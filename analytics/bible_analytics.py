@@ -7,6 +7,7 @@ Usage
 -----
     python bible_analytics.py               # Run default pipeline
     python bible_analytics.py --test-zotero # Test Zotero API connectivity
+    python bible_analytics.py --test-step   # Test STEP Bible API connectivity
 """
 
 import argparse
@@ -47,6 +48,25 @@ def test_zotero() -> None:
         print(f"  • {title}")
 
 
+def test_step() -> None:
+    """Verify that the STEP Bible API is reachable and returns a verse."""
+    from step_client import StepClient  # type: ignore
+
+    client = StepClient()
+    version = os.getenv("STEP_DEFAULT_VERSION", "ESV")
+
+    result = client.get_passage("John.3.16", version=version)
+    if result:
+        text = result.get("text", "(no text returned)")
+        print(f"SUCCESS: Connected to STEP Bible API ({client.base_url}).")
+        print(f"  John 3:16 ({version}): {text!r}")
+    else:
+        print(
+            "WARNING: STEP Bible API responded but returned no text for John 3:16.\n"
+            "See docs/step_setup.md for troubleshooting."
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Bible_Projects analytics entry point."
@@ -56,10 +76,19 @@ def main() -> None:
         action="store_true",
         help="Test Zotero API connectivity and exit.",
     )
+    parser.add_argument(
+        "--test-step",
+        action="store_true",
+        help="Test STEP Bible API connectivity and exit.",
+    )
     args = parser.parse_args()
 
     if args.test_zotero:
         test_zotero()
+        return
+
+    if args.test_step:
+        test_step()
         return
 
     # ── Default pipeline placeholder ───────────────────────────────────────

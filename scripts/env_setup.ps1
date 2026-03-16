@@ -69,9 +69,20 @@ if (-not (Test-Path $envFile)) {
 # Bible_Projects environment variables
 # Fill in your credentials and NEVER commit this file.
 
+# ── Zotero ──────────────────────────────────────────────────────────────────
 ZOTERO_API_KEY=your_zotero_api_key_here
 ZOTERO_USER_ID=your_zotero_user_id_here
 ZOTERO_LIBRARY_TYPE=user
+
+# ── STEP Bible ──────────────────────────────────────────────────────────────
+# Base URL for the STEP Bible public API (no key required for standard access)
+STEP_API_BASE_URL=https://www.stepbible.org/api
+# Default Bible translation (e.g. ESV, NIV, KJV, NASB, NET)
+STEP_DEFAULT_VERSION=ESV
+# Optional: API key placeholder — leave blank unless STEP issues a key
+# STEP_API_KEY=
+# HTTP request timeout in seconds
+STEP_REQUEST_TIMEOUT=10
 "@ | Set-Content $envFile
     Write-Host ".env template created. Edit it to add your credentials." -ForegroundColor Yellow
 } else {
@@ -105,5 +116,6 @@ Write-Host "`n=== Setup complete! ===" -ForegroundColor Cyan
 Write-Host "Next steps:" -ForegroundColor White
 Write-Host "  1. Edit .env with your Zotero credentials" -ForegroundColor White
 Write-Host "  2. See docs\zotero_setup.md for Zotero API instructions" -ForegroundColor White
-Write-Host "  3. Activate the virtual environment:" -ForegroundColor White
+Write-Host "  3. See docs\step_setup.md for STEP Bible API instructions" -ForegroundColor White
+Write-Host "  4. Activate the virtual environment:" -ForegroundColor White
 Write-Host "     .\analytics\venv\Scripts\Activate.ps1" -ForegroundColor White
