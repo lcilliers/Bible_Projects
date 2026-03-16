@@ -1,0 +1,943 @@
+{
+  "word_identity": {
+    "word": "agony",
+    "registry_id": 2,
+    "source_list": "Missing Inner Being Words",
+    "category_label": "Affective/Emotional",
+    "inference_note": null
+  },
+  "qualification_assessment": {
+    "qualification_verdict": "QUALIFIES",
+    "qualification_basis": "agonia (G0074) names an intense inner struggle or anguish as its primary NT sense (Luke 22:44), and the Hebrew chul (H2342I) and the chi.lah/chil cluster (H2427B/A) designate writhing inner anguish experienced by the human person; both terms directly name internal non-physical states of extreme distress.",
+    "qualification_confidence": "HIGH",
+    "qualification_flag": "Several terms in the cluster are predominantly somatic or external in their usage (gi.ach, odin, pig.gul-parallel ta.cha.lu.im which is excluded), and sha.vats has only one verse with uncertain meaning; the core qualification rests on agonia, chul, chi.lah/chil, odunaō, and basanizō."
+  },
+  "term_inventory": [
+    {
+      "transliteration": "agonia",
+      "strongs_number": "G0074",
+      "language": "Greek",
+      "anchor_gloss": "a struggle",
+      "word_type": "noun",
+      "anchor_grammatical_form": "Noun Dative Singular Feminine",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 1,
+      "meaning_summary": "Contest, violent struggle; agony, anguish, anxiety. The LSJ traces the term from athletic contest and gymnastic exercise to inner states of the mind — agony and anguish in contexts of fear and dread.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "chi.lah",
+      "strongs_number": "H2427B",
+      "language": "Hebrew",
+      "anchor_gloss": "agony",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common singular feminine absolute",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 7,
+      "meaning_summary": "Pain, agony, sorrow, writhing, anguish; sub-definitions: writhing of fear, and anguish. Feminine form of chil (H2427A), derived from the chul root.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "chil",
+      "strongs_number": "H2427A",
+      "language": "Hebrew",
+      "anchor_gloss": "agony",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common singular masculine absolute",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 7,
+      "meaning_summary": "Pain, agony, sorrow, writhing, anguish; sub-definitions: writhing of fear, and anguish. Masculine form paired with chi.lah (H2427B). Source file notes the two as alternate forms of the same root.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "sha.vats",
+      "strongs_number": "H7661",
+      "language": "Hebrew",
+      "anchor_gloss": "agony",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common singular masculine absolute",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 1,
+      "meaning_summary": "Cramp, agony, anguish; meaning stated as uncertain in the sub-definition. Single occurrence in 2Sa 1:9.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "odunaō",
+      "strongs_number": "G3600",
+      "language": "Greek",
+      "anchor_gloss": "be anguished",
+      "word_type": "verb",
+      "anchor_grammatical_form": "Verb Present Middle Indicative 2nd Singular",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 4,
+      "meaning_summary": "To grieve, be anxious, be in agony; passive: to be in agony, be tormented, be distressed — either bodily or mentally. Active use: to cause pain or suffering.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "ta.cha.lu.im",
+      "strongs_number": "H8463",
+      "language": "Hebrew",
+      "anchor_gloss": "disease",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common plural masculine absolute",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 5,
+      "meaning_summary": "Diseases. No sub-definitions given. Used of physical illness.",
+      "causative_stem_present": false,
+      "divine_subject_possible": true,
+      "somatic_dimension": true,
+      "note": "Source file marks this term 'Exclude word / This word only' — recorded for completeness per specification but excluded from inner-being analysis."
+    },
+    {
+      "transliteration": "odin",
+      "strongs_number": "G5604",
+      "language": "Greek",
+      "anchor_gloss": "labor",
+      "word_type": "noun",
+      "anchor_grammatical_form": "Noun Genitive Plural Feminine",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 4,
+      "meaning_summary": "Birth pang, spasm of travail; plural: birth throes used metaphorically of catastrophic preliminary sufferings; from the Hebrew, extended to mean a stringent band or snare — Acts 2:24 uses it of the pangs of death (ōdines thanatou).",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "che.vel",
+      "strongs_number": "H2256B",
+      "language": "Hebrew",
+      "anchor_gloss": "pain",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common plural masculine absolute",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 9,
+      "meaning_summary": "Pain, sorrow, travail, pang; sub-definitions: pains of travail and pains/pangs/sorrows. Related words indicate the same root covers cord, pledge, destruction, and piloting — suggesting semantic polysemy across distinct lexical fields.",
+      "causative_stem_present": false,
+      "divine_subject_possible": true,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "gi.ach",
+      "strongs_number": "H1518",
+      "language": "Hebrew",
+      "anchor_gloss": "to burst/come out",
+      "word_type": "verb",
+      "anchor_grammatical_form": "verb qal infinitive construct",
+      "anchor_stem": "Qal",
+      "full_stem_range": [
+        "Qal",
+        "Hiphil"
+      ],
+      "occurrence_count": 7,
+      "meaning_summary": "To burst forth, draw forth, bring forth (Qal); to break forth (Hiphil). The Aramaic cognate means 'to strive'. Related words include proper nouns Gihon and Giah — the semantic connection to agony is through the bursting-forth imagery of birth or violent emergence.",
+      "causative_stem_present": true,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "basanizō",
+      "strongs_number": "G0928",
+      "language": "Greek",
+      "anchor_gloss": "to torture: anguish",
+      "word_type": "verb",
+      "anchor_grammatical_form": "Verb Present Passive Participle Nominative Singular Neuter",
+      "anchor_stem": null,
+      "full_stem_range": null,
+      "occurrence_count": 12,
+      "meaning_summary": "To torture, torment; passive: to be tortured, tormented, in pain. Etymologically from basanos (the touchstone for testing gold) — originally to apply the touchstone, then to examine or scrutinise, then to torture. NT uses: to afflict/torment (by disease, demonisation, waves), and passive: to be tormented or in pain.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": true
+    },
+    {
+      "transliteration": "chul",
+      "strongs_number": "H2342I",
+      "language": "Hebrew",
+      "anchor_gloss": "to twist: writh in pain",
+      "word_type": "verb",
+      "anchor_grammatical_form": "verb qal perfective first singular either gender",
+      "anchor_stem": "Qal",
+      "full_stem_range": [
+        "Qal",
+        "Polel",
+        "Pulal",
+        "Hophal",
+        "Hithpolel",
+        "Hithpalpel"
+      ],
+      "occurrence_count": 56,
+      "meaning_summary": "To twist, whirl, dance, writhe, fear, tremble, travail, be in anguish, be pained. The root covers a remarkably wide semantic range — from physical dance and whirling to birth-travail writhing to inner anguish and fear. Hithpolel includes 'writhing, suffering torture' and 'waiting longingly'; Hithpalpel: to be distressed.",
+      "causative_stem_present": false,
+      "divine_subject_possible": true,
+      "somatic_dimension": true
+    }
+  ],
+  "related_words_index": [
+    {
+      "parent_term": "agonia",
+      "related_words": [
+        {
+          "transliteration": "agōn",
+          "gloss": "fight",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "agōnizomai",
+          "gloss": "to struggle",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "antagōnizomai",
+          "gloss": "to struggle against",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "epagōnizomai",
+          "gloss": "to contend",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "katagōnizomai",
+          "gloss": "to conquer",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "sunagōnizomai",
+          "gloss": "to struggle alongside",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "chi.lah",
+      "related_words": [
+        {
+          "transliteration": "chul",
+          "gloss": "to twist: tremble",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chil",
+          "gloss": "be firm / agony",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chol",
+          "gloss": "sand",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chel",
+          "gloss": "rampart",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "che.lah",
+          "gloss": "bulwark",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chal.cha.lah",
+          "gloss": "anguish",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "ma.chol",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "me.cho.lah",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "chil",
+      "related_words": [
+        {
+          "transliteration": "chul",
+          "gloss": "to twist: tremble / writh / give birth / dance / anticipate",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chi.lah",
+          "gloss": "agony",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chol",
+          "gloss": "sand",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chel",
+          "gloss": "rampart",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "che.lah",
+          "gloss": "bulwark",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chal.cha.lah",
+          "gloss": "anguish",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "ma.chol",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "me.cho.lah",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "sha.vats",
+      "related_words": [
+        {
+          "transliteration": "mish.be.tsot",
+          "gloss": "filigree",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "sha.vats (verb)",
+          "gloss": "to weave",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "tash.bets",
+          "gloss": "checkered",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "odunaō",
+      "related_words": [
+        {
+          "transliteration": "odunē",
+          "gloss": "anguish",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "ta.cha.lu.im",
+      "related_words": [
+        {
+          "transliteration": "cha.la",
+          "gloss": "be sick",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "odin",
+      "related_words": [
+        {
+          "transliteration": "sunōdinō",
+          "gloss": "to labor together",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "ōdinō",
+          "gloss": "be in labor",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "che.vel",
+      "related_words": [
+        {
+          "transliteration": "cha.val",
+          "gloss": "to pledge / to destroy / be in labour",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "cho.ve.lim",
+          "gloss": "union",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "che.vel (alt)",
+          "gloss": "destruction / cord",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "cha.vol",
+          "gloss": "pledge",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "cha.vo.lah",
+          "gloss": "pledge",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "cho.vel",
+          "gloss": "pilot",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chib.bel",
+          "gloss": "mast",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "tach.bu.lah",
+          "gloss": "counsel",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "gi.ach",
+      "related_words": [
+        {
+          "transliteration": "Giah",
+          "gloss": "proper noun (place name)",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "Gihon",
+          "gloss": "proper noun (river/spring)",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "basanizō",
+      "related_words": [
+        {
+          "transliteration": "basanismos",
+          "gloss": "torment",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "basanistēs",
+          "gloss": "torturer",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "basanos",
+          "gloss": "torment",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    },
+    {
+      "parent_term": "chul",
+      "related_words": [
+        {
+          "transliteration": "chil",
+          "gloss": "be firm / agony",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chol",
+          "gloss": "sand",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chel",
+          "gloss": "rampart",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chi.lah",
+          "gloss": "agony",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "che.lah",
+          "gloss": "bulwark",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "chal.cha.lah",
+          "gloss": "anguish",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "ma.chol",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        },
+        {
+          "transliteration": "me.cho.lah",
+          "gloss": "dance",
+          "registry_crossref": null,
+          "root_relationship": "same root"
+        }
+      ]
+    }
+  ],
+  "verse_classification": {
+    "agonia": [
+      {
+        "reference": "Luk 22:44",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "chi.lah": [
+      {
+        "reference": "Job 6:10",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "chil": [
+      {
+        "reference": "Exo 15:14",
+        "classification": "EXTENDED",
+        "reason": "National-corporate register; pangs seize the inhabitants of Philistia as a collective response to hearing of God's acts — inner anguish present but applied to a population, not an individual."
+      },
+      {
+        "reference": "Psa 48:6",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Jer 6:24",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Jer 22:23",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Jer 50:43",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Mic 4:9",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "sha.vats": [
+      {
+        "reference": "2Sa 1:9",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "odunaō": [
+      {
+        "reference": "Luk 2:48",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Luk 16:24",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Luk 16:25",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Act 20:38",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "ta.cha.lu.im": [
+      {
+        "reference": "Deu 29:22",
+        "classification": "PERIPHERAL",
+        "reason": "Refers to physical diseases afflicting the land; external and somatic."
+      },
+      {
+        "reference": "2Ch 21:19",
+        "classification": "PERIPHERAL",
+        "reason": "Physical disease causing death; somatic and external."
+      },
+      {
+        "reference": "Psa 103:3",
+        "classification": "PERIPHERAL",
+        "reason": "Divine healing of physical diseases; somatic referent."
+      },
+      {
+        "reference": "Jer 14:18",
+        "classification": "PERIPHERAL",
+        "reason": "Diseases of famine in the land; external somatic referent."
+      },
+      {
+        "reference": "Jer 16:4",
+        "classification": "PERIPHERAL",
+        "reason": "Fatal diseases; purely somatic."
+      }
+    ],
+    "odin": [
+      {
+        "reference": "Mat 24:8",
+        "classification": "EXTENDED",
+        "reason": "Eschatological-metaphorical register; birth pangs used as a figure for catastrophic preliminary sufferings before the end — inner-being dimension is indirect."
+      },
+      {
+        "reference": "Mar 13:8",
+        "classification": "EXTENDED",
+        "reason": "Parallel to Mat 24:8; same eschatological-metaphorical register."
+      },
+      {
+        "reference": "Act 2:24",
+        "classification": "AMBIGUOUS",
+        "reason": "odinēs thanatou ('pangs of death') applied to Christ's death and resurrection; the meaning note indicates a Hebrew loanshift from 'pang' to 'cord/snare' — whether the inner-being or the physical referent is primary cannot be determined from this verse and note alone."
+      },
+      {
+        "reference": "1Th 5:3",
+        "classification": "EXTENDED",
+        "reason": "Eschatological-metaphorical register; birth pains as a figure for sudden destruction — inner-being dimension present but indirect."
+      }
+    ],
+    "che.vel": [
+      {
+        "reference": "Job 21:17",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Job 39:3",
+        "classification": "PERIPHERAL",
+        "reason": "Describes the physical act of animals giving birth; no human inner-being referent."
+      },
+      {
+        "reference": "Jer 13:21",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Jer 49:24",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Hos 13:13",
+        "classification": "AMBIGUOUS",
+        "reason": "Birth pangs applied to a son's spiritual failure to present himself at the critical moment — the physical birth imagery is explicitly metaphorical for a spiritual-inner crisis, but whether che.vel names the inner state or the external circumstance is ambiguous."
+      }
+    ],
+    "gi.ach": [
+      {
+        "reference": "Judg 20:33",
+        "classification": "PERIPHERAL",
+        "reason": "Military manoeuvre (troops rushing out of ambush); no inner-being or agony referent."
+      },
+      {
+        "reference": "Job 38:8",
+        "classification": "EXTENDED",
+        "reason": "Cosmic-creative register; the sea bursting from the womb — the birth-agony imagery is applied to creation, not to a human inner state."
+      },
+      {
+        "reference": "Job 40:23",
+        "classification": "PERIPHERAL",
+        "reason": "Describes Behemoth's confidence when the river rushes against him; no agony referent."
+      },
+      {
+        "reference": "Psa 22:9",
+        "classification": "EXTENDED",
+        "reason": "Birth imagery applied to God's action in bringing the psalmist from the womb; the inner-being dimension is in the trust established at birth, not in agony per se."
+      },
+      {
+        "reference": "Eze 32:2",
+        "classification": "PERIPHERAL",
+        "reason": "Applied to Pharaoh as a dragon bursting forth in rivers; no agony or inner-being referent."
+      }
+    ],
+    "basanizō": [
+      {
+        "reference": "Mat 8:6",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Mat 14:24",
+        "classification": "PERIPHERAL",
+        "reason": "Applied to a boat beaten by waves; no human inner-being referent."
+      },
+      {
+        "reference": "Mar 6:48",
+        "classification": "PERIPHERAL",
+        "reason": "Applied to disciples making headway painfully against the wind — physical exertion, no inner agony as primary referent."
+      },
+      {
+        "reference": "Rev 12:2",
+        "classification": "CORE",
+        "reason": null
+      }
+    ],
+    "chul": [
+      {
+        "reference": "Deu 2:25",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "1Sa 31:3",
+        "classification": "PERIPHERAL",
+        "reason": "Describes Saul being badly wounded by archers; the English 'wounded' suggests a physical battle injury — the link to chul's writhing sense is not explicit in the translation."
+      },
+      {
+        "reference": "1Ch 10:3",
+        "classification": "PERIPHERAL",
+        "reason": "Parallel to 1Sa 31:3; same physical battle-wound context."
+      },
+      {
+        "reference": "Job 15:20",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Psa 77:16",
+        "classification": "EXTENDED",
+        "reason": "Cosmic-nature register; the deep trembling/writhing at the presence of God — the chul imagery is applied to creation, not to human inner agony directly."
+      },
+      {
+        "reference": "Isa 13:8",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Isa 23:4",
+        "classification": "EXTENDED",
+        "reason": "Personification of the sea speaking; the not-having-laboured or given birth is a negation of the birth-writhing image — indirect inner-being register."
+      },
+      {
+        "reference": "Isa 23:5",
+        "classification": "EXTENDED",
+        "reason": "National-collective register; Egypt in anguish over the report about Tyre — inner anguish is real but applied corporately."
+      },
+      {
+        "reference": "Isa 26:17",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Isa 26:18",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Isa 45:10",
+        "classification": "PERIPHERAL",
+        "reason": "Rhetorical question about birth; addresses the external circumstance of labour rather than the inner experience of agony."
+      },
+      {
+        "reference": "Isa 54:1",
+        "classification": "EXTENDED",
+        "reason": "Prophetic address to barren Zion; the not-having-been-in-labour is a negation of the birth-writhing image — extended register."
+      },
+      {
+        "reference": "Isa 66:7",
+        "classification": "EXTENDED",
+        "reason": "Describes miraculous birth before labour pains came — the absence of agony is the point; extended register."
+      },
+      {
+        "reference": "Isa 66:8",
+        "classification": "EXTENDED",
+        "reason": "National-birth imagery applied to Zion; corporate-eschatological register."
+      },
+      {
+        "reference": "Jer 5:3",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Jer 51:29",
+        "classification": "EXTENDED",
+        "reason": "Land personified as trembling and writhing in pain under divine judgement; extended cosmic-land register."
+      },
+      {
+        "reference": "Eze 30:16",
+        "classification": "EXTENDED",
+        "reason": "Applied to a city (Pelusium) in great agony — personification of a city; extended register."
+      },
+      {
+        "reference": "Joe 2:6",
+        "classification": "EXTENDED",
+        "reason": "Peoples in anguish before an invading army — corporate register; inner anguish is real but applied collectively."
+      },
+      {
+        "reference": "Mic 4:10",
+        "classification": "CORE",
+        "reason": null
+      },
+      {
+        "reference": "Zec 9:5",
+        "classification": "EXTENDED",
+        "reason": "Cities writhing in anguish at regional news — corporate-city personification; extended register."
+      }
+    ]
+  },
+  "cross_registry_links": [
+    {
+      "linked_word": "anguish",
+      "linked_registry_id": null,
+      "connection_type": "shared_root",
+      "connecting_term": "chal.cha.lah",
+      "note": "chal.cha.lah (anguish) appears as a related word under chi.lah, chil, and chul — all three share the chul root; chal.cha.lah was listed in the primary term list for 'abomination' as a cross-link and may correspond to a separate entry in the 181."
+    },
+    {
+      "linked_word": "anguish / pain (noun)",
+      "linked_registry_id": null,
+      "connection_type": "shared_root",
+      "connecting_term": "odunē (anguish)",
+      "note": "odunē is listed as a related word under odunaō and may be a separate entry in the 181 in its own right."
+    },
+    {
+      "linked_word": "torment",
+      "linked_registry_id": null,
+      "connection_type": "shared_term",
+      "connecting_term": "basanos (G0946) / basanismos",
+      "note": "basanos (torment) appears in the primary term list for this word and is a related word under basanizō but has no independent term block; it may be a separate entry in the 181."
+    },
+    {
+      "linked_word": "dance",
+      "linked_registry_id": null,
+      "connection_type": "shared_root",
+      "connecting_term": "ma.chol / me.cho.lah",
+      "note": "Dance terms share the chul root with the agony cluster — the same root covers writhing-in-pain and whirling-in-dance; relevant if dance is a separate entry in the 181."
+    },
+    {
+      "linked_word": "labor / birth pangs",
+      "linked_registry_id": null,
+      "connection_type": "semantic_overlap",
+      "connecting_term": "ōdinō (be in labor) / odin (G5604)",
+      "note": "The birth-pang metaphor is the dominant vehicle for agony language in the Hebrew term set; if labor/birth pangs is a separate entry in the 181 there will be substantial term overlap."
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "flag_type": "MISSING_TERM",
+      "affected_term": "basanos",
+      "description": "basanos appears in the primary term list (Matt 4:24, Luke 16:23) and in the STEP Bible Suggestion as a key term, and as a related word under basanizō, but has no independent term block in the STEP section of the source file; its Strong's number, grammatical form, meaning range, and verse list are absent."
+    },
+    {
+      "flag_type": "FORMAT_INCONSISTENCY",
+      "affected_term": "chi.lah",
+      "description": "The word analysis block for chi.lah shows a parsing token ('in/on/with (b)') preceding the term heading, indicating STEP captured an adjacent preposition as part of the anchor token; does not corrupt term data."
+    },
+    {
+      "flag_type": "FORMAT_INCONSISTENCY",
+      "affected_term": "sha.vats",
+      "description": "The word analysis block for sha.vats shows parsing tokens ('me (ni)', '[the] (h)') preceding the term heading; same STEP anchor-token display issue."
+    },
+    {
+      "flag_type": "FORMAT_INCONSISTENCY",
+      "affected_term": "ta.cha.lu.im",
+      "description": "The word analysis block for ta.cha.lu.im shows a parsing token ('in/on/with (b)') preceding the term heading; same STEP anchor-token display issue."
+    },
+    {
+      "flag_type": "THIN_DATA",
+      "affected_term": "sha.vats",
+      "description": "sha.vats has only one verse and its meaning is explicitly stated as uncertain ('meaning uncertain') in the sub-definition; the analysis is necessarily restricted to the single occurrence and the bare meaning note."
+    },
+    {
+      "flag_type": "THIN_DATA",
+      "affected_term": "chi.lah",
+      "description": "chi.lah has 7 attested occurrences but only 1 verse is provided in the source file (Job 6:10); 6 occurrences are unaccounted for in the verse list."
+    },
+    {
+      "flag_type": "THIN_DATA",
+      "affected_term": "gi.ach",
+      "description": "gi.ach has 7 attested occurrences but only 5 verses are provided in the source file; 2 occurrences are absent and may contain relevant data."
+    },
+    {
+      "flag_type": "FORMAT_INCONSISTENCY",
+      "affected_term": "basanizō",
+      "description": "The Strong's number in the source file is listed as G0928H rather than the standard G0928; the H suffix is not explained and may be a STEP sub-entry notation."
+    },
+    {
+      "flag_type": "FORMAT_INCONSISTENCY",
+      "affected_term": "chil",
+      "description": "chil (H2427A) and chi.lah (H2427B) share the same occurrence count (7 x) and identical meaning sections, with the source file noting them as alternate forms; it is unclear whether the 7 occurrences are shared across both or separately attested for each."
+    },
+    {
+      "flag_type": "OTHER",
+      "affected_term": null,
+      "description": "The source file's primary term list includes basanos and chalchalah, but chalchalah does not appear in the STEP related word list as an independent entry — it appears only as a related word under chi.lah, chil, and chul. chalchalah has no term block in the file."
+    }
+  ]
+}

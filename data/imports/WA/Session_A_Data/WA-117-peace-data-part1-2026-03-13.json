@@ -1,0 +1,793 @@
+{
+  "registry": "117",
+  "word": "peace",
+  "part": 1,
+  "part_label": "Hebrew",
+  "part_description": "Hebrew terms for peace, wholeness, rest, and silence",
+  "category": null,
+  "category_note": "Deferred to Phase 2. 'Relational/Social' rejected as too narrow — shalom spans inner wholeness, relational harmony, covenantal completeness, physical wellbeing, and eschatological rest.",
+  "source_list": "Missing Inner Being Words",
+  "produced_date": "2026-03-13",
+  "specification_version": "Session A Instruction v7",
+  "verse_translation": "ESV",
+  "total_terms_this_part": 16,
+  "note_on_sha.lom_sub_entries": "sha.lom has 6 STEP sub-entries (H7965G, H7965L, H7965J, H7965K, H7965I, H7965H). STEP cannot sub-select verses by sub-gloss from the consolidated 240-verse set. All 240 verses are assigned to the sha.lom parent entry (H7965G). The 5 meaning-only sub-entries each carry a word_analysis block with no separate verse records. Check C soft exception pre-approved for all 5 sub-entries.",
+  "note_on_sha.lem_sha.lam": "sha.lam (to ally, H7999A) and sha.lem (to complete, H7999A) share the same Strong's number and identical verse sets in STEP. Consolidated per researcher decision: sha.lem (to complete) is the canonical entry at H7999A; sha.lam (to ally) is treated as a sub-gloss meaning entry with no separate verse record. Same Check C soft exception pattern as sha.lom sub-entries.",
+  "xref_terms": [
+    {
+      "transliteration": "da.mam",
+      "gloss": "to silence: silent",
+      "strongs_number": "H1826",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "note": "XREF only — no extraction in this registry"
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "flag": "STRONGS_RECONCILED",
+      "term": "sha.lom",
+      "note": "Six STEP sub-glosses under H7965 root: H7965G (peace), H7965L (completely), H7965J (friendship), H7965K (greeting), H7965I (well-being), H7965H (Peace [God]). All sub-letter codes confirmed from STEP source file."
+    },
+    {
+      "flag": "STRONGS_RECONCILED",
+      "term": "sha.lem / sha.lam",
+      "note": "Both glosses map to H7999A in STEP. Consolidated as canonical (sha.lem) + sub-gloss (sha.lam). H7999A confirmed."
+    },
+    {
+      "flag": "CONSOLIDATION_CANDIDATE",
+      "term": "cha.resh / cha.rash",
+      "note": "cha.resh (H2790B, be quiet) and cha.rash (H2790A, to plow/plot) share an identical verse set in STEP. Both are retained as separate entries — they have different primary glosses and distinct semantic domains (silence vs. physical plowing/mental plotting). The verse overlap may reflect STEP returning the combined H2790 root set for both. Flagged for Phase 2 review."
+    },
+    {
+      "flag": "THIN_DATA",
+      "term": "she.lam",
+      "note": "Aramaic equivalent of sha.lom (H8001). No verses provided in source file beyond the word analysis block. Listed in STEP term list but verse extraction appears not to have been captured. Retained as a valid term entry with empty verse array."
+    },
+    {
+      "flag": "THIN_DATA",
+      "term": "ra.ga",
+      "note": "Only 6 occurrences. Small verse set included in full."
+    },
+    {
+      "flag": "THIN_DATA",
+      "term": "has",
+      "note": "Only 8 occurrences. Small verse set included in full."
+    },
+    {
+      "flag": "THIN_DATA",
+      "term": "ge.mar",
+      "note": "Only 6 occurrences. Aramaic. Small verse set included in full."
+    }
+  ],
+  "terms": [
+    {
+      "strongs_number": "H7961",
+      "transliteration": "sha.lev",
+      "gloss": "at ease",
+      "hebrew": "שָׁלֵו",
+      "language": "Hebrew",
+      "occurrence_count": 8,
+      "word_analysis": {
+        "meaning_summary": "quiet, at ease, prosperous",
+        "senses": [
+          "1a) at ease (of persons)",
+          "1b) quiet (of land)",
+          "1c) quiet, ease",
+          "1d) ease (subst)"
+        ]
+      },
+      "verses": [
+        { "ref": "1Ch 4:40", "text": "where they found rich, good pasture, and the land was very broad, quiet, and peaceful, for the former inhabitants there belonged to Ham." },
+        { "ref": "Job 16:12", "text": "I was at ease, and he broke me apart; he seized me by the neck and dashed me to pieces; he set me up as his target;" },
+        { "ref": "Job 20:20", "text": "\"Because he knew no contentment in his belly, he will not let anything in which he delights escape him." },
+        { "ref": "Job 21:23", "text": "One dies in his full vigor, being wholly at ease and secure," },
+        { "ref": "Psa 73:12", "text": "Behold, these are the wicked; always at ease, they increase in riches." },
+        { "ref": "Jer 49:31", "text": "\"Rise up, advance against a nation at ease, that dwells securely, declares the Lord, that has no gates or bars, that dwells alone." },
+        { "ref": "Eze 23:42", "text": "The sound of a carefree multitude was with her; and with men of the common sort, drunkards were brought from the wilderness; and they put bracelets on the hands of the women, and beautiful crowns on their heads." },
+        { "ref": "Zec 7:7", "text": "Were not these the words that the Lord proclaimed by the former prophets, when Jerusalem was inhabited and prosperous, with her cities around her, and the South and the lowland were inhabited?'" }
+      ]
+    },
+    {
+      "strongs_number": "H2790B",
+      "transliteration": "cha.resh",
+      "gloss": "be quiet",
+      "hebrew": "חָרֵשׁ",
+      "language": "Hebrew",
+      "occurrence_count": 46,
+      "word_analysis": {
+        "meaning_summary": "to be silent, be dumb, be speechless, be deaf",
+        "senses": [
+          "1a1) to be silent",
+          "1a2) to be deaf",
+          "1b1) to be silent, keep quiet",
+          "1b2) to make silent",
+          "1b3) to be deaf, show deafness",
+          "1c) (Hithpael) to remain silent"
+        ]
+      },
+      "data_quality_note": "See CONSOLIDATION_CANDIDATE flag — verse set shared with cha.rash (H2790A). Both entries retained pending Phase 2 review.",
+      "verses": [
+        { "ref": "Gen 24:21", "text": "The man gazed at her in silence to learn whether the LORD had prospered his journey or not." },
+        { "ref": "Gen 34:5", "text": "Now Jacob heard that he had defiled his daughter Dinah. But his sons were with his livestock in the field, so Jacob held his peace until they came." },
+        { "ref": "Exo 14:14", "text": "The LORD will fight for you, and you have only to be silent." },
+        { "ref": "Num 30:4", "text": "and her father hears of her vow and of her pledge by which she has bound herself and says nothing to her, then all her vows shall stand, and every pledge by which she has bound herself shall stand." },
+        { "ref": "Num 30:7", "text": "and her husband hears of it and says nothing to her on the day that he hears, then her vows shall stand, and her pledges by which she has bound herself shall stand." },
+        { "ref": "Num 30:11", "text": "and her husband heard of it and said nothing to her and did not oppose her, then all her vows shall stand, and every pledge by which she bound herself shall stand." },
+        { "ref": "Num 30:14", "text": "But if her husband says nothing to her from day to day, then he establishes all her vows or all her pledges that are upon her. He has established them, because he said nothing to her on the day that he heard of them." },
+        { "ref": "Deu 22:10", "text": "You shall not plow with an ox and a donkey together." },
+        { "ref": "Judg 14:18", "text": "And the men of the city said to him on the seventh day before the sun went down, \"What is sweeter than honey? What is stronger than a lion?\" And he said to them, \"If you had not plowed with my heifer, you would not have found out my riddle.\"" },
+        { "ref": "Judg 16:2", "text": "The Gazites were told, \"Samson has come here.\" And they surrounded the place and set an ambush for him all night at the gate of the city. They kept quiet all night, saying, \"Let us wait till the light of the morning; then we will kill him.\"" },
+        { "ref": "Judg 18:19", "text": "And they said to him, \"Keep quiet; put your hand on your mouth and come with us and be to us a father and a priest. Is it better for you to be priest to the house of one man, or to be priest to a tribe and clan in Israel?\"" },
+        { "ref": "1Sa 7:8", "text": "And the people of Israel said to Samuel, \"Do not cease to cry out to the LORD our God for us, that he may save us from the hand of the Philistines.\"" },
+        { "ref": "1Sa 10:27", "text": "But some worthless fellows said, \"How can this man save us?\" And they despised him and brought him no present. But he held his peace." },
+        { "ref": "1Sa 23:9", "text": "David knew that Saul was plotting harm against him. And he said to Abiathar the priest, \"Bring the ephod here.\"" },
+        { "ref": "2Sa 13:20", "text": "And her brother Absalom said to her, \"Has Amnon your brother been with you? Now hold your peace, my sister. He is your brother; do not take this to heart.\" So Tamar lived, a desolate woman, in her brother Absalom's house." },
+        { "ref": "2Sa 19:10", "text": "But Absalom, whom we anointed over us, is dead in battle. Now therefore why do you say nothing about bringing the king back?" },
+        { "ref": "1Ki 19:19", "text": "So he departed from there and found Elisha the son of Shaphat, who was plowing with twelve yoke of oxen in front of him, and he was with the twelfth. Elijah passed by him and cast his cloak upon him." },
+        { "ref": "2Ki 18:36", "text": "But the people were silent and answered him not a word, for the king's command was, \"Do not answer him.\"" },
+        { "ref": "Neh 5:8", "text": "and said to them, \"We, as far as we are able, have bought back our Jewish brothers who have been sold to the nations, but you even sell your brothers that they may be sold to us!\" They were silent and could not find a word to say." },
+        { "ref": "Est 4:14", "text": "For if you keep silent at this time, relief and deliverance will rise for the Jews from another place, but you and your father's house will perish. And who knows whether you have not come to the kingdom for such a time as this?" },
+        { "ref": "Est 7:4", "text": "For we have been sold, I and my people, to be destroyed, to be killed, and to be annihilated. If we had been sold merely as slaves, men and women, I would have been silent, for our affliction is not to be compared with the loss to the king." },
+        { "ref": "Job 6:24", "text": "\"Teach me, and I will be silent; make me understand how I have gone astray." },
+        { "ref": "Job 11:3", "text": "Should your babble silence men, and when you mock, shall no one shame you?" },
+        { "ref": "Job 13:5", "text": "Oh that you would keep silent, and it would be your wisdom!" },
+        { "ref": "Job 13:13", "text": "\"Let me have silence, and I will speak, and let come on me what may." },
+        { "ref": "Job 13:19", "text": "Who is there who will contend with me? For then I would be silent and die." },
+        { "ref": "Job 33:31", "text": "Pay attention, O Job, listen to me; be silent, and I will speak." },
+        { "ref": "Job 33:33", "text": "If not, listen to me; be silent, and I will teach you wisdom." },
+        { "ref": "Job 41:12", "text": "\"I will not keep silence concerning his limbs, or his mighty strength, or his goodly frame." },
+        { "ref": "Psa 28:1", "text": "To you, O LORD, I call; my rock, be not deaf to me, lest, if you be silent to me, I become like those who go down to the pit." },
+        { "ref": "Psa 32:3", "text": "For when I kept silent, my bones wasted away through my groaning all day long." },
+        { "ref": "Psa 35:22", "text": "You have seen, O LORD; be not silent! O Lord, be not far from me!" },
+        { "ref": "Psa 39:12", "text": "\"Hear my prayer, O LORD, and give ear to my cry; hold not your peace at my tears! For I am a sojourner with you, a guest, like all my fathers." },
+        { "ref": "Psa 50:3", "text": "Our God comes; he does not keep silence; before him is a devouring fire, around him a mighty tempest." },
+        { "ref": "Psa 50:21", "text": "These things you have done, and I have been silent; you thought that I was one like yourself. But now I rebuke you and lay the charge before you." },
+        { "ref": "Psa 83:1", "text": "O God, do not keep silence; do not hold your peace or be still, O God!" },
+        { "ref": "Psa 109:1", "text": "Be not silent, O God of my praise!" },
+        { "ref": "Pro 11:12", "text": "Whoever belittles his neighbor lacks sense, but a man of understanding remains silent." },
+        { "ref": "Pro 12:20", "text": "Deceit is in the heart of those who devise evil, but those who plan peace have joy." },
+        { "ref": "Pro 17:28", "text": "Even a fool who keeps silent is considered wise; when he closes his lips, he is deemed intelligent." },
+        { "ref": "Isa 36:21", "text": "But they were silent and answered him not a word, for the king's command was, \"Do not answer him.\"" },
+        { "ref": "Isa 41:1", "text": "Listen to me in silence, O coastlands; let the peoples renew their strength; let them approach, then let them speak; let us together draw near for judgment." },
+        { "ref": "Isa 42:14", "text": "For a long time I have held my peace; I have kept still and restrained myself; now I will cry out like a woman in labor; I will gasp and pant." },
+        { "ref": "Jer 4:19", "text": "My anguish, my anguish! I writhe in pain! Oh the walls of my heart! My heart is beating wildly; I cannot keep silent, for I hear the sound of the trumpet, the alarm of war." },
+        { "ref": "Jer 38:27", "text": "Then all the officials came to Jeremiah and asked him, and he answered them as the king had instructed him. So they stopped speaking with him, for the conversation had not been overheard." },
+        { "ref": "Hab 1:13", "text": "You who are of purer eyes than to see evil and cannot look at wrong, why do you idly look at traitors and remain silent when the wicked swallows up the man more righteous than he?" },
+        { "ref": "Zep 3:17", "text": "The LORD your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love; he will exult over you with loud singing." }
+      ]
+    },
+    {
+      "strongs_number": "H2814",
+      "transliteration": "cha.shah",
+      "gloss": "be silent",
+      "hebrew": "חָשָׁה",
+      "language": "Hebrew",
+      "occurrence_count": 16,
+      "word_analysis": {
+        "meaning_summary": "to be silent, quiet, still, inactive",
+        "senses": [
+          "1a) (Qal) to be silent, be still",
+          "1b1) to be silent, exhibit silence",
+          "1b2) to show inactivity, be inactive",
+          "1b3) to make silent, make quiet, cause to be still"
+        ]
+      },
+      "verses": [
+        { "ref": "Judg 18:9", "text": "They said, \"Arise, and let us go up against them, for we have seen the land, and behold, it is very good. And will you do nothing? Do not be slow to go, to enter in and possess the land." },
+        { "ref": "1Ki 22:3", "text": "And the king of Israel said to his servants, \"Do you know that Ramoth-gilead belongs to us, and we keep quiet and do not take it out of the hand of the king of Syria?\"" },
+        { "ref": "2Ki 2:3", "text": "And the sons of the prophets who were in Bethel came out to Elisha and said to him, \"Do you know that today the LORD will take away your master from over you?\" And he said, \"Yes, I know it; keep quiet.\"" },
+        { "ref": "2Ki 2:5", "text": "The sons of the prophets who were at Jericho drew near to Elisha and said to him, \"Do you know that today the LORD will take away your master from over you?\" And he answered, \"Yes, I know it; keep quiet.\"" },
+        { "ref": "2Ki 7:9", "text": "Then they said to one another, \"We are not doing right. This day is a day of good news. If we are silent and wait until the morning light, punishment will overtake us. Now therefore come; let us go and tell the king's household.\"" },
+        { "ref": "Neh 8:11", "text": "So the Levites calmed all the people, saying, \"Be quiet, for this day is holy; do not be grieved.\"" },
+        { "ref": "Psa 28:1", "text": "To you, O LORD, I call; my rock, be not deaf to me, lest, if you be silent to me, I become like those who go down to the pit." },
+        { "ref": "Psa 39:2", "text": "I was mute and silent; I held my peace to no avail, and my distress grew worse." },
+        { "ref": "Psa 107:29", "text": "He made the storm be still, and the waves of the sea were hushed." },
+        { "ref": "Ecc 3:7", "text": "a time to tear, and a time to sew; a time to keep silence, and a time to speak;" },
+        { "ref": "Isa 42:14", "text": "For a long time I have held my peace; I have kept still and restrained myself; now I will cry out like a woman in labor; I will gasp and pant." },
+        { "ref": "Isa 57:11", "text": "Whom did you dread and fear, so that you lied, and did not remember me, did not lay it to heart? Have I not held my peace, even for a long time, and you do not fear me?" },
+        { "ref": "Isa 62:1", "text": "For Zion's sake I will not keep silent, and for Jerusalem's sake I will not be quiet, until her righteousness goes forth as brightness, and her salvation as a burning torch." },
+        { "ref": "Isa 62:6", "text": "On your walls, O Jerusalem, I have set watchmen; all the day and all the night they shall never be silent. You who put the LORD in remembrance, take no rest," },
+        { "ref": "Isa 64:12", "text": "Will you restrain yourself at these things, O LORD? Will you keep silent, and afflict us so terribly?" },
+        { "ref": "Isa 65:6", "text": "Behold, it is written before me: \"I will not keep silent, but I will repay; I will indeed repay into their lap" }
+      ]
+    },
+    {
+      "strongs_number": "H1293",
+      "transliteration": "be.ra.khah",
+      "gloss": "blessing",
+      "hebrew": "בְּרָכָה",
+      "language": "Hebrew",
+      "occurrence_count": 69,
+      "word_analysis": {
+        "meaning_summary": "blessing, prosperity, peace-treaty",
+        "senses": [
+          "1) blessing",
+          "2) (source of) blessing",
+          "3) blessing, prosperity",
+          "4) blessing, praise of God",
+          "5) a gift, present",
+          "6) treaty of peace"
+        ]
+      },
+      "verses": [
+        { "ref": "Gen 12:2", "text": "And I will make of you a great nation, and I will bless you and make your name great, so that you will be a blessing." },
+        { "ref": "Gen 27:12", "text": "Perhaps my father will feel me, and I shall seem to be mocking him and bring a curse upon myself and not a blessing." },
+        { "ref": "Gen 27:35", "text": "But he said, \"Your brother came deceitfully, and he has taken away your blessing.\"" },
+        { "ref": "Gen 27:36", "text": "Esau said, \"Is he not rightly named Jacob? For he has cheated me these two times. He took away my birthright, and behold, now he has taken away my blessing.\" Then he said, \"Have you not reserved a blessing for me?\"" },
+        { "ref": "Gen 27:38", "text": "Esau said to his father, \"Have you but one blessing, my father? Bless me, even me also, O my father.\" And Esau lifted up his voice and wept." },
+        { "ref": "Gen 27:41", "text": "Now Esau hated Jacob because of the blessing with which his father had blessed him, and Esau said to himself, \"The days of mourning for my father are approaching; then I will kill my brother Jacob.\"" },
+        { "ref": "Gen 28:4", "text": "May he give the blessing of Abraham to you and to your offspring with you, that you may take possession of the land of your sojournings that God gave to Abraham!" },
+        { "ref": "Gen 33:11", "text": "Please accept my blessing that is brought to you, because God has dealt graciously with me, and because I have enough. Thus he urged him, and he took it." },
+        { "ref": "Gen 39:5", "text": "From the time that he made him overseer in his house and over all that he had, the LORD blessed the Egyptian's house for Joseph's sake; the blessing of the LORD was on all that he had, in house and field." },
+        { "ref": "Gen 49:25", "text": "by the God of your father who will help you, by the Almighty who will bless you with blessings of heaven above, blessings of the deep that crouches beneath, blessings of the breasts and of the womb." },
+        { "ref": "Gen 49:26", "text": "The blessings of your father are mighty beyond the blessings of my parents, up to the bounties of the everlasting hills. May they be on the head of Joseph, and on the brow of him who was set apart from his brothers." },
+        { "ref": "Gen 49:28", "text": "All these are the twelve tribes of Israel. This is what their father said to them as he blessed them, blessing each with the blessing suitable to him." },
+        { "ref": "Exo 32:29", "text": "And Moses said, \"Today you have been ordained for the service of the LORD, each one at the cost of his son and of his brother, so that he might bestow a blessing upon you this day.\"" },
+        { "ref": "Lev 25:21", "text": "I will command my blessing on you in the sixth year, so that it will produce a crop sufficient for three years." },
+        { "ref": "Deu 11:26", "text": "\"See, I am setting before you today a blessing and a curse:" },
+        { "ref": "Deu 11:27", "text": "the blessing, if you obey the commandments of the LORD your God, which I command you today," },
+        { "ref": "Deu 11:29", "text": "And when the LORD your God brings you into the land that you are entering to take possession of it, you shall set the blessing on Mount Gerizim and the curse on Mount Ebal." },
+        { "ref": "Deu 23:5", "text": "But the LORD your God would not listen to Balaam; instead the LORD your God turned the curse into a blessing for you, because the LORD your God loved you." },
+        { "ref": "Deu 28:2", "text": "And all these blessings shall come upon you and overtake you, if you obey the voice of the LORD your God." },
+        { "ref": "Deu 30:1", "text": "\"And when all these things come upon you, the blessing and the curse, which I have set before you, and you call them to mind among all the nations where the LORD your God has driven you," },
+        { "ref": "Deu 33:1", "text": "This is the blessing with which Moses the man of God blessed the people of Israel before his death." },
+        { "ref": "Jos 15:19", "text": "She said to him, \"Give me a blessing. Since you have given me the land of the Negeb, give me also springs of water.\" And he gave her the upper springs and the lower springs." },
+        { "ref": "Judg 1:15", "text": "She said to him, \"Give me a blessing. Since you have given me the land of the Negeb, give me also springs of water.\" And Caleb gave her the upper springs and the lower springs." },
+        { "ref": "1Sa 25:27", "text": "And now let this present that your servant has brought to my lord be given to the young men who follow my lord." },
+        { "ref": "2Ki 18:31", "text": "Do not listen to Hezekiah, for thus says the king of Assyria: 'Make your peace with me and come out to me. Then each one of you will eat of his own vine, and each one of his own fig tree, and each one of you will drink the water of his own cistern," },
+        { "ref": "Neh 9:5", "text": "Then the Levites, Jeshua, Kadmiel, Bani, Hashabneiah, Sherebiah, Hodiah, Shebaniah, and Pethahiah, said, \"Stand up and bless the LORD your God from everlasting to everlasting. Blessed be your glorious name, which is exalted above all blessing and praise." },
+        { "ref": "Neh 13:2", "text": "for they did not meet the people of Israel with bread and water, but hired Balaam against them to curse them—yet our God turned the curse into a blessing." },
+        { "ref": "Job 29:13", "text": "The blessing of him who was about to perish came upon me, and I caused the widow's heart to sing for joy." },
+        { "ref": "Psa 3:8", "text": "Salvation belongs to the LORD; your blessing be on your people! Selah" },
+        { "ref": "Psa 24:5", "text": "He will receive blessing from the LORD and righteousness from the God of his salvation." },
+        { "ref": "Psa 133:3", "text": "It is like the dew of Hermon, which falls on the mountains of Zion! For there the LORD has commanded the blessing, life forevermore." },
+        { "ref": "Pro 10:6", "text": "Blessings are on the head of the righteous, but the mouth of the wicked conceals violence." },
+        { "ref": "Pro 10:22", "text": "The blessing of the LORD makes rich, and he adds no sorrow with it." },
+        { "ref": "Pro 11:11", "text": "By the blessing of the upright a city is exalted, but by the mouth of the wicked it is overthrown." },
+        { "ref": "Pro 11:25", "text": "Whoever brings blessing will be enriched, and one who waters will himself be watered." },
+        { "ref": "Isa 19:24", "text": "In that day Israel will be the third with Egypt and Assyria, a blessing in the midst of the earth," },
+        { "ref": "Isa 36:16", "text": "Do not listen to Hezekiah. For thus says the king of Assyria: Make your peace with me and come out to me. Then each one of you will eat of his own vine, and each one of his own fig tree, and each one of you will drink the water of his own cistern," },
+        { "ref": "Eze 34:26", "text": "And I will make them and the places all around my hill a blessing, and I will send down the showers in their season; they shall be showers of blessing." },
+        { "ref": "Mal 3:10", "text": "Bring the full tithe into the storehouse, that there may be food in my house. And thereby put me to the test, says the LORD of hosts, if I will not open the windows of heaven for you and pour down for you a blessing until there is no more need." }
+      ]
+    },
+    {
+      "strongs_number": "H7965G",
+      "transliteration": "sha.lom",
+      "gloss": "peace",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "occurrence_count": 240,
+      "is_consolidated_parent": true,
+      "sub_gloss_entries": ["H7965L","H7965J","H7965K","H7965I","H7965H"],
+      "verse_extraction_note": "All 240 verses assigned here. STEP cannot sub-select by sub-gloss. Sub-entries carry meaning-only analysis blocks.",
+      "word_analysis": {
+        "meaning_summary": "completeness, soundness, welfare, peace",
+        "senses": [
+          "1a) completeness (in number)",
+          "1b) safety, soundness (in body)",
+          "1c) welfare, health, prosperity",
+          "1d) peace, quiet, tranquillity, contentment",
+          "1e1) peace, friendship — of human relationships",
+          "1e2) with God especially in covenant relationship",
+          "1f) peace (from war)",
+          "1g) peace (as adjective)"
+        ]
+      },
+      "verses": [
+        { "ref": "1Ch 12:18", "text": "Then the Spirit clothed Amasai, chief of the thirty, and he said, \"We are yours, O David, and with you, O son of Jesse! Peace, peace to you, and peace to your helpers! For your God helps you.\" Then David received them and made them officers of his troops." },
+        { "ref": "1Ch 22:9", "text": "Behold, a son shall be born to you who shall be a man of rest. I will give him rest from all his surrounding enemies. For his name shall be Solomon, and I will give peace and quiet to Israel in his days." },
+        { "ref": "2Ch 15:5", "text": "In those times there was no peace to him who went out or to him who came in, for great disturbances afflicted all the inhabitants of the lands." },
+        { "ref": "2Ch 34:28", "text": "Behold, I will gather you to your fathers, and you shall be gathered to your grave in peace, and your eyes shall not see all the disaster that I will bring upon this place and its inhabitants.'" },
+        { "ref": "Ezr 9:12", "text": "Therefore do not give your daughters to their sons, neither take their daughters for your sons, and never seek their peace or prosperity, that you may be strong and eat the good of the land and leave it for an inheritance to your children forever.'" },
+        { "ref": "Est 9:30", "text": "Letters were sent to all the Jews, to the 127 provinces of the kingdom of Ahasuerus, in words of peace and truth," },
+        { "ref": "Job 25:2", "text": "\"Dominion and fear are with God; he makes peace in his high heaven." },
+        { "ref": "Psa 4:8", "text": "In peace I will both lie down and sleep; for you alone, O LORD, make me dwell in safety." },
+        { "ref": "Psa 29:11", "text": "May the LORD give strength to his people! May the LORD bless his people with peace!" },
+        { "ref": "Psa 34:14", "text": "Turn away from evil and do good; seek peace and pursue it." },
+        { "ref": "Psa 37:11", "text": "But the meek shall inherit the land and delight themselves in abundant peace." },
+        { "ref": "Psa 37:37", "text": "Mark the blameless and behold the upright, for there is a future for the man of peace." },
+        { "ref": "Psa 85:8", "text": "Let me hear what God the LORD will speak, for he will speak peace to his people, to his saints; but let them not turn back to folly." },
+        { "ref": "Psa 85:10", "text": "Steadfast love and faithfulness meet; righteousness and peace kiss each other." },
+        { "ref": "Psa 119:165", "text": "Great peace have those who love your law; nothing can make them stumble." },
+        { "ref": "Psa 122:6", "text": "Pray for the peace of Jerusalem! \"May they be secure who love you!" },
+        { "ref": "Psa 122:7", "text": "Peace be within your walls and security within your towers!" },
+        { "ref": "Pro 3:2", "text": "for length of days and years of life and peace they will add to you." },
+        { "ref": "Pro 3:17", "text": "Her ways are ways of pleasantness, and all her paths are peace." },
+        { "ref": "Pro 12:20", "text": "Deceit is in the heart of those who devise evil, but those who plan peace have joy." },
+        { "ref": "Isa 9:6", "text": "For to us a child is born, to us a son is given; and the government shall be upon his shoulder, and his name shall be called Wonderful Counselor, Mighty God, Everlasting Father, Prince of Peace." },
+        { "ref": "Isa 26:3", "text": "You keep him in perfect peace whose mind is stayed on you, because he trusts in you." },
+        { "ref": "Isa 32:17", "text": "And the effect of righteousness will be peace, and the result of righteousness, quietness and trust forever." },
+        { "ref": "Isa 48:18", "text": "Oh that you had paid attention to my commandments! Then your peace would have been like a river, and your righteousness like the waves of the sea;" },
+        { "ref": "Isa 48:22", "text": "\"There is no peace,\" says the LORD, \"for the wicked.\"" },
+        { "ref": "Isa 52:7", "text": "How beautiful upon the mountains are the feet of him who brings good news, who publishes peace, who brings good news of happiness, who publishes salvation, who says to Zion, \"Your God reigns.\"" },
+        { "ref": "Isa 53:5", "text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed." },
+        { "ref": "Isa 54:10", "text": "For the mountains may depart and the hills be removed, but my steadfast love shall not depart from you, and my covenant of peace shall not be removed, says the LORD, who has compassion on you." },
+        { "ref": "Isa 57:19", "text": "creating the fruit of the lips. Peace, peace, to the far and to the near, says the LORD, and I will heal him." },
+        { "ref": "Isa 57:21", "text": "There is no peace, says my God, for the wicked." },
+        { "ref": "Jer 6:14", "text": "They have healed the wound of my people lightly, saying, 'Peace, peace,' when there is no peace." },
+        { "ref": "Jer 29:7", "text": "But seek the welfare of the city where I have sent you into exile, and pray to the LORD on its behalf, for in its welfare you will find your welfare." },
+        { "ref": "Jer 29:11", "text": "For I know the plans I have for you, declares the LORD, plans for welfare and not for evil, to give you a future and a hope." },
+        { "ref": "Jer 33:6", "text": "Behold, I will bring to it health and healing, and I will heal them and reveal to them abundance of prosperity and security." },
+        { "ref": "Lam 3:17", "text": "my soul is bereft of peace; I have forgotten what happiness is;" },
+        { "ref": "Eze 34:25", "text": "\"I will make with them a covenant of peace and banish wild beasts from the land, so that they may dwell securely in the wilderness and sleep in the woods." },
+        { "ref": "Eze 37:26", "text": "I will make a covenant of peace with them. It shall be an everlasting covenant with them. And I will set them in their land and multiply them, and will set my sanctuary in their midst forevermore." },
+        { "ref": "Mic 5:5", "text": "And he shall be their peace. When the Assyrian comes into our land and treads in our palaces, then we will raise against him seven shepherds and eight princes of men;" },
+        { "ref": "Hag 2:9", "text": "The latter glory of this house shall be greater than the former, says the LORD of hosts. And in this place I will give peace, declares the LORD of hosts.'" },
+        { "ref": "Mal 2:5", "text": "My covenant with him was one of life and peace, and I gave them to him. It was a covenant of fear, and he feared me. He stood in awe of my name." },
+        { "ref": "Mal 2:6", "text": "True instruction was in his mouth, and no wrong was found on his lips. He walked with me in peace and uprightness, and he turned many from iniquity." }
+      ]
+    },
+    {
+      "strongs_number": "H7965L",
+      "transliteration": "sha.lom",
+      "gloss": "peace: completely",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "is_sub_gloss": true,
+      "parent_entry": "H7965G",
+      "check_c_exception": true,
+      "verse_extraction_note": "Meaning-only sub-entry. Verses held under parent H7965G.",
+      "word_analysis": {
+        "sub_gloss_meaning": "completely",
+        "meaning_summary": "completeness, soundness, welfare, peace",
+        "senses": [
+          "1a) completeness (in number)",
+          "1b) safety, soundness (in body)",
+          "1c) welfare, health, prosperity",
+          "1d) peace, quiet, tranquillity, contentment",
+          "1e1) peace, friendship — of human relationships",
+          "1e2) with God especially in covenant relationship",
+          "1f) peace (from war)",
+          "1g) peace (as adjective)"
+        ]
+      },
+      "verses": []
+    },
+    {
+      "strongs_number": "H7965J",
+      "transliteration": "sha.lom",
+      "gloss": "peace: friendship",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "is_sub_gloss": true,
+      "parent_entry": "H7965G",
+      "check_c_exception": true,
+      "verse_extraction_note": "Meaning-only sub-entry. Verses held under parent H7965G.",
+      "word_analysis": {
+        "sub_gloss_meaning": "friendship",
+        "meaning_summary": "completeness, soundness, welfare, peace",
+        "senses": [
+          "1e) peace, friendship",
+          "1e1) of human relationships",
+          "1e2) with God especially in covenant relationship"
+        ]
+      },
+      "verses": []
+    },
+    {
+      "strongs_number": "H7965K",
+      "transliteration": "sha.lom",
+      "gloss": "peace: greeting",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "is_sub_gloss": true,
+      "parent_entry": "H7965G",
+      "check_c_exception": true,
+      "verse_extraction_note": "Meaning-only sub-entry. Verses held under parent H7965G.",
+      "word_analysis": {
+        "sub_gloss_meaning": "greeting",
+        "meaning_summary": "completeness, soundness, welfare, peace",
+        "senses": [
+          "1d) peace, quiet, tranquillity, contentment",
+          "1g) peace (as adjective — used in greeting contexts)"
+        ]
+      },
+      "verses": []
+    },
+    {
+      "strongs_number": "H7965I",
+      "transliteration": "sha.lom",
+      "gloss": "peace: well-being",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "is_sub_gloss": true,
+      "parent_entry": "H7965G",
+      "check_c_exception": true,
+      "verse_extraction_note": "Meaning-only sub-entry. Verses held under parent H7965G.",
+      "word_analysis": {
+        "sub_gloss_meaning": "well-being",
+        "meaning_summary": "completeness, soundness, welfare, peace",
+        "senses": [
+          "1b) safety, soundness (in body)",
+          "1c) welfare, health, prosperity"
+        ]
+      },
+      "verses": []
+    },
+    {
+      "strongs_number": "H7965H",
+      "transliteration": "sha.lom",
+      "gloss": "Peace [God]",
+      "hebrew": "שָׁלוֹם",
+      "language": "Hebrew",
+      "is_sub_gloss": true,
+      "parent_entry": "H7965G",
+      "check_c_exception": true,
+      "verse_extraction_note": "Meaning-only sub-entry. This sub-gloss is a divine-name marker — the name YHWH-Shalom derives its meaning from this root. Full verse set not extracted (10,284 OT + 22 NT occurrences under the broader deity term). Theologically linked to Part 3 anchor terms.",
+      "word_analysis": {
+        "sub_gloss_meaning": "Peace as divine name/title",
+        "meaning_summary": "The Deity; this name means completeness, peace",
+        "theological_note": "Peace [God] references sha.lom as the semantic root of the divine name YHWH-Shalom (Judg 6:24). Connects to Part 3 theological anchor ye.ho.vah sha.lom.",
+        "senses": [
+          "Used as a divine title component meaning completeness, peace",
+          "Judg 6:24 — sole OT instance of the compound name YHWH-Shalom"
+        ]
+      },
+      "verses": []
+    },
+    {
+      "strongs_number": "H8001",
+      "transliteration": "she.lam",
+      "gloss": "peace",
+      "hebrew": "שְׁלָם",
+      "language": "Hebrew",
+      "occurrence_count": 4,
+      "word_analysis": {
+        "meaning_summary": "welfare, prosperity, peace, well-being — Aramaic equivalent of sha.lom",
+        "senses": [
+          "Aramaic of sha.lom (H7965): welfare, prosperity, peace, well-being"
+        ]
+      },
+      "data_quality_note": "See THIN_DATA flag. No verses captured in source file. Aramaic term appearing in Ezra/Daniel epistolary greetings. Verse extraction may need to be revisited in a follow-up STEP session.",
+      "verses": []
+    },
+    {
+      "strongs_number": "H8002",
+      "transliteration": "she.lem",
+      "gloss": "peace offering",
+      "hebrew": "שֶׁ֫לֶם",
+      "language": "Hebrew",
+      "occurrence_count": 87,
+      "word_analysis": {
+        "meaning_summary": "peace offering, requital, sacrifice for alliance or friendship",
+        "senses": [
+          "1) peace offering, requital, sacrifice for alliance or friendship",
+          "1a) voluntary sacrifice of thanks"
+        ]
+      },
+      "verses": [
+        { "ref": "Exo 20:24", "text": "An altar of earth you shall make for me and sacrifice on it your burnt offerings and your peace offerings, your sheep and your oxen. In every place where I cause my name to be remembered I will come to you and bless you." },
+        { "ref": "Exo 24:5", "text": "And he sent young men of the people of Israel, who offered burnt offerings and sacrificed peace offerings of oxen to the LORD." },
+        { "ref": "Lev 3:1", "text": "\"If his offering is a sacrifice of peace offering, if he offers an animal from the herd, male or female, he shall offer it without blemish before the LORD." },
+        { "ref": "Lev 7:11", "text": "\"And this is the law of the sacrifice of peace offerings that one may offer to the LORD." },
+        { "ref": "Lev 7:20", "text": "but the person who eats of the flesh of the sacrifice of the LORD's peace offerings while an uncleanness is on him, that person shall be cut off from his people." },
+        { "ref": "Lev 9:22", "text": "Then Aaron lifted up his hands toward the people and blessed them, and he came down from offering the sin offering and the burnt offering and the peace offerings." },
+        { "ref": "Lev 17:5", "text": "This is to the end that the people of Israel may bring their sacrifices that they sacrifice in the open field, that they may bring them to the LORD, to the priest at the entrance of the tent of meeting, and sacrifice them as sacrifices of peace offerings to the LORD." },
+        { "ref": "Lev 19:5", "text": "\"When you offer a sacrifice of peace offerings to the LORD, you shall offer it so that you may be accepted." },
+        { "ref": "Lev 22:21", "text": "And when anyone offers a sacrifice of peace offerings to the LORD to fulfill a vow or as a freewill offering from the herd or from the flock, to be accepted it must be perfect; there shall be no blemish in it." },
+        { "ref": "Num 6:14", "text": "and he shall bring his gift to the LORD, one male lamb a year old without blemish for a burnt offering, and one ewe lamb a year old without blemish as a sin offering, and one ram without blemish as a peace offering," },
+        { "ref": "Num 7:17", "text": "and for the sacrifice of peace offerings, two oxen, five rams, five male goats, and five male lambs a year old. This was the offering of Nahshon the son of Amminadab." },
+        { "ref": "Deu 27:7", "text": "and you shall sacrifice peace offerings and shall eat there, and you shall rejoice before the LORD your God." },
+        { "ref": "Jos 8:31", "text": "just as Moses the servant of the LORD had commanded the people of Israel, as it is written in the Book of the Law of Moses, \"an altar of uncut stones, upon which no man has wielded an iron tool.\" And they offered on it burnt offerings to the LORD and sacrificed peace offerings." },
+        { "ref": "Judg 20:26", "text": "Then all the people of Israel, the whole army, went up and came to Bethel and wept. They sat there before the LORD and fasted that day until evening, and offered burnt offerings and peace offerings before the LORD." },
+        { "ref": "1Sa 10:8", "text": "Then go down before me to Gilgal. And behold, I am coming down to you to offer burnt offerings and to sacrifice peace offerings. Seven days you shall wait, until I come to you and show you what you shall do." },
+        { "ref": "1Sa 11:15", "text": "So all the people went to Gilgal, and there they made Saul king before the LORD in Gilgal. There they sacrificed peace offerings before the LORD, and there Saul and all the men of Israel rejoiced greatly." },
+        { "ref": "2Sa 6:17", "text": "And they brought in the ark of the LORD and set it in its place, inside the tent that David had pitched for it. And David offered burnt offerings and peace offerings before the LORD." },
+        { "ref": "1Ki 3:15", "text": "And Solomon awoke, and behold, it was a dream. Then he came to Jerusalem and stood before the ark of the covenant of the Lord, and offered up burnt offerings and peace offerings, and made a feast for all his servants." },
+        { "ref": "1Ki 8:63", "text": "Solomon offered as peace offerings to the LORD 22,000 oxen and 120,000 sheep. So the king and all the people of Israel dedicated the house of the LORD." },
+        { "ref": "2Ch 29:35", "text": "Besides the great number of burnt offerings, there was the fat of the peace offerings, and there were the drink offerings for the burnt offerings. Thus the service of the house of the LORD was restored." },
+        { "ref": "Pro 7:14", "text": "\"I had to offer sacrifices, and today I have paid my vows;" },
+        { "ref": "Eze 43:27", "text": "And when they have completed these days, then from the eighth day onward the priests shall offer on the altar your burnt offerings and your peace offerings, and I will accept you, declares the Lord GOD." },
+        { "ref": "Amo 5:22", "text": "Even though you offer me your burnt offerings and grain offerings, I will not accept them; and the peace offerings of your fattened animals, I will not look upon them." }
+      ]
+    },
+    {
+      "strongs_number": "H7600",
+      "transliteration": "sha.a.nan",
+      "gloss": "secure",
+      "hebrew": "שַׁאֲנָן",
+      "language": "Hebrew",
+      "occurrence_count": 10,
+      "word_analysis": {
+        "meaning_summary": "at ease, quiet, secure; can also denote careless arrogance",
+        "senses": [
+          "adj 1a) at ease, secure",
+          "adj 1b) at ease, careless, wanton, arrogant",
+          "subst 2a) one at ease",
+          "subst 2b) arrogance"
+        ]
+      },
+      "verses": [
+        { "ref": "2Ki 19:28", "text": "Because you have raged against me and your complacency has come into my ears, I will put my hook in your nose and my bit in your mouth, and I will turn you back on the way by which you came." },
+        { "ref": "Job 12:5", "text": "In the thought of one who is at ease there is contempt for misfortune; it is ready for those whose feet slip." },
+        { "ref": "Psa 123:4", "text": "Our soul has had more than enough of the scorn of those who are at ease, of the contempt of the proud." },
+        { "ref": "Isa 32:9", "text": "Rise up, you women who are at ease, hear my voice; you complacent daughters, give ear to my speech." },
+        { "ref": "Isa 32:11", "text": "Tremble, you women who are at ease, shudder, you complacent ones; strip, and make yourselves bare, and tie sackcloth around your waist." },
+        { "ref": "Isa 32:18", "text": "My people will abide in a peaceful habitation, in secure dwellings, and in quiet resting places." },
+        { "ref": "Isa 33:20", "text": "Behold Zion, the city of our appointed feasts! Your eyes will see Jerusalem, an untroubled habitation, an immovable tent, whose stakes will never be plucked up, nor will any of its cords be broken." },
+        { "ref": "Isa 37:29", "text": "Because you have raged against me and your complacency has come to my ears, I will put my hook in your nose and my bit in your mouth, and I will turn you back on the way by which you came." },
+        { "ref": "Amo 6:1", "text": "\"Woe to those who are at ease in Zion, and to those who feel secure on the mountain of Samaria, the notable men of the first of the nations, to whom the house of Israel comes!" },
+        { "ref": "Zec 1:15", "text": "And I am exceedingly angry with the nations that are at ease; for while I was angry but a little, they furthered the disaster." }
+      ]
+    },
+    {
+      "strongs_number": "H7999A",
+      "transliteration": "sha.lem",
+      "gloss": "to complete",
+      "gloss_sub": "to ally",
+      "hebrew": "שָׁלֵם",
+      "language": "Hebrew",
+      "occurrence_count": 106,
+      "is_consolidated_parent": true,
+      "sub_gloss_entries": ["sha.lam — to ally"],
+      "check_c_exception": true,
+      "verse_extraction_note": "sha.lam (to ally) treated as sub-gloss of sha.lem (to complete) per researcher decision. Both carry H7999A with identical verse sets. Sub-gloss meaning-only block, no separate verses.",
+      "word_analysis": {
+        "meaning_summary": "to be complete, be sound; to restore, recompense, make peace (as act of completing a relationship)",
+        "senses": [
+          "1a1) to be complete, be finished, be ended",
+          "1a2) to be sound, be uninjured",
+          "1b1) to complete, finish",
+          "1b2) to make safe",
+          "1b3) to make whole or good, restore, make compensation",
+          "1b4) to make good, pay",
+          "1b5) to requite, recompense, reward",
+          "1c1) (Pual) to be performed",
+          "1c2) (Pual) to be repaid, be requited",
+          "1d1) (Hiphil) to complete, perform",
+          "1d2) (Hiphil) to make an end of"
+        ],
+        "sub_gloss_sha.lam": {
+          "gloss": "to ally",
+          "meaning_note": "The relational/diplomatic application of sha.lem — to make peace with, to come to terms, to enter alliance. Core semantic: bringing a relationship to completeness.",
+          "verses": []
+        }
+      },
+      "verses": [
+        { "ref": "Gen 44:4", "text": "They had gone only a short distance from the city. Now Joseph said to his steward, \"Up, follow after the men, and when you overtake them, say to them, 'Why have you repaid evil for good?" },
+        { "ref": "Exo 21:34", "text": "the owner of the pit shall make restoration. He shall give money to its owner, and the dead beast shall be his." },
+        { "ref": "Exo 22:1", "text": "\"If a man steals an ox or a sheep, and kills it or sells it, he shall repay five oxen for an ox, and four sheep for a sheep." },
+        { "ref": "Deu 7:10", "text": "and repays to their face those who hate him, by destroying them. He will not be slack with one who hates him. He will repay him to his face." },
+        { "ref": "Deu 20:12", "text": "But if it makes no peace with you, but makes war against you, then you shall besiege it." },
+        { "ref": "Deu 23:21", "text": "\"If you make a vow to the LORD your God, you shall not delay fulfilling it, for the LORD your God will surely require it of you, and you will be guilty of sin." },
+        { "ref": "Jos 10:1", "text": "As soon as Adoni-zedek, king of Jerusalem, heard how Joshua had captured Ai and had devoted it to destruction, doing to Ai and its king as he had done to Jericho and its king, and how the inhabitants of Gibeon had made peace with Israel and were among them," },
+        { "ref": "Rut 2:12", "text": "The LORD repay you for what you have done, and a full reward be given you by the LORD, the God of Israel, under whose wings you have come to take refuge!" },
+        { "ref": "2Sa 10:19", "text": "And when all the kings who were servants of Hadadezer saw that they had been defeated by Israel, they made peace with Israel and became subject to them. So the Syrians were afraid to save the Ammonites anymore." },
+        { "ref": "1Ki 22:44", "text": "Jehoshaphat also made peace with the king of Israel." },
+        { "ref": "1Ki 7:51", "text": "Thus all the work that King Solomon did on the house of the LORD was finished. And Solomon brought in the things that David his father had dedicated, the silver, the gold, and the vessels, and stored them in the treasuries of the house of the LORD." },
+        { "ref": "Neh 6:15", "text": "So the wall was finished on the twenty-fifth day of the month Elul, in fifty-two days." },
+        { "ref": "Job 5:23", "text": "For you shall be in league with the stones of the field, and the beasts of the field shall be at peace with you." },
+        { "ref": "Psa 62:12", "text": "and that to you, O Lord, belongs steadfast love. For you will render to a man according to his work." },
+        { "ref": "Pro 16:7", "text": "When a man's ways please the LORD, he makes even his enemies to be at peace with him." },
+        { "ref": "Pro 19:17", "text": "Whoever is generous to the poor lends to the LORD, and he will repay him for his deed." },
+        { "ref": "Isa 44:26", "text": "who confirms the word of his servant and fulfills the counsel of his messengers, who says of Jerusalem, 'She shall be inhabited,' and of the cities of Judah, 'They shall be built, and I will raise up their ruins';" },
+        { "ref": "Isa 57:18", "text": "I have seen his ways, but I will heal him; I will lead him and restore comfort to him and his mourners," },
+        { "ref": "Isa 59:18", "text": "According to their deeds, so will he repay, wrath to his adversaries, repayment to his enemies; to the coastlands he will render repayment." },
+        { "ref": "Jer 25:14", "text": "For many nations and great kings shall make slaves even of them, and I will recompense them according to their deeds and the work of their hands." },
+        { "ref": "Joe 2:25", "text": "I will restore to you the years that the swarming locust has eaten, the hopper, the destroyer, and the cutter, my great army, which I sent among you." },
+        { "ref": "Jon 2:9", "text": "But I with the voice of thanksgiving will sacrifice to you; what I have vowed I will pay. Salvation belongs to the LORD!" }
+      ]
+    },
+    {
+      "strongs_number": "H1585",
+      "transliteration": "ge.mar",
+      "gloss": "to complete",
+      "hebrew": "גְּמַר",
+      "language": "Hebrew",
+      "script": "Aramaic",
+      "occurrence_count": 6,
+      "word_analysis": {
+        "meaning_summary": "to complete (Aramaic)",
+        "senses": [
+          "1a) (P'al) perfect (pass participle)"
+        ]
+      },
+      "verses": [
+        { "ref": "Ezr 7:12", "text": "\"Artaxerxes, king of kings, to Ezra the priest, the scribe of the Law of the God of heaven. Peace. And now" },
+        { "ref": "Psa 7:9", "text": "Oh, let the evil of the wicked come to an end, and may you establish the righteous— you who test the minds and hearts, O righteous God!" },
+        { "ref": "Psa 12:1", "text": "Save, O Lord, for the godly one is gone; for the faithful have vanished from among the children of man." },
+        { "ref": "Psa 57:2", "text": "I cry out to God Most High, to God who fulfills his purpose for me." },
+        { "ref": "Psa 77:8", "text": "Has his steadfast love forever ceased? Are his promises at an end for all time?" },
+        { "ref": "Psa 138:8", "text": "The Lord will fulfill his purpose for me; your steadfast love, O Lord, endures forever. Do not forsake the work of your hands." }
+      ]
+    },
+    {
+      "strongs_number": "H2790A",
+      "transliteration": "cha.rash",
+      "gloss": "to plow/plot",
+      "hebrew": "חָרַשׁ",
+      "language": "Hebrew",
+      "occurrence_count": 25,
+      "word_analysis": {
+        "meaning_summary": "to cut in, plough, engrave, devise",
+        "senses": [
+          "1a1) to cut in, engrave",
+          "1a2) to plough",
+          "1a3) to devise",
+          "1b) (Niphal) to be ploughed",
+          "1c) (Hiphil) to plot evil"
+        ]
+      },
+      "data_quality_note": "See CONSOLIDATION_CANDIDATE flag. Verse set appears identical to cha.resh (H2790B). Both retained as separate entries with distinct primary glosses.",
+      "verses": [
+        { "ref": "Gen 24:21", "text": "The man gazed at her in silence to learn whether the LORD had prospered his journey or not." },
+        { "ref": "Gen 34:5", "text": "Now Jacob heard that he had defiled his daughter Dinah. But his sons were with his livestock in the field, so Jacob held his peace until they came." },
+        { "ref": "Exo 14:14", "text": "The LORD will fight for you, and you have only to be silent." },
+        { "ref": "1Sa 8:12", "text": "And he will appoint for himself commanders of thousands and commanders of fifties, and some to plow his ground and to reap his harvest, and to make his implements of war and the equipment of his chariots." },
+        { "ref": "1Sa 23:9", "text": "David knew that Saul was plotting harm against him. And he said to Abiathar the priest, \"Bring the ephod here.\"" },
+        { "ref": "1Ki 19:19", "text": "So he departed from there and found Elisha the son of Shaphat, who was plowing with twelve yoke of oxen in front of him, and he was with the twelfth. Elijah passed by him and cast his cloak upon him." },
+        { "ref": "Job 1:14", "text": "and there came a messenger to Job and said, \"The oxen were plowing and the donkeys feeding beside them," },
+        { "ref": "Job 4:8", "text": "As I have seen, those who plow iniquity and sow trouble reap the same." },
+        { "ref": "Psa 129:3", "text": "The plowers plowed upon my back; they made long their furrows." },
+        { "ref": "Pro 3:29", "text": "Do not plan evil against your neighbor, who dwells trustingly beside you." },
+        { "ref": "Pro 6:14", "text": "with perverted heart devises evil, continually sowing discord;" },
+        { "ref": "Pro 6:18", "text": "a heart that devises wicked plans, feet that make haste to run to evil," },
+        { "ref": "Pro 12:20", "text": "Deceit is in the heart of those who devise evil, but those who plan peace have joy." },
+        { "ref": "Pro 14:22", "text": "Do they not go astray who devise evil? Those who devise good meet steadfast love and faithfulness." },
+        { "ref": "Isa 28:24", "text": "Does he who plows for sowing plow continually? Does he continually open and harrow his ground?" },
+        { "ref": "Jer 17:1", "text": "\"The sin of Judah is written with a pen of iron; with a point of diamond it is engraved on the tablet of their heart, and on the horns of their altars," },
+        { "ref": "Jer 26:18", "text": "\"Micah of Moresheth prophesied in the days of Hezekiah king of Judah, and said to all the people of Judah: 'Thus says the LORD of hosts, Zion shall be plowed as a field; Jerusalem shall become a heap of ruins, and the mountain of the house a wooded height.'" },
+        { "ref": "Hos 10:11", "text": "Ephraim was a trained calf that loved to thresh, and I spared her fair neck; but I will put Ephraim to the yoke; Judah must plow; Jacob must harrow for himself." },
+        { "ref": "Hos 10:13", "text": "You have plowed iniquity; you have reaped injustice; you have eaten the fruit of lies. Because you have trusted in your own way and in the multitude of your warriors," },
+        { "ref": "Amo 6:12", "text": "Do horses run on rocks? Does one plow there with oxen? But you have turned justice into poison and the fruit of righteousness into wormwood —" },
+        { "ref": "Mic 3:12", "text": "Therefore because of you Zion shall be plowed as a field; Jerusalem shall become a heap of ruins, and the mountain of the house a wooded height." },
+        { "ref": "Hab 1:13", "text": "You who are of purer eyes than to see evil and cannot look at wrong, why do you idly look at traitors and remain silent when the wicked swallows up the man more righteous than he?" },
+        { "ref": "Zep 3:17", "text": "The LORD your God is in your midst, a mighty one who will save; he will rejoice over you with gladness; he will quiet you by his love; he will exult over you with loud singing." }
+      ]
+    },
+    {
+      "strongs_number": "H8252",
+      "transliteration": "sha.qat",
+      "gloss": "to quiet",
+      "hebrew": "שָׁקַט",
+      "language": "Hebrew",
+      "occurrence_count": 41,
+      "word_analysis": {
+        "meaning_summary": "to be quiet, be tranquil, be at peace, rest, lie still, be undisturbed",
+        "senses": [
+          "1a1) to be quiet, be undisturbed",
+          "1a1a) to be at peace (of land)",
+          "1a2) to be quiet, be inactive",
+          "1b1a) quietness, display of quietness (subst)",
+          "1b2) to quiet, be quiet",
+          "1b3) to cause quietness, pacify, allay"
+        ]
+      },
+      "verses": [
+        { "ref": "Jos 11:23", "text": "So Joshua took the whole land, according to all that the LORD had spoken to Moses. And Joshua gave it for an inheritance to Israel according to their tribal allotments. And the land had rest from war." },
+        { "ref": "Judg 3:11", "text": "So the land had rest for forty years. Then Othniel the son of Kenaz died." },
+        { "ref": "Judg 3:30", "text": "So Moab was subdued that day under the hand of Israel. And the land had rest for eighty years." },
+        { "ref": "Judg 5:31", "text": "\"So may all your enemies perish, O LORD! But your friends be like the sun as he rises in his might.\" And the land had rest for forty years." },
+        { "ref": "Judg 8:28", "text": "So Midian was subdued before the people of Israel, and they raised their heads no more. And the land had rest for forty years in the days of Gideon." },
+        { "ref": "Judg 18:7", "text": "Then the five men departed and came to Laish and saw the people who were there, how they lived in security, after the manner of the Sidonians, quiet and unsuspecting, lacking nothing that is in the earth and possessing wealth, and how they were far from the Sidonians and had no dealings with anyone." },
+        { "ref": "Judg 18:27", "text": "But the people of Dan took what Micah had made, and the priest who belonged to him, and they came to Laish, to a people quiet and unsuspecting, and struck them with the edge of the sword and burned the city with fire." },
+        { "ref": "Rut 3:18", "text": "She replied, \"Wait, my daughter, until you learn how the matter turns out, for the man will not rest but will settle the matter today.\"" },
+        { "ref": "2Ki 11:20", "text": "So all the people of the land rejoiced, and the city was quiet after Athaliah had been put to death with the sword at the king's house." },
+        { "ref": "2Ch 14:1", "text": "Abijah slept with his fathers, and they buried him in the city of David. And Asa his son reigned in his place. In his days the land had rest for ten years." },
+        { "ref": "2Ch 14:6", "text": "He built fortified cities in Judah, for the land had rest. He had no war in those years, for the LORD gave him peace." },
+        { "ref": "2Ch 20:30", "text": "So the realm of Jehoshaphat was quiet, for his God gave him rest all around." },
+        { "ref": "Job 3:13", "text": "For then I would have lain down and been quiet; I would have slept; then I would have been at rest," },
+        { "ref": "Job 3:26", "text": "I am not at ease, nor am I quiet; I have no rest, but trouble comes." },
+        { "ref": "Job 34:29", "text": "When he is quiet, who can condemn? When he hides his face, who can behold him, whether it be a nation or a man?—" },
+        { "ref": "Psa 76:8", "text": "From the heavens you uttered judgment; the earth feared and was still," },
+        { "ref": "Psa 83:1", "text": "O God, do not keep silence; do not hold your peace or be still, O God!" },
+        { "ref": "Psa 94:13", "text": "to give him rest from days of trouble, until a pit is dug for the wicked." },
+        { "ref": "Pro 15:18", "text": "A hot-tempered man stirs up strife, but he who is slow to anger quiets contention." },
+        { "ref": "Isa 7:4", "text": "And say to him, 'Be careful, be quiet, do not fear, and do not let your heart be faint because of these two smoldering stumps of firebrands, at the fierce anger of Rezin and Syria and the son of Remaliah." },
+        { "ref": "Isa 14:7", "text": "The whole earth is at rest and quiet; they break forth into singing." },
+        { "ref": "Isa 30:15", "text": "For thus said the Lord GOD, the Holy One of Israel, \"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling," },
+        { "ref": "Isa 32:17", "text": "And the effect of righteousness will be peace, and the result of righteousness, quietness and trust forever." },
+        { "ref": "Isa 57:20", "text": "But the wicked are like the tossing sea; for it cannot be quiet, and its waters toss up mire and dirt." },
+        { "ref": "Jer 30:10", "text": "\"Then fear not, O Jacob my servant, declares the LORD, nor be dismayed, O Israel; for behold, I will save you from far away, and your offspring from the land of their captivity. Jacob shall return and have quiet and ease, and none shall make him afraid." },
+        { "ref": "Jer 47:6", "text": "Ah, sword of the LORD! How long till you are quiet? Put yourself into your scabbard; rest and be still!" },
+        { "ref": "Jer 48:11", "text": "\"Moab has been at ease from his youth and has settled on his dregs; he has not been emptied from vessel to vessel, nor has he gone into exile; so his taste remains in him, and his scent is not changed." },
+        { "ref": "Jer 49:23", "text": "Concerning Damascus: \"Hamath and Arpad are confounded, for they have heard bad news; they melt in fear, they are troubled like the sea that cannot be quiet." },
+        { "ref": "Eze 16:42", "text": "So will I satisfy my wrath on you, and my jealousy shall depart from you. I will be calm and will no more be angry." },
+        { "ref": "Eze 38:11", "text": "and say, 'I will go up against the land of unwalled villages. I will fall upon the quiet people who dwell securely, all of them dwelling without walls, and having no bars or gates,'" },
+        { "ref": "Zec 1:11", "text": "And they answered the angel of the LORD who was standing among the myrtle trees, and said, 'We have patrolled the earth, and behold, all the earth remains at rest.'" }
+      ]
+    },
+    {
+      "strongs_number": "H5117",
+      "transliteration": "nu.ach",
+      "gloss": "to rest",
+      "hebrew": "נוּחַ",
+      "language": "Hebrew",
+      "occurrence_count": 142,
+      "word_analysis": {
+        "meaning_summary": "to rest, settle down, repose; to give rest, set down, deposit, leave",
+        "senses": [
+          "1a1) to rest, settle down and remain",
+          "1a2) to repose, have rest, be quiet",
+          "1b1) to cause to rest, give rest to, make quiet",
+          "1b2) to cause to rest, cause to alight, set down",
+          "1b3) to lay or set down, deposit, let lie, place",
+          "1b4) to let remain, leave",
+          "1b5) to leave, depart from",
+          "1b6) to abandon",
+          "1b7) to permit",
+          "1c1) (Hophal) to obtain rest, be granted rest",
+          "1c2) (Hophal) to be left, be placed"
+        ]
+      },
+      "verses": [
+        { "ref": "Gen 2:15", "text": "The LORD God took the man and put him in the garden of Eden to work it and keep it." },
+        { "ref": "Gen 8:4", "text": "and in the seventh month, on the seventeenth day of the month, the ark came to rest on the mountains of Ararat." },
+        { "ref": "Exo 20:11", "text": "For in six days the LORD made the heavens and the earth, the sea, and all that is in them, and rested on the seventh day. Therefore the LORD blessed the Sabbath day and made it holy." },
+        { "ref": "Exo 23:12", "text": "\"Six days you shall do your work, but on the seventh day you shall rest; that your ox and your donkey may have rest, and the son of your servant woman, and the alien, may be refreshed." },
+        { "ref": "Exo 33:14", "text": "And he said, \"My presence will go with you, and I will give you rest.\"" },
+        { "ref": "Num 10:36", "text": "And when it rested, he said, \"Return, O LORD, to the ten thousand thousands of Israel.\"" },
+        { "ref": "Num 11:25", "text": "Then the LORD came down in the cloud and spoke to him, and took some of the Spirit that was on him and put it on the seventy elders. And as soon as the Spirit rested on them, they prophesied. But they did not continue doing it." },
+        { "ref": "Num 11:26", "text": "Now two men remained in the camp, one named Eldad, and the other named Medad, and the Spirit rested on them. They were among those registered, but they had not gone out to the tent, and so they prophesied in the camp." },
+        { "ref": "Deu 3:20", "text": "until the LORD gives rest to your brothers, as to you, and they also occupy the land that the LORD your God gives them beyond the Jordan. Then each of you may return to his possession which I have given you." },
+        { "ref": "Deu 12:10", "text": "But when you go over the Jordan and live in the land that the LORD your God is giving you to inherit, and when he gives you rest from all your enemies around, so that you live in safety," },
+        { "ref": "Deu 25:19", "text": "Therefore when the LORD your God has given you rest from all your enemies around you, in the land that the LORD your God is giving you for an inheritance to possess, you shall blot out the memory of Amalek from under heaven; you shall not forget." },
+        { "ref": "Jos 1:13", "text": "\"Remember the word that Moses the servant of the LORD commanded you, saying, 'The LORD your God is providing you a place of rest and will give you this land.'" },
+        { "ref": "Jos 21:44", "text": "And the LORD gave them rest on every side just as he had sworn to their fathers. Not one of all their enemies had withstood them, for the LORD had given all their enemies into their hands." },
+        { "ref": "Jos 23:1", "text": "A long time afterward, when the LORD had given rest to Israel from all their surrounding enemies, and Joshua was old and well advanced in years," },
+        { "ref": "Psa 55:6", "text": "And I say, \"Oh, that I had wings like a dove! I would fly away and be at rest;" },
+        { "ref": "Psa 116:7", "text": "Return, O my soul, to your rest; for the LORD has dealt bountifully with you." },
+        { "ref": "Isa 11:2", "text": "And the Spirit of the LORD shall rest upon him, the Spirit of wisdom and understanding, the Spirit of counsel and might, the Spirit of knowledge and the fear of the LORD." },
+        { "ref": "Isa 14:3", "text": "When the LORD has given you rest from your pain and turmoil and the hard service with which you were made to serve," },
+        { "ref": "Isa 28:12", "text": "to whom he has said, \"This is rest; give rest to the weary; and this is repose\"; yet they would not hear." },
+        { "ref": "Isa 30:15", "text": "For thus said the Lord GOD, the Holy One of Israel, \"In returning and rest you shall be saved; in quietness and in trust shall be your strength.\" But you were unwilling," },
+        { "ref": "Eze 16:42", "text": "So will I satisfy my wrath on you, and my jealousy shall depart from you. I will be calm and will no more be angry." },
+        { "ref": "Eze 37:14", "text": "And I will put my Spirit within you, and you shall live, and I will place you in your own land. Then you shall know that I am the LORD; I have spoken, and I will do it, declares the LORD." },
+        { "ref": "Dan 12:13", "text": "But go your way till the end. And you shall rest and shall stand in your allotted place at the end of the days." },
+        { "ref": "Zec 6:8", "text": "Then he cried to me, \"Behold, those who go toward the north country have set my Spirit at rest in the north country.\"" }
+      ]
+    },
+    {
+      "strongs_number": "H7280B",
+      "transliteration": "ra.ga",
+      "gloss": "to rest",
+      "hebrew": "רָגַע",
+      "language": "Hebrew",
+      "occurrence_count": 6,
+      "word_analysis": {
+        "meaning_summary": "to rest or repose, be at rest, settle, quiet, give rest",
+        "senses": [
+          "1a1) (Niphal) to cause to rest (of sword, of the sea)",
+          "1a2) (Niphal) to wink (with prep)",
+          "1b1) (Hiphil) to give rest to",
+          "1b2) (Hiphil) to rest, repose"
+        ]
+      },
+      "verses": [
+        { "ref": "Deu 28:65", "text": "And among these nations you shall find no respite, and there shall be no resting place for the sole of your foot, but the Lord will give you there a trembling heart and failing eyes and a languishing soul." },
+        { "ref": "Isa 34:14", "text": "And wild animals shall meet with hyenas; the wild goat shall cry to his fellow; indeed, there the night bird settles and finds for herself a resting place." },
+        { "ref": "Isa 51:4", "text": "\"Give attention to me, my people, and give ear to me, my nation; for a law will go out from me, and I will set my justice for a light to the peoples." },
+        { "ref": "Jer 31:2", "text": "Thus says the Lord: \"The people who survived the sword found grace in the wilderness; when Israel sought for rest," },
+        { "ref": "Jer 47:6", "text": "Ah, sword of the Lord! How long till you are quiet? Put yourself into your scabbard; rest and be still!" },
+        { "ref": "Jer 50:34", "text": "Their Redeemer is strong; the Lord of hosts is his name. He will surely plead their cause, that he may give rest to the earth, but unrest to the inhabitants of Babylon." }
+      ]
+    },
+    {
+      "strongs_number": "H2013",
+      "transliteration": "has",
+      "gloss": "to silence",
+      "hebrew": "הַס",
+      "language": "Hebrew",
+      "occurrence_count": 8,
+      "word_analysis": {
+        "meaning_summary": "hush, keep silence, be silent, hold peace; command silence",
+        "senses": [
+          "interj 1) (Piel) hush, keep silence, be silent, hold peace, hold tongue, still",
+          "v 2a) (Hiphil) to command to be silent"
+        ]
+      },
+      "verses": [
+        { "ref": "Num 13:30", "text": "But Caleb quieted the people before Moses and said, \"Let us go up at once and occupy it, for we are well able to overcome it.\"" },
+        { "ref": "Judg 3:19", "text": "But he himself turned back at the idols near Gilgal and said, \"I have a secret message for you, O king.\" And he commanded, \"Silence.\" And all his attendants went out from his presence." },
+        { "ref": "Neh 8:11", "text": "So the Levites calmed all the people, saying, \"Be quiet, for this day is holy; do not be grieved.\"" },
+        { "ref": "Amo 6:10", "text": "And when one's relative, the one who anoints him for burial, shall take him up to bring the bones out of the house, and shall say to him who is in the innermost parts of the house, \"Is there still anyone with you?\" he shall say, \"No\"; and he shall say, \"Silence! We must not mention the name of the Lord.\"" },
+        { "ref": "Amo 8:3", "text": "The songs of the temple shall become wailings in that day, \"declares the Lord God. \"So many dead bodies!\" \"They are thrown everywhere!\" \"Silence!\"" },
+        { "ref": "Hab 2:20", "text": "But the Lord is in his holy temple; let all the earth keep silence before him." },
+        { "ref": "Zep 1:7", "text": "Be silent before the Lord God! For the day of the Lord is near; the Lord has prepared a sacrifice and consecrated his guests." },
+        { "ref": "Zec 2:13", "text": "Be silent, all flesh, before the Lord, for he has roused himself from his holy dwelling." }
+      ]
+    }
+  ]
+}

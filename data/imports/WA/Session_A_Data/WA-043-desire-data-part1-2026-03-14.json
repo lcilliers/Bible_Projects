@@ -1,0 +1,4584 @@
+{
+  "meta": {
+    "schema_version": "2.3",
+    "phase": "Phase 1 --- STEP Data Assimilation",
+    "produced_date": "2026-03-14",
+    "source_file": "word_desire_Part1.md",
+    "translation_used": "ESV",
+    "specification": "Session A Instruction v7",
+    "revision_note": "Part 1: na.sa (H5375O) and da.var (H1697H) have no verse records by researcher decision. Phase 2 note recorded in data_quality_flags for both terms.",
+    "word": "desire",
+    "registry_id": "043",
+    "source_list": "High Confidence",
+    "category": null,
+    "testament_coverage": "OT_only",
+    "part_number": 1,
+    "total_parts": 2,
+    "is_split": true,
+    "root_families_in_prior_parts": []
+  },
+  "term_inventory_hebrew": [
+    {
+      "term_id": "H7522",
+      "step_search_gloss": "acceptance",
+      "step_search_flag": null,
+      "transliteration": "ra.tson",
+      "strongs_number": "H7522",
+      "word_analysis_gloss": "acceptance",
+      "occurrence_count": 56,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) pleasure, delight, favour, goodwill, acceptance, will\n1a) goodwill, favour\n1b) acceptance\n1c) will, desire, pleasure, self-will",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to accept",
+          "transliteration": "ra.tsah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "RATSON"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2531",
+      "step_search_gloss": "delight",
+      "step_search_flag": null,
+      "transliteration": "che.med",
+      "strongs_number": "H2531",
+      "word_analysis_gloss": "delight",
+      "occurrence_count": 6,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire, delight, beauty, desirable, pleasant",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.mad"
+        },
+        {
+          "gloss": "precious thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "chem.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "mach.mad"
+        },
+        {
+          "gloss": "desirable",
+          "transliteration": "mach.mod"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2655",
+      "step_search_gloss": "delighting",
+      "step_search_flag": null,
+      "transliteration": "cha.phets",
+      "strongs_number": "H2655",
+      "word_analysis_gloss": "delighting",
+      "occurrence_count": 12,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desiring, delighting in, having pleasure in",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to delight in",
+          "transliteration": "cha.phets"
+        },
+        {
+          "gloss": "to sway",
+          "transliteration": "cha.phats"
+        },
+        {
+          "gloss": "pleasure",
+          "transliteration": "che.phets"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAPHETS"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "Two STEP glosses (delighting H2655; to delight in H2654A) share one verse set recorded here. Source also surfaces H2654B (to sway/bend, 1 occurrence) as a sub-gloss within the same block. Separate word analysis blocks; verses recorded under this entry."
+    },
+    {
+      "term_id": "H4262",
+      "step_search_gloss": "desirable",
+      "step_search_flag": null,
+      "transliteration": "mach.mod",
+      "strongs_number": "H4262",
+      "word_analysis_gloss": "desirable",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desirable, precious thing",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.mad"
+        },
+        {
+          "gloss": "precious thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "delight",
+          "transliteration": "che.med"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "chem.dah"
+        },
+        {
+          "gloss": "desirable thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "mach.mad"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H4261 corrected to H4262 (mach.mod). mach.mad (H4261) is a separate lemma — not a consolidation candidate as initially assessed."
+    },
+    {
+      "term_id": "H4261",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "mach.mad",
+      "strongs_number": "H4261",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 13,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire, desirable thing, pleasant thing",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.mad"
+        },
+        {
+          "gloss": "precious thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "delight",
+          "transliteration": "che.med"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "chem.dah"
+        },
+        {
+          "gloss": "desirable thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desirable",
+          "transliteration": "mach.mod"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2530B",
+      "step_search_gloss": "desirable thing",
+      "step_search_flag": null,
+      "transliteration": "cha.mu.dah",
+      "strongs_number": "H2530B",
+      "word_analysis_gloss": "desirable thing",
+      "occurrence_count": 5,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desirableness, preciousness",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.mad"
+        },
+        {
+          "gloss": "delight",
+          "transliteration": "che.med"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "chem.dah"
+        },
+        {
+          "gloss": "desirable thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "mach.mad"
+        },
+        {
+          "gloss": "desirable",
+          "transliteration": "mach.mod"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H2532 corrected to H2530B. chem.dah is H2532A — separate lettered sub-entry."
+    },
+    {
+      "term_id": "H2532A",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "chem.dah",
+      "strongs_number": "H2532A",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 16,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire, that which is desirable",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.mad"
+        },
+        {
+          "gloss": "precious thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "delight",
+          "transliteration": "che.med"
+        },
+        {
+          "gloss": "desirable thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "mach.mad"
+        },
+        {
+          "gloss": "desirable",
+          "transliteration": "mach.mod"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: H2532A confirmed. Researcher note: STEP shows different verses from cha.mu.dah despite same root — both verse sets recorded in full."
+    },
+    {
+      "term_id": "H0185",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "av.vah",
+      "strongs_number": "H0185",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 7,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire, lust, will (not necessarily evil)",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "or",
+          "transliteration": "o"
+        },
+        {
+          "gloss": "to desire",
+          "transliteration": "a.vah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ma.a.vay"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ta.a.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AVAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H1942",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "hav.vah",
+      "strongs_number": "H1942",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 16,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) desire\n1a) desire (in bad sense)\n2) chasm (fig. of destruction)\n2a) engulfing ruin, destruction, calamity",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to fall",
+          "transliteration": "ha.va"
+        },
+        {
+          "gloss": "to be",
+          "transliteration": "ha.vah"
+        },
+        {
+          "gloss": "misfortune",
+          "transliteration": "ho.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "HAVAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2837",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "che.sheq",
+      "strongs_number": "H2837",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 4,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire, thing desired",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.shaq"
+        },
+        {
+          "gloss": "to connect",
+          "transliteration": "cha.shaq"
+        },
+        {
+          "gloss": "ring",
+          "transliteration": "cha.shuq"
+        },
+        {
+          "gloss": "spoke",
+          "transliteration": "chish.shuq"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHASHAQ"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H2836 corrected to H2837 (che.sheq noun). cha.shaq verb entries are H2836A (to desire) and H2836B (to connect/fillet)."
+    },
+    {
+      "term_id": "H2836B",
+      "step_search_gloss": "to connect",
+      "step_search_flag": null,
+      "transliteration": "cha.shaq",
+      "strongs_number": "H2836B",
+      "word_analysis_gloss": "to connect",
+      "occurrence_count": 3,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1a) (Piel) fillet\n1b) (Pual) fillet",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to desire",
+          "transliteration": "cha.shaq"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "che.sheq"
+        },
+        {
+          "gloss": "ring",
+          "transliteration": "cha.shuq"
+        },
+        {
+          "gloss": "spoke",
+          "transliteration": "chish.shuq"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHASHAQ"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "CONSOLIDATION_CANDIDATE: che.sheq (H2837), cha.shaq H2836A, and cha.shaq H2836B are three STEP entries sharing the same root. Verses for H2836B are the tabernacle fillet passages (Exo 27:17, 38:17, 38:28) — architectural/literal sense only."
+    },
+    {
+      "term_id": "H2836A",
+      "step_search_gloss": "to desire",
+      "step_search_flag": null,
+      "transliteration": "cha.shaq",
+      "strongs_number": "H2836A",
+      "word_analysis_gloss": "to desire",
+      "occurrence_count": 8,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(Qal) to love, be attached to, long for",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to connect",
+          "transliteration": "cha.shaq"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "che.sheq"
+        },
+        {
+          "gloss": "ring",
+          "transliteration": "cha.shuq"
+        },
+        {
+          "gloss": "spoke",
+          "transliteration": "chish.shuq"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHASHAQ"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "Shares CHASHAQ root with H2837 and H2836B. Inner-being sense (love, attachment, longing) is primary here. god_as_subject=true: Deu 7:7, 10:15 — God's love/attachment to Israel."
+    },
+    {
+      "term_id": "H3970",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "ma.a.vay",
+      "strongs_number": "H3970",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "desire",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "or",
+          "transliteration": "o"
+        },
+        {
+          "gloss": "to desire",
+          "transliteration": "a.vah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "av.vah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ta.a.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AVAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H8378",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "ta.a.vah",
+      "strongs_number": "H8378",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 20,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) desire\n1a) desire, wish, longings of one's heart\n1a1) lust, appetite, covetousness (bad sense)\n1b) thing desired, object of desire",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "or",
+          "transliteration": "o"
+        },
+        {
+          "gloss": "to desire",
+          "transliteration": "a.vah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "av.vah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ma.a.vay"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AVAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H8669",
+      "step_search_gloss": "desire",
+      "step_search_flag": null,
+      "transliteration": "te.shu.qah",
+      "strongs_number": "H8669",
+      "word_analysis_gloss": "desire",
+      "occurrence_count": 3,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) desire, longing, craving\n1a) of man for woman\n1b) of woman for man\n1c) of beast to devour",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to overflow",
+          "transliteration": "shuq"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "TESHUQAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H5690",
+      "step_search_gloss": "lust",
+      "step_search_flag": null,
+      "transliteration": "a.gav",
+      "strongs_number": "H5690",
+      "word_analysis_gloss": "lust",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(sensuous) love",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to lust",
+          "transliteration": "a.gav"
+        },
+        {
+          "gloss": "lust",
+          "transliteration": "a.ga.vah"
+        },
+        {
+          "gloss": "pipe",
+          "transliteration": "u.gav"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AGAV"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H5689 corrected to H5690."
+    },
+    {
+      "term_id": "H0015",
+      "step_search_gloss": "oh that!",
+      "step_search_flag": null,
+      "transliteration": "a.vi",
+      "strongs_number": "H0015",
+      "word_analysis_gloss": "oh that!",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "entreat, longing, desire (particle interjection)",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "be willing",
+          "transliteration": "a.vah"
+        },
+        {
+          "gloss": "please",
+          "transliteration": "bi"
+        },
+        {
+          "gloss": "longing",
+          "transliteration": "ta.a.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AVI"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H0014 corrected to H0015. Interjection particle."
+    },
+    {
+      "term_id": "H4862",
+      "step_search_gloss": "petition",
+      "step_search_flag": null,
+      "transliteration": "mish.a.lah",
+      "strongs_number": "H4862",
+      "word_analysis_gloss": "petition",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": "about",
+      "meaning": "request, petition, desire",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to ask",
+          "transliteration": "sha.al"
+        },
+        {
+          "gloss": "petition",
+          "transliteration": "she.e.lah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "SHA-AL"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2656",
+      "step_search_gloss": "pleasure",
+      "step_search_flag": null,
+      "transliteration": "che.phets",
+      "strongs_number": "H2656",
+      "word_analysis_gloss": "pleasure",
+      "occurrence_count": 39,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) delight, pleasure\n1a) delight\n1b) desire, longing\n1c) the good pleasure\n1d) that in which one takes delight",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to delight in",
+          "transliteration": "cha.phets"
+        },
+        {
+          "gloss": "to sway",
+          "transliteration": "cha.phats"
+        },
+        {
+          "gloss": "delighting",
+          "transliteration": "cha.phets"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAPHETS"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H2654 corrected to H2656 (che.phets noun)."
+    },
+    {
+      "term_id": "H4180",
+      "step_search_gloss": "possession",
+      "step_search_flag": null,
+      "transliteration": "mo.rash",
+      "strongs_number": "H4180",
+      "word_analysis_gloss": "possession",
+      "occurrence_count": 3,
+      "occurrence_count_qualifier": "about",
+      "meaning": "possession",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "to possess: possess",
+          "transliteration": "ya.rash"
+        },
+        {
+          "gloss": "possession",
+          "transliteration": "ye.re.shah"
+        },
+        {
+          "gloss": "possession",
+          "transliteration": "ye.rush.shah"
+        },
+        {
+          "gloss": "possession",
+          "transliteration": "mo.ra.shah"
+        },
+        {
+          "gloss": "net",
+          "transliteration": "re.shet"
+        },
+        {
+          "gloss": "new wine",
+          "transliteration": "ti.rosh"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "YARASH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H1156",
+      "step_search_gloss": "to ask",
+      "step_search_flag": null,
+      "transliteration": "be.a",
+      "strongs_number": "H1156",
+      "word_analysis_gloss": "to ask",
+      "occurrence_count": 19,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to ask, seek, request, desire, pray, make petition\n1a) (P'al)\n1a1) to ask, request\n1a2) to seek (for favour)",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "commander",
+          "transliteration": "be.el"
+        },
+        {
+          "gloss": "plain",
+          "transliteration": "biq.a"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "BEA"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "Aramaic term (Daniel, Ezra). Desire/petition sense."
+    },
+    {
+      "term_id": "H7592",
+      "step_search_gloss": "to ask",
+      "step_search_flag": null,
+      "transliteration": "sha.al",
+      "strongs_number": "H7592",
+      "word_analysis_gloss": "to ask",
+      "occurrence_count": 179,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to ask, enquire, borrow, beg\n1a) (Qal)\n1a1) to ask, ask for\n1a2) to ask (as a favour), borrow\n1a3) to enquire, enquire of\n1a4) to enquire of, consult (of deity, oracle)\n1a5) to seek\n1b) (Niphal) to ask for oneself, ask leave of absence\n1c) (Piel)\n1c1) to enquire, enquire carefully\n1c2) to beg, practise beggary\n1d) (Hiphil)\n1d1) to be given on request\n1d2) to grant, make over to, let (one) ask (successfully) or give or lend on request",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "petition",
+          "transliteration": "mish.a.lah"
+        },
+        {
+          "gloss": "petition",
+          "transliteration": "she.e.lah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "SHA-AL"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "SMALL_VERSE_SAMPLE: 179 occurrences; verses selected by researcher covering representative range."
+    },
+    {
+      "term_id": "H0977",
+      "step_search_gloss": "to choose",
+      "step_search_flag": null,
+      "transliteration": "ba.char",
+      "strongs_number": "H0977",
+      "word_analysis_gloss": "to choose",
+      "occurrence_count": 171,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to choose, elect, decide for\n1a) (Qal) to choose\n1b) (Niphal) to be chosen\n1c) (Pual) to be chosen, selected",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "youth",
+          "transliteration": "ba.chur"
+        },
+        {
+          "gloss": "chosen",
+          "transliteration": "ba.chir"
+        },
+        {
+          "gloss": "choice",
+          "transliteration": "miv.chor"
+        },
+        {
+          "gloss": "best",
+          "transliteration": "miv.char"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "BACHAR"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "SMALL_VERSE_SAMPLE: 171 occurrences; selected verses cover the key 'God chooses' and 'human chooses' senses."
+    },
+    {
+      "term_id": "H0183",
+      "step_search_gloss": "to desire",
+      "step_search_flag": null,
+      "transliteration": "a.vah",
+      "strongs_number": "H0183",
+      "word_analysis_gloss": "to desire",
+      "occurrence_count": 26,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) desire, incline, covet, wait longingly, wish, sigh, want, be greedy, prefer\n1a) (Piel) to desire, crave (food and drink)\n1b) (Hithpael) to desire, long for, lust after (of bodily appetites)",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "or",
+          "transliteration": "o"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "av.vah"
+        },
+        {
+          "gloss": "woe!",
+          "transliteration": "oy"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ma.a.vay"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "ta.a.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AVAH"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H2530A",
+      "step_search_gloss": "to desire",
+      "step_search_flag": null,
+      "transliteration": "cha.mad",
+      "strongs_number": "H2530A",
+      "word_analysis_gloss": "to desire",
+      "occurrence_count": 21,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to desire, covet, take pleasure in, delight in\n1a) (Qal) to desire\n1b) (Niphal) to be desirable\n1c) (Piel) to delight greatly, desire greatly",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "precious thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "delight",
+          "transliteration": "che.med"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "chem.dah"
+        },
+        {
+          "gloss": "desirable thing",
+          "transliteration": "cha.mu.dah"
+        },
+        {
+          "gloss": "desire",
+          "transliteration": "mach.mad"
+        },
+        {
+          "gloss": "desirable",
+          "transliteration": "mach.mod"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAD"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H2530 corrected to H2530A."
+    },
+    {
+      "term_id": "H5375O",
+      "step_search_gloss": "to lift: trust",
+      "step_search_flag": null,
+      "transliteration": "na.sa",
+      "strongs_number": "H5375O",
+      "word_analysis_gloss": "to lift: trust",
+      "occurrence_count": 659,
+      "occurrence_count_qualifier": "about",
+      "meaning": ": trust/desire/lift(soul/heart)\n1) to lift, bear up, carry, take\n1a) (Qal): to lift up; to bear, carry, support, sustain, endure; to take, take away, carry off, forgive\n1b) (Niphal): to be lifted up, be exalted; to lift oneself up, rise up; to be borne, carried; to be taken away\n1c) (Piel): to lift up, exalt, support, aid, assist; to desire, long (fig.); to carry, bear continuously; to take away\n1d) (Hithpael) to lift oneself up, exalt oneself\n1e) (Hiphil): to cause one to bear (iniquity); to cause to bring, have brought",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "burden",
+          "transliteration": "mas.sa"
+        },
+        {
+          "gloss": "oracle",
+          "transliteration": "mas.sa"
+        },
+        {
+          "gloss": "leader",
+          "transliteration": "na.si"
+        },
+        {
+          "gloss": "elevation",
+          "transliteration": "se.et"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "NASA"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "NO_VERSES: Researcher deliberately omitted verses (659 occurrences across 20+ sub-glosses; only the trust/desire sub-gloss H5375O is relevant here). PHASE 2 NOTE: If Session B analysis of desire produces weak conclusions or unanswered questions regarding this term, the researcher must conduct additional research on na.sa independently before drawing synthesis-level conclusions."
+    },
+    {
+      "term_id": "H3700",
+      "step_search_gloss": "to long",
+      "step_search_flag": null,
+      "transliteration": "ka.saph",
+      "strongs_number": "H3700",
+      "word_analysis_gloss": "to long",
+      "occurrence_count": 6,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to long for, yearn for, long after\n1a) (Qal) to long for\n1b) (Niphal): to long for (deeply); being longed for (participle)",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "silver: money",
+          "transliteration": "ke.seph"
+        },
+        {
+          "gloss": "silver: price",
+          "transliteration": "ke.seph"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "KASAPH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H7602A",
+      "step_search_gloss": "to long for",
+      "step_search_flag": null,
+      "transliteration": "sha.aph",
+      "strongs_number": "H7602A",
+      "word_analysis_gloss": "to long for",
+      "occurrence_count": 8,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to gasp, pant, pant after, long for, breathe heavily\n1a) (Qal): to gasp, pant after, snuff up; to gasp or pant (with desire), pant after, be eager for; to thirst for one's blood (from actions of animals) (fig)",
+      "meaning_numbered": true,
+      "related_words": [],
+      "also_spelled": null,
+      "root_family": [
+        "SHA-APH"
+      ],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "somatic_link=true: panting/gasping as physical expression of desire."
+    },
+    {
+      "term_id": "H0157G",
+      "step_search_gloss": "to love: lover",
+      "step_search_flag": null,
+      "transliteration": "a.hev",
+      "strongs_number": "H0157G",
+      "word_analysis_gloss": "to love: lover",
+      "occurrence_count": 211,
+      "occurrence_count_qualifier": "about",
+      "meaning": ": lover\n1) to love\n1a) (Qal): human love for another, includes family, and sexual; human appetite for objects such as food, drink, sleep, wisdom; human love for or to God; act of being a friend; lover (participle); friend (participle); God's love toward man\n1b) (Niphal): lovely (participle); loveable (participle)\n1c) (Piel): friends; lovers (fig. of adulterers)\n2) to like",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "lover",
+          "transliteration": "a.hav"
+        },
+        {
+          "gloss": "beloved",
+          "transliteration": "o.hav"
+        },
+        {
+          "gloss": "love",
+          "transliteration": "a.ha.vah"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "AHEV"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: source confirms H0157G (lover sub-gloss). SMALL_VERSE_SAMPLE: 211 occurrences; representative verses selected."
+    },
+    {
+      "term_id": "H1245",
+      "step_search_gloss": "to seek",
+      "step_search_flag": null,
+      "transliteration": "ba.qash",
+      "strongs_number": "H1245",
+      "word_analysis_gloss": "to seek",
+      "occurrence_count": 225,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to seek, require, desire, exact, request\n1a) (Piel): to seek to find; to seek to secure; to seek the face; to desire, demand; to require, exact; to ask, request\n1b) (Pual) to be sought",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "request",
+          "transliteration": "baq.qa.shah"
+        },
+        {
+          "gloss": "son",
+          "transliteration": "bar"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "BAQASH"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "SMALL_VERSE_SAMPLE: 225 occurrences; selected verses cover key desire/seeking senses."
+    },
+    {
+      "term_id": "H2550",
+      "step_search_gloss": "to spare",
+      "step_search_flag": null,
+      "transliteration": "cha.mal",
+      "strongs_number": "H2550",
+      "word_analysis_gloss": "to spare",
+      "occurrence_count": 41,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(Qal) to spare, pity, have compassion on",
+      "meaning_numbered": false,
+      "related_words": [
+        {
+          "gloss": "compassion",
+          "transliteration": "chem.lah"
+        },
+        {
+          "gloss": "compassion",
+          "transliteration": "mach.mal"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "CHAMAL"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "H6634",
+      "step_search_gloss": "to will",
+      "step_search_flag": null,
+      "transliteration": "tse.va",
+      "strongs_number": "H6634",
+      "word_analysis_gloss": "to will",
+      "occurrence_count": 10,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to desire, be inclined, be willing, be pleased\n1a) (P'al): to desire; to be pleased; to will (without hindrance) (of God)",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "interpretation",
+          "transliteration": "pit.ron"
+        },
+        {
+          "gloss": "thing",
+          "transliteration": "tse.vu"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "TSEVA"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": [],
+      "status_note": "STRONGS_RECONCILED: MTI provisional H6633 corrected to H6634. Aramaic term (Daniel). god_as_subject=true: Dan 4:17, 4:25, 4:32, 4:35 — God gives kingdoms to whom he wills."
+    },
+    {
+      "term_id": "H1697H",
+      "step_search_gloss": "word: speaking",
+      "step_search_flag": null,
+      "transliteration": "da.var",
+      "strongs_number": "H1697H",
+      "word_analysis_gloss": "word: speaking",
+      "occurrence_count": 1381,
+      "occurrence_count_qualifier": "about",
+      "meaning": ": speaking\n1) speech, word, speaking, thing\n1a) speech\n1b) saying, utterance\n1c) word, words\n1d) business, occupation, acts, matter, case, something, manner (by extension)",
+      "meaning_numbered": true,
+      "related_words": [
+        {
+          "gloss": "to speak: speak",
+          "transliteration": "da.var"
+        },
+        {
+          "gloss": "to speak: subdue",
+          "transliteration": "da.var"
+        },
+        {
+          "gloss": "to speak: promise",
+          "transliteration": "da.var"
+        },
+        {
+          "gloss": "pestilence",
+          "transliteration": "de.ver"
+        },
+        {
+          "gloss": "wilderness",
+          "transliteration": "mid.bar"
+        }
+      ],
+      "also_spelled": null,
+      "root_family": [
+        "DAVAR"
+      ],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": [],
+      "status_note": "NO_VERSES: 1381 occurrences across multiple sub-glosses; researcher deliberately omitted verses due to volume and peripheral semantic fit to desire. Only the 'speaking' sub-gloss H1697H is included here. PHASE 2 NOTE: If Session B analysis of desire produces weak conclusions or unanswered questions regarding this term, the researcher must conduct additional research on da.var independently before drawing synthesis-level conclusions."
+    }
+  ],
+  "term_inventory_greek": [],
+  "verse_records": [
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 49:6",
+      "verse_text": "For in their anger they killed men, and in their willfulness they hamstrung oxen."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 28:38",
+      "verse_text": "It shall be on Aaron's forehead, and Aaron shall bear any guilt from the holy things that the people of Israel consecrate as their holy gifts. It shall regularly be on his forehead, that they may be accepted before the LORD."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 1:3",
+      "verse_text": "If his offering is a burnt offering from the herd, he shall offer a male without blemish. He shall bring it to the entrance of the tent of meeting, that he may be accepted before the LORD."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 19:5",
+      "verse_text": "When you offer a sacrifice of peace offerings to the LORD, you shall offer it so that you may be accepted."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 22:19",
+      "verse_text": "if it is to be accepted for you it shall be a male without blemish, of the bulls or the sheep or the goats."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 22:20",
+      "verse_text": "You shall not offer anything that has a blemish, for it will not be acceptable for you."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 22:21",
+      "verse_text": "And when anyone offers a sacrifice of peace offerings to the LORD to fulfill a vow or as a freewill offering from the herd or from the flock, to be accepted it must be perfect; there shall be no blemish in it."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 22:29",
+      "verse_text": "And when you sacrifice a sacrifice of thanksgiving to the LORD, you shall sacrifice it so that you may be accepted."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 23:11",
+      "verse_text": "and he shall wave the sheaf before the LORD, so that you may be accepted. On the day after the Sabbath the priest shall wave it."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 33:16",
+      "verse_text": "with the best gifts of the earth and its fullness and the favor of him who dwells in the bush. May these rest on the head of Joseph, on the pate of him who is prince among his brothers."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 33:23",
+      "verse_text": "O Naphtali, sated with favor, and full of the blessing of the LORD, possess the lake and the south."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 15:15",
+      "verse_text": "And all Judah rejoiced over the oath, for they had sworn with all their heart and had sought him with their whole desire, and he was found by them, and the LORD gave them rest all around."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Ezr",
+      "reference": "Ezr 10:11",
+      "verse_text": "Now then make confession to the LORD, the God of your fathers and do his will. Separate yourselves from the peoples of the land and from the foreign wives."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Neh",
+      "reference": "Neh 9:37",
+      "verse_text": "And its rich yield goes to the kings whom you have set over us because of our sins. They rule over our bodies and over our livestock as they please, and we are in great distress."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Est",
+      "reference": "Est 1:8",
+      "verse_text": "And drinking was according to this edict: 'There is no compulsion.' For the king had given orders to all the staff of his palace to do as each man desired."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Est",
+      "reference": "Est 9:5",
+      "verse_text": "The Jews struck all their enemies with the sword, killing and destroying them, and did as they pleased to those who hated them."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 5:12",
+      "verse_text": "For you bless the righteous, O LORD; you cover him with favor as with a shield."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 19:14",
+      "verse_text": "Let the words of my mouth and the meditation of my heart be acceptable in your sight, O LORD, my rock and my redeemer."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 30:5",
+      "verse_text": "For his anger is but for a moment, and his favor is for a lifetime. Weeping may tarry for the night, but joy comes with the morning."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 40:8",
+      "verse_text": "I delight to do your will, O my God; your law is within my heart."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 51:18",
+      "verse_text": "Do good to Zion in your good pleasure; build up the walls of Jerusalem;"
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 69:13",
+      "verse_text": "But as for me, my prayer is to you, O LORD. At an acceptable time, O God, in the abundance of your steadfast love answer me in your saving faithfulness."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 89:17",
+      "verse_text": "For you are the glory of their strength; by your favor our horn is exalted."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 103:21",
+      "verse_text": "Bless the LORD, all his hosts, his ministers, who do his will!"
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 106:4",
+      "verse_text": "Remember me, O LORD, when you show favor to your people; help me when you save them,"
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 143:10",
+      "verse_text": "Teach me to do your will, for you are my God! Let your good Spirit lead me on level ground!"
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 145:16",
+      "verse_text": "You open your hand; you satisfy the desire of every living thing."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 145:19",
+      "verse_text": "He fulfills the desire of those who fear him; he also hears their cry and saves them."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 8:35",
+      "verse_text": "For whoever finds me finds life and obtains favor from the LORD,"
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 11:1",
+      "verse_text": "A false balance is an abomination to the LORD, but a just weight is his delight."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 11:20",
+      "verse_text": "Those of crooked heart are an abomination to the LORD, but those of blameless ways are his delight."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 14:9",
+      "verse_text": "Fools mock at the guilt offering, but the upright enjoy acceptance."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 14:35",
+      "verse_text": "A servant who deals wisely has the king's favor, but his wrath falls on one who acts shamefully."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 16:13",
+      "verse_text": "Righteous lips are the delight of a king, and he loves him who speaks what is right."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 18:22",
+      "verse_text": "He who finds a wife finds a good thing and obtains favor from the LORD."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 49:8",
+      "verse_text": "Thus says the LORD: In a time of favor I have answered you; in a day of salvation I have helped you."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 8:4",
+      "verse_text": "I saw the ram charging westward and northward and southward. No beast could stand before him, and there was no one who could rescue from his power. He did as he pleased and became great."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 11:36",
+      "verse_text": "And the king shall do as he wills. He shall exalt himself and magnify himself above every god, and shall speak astonishing things against the God of gods."
+    },
+    {
+      "term_id": "H7522",
+      "transliteration": "ra.tson",
+      "testament": "OT",
+      "book": "Mal",
+      "reference": "Mal 2:13",
+      "verse_text": "And this second thing you do. You cover the LORD'S altar with tears, with weeping and groaning because he no longer regards the offering or accepts it with favor from your hand."
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 27:2",
+      "verse_text": "In that day, 'A pleasant vineyard, sing of it!'"
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 32:12",
+      "verse_text": "Beat your breasts for the pleasant fields, for the fruitful vine,"
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 23:6",
+      "verse_text": "clothed in purple, governors and commanders, all of them desirable young men, horsemen riding on horses."
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 23:12",
+      "verse_text": "She lusted after the Assyrians, governors and commanders, warriors clothed in full armor, horsemen riding on horses, all of them desirable young men."
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 23:23",
+      "verse_text": "the Babylonians and all the Chaldeans, Pekod and Shoa and Koa, and all the Assyrians with them, desirable young men, governors and commanders all of them, officers and men of renown, all of them riding on horses."
+    },
+    {
+      "term_id": "H2531",
+      "transliteration": "che.med",
+      "testament": "OT",
+      "book": "Amo",
+      "reference": "Amo 5:11",
+      "verse_text": "Therefore because you trample on the poor and you exact taxes of grain from him, you have built houses of hewn stone, but you shall not dwell in them; you have planted pleasant vineyards, but you shall not drink their wine."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 13:33",
+      "verse_text": "After this thing Jeroboam did not turn from his evil way, but made priests for the high places again from among all the people. Any who would, he ordained to be priests of the high places."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 21:6",
+      "verse_text": "And he said to her, 'Because I spoke to Naboth the Jezreelite and said to him, Give me your vineyard for money, or else, if it please you, I will give you another vineyard for it. And he answered, I will not give you my vineyard.'"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Ch",
+      "reference": "1Ch 28:9",
+      "verse_text": "And you, Solomon my son, know the God of your father and serve him with a whole heart and with a willing mind, for the Lord searches all hearts and understands every plan and thought."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Neh",
+      "reference": "Neh 1:11",
+      "verse_text": "O Lord, let your ear be attentive to the prayer of your servant, and to the prayer of your servants who delight to fear your name."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 5:4",
+      "verse_text": "For you are not a God who delights in wickedness; evil may not dwell with you."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 34:12",
+      "verse_text": "What man is there who desires life and loves many days, that he may see good?"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 35:27",
+      "verse_text": "Let those who delight in my righteousness shout for joy and be glad and say evermore, 'Great is the Lord, who delights in the welfare of his servant!'"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 40:14",
+      "verse_text": "Let those be put to shame and disappointed altogether who seek to snatch away my life."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 51:6",
+      "verse_text": "Behold, you delight in truth in the inward being, and you teach me wisdom in the secret heart."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 51:16",
+      "verse_text": "For you will not delight in sacrifice, or I would give it; you will not be pleased with a burnt offering."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 51:19",
+      "verse_text": "then will you delight in right sacrifices, in burnt offerings and whole burnt offerings; then bulls will be offered on your altar."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 112:1",
+      "verse_text": "Blessed is the man who fears the LORD, who greatly delights in his commandments!"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 115:3",
+      "verse_text": "Our God is in the heavens; he does all that he pleases."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 119:35",
+      "verse_text": "Lead me in the path of your commandments, for I delight in it."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 135:6",
+      "verse_text": "Whatever the LORD pleases, he does, in heaven and on earth, in the seas and all deeps."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 147:10",
+      "verse_text": "His delight is not in the strength of the horse, nor his pleasure in the legs of a man,"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 34:19",
+      "verse_text": "And the young man did not delay to do the thing, because he delighted in Jacob's daughter."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Num",
+      "reference": "Num 14:8",
+      "verse_text": "If the LORD delights in us, he will bring us into this land and give it to us, a land that flows with milk and honey."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 21:14",
+      "verse_text": "But if you no longer delight in her, you shall let her go where she wants."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 2:25",
+      "verse_text": "If someone sins against a man, God will mediate for him, but if someone sins against the LORD, who can intercede for him? But they would not listen to the voice of their father, for it was the will of the LORD to put them to death."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 18:22",
+      "verse_text": "And Saul commanded his servants, 'Speak to David in private and say, Behold, the king has delight in you, and all his servants love you. Now then become the king's son-in-law.'"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 19:1",
+      "verse_text": "And Saul spoke to Jonathan his son and to all his servants, that they should kill David. But Jonathan, Saul's son, delighted much in David."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 15:26",
+      "verse_text": "But if he says, 'I have no pleasure in you,' behold, here I am, let him do to me what seems good to him."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 18:19",
+      "verse_text": "He brought me out into a broad place; he rescued me, because he delighted in me."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 22:8",
+      "verse_text": "He trusts in the LORD; let him deliver him; let him rescue him, for he delights in him!"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 37:23",
+      "verse_text": "The steps of a man are established by the LORD, when he delights in his way;"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 40:6",
+      "verse_text": "In sacrifice and offering you have not delighted, but you have given me an open ear."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 41:11",
+      "verse_text": "By this I know that you delight in me: my enemy will not shout in triumph over me."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 68:30",
+      "verse_text": "Rebuke the beasts that dwell among the reeds, the herd of bulls with the calves of the peoples. Trample underfoot those who lust after tribute; scatter the peoples who delight in war."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 73:25",
+      "verse_text": "Whom have I in heaven but you? And there is nothing on earth that I desire besides you."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 109:17",
+      "verse_text": "He loved to curse; let curses come upon him! He did not delight in blessing; may it be far from him!"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 9:3",
+      "verse_text": "If one wished to contend with him, one could not answer him once in a thousand times."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 13:3",
+      "verse_text": "But I would speak to the Almighty, and I desire to argue my case with God."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 21:14",
+      "verse_text": "They say to God, 'Depart from us! We do not desire the knowledge of your ways.'"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 1:11",
+      "verse_text": "What to me is the multitude of your sacrifices? says the LORD; I have had enough of burnt offerings of rams and the fat of well-fed beasts; I do not delight in the blood of bulls, or of lambs, or of goats."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 42:21",
+      "verse_text": "The LORD was pleased, for his righteousness' sake, to magnify his law and make it glorious."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 53:10",
+      "verse_text": "Yet it was the will of the LORD to crush him; he has put him to grief."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 58:2",
+      "verse_text": "Yet they seek me daily and delight to know my ways, as if they were a nation that did righteousness and did not forsake the judgment of their God."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 62:4",
+      "verse_text": "You shall no more be termed Forsaken, and your land shall no more be termed Desolate, but you shall be called My Delight Is in Her, and your land Married; for the LORD delights in you."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 66:3",
+      "verse_text": "He who slaughters an ox is like one who kills a man; he who sacrifices a lamb, like one who breaks a dog's neck. These have chosen their own ways, and their soul delights in their abominations."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 9:24",
+      "verse_text": "but let him who boasts boast in this, that he understands and knows me, that I am the LORD who practices steadfast love, justice, and righteousness in the earth. For in these things I delight, declares the LORD."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 18:23",
+      "verse_text": "Have I any pleasure in the death of the wicked, declares the Lord GOD, and not rather that he should turn from his way and live?"
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 18:32",
+      "verse_text": "For I have no pleasure in the death of anyone, declares the Lord GOD; so turn, and live."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 33:11",
+      "verse_text": "Say to them, As I live, declares the Lord GOD, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 6:6",
+      "verse_text": "For I desire steadfast love and not sacrifice, the knowledge of God rather than burnt offerings."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Mic",
+      "reference": "Mic 7:18",
+      "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+    },
+    {
+      "term_id": "H2655",
+      "transliteration": "cha.phets",
+      "testament": "OT",
+      "book": "Mal",
+      "reference": "Mal 3:1",
+      "verse_text": "Behold, I send my messenger, and he will prepare the way before me. And the Lord whom you seek will suddenly come to his temple; and the messenger of the covenant in whom you delight, behold, he is coming, says the LORD of hosts."
+    },
+    {
+      "term_id": "H4262",
+      "transliteration": "mach.mod",
+      "testament": "OT",
+      "book": "Lam",
+      "reference": "Lam 1:7",
+      "verse_text": "Jerusalem remembers in the days of her affliction and wandering all the precious things that were hers from days of old. When her people fell into the hand of the foe, and there was none to help her, her foes gloated over her; they mocked at her downfall."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 20:6",
+      "verse_text": "Nevertheless I will send my servants to you tomorrow about this time, and they shall search your house and the houses of your servants and lay hands on whatever pleases you and take it away."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 36:19",
+      "verse_text": "And they burned the house of God and broke down the wall of Jerusalem and burned all its palaces with fire and destroyed all its precious vessels."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 5:16",
+      "verse_text": "His mouth is most sweet, and he is altogether desirable. This is my beloved and this is my friend, O daughters of Jerusalem."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 64:11",
+      "verse_text": "Our holy and beautiful house, where our fathers praised you, has been burned by fire, and all our pleasant places have become ruins."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Lam",
+      "reference": "Lam 1:10",
+      "verse_text": "The enemy has stretched out his hands over all her precious things."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Lam",
+      "reference": "Lam 1:11",
+      "verse_text": "All her people groan as they search for bread; they trade their treasures for food to revive their strength."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Lam",
+      "reference": "Lam 2:4",
+      "verse_text": "He has bent his bow like an enemy, with his right hand set like a foe; and he has killed all who were delightful in our eyes."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 24:16",
+      "verse_text": "Son of man, behold, I am about to take the delight of your eyes away from you at a stroke; yet you shall not mourn or weep, nor shall your tears run down."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 24:21",
+      "verse_text": "Say to the house of Israel, Thus says the Lord GOD: Behold, I will profane my sanctuary, the pride of your power, the delight of your eyes, and the yearning of your soul."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 24:25",
+      "verse_text": "As for you, son of man, surely on the day when I take from them their stronghold, their joy and glory, the delight of their eyes and their soul's desire."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 9:6",
+      "verse_text": "Nettles shall possess their precious things of silver; thorns shall be in their tents."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 9:16",
+      "verse_text": "Even though they give birth, I will put their beloved children to death."
+    },
+    {
+      "term_id": "H4261",
+      "transliteration": "mach.mad",
+      "testament": "OT",
+      "book": "Joe",
+      "reference": "Joe 3:5",
+      "verse_text": "For you have taken my silver and my gold, and have carried my rich treasures into your temples."
+    },
+    {
+      "term_id": "H2530B",
+      "transliteration": "cha.mu.dah",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 27:15",
+      "verse_text": "Then Rebekah took the best garments of Esau her older son, which were with her in the house, and put them on Jacob her younger son."
+    },
+    {
+      "term_id": "H2530B",
+      "transliteration": "cha.mu.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 9:23",
+      "verse_text": "At the beginning of your pleas for mercy a word went out, and I have come to tell it to you, for you are greatly loved."
+    },
+    {
+      "term_id": "H2530B",
+      "transliteration": "cha.mu.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 10:3",
+      "verse_text": "I ate no delicacies, no meat or wine entered my mouth, nor did I anoint myself at all, for the full three weeks."
+    },
+    {
+      "term_id": "H2530B",
+      "transliteration": "cha.mu.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 10:11",
+      "verse_text": "And he said to me, 'O Daniel, man greatly loved, understand the words that I speak to you, and stand upright, for now I have been sent to you.' And when he had spoken this word to me, I stood up trembling."
+    },
+    {
+      "term_id": "H2530B",
+      "transliteration": "cha.mu.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 10:19",
+      "verse_text": "And he said, 'O man greatly loved, fear not, peace be with you; be strong and of good courage.' And as he spoke to me, I was strengthened and said, 'Let my lord speak, for you have strengthened me.'"
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 9:20",
+      "verse_text": "As for your donkeys that were lost three days ago, do not set your mind on them, for they have been found. And for whom is all that is desirable in Israel? Is it not for you and for all your father's house?"
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 21:20",
+      "verse_text": "He was thirty-two years old when he began to reign, and he reigned eight years in Jerusalem. And he departed with no one's regret."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 32:27",
+      "verse_text": "And Hezekiah had very great riches and honor, and he made for himself treasuries for silver, for gold, for precious stones, for spices, for shields, and for all kinds of costly vessels;"
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 36:10",
+      "verse_text": "In the spring of the year King Nebuchadnezzar sent and brought him to Babylon, with the precious vessels of the house of the Lord, and made his brother Zedekiah king over Judah and Jerusalem."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 106:24",
+      "verse_text": "Then they despised the pleasant land, having no faith in his promise."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 2:16",
+      "verse_text": "against all the ships of Tarshish, and against all the beautiful craft."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 3:19",
+      "verse_text": "I said, How I would set you among my sons, and give you a pleasant land, a heritage most beautiful of all nations."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 12:10",
+      "verse_text": "Many shepherds have destroyed my vineyard; they have trampled down my portion; they have made my pleasant portion a desolate wilderness."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 25:34",
+      "verse_text": "Wail, you shepherds, and cry out, and roll in ashes, you lords of the flock, for the days of your slaughter and dispersion have come, and you shall fall like a choice vessel."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 26:12",
+      "verse_text": "They will plunder your riches and loot your merchandise. They will break down your walls and destroy your pleasant houses."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 11:8",
+      "verse_text": "He shall also carry off to Egypt their gods with their metal images and their precious vessels of silver and gold."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 11:37",
+      "verse_text": "He shall pay no attention to the gods of his fathers, or to the one beloved by women."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 13:15",
+      "verse_text": "Though he may flourish among his brothers, the east wind, the wind of the Lord, shall come, rising from the wilderness, and his fountain shall dry up; his spring shall be parched; it shall strip his treasury of every precious thing."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Nah",
+      "reference": "Nah 2:9",
+      "verse_text": "Plunder the silver, plunder the gold! There is no end of the treasure or of the wealth of all precious things."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Hag",
+      "reference": "Hag 2:7",
+      "verse_text": "And I will shake all nations, so that the treasures of all nations shall come in, and I will fill this house with glory, says the Lord of hosts."
+    },
+    {
+      "term_id": "H2532A",
+      "transliteration": "chem.dah",
+      "testament": "OT",
+      "book": "Zec",
+      "reference": "Zec 7:14",
+      "verse_text": "and I scattered them with a whirlwind among all the nations that they had not known. Thus the land they left was desolate, so that no one went to and fro, and the pleasant land was made desolate."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 12:15",
+      "verse_text": "However, you may slaughter and eat meat within any of your towns, as much as you desire, according to the blessing of the Lord your God that he has given you."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 12:20",
+      "verse_text": "When the Lord your God enlarges your territory, as he has promised you, and you say, 'I will eat meat,' because you crave meat, you may eat meat whenever you desire."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 12:21",
+      "verse_text": "If the place that the Lord your God will choose to put his name there is too far from you, then you may kill any of your herd or your flock, which the Lord has given you, as I have commanded you, and you may eat within your towns whenever you desire."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 18:6",
+      "verse_text": "And if a Levite comes from any of your towns out of all Israel, where he lives—and he may come when he desires—to the place that the Lord will choose,"
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 23:20",
+      "verse_text": "Now come down, O king, according to all your heart's desire to come down, and our part shall be to surrender him into the king's hand."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 2:24",
+      "verse_text": "a wild donkey used to the wilderness, in her heat sniffing the wind! Who can restrain her lust? None who seek her need weary themselves; in her month they will find her."
+    },
+    {
+      "term_id": "H0185",
+      "transliteration": "av.vah",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 10:10",
+      "verse_text": "When I please, I will discipline them, and nations shall be gathered against them when they are bound up for their double iniquity."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 6:2",
+      "verse_text": "Oh that my vexation were weighed, and all my calamity laid in the balances!"
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 6:30",
+      "verse_text": "Is there any injustice on my tongue? Cannot my palate discern the cause of calamity?"
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 30:13",
+      "verse_text": "They break up my path; they promote my calamity; they need no one to help them."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 5:9",
+      "verse_text": "For there is no truth in their mouth; their inmost self is destruction; their throat is an open grave; they flatter with their tongue."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 38:12",
+      "verse_text": "Those who seek my life lay their snares; those who seek my hurt speak of ruin and meditate treachery all day long."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 52:2",
+      "verse_text": "Your tongue plots destruction, like a sharp razor, you worker of deceit."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 52:7",
+      "verse_text": "See the man who would not make God his refuge, but trusted in the abundance of his riches and sought refuge in his own destruction!"
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 55:11",
+      "verse_text": "ruin is in its midst; oppression and fraud do not depart from its marketplace."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 57:1",
+      "verse_text": "Be merciful to me, O God, be merciful to me, for in you my soul takes refuge; in the shadow of your wings I will take refuge, till the storms of destruction pass by."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 91:3",
+      "verse_text": "For he will deliver you from the snare of the fowler and from the deadly pestilence."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 10:3",
+      "verse_text": "The LORD does not let the righteous go hungry, but he thwarts the craving of the wicked."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 11:6",
+      "verse_text": "The righteousness of the upright delivers them, but the treacherous are taken captive by their lust."
+    },
+    {
+      "term_id": "H1942",
+      "transliteration": "hav.vah",
+      "testament": "OT",
+      "book": "Mic",
+      "reference": "Mic 7:3",
+      "verse_text": "Their hands are on what is evil, to do it well; the prince and the judge ask for a bribe, and the great man utters the evil desire of his soul; thus they weave it together."
+    },
+    {
+      "term_id": "H2837",
+      "transliteration": "che.sheq",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 9:1",
+      "verse_text": "As soon as Solomon had finished building the house of the Lord and the king's house and all that Solomon desired to build,"
+    },
+    {
+      "term_id": "H2837",
+      "transliteration": "che.sheq",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 9:19",
+      "verse_text": "and all the store cities that Solomon had, and the cities for his chariots, and the cities for his horsemen, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion."
+    },
+    {
+      "term_id": "H2837",
+      "transliteration": "che.sheq",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 8:6",
+      "verse_text": "and Baalath, and all the store cities that Solomon had and all the cities for his chariots and the cities for his horsemen, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion."
+    },
+    {
+      "term_id": "H2837",
+      "transliteration": "che.sheq",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 21:4",
+      "verse_text": "My heart staggers; horror has appalled me; the twilight I longed for has been turned for me into trembling."
+    },
+    {
+      "term_id": "H2836B",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 27:17",
+      "verse_text": "All the pillars around the court shall be filleted with silver. Their hooks shall be of silver, and their bases of bronze."
+    },
+    {
+      "term_id": "H2836B",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 38:17",
+      "verse_text": "And the bases for the pillars were of bronze, but the hooks of the pillars and their fillets were of silver."
+    },
+    {
+      "term_id": "H2836B",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 38:28",
+      "verse_text": "And of the 1,775 shekels he made hooks for the pillars and overlaid their capitals and made fillets for them."
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 34:8",
+      "verse_text": "But Hamor spoke with them, saying, 'The soul of my son Shechem longs for your daughter. Please give her to him to be his wife.'"
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 7:7",
+      "verse_text": "It was not because you were more in number than any other people that the LORD set his love on you and chose you, for you were the fewest of all peoples,"
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 10:15",
+      "verse_text": "Yet the LORD set his heart in love on your fathers and chose their offspring after them, you above all peoples, as you are this day."
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 21:11",
+      "verse_text": "and you see among the captives a beautiful woman, and you desire to take her to be your wife,"
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 9:19",
+      "verse_text": "and all the store cities that Solomon had, and the cities for his chariots, and the cities for his horsemen, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion."
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 8:6",
+      "verse_text": "and Baalath, and all the store cities that Solomon had and all the cities for his chariots and the cities for his horsemen, and whatever Solomon desired to build in Jerusalem, in Lebanon, and in all the land of his dominion."
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 91:14",
+      "verse_text": "Because he holds fast to me in love, I will deliver him; I will protect him, because he knows my name."
+    },
+    {
+      "term_id": "H2836A",
+      "transliteration": "cha.shaq",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 38:17",
+      "verse_text": "Behold, it was for my welfare that I had great bitterness; but in love you have delivered my life from the pit of destruction, for you have cast all my sins behind your back."
+    },
+    {
+      "term_id": "H3970",
+      "transliteration": "ma.a.vay",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 140:8",
+      "verse_text": "Grant not, O Lord, the desires of the wicked; do not further their evil plot, or they will be exalted! Selah"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 3:6",
+      "verse_text": "So when the woman saw that the tree was good for food, and that it was a delight to the eyes, and that the tree was to be desired to make one wise, she took of its fruit and ate, and she also gave some to her husband who was with her, and he ate."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Num",
+      "reference": "Num 11:4",
+      "verse_text": "Now the rabble that was among them had a strong craving. And the people of Israel also wept again and said, 'Oh that we had meat to eat!'"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 33:20",
+      "verse_text": "so that his life loathes bread, and his appetite the choicest food."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 10:3",
+      "verse_text": "For the wicked boasts of the desires of his soul, and the one greedy for gain curses and renounces the LORD."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 10:17",
+      "verse_text": "O LORD, you hear the desire of the afflicted; you will strengthen their heart; you will incline your ear"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 21:2",
+      "verse_text": "You have given him his heart's desire and have not withheld the request of his lips. Selah"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 38:9",
+      "verse_text": "O Lord, all my longing is before you; my sighing is not hidden from you."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 78:29",
+      "verse_text": "And they ate and were well filled, for he gave them what they craved."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 78:30",
+      "verse_text": "But before they had satisfied their craving, while the food was still in their mouths,"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 106:14",
+      "verse_text": "But they had a wanton craving in the wilderness, and put God to the test in the desert;"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 112:10",
+      "verse_text": "The wicked man sees it and is angry; he gnashes his teeth and melts away; the desire of the wicked will perish!"
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 10:24",
+      "verse_text": "What the wicked dreads will come upon him, but the desire of the righteous will be granted."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 11:23",
+      "verse_text": "The desire of the righteous ends only in good, the expectation of the wicked in wrath."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 13:12",
+      "verse_text": "Hope deferred makes the heart sick, but a desire fulfilled is a tree of life."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 13:19",
+      "verse_text": "A desire fulfilled is sweet to the soul, but to turn away from evil is an abomination to fools."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 18:1",
+      "verse_text": "Whoever isolates himself seeks his own desire; he breaks out against all sound judgment."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 19:22",
+      "verse_text": "What is desired in a man is steadfast love, and a poor man is better than a liar."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 21:25",
+      "verse_text": "The desire of the sluggard kills him, for his hands refuse to labor."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 21:26",
+      "verse_text": "All day long he craves and craves, but the righteous gives and does not hold back."
+    },
+    {
+      "term_id": "H8378",
+      "transliteration": "ta.a.vah",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 26:8",
+      "verse_text": "In the path of your judgments, O LORD, we wait for you; your name and remembrance are the desire of our soul."
+    },
+    {
+      "term_id": "H8669",
+      "transliteration": "te.shu.qah",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 3:16",
+      "verse_text": "To the woman he said, 'I will surely multiply your pain in childbearing; in pain you shall bring forth children. Your desire shall be for your husband, and he shall rule over you.'"
+    },
+    {
+      "term_id": "H8669",
+      "transliteration": "te.shu.qah",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 4:7",
+      "verse_text": "If you do well, will you not be accepted? And if you do not do well, sin is crouching at the door. Its desire is for you, and you must rule over it."
+    },
+    {
+      "term_id": "H8669",
+      "transliteration": "te.shu.qah",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 7:10",
+      "verse_text": "I am my beloved's, and his desire is for me."
+    },
+    {
+      "term_id": "H5690",
+      "transliteration": "a.gav",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 33:31",
+      "verse_text": "And they come to you as people come, and they sit before you as my people, and they hear what you say but they will not do it; for with lustful talk in their mouths they act; their heart is set on their gain."
+    },
+    {
+      "term_id": "H5690",
+      "transliteration": "a.gav",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 33:32",
+      "verse_text": "And behold, you are to them like one who sings lustful songs with a beautiful voice and plays well on an instrument, for they hear what you say, but they will not do it."
+    },
+    {
+      "term_id": "H0015",
+      "transliteration": "a.vi",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 34:36",
+      "verse_text": "Would that Job were tried to the end, because he answers like wicked men."
+    },
+    {
+      "term_id": "H4862",
+      "transliteration": "mish.a.lah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 20:5",
+      "verse_text": "May we shout for joy over your salvation, and in the name of our God set up our banners! May the Lord fulfill all your petitions!"
+    },
+    {
+      "term_id": "H4862",
+      "transliteration": "mish.a.lah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 37:4",
+      "verse_text": "Delight yourself in the Lord, and he will give you the desires of your heart."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 15:22",
+      "verse_text": "Has the LORD as great delight in burnt offerings and sacrifices, as in obeying the voice of the LORD? Behold, to obey is better than sacrifice, and to listen than the fat of rams."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 18:25",
+      "verse_text": "Then Saul said, 'Thus shall you say to David, The king desires no bride-price except a hundred foreskins of the Philistines, that he may be avenged of the king's enemies.' Now Saul thought to make David fall by the hand of the Philistines."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 23:5",
+      "verse_text": "For does not my house stand so with God? For he has made with me an everlasting covenant, ordered in all things and secure. For will he not cause to prosper all my help and my desire?"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 5:8",
+      "verse_text": "And Hiram sent to Solomon, saying, 'I have heard the message that you have sent to me. I am ready to do all you desire in the matter of cedar and cypress timber.'"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 5:10",
+      "verse_text": "So Hiram supplied Solomon with all the timber of cedar and cypress that he desired,"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 1:2",
+      "verse_text": "but his delight is in the law of the LORD, and on his law he meditates day and night."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 16:3",
+      "verse_text": "As for the saints in the land, they are the excellent ones, in whom is all my delight."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 107:30",
+      "verse_text": "Then they were glad that the waters were quiet, and he brought them to their desired haven."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 111:2",
+      "verse_text": "Great are the works of the LORD, studied by all who delight in them."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 3:15",
+      "verse_text": "She is more precious than jewels, and nothing you desire can compare with her."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 8:11",
+      "verse_text": "for wisdom is better than jewels, and all that you may desire cannot compare with her."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 31:13",
+      "verse_text": "She seeks wool and flax, and works with willing hands."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Ecc",
+      "reference": "Ecc 3:1",
+      "verse_text": "For everything there is a season, and a time for every matter under heaven:"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Ecc",
+      "reference": "Ecc 5:4",
+      "verse_text": "When you vow a vow to God, do not delay paying it, for he has no pleasure in fools. Pay what you vow."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Ecc",
+      "reference": "Ecc 12:1",
+      "verse_text": "Remember also your Creator in the days of your youth, before the evil days come and the years draw near of which you will say, 'I have no pleasure in them';"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 44:28",
+      "verse_text": "who says of Cyrus, 'He is my shepherd, and he shall fulfill all my purpose'; saying of Jerusalem, 'She shall be built,' and of the temple, 'Your foundation shall be laid.'"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 46:10",
+      "verse_text": "declaring the end from the beginning and from ancient times things not yet done, saying, 'My counsel shall stand, and I will accomplish all my purpose,'"
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 48:14",
+      "verse_text": "The LORD loves him; he shall perform his purpose on Babylon, and his arm shall be against the Chaldeans."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 53:10",
+      "verse_text": "Yet it was the will of the LORD to crush him; he has put him to grief."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 58:3",
+      "verse_text": "'Why have we fasted, and you see it not? Why have we humbled ourselves, and you take no knowledge of it?' Behold, in the day of your fast you seek your own pleasure, and oppress all your workers."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 58:13",
+      "verse_text": "If you turn back your foot from the Sabbath, from doing your pleasure on my holy day, and call the Sabbath a delight and the holy day of the LORD honorable."
+    },
+    {
+      "term_id": "H2656",
+      "transliteration": "che.phets",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 48:38",
+      "verse_text": "On all the housetops of Moab and in the squares there is nothing but lamentation, for I have broken Moab like a vessel for which no one cares, declares the LORD."
+    },
+    {
+      "term_id": "H4180",
+      "transliteration": "mo.rash",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 17:11",
+      "verse_text": "My days are past; my plans are broken off, the desires of my heart."
+    },
+    {
+      "term_id": "H4180",
+      "transliteration": "mo.rash",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 14:23",
+      "verse_text": "And I will make it a possession of the hedgehog, and pools of water, and I will sweep it with the broom of destruction, declares the Lord of hosts."
+    },
+    {
+      "term_id": "H4180",
+      "transliteration": "mo.rash",
+      "testament": "OT",
+      "book": "Obd",
+      "reference": "Obd 17",
+      "verse_text": "But in Mount Zion there shall be those who escape, and it shall be holy, and the house of Jacob shall possess their own possessions."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 2:13",
+      "verse_text": "So the decree went out, and the wise men were about to be killed; and they sought Daniel and his companions, to kill them."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 2:16",
+      "verse_text": "And Daniel went in and requested the king to appoint him a time, that he might show the interpretation to the king."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 2:18",
+      "verse_text": "and told them to seek mercy from the God of heaven concerning this mystery, so that Daniel and his companions might not be destroyed with the rest of the wise men of Babylon."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 2:23",
+      "verse_text": "To you, O God of my fathers, I give thanks and praise, for you have given me wisdom and might, and have now made known to me what we asked of you."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 2:49",
+      "verse_text": "Daniel made a request of the king, and he appointed Shadrach, Meshach, and Abednego over the affairs of the province of Babylon."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 6:7",
+      "verse_text": "All the high officials of the kingdom, the prefects and the satraps, the counselors and the governors are agreed that the king should establish an ordinance and enforce an injunction, that whoever makes petition to any god or man for thirty days, except to you, O king, shall be cast into the den of lions."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 6:11",
+      "verse_text": "Then these men came by agreement and found Daniel making petition and plea before his God."
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 6:13",
+      "verse_text": "Then they answered and said before the king, 'Daniel, who is one of the exiles from Judah, pays no attention to you, O king, or the injunction you have signed, but makes his petition three times a day.'"
+    },
+    {
+      "term_id": "H1156",
+      "transliteration": "be.a",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 7:16",
+      "verse_text": "I approached one of those who stood there and asked him the truth concerning all this. So he told me and made known to me the interpretation of the things."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 24:47",
+      "verse_text": "Then I asked her, 'Whose daughter are you?'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 32:29",
+      "verse_text": "Then Jacob asked him, 'Please tell me your name.' But he said, 'Why is it that you ask my name?' And there he blessed him."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 1:17",
+      "verse_text": "Then Eli answered, 'Go in peace, and the God of Israel grant your petition that you have made to him.'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 1:20",
+      "verse_text": "And in due time Hannah conceived and bore a son, and she called his name Samuel, for she said, 'I have asked for him from the LORD.'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 1:27",
+      "verse_text": "For this child I prayed, and the LORD has granted me my petition that I made to him."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 3:5",
+      "verse_text": "and ran to Eli and said, 'Here I am, for you called me.' But he said, 'I did not call; lie down again.'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 8:10",
+      "verse_text": "So Samuel told all the words of the LORD to the people who were asking for a king from him."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 12:13",
+      "verse_text": "And now behold the king whom you have chosen, for whom you have asked; behold, the LORD has set a king over you."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 3:5",
+      "verse_text": "At Gibeon the LORD appeared to Solomon in a dream by night, and God said, 'Ask what I shall give you.'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 3:11",
+      "verse_text": "And God said to him, 'Because you have asked this, and have not asked for yourself long life or riches or the life of your enemies, but have asked for yourself understanding to discern what is right,'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "2Ki",
+      "reference": "2Ki 2:9",
+      "verse_text": "When they had crossed, Elijah said to Elisha, 'Ask what I shall do for you, before I am taken from you.' And Elisha said, 'Please let there be a double portion of your spirit on me.'"
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 2:8",
+      "verse_text": "Ask of me, and I will make the nations your heritage, and the ends of the earth your possession."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 27:4",
+      "verse_text": "One thing have I asked of the LORD, that will I seek after: that I may dwell in the house of the LORD all the days of my life."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 7:11",
+      "verse_text": "Ask a sign of the LORD your God; let it be deep as Sheol or high as heaven."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 6:16",
+      "verse_text": "Thus says the LORD: Stand by the roads, and look, and ask for the ancient paths, where the good way is; and walk in it, and find rest for your souls."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 29:13",
+      "verse_text": "You will seek me and find me, when you seek me with all your heart."
+    },
+    {
+      "term_id": "H7592",
+      "transliteration": "sha.al",
+      "testament": "OT",
+      "book": "Zec",
+      "reference": "Zec 10:1",
+      "verse_text": "Ask rain from the LORD in the season of the spring rain, from the LORD who makes the storm clouds, and he will give them showers of rain, to everyone the vegetation in the field."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 6:2",
+      "verse_text": "the sons of God saw that the daughters of man were attractive. And they took as their wives any they chose."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 13:11",
+      "verse_text": "So Lot chose for himself all the Jordan Valley, and Lot journeyed east."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 4:37",
+      "verse_text": "And because he loved your fathers and chose their offspring after them and brought you out of Egypt with his own presence, by his great power,"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 7:6",
+      "verse_text": "For you are a people holy to the LORD your God. The LORD your God has chosen you to be a people for his treasured possession."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 30:19",
+      "verse_text": "I call heaven and earth to witness against you today, that I have set before you life and death, blessing and curse. Therefore choose life, that you and your offspring may live,"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 16:8",
+      "verse_text": "Then Jesse called Abinadab and made him pass before Samuel. And he said, 'Neither has the LORD chosen this one.'"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 6:21",
+      "verse_text": "And David said to Michal, 'It was before the LORD, who chose me above your father and above all his house, to appoint me as prince over Israel, the people of the LORD.'"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 25:12",
+      "verse_text": "Who is the man who fears the LORD? Him will he instruct in the way that he should choose."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 65:4",
+      "verse_text": "Blessed is the one you choose and bring near, to dwell in your courts!"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 78:70",
+      "verse_text": "He chose David his servant and took him from the sheepfolds;"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 132:13",
+      "verse_text": "For the LORD has chosen Zion; he has desired it for his dwelling place:"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 1:29",
+      "verse_text": "Because they hated knowledge and did not choose the fear of the LORD,"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 16:16",
+      "verse_text": "How much better to get wisdom than gold! To get understanding is to be chosen rather than silver."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 22:1",
+      "verse_text": "A good name is to be chosen rather than great riches, and favor is better than silver or gold."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 41:8",
+      "verse_text": "But you, Israel, my servant, Jacob, whom I have chosen, the offspring of Abraham, my friend;"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 43:10",
+      "verse_text": "You are my witnesses, declares the LORD, and my servant whom I have chosen."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 58:5",
+      "verse_text": "Is such the fast that I choose, a day for a person to humble himself?"
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 66:4",
+      "verse_text": "I also will choose harsh treatment for them and bring their fears upon them, because when I called, no one answered, when I spoke, they did not listen; but they did what was evil in my eyes and chose that in which I did not delight."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 33:24",
+      "verse_text": "Have you not observed that these people are saying, 'The LORD has rejected the two clans that he chose'? Thus they have despised my people so that they are no longer a nation in their sight."
+    },
+    {
+      "term_id": "H0977",
+      "transliteration": "ba.char",
+      "testament": "OT",
+      "book": "Hag",
+      "reference": "Hag 2:23",
+      "verse_text": "On that day, declares the LORD of hosts, I will take you, O Zerubbabel my servant, the son of Shealtiel, declares the LORD, and make you like a signet ring, for I have chosen you, declares the LORD of hosts."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Num",
+      "reference": "Num 11:4",
+      "verse_text": "Now the rabble that was among them had a strong craving. And the people of Israel also wept again and said, 'Oh that we had meat to eat!'"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Num",
+      "reference": "Num 11:34",
+      "verse_text": "Therefore the name of that place was called Kibroth-hattaavah, because there they buried the people who had the craving."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 5:21",
+      "verse_text": "And you shall not covet your neighbor's wife. And you shall not desire your neighbor's house, his field, or his male servant, or his female servant, his ox, or his donkey, or anything that is your neighbor's."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 12:20",
+      "verse_text": "When the LORD your God enlarges your territory, as he has promised you, and you say, 'I will eat meat,' because you crave meat, you may eat meat whenever you desire."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 14:26",
+      "verse_text": "and spend the money for whatever you desire—oxen or sheep or wine or strong drink, whatever your appetite craves."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 2:16",
+      "verse_text": "And if the man said to him, 'Let them burn the fat first, and then take as much as you wish,' he would say, 'No, you must give it now, and if not, I will take it by force.'"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 3:21",
+      "verse_text": "And Abner said to David, 'I will arise and go and will gather all Israel to my lord the king, that they may make a covenant with you, and that you may reign over all that your heart desires.'"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 23:15",
+      "verse_text": "And David said longingly, 'Oh, that someone would give me water to drink from the well of Bethlehem that is by the gate!'"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 11:37",
+      "verse_text": "And I will take you, and you shall reign over all that your soul desires, and you shall be king over Israel."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "1Ch",
+      "reference": "1Ch 11:17",
+      "verse_text": "And David said longingly, 'Oh that someone would give me water to drink from the well of Bethlehem that is by the gate!'"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 23:13",
+      "verse_text": "But he is unchangeable, and who can turn him back? What he desires, that he does."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 45:11",
+      "verse_text": "and the king will desire your beauty. Since he is your lord, bow to him."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 106:14",
+      "verse_text": "But they had a wanton craving in the wilderness, and put God to the test in the desert;"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 132:13",
+      "verse_text": "For the LORD has chosen Zion; he has desired it for his dwelling place:"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 132:14",
+      "verse_text": "This is my resting place forever; here I will dwell, for I have desired it."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 13:4",
+      "verse_text": "The soul of the sluggard craves and gets nothing, while the soul of the diligent is richly supplied."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 21:10",
+      "verse_text": "The soul of the wicked desires evil; his neighbor finds no mercy in his eyes."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 21:26",
+      "verse_text": "All day long he craves and craves, but the righteous gives and does not hold back."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 23:3",
+      "verse_text": "Do not desire his delicacies, for they are deceptive food."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 23:6",
+      "verse_text": "Do not eat the bread of a man who is stingy; do not desire his delicacies,"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 24:1",
+      "verse_text": "Be not envious of evil men, nor desire to be with them,"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 26:9",
+      "verse_text": "My soul yearns for you in the night; my spirit within me earnestly seeks you."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 17:16",
+      "verse_text": "I have not run away from being your shepherd, nor have I desired the day of sickness."
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Amo",
+      "reference": "Amo 5:18",
+      "verse_text": "Woe to you who desire the day of the LORD! Why would you have the day of the LORD? It is darkness, and not light,"
+    },
+    {
+      "term_id": "H0183",
+      "transliteration": "a.vah",
+      "testament": "OT",
+      "book": "Mic",
+      "reference": "Mic 7:1",
+      "verse_text": "Woe is me! For I have become as when the summer fruit has been gathered; there is no cluster to eat, no first-ripe fig that my soul desires."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 2:9",
+      "verse_text": "And out of the ground the LORD God made to spring up every tree that is pleasant to the sight and good for food."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 3:6",
+      "verse_text": "So when the woman saw that the tree was good for food, and that it was a delight to the eyes, and that the tree was to be desired to make one wise, she took of its fruit and ate."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 20:17",
+      "verse_text": "You shall not covet your neighbor's house; you shall not covet your neighbor's wife, or his male servant, or his female servant, or his ox, or his donkey, or anything that is your neighbor's."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 34:24",
+      "verse_text": "For I will cast out nations before you and enlarge your borders; no one shall covet your land, when you go up to appear before the LORD your God three times in the year."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 5:21",
+      "verse_text": "And you shall not covet your neighbor's wife. And you shall not desire your neighbor's house, his field, or his male servant, or his female servant, his ox, or his donkey, or anything that is your neighbor's."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 7:25",
+      "verse_text": "The carved images of their gods you shall burn with fire. You shall not covet the silver or the gold that is on them or take it for yourselves."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Jos",
+      "reference": "Jos 7:21",
+      "verse_text": "when I saw among the spoil a beautiful cloak from Shinar, and 200 shekels of silver, and a bar of gold weighing 50 shekels, then I coveted them and took them."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 20:20",
+      "verse_text": "Because he knew no contentment in his belly, he will not let anything in which he delights escape him."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 19:10",
+      "verse_text": "More to be desired are they than gold, even much fine gold; sweeter also than honey and drippings of the honeycomb."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 39:11",
+      "verse_text": "When you discipline a man with rebukes for sin, you consume like a moth what is dear to him; surely all mankind is a mere breath. Selah"
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 68:16",
+      "verse_text": "Why do you look with hatred, O many-peaked mountain, at the mount that God desired for his abode, yes, where the LORD will dwell forever?"
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 6:25",
+      "verse_text": "Do not desire her beauty in your heart, and do not let her capture you with her eyelashes;"
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Pro",
+      "reference": "Pro 12:12",
+      "verse_text": "Whoever is wicked covets the spoil of evildoers, but the root of the righteous bears fruit."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 2:3",
+      "verse_text": "As an apple tree among the trees of the forest, so is my beloved among the young men. With great delight I sat in his shadow, and his fruit was sweet to my taste."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 1:29",
+      "verse_text": "For they shall be ashamed of the oaks that you desired; and you shall blush for the gardens that you have chosen."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 44:9",
+      "verse_text": "All who fashion idols are nothing, and the things they delight in do not profit."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 53:2",
+      "verse_text": "For he grew up before him like a young plant, and like a root out of dry ground; he had no form or majesty that we should look at him, and no beauty that we should desire him."
+    },
+    {
+      "term_id": "H2530A",
+      "transliteration": "cha.mad",
+      "testament": "OT",
+      "book": "Mic",
+      "reference": "Mic 2:2",
+      "verse_text": "They covet fields and seize them, and houses, and take them away; they oppress a man and his house, a man and his inheritance."
+    },
+    {
+      "term_id": "H3700",
+      "transliteration": "ka.saph",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 31:30",
+      "verse_text": "And now you have gone away because you longed greatly for your father's house, but why did you steal my gods?"
+    },
+    {
+      "term_id": "H3700",
+      "transliteration": "ka.saph",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 14:15",
+      "verse_text": "You would call, and I would answer you; you would long for the work of your hands."
+    },
+    {
+      "term_id": "H3700",
+      "transliteration": "ka.saph",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 17:12",
+      "verse_text": "He is like a lion eager to tear, as a young lion lurking in ambush."
+    },
+    {
+      "term_id": "H3700",
+      "transliteration": "ka.saph",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 84:2",
+      "verse_text": "My soul longs, yes, faints for the courts of the Lord; my heart and flesh sing for joy to the living God."
+    },
+    {
+      "term_id": "H3700",
+      "transliteration": "ka.saph",
+      "testament": "OT",
+      "book": "Zep",
+      "reference": "Zep 2:1",
+      "verse_text": "Gather together, yes, gather, O shameless nation,"
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 5:5",
+      "verse_text": "The hungry eat his harvest, and he takes it even out of thorns, and the thirsty pant after his wealth."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 7:2",
+      "verse_text": "Like a slave who longs for the shadow, and like a hired hand who looks for his wages,"
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Job",
+      "reference": "Job 36:20",
+      "verse_text": "Do not long for the night, when peoples vanish in their place."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 119:131",
+      "verse_text": "I open my mouth and pant, because I long for your commandments."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Ecc",
+      "reference": "Ecc 1:5",
+      "verse_text": "The sun rises, and the sun goes down, and hastens to the place where it rises."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 42:14",
+      "verse_text": "For a long time I have held my peace; I have kept still and restrained myself; now I will cry out like a woman in labor; I will gasp and pant."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 2:24",
+      "verse_text": "a wild donkey used to the wilderness, in her heat sniffing the wind! Who can restrain her lust? None who seek her need weary themselves; in her month they will find her."
+    },
+    {
+      "term_id": "H7602A",
+      "transliteration": "sha.aph",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 14:6",
+      "verse_text": "The wild donkeys stand on the bare heights; they pant for air like jackals; their eyes fail because there is no vegetation."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 22:2",
+      "verse_text": "He said, 'Take your son, your only son Isaac, whom you love, and go to the land of Moriah, and offer him there as a burnt offering on one of the mountains of which I shall tell you.'"
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 24:67",
+      "verse_text": "Then Isaac brought her into the tent of Sarah his mother and took Rebekah, and she became his wife, and he loved her. So Isaac was comforted after his mother's death."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 29:18",
+      "verse_text": "Jacob loved Rachel. And he said, 'I will serve you seven years for your younger daughter Rachel.'"
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 34:3",
+      "verse_text": "And his soul was drawn to Dinah the daughter of Jacob. He loved the young woman and spoke tenderly to her."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 37:3",
+      "verse_text": "Now Israel loved Joseph more than any other of his sons, because he was the son of his old age. And he made him a robe of many colors."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 20:6",
+      "verse_text": "but showing steadfast love to thousands of those who love me and keep my commandments."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Lev",
+      "reference": "Lev 19:18",
+      "verse_text": "You shall not take vengeance or bear a grudge against the sons of your own people, but you shall love your neighbor as yourself: I am the LORD."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 6:5",
+      "verse_text": "You shall love the LORD your God with all your heart and with all your soul and with all your might."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 7:13",
+      "verse_text": "He will love you, bless you, and multiply you."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 18:1",
+      "verse_text": "As soon as he had finished speaking to Saul, the soul of Jonathan was knit to the soul of David, and Jonathan loved him as his own soul."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 13:1",
+      "verse_text": "Now Absalom, David's son, had a beautiful sister, whose name was Tamar. And after a time Amnon, David's son, loved her."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 3:3",
+      "verse_text": "Solomon loved the LORD, walking in the statutes of David his father."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "1Ki",
+      "reference": "1Ki 10:9",
+      "verse_text": "Blessed be the LORD your God, who has delighted in you and set you on the throne of Israel! Because the LORD loved Israel forever."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 11:7",
+      "verse_text": "For the LORD is righteous; he loves righteous deeds; the upright shall behold his face."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 33:5",
+      "verse_text": "He loves righteousness and justice; the earth is full of the steadfast love of the LORD."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 116:1",
+      "verse_text": "I love the LORD, because he has heard my voice and my pleas for mercy."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 119:97",
+      "verse_text": "Oh how I love your law! It is my meditation all the day."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 1:7",
+      "verse_text": "Tell me, you whom my soul loves, where you pasture your flock, where you make it lie down at noon."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 3:1",
+      "verse_text": "On my bed by night I sought him whom my soul loves; I sought him, but found him not."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 43:4",
+      "verse_text": "Because you are precious in my eyes, and honored, and I love you, I give men in return for you, peoples in exchange for your life."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 31:3",
+      "verse_text": "the LORD appeared to him from far away. I have loved you with an everlasting love; therefore I have continued my faithfulness to you."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 11:1",
+      "verse_text": "When Israel was a child, I loved him, and out of Egypt I called my son."
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Mic",
+      "reference": "Mic 6:8",
+      "verse_text": "He has told you, O man, what is good; and what does the LORD require of you but to do justice, and to love kindness, and to walk humbly with your God?"
+    },
+    {
+      "term_id": "H0157G",
+      "transliteration": "a.hev",
+      "testament": "OT",
+      "book": "Mal",
+      "reference": "Mal 1:2",
+      "verse_text": "I have loved you, says the LORD. But you say, 'How have you loved us?' Is not Esau Jacob's brother? declares the LORD. Yet I have loved Jacob"
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Gen",
+      "reference": "Gen 31:39",
+      "verse_text": "What was torn by wild beasts I did not bring to you. I bore the loss of it myself. From my hand you required it."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 2:15",
+      "verse_text": "When Pharaoh heard of it, he sought to kill Moses. But Moses fled from Pharaoh and stayed in the land of Midian."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 33:7",
+      "verse_text": "Now Moses used to take the tent and pitch it outside the camp, far off from the camp, and he called it the tent of meeting. And everyone who sought the LORD would go out to the tent of meeting."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 13:14",
+      "verse_text": "But now your kingdom shall not continue. The LORD has sought out a man after his own heart."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 12:16",
+      "verse_text": "David therefore sought God on behalf of the child. And David fasted and went in and lay all night on the ground."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 21:1",
+      "verse_text": "Now there was a famine in the days of David for three years, year after year. And David sought the face of the LORD."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 27:4",
+      "verse_text": "One thing have I asked of the LORD, that will I seek after: that I may dwell in the house of the LORD all the days of my life."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 40:16",
+      "verse_text": "But may all who seek you rejoice and be glad in you."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 3:1",
+      "verse_text": "On my bed by night I sought him whom my soul loves; I sought him, but found him not."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 3:2",
+      "verse_text": "I will rise now and go about the city, in the streets and in the squares; I will seek him whom my soul loves. I sought him, but found him not."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Song",
+      "reference": "Song 5:6",
+      "verse_text": "I opened to my beloved, but my beloved had turned and gone. My soul failed me when he spoke. I sought him, but found him not."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Isa",
+      "reference": "Isa 51:1",
+      "verse_text": "Listen to me, you who pursue righteousness, you who seek the LORD."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 29:13",
+      "verse_text": "You will seek me and find me, when you seek me with all your heart."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Jer",
+      "reference": "Jer 5:1",
+      "verse_text": "Run to and fro through the streets of Jerusalem, look and take note! Search her squares to see if you can find a man, one who does justice and seeks truth, that I may pardon her."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 22:30",
+      "verse_text": "And I sought for a man among them who should build up the wall and stand in the breach before me for the land, that I should not destroy it, but I found none."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 34:16",
+      "verse_text": "I will seek the lost, and I will bring back the strayed, and I will bind up the injured, and I will strengthen the weak."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 9:3",
+      "verse_text": "Then I turned my face to the Lord God, seeking him by prayer and pleas for mercy with fasting and sackcloth and ashes."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Hos",
+      "reference": "Hos 3:5",
+      "verse_text": "Afterward the children of Israel shall return and seek the LORD their God, and David their king."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Zep",
+      "reference": "Zep 2:3",
+      "verse_text": "Seek the LORD, all you humble of the land, who do his just commands; seek righteousness; seek humility."
+    },
+    {
+      "term_id": "H1245",
+      "transliteration": "ba.qash",
+      "testament": "OT",
+      "book": "Mal",
+      "reference": "Mal 2:15",
+      "verse_text": "Did he not make them one, with a portion of the Spirit in their union? And what was the one God seeking? Godly offspring."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Exo",
+      "reference": "Exo 2:6",
+      "verse_text": "When she opened it, she saw the child, and behold, the baby was crying. She took pity on him and said, 'This is one of the Hebrews' children.'"
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Deu",
+      "reference": "Deu 13:8",
+      "verse_text": "you shall not yield to him or listen to him, nor shall your eye pity him, nor shall you spare him, nor shall you conceal him."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 15:3",
+      "verse_text": "Now go and strike Amalek and devote to destruction all that they have. Do not spare them, but kill both man and woman, child and infant, ox and sheep, camel and donkey."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "1Sa",
+      "reference": "1Sa 15:9",
+      "verse_text": "But Saul and the people spared Agag and the best of the sheep and of the oxen and of the fattened calves and the lambs, and all that was good, and would not utterly destroy them."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 12:4",
+      "verse_text": "Now there came a traveler to the rich man, and he was unwilling to take one of his own flock or herd to prepare for the guest who had come to him, but he took the poor man's lamb and prepared it for the man who had come to him."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "2Sa",
+      "reference": "2Sa 12:6",
+      "verse_text": "and he shall restore the lamb fourfold, because he did this thing, and because he had no pity."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "2Ch",
+      "reference": "2Ch 36:15",
+      "verse_text": "The LORD, the God of their fathers, sent persistently to them by his messengers, because he had compassion on his people and on his dwelling place."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Psa",
+      "reference": "Psa 72:13",
+      "verse_text": "He has pity on the weak and the needy, and saves the lives of the needy."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 5:11",
+      "verse_text": "Therefore, as I live, declares the Lord GOD, surely, because you have defiled my sanctuary with all your detestable things and with all your abominations, therefore I will withdraw. My eye will not spare, and I will have no pity."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Eze",
+      "reference": "Eze 16:5",
+      "verse_text": "No eye pitied you, to do any of these things to you out of compassion for you, but you were cast out on the open field."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Joe",
+      "reference": "Joe 2:18",
+      "verse_text": "Then the LORD became jealous for his land and had pity on his people."
+    },
+    {
+      "term_id": "H2550",
+      "transliteration": "cha.mal",
+      "testament": "OT",
+      "book": "Mal",
+      "reference": "Mal 3:17",
+      "verse_text": "They shall be mine, says the LORD of hosts, in the day when I make up my treasured possession, and I will spare them as a man spares his son who serves him."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 4:17",
+      "verse_text": "The sentence is by the decree of the watchers, the decision by the word of the holy ones, to the end that the living may know that the Most High rules the kingdom of men and gives it to whom he will."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 4:25",
+      "verse_text": "that you shall be driven from among men, and your dwelling shall be with the beasts of the field. You shall be made to eat grass like an ox, and you shall be wet with the dew of heaven, and seven periods of time shall pass over you, till you know that the Most High rules the kingdom of men and gives it to whom he will."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 4:32",
+      "verse_text": "and you shall be driven from among men, and your dwelling shall be with the beasts of the field. And you shall be made to eat grass like an ox, and seven periods of time shall pass over you, until you know that the Most High rules the kingdom of men and gives it to whom he will."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 4:35",
+      "verse_text": "all the inhabitants of the earth are accounted as nothing, and he does according to his will among the host of heaven and among the inhabitants of the earth; and none can stay his hand or say to him, 'What have you done?'"
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 5:19",
+      "verse_text": "And because of the greatness that he gave him, all peoples, nations, and languages trembled and feared before him. Whom he would, he killed, and whom he would, he kept alive."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 5:21",
+      "verse_text": "He was driven from among the children of mankind, and his mind was made like that of a beast, and his dwelling was with the wild donkeys. He was fed grass like an ox, and his body was wet with the dew of heaven, until he knew that the Most High God rules the kingdom of mankind and sets over it whom he will."
+    },
+    {
+      "term_id": "H6634",
+      "transliteration": "tse.va",
+      "testament": "OT",
+      "book": "Dan",
+      "reference": "Dan 7:19",
+      "verse_text": "Then I desired to know the truth about the fourth beast, which was different from all the rest, exceedingly terrifying."
+    }
+  ],
+  "cross_registry_links": [
+    {
+      "linked_word": "sorrow",
+      "linked_registry_id": "154",
+      "connection_type": "shared_term",
+      "connecting_term": "a.viy.yo.nah",
+      "note": "a.viy.yo.nah (H0060) is owned by sorrow (154). Listed as XREF in Part 1."
+    },
+    {
+      "linked_word": "grief",
+      "linked_registry_id": "071",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "na.cham / parakaleō",
+      "note": "Comfort/consolation sense of na.cham (registry 135 repentance) and parakaleō (G3870) overlap with grief (071) in the comfort-response context."
+    },
+    {
+      "linked_word": "repentance",
+      "linked_registry_id": "135",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "epithumeō / thelō / ba.char",
+      "note": "Desire and will vocabulary (epithumeō, thelō, ba.char) overlaps with repentance register in turning/choosing contexts."
+    },
+    {
+      "linked_word": "guilt",
+      "linked_registry_id": "073",
+      "connection_type": "shared_verse",
+      "connecting_term": "cha.mad",
+      "note": "cha.mad (H2530A) appears in the 10th commandment (Exo 20:17; Deu 5:21) — core guilt/coveting intersection."
+    },
+    {
+      "linked_word": "peace",
+      "linked_registry_id": "117",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "eudokia / ra.tson",
+      "note": "eudokia (goodwill/pleasure) and ra.tson (favor/acceptance/will) both appear in peace contexts (Luk 2:14; Psa 30:5)."
+    },
+    {
+      "linked_word": "fear",
+      "linked_registry_id": "061",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "prosdokia",
+      "note": "prosdokia (G4329, owned by anxiety 007) overlaps with fear registry in apprehension/expectation sense."
+    },
+    {
+      "linked_word": "joy",
+      "linked_registry_id": "097",
+      "connection_type": "shared_verse",
+      "connecting_term": "cha.phets / eudokia",
+      "note": "cha.phets (delighting in, H2654A/H2655) and eudokia co-occur with joy vocabulary across Psalms and NT."
+    },
+    {
+      "linked_word": "love",
+      "linked_registry_id": "TBD",
+      "connection_type": "shared_root",
+      "connecting_term": "a.hev / epithumia",
+      "note": "a.hev (H0157G) is the primary Hebrew love term and sits within desire registry under the 'lover' sub-gloss. The desire-love boundary will be a significant Phase 2 and synthesis question."
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "term_id": "H4262",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H4261 corrected to H4262 (mach.mod desirable). mach.mad (H4261) confirmed as separate lemma — not a consolidation candidate."
+    },
+    {
+      "term_id": "H2530B",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H2532 corrected to H2530B (cha.mu.dah desirable thing). chem.dah is H2532A — distinct lettered entry."
+    },
+    {
+      "term_id": "H2655",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H2654 corrected to H2655 (cha.phets delighting, adjective/participle). to delight in is H2654A (verb); to sway is H2654B (1 occurrence). Three entries from same root cluster captured across two source file blocks."
+    },
+    {
+      "term_id": "H2837",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H2836 corrected to H2837 (che.sheq noun). cha.shaq verb entries are H2836A and H2836B."
+    },
+    {
+      "term_id": "H5690",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H5689 corrected to H5690 (a.gav lust noun)."
+    },
+    {
+      "term_id": "H0015",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H0014 corrected to H0015 (a.vi interjection particle)."
+    },
+    {
+      "term_id": "H2530A",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H2530 corrected to H2530A (cha.mad to desire verb)."
+    },
+    {
+      "term_id": "H6634",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional H6633 corrected to H6634 (tse.va to will, Aramaic)."
+    },
+    {
+      "term_id": "H1697H",
+      "flag": "STRONGS_RECONCILED",
+      "description": "Source confirms H1697H (da.var word: speaking sub-gloss)."
+    },
+    {
+      "term_id": "H7602A",
+      "flag": "STRONGS_RECONCILED",
+      "description": "Source confirms H7602A (sha.aph to long for sub-gloss)."
+    },
+    {
+      "term_id": "H0157G",
+      "flag": "STRONGS_RECONCILED",
+      "description": "Source confirms H0157G (a.hev to love: lover sub-gloss)."
+    },
+    {
+      "term_id": "G3715",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional G3713 corrected to G3715 (orexis lust/desire noun). oregō (to aspire) confirmed as G3713."
+    },
+    {
+      "term_id": "PENDING-043-oregō",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional PENDING-043-oregō confirmed as G3713 (oregō to aspire). Provisional key retained in term_id pending MTI update; strongs_number field holds the correct value G3713."
+    },
+    {
+      "term_id": "G1938",
+      "flag": "STRONGS_RECONCILED",
+      "description": "MTI provisional PENDING-043-epithumetes corrected to G1938 (epithumētēs one who desires)."
+    },
+    {
+      "term_id": "PENDING-043-epithumetos",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "STEP returns no analysis for epithumētos. Term identity confirmed from STEP list only. Strong's provisional."
+    },
+    {
+      "term_id": "G4658",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "STEP returns no analysis for potheinos. Term identity confirmed from STEP list only."
+    },
+    {
+      "term_id": "PENDING-043-epithumema",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "STEP returns no analysis for epithumēma. Term identity confirmed from STEP list only. Strong's provisional."
+    },
+    {
+      "term_id": "H5375O",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "na.sa sub-gloss H5375O word analysis present (meaning block extracted). Clarification: NO_VERSES applies (see separate flag), not NO_WORD_ANALYSIS."
+    },
+    {
+      "term_id": "PENDING-043-epithumetos",
+      "flag": "NO_VERSES",
+      "description": "STEP returns no verses for epithumētos."
+    },
+    {
+      "term_id": "G4658",
+      "flag": "NO_VERSES",
+      "description": "STEP returns no verses for potheinos."
+    },
+    {
+      "term_id": "PENDING-043-epithumema",
+      "flag": "NO_VERSES",
+      "description": "STEP returns no verses for epithumēma."
+    },
+    {
+      "term_id": "H5375O",
+      "flag": "NO_VERSES",
+      "description": "659 occurrences across 20+ na.sa sub-glosses. Researcher deliberately omitted all verses — only the trust/desire sub-gloss H5375O is relevant here, and the verse-set cannot be cleanly separated from the parent term without full STEP extraction of all sub-glosses. PHASE 2 NOTE: If Session B analysis produces weak conclusions or unanswered questions regarding na.sa, the researcher must conduct additional independent research on this term before drawing synthesis-level conclusions."
+    },
+    {
+      "term_id": "H1697H",
+      "flag": "NO_VERSES",
+      "description": "1381 occurrences across multiple da.var sub-glosses. Researcher deliberately omitted verses due to volume and peripheral semantic fit. Only the speaking sub-gloss H1697H is included here. PHASE 2 NOTE: If Session B analysis produces weak conclusions or unanswered questions regarding da.var, the researcher must conduct additional independent research on this term before drawing synthesis-level conclusions."
+    },
+    {
+      "term_id": "H3970",
+      "flag": "THIN_DATA",
+      "description": "ma.a.vay occurs about 1x. Single verse record (Psa 140:8). Assessments will be limited."
+    },
+    {
+      "term_id": "H0015",
+      "flag": "THIN_DATA",
+      "description": "a.vi occurs about 1x. Single verse record (Job 34:36). Interjection particle — meaning is clear but verse evidence minimal."
+    },
+    {
+      "term_id": "H1942",
+      "flag": "THIN_DATA",
+      "description": "hav.vah primary sense is destruction/calamity rather than desire proper (sense 1a in bad sense only). Semantic fit to desire is partial; primary range is ruin/calamity."
+    },
+    {
+      "term_id": "G2212",
+      "flag": "THIN_DATA",
+      "description": "zēteō occurrence count not stated in source. Large NT term; selected verse coverage only."
+    },
+    {
+      "term_id": "G1934",
+      "flag": "THIN_DATA",
+      "description": "epizēteō occurrence count not stated in source. Selected verse coverage only."
+    },
+    {
+      "term_id": "G2309",
+      "flag": "THIN_DATA",
+      "description": "thelō occurrence count not stated in source. Very large NT term — will/desire distinction from boulomai noted in LSJ. Selected verse coverage only."
+    },
+    {
+      "term_id": "G2307",
+      "flag": "THIN_DATA",
+      "description": "thelēma occurrence count not stated in source. Dominant NT will-of-God term. Selected verse coverage only."
+    },
+    {
+      "term_id": "G4658",
+      "flag": "THIN_DATA",
+      "description": "potheinos occurrence count unknown. No STEP data available."
+    },
+    {
+      "term_id": "PENDING-043-epithumetos",
+      "flag": "THIN_DATA",
+      "description": "epithumētos occurrence count unknown. No STEP data available."
+    },
+    {
+      "term_id": "PENDING-043-epithumema",
+      "flag": "THIN_DATA",
+      "description": "epithumēma occurrence count unknown. No STEP data available."
+    },
+    {
+      "term_id": "H7592",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "sha.al occurs about 179x. 17 verses recorded (~9% coverage). Selected for representativeness across key ask/petition/seek senses."
+    },
+    {
+      "term_id": "H0977",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "ba.char occurs about 171x. 20 verses recorded (~12% coverage). Selected to cover human and divine choosing."
+    },
+    {
+      "term_id": "H0157G",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "a.hev occurs about 211x. 24 verses recorded (~11% coverage). Selected to cover human love, divine love, and lover/friend senses."
+    },
+    {
+      "term_id": "H1245",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "ba.qash occurs about 225x. 20 verses recorded (~9% coverage). Selected to cover seeking God, seeking life, and the demand sense."
+    },
+    {
+      "term_id": "H2550",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "cha.mal occurs about 41x. 12 verses recorded (~29% — above 20% threshold). Flagged for awareness."
+    },
+    {
+      "term_id": "H2836B",
+      "flag": "CONSOLIDATION_CANDIDATE",
+      "description": "che.sheq (H2837), cha.shaq to desire (H2836A), and cha.shaq to connect/fillet (H2836B) share the same root. H2836B is architectural (fillet sense, Exo tabernacle passages only) — likely excludable from inner-being analysis at Phase 2. Both H2836A and H2836B retained as separate entries pending Phase 2 review."
+    },
+    {
+      "term_id": "H0157G",
+      "flag": "ANOMALY_NOTE",
+      "description": "a.hev (to love: lover, H0157G) is a boundary term between desire and love registries. With 211 occurrences and sub-glosses for human love, divine love, and appetite/craving, it is under-extracted here. The love registry (TBD) will need to treat this as a primary owned term. Also_used_in for love registry should be added when that registry is processed."
+    },
+    {
+      "term_id": "H2550",
+      "flag": "ANOMALY_NOTE",
+      "description": "cha.mal (to spare/pity/compassion) fits the desire word set peripherally — it is the opposite of desire in some contexts (not desiring to destroy). Its primary sense is pity/compassion rather than desire. Phase 2 should assess whether it contributes to the desire dataset."
+    }
+  ]
+}

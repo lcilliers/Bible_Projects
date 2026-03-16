@@ -1,0 +1,600 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "phase": "Phase 1 \u2014 STEP Data Assimilation",
+    "produced_date": "2026-03-06",
+    "source_file": "word_humility.md",
+    "specification": "WA-Phase1-Specification V2"
+  },
+  "word_identity": {
+    "word": "humility",
+    "registry_id": 80,
+    "source_list": "High Confidence",
+    "category_label": "Dispositional/Character",
+    "inference_note": null
+  },
+  "qualification_assessment": {
+    "qualification_verdict": "QUALIFIES",
+    "qualification_basis": "Multiple terms name humility as an explicit inner disposition of the person: tapeinofrosun\u0113 (lowliness of mind, Phil 2:3), a.na.vah (inner gentleness/humility, Pro 15:33; 22:4), a.nav (the meek/humble as a named category of persons before God). The term set spans the full inner-being range \u2014 the settled disposition of lowliness, the active exercise of humility in relational conduct, and humility as the condition that God responds to with grace (Jam 4:6; 1Pe 5:5). Christ is explicitly named as the model of the inner state: 'learn from me, for I am gentle and lowly in heart' (tapeinofrosun\u0113/tapeinos, Mat 11:29).",
+    "qualification_confidence": "HIGH",
+    "qualification_flag": null
+  },
+  "term_inventory": [
+    {
+      "transliteration": "a.na.vah",
+      "strongs_number": "H6038",
+      "language": "Hebrew",
+      "anchor_gloss": "gentleness / humility",
+      "word_type": "noun",
+      "anchor_grammatical_form": "noun common singular feminine absolute",
+      "occurrence_count": 5,
+      "meaning_summary": "Humility, gentleness, meekness \u2014 the inner disposition of lowliness. Derived from a.nav (H6035, the humble person). The source file lists a.na.vah (\u05e2\u05b2\u05e0\u05b8\u05d5\u05b8\u05d4) and an.vah (\u05e2\u05b7\u05e0\u05b0\u05d5\u05b8\u05d4) as separate entries but both carry H6038 and are variant spellings of the same lemma. an.vah is flagged 'Exclude word This word only' in STEP \u2014 treated here as a variant form consolidated under a.na.vah.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "a.nav",
+      "strongs_number": "H6035",
+      "language": "Hebrew",
+      "anchor_gloss": "poor / humble / meek",
+      "word_type": "adjective",
+      "anchor_grammatical_form": "adjective common singular masculine absolute",
+      "occurrence_count": 20,
+      "meaning_summary": "Humble, meek, poor, afflicted \u2014 the person characterised by lowliness before God. Covers both the humble inner disposition (Psa 25:9 \u2014 God leads the humble) and the social condition of the poor/afflicted (Job 24:4; Amo 2:7). The inner-being sub-sense is the person whose spirit is lowly and who looks to God; the socioeconomic sub-sense is the materially poor. These overlap but are distinct.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "tsa.nu.a",
+      "strongs_number": "H6847",
+      "language": "Hebrew",
+      "anchor_gloss": "humble / modest",
+      "word_type": "adjective",
+      "anchor_grammatical_form": "adjective common singular masculine absolute",
+      "occurrence_count": 1,
+      "meaning_summary": "Modest, humble \u2014 unassuming, reserved. Single occurrence: Pro 11:2. The root tsa.na (to be modest/reserved) gives this term a behavioural-discretion dimension \u2014 humility as self-contained restraint.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "tapeinofrosun\u0113",
+      "strongs_number": "G5012",
+      "language": "Greek",
+      "anchor_gloss": "humility / lowliness of mind",
+      "word_type": "noun",
+      "anchor_grammatical_form": "Noun Genitive Singular Feminine",
+      "occurrence_count": 7,
+      "meaning_summary": "Humility of mind, lowliness \u2014 the inner disposition of considering others more significant than oneself (Phil 2:3). Compound: tapeinos (lowly) + phren (mind/disposition). The NT's primary term for the inner disposition of humility. Note: standard spelling is tapeinophrosun\u0113; the source file uses tapeinofrosun\u0113 consistently.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "tapeinos",
+      "strongs_number": "G5011",
+      "language": "Greek",
+      "anchor_gloss": "lowly / humble",
+      "word_type": "adjective",
+      "anchor_grammatical_form": "Adjective Nominative Singular Masculine",
+      "occurrence_count": 8,
+      "meaning_summary": "Lowly, humble, of low degree \u2014 used of persons in low social position and of the inner disposition of lowliness. Christ applies it to himself: 'I am gentle and lowly (tapeinos) in heart' (Mat 11:29). God gives grace to the tapeinos (Jam 4:6; 1Pe 5:5). The Magnificat uses it of those God exalts (Luk 1:52).",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "praus",
+      "strongs_number": "G4239",
+      "language": "Greek",
+      "anchor_gloss": "gentle / meek",
+      "word_type": "adjective",
+      "anchor_grammatical_form": "Adjective Nominative Plural Masculine",
+      "occurrence_count": 4,
+      "meaning_summary": "Meek, gentle \u2014 power or strength held under control. Not weakness but controlled restraint. Applied to Christ (Mat 11:29; 21:5) and to the blessed (Mat 5:5). LSJ: gentle, mild, tame \u2014 but in NT context carries the sense of strength restrained in service of others.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "praut\u0113s",
+      "strongs_number": "G4236",
+      "language": "Greek",
+      "anchor_gloss": "gentleness / meekness",
+      "word_type": "noun",
+      "anchor_grammatical_form": "Noun Dative Singular Feminine",
+      "occurrence_count": 4,
+      "meaning_summary": "Gentleness, meekness \u2014 the noun form of praus. Appears in paraenetic (ethical instruction) contexts. Data quality note: the source file lists praut\u0113s (G4236) twice with identical verse lists \u2014 both occurrences are the same term block repeated. praot\u0113s (G4240) is a variant spelling of the same word listed separately.",
+      "causative_stem_present": false,
+      "divine_subject_possible": false,
+      "somatic_dimension": false
+    },
+    {
+      "transliteration": "praot\u0113s",
+      "strongs_number": "G4240",
+      "language": "Greek",
+      "anchor_gloss": "gentleness / meekness",
+      "word_type": "noun",
+      "anchor_grammatical_form": "Noun Dative Singular Feminine",
+      "occurrence_count": 6,
+      "meaning_summary": "Gentleness, meekness \u2014 variant spelling of praut\u0113s (G4236). Both G4236 and G4240 name the same quality. The distinction in the source file reflects manuscript spelling variation rather than a semantic difference. Fruit of the Spirit (Gal 5:23); spirit of gentleness in correction (Gal 6:1; 2Ti 2:25); the gentleness of Christ (2Cor 10:1).",
+      "causative_stem_present": false,
+      "divine_subject_possible": true,
+      "somatic_dimension": false
+    }
+  ],
+  "related_words_index": [
+    {
+      "parent_term": "a.na.vah",
+      "related_words": [
+        {
+          "transliteration": "a.nav",
+          "gloss": "humble/meek person",
+          "registry_crossref": null,
+          "root_relationship": "root adjective"
+        },
+        {
+          "transliteration": "o.ni",
+          "gloss": "affliction",
+          "registry_crossref": {
+            "registry_id": 72,
+            "word": "grief"
+          },
+          "root_relationship": "same root cluster \u2014 affliction that produces humility"
+        },
+        {
+          "transliteration": "a.nah",
+          "gloss": "to afflict / to humble",
+          "registry_crossref": null,
+          "root_relationship": "root verb"
+        }
+      ]
+    },
+    {
+      "parent_term": "tapeinos",
+      "related_words": [
+        {
+          "transliteration": "tapeinofrosun\u0113",
+          "gloss": "humility of mind",
+          "registry_crossref": null,
+          "root_relationship": "compound noun"
+        },
+        {
+          "transliteration": "tapeinoo",
+          "gloss": "to humble / to abase",
+          "registry_crossref": null,
+          "root_relationship": "root verb"
+        },
+        {
+          "transliteration": "tapeinophrosun\u0113",
+          "gloss": "standard spelling variant",
+          "registry_crossref": null,
+          "root_relationship": "spelling variant"
+        }
+      ]
+    },
+    {
+      "parent_term": "praus",
+      "related_words": [
+        {
+          "transliteration": "praut\u0113s",
+          "gloss": "gentleness",
+          "registry_crossref": null,
+          "root_relationship": "derived noun"
+        },
+        {
+          "transliteration": "praot\u0113s",
+          "gloss": "gentleness (variant)",
+          "registry_crossref": null,
+          "root_relationship": "variant spelling of derived noun"
+        }
+      ]
+    }
+  ],
+  "verse_classification": [
+    {
+      "term": "a.na.vah",
+      "reference": "2Sa 22:36",
+      "classification": "CORE",
+      "reason": "your gentleness made me great \u2014 divine gentleness/humility as the source of the psalmist's elevation; the inner quality of God as the cause of human flourishing"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Pro 15:33",
+      "classification": "CORE",
+      "reason": "humility comes before honour \u2014 a.na.vah as the inner disposition that precedes and enables divine honour"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Pro 18:12",
+      "classification": "CORE",
+      "reason": "humility comes before honour \u2014 direct pairing of a.na.vah with the outcome of honour; inner disposition named as precondition"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Pro 22:4",
+      "classification": "CORE",
+      "reason": "the reward for humility and fear of the Lord \u2014 a.na.vah named alongside the fear of the Lord as the combined inner-dispositional base for riches, honour, and life"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Zep 2:3",
+      "classification": "CORE",
+      "reason": "seek humility \u2014 a.na.vah as a quality to be actively sought; the humble are addressed as a named community before God"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Psa 18:35",
+      "classification": "CORE",
+      "reason": "your gentleness made me great \u2014 parallel text of 2Sa 22:36; an.vah variant spelling; same inner quality of divine gentleness"
+    },
+    {
+      "term": "a.na.vah",
+      "reference": "Psa 45:4",
+      "classification": "CORE",
+      "reason": "ride out victoriously for the cause of truth and meekness and righteousness \u2014 a.na.vah/an.vah as a named quality of the royal warrior; humility as an inner disposition in the exercise of power"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Num 12:3",
+      "classification": "CORE",
+      "reason": "Moses was very meek, more than all people \u2014 the definitive OT inner-being statement about humility as a named character quality of a person"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 25:9",
+      "classification": "CORE",
+      "reason": "He leads the humble in what is right and teaches the humble his way \u2014 a.nav as the inner disposition that opens a person to divine guidance"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 34:2",
+      "classification": "CORE",
+      "reason": "let the humble hear and be glad \u2014 a.nav as the inner state that makes the person receptive to good news from God"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 37:11",
+      "classification": "CORE",
+      "reason": "the meek shall inherit the land \u2014 a.nav as the named inner disposition whose outcome is inheritance; the eschatological promise of the humble"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 69:32",
+      "classification": "CORE",
+      "reason": "when the humble see it they will be glad \u2014 a.nav as the receptive inner state that registers God's action with joy"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 76:9",
+      "classification": "CORE",
+      "reason": "to save all the humble of the earth \u2014 a.nav as the inner disposition that defines those who are saved by divine judgment"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 147:6",
+      "classification": "CORE",
+      "reason": "the Lord lifts up the humble \u2014 a.nav as the inner disposition that elicits divine lifting-up"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 149:4",
+      "classification": "CORE",
+      "reason": "he adorns the humble with salvation \u2014 a.nav as the inner disposition that receives divine adornment"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Pro 3:34",
+      "classification": "CORE",
+      "reason": "to the humble he gives favour \u2014 a.nav as the inner disposition that receives divine favour; paralleled by scorn given to scorners"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Pro 16:19",
+      "classification": "CORE",
+      "reason": "better to be of a lowly spirit with the poor than to divide the spoil with the proud \u2014 a.nav/lowly spirit as the preferred inner disposition regardless of material outcome"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Isa 11:4",
+      "classification": "CORE",
+      "reason": "with equity he shall decide for the meek of the earth \u2014 a.nav as the inner-dispositional category that receives the Messianic king's just judgment"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Isa 29:19",
+      "classification": "CORE",
+      "reason": "the meek shall obtain fresh joy in the Lord \u2014 a.nav as the inner disposition whose eschatological outcome is joy in God"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Isa 61:1",
+      "classification": "CORE",
+      "reason": "to bring good news to the poor/humble \u2014 a.nav as the primary recipient of the anointed one's proclamation; inner-dispositional humility as the condition of receptivity to gospel"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Job 24:4",
+      "classification": "PERIPHERAL",
+      "reason": "poor of the earth hide \u2014 socioeconomic register; no inner humility disposition named"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 9:12",
+      "classification": "PERIPHERAL",
+      "reason": "cry of the afflicted \u2014 social justice register; poor/afflicted as socioeconomic category"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 10:12",
+      "classification": "PERIPHERAL",
+      "reason": "forget not the afflicted \u2014 poor as the oppressed social category"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 10:17",
+      "classification": "CORE",
+      "reason": "you hear the desire of the afflicted \u2014 a.nav as the inner state whose desire God attends to; the humility-before-God dimension is present alongside the affliction"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Psa 22:26",
+      "classification": "CORE",
+      "reason": "the afflicted shall eat and be satisfied \u2014 a.nav as both the afflicted and the humble; those who seek God are parallel to the humble"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Pro 14:21",
+      "classification": "PERIPHERAL",
+      "reason": "generous to the poor \u2014 socioeconomic register; no inner humility disposition named"
+    },
+    {
+      "term": "a.nav",
+      "reference": "Amo 2:7",
+      "classification": "PERIPHERAL",
+      "reason": "trample the head of the poor \u2014 social justice register; oppression of the materially poor"
+    },
+    {
+      "term": "tsa.nu.a",
+      "reference": "Pro 11:2",
+      "classification": "CORE",
+      "reason": "with the humble is wisdom \u2014 tsa.nu.a as the inner disposition paired with wisdom; the modest/reserved person as the one who holds wisdom"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Act 20:19",
+      "classification": "CORE",
+      "reason": "serving the Lord with all humility \u2014 tapeinofrosun\u0113 as the inner disposition governing apostolic service; the all (all humility) indicates totality of the inner posture"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Eph 4:2",
+      "classification": "CORE",
+      "reason": "with all humility and gentleness \u2014 tapeinofrosun\u0113 as the first in the list of inner dispositions that enable relational unity; appears alongside praot\u0113s in the same verse"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Phili 2:3",
+      "classification": "CORE",
+      "reason": "in humility count others more significant than yourselves \u2014 tapeinofrosun\u0113 as the inner disposition directly defined: the cognitive-evaluative act of placing others above self"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Col 2:18",
+      "classification": "CORE",
+      "reason": "insisting on asceticism and worship of angels \u2014 false humility; tapeinofrosun\u0113 used of the appearance of humility that masks pride; the entry's negative case"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Col 2:23",
+      "classification": "CORE",
+      "reason": "appearance of wisdom in promoting self-made religion and asceticism and severity to the body \u2014 self-imposed tapeinofrosun\u0113 as no value; the inner disposition must be genuinely God-oriented not self-manufactured"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "Col 3:12",
+      "classification": "CORE",
+      "reason": "put on humility, meekness, and patience \u2014 tapeinofrosun\u0113 as a garment to be deliberately worn; the inner disposition is cultivated, not merely received"
+    },
+    {
+      "term": "tapeinofrosun\u0113",
+      "reference": "1Pe 5:5",
+      "classification": "CORE",
+      "reason": "clothe yourselves with humility toward one another \u2014 tapeinofrosun\u0113 as a relational garment; the inner disposition expressed toward each other; appears alongside tapeinos in the grace-to-the-humble quotation"
+    },
+    {
+      "term": "praus",
+      "reference": "Mat 5:5",
+      "classification": "CORE",
+      "reason": "blessed are the meek, for they shall inherit the earth \u2014 praus as the inner disposition that receives the beatitude and the eschatological promise"
+    },
+    {
+      "term": "praus",
+      "reference": "Mat 21:5",
+      "classification": "CORE",
+      "reason": "your king is coming to you, humble, and mounted on a donkey \u2014 praus applied to Christ's triumphal entry; meekness as the defining quality of messianic kingship"
+    },
+    {
+      "term": "praus",
+      "reference": "1Ti 6:11",
+      "classification": "CORE",
+      "reason": "pursue righteousness, godliness, faith, love, steadfastness, gentleness \u2014 praut\u0113s in the pursuit list; inner disposition of meekness as a named quality to be actively pursued"
+    },
+    {
+      "term": "praus",
+      "reference": "1Pe 3:4",
+      "classification": "CORE",
+      "reason": "the hidden person of the heart with the imperishable beauty of a gentle and quiet spirit \u2014 praus as the inner quality of the hidden person of the heart; explicitly inner-being location"
+    },
+    {
+      "term": "praut\u0113s",
+      "reference": "Tit 3:2",
+      "classification": "CORE",
+      "reason": "to be gentle and to show perfect courtesy toward all people \u2014 praut\u0113s as the inner disposition governing social conduct; gentleness toward all as the relational expression of the inner state"
+    },
+    {
+      "term": "praut\u0113s",
+      "reference": "Jam 1:21",
+      "classification": "CORE",
+      "reason": "receive with meekness the implanted word \u2014 praut\u0113s as the inner disposition that enables receptive reception of Scripture; humility as the condition of teachability"
+    },
+    {
+      "term": "praut\u0113s",
+      "reference": "Jam 3:13",
+      "classification": "CORE",
+      "reason": "show his works in the meekness of wisdom \u2014 praut\u0113s as the inner disposition from which genuine wisdom-works emerge; the fruit of wisdom is meekness in conduct"
+    },
+    {
+      "term": "praut\u0113s",
+      "reference": "1Pe 3:15",
+      "classification": "CORE",
+      "reason": "do it with gentleness and respect \u2014 praut\u0113s as the inner disposition governing the manner of apologetic witness; the inner state shapes the quality of engagement with opponents"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "1Cor 4:21",
+      "classification": "CORE",
+      "reason": "shall I come with love in a spirit of gentleness \u2014 praot\u0113s as the inner disposition that determines the manner of apostolic presence; the choice of gentleness over severity is an inner-being choice"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "Gal 5:23",
+      "classification": "CORE",
+      "reason": "gentleness, self-control \u2014 praot\u0113s as the ninth fruit of the Spirit; an inner disposition produced by the Spirit's activity"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "Gal 6:1",
+      "classification": "CORE",
+      "reason": "restore him in a spirit of gentleness \u2014 praot\u0113s as the inner disposition governing restorative correction; the spirit of gentleness is the inner state of the one who corrects"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "Eph 4:2",
+      "classification": "CORE",
+      "reason": "with all humility and gentleness, with patience \u2014 praot\u0113s as part of the triad of inner dispositions enabling relational unity; appears alongside tapeinofrosun\u0113 in the same verse"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "Col 3:12",
+      "classification": "CORE",
+      "reason": "compassionate hearts, kindness, humility, meekness, and patience \u2014 praot\u0113s as one of the five garment-virtues in the Colossians 3 list; an inner disposition to be deliberately clothed in"
+    },
+    {
+      "term": "praot\u0113s",
+      "reference": "2Ti 2:25",
+      "classification": "CORE",
+      "reason": "correcting his opponents with gentleness \u2014 praot\u0113s as the inner disposition governing engagement with theological opponents; God may grant repentance through the gentleness of the corrector"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "Mat 11:29",
+      "classification": "CORE",
+      "reason": "I am gentle and lowly in heart \u2014 tapeinos applied to Christ's own inner state; the explicit heart (kardia) location makes this the entry's most direct inner-being statement about humility"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "Luk 1:52",
+      "classification": "CORE",
+      "reason": "exalted those of humble estate \u2014 tapeinos as the named condition of those who receive divine exaltation; the Magnificat's reversal of human hierarchy"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "Rom 12:16",
+      "classification": "CORE",
+      "reason": "do not be haughty, but associate with the lowly \u2014 tapeinos as the named category of people the non-haughty person associates with; the inner disposition of not being haughty is contrasted with the condition of the lowly"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "2Cor 7:6",
+      "classification": "CORE",
+      "reason": "God, who comforts the downcast \u2014 tapeinos as the named state of those whom God specifically comforts; the lowly/downcast inner state is the condition of receptivity to divine comfort"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "2Cor 10:1",
+      "classification": "CORE",
+      "reason": "I who am humble when face to face with you \u2014 tapeinos as a quality Paul claims of himself in person; the inner disposition of lowliness expressed in relational presence"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "Jam 1:9",
+      "classification": "CORE",
+      "reason": "let the lowly brother boast in his exaltation \u2014 tapeinos as the social-inner condition of the low-status believer who is exalted in Christ; the inner state and the social condition converge"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "Jam 4:6",
+      "classification": "CORE",
+      "reason": "God opposes the proud but gives grace to the humble \u2014 tapeinos as the inner disposition that receives divine grace; the foundational statement of the entry's theological claim"
+    },
+    {
+      "term": "tapeinos",
+      "reference": "1Pe 5:5",
+      "classification": "CORE",
+      "reason": "God gives grace to the humble \u2014 tapeinos as the inner disposition that receives divine grace; parallel to Jam 4:6; appears alongside tapeinofrosun\u0113 in the same verse"
+    }
+  ],
+  "cross_registry_links": [
+    {
+      "linked_word": "grief",
+      "linked_registry_id": 72,
+      "connection_type": "shared_root",
+      "connecting_term": "a.na.vah / a.nav share root cluster with o.ni (affliction, H6040) and a.nah (to afflict/humble)",
+      "note": "The Hebrew humility vocabulary is root-related to the affliction vocabulary. a.nav (the humble person) and a.ni/o.ni (the afflicted person) share the same ayin-nun root. The linguistic link suggests humility and grief-as-affliction are related inner states in the Hebrew conceptual field."
+    },
+    {
+      "linked_word": "pride",
+      "linked_registry_id": null,
+      "connection_type": "antonym_pair",
+      "connecting_term": "a.na.vah / tapeinos \u2014 explicitly contrasted with pride in Pro 15:33; 18:12; Jam 4:6; 1Pe 5:5",
+      "note": "Humility and pride are the primary antonym pair across both Hebrew and Greek terms. Every major statement of humility's reward is paired with a statement about pride's fall or divine opposition."
+    },
+    {
+      "linked_word": "meekness / anger",
+      "linked_registry_id": 4,
+      "connection_type": "semantic_overlap",
+      "connecting_term": "praus / praot\u0113s \u2014 meekness as controlled strength; anger as the force that meekness restrains",
+      "note": "praus is characterised as power under control \u2014 the opposite of unrestrained expression. This directly connects the humility entry to the anger entry, where controlled vs uncontrolled inner states are the key distinction."
+    }
+  ],
+  "data_quality_flags": [
+    {
+      "flag_type": "CONSOLIDATION_NOTE",
+      "affected_term": "a.na.vah / an.vah",
+      "description": "The source file lists a.na.vah (\u05e2\u05b2\u05e0\u05b8\u05d5\u05b8\u05d4) and an.vah (\u05e2\u05b7\u05e0\u05b0\u05d5\u05b8\u05d4) as separate term blocks with note 'Exclude word This word only' on an.vah. Both carry H6038. an.vah is treated here as a variant spelling consolidated under a.na.vah. Psa 18:35 (an.vah) and 2Sa 22:36 (a.na.vah) are parallel texts of the same Davidic song with a variant spelling between them."
+    },
+    {
+      "flag_type": "DUPLICATE_BLOCK",
+      "affected_term": "praut\u0113s (G4236)",
+      "description": "The source file contains two identical term blocks for praut\u0113s with identical verse lists (Tit 3:2; Jam 1:21; Jam 3:13; 1Pe 3:15). These are treated as a single entry. praut\u0113s (G4236) and praot\u0113s (G4240) are also spelling variants of the same word listed as separate entries \u2014 both are kept as separate entries per source file structure."
+    },
+    {
+      "flag_type": "DUPLICATE_BLOCK",
+      "affected_term": "a.na.vah and an.vah",
+      "description": "Both a.na.vah and an.vah term blocks appear twice in the source file. The second occurrence of each is a STEP formatting repeat. The verse data is identical between both appearances. Deduplicated to single records."
+    },
+    {
+      "flag_type": "CROSS_TERM_VERSE",
+      "affected_term": "Eph 4:2",
+      "description": "Eph 4:2 appears under both tapeinofrosun\u0113 and praot\u0113s \u2014 the verse contains both terms simultaneously. Separate records are kept under each term."
+    },
+    {
+      "flag_type": "CROSS_TERM_VERSE",
+      "affected_term": "Col 3:12",
+      "description": "Col 3:12 appears under both tapeinofrosun\u0113 and praot\u0113s \u2014 the verse contains both terms simultaneously. Separate records are kept under each term."
+    },
+    {
+      "flag_type": "CROSS_TERM_VERSE",
+      "affected_term": "1Pe 5:5",
+      "description": "1Pe 5:5 appears under both tapeinofrosun\u0113 and tapeinos \u2014 the verse contains both terms simultaneously. Separate records are kept under each term."
+    },
+    {
+      "flag_type": "SPELLING_VARIANT",
+      "affected_term": "tapeinofrosun\u0113",
+      "description": "Source file consistently spells this term tapeinofrosun\u0113. Standard scholarly spelling is tapeinophrosun\u0113 (G5012). The source file spelling is used throughout as the anchor transliteration."
+    }
+  ]
+}

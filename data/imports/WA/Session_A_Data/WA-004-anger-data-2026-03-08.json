@@ -1,0 +1,1130 @@
+{
+  "meta": {
+    "schema_version": "2.2",
+    "phase": "Phase 1 — STEP Data Assimilation",
+    "produced_date": "2026-03-08",
+    "source_file": "Word_anger.md",
+    "translation_used": "ESV",
+    "specification": "Session A Instruction v4",
+    "revision_note": null,
+    "word": "anger",
+    "registry_id": "004",
+    "source_list": "High Confidence",
+    "category": null,
+    "testament_coverage": "both"
+  },
+
+  "term_inventory_hebrew": [
+
+    {
+      "term_id": "H0639G",
+      "step_search_gloss": "face: anger",
+      "step_search_flag": "MULTI_SENSE_ENTRY — H0639 (aph) yields three distinct STEP sub-entries (H0639G anger, H0639H nose, H0639I face) all sharing the same occurrence count (~278x) and root. These are the same lexical word with context-dependent meanings. All three sub-entries are retained as separate records to preserve the physiological-inner being layering. Phase 2 flag: somatic_inner_link (nose/anger/face semantic field).",
+      "transliteration": "aph",
+      "strongs_number": "H0639G",
+      "word_analysis_gloss": "face: anger",
+      "occurrence_count": 278,
+      "occurrence_count_qualifier": "about",
+      "meaning": "anger\n1) nostril, nose, face\n2) anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be angry", "transliteration": "a.naph" },
+        { "gloss": "heron", "transliteration": "a.na.phah" }
+      ],
+      "root_family": ["APH"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject", "somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H0639H",
+      "step_search_gloss": "face: nose",
+      "step_search_flag": "MULTI_SENSE_ENTRY — H0639 sub-entry. Same word as H0639G and H0639I. Nose sub-entry retained separately to preserve the physiological register of the anger semantic field. Verse set contains anatomical nose references (Gen 2:7 breath of life into nostrils; Exo 15:8 blast of nostrils; 2Sa 22:9 smoke from nostrils). Phase 2 flag: somatic_inner_link (nostril as physical site of breath and anger expression).",
+      "transliteration": "aph",
+      "strongs_number": "H0639H",
+      "word_analysis_gloss": "face: nose",
+      "occurrence_count": 278,
+      "occurrence_count_qualifier": "about",
+      "meaning": "nose\n1) nostril, nose, face\n2) anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be angry", "transliteration": "a.naph" },
+        { "gloss": "heron", "transliteration": "a.na.phah" }
+      ],
+      "root_family": ["APH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H0639I",
+      "step_search_gloss": "face",
+      "step_search_flag": "MULTI_SENSE_ENTRY — H0639 sub-entry. Same word as H0639G and H0639H. Face sub-entry retained separately. Verse set is primarily prostration/bowing contexts (Gen 3:19 sweat of face; Gen 19:1 bowed face to earth; Gen 48:12; Num 22:31 etc). The face-falling idiom as expression of anger response is potentially significant (cf. Gen 4:5 Cain's face fell). Phase 2 flag: somatic_inner_link (face as somatic expression of inner state).",
+      "transliteration": "aph",
+      "strongs_number": "H0639I",
+      "word_analysis_gloss": "face",
+      "occurrence_count": 278,
+      "occurrence_count_qualifier": "about",
+      "meaning": "face\n1) nostril, nose, face\n2) anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be angry", "transliteration": "a.naph" },
+        { "gloss": "heron", "transliteration": "a.na.phah" }
+      ],
+      "root_family": ["APH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H2534",
+      "step_search_gloss": "rage",
+      "step_search_flag": null,
+      "transliteration": "che.mah",
+      "strongs_number": "H2534",
+      "word_analysis_gloss": "rage",
+      "occurrence_count": 127,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) heat, rage, hot displeasure, indignation, anger, wrath, poison, bottles\n1a) heat\n1a1) fever\n1a2) venom, poison (fig.)\n1b) burning anger, rage\nAramaic equivalent: che.ma (H2528)",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "curd", "transliteration": "chem.ah" },
+        { "gloss": "heat", "transliteration": "che.mah" },
+        { "gloss": "to conceive", "transliteration": "ya.cham" }
+      ],
+      "root_family": ["CHEM"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject", "somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H2528",
+      "step_search_gloss": "rage",
+      "step_search_flag": "ARAMAIC_EQUIVALENT — Aramaic form of che.mah (H2534). Retained as independent entry because the Aramaic context (Daniel) may carry distinct theological or literary significance. Phase 2 flag: context analysis required to determine why Aramaic form is used in those specific passages.",
+      "transliteration": "che.ma",
+      "strongs_number": "H2528",
+      "word_analysis_gloss": "rage",
+      "occurrence_count": 127,
+      "occurrence_count_qualifier": "about",
+      "meaning": "anger, rage\nAramaic of che.mah (H2534)",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "curd", "transliteration": "chem.ah" },
+        { "gloss": "heat", "transliteration": "che.mah" },
+        { "gloss": "to conceive", "transliteration": "ya.cham" }
+      ],
+      "root_family": ["CHEM"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H2740",
+      "step_search_gloss": "burning anger",
+      "step_search_flag": "GOD_ONLY — meaning note states: 'always used of God's anger.' Retained as primary term. Phase 2 flag: god_as_subject.",
+      "transliteration": "cha.ron",
+      "strongs_number": "H2740",
+      "word_analysis_gloss": "burning anger",
+      "occurrence_count": 41,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) anger, heat, burning (of anger)\n1a) always used of God's anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "to be incensed", "transliteration": "cha.rah" },
+        { "gloss": "burning", "transliteration": "cho.ri" },
+        { "gloss": "to contend", "transliteration": "ta.cha.rah" }
+      ],
+      "root_family": ["CHAR"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject", "somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H2734",
+      "step_search_gloss": "to be incensed",
+      "step_search_flag": null,
+      "transliteration": "cha.rah",
+      "strongs_number": "H2734",
+      "word_analysis_gloss": "to be incensed",
+      "occurrence_count": 90,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to be hot, furious, burn, become angry, be kindled\n1a) (Qal) to burn, kindle (anger)\n1b) (Niphal) to be angry with, be incensed\n1c) (Hiphil) to burn, kindle\n1d) (Hithpael) to heat oneself in vexation",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "burning anger", "transliteration": "cha.ron" },
+        { "gloss": "burning", "transliteration": "cho.ri" },
+        { "gloss": "to scorch", "transliteration": "cha.rar" },
+        { "gloss": "to contend", "transliteration": "ta.cha.rah" }
+      ],
+      "root_family": ["CHAR"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": true,
+      "causative_form_present": true,
+      "phase2_flags": ["god_as_subject", "somatic_inner_link", "causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "H8474",
+      "step_search_gloss": "to contend",
+      "step_search_flag": "PERIPHERAL_TERM — ~2x occurrences. Primary meaning is 'to burn, be kindled of anger / to heat oneself in vexation' (Tiphel stem). Verses (Jer 12:5; Jer 22:15) use competitive contending metaphors. Retained because the heat-of-vexation meaning and CHAR root family connection to cha.ron/cha.rah may be significant. Phase 2 flag: context analysis required.",
+      "transliteration": "ta.cha.rah",
+      "strongs_number": "H8474",
+      "word_analysis_gloss": "to contend",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to burn, be kindled (of anger)\n1a) (Tiphel) to heat oneself in vexation",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "to be incensed", "transliteration": "cha.rah" },
+        { "gloss": "burning anger", "transliteration": "cha.ron" },
+        { "gloss": "burning", "transliteration": "cho.ri" }
+      ],
+      "root_family": ["CHAR"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H2552",
+      "step_search_gloss": "to warm",
+      "step_search_flag": "PERIPHERAL_TERM — Primary meaning is physical warmth (to be hot, become warm). Anger connection is via figurative sub-sense 1a2 'of passion.' Retained because the heat-as-passion metaphor may illuminate the physiological layer of the anger semantic field, and Hos 7:6 ('with hearts like an oven their anger smolders; in the morning it blazes like a flaming fire') directly connects warming to anger. Phase 2 flag: somatic_inner_link.",
+      "transliteration": "cha.mam",
+      "strongs_number": "H2552",
+      "word_analysis_gloss": "to warm",
+      "occurrence_count": 21,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to be hot, become warm\n1a) (Qal)\n1a1) to be or grow warm\n1a2) of passion (fig.)\n1b) (Niphal) to become aroused, inflame oneself with\n1c) (Piel) to warm\n1d) (Hithpael) to warm oneself",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "hot", "transliteration": "cham" },
+        { "gloss": "heat", "transliteration": "chom" },
+        { "gloss": "heat", "transliteration": "cham.mah" }
+      ],
+      "root_family": ["CHAM"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H5678",
+      "step_search_gloss": "fury",
+      "step_search_flag": null,
+      "transliteration": "ev.rah",
+      "strongs_number": "H5678",
+      "word_analysis_gloss": "fury",
+      "occurrence_count": 34,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) outpouring, overflow, excess, fury, wrath, arrogance\n1a) overflow, excess, outburst\n1b) arrogance\n1c) overflowing rage or fury",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "ford", "transliteration": "ma.a.var" },
+        { "gloss": "ford", "transliteration": "ma.a.va.rah" },
+        { "gloss": "for the sake of", "transliteration": "a.vur" },
+        { "gloss": "to pass", "transliteration": "a.var" },
+        { "gloss": "be angry", "transliteration": "a.var" },
+        { "gloss": "be arrogant", "transliteration": "a.var" },
+        { "gloss": "side: beside", "transliteration": "e.ver" }
+      ],
+      "root_family": ["AVAR"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H5674B",
+      "step_search_gloss": "be angry",
+      "step_search_flag": "MULTI_SENSE_ROOT — a.var (H5674) has primary meanings of 'to pass over, cross.' H5674B is the anger sub-sense. The related word cluster includes ford, side/beyond, fury (ev.rah H5678), and be arrogant — the root family spans physical crossing, arrogance, and fury. Phase 2 flag: the crossing/overflowing image as root metaphor for anger may be significant.",
+      "transliteration": "a.var",
+      "strongs_number": "H5674B",
+      "word_analysis_gloss": "be angry",
+      "occurrence_count": 554,
+      "occurrence_count_qualifier": "about",
+      "meaning": "to be angry, arrogant",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "ford", "transliteration": "ma.a.var" },
+        { "gloss": "ford", "transliteration": "ma.a.va.rah" },
+        { "gloss": "for the sake of", "transliteration": "a.vur" },
+        { "gloss": "fury", "transliteration": "ev.rah" },
+        { "gloss": "side: beside", "transliteration": "e.ver" },
+        { "gloss": "side: beyond", "transliteration": "e.ver" },
+        { "gloss": "be arrogant", "transliteration": "a.var" }
+      ],
+      "root_family": ["AVAR"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H7107",
+      "step_search_gloss": "be angry",
+      "step_search_flag": null,
+      "transliteration": "qa.tsaph",
+      "strongs_number": "H7107",
+      "word_analysis_gloss": "be angry",
+      "occurrence_count": 35,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to be displeased, be angry, fret oneself, be wroth\n1a) (Qal) to be wroth, to be full of wrath, to be furious\n1b) (Hiphil) to provoke to wrath or anger\n1c) (Hithpael) to put oneself in a rage, anger oneself\nAramaic equivalent: qe.tsaph (H7108)",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "wrath", "transliteration": "qe.tseph" },
+        { "gloss": "splinter", "transliteration": "qe.tseph" },
+        { "gloss": "splinter", "transliteration": "qe.tsa.phah" }
+      ],
+      "root_family": ["QTSPH"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["god_as_subject", "causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "H7110A",
+      "step_search_gloss": "wrath",
+      "step_search_flag": "MULTI_SENSE_ROOT — qe.tseph (H7110) yields two STEP sub-entries: H7110A wrath (~28x) and H7110B splinter (~1x). Both retained. Phase 2 flag: the splinter/broken-twig meaning alongside wrath in the same root may carry metaphorical significance.",
+      "transliteration": "qe.tseph",
+      "strongs_number": "H7110A",
+      "word_analysis_gloss": "wrath",
+      "occurrence_count": 28,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) wrath, anger\n1a) of God\n1b) of man",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be angry", "transliteration": "qa.tsaph" },
+        { "gloss": "splinter", "transliteration": "qe.tseph" },
+        { "gloss": "splinter", "transliteration": "qe.tsa.phah" }
+      ],
+      "root_family": ["QTSPH"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H7110B",
+      "step_search_gloss": "splinter",
+      "step_search_flag": "PERIPHERAL_TERM / MULTI_SENSE_ROOT — ~1x occurrence (Hos 10:7). Meaning: 'splinter, twig, broken twig — meaning uncertain.' Retained because: (1) same root as qa.tsaph/qe.tseph wrath family; (2) broken-twig image may be a metaphorical resonance of the anger/wrath root; (3) discarding premature without context analysis. Phase 2 flag: root_metaphor investigation.",
+      "transliteration": "qe.tseph",
+      "strongs_number": "H7110B",
+      "word_analysis_gloss": "splinter",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) splinter, twig, broken twig\n1a) meaning uncertain",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be angry", "transliteration": "qa.tsaph" },
+        { "gloss": "wrath", "transliteration": "qe.tseph" },
+        { "gloss": "splinter", "transliteration": "qe.tsa.phah" }
+      ],
+      "root_family": ["QTSPH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+
+    {
+      "term_id": "H2195",
+      "step_search_gloss": "indignation",
+      "step_search_flag": "CROSS_REGISTRY_NOTE — za.am also appears in registry 001 (Abomination) as H2194 (verbal form). That entry carried god_as_subject flag and a Phase 2 note about possible migration to anger/wrath registry. This noun form (H2195) is recorded here independently.",
+      "transliteration": "za.am",
+      "strongs_number": "H2195",
+      "word_analysis_gloss": "indignation",
+      "occurrence_count": 22,
+      "occurrence_count_qualifier": "about",
+      "meaning": "anger, indignation",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "be indignant", "transliteration": "za.am" }
+      ],
+      "root_family": ["ZAM"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H7307J",
+      "step_search_gloss": "spirit: temper",
+      "step_search_flag": "MULTI_SENSE_ENTRY / CROSS_REGISTRY_NOTE — ru.ach (H7307) is a primary word in its own right (~389x, covering wind/breath/spirit/Holy Spirit). H7307J is the temper/anger sub-entry. Retained here in full because: (1) the connection between spirit and anger/temper is theologically significant; (2) the anger-of-God / Spirit-of-God overlap may be revealing; (3) discarding or reducing to a stub would lose the data. Phase 2 flags: cross_registry (ruach will have its own registry entry), god_as_subject investigation for ru.ach-as-anger in divine contexts.",
+      "transliteration": "ru.ach",
+      "strongs_number": "H7307J",
+      "word_analysis_gloss": "spirit: temper",
+      "occurrence_count": 389,
+      "occurrence_count_qualifier": "about",
+      "meaning": "temper\n1) wind, breath, mind, spirit\n1a) breath\n1b) wind\n1c) spirit (as that which breathes quickly in animation or agitation)\n1c1) spirit, animation, vivacity, vigour\n1c2) courage\n1c3) temper, anger\n1c4) impatience, patience\n1c5) spirit, disposition (as troubled, bitter, discontented)\n1c6) disposition of various kinds, unaccountable or uncontrollable impulse\n1c7) prophetic spirit\n1d) spirit (of the living, breathing being in man and animals)\n1e) spirit (as seat of emotion)\n1e1) desire\n1e2) sorrow, trouble\n1f) spirit (as seat or organ of mental acts)\n1f3) as seat especially of moral character\n1g) Spirit of God, the third person of the triune God, the Holy Spirit",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "to smell", "transliteration": "ri.ach" },
+        { "gloss": "aroma", "transliteration": "re.ach" }
+      ],
+      "root_family": ["RUACH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H7267",
+      "step_search_gloss": "turmoil",
+      "step_search_flag": "PERIPHERAL_TERM — ~7x. Primary meaning includes agitation, raging, trembling/trepidation. Anger connection is through 'raging' sub-sense. Retained because turmoil/trembling as bodily-inner response to anger or divine anger may carry significance. Job verse set (3:17, 3:26, 14:1, 37:2) and Hab 3:2 ('in wrath remember mercy') are contextually significant. Phase 2 flag: somatic_inner_link (trembling/trepidation as bodily expression).",
+      "transliteration": "ro.gez",
+      "strongs_number": "H7267",
+      "word_analysis_gloss": "turmoil",
+      "occurrence_count": 7,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) agitation, excitement, raging, trouble, turmoil, trembling\n1a) turmoil, disquiet, raging\n1b) trembling, trepidation",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "box", "transliteration": "ar.gaz" },
+        { "gloss": "to tremble", "transliteration": "ra.gaz" },
+        { "gloss": "quivering", "transliteration": "rag.gaz" },
+        { "gloss": "quivering", "transliteration": "rog.zah" }
+      ],
+      "root_family": ["RGAZ"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H7265",
+      "step_search_gloss": "to enrage",
+      "step_search_flag": "ARAMAIC_EQUIVALENT — Aramaic Haphel form of ra.gaz (H7264 'to tremble'). ~1x in source (Ezr 5:12). Retained as independent entry because the Aramaic context (Ezra, post-exilic) and the choice of enrage rather than the Hebrew equivalent may carry significance. Phase 2 flag: context analysis required.",
+      "transliteration": "re.gaz",
+      "strongs_number": "H7265",
+      "word_analysis_gloss": "to enrage",
+      "occurrence_count": 43,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(Aphel) to rage, enrage\nAramaic of ra.gaz (H7264)",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "foot", "transliteration": "re.gal" }
+      ],
+      "root_family": ["RGAZ"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "H3707",
+      "step_search_gloss": "to provoke",
+      "step_search_flag": null,
+      "transliteration": "ka.as",
+      "strongs_number": "H3707",
+      "word_analysis_gloss": "to provoke",
+      "occurrence_count": 53,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to be angry, be vexed, be indignant, be wroth, be grieved, provoke to anger and wrath\n1a) (Qal)\n1a1) to be vexed, be indignant\n1a2) to be angry\n1b) (Piel) to provoke to anger\n1c) (Hiphil)\n1c1) to vex\n1c2) to vex, provoke to anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "vexation", "transliteration": "ka.as" },
+        { "gloss": "vexation", "transliteration": "ka.a.s" },
+        { "gloss": "rock", "transliteration": "keph" }
+      ],
+      "root_family": ["KAS"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["god_as_subject", "causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "H3708B",
+      "step_search_gloss": "vexation",
+      "step_search_flag": "DUPLICATE_NOTE — The source file contains two separate word analysis blocks both labelled 'vexation (ka.as - כַּ֫עַס)' at lines ~1451 and ~1482. The second block (H3708B / ka.a.s) resolves on inspection to na.ats (H5006 to spurn). Both are recorded. See also H5006 entry.",
+      "transliteration": "ka.a.s",
+      "strongs_number": "H3708B",
+      "word_analysis_gloss": "vexation",
+      "occurrence_count": 26,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) anger, vexation, provocation, grief\n1a) vexation\n1a1) of men\n1a2) of God\n1b) vexation, grief, frustration",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "to provoke", "transliteration": "ka.as" },
+        { "gloss": "rock", "transliteration": "keph" }
+      ],
+      "root_family": ["KAS"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "H5006",
+      "step_search_gloss": "to spurn",
+      "step_search_flag": "PERIPHERAL_TERM — Primary meaning is to spurn, contemn, despise, abhor. Appears in source under the vexation heading; verse set includes Num 14:11 (how long will this people despise me?), Psa 107:11 (spurned the counsel of the Most High). Retained because contempt/spurning as a trigger or expression of anger, and its connection to the ka.as vexation family in the source grouping, may be significant. Phase 2 flag: context analysis required.",
+      "transliteration": "na.ats",
+      "strongs_number": "H5006",
+      "word_analysis_gloss": "to spurn",
+      "occurrence_count": 25,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to spurn, contemn, despise, abhor\n1a) (Qal) to spurn, contemn\n1b) (Piel)\n1b1) to spurn\n1b2) to cause to contemn\n1c) (Hiphil) to spurn\n1d) (Hithpolel) to be contemned",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "contempt", "transliteration": "ne.a.tsah" },
+        { "gloss": "to flee", "transliteration": "na.tsah" },
+        { "gloss": "to bud", "transliteration": "na.tsats" }
+      ],
+      "root_family": ["NATS"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "H5201",
+      "step_search_gloss": "to keep",
+      "step_search_flag": "PERIPHERAL_TERM — Primary meaning is to keep, guard, maintain. Anger connection is through the idiom 'keeping anger' (na.tar aph = to maintain/harbour anger). Key verses: Lev 19:18 'do not bear a grudge'; Psa 103:9 'he will not keep his anger forever'; Jer 3:5 'will he be angry forever.' Retained because the concept of harbouring or withholding anger as an inner state is potentially distinct from the expression of anger and may contribute to the inner-being model. Phase 2 flag: context analysis required.",
+      "transliteration": "na.tar",
+      "strongs_number": "H5201",
+      "word_analysis_gloss": "to keep",
+      "occurrence_count": 10,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to keep, keep guard, reserve, maintain\n1a) (Qal)\n1a1) to keep, maintain\n1a2) to keep, guard\nAramaic equivalent: ne.tar (H5202)",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "guardhouse", "transliteration": "mat.ta.rah" }
+      ],
+      "root_family": ["NTAR"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+
+    {
+      "term_id": "H5307K",
+      "step_search_gloss": "to fall: angry",
+      "step_search_flag": "PERIPHERAL_TERM / SOMATIC_EXPRESSION — Primary meaning is to fall (~446x). Anger sub-sense (H5307K) relates specifically to the idiom of the face falling as an expression of anger (cf. Gen 4:5 'Cain's face fell'). Retained because: the falling-face as somatic expression of anger connects directly to the aph (H0639) nose/face/anger cluster and may be part of the same physiological-inner being layer. Phase 2 flag: somatic_inner_link.",
+      "transliteration": "na.phal",
+      "strongs_number": "H5307K",
+      "word_analysis_gloss": "to fall: angry",
+      "occurrence_count": 446,
+      "occurrence_count_qualifier": "about",
+      "meaning": "angry/fallen (face)\n1) to fall, lie, be cast down, fail\n1a) (Qal) to fall\n1b) (Hiphil) to cause to fall, fell, throw down\nNote: anger sub-sense relates to the idiom of the face falling as somatic expression of anger",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "refuse", "transliteration": "map.pal" },
+        { "gloss": "ruin", "transliteration": "map.pa.lah" },
+        { "gloss": "miscarriage", "transliteration": "ne.phel" }
+      ],
+      "root_family": ["NPHL"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H0644",
+      "step_search_gloss": "to bake",
+      "step_search_flag": "PERIPHERAL_TERM — Primary meaning is to bake (~25x). Anger connection is indirect: STEP search returned this term in the anger field, possibly via baking-heat as metaphor. Key verse: Hos 7:6 ('with hearts like an oven they approach their intrigue; all night their anger smolders; in the morning it blazes like a flaming fire') uses baking/oven as explicit metaphor for inner anger. Also Hos 7:4 (heated oven). Retained because the baking/heat metaphor for the nature of anger as something baked into or smoldering within may illuminate the physiological-inner being connection. Phase 2 flag: somatic_inner_link, metaphor analysis.",
+      "transliteration": "a.phah",
+      "strongs_number": "H0644",
+      "word_analysis_gloss": "to bake",
+      "occurrence_count": 25,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to bake\n1a) (Qal)\n1a1) to bake\n1a2) (subst) baker\n1b) (Niphal) to be baked",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "baked food", "transliteration": "ma.a.pheh" },
+        { "gloss": "baked", "transliteration": "tu.phi.nim" }
+      ],
+      "root_family": ["APH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    },
+
+    {
+      "term_id": "H5860A",
+      "step_search_gloss": "to scream",
+      "step_search_flag": "PERIPHERAL_TERM — ~1x occurrence (1Sa 25:14 'he railed at them'). Primary meaning is to scream, shriek. Anger connection is through screaming as a physiological/somatic expression or outcome of anger. Retained because: (1) screaming as bodily expression of anger may contribute to the physiological layer of the anger model; (2) discarding on the basis of low occurrence alone is premature. Phase 2 flag: somatic_inner_link.",
+      "transliteration": "it",
+      "strongs_number": "H5860A",
+      "word_analysis_gloss": "to scream",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) to scream, shriek\n1a) (Qal) to scream",
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "stylus", "transliteration": "et" },
+        { "gloss": "to pounce", "transliteration": "it" },
+        { "gloss": "bird of prey", "transliteration": "a.yit" }
+      ],
+      "root_family": ["IT"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["somatic_inner_link"]
+    }
+
+  ],
+
+  "term_inventory_greek": [
+
+    {
+      "term_id": "G3709",
+      "step_search_gloss": "wrath",
+      "step_search_flag": null,
+      "transliteration": "orgē",
+      "strongs_number": "G3709",
+      "word_analysis_gloss": "wrath",
+      "occurrence_count": 35,
+      "occurrence_count_qualifier": "about",
+      "meaning": "wrath, anger, the feeling and expression of strong displeasure and hostility;\nthis can range from petty human anger to the righteous anger of God toward sinful disobedience;\nprimarily mental bent, impulse;\nanger, indignation, wrath, Eph. 4:31; Col. 3:8;\nvengeance, punishment, Mt. 3:7; Lk. 3:7; 21:23; Rom. 13:4, 5",
+      "lsj_entry": "ὀργή: natural impulse or propensity; hence, temperament, disposition, mood [8th c.BC+]; anger, wrath [5th c.BC+]; ὀργῇ χρῆσθαι to be in a passion; ἐν ὀργῇ ἔχειν to hold in anger; ἀνιέναι τῆς ὀργῆς to remit one's anger, be pacified; ὀ. ἐμποιεῖν τινι make one angry; ὀργὴν ἄκρος quick to anger, passionate.",
+      "related_words": [
+        { "gloss": "to anger", "transliteration": "orgizō" },
+        { "gloss": "quick-tempered", "transliteration": "orgilos" },
+        { "gloss": "to anger", "transliteration": "parorgizō" },
+        { "gloss": "anger", "transliteration": "parorgismos" }
+      ],
+      "root_family": ["ORG"],
+      "testament": "NT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject"]
+    },
+
+    {
+      "term_id": "G3710",
+      "step_search_gloss": "to anger",
+      "step_search_flag": "SOURCE_NOTE — The source file lists parorgismos (παροργισμός) as a header term but the word analysis block resolves to orgizō (G3710). Both the orgizō block and the parorgizō/parorgismos entries are recorded separately.",
+      "transliteration": "orgizō",
+      "strongs_number": "G3710",
+      "word_analysis_gloss": "to anger",
+      "occurrence_count": 8,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(middle/passive) to be angry, enraged, to feel and express strong displeasure and hostility;\nthis can range from petty human anger to the righteous anger of God toward sinful disobedience;\nsome list as deponent, ὀργιζομαι, to provoke to anger, irritate;\npassive to be angry, indignant, enraged, Mt. 5:22; 18:34",
+      "lsj_entry": "ὀργίζω: make angry, provoke to anger, irritate [5th c.BC+]; more frequently in passive: grow angry, be wroth [5th c.BC+]; ἄνθρωπος -όμενος in a passion; τὸ -όμενον τῆς γνώμης their angry feelings.",
+      "related_words": [
+        { "gloss": "wrath", "transliteration": "orgē" },
+        { "gloss": "quick-tempered", "transliteration": "orgilos" },
+        { "gloss": "to anger", "transliteration": "parorgizō" },
+        { "gloss": "anger", "transliteration": "parorgismos" }
+      ],
+      "root_family": ["ORG"],
+      "testament": "NT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["god_as_subject", "causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "G_parorgismos",
+      "step_search_gloss": "anger",
+      "step_search_flag": "HEADER_TERM — parorgismos (παροργισμός) appears in the source header term list and in the related words of orgizō/orgē. No independent word analysis block is present; the block under the parorgismos header resolves to orgizō (G3710). Recorded as a stub. Phase 2 flag: confirm Strong's number and occurrence count.",
+      "transliteration": "parorgismos",
+      "strongs_number": "G3949_related",
+      "word_analysis_gloss": "anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "wrath", "transliteration": "orgē" },
+        { "gloss": "to anger", "transliteration": "orgizō" }
+      ],
+      "root_family": ["ORG"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+
+    {
+      "term_id": "G_parorgizō",
+      "step_search_gloss": "to anger",
+      "step_search_flag": "HEADER_TERM — parorgizō appears in the related words of the ORG family and in the source term list. Verses present: Rom 10:19 (make you angry) and Eph 6:4 (do not provoke your children to anger). No independent full word analysis block. Recorded with verses.",
+      "transliteration": "parorgizō",
+      "strongs_number": "G3949",
+      "word_analysis_gloss": "to anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "wrath", "transliteration": "orgē" },
+        { "gloss": "to anger", "transliteration": "orgizō" },
+        { "gloss": "anger", "transliteration": "parorgismos" }
+      ],
+      "root_family": ["ORG"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "G2372",
+      "step_search_gloss": "wrath",
+      "step_search_flag": null,
+      "transliteration": "thumos",
+      "strongs_number": "G2372",
+      "word_analysis_gloss": "wrath",
+      "occurrence_count": 18,
+      "occurrence_count_qualifier": "about",
+      "meaning": "wrath, fury, anger, rage, a state of intense displeasure based in some real or perceived wrong;\nprimarily the soul, mind; hence, a strong passion or emotion of the mind;\nanger, wrath, rage Lk. 4:28; Acts 19:28; plural swellings of anger, 2Cor. 12:20; Gal. 5:20",
+      "lsj_entry": "θυμός: soul, spirit, as the principle of life, feeling and thought, especially of strong feeling and passion [8th c.BC+]; breath, life [8th c.BC+]; desire or inclination, appetite [8th c.BC+]; mind, temper, will [8th c.BC+]; spirit, courage [8th c.BC+]; the seat of anger [8th c.BC+]; the heart, as the seat of the emotions especially joy or grief [8th c.BC+]; mind, soul, as the seat of thought [8th c.BC+]; Passion, Emotion, opposed to Λογισμός (Reason) [4th c.BC+].",
+      "related_words": [
+        { "gloss": "to quarrel", "transliteration": "thumomacheō" },
+        { "gloss": "to anger", "transliteration": "thumoō" },
+        { "gloss": "patiently", "transliteration": "makrothumōs" }
+      ],
+      "root_family": ["THUM"],
+      "testament": "NT",
+      "god_as_subject": true,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": ["god_as_subject", "nt_faculty_naming"]
+    },
+
+    {
+      "term_id": "G_thumoō",
+      "step_search_gloss": "to anger",
+      "step_search_flag": "THIN_DATA — Only 1 verse present in source (Mat 2:16 Herod became furious). The word analysis block in the source resolves primarily to lian (G3029 greatly/exceedingly) rather than thumoō itself. Retained with the single verse.",
+      "transliteration": "thumoō",
+      "strongs_number": "G2373",
+      "word_analysis_gloss": "to anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [
+        { "gloss": "wrath", "transliteration": "thumos" },
+        { "gloss": "to quarrel", "transliteration": "thumomacheō" }
+      ],
+      "root_family": ["THUM"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "G3947",
+      "step_search_gloss": "to provoke",
+      "step_search_flag": null,
+      "transliteration": "paroxunō",
+      "strongs_number": "G3947",
+      "word_analysis_gloss": "to provoke",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(intr.) to be greatly distressed;\nto be angered, irritated, provoke;\nto sharpen; metaphorically to incite, stir up, Acts 17:16;\nto irritate, provoke, anger 1Cor. 13:5",
+      "lsj_entry": "παροξύνω: urge, spur on, stimulate [5th c.BC+]; provoke, irritate [5th c.BC+]; passive: to be provoked; of sicknesses, grow virulent.",
+      "related_words": [
+        { "gloss": "sharp/swift", "transliteration": "oxus" },
+        { "gloss": "from/with/beside", "transliteration": "para" },
+        { "gloss": "stirring up", "transliteration": "paroxusmos" }
+      ],
+      "root_family": ["PAROX"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": ["causative_of_inner_state"]
+    },
+
+    {
+      "term_id": "G_mēnis",
+      "step_search_gloss": "vehement anger",
+      "step_search_flag": "NO_WORD_ANALYSIS — mēnis (μῆνις) appears in the source header term list but has no word analysis block and no verses in the source file. Retained as a stub for Phase 2 investigation.",
+      "transliteration": "mēnis",
+      "strongs_number": null,
+      "word_analysis_gloss": "vehement anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [],
+      "root_family": null,
+      "testament": null,
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+
+    {
+      "term_id": "G_enkotēma",
+      "step_search_gloss": "an object of anger",
+      "step_search_flag": "NO_WORD_ANALYSIS — enkotēma (ἐγκότημα) appears in the source header term list but has no word analysis block and no verses in the source file. Retained as a stub for Phase 2 investigation.",
+      "transliteration": "enkotēma",
+      "strongs_number": null,
+      "word_analysis_gloss": "an object of anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [],
+      "root_family": null,
+      "testament": null,
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+
+    {
+      "term_id": "G_cholos",
+      "step_search_gloss": "anger",
+      "step_search_flag": "NO_WORD_ANALYSIS — cholos (χόλος) appears in the source header term list but has no word analysis block and no verses in the source file. Retained as a stub for Phase 2 investigation.",
+      "transliteration": "cholos",
+      "strongs_number": null,
+      "word_analysis_gloss": "anger",
+      "occurrence_count": null,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "lsj_entry": null,
+      "related_words": [],
+      "root_family": null,
+      "testament": null,
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    }
+
+  ],
+
+  "verse_records": [
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 3:26", "verse_text": "But the Lord was angry with me because of you and would not listen to me. And the Lord said to me, 'Enough from you; do not speak to me of this matter again." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Psalms", "reference": "Psa 78:59", "verse_text": "When God heard, he was full of wrath, and he utterly rejected Israel." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Psalms", "reference": "Psa 78:62", "verse_text": "He gave his people over to the sword and vented his wrath on his heritage." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Psalms", "reference": "Psa 89:38", "verse_text": "But now you have cast off and rejected; you are full of wrath against your anointed." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Proverbs", "reference": "Pro 20:2", "verse_text": "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Proverbs", "reference": "Pro 26:17", "verse_text": "Whoever meddles in a quarrel not his own is like one who takes a passing dog by the ears." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Genesis", "reference": "Gen 49:7", "verse_text": "Cursed be their anger, for it is fierce, and their wrath, for it is cruel! I will divide them in Jacob and scatter them in Israel." },
+    { "term_id": "H5674B", "transliteration": "a.var", "testament": "OT", "book": "Job", "reference": "Job 21:30", "verse_text": "that the evil man is spared in the day of calamity, that he is rescued in the day of wrath?" },
+
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Exodus", "reference": "Exo 16:20", "verse_text": "But they did not listen to Moses. Some left part of it till the morning, and it bred worms and stank. And Moses was angry with them." },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Leviticus", "reference": "Lev 10:6", "verse_text": "And Moses said to Aaron and to Eleazar and Ithamar his sons, 'Do not let the hair of your heads hang loose, and do not tear your clothes, lest you die, and wrath come upon all the congregation...'" },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Leviticus", "reference": "Lev 10:16", "verse_text": "Now Moses diligently inquired about the goat of the sin offering, and behold, it was burned up! And he was angry with Eleazar and Ithamar, the surviving sons of Aaron, saying," },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Numbers", "reference": "Num 16:22", "verse_text": "And they fell on their faces and said, 'O God, the God of the spirits of all flesh, shall one man sin, and will you be angry with all the congregation?'" },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Numbers", "reference": "Num 31:14", "verse_text": "And Moses was angry with the officers of the army, the commanders of thousands and the commanders of hundreds, who had come from service in the war." },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 1:34", "verse_text": "And the Lord heard your words and was angered, and he swore," },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Zechariah", "reference": "Zec 1:2", "verse_text": "The Lord was very angry with your fathers." },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Zechariah", "reference": "Zec 1:15", "verse_text": "And I am exceedingly angry with the nations that are at ease; for while I was angry but a little, they furthered the disaster." },
+    { "term_id": "H7107", "transliteration": "qa.tsaph", "testament": "OT", "book": "Zechariah", "reference": "Zec 7:12", "verse_text": "They made their hearts diamond-hard lest they should hear the law and the words that the Lord of hosts had sent by his Spirit through the former prophets. Therefore great anger came from the Lord of hosts." },
+
+    { "term_id": "H2740", "transliteration": "cha.ron", "testament": "OT", "book": "Exodus", "reference": "Exo 15:7", "verse_text": "In the greatness of your majesty you overthrow your adversaries; you send out your fury; it consumes them like stubble." },
+    { "term_id": "H2740", "transliteration": "cha.ron", "testament": "OT", "book": "Exodus", "reference": "Exo 32:12", "verse_text": "Why should the Egyptians say, 'With evil intent did he bring them out, to kill them in the mountains'? Turn from your burning anger and relent from this disaster against your people." },
+    { "term_id": "H2740", "transliteration": "cha.ron", "testament": "OT", "book": "Numbers", "reference": "Num 25:4", "verse_text": "And the Lord said to Moses, 'Take all the chiefs of the people and hang them in the sun before the Lord, that the fierce anger of the Lord may turn away from Israel.'" },
+    { "term_id": "H2740", "transliteration": "cha.ron", "testament": "OT", "book": "Hosea", "reference": "Hos 11:9", "verse_text": "I will not execute my burning anger; I will not again destroy Ephraim; for I am God and not a man, the Holy One in your midst, and I will not come in wrath." },
+    { "term_id": "H2740", "transliteration": "cha.ron", "testament": "OT", "book": "Zephaniah", "reference": "Zep 2:2", "verse_text": "before the decree takes effect — before there comes upon you the burning anger of the Lord, before there comes upon you the day of the anger of the Lord." },
+
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Genesis", "reference": "Gen 27:45", "verse_text": "until your brother's anger turns away from you, and he forgets what you have done to him." },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Genesis", "reference": "Gen 30:2", "verse_text": "Jacob's anger was kindled against Rachel, and he said, 'Am I in the place of God, who has withheld from you the fruit of the womb?'" },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Exodus", "reference": "Exo 32:10", "verse_text": "Now therefore let me alone, that my wrath may burn hot against them and I may consume them, in order that I may make a great nation of you." },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Exodus", "reference": "Exo 34:6", "verse_text": "The Lord passed before him and proclaimed, 'The Lord, the Lord, a God merciful and gracious, slow to anger, and abounding in steadfast love and faithfulness,'" },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Numbers", "reference": "Num 14:18", "verse_text": "'The Lord is slow to anger and abounding in steadfast love, forgiving iniquity and transgression, but he will by no means clear the guilty, visiting the iniquity of the fathers on the children, to the third and the fourth generation.'" },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Proverbs", "reference": "Pro 15:1", "verse_text": "A soft answer turns away wrath, but a harsh word stirs up anger." },
+    { "term_id": "H0639G", "transliteration": "aph", "testament": "OT", "book": "Proverbs", "reference": "Pro 30:33", "verse_text": "For pressing milk produces curds, pressing the nose produces blood, and pressing anger produces strife." },
+
+    { "term_id": "H0639H", "transliteration": "aph", "testament": "OT", "book": "Genesis", "reference": "Gen 2:7", "verse_text": "then the Lord God formed the man of dust from the ground and breathed into his nostrils the breath of life, and the man became a living creature." },
+    { "term_id": "H0639H", "transliteration": "aph", "testament": "OT", "book": "Exodus", "reference": "Exo 15:8", "verse_text": "At the blast of your nostrils the waters piled up; the floods stood up in a heap; the deeps congealed in the heart of the sea." },
+    { "term_id": "H0639H", "transliteration": "aph", "testament": "OT", "book": "2 Samuel", "reference": "2Sa 22:9", "verse_text": "Smoke went up from his nostrils, and devouring fire from his mouth; glowing coals flamed forth from him." },
+    { "term_id": "H0639H", "transliteration": "aph", "testament": "OT", "book": "Numbers", "reference": "Num 11:20", "verse_text": "but a whole month, until it comes out at your nostrils and becomes loathsome to you, because you have rejected the Lord who is among you..." },
+    { "term_id": "H0639H", "transliteration": "aph", "testament": "OT", "book": "Isaiah", "reference": "Isa 2:22", "verse_text": "Stop regarding man in whose nostrils is breath, for of what account is he?" },
+
+    { "term_id": "H0639I", "transliteration": "aph", "testament": "OT", "book": "Genesis", "reference": "Gen 3:19", "verse_text": "By the sweat of your face you shall eat bread, till you return to the ground, for out of it you were taken; for you are dust, and to dust you shall return." },
+    { "term_id": "H0639I", "transliteration": "aph", "testament": "OT", "book": "Genesis", "reference": "Gen 19:1", "verse_text": "The two angels came to Sodom in the evening, and Lot was sitting in the gate of Sodom. When Lot saw them, he rose to meet them and bowed himself with his face to the earth." },
+    { "term_id": "H0639I", "transliteration": "aph", "testament": "OT", "book": "Psalms", "reference": "Psa 10:4", "verse_text": "In the pride of his face the wicked does not seek him; all his thoughts are, 'There is no God.'" },
+
+    { "term_id": "H5678", "transliteration": "ev.rah", "testament": "OT", "book": "Genesis", "reference": "Gen 49:7", "verse_text": "Cursed be their anger, for it is fierce, and their wrath, for it is cruel! I will divide them in Jacob and scatter them in Israel." },
+    { "term_id": "H5678", "transliteration": "ev.rah", "testament": "OT", "book": "Psalms", "reference": "Psa 78:49", "verse_text": "He let loose on them his burning anger, wrath, indignation, and distress, a company of destroying angels." },
+    { "term_id": "H5678", "transliteration": "ev.rah", "testament": "OT", "book": "Proverbs", "reference": "Pro 11:4", "verse_text": "Riches do not profit in the day of wrath, but righteousness delivers from death." },
+    { "term_id": "H5678", "transliteration": "ev.rah", "testament": "OT", "book": "Ezekiel", "reference": "Eze 38:19", "verse_text": "For in my jealousy and in my blazing wrath I declare, On that day there shall be a great earthquake in the land of Israel." },
+    { "term_id": "H5678", "transliteration": "ev.rah", "testament": "OT", "book": "Zephaniah", "reference": "Zep 1:15", "verse_text": "A day of wrath is that day, a day of distress and anguish, a day of ruin and devastation, a day of darkness and gloom, a day of clouds and thick darkness," },
+
+    { "term_id": "H2195", "transliteration": "za.am", "testament": "OT", "book": "Psalms", "reference": "Psa 38:3", "verse_text": "There is no soundness in my flesh because of your indignation; there is no health in my bones because of my sin." },
+    { "term_id": "H2195", "transliteration": "za.am", "testament": "OT", "book": "Isaiah", "reference": "Isa 13:5", "verse_text": "They come from a distant land, from the end of the heavens, the Lord and the weapons of his indignation, to destroy the whole land." },
+    { "term_id": "H2195", "transliteration": "za.am", "testament": "OT", "book": "Isaiah", "reference": "Isa 26:20", "verse_text": "Come, my people, enter your chambers, and shut your doors behind you; hide yourselves for a little while until the fury has passed by." },
+    { "term_id": "H2195", "transliteration": "za.am", "testament": "OT", "book": "Jeremiah", "reference": "Jer 15:17", "verse_text": "I did not sit in the company of revelers, nor did I rejoice; I sat alone, because your hand was upon me, for you had filled me with indignation." },
+    { "term_id": "H2195", "transliteration": "za.am", "testament": "OT", "book": "Daniel", "reference": "Dan 8:19", "verse_text": "He said, 'Behold, I will make known to you what shall be at the latter end of the indignation, for it refers to the appointed time of the end." },
+
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Genesis", "reference": "Gen 27:44", "verse_text": "and stay with him a while, until your brother's fury turns away—" },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "2 Kings", "reference": "2Ki 5:12", "verse_text": "Are not Abana and Pharpar, the rivers of Damascus, better than all the waters of Israel? Could I not wash in them and be clean?' So he turned and went away in a rage." },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Esther", "reference": "Est 1:12", "verse_text": "But Queen Vashti refused to come at the king's command delivered by the eunuchs. At this the king became enraged, and his anger burned within him." },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Esther", "reference": "Est 3:5", "verse_text": "And when Haman saw that Mordecai did not bow down or pay homage to him, Haman was filled with fury." },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Proverbs", "reference": "Pro 6:34", "verse_text": "For jealousy makes a man furious, and he will not spare when he takes revenge." },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Proverbs", "reference": "Pro 19:19", "verse_text": "A man of great wrath will pay the penalty, for if you deliver him, you will only have to do it again." },
+    { "term_id": "H2534", "transliteration": "che.mah", "testament": "OT", "book": "Amos", "reference": "Amo 1:11", "verse_text": "...because he pursued his brother with the sword and cast off all pity, and his anger tore perpetually, and he kept his wrath forever." },
+
+    { "term_id": "H2528", "transliteration": "che.ma", "testament": "OT", "book": "Daniel", "reference": "Dan 3:13", "verse_text": "Then Nebuchadnezzar in furious rage commanded that Shadrach, Meshach, and Abednego be brought. So they brought these men before the king." },
+    { "term_id": "H2528", "transliteration": "che.ma", "testament": "OT", "book": "Daniel", "reference": "Dan 3:19", "verse_text": "Then Nebuchadnezzar was filled with fury, and the expression of his face was changed against Shadrach, Meshach, and Abednego. He ordered the furnace heated seven times more than it was usually heated." },
+
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Judges", "reference": "Judg 8:3", "verse_text": "God has given into your hands the princes of Midian, Oreb and Zeeb. What have I been able to do in comparison with you?' Then their anger against him subsided when he said this." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Job", "reference": "Job 21:4", "verse_text": "As for me, is my complaint against man? Why should I not be impatient?" },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Proverbs", "reference": "Pro 14:29", "verse_text": "Whoever is slow to anger has great understanding, but he who has a hasty temper exalts folly." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Proverbs", "reference": "Pro 16:32", "verse_text": "Whoever is slow to anger is better than the mighty, and he who rules his spirit than he who takes a city." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Proverbs", "reference": "Pro 17:27", "verse_text": "Whoever restrains his words has knowledge, and he who has a cool spirit is a man of understanding." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Proverbs", "reference": "Pro 25:28", "verse_text": "A man without self-control is like a city broken into and left without walls." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Proverbs", "reference": "Pro 29:11", "verse_text": "A fool gives full vent to his spirit, but a wise man quietly holds it back." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Ecclesiastes", "reference": "Ecc 7:9", "verse_text": "Be not quick in your spirit to become angry, for anger lodges in the heart of fools." },
+    { "term_id": "H7307J", "transliteration": "ru.ach", "testament": "OT", "book": "Micah", "reference": "Mic 2:7", "verse_text": "Should this be said, O house of Jacob? Has the Lord grown impatient? Are these his deeds? Do not my words do good to him who walks uprightly?" },
+
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Genesis", "reference": "Gen 4:5", "verse_text": "but for Cain and his offering he had no regard. So Cain was very angry, and his face fell." },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Genesis", "reference": "Gen 4:6", "verse_text": "The Lord said to Cain, 'Why are you angry, and why has your face fallen?'" },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Jonah", "reference": "Jon 4:1", "verse_text": "But it displeased Jonah exceedingly, and he was angry." },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Jonah", "reference": "Jon 4:4", "verse_text": "And the Lord said, 'Do you do well to be angry?'" },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Jonah", "reference": "Jon 4:9", "verse_text": "But God said to Jonah, 'Do you do well to be angry for the plant?' And he said, 'Yes, I do well to be angry, angry enough to die.'" },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "1 Samuel", "reference": "1Sa 18:8", "verse_text": "And Saul was very angry, and this saying displeased him. He said, 'They have ascribed to David ten thousands, and to me they have ascribed thousands, and what more can he have but the kingdom?'" },
+    { "term_id": "H2734", "transliteration": "cha.rah", "testament": "OT", "book": "Nehemiah", "reference": "Neh 4:1", "verse_text": "Now when Sanballat heard that we were building the wall, he was angry and greatly enraged, and he jeered at the Jews." },
+
+    { "term_id": "H3707", "transliteration": "ka.as", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 4:25", "verse_text": "When you father children and children's children, and have grown old in the land, and you act corruptly by making a carved image in the form of anything, and by doing what is evil in the sight of the Lord your God, so as to provoke him to anger," },
+    { "term_id": "H3707", "transliteration": "ka.as", "testament": "OT", "book": "1 Kings", "reference": "1Ki 14:9", "verse_text": "but you have done evil above all who were before you and have gone and made for yourself other gods and metal images, provoking me to anger, and have cast me behind your back," },
+    { "term_id": "H3707", "transliteration": "ka.as", "testament": "OT", "book": "Psalms", "reference": "Psa 78:58", "verse_text": "For they provoked him to anger with their high places; they moved him to jealousy with their idols." },
+    { "term_id": "H3707", "transliteration": "ka.as", "testament": "OT", "book": "Psalms", "reference": "Psa 112:10", "verse_text": "The wicked man sees it and is angry; he gnashes his teeth and melts away; the desire of the wicked will perish!" },
+    { "term_id": "H3707", "transliteration": "ka.as", "testament": "OT", "book": "1 Samuel", "reference": "1Sa 1:7", "verse_text": "So it went on year by year. As often as she went up to the house of the Lord, she used to provoke her. Therefore Hannah wept and would not eat." },
+
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "Job", "reference": "Job 5:2", "verse_text": "Surely vexation kills the fool, and jealousy slays the simple." },
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "Job", "reference": "Job 6:2", "verse_text": "'Oh that my vexation were weighed, and all my calamity laid in the balances!'" },
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "Ecclesiastes", "reference": "Ecc 1:18", "verse_text": "For in much wisdom is much vexation, and he who increases knowledge increases sorrow." },
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "Proverbs", "reference": "Pro 12:16", "verse_text": "The vexation of a fool is known at once, but the prudent ignores an insult." },
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "1 Samuel", "reference": "1Sa 1:16", "verse_text": "Do not regard your servant as a worthless woman, for all along I have been speaking out of my great anxiety and vexation." },
+    { "term_id": "H3708B", "transliteration": "ka.a.s", "testament": "OT", "book": "Ecclesiastes", "reference": "Ecc 11:10", "verse_text": "Remove vexation from your heart, and put away pain from your body, for youth and the dawn of life are vanity." },
+
+    { "term_id": "H7110A", "transliteration": "qe.tseph", "testament": "OT", "book": "Numbers", "reference": "Num 1:53", "verse_text": "But the Levites shall camp around the tabernacle of the testimony, so that there may be no wrath on the congregation of the people of Israel." },
+    { "term_id": "H7110A", "transliteration": "qe.tseph", "testament": "OT", "book": "Numbers", "reference": "Num 16:46", "verse_text": "And Moses said to Aaron, 'Take your censer, and put fire on it from off the altar... carry it quickly to the congregation and make atonement for them, for wrath has gone out from the Lord; the plague has begun.'" },
+    { "term_id": "H7110A", "transliteration": "qe.tseph", "testament": "OT", "book": "Psalms", "reference": "Psa 38:1", "verse_text": "O Lord, rebuke me not in your anger, nor discipline me in your wrath!" },
+    { "term_id": "H7110A", "transliteration": "qe.tseph", "testament": "OT", "book": "Isaiah", "reference": "Isa 54:8", "verse_text": "In overflowing anger for a moment I hid my face from you, but with everlasting love I will have compassion on you, says the Lord, your Redeemer." },
+    { "term_id": "H7110A", "transliteration": "qe.tseph", "testament": "OT", "book": "Zechariah", "reference": "Zec 1:2", "verse_text": "The Lord was very angry with your fathers." },
+
+    { "term_id": "H7110B", "transliteration": "qe.tseph", "testament": "OT", "book": "Hosea", "reference": "Hos 10:7", "verse_text": "Samaria's king shall perish like a twig on the face of the waters." },
+
+    { "term_id": "H8474", "transliteration": "ta.cha.rah", "testament": "OT", "book": "Jeremiah", "reference": "Jer 12:5", "verse_text": "If you have raced with men on foot, and they have wearied you, how will you compete with horses? And if in a safe land you are so trusting, what will you do in the thicket of the Jordan?" },
+    { "term_id": "H8474", "transliteration": "ta.cha.rah", "testament": "OT", "book": "Jeremiah", "reference": "Jer 22:15", "verse_text": "Do you think you are a king because you compete in cedar? Did not your father eat and drink and do justice and righteousness? Then it was well with him." },
+
+    { "term_id": "H7265", "transliteration": "re.gaz", "testament": "OT", "book": "Ezra", "reference": "Ezr 5:12", "verse_text": "But because our fathers had angered the God of heaven, he gave them into the hand of Nebuchadnezzar king of Babylon, the Chaldean, who destroyed this house and carried away the people to Babylonia." },
+
+    { "term_id": "H5307K", "transliteration": "na.phal", "testament": "OT", "book": "Jeremiah", "reference": "Jer 3:12", "verse_text": "Go, and proclaim these words toward the north, and say, 'Return, faithless Israel, declares the Lord. I will not look on you in anger, for I am merciful, declares the Lord; I will not be angry forever.'" },
+
+    { "term_id": "H5201", "transliteration": "na.tar", "testament": "OT", "book": "Leviticus", "reference": "Lev 19:18", "verse_text": "You shall not take vengeance or bear a grudge against the sons of your own people, but you shall love your neighbor as yourself: I am the Lord." },
+    { "term_id": "H5201", "transliteration": "na.tar", "testament": "OT", "book": "Psalms", "reference": "Psa 103:9", "verse_text": "He will not always chide, nor will he keep his anger forever." },
+    { "term_id": "H5201", "transliteration": "na.tar", "testament": "OT", "book": "Jeremiah", "reference": "Jer 3:5", "verse_text": "will he be angry forever, will he be indignant to the end? Behold, you have spoken, but you have done all the evil that you could." },
+
+    { "term_id": "H5006", "transliteration": "na.ats", "testament": "OT", "book": "Numbers", "reference": "Num 14:11", "verse_text": "And the Lord said to Moses, 'How long will this people despise me? And how long will they not believe in me, in spite of all the signs that I have done among them?'" },
+    { "term_id": "H5006", "transliteration": "na.ats", "testament": "OT", "book": "Psalms", "reference": "Psa 107:11", "verse_text": "for they had rebelled against the words of God, and spurned the counsel of the Most High." },
+    { "term_id": "H5006", "transliteration": "na.ats", "testament": "OT", "book": "2 Samuel", "reference": "2Sa 12:14", "verse_text": "Nevertheless, because by this deed you have utterly scorned the Lord, the child who is born to you shall die." },
+    { "term_id": "H5006", "transliteration": "na.ats", "testament": "OT", "book": "Isaiah", "reference": "Isa 1:4", "verse_text": "Ah, sinful nation, a people laden with iniquity, offspring of evildoers, children who deal corruptly! They have forsaken the Lord, they have despised the Holy One of Israel, they are utterly estranged." },
+
+    { "term_id": "H2552", "transliteration": "cha.mam", "testament": "OT", "book": "Psalms", "reference": "Psa 39:3", "verse_text": "My heart became hot within me. As I mused, the fire burned; then I spoke with my tongue:" },
+    { "term_id": "H2552", "transliteration": "cha.mam", "testament": "OT", "book": "Hosea", "reference": "Hos 7:6", "verse_text": "For with hearts like an oven they approach their intrigue; all night their anger smolders; in the morning it blazes like a flaming fire." },
+    { "term_id": "H2552", "transliteration": "cha.mam", "testament": "OT", "book": "Hosea", "reference": "Hos 7:7", "verse_text": "All of them are hot as an oven, and they devour their rulers. All their kings have fallen, and none of them calls upon me." },
+
+    { "term_id": "H0644", "transliteration": "a.phah", "testament": "OT", "book": "Hosea", "reference": "Hos 7:4", "verse_text": "They are all adulterers; they are like a heated oven whose baker ceases to stir the fire, from the kneading of the dough until it is leavened." },
+    { "term_id": "H0644", "transliteration": "a.phah", "testament": "OT", "book": "Hosea", "reference": "Hos 7:6", "verse_text": "For with hearts like an oven they approach their intrigue; all night their anger smolders; in the morning it blazes like a flaming fire." },
+
+    { "term_id": "H5860A", "transliteration": "it", "testament": "OT", "book": "1 Samuel", "reference": "1Sa 25:14", "verse_text": "But one of the young men told Abigail, Nabal's wife, 'Behold, David sent messengers out of the wilderness to greet our master, and he railed at them.'" },
+
+    { "term_id": "H7267", "transliteration": "ro.gez", "testament": "OT", "book": "Job", "reference": "Job 3:17", "verse_text": "There the wicked cease from troubling, and there the weary are at rest." },
+    { "term_id": "H7267", "transliteration": "ro.gez", "testament": "OT", "book": "Job", "reference": "Job 3:26", "verse_text": "I am not at ease, nor am I quiet; I have no rest, but trouble comes." },
+    { "term_id": "H7267", "transliteration": "ro.gez", "testament": "OT", "book": "Job", "reference": "Job 39:24", "verse_text": "With fierceness and rage he swallows the ground; he cannot stand still at the sound of the trumpet." },
+    { "term_id": "H7267", "transliteration": "ro.gez", "testament": "OT", "book": "Isaiah", "reference": "Isa 14:3", "verse_text": "When the Lord has given you rest from your pain and turmoil and the hard service with which you were made to serve," },
+    { "term_id": "H7267", "transliteration": "ro.gez", "testament": "OT", "book": "Habakkuk", "reference": "Hab 3:2", "verse_text": "O Lord, I have heard the report of you, and your work, O Lord, do I fear. In the midst of the years revive it; in the midst of the years make it known; in wrath remember mercy." },
+
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Matthew", "reference": "Mat 3:7", "verse_text": "But when he saw many of the Pharisees and Sadducees coming to his baptism, he said to them, 'You brood of vipers! Who warned you to flee from the wrath to come?'" },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Mark", "reference": "Mar 3:5", "verse_text": "And he looked around at them with anger, grieved at their hardness of heart, and said to the man, 'Stretch out your hand.' He stretched it out, and his hand was restored." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Romans", "reference": "Rom 1:18", "verse_text": "For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men, who by their unrighteousness suppress the truth." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Romans", "reference": "Rom 2:5", "verse_text": "But because of your hard and impenitent heart you are storing up wrath for yourself on the day of wrath when God's righteous judgment will be revealed." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Romans", "reference": "Rom 12:19", "verse_text": "Beloved, never avenge yourselves, but leave it to the wrath of God, for it is written, 'Vengeance is mine, I will repay, says the Lord.'" },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Ephesians", "reference": "Eph 4:31", "verse_text": "Let all bitterness and wrath and anger and clamor and slander be put away from you, along with all malice." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Colossians", "reference": "Col 3:8", "verse_text": "But now you must put them all away: anger, wrath, malice, slander, and obscene talk from your mouth." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "James", "reference": "Jam 1:19", "verse_text": "Know this, my beloved brothers: let every person be quick to hear, slow to speak, slow to anger;" },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "James", "reference": "Jam 1:20", "verse_text": "for the anger of man does not produce the righteousness of God." },
+    { "term_id": "G3709", "transliteration": "orgē", "testament": "NT", "book": "Revelation", "reference": "Rev 6:16", "verse_text": "calling to the mountains and rocks, 'Fall on us and hide us from the face of him who is seated on the throne, and from the wrath of the Lamb,'" },
+
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Matthew", "reference": "Mat 5:22", "verse_text": "But I say to you that everyone who is angry with his brother will be liable to judgment; whoever insults his brother will be liable to the council; and whoever says, 'You fool!' will be liable to the hell of fire." },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Matthew", "reference": "Mat 18:34", "verse_text": "And in anger his master delivered him to the jailers, until he should pay all his debt." },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Matthew", "reference": "Mat 22:7", "verse_text": "The king was angry, and he sent his troops and destroyed those murderers and burned their city." },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Luke", "reference": "Luk 14:21", "verse_text": "So the servant came and reported these things to his master. Then the master of the house became angry and said to his servant, 'Go out quickly to the streets and lanes of the city, and bring in the poor and crippled and blind and lame.'" },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Luke", "reference": "Luk 15:28", "verse_text": "But he was angry and refused to go in. His father came out and entreated him," },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Revelation", "reference": "Rev 11:18", "verse_text": "The nations raged, but your wrath came, and the time for the dead to be judged, and for rewarding your servants, the prophets and saints..." },
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Revelation", "reference": "Rev 12:17", "verse_text": "Then the dragon became furious with the woman and went off to make war on the rest of her offspring, on those who keep the commandments of God and hold to the testimony of Jesus." },
+
+    { "term_id": "G_parorgizō", "transliteration": "parorgizō", "testament": "NT", "book": "Romans", "reference": "Rom 10:19", "verse_text": "But I ask, did Israel not understand? First Moses says, 'I will make you jealous of those who are not a nation; with a foolish nation I will make you angry.'" },
+    { "term_id": "G_parorgizō", "transliteration": "parorgizō", "testament": "NT", "book": "Ephesians", "reference": "Eph 6:4", "verse_text": "Fathers, do not provoke your children to anger, but bring them up in the discipline and instruction of the Lord." },
+
+    { "term_id": "G3710", "transliteration": "orgizō", "testament": "NT", "book": "Ephesians", "reference": "Eph 4:26", "verse_text": "Be angry and do not sin; do not let the sun go down on your anger" },
+
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Luke", "reference": "Luk 4:28", "verse_text": "When they heard these things, all in the synagogue were filled with wrath." },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Acts", "reference": "Act 19:28", "verse_text": "When they heard this they were enraged and were crying out, 'Great is Artemis of the Ephesians!'" },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Romans", "reference": "Rom 2:8", "verse_text": "but for those who are self-seeking and do not obey the truth, but obey unrighteousness, there will be wrath and fury." },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 12:20", "verse_text": "For I fear that perhaps when I come I may find you not as I wish... there may be quarreling, jealousy, anger, hostility, slander, gossip, conceit, and disorder." },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Galatians", "reference": "Gal 5:20", "verse_text": "idolatry, sorcery, enmity, strife, jealousy, fits of anger, rivalries, dissensions, divisions," },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Ephesians", "reference": "Eph 4:31", "verse_text": "Let all bitterness and wrath and anger and clamor and slander be put away from you, along with all malice." },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Revelation", "reference": "Rev 16:19", "verse_text": "The great city was split into three parts, and the cities of the nations fell, and God remembered Babylon the great, to make her drain the cup of the wine of the fury of his wrath." },
+    { "term_id": "G2372", "transliteration": "thumos", "testament": "NT", "book": "Revelation", "reference": "Rev 19:15", "verse_text": "From his mouth comes a sharp sword with which to strike down the nations, and he will rule them with a rod of iron. He will tread the winepress of the fury of the wrath of God the Almighty." },
+
+    { "term_id": "G_thumoō", "transliteration": "thumoō", "testament": "NT", "book": "Matthew", "reference": "Mat 2:16", "verse_text": "Then Herod, when he saw that he had been tricked by the wise men, became furious, and he sent and killed all the male children in Bethlehem and in all that region who were two years old or under..." },
+
+    { "term_id": "G3947", "transliteration": "paroxunō", "testament": "NT", "book": "Acts", "reference": "Act 17:16", "verse_text": "Now while Paul was waiting for them at Athens, his spirit was provoked within him as he saw that the city was full of idols." },
+    { "term_id": "G3947", "transliteration": "paroxunō", "testament": "NT", "book": "1 Corinthians", "reference": "1Cor 13:5", "verse_text": "or rude. It does not insist on its own way; it is not irritable or resentful;" }
+  ],
+
+  "cross_registry_links": [
+    {
+      "linked_word": "indignation",
+      "linked_registry_id": "001",
+      "connection_type": "shared_term",
+      "connecting_term": "za.am H2194/H2195",
+      "note": "za.am appears in registry 001 (Abomination) as H2194 verbal form with god_as_subject flag and a Phase 2 note about possible migration to anger/wrath registry. The noun form H2195 is recorded here. Phase 2 will determine whether za.am belongs primarily to abomination or anger."
+    },
+    {
+      "linked_word": "spirit/ruach",
+      "linked_registry_id": null,
+      "connection_type": "shared_term",
+      "connecting_term": "ru.ach H7307J",
+      "note": "ru.ach (H7307) is a primary biblical anthropology word that will have its own registry entry. The temper/anger sub-sense (H7307J) recorded here may illuminate the anger-of-God / Spirit-of-God overlap. Phase 2 cross-registry investigation required."
+    },
+    {
+      "linked_word": "humility",
+      "linked_registry_id": null,
+      "connection_type": "semantic_opposition",
+      "connecting_term": "orgē G3709",
+      "note": "Jam 1:19-20 places slowness to anger in direct contrast with the failure to produce the righteousness of God. The anger/humility contrast is structurally parallel to the eritheia/tapeinophrosune contrast noted in registry 003."
+    },
+    {
+      "linked_word": "jealousy/zeal",
+      "linked_registry_id": "181",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "che.mah H2534",
+      "note": "Che.mah meaning block includes venom/poison as a sub-sense alongside rage. Pro 6:34 explicitly pairs jealousy and fury. The jealousy-anger complex appears across multiple terms (che.mah, ka.as, orgē) and will require cross-registry investigation in Phase 2."
+    }
+  ],
+
+  "data_quality_flags": [
+    {
+      "term_id": "H0639G/H/I",
+      "flag": "MULTI_SENSE_ENTRY",
+      "description": "Three STEP sub-entries (H0639G anger, H0639H nose, H0639I face) share the same lexical root aph and occurrence count (~278x). Retained as three separate records to preserve the physiological-inner being layering for Phase 2 investigation."
+    },
+    {
+      "term_id": "H2528",
+      "flag": "ARAMAIC_EQUIVALENT",
+      "description": "Aramaic form of che.mah (H2534). Retained independently. Context (Daniel 3) requires analysis."
+    },
+    {
+      "term_id": "H7265",
+      "flag": "ARAMAIC_EQUIVALENT",
+      "description": "Aramaic Haphel form of ra.gaz (H7264). Retained independently. Context (Ezra 5:12) requires analysis."
+    },
+    {
+      "term_id": "H7307J",
+      "flag": "MULTI_SENSE_ENTRY / CROSS_REGISTRY",
+      "description": "Sub-entry of the primary ruach word. Retained in full. Cross-registry link to ruach's own future registry entry required."
+    },
+    {
+      "term_id": "H3708B",
+      "flag": "DUPLICATE_IN_SOURCE",
+      "description": "The source file contains two blocks labelled vexation (ka.as). The second resolves to na.ats (H5006 to spurn). Both recorded separately."
+    },
+    {
+      "term_id": "H7110B",
+      "flag": "THIN_DATA / UNCERTAIN_MEANING",
+      "description": "qe.tseph splinter — ~1x, meaning uncertain in source. Retained; root metaphor investigation deferred to Phase 2."
+    },
+    {
+      "term_id": "H0644",
+      "flag": "PERIPHERAL_TERM",
+      "description": "to bake — retained on the basis of Hos 7:4-6 oven/baking metaphors for smoldering anger. Not a direct anger term but potentially significant for the physiological-inner being layer."
+    },
+    {
+      "term_id": "H5860A",
+      "flag": "PERIPHERAL_TERM / THIN_DATA",
+      "description": "to scream — 1x occurrence. Retained as potential somatic expression of anger."
+    },
+    {
+      "term_id": "H5307K",
+      "flag": "PERIPHERAL_TERM / SOMATIC_EXPRESSION",
+      "description": "to fall: angry — primarily a falling verb; anger sub-sense relates to face-falling idiom. Retained for somatic-inner link investigation."
+    },
+    {
+      "term_id": "G_parorgismos",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "Header term; word analysis block resolves to orgizō (G3710). Strong's and occurrence count unconfirmed."
+    },
+    {
+      "term_id": "G_mēnis",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "Header term only. No block, no verses."
+    },
+    {
+      "term_id": "G_enkotēma",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "Header term only. No block, no verses."
+    },
+    {
+      "term_id": "G_cholos",
+      "flag": "NO_WORD_ANALYSIS",
+      "description": "Header term only. No block, no verses."
+    },
+    {
+      "term_id": "G_thumoō",
+      "flag": "THIN_DATA",
+      "description": "Word analysis block resolves primarily to lian (G3029 greatly). Only 1 verse (Mat 2:16). Occurrence count not confirmed."
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "meta": {
+    "schema_version": "2.3",
+    "phase": "Phase 1 — STEP Data Assimilation",
+    "produced_date": "2026-03-08",
+    "source_file": "Word_grief_Part3.md",
+    "translation_used": "ESV",
+    "specification": "Session A Instruction v5",
+    "revision_note": null,
+    "word": "grief",
+    "registry_id": "071",
+    "source_list": "High Confidence",
+    "category": null,
+    "testament_coverage": "both",
+    "part_number": 3,
+    "total_parts": 3,
+    "is_split": true,
+    "root_families_in_prior_parts": [
+      "ONI", "QADAR", "CHALAH", "MAR", "RAAH", "AMEL", "AVL",
+      "ATSAV", "YGN", "YGH", "KAV", "KAS"
+    ]
+  },
+
+  "term_inventory_hebrew": [
+    {
+      "term_id": "H2483",
+      "step_search_gloss": "sickness",
+      "step_search_flag": null,
+      "transliteration": "cho.li",
+      "strongs_number": "H2483",
+      "word_analysis_gloss": "sickness",
+      "occurrence_count": 24,
+      "occurrence_count_qualifier": "about",
+      "meaning": "sickness",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "be weak: weak", "transliteration": "cha.lah" },
+        { "gloss": "to beg", "transliteration": "cha.lah" },
+        { "gloss": "be weak: ill", "transliteration": "cha.lah" },
+        { "gloss": "be weak: grieved", "transliteration": "cha.lah" },
+        { "gloss": "sickness", "transliteration": "ma.cha.leh" },
+        { "gloss": "sickness", "transliteration": "ma.cha.lah" },
+        { "gloss": "suffering", "transliteration": "ma.cha.luy" }
+      ],
+      "also_spelled": null,
+      "root_family": ["CHALAH"],
+      "testament": "OT",
+      "god_as_subject": true,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["CROSS_PART_ROOT"]
+    },
+    {
+      "term_id": "H6330",
+      "step_search_gloss": "staggering",
+      "step_search_flag": null,
+      "transliteration": "pu.qah",
+      "strongs_number": "H6330",
+      "word_analysis_gloss": "staggering",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": "about",
+      "meaning": "1) tottering, staggering, stumbling\n1a) of qualm of conscience (fig.)",
+      "meaning_numbered": "1) tottering, staggering, stumbling | 1a) of qualm of conscience (fig.)",
+      "related_words": [
+        { "gloss": "to reel", "transliteration": "puq" },
+        { "gloss": "tottering", "transliteration": "piq" }
+      ],
+      "also_spelled": null,
+      "root_family": ["PUQAH"],
+      "testament": "OT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["THIN_DATA"]
+    }
+  ],
+
+  "term_inventory_greek": [
+    {
+      "term_id": "G3601",
+      "step_search_gloss": "anguish",
+      "step_search_flag": null,
+      "transliteration": "o.du.ne",
+      "strongs_number": "G3601",
+      "word_analysis_gloss": "anguish",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": "about",
+      "meaning": "anguish, grief, pain\npain, of body or mind;\nsorrow, grief, Rom. 9:2; 1Tim. 6:10\nLSJ: pain of body; pain of mind, grief, distress",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "be anguished", "transliteration": "odunaō" },
+        { "gloss": "labor", "transliteration": "ōdin" }
+      ],
+      "also_spelled": null,
+      "root_family": ["ODUNE"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["SMALL_VERSE_SAMPLE"]
+    },
+    {
+      "term_id": "G3997",
+      "step_search_gloss": "grief",
+      "step_search_flag": null,
+      "transliteration": "penthos",
+      "strongs_number": "G3997",
+      "word_analysis_gloss": "grief",
+      "occurrence_count": 5,
+      "occurrence_count_qualifier": "about",
+      "meaning": "mourning, grief, sadness\nmourning, sorrow, sadness, grief, Jas. 4:9\nLSJ: grief, sorrow; especially grief for the dead, mourning; unhappy event, misfortune; of a person, a misery",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "to mourn", "transliteration": "pentheō" }
+      ],
+      "also_spelled": null,
+      "root_family": ["PENTHOS"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "G3077",
+      "step_search_gloss": "grief",
+      "step_search_flag": null,
+      "transliteration": "lu.pe",
+      "strongs_number": "G3077",
+      "word_analysis_gloss": "grief",
+      "occurrence_count": 16,
+      "occurrence_count_qualifier": "about",
+      "meaning": "sorrow, grief, pain\npain, distress, Jn. 16:21;\ngrief, sorrow, Jn. 16:6, 20, 22;\nmetonymy: cause of grief, trouble, affliction, 1Pet. 2:19\nLSJ: pain of body, opposed to pleasure; pain of mind, grief",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "to grieve", "transliteration": "lupeō" }
+      ],
+      "also_spelled": null,
+      "root_family": ["LUPE"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": ["DUPLICATE_RESOLVED"]
+    },
+    {
+      "term_id": "G3076",
+      "step_search_gloss": "to grieve",
+      "step_search_flag": null,
+      "transliteration": "lu.pe.o",
+      "strongs_number": "G3076",
+      "word_analysis_gloss": "to grieve",
+      "occurrence_count": 26,
+      "occurrence_count_qualifier": "about",
+      "meaning": "(act.) to cause sorrow, grief;\n(pass.) to be sorrowful, sad, distressed, grieve\nto occasion grief or sorrow, to distress, 2Cor. 2:2, 5; 7:8;\npassive: to be grieved, pained, distressed, sorrowful, Mt. 17:23; 19:22;\nto aggrieve, cross, vex, Eph. 4:30; passive to feel pained, Rom. 14:15\nLSJ: grieve, vex, whether in body or mind; cause pain or grief; passive: to be grieved, distressed",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "grief", "transliteration": "lupē" }
+      ],
+      "also_spelled": null,
+      "root_family": ["LUPE"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": false,
+      "causative_form_present": true,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "G4727",
+      "step_search_gloss": "to groan",
+      "step_search_flag": null,
+      "transliteration": "ste.na.zo",
+      "strongs_number": "G4727",
+      "word_analysis_gloss": "to groan",
+      "occurrence_count": 6,
+      "occurrence_count_qualifier": "about",
+      "meaning": "to groan, sigh;\nto grumble\nto groan, sigh, Rom. 8:23; 2Cor. 5:2, 4; Heb. 13:17;\nto sigh inwardly, Mk. 7:34;\nto grumble, to give vent to querulous or censorious feelings, Jas. 5:9\nLSJ: sigh deeply; generally sigh, groan; transitive: bemoan, bewail",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "to sigh deeply", "transliteration": "anastenazō" },
+        { "gloss": "groan", "transliteration": "stenagmos" },
+        { "gloss": "to groan with", "transliteration": "sustenazō" },
+        { "gloss": "to groan", "transliteration": "katastenazō" },
+        { "gloss": "to moan", "transliteration": "stenō" }
+      ],
+      "also_spelled": null,
+      "root_family": ["STENAZ"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": []
+    },
+    {
+      "term_id": "G3996",
+      "step_search_gloss": "to mourn",
+      "step_search_flag": null,
+      "transliteration": "pen.the.o",
+      "strongs_number": "G3996",
+      "word_analysis_gloss": "to mourn",
+      "occurrence_count": 10,
+      "occurrence_count_qualifier": "about",
+      "meaning": "to mourn, grieve (over)\ntrans. to lament over, 2Cor. 12:21;\nabsolute: to lament, be sad, mourn, grieve, Mt. 5:4; 9:15; Mk. 16:10;\nmiddle: to bewail oneself, to feel guilt, 1Cor. 5:2\nLSJ: bewail, lament, especially for persons; mourn, go into mourning; passive: to be mourned for",
+      "meaning_numbered": null,
+      "related_words": [
+        { "gloss": "grief", "transliteration": "penthos" }
+      ],
+      "also_spelled": null,
+      "root_family": ["PENTHOS"],
+      "testament": "NT",
+      "god_as_subject": false,
+      "somatic_link": true,
+      "causative_form_present": false,
+      "phase2_flags": []
+    }
+  ],
+
+  "verse_records": [
+    { "term_id": "G3601", "transliteration": "o.du.ne", "testament": "NT", "book": "1 Timothy", "reference": "1Ti 6:10", "verse_text": "For the love of money is a root of all kinds of evils. It is through this craving that some have wandered away from the faith and pierced themselves with many pangs." },
+
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 7:15", "verse_text": "And the Lord will take away from you all sickness, and none of the evil diseases of Egypt, which you knew, will he inflict on you, but he will lay them on all who hate you." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 28:59", "verse_text": "then the Lord will bring on you and your offspring extraordinary afflictions, afflictions severe and lasting, and sicknesses grievous and lasting." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Deuteronomy", "reference": "Deu 28:61", "verse_text": "Every sickness also and every affliction that is not recorded in the book of this law, the Lord will bring upon you, until you are destroyed." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "1 Kings", "reference": "1Ki 17:17", "verse_text": "After this the son of the woman, the mistress of the house, became ill. And his illness was so severe that there was no breath left in him." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Kings", "reference": "2Ki 1:2", "verse_text": "Now Ahaziah fell through the lattice in his upper chamber in Samaria, and lay sick; so he sent messengers, telling them, \"Go, inquire of Baal-zebub, the god of Ekron, whether I shall recover from this sickness.\"" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Kings", "reference": "2Ki 8:8", "verse_text": "the king said to Hazael, \"Take a present with you and go to meet the man of God, and inquire of the Lord through him, saying, 'Shall I recover from this sickness?'\"" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Kings", "reference": "2Ki 8:9", "verse_text": "So Hazael went to meet him, and took a present with him, all kinds of goods of Damascus, forty camels' loads. When he came and stood before him, he said, \"Your son Ben-hadad king of Syria has sent me to you, saying, 'Shall I recover from this sickness?'\"" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Kings", "reference": "2Ki 13:14", "verse_text": "Now when Elisha had fallen sick with the illness of which he was to die, Joash king of Israel went down to him and wept before him, crying, \"My father, my father! The chariots of Israel and its horsemen!\"" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Chronicles", "reference": "2Ch 16:12", "verse_text": "In the thirty-ninth year of his reign Asa was diseased in his feet, and his disease became severe. Yet even in his disease he did not seek the Lord, but sought help from physicians." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Chronicles", "reference": "2Ch 21:15", "verse_text": "and you yourself will have a severe sickness with a disease of your bowels, until your bowels come out because of the disease, day by day.'" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Chronicles", "reference": "2Ch 21:18", "verse_text": "And after all this the Lord struck him in his bowels with an incurable disease." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "2 Chronicles", "reference": "2Ch 21:19", "verse_text": "In the course of time, at the end of two years, his bowels came out because of the disease, and he died in great agony. His people made no fire in his honor, like the fires made for his fathers." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Psalms", "reference": "Psa 41:3", "verse_text": "The Lord sustains him on his sickbed; in his illness you restore him to full health." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Ecclesiastes", "reference": "Ecc 6:2", "verse_text": "a man to whom God gives wealth, possessions, and honor, so that he lacks nothing of all that he desires, yet God does not give him power to enjoy them, but a stranger enjoys them. This is vanity; it is a grievous evil." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Isaiah", "reference": "Isa 1:5", "verse_text": "Why will you still be struck down? Why will you continue to rebel? The whole head is sick, and the whole heart faint." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Isaiah", "reference": "Isa 38:9", "verse_text": "A writing of Hezekiah king of Judah, after he had been sick and had recovered from his sickness:" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Isaiah", "reference": "Isa 53:3", "verse_text": "He was despised and rejected by men, a man of sorrows, and acquainted with grief; and as one from whom men hide their faces he was despised, and we esteemed him not." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Isaiah", "reference": "Isa 53:4", "verse_text": "Surely he has borne our griefs and carried our sorrows; yet we esteemed him stricken, smitten by God, and afflicted." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Jeremiah", "reference": "Jer 6:7", "verse_text": "As a well keeps its water fresh, so she keeps fresh her evil; violence and destruction are heard within her; sickness and wounds are ever before me." },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Jeremiah", "reference": "Jer 10:19", "verse_text": "Woe is me because of my hurt! My wound is grievous. But I said, \"Truly this is an affliction, and I must bear it.\"" },
+    { "term_id": "H2483", "transliteration": "cho.li", "testament": "OT", "book": "Hosea", "reference": "Hos 5:13", "verse_text": "When Ephraim saw his sickness, and Judah his wound, then Ephraim went to Assyria, and sent to the great king. But he is not able to cure you or heal your wound." },
+
+    { "term_id": "G3997", "transliteration": "penthos", "testament": "NT", "book": "Revelation", "reference": "Rev 18:7", "verse_text": "As she glorified herself and lived in luxury, so give her a like measure of torment and mourning, since in her heart she says, 'I sit as a queen, I am no widow, and mourning I shall never see.'" },
+    { "term_id": "G3997", "transliteration": "penthos", "testament": "NT", "book": "Revelation", "reference": "Rev 18:8", "verse_text": "For this reason her plagues will come in a single day, death and mourning and famine, and she will be burned up with fire; for mighty is the Lord God who has judged her." },
+    { "term_id": "G3997", "transliteration": "penthos", "testament": "NT", "book": "Revelation", "reference": "Rev 21:4", "verse_text": "He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away." },
+
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "Luke", "reference": "Luk 22:45", "verse_text": "And when he rose from prayer, he came to the disciples and found them sleeping for sorrow," },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "John", "reference": "Joh 16:6", "verse_text": "But because I have said these things to you, sorrow has filled your heart." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "John", "reference": "Joh 16:21", "verse_text": "When a woman is giving birth, she has sorrow because her hour has come, but when she has delivered the baby, she no longer remembers the anguish, for joy that a human being has been born into the world." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "John", "reference": "Joh 16:22", "verse_text": "So also you have sorrow now, but I will see you again, and your hearts will rejoice, and no one will take your joy from you." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "Romans", "reference": "Rom 9:2", "verse_text": "that I have great sorrow and unceasing anguish in my heart." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:1", "verse_text": "For I made up my mind not to make another painful visit to you." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:3", "verse_text": "And I wrote as I did, so that when I came I might not suffer pain from those who should have made me rejoice, for I felt sure of all of you, that my joy would be the joy of you all." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:7", "verse_text": "so you should rather turn to forgive and comfort him, or he may be overwhelmed by excessive sorrow." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 7:10", "verse_text": "For godly grief produces a repentance that leads to salvation without regret, whereas worldly grief produces death." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 9:7", "verse_text": "Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "Philippians", "reference": "Phili 2:27", "verse_text": "Indeed he was ill, near to death. But God had mercy on him, and not only on him but on me also, lest I should have sorrow upon sorrow." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "Hebrews", "reference": "Heb 12:11", "verse_text": "For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it." },
+    { "term_id": "G3077", "transliteration": "lu.pe", "testament": "NT", "book": "1 Peter", "reference": "1Pe 2:19", "verse_text": "For this is a gracious thing, when, mindful of God, one endures sorrows while suffering unjustly." },
+
+    { "term_id": "H6330", "transliteration": "pu.qah", "testament": "OT", "book": "1 Samuel", "reference": "1Sa 25:31", "verse_text": "my lord shall have no cause of grief or pangs of conscience for having shed blood without cause or for my lord working salvation himself. And when the Lord has dealt well with my lord, then remember your servant." },
+
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 14:9", "verse_text": "And the king was sorry, but because of his oaths and his guests he commanded it to be given." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 17:23", "verse_text": "and they will kill him, and he will be raised on the third day.\" And they were greatly distressed." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 18:31", "verse_text": "When his fellow servants saw what had taken place, they were greatly distressed, and they went and reported to their master all that had taken place." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 19:22", "verse_text": "When the young man heard this he went away sorrowful, for he had great possessions." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 26:22", "verse_text": "And they were very sorrowful and began to say to him one after another, \"Is it I, Lord?\"" },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Matthew", "reference": "Mat 26:37", "verse_text": "And taking with him Peter and the two sons of Zebedee, he began to be sorrowful and troubled." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Mark", "reference": "Mar 10:22", "verse_text": "Disheartened by the saying, he went away sorrowful, for he had great possessions." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Mark", "reference": "Mar 14:19", "verse_text": "They began to be sorrowful and to say to him one after another, \"Is it I?\"" },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "John", "reference": "Joh 16:20", "verse_text": "Truly, truly, I say to you, you will weep and lament, but the world will rejoice. You will be sorrowful, but your sorrow will turn into joy." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "John", "reference": "Joh 21:17", "verse_text": "He said to him the third time, \"Simon, son of John, do you love me?\" Peter was grieved because he said to him the third time, \"Do you love me?\" and he said to him, \"Lord, you know everything; you know that I love you.\" Jesus said to him, \"Feed my sheep." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Romans", "reference": "Rom 14:15", "verse_text": "For if your brother is grieved by what you eat, you are no longer walking in love. By what you eat, do not destroy the one for whom Christ died." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:2", "verse_text": "For if I cause you pain, who is there to make me glad but the one whom I have pained?" },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:4", "verse_text": "For I wrote to you out of much affliction and anguish of heart and with many tears, not to cause you pain but to let you know the abundant love that I have for you." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 2:5", "verse_text": "Now if anyone has caused pain, he has caused it not to me, but in some measure—not to put it too severely—to all of you." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 6:10", "verse_text": "as sorrowful, yet always rejoicing; as poor, yet making many rich; as having nothing, yet possessing everything." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 7:8", "verse_text": "For even if I made you grieve with my letter, I do not regret it—though I did regret it, for I see that that letter grieved you, though only for a while." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 7:9", "verse_text": "As it is, I rejoice, not because you were grieved, but because you were grieved into repenting. For you felt a godly grief, so that you suffered no loss through us." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 7:11", "verse_text": "For see what earnestness this godly grief has produced in you, but also what eagerness to clear yourselves, what indignation, what fear, what longing, what zeal, what punishment! At every point you have proved yourselves innocent in the matter." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "Ephesians", "reference": "Eph 4:30", "verse_text": "And do not grieve the Holy Spirit of God, by whom you were sealed for the day of redemption." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "1 Thessalonians", "reference": "1Th 4:13", "verse_text": "But we do not want you to be uninformed, brothers, about those who are asleep, that you may not grieve as others do who have no hope." },
+    { "term_id": "G3076", "transliteration": "lu.pe.o", "testament": "NT", "book": "1 Peter", "reference": "1Pe 1:6", "verse_text": "In this you rejoice, though now for a little while, if necessary, you have been grieved by various trials," },
+
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "Mark", "reference": "Mar 7:34", "verse_text": "And looking up to heaven, he sighed and said to him, \"Ephphatha,\" that is, \"Be opened.\"" },
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "Romans", "reference": "Rom 8:23", "verse_text": "And not only the creation, but we ourselves, who have the firstfruits of the Spirit, groan inwardly as we wait eagerly for adoption as sons, the redemption of our bodies." },
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 5:2", "verse_text": "For in this tent we groan, longing to put on our heavenly dwelling," },
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 5:4", "verse_text": "For while we are still in this tent, we groan, being burdened—not that we would be unclothed, but that we would be further clothed, so that what is mortal may be swallowed up by life." },
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "Hebrews", "reference": "Heb 13:17", "verse_text": "Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account. Let them do this with joy and not with groaning, for that would be of no advantage to you." },
+    { "term_id": "G4727", "transliteration": "ste.na.zo", "testament": "NT", "book": "James", "reference": "Jam 5:9", "verse_text": "Do not grumble against one another, brothers, so that you may not be judged; behold, the Judge is standing at the door." },
+
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Matthew", "reference": "Mat 5:4", "verse_text": "\"Blessed are those who mourn, for they shall be comforted." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Matthew", "reference": "Mat 9:15", "verse_text": "And Jesus said to them, \"Can the wedding guests mourn as long as the bridegroom is with them? The days will come when the bridegroom is taken away from them, and then they will fast." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Mark", "reference": "Mar 16:10", "verse_text": "She went and told those who had been with him, as they mourned and wept." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Luke", "reference": "Luk 6:25", "verse_text": "\"Woe to you who are full now, for you shall be hungry. Woe to you who laugh now, for you shall mourn and weep." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "1 Corinthians", "reference": "1Cor 5:2", "verse_text": "And you are arrogant! Ought you not rather to mourn? Let him who has done this be removed from among you." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "2 Corinthians", "reference": "2Cor 12:21", "verse_text": "I fear that when I come again my God may humble me before you, and I may have to mourn over many of those who sinned earlier and have not repented of the impurity, sexual immorality, and sensuality that they have practiced." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "James", "reference": "Jam 4:9", "verse_text": "Be wretched and mourn and weep. Let your laughter be turned to mourning and your joy to gloom." },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Revelation", "reference": "Rev 18:11", "verse_text": "And the merchants of the earth weep and mourn for her, since no one buys their cargo anymore," },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Revelation", "reference": "Rev 18:15", "verse_text": "The merchants of these wares, who gained wealth from her, will stand far off, in fear of her torment, weeping and mourning aloud," },
+    { "term_id": "G3996", "transliteration": "pen.the.o", "testament": "NT", "book": "Revelation", "reference": "Rev 18:19", "verse_text": "And they threw dust on their heads as they wept and mourned, crying out, \"Alas, alas, for the great city where all who had ships at sea grew rich by her wealth! For in a single hour she has been laid waste." }
+  ],
+
+  "cross_registry_links": [
+    {
+      "linked_word": "anguish",
+      "linked_registry_id": "unknown",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "o.du.ne",
+      "note": "o.du.ne (G3601) is glossed 'anguish' and has direct meaning overlap with any anguish word set. Rom 9:2 pairs it with lu.pe (G3077) — great sorrow and unceasing anguish — in the same verse."
+    },
+    {
+      "linked_word": "shame",
+      "linked_registry_id": "unknown",
+      "connection_type": "co-occurrence",
+      "connecting_term": "cho.li",
+      "note": "Isa 53:3-4 presents cho.li (grief/sickness) in the context of the Suffering Servant who was despised and rejected, with implicit shame and social rejection. Cross-connects grief and shame word sets through the Servant Songs."
+    },
+    {
+      "linked_word": "Holy Spirit",
+      "linked_registry_id": "unknown",
+      "connection_type": "theological",
+      "connecting_term": "lu.pe.o",
+      "note": "Eph 4:30 — 'do not grieve the Holy Spirit of God' — uses lu.pe.o (G3076) as the verb. This is the NT counterpart to Isa 63:10 (a.tsav, Part 2) and constitutes a direct Hebrew-Greek correspondence on the theme of grieving the Spirit. Theologically significant for the Holy Spirit project."
+    },
+    {
+      "linked_word": "humility",
+      "linked_registry_id": "unknown",
+      "connection_type": "semantic_overlap",
+      "connecting_term": "pen.the.o",
+      "note": "Matt 5:4 — 'Blessed are those who mourn' — places mourning (pen.the.o) within the Beatitudes alongside poverty of spirit (Matt 5:3), linking grief-mourning to humility and poverty-of-spirit word sets."
+    },
+    {
+      "linked_word": "pride",
+      "linked_registry_id": "unknown",
+      "connection_type": "antonym",
+      "connecting_term": "pen.the.o / penthos",
+      "note": "Jam 4:9-10 pairs pen.the.o/penthos directly with the command to humble oneself before God, setting mourning as the antithesis of pride and arrogance. Rev 18:7 contrasts penthos with self-glorification."
+    }
+  ],
+
+  "data_quality_flags": [
+    {
+      "term_id": "G3077",
+      "flag": "DUPLICATE_RESOLVED",
+      "description": "lu.pe (G3077) appeared in two separate sections in the original source file with identical Strong's number, meaning block, and verse records. Resolved prior to extraction: user removed the duplicate entry. A single clean entry is recorded here."
+    },
+    {
+      "term_id": "G3601",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "o.du.ne (G3601) has a stated occurrence count of approximately 2. Only 1 verse is recorded in the source file (1Ti 6:10), representing 50% of the occurrence set. The meaning block cites Rom. 9:2 as a locus but that verse appears in the source file under lu.pe (G3077), not under o.du.ne. The single verse record is extracted as-is from the source."
+    },
+    {
+      "term_id": "G3997",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "penthos (G3997) has a stated occurrence count of approximately 5. The source file records 3 verses, representing 60% of the occurrence set. The missing verses (likely Jas. 4:9 in noun form and one other) are cited in the meaning block but the verse records for them appear under pen.the.o (G3996). Coverage is partial."
+    },
+    {
+      "term_id": "H2483",
+      "flag": "CROSS_PART_ROOT",
+      "description": "cho.li (H2483) belongs to the CHALAH root family, which also contains cha.lah (H2470I) recorded in Part 1. The two terms are close cognates within the same root family and share related words clusters. This cross-part root split was flagged in the split plan and is recorded here for completeness."
+    },
+    {
+      "term_id": "H6330",
+      "flag": "THIN_DATA",
+      "description": "pu.qah (H6330) occurs only once in the OT and has a single verse record (1Sa 25:31). The term's grief-related meaning is figurative (pangs of conscience). Its inclusion reflects the source list's classification, but its semantic contribution to the grief word set is minimal and highly contextual."
+    },
+    {
+      "term_id": "G3076",
+      "flag": "SMALL_VERSE_SAMPLE",
+      "description": "lu.pe.o (G3076) has a stated occurrence count of approximately 26. The source file records 21 verses, representing approximately 81% of the occurrence set. Sample is adequate and highly representative."
+    },
+    {
+      "term_id": "G3996",
+      "flag": "NOTE",
+      "description": "pen.the.o (G3996) has a stated occurrence count of approximately 10. The source file records 10 verses — effectively complete coverage of the occurrence set."
+    }
+  ]
+}

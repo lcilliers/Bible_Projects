@@ -1,0 +1,3872 @@
+{
+  "mti_meta": {
+    "title": "Framework B Soul Word Analysis — Master Term Index",
+    "file_prefix": "WA-MTI",
+    "schema_version": "1.0",
+    "produced_date": "2026-03-09",
+    "last_updated": "2026-03-10",
+    "total_terms": 311,
+    "registries_included": [
+      "001",
+      "003",
+      "004",
+      "005",
+      "006",
+      "051",
+      "061",
+      "071",
+      "073",
+      "080",
+      "116",
+      "123",
+      "154",
+      "178"
+    ],
+    "words_included": [
+      "abomination",
+      "ambition",
+      "anger",
+      "anguish",
+      "anointing",
+      "distress",
+      "fear",
+      "grief",
+      "guilt",
+      "humility",
+      "patience",
+      "pride",
+      "sorrow",
+      "wrath"
+    ],
+    "cross_registry_terms": 31,
+    "usage_instructions": [
+      "Before starting STEP data gathering for a new word, extract the Strong's numbers from the STEP term list.",
+      "Run a lookup of those Strong's numbers against this index.",
+      "Any match with status 'extracted' is a cross-reference term — do not re-extract. Note the owning_registry.",
+      "Any non-match is a new term — extract in full in Session A.",
+      "After Session A completes, add new terms to this index and update also_used_in for cross-reference terms.",
+      "File must be re-saved after every update. Filename: WA-MTI-framework-b-terms-[yyyy-mm-dd].json"
+    ]
+  },
+  "terms": [
+    {
+      "strongs_number": "G0074",
+      "transliteration": "agonia",
+      "gloss": "a struggle",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0085",
+      "transliteration": "ademoneo",
+      "gloss": "be distressed",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0111",
+      "transliteration": "athemitos",
+      "gloss": "unlawful",
+      "language": "Greek",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0156",
+      "transliteration": "aitia",
+      "gloss": "cause/charge",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0159",
+      "transliteration": "aitios",
+      "gloss": "causer",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0212",
+      "transliteration": "alazoneia",
+      "gloss": "boasting",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0218",
+      "transliteration": "aleifō",
+      "gloss": "to anoint",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0220",
+      "transliteration": "aleimma",
+      "gloss": "an anointing",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0266",
+      "transliteration": "hamartia",
+      "gloss": "sin",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0318",
+      "transliteration": "anankē",
+      "gloss": "necessity",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0928",
+      "transliteration": "basanizō",
+      "gloss": "to torture: anguish",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0946",
+      "transliteration": "bdelugma",
+      "gloss": "abomination",
+      "language": "Greek",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0947",
+      "transliteration": "bdeluktos",
+      "gloss": "abominable",
+      "language": "Greek",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G0948",
+      "transliteration": "bdelussomai",
+      "gloss": "to abhor",
+      "language": "Greek",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G1472",
+      "transliteration": "enchriō",
+      "gloss": "to rub on",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G1568",
+      "transliteration": "ekthambeo",
+      "gloss": "be awe-struck",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G1777",
+      "transliteration": "enochos",
+      "gloss": "liable for",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2025",
+      "transliteration": "epichriō",
+      "gloss": "to rub on",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2052",
+      "transliteration": "eritheia",
+      "gloss": "rivalry",
+      "language": "Greek",
+      "owning_registry": "003",
+      "owning_word": "ambition",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2346",
+      "transliteration": "thlibō",
+      "gloss": "to press on",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2347",
+      "transliteration": "thlipsis",
+      "gloss": "pressure",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 2
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2372",
+      "transliteration": "thumos",
+      "gloss": "wrath",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2373",
+      "transliteration": "thumoō",
+      "gloss": "to anger",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2631",
+      "transliteration": "katakrima",
+      "gloss": "condemnation",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2669",
+      "transliteration": "kataponeō",
+      "gloss": "to oppress",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2744",
+      "transliteration": "kauchaomai",
+      "gloss": "to boast",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2745",
+      "transliteration": "kauchēma",
+      "gloss": "pride",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G2746",
+      "transliteration": "kauchēsis",
+      "gloss": "pride",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3040",
+      "transliteration": "lipainō",
+      "gloss": "to anoint",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3076",
+      "transliteration": "lupeō",
+      "gloss": "to grieve",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 3
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3077",
+      "transliteration": "lu.pe",
+      "gloss": "grief",
+      "language": "Greek",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3114",
+      "transliteration": "makrothumeō",
+      "gloss": "to have patience",
+      "language": "Greek",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3115",
+      "transliteration": "makrothumia",
+      "gloss": "patience",
+      "language": "Greek",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3462",
+      "transliteration": "murizō",
+      "gloss": "to anoint",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3600",
+      "transliteration": "odunaō",
+      "gloss": "be anguished",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3601",
+      "transliteration": "odunē",
+      "gloss": "anguish",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 3
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3709",
+      "transliteration": "orgē",
+      "gloss": "wrath",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3710",
+      "transliteration": "orgizō",
+      "gloss": "to anger",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3947",
+      "transliteration": "paroxunō",
+      "gloss": "to provoke",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3949",
+      "transliteration": "parorgizō",
+      "gloss": "to anger",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3949_related",
+      "transliteration": "parorgismos",
+      "gloss": "anger",
+      "language": "Greek",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3996",
+      "transliteration": "pen.the.o",
+      "gloss": "to mourn",
+      "language": "Greek",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G3997",
+      "transliteration": "penthos",
+      "gloss": "grief",
+      "language": "Greek",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4036",
+      "transliteration": "perilupos",
+      "gloss": "sorrowful",
+      "language": "Greek",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G4192",
+      "transliteration": "ponos",
+      "gloss": "travail",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4239",
+      "transliteration": "praus",
+      "gloss": "gentle",
+      "language": "Greek",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4240",
+      "transliteration": "prautēs",
+      "gloss": "gentleness",
+      "language": "Greek",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4660",
+      "transliteration": "skullō",
+      "gloss": "to trouble",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4727",
+      "transliteration": "ste.na.zo",
+      "gloss": "to groan",
+      "language": "Greek",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4729",
+      "transliteration": "stenochōreō",
+      "gloss": "to press upon",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4730",
+      "transliteration": "stenochoria",
+      "gloss": "hardship",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4818",
+      "transliteration": "sullupeō",
+      "gloss": "be grieved",
+      "language": "Greek",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G4893",
+      "transliteration": "suneidesis",
+      "gloss": "conscience",
+      "language": "Greek",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4912",
+      "transliteration": "sunechō",
+      "gloss": "to hold/oppress",
+      "language": "Greek",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G4928",
+      "transliteration": "sunochē",
+      "gloss": "anguish",
+      "language": "Greek",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5011",
+      "transliteration": "tapeinos",
+      "gloss": "lowly",
+      "language": "Greek",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5012",
+      "transliteration": "tapeinofrosunē",
+      "gloss": "humility",
+      "language": "Greek",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5187",
+      "transliteration": "tufoō",
+      "gloss": "be conceited",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5243",
+      "transliteration": "huperēfania",
+      "gloss": "pride",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5244",
+      "transliteration": "huperēfanos",
+      "gloss": "arrogant",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5278",
+      "transliteration": "hupomenō",
+      "gloss": "to remain/endure",
+      "language": "Greek",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5281",
+      "transliteration": "hupomonē",
+      "gloss": "perseverance",
+      "language": "Greek",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5389",
+      "transliteration": "filotimeomai",
+      "gloss": "to aspire",
+      "language": "Greek",
+      "owning_registry": "003",
+      "owning_word": "ambition",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5448",
+      "transliteration": "fusioō",
+      "gloss": "to inflate",
+      "language": "Greek",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5545",
+      "transliteration": "chrisma",
+      "gloss": "anointing",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5545B",
+      "transliteration": "chrisis",
+      "gloss": "an anointing",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5547",
+      "transliteration": "christos",
+      "gloss": "Christ",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5548",
+      "transliteration": "chriō",
+      "gloss": "to anoint",
+      "language": "Greek",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G5604",
+      "transliteration": "ōdin",
+      "gloss": "labor",
+      "language": "Greek",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0017",
+      "transliteration": "a.voy",
+      "gloss": "pain!",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0056",
+      "transliteration": "a.val",
+      "gloss": "to mourn",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0057",
+      "transliteration": "a.vel",
+      "gloss": "mourning",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0060",
+      "transliteration": "e.vel",
+      "gloss": "mourning",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0205G",
+      "transliteration": "a.ven",
+      "gloss": "evil: trouble",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0205H",
+      "transliteration": "a.ven",
+      "gloss": "evil: trouble",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0585",
+      "transliteration": "a.na.chah",
+      "gloss": "sighing",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0592",
+      "transliteration": "a.niy.yah",
+      "gloss": "lamentation",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0639",
+      "transliteration": "aph",
+      "gloss": "face: anger",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0639G",
+      "transliteration": "aph",
+      "gloss": "face: anger",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0639H",
+      "transliteration": "aph",
+      "gloss": "face: nose",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0639I",
+      "transliteration": "aph",
+      "gloss": "face",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0644",
+      "transliteration": "a.phah",
+      "gloss": "to bake",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0748",
+      "transliteration": "a.rakh",
+      "gloss": "to prolong",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0750",
+      "transliteration": "a.rekh",
+      "gloss": "slow",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0753",
+      "transliteration": "o.rekh",
+      "gloss": "length",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0816",
+      "transliteration": "a.sham",
+      "gloss": "be guilty",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0817",
+      "transliteration": "a.sham",
+      "gloss": "guilt [offering]",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0818",
+      "transliteration": "a.shem",
+      "gloss": "guilty",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0819",
+      "transliteration": "ash.mah",
+      "gloss": "guiltiness",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0887",
+      "transliteration": "ba.ash",
+      "gloss": "to stink",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0888",
+      "transliteration": "be.esh",
+      "gloss": "be displeased",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H0926",
+      "transliteration": "ba.hal",
+      "gloss": "to dismay",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1101",
+      "transliteration": "ba.lal",
+      "gloss": "to mix",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1341",
+      "transliteration": "ge",
+      "gloss": "proud",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1343",
+      "transliteration": "ge.eh",
+      "gloss": "proud",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1344",
+      "transliteration": "ge.ah",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1346",
+      "transliteration": "ga.a.vah",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1347",
+      "transliteration": "ga.on",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1348",
+      "transliteration": "ge.ut",
+      "gloss": "majesty",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1361",
+      "transliteration": "ga.vah",
+      "gloss": "to exult",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1363",
+      "transliteration": "go.vah",
+      "gloss": "height",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1365",
+      "transliteration": "gav.hut",
+      "gloss": "haughtiness",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1467",
+      "transliteration": "ge.vah",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1669",
+      "transliteration": "da.ev",
+      "gloss": "to languish",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1670",
+      "transliteration": "de.a.vah",
+      "gloss": "dismay",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1671",
+      "transliteration": "de.a.von",
+      "gloss": "sorrow",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1674",
+      "transliteration": "de.a.gah",
+      "gloss": "anxiety",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "061",
+          "word": "fear",
+          "part": null
+        }
+      ],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1727",
+      "transliteration": "duv",
+      "gloss": "to pine",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1741",
+      "transliteration": "de.vay",
+      "gloss": "illness",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1826",
+      "transliteration": "da.mam",
+      "gloss": "to silence: silent",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H1878",
+      "transliteration": "da.shen",
+      "gloss": "to prosper",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2087",
+      "transliteration": "za.don",
+      "gloss": "arrogance",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2103",
+      "transliteration": "zud",
+      "gloss": "be proud",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2194",
+      "transliteration": "za.am",
+      "gloss": "be indignant",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2195",
+      "transliteration": "za.am",
+      "gloss": "indignation",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2201",
+      "transliteration": "ze.a.qah",
+      "gloss": "outcry",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2256B",
+      "transliteration": "che.vel",
+      "gloss": "pain",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2256M",
+      "transliteration": "che.vel",
+      "gloss": "pain",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2342A",
+      "transliteration": "chul",
+      "gloss": "to twist: tremble",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 3
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        },
+        {
+          "registry": "061",
+          "word": "fear",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2342B",
+      "transliteration": "chil",
+      "gloss": "be firm",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2342H",
+      "transliteration": "chul",
+      "gloss": "to twist: give birth",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2342I",
+      "transliteration": "chul",
+      "gloss": "to twist: writhe in pain",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2342J",
+      "transliteration": "chul",
+      "gloss": "to twist: dance",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2342K",
+      "transliteration": "chul",
+      "gloss": "to twist: anticipate",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2398",
+      "transliteration": "cha.ta",
+      "gloss": "to sin",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2399",
+      "transliteration": "chet",
+      "gloss": "sin",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2401",
+      "transliteration": "cha.ta.ah",
+      "gloss": "sin",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2427A",
+      "transliteration": "chil",
+      "gloss": "agony",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2427B",
+      "transliteration": "chil",
+      "gloss": "agony",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2442",
+      "transliteration": "cha.khah",
+      "gloss": "to wait",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2470I",
+      "transliteration": "cha.lah",
+      "gloss": "be weak: grieved",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2479",
+      "transliteration": "chal.cha.lah",
+      "gloss": "anguish",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2483",
+      "transliteration": "cho.li",
+      "gloss": "sickness",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2490H",
+      "transliteration": "cha.lal",
+      "gloss": "to profane/begin",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2528",
+      "transliteration": "che.ma",
+      "gloss": "rage",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2534",
+      "transliteration": "che.mah",
+      "gloss": "rage",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2552",
+      "transliteration": "cha.mam",
+      "gloss": "to warm",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2600",
+      "transliteration": "chin.nam",
+      "gloss": "for nothing",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2734",
+      "transliteration": "cha.rah",
+      "gloss": "to be incensed",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 3
+        },
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2740",
+      "transliteration": "cha.ron",
+      "gloss": "burning anger",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3013",
+      "transliteration": "ya.gah",
+      "gloss": "to suffer",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3015",
+      "transliteration": "ya.gon",
+      "gloss": "sorrow",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 2
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3176",
+      "transliteration": "ya.chal",
+      "gloss": "to wait: wait",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3332",
+      "transliteration": "ya.tsaq",
+      "gloss": "to pour: pour",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3334",
+      "transliteration": "ya.tsar",
+      "gloss": "be distressed",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3510",
+      "transliteration": "ka.av",
+      "gloss": "to pain",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3511",
+      "transliteration": "ke.ev",
+      "gloss": "pain",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 2
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3515",
+      "transliteration": "ka.ved",
+      "gloss": "heavy",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3707",
+      "transliteration": "ka.as",
+      "gloss": "to provoke",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3708A",
+      "transliteration": "ka.as",
+      "gloss": "vexation",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        },
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3708B",
+      "transliteration": "ka.a.s",
+      "gloss": "vexation",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 2
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        },
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3735",
+      "transliteration": "ke.ra",
+      "gloss": "be distressed",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H3811",
+      "transliteration": "la.ah",
+      "gloss": "be weary",
+      "language": "Hebrew",
+      "owning_registry": "116",
+      "owning_word": "patience",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4044",
+      "transliteration": "me.gin.nah",
+      "gloss": "covering",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4157",
+      "transliteration": "mu.a.qah",
+      "gloss": "distress",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4164",
+      "transliteration": "mu.tsaq",
+      "gloss": "constraint",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4341",
+      "transliteration": "makh.ov",
+      "gloss": "pain",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4473",
+      "transliteration": "mim.shach",
+      "gloss": "expanded",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4620",
+      "transliteration": "ma.a.tse.vah",
+      "gloss": "torment",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4656",
+      "transliteration": "miph.le.tset",
+      "gloss": "horror",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4689",
+      "transliteration": "ma.tsoq",
+      "gloss": "distress",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4712",
+      "transliteration": "me.tsar",
+      "gloss": "terror",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 2
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4751",
+      "transliteration": "mar",
+      "gloss": "bitter",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4786",
+      "transliteration": "mo.rah",
+      "gloss": "bitterness",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4791",
+      "transliteration": "ma.rom",
+      "gloss": "height",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4843",
+      "transliteration": "ma.rar",
+      "gloss": "to provoke",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4886",
+      "transliteration": "ma.shach",
+      "gloss": "to anoint",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4887",
+      "transliteration": "me.shach",
+      "gloss": "oil",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4888A",
+      "transliteration": "mish.chah",
+      "gloss": "anointing",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4888B",
+      "transliteration": "ma.she.chah",
+      "gloss": "consecrated portion",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H4899",
+      "transliteration": "ma.shi.ach",
+      "gloss": "anointed",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5006",
+      "transliteration": "na.ats",
+      "gloss": "to spurn",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5065",
+      "transliteration": "na.ga.s",
+      "gloss": "to oppress",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5100",
+      "transliteration": "ne.ha.mah",
+      "gloss": "groaning",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5201",
+      "transliteration": "na.tar",
+      "gloss": "to keep",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5258",
+      "transliteration": "ya.sakh",
+      "gloss": "to pour",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5307K",
+      "transliteration": "na.phal",
+      "gloss": "to fall: angry",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5375J",
+      "transliteration": "na.sa",
+      "gloss": "to lift: guilt",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5480",
+      "transliteration": "sukh",
+      "gloss": "to anoint",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5674B",
+      "transliteration": "a.var",
+      "gloss": "be angry",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5678",
+      "transliteration": "ev.rah",
+      "gloss": "fury",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5771G",
+      "transliteration": "a.von",
+      "gloss": "iniquity: crime",
+      "language": "Hebrew",
+      "owning_registry": "073",
+      "owning_word": "guilt",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5860A",
+      "transliteration": "it",
+      "gloss": "to scream",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5892A",
+      "transliteration": "ir",
+      "gloss": "excitement",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H5999",
+      "transliteration": "a.mal",
+      "gloss": "trouble",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6001A",
+      "transliteration": "a.mel",
+      "gloss": "labour[er]",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6035",
+      "transliteration": "a.nav",
+      "gloss": "poor",
+      "language": "Hebrew",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6037",
+      "transliteration": "an.vah",
+      "gloss": "gentleness",
+      "language": "Hebrew",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6038",
+      "transliteration": "a.na.vah",
+      "gloss": "gentleness",
+      "language": "Hebrew",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6040",
+      "transliteration": "o.ni",
+      "gloss": "affliction",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6087A",
+      "transliteration": "a.tsav",
+      "gloss": "to hurt",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 2
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6088",
+      "transliteration": "a.tsav",
+      "gloss": "to pain",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6089A",
+      "transliteration": "e.tsev",
+      "gloss": "toil",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6090A",
+      "transliteration": "o.tsev",
+      "gloss": "pain",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6093",
+      "transliteration": "its.tsa.von",
+      "gloss": "toil",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6094",
+      "transliteration": "ats.tse.vet",
+      "gloss": "injury",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6292",
+      "transliteration": "pig.gul",
+      "gloss": "refuse",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6330",
+      "transliteration": "pu.qah",
+      "gloss": "staggering",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6365",
+      "transliteration": "pid",
+      "gloss": "disaster",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6682",
+      "transliteration": "tse.va.chah",
+      "gloss": "outcry",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6693",
+      "transliteration": "tsuq",
+      "gloss": "to press",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6695A",
+      "transliteration": "tsoq",
+      "gloss": "distress",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6695B",
+      "transliteration": "tsu.qah",
+      "gloss": "anguish",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6696A",
+      "transliteration": "tsur",
+      "gloss": "to confine",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6696B",
+      "transliteration": "tsur",
+      "gloss": "to provoke",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6735C",
+      "transliteration": "tsir",
+      "gloss": "pang",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow"
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6800B",
+      "transliteration": "tsa.nu.a",
+      "gloss": "humble",
+      "language": "Hebrew",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6862A",
+      "transliteration": "tsar",
+      "gloss": "narrow",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6862B",
+      "transliteration": "tsar",
+      "gloss": "distress",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        },
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6862C",
+      "transliteration": "tsar",
+      "gloss": "enemy",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 2
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6862D",
+      "transliteration": "tsar",
+      "gloss": "hard",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6869A",
+      "transliteration": "bats.tsa.rah",
+      "gloss": "dearth",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6869B",
+      "transliteration": "tsa.rah",
+      "gloss": "distress",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6869C",
+      "transliteration": "tsa.rah",
+      "gloss": "vexer",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6887B",
+      "transliteration": "tsa.rar",
+      "gloss": "to constrain",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6887C",
+      "transliteration": "tsa.rar",
+      "gloss": "to distress",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6887D",
+      "transliteration": "tsa.rar",
+      "gloss": "to vex",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6887E",
+      "transliteration": "tsa.rar",
+      "gloss": "to rival",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6937",
+      "transliteration": "qa.dar",
+      "gloss": "be dark",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 1,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H6973",
+      "transliteration": "quts",
+      "gloss": "to loathe",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [
+        {
+          "registry": "061",
+          "word": "fear",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7089",
+      "transliteration": "qe.pha.dah",
+      "gloss": "anguish",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7107",
+      "transliteration": "qa.tsaph",
+      "gloss": "be angry",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7110A",
+      "transliteration": "qe.tseph",
+      "gloss": "wrath",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7110B",
+      "transliteration": "qe.tseph",
+      "gloss": "splinter",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7115",
+      "transliteration": "qo.tser",
+      "gloss": "shortness",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7185",
+      "transliteration": "qa.shah",
+      "gloss": "to harden",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7265",
+      "transliteration": "re.gaz",
+      "gloss": "to enrage",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7267",
+      "transliteration": "ro.gez",
+      "gloss": "turmoil",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "178",
+          "word": "wrath",
+          "part": null
+        },
+        {
+          "registry": "061",
+          "word": "fear",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7292",
+      "transliteration": "ra.hav",
+      "gloss": "to be assertive",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7294",
+      "transliteration": "ra.hav",
+      "gloss": "Rahab monster",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7295",
+      "transliteration": "ra.hav",
+      "gloss": "proud",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7296",
+      "transliteration": "ro.hav",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7307J",
+      "transliteration": "ru.ach",
+      "gloss": "spirit: temper",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7379",
+      "transliteration": "riv",
+      "gloss": "strife",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7451A",
+      "transliteration": "ra",
+      "gloss": "bad: harmful",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7451C",
+      "transliteration": "ra.ah",
+      "gloss": "distress: harm",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [
+        {
+          "registry": "051",
+          "word": "distress",
+          "part": 2
+        },
+        {
+          "registry": "071",
+          "word": "grief",
+          "part": 1
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7451I",
+      "transliteration": "ra.ah",
+      "gloss": "distress: evil",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 2,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7455",
+      "transliteration": "ro.a",
+      "gloss": "evil",
+      "language": "Hebrew",
+      "owning_registry": "154",
+      "owning_word": "sorrow",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H7489A",
+      "transliteration": "ra.a",
+      "gloss": "be evil",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7661",
+      "transliteration": "sha.vats",
+      "gloss": "agony",
+      "language": "Hebrew",
+      "owning_registry": "005",
+      "owning_word": "anguish",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7830",
+      "transliteration": "sha.chats",
+      "gloss": "pride",
+      "language": "Hebrew",
+      "owning_registry": "123",
+      "owning_word": "pride",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7878",
+      "transliteration": "si.ach",
+      "gloss": "to muse",
+      "language": "Hebrew",
+      "owning_registry": "051",
+      "owning_word": "distress",
+      "owning_part": 3,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8081",
+      "transliteration": "she.men",
+      "gloss": "oil",
+      "language": "Hebrew",
+      "owning_registry": "006",
+      "owning_word": "anointing",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8213",
+      "transliteration": "sha.phel",
+      "gloss": "to abase",
+      "language": "Hebrew",
+      "owning_registry": "080",
+      "owning_word": "humility",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8251",
+      "transliteration": "shiq.quts",
+      "gloss": "abomination",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8262",
+      "transliteration": "shiq.qets",
+      "gloss": "to detest",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8263",
+      "transliteration": "she.qets",
+      "gloss": "detestation",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8374",
+      "transliteration": "ta.av",
+      "gloss": "to loathe",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8424",
+      "transliteration": "tu.gah",
+      "gloss": "grief",
+      "language": "Hebrew",
+      "owning_registry": "071",
+      "owning_word": "grief",
+      "owning_part": 2,
+      "also_used_in": [
+        {
+          "registry": "154",
+          "word": "sorrow",
+          "part": null
+        }
+      ],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8441",
+      "transliteration": "to.e.vah",
+      "gloss": "abomination",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8474",
+      "transliteration": "ta.cha.rah",
+      "gloss": "to contend",
+      "language": "Hebrew",
+      "owning_registry": "004",
+      "owning_word": "anger",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H8581",
+      "transliteration": "ta.av",
+      "gloss": "to abhor",
+      "language": "Hebrew",
+      "owning_registry": "001",
+      "owning_word": "abomination",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2573",
+      "transliteration": "che.met",
+      "gloss": "bottle",
+      "language": "Hebrew",
+      "owning_registry": "178",
+      "owning_word": "wrath",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2196",
+      "transliteration": "za.aph",
+      "gloss": "to enrage",
+      "language": "Hebrew",
+      "owning_registry": "178",
+      "owning_word": "wrath",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H2197",
+      "transliteration": "za.aph",
+      "gloss": "rage",
+      "language": "Hebrew",
+      "owning_registry": "178",
+      "owning_word": "wrath",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "H7109",
+      "transliteration": "qe.tsaph",
+      "gloss": "wrath",
+      "language": "Hebrew",
+      "owning_registry": "178",
+      "owning_word": "wrath",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "extracted"
+    },
+    {
+      "strongs_number": "G1719",
+      "transliteration": "emfobos",
+      "gloss": "afraid",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3372A",
+      "transliteration": "ya.re",
+      "gloss": "afraid",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1672",
+      "transliteration": "da.ag",
+      "gloss": "be anxious",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G4576",
+      "transliteration": "sebomai",
+      "gloss": "be devout",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1168",
+      "transliteration": "deiliaō",
+      "gloss": "be timid",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G2126",
+      "transliteration": "eulabēs",
+      "gloss": "devout",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6343A",
+      "transliteration": "pach.dah",
+      "gloss": "dread",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6343B",
+      "transliteration": "pa.chad",
+      "gloss": "dread",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1169A",
+      "transliteration": "deos",
+      "gloss": "fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5401",
+      "transliteration": "fobos",
+      "gloss": "fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G4423",
+      "transliteration": "ptoēsis",
+      "gloss": "fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G2671B",
+      "transliteration": "katafobos",
+      "gloss": "fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3374",
+      "transliteration": "yir.ah",
+      "gloss": "fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4172A",
+      "transliteration": "mo.rah",
+      "gloss": "fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4172B",
+      "transliteration": "mo.ra",
+      "gloss": "fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4033A",
+      "transliteration": "me.gu.rah",
+      "gloss": "fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4033B",
+      "transliteration": "me.go.rah",
+      "gloss": "fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5398",
+      "transliteration": "foberos",
+      "gloss": "fearful",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5400",
+      "transliteration": "fobētron",
+      "gloss": "fearful thing",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3016",
+      "transliteration": "ya.gor",
+      "gloss": "fearing",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G870",
+      "transliteration": "afobōs",
+      "gloss": "fearlessly",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G2318",
+      "transliteration": "theosebēs",
+      "gloss": "godly",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H7578",
+      "transliteration": "re.tet",
+      "gloss": "panic",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4177",
+      "transliteration": "mo.rah",
+      "gloss": "razor",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G2124",
+      "transliteration": "eulabeia",
+      "gloss": "reverence",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6427",
+      "transliteration": "pal.la.tsut",
+      "gloss": "shuddering",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1630",
+      "transliteration": "ekfobos",
+      "gloss": "terrified",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H0367",
+      "transliteration": "e.mah",
+      "gloss": "terror",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2844",
+      "transliteration": "chat",
+      "gloss": "terror",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4036",
+      "transliteration": "ma.gor",
+      "gloss": "terror",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1169B",
+      "transliteration": "deilos",
+      "gloss": "timid",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1167",
+      "transliteration": "deilia",
+      "gloss": "timidity",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H8539",
+      "transliteration": "ta.mah",
+      "gloss": "to astounded",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1481A",
+      "transliteration": "gur",
+      "gloss": "to dread",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6342",
+      "transliteration": "pa.chad",
+      "gloss": "to dread",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5399",
+      "transliteration": "fobeō",
+      "gloss": "to fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2119",
+      "transliteration": "za.chal",
+      "gloss": "to fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H1763",
+      "transliteration": "de.chal",
+      "gloss": "to fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3372B",
+      "transliteration": "ya.re",
+      "gloss": "to fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3017",
+      "transliteration": "ya.gor",
+      "gloss": "to fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H7297",
+      "transliteration": "ra.hah",
+      "gloss": "to fear",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H3372C",
+      "transliteration": "ya.re",
+      "gloss": "to fear: revere",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4116",
+      "transliteration": "ma.har",
+      "gloss": "to hasten",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H8175",
+      "transliteration": "sa.ar",
+      "gloss": "to know",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H4549",
+      "transliteration": "ma.sas",
+      "gloss": "to melt",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G2125",
+      "transliteration": "eulabeomai",
+      "gloss": "to revere",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H7200B",
+      "transliteration": "ra.ah",
+      "gloss": "to see: seer",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5420",
+      "transliteration": "foberizō",
+      "gloss": "to throw into fear",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2729",
+      "transliteration": "cha.rad",
+      "gloss": "to tremble",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H6206",
+      "transliteration": "a.rats",
+      "gloss": "to tremble",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G1790",
+      "transliteration": "entromos",
+      "gloss": "trembling",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "G5156",
+      "transliteration": "tromos",
+      "gloss": "trembling",
+      "language": "Greek",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2731",
+      "transliteration": "cha.ra.dah",
+      "gloss": "trembling",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H2730",
+      "transliteration": "cha.red",
+      "gloss": "trembling",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    },
+    {
+      "strongs_number": "H7461",
+      "transliteration": "re.a.dah",
+      "gloss": "trembling",
+      "language": "Hebrew",
+      "owning_registry": "061",
+      "owning_word": "fear",
+      "owning_part": null,
+      "also_used_in": [],
+      "status": "pending"
+    }
+  ]
+}

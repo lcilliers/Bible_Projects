@@ -5,13 +5,15 @@ Main entry point for the Bible_Projects analytics module.
 
 Usage
 -----
-    python bible_analytics.py                                    # Run default pipeline
-    python bible_analytics.py --test-zotero                     # Test Zotero API connectivity
-    python bible_analytics.py --test-step                       # Test STEP Bible API connectivity
-    python bible_analytics.py --init-db                         # Initialise SQLite schema
-    python bible_analytics.py --test-db                         # Verify SQLite connectivity
-    python bible_analytics.py --import-json FILE --table TABLE  # Import JSON records into SQLite
-    python bible_analytics.py --export-json TABLE               # Export table to JSON
+    python bible_analytics.py                                        # Run default pipeline
+    python bible_analytics.py --test-zotero                         # Test Zotero API connectivity
+    python bible_analytics.py --test-step                            # Test STEP Bible API connectivity
+    python bible_analytics.py --init-db                              # Initialise SQLite schema
+    python bible_analytics.py --test-db                              # Verify SQLite connectivity
+    python bible_analytics.py --import-json FILE --table TABLE       # Import JSON records into SQLite
+    python bible_analytics.py --export-json TABLE                    # Export table to JSON
+    python bible_analytics.py --list-attachments ITEM_KEY            # List attachments for a Zotero item
+    python bible_analytics.py --download-attachment ATTACHMENT_KEY   # Download a Zotero attachment
 """
 
 import argparse
@@ -133,6 +135,41 @@ def export_json(table: str) -> None:
     print(f"SUCCESS: Exported {len(rows)} row(s) from '{table}' to {output_path!r}.")
 
 
+def list_attachments(item_key: str) -> None:
+    """List all attachments for a Zotero item and print their metadata."""
+    from zotero_client import get_attachments  # type: ignore
+
+    attachments = get_attachments(item_key)
+    if not attachments:
+        print(f"No attachments found for item '{item_key}'.")
+        return
+
+    print(f"Attachments for item '{item_key}' ({len(attachments)} found):")
+    for att in attachments:
+        d = att["data"]
+        key = d.get("key", "?")
+        filename = d.get("filename") or d.get("title") or "(no filename)"
+        content_type = d.get("contentType", "(unknown type)")
+        link_mode = d.get("linkMode", "?")
+        downloadable = "✓ downloadable" if link_mode in ("imported_file", "imported_url") else "✗ linked (local only)"
+        print(f"  [{key}]  {filename}  |  {content_type}  |  {link_mode}  |  {downloadable}")
+
+
+def download_attachment(attachment_key: str) -> None:
+    """Download a Zotero stored attachment to data/exports/."""
+    from zotero_client import download_attachment as _download  # type: ignore
+
+    try:
+        dest = _download(attachment_key)
+        print(f"SUCCESS: Attachment '{attachment_key}' saved to {dest!r}.")
+    except ValueError as e:
+        print(f"ERROR: {e}")
+        sys.exit(1)
+    except RuntimeError as e:
+        print(f"ERROR: {e}")
+        sys.exit(1)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Bible_Projects analytics entry point."
@@ -172,6 +209,16 @@ def main() -> None:
         metavar="TABLE",
         help="Export the named table to data/exports/<TABLE>.json and exit.",
     )
+    parser.add_argument(
+        "--list-attachments",
+        metavar="ITEM_KEY",
+        help="List all attachments for the given Zotero item key and exit.",
+    )
+    parser.add_argument(
+        "--download-attachment",
+        metavar="ATTACHMENT_KEY",
+        help="Download a stored Zotero attachment to data/exports/ and exit.",
+    )
     args = parser.parse_args()
 
     if args.test_zotero:
@@ -199,6 +246,14 @@ def main() -> None:
 
     if args.export_json:
         export_json(args.export_json)
+        return
+
+    if args.list_attachments:
+        list_attachments(args.list_attachments)
+        return
+
+    if args.download_attachment:
+        download_attachment(args.download_attachment)
         return
 
     # ── Default pipeline placeholder ───────────────────────────────────────
