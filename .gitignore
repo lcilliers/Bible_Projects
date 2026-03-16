@@ -1,0 +1,93 @@
+# ─────────────────────────────────────────────
+# Bible_Projects – .gitignore
+# ─────────────────────────────────────────────
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Jupyter Notebooks ─────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Data files (large / generated) ────────────
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# ── SQLite import / export staging files ──────
+# (these are transient; commit only the schema and .gitkeep files)
+data/imports/*.json
+data/exports/*.json
+data/exports/*.csv
+
+# ── Output binaries (track only source .md) ───
+outputs/docx/*.docx
+outputs/pdf/*.pdf
+
+# ── Research: large / binary files stay on Google Drive ─
+# Text notes (.md) ARE tracked in Git.
+# PDFs, Word docs, HTML exports, images are NOT.
+research/**/*.pdf
+research/**/*.docx
+research/**/*.doc
+research/**/*.html
+research/**/*.htm
+research/**/*.png
+research/**/*.jpg
+research/**/*.jpeg
+research/**/*.gif
+research/**/*.xlsx
+research/**/*.xls
+
+# ── PowerShell ────────────────────────────────
+*.ps1xml
+
+# ── Environment / secrets ─────────────────────
+.env
+.env.*
+*.env
+config/secrets.json
+config/api_keys.json
+zotero_api_key.txt
+
+# ── OS artefacts ──────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Visual Studio / VS Code ───────────────────
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ── Obsidian ──────────────────────────────────
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# ── Zotero (local cache) ──────────────────────
+zotero-cache/
+
+# ── Misc ──────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.swp
+*~
