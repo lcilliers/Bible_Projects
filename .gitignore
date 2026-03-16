@@ -1,0 +1,72 @@
+# ─────────────────────────────────────────────
+# Bible_Projects – .gitignore
+# ─────────────────────────────────────────────
+
+# ── Python ────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── Jupyter Notebooks ─────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── Data files (large / generated) ────────────
+data/*.db
+data/*.sqlite
+data/*.sqlite3
+
+# ── Output binaries (track only source .md) ───
+outputs/docx/*.docx
+outputs/pdf/*.pdf
+
+# ── PowerShell ────────────────────────────────
+*.ps1xml
+
+# ── Environment / secrets ─────────────────────
+.env
+.env.*
+*.env
+config/secrets.json
+config/api_keys.json
+zotero_api_key.txt
+
+# ── OS artefacts ──────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Visual Studio / VS Code ───────────────────
+.vs/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ── Obsidian ──────────────────────────────────
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# ── Zotero (local cache) ──────────────────────
+zotero-cache/
+
+# ── Misc ──────────────────────────────────────
+*.log
+*.tmp
+*.bak
+*.swp
+*~

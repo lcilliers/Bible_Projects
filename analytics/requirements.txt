@@ -1,0 +1,26 @@
+# Bible_Projects – Python Analytics Dependencies
+# Install with: pip install -r requirements.txt
+
+# Zotero API client
+pyzotero>=1.5.18
+
+# Data manipulation and analysis
+pandas>=2.2.0
+
+# JSON / structured data handling
+jsonschema>=4.23.0
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# Markdown generation
+markdown>=3.6
+
+# HTTP requests (for API calls)
+requests>=2.32.0
+
+# Optional: docx generation
+python-docx>=1.1.2
+
+# Optional: PDF generation
+reportlab>=4.2.0
