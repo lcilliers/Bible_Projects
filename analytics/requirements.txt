@@ -4,10 +4,10 @@
 # Zotero API client
 pyzotero>=1.5.18
 
-# Data manipulation and analysis
+# Data manipulation and analysis (also used for SQLite bulk inserts via to_sql)
 pandas>=2.2.0
 
-# JSON / structured data handling
+# JSON / structured data handling (also used for validating Claude JSON imports)
 jsonschema>=4.23.0
 
 # Environment variable management

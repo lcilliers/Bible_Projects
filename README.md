@@ -30,7 +30,7 @@ To serve as the repository for application development and AI interaction to sup
 | **Google Docs** | Project file management |
 | **PowerShell** | File handling and environment scripting |
 | **Python** | Analytics and data processing |
-| **SQLite / Structured JSON** | Data management (TBD — see [`data/`](data/)) |
+| **SQLite** | Structured research data — multi-table, JSON import/export workflow (see [`docs/data_setup.md`](docs/data_setup.md)) |
 | **Git + GitHub** | Source control (`lcilliers/Bible_projects`) |
 
 ---
@@ -46,9 +46,15 @@ Bible_Projects/
 │
 ├── docs/                      # Project documentation and setup guides
 │   ├── zotero_setup.md        # Zotero API integration guide
-│   └── step_setup.md          # STEP Bible API integration guide
+│   ├── step_setup.md          # STEP Bible API integration guide
+│   └── data_setup.md          # SQLite data platform guide
 │
-├── data/                      # Structured data files (JSON, CSV, SQLite)
+├── data/                      # Structured data files
+│   ├── bible_research.db      # SQLite database (excluded from Git)
+│   ├── schema/                # SQL schema definitions (versioned)
+│   │   └── create_tables.sql
+│   ├── imports/               # JSON files from Claude staged for import
+│   └── exports/               # JSON / CSV exports produced for Claude
 │
 ├── outputs/                   # Research outputs by file type
 │   ├── markdown/              # General output (.md)
@@ -61,6 +67,7 @@ Bible_Projects/
 └── analytics/                 # Python analytics and data processing
     ├── requirements.txt       # Python dependencies
     ├── bible_analytics.py     # Main analytics entry point
+    ├── db_client.py           # SQLite database client
     ├── zotero_client.py       # Zotero API client wrapper
     └── step_client.py         # STEP Bible API client wrapper
 ```
@@ -109,6 +116,10 @@ See [`docs/zotero_setup.md`](docs/zotero_setup.md) for step-by-step instructions
 
 See [`docs/step_setup.md`](docs/step_setup.md) for step-by-step instructions on configuring access to [STEP Bible](https://www.stepbible.org/) for scripture search and verse analytics.
 
+### SQLite Data Platform
+
+See [`docs/data_setup.md`](docs/data_setup.md) for the data platform decision, schema design, and the JSON → SQLite import workflow used to add new research records from Claude.
+
 ---
 
 ## Bible_verse_analytics : STEP Integration
@@ -139,6 +150,46 @@ python analytics/bible_analytics.py --test-step
 ```
 
 For full configuration instructions, see **[`docs/step_setup.md`](docs/step_setup.md)**.
+
+---
+
+## Structured Data Platform : SQLite
+
+After evaluating SQL, pure JSON, and SQLite, **SQLite** is the chosen data platform for this project. It requires no server, stores the entire database in a single portable file (`data/bible_research.db`), and handles the expected scale (~20 000 rows in the main `verse_notes` table) with ease.
+
+### Why SQLite
+
+| Requirement | SQLite |
+|-------------|--------|
+| Multi-table, relational schema | ✓ |
+| ~20 000 rows (main table) | ✓ — trivially fast |
+| No server / no install required | ✓ — single `.db` file |
+| Python built-in support | ✓ — `sqlite3` stdlib |
+| JSON import from Claude | ✓ — one-command batch insert |
+| JSON export for Claude to read | ✓ — one-command export |
+
+### Claude → SQLite workflow
+
+```
+Claude outputs structured JSON (list of records)
+            ↓
+Save to  data/imports/<batch_name>.json
+            ↓
+python analytics/bible_analytics.py --import-json data/imports/<batch>.json --table verse_notes
+            ↓
+Records inserted into bible_research.db
+```
+
+### Quick commands
+
+```bash
+python analytics/bible_analytics.py --init-db                                         # Create schema
+python analytics/bible_analytics.py --test-db                                         # Verify setup
+python analytics/bible_analytics.py --import-json data/imports/batch.json --table verse_notes
+python analytics/bible_analytics.py --export-json verse_notes                         # Export for Claude
+```
+
+See **[`docs/data_setup.md`](docs/data_setup.md)** for full setup, schema reference, and import/export examples.
 
 ---
 

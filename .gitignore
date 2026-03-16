@@ -29,6 +29,12 @@ data/*.db
 data/*.sqlite
 data/*.sqlite3
 
+# ── SQLite import / export staging files ──────
+# (these are transient; commit only the schema and .gitkeep files)
+data/imports/*.json
+data/exports/*.json
+data/exports/*.csv
+
 # ── Output binaries (track only source .md) ───
 outputs/docx/*.docx
 outputs/pdf/*.pdf

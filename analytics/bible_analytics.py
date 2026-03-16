@@ -5,9 +5,13 @@ Main entry point for the Bible_Projects analytics module.
 
 Usage
 -----
-    python bible_analytics.py               # Run default pipeline
-    python bible_analytics.py --test-zotero # Test Zotero API connectivity
-    python bible_analytics.py --test-step   # Test STEP Bible API connectivity
+    python bible_analytics.py                                    # Run default pipeline
+    python bible_analytics.py --test-zotero                     # Test Zotero API connectivity
+    python bible_analytics.py --test-step                       # Test STEP Bible API connectivity
+    python bible_analytics.py --init-db                         # Initialise SQLite schema
+    python bible_analytics.py --test-db                         # Verify SQLite connectivity
+    python bible_analytics.py --import-json FILE --table TABLE  # Import JSON records into SQLite
+    python bible_analytics.py --export-json TABLE               # Export table to JSON
 """
 
 import argparse
@@ -67,6 +71,68 @@ def test_step() -> None:
         )
 
 
+def init_db() -> None:
+    """Initialise the SQLite database schema (creates tables if absent)."""
+    from db_client import get_connection, init_schema_from_file  # type: ignore
+
+    conn = get_connection()
+    init_schema_from_file(conn)
+    conn.close()
+    db_path = os.getenv("DB_PATH", os.path.join(ROOT_DIR, "data", "bible_research.db"))
+    print(f"SUCCESS: Database schema initialised at {db_path}")
+
+
+def test_db() -> None:
+    """Verify that the SQLite database is reachable and the schema is present."""
+    from db_client import get_connection, list_tables, row_count  # type: ignore
+
+    conn = get_connection()
+    tables = list_tables(conn)
+    db_path = os.getenv("DB_PATH", os.path.join(ROOT_DIR, "data", "bible_research.db"))
+
+    if not tables:
+        print(
+            "WARNING: Database exists but contains no tables.\n"
+            "Run: python bible_analytics.py --init-db"
+        )
+        conn.close()
+        return
+
+    print(f"SUCCESS: Connected to SQLite database at {db_path}")
+    print(f"  Tables: {', '.join(tables)}")
+    if "verse_notes" in tables:
+        n = row_count(conn, "verse_notes")
+        print(f"  verse_notes row count: {n}")
+    conn.close()
+
+
+def import_json(json_path: str, table: str) -> None:
+    """Import a JSON file of records into the named SQLite table."""
+    from db_client import get_connection, import_json_file  # type: ignore
+
+    if not os.path.isfile(json_path):
+        print(f"ERROR: File not found: {json_path}")
+        sys.exit(1)
+
+    conn = get_connection()
+    count = import_json_file(conn, json_path, table)
+    conn.close()
+    print(f"SUCCESS: Imported {count} record(s) from {json_path!r} into '{table}'.")
+
+
+def export_json(table: str) -> None:
+    """Export the named SQLite table to a JSON file in data/exports/."""
+    import json as _json
+
+    from db_client import export_table_to_json, get_connection  # type: ignore
+
+    conn = get_connection()
+    output_path = os.path.join(ROOT_DIR, "data", "exports", f"{table}.json")
+    rows = export_table_to_json(conn, table, output_path=output_path)
+    conn.close()
+    print(f"SUCCESS: Exported {len(rows)} row(s) from '{table}' to {output_path!r}.")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Bible_Projects analytics entry point."
@@ -81,6 +147,31 @@ def main() -> None:
         action="store_true",
         help="Test STEP Bible API connectivity and exit.",
     )
+    parser.add_argument(
+        "--init-db",
+        action="store_true",
+        help="Initialise the SQLite database schema and exit.",
+    )
+    parser.add_argument(
+        "--test-db",
+        action="store_true",
+        help="Verify SQLite database connectivity and schema, then exit.",
+    )
+    parser.add_argument(
+        "--import-json",
+        metavar="FILE",
+        help="Path to a JSON file of records to import. Requires --table.",
+    )
+    parser.add_argument(
+        "--table",
+        metavar="TABLE",
+        help="Target table name for --import-json or source table for --export-json.",
+    )
+    parser.add_argument(
+        "--export-json",
+        metavar="TABLE",
+        help="Export the named table to data/exports/<TABLE>.json and exit.",
+    )
     args = parser.parse_args()
 
     if args.test_zotero:
@@ -89,6 +180,25 @@ def main() -> None:
 
     if args.test_step:
         test_step()
+        return
+
+    if args.init_db:
+        init_db()
+        return
+
+    if args.test_db:
+        test_db()
+        return
+
+    if args.import_json:
+        if not args.table:
+            print("ERROR: --import-json requires --table <TABLE_NAME>.")
+            sys.exit(1)
+        import_json(args.import_json, args.table)
+        return
+
+    if args.export_json:
+        export_json(args.export_json)
         return
 
     # ── Default pipeline placeholder ───────────────────────────────────────

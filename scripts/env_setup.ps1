@@ -83,6 +83,10 @@ STEP_DEFAULT_VERSION=ESV
 # STEP_API_KEY=
 # HTTP request timeout in seconds
 STEP_REQUEST_TIMEOUT=10
+
+# ── SQLite Database ──────────────────────────────────────────────────────────
+# Path to the SQLite database file (relative to project root)
+DB_PATH=data/bible_research.db
 "@ | Set-Content $envFile
     Write-Host ".env template created. Edit it to add your credentials." -ForegroundColor Yellow
 } else {
@@ -94,6 +98,9 @@ $dirs = @(
     'research',
     'docs',
     'data',
+    'data\schema',
+    'data\imports',
+    'data\exports',
     'outputs\markdown',
     'outputs\docx',
     'outputs\pdf',
@@ -117,5 +124,8 @@ Write-Host "Next steps:" -ForegroundColor White
 Write-Host "  1. Edit .env with your Zotero credentials" -ForegroundColor White
 Write-Host "  2. See docs\zotero_setup.md for Zotero API instructions" -ForegroundColor White
 Write-Host "  3. See docs\step_setup.md for STEP Bible API instructions" -ForegroundColor White
-Write-Host "  4. Activate the virtual environment:" -ForegroundColor White
+Write-Host "  4. See docs\data_setup.md for SQLite data platform instructions" -ForegroundColor White
+Write-Host "  5. Initialise the database schema:" -ForegroundColor White
+Write-Host "     python analytics\bible_analytics.py --init-db" -ForegroundColor White
+Write-Host "  6. Activate the virtual environment:" -ForegroundColor White
 Write-Host "     .\analytics\venv\Scripts\Activate.ps1" -ForegroundColor White
