@@ -39,6 +39,21 @@ data/exports/*.csv
 outputs/docx/*.docx
 outputs/pdf/*.pdf
 
+# ── Research: large / binary files stay on Google Drive ─
+# Text notes (.md) ARE tracked in Git.
+# PDFs, Word docs, HTML exports, images are NOT.
+research/**/*.pdf
+research/**/*.docx
+research/**/*.doc
+research/**/*.html
+research/**/*.htm
+research/**/*.png
+research/**/*.jpg
+research/**/*.jpeg
+research/**/*.gif
+research/**/*.xlsx
+research/**/*.xls
+
 # ── PowerShell ────────────────────────────────
 *.ps1xml
 

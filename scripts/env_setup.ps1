@@ -96,6 +96,9 @@ DB_PATH=data/bible_research.db
 # ── 7. Ensure output directories exist ───────────────────────────────────────
 $dirs = @(
     'research',
+    'research\projects',
+    'research\notes',
+    'research\templates',
     'docs',
     'data',
     'data\schema',
@@ -122,10 +125,11 @@ foreach ($dir in $dirs) {
 Write-Host "`n=== Setup complete! ===" -ForegroundColor Cyan
 Write-Host "Next steps:" -ForegroundColor White
 Write-Host "  1. Edit .env with your Zotero credentials" -ForegroundColor White
-Write-Host "  2. See docs\zotero_setup.md for Zotero API instructions" -ForegroundColor White
-Write-Host "  3. See docs\step_setup.md for STEP Bible API instructions" -ForegroundColor White
-Write-Host "  4. See docs\data_setup.md for SQLite data platform instructions" -ForegroundColor White
-Write-Host "  5. Initialise the database schema:" -ForegroundColor White
+Write-Host "  2. See docs\file_organization.md for the two-tier storage guide (Git + Google Drive)" -ForegroundColor White
+Write-Host "  3. See docs\zotero_setup.md for Zotero API instructions" -ForegroundColor White
+Write-Host "  4. See docs\step_setup.md for STEP Bible API instructions" -ForegroundColor White
+Write-Host "  5. See docs\data_setup.md for SQLite data platform instructions" -ForegroundColor White
+Write-Host "  6. Initialise the database schema:" -ForegroundColor White
 Write-Host "     python analytics\bible_analytics.py --init-db" -ForegroundColor White
-Write-Host "  6. Activate the virtual environment:" -ForegroundColor White
+Write-Host "  7. Activate the virtual environment:" -ForegroundColor White
 Write-Host "     .\analytics\venv\Scripts\Activate.ps1" -ForegroundColor White

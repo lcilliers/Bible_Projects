@@ -1,7 +1,7 @@
 # Bible_Projects
 
 > **Repository:** [lcilliers/Bible_Projects](https://github.com/lcilliers/Bible_projects)
-> **File Server:** Google Drive (`G:\My Drive\Bible_study_projects`)
+> **File Server (Google Drive):** `G:\My Drive\Bible_study_projects` — see [`docs/file_organization.md`](docs/file_organization.md) for the full two-tier storage structure
 
 ## Objective
 
@@ -27,7 +27,7 @@ To serve as the repository for application development and AI interaction to sup
 | **Zotero** | File storage and reference management (API setup required — see [`docs/zotero_setup.md`](docs/zotero_setup.md)) |
 | **STEP Bible** | Scripture search and cross-referencing for `Bible_verse_analytics` (see [`docs/step_setup.md`](docs/step_setup.md)) |
 | **Obsidian** | Writing and note-taking (value still being evaluated) |
-| **Google Docs** | Project file management |
+| **Google Docs / Google Drive** | Project file management and large-file storage (`G:\My Drive\Bible_study_projects` — see [`docs/file_organization.md`](docs/file_organization.md)) |
 | **PowerShell** | File handling and environment scripting |
 | **Python** | Analytics and data processing |
 | **SQLite** | Structured research data — multi-table, JSON import/export workflow (see [`docs/data_setup.md`](docs/data_setup.md)) |
@@ -43,8 +43,12 @@ Bible_Projects/
 ├── .gitignore                 # Files and folders excluded from source control
 │
 ├── research/                  # Research notes, source summaries, working documents
+│   ├── projects/              # One .md brief per research project
+│   ├── notes/                 # Working notes, cross-references, exegesis
+│   └── templates/             # Reusable templates (research note, Claude session, project brief)
 │
 ├── docs/                      # Project documentation and setup guides
+│   ├── file_organization.md   # Two-tier storage guide (Git + Google Drive)
 │   ├── zotero_setup.md        # Zotero API integration guide
 │   ├── step_setup.md          # STEP Bible API integration guide
 │   └── data_setup.md          # SQLite data platform guide
@@ -119,6 +123,10 @@ See [`docs/step_setup.md`](docs/step_setup.md) for step-by-step instructions on 
 ### SQLite Data Platform
 
 See [`docs/data_setup.md`](docs/data_setup.md) for the data platform decision, schema design, and the JSON → SQLite import workflow used to add new research records from Claude.
+
+### File Organisation
+
+See [`docs/file_organization.md`](docs/file_organization.md) for the complete two-tier storage model (Git vs Google Drive), naming conventions, what-goes-where reference, and how to migrate existing unorganised materials from `Claude_Research` into the structured layout.
 
 ---
 
