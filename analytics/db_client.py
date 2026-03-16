@@ -34,12 +34,26 @@ _DEFAULT_SCHEMA = os.path.join(ROOT_DIR, "data", "schema", "create_tables.sql")
 # This list is the sole authoritative whitelist used to prevent SQL injection
 # when table names are interpolated into query strings.
 _ALLOWED_TABLES = frozenset({
+    "book_code_variants",
     "books",
     "themes",
     "sources",
-    "verse_notes",
-    "verse_theme_map",
-    "verse_source_map",
+    "wa_verse_records",
+    "wa_file_index",
+    "wa_term_inventory",
+    "wa_term_related_words",
+    "wa_term_root_family",
+    "wa_term_flags",
+    "wa_term_phase2_flags",
+    "phase2_flag_types",
+    "wa_quality_flag_types",
+    "wa_cross_registry_links",
+    "wa_crosslink_type",
+    "wa_data_quality_flags",
+    "word_registry",
+    "mti_terms",
+    "mti_term_flags",
+    "mti_term_cross_refs",
 })
 
 
@@ -269,3 +283,198 @@ def row_count(conn: sqlite3.Connection, table: str) -> int:
         f"SELECT COUNT(*) AS n FROM {_validate_table(table)}"
     ).fetchone()
     return result["n"]
+
+
+# ── Books helpers ─────────────────────────────────────────────────────────────
+
+# Alias map: every spelling found in source tables → canonical books.name value.
+# Extend this dict if new abbreviation variants appear in imported data.
+_BOOK_ALIASES: dict = {
+    "Genesis": "Genesis", "Gen": "Genesis",
+    "Exodus": "Exodus", "Exo": "Exodus",
+    "Leviticus": "Leviticus", "Lev": "Leviticus",
+    "Numbers": "Numbers", "Num": "Numbers",
+    "Deuteronomy": "Deuteronomy", "Deu": "Deuteronomy",
+    "Joshua": "Joshua", "Jos": "Joshua",
+    "Judges": "Judges", "Judg": "Judges",
+    "Ruth": "Ruth", "Rut": "Ruth",
+    "1 Samuel": "1 Samuel", "1Sa": "1 Samuel",
+    "2 Samuel": "2 Samuel", "2Sa": "2 Samuel",
+    "1 Kings": "1 Kings", "1Ki": "1 Kings",
+    "2 Kings": "2 Kings", "2Ki": "2 Kings",
+    "1 Chronicles": "1 Chronicles", "1Ch": "1 Chronicles",
+    "2 Chronicles": "2 Chronicles", "2Ch": "2 Chronicles",
+    "Ezra": "Ezra", "Ezr": "Ezra",
+    "Nehemiah": "Nehemiah", "Neh": "Nehemiah",
+    "Esther": "Esther", "Est": "Esther",
+    "Job": "Job",
+    "Psalms": "Psalms", "Psa": "Psalms",
+    "Proverbs": "Proverbs", "Pro": "Proverbs",
+    "Ecclesiastes": "Ecclesiastes", "Ecc": "Ecclesiastes",
+    "Song of Solomon": "Song of Solomon", "Song": "Song of Solomon", "Son": "Song of Solomon",
+    "Isaiah": "Isaiah", "Isa": "Isaiah",
+    "Jeremiah": "Jeremiah", "Jer": "Jeremiah",
+    "Lamentations": "Lamentations", "Lam": "Lamentations",
+    "Ezekiel": "Ezekiel", "Eze": "Ezekiel",
+    "Daniel": "Daniel", "Dan": "Daniel",
+    "Hosea": "Hosea", "Hos": "Hosea",
+    "Joel": "Joel", "Joe": "Joel",
+    "Amos": "Amos", "Amo": "Amos",
+    "Obadiah": "Obadiah", "Obd": "Obadiah",
+    "Jonah": "Jonah", "Jon": "Jonah",
+    "Micah": "Micah", "Mic": "Micah",
+    "Nahum": "Nahum", "Nah": "Nahum",
+    "Habakkuk": "Habakkuk", "Hab": "Habakkuk",
+    "Zephaniah": "Zephaniah", "Zep": "Zephaniah",
+    "Haggai": "Haggai", "Hag": "Haggai",
+    "Zechariah": "Zechariah", "Zec": "Zechariah",
+    "Malachi": "Malachi", "Mal": "Malachi",
+    "Matthew": "Matthew", "Mat": "Matthew",
+    "Mark": "Mark", "Mar": "Mark",
+    "Luke": "Luke", "Luk": "Luke",
+    "John": "John", "Joh": "John",
+    "Acts": "Acts", "Act": "Acts",
+    "Romans": "Romans", "Rom": "Romans",
+    "1 Corinthians": "1 Corinthians", "1Co": "1 Corinthians", "1Cor": "1 Corinthians",
+    "2 Corinthians": "2 Corinthians", "2Co": "2 Corinthians", "2Cor": "2 Corinthians",
+    "Galatians": "Galatians", "Gal": "Galatians",
+    "Ephesians": "Ephesians", "Eph": "Ephesians",
+    "Philippians": "Philippians", "Php": "Philippians", "Phili": "Philippians",
+    "Colossians": "Colossians", "Col": "Colossians",
+    "1 Thessalonians": "1 Thessalonians", "1Th": "1 Thessalonians",
+    "2 Thessalonians": "2 Thessalonians", "2Th": "2 Thessalonians",
+    "1 Timothy": "1 Timothy", "1Ti": "1 Timothy",
+    "2 Timothy": "2 Timothy", "2Ti": "2 Timothy",
+    "Titus": "Titus", "Tit": "Titus",
+    "Philemon": "Philemon", "Phm": "Philemon",
+    "Hebrews": "Hebrews", "Heb": "Hebrews",
+    "James": "James", "Jam": "James",
+    "1 Peter": "1 Peter", "1Pe": "1 Peter",
+    "2 Peter": "2 Peter", "2Pe": "2 Peter",
+    "1 John": "1 John", "1Jn": "1 John", "1Jo": "1 John",
+    "2 John": "2 John", "2Jn": "2 John", "2Jo": "2 John",
+    "3 John": "3 John", "3Jn": "3 John",
+    "Jude": "Jude",
+    "Revelation": "Revelation", "Rev": "Revelation",
+}
+
+
+def resolve_verse_refs(
+    conn: sqlite3.Connection,
+    only_missing: bool = True,
+) -> int:
+    """Parse ``reference`` strings and populate ``book_id``, ``chapter``,
+    and ``verse_num`` in ``wa_verse_records``.
+
+    Uses the ``book_code_variants`` table to resolve any STEP short code
+    (or known alias) to the correct ``book_id``.  Call this after every
+    import that writes rows with only a ``reference`` value.
+
+    Parameters
+    ----------
+    only_missing : bool
+        When ``True`` (default), only rows where at least one of
+        ``book_id``, ``chapter``, or ``verse_num`` is NULL are processed.
+        Set ``False`` to reprocess every row that has a ``reference``.
+
+    Returns
+    -------
+    int
+        Number of rows updated.
+    """
+    import re
+    import warnings
+
+    where = (
+        "WHERE reference IS NOT NULL "
+        "AND (book_id IS NULL OR chapter IS NULL OR verse_num IS NULL)"
+        if only_missing
+        else "WHERE reference IS NOT NULL"
+    )
+    rows = conn.execute(
+        f"SELECT id, reference FROM wa_verse_records {where}"
+    ).fetchall()
+
+    # Build code -> book_id lookup from the variants table
+    variants: dict = {
+        r["code"]: r["book_id"]
+        for r in conn.execute(
+            "SELECT code, book_id FROM book_code_variants"
+        ).fetchall()
+    }
+
+    updates = []
+    skipped = []
+    for row in rows:
+        ref = (row["reference"] or "").strip()
+        parts = ref.split(" ", 1)
+        if len(parts) != 2:
+            skipped.append(row["id"])
+            continue
+        code, loc = parts
+        book_id = variants.get(code)
+        if not book_id:
+            skipped.append(row["id"])
+            continue
+        try:
+            if ":" in loc:
+                ch, vs = loc.split(":", 1)
+                chapter, verse_num = int(ch), int(vs)
+            else:
+                # Single-chapter book: reference is "Code versenum"
+                chapter, verse_num = 1, int(loc)
+        except ValueError:
+            skipped.append(row["id"])
+            continue
+        updates.append((book_id, chapter, verse_num, row["id"]))
+
+    if updates:
+        conn.executemany(
+            "UPDATE wa_verse_records "
+            "SET book_id=?, chapter=?, verse_num=? WHERE id=?",
+            updates,
+        )
+        conn.commit()
+
+    if skipped:
+        warnings.warn(
+            f"resolve_verse_refs: {len(skipped)} row(s) could not be resolved "
+            f"(unknown code or bad format). ids={skipped[:10]}"
+            f"{'...' if len(skipped) > 10 else ''}"
+        )
+
+    return len(updates)
+
+
+def update_book_verse_counts(conn: sqlite3.Connection) -> dict:
+    """Refresh ``books.verse_count`` with the number of *distinct* verses
+    per book recorded in ``wa_verse_records``.
+
+    Counts by (chapter, verse_num) per book_id — so a verse that appears
+    under multiple terms is only counted once.
+
+    Returns
+    -------
+    dict
+        ``{"updated": <n books updated>}``
+    """
+    from datetime import datetime, timezone
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")
+
+    rows = conn.execute(
+        "SELECT book_id, COUNT(DISTINCT chapter || ':' || verse_num) AS cnt"
+        " FROM wa_verse_records"
+        " WHERE book_id IS NOT NULL"
+        " GROUP BY book_id"
+    ).fetchall()
+
+    updated = 0
+    for book_id, cnt in rows:
+        result = conn.execute(
+            "UPDATE books SET verse_count = ?, last_updated = ? WHERE id = ?",
+            (cnt, now, book_id),
+        )
+        updated += result.rowcount
+
+    conn.commit()
+    return {"updated": updated}

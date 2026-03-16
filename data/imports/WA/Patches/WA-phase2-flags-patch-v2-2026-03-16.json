@@ -1,0 +1,2302 @@
+{
+  "_meta": {
+    "description": "Database patch: new phase2_flag_types entries and wa_term_phase2_flags gap fill",
+    "produced_date": "2026-03-16",
+    "format": "Each operation block names target_table, operation, and conflict_action explicitly. _ref fields are for human verification only and are not imported.",
+    "import_order": [
+      "1. Execute all operations in phase2_flag_types_insert first",
+      "2. Then execute all operations in wa_term_phase2_flags_insert",
+      "3. wa_term_phase2_flags has a composite PK (term_inv_id, flag_id) — conflict_action IGNORE prevents duplicate errors"
+    ]
+  },
+  "phase2_flag_types_insert": {
+    "target_table": "phase2_flag_types",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "flag_code",
+      "description"
+    ],
+    "rows": [
+      {
+        "id": 15,
+        "flag_code": "ARAMAIC_FORM",
+        "description": "Term is an Aramaic form of a Hebrew root, appearing in Daniel, Ezra, or post-exilic contexts. Signals potential theological or register difference from the Hebrew equivalent."
+      },
+      {
+        "id": 16,
+        "flag_code": "MULTI_REGISTRY_ANCHOR",
+        "description": "Term appears in 3 or more registries via mti_term_cross_refs. Structural connector of the relational map; requires distinct treatment in cross-registry Phase 2 analysis."
+      },
+      {
+        "id": 17,
+        "flag_code": "HIGH_FREQUENCY_ANCHOR",
+        "description": "Term has 200 or more occurrences. Lexically dominant terms that set the semantic baseline for their word set."
+      },
+      {
+        "id": 18,
+        "flag_code": "SEMANTIC_RANGE_BREADTH",
+        "description": "Meaning block covers 4 or more distinct semantic domains for a single lexeme. Requires multi-dimensional analysis in Phase 2."
+      },
+      {
+        "id": 19,
+        "flag_code": "DIVINE_HUMAN_PARALLEL",
+        "description": "Term appears with God as subject AND with humans as subject in structurally parallel contexts. The parallelism itself is analytically significant."
+      },
+      {
+        "id": 20,
+        "flag_code": "ESCHATOLOGICAL_USAGE",
+        "description": "Term appears predominantly or significantly in eschatological and apocalyptic contexts."
+      },
+      {
+        "id": 21,
+        "flag_code": "WISDOM_LITERATURE_CONCENTRATION",
+        "description": "Term appears predominantly in Proverbs, Job, or Ecclesiastes. Wisdom tradition uses inner-being vocabulary with distinctive didactic intent."
+      },
+      {
+        "id": 22,
+        "flag_code": "METAPHOR_ROOT",
+        "description": "Meaning is grounded in a concrete physical or sensory metaphor that carries into the inner-being usage (e.g. heat for anger, twisting for anguish)."
+      },
+      {
+        "id": 23,
+        "flag_code": "RELATIONAL_DIRECTION",
+        "description": "Inner state is inherently directed toward another person, group, or God rather than being self-contained."
+      },
+      {
+        "id": 24,
+        "flag_code": "VOLITIONAL_COMPONENT",
+        "description": "Term carries a dimension of will, choice, or intention as part of the inner state itself."
+      },
+      {
+        "id": 25,
+        "flag_code": "CROSS_TESTAMENT_SHIFT",
+        "description": "Hebrew and Greek terms in this registry show a meaningful semantic shift, narrowing, or reframing between OT and NT usage."
+      }
+    ]
+  },
+  "wa_term_phase2_flags_insert": {
+    "target_table": "wa_term_phase2_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "flag_id"
+    ],
+    "notes": [
+      "SOMATIC_INNER_LINK (flag_id=3) is the conservative assignment for all somatic_link=1 gaps.",
+      "Individual terms may warrant BODY_INNER_EXPRESSION (flag_id=4) or SOMATIC_EXPRESSION (flag_id=14) instead — review per term during Phase 2.",
+      "Distress (051), Joy (097), and Peace (117) are excluded — those files are archived for rebuild.",
+      "_ref fields in each row are for human verification only — do not import them."
+    ],
+    "row_counts": {
+      "god_as_subject_gap_flag_id_1": 85,
+      "somatic_link_gap_flag_id_3": 74,
+      "causative_gap_flag_id_2": 41,
+      "total_rows": 200
+    },
+    "rows": [
+      {
+        "term_inv_id": 80,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7451C",
+          "transliteration": "ra.ah",
+          "registry_id": "005",
+          "word": "anguish",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 176,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0701",
+          "transliteration": "arestos",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 175,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G1013",
+          "transliteration": "boulēma",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 185,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G1014",
+          "transliteration": "boulomai",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 183,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G1971",
+          "transliteration": "epipotheō",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 178,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2065",
+          "transliteration": "erōtaō",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 170,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2107",
+          "transliteration": "eudokia",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 187,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2212",
+          "transliteration": "zēteō",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 190,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2307",
+          "transliteration": "thelēma",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 189,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2309",
+          "transliteration": "thelō",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 161,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0157G",
+          "transliteration": "a.hev",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 156,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0183",
+          "transliteration": "a.vah",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 155,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0977",
+          "transliteration": "ba.char",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 162,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H1245",
+          "transliteration": "ba.qash",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 165,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H1697H",
+          "transliteration": "da.var",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 163,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2550",
+          "transliteration": "cha.mal",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 135,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2655",
+          "transliteration": "cha.phets",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 151,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2656",
+          "transliteration": "che.phets",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 144,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2836A",
+          "transliteration": "cha.shaq",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 158,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5375O",
+          "transliteration": "na.sa",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 164,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H6634",
+          "transliteration": "tse.va",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 133,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7522",
+          "transliteration": "ra.tson",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 195,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2206",
+          "transliteration": "zēloō",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 197,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G3788",
+          "transliteration": "ophthalmos",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 191,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7065",
+          "transliteration": "qa.na",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 192,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7068",
+          "transliteration": "qin.ah",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 207,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G5398",
+          "transliteration": "foberos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 230,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0367",
+          "transliteration": "e.mah",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 224,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H4172A",
+          "transliteration": "mo.rah",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 221,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H6343",
+          "transliteration": "pa.chad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 295,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H4723B",
+          "transliteration": "miq.veh",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 303,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H6960A",
+          "transliteration": "qa.vah",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 364,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0025",
+          "transliteration": "agapaō",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 355,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0026",
+          "transliteration": "agapē",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 348,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0027",
+          "transliteration": "agapētos",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 331,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0160",
+          "transliteration": "a.ha.vah",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 330,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2617A",
+          "transliteration": "che.sed",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 333,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2623",
+          "transliteration": "cha.sid",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 344,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7355",
+          "transliteration": "ra.cham",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 337,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7356B",
+          "transliteration": "ra.cha.mim",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 418,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G3338",
+          "transliteration": "metamellomai",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 407,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5162G",
+          "transliteration": "na.cham",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 408,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5162H",
+          "transliteration": "na.cham",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 412,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7725I",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 409,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7725J",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 410,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7725N",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 411,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7725O",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 444,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0818",
+          "transliteration": "atimazō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 427,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G0819",
+          "transliteration": "atimia",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 445,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2617",
+          "transliteration": "kataischunō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 422,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0937",
+          "transliteration": "buz",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 419,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0954",
+          "transliteration": "bosh",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 440,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2778A",
+          "transliteration": "cha.raph",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 429,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2781",
+          "transliteration": "cher.pah",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 421,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H3637",
+          "transliteration": "ka.lam",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 425,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7036",
+          "transliteration": "qa.lon",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 466,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2490H",
+          "transliteration": "cha.lal",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 451,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7455",
+          "transliteration": "ro.a",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 485,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G4678",
+          "transliteration": "sofia",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 476,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H0998",
+          "transliteration": "bi.nah",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 479,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2451",
+          "transliteration": "chokh.mah",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 477,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H8394",
+          "transliteration": "te.vu.nah",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 480,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H8454",
+          "transliteration": "tu.shiy.yah",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 488,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2197",
+          "transliteration": "za.aph",
+          "registry_id": "178",
+          "word": "wrath",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 489,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7109",
+          "transliteration": "qe.tsaph",
+          "registry_id": "178",
+          "word": "wrath",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 493,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G5590",
+          "transliteration": "psuchē",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 490,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H4578",
+          "transliteration": "me.eh",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 492,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5315",
+          "transliteration": "ne.phesh",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 491,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5397",
+          "transliteration": "ne.sha.mah",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 523,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G1573",
+          "transliteration": "ekkakeō",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 513,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2155",
+          "transliteration": "eusplanchnos",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 518,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2588",
+          "transliteration": "kardia",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 519,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G2589",
+          "transliteration": "kardiognōstēs",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 510,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G4698",
+          "transliteration": "splanchnon",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 506,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H1079",
+          "transliteration": "bal",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 495,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2436G",
+          "transliteration": "cheq",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 505,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H2504",
+          "transliteration": "cha.lats",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 499,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H3824",
+          "transliteration": "le.vav",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 498,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H3826",
+          "transliteration": "lib.bah",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 508,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5034B",
+          "transliteration": "na.vel",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 497,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H7130H",
+          "transliteration": "qe.rev",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 534,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G4151G",
+          "transliteration": "pneuma",
+          "registry_id": "184",
+          "word": "spirit",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 535,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "G4151H",
+          "transliteration": "pneuma",
+          "registry_id": "184",
+          "word": "spirit",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 529,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H5301",
+          "transliteration": "na.phach",
+          "registry_id": "184",
+          "word": "spirit",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 541,
+        "flag_id": 1,
+        "_ref": {
+          "term_id": "H3318G",
+          "transliteration": "ya.tsa",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "god_as_subject=1"
+        }
+      },
+      {
+        "term_inv_id": 20,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H8463",
+          "transliteration": "ta.cha.lu.im",
+          "registry_id": "002",
+          "word": "agony",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 118,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G3462",
+          "transliteration": "murizō",
+          "registry_id": "006",
+          "word": "anointing",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 131,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3629",
+          "transliteration": "kil.yah",
+          "registry_id": "026",
+          "word": "conscience",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 160,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7602A",
+          "transliteration": "sha.aph",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 197,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G3788",
+          "transliteration": "ophthalmos",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 192,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7068",
+          "transliteration": "qin.ah",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 212,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G1630",
+          "transliteration": "ekfobos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 200,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G1719",
+          "transliteration": "emfobos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 217,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G1790",
+          "transliteration": "entromos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 218,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5156",
+          "transliteration": "tromos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 216,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5399",
+          "transliteration": "fobeo",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 205,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5401",
+          "transliteration": "fobos",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 247,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2729",
+          "transliteration": "cha.rad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 250,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2730",
+          "transliteration": "cha.red",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 249,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2731",
+          "transliteration": "cha.ra.dah",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 245,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H4549",
+          "transliteration": "ma.sas",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 248,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H6206",
+          "transliteration": "a.rats",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 235,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H6342",
+          "transliteration": "pa.chad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 221,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H6343",
+          "transliteration": "pa.chad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 229,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H6427",
+          "transliteration": "pal.la.tsut",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 227,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7374",
+          "transliteration": "re.tet",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 251,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7461B",
+          "transliteration": "re.a.dah",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 301,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3689",
+          "transliteration": "ke.sel",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 299,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H8431",
+          "transliteration": "to.che.let",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 344,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7355",
+          "transliteration": "ra.cham",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 337,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7356B",
+          "transliteration": "ra.cha.mim",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 436,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G0152",
+          "transliteration": "aischunē",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 428,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G0808",
+          "transliteration": "aschēmosunē",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 444,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G0818",
+          "transliteration": "atimazō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 427,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G0819",
+          "transliteration": "atimia",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 446,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5195",
+          "transliteration": "hubrizō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 419,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H0954",
+          "transliteration": "bosh",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 432,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H0955",
+          "transliteration": "bu.shah",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 421,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3637",
+          "transliteration": "ka.lam",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 434,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3639",
+          "transliteration": "ke.lim.mah",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 458,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5604",
+          "transliteration": "odin",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 462,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H0585",
+          "transliteration": "a.na.chah",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 454,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H1741",
+          "transliteration": "de.vay",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 459,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2256M",
+          "transliteration": "che.vel",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 447,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2427B",
+          "transliteration": "chil",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 486,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2573",
+          "transliteration": "che.met",
+          "registry_id": "178",
+          "word": "wrath",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 493,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G5590",
+          "transliteration": "psuchē",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 490,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H4578",
+          "transliteration": "me.eh",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 492,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H5315",
+          "transliteration": "ne.phesh",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 491,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H5397",
+          "transliteration": "ne.sha.mah",
+          "registry_id": "182",
+          "word": "soul",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 513,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G2155",
+          "transliteration": "eusplanchnos",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 521,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G2292",
+          "transliteration": "tharseō",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 518,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G2588",
+          "transliteration": "kardia",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 510,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G4698",
+          "transliteration": "splanchnon",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 506,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H1079",
+          "transliteration": "bal",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 496,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2243",
+          "transliteration": "chov",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 495,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2436G",
+          "transliteration": "cheq",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 505,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2504",
+          "transliteration": "cha.lats",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 504,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H2910",
+          "transliteration": "tu.chot",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 501,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3820A",
+          "transliteration": "lev",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 499,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3824",
+          "transliteration": "le.vav",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 508,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H5034B",
+          "transliteration": "na.vel",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 497,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7130H",
+          "transliteration": "qe.rev",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 503,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7907",
+          "transliteration": "sekh.vi",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 529,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H5301",
+          "transliteration": "na.phach",
+          "registry_id": "184",
+          "word": "spirit",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 543,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G0766",
+          "transliteration": "aselgeia",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 548,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G2699",
+          "transliteration": "katatomē",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 547,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G2907",
+          "transliteration": "kreas",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 546,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G4559",
+          "transliteration": "sarkikos",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 545,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G4561",
+          "transliteration": "sarx",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 549,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G7143",
+          "transliteration": "eksarkizomai",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 544,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "G7681",
+          "transliteration": "thnēsimaios",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 538,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H1320",
+          "transliteration": "ba.sar",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 537,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H1321",
+          "transliteration": "be.shar",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 541,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3318G",
+          "transliteration": "ya.tsa",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 540,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H3894",
+          "transliteration": "le.chum",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 536,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H6371",
+          "transliteration": "pi.mah",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 539,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H7607",
+          "transliteration": "she.er",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 542,
+        "flag_id": 3,
+        "_ref": {
+          "term_id": "H8270",
+          "transliteration": "shor",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "somatic_link=1"
+        }
+      },
+      {
+        "term_inv_id": 113,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H1878",
+          "transliteration": "da.shen",
+          "registry_id": "006",
+          "word": "anointing",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 156,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H0183",
+          "transliteration": "a.vah",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 162,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H1245",
+          "transliteration": "ba.qash",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 165,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H1697H",
+          "transliteration": "da.var",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 157,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2530A",
+          "transliteration": "cha.mad",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 143,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2836B",
+          "transliteration": "cha.shaq",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 158,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H5375O",
+          "transliteration": "na.sa",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 154,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7592",
+          "transliteration": "sha.al",
+          "registry_id": "043",
+          "word": "desire",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 191,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7065",
+          "transliteration": "qa.na",
+          "registry_id": "056",
+          "word": "envy",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 216,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "G5399",
+          "transliteration": "fobeo",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 237,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H1763",
+          "transliteration": "de.chal",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 247,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2729",
+          "transliteration": "cha.rad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 242,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3372G",
+          "transliteration": "ya.re",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 241,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3372H",
+          "transliteration": "ya.re",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 245,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H4549",
+          "transliteration": "ma.sas",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 248,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H6206",
+          "transliteration": "a.rats",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 235,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H6342",
+          "transliteration": "pa.chad",
+          "registry_id": "061",
+          "word": "fear",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 309,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H0982",
+          "transliteration": "ba.tach",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 306,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2976",
+          "transliteration": "ya.ash",
+          "registry_id": "078",
+          "word": "hope",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 344,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7355",
+          "transliteration": "ra.cham",
+          "registry_id": "103",
+          "word": "love",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 370,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3811",
+          "transliteration": "la.ah",
+          "registry_id": "116",
+          "word": "patience",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 407,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H5162G",
+          "transliteration": "na.cham",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 412,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7725I",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 409,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7725J",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 410,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7725N",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 411,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7725O",
+          "transliteration": "shuv",
+          "registry_id": "135",
+          "word": "repentance",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 442,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "G1788",
+          "transliteration": "entrepō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 445,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "G2617",
+          "transliteration": "kataischunō",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 419,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H0954",
+          "transliteration": "bosh",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 439,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2616B",
+          "transliteration": "cha.sad",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 420,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2659",
+          "transliteration": "cha.pher",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 421,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3637",
+          "transliteration": "ka.lam",
+          "registry_id": "146",
+          "word": "shame",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 465,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H1727",
+          "transliteration": "duv",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 466,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2490H",
+          "transliteration": "cha.lal",
+          "registry_id": "154",
+          "word": "sorrow",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 483,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "G4679",
+          "transliteration": "sofizo",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 473,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H2449",
+          "transliteration": "cha.kham",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 472,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H7919A",
+          "transliteration": "sa.khal",
+          "registry_id": "174",
+          "word": "wisdom",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 494,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3512A",
+          "transliteration": "ka.ah",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 507,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3823A",
+          "transliteration": "la.vav",
+          "registry_id": "183",
+          "word": "heart",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 529,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H5301",
+          "transliteration": "na.phach",
+          "registry_id": "184",
+          "word": "spirit",
+          "source_boolean": "causative_form_present=1"
+        }
+      },
+      {
+        "term_inv_id": 541,
+        "flag_id": 2,
+        "_ref": {
+          "term_id": "H3318G",
+          "transliteration": "ya.tsa",
+          "registry_id": "185",
+          "word": "flesh",
+          "source_boolean": "causative_form_present=1"
+        }
+      }
+    ]
+  }
+}
