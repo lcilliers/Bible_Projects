@@ -1,0 +1,112 @@
+{
+  "_meta": {
+    "patch_id": "WA-051-DISTRESS-CORRECTIVE-UPDATE-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Corrective UPDATE for registry 051 distress: set word_data_reference on 42 mti_terms rows and 13 mti_term_cross_refs rows to match wa_file_index ids assigned in Phase 2 patches 02/03/04; correct word_registry phase1_output_file placeholder.",
+    "reason": "Registry 051 was partially processed in a prior session: mti_terms and mti_term_cross_refs were populated but Phase 2 data patches were never applied, leaving word_data_reference null on all rows and phase1_output_file as a placeholder. This patch applies after patches 02, 03, 04 to set FK references once wa_file_index ids 45/46/47 exist.",
+    "produced_by": "Claude (Session A v8)",
+    "format": "bible-projects-patch-spec-v1.1",
+    "registry_id": "051",
+    "word": "distress",
+    "prerequisite": "WA-051-DISTRESS-DATA-PART1-20260317-V1",
+    "import_order": [
+      "1. Apply after 02-wa-051-distress-data-part1-patch-20260317-v1.json",
+      "2. Apply after 03-wa-051-distress-data-part2-patch-20260317-v1.json",
+      "3. Apply after 04-wa-051-distress-data-part3-patch-20260317-v1.json",
+      "4. Execute mti_terms_word_data_ref_update",
+      "5. Execute mti_term_cross_refs_word_data_ref_update",
+      "6. Execute word_registry_output_file_update"
+    ],
+    "id_baseline": {}
+  },
+
+  "mti_terms_word_data_ref_update": {
+    "target_table": "mti_terms",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": ["word_data_reference"],
+    "row_counts": { "total_rows": 42, "part1_rows": 12, "part2_rows": 10, "part3_rows": 20 },
+    "rows": [
+      { "id": 2,   "word_data_reference": "45", "_ref": { "term": "ademoneo G0085", "part": 1 } },
+      { "id": 16,  "word_data_reference": "45", "_ref": { "term": "ekthambeo G1568", "part": 1 } },
+      { "id": 91,  "word_data_reference": "45", "_ref": { "term": "be.esh H0888", "part": 1 } },
+      { "id": 145, "word_data_reference": "45", "_ref": { "term": "ya.tsar H3334", "part": 1 } },
+      { "id": 152, "word_data_reference": "45", "_ref": { "term": "ke.ra H3735", "part": 1 } },
+      { "id": 155, "word_data_reference": "45", "_ref": { "term": "mu.a.qah H4157", "part": 1 } },
+      { "id": 199, "word_data_reference": "45", "_ref": { "term": "pid H6365", "part": 1 } },
+      { "id": 202, "word_data_reference": "45", "_ref": { "term": "tsoq H6695A", "part": 1 } },
+      { "id": 203, "word_data_reference": "45", "_ref": { "term": "tsu.qah H6695B", "part": 1 } },
+      { "id": 212, "word_data_reference": "45", "_ref": { "term": "bats.tsa.rah H6869A", "part": 1 } },
+      { "id": 235, "word_data_reference": "45", "_ref": { "term": "ra H7451A", "part": 1 } },
+      { "id": 239, "word_data_reference": "45", "_ref": { "term": "ra.a H7489A", "part": 1 } },
+      { "id": 10,  "word_data_reference": "46", "_ref": { "term": "anankē G0318", "part": 2 } },
+      { "id": 51,  "word_data_reference": "46", "_ref": { "term": "stenochoria G4730", "part": 2 } },
+      { "id": 75,  "word_data_reference": "46", "_ref": { "term": "a.ven H0205H", "part": 2 } },
+      { "id": 116, "word_data_reference": "46", "_ref": { "term": "ze.a.qah H2201", "part": 2 } },
+      { "id": 147, "word_data_reference": "46", "_ref": { "term": "ke.ev H3511", "part": 2 } },
+      { "id": 200, "word_data_reference": "46", "_ref": { "term": "tse.va.chah H6682", "part": 2 } },
+      { "id": 208, "word_data_reference": "46", "_ref": { "term": "tsar H6862A (narrow)", "part": 2 } },
+      { "id": 211, "word_data_reference": "46", "_ref": { "term": "tsar H6862D (hard)", "part": 2 } },
+      { "id": 234, "word_data_reference": "46", "_ref": { "term": "riv H7379", "part": 2 } },
+      { "id": 237, "word_data_reference": "46", "_ref": { "term": "ra.ah H7451I", "part": 2 } },
+      { "id": 20,  "word_data_reference": "47", "_ref": { "term": "thlibo G2346", "part": 3 } },
+      { "id": 25,  "word_data_reference": "47", "_ref": { "term": "kataponeō G2669", "part": 3 } },
+      { "id": 30,  "word_data_reference": "47", "_ref": { "term": "lupeō G3076", "part": 3 } },
+      { "id": 48,  "word_data_reference": "47", "_ref": { "term": "skullō G4660", "part": 3 } },
+      { "id": 50,  "word_data_reference": "47", "_ref": { "term": "stenochōreō G4729", "part": 3 } },
+      { "id": 54,  "word_data_reference": "47", "_ref": { "term": "sunechō G4912", "part": 3 } },
+      { "id": 92,  "word_data_reference": "47", "_ref": { "term": "ba.hal H0926", "part": 3 } },
+      { "id": 173, "word_data_reference": "47", "_ref": { "term": "na.ga.s H5065", "part": 3 } },
+      { "id": 191, "word_data_reference": "47", "_ref": { "term": "a.tsav H6087A", "part": 3 } },
+      { "id": 201, "word_data_reference": "47", "_ref": { "term": "tsuq H6693", "part": 3 } },
+      { "id": 204, "word_data_reference": "47", "_ref": { "term": "tsur H6696A (confine)", "part": 3 } },
+      { "id": 205, "word_data_reference": "47", "_ref": { "term": "tsur H6696B (provoke)", "part": 3 } },
+      { "id": 214, "word_data_reference": "47", "_ref": { "term": "tsa.rah H6869C (vexer)", "part": 3 } },
+      { "id": 215, "word_data_reference": "47", "_ref": { "term": "tsa.rar H6887B (constrain)", "part": 3 } },
+      { "id": 216, "word_data_reference": "47", "_ref": { "term": "tsa.rar H6887C (distress)", "part": 3 } },
+      { "id": 217, "word_data_reference": "47", "_ref": { "term": "tsa.rar H6887D (vex)", "part": 3 } },
+      { "id": 218, "word_data_reference": "47", "_ref": { "term": "tsa.rar H6887E (rival)", "part": 3 } },
+      { "id": 220, "word_data_reference": "47", "_ref": { "term": "quts H6973", "part": 3 } },
+      { "id": 226, "word_data_reference": "47", "_ref": { "term": "qa.shah H7185", "part": 3 } },
+      { "id": 242, "word_data_reference": "47", "_ref": { "term": "si.ach H7878", "part": 3 } }
+    ]
+  },
+
+  "mti_term_cross_refs_word_data_ref_update": {
+    "target_table": "mti_term_cross_refs",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": ["word_data_reference"],
+    "row_counts": { "total_rows": 13 },
+    "rows": [
+      { "id": 1,  "word_data_reference": "46", "_ref": { "mti_term_id": 21, "strongs": "G2347 thlipsis", "part": 2 } },
+      { "id": 8,  "word_data_reference": "45", "_ref": { "mti_term_id": 35, "strongs": "G3600 odunaō", "part": 1 } },
+      { "id": 16, "word_data_reference": "45", "_ref": { "mti_term_id": 55, "strongs": "G4928 sunochē", "part": 1 } },
+      { "id": 24, "word_data_reference": "47", "_ref": { "mti_term_id": 119, "strongs": "H2342A chul", "part": 3 } },
+      { "id": 30, "word_data_reference": "47", "_ref": { "mti_term_id": 139, "strongs": "H2734 cha.rah", "part": 3 } },
+      { "id": 45, "word_data_reference": "45", "_ref": { "mti_term_id": 156, "strongs": "H4164 mu.tsaq", "part": 1 } },
+      { "id": 47, "word_data_reference": "45", "_ref": { "mti_term_id": 161, "strongs": "H4689 ma.tsoq", "part": 1 } },
+      { "id": 48, "word_data_reference": "46", "_ref": { "mti_term_id": 162, "strongs": "H4712 me.tsar", "part": 2 } },
+      { "id": 49, "word_data_reference": "45", "_ref": { "mti_term_id": 163, "strongs": "H4751 mar", "part": 1 } },
+      { "id": 58, "word_data_reference": "45", "_ref": { "mti_term_id": 209, "strongs": "H6862B tsar (distress)", "part": 1 } },
+      { "id": 60, "word_data_reference": "46", "_ref": { "mti_term_id": 210, "strongs": "H6862C tsar (enemy)", "part": 2 } },
+      { "id": 61, "word_data_reference": "45", "_ref": { "mti_term_id": 213, "strongs": "H6869B tsa.rah (distress)", "part": 1 } },
+      { "id": 69, "word_data_reference": "46", "_ref": { "mti_term_id": 236, "strongs": "H7451C ra.ah (harm)", "part": 2 } }
+    ]
+  },
+
+  "word_registry_output_file_update": {
+    "target_table": "word_registry",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": ["phase1_status", "phase1_output_file"],
+    "row_counts": { "total_rows": 1 },
+    "rows": [
+      {
+        "id": 51,
+        "phase1_status": "Complete",
+        "phase1_output_file": "02-wa-051-distress-data-part1-patch-20260317-v1.json, 03-wa-051-distress-data-part2-patch-20260317-v1.json, 04-wa-051-distress-data-part3-patch-20260317-v1.json"
+      }
+    ]
+  }
+}

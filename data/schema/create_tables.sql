@@ -162,21 +162,28 @@ CREATE INDEX IF NOT EXISTS idx_wa_ti_lang    ON wa_term_inventory (language);
 
 -- ── 4.2  wa_term_related_words ────────────────────────────────────────────────
 -- Related words cluster for each term (from the STEP word analysis block).
+-- Columns root_language, root_gloss, note added 2026-03-17.
 CREATE TABLE IF NOT EXISTS wa_term_related_words (
-    id              INTEGER PRIMARY KEY AUTOINCREMENT,
-    term_inv_id     INTEGER NOT NULL REFERENCES wa_term_inventory(id),
-    gloss           TEXT,
-    transliteration TEXT
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    term_inv_id       INTEGER NOT NULL REFERENCES wa_term_inventory(id),
+    gloss             TEXT,
+    transliteration   TEXT,
+    strongs_number    TEXT,              -- e.g. "H7965", "G1515"
+    relationship_note TEXT               -- brief note on how this word relates to the term
 );
 
 CREATE INDEX IF NOT EXISTS idx_wa_rw ON wa_term_related_words (term_inv_id);
 
 -- ── 4.3  wa_term_root_family ──────────────────────────────────────────────────
 -- Root family labels assigned to each term (may span multiple families).
+-- Columns root_language, root_gloss, note added 2026-03-17.
 CREATE TABLE IF NOT EXISTS wa_term_root_family (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    term_inv_id INTEGER NOT NULL REFERENCES wa_term_inventory(id),
-    root_code   TEXT    NOT NULL                   -- e.g. "TSR", "CHARAH", "LUPE"
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    term_inv_id   INTEGER NOT NULL REFERENCES wa_term_inventory(id),
+    root_code     TEXT    NOT NULL,                -- e.g. "TSR", "CHARAH", "LUPE"
+    root_language TEXT,                            -- "Hebrew", "Greek", "Aramaic"
+    root_gloss    TEXT,                            -- brief English gloss for the root
+    note          TEXT                             -- any additional note about this root membership
 );
 
 CREATE INDEX IF NOT EXISTS idx_wa_rf ON wa_term_root_family (term_inv_id);

@@ -1,0 +1,2537 @@
+{
+  "_meta": {
+    "patch_id": "WA-187-STRENGTH-DATA-PART2-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Phase 2 data patch for strength registry 187, Part 2: Hebrew terms group 2. 20 new terms extracted.",
+    "format": "bible-projects-patch-spec-v1.1",
+    "produced_by": "Claude (Session A v8)",
+    "registry_id": "187",
+    "word": "strength",
+    "part_number": 2,
+    "source_files": [
+      "word_strength_Part2.md"
+    ],
+    "prerequisite": "WA-187-STRENGTH-PHASE1-20260317-V1",
+    "id_baseline": {
+      "wa_file_index": 51,
+      "mti_terms": 642,
+      "mti_term_cross_refs": 73,
+      "wa_term_inventory": 657
+    },
+    "import_order": [
+      "1. Execute wa_file_index_insert first",
+      "2. Execute mti_terms_insert",
+      "3. Execute wa_term_inventory_insert",
+      "4. Execute wa_term_related_words_insert",
+      "5. Execute wa_term_root_family_insert",
+      "6. Execute wa_term_phase2_flags_insert",
+      "7. Execute wa_verse_records_insert",
+      "8. Execute wa_cross_registry_links_insert",
+      "9. Execute wa_data_quality_flags_insert"
+    ]
+  },
+  "wa_file_index_insert": {
+    "target_table": "wa_file_index",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "filename",
+      "registry_id",
+      "word_registry_fk",
+      "word",
+      "part_number",
+      "total_parts",
+      "is_split",
+      "schema_version",
+      "phase",
+      "produced_date",
+      "source_file",
+      "translation_used",
+      "specification",
+      "revision_note",
+      "source_list",
+      "category",
+      "testament_coverage",
+      "root_families_in_prior_parts"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 53,
+        "filename": "03-wa-187-strength-data-part2-patch-20260317-v1.json",
+        "registry_id": "187",
+        "word_registry_fk": 187,
+        "word": "strength",
+        "part_number": 2,
+        "total_parts": 3,
+        "is_split": 1,
+        "schema_version": "2.2",
+        "phase": "phase2",
+        "produced_date": "2026-03-17",
+        "source_file": "word_strength_Part2.md",
+        "translation_used": "ESV",
+        "specification": "Session A Instruction v8",
+        "revision_note": null,
+        "source_list": "High Confidence",
+        "category": "Volitional/Capacity",
+        "testament_coverage": "OT",
+        "root_families_in_prior_parts": "ATSAM_ROOT, EYAL_ROOT, GADAL_ROOT, GBUR_ROOT, KOACH_ROOT, MAZACH_ROOT, MEOD_ROOT, NTSB_ROOT, OZ_ROOT, TOAPHA_ROOT, TQPH_ROOT, TQUM_ROOT, TSUR_ROOT, YAD_ROOT, ZROA_ROOT"
+      }
+    ]
+  },
+  "mti_terms_insert": {
+    "target_table": "mti_terms",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "strongs_number",
+      "transliteration",
+      "gloss",
+      "language",
+      "owning_registry",
+      "owning_word",
+      "owning_part",
+      "word_data_reference",
+      "status",
+      "extraction_date",
+      "strongs_reconciled",
+      "status_note",
+      "exclusion_reason",
+      "anchor_note"
+    ],
+    "row_counts": {
+      "total_rows": 20
+    },
+    "rows": [
+      {
+        "id": 662,
+        "strongs_number": "H0360",
+        "transliteration": "e.ya.lut",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "e.ya.lut",
+          "part": 2
+        }
+      },
+      {
+        "id": 663,
+        "strongs_number": "H0556",
+        "transliteration": "am.tsah",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "am.tsah",
+          "part": 2
+        }
+      },
+      {
+        "id": 664,
+        "strongs_number": "H0555",
+        "transliteration": "o.mets",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "o.mets",
+          "part": 2
+        }
+      },
+      {
+        "id": 665,
+        "strongs_number": "H0202",
+        "transliteration": "on",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "on",
+          "part": 2
+        }
+      },
+      {
+        "id": 666,
+        "strongs_number": "H0193",
+        "transliteration": "ul",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "ul",
+          "part": 2
+        }
+      },
+      {
+        "id": 667,
+        "strongs_number": "H2428",
+        "transliteration": "cha.yil",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "STEP lists cha.yil under four sub-glosses (strength, strength: rich, strength: soldiers, strength: worthy) sharing the same Strong's H2428. One term record produced. Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "cha.yil",
+          "part": 2
+        }
+      },
+      {
+        "id": 668,
+        "strongs_number": "H2393",
+        "transliteration": "chez.qah",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "chez.qah",
+          "part": 2
+        }
+      },
+      {
+        "id": 669,
+        "strongs_number": "H2392",
+        "transliteration": "cho.zeq",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "cho.zeq",
+          "part": 2
+        }
+      },
+      {
+        "id": 670,
+        "strongs_number": "H2391",
+        "transliteration": "che.zeq",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "che.zeq",
+          "part": 2
+        }
+      },
+      {
+        "id": 671,
+        "strongs_number": "H1679",
+        "transliteration": "do.ve",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Hapax legomenon; meaning uncertain. Context (Deu 33:25) suggests iron-clad strength or durability.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "do.ve",
+          "part": 2
+        }
+      },
+      {
+        "id": 672,
+        "strongs_number": "H6109",
+        "transliteration": "ots.mah",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "ots.mah",
+          "part": 2
+        }
+      },
+      {
+        "id": 673,
+        "strongs_number": "H6108",
+        "transliteration": "o.tsem",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "o.tsem",
+          "part": 2
+        }
+      },
+      {
+        "id": 674,
+        "strongs_number": "H5794",
+        "transliteration": "e.zuz",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "e.zuz",
+          "part": 2
+        }
+      },
+      {
+        "id": 675,
+        "strongs_number": "H5797",
+        "transliteration": "oz",
+        "gloss": "strength",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file. Root of the oz-word family including a.zaz, e.zuz, ma.oz.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "oz",
+          "part": 2
+        }
+      },
+      {
+        "id": 676,
+        "strongs_number": "H0553",
+        "transliteration": "am.mits",
+        "gloss": "strong",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "am.mits",
+          "part": 2
+        }
+      },
+      {
+        "id": 677,
+        "strongs_number": "H0386",
+        "transliteration": "e.tan",
+        "gloss": "strong",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Occurrence count not stated in source file. Denotes enduring permanence and steady strength.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "e.tan",
+          "part": 2
+        }
+      },
+      {
+        "id": 678,
+        "strongs_number": "H2502",
+        "transliteration": "cha.lats",
+        "gloss": "to arm",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "Distinct from H2504 (cha.lats loin) in registry 183. This is the verb to arm/equip for battle.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "cha.lats",
+          "part": 2
+        }
+      },
+      {
+        "id": 679,
+        "strongs_number": "H2388",
+        "transliteration": "cha.zaq",
+        "gloss": "to strengthen: strengthen",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "cha.zaq",
+          "part": 2
+        }
+      },
+      {
+        "id": 680,
+        "strongs_number": "H5953",
+        "transliteration": "a.lal",
+        "gloss": "to thrust",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "STEP includes this term in the strength list for its Poel sense of forceful insertion/thrusting. The term has multiple glosses under the same root (to abuse, to glean, to mock); the thrust/insert sense is a subset.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "a.lal",
+          "part": 2
+        }
+      },
+      {
+        "id": 681,
+        "strongs_number": "H2633",
+        "transliteration": "cho.sen",
+        "gloss": "wealth",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 2,
+        "word_data_reference": 53,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "Included in STEP strength list; connection to strength is through the semantic association of stored-up resources as a form of capacity/power.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "cho.sen",
+          "part": 2
+        }
+      }
+    ]
+  },
+  "wa_term_inventory_insert": {
+    "target_table": "wa_term_inventory",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "file_id",
+      "language",
+      "term_id",
+      "strongs_number",
+      "transliteration",
+      "step_search_gloss",
+      "word_analysis_gloss",
+      "occurrence_count",
+      "occurrence_count_qualifier",
+      "meaning",
+      "testament",
+      "god_as_subject",
+      "somatic_link",
+      "causative_form_present",
+      "status_note",
+      "meaning_numbered",
+      "also_spelled"
+    ],
+    "row_counts": {
+      "total_rows": 20
+    },
+    "rows": [
+      {
+        "id": 677,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0360",
+        "strongs_number": "H0360",
+        "transliteration": "e.ya.lut",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "strength, my help",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "e.ya.lut"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 678,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0556",
+        "strongs_number": "H0556",
+        "transliteration": "am.tsah",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "am.tsah"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 679,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0555",
+        "strongs_number": "H0555",
+        "transliteration": "o.mets",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "o.mets"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 680,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0202",
+        "strongs_number": "H0202",
+        "transliteration": "on",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 13,
+        "occurrence_count_qualifier": "about",
+        "meaning": "1) vigour, generative power\n2) wealth\n3) physical strength (of men and behemoth)",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 1,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "on"
+        },
+        "meaning_numbered": "True",
+        "also_spelled": null
+      },
+      {
+        "id": 681,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0193",
+        "strongs_number": "H0193",
+        "transliteration": "ul",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "body, strength, belly",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 1,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "ul"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 682,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2428",
+        "strongs_number": "H2428",
+        "transliteration": "cha.yil",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength / strength: rich / strength: soldiers / strength: worthy",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "1) strength, might, efficiency, wealth, army\n1a) strength\n1b) ability, efficiency\n1c) wealth\n1d) force, army",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "STEP lists cha.yil under four sub-glosses (strength, strength: rich, strength: soldiers, strength: worthy) sharing the same Strong's H2428. One term record produced. Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "cha.yil"
+        },
+        "meaning_numbered": "True",
+        "also_spelled": null
+      },
+      {
+        "id": 683,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2393",
+        "strongs_number": "H2393",
+        "transliteration": "chez.qah",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "strength, force",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "chez.qah"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 684,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2392",
+        "strongs_number": "H2392",
+        "transliteration": "cho.zeq",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "cho.zeq"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 685,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2391",
+        "strongs_number": "H2391",
+        "transliteration": "che.zeq",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "che.zeq"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 686,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H1679",
+        "strongs_number": "H1679",
+        "transliteration": "do.ve",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "rest, strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Hapax legomenon; meaning uncertain. Context (Deu 33:25) suggests iron-clad strength or durability.",
+        "_ref": {
+          "trans": "do.ve"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 687,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H6109",
+        "strongs_number": "H6109",
+        "transliteration": "ots.mah",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "strength, vastness",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "ots.mah"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 688,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H6108",
+        "strongs_number": "H6108",
+        "transliteration": "o.tsem",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "might, strength",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "o.tsem"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 689,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H5794",
+        "strongs_number": "H5794",
+        "transliteration": "e.zuz",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "strength, might",
+        "testament": "OT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "e.zuz"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 690,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H5797",
+        "strongs_number": "H5797",
+        "transliteration": "oz",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "1) strength, might\n1a) material or physical\n1b) personal or social or political\n1c) God's\n1d) boldness",
+        "testament": "OT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file. Root of the oz-word family including a.zaz, e.zuz, ma.oz.",
+        "_ref": {
+          "trans": "oz"
+        },
+        "meaning_numbered": "True",
+        "also_spelled": null
+      },
+      {
+        "id": 691,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0553",
+        "strongs_number": "H0553",
+        "transliteration": "am.mits",
+        "step_search_gloss": "strong",
+        "word_analysis_gloss": "strong",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "strong, alert, courageous",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file.",
+        "_ref": {
+          "trans": "am.mits"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 692,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H0386",
+        "strongs_number": "H0386",
+        "transliteration": "e.tan",
+        "step_search_gloss": "strong",
+        "word_analysis_gloss": "strong",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "ever-flowing, ever-lasting, permanent, steady, strong",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Occurrence count not stated in source file. Denotes enduring permanence and steady strength.",
+        "_ref": {
+          "trans": "e.tan"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 693,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2502",
+        "strongs_number": "H2502",
+        "transliteration": "cha.lats",
+        "step_search_gloss": "to arm",
+        "word_analysis_gloss": "to arm",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "(Qal) to equip for war, to arm; (Niphal) to be equipped, to go equipped for battle",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Distinct from H2504 (cha.lats loin) in registry 183. This is the verb to arm/equip for battle.",
+        "_ref": {
+          "trans": "cha.lats"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 694,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2388",
+        "strongs_number": "H2388",
+        "transliteration": "cha.zaq",
+        "step_search_gloss": "to strengthen: strengthen",
+        "word_analysis_gloss": "to strengthen: strengthen",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": "1) to strengthen, to prevail, to harden, to be strong, to become strong, to be courageous, to be firm, to grow firm, to be resolute, to be sore\n1a) (Qal) to be strong, to grow strong\n1b) (Piel) to make strong, to strengthen\n1c) (Hiphil) to make strong, to strengthen\n1d) (Hithpael) to strengthen oneself",
+        "testament": "OT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 1,
+        "status_note": null,
+        "_ref": {
+          "trans": "cha.zaq"
+        },
+        "meaning_numbered": "True",
+        "also_spelled": null
+      },
+      {
+        "id": 695,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H5953",
+        "strongs_number": "H5953",
+        "transliteration": "a.lal",
+        "step_search_gloss": "to thrust",
+        "word_analysis_gloss": "to thrust",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "(Poel) to insert, thrust, thrust in, thrust upon",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "STEP includes this term in the strength list for its Poel sense of forceful insertion/thrusting. The term has multiple glosses under the same root (to abuse, to glean, to mock); the thrust/insert sense is a subset.",
+        "_ref": {
+          "trans": "a.lal"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      },
+      {
+        "id": 696,
+        "file_id": 53,
+        "language": "Hebrew",
+        "term_id": "H2633",
+        "strongs_number": "H2633",
+        "transliteration": "cho.sen",
+        "step_search_gloss": "wealth",
+        "word_analysis_gloss": "wealth",
+        "occurrence_count": 5,
+        "occurrence_count_qualifier": "about",
+        "meaning": "riches, treasure, wealth",
+        "testament": "OT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Included in STEP strength list; connection to strength is through the semantic association of stored-up resources as a form of capacity/power.",
+        "_ref": {
+          "trans": "cho.sen"
+        },
+        "meaning_numbered": "False",
+        "also_spelled": null
+      }
+    ]
+  },
+  "wa_term_related_words_insert": {
+    "target_table": "wa_term_related_words",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "gloss",
+      "transliteration"
+    ],
+    "row_counts": {
+      "total_rows": 41
+    },
+    "rows": [
+      {
+        "term_inv_id": 677,
+        "gloss": "strength",
+        "transliteration": "e.yal"
+      },
+      {
+        "term_inv_id": 678,
+        "gloss": "strong",
+        "transliteration": "am.mits"
+      },
+      {
+        "term_inv_id": 678,
+        "gloss": "strength",
+        "transliteration": "o.mets"
+      },
+      {
+        "term_inv_id": 678,
+        "gloss": "to strengthen",
+        "transliteration": "a.mets"
+      },
+      {
+        "term_inv_id": 679,
+        "gloss": "strong",
+        "transliteration": "am.mits"
+      },
+      {
+        "term_inv_id": 679,
+        "gloss": "strength",
+        "transliteration": "am.tsah"
+      },
+      {
+        "term_inv_id": 679,
+        "gloss": "to strengthen",
+        "transliteration": "a.mets"
+      },
+      {
+        "term_inv_id": 680,
+        "gloss": "substance",
+        "transliteration": "hon"
+      },
+      {
+        "term_inv_id": 683,
+        "gloss": "to strengthen",
+        "transliteration": "cha.zaq"
+      },
+      {
+        "term_inv_id": 683,
+        "gloss": "strength",
+        "transliteration": "cho.zeq"
+      },
+      {
+        "term_inv_id": 683,
+        "gloss": "strength",
+        "transliteration": "che.zeq"
+      },
+      {
+        "term_inv_id": 684,
+        "gloss": "to strengthen",
+        "transliteration": "cha.zaq"
+      },
+      {
+        "term_inv_id": 684,
+        "gloss": "strength",
+        "transliteration": "chez.qah"
+      },
+      {
+        "term_inv_id": 684,
+        "gloss": "strength",
+        "transliteration": "che.zeq"
+      },
+      {
+        "term_inv_id": 685,
+        "gloss": "to strengthen: strengthen",
+        "transliteration": "cha.zaq"
+      },
+      {
+        "term_inv_id": 685,
+        "gloss": "strength",
+        "transliteration": "cho.zeq"
+      },
+      {
+        "term_inv_id": 685,
+        "gloss": "strength",
+        "transliteration": "chez.qah"
+      },
+      {
+        "term_inv_id": 687,
+        "gloss": "bone",
+        "transliteration": "e.tsem"
+      },
+      {
+        "term_inv_id": 687,
+        "gloss": "mighty",
+        "transliteration": "a.tsum"
+      },
+      {
+        "term_inv_id": 687,
+        "gloss": "strength",
+        "transliteration": "o.tsem"
+      },
+      {
+        "term_inv_id": 688,
+        "gloss": "bone",
+        "transliteration": "e.tsem"
+      },
+      {
+        "term_inv_id": 688,
+        "gloss": "mighty",
+        "transliteration": "a.tsum"
+      },
+      {
+        "term_inv_id": 688,
+        "gloss": "strength",
+        "transliteration": "ots.mah"
+      },
+      {
+        "term_inv_id": 689,
+        "gloss": "strength",
+        "transliteration": "oz"
+      },
+      {
+        "term_inv_id": 689,
+        "gloss": "be strong",
+        "transliteration": "a.zaz"
+      },
+      {
+        "term_inv_id": 690,
+        "gloss": "be strong",
+        "transliteration": "a.zaz"
+      },
+      {
+        "term_inv_id": 690,
+        "gloss": "security",
+        "transliteration": "ma.oz"
+      },
+      {
+        "term_inv_id": 690,
+        "gloss": "strength",
+        "transliteration": "e.zuz"
+      },
+      {
+        "term_inv_id": 691,
+        "gloss": "strength",
+        "transliteration": "am.tsah"
+      },
+      {
+        "term_inv_id": 691,
+        "gloss": "strength",
+        "transliteration": "o.mets"
+      },
+      {
+        "term_inv_id": 691,
+        "gloss": "to strengthen",
+        "transliteration": "a.mets"
+      },
+      {
+        "term_inv_id": 694,
+        "gloss": "strength",
+        "transliteration": "chez.qah"
+      },
+      {
+        "term_inv_id": 694,
+        "gloss": "strength",
+        "transliteration": "cho.zeq"
+      },
+      {
+        "term_inv_id": 694,
+        "gloss": "strength",
+        "transliteration": "che.zeq"
+      },
+      {
+        "term_inv_id": 695,
+        "gloss": "deed",
+        "transliteration": "ma.a.lal"
+      },
+      {
+        "term_inv_id": 695,
+        "gloss": "to abuse",
+        "transliteration": "a.lal"
+      },
+      {
+        "term_inv_id": 695,
+        "gloss": "to glean",
+        "transliteration": "a.lal"
+      },
+      {
+        "term_inv_id": 695,
+        "gloss": "to mock",
+        "transliteration": "a.lal"
+      },
+      {
+        "term_inv_id": 696,
+        "gloss": "mighty",
+        "transliteration": "cha.sin"
+      },
+      {
+        "term_inv_id": 696,
+        "gloss": "to hoard",
+        "transliteration": "cha.san"
+      },
+      {
+        "term_inv_id": 696,
+        "gloss": "strong",
+        "transliteration": "cha.son"
+      }
+    ]
+  },
+  "wa_term_root_family_insert": {
+    "target_table": "wa_term_root_family",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "root_code"
+    ],
+    "row_counts": {
+      "total_rows": 20
+    },
+    "rows": [
+      {
+        "term_inv_id": 677,
+        "root_code": "EYAL_ROOT"
+      },
+      {
+        "term_inv_id": 678,
+        "root_code": "AMTS_ROOT"
+      },
+      {
+        "term_inv_id": 679,
+        "root_code": "AMTS_ROOT"
+      },
+      {
+        "term_inv_id": 680,
+        "root_code": "ON_ROOT"
+      },
+      {
+        "term_inv_id": 681,
+        "root_code": "UL_ROOT"
+      },
+      {
+        "term_inv_id": 682,
+        "root_code": "CHAYIL_ROOT"
+      },
+      {
+        "term_inv_id": 683,
+        "root_code": "CHAZAQ_ROOT"
+      },
+      {
+        "term_inv_id": 684,
+        "root_code": "CHAZAQ_ROOT"
+      },
+      {
+        "term_inv_id": 685,
+        "root_code": "CHAZAQ_ROOT"
+      },
+      {
+        "term_inv_id": 686,
+        "root_code": "DOVE_ROOT"
+      },
+      {
+        "term_inv_id": 687,
+        "root_code": "ATSAM_ROOT"
+      },
+      {
+        "term_inv_id": 688,
+        "root_code": "ATSAM_ROOT"
+      },
+      {
+        "term_inv_id": 689,
+        "root_code": "OZ_ROOT"
+      },
+      {
+        "term_inv_id": 690,
+        "root_code": "OZ_ROOT"
+      },
+      {
+        "term_inv_id": 691,
+        "root_code": "AMTS_ROOT"
+      },
+      {
+        "term_inv_id": 692,
+        "root_code": "ETAN_ROOT"
+      },
+      {
+        "term_inv_id": 693,
+        "root_code": "CHALATS_ROOT"
+      },
+      {
+        "term_inv_id": 694,
+        "root_code": "CHAZAQ_ROOT"
+      },
+      {
+        "term_inv_id": 695,
+        "root_code": "ALAL_ROOT"
+      },
+      {
+        "term_inv_id": 696,
+        "root_code": "CHOSEN_ROOT"
+      }
+    ]
+  },
+  "wa_term_phase2_flags_insert": {
+    "target_table": "wa_term_phase2_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "flag_id"
+    ],
+    "row_counts": {
+      "total_rows": 36
+    },
+    "rows": [
+      {
+        "term_inv_id": 677,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "e.ya.lut"
+        }
+      },
+      {
+        "term_inv_id": 677,
+        "flag_id": 7,
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT",
+          "term": "e.ya.lut"
+        }
+      },
+      {
+        "term_inv_id": 677,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "e.ya.lut"
+        }
+      },
+      {
+        "term_inv_id": 678,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "am.tsah"
+        }
+      },
+      {
+        "term_inv_id": 678,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "am.tsah"
+        }
+      },
+      {
+        "term_inv_id": 679,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "o.mets"
+        }
+      },
+      {
+        "term_inv_id": 679,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "o.mets"
+        }
+      },
+      {
+        "term_inv_id": 680,
+        "flag_id": 3,
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "term": "on"
+        }
+      },
+      {
+        "term_inv_id": 680,
+        "flag_id": 16,
+        "_ref": {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "term": "on"
+        }
+      },
+      {
+        "term_inv_id": 681,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "ul"
+        }
+      },
+      {
+        "term_inv_id": 681,
+        "flag_id": 3,
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "term": "ul"
+        }
+      },
+      {
+        "term_inv_id": 682,
+        "flag_id": 16,
+        "_ref": {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "term": "cha.yil"
+        }
+      },
+      {
+        "term_inv_id": 682,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "cha.yil"
+        }
+      },
+      {
+        "term_inv_id": 683,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "chez.qah"
+        }
+      },
+      {
+        "term_inv_id": 684,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "cho.zeq"
+        }
+      },
+      {
+        "term_inv_id": 684,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "cho.zeq"
+        }
+      },
+      {
+        "term_inv_id": 685,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "che.zeq"
+        }
+      },
+      {
+        "term_inv_id": 686,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "do.ve"
+        }
+      },
+      {
+        "term_inv_id": 687,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "ots.mah"
+        }
+      },
+      {
+        "term_inv_id": 687,
+        "flag_id": 7,
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT",
+          "term": "ots.mah"
+        }
+      },
+      {
+        "term_inv_id": 688,
+        "flag_id": 3,
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "term": "o.tsem"
+        }
+      },
+      {
+        "term_inv_id": 688,
+        "flag_id": 7,
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT",
+          "term": "o.tsem"
+        }
+      },
+      {
+        "term_inv_id": 689,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "e.zuz"
+        }
+      },
+      {
+        "term_inv_id": 689,
+        "flag_id": 7,
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT",
+          "term": "e.zuz"
+        }
+      },
+      {
+        "term_inv_id": 690,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "oz"
+        }
+      },
+      {
+        "term_inv_id": 690,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "oz"
+        }
+      },
+      {
+        "term_inv_id": 690,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "oz"
+        }
+      },
+      {
+        "term_inv_id": 690,
+        "flag_id": 7,
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT",
+          "term": "oz"
+        }
+      },
+      {
+        "term_inv_id": 691,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "am.mits"
+        }
+      },
+      {
+        "term_inv_id": 692,
+        "flag_id": 21,
+        "_ref": {
+          "flag_code": "METAPHOR_ROOT",
+          "term": "e.tan"
+        }
+      },
+      {
+        "term_inv_id": 693,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "cha.lats"
+        }
+      },
+      {
+        "term_inv_id": 694,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "cha.zaq"
+        }
+      },
+      {
+        "term_inv_id": 694,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "cha.zaq"
+        }
+      },
+      {
+        "term_inv_id": 694,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "cha.zaq"
+        }
+      },
+      {
+        "term_inv_id": 694,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "cha.zaq"
+        }
+      },
+      {
+        "term_inv_id": 695,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "a.lal"
+        }
+      }
+    ]
+  },
+  "wa_verse_records_insert": {
+    "target_table": "wa_verse_records",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_inv_id",
+      "term_id",
+      "transliteration",
+      "testament",
+      "reference",
+      "verse_text",
+      "book_id",
+      "chapter",
+      "verse_num",
+      "translation"
+    ],
+    "row_counts": {
+      "total_rows": 57
+    },
+    "rows": [
+      {
+        "file_id": 53,
+        "term_inv_id": 677,
+        "term_id": "H0360",
+        "transliteration": "e.ya.lut",
+        "testament": "OT",
+        "reference": "Psa 22:19",
+        "verse_text": "But you, O Lord, do not be far off! O you my help, come quickly to my aid!",
+        "book_id": 19,
+        "chapter": 22,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 678,
+        "term_id": "H0556",
+        "transliteration": "am.tsah",
+        "testament": "OT",
+        "reference": "Zec 12:5",
+        "verse_text": "Then the clans of Judah shall say to themselves, The inhabitants of Jerusalem have strength through the Lord of hosts, their God.",
+        "book_id": 38,
+        "chapter": 12,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 679,
+        "term_id": "H0555",
+        "transliteration": "o.mets",
+        "testament": "OT",
+        "reference": "Job 17:9",
+        "verse_text": "Yet the righteous holds to his way, and he who has clean hands grows stronger and stronger.",
+        "book_id": 18,
+        "chapter": 17,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 680,
+        "term_id": "H0202",
+        "transliteration": "on",
+        "testament": "OT",
+        "reference": "Gen 49:3",
+        "verse_text": "Reuben, you are my firstborn, my might, and the firstfruits of my strength, preeminent in dignity and preeminent in power.",
+        "book_id": 1,
+        "chapter": 49,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 680,
+        "term_id": "H0202",
+        "transliteration": "on",
+        "testament": "OT",
+        "reference": "Deu 21:17",
+        "verse_text": "but he shall acknowledge the firstborn, the son of the unloved, by giving him a double portion of all that he has, for he is the firstfruits of his strength.",
+        "book_id": 5,
+        "chapter": 21,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 680,
+        "term_id": "H0202",
+        "transliteration": "on",
+        "testament": "OT",
+        "reference": "Job 18:7",
+        "verse_text": "His strong steps are shortened, and his own schemes throw him down.",
+        "book_id": 18,
+        "chapter": 18,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 680,
+        "term_id": "H0202",
+        "transliteration": "on",
+        "testament": "OT",
+        "reference": "Job 40:16",
+        "verse_text": "Behold, his strength in his loins, and his power in the muscles of his belly.",
+        "book_id": 18,
+        "chapter": 40,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 680,
+        "term_id": "H0202",
+        "transliteration": "on",
+        "testament": "OT",
+        "reference": "Isa 40:26",
+        "verse_text": "Lift up your eyes on high and see: who created these? He who brings out their host by number, calling them all by name; by the greatness of his might and because he is strong in power, not one is missing.",
+        "book_id": 23,
+        "chapter": 40,
+        "verse_num": 26,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 681,
+        "term_id": "H0193",
+        "transliteration": "ul",
+        "testament": "OT",
+        "reference": "Job 40:16",
+        "verse_text": "Behold, his strength in his loins, and his power in the muscles of his belly.",
+        "book_id": 18,
+        "chapter": 40,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Deu 8:17",
+        "verse_text": "Beware lest you say in your heart, My power and the might of my hand have gotten me this wealth.",
+        "book_id": 5,
+        "chapter": 8,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Deu 8:18",
+        "verse_text": "You shall remember the LORD your God, for it is he who gives you power to get wealth, that he may confirm his covenant that he swore to your fathers.",
+        "book_id": 5,
+        "chapter": 8,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Psa 18:32",
+        "verse_text": "the God who equipped me with strength and made my way blameless.",
+        "book_id": 19,
+        "chapter": 18,
+        "verse_num": 32,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Pro 12:4",
+        "verse_text": "An excellent wife is the crown of her husband, but she who brings shame is like rottenness in his bones.",
+        "book_id": 20,
+        "chapter": 12,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Pro 31:17",
+        "verse_text": "She dresses herself with strength and makes her arms strong.",
+        "book_id": 20,
+        "chapter": 31,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 682,
+        "term_id": "H2428",
+        "transliteration": "cha.yil",
+        "testament": "OT",
+        "reference": "Pro 31:29",
+        "verse_text": "Many women have done excellently, but you surpass them all.",
+        "book_id": 20,
+        "chapter": 31,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 683,
+        "term_id": "H2393",
+        "transliteration": "chez.qah",
+        "testament": "OT",
+        "reference": "Eze 34:4",
+        "verse_text": "The weak you have not strengthened, the sick you have not healed, the injured you have not bound up, the strayed you have not brought back, the lost you have not sought, and with force and harshness you have ruled them.",
+        "book_id": 26,
+        "chapter": 34,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 684,
+        "term_id": "H2392",
+        "transliteration": "cho.zeq",
+        "testament": "OT",
+        "reference": "Exo 13:3",
+        "verse_text": "Then Moses said to the people, Remember this day in which you came out from Egypt, out of the house of slavery, for by a strong hand the LORD brought you out from this place.",
+        "book_id": 2,
+        "chapter": 13,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 684,
+        "term_id": "H2392",
+        "transliteration": "cho.zeq",
+        "testament": "OT",
+        "reference": "Eze 30:21",
+        "verse_text": "Son of man, I have broken the arm of Pharaoh king of Egypt, and behold, it has not been bound up, to heal it by binding it with a bandage, so that it may become strong to wield the sword.",
+        "book_id": 26,
+        "chapter": 30,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 685,
+        "term_id": "H2391",
+        "transliteration": "che.zeq",
+        "testament": "OT",
+        "reference": "Judg 9:51",
+        "verse_text": "But there was a strong tower within the city, and all the men and women and all the leaders of the city fled to it and shut themselves in, and they went up to the roof of the tower.",
+        "book_id": 7,
+        "chapter": 9,
+        "verse_num": 51,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 686,
+        "term_id": "H1679",
+        "transliteration": "do.ve",
+        "testament": "OT",
+        "reference": "Deu 33:25",
+        "verse_text": "Your bars shall be iron and bronze, and as your days, so shall your strength be.",
+        "book_id": 5,
+        "chapter": 33,
+        "verse_num": 25,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 687,
+        "term_id": "H6109",
+        "transliteration": "ots.mah",
+        "testament": "OT",
+        "reference": "Isa 47:9",
+        "verse_text": "These two things shall come to you in a moment, in one day; the loss of children and widowhood shall come upon you in full measure, in spite of your many sorceries and the great power of your enchantments.",
+        "book_id": 23,
+        "chapter": 47,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 688,
+        "term_id": "H6108",
+        "transliteration": "o.tsem",
+        "testament": "OT",
+        "reference": "Job 40:16",
+        "verse_text": "Behold, his strength in his loins, and his power in the muscles of his belly.",
+        "book_id": 18,
+        "chapter": 40,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 688,
+        "term_id": "H6108",
+        "transliteration": "o.tsem",
+        "testament": "OT",
+        "reference": "Psa 90:10",
+        "verse_text": "The years of our life are seventy, or even by reason of strength eighty; yet their span is but toil and trouble; they are soon gone, and we fly away.",
+        "book_id": 19,
+        "chapter": 90,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 689,
+        "term_id": "H5794",
+        "transliteration": "e.zuz",
+        "testament": "OT",
+        "reference": "Psa 24:8",
+        "verse_text": "Who is this King of glory? The LORD, strong and mighty, the LORD, mighty in battle!",
+        "book_id": 19,
+        "chapter": 24,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 689,
+        "term_id": "H5794",
+        "transliteration": "e.zuz",
+        "testament": "OT",
+        "reference": "Psa 78:4",
+        "verse_text": "We will not hide them from their children, but tell to the coming generation the glorious deeds of the LORD, and his might, and the wonders that he has done.",
+        "book_id": 19,
+        "chapter": 78,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 689,
+        "term_id": "H5794",
+        "transliteration": "e.zuz",
+        "testament": "OT",
+        "reference": "Isa 42:25",
+        "verse_text": "So he poured on him the heat of his anger and the might of battle; it set him on fire all around, but he did not understand; it burned him up, but he did not take it to heart.",
+        "book_id": 23,
+        "chapter": 42,
+        "verse_num": 25,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Exo 15:2",
+        "verse_text": "The LORD is my strength and my song, and he has become my salvation; this is my God, and I will praise him, my father's God, and I will exalt him.",
+        "book_id": 2,
+        "chapter": 15,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Neh 8:10",
+        "verse_text": "Then he said to them, Go your way. Eat the fat and drink sweet wine and send portions to anyone who has nothing ready, for this day is holy to our Lord. And do not be grieved, for the joy of the LORD is your strength.",
+        "book_id": 16,
+        "chapter": 8,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Psa 28:7",
+        "verse_text": "The LORD is my strength and my shield; in him my heart trusts, and I am helped; my heart exults, and with my song I give thanks to him.",
+        "book_id": 19,
+        "chapter": 28,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Psa 46:1",
+        "verse_text": "God is our refuge and strength, a very present help in trouble.",
+        "book_id": 19,
+        "chapter": 46,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Psa 68:35",
+        "verse_text": "Awesome is God from his sanctuary; the God of Israel— he is the one who gives power and strength to his people. Blessed be God!",
+        "book_id": 19,
+        "chapter": 68,
+        "verse_num": 35,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Isa 12:2",
+        "verse_text": "Behold, God is my salvation; I will trust, and will not be afraid; for the LORD GOD is my strength and my song, and he has become my salvation.",
+        "book_id": 23,
+        "chapter": 12,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 690,
+        "term_id": "H5797",
+        "transliteration": "oz",
+        "testament": "OT",
+        "reference": "Zec 4:6",
+        "verse_text": "Then he said to me, This is the word of the LORD to Zerubbabel: Not by might, nor by power, but by my Spirit, says the LORD of hosts.",
+        "book_id": 38,
+        "chapter": 4,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 691,
+        "term_id": "H0553",
+        "transliteration": "am.mits",
+        "testament": "OT",
+        "reference": "Isa 28:2",
+        "verse_text": "Behold, the Lord has one who is mighty and strong; like a storm of hail, a destroying tempest, like a storm of mighty, overflowing waters, he casts down to the earth with his hand.",
+        "book_id": 23,
+        "chapter": 28,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 692,
+        "term_id": "H0386",
+        "transliteration": "e.tan",
+        "testament": "OT",
+        "reference": "Gen 49:24",
+        "verse_text": "yet his bow remained unmoved; his arms were made agile by the hands of the Mighty One of Jacob",
+        "book_id": 1,
+        "chapter": 49,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 692,
+        "term_id": "H0386",
+        "transliteration": "e.tan",
+        "testament": "OT",
+        "reference": "Num 24:21",
+        "verse_text": "And he looked on the Kenite, and took up his discourse and said, Enduring is your dwelling place, and your nest is set in the rock.",
+        "book_id": 4,
+        "chapter": 24,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 692,
+        "term_id": "H0386",
+        "transliteration": "e.tan",
+        "testament": "OT",
+        "reference": "Psa 74:15",
+        "verse_text": "You split open springs and brooks; you dried up ever-flowing streams.",
+        "book_id": 19,
+        "chapter": 74,
+        "verse_num": 15,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 692,
+        "term_id": "H0386",
+        "transliteration": "e.tan",
+        "testament": "OT",
+        "reference": "Mic 6:2",
+        "verse_text": "Hear, you mountains, the indictment of the LORD, and you enduring foundations of the earth, for the LORD has an indictment against his people, and he will contend with Israel.",
+        "book_id": 33,
+        "chapter": 6,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 693,
+        "term_id": "H2502",
+        "transliteration": "cha.lats",
+        "testament": "OT",
+        "reference": "Num 31:3",
+        "verse_text": "So Moses spoke to the people, saying, Arm men from among you for the war, that they may go against Midian to execute the LORD's vengeance on Midian.",
+        "book_id": 4,
+        "chapter": 31,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 693,
+        "term_id": "H2502",
+        "transliteration": "cha.lats",
+        "testament": "OT",
+        "reference": "Deu 3:18",
+        "verse_text": "And I commanded you at that time, saying, The LORD your God has given you this land to possess. All your men of valor shall cross over armed before your brothers, the people of Israel.",
+        "book_id": 5,
+        "chapter": 3,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 693,
+        "term_id": "H2502",
+        "transliteration": "cha.lats",
+        "testament": "OT",
+        "reference": "Jos 4:13",
+        "verse_text": "About 40,000 ready for war passed before the LORD for battle, to the plains of Jericho.",
+        "book_id": 6,
+        "chapter": 4,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 693,
+        "term_id": "H2502",
+        "transliteration": "cha.lats",
+        "testament": "OT",
+        "reference": "Psa 7:4",
+        "verse_text": "if I have repaid my friend with evil or plundered my enemy without cause,",
+        "book_id": 19,
+        "chapter": 7,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Deu 31:6",
+        "verse_text": "Be strong and courageous. Do not fear or be in dread of them, for it is the LORD your God who goes with you. He will not leave you or forsake you.",
+        "book_id": 5,
+        "chapter": 31,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "1Sa 30:6",
+        "verse_text": "And David was greatly distressed, for the people spoke of stoning him, because all the people were bitter in soul, each for his sons and daughters. But David strengthened himself in the LORD his God.",
+        "book_id": 9,
+        "chapter": 30,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Eze 30:24",
+        "verse_text": "And I will strengthen the arms of the king of Babylon and put my sword in his hand, but I will break the arms of Pharaoh, and he will groan before him like a man mortally wounded.",
+        "book_id": 26,
+        "chapter": 30,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Dan 10:18",
+        "verse_text": "Again one having the appearance of a man touched me and strengthened me.",
+        "book_id": 27,
+        "chapter": 10,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Dan 10:19",
+        "verse_text": "And he said, O man greatly loved, fear not, peace be with you; be strong and of good courage. And as he spoke to me, I was strengthened and said, Let my lord speak, for you have strengthened me.",
+        "book_id": 27,
+        "chapter": 10,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Hag 2:4",
+        "verse_text": "Yet now be strong, O Zerubbabel, declares the LORD. Be strong, O Joshua, son of Jehozadak, the high priest. Be strong, all you people of the land, declares the LORD.",
+        "book_id": 37,
+        "chapter": 2,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 694,
+        "term_id": "H2388",
+        "transliteration": "cha.zaq",
+        "testament": "OT",
+        "reference": "Zec 8:9",
+        "verse_text": "Thus says the LORD of hosts: Let your hands be strong, you who in these days have been hearing these words from the mouth of the prophets who were present on the day that the foundation of the house of the LORD of hosts was laid, that the temple might be built.",
+        "book_id": 38,
+        "chapter": 8,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 695,
+        "term_id": "H5953",
+        "transliteration": "a.lal",
+        "testament": "OT",
+        "reference": "1Sa 31:4",
+        "verse_text": "Then Saul said to his armor-bearer, Draw your sword, and thrust me through with it, lest these uncircumcised come and thrust me through, and mistreat me. But his armor-bearer would not, for he feared greatly. Therefore Saul took his own sword and fell upon it.",
+        "book_id": 9,
+        "chapter": 31,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 695,
+        "term_id": "H5953",
+        "transliteration": "a.lal",
+        "testament": "OT",
+        "reference": "1Ch 10:4",
+        "verse_text": "Then Saul said to his armor-bearer, Draw your sword and thrust me through with it, lest these uncircumcised come and mistreat me. But his armor-bearer would not, for he feared greatly. Therefore Saul took his own sword and fell upon it.",
+        "book_id": 13,
+        "chapter": 10,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 695,
+        "term_id": "H5953",
+        "transliteration": "a.lal",
+        "testament": "OT",
+        "reference": "Job 16:15",
+        "verse_text": "I have sewed sackcloth upon my skin and have laid my strength in the dust.",
+        "book_id": 18,
+        "chapter": 16,
+        "verse_num": 15,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 696,
+        "term_id": "H2633",
+        "transliteration": "cho.sen",
+        "testament": "OT",
+        "reference": "Pro 15:6",
+        "verse_text": "In the house of the righteous there is much treasure, but trouble befalls the income of the wicked.",
+        "book_id": 20,
+        "chapter": 15,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 696,
+        "term_id": "H2633",
+        "transliteration": "cho.sen",
+        "testament": "OT",
+        "reference": "Pro 27:24",
+        "verse_text": "for riches do not last forever; and does a crown endure to all generations?",
+        "book_id": 20,
+        "chapter": 27,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 696,
+        "term_id": "H2633",
+        "transliteration": "cho.sen",
+        "testament": "OT",
+        "reference": "Isa 33:6",
+        "verse_text": "and he will be the stability of your times, abundance of salvation, wisdom, and knowledge; the fear of the Lord is Zion's treasure.",
+        "book_id": 23,
+        "chapter": 33,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 696,
+        "term_id": "H2633",
+        "transliteration": "cho.sen",
+        "testament": "OT",
+        "reference": "Jer 20:5",
+        "verse_text": "Moreover, I will give all the wealth of the city, all its gains, all its prized belongings, and all the treasures of the kings of Judah into the hand of their enemies, who shall plunder them and seize them and carry them to Babylon.",
+        "book_id": 24,
+        "chapter": 20,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 53,
+        "term_inv_id": 696,
+        "term_id": "H2633",
+        "transliteration": "cho.sen",
+        "testament": "OT",
+        "reference": "Eze 22:25",
+        "verse_text": "The conspiracy of her prophets in her midst is like a roaring lion tearing the prey; they have devoured human lives; they have taken treasure and precious things; they have made many widows in her midst.",
+        "book_id": 26,
+        "chapter": 22,
+        "verse_num": 25,
+        "translation": "ESV"
+      }
+    ]
+  },
+  "wa_cross_registry_links_insert": {
+    "target_table": "wa_cross_registry_links",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "linked_word",
+      "linked_registry_id",
+      "connection_type_id",
+      "connecting_term",
+      "note"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "file_id": 53,
+        "linked_word": "heart",
+        "linked_registry_id": 183,
+        "connection_type_id": 3,
+        "connecting_term": "cha.lats",
+        "note": "cha.lats H2502 (to arm) shares transliteration with H2504 (loin) in registry 183; distinct Strong's numbers, related root.",
+        "_ref": {
+          "type": "SHARED_ROOT"
+        }
+      }
+    ]
+  },
+  "wa_data_quality_flags_insert": {
+    "target_table": "wa_data_quality_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_id",
+      "flag_id",
+      "description"
+    ],
+    "row_counts": {
+      "total_rows": 9
+    },
+    "rows": [
+      {
+        "file_id": 53,
+        "term_id": "H0556",
+        "flag_id": 7,
+        "description": "Strong's number for am.tsah confirmed from source file; provisional number corrected to H0556.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "am.tsah"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H0193",
+        "flag_id": 1,
+        "description": "No STEP verse records available for ul (H0193).",
+        "_ref": {
+          "flag_code": "NO_VERSES",
+          "term": "ul"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H2428",
+        "flag_id": 8,
+        "description": "STEP lists cha.yil under multiple sub-glosses sharing the same Strong's number. One term record produced; occurrence count applies to combined sub-glosses.",
+        "_ref": {
+          "flag_code": "OCCURRENCE_COUNT_MISMATCH",
+          "term": "cha.yil"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H2391",
+        "flag_id": 7,
+        "description": "Strong's number for che.zeq confirmed from source file; provisional number corrected to H2391.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "che.zeq"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H1679",
+        "flag_id": 5,
+        "description": "Meaning of do.ve (H1679) is uncertain; hapax legomenon with contextually derived meaning.",
+        "_ref": {
+          "flag_code": "UNCERTAIN_MEANING",
+          "term": "do.ve"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H2502",
+        "flag_id": 7,
+        "description": "Strong's number for cha.lats confirmed from source file; provisional number corrected to H2502.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "cha.lats"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H2502",
+        "flag_id": 17,
+        "description": "Term cha.lats has shared root or semantic connection with terms in another registry.",
+        "_ref": {
+          "flag_code": "CROSS_REGISTRY",
+          "term": "cha.lats"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H5953",
+        "flag_id": 20,
+        "description": "STEP inclusion of a.lal in strength list noted; see status_note for details.",
+        "_ref": {
+          "flag_code": "NOTE",
+          "term": "a.lal"
+        }
+      },
+      {
+        "file_id": 53,
+        "term_id": "H2633",
+        "flag_id": 20,
+        "description": "STEP inclusion of cho.sen in strength list noted; see status_note for details.",
+        "_ref": {
+          "flag_code": "NOTE",
+          "term": "cho.sen"
+        }
+      }
+    ]
+  }
+}

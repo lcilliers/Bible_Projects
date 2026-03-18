@@ -1,103 +1,405 @@
 """
 step_client.py
 ──────────────
-Thin wrapper around the STEP Bible public API for use within the
-Bible_verse_analytics module.
+Client for the locally-running STEP Bible instance (localhost:8989).
 
-The STEP Bible API is publicly accessible without an API key.
-See docs/step_setup.md for full configuration instructions.
+Discovered REST API (STEP v26.1.2, Tomcat embedded):
+  - Vocab/lexicon:  GET /rest/module/getInfo/{version}//{strong}//
+  - Verse search:   GET /rest/search/masterSearch/strong={strong}|version={version}
+                    Results capped at 60; use canonical section ranges for overflow.
+
+Configuration via environment (.env):
+  STEP_LOCAL_URL   — default: http://localhost:8989
+  STEP_VERSION     — default: ESV_th   (tagged Hebrew; ESV text + Strong's)
+  STEP_TIMEOUT     — default: 30 (seconds)
+
+Non-canonical STEP Strong's (G9559, G9073, G6347, H9001, H9002 etc.):
+  Vocab data is returned but verse search yields 0 results — these are
+  STEP-internal SEMR numbers not used in verse tagging.
 """
 
 import os
+import re
+from html import unescape
 from typing import Optional
 
 import requests
-from dotenv import load_dotenv
 
-ROOT_DIR = os.path.join(os.path.dirname(__file__), "..")
-load_dotenv(os.path.join(ROOT_DIR, ".env"))
+try:
+    from dotenv import load_dotenv
+    _ROOT = os.path.join(os.path.dirname(__file__), "..")
+    load_dotenv(os.path.join(_ROOT, ".env"))
+except ImportError:
+    pass
+
+
+# Canonical OT/NT ranges for verse pagination (60-result cap workaround).
+_CANON_RANGES = [
+    ("Torah",     "Gen.1.1-Deut.34.12"),
+    ("History",   "Josh.1.1-Esth.10.3"),
+    ("Poetry",    "Job.1.1-Song.8.14"),
+    ("Prophets",  "Isa.1.1-Mal.4.6"),
+    ("NT",        "Matt.1.1-Rev.22.21"),
+]
+
+# Sub-ranges used when a parent section returns total > 60.
+# Each parent maps to ~equal halves that keep most word studies under the cap.
+_CANON_SUBSPLITS: dict[str, list[tuple[str, str]]] = {
+    "Torah":    [("Torah_A",    "Gen.1.1-Lev.27.34"),    ("Torah_B",    "Num.1.1-Deut.34.12")],
+    "History":  [("History_A",  "Josh.1.1-2Chr.36.23"),  ("History_B",  "Ezra.1.1-Esth.10.3")],
+    "Poetry":   [("Poetry_A",   "Job.1.1-Ps.150.6"),     ("Poetry_B",   "Prov.1.1-Song.8.14")],
+    "Prophets": [("Prophets_A", "Isa.1.1-Dan.12.13"),    ("Prophets_B", "Hos.1.1-Mal.4.6")],
+    "NT":       [("NT_A",       "Matt.1.1-Acts.28.31"),  ("NT_B",       "Rom.1.1-Rev.22.21")],
+}
+
+# OSIS book codes that belong to the New Testament.
+_NT_BOOKS = frozenset([
+    "Matt", "Mark", "Luke", "John", "Acts",
+    "Rom", "1Cor", "2Cor", "Gal", "Eph", "Phil", "Col",
+    "1Thess", "2Thess", "1Tim", "2Tim", "Titus", "Phlm",
+    "Heb", "Jas", "1Pet", "2Pet", "1John", "2John", "3John", "Jude", "Rev",
+])
 
 
 class StepClient:
-    """Client for the STEP Bible public HTTP API.
+    """Client for the locally-installed STEP Bible REST API.
 
-    Configuration is read from environment variables (`.env`):
-      - STEP_API_BASE_URL      — default: https://www.stepbible.org/api
-      - STEP_DEFAULT_VERSION   — default: ESV
-      - STEP_REQUEST_TIMEOUT   — default: 10 (seconds)
+    Exposes two primary methods for Session A word-analysis use:
+      - ``get_vocab_info(strong)``   — lexical data (gloss, definition, related)
+      - ``get_verse_records(strong)`` — all ESV verse occurrences, fully paginated
+      - ``extract_word_data(strong)`` — complete structured package for both
     """
 
     def __init__(self) -> None:
-        self.base_url = os.getenv(
-            "STEP_API_BASE_URL", "https://www.stepbible.org/api"
-        ).rstrip("/")
-        self.default_version = os.getenv("STEP_DEFAULT_VERSION", "ESV")
-        self.timeout = int(os.getenv("STEP_REQUEST_TIMEOUT", "10"))
+        self.base = os.getenv("STEP_LOCAL_URL", "http://localhost:8989").rstrip("/")
+        self.version = os.getenv("STEP_VERSION", "ESV_th")
+        self.timeout = int(os.getenv("STEP_TIMEOUT", "30"))
 
-    # ── Internal helpers ────────────────────────────────────────────────────
+    # ── Internal helpers ───────────────────────────────────────────────────
 
-    def _get(self, path: str) -> dict:
-        """Perform a GET request and return the parsed JSON response."""
-        url = f"{self.base_url}/{path.lstrip('/')}"
-        response = requests.get(url, timeout=self.timeout)
-        response.raise_for_status()
-        return response.json()
+    def _get_json(self, path: str) -> dict:
+        url = f"{self.base}/{path.lstrip('/')}"
+        r = requests.get(url, timeout=self.timeout)
+        r.raise_for_status()
+        d = r.json()
+        if "errorMessage" in d:
+            raise RuntimeError(f"STEP error for {path!r}: {d['errorMessage']}")
+        return d
 
-    # ── Public API ──────────────────────────────────────────────────────────
+    @staticmethod
+    def _strip_html(html: str) -> str:
+        """Remove HTML tags and collapse whitespace."""
+        text = re.sub(r"<[^>]+>", " ", html)
+        text = re.sub(r"\s+", " ", text).strip()
+        return unescape(text)
 
-    def get_passage(self, reference: str, version: Optional[str] = None) -> dict:
-        """Retrieve a Bible passage by reference.
+    @staticmethod
+    def _strip_html_preserve_newlines(html: str) -> str:
+        """Strip HTML; convert <br> variants to newlines before removing tags."""
+        text = re.sub(r"<br\s*/?>", "\n", html, flags=re.IGNORECASE)
+        text = re.sub(r"<[^>]+>", "", text)
+        text = re.sub(r" +", " ", text)
+        text = re.sub(r"\n +", "\n", text)
+        return unescape(text).strip()
 
-        Parameters
-        ----------
-        reference : str
-            Passage reference in dot notation, e.g. ``"John.3.16"`` or
-            ``"Gen.1.1-Gen.1.3"``.
-        version : str, optional
-            Bible version/translation code (e.g. ``"ESV"``, ``"NIV"``).
-            Defaults to ``STEP_DEFAULT_VERSION`` from the environment.
+    @staticmethod
+    def _target_word_in_span(html: str, strong: str) -> str:
+        """Return the ESV word(s) whose <span> carries the given Strong's number."""
+        # Each span may carry multiple Strong's: strong='H8057 H9003 H9031'
+        hits = re.findall(
+            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<",
+            html,
+        )
+        words = [word.strip() for strongs, word in hits if strong in strongs.split()]
+        return ", ".join(words) if words else ""
 
-        Returns
-        -------
-        dict
-            Raw JSON response from the STEP Bible API.
+    @staticmethod
+    def _parse_osisid(osisid: str) -> tuple[str, int, int]:
+        """Parse 'Gen.31.27' → ('Gen', 31, 27). Single-chapter book returns chapter=1."""
+        parts = osisid.split(".")
+        book = parts[0]
+        if len(parts) == 3:
+            return book, int(parts[1]), int(parts[2])
+        # Unexpected format — return safe defaults
+        return book, 0, 0
+
+    def _search_range(self, strong: str, ref_range: Optional[str] = None) -> dict:
+        query = f"strong={strong}|version={self.version}"
+        if ref_range:
+            query += f"|reference={ref_range}"
+        return self._get_json(f"rest/search/masterSearch/{query}")
+
+    def _resolved_strong(self, strong: str) -> str:
+        """Return the Strong's number STEP actually uses for verse tagging.
+
+        Some base numbers (e.g. H0157, H2428) resolve to suffixed variants
+        (H0157G, H2428A) in STEP's lexicon and verse tagging.  This method
+        does a lightweight vocab lookup to get the canonical form.
         """
-        v = version or self.default_version
-        return self._get(f"bible/passage/{v}/{reference}")
+        try:
+            d = self._get_json(f"rest/module/getInfo/{self.version}//{strong}//")
+            vocabs = d.get("vocabInfos", [])
+            if vocabs:
+                return vocabs[0].get("strongNumber", strong)
+        except Exception:
+            pass
+        return strong
 
-    def search(self, query: str, version: Optional[str] = None) -> list:
-        """Search for a word or phrase across the Bible.
+    # ── Public API — vocab ─────────────────────────────────────────────────
 
-        Parameters
-        ----------
-        query : str
-            Search term or phrase, e.g. ``"grace"`` or ``"love of God"``.
-        version : str, optional
-            Bible version/translation code. Defaults to
-            ``STEP_DEFAULT_VERSION`` from the environment.
+    def get_vocab_info(self, strong: str) -> dict:
+        """Return lexical data for a Strong's number.
 
-        Returns
-        -------
-        list
-            List of verse result dicts from the STEP Bible API response.
+        Returns a dict with keys:
+          strong_number       — resolved STEP identifier (may differ from input)
+          language            — 'Hebrew' or 'Greek' (derived from strong_number prefix)
+          hebrew_unicode      — accented script form (Hebrew or Greek)
+          transliteration     — STEP romanisation (e.g. 'sim.chah')
+          gloss               — primary English gloss (= step_search_gloss)
+          occurrence_count    — token count (integer; NOT verse count)
+          medium_def          — multi-line definition (HTML stripped, newlines preserved)
+          meaning_numbered    — True if medium_def contains numbered sub-senses (1), 1a)…)
+          causative_form_present — True if medium_def names Hiphil or Piel stem
+          lsj_entry           — LSJ dictionary text, HTML stripped (Greek only; '' for Hebrew)
+          short_def_mounce    — Mounce short definition (Greek only; '' for Hebrew)
+          related_words       — list of {strong, form, gloss, translit}
+          raw_related_numbers — comma-separated related Strong's string
+          freq_list           — raw frequency distribution string from STEP
+
+        Notes:
+          - occurrence_count_qualifier ('about') is NOT available from the API.
+          - also_spelled is NOT available from the API (STEP UI only).
+          - Both fields remain null / unset and must be filled from the source file.
         """
-        v = version or self.default_version
-        data = self._get(f"bible/search/{v}/{query}")
-        # The API may wrap results under a key; return the list if present.
-        if isinstance(data, list):
-            return data
-        return data.get("results", data.get("verses", []))
+        d = self._get_json(f"rest/module/getInfo/{self.version}//{strong}//")
+        vocabs = d.get("vocabInfos", [])
+        if not vocabs:
+            return {}
+        v = vocabs[0]
 
-    def get_versions(self) -> list:
-        """Return the list of available Bible versions from the API.
+        related = []
+        for r in v.get("relatedNos", []):
+            related.append({
+                "strong":   r.get("strongNumber", ""),
+                "form":     r.get("matchingForm", ""),
+                "gloss":    r.get("gloss", ""),
+                "translit": r.get("stepTransliteration", ""),
+            })
 
-        Returns
-        -------
-        list
-            List of version dicts (each typically contains ``"shortName"``
-            and ``"longName"`` fields).
+        # Normalise medium_def: convert <br> to newlines first, then strip tags
+        raw_def = v.get("mediumDef", "") or ""
+        medium_def = self._strip_html_preserve_newlines(raw_def)
+
+        resolved_strong = v.get("strongNumber", strong)
+        language = "Greek" if resolved_strong.startswith("G") else "Hebrew"
+
+        # Derived boolean flags from the definition text
+        meaning_numbered = bool(re.search(r"\b1[a-z]?\)", medium_def))
+        causative_form_present = bool(
+            re.search(r"\b(Hiphil|Piel)\b", medium_def, re.IGNORECASE)
+        )
+
+        # Greek-only fields
+        lsj_raw = v.get("lsjDefs", "") or ""
+        lsj_entry = self._strip_html_preserve_newlines(lsj_raw) if lsj_raw else ""
+        short_def_mounce = v.get("shortDefMounce", "") or ""
+
+        return {
+            "strong_number":           resolved_strong,
+            "language":                language,
+            "hebrew_unicode":          v.get("accentedUnicode", ""),
+            "transliteration":         v.get("stepTransliteration", ""),
+            "gloss":                   v.get("stepGloss", ""),
+            "occurrence_count":        v.get("count", 0),
+            "medium_def":              medium_def,
+            "meaning_numbered":        meaning_numbered,
+            "causative_form_present":  causative_form_present,
+            "lsj_entry":               lsj_entry,
+            "short_def_mounce":        short_def_mounce,
+            "related_words":           related,
+            "raw_related_numbers":     v.get("rawRelatedNumbers", ""),
+            "freq_list":               v.get("freqList", ""),
+        }
+
+    # ── Public API — verse search ──────────────────────────────────────────
+
+    def get_verse_records(self, strong: str) -> list[dict]:
+        """Return all ESV verse records containing the given Strong's number.
+
+        Each record is a dict:
+          osisId, ref, esv_text, target_word,
+          testament ('OT' or 'NT'), book_code, chapter (int), verse_num (int)
+
+        Handles the 60-result cap via two layers of canonical section splits:
+          Layer 1 — five canonical sections (Torah / History / Poetry / Prophets / NT)
+          Layer 2 — halved sub-sections when a layer-1 section total > 60
+
+        All results are deduplicated by osisId and sorted canonically.
+        Non-canonical STEP internals return an empty list.
         """
-        data = self._get("bible/versions")
-        if isinstance(data, list):
-            return data
-        return data.get("versions", [])
+        resolved = self._resolved_strong(strong)
+        # First call (no range): reveals total; reuse results if total <= 60
+        first = self._search_range(resolved)
+        total = first.get("total", 0)
+
+        if total == 0:
+            return []
+
+        if total <= 60:
+            raw_results = first.get("results", [])
+        else:
+            seen: dict[str, dict] = {}
+            for section, ref_range in _CANON_RANGES:
+                d = self._search_range(resolved, ref_range)
+                section_total = d.get("total", 0)
+                if section_total > 60:
+                    # Layer 2: halve the section
+                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
+                        sd = self._search_range(resolved, subrange)
+                        for item in sd.get("results", []):
+                            if item["osisId"] not in seen:
+                                seen[item["osisId"]] = item
+                else:
+                    for item in d.get("results", []):
+                        if item["osisId"] not in seen:
+                            seen[item["osisId"]] = item
+            raw_results = list(seen.values())
+
+        records = []
+        for item in raw_results:
+            html = item.get("preview", "")
+            osisid = item["osisId"]
+            book_code, chapter, verse_num = self._parse_osisid(osisid)
+            testament = "NT" if book_code in _NT_BOOKS else "OT"
+            records.append({
+                "osisId":     osisid,
+                "ref":        item["key"],
+                "esv_text":   self._strip_html(html),
+                "target_word": self._target_word_in_span(html, resolved),
+                "testament":  testament,
+                "book_code":  book_code,
+                "chapter":    chapter,
+                "verse_num":  verse_num,
+            })
+
+        records.sort(key=lambda r: r["osisId"])
+        return records
+
+    def get_verse_records_with_html(self, strong: str) -> tuple[list[dict], dict[str, str]]:
+        """Like get_verse_records() but also returns raw preview HTML per verse.
+
+        Returns:
+            (records, html_map)
+            records  — same list as get_verse_records()
+            html_map — dict mapping osisId → raw preview HTML string
+                       (used by engine/span_filter.py for span confirmation)
+        """
+        resolved = self._resolved_strong(strong)
+        first = self._search_range(resolved)
+        total = first.get("total", 0)
+
+        if total == 0:
+            return [], {}
+
+        if total <= 60:
+            raw_results = first.get("results", [])
+        else:
+            seen: dict[str, dict] = {}
+            for section, ref_range in _CANON_RANGES:
+                d = self._search_range(resolved, ref_range)
+                section_total = d.get("total", 0)
+                if section_total > 60:
+                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
+                        sd = self._search_range(resolved, subrange)
+                        for item in sd.get("results", []):
+                            if item["osisId"] not in seen:
+                                seen[item["osisId"]] = item
+                else:
+                    for item in d.get("results", []):
+                        if item["osisId"] not in seen:
+                            seen[item["osisId"]] = item
+            raw_results = list(seen.values())
+
+        records = []
+        html_map = {}
+        for item in raw_results:
+            html = item.get("preview", "")
+            osisid = item["osisId"]
+            book_code, chapter, verse_num = self._parse_osisid(osisid)
+            testament = "NT" if book_code in _NT_BOOKS else "OT"
+            html_map[osisid] = html
+            records.append({
+                "osisId":      osisid,
+                "ref":         item["key"],
+                "esv_text":    self._strip_html(html),
+                "target_word": self._target_word_in_span(html, resolved),
+                "testament":   testament,
+                "book_code":   book_code,
+                "chapter":     chapter,
+                "verse_num":   verse_num,
+            })
+
+        records.sort(key=lambda r: r["osisId"])
+        return records, html_map
+
+    # ── Public API — full extraction ───────────────────────────────────────
+
+    def extract_word_data(self, strong: str) -> dict:
+        """Return a complete structured data package for Session A.
+
+        Keys:
+          strong         — the requested Strong's number
+          vocab          — output of get_vocab_info()
+          verse_records  — output of get_verse_records()
+          verse_count    — number of unique verses returned
+          testament      — 'OT', 'NT', or 'both' (derived from verse_records)
+          notes          — list of warning strings (e.g. non-canonical Strong's)
+        """
+        notes = []
+        vocab = self.get_vocab_info(strong)
+
+        if not vocab:
+            notes.append(f"No vocab data found for {strong}")
+            return {
+                "strong": strong, "vocab": {}, "verse_records": [],
+                "verse_count": 0, "testament": None, "notes": notes,
+            }
+
+        resolved = vocab["strong_number"]
+        if resolved != strong:
+            notes.append(f"Strong's {strong} resolved to {resolved} in STEP")
+
+        verse_records = self.get_verse_records(strong)
+        vc = len(verse_records)
+        oc = vocab.get("occurrence_count", 0)
+
+        if vc == 0 and oc > 0:
+            notes.append(
+                f"Verse search returned 0 results despite occurrence_count={oc}. "
+                "This may be a non-canonical STEP internal Strong's number."
+            )
+        elif abs(vc - oc) > 5:
+            notes.append(
+                f"Verse count ({vc} verses) vs occurrence count ({oc} tokens). "
+                "Multiple occurrences in a single verse are counted once here."
+            )
+
+        # Derive testament coverage
+        testaments = {r["testament"] for r in verse_records}
+        if testaments == {"OT"}:
+            testament = "OT"
+        elif testaments == {"NT"}:
+            testament = "NT"
+        elif testaments:
+            testament = "both"
+        else:
+            testament = None
+
+        return {
+            "strong":        strong,
+            "vocab":         vocab,
+            "verse_records": verse_records,
+            "verse_count":   vc,
+            "testament":     testament,
+            "notes":         notes,
+        }

@@ -1,0 +1,94 @@
+{
+  "patch_metadata": {
+    "patch_id": "REG-PATCH-20260317-002",
+    "supersedes": "REG-PATCH-20260317-001",
+    "date": "2026-03-17",
+    "session": "Col 2:8 word analysis session",
+    "prepared_by": "Claude (Framework B pipeline)",
+    "reason": "Col 2:8 exegetical review identified two related gaps: (1) external spiritual agents/powers acting on the inner being are not represented; (2) the core English-first entry points for power-related vocabulary (power, authority, might, dominion, energy) are absent from the registry entirely. STEP Bible testing of the 'power' word family confirmed that none of these gloss terms have registry entries, meaning the underlying Hebrew/Greek terms would be missed entirely by the English-first methodology. The earlier patch (REG-PATCH-20260317-001) proposed 'spiritual powers' as a Greek-first entry — this is revised: #195 is reframed as a cross-registry synthesis note, and five English-first entries (#196-200) are added as the correct methodological approach.",
+    "db_table": "word_registry",
+    "operation": "INSERT (6 entries: UPDATE #195 intent via supersession + INSERT #196-200)"
+  },
+  "entries": [
+    {
+      "id": 195,
+      "no": 195,
+      "word": "spiritual powers",
+      "source_list": "High Confidence",
+      "category_hint": "Spiritual/External Operator — Cross-Registry Synthesis",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17 (revised same session): Originally proposed as a standalone Greek-first registry entry. Revised: this entry serves as a CROSS-REGISTRY SYNTHESIS note rather than a primary Session A word. The spiritual-agent dimension (stoicheia, archē, exousia, kosmokratōr acting on the inner person) will emerge from within the English-first registries #196 power, #197 authority, #198 might, #199 dominion, #200 energy — surfaced through PROCESS_DYNAMIC flags and phase2_flags during Session B analysis. Session A for this entry should NOT be run independently. Instead, after #196-200 are complete, a Session D synthesis should map the spiritual-operator dimension across all five. Cross-links expected with: bondage (#17), darkening (#37), corruption (#31), defilement (#41), temptation (#157), transformation (#161). Key verses anchoring the spiritual-agent dimension: Col 2:8; Col 2:15; Eph 6:12; Rom 8:38; Gal 4:3,9; 2 Thess 2:9."
+    },
+    {
+      "id": 196,
+      "no": 196,
+      "word": "power",
+      "source_list": "High Confidence",
+      "category_hint": "Volitional-Spiritual/Capacity and Agency",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17: identified via STEP Bible testing of the power word family during Col 2:8 exegetical review. Critical English-first gap — 'power' as a translation gloss covers central biblical terms entirely absent from the registry. Primary Greek terms expected: G1411 dunamis (power/force — Rom 8:38; Eph 1:21; 1 Pet 3:22), G2904 kratos (dominion/lordship — Eph 1:19; Col 1:11), G1753 energeia (active working/energy — Eph 1:19; 2 Thess 2:9 — used of both divine and Satanic power). Primary Hebrew terms expected: H3581 ko.ach (strength/power), H1369 ge.vu.rah (might/heroic power), H5797 oz (strength/power), H8617 te.qu.mah (power to stand), H4756 shil.ton (power/dominion). Note: terms describing human inner capacity (ability, strength) should cross-link to #187 strength. Terms describing spiritual-agent power over persons should flag PROCESS_DYNAMIC for Session D synthesis under #195. Expected to be large — likely requires split. Cross-links: authority (#197), might (#198), dominion (#199), strength (#187), spiritual powers (#195)."
+    },
+    {
+      "id": 197,
+      "no": 197,
+      "word": "authority",
+      "source_list": "High Confidence",
+      "category_hint": "Volitional-Spiritual/Agency and Governance",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. 'Authority' as a translation gloss is a critical English-first gap — exousia alone has 100+ NT occurrences and is central to Paul's cosmology of powers. Primary Greek terms expected: G1849 exousia (authority/power — Eph 6:12; Col 2:15; Lk 4:36; Rom 13:1), G1849-v exousiazō (to exercise authority over), G0746 archē (ruler/principality/beginning — Eph 6:12; Col 2:15; Rom 8:38), G0758 archōn (ruler/prince — Jn 12:31; Eph 2:2), G2888 kosmokratōr (world ruler — Eph 6:12), G1415 exischuō (to have power over). Primary Hebrew terms expected: H2633 che.sen (authority — rare), H4475 mem.sha.lah (dominion/rule), H7989 shal.lit (domineering/ruling). Note: this registry will be the primary home for the spiritual-principalities dimension identified in Col 2:8. Session B analysis should flag PROCESS_DYNAMIC for all terms describing authority exercised over the inner person. Cross-links: power (#196), dominion (#199), spiritual powers (#195), bondage (#17)."
+    },
+    {
+      "id": 198,
+      "no": 198,
+      "word": "might",
+      "source_list": "High Confidence",
+      "category_hint": "Volitional/Capacity and Strength",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. 'Might' as a translation gloss covers strength/power terms that overlap with but are distinct from #187 strength — particularly in contexts of divine and heroic might bearing on the inner person. Primary Greek terms expected: G2479 ischus (strength/might — Eph 6:10; Rev 5:12), G2478 ischuros (strong — used of binding the strong man, Mt 12:29), G2480 ischuō (to be strong/able). Primary Hebrew terms expected: H1369 ge.vu.rah (might/heroic strength — frequently of divine might bearing on human experience), H0193 on (strength/vigour), H5797 oz (strength/might), H5800 e.zuz/iz.zuz (might/power), H0047 ab.bir (mighty), H3524 kab.bir (mighty). Note: scope carefully against #187 strength — might tends toward the external/overwhelming dimension, strength toward inner capacity. Cross-links: power (#196), strength (#187), authority (#197)."
+    },
+    {
+      "id": 199,
+      "no": 199,
+      "word": "dominion",
+      "source_list": "High Confidence",
+      "category_hint": "Spiritual/Governance and Rule",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. 'Dominion' as a translation gloss covers the rule/lordship dimension of power — particularly relevant to how spiritual forces hold dominion over persons and how Christ's victory transfers that dominion. Primary Greek terms expected: G2904 kratos (dominion/lordship — Eph 1:19; Col 1:11; 1 Pet 4:11), G2961 kurieuō (to have dominion over — Rom 6:9,14 — sin's dominion over the person), G2634 katakurieuō (to exercise dominion over). Primary Hebrew terms expected: H4475 mem.sha.lah (dominion/rule), H7989 shal.lit (domineering), H4427 ma.lakh (to reign/rule), H7300 ru.d (to have dominion). Note: Rom 6:9,14 — sin no longer has dominion — is a key inner-being verse anchoring this word. Session B should flag PROCESS_DYNAMIC for all terms describing dominion exercised over the inner person. Cross-links: power (#196), authority (#197), bondage (#17), spiritual powers (#195)."
+    },
+    {
+      "id": 200,
+      "no": 200,
+      "word": "energy",
+      "source_list": "Medium Confidence",
+      "category_hint": "Spiritual/Active Working",
+      "phase1_input_file": null,
+      "phase1_status": "Pending",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": "Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. 'Energy' as a translation gloss for energeia/energēs covers the active-working dimension of power — used in the NT for both divine working within the inner person AND Satanic active working. This dual usage makes it particularly significant for understanding what operates on the inner being. Primary Greek terms expected: G1753 energeia (active energy/working — Phil 3:21 divine working; 2 Thess 2:9,11 Satanic working; Eph 1:19; Col 1:29), G1754 energeō (to work/be active — Gal 2:8; 5:6), G1756 energēs (effective/active — 1 Cor 16:9; Heb 4:12 — the word of God as energēs). Medium confidence: 'energy' may not be a common translation gloss in all versions — Session A should verify which English translations use this term and identify the primary gloss. If 'energy' proves too narrow as an entry point, may need to fold into #196 power with a sub-note. Cross-links: power (#196), transformation (#161), spiritual powers (#195)."
+    }
+  ],
+  "sql_statements": [
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (195, 195, 'spiritual powers', 'High Confidence', 'Spiritual/External Operator — Cross-Registry Synthesis', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17 (revised same session): Originally proposed as a standalone Greek-first registry entry. Revised: this entry serves as a CROSS-REGISTRY SYNTHESIS note rather than a primary Session A word. The spiritual-agent dimension (stoicheia, archē, exousia, kosmokratōr acting on the inner person) will emerge from within the English-first registries #196 power, #197 authority, #198 might, #199 dominion, #200 energy — surfaced through PROCESS_DYNAMIC flags and phase2_flags during Session B analysis. Session A for this entry should NOT be run independently. Instead, after #196-200 are complete, a Session D synthesis should map the spiritual-operator dimension across all five. Cross-links expected with: bondage (#17), darkening (#37), corruption (#31), defilement (#41), temptation (#157), transformation (#161). Key verses anchoring the spiritual-agent dimension: Col 2:8; Col 2:15; Eph 6:12; Rom 8:38; Gal 4:3,9; 2 Thess 2:9.');",
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (196, 196, 'power', 'High Confidence', 'Volitional-Spiritual/Capacity and Agency', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17: identified via STEP Bible testing of the power word family during Col 2:8 exegetical review. Critical English-first gap — power as a translation gloss covers central biblical terms entirely absent from the registry. Primary Greek terms expected: G1411 dunamis, G2904 kratos, G1753 energeia. Primary Hebrew terms expected: H3581 ko.ach, H1369 ge.vu.rah, H5797 oz, H8617 te.qu.mah, H4756 shil.ton. Note: terms describing human inner capacity cross-link to #187 strength. Terms describing spiritual-agent power over persons should flag PROCESS_DYNAMIC for Session D synthesis under #195. Cross-links: authority (#197), might (#198), dominion (#199), strength (#187), spiritual powers (#195).');",
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (197, 197, 'authority', 'High Confidence', 'Volitional-Spiritual/Agency and Governance', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. authority as a translation gloss is a critical English-first gap — exousia alone has 100+ NT occurrences. Primary Greek terms expected: G1849 exousia, G0746 archē, G0758 archōn, G2888 kosmokratōr. Primary Hebrew terms expected: H2633 che.sen, H4475 mem.sha.lah, H7989 shal.lit. Session B analysis should flag PROCESS_DYNAMIC for all terms describing authority exercised over the inner person. Cross-links: power (#196), dominion (#199), spiritual powers (#195), bondage (#17).');",
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (198, 198, 'might', 'High Confidence', 'Volitional/Capacity and Strength', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. might as a translation gloss covers strength/power terms distinct from #187 strength — particularly divine and overwhelming might bearing on the inner person. Primary Greek terms expected: G2479 ischus, G2478 ischuros, G2480 ischuō. Primary Hebrew terms expected: H1369 ge.vu.rah, H0193 on, H5797 oz, H0047 ab.bir, H3524 kab.bir. Scope carefully against #187 strength. Cross-links: power (#196), strength (#187), authority (#197).');",
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (199, 199, 'dominion', 'High Confidence', 'Spiritual/Governance and Rule', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. dominion covers the rule/lordship dimension — particularly how spiritual forces hold dominion over persons and how Christ transfers that dominion. Key verse: Rom 6:9,14 — sin no longer has dominion. Primary Greek terms expected: G2904 kratos, G2961 kurieuō, G2634 katakurieuō. Primary Hebrew terms expected: H4475 mem.sha.lah, H7989 shal.lit, H4427 ma.lakh, H7300 ru.d. Session B should flag PROCESS_DYNAMIC for dominion exercised over the inner person. Cross-links: power (#196), authority (#197), bondage (#17), spiritual powers (#195).');",
+    "INSERT INTO word_registry (id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes) VALUES (200, 200, 'energy', 'Medium Confidence', 'Spiritual/Active Working', NULL, 'Pending', NULL, NULL, 'Added 2026-03-17: identified via STEP Bible testing during Col 2:8 exegetical review. energeia/energēs covers active-working dimension of power — used for both divine working within the inner person AND Satanic active working (2 Thess 2:9,11). Primary Greek terms expected: G1753 energeia, G1754 energeō, G1756 energēs. Medium confidence: energy may not be common as a translation gloss — Session A should verify primary English gloss and consider folding into #196 power if too narrow. Cross-links: power (#196), transformation (#161), spiritual powers (#195).');"
+  ]
+}

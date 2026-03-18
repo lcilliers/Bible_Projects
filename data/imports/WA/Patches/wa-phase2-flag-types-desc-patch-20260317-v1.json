@@ -1,0 +1,108 @@
+{
+  "_meta": {
+    "patch_id": "WA-PHASE2-FLAG-TYPES-DESC-PATCH-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Add descriptions to 12 existing phase2_flag_types rows that currently have null description.",
+    "reason": "Rows 1-12 in phase2_flag_types were inserted without description text. This patch populates description for each row using the definitions in the Session A v8 specification. Rows 13 and 14 already have descriptions and are not touched by this patch.",
+    "produced_by": "Claude (Session A v8)",
+    "format": "bible-projects-patch-spec-v1.1",
+    "id_baseline": {}
+  },
+  "phase2_flag_types_desc_update": {
+    "target_table": "phase2_flag_types",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": [
+      "description"
+    ],
+    "row_counts": {
+      "total_rows": 12
+    },
+    "rows": [
+      {
+        "id": 1,
+        "description": "God experiences, enacts, or is the direct subject of this inner state or action in at least one meaning sub-definition or verse",
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT"
+        }
+      },
+      {
+        "id": 2,
+        "description": "Term has an explicit causative grammatical form: Hiphil or Piel (Hebrew) or stated causative sense (Greek); causes the inner state in another",
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE"
+        }
+      },
+      {
+        "id": 3,
+        "description": "Meaning block or verses connect this inner state to a specific bodily organ or physical process as its seat or origin",
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK"
+        }
+      },
+      {
+        "id": 4,
+        "description": "Inner state manifests through visible outward physical behaviour such as trembling, weeping, prostration, or the face falling",
+        "_ref": {
+          "flag_code": "BODY_INNER_EXPRESSION"
+        }
+      },
+      {
+        "id": 5,
+        "description": "Greek term directly names an inner faculty (kardia, pneuma, psuche, nous); faculty-naming warrants attention in Session B",
+        "_ref": {
+          "flag_code": "NT_FACULTY_NAMING"
+        }
+      },
+      {
+        "id": 6,
+        "description": "Hebrew-Aramaic or Hebrew-Greek pair resolving to the same referent across language or testament boundary",
+        "_ref": {
+          "flag_code": "GENERATION_RESOLUTION_PAIR"
+        }
+      },
+      {
+        "id": 7,
+        "description": "Term shares a root family with one or more terms in another part of this split registry; root spans the part boundary",
+        "_ref": {
+          "flag_code": "CROSS_PART_ROOT"
+        }
+      },
+      {
+        "id": 8,
+        "description": "Fewer than 5 verse records or very low occurrence count; dataset too thin for confident Session B analysis",
+        "_ref": {
+          "flag_code": "THIN_DATA"
+        }
+      },
+      {
+        "id": 9,
+        "description": "Verse count is less than 20 percent of stated occurrence count for terms with 20 or more occurrences; sample is not representative",
+        "_ref": {
+          "flag_code": "SMALL_VERSE_SAMPLE"
+        }
+      },
+      {
+        "id": 10,
+        "description": "Term appeared as a duplicate entry in the source data; resolved and recorded as a single term record with a quality note",
+        "_ref": {
+          "flag_code": "DUPLICATE_RESOLVED"
+        }
+      },
+      {
+        "id": 11,
+        "description": "No STEP word analysis data available for this term; meaning and verse records are absent; extraction deferred",
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS"
+        }
+      },
+      {
+        "id": 12,
+        "description": "Term is likely to merge with a closely related entry during Session B; warrants review before final dataset construction",
+        "_ref": {
+          "flag_code": "CONSOLIDATION_CANDIDATE"
+        }
+      }
+    ]
+  }
+}

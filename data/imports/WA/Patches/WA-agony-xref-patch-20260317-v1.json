@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "patch_id": "WA-AGONY-XREF-20260317-001",
+    "date": "2026-03-17",
+    "description": "Mark 10 agony registry terms as XREFs, pointing to their primary registry (anguish-005 or sorrow-154).",
+    "reason": "The agony registry (002) contains 13 terms. Of these, 10 appear as primary analysed terms in other completed registries. Per pipeline convention, these should carry a status_note identifying the primary location rather than carrying duplicate analysis. The remaining 3 terms (H8463, H1518, G0931) are unique to agony and are left unchanged.",
+    "produced_by": "Claude (session 2026-03-17)",
+    "format": "bible-projects-patch-spec-v1.1",
+    "id_baseline": {
+      "wa_term_inventory": 650
+    }
+  },
+  "wa_term_inventory_xref_update": {
+    "target_table": "wa_term_inventory",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": ["status_note"],
+    "row_counts": {
+      "total_rows": 10
+    },
+    "rows": [
+      {
+        "id": 17,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 70. H2427A (chil) is the masculine form of the chul root cluster; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "H2427A", "transliteration": "chil", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 18,
+        "status_note": "XREF: primary analysis in registry 154 (sorrow), wa_term_inventory id 447. H2427B (chi.lah) is the feminine form of H2427A; full word analysis, verse records and phase2 flags should be drawn from that registry. Note: H2427A is primary in registry 005 (anguish) — the two forms are split across different primary registries by root affinity.",
+        "_ref": { "strongs": "H2427B", "transliteration": "chi.lah", "primary_registry": "154 sorrow" }
+      },
+      {
+        "id": 19,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 71. H7661 (sha.vats) carries the single occurrence at 2Sa 1:9; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "H7661", "transliteration": "sha.vats", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 21,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 84. H2256B (che.vel) covers pain/pangs/travail meanings; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "H2256B", "transliteration": "che.vel", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 23,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 94. H2342I (chul) is the root verb of the chul/chil/chi.lah cluster (56 occurrences); full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "H2342I", "transliteration": "chul", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 24,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 72. H2479 (chal.cha.lah) is the intensive reduplicated form of the chul root; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "H2479", "transliteration": "chal.cha.lah", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 25,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 96. G0074 (agōnia) is the single-occurrence Gethsemane term (Lk 22:44); full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "G0074", "transliteration": "agonia", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 26,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 99. G3600 (odunaō) spans anguish/distress meanings across Lk 2:48, 16:24-25, Acts 20:38; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "G3600", "transliteration": "odunaō", "primary_registry": "005 anguish" }
+      },
+      {
+        "id": 27,
+        "status_note": "XREF: primary analysis in registry 154 (sorrow), wa_term_inventory id 458. G5604 (ōdin) covers birth-pang/labour-pang metaphors (Mt 24:8, Mk 13:8, Acts 2:24, 1Th 5:3); full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "G5604", "transliteration": "odin", "primary_registry": "154 sorrow" }
+      },
+      {
+        "id": 28,
+        "status_note": "XREF: primary analysis in registry 005 (anguish), wa_term_inventory id 101. G0928 (basanizō) is the verbal form of the basanos root; full word analysis, verse records and phase2 flags should be drawn from that registry.",
+        "_ref": { "strongs": "G0928", "transliteration": "basanizō", "primary_registry": "005 anguish" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,2812 @@
+{
+  "_meta": {
+    "patch_id": "WA-187-STRENGTH-DATA-PART3-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Phase 2 data patch for strength registry 187, Part 3: Greek terms. 17 new terms extracted.",
+    "format": "bible-projects-patch-spec-v1.1",
+    "produced_by": "Claude (Session A v8)",
+    "registry_id": "187",
+    "word": "strength",
+    "part_number": 3,
+    "source_files": [
+      "word_strength_Part3.md"
+    ],
+    "prerequisite": "WA-187-STRENGTH-PHASE1-20260317-V1",
+    "id_baseline": {
+      "wa_file_index": 51,
+      "mti_terms": 642,
+      "mti_term_cross_refs": 73,
+      "wa_term_inventory": 657
+    },
+    "import_order": [
+      "1. Execute wa_file_index_insert first",
+      "2. Execute mti_terms_insert",
+      "3. Execute mti_term_flags_insert",
+      "4. Execute wa_term_inventory_insert",
+      "5. Execute wa_term_related_words_insert",
+      "6. Execute wa_term_root_family_insert",
+      "7. Execute wa_term_phase2_flags_insert",
+      "8. Execute wa_verse_records_insert",
+      "9. Execute wa_data_quality_flags_insert"
+    ]
+  },
+  "wa_file_index_insert": {
+    "target_table": "wa_file_index",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "filename",
+      "registry_id",
+      "word_registry_fk",
+      "word",
+      "part_number",
+      "total_parts",
+      "is_split",
+      "schema_version",
+      "phase",
+      "produced_date",
+      "source_file",
+      "translation_used",
+      "specification",
+      "revision_note",
+      "source_list",
+      "category",
+      "testament_coverage",
+      "root_families_in_prior_parts"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 54,
+        "filename": "04-wa-187-strength-data-part3-patch-20260317-v1.json",
+        "registry_id": "187",
+        "word_registry_fk": 187,
+        "word": "strength",
+        "part_number": 3,
+        "total_parts": 3,
+        "is_split": 1,
+        "schema_version": "2.2",
+        "phase": "phase2",
+        "produced_date": "2026-03-17",
+        "source_file": "word_strength_Part3.md",
+        "translation_used": "ESV",
+        "specification": "Session A Instruction v8",
+        "revision_note": null,
+        "source_list": "High Confidence",
+        "category": "Volitional/Capacity",
+        "testament_coverage": "NT",
+        "root_families_in_prior_parts": "ALAL_ROOT, AMTS_ROOT, ATSAM_ROOT, CHALATS_ROOT, CHAYIL_ROOT, CHAZAQ_ROOT, CHOSEN_ROOT, DOVE_ROOT, ETAN_ROOT, EYAL_ROOT, GADAL_ROOT, GBUR_ROOT, KOACH_ROOT, MAZACH_ROOT, MEOD_ROOT, NTSB_ROOT, ON_ROOT, OZ_ROOT, TOAPHA_ROOT, TQPH_ROOT, TQUM_ROOT, TSUR_ROOT, UL_ROOT, YAD_ROOT, ZROA_ROOT"
+      }
+    ]
+  },
+  "mti_terms_insert": {
+    "target_table": "mti_terms",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "strongs_number",
+      "transliteration",
+      "gloss",
+      "language",
+      "owning_registry",
+      "owning_word",
+      "owning_part",
+      "word_data_reference",
+      "status",
+      "extraction_date",
+      "strongs_reconciled",
+      "status_note",
+      "exclusion_reason",
+      "anchor_note"
+    ],
+    "row_counts": {
+      "total_rows": 17
+    },
+    "rows": [
+      {
+        "id": 682,
+        "strongs_number": "G1849",
+        "transliteration": "exousia",
+        "gloss": "authority",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "exousia",
+          "part": 3
+        }
+      },
+      {
+        "id": 683,
+        "strongs_number": "G2480",
+        "transliteration": "ischuō",
+        "gloss": "be strong",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "ischuō",
+          "part": 3
+        }
+      },
+      {
+        "id": 684,
+        "strongs_number": "G1411",
+        "transliteration": "dunamis",
+        "gloss": "power",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "dunamis",
+          "part": 3
+        }
+      },
+      {
+        "id": 685,
+        "strongs_number": "G2904",
+        "transliteration": "kratos",
+        "gloss": "power",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "kratos",
+          "part": 3
+        }
+      },
+      {
+        "id": 686,
+        "strongs_number": "G2479",
+        "transliteration": "ischus",
+        "gloss": "strength",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": "STEP entry appears duplicated in source file; two identical blocks present. One term record produced. Quality flag OCCURRENCE_COUNT_MISMATCH applied.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "ischus",
+          "part": 3
+        }
+      },
+      {
+        "id": 687,
+        "strongs_number": "G9073",
+        "transliteration": "sthenos",
+        "gloss": "strength (physical)",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "Non-canonical Strong's number G9073. No STEP data available.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "sthenos",
+          "part": 3
+        }
+      },
+      {
+        "id": 688,
+        "strongs_number": "G2478",
+        "transliteration": "ischuros",
+        "gloss": "strong",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "ischuros",
+          "part": 3
+        }
+      },
+      {
+        "id": 689,
+        "strongs_number": "G1412",
+        "transliteration": "dunamoō",
+        "gloss": "to empower",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "dunamoō",
+          "part": 3
+        }
+      },
+      {
+        "id": 690,
+        "strongs_number": "G9559",
+        "transliteration": "huperischuō",
+        "gloss": "to excel in strength",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "Non-canonical Strong's number G9559. No STEP data available.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "huperischuō",
+          "part": 3
+        }
+      },
+      {
+        "id": 691,
+        "strongs_number": "G1840",
+        "transliteration": "exischuō",
+        "gloss": "to have power",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "exischuō",
+          "part": 3
+        }
+      },
+      {
+        "id": 692,
+        "strongs_number": "G2729",
+        "transliteration": "katischuō",
+        "gloss": "to prevail",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "katischuō",
+          "part": 3
+        }
+      },
+      {
+        "id": 693,
+        "strongs_number": "G1765",
+        "transliteration": "enischuō",
+        "gloss": "to strengthen",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "enischuō",
+          "part": 3
+        }
+      },
+      {
+        "id": 694,
+        "strongs_number": "G1743",
+        "transliteration": "endunamoō",
+        "gloss": "to strengthen",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "endunamoō",
+          "part": 3
+        }
+      },
+      {
+        "id": 695,
+        "strongs_number": "G4732",
+        "transliteration": "stereoō",
+        "gloss": "to strengthen",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "stereoō",
+          "part": 3
+        }
+      },
+      {
+        "id": 696,
+        "strongs_number": "G0102",
+        "transliteration": "adunatos",
+        "gloss": "unable",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 0,
+        "status_note": null,
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "adunatos",
+          "part": 3
+        }
+      },
+      {
+        "id": 697,
+        "strongs_number": "G0772",
+        "transliteration": "asthenēs",
+        "gloss": "weak",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "STEP shows G0772G sub-gloss variant. Covers physical, moral, and spiritual weakness as a single semantic field.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "asthenēs",
+          "part": 3
+        }
+      },
+      {
+        "id": 698,
+        "strongs_number": "G6347",
+        "transliteration": "anischus",
+        "gloss": "without strength",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": 3,
+        "word_data_reference": 54,
+        "status": "extracted",
+        "extraction_date": "2026-03-17",
+        "strongs_reconciled": 1,
+        "status_note": "Non-canonical Strong's number G6347. No STEP data available.",
+        "exclusion_reason": null,
+        "anchor_note": null,
+        "_ref": {
+          "trans": "anischus",
+          "part": 3
+        }
+      }
+    ]
+  },
+  "mti_term_flags_insert": {
+    "target_table": "mti_term_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "mti_term_id",
+      "flag_id"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "mti_term_id": 684,
+        "flag_id": 13
+      }
+    ]
+  },
+  "wa_term_inventory_insert": {
+    "target_table": "wa_term_inventory",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "file_id",
+      "language",
+      "term_id",
+      "strongs_number",
+      "transliteration",
+      "step_search_gloss",
+      "word_analysis_gloss",
+      "occurrence_count",
+      "occurrence_count_qualifier",
+      "meaning",
+      "testament",
+      "god_as_subject",
+      "somatic_link",
+      "causative_form_present",
+      "status_note",
+      "lsj_entry"
+    ],
+    "row_counts": {
+      "total_rows": 17
+    },
+    "rows": [
+      {
+        "id": 697,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1849",
+        "strongs_number": "G1849",
+        "transliteration": "exousia",
+        "step_search_gloss": "authority",
+        "word_analysis_gloss": "authority",
+        "occurrence_count": 102,
+        "occurrence_count_qualifier": "about",
+        "meaning": "authority, power, the right to control or govern; dominion, the area or sphere of jurisdiction; a ruler, human or supernatural; power, ability, faculty; efficiency, energy; liberty, licence; authority, rule, dominion, jurisdiction; privilege, prerogative; perhaps, a veil (1Cor 11:10)",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "exousia"
+        },
+        "lsj_entry": "power, authority to do a thing; abuse of authority, licence, arrogance; office, magistracy; body of magistrates; abundance of means, resources; pomp"
+      },
+      {
+        "id": 698,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G2480",
+        "strongs_number": "G2480",
+        "transliteration": "ischuō",
+        "step_search_gloss": "be strong",
+        "word_analysis_gloss": "be strong",
+        "occurrence_count": 29,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to be strong, powerful, able; to be strong, be well, be in good health; to have power, be able; to have power or efficiency, avail, be valid; to be of service, be serviceable; to prevail",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "ischuō"
+        },
+        "lsj_entry": "to be strong in body; to be powerful, prevail; of things, prevail, have force; to be worth or equivalent to"
+      },
+      {
+        "id": 699,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1411",
+        "strongs_number": "G1411",
+        "transliteration": "dunamis",
+        "step_search_gloss": "power",
+        "word_analysis_gloss": "power",
+        "occurrence_count": 119,
+        "occurrence_count_qualifier": "about",
+        "meaning": "power, ability; miracle; ruler, an extended meaning of a person or supernatural being who has administrative power; strength, ability; efficacy; energy; meaning, purport of language; authority; might, power, majesty; a manifestation or instance of power, mighty means; omnipotence; authorities; miraculous power; a miracle; a worker of miracles; the heavenly luminaries; the spiritual powers",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "dunamis"
+        },
+        "lsj_entry": "power, might, especially of bodily strength; outward power, influence, authority; force for war; a power, quantity; means; power, faculty, capacity; elementary force; property, quality; function, faculty; force or meaning of a word; capability of existing or acting, potentiality; in Mathematics, power, square; manifestation of divine power, miracle"
+      },
+      {
+        "id": 700,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G2904",
+        "strongs_number": "G2904",
+        "transliteration": "kratos",
+        "step_search_gloss": "power",
+        "word_analysis_gloss": "power",
+        "occurrence_count": 12,
+        "occurrence_count_qualifier": "about",
+        "meaning": "power, strength; strength, power, might, force; a display of might; power, sway, dominion",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "kratos"
+        },
+        "lsj_entry": "strength, might, especially of bodily strength; power, sovereignty; mastery, victory; in Medicine, ligaments"
+      },
+      {
+        "id": 701,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G2479",
+        "strongs_number": "G2479",
+        "transliteration": "ischus",
+        "step_search_gloss": "strength",
+        "word_analysis_gloss": "strength",
+        "occurrence_count": 10,
+        "occurrence_count_qualifier": "about",
+        "meaning": "strength, power; strength, might, power; faculty, ability",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "STEP entry appears duplicated in source file; two identical blocks present. One term record produced. Quality flag OCCURRENCE_COUNT_MISMATCH applied.",
+        "_ref": {
+          "trans": "ischus"
+        },
+        "lsj_entry": "strength of body; might, power; brute force; motive force; vigour of style; the main body of troops"
+      },
+      {
+        "id": 702,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G9073",
+        "strongs_number": "G9073",
+        "transliteration": "sthenos",
+        "step_search_gloss": "strength (physical)",
+        "word_analysis_gloss": "strength: physical",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": null,
+        "testament": null,
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Non-canonical Strong's number G9073. No STEP data available.",
+        "_ref": {
+          "trans": "sthenos"
+        },
+        "lsj_entry": null
+      },
+      {
+        "id": 703,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G2478",
+        "strongs_number": "G2478",
+        "transliteration": "ischuros",
+        "step_search_gloss": "strong",
+        "word_analysis_gloss": "strong",
+        "occurrence_count": 27,
+        "occurrence_count_qualifier": "about",
+        "meaning": "powerful, strong, forceful; strong, mighty, robust; powerful, mighty; vehement; energetic; sure, firm",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "ischuros"
+        },
+        "lsj_entry": "strong, especially of personal strength; of things; of armies; of places; powerful; forcible, violent, severe; of literary style, vigorous"
+      },
+      {
+        "id": 704,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1412",
+        "strongs_number": "G1412",
+        "transliteration": "dunamoō",
+        "step_search_gloss": "to empower",
+        "word_analysis_gloss": "to empower",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "(passive) to be strengthened; to strengthen, confirm",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 1,
+        "status_note": null,
+        "_ref": {
+          "trans": "dunamoō"
+        },
+        "lsj_entry": "strengthen; put power into; endow with vitality"
+      },
+      {
+        "id": 705,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G9559",
+        "strongs_number": "G9559",
+        "transliteration": "huperischuō",
+        "step_search_gloss": "to excel in strength",
+        "word_analysis_gloss": "to excel in strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": null,
+        "testament": null,
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Non-canonical Strong's number G9559. No STEP data available.",
+        "_ref": {
+          "trans": "huperischuō"
+        },
+        "lsj_entry": null
+      },
+      {
+        "id": 706,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1840",
+        "strongs_number": "G1840",
+        "transliteration": "exischuō",
+        "step_search_gloss": "to have power",
+        "word_analysis_gloss": "to have power",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to have power, be strong enough, able; to be fully able, be strong",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "exischuō"
+        },
+        "lsj_entry": "have strength enough, be able; with genitive, fate prevailing over; of flames, gather force"
+      },
+      {
+        "id": 707,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G2729",
+        "strongs_number": "G2729",
+        "transliteration": "katischuō",
+        "step_search_gloss": "to prevail",
+        "word_analysis_gloss": "to prevail",
+        "occurrence_count": 2,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to overcome, prevail; to be able; to overpower; absolute to predominate, get the upper hand",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "katischuō"
+        },
+        "lsj_entry": "overpower, prevail over; absolutely, have the upper hand, prevail; come to one's full strength; strengthen, encourage"
+      },
+      {
+        "id": 708,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1765",
+        "strongs_number": "G1765",
+        "transliteration": "enischuō",
+        "step_search_gloss": "to strengthen",
+        "word_analysis_gloss": "to strengthen",
+        "occurrence_count": 2,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to strengthen (another); to regain (one's own) strength; to strengthen, impart strength and vigor; intransitive to gain, acquire, or recover strength and vigor, be strengthened",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 1,
+        "status_note": null,
+        "_ref": {
+          "trans": "enischuō"
+        },
+        "lsj_entry": "strengthen, confirm; intransitive, prevail in or among"
+      },
+      {
+        "id": 709,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G1743",
+        "strongs_number": "G1743",
+        "transliteration": "endunamoō",
+        "step_search_gloss": "to strengthen",
+        "word_analysis_gloss": "to strengthen",
+        "occurrence_count": 8,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to give strength, strengthen; (middle/passive) to be strong, strengthened; to empower, invigorate; to summon up vigor, put forth energy; passive to acquire strength, be invigorated, be strong",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 1,
+        "status_note": null,
+        "_ref": {
+          "trans": "endunamoō"
+        },
+        "lsj_entry": "strengthen, confirm; endow with vitality, in passive"
+      },
+      {
+        "id": 710,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G4732",
+        "strongs_number": "G4732",
+        "transliteration": "stereoō",
+        "step_search_gloss": "to strengthen",
+        "word_analysis_gloss": "to strengthen",
+        "occurrence_count": 4,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to make strong; (passive) to become strong, be strengthened; to make firm; to settle",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 1,
+        "causative_form_present": 1,
+        "status_note": null,
+        "_ref": {
+          "trans": "stereoō"
+        },
+        "lsj_entry": "make firm or solid; strengthen; passive, to be made strong; to be firmly established, confirmed"
+      },
+      {
+        "id": 711,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G0102",
+        "strongs_number": "G0102",
+        "transliteration": "adunatos",
+        "step_search_gloss": "unable",
+        "word_analysis_gloss": "unable",
+        "occurrence_count": 10,
+        "occurrence_count_qualifier": "about",
+        "meaning": "impossible, powerless; impotent, weak",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null,
+        "_ref": {
+          "trans": "adunatos"
+        },
+        "lsj_entry": "of persons, unable to do a thing; absolutely, without strength, powerless; of things, impossible"
+      },
+      {
+        "id": 712,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G0772",
+        "strongs_number": "G0772",
+        "transliteration": "asthenēs",
+        "step_search_gloss": "weak",
+        "word_analysis_gloss": "weak",
+        "occurrence_count": 27,
+        "occurrence_count_qualifier": "about",
+        "meaning": "weak, ill (of physical weakness or illness, also of moral or spiritual weakness); without strength, weak, infirm; helpless; imperfect, inefficient; feeble, without energy; infirm in body, sick; weak, mentally or spiritually, dubious, hesitating; afflicted, distressed, oppressed with calamities",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 1,
+        "causative_form_present": 0,
+        "status_note": "STEP shows G0772G sub-gloss variant. Covers physical, moral, and spiritual weakness as a single semantic field.",
+        "_ref": {
+          "trans": "asthenēs"
+        },
+        "lsj_entry": "without strength, weak; in body, feeble, sickly; in mind; in power, weak, feeble; in property, weak, poor; insignificant"
+      },
+      {
+        "id": 713,
+        "file_id": 54,
+        "language": "Greek",
+        "term_id": "G6347",
+        "strongs_number": "G6347",
+        "transliteration": "anischus",
+        "step_search_gloss": "without strength",
+        "word_analysis_gloss": "without strength",
+        "occurrence_count": null,
+        "occurrence_count_qualifier": null,
+        "meaning": null,
+        "testament": null,
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Non-canonical Strong's number G6347. No STEP data available.",
+        "_ref": {
+          "trans": "anischus"
+        },
+        "lsj_entry": null
+      }
+    ]
+  },
+  "wa_term_related_words_insert": {
+    "target_table": "wa_term_related_words",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "gloss",
+      "transliteration"
+    ],
+    "row_counts": {
+      "total_rows": 35
+    },
+    "rows": [
+      {
+        "term_inv_id": 697,
+        "gloss": "be permitted",
+        "transliteration": "exesti exon"
+      },
+      {
+        "term_inv_id": 697,
+        "gloss": "to have authority",
+        "transliteration": "exousiazō"
+      },
+      {
+        "term_inv_id": 697,
+        "gloss": "to rule",
+        "transliteration": "katexousiazō"
+      },
+      {
+        "term_inv_id": 698,
+        "gloss": "strength",
+        "transliteration": "ischus"
+      },
+      {
+        "term_inv_id": 698,
+        "gloss": "to strengthen",
+        "transliteration": "enischuō"
+      },
+      {
+        "term_inv_id": 698,
+        "gloss": "to have power",
+        "transliteration": "exischuō"
+      },
+      {
+        "term_inv_id": 698,
+        "gloss": "to prevail",
+        "transliteration": "katischuō"
+      },
+      {
+        "term_inv_id": 699,
+        "gloss": "unable",
+        "transliteration": "adunatos"
+      },
+      {
+        "term_inv_id": 699,
+        "gloss": "be able",
+        "transliteration": "dunamai"
+      },
+      {
+        "term_inv_id": 699,
+        "gloss": "to empower",
+        "transliteration": "dunamoō"
+      },
+      {
+        "term_inv_id": 699,
+        "gloss": "to strengthen",
+        "transliteration": "endunamoō"
+      },
+      {
+        "term_inv_id": 700,
+        "gloss": "mighty",
+        "transliteration": "krataios"
+      },
+      {
+        "term_inv_id": 700,
+        "gloss": "greater",
+        "transliteration": "kreissōn"
+      },
+      {
+        "term_inv_id": 700,
+        "gloss": "stronger",
+        "transliteration": "kreittōn"
+      },
+      {
+        "term_inv_id": 701,
+        "gloss": "strong",
+        "transliteration": "ischuros"
+      },
+      {
+        "term_inv_id": 701,
+        "gloss": "be strong",
+        "transliteration": "ischuō"
+      },
+      {
+        "term_inv_id": 703,
+        "gloss": "strength",
+        "transliteration": "ischus"
+      },
+      {
+        "term_inv_id": 704,
+        "gloss": "power",
+        "transliteration": "dunamis"
+      },
+      {
+        "term_inv_id": 704,
+        "gloss": "unable",
+        "transliteration": "adunatos"
+      },
+      {
+        "term_inv_id": 704,
+        "gloss": "to strengthen",
+        "transliteration": "endunamoō"
+      },
+      {
+        "term_inv_id": 706,
+        "gloss": "be strong",
+        "transliteration": "ischuō"
+      },
+      {
+        "term_inv_id": 707,
+        "gloss": "be strong",
+        "transliteration": "ischuō"
+      },
+      {
+        "term_inv_id": 708,
+        "gloss": "be strong",
+        "transliteration": "ischuō"
+      },
+      {
+        "term_inv_id": 709,
+        "gloss": "power",
+        "transliteration": "dunamis"
+      },
+      {
+        "term_inv_id": 709,
+        "gloss": "to empower",
+        "transliteration": "dunamoō"
+      },
+      {
+        "term_inv_id": 709,
+        "gloss": "unable",
+        "transliteration": "adunatos"
+      },
+      {
+        "term_inv_id": 710,
+        "gloss": "strong",
+        "transliteration": "stereos"
+      },
+      {
+        "term_inv_id": 710,
+        "gloss": "firmness",
+        "transliteration": "stereōma"
+      },
+      {
+        "term_inv_id": 710,
+        "gloss": "firm",
+        "transliteration": "bebaios"
+      },
+      {
+        "term_inv_id": 711,
+        "gloss": "power",
+        "transliteration": "dunamis"
+      },
+      {
+        "term_inv_id": 711,
+        "gloss": "be able",
+        "transliteration": "dunamai"
+      },
+      {
+        "term_inv_id": 711,
+        "gloss": "to empower",
+        "transliteration": "dunamoō"
+      },
+      {
+        "term_inv_id": 712,
+        "gloss": "weakness",
+        "transliteration": "astheneia"
+      },
+      {
+        "term_inv_id": 712,
+        "gloss": "be weak",
+        "transliteration": "astheneō"
+      },
+      {
+        "term_inv_id": 712,
+        "gloss": "weakness",
+        "transliteration": "asthenēma"
+      }
+    ]
+  },
+  "wa_term_root_family_insert": {
+    "target_table": "wa_term_root_family",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "root_code"
+    ],
+    "row_counts": {
+      "total_rows": 17
+    },
+    "rows": [
+      {
+        "term_inv_id": 697,
+        "root_code": "EXOUSIA_ROOT"
+      },
+      {
+        "term_inv_id": 698,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 699,
+        "root_code": "DUNAMIS_ROOT"
+      },
+      {
+        "term_inv_id": 700,
+        "root_code": "KRATOS_ROOT"
+      },
+      {
+        "term_inv_id": 701,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 702,
+        "root_code": "STHENOS_ROOT"
+      },
+      {
+        "term_inv_id": 703,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 704,
+        "root_code": "DUNAMIS_ROOT"
+      },
+      {
+        "term_inv_id": 705,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 706,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 707,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 708,
+        "root_code": "ISCHUS_ROOT"
+      },
+      {
+        "term_inv_id": 709,
+        "root_code": "DUNAMIS_ROOT"
+      },
+      {
+        "term_inv_id": 710,
+        "root_code": "STEREOS_ROOT"
+      },
+      {
+        "term_inv_id": 711,
+        "root_code": "DUNAMIS_ROOT"
+      },
+      {
+        "term_inv_id": 712,
+        "root_code": "ASTHENES_ROOT"
+      },
+      {
+        "term_inv_id": 713,
+        "root_code": "ISCHUS_ROOT"
+      }
+    ]
+  },
+  "wa_term_phase2_flags_insert": {
+    "target_table": "wa_term_phase2_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "flag_id"
+    ],
+    "row_counts": {
+      "total_rows": 47
+    },
+    "rows": [
+      {
+        "term_inv_id": 697,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "exousia"
+        }
+      },
+      {
+        "term_inv_id": 697,
+        "flag_id": 16,
+        "_ref": {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "term": "exousia"
+        }
+      },
+      {
+        "term_inv_id": 697,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "exousia"
+        }
+      },
+      {
+        "term_inv_id": 697,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "exousia"
+        }
+      },
+      {
+        "term_inv_id": 697,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "exousia"
+        }
+      },
+      {
+        "term_inv_id": 698,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "ischuō"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 15,
+        "_ref": {
+          "flag_code": "HIGH_FREQUENCY_ANCHOR",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 16,
+        "_ref": {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 24,
+        "_ref": {
+          "flag_code": "CROSS_TESTAMENT_SHIFT",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 699,
+        "flag_id": 13,
+        "_ref": {
+          "flag_code": "THEOLOGICAL_ANCHOR",
+          "term": "dunamis"
+        }
+      },
+      {
+        "term_inv_id": 700,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "kratos"
+        }
+      },
+      {
+        "term_inv_id": 700,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "kratos"
+        }
+      },
+      {
+        "term_inv_id": 700,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "kratos"
+        }
+      },
+      {
+        "term_inv_id": 701,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "ischus"
+        }
+      },
+      {
+        "term_inv_id": 701,
+        "flag_id": 22,
+        "_ref": {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "term": "ischus"
+        }
+      },
+      {
+        "term_inv_id": 701,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "ischus"
+        }
+      },
+      {
+        "term_inv_id": 701,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "ischus"
+        }
+      },
+      {
+        "term_inv_id": 702,
+        "flag_id": 11,
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "sthenos"
+        }
+      },
+      {
+        "term_inv_id": 703,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "ischuros"
+        }
+      },
+      {
+        "term_inv_id": 703,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "ischuros"
+        }
+      },
+      {
+        "term_inv_id": 703,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "ischuros"
+        }
+      },
+      {
+        "term_inv_id": 704,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "dunamoō"
+        }
+      },
+      {
+        "term_inv_id": 704,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "dunamoō"
+        }
+      },
+      {
+        "term_inv_id": 705,
+        "flag_id": 11,
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "huperischuō"
+        }
+      },
+      {
+        "term_inv_id": 706,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "exischuō"
+        }
+      },
+      {
+        "term_inv_id": 707,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "katischuō"
+        }
+      },
+      {
+        "term_inv_id": 708,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "enischuō"
+        }
+      },
+      {
+        "term_inv_id": 708,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "enischuō"
+        }
+      },
+      {
+        "term_inv_id": 708,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "enischuō"
+        }
+      },
+      {
+        "term_inv_id": 709,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "endunamoō"
+        }
+      },
+      {
+        "term_inv_id": 709,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "endunamoō"
+        }
+      },
+      {
+        "term_inv_id": 709,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "endunamoō"
+        }
+      },
+      {
+        "term_inv_id": 709,
+        "flag_id": 23,
+        "_ref": {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "term": "endunamoō"
+        }
+      },
+      {
+        "term_inv_id": 710,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "stereoō"
+        }
+      },
+      {
+        "term_inv_id": 710,
+        "flag_id": 2,
+        "_ref": {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "term": "stereoō"
+        }
+      },
+      {
+        "term_inv_id": 710,
+        "flag_id": 3,
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "term": "stereoō"
+        }
+      },
+      {
+        "term_inv_id": 710,
+        "flag_id": 8,
+        "_ref": {
+          "flag_code": "THIN_DATA",
+          "term": "stereoō"
+        }
+      },
+      {
+        "term_inv_id": 711,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "adunatos"
+        }
+      },
+      {
+        "term_inv_id": 711,
+        "flag_id": 24,
+        "_ref": {
+          "flag_code": "CROSS_TESTAMENT_SHIFT",
+          "term": "adunatos"
+        }
+      },
+      {
+        "term_inv_id": 712,
+        "flag_id": 1,
+        "_ref": {
+          "flag_code": "GOD_AS_SUBJECT",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "term_inv_id": 712,
+        "flag_id": 3,
+        "_ref": {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "term_inv_id": 712,
+        "flag_id": 16,
+        "_ref": {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "term_inv_id": 712,
+        "flag_id": 18,
+        "_ref": {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "term_inv_id": 712,
+        "flag_id": 24,
+        "_ref": {
+          "flag_code": "CROSS_TESTAMENT_SHIFT",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "term_inv_id": 713,
+        "flag_id": 11,
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "anischus"
+        }
+      }
+    ]
+  },
+  "wa_verse_records_insert": {
+    "target_table": "wa_verse_records",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_inv_id",
+      "term_id",
+      "transliteration",
+      "testament",
+      "reference",
+      "verse_text",
+      "book_id",
+      "chapter",
+      "verse_num",
+      "translation"
+    ],
+    "row_counts": {
+      "total_rows": 84
+    },
+    "rows": [
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Mat 7:29",
+        "verse_text": "for he was teaching them as one who had authority, and not as their scribes.",
+        "book_id": 40,
+        "chapter": 7,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Mat 9:6",
+        "verse_text": "But that you may know that the Son of Man has authority on earth to forgive sins— he then said to the paralytic— Rise, pick up your bed and go home.",
+        "book_id": 40,
+        "chapter": 9,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Mat 28:18",
+        "verse_text": "And Jesus came and said to them, All authority in heaven and on earth has been given to me.",
+        "book_id": 40,
+        "chapter": 28,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Luk 4:36",
+        "verse_text": "And they were all amazed and said to one another, What is this word? For with authority and power he commands the unclean spirits, and they come out!",
+        "book_id": 42,
+        "chapter": 4,
+        "verse_num": 36,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Joh 1:12",
+        "verse_text": "But to all who did receive him, who believed in his name, he gave the right to become children of God,",
+        "book_id": 43,
+        "chapter": 1,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Joh 10:18",
+        "verse_text": "No one takes it from me, but I lay it down of my own accord. I have authority to lay it down, and I have authority to take it up again. This charge I have received from my Father.",
+        "book_id": 43,
+        "chapter": 10,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Rom 13:1",
+        "verse_text": "Let every person be subject to the governing authorities. For there is no authority except from God, and those that exist have been instituted by God.",
+        "book_id": 45,
+        "chapter": 13,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Eph 1:21",
+        "verse_text": "far above all rule and authority and power and dominion, and above every name that is named, not only in this age but also in the one to come.",
+        "book_id": 49,
+        "chapter": 1,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 697,
+        "term_id": "G1849",
+        "transliteration": "exousia",
+        "testament": "NT",
+        "reference": "Rev 12:10",
+        "verse_text": "And I heard a loud voice in heaven, saying, Now the salvation and the power and the kingdom of our God and the authority of his Christ have come, for the accuser of our brothers has been thrown down, who accuses them day and night before our God.",
+        "book_id": 66,
+        "chapter": 12,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Mat 5:13",
+        "verse_text": "You are the salt of the earth, but if salt has lost its taste, how shall its saltiness be restored? It is no longer good for anything except to be thrown out and trampled under people's feet.",
+        "book_id": 40,
+        "chapter": 5,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Mat 26:40",
+        "verse_text": "And he came to the disciples and found them sleeping. And he said to Peter, So, could you not watch with me one hour?",
+        "book_id": 40,
+        "chapter": 26,
+        "verse_num": 40,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Luk 13:24",
+        "verse_text": "Strive to enter through the narrow door. For many, I tell you, will seek to enter and will not be able.",
+        "book_id": 42,
+        "chapter": 13,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Luk 16:3",
+        "verse_text": "And the manager said to himself, What shall I do, since my master is taking the management away from me? I am not strong enough to dig, and I am ashamed to beg.",
+        "book_id": 42,
+        "chapter": 16,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Act 19:16",
+        "verse_text": "And the man in whom was the evil spirit leaped on them, mastered all of them and overpowered them, so that they fled out of that house naked and wounded.",
+        "book_id": 44,
+        "chapter": 19,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Act 19:20",
+        "verse_text": "So the word of the Lord continued to increase and prevail mightily.",
+        "book_id": 44,
+        "chapter": 19,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Gal 5:6",
+        "verse_text": "For in Christ Jesus neither circumcision nor uncircumcision counts for anything, but only faith working through love.",
+        "book_id": 48,
+        "chapter": 5,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 698,
+        "term_id": "G2480",
+        "transliteration": "ischuō",
+        "testament": "NT",
+        "reference": "Jam 5:16",
+        "verse_text": "Therefore, confess your sins to one another and pray for one another, that you may be healed. The prayer of a righteous person has great power as it is working.",
+        "book_id": 57,
+        "chapter": 5,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Mat 22:29",
+        "verse_text": "But Jesus answered them, You are wrong, because you know neither the Scriptures nor the power of God.",
+        "book_id": 40,
+        "chapter": 22,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Mat 28:18",
+        "verse_text": "And Jesus came and said to them, All authority in heaven and on earth has been given to me.",
+        "book_id": 40,
+        "chapter": 28,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Luk 1:35",
+        "verse_text": "And the angel answered her, The Holy Spirit will come upon you, and the power of the Most High will overshadow you; therefore the child to be born will be called holy— the Son of God.",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 35,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Act 1:8",
+        "verse_text": "But you will receive power when the Holy Spirit has come upon you, and you will be my witnesses in Jerusalem and in all Judea and Samaria, and to the end of the earth.",
+        "book_id": 44,
+        "chapter": 1,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Rom 1:16",
+        "verse_text": "For I am not ashamed of the gospel, for it is the power of God for salvation to everyone who believes, to the Jew first and also to the Greek.",
+        "book_id": 45,
+        "chapter": 1,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "1Cor 1:18",
+        "verse_text": "For the word of the cross is folly to those who are perishing, but to us who are being saved it is the power of God.",
+        "book_id": 46,
+        "chapter": 1,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "2Cor 12:9",
+        "verse_text": "But he said to me, My grace is sufficient for you, for my power is made perfect in weakness. Therefore I will boast all the more gladly of my weaknesses, so that the power of Christ may rest upon me.",
+        "book_id": 47,
+        "chapter": 12,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Eph 3:16",
+        "verse_text": "that according to the riches of his glory he may grant you to be strengthened with power through his Spirit in your inner being,",
+        "book_id": 49,
+        "chapter": 3,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "Phili 3:10",
+        "verse_text": "that I may know him and the power of his resurrection, and may share his sufferings, becoming like him in his death,",
+        "book_id": 50,
+        "chapter": 3,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 699,
+        "term_id": "G1411",
+        "transliteration": "dunamis",
+        "testament": "NT",
+        "reference": "2Ti 1:7",
+        "verse_text": "for God gave us a spirit not of fear but of power and love and self-control.",
+        "book_id": 55,
+        "chapter": 1,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Luk 1:51",
+        "verse_text": "He has shown strength with his arm; he has scattered the proud in the thoughts of their hearts;",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 51,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Act 19:20",
+        "verse_text": "So the word of the Lord continued to increase and prevail mightily.",
+        "book_id": 44,
+        "chapter": 19,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Eph 1:19",
+        "verse_text": "and what is the immeasurable greatness of his power toward us who believe, according to the working of his great might",
+        "book_id": 49,
+        "chapter": 1,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Eph 6:10",
+        "verse_text": "Finally, be strong in the Lord and in the strength of his might.",
+        "book_id": 49,
+        "chapter": 6,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Col 1:11",
+        "verse_text": "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;",
+        "book_id": 51,
+        "chapter": 1,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Heb 2:14",
+        "verse_text": "Since therefore the children share in flesh and blood, he himself likewise partook of the same things, that through death he might destroy the one who has the power of death, that is, the devil,",
+        "book_id": 56,
+        "chapter": 2,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "1Pe 4:11",
+        "verse_text": "whoever speaks, as one who speaks oracles of God; whoever serves, as one who serves by the strength that God supplies— in order that in everything God may be glorified through Jesus Christ. To him belong glory and dominion forever and ever. Amen.",
+        "book_id": 58,
+        "chapter": 4,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 700,
+        "term_id": "G2904",
+        "transliteration": "kratos",
+        "testament": "NT",
+        "reference": "Rev 5:13",
+        "verse_text": "And I heard every creature in heaven and on earth and under the earth and in the sea, and all that is in them, saying, To him who sits on the throne and to the Lamb be blessing and honor and glory and might forever and ever!",
+        "book_id": 66,
+        "chapter": 5,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Mar 12:30",
+        "verse_text": "And you shall love the Lord your God with all your heart and with all your soul and with all your mind and with all your strength.",
+        "book_id": 41,
+        "chapter": 12,
+        "verse_num": 30,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Mar 12:33",
+        "verse_text": "And to love him with all the heart and with all the understanding and with all the strength, and to love one's neighbor as oneself, is much more than all whole burnt offerings and sacrifices.",
+        "book_id": 41,
+        "chapter": 12,
+        "verse_num": 33,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Luk 10:27",
+        "verse_text": "And he answered, You shall love the Lord your God with all your heart and with all your soul and with all your strength and with all your mind, and your neighbor as yourself.",
+        "book_id": 42,
+        "chapter": 10,
+        "verse_num": 27,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Eph 1:19",
+        "verse_text": "and what is the immeasurable greatness of his power toward us who believe, according to the working of his great might",
+        "book_id": 49,
+        "chapter": 1,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Eph 6:10",
+        "verse_text": "Finally, be strong in the Lord and in the strength of his might.",
+        "book_id": 49,
+        "chapter": 6,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "1Pe 4:11",
+        "verse_text": "whoever serves, as one who serves by the strength that God supplies—",
+        "book_id": 58,
+        "chapter": 4,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Rev 5:12",
+        "verse_text": "saying with a loud voice, Worthy is the Lamb who was slain, to receive power and wealth and wisdom and might and honor and glory and blessing!",
+        "book_id": 66,
+        "chapter": 5,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 701,
+        "term_id": "G2479",
+        "transliteration": "ischus",
+        "testament": "NT",
+        "reference": "Rev 7:12",
+        "verse_text": "saying, Amen! Blessing and glory and wisdom and thanksgiving and honor and power and might be to our God forever and ever! Amen.",
+        "book_id": 66,
+        "chapter": 7,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "Mat 3:11",
+        "verse_text": "I baptize you with water for repentance, but he who is coming after me is mightier than I, whose sandals I am not worthy to carry. He will baptize you with the Holy Spirit and fire.",
+        "book_id": 40,
+        "chapter": 3,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "Mat 12:29",
+        "verse_text": "Or how can someone enter a strong man's house and plunder his goods, unless he first binds the strong man? Then indeed he may plunder his house.",
+        "book_id": 40,
+        "chapter": 12,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "Luk 11:21",
+        "verse_text": "When a strong man, fully armed, guards his own palace, his goods are safe;",
+        "book_id": 42,
+        "chapter": 11,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "Luk 11:22",
+        "verse_text": "but when one stronger than he attacks him and overcomes him, he takes away his armor in which he trusted and divides his spoil.",
+        "book_id": 42,
+        "chapter": 11,
+        "verse_num": 22,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "1Cor 1:25",
+        "verse_text": "For the foolishness of God is wiser than men, and the weakness of God is stronger than men.",
+        "book_id": 46,
+        "chapter": 1,
+        "verse_num": 25,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "1Cor 1:27",
+        "verse_text": "But God chose what is foolish in the world to shame the wise; God chose what is weak in the world to shame the strong;",
+        "book_id": 46,
+        "chapter": 1,
+        "verse_num": 27,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "1Jo 2:14",
+        "verse_text": "I write to you, fathers, because you know him who is from the beginning. I write to you, young men, because you are strong, and the word of God abides in you, and you have overcome the evil one.",
+        "book_id": 62,
+        "chapter": 2,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 703,
+        "term_id": "G2478",
+        "transliteration": "ischuros",
+        "testament": "NT",
+        "reference": "Heb 6:18",
+        "verse_text": "so that by two unchangeable things, in which it is impossible for God to lie, we who have fled for refuge might have strong encouragement to hold fast to the hope set before us.",
+        "book_id": 56,
+        "chapter": 6,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 704,
+        "term_id": "G1412",
+        "transliteration": "dunamoō",
+        "testament": "NT",
+        "reference": "Col 1:11",
+        "verse_text": "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;",
+        "book_id": 51,
+        "chapter": 1,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 706,
+        "term_id": "G1840",
+        "transliteration": "exischuō",
+        "testament": "NT",
+        "reference": "Eph 3:18",
+        "verse_text": "may have strength to comprehend with all the saints what is the breadth and length and height and depth,",
+        "book_id": 49,
+        "chapter": 3,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 707,
+        "term_id": "G2729",
+        "transliteration": "katischuō",
+        "testament": "NT",
+        "reference": "Mat 16:18",
+        "verse_text": "And I tell you, you are Peter, and on this rock I will build my church, and the gates of hell shall not prevail against it.",
+        "book_id": 40,
+        "chapter": 16,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 707,
+        "term_id": "G2729",
+        "transliteration": "katischuō",
+        "testament": "NT",
+        "reference": "Luk 23:23",
+        "verse_text": "But they were urgent, demanding with loud cries that he should be crucified. And their voices prevailed.",
+        "book_id": 42,
+        "chapter": 23,
+        "verse_num": 23,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 708,
+        "term_id": "G1765",
+        "transliteration": "enischuō",
+        "testament": "NT",
+        "reference": "Luk 22:43",
+        "verse_text": "And there appeared to him an angel from heaven, strengthening him.",
+        "book_id": 42,
+        "chapter": 22,
+        "verse_num": 43,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 708,
+        "term_id": "G1765",
+        "transliteration": "enischuō",
+        "testament": "NT",
+        "reference": "Act 9:19",
+        "verse_text": "and taking food, he was strengthened. For some days he was with the disciples at Damascus.",
+        "book_id": 44,
+        "chapter": 9,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "Act 9:22",
+        "verse_text": "But Saul increased all the more in strength, and confounded the Jews who lived in Damascus by proving that Jesus was the Christ.",
+        "book_id": 44,
+        "chapter": 9,
+        "verse_num": 22,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "Rom 4:20",
+        "verse_text": "No unbelief made him waver concerning the promise of God, but he grew strong in his faith as he gave glory to God,",
+        "book_id": 45,
+        "chapter": 4,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "Eph 6:10",
+        "verse_text": "Finally, be strong in the Lord and in the strength of his might.",
+        "book_id": 49,
+        "chapter": 6,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "Phili 4:13",
+        "verse_text": "I can do all things through him who strengthens me.",
+        "book_id": 50,
+        "chapter": 4,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "1Ti 1:12",
+        "verse_text": "I thank him who has given me strength, Christ Jesus our Lord, because he judged me faithful, appointing me to his service,",
+        "book_id": 54,
+        "chapter": 1,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "2Ti 2:1",
+        "verse_text": "You then, my child, be strengthened by the grace that is in Christ Jesus,",
+        "book_id": 55,
+        "chapter": 2,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "2Ti 4:17",
+        "verse_text": "But the Lord stood by me and strengthened me, so that through me the message might be fully proclaimed and all the Gentiles might hear it.",
+        "book_id": 55,
+        "chapter": 4,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 709,
+        "term_id": "G1743",
+        "transliteration": "endunamoō",
+        "testament": "NT",
+        "reference": "Heb 11:34",
+        "verse_text": "quenched the power of fire, escaped the edge of the sword, were made strong out of weakness, became mighty in war, put foreign armies to flight.",
+        "book_id": 56,
+        "chapter": 11,
+        "verse_num": 34,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 710,
+        "term_id": "G4732",
+        "transliteration": "stereoō",
+        "testament": "NT",
+        "reference": "Act 3:7",
+        "verse_text": "And he took him by the right hand and raised him up, and immediately his feet and ankles were made strong.",
+        "book_id": 44,
+        "chapter": 3,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 710,
+        "term_id": "G4732",
+        "transliteration": "stereoō",
+        "testament": "NT",
+        "reference": "Act 3:16",
+        "verse_text": "And his name— by faith in his name— has made this man strong whom you see and know, and the faith that is through Jesus has given the man this perfect health in the presence of you all.",
+        "book_id": 44,
+        "chapter": 3,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 710,
+        "term_id": "G4732",
+        "transliteration": "stereoō",
+        "testament": "NT",
+        "reference": "Act 16:5",
+        "verse_text": "So the churches were strengthened in the faith, and they increased in numbers daily.",
+        "book_id": 44,
+        "chapter": 16,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Mat 19:26",
+        "verse_text": "But Jesus looked at them and said, With man this is impossible, but with God all things are possible.",
+        "book_id": 40,
+        "chapter": 19,
+        "verse_num": 26,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Mar 10:27",
+        "verse_text": "Jesus looked at them and said, With man it is impossible, but not with God. For all things are possible with God.",
+        "book_id": 41,
+        "chapter": 10,
+        "verse_num": 27,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Luk 18:27",
+        "verse_text": "But he said, What is impossible with man is possible with God.",
+        "book_id": 42,
+        "chapter": 18,
+        "verse_num": 27,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Rom 8:3",
+        "verse_text": "For God has done what the law, weakened by the flesh, could not do. By sending his own Son in the likeness of sinful flesh and for sin, he condemned sin in the flesh,",
+        "book_id": 45,
+        "chapter": 8,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Rom 15:1",
+        "verse_text": "We who are strong have an obligation to bear with the failings of the weak, and not to please ourselves.",
+        "book_id": 45,
+        "chapter": 15,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Heb 6:4",
+        "verse_text": "For it is impossible, in the case of those who have once been enlightened, who have tasted the heavenly gift, and have shared in the Holy Spirit,",
+        "book_id": 56,
+        "chapter": 6,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Heb 10:4",
+        "verse_text": "For it is impossible for the blood of bulls and goats to take away sins.",
+        "book_id": 56,
+        "chapter": 10,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 711,
+        "term_id": "G0102",
+        "transliteration": "adunatos",
+        "testament": "NT",
+        "reference": "Heb 11:6",
+        "verse_text": "And without faith it is impossible to please him, for whoever would draw near to God must believe that he exists and that he rewards those who seek him.",
+        "book_id": 56,
+        "chapter": 11,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "Mat 25:39",
+        "verse_text": "And when did we see you sick or in prison and visit you?",
+        "book_id": 40,
+        "chapter": 25,
+        "verse_num": 39,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "Mat 26:41",
+        "verse_text": "Watch and pray that you may not enter into temptation. The spirit indeed is willing, but the flesh is weak.",
+        "book_id": 40,
+        "chapter": 26,
+        "verse_num": 41,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "Rom 5:6",
+        "verse_text": "For while we were still weak, at the right time Christ died for the ungodly.",
+        "book_id": 45,
+        "chapter": 5,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "1Cor 1:25",
+        "verse_text": "For the foolishness of God is wiser than men, and the weakness of God is stronger than men.",
+        "book_id": 46,
+        "chapter": 1,
+        "verse_num": 25,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "1Cor 1:27",
+        "verse_text": "But God chose what is foolish in the world to shame the wise; God chose what is weak in the world to shame the strong;",
+        "book_id": 46,
+        "chapter": 1,
+        "verse_num": 27,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "1Cor 8:7",
+        "verse_text": "However, not all possess this knowledge. But some, through former association with idols, eat food as really offered to an idol, and their conscience, being weak, is defiled.",
+        "book_id": 46,
+        "chapter": 8,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "2Cor 10:10",
+        "verse_text": "For they say, His letters are weighty and strong, but his bodily presence is weak, and his speech of no account.",
+        "book_id": 47,
+        "chapter": 10,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 54,
+        "term_inv_id": 712,
+        "term_id": "G0772",
+        "transliteration": "asthenēs",
+        "testament": "NT",
+        "reference": "1Pe 3:7",
+        "verse_text": "Likewise, husbands, live with your wives in an understanding way, showing honor to the woman as the weaker vessel, since they are heirs with you of the grace of life, so that your prayers may not be hindered.",
+        "book_id": 58,
+        "chapter": 3,
+        "verse_num": 7,
+        "translation": "ESV"
+      }
+    ]
+  },
+  "wa_data_quality_flags_insert": {
+    "target_table": "wa_data_quality_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_id",
+      "flag_id",
+      "description"
+    ],
+    "row_counts": {
+      "total_rows": 11
+    },
+    "rows": [
+      {
+        "file_id": 54,
+        "term_id": "G2479",
+        "flag_id": 8,
+        "description": "STEP lists ischus under multiple sub-glosses sharing the same Strong's number. One term record produced; occurrence count applies to combined sub-glosses.",
+        "_ref": {
+          "flag_code": "OCCURRENCE_COUNT_MISMATCH",
+          "term": "ischus"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9073",
+        "flag_id": 4,
+        "description": "No STEP word analysis data available for sthenos (G9073); non-canonical Strong's number.",
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "sthenos"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9073",
+        "flag_id": 1,
+        "description": "No STEP verse records available for sthenos (G9073).",
+        "_ref": {
+          "flag_code": "NO_VERSES",
+          "term": "sthenos"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9073",
+        "flag_id": 7,
+        "description": "Strong's number for sthenos confirmed from source file; provisional number corrected to G9073.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "sthenos"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9559",
+        "flag_id": 4,
+        "description": "No STEP word analysis data available for huperischuō (G9559); non-canonical Strong's number.",
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "huperischuō"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9559",
+        "flag_id": 1,
+        "description": "No STEP verse records available for huperischuō (G9559).",
+        "_ref": {
+          "flag_code": "NO_VERSES",
+          "term": "huperischuō"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G9559",
+        "flag_id": 7,
+        "description": "Strong's number for huperischuō confirmed from source file; provisional number corrected to G9559.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "huperischuō"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G0772",
+        "flag_id": 7,
+        "description": "Strong's number for asthenēs confirmed from source file; provisional number corrected to G0772.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "asthenēs"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G6347",
+        "flag_id": 4,
+        "description": "No STEP word analysis data available for anischus (G6347); non-canonical Strong's number.",
+        "_ref": {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "term": "anischus"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G6347",
+        "flag_id": 1,
+        "description": "No STEP verse records available for anischus (G6347).",
+        "_ref": {
+          "flag_code": "NO_VERSES",
+          "term": "anischus"
+        }
+      },
+      {
+        "file_id": 54,
+        "term_id": "G6347",
+        "flag_id": 7,
+        "description": "Strong's number for anischus confirmed from source file; provisional number corrected to G6347.",
+        "_ref": {
+          "flag_code": "STRONGS_RECONCILED",
+          "term": "anischus"
+        }
+      }
+    ]
+  },
+  "word_registry_update": {
+    "target_table": "word_registry",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": [
+      "phase1_status",
+      "phase1_output_file"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 187,
+        "phase1_status": "Complete",
+        "phase1_output_file": "02-wa-187-strength-data-part1-patch-20260317-v1.json, 03-wa-187-strength-data-part2-patch-20260317-v1.json, 04-wa-187-strength-data-part3-patch-20260317-v1.json"
+      }
+    ]
+  }
+}

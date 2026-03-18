@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "patch_id": "WA-187-STRENGTH-PHASE1-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Phase 1 registration for strength registry 187: 6 excluded terms recorded, word_registry status set to In Progress.",
+    "format": "bible-projects-patch-spec-v1.1",
+    "produced_by": "Claude (Session A v8)",
+    "registry_id": "187",
+    "word": "strength",
+    "source_files": [
+      "word_strength_Part1.md",
+      "word_strength_Part2.md",
+      "word_strength_Part3.md"
+    ],
+    "id_baseline": {
+      "mti_terms": 636
+    },
+    "import_order": [
+      "1. Execute mti_terms_excluded_insert first",
+      "2. Then execute word_registry_update"
+    ]
+  },
+  "mti_terms_excluded_insert": {
+    "target_table": "mti_terms",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id", "strongs_number", "transliteration", "gloss", "language",
+      "owning_registry", "owning_word", "owning_part", "status",
+      "exclusion_reason", "extraction_date"
+    ],
+    "row_counts": {
+      "total_rows": 6
+    },
+    "rows": [
+      {
+        "id": 637,
+        "strongs_number": "H1082",
+        "transliteration": "ba.lag",
+        "gloss": "be cheerful",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "be cheerful (ba.lag)" }
+      },
+      {
+        "id": 638,
+        "strongs_number": "H3955",
+        "transliteration": "la.shad",
+        "gloss": "juicy bit",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "juicy bit (la.shad)" }
+      },
+      {
+        "id": 639,
+        "strongs_number": "G3618",
+        "transliteration": "oikodomeō",
+        "gloss": "to build",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "to build (oikodomeō)" }
+      },
+      {
+        "id": 640,
+        "strongs_number": "G194",
+        "transliteration": "akratos",
+        "gloss": "undiluted",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "undiluted (akratos)" }
+      },
+      {
+        "id": 641,
+        "strongs_number": "G4991",
+        "transliteration": "soteria",
+        "gloss": "salvation",
+        "language": "Greek",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "salvation (soteria)" }
+      },
+      {
+        "id": 642,
+        "strongs_number": "H5934",
+        "transliteration": "a.lu.mim",
+        "gloss": "youth",
+        "language": "Hebrew",
+        "owning_registry": "187",
+        "owning_word": "strength",
+        "owning_part": null,
+        "status": "excluded",
+        "exclusion_reason": "No connection with inner strength; STEP inclusion reason unclear",
+        "extraction_date": "2026-03-17",
+        "_ref": { "step_list_entry": "youth (a.lu.mim)" }
+      }
+    ]
+  },
+  "word_registry_update": {
+    "target_table": "word_registry",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": ["phase1_status", "phase1_input_file"],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 187,
+        "phase1_status": "In Progress",
+        "phase1_input_file": "word_strength_Part1.md, word_strength_Part2.md, word_strength_Part3.md"
+      }
+    ]
+  }
+}

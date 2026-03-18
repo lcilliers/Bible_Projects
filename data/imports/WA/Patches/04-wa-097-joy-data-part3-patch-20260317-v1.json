@@ -1,0 +1,2623 @@
+{
+  "_meta": {
+    "patch_id": "WA-097-JOY-DATA-PART3-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Phase 2 data patch for joy registry 097 Part 3: 7 Greek joy terms from word_joy_Part3.md. Includes 1 XREF cross-reference record for kauchaomai (registry 123). Completes Phase 2 for joy registry 097.",
+    "format": "bible-projects-patch-spec-v1.1",
+    "registry_id": "097",
+    "word": "joy",
+    "part_number": 3,
+    "source_files": [
+      "word_joy_Part3.md"
+    ],
+    "produced_by": "Claude (Session A v8)",
+    "prerequisite": "WA-097-JOY-PHASE1-[DATE]-V1",
+    "id_baseline": {
+      "wa_file_index": 43,
+      "mti_term_cross_refs": 72,
+      "wa_term_inventory": 567
+    },
+    "import_order": [
+      "1. wa_file_index_insert",
+      "2. mti_term_cross_refs_insert",
+      "3. wa_term_inventory_insert",
+      "4. wa_term_related_words_insert",
+      "5. wa_term_root_family_insert",
+      "6. wa_term_phase2_flags_insert",
+      "7. wa_verse_records_insert",
+      "8. wa_data_quality_flags_insert",
+      "9. wa_cross_registry_links_insert",
+      "10. word_registry_update"
+    ]
+  },
+  "wa_file_index_insert": {
+    "target_table": "wa_file_index",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "filename",
+      "registry_id",
+      "word_registry_fk",
+      "word",
+      "part_number",
+      "total_parts",
+      "is_split",
+      "schema_version",
+      "phase",
+      "produced_date",
+      "source_file",
+      "translation_used",
+      "specification",
+      "revision_note",
+      "source_list",
+      "category",
+      "testament_coverage",
+      "root_families_in_prior_parts"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 44,
+        "filename": "04-wa-097-joy-data-part3-patch-20260317-v1.json",
+        "registry_id": "097",
+        "word_registry_fk": 97,
+        "word": "joy",
+        "part_number": 3,
+        "total_parts": 3,
+        "is_split": 1,
+        "schema_version": "2.2",
+        "phase": "Phase2",
+        "produced_date": "2026-03-17",
+        "source_file": "word_joy_Part3.md",
+        "translation_used": "ESV",
+        "specification": "Session A Instruction v8",
+        "revision_note": null,
+        "source_list": "High Confidence",
+        "category": "Emotion/Joy",
+        "testament_coverage": "NT",
+        "root_families_in_prior_parts": "SIMCHAH_ROOT, SASOWN_ROOT, GIL_ROOT, CHEDVAH_ROOT, SALAD_ROOT, RANAN_ROOT, MAVLIGIT_ROOT, HEDAD_ROOT, TSAVACH_ROOT"
+      }
+    ]
+  },
+  "mti_term_cross_refs_insert": {
+    "target_table": "mti_term_cross_refs",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "mti_term_id",
+      "registry",
+      "word",
+      "part",
+      "word_data_reference"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 73,
+        "mti_term_id": 26,
+        "registry": "097",
+        "word": "joy",
+        "part": "Part3",
+        "word_data_reference": 44
+      }
+    ]
+  },
+  "wa_term_inventory_insert": {
+    "target_table": "wa_term_inventory",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "file_id",
+      "language",
+      "term_id",
+      "strongs_number",
+      "transliteration",
+      "step_search_gloss",
+      "word_analysis_gloss",
+      "occurrence_count",
+      "occurrence_count_qualifier",
+      "meaning",
+      "lsj_entry",
+      "testament",
+      "god_as_subject",
+      "somatic_link",
+      "causative_form_present",
+      "status_note"
+    ],
+    "row_counts": {
+      "total_rows": 7
+    },
+    "rows": [
+      {
+        "id": 568,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G0020",
+        "strongs_number": "G0020",
+        "transliteration": "agalliasis",
+        "step_search_gloss": "joy",
+        "word_analysis_gloss": "joy",
+        "occurrence_count": 5,
+        "occurrence_count_qualifier": "about",
+        "meaning": "delight, great joy; exultation, extreme joy",
+        "lsj_entry": "agalliasis, eos, he: great joy, exultation [LXX+NT+3rd c.AD+]",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 1,
+        "causative_form_present": 0,
+        "status_note": null
+      },
+      {
+        "id": 569,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G2167",
+        "strongs_number": "G2167",
+        "transliteration": "eufrosune",
+        "step_search_gloss": "joy",
+        "word_analysis_gloss": "joy",
+        "occurrence_count": 2,
+        "occurrence_count_qualifier": "about",
+        "meaning": "joy, gladness, cheerfulness; joy, gladness, rejoicing, Acts 2:28; 14:17",
+        "lsj_entry": "eufrosune: (euphron) mirth, merriment; especially of a banquet, good cheer, festivity [8th c.BC+]; also in later Prose [LXX+NT+4th c.BC+]; eufrosune psuches oinos pinomenos [LXX]. II one of the Graces [8th c.BC+]",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "Act 2:28 quotes Psa 16:11 LXX; God makes full of gladness with his presence - god_as_subject from this citation."
+      },
+      {
+        "id": 570,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G5479",
+        "strongs_number": "G5479",
+        "transliteration": "chara",
+        "step_search_gloss": "joy",
+        "word_analysis_gloss": "joy",
+        "occurrence_count": 59,
+        "occurrence_count_qualifier": "about",
+        "meaning": "joy, rejoicing, happiness, gladness; joy, gladness, rejoicing, Mt. 2:10; 13:20, 44; 28:8; meton, joy, cause of joy, occasion of rejoicing, Lk. 2:10; Phil. 4:1; 1Thess. 2:19, 20; bliss, Mt. 25:21, 23",
+        "lsj_entry": "chara, he: (chairo): joy, delight; with genitive objecti, joy in or at a thing; opposed to lupe; in concrete sense, a joy, of persons, chara mou [NT]",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null
+      },
+      {
+        "id": 571,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G3685",
+        "strongs_number": "G3685",
+        "transliteration": "oninemi",
+        "step_search_gloss": "to have joy",
+        "word_analysis_gloss": "to have joy",
+        "occurrence_count": 1,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to have benefit or joy; optative onaimēn, to receive profit, pleasure, benefit; with a genitive, to have joy of, Phlm. 20",
+        "lsj_entry": "oninemi [i]: active, profit, benefit, help; middle, have profit or advantage, enjoy help or support, have enjoyment or delight [8th c.BC+]; with genitive, have delight or enjoyment of; aorist optative onaimēn in protestations and wishes [5th c.BC+]",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null
+      },
+      {
+        "id": 572,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G0021",
+        "strongs_number": "G0021",
+        "transliteration": "agalliao",
+        "step_search_gloss": "to rejoice",
+        "word_analysis_gloss": "to rejoice",
+        "occurrence_count": 11,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to be filled with delight, with great joy; to celebrate, praise; usually in the middle in the NT (agalliaŏmai) to exult, rejoice exceedingly; to fill with delight; to desire ardently, Jn. 8:56",
+        "lsj_entry": "agalliao: late form of agallomai, rejoice exceedingly [NT+3rd c.AD+]; future agalliasŏmai [LXX]; aorist egalliasamen [LXX+NT]",
+        "testament": "NT",
+        "god_as_subject": 1,
+        "somatic_link": 1,
+        "causative_form_present": 0,
+        "status_note": "Luk 10:21 Jesus rejoiced in the Holy Spirit - god_as_subject. Act 2:26 heart glad, tongue rejoiced, flesh dwells in hope - somatic triad explicit."
+      },
+      {
+        "id": 573,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G5463",
+        "strongs_number": "G5463",
+        "transliteration": "chairo",
+        "step_search_gloss": "to rejoice",
+        "word_analysis_gloss": "to rejoice",
+        "occurrence_count": 74,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to rejoice, be glad, delighted; (as a greeting) Hail!, Greetings!; be joyful, be full of joy; a term of salutation; legō chairein, to greet; an epistolary form, Health! Acts 15:23",
+        "lsj_entry": "chairo [8th c.BC+]: rejoice, be glad; opposed to lupesthai; with dative, rejoice at; used as greeting at meeting and leavetaking; chairetō, have done with; participle chairōn, joyful; to chairon tēs psychēs [1st c.AD+]",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": "74 occurrences include greeting uses (Hail!, Greetings) as well as joy uses. Semantic range: religious joy, relational greeting, epistolary formula, commanded rejoicing."
+      },
+      {
+        "id": 574,
+        "file_id": 44,
+        "language": "Greek",
+        "term_id": "G4796",
+        "strongs_number": "G4796",
+        "transliteration": "sunchairo",
+        "step_search_gloss": "to rejoice with",
+        "word_analysis_gloss": "to rejoice with",
+        "occurrence_count": 7,
+        "occurrence_count_qualifier": "about",
+        "meaning": "to rejoice with, any one, sympathize in joy, Lk. 1:58; 15:6, 9; Phil. 2:17, 18; metaphorically 1Cor. 12:26; to sympathize in the advancement of, congratulate, 1Cor. 13:6",
+        "lsj_entry": "sunchairo: aorist -echarēn [2nd c.BC+]; rejoice with [5th c.BC+]. II wish one joy, congratulate [4th c.BC+]",
+        "testament": "NT",
+        "god_as_subject": 0,
+        "somatic_link": 0,
+        "causative_form_present": 0,
+        "status_note": null
+      }
+    ]
+  },
+  "wa_term_related_words_insert": {
+    "target_table": "wa_term_related_words",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "gloss",
+      "transliteration"
+    ],
+    "row_counts": {
+      "total_rows": 8
+    },
+    "rows": [
+      {
+        "term_inv_id": 568,
+        "gloss": "to rejoice",
+        "transliteration": "agalliao"
+      },
+      {
+        "term_inv_id": 569,
+        "gloss": "to celebrate",
+        "transliteration": "eufraino"
+      },
+      {
+        "term_inv_id": 570,
+        "gloss": "to rejoice",
+        "transliteration": "chairo"
+      },
+      {
+        "term_inv_id": 572,
+        "gloss": "joy",
+        "transliteration": "agalliasis"
+      },
+      {
+        "term_inv_id": 572,
+        "gloss": "to spring",
+        "transliteration": "hallomai"
+      },
+      {
+        "term_inv_id": 573,
+        "gloss": "joy",
+        "transliteration": "chara"
+      },
+      {
+        "term_inv_id": 573,
+        "gloss": "grace",
+        "transliteration": "charis"
+      },
+      {
+        "term_inv_id": 574,
+        "gloss": "to rejoice",
+        "transliteration": "chairo"
+      }
+    ]
+  },
+  "wa_term_root_family_insert": {
+    "target_table": "wa_term_root_family",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "root_code"
+    ],
+    "row_counts": {
+      "total_rows": 7
+    },
+    "rows": [
+      {
+        "term_inv_id": 568,
+        "root_code": "AGALLIAO_ROOT"
+      },
+      {
+        "term_inv_id": 569,
+        "root_code": "EUFROSUNE_ROOT"
+      },
+      {
+        "term_inv_id": 570,
+        "root_code": "CHAIRO_ROOT"
+      },
+      {
+        "term_inv_id": 571,
+        "root_code": "ONINEMI_ROOT"
+      },
+      {
+        "term_inv_id": 572,
+        "root_code": "AGALLIAO_ROOT"
+      },
+      {
+        "term_inv_id": 573,
+        "root_code": "CHAIRO_ROOT"
+      },
+      {
+        "term_inv_id": 574,
+        "root_code": "CHAIRO_ROOT"
+      }
+    ]
+  },
+  "wa_term_phase2_flags_insert": {
+    "target_table": "wa_term_phase2_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "term_inv_id",
+      "flag_id"
+    ],
+    "row_counts": {
+      "total_rows": 22
+    },
+    "rows": [
+      {
+        "term_inv_id": 568,
+        "flag_id": 8,
+        "_ref": {
+          "reason": "5 occurrences, 5 verses - small dataset"
+        }
+      },
+      {
+        "term_inv_id": 568,
+        "flag_id": 3,
+        "_ref": {
+          "reason": "Luk 1:44 baby leaped for joy in womb - explicit somatic expression of agalliasis"
+        }
+      },
+      {
+        "term_inv_id": 569,
+        "flag_id": 8,
+        "_ref": {
+          "reason": "2 occurrences, 2 verses - very thin dataset"
+        }
+      },
+      {
+        "term_inv_id": 569,
+        "flag_id": 1,
+        "_ref": {
+          "reason": "Act 2:28 (Psa 16:11 LXX) God makes full of gladness with his presence - God as agent"
+        }
+      },
+      {
+        "term_inv_id": 570,
+        "flag_id": 15,
+        "_ref": {
+          "reason": "59 occurrences - dominant NT joy noun; primary anchor of Greek joy semantic field"
+        }
+      },
+      {
+        "term_inv_id": 570,
+        "flag_id": 16,
+        "_ref": {
+          "reason": "Covers inner emotional state (Gal 5:22), eschatological bliss (Mt 25:21), cause of joy (Php 4:1), grief-transcending joy (Joh 16:20-22), fruit of Spirit - 4+ domains"
+        }
+      },
+      {
+        "term_inv_id": 570,
+        "flag_id": 24,
+        "_ref": {
+          "reason": "NT chara in Philippians and John is commanded, circumstance-independent, Spirit-grounded - meaningful development beyond OT circumstantial rejoicing"
+        }
+      },
+      {
+        "term_inv_id": 570,
+        "flag_id": 18,
+        "_ref": {
+          "reason": "Luk 15:7 joy in heaven over one sinner; Luk 15:10 joy before angels - divine joy structurally parallel to human joy in parable"
+        }
+      },
+      {
+        "term_inv_id": 570,
+        "flag_id": 23,
+        "_ref": {
+          "reason": "Php 4:4 Rejoice always - commanded; Jam 1:2 Count it all joy - volitional; chara consistently commanded in Paul"
+        }
+      },
+      {
+        "term_inv_id": 571,
+        "flag_id": 8,
+        "_ref": {
+          "reason": "1 occurrence (Phlm 20) - hapax legomenon in NT; extremely thin dataset"
+        }
+      },
+      {
+        "term_inv_id": 572,
+        "flag_id": 1,
+        "_ref": {
+          "reason": "Luk 10:21 Jesus rejoiced in the Holy Spirit; Joh 8:56 Abraham rejoiced in anticipation of Christ's day"
+        }
+      },
+      {
+        "term_inv_id": 572,
+        "flag_id": 3,
+        "_ref": {
+          "reason": "Act 2:26 heart glad, tongue rejoiced, flesh dwells in hope - explicit somatic triad; Luk 1:44 leaping in womb"
+        }
+      },
+      {
+        "term_inv_id": 572,
+        "flag_id": 19,
+        "_ref": {
+          "reason": "1Pe 1:6-8 eschatological joy amid trials; Rev 19:7 marriage of the Lamb - eschatological concentration"
+        }
+      },
+      {
+        "term_inv_id": 572,
+        "flag_id": 18,
+        "_ref": {
+          "reason": "Jesus rejoices in Holy Spirit (Luk 10:21) while disciples rejoice at same salvific events (Luk 10:20) - divine-human parallel"
+        }
+      },
+      {
+        "term_inv_id": 573,
+        "flag_id": 15,
+        "_ref": {
+          "reason": "74 occurrences - highest frequency Greek joy verb; primary verb of NT joy semantic field"
+        }
+      },
+      {
+        "term_inv_id": 573,
+        "flag_id": 16,
+        "_ref": {
+          "reason": "Covers inner religious joy (Php 4:4), epistolary greeting (Act 15:23), salvific rejoicing (Luk 19:37), commanded rejoicing (1Th 5:16), empathetic shared joy (Rom 12:15) - 4+ domains"
+        }
+      },
+      {
+        "term_inv_id": 573,
+        "flag_id": 23,
+        "_ref": {
+          "reason": "1Th 5:16 Rejoice always; Php 4:4 Rejoice in the Lord always - repeated imperative throughout Paul; strongly volitional"
+        }
+      },
+      {
+        "term_inv_id": 573,
+        "flag_id": 24,
+        "_ref": {
+          "reason": "Greek chairo carries greeting sense (Hail!) absent from OT Hebrew parallels; NT develops commanded, Spirit-sustained joy"
+        }
+      },
+      {
+        "term_inv_id": 573,
+        "flag_id": 22,
+        "_ref": {
+          "reason": "Rom 12:15 Rejoice with those who rejoice - explicitly relational/sympathetic; sunchairo derivative reinforces relational direction"
+        }
+      },
+      {
+        "term_inv_id": 574,
+        "flag_id": 22,
+        "_ref": {
+          "reason": "sunchairo is inherently relational: to rejoice WITH someone; all 7 occurrences involve shared or communal joy directed toward another"
+        }
+      },
+      {
+        "term_inv_id": 574,
+        "flag_id": 8,
+        "_ref": {
+          "reason": "7 occurrences, 7 verses - small but complete dataset for a compound verb"
+        }
+      },
+      {
+        "term_inv_id": 574,
+        "flag_id": 6,
+        "_ref": {
+          "reason": "sunchairo (sun+chairo) is the Greek parallel to Hebrew shared-joy expressions; bridges OT/NT joy terminology as a compound relational form"
+        }
+      }
+    ]
+  },
+  "wa_verse_records_insert": {
+    "target_table": "wa_verse_records",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_inv_id",
+      "term_id",
+      "transliteration",
+      "testament",
+      "reference",
+      "verse_text",
+      "book_id",
+      "chapter",
+      "verse_num",
+      "translation"
+    ],
+    "row_counts": {
+      "total_rows": 151
+    },
+    "rows": [
+      {
+        "file_id": 44,
+        "term_inv_id": 568,
+        "term_id": null,
+        "transliteration": "agalliasis",
+        "testament": "NT",
+        "reference": "Luk 1:14",
+        "verse_text": "And you will have joy and gladness, and many will rejoice at his birth,",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 568,
+        "term_id": null,
+        "transliteration": "agalliasis",
+        "testament": "NT",
+        "reference": "Luk 1:44",
+        "verse_text": "For behold, when the sound of your greeting came to my ears, the baby in my womb leaped for joy.",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 44,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 568,
+        "term_id": null,
+        "transliteration": "agalliasis",
+        "testament": "NT",
+        "reference": "Act 2:46",
+        "verse_text": "And day by day, attending the temple together and breaking bread in their homes, they received their food with glad and generous hearts,",
+        "book_id": 44,
+        "chapter": 2,
+        "verse_num": 46,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 568,
+        "term_id": null,
+        "transliteration": "agalliasis",
+        "testament": "NT",
+        "reference": "Heb 1:9",
+        "verse_text": "You have loved righteousness and hated wickedness; therefore God, your God, has anointed you with the oil of gladness beyond your companions.",
+        "book_id": 58,
+        "chapter": 1,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 568,
+        "term_id": null,
+        "transliteration": "agalliasis",
+        "testament": "NT",
+        "reference": "Jude 24",
+        "verse_text": "Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy,",
+        "book_id": 65,
+        "chapter": 1,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 569,
+        "term_id": null,
+        "transliteration": "eufrosune",
+        "testament": "NT",
+        "reference": "Act 2:28",
+        "verse_text": "You have made known to me the paths of life; you will make me full of gladness with your presence.",
+        "book_id": 44,
+        "chapter": 2,
+        "verse_num": 28,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 569,
+        "term_id": null,
+        "transliteration": "eufrosune",
+        "testament": "NT",
+        "reference": "Act 14:17",
+        "verse_text": "Yet he did not leave himself without witness, for he did good by giving you rains from heaven and fruitful seasons, satisfying your hearts with food and gladness.",
+        "book_id": 44,
+        "chapter": 14,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 2:10",
+        "verse_text": "When they saw the star, they rejoiced exceedingly with great joy.",
+        "book_id": 40,
+        "chapter": 2,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 13:20",
+        "verse_text": "As for what was sown on rocky ground, this is the one who hears the word and immediately receives it with joy,",
+        "book_id": 40,
+        "chapter": 13,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 13:44",
+        "verse_text": "The kingdom of heaven is like treasure hidden in a field, which a man found and covered up. Then in his joy he goes and sells all that he has and buys that field.",
+        "book_id": 40,
+        "chapter": 13,
+        "verse_num": 44,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 25:21",
+        "verse_text": "His master said to him, 'Well done, good and faithful servant. You have been faithful over a little; I will set you over much. Enter into the joy of your master.'",
+        "book_id": 40,
+        "chapter": 25,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 25:23",
+        "verse_text": "His master said to him, 'Well done, good and faithful servant. You have been faithful over a little; I will set you over much. Enter into the joy of your master.'",
+        "book_id": 40,
+        "chapter": 25,
+        "verse_num": 23,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mat 28:8",
+        "verse_text": "So they departed quickly from the tomb with fear and great joy, and ran to tell his disciples.",
+        "book_id": 40,
+        "chapter": 28,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Mar 4:16",
+        "verse_text": "And these are the ones sown on rocky ground: the ones who, when they hear the word, immediately receive it with joy.",
+        "book_id": 41,
+        "chapter": 4,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 1:14",
+        "verse_text": "And you will have joy and gladness, and many will rejoice at his birth,",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 2:10",
+        "verse_text": "And the angel said to them, 'Fear not, for behold, I bring you good news of great joy that will be for all the people.'",
+        "book_id": 42,
+        "chapter": 2,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 8:13",
+        "verse_text": "And the ones on the rock are those who, when they hear the word, receive it with joy. But these have no root; they believe for a while, and in time of testing fall away.",
+        "book_id": 42,
+        "chapter": 8,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 10:17",
+        "verse_text": "The seventy-two returned with joy, saying, 'Lord, even the demons are subject to us in your name!'",
+        "book_id": 42,
+        "chapter": 10,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 15:7",
+        "verse_text": "Just so, I tell you, there will be more joy in heaven over one sinner who repents than over ninety-nine righteous persons who need no repentance.",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 15:10",
+        "verse_text": "Just so, I tell you, there is joy before the angels of God over one sinner who repents.",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 24:41",
+        "verse_text": "And while they still disbelieved for joy and were marveling, he said to them, 'Have you anything here to eat?'",
+        "book_id": 42,
+        "chapter": 24,
+        "verse_num": 41,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Luk 24:52",
+        "verse_text": "And they worshiped him and returned to Jerusalem with great joy,",
+        "book_id": 42,
+        "chapter": 24,
+        "verse_num": 52,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 3:29",
+        "verse_text": "The one who has the bride is the bridegroom. The friend of the bridegroom, who stands and hears him, rejoices greatly at the bridegroom's voice. Therefore this joy of mine is now complete.",
+        "book_id": 43,
+        "chapter": 3,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 15:11",
+        "verse_text": "These things I have spoken to you, that my joy may be in you, and that your joy may be full.",
+        "book_id": 43,
+        "chapter": 15,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 16:20",
+        "verse_text": "Truly, truly, I say to you, you will weep and lament, but the world will rejoice. You will be sorrowful, but your sorrow will turn into joy.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 16:21",
+        "verse_text": "When a woman is giving birth, she has sorrow because her hour has come, but when she has delivered the baby, she no longer remembers the anguish, for joy that a human being has been born into the world.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 16:22",
+        "verse_text": "So also you have sorrow now, but I will see you again, and your hearts will rejoice, and no one will take your joy from you.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 22,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 16:24",
+        "verse_text": "Until now you have asked nothing in my name. Ask, and you will receive, that your joy may be full.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Joh 17:13",
+        "verse_text": "But now I am coming to you, and these things I speak in the world, that they may have my joy fulfilled in themselves.",
+        "book_id": 43,
+        "chapter": 17,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Act 8:8",
+        "verse_text": "So there was much joy in that city.",
+        "book_id": 44,
+        "chapter": 8,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Act 12:14",
+        "verse_text": "Recognizing Peter's voice, in her joy she did not open the gate but ran in and reported that Peter was standing at the gate.",
+        "book_id": 44,
+        "chapter": 12,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Act 13:52",
+        "verse_text": "And the disciples were filled with joy and with the Holy Spirit.",
+        "book_id": 44,
+        "chapter": 13,
+        "verse_num": 52,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Act 15:3",
+        "verse_text": "So, being sent on their way by the church, they passed through both Phoenicia and Samaria, describing in detail the conversion of the Gentiles, and brought great joy to all the brothers.",
+        "book_id": 44,
+        "chapter": 15,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Rom 14:17",
+        "verse_text": "For the kingdom of God is not a matter of eating and drinking but of righteousness and peace and joy in the Holy Spirit.",
+        "book_id": 45,
+        "chapter": 14,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Rom 15:13",
+        "verse_text": "May the God of hope fill you with all joy and peace in believing, so that by the power of the Holy Spirit you may abound in hope.",
+        "book_id": 45,
+        "chapter": 15,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Rom 15:32",
+        "verse_text": "so that by God's will I may come to you with joy and be refreshed in your company.",
+        "book_id": 45,
+        "chapter": 15,
+        "verse_num": 32,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Cor 1:24",
+        "verse_text": "Not that we lord it over your faith, but we work with you for your joy, for you stand firm in your faith.",
+        "book_id": 47,
+        "chapter": 1,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Cor 2:3",
+        "verse_text": "And I wrote as I did, so that when I came I might not suffer pain from those who should have made me rejoice, for I felt sure of all of you, that my joy would be the joy of you all.",
+        "book_id": 47,
+        "chapter": 2,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Cor 7:4",
+        "verse_text": "I am acting with great boldness toward you; I have great pride in you; I am filled with comfort. In all our affliction, I am overflowing with joy.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Cor 7:13",
+        "verse_text": "Therefore we are comforted. And besides our own comfort, we rejoiced still more at the joy of Titus, because his spirit has been refreshed by you all.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Cor 8:2",
+        "verse_text": "for in a severe test of affliction, their abundance of joy and their extreme poverty have overflowed in a wealth of generosity on their part.",
+        "book_id": 47,
+        "chapter": 8,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Gal 5:22",
+        "verse_text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness,",
+        "book_id": 48,
+        "chapter": 5,
+        "verse_num": 22,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Php 1:4",
+        "verse_text": "always in every prayer of mine for you all making my prayer with joy,",
+        "book_id": 50,
+        "chapter": 1,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Php 1:25",
+        "verse_text": "Convinced of this, I know that I will remain and continue with you all, for your progress and joy in the faith,",
+        "book_id": 50,
+        "chapter": 1,
+        "verse_num": 25,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Php 2:2",
+        "verse_text": "complete my joy by being of the same mind, having the same love, being in full accord and of one mind.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Php 2:29",
+        "verse_text": "So receive him in the Lord with all joy, and honor such men,",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Php 4:1",
+        "verse_text": "Therefore, my brothers, whom I love and long for, my joy and crown, stand firm thus in the Lord, my beloved.",
+        "book_id": 50,
+        "chapter": 4,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Col 1:11",
+        "verse_text": "being strengthened with all power, according to his glorious might, for all endurance and patience with joy;",
+        "book_id": 51,
+        "chapter": 1,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Th 1:6",
+        "verse_text": "And you became imitators of us and of the Lord, for you received the word in much affliction, with the joy of the Holy Spirit,",
+        "book_id": 52,
+        "chapter": 1,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Th 2:19",
+        "verse_text": "For what is our hope or joy or crown of boasting before our Lord Jesus at his coming? Is it not you?",
+        "book_id": 52,
+        "chapter": 2,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Th 2:20",
+        "verse_text": "For you are our glory and joy.",
+        "book_id": 52,
+        "chapter": 2,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Th 3:9",
+        "verse_text": "For what thanksgiving can we return to God for you, for all the joy that we feel for your sake before our God,",
+        "book_id": 52,
+        "chapter": 3,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Ti 1:4",
+        "verse_text": "As I remember your tears, I long to see you, that I may be filled with joy.",
+        "book_id": 55,
+        "chapter": 1,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Phile 7",
+        "verse_text": "For I have derived much joy and comfort from your love, my brother, because the hearts of the saints have been refreshed through you.",
+        "book_id": 57,
+        "chapter": 1,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Heb 10:34",
+        "verse_text": "For you had compassion on those in prison, and you joyfully accepted the plundering of your property, since you knew that you yourselves had a better possession and an abiding one.",
+        "book_id": 58,
+        "chapter": 10,
+        "verse_num": 34,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Heb 12:2",
+        "verse_text": "looking to Jesus, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame, and is seated at the right hand of the throne of God.",
+        "book_id": 58,
+        "chapter": 12,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Heb 12:11",
+        "verse_text": "For the moment all discipline seems painful rather than pleasant, but later it yields the peaceful fruit of righteousness to those who have been trained by it.",
+        "book_id": 58,
+        "chapter": 12,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Heb 13:17",
+        "verse_text": "Obey your leaders and submit to them, for they are keeping watch over your souls, as those who will have to give an account. Let them do this with joy and not with groaning, for that would be of no advantage to you.",
+        "book_id": 58,
+        "chapter": 13,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Jam 1:2",
+        "verse_text": "Count it all joy, my brothers, when you meet trials of various kinds,",
+        "book_id": 59,
+        "chapter": 1,
+        "verse_num": 2,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "Jam 4:9",
+        "verse_text": "Be wretched and mourn and weep. Let your laughter be turned to mourning and your joy to gloom.",
+        "book_id": 59,
+        "chapter": 4,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Pe 1:8",
+        "verse_text": "Though you have not seen him, you love him. Though you do not now see him, you believe in him and rejoice with joy that is inexpressible and filled with glory,",
+        "book_id": 60,
+        "chapter": 1,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "1Jn 1:4",
+        "verse_text": "And we are writing these things so that our joy may be complete.",
+        "book_id": 62,
+        "chapter": 1,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "2Jo 12",
+        "verse_text": "Though I have much to write to you, I would rather not use paper and ink. Instead I hope to come to you and talk face to face, so that our joy may be complete.",
+        "book_id": 63,
+        "chapter": 1,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 570,
+        "term_id": null,
+        "transliteration": "chara",
+        "testament": "NT",
+        "reference": "3Jo 4",
+        "verse_text": "I have no greater joy than to hear that my children are walking in the truth.",
+        "book_id": 64,
+        "chapter": 1,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 571,
+        "term_id": null,
+        "transliteration": "oninemi",
+        "testament": "NT",
+        "reference": "Phile 20",
+        "verse_text": "Yes, brother, I want some benefit from you in the Lord. Refresh my heart in Christ.",
+        "book_id": 57,
+        "chapter": 1,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Mat 5:12",
+        "verse_text": "Rejoice and be glad, for your reward is great in heaven, for so they persecuted the prophets who were before you.",
+        "book_id": 40,
+        "chapter": 5,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Luk 1:47",
+        "verse_text": "and my spirit rejoices in God my Savior,",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 47,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Luk 10:21",
+        "verse_text": "In that same hour he rejoiced in the Holy Spirit and said, 'I thank you, Father, Lord of heaven and earth, that you have hidden these things from the wise and understanding and revealed them to little children; yes, Father, for such was your gracious will.'",
+        "book_id": 42,
+        "chapter": 10,
+        "verse_num": 21,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Joh 5:35",
+        "verse_text": "He was a burning and shining lamp, and you were willing to rejoice for a while in his light.",
+        "book_id": 43,
+        "chapter": 5,
+        "verse_num": 35,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Joh 8:56",
+        "verse_text": "Your father Abraham rejoiced that he would see my day. He saw it and was glad.",
+        "book_id": 43,
+        "chapter": 8,
+        "verse_num": 56,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Act 2:26",
+        "verse_text": "therefore my heart was glad, and my tongue rejoiced; my flesh also will dwell in hope.",
+        "book_id": 44,
+        "chapter": 2,
+        "verse_num": 26,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Act 16:34",
+        "verse_text": "Then he brought them up into his house and set food before them. And he rejoiced along with his entire household that he had believed in God.",
+        "book_id": 44,
+        "chapter": 16,
+        "verse_num": 34,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "1Pe 1:6",
+        "verse_text": "In this you rejoice, though now for a little while, if necessary, you have been grieved by various trials,",
+        "book_id": 60,
+        "chapter": 1,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "1Pe 1:8",
+        "verse_text": "Though you have not seen him, you love him. Though you do not now see him, you believe in him and rejoice with joy that is inexpressible and filled with glory,",
+        "book_id": 60,
+        "chapter": 1,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "1Pe 4:13",
+        "verse_text": "But rejoice insofar as you share Christ's sufferings, that you may also rejoice and be glad when his glory is revealed.",
+        "book_id": 60,
+        "chapter": 4,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 572,
+        "term_id": null,
+        "transliteration": "agalliao",
+        "testament": "NT",
+        "reference": "Rev 19:7",
+        "verse_text": "Let us rejoice and exult and give him the glory, for the marriage of the Lamb has come, and his Bride has made herself ready;",
+        "book_id": 66,
+        "chapter": 19,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 2:10",
+        "verse_text": "When they saw the star, they rejoiced exceedingly with great joy.",
+        "book_id": 40,
+        "chapter": 2,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 5:12",
+        "verse_text": "Rejoice and be glad, for your reward is great in heaven, for so they persecuted the prophets who were before you.",
+        "book_id": 40,
+        "chapter": 5,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 18:13",
+        "verse_text": "And if he finds it, truly, I say to you, he rejoices over it more than over the ninety-nine that never went astray.",
+        "book_id": 40,
+        "chapter": 18,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 26:49",
+        "verse_text": "And he came up to Jesus at once and said, 'Greetings, Rabbi!' And he kissed him.",
+        "book_id": 40,
+        "chapter": 26,
+        "verse_num": 49,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 27:29",
+        "verse_text": "and twisting together a crown of thorns, they put it on his head and put a reed in his right hand. And kneeling before him, they mocked him, saying, 'Hail, King of the Jews!'",
+        "book_id": 40,
+        "chapter": 27,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mat 28:9",
+        "verse_text": "And behold, Jesus met them and said, 'Greetings!' And they came up and took hold of his feet and worshiped him.",
+        "book_id": 40,
+        "chapter": 28,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mar 14:11",
+        "verse_text": "And when they heard it, they were glad and promised to give him money. And he sought an opportunity to betray him.",
+        "book_id": 41,
+        "chapter": 14,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Mar 15:18",
+        "verse_text": "And they began to salute him, 'Hail, King of the Jews!'",
+        "book_id": 41,
+        "chapter": 15,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 1:14",
+        "verse_text": "And you will have joy and gladness, and many will rejoice at his birth,",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 14,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 1:28",
+        "verse_text": "And he came to her and said, 'Greetings, O favored one, the Lord is with you!'",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 28,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 6:23",
+        "verse_text": "Rejoice in that day, and leap for joy, for behold, your reward is great in heaven; for so their fathers did to the prophets.",
+        "book_id": 42,
+        "chapter": 6,
+        "verse_num": 23,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 10:20",
+        "verse_text": "Nevertheless, do not rejoice in this, that the spirits are subject to you, but rejoice that your names are written in heaven.",
+        "book_id": 42,
+        "chapter": 10,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 13:17",
+        "verse_text": "As he said these things, all his adversaries were put to shame, and all the people rejoiced at all the glorious things that were done by him.",
+        "book_id": 42,
+        "chapter": 13,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 15:5",
+        "verse_text": "And when he has found it, he lays it on his shoulders, rejoicing.",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 15:32",
+        "verse_text": "It was fitting to celebrate and be glad, for this your brother was dead, and is alive; he was lost, and is found.",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 32,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 19:6",
+        "verse_text": "So he hurried and came down and received him joyfully.",
+        "book_id": 42,
+        "chapter": 19,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 19:37",
+        "verse_text": "As he was drawing near - already on the way down the Mount of Olives - the whole multitude of his disciples began to rejoice and praise God with a loud voice for all the mighty works that they had seen,",
+        "book_id": 42,
+        "chapter": 19,
+        "verse_num": 37,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 22:5",
+        "verse_text": "And they were glad, and agreed to give him money.",
+        "book_id": 42,
+        "chapter": 22,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Luk 23:8",
+        "verse_text": "When Herod saw Jesus, he was very glad, for he had long desired to see him, because he had heard about him, and he was hoping to see some sign done by him.",
+        "book_id": 42,
+        "chapter": 23,
+        "verse_num": 8,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 3:29",
+        "verse_text": "The one who has the bride is the bridegroom. The friend of the bridegroom, who stands and hears him, rejoices greatly at the bridegroom's voice. Therefore this joy of mine is now complete.",
+        "book_id": 43,
+        "chapter": 3,
+        "verse_num": 29,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 4:36",
+        "verse_text": "Already the one who reaps is receiving wages and gathering fruit for eternal life, so that sower and reaper may rejoice together.",
+        "book_id": 43,
+        "chapter": 4,
+        "verse_num": 36,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 8:56",
+        "verse_text": "Your father Abraham rejoiced that he would see my day. He saw it and was glad.",
+        "book_id": 43,
+        "chapter": 8,
+        "verse_num": 56,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 11:15",
+        "verse_text": "and for your sake I am glad that I was not there, so that you may believe. But let us go to him.",
+        "book_id": 43,
+        "chapter": 11,
+        "verse_num": 15,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 14:28",
+        "verse_text": "You heard me say to you, 'I am going away, and I will come to you.' If you loved me, you would have rejoiced, because I am going to the Father, for the Father is greater than I.",
+        "book_id": 43,
+        "chapter": 14,
+        "verse_num": 28,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 16:20",
+        "verse_text": "Truly, truly, I say to you, you will weep and lament, but the world will rejoice. You will be sorrowful, but your sorrow will turn into joy.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 16:22",
+        "verse_text": "So also you have sorrow now, but I will see you again, and your hearts will rejoice, and no one will take your joy from you.",
+        "book_id": 43,
+        "chapter": 16,
+        "verse_num": 22,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 19:3",
+        "verse_text": "They came up to him, saying, 'Hail, King of the Jews!' and struck him with their hands.",
+        "book_id": 43,
+        "chapter": 19,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Joh 20:20",
+        "verse_text": "When he had said this, he showed them his hands and his side. Then the disciples were glad when they saw the Lord.",
+        "book_id": 43,
+        "chapter": 20,
+        "verse_num": 20,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 5:41",
+        "verse_text": "Then they left the presence of the council, rejoicing that they were counted worthy to suffer dishonor for the name.",
+        "book_id": 44,
+        "chapter": 5,
+        "verse_num": 41,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 8:39",
+        "verse_text": "And when they came up out of the water, the Spirit of the Lord carried Philip away, and the eunuch saw him no more, and went on his way rejoicing.",
+        "book_id": 44,
+        "chapter": 8,
+        "verse_num": 39,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 11:23",
+        "verse_text": "When he came and saw the grace of God, he was glad, and he exhorted them all to remain faithful to the Lord with steadfast purpose,",
+        "book_id": 44,
+        "chapter": 11,
+        "verse_num": 23,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 13:48",
+        "verse_text": "And when the Gentiles heard this, they began rejoicing and glorifying the word of the Lord, and as many as were appointed to eternal life believed.",
+        "book_id": 44,
+        "chapter": 13,
+        "verse_num": 48,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 15:23",
+        "verse_text": "with the following letter: 'The brothers, both the apostles and the elders, to the brothers who are of the Gentiles in Antioch and Syria and Cilicia, greetings.'",
+        "book_id": 44,
+        "chapter": 15,
+        "verse_num": 23,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 15:31",
+        "verse_text": "And when they had read it, they rejoiced because of its encouragement.",
+        "book_id": 44,
+        "chapter": 15,
+        "verse_num": 31,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Act 23:26",
+        "verse_text": "Claudius Lysias, to his Excellency the governor Felix, greetings.",
+        "book_id": 44,
+        "chapter": 23,
+        "verse_num": 26,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Rom 12:12",
+        "verse_text": "Rejoice in hope, be patient in tribulation, be constant in prayer.",
+        "book_id": 45,
+        "chapter": 12,
+        "verse_num": 12,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Rom 12:15",
+        "verse_text": "Rejoice with those who rejoice, weep with those who weep.",
+        "book_id": 45,
+        "chapter": 12,
+        "verse_num": 15,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Rom 16:19",
+        "verse_text": "For your obedience is known to all, so that I rejoice over you, but I want you to be wise as to what is good and innocent as to what is evil.",
+        "book_id": 45,
+        "chapter": 16,
+        "verse_num": 19,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Cor 7:30",
+        "verse_text": "and those who mourn as though they were not mourning, and those who rejoice as though they were not rejoicing, and those who buy as though they had no goods,",
+        "book_id": 46,
+        "chapter": 7,
+        "verse_num": 30,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Cor 13:6",
+        "verse_text": "it does not rejoice at wrongdoing, but rejoices with the truth.",
+        "book_id": 46,
+        "chapter": 13,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Cor 16:17",
+        "verse_text": "I rejoice at the coming of Stephanas and Fortunatus and Achaicus, because they have made up for your absence,",
+        "book_id": 46,
+        "chapter": 16,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 2:3",
+        "verse_text": "And I wrote as I did, so that when I came I might not suffer pain from those who should have made me rejoice, for I felt sure of all of you, that my joy would be the joy of you all.",
+        "book_id": 47,
+        "chapter": 2,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 6:10",
+        "verse_text": "as sorrowful, yet always rejoicing; as poor, yet making many rich; as having nothing, yet possessing everything.",
+        "book_id": 47,
+        "chapter": 6,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 7:7",
+        "verse_text": "and not only by his coming but also by the comfort with which he was comforted by you, as he told us of your longing, your mourning, your zeal for me, so that I rejoiced still more.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 7:9",
+        "verse_text": "As it is, I rejoice, not because you were grieved, but because you were grieved into repenting. For you felt a godly grief, so that you suffered no loss through us.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 7:13",
+        "verse_text": "Therefore we are comforted. And besides our own comfort, we rejoiced still more at the joy of Titus, because his spirit has been refreshed by you all.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 7:16",
+        "verse_text": "I rejoice, because I have complete confidence in you.",
+        "book_id": 47,
+        "chapter": 7,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 13:9",
+        "verse_text": "For we are glad when we are weak and you are strong. Your restoration is what we pray for.",
+        "book_id": 47,
+        "chapter": 13,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Cor 13:11",
+        "verse_text": "Finally, brothers, rejoice. Aim for restoration, comfort one another, agree with one another, live in peace; and the God of love and peace will be with you.",
+        "book_id": 47,
+        "chapter": 13,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 1:18",
+        "verse_text": "What then? Only that in every way, whether in pretense or in truth, Christ is proclaimed, and in that I rejoice. Yes, and I will rejoice,",
+        "book_id": 50,
+        "chapter": 1,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 2:17",
+        "verse_text": "Even if I am to be poured out as a drink offering upon the sacrificial offering of your faith, I am glad and rejoice with you all.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 2:18",
+        "verse_text": "Likewise you also should be glad and rejoice with me.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 18,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 2:28",
+        "verse_text": "I am the more eager to send him, therefore, that you may rejoice at seeing him again, and that I may be less anxious.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 28,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 3:1",
+        "verse_text": "Finally, my brothers, rejoice in the Lord. To write the same things to you is no trouble to me and is safe for you.",
+        "book_id": 50,
+        "chapter": 3,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 4:4",
+        "verse_text": "Rejoice in the Lord always; again I will say, rejoice.",
+        "book_id": 50,
+        "chapter": 4,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Php 4:10",
+        "verse_text": "I rejoiced in the Lord greatly that now at length you have revived your concern for me. You were indeed concerned for me, but you had no opportunity.",
+        "book_id": 50,
+        "chapter": 4,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Col 1:24",
+        "verse_text": "Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ's afflictions for the sake of his body, that is, the church,",
+        "book_id": 51,
+        "chapter": 1,
+        "verse_num": 24,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Col 2:5",
+        "verse_text": "For though I am absent in body, yet I am with you in spirit, rejoicing to see your good order and the firmness of your faith in Christ.",
+        "book_id": 51,
+        "chapter": 2,
+        "verse_num": 5,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Th 3:9",
+        "verse_text": "For what thanksgiving can we return to God for you, for all the joy that we feel for your sake before our God,",
+        "book_id": 52,
+        "chapter": 3,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Th 5:16",
+        "verse_text": "Rejoice always,",
+        "book_id": 52,
+        "chapter": 5,
+        "verse_num": 16,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Jam 1:1",
+        "verse_text": "James, a servant of God and of the Lord Jesus Christ, To the twelve tribes in the Dispersion: Greetings.",
+        "book_id": 59,
+        "chapter": 1,
+        "verse_num": 1,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "1Pe 4:13",
+        "verse_text": "But rejoice insofar as you share Christ's sufferings, that you may also rejoice and be glad when his glory is revealed.",
+        "book_id": 60,
+        "chapter": 4,
+        "verse_num": 13,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Jo 4",
+        "verse_text": "I rejoiced greatly to find some of your children walking in the truth, just as we were commanded by the Father.",
+        "book_id": 63,
+        "chapter": 1,
+        "verse_num": 4,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Jo 10",
+        "verse_text": "If anyone comes to you and does not bring this teaching, do not receive him into your house or give him any greeting,",
+        "book_id": 63,
+        "chapter": 1,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "2Jo 11",
+        "verse_text": "for whoever greets him takes part in his wicked works.",
+        "book_id": 63,
+        "chapter": 1,
+        "verse_num": 11,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "3Jo 3",
+        "verse_text": "For I rejoiced greatly when the brothers came and testified to your truth, as indeed you are walking in the truth.",
+        "book_id": 64,
+        "chapter": 1,
+        "verse_num": 3,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Rev 11:10",
+        "verse_text": "and those who dwell on the earth will rejoice over them and make merry and exchange presents, because these two prophets had been a torment to those who dwell on the earth.",
+        "book_id": 66,
+        "chapter": 11,
+        "verse_num": 10,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 573,
+        "term_id": null,
+        "transliteration": "chairo",
+        "testament": "NT",
+        "reference": "Rev 19:7",
+        "verse_text": "Let us rejoice and exult and give him the glory, for the marriage of the Lamb has come, and his Bride has made herself ready;",
+        "book_id": 66,
+        "chapter": 19,
+        "verse_num": 7,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "Luk 1:58",
+        "verse_text": "And her neighbors and relatives heard that the Lord had shown great mercy to her, and they rejoiced with her.",
+        "book_id": 42,
+        "chapter": 1,
+        "verse_num": 58,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "Luk 15:6",
+        "verse_text": "And when he comes home, he calls together his friends and his neighbors, saying to them, 'Rejoice with me, for I have found my sheep that was lost.'",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "Luk 15:9",
+        "verse_text": "And when she has found it, she calls together her friends and neighbors, saying, 'Rejoice with me, for I have found the coin that I had lost.'",
+        "book_id": 42,
+        "chapter": 15,
+        "verse_num": 9,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "1Cor 12:26",
+        "verse_text": "If one member suffers, all suffer together; if one member is honored, all rejoice together.",
+        "book_id": 46,
+        "chapter": 12,
+        "verse_num": 26,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "1Cor 13:6",
+        "verse_text": "it does not rejoice at wrongdoing, but rejoices with the truth.",
+        "book_id": 46,
+        "chapter": 13,
+        "verse_num": 6,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "Php 2:17",
+        "verse_text": "Even if I am to be poured out as a drink offering upon the sacrificial offering of your faith, I am glad and rejoice with you all.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 17,
+        "translation": "ESV"
+      },
+      {
+        "file_id": 44,
+        "term_inv_id": 574,
+        "term_id": null,
+        "transliteration": "sunchairo",
+        "testament": "NT",
+        "reference": "Php 2:18",
+        "verse_text": "Likewise you also should be glad and rejoice with me.",
+        "book_id": 50,
+        "chapter": 2,
+        "verse_num": 18,
+        "translation": "ESV"
+      }
+    ]
+  },
+  "wa_data_quality_flags_insert": {
+    "target_table": "wa_data_quality_flags",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "term_id",
+      "flag_id",
+      "description"
+    ],
+    "row_counts": {
+      "total_rows": 5
+    },
+    "rows": [
+      {
+        "file_id": 44,
+        "term_id": "G9704",
+        "flag_id": 4,
+        "description": "charmone (G9704) excluded: STEP search returns Strong's number G9704 with no verses attached. No word analysis data available. Excluded from MTI per source file researcher instruction. MTI row id=373 status=excluded."
+      },
+      {
+        "file_id": 44,
+        "term_id": "G9706",
+        "flag_id": 4,
+        "description": "charopoios (G9706) excluded: STEP search returns Strong's number G9706 with no verses attached. No word analysis data available. Excluded from MTI per source file researcher instruction. MTI row id=374 status=excluded."
+      },
+      {
+        "file_id": 44,
+        "term_id": "G6110",
+        "flag_id": 4,
+        "description": "agalliama (G6110) excluded: STEP search returns Strong's number G6110 with no verses attached. No word analysis data available. Excluded from MTI per source file researcher instruction. MTI row id=375 status=excluded."
+      },
+      {
+        "file_id": 44,
+        "term_id": "G2744",
+        "flag_id": 17,
+        "description": "kauchaomai (G2744 to boast) appears in STEP verses header for Part 3 as XREF to registry 123 pride. Analysis held in registry 123. Cross-reference recorded in mti_term_cross_refs (id=73). No wa_term_inventory or wa_verse_records row created for this term in registry 097."
+      },
+      {
+        "file_id": 44,
+        "term_id": "G5463",
+        "flag_id": 8,
+        "description": "chairo (G5463) stated occurrence count is about 74. Source file verse count extracts 74 verses including epistolary greeting uses (Hail!, Greetings, Acts 15:23, Acts 23:26, Jam 1:1). These greeting uses are part of the full semantic range of chairo and are included per spec. Session B should assess the inner-joy vs greeting distribution."
+      }
+    ]
+  },
+  "wa_cross_registry_links_insert": {
+    "target_table": "wa_cross_registry_links",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "file_id",
+      "linked_word",
+      "linked_registry_id",
+      "connection_type_id",
+      "connecting_term",
+      "note"
+    ],
+    "row_counts": {
+      "total_rows": 2
+    },
+    "rows": [
+      {
+        "file_id": 44,
+        "linked_word": "pride",
+        "linked_registry_id": 123,
+        "connection_type_id": 1,
+        "connecting_term": "kauchaomai G2744",
+        "note": "kauchaomai (to boast/rejoice) appears in the STEP joy word list but is owned by registry 123 pride. SHARED_TERM cross-registry link."
+      },
+      {
+        "file_id": 44,
+        "linked_word": "pride",
+        "linked_registry_id": 123,
+        "connection_type_id": 2,
+        "connecting_term": "chara G5479",
+        "note": "chara (joy) and kauchaomai (boasting) share overlapping semantic territory in Paul: Rom 5:2-3, 2Cor 7:4, 1Th 2:19 where joy and boasting appear together as near-synonyms. SEMANTIC_OVERLAP link."
+      }
+    ]
+  },
+  "word_registry_update": {
+    "target_table": "word_registry",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": [
+      "phase1_status",
+      "phase1_output_file"
+    ],
+    "row_counts": {
+      "total_rows": 1
+    },
+    "rows": [
+      {
+        "id": 97,
+        "phase1_status": "Complete",
+        "phase1_output_file": "02-wa-097-joy-data-part1-patch-20260317-v1.json, 03-wa-097-joy-data-part2-patch-20260317-v1.json, 04-wa-097-joy-data-part3-patch-20260317-v1.json"
+      }
+    ]
+  }
+}

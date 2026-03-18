@@ -1,0 +1,83 @@
+{
+  "_meta": {
+    "patch_id": "WA-PHASE2-FLAG-TYPES-PATCH-20260317-V1",
+    "date": "2026-03-17",
+    "description": "Add 11 missing phase2_flag_types referenced in Session A v8 specification but absent from the database.",
+    "reason": "Session A v8 specification defines 25 phase2 flag codes. Only 14 exist in phase2_flag_types. The 11 missing flags are required for correct annotation of high-frequency terms, semantic breadth, eschatological usage, wisdom literature concentration, relational direction, volitional component, cross-testament shift, Aramaic forms, multi-registry anchors, divine-human parallels, and metaphor roots. These must be present before Phase 2 patches for joy (097) and subsequent registries can reference them by id.",
+    "produced_by": "Claude (Session A v8)",
+    "format": "bible-projects-patch-spec-v1.1",
+    "id_baseline": {
+      "phase2_flag_types": 14
+    }
+  },
+  "phase2_flag_types_insert": {
+    "target_table": "phase2_flag_types",
+    "operation": "INSERT",
+    "conflict_action": "IGNORE",
+    "columns": [
+      "id",
+      "flag_code",
+      "description"
+    ],
+    "row_counts": {
+      "total_rows": 11
+    },
+    "rows": [
+      {
+        "id": 15,
+        "flag_code": "HIGH_FREQUENCY_ANCHOR",
+        "description": "Term occurs 200 or more times; high frequency makes it a primary anchor for its semantic field"
+      },
+      {
+        "id": 16,
+        "flag_code": "SEMANTIC_RANGE_BREADTH",
+        "description": "Term covers 4 or more distinct semantic domains; breadth warrants attention in Session B cross-part synthesis"
+      },
+      {
+        "id": 17,
+        "flag_code": "MULTI_REGISTRY_ANCHOR",
+        "description": "Term appears as a cross-reference in 3 or more registries; functions as a conceptual anchor across multiple word families"
+      },
+      {
+        "id": 18,
+        "flag_code": "DIVINE_HUMAN_PARALLEL",
+        "description": "God and humans appear as subject of this term in structurally parallel contexts within the verse set"
+      },
+      {
+        "id": 19,
+        "flag_code": "ESCHATOLOGICAL_USAGE",
+        "description": "Term is predominant in eschatological or apocalyptic passages; eschatological register warrants attention in Session B"
+      },
+      {
+        "id": 20,
+        "flag_code": "WISDOM_LITERATURE_CONCENTRATION",
+        "description": "Term is predominant in Proverbs, Job, or Ecclesiastes; wisdom literature concentration warrants attention in Session B"
+      },
+      {
+        "id": 21,
+        "flag_code": "METAPHOR_ROOT",
+        "description": "Term meaning is grounded in concrete physical or sensory metaphor rather than direct abstract description"
+      },
+      {
+        "id": 22,
+        "flag_code": "RELATIONAL_DIRECTION",
+        "description": "Term is inherently directed toward another person, group, or God; relational orientation is intrinsic to its meaning"
+      },
+      {
+        "id": 23,
+        "flag_code": "VOLITIONAL_COMPONENT",
+        "description": "Term carries a dimension of will, choice, or intention alongside or within its inner-state meaning"
+      },
+      {
+        "id": 24,
+        "flag_code": "CROSS_TESTAMENT_SHIFT",
+        "description": "Term exhibits a meaningful semantic shift between OT and NT usage; shift warrants attention in Session B"
+      },
+      {
+        "id": 25,
+        "flag_code": "ARAMAIC_FORM",
+        "description": "Term is an Aramaic form of a Hebrew root occurring in Daniel, Ezra, or post-exilic contexts"
+      }
+    ]
+  }
+}
