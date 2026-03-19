@@ -19,6 +19,7 @@ Streams:
 
 from __future__ import annotations
 
+import json
 import sys
 import os
 from datetime import datetime, timezone
@@ -32,6 +33,7 @@ from analytics.step_client import StepClient
 from .constants import (
     EXPECTED_SCHEMA_VERSION,
     LOCK_SENTINEL,
+    SPECIFICATION,
 )
 from .db import get_max_id, get_book_id, get_schema_version
 from .audit import run_audit
@@ -423,4 +425,565 @@ def run_gap_fill(conn, registry_id: int,
             "meanings_updated": counts["total_meanings_parsed"],
             "audit_result": audit_res,
         },
+    }
+
+
+def run_bulk_gap_fill(conn,
+                      stages: list[str] | None = None,
+                      dry_run: bool = False) -> dict:
+    """Run bulk GAP_FILL across all Pending words in word_registry.
+
+    Four sequential stages, each completing for ALL words before the next begins:
+
+      S1 — Term discovery: get_strongs_for_word() → word_registry.strongs_list
+      S2 — Vocab fetch + DB init: wa_file_index, mti_terms, wa_term_inventory
+      S3 — Verse fetch + span filter: wa_verse_records
+      S4 — Meaning parse + flag engine + audit; word_registry → 'In Progress'
+
+    All discovered Strong's are written (Option C — no threshold filtering).
+    Low-frequency incidental terms are flagged by the flag engine at S4.
+
+    Args:
+        conn:    Open database connection.
+        stages:  Subset of stages to run (e.g. ["S1", "S2"]). None = all four.
+        dry_run: If True, report what would be done; no writes.
+
+    Returns:
+        {"outcome": str, "run_id": str, "stages_run": list[str], "summary": dict}
+    """
+    ALL_STAGES = ["S1", "S2", "S3", "S4"]
+    active_stages = stages if stages is not None else ALL_STAGES
+    run_id = make_run_id("BULK_GAP_FILL")
+    stages_run: list[str] = []
+    errors: list[str] = []
+    summary: dict = {
+        "words_discovered": 0,
+        "words_initialized": 0,
+        "terms_inserted": 0,
+        "verses_inserted": 0,
+        "verses_filtered": 0,
+        "meanings_parsed": 0,
+        "errors": errors,
+    }
+
+    if not dry_run:
+        open_run(conn, run_id, "GAP_FILL", [])
+
+    print(f"\n=== BULK_GAP_FILL run {run_id} ===")
+
+    # Load all Pending words upfront for S1 scope reporting.
+    pending_all = conn.execute(
+        "SELECT no, id, word, strongs_list, source_list "
+        "FROM word_registry WHERE phase1_status = 'Pending' ORDER BY no"
+    ).fetchall()
+    print(f"     Pending words total: {len(pending_all)}")
+
+    # Only bail out early if no Pending words AND the request is purely S1/S2 work.
+    # S3 and S4 use specification-scoped queries and are not blocked by pending_all.
+    early_stages = {"S1", "S2"}
+    if not pending_all and not dry_run and set(active_stages).issubset(early_stages):
+        open_run_counts = {
+            "words_attempted": 0, "words_complete": 0, "words_stopped": 0,
+            "total_terms_new": 0, "total_terms_xref": 0,
+            "total_verses_inserted": 0, "total_verses_filtered": 0,
+            "total_meanings_parsed": 0, "errors": errors,
+        }
+        close_run(conn, run_id, "COMPLETE", open_run_counts)
+        return {"outcome": "COMPLETE", "run_id": run_id,
+                "stages_run": [], "summary": summary}
+
+    # ── S1: Term discovery (English → Strong's) ───────────────────────────────
+    if "S1" in active_stages:
+        needs_discovery = [r for r in pending_all if not r["strongs_list"]]
+        already_done    = len(pending_all) - len(needs_discovery)
+        print(f"\nS1  Term discovery — {len(needs_discovery)} to discover, "
+              f"{already_done} already populated...")
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S1", "running")
+        client = StepClient()
+        s1_done = already_done
+
+        for reg in needs_discovery:
+            word = reg["word"]
+            registry_no = reg["no"]
+            try:
+                results = client.get_strongs_for_word(word)
+                if not dry_run:
+                    conn.execute(
+                        "UPDATE word_registry SET strongs_list = ? WHERE no = ?",
+                        (json.dumps(results), registry_no),
+                    )
+                    conn.commit()
+                s1_done += 1
+                top = results[0]["strong"] if results else "none"
+                print(f"     [{registry_no:3}] {word}: {len(results)} terms  "
+                      f"(top: {top})")
+            except Exception as exc:
+                errors.append(f"S1: [{registry_no}] {word}: {exc}")
+                print(f"     [{registry_no:3}] {word}: ERROR — {exc}")
+
+        summary["words_discovered"] = s1_done
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S1", "complete", rows_written=s1_done)
+        stages_run.append("S1")
+        print(f"     S1 complete: {s1_done}/{len(pending_all)} words have strongs_list")
+
+    # ── S2: DB init + NEW/XREF classification + vocab fetch ───────────────────
+    if "S2" in active_stages:
+        # Reload so S1-populated strongs_list is visible.
+        pending_s2 = conn.execute(
+            "SELECT no, id, word, strongs_list, source_list "
+            "FROM word_registry WHERE phase1_status = 'Pending' "
+            "AND strongs_list IS NOT NULL ORDER BY no"
+        ).fetchall()
+        print(f"\nS2  DB init + classify + vocab ({len(pending_s2)} words with strongs_list)...")
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S2", "running")
+        client = StepClient()
+        s2_done = 0
+        s2_terms = 0
+        s2_xrefs = 0
+
+        for reg in pending_s2:
+            word = reg["word"]
+            registry_no = reg["no"]
+
+            # Idempotent: skip if wa_file_index already exists for this word.
+            existing_fi = conn.execute(
+                "SELECT id FROM wa_file_index WHERE registry_id = ?",
+                (str(registry_no),),
+            ).fetchone()
+            if existing_fi:
+                print(f"     [{registry_no:3}] {word}: already initialized "
+                      f"(file_id={existing_fi['id']}) — skipping")
+                s2_done += 1
+                continue
+
+            strongs_data: list[dict] = json.loads(reg["strongs_list"])
+            strongs_numbers = [d["strong"] for d in strongs_data]
+
+            if dry_run:
+                new_count = sum(
+                    1 for s in strongs_numbers
+                    if not conn.execute(
+                        "SELECT id FROM mti_terms WHERE strongs_number = ?", (s,)
+                    ).fetchone()
+                )
+                print(f"     [{registry_no:3}] {word}: {len(strongs_numbers)} terms "
+                      f"(NEW={new_count} XREF={len(strongs_numbers)-new_count}) DRY RUN")
+                s2_done += 1
+                continue
+
+            # ── Phase A: Write wa_file_index + classify NEW/XREF ──────────────
+            # wa_file_index is committed BEFORE any API calls so the anchor
+            # persists even if Phase B/C partially fails.
+            new_terms: list[str] = []
+            xref_terms: list[tuple[str, int]] = []  # (strong, mti_term_id)
+            file_id = -1
+            try:
+                with conn:
+                    file_id = get_max_id(conn, "wa_file_index") + 1
+                    conn.execute(
+                        """INSERT INTO wa_file_index
+                               (id, filename, registry_id, word_registry_fk, word,
+                                part_number, total_parts, is_split,
+                                specification, phase, produced_date, translation_used,
+                                source_list, testament_coverage)
+                           VALUES (?, ?, ?, ?, ?, NULL, NULL, 0, ?, 'Phase 1', ?, 'ESV', ?, NULL)""",
+                        (
+                            file_id, run_id,
+                            str(registry_no), reg["id"], word,
+                            SPECIFICATION, _today(),
+                            reg["source_list"],
+                        ),
+                    )
+
+                    for strong in strongs_numbers:
+                        existing_mt = conn.execute(
+                            "SELECT id FROM mti_terms WHERE strongs_number = ?",
+                            (strong,),
+                        ).fetchone()
+                        if existing_mt:
+                            # XREF: Strong's already owned by another word.
+                            xref_id = get_max_id(conn, "mti_term_cross_refs") + 1
+                            conn.execute(
+                                """INSERT OR IGNORE INTO mti_term_cross_refs
+                                       (id, mti_term_id, registry, word)
+                                   VALUES (?, ?, ?, ?)""",
+                                (xref_id, existing_mt["id"], str(registry_no), word),
+                            )
+                            xref_terms.append((strong, existing_mt["id"]))
+                        else:
+                            new_terms.append(strong)
+
+                    # Transition: Pending → In Progress at wa_file_index write.
+                    conn.execute(
+                        "UPDATE word_registry SET phase1_status = 'In Progress', "
+                        "automation_run_id = ?, last_automation_run = ? WHERE no = ?",
+                        (run_id, _now(), registry_no),
+                    )
+
+                # Phase A committed — log XREF classifications outside transaction.
+                for strong, _mt_id in xref_terms:
+                    log_fetch(conn, run_id, registry_no, strong, strong, 0,
+                              "xref", "xref", 0, 0, 0, 0, None)
+                s2_xrefs += len(xref_terms)
+                print(f"     [{registry_no:3}] {word}: file_id={file_id}  "
+                      f"NEW={len(new_terms)}  XREF={len(xref_terms)}")
+
+            except Exception as exc:
+                errors.append(f"S2: file_index init failed for [{registry_no}] {word}: {exc}")
+                print(f"     [{registry_no:3}] {word}: ERROR in Phase A — {exc}")
+                continue
+
+            if not new_terms:
+                # All terms are XREF — nothing to fetch.
+                s2_done += 1
+                continue
+
+            # ── Phase B: Fetch vocab for NEW terms only ────────────────────────
+            vocab_map: dict[str, dict] = {}
+            for strong in new_terms:
+                try:
+                    vocab = client.get_vocab_info(strong)
+                    if vocab:
+                        vocab_map[strong] = vocab
+                    else:
+                        errors.append(f"S2: no vocab for {strong} [{registry_no}] {word}")
+                except Exception as exc:
+                    errors.append(f"S2: vocab {strong} for [{registry_no}] {word}: {exc}")
+
+            if not vocab_map:
+                errors.append(f"S2: all vocab fetches failed for [{registry_no}] {word}")
+                print(f"     [{registry_no:3}] {word}: ERROR — all vocab fetches failed")
+                # wa_file_index is committed; word is 'In Progress' but has no terms.
+                continue
+
+            # ── Phase C: Write mti_terms + wa_term_inventory for NEW terms ──────
+            try:
+                with conn:
+                    term_inv_ids: dict[str, int] = {}
+                    for strong in new_terms:
+                        vocab = vocab_map.get(strong)
+                        if not vocab:
+                            continue
+                        resolved = vocab["strong_number"]
+                        lang = vocab.get("language", "Hebrew")
+
+                        # mti_terms: global, idempotent — re-check inside transaction.
+                        existing_mt = conn.execute(
+                            "SELECT id FROM mti_terms WHERE strongs_number = ?",
+                            (resolved,),
+                        ).fetchone()
+                        if not existing_mt:
+                            mt_id = get_max_id(conn, "mti_terms") + 1
+                            conn.execute(
+                                """INSERT INTO mti_terms
+                                       (id, strongs_number, transliteration, gloss, language,
+                                        owning_registry, owning_word, owning_part,
+                                        word_data_reference, status, extraction_date,
+                                        strongs_reconciled)
+                                   VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, 'extracted', ?, ?)""",
+                                (
+                                    mt_id, resolved,
+                                    vocab.get("transliteration", ""),
+                                    vocab.get("gloss", ""),
+                                    lang,
+                                    str(registry_no), word,
+                                    str(file_id),
+                                    _today(),
+                                    1 if resolved != strong else 0,
+                                ),
+                            )
+                            s2_terms += 1
+
+                        # wa_term_inventory: one row per Strong's per file.
+                        ti_id = get_max_id(conn, "wa_term_inventory") + 1
+                        conn.execute(
+                            """INSERT INTO wa_term_inventory
+                                   (id, file_id, language, term_id, strongs_number,
+                                    transliteration, step_search_gloss, word_analysis_gloss,
+                                    occurrence_count, meaning, meaning_numbered,
+                                    lsj_entry, short_def_mounce, testament,
+                                    causative_form_present, status_note)
+                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)""",
+                            (
+                                ti_id, file_id, lang,
+                                resolved, resolved,
+                                vocab.get("transliteration", ""),
+                                vocab.get("gloss", ""),
+                                vocab.get("gloss", ""),
+                                vocab.get("occurrence_count"),
+                                vocab.get("medium_def"),
+                                vocab.get("medium_def"),  # meaning_numbered mirrors meaning
+                                vocab.get("lsj_entry") or None,
+                                vocab.get("short_def_mounce") or None,
+                                1 if vocab.get("causative_form_present") else 0,
+                            ),
+                        )
+                        term_inv_ids[strong] = ti_id
+
+                        # Related words
+                        for rw in vocab.get("related_words", []):
+                            conn.execute(
+                                """INSERT INTO wa_term_related_words
+                                       (term_inv_id, gloss, transliteration, strongs_number)
+                                   VALUES (?, ?, ?, ?)""",
+                                (ti_id, rw.get("gloss"), rw.get("translit"),
+                                 rw.get("strong")),
+                            )
+
+                # Phase C committed — log fetch results outside transaction.
+                for strong in new_terms:
+                    vocab = vocab_map.get(strong)
+                    if vocab:
+                        resolved = vocab["strong_number"]
+                        log_fetch(conn, run_id, registry_no, strong, resolved,
+                                  1 if resolved != strong else 0,
+                                  "ok", "pending", 0, 0, 0, 0, None)
+                    else:
+                        log_fetch(conn, run_id, registry_no, strong, strong, 0,
+                                  "failed", "pending", 0, 0, 0, 0,
+                                  ["vocab fetch returned empty"])
+
+                s2_done += 1
+                print(f"     [{registry_no:3}] {word}: {len(term_inv_ids)}/{len(new_terms)} "
+                      f"NEW terms written")
+
+            except Exception as exc:
+                errors.append(f"S2: term write failed for [{registry_no}] {word}: {exc}")
+                print(f"     [{registry_no:3}] {word}: ERROR in Phase C — {exc}")
+
+        summary["words_initialized"] = s2_done
+        summary["terms_inserted"] = s2_terms
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S2", "complete", rows_written=s2_done)
+        stages_run.append("S2")
+        print(f"     S2 complete: {s2_done} words initialized, "
+              f"{s2_terms} new mti_terms rows, {s2_xrefs} XREF cross-refs")
+
+    # ── S3: Verse fetch + span filter ─────────────────────────────────────────
+    if "S3" in active_stages:
+        # All term_inventory rows with zero verse records, for v9-initialized words.
+        ti_rows = conn.execute(
+            """SELECT ti.id AS ti_id, ti.strongs_number, ti.transliteration,
+                      fi.id AS file_id, fi.registry_id,
+                      wr.no AS registry_no, wr.word
+               FROM wa_term_inventory ti
+               JOIN wa_file_index fi ON fi.id = ti.file_id
+               JOIN word_registry wr ON wr.no = CAST(fi.registry_id AS INTEGER)
+               WHERE fi.specification = ?
+               AND NOT EXISTS (
+                   SELECT 1 FROM wa_verse_records vr WHERE vr.term_inv_id = ti.id
+               )
+               ORDER BY wr.no, ti.id""",
+            (SPECIFICATION,),
+        ).fetchall()
+
+        print(f"\nS3  Verse fetch ({len(ti_rows)} terms with 0 verses)...")
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S3", "running")
+        client = StepClient()
+        s3_inserted = 0
+        s3_filtered = 0
+        s3_done = 0
+
+        for row in ti_rows:
+            strongs = row["strongs_number"]
+            ti_id = row["ti_id"]
+            file_id = row["file_id"]
+            registry_no = row["registry_no"]
+            word = row["word"]
+
+            if not strongs:
+                continue
+
+            if dry_run:
+                print(f"     [{registry_no:3}] {word} / {strongs}: (DRY RUN)")
+                continue
+
+            try:
+                raw_records, html_map = client.get_verse_records_with_html(strongs)
+                resolved = strongs
+
+                filter_result = filter_verse_records(raw_records, resolved, html_map)
+                stored          = filter_result["stored"]
+                filtered_recs   = filter_result["filtered"]
+                conflict        = filter_result["conflict"]
+
+                if conflict:
+                    print(f"     [{registry_no:3}] {word} / {strongs}: "
+                          f"SPAN_CONFLICT — 0 stored")
+
+                for rec in stored:
+                    book_id = get_book_id(conn, rec["book_code"])
+                    if not book_id:
+                        errors.append(f"S3: unknown book {rec['book_code']!r}")
+                        continue
+                    vr_id = get_max_id(conn, "wa_verse_records") + 1
+                    conn.execute(
+                        """INSERT INTO wa_verse_records
+                               (id, file_id, term_inv_id, term_id, transliteration,
+                                book_id, reference, chapter, verse_num, testament,
+                                translation, verse_text, target_word,
+                                span_strong_match, context_before, context_after)
+                           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL)""",
+                        (
+                            vr_id, file_id, ti_id, strongs,
+                            row["transliteration"] or "",
+                            book_id,
+                            rec["ref"], rec["chapter"], rec["verse_num"],
+                            rec["testament"],
+                            rec["esv_text"],
+                            rec.get("target_word", ""),
+                            rec.get("span_strong_match", 1),
+                        ),
+                    )
+                    s3_inserted += 1
+                s3_filtered += len(filtered_recs)
+
+                log_fetch(
+                    conn, run_id, registry_no, strongs, resolved, 0,
+                    "ok", "zero_results" if not stored else "ok",
+                    len(raw_records), len(stored), len(filtered_recs),
+                    1 if conflict else 0, None,
+                )
+                conn.commit()
+                s3_done += 1
+                print(f"     [{registry_no:3}] {word} / {strongs}: "
+                      f"{len(stored)} verses  ({len(filtered_recs)} filtered)")
+
+            except Exception as exc:
+                errors.append(f"S3: [{registry_no}] {word}/{strongs}: {exc}")
+                print(f"     [{registry_no:3}] {word} / {strongs}: ERROR — {exc}")
+
+        summary["verses_inserted"] = s3_inserted
+        summary["verses_filtered"] = s3_filtered
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S3", "complete",
+                              rows_written=s3_inserted, rows_filtered=s3_filtered)
+        stages_run.append("S3")
+        print(f"     S3 complete: {s3_inserted} verses inserted, "
+              f"{s3_filtered} filtered, {s3_done} terms processed")
+
+    # ── S4: Meaning parse + flag engine + audit ───────────────────────────────
+    if "S4" in active_stages:
+        pending_fi = conn.execute(
+            """SELECT fi.id AS file_id, fi.registry_id,
+                      wr.no AS registry_no, wr.word
+               FROM wa_file_index fi
+               JOIN word_registry wr ON wr.no = CAST(fi.registry_id AS INTEGER)
+               WHERE fi.specification = ? AND wr.phase1_status = 'In Progress'
+               ORDER BY wr.no""",
+            (SPECIFICATION,),
+        ).fetchall()
+
+        print(f"\nS4  Meaning parse + flags + audit ({len(pending_fi)} words)...")
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S4", "running")
+        s4_done = 0
+        s4_meanings = 0
+        s4_flags = 0
+
+        for row in pending_fi:
+            file_id = row["file_id"]
+            registry_no = row["registry_no"]
+            word = row["word"]
+
+            if dry_run:
+                print(f"     [{registry_no:3}] {word}: (DRY RUN)")
+                continue
+
+            try:
+                terms = conn.execute(
+                    "SELECT strongs_number, term_id, meaning "
+                    "FROM wa_term_inventory WHERE file_id = ?",
+                    (file_id,),
+                ).fetchall()
+                vocab_map = {
+                    (r["strongs_number"] or r["term_id"]): {"medium_def": r["meaning"]}
+                    for r in terms if r["meaning"]
+                }
+
+                if vocab_map:
+                    run_parser_for_file(conn, file_id, vocab_map)
+                    s4_meanings += len(vocab_map)
+
+                flag_result = run_flag_engine(conn, file_id, registry_no, set())
+                s4_flags += flag_result.get("flags_written", 0)
+
+                audit_result = run_audit(conn, file_id, registry_no)
+                audit_res = audit_result["result"]
+
+                write_word_run_state(
+                    conn, run_id, registry_no, word, "BULK_GAP_FILL_S4",
+                    audit_res,
+                    {c["check"]: {"r": c["result"], "d": c["detail"]}
+                     for c in audit_result["checks"]},
+                    audit_result.get("stop_reason"),
+                )
+
+                verse_count = conn.execute(
+                    "SELECT COUNT(*) AS c FROM wa_verse_records "
+                    "WHERE file_id = ? AND (span_strong_match = 1 OR span_strong_match IS NULL)",
+                    (file_id,),
+                ).fetchone()["c"]
+                term_count = conn.execute(
+                    "SELECT COUNT(*) AS c FROM wa_term_inventory WHERE file_id = ?",
+                    (file_id,),
+                ).fetchone()["c"]
+
+                # Update counts (phase1_status already set to 'In Progress' by S2).
+                conn.execute(
+                    """UPDATE word_registry SET
+                           phase1_term_count  = ?,
+                           phase1_verse_count = ?
+                       WHERE no = ?""",
+                    (term_count, verse_count, registry_no),
+                )
+                conn.commit()
+
+                s4_done += 1
+                print(f"     [{registry_no:3}] {word}: audit={audit_res}  "
+                      f"terms={term_count}  verses={verse_count}")
+
+            except Exception as exc:
+                errors.append(f"S4: [{registry_no}] {word}: {exc}")
+                print(f"     [{registry_no:3}] {word}: ERROR — {exc}")
+
+        summary["meanings_parsed"] = s4_meanings
+        if not dry_run:
+            upsert_checkpoint(conn, run_id, "S4", "complete", rows_written=s4_done)
+        stages_run.append("S4")
+        print(f"     S4 complete: {s4_done} words processed, "
+              f"{s4_flags} flags written, {s4_meanings} meanings parsed")
+
+    # ── Close run ─────────────────────────────────────────────────────────────
+    close_counts = {
+        "words_attempted": len(pending_all),
+        "words_complete": summary.get("words_initialized", 0),
+        "words_stopped": len(errors),
+        "total_terms_new": summary.get("terms_inserted", 0),
+        "total_terms_xref": 0,
+        "total_verses_inserted": summary.get("verses_inserted", 0),
+        "total_verses_filtered": summary.get("verses_filtered", 0),
+        "total_meanings_parsed": summary.get("meanings_parsed", 0),
+        "errors": errors,
+    }
+    if not dry_run:
+        close_run(conn, run_id, "COMPLETE", close_counts)
+
+    print(f"\n=== BULK_GAP_FILL complete  stages={stages_run}  "
+          f"errors={len(errors)} ===")
+    if errors:
+        for e in errors[:10]:
+            print(f"  ERROR: {e}")
+        if len(errors) > 10:
+            print(f"  … and {len(errors) - 10} more errors")
+
+    return {
+        "outcome": "COMPLETE",
+        "run_id": run_id,
+        "stages_run": stages_run,
+        "summary": summary,
     }

@@ -1,0 +1,4546 @@
+{
+  "document": "Field-Level Data Flow Mapping — Specification Compliance Reference",
+  "spec_version": "Session A v9 Architecture v4 Final (2026-03-18)",
+  "engine_version": "1.0.0",
+  "schema_version": "3.1.0",
+  "generated": "2026-03-19",
+  "tables": [
+    {
+      "table": "word_registry",
+      "part": "Part 1 — Registration Tables",
+      "description": "Master word anchor. One row per English word under research. First and last table touched by every engine run.",
+      "spec_sections": [
+        "§1.2",
+        "§7.1",
+        "§7.4",
+        "§7.2 N19",
+        "§6.1 S7",
+        "§7.5 A10"
+      ],
+      "modes_that_write": [
+        "REGISTER",
+        "NEW_WORD",
+        "GAP_FILL",
+        "AUDIT_WORD"
+      ],
+      "table_spec_rules": [
+        "§1.2: The registry is the anchor. Every run begins and ends with a confirmed word_registry row.",
+        "§7.1: --register inserts a new row: no=MAX(no)+1, phase1_status=Pending, automation_eligible=1. Validates: no duplicate word; lowercase and hyphens only; source_list non-empty.",
+        "§7.4: last_automation_run is the run-lock. LOCK_SENTINEL ('IN_PROGRESS') written before any API call; replaced with UTC timestamp at run end. --clear-lock sets to NULL.",
+        "§4 M03: All sequential IDs must use SELECT MAX(id)+1 queried live — never hardcoded."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.1 · §4 M03",
+          "spec_rule": "Auto-assigned sequential integer at registration. Never modified after INSERT.",
+          "data_source": "SELECT MAX(id) AS m FROM word_registry → (m or 0) + 1",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Always — new row only",
+                "value": "SELECT MAX(id) AS m FROM word_registry → (m or 0) + 1"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N1",
+                "operation": "READ",
+                "condition": "SELECT * FROM word_registry WHERE no=?",
+                "value": "read only"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "READ",
+                "condition": "SELECT * FROM word_registry WHERE no=?",
+                "value": "read only"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "SELECT * FROM word_registry WHERE no=?",
+                "value": "read only"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "no",
+          "spec_section": "§7.1 · §4 M03",
+          "spec_rule": "Sequential registry number. MAX(no)+1, queried live. Used as the primary lookup key by all engine modes.",
+          "data_source": "SELECT MAX(no) AS m FROM word_registry → (m or 0) + 1",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "SELECT MAX(no) AS m FROM word_registry → (m or 0) + 1"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N1",
+                "operation": "READ",
+                "condition": "Used as WHERE key in all NEW_WORD queries",
+                "value": "read only"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "READ",
+                "condition": "Used as WHERE key per word loop",
+                "value": "read only"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "Used as WHERE key",
+                "value": "read only"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "word",
+          "spec_section": "§7.1",
+          "spec_rule": "Lowercase English word label. Validated: lowercase and hyphens only; no duplicates allowed. Never modified after INSERT.",
+          "data_source": "researcher-supplied CLI argument: --word=[value]",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Validated lowercase; duplicate check",
+                "value": "CLI arg --word as-supplied"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N1",
+                "operation": "READ",
+                "condition": "Loaded from reg_row",
+                "value": "read only"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "READ",
+                "condition": "Loaded from reg row",
+                "value": "read only"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "Loaded from reg_row",
+                "value": "read only"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "source_list",
+          "spec_section": "§7.1",
+          "spec_rule": "Researcher-supplied source list label. Required non-empty at registration. Copied to wa_file_index and mti_terms at write time.",
+          "data_source": "researcher-supplied CLI argument: --source=[value]",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Non-empty validated",
+                "value": "CLI arg --source"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "READ",
+                "condition": "reg_row['source_list'] propagated to wa_file_index INSERT",
+                "value": "read only — propagated downstream"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "READ",
+                "condition": "reg['source_list'] propagated to wa_file_index INSERT",
+                "value": "read only — propagated downstream"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "AUDIT_WORD reads reg_row but does not modify source_list",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "category_hint",
+          "spec_section": "§7.1",
+          "spec_rule": "Optional researcher category hint. Set at registration only. No engine mode modifies it.",
+          "data_source": "researcher-supplied CLI argument: --category=[value] (optional)",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Optional — NULL if not supplied",
+                "value": "CLI arg --category or NULL"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "phase1_status",
+          "spec_section": "§7.1 · §7.2 N19 · §6.1 S2/S7 · §7.5 A10",
+          "spec_rule": "Pending at --register. NEW_WORD N19: 'Complete' if PASS else 'In Progress'. GAP_FILL S2: 'In Progress' at wa_file_index write; S7: final status. AUDIT_WORD A10: does NOT update phase1_status — retains current value.",
+          "data_source": "NEW_WORD N19/GAP_FILL S7: audit_result → 'Complete' if PASS else 'In Progress'",
+          "py_file": "engine/register.py · engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "hardcoded: 'Pending'"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N1",
+                "operation": "READ",
+                "condition": "STOP if != 'Pending'",
+                "value": "read only"
+              },
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always at run end",
+                "value": "audit PASS → 'Complete'; else → 'In Progress'  |  UPDATE word_registry SET phase1_status=? WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "READ",
+                "condition": "Filter: WHERE phase1_status='Pending'",
+                "value": "read only"
+              },
+              {
+                "stage": "S2",
+                "operation": "UPDATE",
+                "condition": "At wa_file_index write (per word)",
+                "value": "hardcoded: 'In Progress'  |  UPDATE word_registry SET phase1_status='In Progress' ... WHERE no=?"
+              },
+              {
+                "stage": "S7",
+                "operation": "UPDATE",
+                "condition": "After audit per word",
+                "value": "audit PASS → retain existing; STOP/REVIEW → 'In Progress'  |  UPDATE word_registry SET phase1_status=? WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "Read for context only",
+                "value": "read only"
+              },
+              {
+                "stage": "A10",
+                "operation": "NOT_WRITTEN",
+                "condition": "A10 UPDATE does not include phase1_status — field is not set by audit mode",
+                "value": "— GAP: spec §7.5 A10 implies status update but code omits it"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — AUDIT_WORD A10 does not update phase1_status; the field retains its pre-audit value even if audit result changes"
+        },
+        {
+          "field": "automation_eligible",
+          "spec_section": "§7.1 · §7.2 N1",
+          "spec_rule": "Set 1 at registration. NEW_WORD reads at N1 to confirm eligibility (0 → STOP). GAP_FILL S1 uses in WHERE filter. Never modified by any engine mode.",
+          "data_source": "hardcoded: 1 at INSERT",
+          "py_file": "engine/register.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "--register",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "hardcoded: 1"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N1",
+                "operation": "READ",
+                "condition": "automation_eligible=0 → STOP",
+                "value": "read only"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "READ",
+                "condition": "WHERE automation_eligible=1 filter in SELECT",
+                "value": "read only"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "last_automation_run",
+          "spec_section": "§7.4 · §7.2 N6/N19 · §6.1 S2/S7 · §7.5 A10",
+          "spec_rule": "Run-lock field. LOCK_SENTINEL='IN_PROGRESS' must be written before any API call; replaced with UTC timestamp at run end. --clear-lock sets to NULL. Only NEW_WORD follows this protocol fully (N6: sentinel, N19: timestamp). GAP_FILL (S2) and AUDIT_WORD (A10) both write the completion timestamp directly without first setting the IN_PROGRESS sentinel.",
+          "data_source": "lock: hardcoded 'IN_PROGRESS'; completion: _now() → datetime.now(utc).strftime('%Y-%m-%dT%H:%M:%S')",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N6",
+                "operation": "UPDATE",
+                "condition": "Before any API call — stale lock check",
+                "value": "UPDATE word_registry SET last_automation_run='IN_PROGRESS' WHERE no=?"
+              },
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always at run end",
+                "value": "UPDATE word_registry SET last_automation_run=_now() WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "UPDATE",
+                "condition": "At wa_file_index write — no prior sentinel step",
+                "value": "UPDATE word_registry SET ..., last_automation_run=_now() WHERE no=?"
+              },
+              {
+                "stage": "S7",
+                "operation": "UPDATE",
+                "condition": "At final registry update",
+                "value": "UPDATE word_registry SET last_automation_run=_now() WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A10",
+                "operation": "UPDATE",
+                "condition": "Always at audit end — no prior sentinel step",
+                "value": "UPDATE word_registry SET last_automation_run=_now() WHERE no=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — GAP_FILL and AUDIT_WORD write the completion timestamp but neither sets LOCK_SENTINEL='IN_PROGRESS' before starting work; §7.4 run-lock guarantee requires the sentinel to be set before any API call"
+        },
+        {
+          "field": "automation_run_id",
+          "spec_section": "§7.2 N19 · §6.1 S7 · §7.5 A10",
+          "spec_rule": "FK to engine_run_log.run_id. Written at run completion by all three engine modes.",
+          "data_source": "engine/run_log.py make_run_id(mode) → f'RUN-{datetime.now(utc).strftime(\"%Y%m%d_%H%M%S\")}-{mode}'",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET automation_run_id=run_id WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "UPDATE",
+                "condition": "At wa_file_index write (per word)",
+                "value": "UPDATE word_registry SET automation_run_id=run_id WHERE no=?"
+              },
+              {
+                "stage": "S7",
+                "operation": "UPDATE",
+                "condition": "At final registry update",
+                "value": "UPDATE word_registry SET automation_run_id=run_id WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A10",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET automation_run_id=run_id WHERE no=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "phase1_term_count",
+          "spec_section": "§7.2 N19 · §6.1 S4/S7 · §7.5 A10",
+          "spec_rule": "Count of wa_term_inventory rows for this word. Written at run completion by all three engine modes.",
+          "data_source": "N19: counts['total_terms_new'] from run loop; GAP_FILL S4/S7 and AUDIT_WORD A10: SELECT COUNT(*) FROM wa_term_inventory WHERE file_id IN (...)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET phase1_term_count=counts['total_terms_new'] WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "Per word after audit",
+                "value": "UPDATE word_registry SET phase1_term_count=SELECT COUNT(*) FROM wa_term_inventory WHERE file_id=? WHERE no=?"
+              },
+              {
+                "stage": "S7",
+                "operation": "UPDATE",
+                "condition": "Final recount at registry update",
+                "value": "UPDATE word_registry SET phase1_term_count=term_count WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A10",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET phase1_term_count=SELECT COUNT(*) FROM wa_term_inventory WHERE file_id IN (...) WHERE no=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "phase1_verse_count",
+          "spec_section": "§7.2 N19 · §6.1 S4/S7 · §7.5 A10",
+          "spec_rule": "Count of span-confirmed verse records (span_strong_match=1 OR IS NULL). Written at run completion by all three engine modes.",
+          "data_source": "N19: counts['total_verses_inserted']; GAP_FILL S4/S7 and AUDIT_WORD A10: SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN (...) AND (span_strong_match=1 OR IS NULL)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET phase1_verse_count=counts['total_verses_inserted'] WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "Per word after audit",
+                "value": "UPDATE word_registry SET phase1_verse_count=SELECT COUNT(*) FROM wa_verse_records WHERE file_id=? AND (span_strong_match=1 OR IS NULL) WHERE no=?"
+              },
+              {
+                "stage": "S7",
+                "operation": "UPDATE",
+                "condition": "Final recount at registry update",
+                "value": "UPDATE word_registry SET phase1_verse_count=verse_count WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A10",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET phase1_verse_count=SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN (...) AND (span_strong_match=1 OR IS NULL) WHERE no=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "phase1_input_file",
+          "spec_section": "§9 Field-Level Mapping",
+          "spec_rule": "Stores the run_id of the NEW_WORD run that created the word's data. Written only by NEW_WORD N19. GAP_FILL and AUDIT_WORD do not write this field.",
+          "data_source": "engine/run_log.py make_run_id('NEW_WORD') → e.g. 'RUN-20260319_143022-NEW_WORD'",
+          "py_file": "engine/new_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N19",
+                "operation": "UPDATE",
+                "condition": "Always",
+                "value": "UPDATE word_registry SET phase1_input_file=run_id WHERE no=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — GAP_FILL and AUDIT_WORD do not write phase1_input_file; field remains NULL or retains NEW_WORD value; spec §9 implies it should record the originating run for any mode that creates the word's Phase 1 data"
+        },
+        {
+          "field": "strongs_list",
+          "spec_section": "— Not in spec",
+          "spec_rule": "No spec rule — field exists in DB schema and engine code (GAP_FILL S1 UPDATE) but is not referenced anywhere in the v9 Architecture specification.",
+          "data_source": "STEP REST API text search via StepClient.get_strongs_for_word(word) → JSON array e.g. [{\"strong\":\"H7965\",\"count\":148},...]",
+          "py_file": "analytics/step_client.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S1",
+                "operation": "UPDATE",
+                "condition": "Only if strongs_list IS NULL",
+                "value": "UPDATE word_registry SET strongs_list=json_array WHERE no=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Not specified"
+        },
+        {
+          "field": "notes",
+          "spec_section": "§7.5 A10",
+          "spec_rule": "AUDIT_WORD A10 is specified to update last_automation_run, automation_run_id, and notes. Researcher annotation field. However, A10 UPDATE in code only sets phase1_term_count, phase1_verse_count, last_automation_run, automation_run_id — notes is absent.",
+          "data_source": "Not implemented — A10 UPDATE in audit_word.py does not include notes column",
+          "py_file": "engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A10",
+                "operation": "NOT_WRITTEN",
+                "condition": "Spec says update — code does not implement it",
+                "value": "— DIVERGES: UPDATE word_registry SET notes=? WHERE no=? is absent from A10"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✗ Diverges — spec §7.5 A10 lists notes in the update statement but audit_word.py A10 UPDATE does not include the notes column; field is never written by any engine mode"
+        }
+      ]
+    },
+    {
+      "table": "wa_file_index",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "One row per word. Anchor connecting word_registry to all term and verse data. Created by NEW_WORD N9 or GAP_FILL S2. AUDIT_WORD reads it at A1 and updates testament_coverage at A9; never re-creates it.",
+      "spec_sections": [
+        "§7.2 N9",
+        "§7.3",
+        "§9 Field-Level Mapping",
+        "§4 M03",
+        "§7.5 A9"
+      ],
+      "modes_that_write": [
+        "NEW_WORD",
+        "GAP_FILL",
+        "AUDIT_WORD"
+      ],
+      "table_spec_rules": [
+        "§7.2 N9: INSERT one row inside atomic transaction N9-N15. id=MAX(id)+1. testament_coverage=NULL at insert; derived at N14.",
+        "§7.3: part_number, total_parts, is_split, root_families_in_prior_parts are legacy columns from the manual multi-part pipeline. v9 always writes NULL/0 for these. Retained in schema for backward compatibility.",
+        "§9: specification constant = 'Session A v9 Automation'. phase = 'Phase 1'. translation_used = 'ESV'. All hardcoded.",
+        "§4 M03: id must be queried live via SELECT MAX(id)+1 — never hardcoded.",
+        "§7.5 A9: AUDIT_WORD re-derives testament_coverage from confirmed verse rows and updates wa_file_index."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.2 N9 · §4 M03",
+          "spec_rule": "Sequential integer. Must query MAX(id) live before insert.",
+          "data_source": "engine/db.py get_max_id(conn, 'wa_file_index') → SELECT MAX(id) FROM wa_file_index → result + 1",
+          "py_file": "engine/db.py · engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of atomic transaction N9-N15",
+                "value": "get_max_id(conn, 'wa_file_index') + 1"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A, per word — idempotent; skipped if already exists",
+                "value": "get_max_id(conn, 'wa_file_index') + 1"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "SELECT id FROM wa_file_index WHERE registry_id=? — no row → STOP",
+                "value": "read only"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "filename",
+          "spec_section": "§9 Field-Level Mapping",
+          "spec_rule": "Stores run_id — not a filesystem path. v9 replaced the prior .md filename convention with run_id.",
+          "data_source": "engine/run_log.py make_run_id(mode) → f'RUN-{timestamp}-{mode}'",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "run_id string"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A, per word",
+                "value": "run_id string"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "registry_id",
+          "spec_section": "§7.2 N9",
+          "spec_rule": "word_registry.no value stored as TEXT. Links file_index row back to registry.",
+          "data_source": "CLI arg registry_id (word_registry.no) → str(registry_id)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "str(registry_id)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A, per word",
+                "value": "str(registry_no)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "word_registry_fk",
+          "spec_section": "§7.2 N9",
+          "spec_rule": "word_registry.id (PK integer, not .no). FK constraint to word_registry.",
+          "data_source": "SELECT * FROM word_registry WHERE no=? → reg_row['id']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "reg_row['id']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A, per word",
+                "value": "reg['id']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "word",
+          "spec_section": "§9",
+          "spec_rule": "English word label copied from word_registry.word.",
+          "data_source": "SELECT word FROM word_registry WHERE no=? → reg_row['word']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "reg_row['word']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A, per word",
+                "value": "reg['word']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "part_number",
+          "spec_section": "§7.3 Multi-Part Legacy",
+          "spec_rule": "Legacy column from v3-v8 manual multi-part pipeline. v9 always writes NULL. Column retained for backward compatibility.",
+          "data_source": "hardcoded: NULL",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "total_parts",
+          "spec_section": "§7.3 Multi-Part Legacy",
+          "spec_rule": "Legacy column. v9 always writes NULL.",
+          "data_source": "hardcoded: NULL",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "is_split",
+          "spec_section": "§7.3 Multi-Part Legacy",
+          "spec_rule": "Legacy column. v9 always writes 0.",
+          "data_source": "hardcoded: 0",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "0 — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "0 — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "specification",
+          "spec_section": "§9",
+          "spec_rule": "Constant string identifying the automation spec version. Written from engine/constants.py.",
+          "data_source": "engine/constants.py → SPECIFICATION constant = 'Session A v9 Automation'",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/constants.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "SPECIFICATION constant from engine/constants.py"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "SPECIFICATION constant"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "phase",
+          "spec_section": "§9",
+          "spec_rule": "Constant 'Phase 1'. Hardcoded for all v9 engine runs.",
+          "data_source": "hardcoded: 'Phase 1'",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'Phase 1'"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'Phase 1'"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "produced_date",
+          "spec_section": "§9",
+          "spec_rule": "UTC date of the run that created this row. YYYY-MM-DD format.",
+          "data_source": "_today() → datetime.now(utc).strftime('%Y-%m-%d')",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "_today() → UTC date string"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "_today()"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "translation_used",
+          "spec_section": "§9",
+          "spec_rule": "Constant 'ESV'. Hardcoded for all v9 engine runs.",
+          "data_source": "hardcoded: 'ESV'",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'ESV'"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'ESV'"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "source_list",
+          "spec_section": "§9",
+          "spec_rule": "Copied from word_registry.source_list at file_index creation.",
+          "data_source": "SELECT source_list FROM word_registry WHERE no=? → reg_row['source_list']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "reg_row['source_list']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Per word",
+                "value": "reg['source_list']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "testament_coverage",
+          "spec_section": "§7.2 N14 · §9 · §7.5 A9",
+          "spec_rule": "NULL at INSERT. Derived after verse records are committed by querying distinct testament values from confirmed verse rows (span_strong_match=1). Re-derived in AUDIT_WORD A9 from span_strong_match=1 OR IS NULL rows.",
+          "data_source": "SELECT DISTINCT testament FROM wa_verse_records WHERE file_id=? AND span_strong_match=1 → 'OT_only' / 'NT_only' / 'both' / NULL",
+          "py_file": "engine/new_word.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N9",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "NULL — placeholder; derived post-transaction at N14"
+              },
+              {
+                "stage": "N14",
+                "operation": "UPDATE",
+                "condition": "After verse records committed",
+                "value": "SELECT DISTINCT testament FROM wa_verse_records WHERE file_id=? AND span_strong_match=1 → UPDATE wa_file_index SET testament_coverage=? WHERE id=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2",
+                "operation": "INSERT",
+                "condition": "Phase A",
+                "value": "NULL — placeholder; no derivation step in GAP_FILL"
+              },
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "GAP_FILL has no testament_coverage derivation step after S3 verse insert — field remains NULL",
+                "value": "— GAP: no equivalent of N14 in GAP_FILL stream"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A9",
+                "operation": "UPDATE",
+                "condition": "Always — re-derives from confirmed verses post-audit",
+                "value": "SELECT DISTINCT testament FROM wa_verse_records WHERE file_id=? AND (span_strong_match=1 OR IS NULL) → UPDATE wa_file_index SET testament_coverage=? WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — GAP_FILL inserts the row with testament_coverage=NULL at S2 but has no derivation step; the field is never updated after verses are written by GAP_FILL (S3). AUDIT_WORD A9 corrects this for words it processes."
+        },
+        {
+          "field": "root_families_in_prior_parts",
+          "spec_section": "§7.3 Multi-Part Legacy",
+          "spec_rule": "Legacy multi-part column. Never written by v9 engine. Retained in schema for backward compatibility only.",
+          "data_source": "NOT_WRITTEN — legacy column",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        }
+      ]
+    },
+    {
+      "table": "mti_terms",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "Master term index. One row per Strong's number processed. Created by NEW_WORD N10 or GAP_FILL S2 Phase C. Idempotent — re-checks existence before INSERT. AUDIT_WORD spec intent: INSERT any term returned by STEP API that is missing from mti_terms; flag as redundant any row in mti_terms not returned by STEP. Code currently does not implement either action.",
+      "spec_sections": [
+        "§7.2 N10",
+        "§9 Field-Level Mapping",
+        "§4 M03"
+      ],
+      "modes_that_write": [
+        "NEW_WORD",
+        "GAP_FILL",
+        "AUDIT_WORD (spec intent — not yet implemented)"
+      ],
+      "table_spec_rules": [
+        "§7.2 N10: INSERT per NEW term inside atomic transaction N9-N15.",
+        "§9: status hardcoded 'extracted'. extraction_date = run date. strongs_reconciled = 1 if suffix was resolved (input != resolved), else 0.",
+        "§4 M03: id must be queried live via SELECT MAX(id)+1.",
+        "owning_part is a legacy multi-part column — always NULL in v9.",
+        "Idempotent: both NEW_WORD and GAP_FILL re-check SELECT id FROM mti_terms WHERE strongs_number=? before INSERT.",
+        "AUDIT_WORD spec intent (not yet implemented): (1) For each strongs_number returned by STEP API for this word — if not present in mti_terms, INSERT the row (same columns as NEW_WORD N10). (2) For each row already in mti_terms for this word — if its strongs_number is NOT in the STEP API response, UPDATE status='REDUNDANT'."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.2 N10 · §4 M03",
+          "spec_rule": "Sequential integer. Must query MAX(id) live before insert.",
+          "data_source": "engine/db.py get_max_id(conn, 'mti_terms') → SELECT MAX(id) FROM mti_terms → result + 1",
+          "py_file": "engine/db.py · engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of atomic transaction N9-N15; only if strongs_number not already in mti_terms",
+                "value": "get_max_id(conn, 'mti_terms') + 1"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent: only if SELECT id FROM mti_terms WHERE strongs_number=? returns no row",
+                "value": "get_max_id(conn, 'mti_terms') + 1"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A1",
+                "operation": "READ",
+                "condition": "Loads existing mti_terms rows for this word",
+                "value": "read only"
+              },
+              {
+                "stage": "A-x",
+                "operation": "NOT_WRITTEN",
+                "condition": "Should INSERT for each strongs_number in STEP response not already in mti_terms — not yet implemented",
+                "value": "— DIVERGES: code never calls get_max_id(conn, 'mti_terms') or INSERT in audit_word.py"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✗ Diverges — AUDIT_WORD spec intent requires INSERT of missing term rows (terms in STEP API but absent from mti_terms); code does not implement this; all mti_terms fields are unset by AUDIT_WORD"
+        },
+        {
+          "field": "strongs_number",
+          "spec_section": "§7.2 N10 · §9",
+          "spec_rule": "Resolved Strong's number (e.g. H7965). If input had a suffix that was resolved, stores the resolved form.",
+          "data_source": "StepClient.get_vocab_info(strongs) → vocab['strong_number'] (resolved)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab['strong_number'] — resolved strongs string"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "vocab['strong_number'] — resolved strongs string"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "transliteration",
+          "spec_section": "§9",
+          "spec_rule": "Transliteration of the Strong's term. From STEP vocab API response.",
+          "data_source": "STEP REST API GET /vocab?strong={x} → vocab['transliteration']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('transliteration', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "vocab.get('transliteration', '')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "gloss",
+          "spec_section": "§9",
+          "spec_rule": "Primary gloss for the term. From STEP vocab API response.",
+          "data_source": "STEP REST API → vocab['gloss']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('gloss', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "vocab.get('gloss', '')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "language",
+          "spec_section": "§9",
+          "spec_rule": "Derived from STEP vocab API 'language' field. 'Hebrew' or 'Greek'.",
+          "data_source": "vocab.get('language', 'Hebrew')",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('language', 'Hebrew')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "vocab.get('language', 'Hebrew')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "owning_registry",
+          "spec_section": "§9",
+          "spec_rule": "word_registry.no stored as string. Links this term to its registry entry.",
+          "data_source": "str(registry_id) — CLI arg word_registry.no",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "str(registry_id)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "str(registry_no)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "owning_word",
+          "spec_section": "§9",
+          "spec_rule": "English word label from word_registry. Denormalised copy for query convenience.",
+          "data_source": "SELECT word FROM word_registry WHERE no=? → reg_row['word']",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "reg_row['word']  (word variable)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT",
+                "value": "word variable"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "owning_part",
+          "spec_section": "§7.3 Multi-Part Legacy",
+          "spec_rule": "Legacy multi-part column. v9 always writes NULL.",
+          "data_source": "hardcoded: NULL",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "word_data_reference",
+          "spec_section": "§9",
+          "spec_rule": "Stores wa_file_index.id as a string. Links mti_terms row to its file index entry.",
+          "data_source": "str(file_id) — wa_file_index.id just inserted at N9/S2",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Part of transaction; file_id available from N9",
+                "value": "str(file_id)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Idempotent INSERT; file_id from Phase A",
+                "value": "str(file_id)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "status",
+          "spec_section": "§9",
+          "spec_rule": "'extracted' at INSERT (hardcoded). AUDIT_WORD spec intent: UPDATE status='REDUNDANT' for any row whose strongs_number is not returned by the STEP API for this word.",
+          "data_source": "INSERT: hardcoded 'extracted' | AUDIT_WORD UPDATE: 'REDUNDANT' (confirmed flag value)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py (pending)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'extracted' — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'extracted' — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A-x",
+                "operation": "NOT_WRITTEN",
+                "condition": "Should UPDATE status='REDUNDANT' for any row whose strongs_number is absent from STEP API response — not yet implemented",
+                "value": "— DIVERGES: UPDATE mti_terms SET status='REDUNDANT' WHERE id=? not present in audit_word.py"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — INSERT correctly sets 'extracted'; AUDIT_WORD should UPDATE status='REDUNDANT' for stale term rows (strongs_number absent from STEP API response) but code does not implement it"
+        },
+        {
+          "field": "extraction_date",
+          "spec_section": "§9",
+          "spec_rule": "UTC date of the run that created this term row. YYYY-MM-DD format.",
+          "data_source": "_today() → datetime.now(utc).strftime('%Y-%m-%d')",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "_today()"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "_today()"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "strongs_reconciled",
+          "spec_section": "§9",
+          "spec_rule": "1 if the resolved strongs_number differs from the input (suffix stripped/mapped); 0 otherwise.",
+          "data_source": "1 if resolved != strong else 0",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N10",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "1 if resolved != strongs_input else 0"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "1 if resolved != strong else 0"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        }
+      ]
+    },
+    {
+      "table": "wa_term_inventory",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "One row per Strong's number per word. Holds all per-term metadata: glosses, meaning, occurrence counts, testament coverage, parsed meaning FK. Written at N11 (NEW_WORD) and S2 Phase C (GAP_FILL). Refreshed non-destructively at A4 (AUDIT_WORD).",
+      "spec_sections": [
+        "§7.2 N11",
+        "§9 Field-Level Mapping",
+        "§4 M03",
+        "§4 M04"
+      ],
+      "modes_that_write": [
+        "NEW_WORD",
+        "GAP_FILL",
+        "AUDIT_WORD"
+      ],
+      "table_spec_rules": [
+        "§7.2 N11: INSERT per NEW term inside atomic transaction N9–N15. id=MAX(id)+1 queried live.",
+        "§9: god_as_subject=0, somatic_link=0 — DEFERRED. Next-phase judgment fields.",
+        "§9: also_spelled and occurrence_count_qualifier — DEFERRED-INTERACTIVE. Filled at field-fill N18/A8/S8. null until researcher provides value or confirms null.",
+        "§9: testament — derived from confirmed verse records after verse insert (span_strong_match=1). Derived per term at N14. GAP_FILL and AUDIT_WORD do not re-derive this field after verse changes.",
+        "§4 M04: short_def_mounce and parsed_meaning_id are new columns added in migration M04.",
+        "AUDIT_WORD A4: non-destructive COALESCE update — fills only null/empty fields. Never overwrites existing values.",
+        "GAP_FILL S4: meaning gap-fill — fills meaning, meaning_numbered, step_search_gloss, word_analysis_gloss, lsj_entry if null. Also fills via COALESCE.",
+        "WR-11: transliteration must be non-null — STOP condition.",
+        "WR-12: language must be 'Hebrew' or 'Greek' — STOP condition."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.2 N11 · §4 M03",
+          "spec_rule": "Sequential integer. Must query MAX(id) live before insert.",
+          "data_source": "engine/db.py get_max_id(conn, 'wa_term_inventory') → SELECT MAX(id) FROM wa_term_inventory → result + 1",
+          "py_file": "engine/db.py · engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of atomic transaction N9–N15; one row per NEW term",
+                "value": "get_max_id(conn, 'wa_term_inventory') + 1"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "One row per NEW term; idempotent within transaction",
+                "value": "get_max_id(conn, 'wa_term_inventory') + 1"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "Refreshes existing rows; never INSERTs new rows (new terms are handled at A6 gap-fill)",
+                "value": "COALESCE update — no new id assigned"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "file_id",
+          "spec_section": "§7.2 N11",
+          "spec_rule": "FK to wa_file_index.id. Links this term row to the file anchor for this word.",
+          "data_source": "wa_file_index.id assigned at N9/S2 Phase A",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; file_id from N9",
+                "value": "file_id (wa_file_index.id from N9)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "file_id from Phase A",
+                "value": "file_id (wa_file_index.id from Phase A)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "language",
+          "spec_section": "§9 · §7.2 N12 WR-12",
+          "spec_rule": "H-prefix Strong's → 'Hebrew'; G-prefix → 'Greek'. WR-12 STOP if not one of these two values.",
+          "data_source": "vocab.get('language', 'Hebrew') from STEP API",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('language', 'Hebrew')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('language', 'Hebrew')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "term_id",
+          "spec_section": "§9",
+          "spec_rule": "STEP internal code — stores resolved Strong's number. Same as strongs_number at write time.",
+          "data_source": "vocab['strong_number'] (resolved form)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "resolved (vocab['strong_number'])"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "resolved (vocab['strong_number'])"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "strongs_number",
+          "spec_section": "§9",
+          "spec_rule": "Canonical resolved Strong's number. H2428 → H2428A. Same as term_id at write time.",
+          "data_source": "vocab['strong_number'] (resolved form)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "resolved (vocab['strong_number'])"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "resolved (vocab['strong_number'])"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "transliteration",
+          "spec_section": "§9 · §8.1 WR-11",
+          "spec_rule": "Required — WR-11 STOP if null. From STEP vocab API.",
+          "data_source": "vocab.get('transliteration', '') from STEP API",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('transliteration', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('transliteration', '')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "step_search_gloss",
+          "spec_section": "§9",
+          "spec_rule": "English gloss label from STEP search heading (vocabInfos[0].stepGloss). COALESCE-filled in S4 and A4 — never overwrites existing non-empty value.",
+          "data_source": "vocab.get('gloss', '') from STEP API",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('gloss', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('gloss', '')"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(step_search_gloss, ?) — fills only if null",
+                "value": "UPDATE wa_term_inventory SET step_search_gloss=COALESCE(step_search_gloss,?) WHERE id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(NULLIF(step_search_gloss,''),?) — fills only if null or empty string",
+                "value": "UPDATE wa_term_inventory SET step_search_gloss=COALESCE(NULLIF(step_search_gloss,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "word_analysis_gloss",
+          "spec_section": "§9",
+          "spec_rule": "Gloss from STEP word analysis block. Same as step_search_gloss at write time. Researcher may update in review. COALESCE-filled in S4 and A4.",
+          "data_source": "vocab.get('gloss', '') from STEP API",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('gloss', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('gloss', '')"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "COALESCE fill if null",
+                "value": "UPDATE wa_term_inventory SET word_analysis_gloss=COALESCE(word_analysis_gloss,?) WHERE id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE fill if null/empty",
+                "value": "UPDATE wa_term_inventory SET word_analysis_gloss=COALESCE(NULLIF(word_analysis_gloss,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "occurrence_count",
+          "spec_section": "§9",
+          "spec_rule": "Token occurrence count from STEP API. Null if API does not return it — triggers DATA_GAP quality flag. COALESCE-filled by AUDIT_WORD A4.",
+          "data_source": "vocab.get('occurrence_count') from STEP API — may be null",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; null if API returns no value",
+                "value": "vocab.get('occurrence_count')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('occurrence_count')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(occurrence_count, ?) — fills only if currently null",
+                "value": "UPDATE wa_term_inventory SET occurrence_count=COALESCE(occurrence_count,?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "occurrence_count_qualifier",
+          "spec_section": "§9",
+          "spec_rule": "DEFERRED-INTERACTIVE. 'about', 'exactly', etc. Not available from API. Filled at field-fill N18/A8/S8 with researcher input or confirmed null. Only NEW_WORD N18 implements the interactive field-fill; GAP_FILL has no S8 equivalent in code; AUDIT_WORD A8 in code writes SPAN_BACK_POPULATED flag (not field-fill).",
+          "data_source": "Researcher input at N18 field-fill — not from API",
+          "py_file": "engine/new_word.py (_run_field_fill)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N18",
+                "operation": "UPDATE",
+                "condition": "Interactive: presented only if null; researcher types value or presses Enter to confirm null",
+                "value": "UPDATE wa_term_inventory SET occurrence_count_qualifier=? WHERE id=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "GAP_FILL has no S8 field-fill stream implemented; field remains null for words processed by BULK_GAP_FILL without a subsequent NEW_WORD run",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A8",
+                "operation": "NOT_WRITTEN",
+                "condition": "A8 in code writes SPAN_BACK_POPULATED quality flag — not field-fill; occurrence_count_qualifier not updated by AUDIT_WORD",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "⚠ Partial — only NEW_WORD N18 implements the interactive field-fill; GAP_FILL has no S8 equivalent in code; AUDIT_WORD A8 writes SPAN_BACK_POPULATED flag instead of field-fill; words processed only through GAP_FILL will have occurrence_count_qualifier=null indefinitely"
+        },
+        {
+          "field": "meaning",
+          "spec_section": "§9",
+          "spec_rule": "Full meaning block from STEP vocab.medium_def. HTML-stripped; newlines preserved. Null if API returns none — triggers NO_WORD_ANALYSIS flag. Gap-filled in S4; refreshed in A4.",
+          "data_source": "vocab.get('medium_def') from STEP API",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('medium_def')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('medium_def')"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "Fills if meaning IS NULL or empty",
+                "value": "UPDATE wa_term_inventory SET meaning=?,meaning_numbered=? WHERE id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(NULLIF(meaning,''),?) — non-destructive",
+                "value": "UPDATE wa_term_inventory SET meaning=COALESCE(NULLIF(meaning,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "meaning_numbered",
+          "spec_section": "§9",
+          "spec_rule": "Same content as meaning at write time. Mirrors meaning text. Researcher-distinguishable numbered form for future structured parsing. Gap-filled and refreshed same as meaning.",
+          "data_source": "vocab.get('medium_def') — same value as meaning at write",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; mirrors meaning",
+                "value": "vocab.get('medium_def')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab.get('medium_def')"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "Updated alongside meaning",
+                "value": "UPDATE wa_term_inventory SET meaning_numbered=? WHERE id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE fill if null/empty",
+                "value": "UPDATE wa_term_inventory SET meaning_numbered=COALESCE(NULLIF(meaning_numbered,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "also_spelled",
+          "spec_section": "§9",
+          "spec_rule": "DEFERRED-INTERACTIVE. Hebrew only. Alternate spelling / Strong's variant (JSON). Filled at field-fill N18/A8/S8. null until researcher provides value or confirms null. Same gap as occurrence_count_qualifier — only NEW_WORD N18 implements field-fill.",
+          "data_source": "Researcher input at N18 field-fill — Hebrew terms only; not from API",
+          "py_file": "engine/new_word.py (_run_field_fill)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N18",
+                "operation": "UPDATE",
+                "condition": "Hebrew terms only; presented if null; researcher types value or confirms null",
+                "value": "UPDATE wa_term_inventory SET also_spelled=? WHERE id=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "No S8 field-fill in GAP_FILL code",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "A8 in code writes quality flag, not field-fill",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "⚠ Partial — only NEW_WORD N18 implements the field-fill; GAP_FILL and AUDIT_WORD do not prompt for also_spelled; Hebrew words processed only through GAP_FILL will have also_spelled=null indefinitely"
+        },
+        {
+          "field": "lsj_entry",
+          "spec_section": "§9",
+          "spec_rule": "Greek only. Full LSJ lexicon text from STEP vocab API. Null for Hebrew. COALESCE-filled by S4 and A4.",
+          "data_source": "vocab.get('lsj_entry') from STEP API — null for Hebrew",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; null for Hebrew",
+                "value": "vocab.get('lsj_entry') or None"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "null for Hebrew",
+                "value": "vocab.get('lsj_entry') or None"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "COALESCE fill if null",
+                "value": "UPDATE wa_term_inventory SET lsj_entry=COALESCE(lsj_entry,?) WHERE id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(NULLIF(lsj_entry,''),?) — Greek only; null for Hebrew",
+                "value": "UPDATE wa_term_inventory SET lsj_entry=COALESCE(NULLIF(lsj_entry,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "short_def_mounce",
+          "spec_section": "§9 · §4 M04",
+          "spec_rule": "Greek only. Mounce short definition. New column added in M04. Null for Hebrew. COALESCE-filled by A4.",
+          "data_source": "vocab.get('short_def_mounce') from STEP API — null for Hebrew",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; null for Hebrew",
+                "value": "vocab.get('short_def_mounce') or None"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "null for Hebrew",
+                "value": "vocab.get('short_def_mounce') or None"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A4",
+                "operation": "UPDATE",
+                "condition": "COALESCE(NULLIF(short_def_mounce,''),?) — Greek only",
+                "value": "UPDATE wa_term_inventory SET short_def_mounce=COALESCE(NULLIF(short_def_mounce,''),?) WHERE id=?"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "testament",
+          "spec_section": "§9",
+          "spec_rule": "OT/NT/both derived per term from confirmed verse records (span_strong_match=1). Derived at NEW_WORD N14 post-transaction. GAP_FILL inserts verses at S3 but has no per-term testament derivation step. AUDIT_WORD A9 updates wa_file_index.testament_coverage only — not wa_term_inventory.testament.",
+          "data_source": "SELECT DISTINCT testament FROM wa_verse_records WHERE term_inv_id=? AND span_strong_match=1",
+          "py_file": "engine/new_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "NULL — placeholder; derived post-transaction at N14"
+              },
+              {
+                "stage": "N14",
+                "operation": "UPDATE",
+                "condition": "After verse records committed",
+                "value": "SELECT DISTINCT testament FROM wa_verse_records WHERE term_inv_id=? AND span_strong_match=1 → OT/NT/both → UPDATE wa_term_inventory SET testament=? WHERE id=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "NULL — placeholder"
+              },
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "S3 inserts verse records but no step derives per-term testament for wa_term_inventory in GAP_FILL",
+                "value": "— GAP: field remains NULL after GAP_FILL verse insert (S3)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A9",
+                "operation": "NOT_WRITTEN",
+                "condition": "A9 updates wa_file_index.testament_coverage only; wa_term_inventory.testament is not updated",
+                "value": "— GAP: per-term testament not re-derived after A3a verse sync"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — only NEW_WORD N14 derives per-term testament from confirmed verse records; GAP_FILL (S3) and AUDIT_WORD (A3a/A9) do not update wa_term_inventory.testament after verse changes"
+        },
+        {
+          "field": "god_as_subject",
+          "spec_section": "§9",
+          "spec_rule": "DEFERRED. Default 0 (schema DEFAULT). Next-phase judgment — whether the term is applied to God or Holy Spirit. Never set by engine; researcher assigns in next phase.",
+          "data_source": "Schema DEFAULT 0 — not written by engine INSERT column list",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Not in INSERT column list; schema DEFAULT 0 applies",
+                "value": "0 — schema default"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Not in column list; schema DEFAULT 0",
+                "value": "0 — schema default"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "somatic_link",
+          "spec_section": "§9",
+          "spec_rule": "DEFERRED. Default 0 (schema DEFAULT). Inner state linked to bodily expression — next-phase judgment. Never set by engine.",
+          "data_source": "Schema DEFAULT 0 — not written by engine INSERT column list",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Not in INSERT column list; schema DEFAULT 0 applies",
+                "value": "0 — schema default"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Schema DEFAULT 0",
+                "value": "0 — schema default"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "causative_form_present",
+          "spec_section": "§9",
+          "spec_rule": "1 if medium_def contains Hiphil or Piel (Hebrew) or causative sense. Derived at INSERT from vocab API response.",
+          "data_source": "1 if vocab.get('causative_form_present') else 0",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "1 if vocab.get('causative_form_present') else 0"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "1 if vocab.get('causative_form_present') else 0"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "status_note",
+          "spec_section": "§9",
+          "spec_rule": "step_client warnings for this term. Null if no warnings. Populated at INSERT from any errors accumulated during pre-transaction fetch.",
+          "data_source": "'; '.join(errors[-3:]) if errors else None",
+          "py_file": "engine/new_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction; null if no errors",
+                "value": "'; '.join(errors[-3:]) if errors else None"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Always NULL in GAP_FILL Phase C",
+                "value": "NULL — hardcoded in GAP_FILL INSERT"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "parsed_meaning_id",
+          "spec_section": "§9 · §4 M04 · §7.2 N15",
+          "spec_rule": "FK to wa_meaning_parsed.id. Null until meaning parser runs. Set by run_parser_for_file() at N15 (NEW_WORD), S4 (GAP_FILL), A5 (AUDIT_WORD).",
+          "data_source": "engine/meaning_parser.py run_parser_for_file() → INSERT wa_meaning_parsed → UPDATE wa_term_inventory SET parsed_meaning_id=?",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py · engine/meaning_parser.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "NULL — not yet set"
+              },
+              {
+                "stage": "N15",
+                "operation": "UPDATE",
+                "condition": "After meaning parser runs",
+                "value": "run_parser_for_file() → UPDATE wa_term_inventory SET parsed_meaning_id=wa_meaning_parsed.id WHERE id=?"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "NULL — not yet set"
+              },
+              {
+                "stage": "S4",
+                "operation": "UPDATE",
+                "condition": "run_parser_for_file() called after meaning gap-fill",
+                "value": "run_parser_for_file() → UPDATE wa_term_inventory SET parsed_meaning_id=?"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A5",
+                "operation": "UPDATE",
+                "condition": "Always — re-parses all terms",
+                "value": "run_parser_for_file() → UPDATE wa_term_inventory SET parsed_meaning_id=?"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        }
+      ]
+    },
+    {
+      "table": "wa_term_related_words",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "Related words cluster for each term from the STEP word analysis block. One row per related word per term. Written at N11 (NEW_WORD) and S2 Phase C (GAP_FILL). AUDIT_WORD does not refresh or add related words — if the STEP API returns new related words in a re-fetch, they are not captured.",
+      "spec_sections": [
+        "§7.2 N11",
+        "§9"
+      ],
+      "modes_that_write": [
+        "NEW_WORD",
+        "GAP_FILL"
+      ],
+      "table_spec_rules": [
+        "§7.2 N11: INSERT per related word per NEW term inside atomic transaction N9–N15.",
+        "Related words are written inside the same transaction as wa_term_inventory (Phase C in GAP_FILL).",
+        "AUDIT_WORD A4 re-fetches vocab and does COALESCE UPDATEs on wa_term_inventory but does not INSERT new wa_term_related_words rows. If the STEP API returns new related words, they are silently dropped.",
+        "relationship_note column exists in schema but is not written by any engine mode — researcher annotation field."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.2 N11 · §4 M03",
+          "spec_rule": "Sequential integer. AUTOINCREMENT in schema — no explicit MAX query required.",
+          "data_source": "SQLite AUTOINCREMENT — engine does not explicitly set id for related_words rows",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "One row per related word per NEW term",
+                "value": "AUTOINCREMENT — not explicitly set in INSERT"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "One row per related word per NEW term",
+                "value": "AUTOINCREMENT"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "A4 re-fetches vocab but does not INSERT new related_words rows; new related words from STEP API are not captured",
+                "value": "— GAP: AUDIT_WORD silently drops new related words from re-fetch"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — AUDIT_WORD does not INSERT new related word rows even when re-fetching vocab at A4; related words added to STEP API after the initial write are never captured"
+        },
+        {
+          "field": "term_inv_id",
+          "spec_section": "§7.2 N11",
+          "spec_rule": "FK to wa_term_inventory.id. Links related word row to its owning term.",
+          "data_source": "ti_id — wa_term_inventory.id from concurrent N11/S2-Phase-C INSERT",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "ti_id (wa_term_inventory.id from N11)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "ti_id (wa_term_inventory.id from Phase C)"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "gloss",
+          "spec_section": "§9",
+          "spec_rule": "English gloss for the related word, from STEP vocab related_words array.",
+          "data_source": "rw.get('gloss') from vocab['related_words'][i]",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('gloss')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('gloss')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "transliteration",
+          "spec_section": "§9",
+          "spec_rule": "Transliteration of the related word. From STEP vocab related_words array.",
+          "data_source": "rw.get('translit') from vocab['related_words'][i]",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('translit')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('translit')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "strongs_number",
+          "spec_section": "§9",
+          "spec_rule": "Strong's number of the related word. From STEP vocab related_words array.",
+          "data_source": "rw.get('strong') from vocab['related_words'][i]",
+          "py_file": "engine/new_word.py · engine/gap_fill.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N11",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('strong')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S2 Phase C",
+                "operation": "INSERT",
+                "condition": "Per related word",
+                "value": "rw.get('strong')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "relationship_note",
+          "spec_section": "— Not in spec §9 field mapping",
+          "spec_rule": "Schema column for researcher annotation of how related words relate to the term. Never written by any engine mode. Researcher-only field.",
+          "data_source": "NOT_WRITTEN — researcher annotation",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "— Not specified"
+        }
+      ]
+    },
+    {
+      "table": "wa_verse_records",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "Core research table. One row per confirmed term occurrence in a verse (span_strong_match=1 at write time). All v9 engine modes write or modify this table. NEW_WORD N12 and GAP_FILL S3 INSERT span-confirmed rows only. AUDIT_WORD A3a INSERTs missing rows, UPDATEs existing rows with latest STEP data, and marks orphan rows (span_strong_match=-1) for verses in DB but absent from current STEP API response.",
+      "spec_sections": [
+        "§7.2 N12",
+        "§5.2 Span Filter",
+        "§5.5 AUDIT A3a",
+        "§9",
+        "§4 M05"
+      ],
+      "modes_that_write": [
+        "NEW_WORD",
+        "GAP_FILL",
+        "AUDIT_WORD"
+      ],
+      "table_spec_rules": [
+        "§5.2: Span filter — only verses where queried Strong's appears in the strong= attribute of the target-word span are stored. span_strong_match=1 at write time for all v9 INSERTs.",
+        "§5.5 A3a: AUDIT_WORD verse sync — INSERT missing (in STEP not in DB), UPDATE existing (overwrite span fields), mark orphans span_strong_match=-1 (in DB not in STEP). -1 is a code extension not in the spec's defined value set (spec: 1/0/NULL only).",
+        "§4 M05: target_word, span_strong_match, context_before, context_after added in migration M05.",
+        "§5.6: context_before, context_after, note, claude_output — Phase 2 reserved. Always NULL in Phase 1. Not written by v9 engine.",
+        "§9: translation hardcoded 'ESV' in all INSERT statements.",
+        "§9: book_id derived from book_code via book_code_variants lookup — WR error if not found."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§7.2 N12 · §4 M03",
+          "spec_rule": "Sequential integer. Must query MAX(id) live before insert.",
+          "data_source": "engine/db.py get_max_id(conn, 'wa_verse_records') → SELECT MAX(id) → result + 1",
+          "py_file": "engine/db.py · engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "One row per span-confirmed verse per term",
+                "value": "get_max_id(conn, 'wa_verse_records') + 1"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Terms with zero verse records; span-confirmed only",
+                "value": "get_max_id(conn, 'wa_verse_records') + 1"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Verses in STEP response but absent from DB",
+                "value": "get_max_id(conn, 'wa_verse_records') + 1"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "file_id",
+          "spec_section": "§7.2 N12",
+          "spec_rule": "FK to wa_file_index.id.",
+          "data_source": "file_id from wa_file_index INSERT at N9/S2 Phase A",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "file_id from N9"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Part of S3 loop",
+                "value": "ti_row['file_id']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "fid (from file_ids loop)"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "term_inv_id",
+          "spec_section": "§7.2 N12",
+          "spec_rule": "FK to wa_term_inventory.id.",
+          "data_source": "ti_id from wa_term_inventory INSERT at N11/S2 Phase C",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "ti_id from term_inv_ids[strongs]"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Part of S3 loop",
+                "value": "ti_id from gap row"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "ti_id from term_rows loop"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "term_id",
+          "spec_section": "§9",
+          "spec_rule": "Strong's / STEP code for the term this verse belongs to.",
+          "data_source": "strongs variable (resolved Strong's number)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "strongs (vocab key)"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Part of S3 loop",
+                "value": "strongs from gap row"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "strongs (ti['strongs_number'] or ti['term_id'])"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "transliteration",
+          "spec_section": "§9",
+          "spec_rule": "Transliteration of the term. From vocab at write time.",
+          "data_source": "vocab_map.get(strongs, {}).get('transliteration', '')",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "vocab_map.get(strongs, {}).get('transliteration', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Part of S3 loop",
+                "value": "ti_row['transliteration'] or ''"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "ti['transliteration'] or ''"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "book_id",
+          "spec_section": "§9",
+          "spec_rule": "FK to books.id. Derived from book_code via SELECT book_id FROM book_code_variants WHERE code=?. STOP if not found.",
+          "data_source": "engine/db.py get_book_id(conn, rec['book_code']) → SELECT book_id FROM book_code_variants WHERE code=?",
+          "py_file": "engine/db.py · engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "None → error logged; row skipped",
+                "value": "get_book_id(conn, rec['book_code'])"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "None → error logged; row skipped",
+                "value": "get_book_id(conn, rec['book_code'])"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "None → book_misses list; row skipped",
+                "value": "get_book_id(conn, rec['book_code'])"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "reference",
+          "spec_section": "§9",
+          "spec_rule": "STEP verse reference string as returned, e.g. 'Gen 31:27'.",
+          "data_source": "rec['ref'] from STEP masterSearch response",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec['ref']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec['ref']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec['ref'] — used as match key for INSERT vs UPDATE decision"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "chapter",
+          "spec_section": "§9",
+          "spec_rule": "Integer chapter number. Single-chapter books always 1. Parsed from STEP verse record.",
+          "data_source": "rec['chapter'] from STEP masterSearch response",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec['chapter']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec['chapter']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec['chapter']"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "verse_num",
+          "spec_section": "§9",
+          "spec_rule": "Integer verse number. Parsed from STEP verse record.",
+          "data_source": "rec['verse_num'] from STEP masterSearch response",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec['verse_num']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec['verse_num']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec['verse_num']"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "testament",
+          "spec_section": "§9",
+          "spec_rule": "'OT' or 'NT' — derived from book_code vs NT_BOOKS list in step_client.",
+          "data_source": "rec['testament'] from STEP verse record (derived by step_client)",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec['testament']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec['testament']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec['testament']"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "translation",
+          "spec_section": "§9",
+          "spec_rule": "Hardcoded 'ESV' for all v9 engine runs.",
+          "data_source": "hardcoded: 'ESV' in all INSERT statements",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'ESV' — hardcoded"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "'ESV' — hardcoded"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "'ESV' — hardcoded"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "verse_text",
+          "spec_section": "§9",
+          "spec_rule": "HTML-stripped ESV verse text from STEP masterSearch preview.",
+          "data_source": "rec['esv_text'] from STEP masterSearch; HTML-stripped by step_client",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py · analytics/step_client.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec['esv_text']"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec['esv_text']"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec['esv_text']"
+              },
+              {
+                "stage": "A3a",
+                "operation": "UPDATE",
+                "condition": "Existing verse: always overwritten with latest STEP text",
+                "value": "UPDATE wa_verse_records SET verse_text=? WHERE id=?"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "target_word",
+          "spec_section": "§9 · §5.2 · §4 M05",
+          "spec_rule": "English rendering of target Strong's from span text. Null if span extraction fails. Set at INSERT for all v9 writes. AUDIT_WORD A3a also UPDATEs if new value available from re-fetch.",
+          "data_source": "rec.get('target_word', '') — extracted by span_filter.py from strong= attribute span text",
+          "py_file": "engine/new_word.py · engine/gap_fill.py · engine/audit_word.py · engine/span_filter.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Part of transaction",
+                "value": "rec.get('target_word', '')"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "S3 loop",
+                "value": "rec.get('target_word', '')"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec.get('target_word', '')"
+              },
+              {
+                "stage": "A3a",
+                "operation": "UPDATE",
+                "condition": "Existing verse: if rec.get('target_word') is truthy",
+                "value": "UPDATE wa_verse_records SET target_word=? WHERE id=?"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "span_strong_match",
+          "spec_section": "§5.2 · §5.5 · §9 · §4 M05",
+          "spec_rule": "1 = queried Strong's confirmed in span. 0 = only sibling/prefix form (AUDIT back-pop). NULL = pre-v9 not yet assessed. Code also uses -1 for orphan rows (in DB but not in current STEP API response) — this value is not in the spec's defined set.",
+          "data_source": "rec.get('span_strong_match', 1) at INSERT; span_filter.py derived; AUDIT A3a: 1 or -1 on UPDATE",
+          "py_file": "engine/span_filter.py · engine/new_word.py · engine/gap_fill.py · engine/audit_word.py",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Span-confirmed rows only — all inserted rows have span_strong_match=1",
+                "value": "rec.get('span_strong_match', 1) — always 1 for v9 INSERTs"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Span-confirmed rows only",
+                "value": "rec.get('span_strong_match', 1) — always 1 for S3 INSERTs"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT",
+                "value": "rec.get('span_strong_match', 1) — 1 for confirmed"
+              },
+              {
+                "stage": "A3a",
+                "operation": "UPDATE",
+                "condition": "Existing verse: always overwritten",
+                "value": "span_strong_match = rec.get('span_strong_match', 1)"
+              },
+              {
+                "stage": "A3a",
+                "operation": "UPDATE",
+                "condition": "Orphan: verse in DB but absent from STEP API response",
+                "value": "UPDATE wa_verse_records SET span_strong_match=-1 WHERE id=?  — NOTE: -1 is code-only; spec defines 1/0/NULL"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "⚠ Partial — INSERT correctly sets span_strong_match=1 per spec §5.2; AUDIT_WORD A3a uses span_strong_match=-1 for orphan rows (verses in DB but absent from STEP response); spec §5.2/§5.5 only defines 1 (confirmed), 0 (sibling/back-pop), NULL (pre-v9 unassessed); -1 is a code extension"
+        },
+        {
+          "field": "context_before",
+          "spec_section": "§5.6 · §4 M05",
+          "spec_rule": "Phase 2 reserved. Always NULL in Phase 1. AUDIT_WORD A3a may UPDATE if STEP API returns a value (conditional write), but STEP never returns this — effectively always NULL.",
+          "data_source": "NULL — Phase 2 reserved. Not written in Phase 1.",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — Phase 2 reserved; hardcoded in INSERT"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — Phase 2 reserved; hardcoded in INSERT"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "Missing verse INSERT: NULL; UPDATE: conditional on rec.get('context_before') is not None — never triggered in Phase 1",
+                "value": "NULL for Phase 1 — STEP API does not return context_before"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "context_after",
+          "spec_section": "§5.6 · §4 M05",
+          "spec_rule": "Phase 2 reserved. Always NULL in Phase 1. Same logic as context_before.",
+          "data_source": "NULL — Phase 2 reserved. Not written in Phase 1.",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N12",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — Phase 2 reserved"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S3",
+                "operation": "INSERT",
+                "condition": "Always",
+                "value": "NULL — Phase 2 reserved"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "A3a",
+                "operation": "INSERT",
+                "condition": "NULL; conditional UPDATE never triggered in Phase 1",
+                "value": "NULL for Phase 1"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "note",
+          "spec_section": "§5.6",
+          "spec_rule": "Phase 2 reserved. Researcher annotation at verse level. Never written by v9 engine. NULL for all Phase 1 records.",
+          "data_source": "NOT_WRITTEN — Phase 2 reserved, researcher annotation",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        },
+        {
+          "field": "claude_output",
+          "spec_section": "§5.6",
+          "spec_rule": "Phase 2 reserved. AI-assisted analysis output for specific verse. Never written by v9 engine. NULL for all Phase 1 records.",
+          "data_source": "NOT_WRITTEN — Phase 2 reserved",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "✓ Match"
+        }
+      ]
+    },
+    {
+      "table": "wa_term_root_family",
+      "part": "Part 2 — Core Word Data Tables",
+      "description": "Root family labels assigned to each term from wa_term_inventory. One row per root family membership per term — a term may belong to multiple families. Entirely researcher-assigned. The engine never writes to this table. All rows null for automation terms (v9). WR-13 explicitly excludes root_code from the undocumented-null check.",
+      "spec_sections": [
+        "§9",
+        "§14",
+        "§8.1 WR-13"
+      ],
+      "modes_that_write": [],
+      "table_spec_rules": [
+        "§9: wa_term_root_family.root_code — Researcher judgment | null until assigned | DEFERRED. Not written by engine. Expected null for all automation terms. Not flagged by WR-13.",
+        "§14: Content | Researcher (deferred) | Unchanged — populated by researcher, not engine.",
+        "§8.1 WR-13: wa_term_root_family.root_code is explicitly excluded from the undocumented-null quality flag check.",
+        "No engine mode (NEW_WORD, GAP_FILL, AUDIT_WORD) writes to this table. Rows appear only when a researcher assigns root families to a term (next-phase work).",
+        "~640 rows in DB baseline — all written by researcher during earlier manual processing phases."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§14",
+          "spec_rule": "AUTOINCREMENT PK. Not assigned by engine — researcher writes these rows.",
+          "data_source": "NOT_WRITTEN — researcher-assigned",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        },
+        {
+          "field": "term_inv_id",
+          "spec_section": "§9 · §14",
+          "spec_rule": "FK to wa_term_inventory.id. Links root family row to its owning term. Assigned by researcher.",
+          "data_source": "NOT_WRITTEN — researcher-assigned",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        },
+        {
+          "field": "root_code",
+          "spec_section": "§9",
+          "spec_rule": "Root family identifier, e.g. 'TSR', 'CHARAH', 'LUPE'. Researcher judgment — null until assigned. DEFERRED. WR-13 explicitly excludes from undocumented-null check.",
+          "data_source": "NOT_WRITTEN — researcher judgment",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        },
+        {
+          "field": "root_language",
+          "spec_section": "§14",
+          "spec_rule": "'Hebrew', 'Greek', or 'Aramaic'. Researcher-assigned. Not written by engine.",
+          "data_source": "NOT_WRITTEN — researcher-assigned",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        },
+        {
+          "field": "root_gloss",
+          "spec_section": "§14",
+          "spec_rule": "Brief English gloss for the root, e.g. 'to be angry', 'inner peace'. Researcher-assigned. Not written by engine.",
+          "data_source": "NOT_WRITTEN — researcher-assigned",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        },
+        {
+          "field": "note",
+          "spec_section": "§14",
+          "spec_rule": "Additional researcher note about this root family membership. Not written by engine.",
+          "data_source": "NOT_WRITTEN — researcher annotation",
+          "py_file": "—",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "— Not written by engine (DEFERRED)"
+        }
+      ]
+    },
+    {
+      "table": "phase2_flag_types",
+      "part": "Part 3 — Phase-2 Flags (shared lookup)",
+      "description": "Lookup table for Phase 2 analytical flags. 25 rows. Seeded historically by migration scripts and patch imports — not written by any run mode. Both wa_term_phase2_flags and mti_term_flags FK to this single table. All 25 flags are researcher judgment flags; none are written by the v9 engine. Spec §14 classifies this table as Reference with no mode.",
+      "spec_sections": [
+        "§14",
+        "§12.2 migration history"
+      ],
+      "modes_that_write": [],
+      "table_spec_rules": [
+        "§14: Reference | — | Unchanged. No run mode writes to this table.",
+        "25 rows populated via historical migration (migrate_flag_tables.py consolidated wa_phase2_flag_types into this table at normalisation).",
+        "All 25 phase2_flag_types entries represent researcher judgment flags — none are derivable by the engine. Spec §13 (checklist): 'Judgment-deferred fields confirmed: wa_term_root_family, god_as_subject, somatic_link, mti_term_flags, all 25 phase2_flag_types judgment flags.'",
+        "flag_engine.py does not reference this table when writing flags — only wa_quality_flag_types is used for derivable flags."
+      ],
+      "fields": [
+        {
+          "field": "id",
+          "spec_section": "§14",
+          "spec_rule": "AUTOINCREMENT PK. Seeded by migration; read only at runtime.",
+          "data_source": "Seeded by migration — read only by run modes",
+          "py_file": "scripts/migrate_flag_tables.py (historical seeding only)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Reference table (seeded by migration; no run mode writes)"
+        },
+        {
+          "field": "flag_code",
+          "spec_section": "§14",
+          "spec_rule": "25 analytical flag codes, e.g. 'GOD_AS_SUBJECT', 'SOMATIC_INNER_LINK', 'THEOLOGICAL_ANCHOR'. UNIQUE constraint. Seeded by migration.",
+          "data_source": "Seeded by migration — read only at runtime. Run modes FK-reference via wa_term_phase2_flags.flag_id.",
+          "py_file": "scripts/migrate_flag_tables.py (historical seeding only)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "— Reference table (seeded by migration; no run mode writes)"
+        },
+        {
+          "field": "description",
+          "spec_section": "§14",
+          "spec_rule": "Human-readable description of the flag. Seeded by migration.",
+          "data_source": "Seeded by migration — read only at runtime",
+          "py_file": "scripts/migrate_flag_tables.py (historical seeding only)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": true,
+          "spec_match": "— Reference table (seeded by migration; no run mode writes)"
+        }
+      ]
+    },
+    {
+      "table": "wa_term_phase2_flags",
+      "part": "Part 3 — Phase-2 Flags (shared lookup)",
+      "description": "Junction table: wa_term_inventory ↔ phase2_flag_types (many-to-many). Composite PK (term_inv_id, flag_id) — no separate id column. Spec says engine writes 'derivable flags' here at NEW_WORD N16 and GAP_FILL S5. However, flag_engine.py's run_flag_engine() writes ONLY to wa_data_quality_flags and never INSERTs to this table. No INSERT INTO wa_term_phase2_flags exists anywhere in engine/ code. In practice, all rows written to this table come from manual DB patch imports, not from engine runs.",
+      "spec_sections": [
+        "§6.1 S5",
+        "§7.2 N16",
+        "§14"
+      ],
+      "modes_that_write": [],
+      "table_spec_rules": [
+        "§7.2 N16: 'Run flag engine. Evaluate derivable flags. INSERT wa_term_phase2_flags, wa_data_quality_flags (including SPAN_RESOLUTION_CONFLICT for any span-conflict terms).'",
+        "§6.1 S5: 'FLAG_ENGINE | Terms written in S4 | wa_term_phase2_flags (derivable flags); wa_data_quality_flags including SPAN_RESOLUTION_CONFLICT where applicable.'",
+        "§14: 'Content | Engine (derivable) | Unchanged' — spec intent is engine-written.",
+        "CODE REALITY: flag_engine.py run_flag_engine() docstring says 'Writes rows to wa_term_phase2_flags and wa_data_quality_flags' but implementation only writes to wa_data_quality_flags. No INSERT INTO wa_term_phase2_flags anywhere in engine/ code.",
+        "CODE REALITY: flag_engine.py comment: 'All other phase2_flag_types are judgment flags deferred to the researcher.' Derivable quality flags go to wa_data_quality_flags (HIGH_FREQUENCY_ANCHOR, THIN_DATA, SMALL_VERSE_SAMPLE, NO_WORD_ANALYSIS, NO_VERSES, SPAN_RESOLUTION_CONFLICT).",
+        "AUDIT_WORD has no explicit flag engine step in its step sequence — wa_term_phase2_flags is not touched.",
+        "Impact: Terms processed by v9 automation engine have zero rows in wa_term_phase2_flags. The table has rows only for terms processed before v9 (manual patches).",
+        "COMPOSITE PK — no separate id column. Fields are term_inv_id and flag_id only."
+      ],
+      "fields": [
+        {
+          "field": "term_inv_id",
+          "spec_section": "§6.1 S5 · §7.2 N16",
+          "spec_rule": "FK to wa_term_inventory.id. Part of composite PK. Spec: written by engine at N16 (NEW_WORD) and S5 (GAP_FILL). Code: never set — run_flag_engine() does not INSERT to this table.",
+          "data_source": "NOT_WRITTEN by engine — rows written only via manual DB patch imports",
+          "py_file": "engine/flag_engine.py (listed in docstring but not implemented)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N16",
+                "operation": "NOT_WRITTEN",
+                "condition": "Spec says 'INSERT wa_term_phase2_flags (derivable flags)' at N16; code run_flag_engine() never INSERTs to this table",
+                "value": "— ✗ Diverges from spec §7.2 N16"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S5",
+                "operation": "NOT_WRITTEN",
+                "condition": "Spec says FLAG_ENGINE writes wa_term_phase2_flags at S5; code run_flag_engine() never INSERTs to this table",
+                "value": "— ✗ Diverges from spec §6.1 S5"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✗ Diverges — spec §7.2 N16 and §6.1 S5 specify engine writes derivable flags to wa_term_phase2_flags; run_flag_engine() in code only writes to wa_data_quality_flags; no INSERT INTO wa_term_phase2_flags exists in engine/ code; rows written only by manual DB patch imports for pre-v9 terms"
+        },
+        {
+          "field": "flag_id",
+          "spec_section": "§6.1 S5 · §7.2 N16",
+          "spec_rule": "FK to phase2_flag_types.id. Part of composite PK. Spec: derivable flags written by engine. Code: never written by engine.",
+          "data_source": "NOT_WRITTEN by engine — rows written only via manual DB patch imports",
+          "py_file": "engine/flag_engine.py (listed in docstring but not implemented)",
+          "modes": {
+            "REGISTER": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ],
+            "NEW_WORD": [
+              {
+                "stage": "N16",
+                "operation": "NOT_WRITTEN",
+                "condition": "Same divergence as term_inv_id — no INSERT to wa_term_phase2_flags",
+                "value": "—"
+              }
+            ],
+            "GAP_FILL": [
+              {
+                "stage": "S5",
+                "operation": "NOT_WRITTEN",
+                "condition": "Same divergence as term_inv_id — no INSERT to wa_term_phase2_flags",
+                "value": "—"
+              }
+            ],
+            "AUDIT_WORD": [
+              {
+                "stage": "—",
+                "operation": "NOT_WRITTEN",
+                "condition": "—",
+                "value": "—"
+              }
+            ]
+          },
+          "optional": false,
+          "spec_match": "✗ Diverges — same as term_inv_id; the entire table is not written by v9 engine despite spec §7.2 N16 and §6.1 S5 intent"
+        }
+      ]
+    }
+  ]
+}

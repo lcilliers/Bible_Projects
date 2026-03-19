@@ -14,7 +14,9 @@ Usage examples:
     python -m engine.engine --mode=new_word --registry=42 --terms=H0015 --dry-run
     python -m engine.engine --mode=new_word --registry=42 --terms=H0015 --force
 
-    python -m engine.engine --mode=gap_fill  --registry=42
+    python -m engine.engine --mode=gap_fill                        (bulk — all Pending words)
+    python -m engine.engine --mode=gap_fill  --streams=S1,S2        (bulk — selected stages only)
+    python -m engine.engine --mode=gap_fill  --registry=42           (single-word gap patch)
     python -m engine.engine --mode=gap_fill  --registry=42 --streams=S3,S4
 
     python -m engine.engine --mode=audit_word --registry=42
@@ -46,8 +48,8 @@ from .migrate import run_migrations, check_version
 from .backup import pre_migration_backup, pre_run_backup, post_run_backup
 from .register import run_register, run_clear_lock, check_stale_locks
 from .new_word import run_new_word
-from .gap_fill import run_gap_fill
-from .audit_word import run_audit_word
+from .gap_fill import run_gap_fill, run_bulk_gap_fill
+from .audit_word import run_audit_word, register_book_override
 from .report import print_word_report
 
 
@@ -88,6 +90,10 @@ def _build_parser() -> argparse.ArgumentParser:
                     help="Extra output for migrations and diagnostics")
     ap.add_argument("--db",       metavar="PATH",
                     help="Path to SQLite database (defaults to analytics/bible_research.db)")
+    ap.add_argument("--pause",    action="store_true",
+                    help="Pause at key checkpoints for manual verification (new_word mode)")
+    ap.add_argument("--add-book-code", metavar="SOURCE=OSIS",
+                    help='Register a book name alias (e.g. --add-book-code "Psalms=Ps")')
 
     # ── --migrate options ─────────────────────────────────────────────────────
     ap.add_argument("--to", metavar="MXX",
@@ -127,8 +133,18 @@ def main() -> int:
 
     # Default action: print help if nothing specified
     if not any([args.migrate, args.db_status, args.register, args.mode,
-                args.report, args.clear_lock, args.check_locks]):
+                args.report, args.clear_lock, args.check_locks,
+                args.add_book_code]):
         ap.print_help()
+        return 0
+
+    # ── --add-book-code ────────────────────────────────────────────────────────────────────────
+    if args.add_book_code:
+        if "=" not in args.add_book_code:
+            print("[ERROR] --add-book-code expects 'SourceName=OsisCode'", file=sys.stderr)
+            return 1
+        _src, _osis = args.add_book_code.split("=", 1)
+        register_book_override(_src.strip(), _osis.strip())
         return 0
 
     # ── Open DB connection ────────────────────────────────────────────────────
@@ -216,7 +232,8 @@ def main() -> int:
 
     # ── --mode ────────────────────────────────────────────────────────────────
     if args.mode:
-        if not args.registry:
+        # gap_fill without --registry = bulk mode; all others require --registry.
+        if not args.registry and args.mode != "gap_fill":
             print(f"[ERROR] --mode={args.mode} requires --registry=N", file=sys.stderr)
             return 1
 
@@ -230,6 +247,7 @@ def main() -> int:
             result = run_new_word(
                 conn, args.registry, strongs_list,
                 dry_run=args.dry_run, force=args.force,
+                pause=args.pause,
             )
             if not args.dry_run and result["outcome"] in ("COMPLETE", "PARTIAL"):
                 post_run_backup(f"NEW_WORD-reg{args.registry}")
@@ -237,14 +255,24 @@ def main() -> int:
 
         if args.mode == "gap_fill":
             streams = [s.strip() for s in args.streams.split(",")] if args.streams else None
-            if not args.dry_run:
-                pre_run_backup(f"GAP_FILL-reg{args.registry}")
-            result = run_gap_fill(
-                conn, args.registry, streams=streams, dry_run=args.dry_run,
-            )
-            if not args.dry_run and result["outcome"] == "COMPLETE":
-                post_run_backup(f"GAP_FILL-reg{args.registry}")
-            return 0 if result["outcome"] in ("COMPLETE", "DRY_RUN") else 1
+            if args.registry:
+                # Single-word gap patch (existing behaviour).
+                if not args.dry_run:
+                    pre_run_backup(f"GAP_FILL-reg{args.registry}")
+                result = run_gap_fill(
+                    conn, args.registry, streams=streams, dry_run=args.dry_run,
+                )
+                if not args.dry_run and result["outcome"] == "COMPLETE":
+                    post_run_backup(f"GAP_FILL-reg{args.registry}")
+                return 0 if result["outcome"] in ("COMPLETE", "DRY_RUN") else 1
+            else:
+                # Bulk initialization pass across all Pending words.
+                if not args.dry_run:
+                    pre_run_backup("BULK_GAP_FILL")
+                result = run_bulk_gap_fill(conn, stages=streams, dry_run=args.dry_run)
+                if not args.dry_run and result["outcome"] == "COMPLETE":
+                    post_run_backup("BULK_GAP_FILL")
+                return 0 if result["outcome"] in ("COMPLETE", "DRY_RUN") else 1
 
         if args.mode == "audit_word":
             if not args.dry_run:

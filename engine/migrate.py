@@ -260,8 +260,18 @@ def _m09(conn: sqlite3.Connection) -> None:
 
 @_register("M10", "Update schema_version to 3.0.0")
 def _m10(conn: sqlite3.Connection) -> None:
-    # This migration updates the version_code and records full migration history.
-    # It runs last and its completion is the canonical signal that migration is done.
+    conn.execute(
+        "UPDATE schema_version SET version_code = '3.0.0', applied_at = ? WHERE id = 1",
+        (_now(),),
+    )
+
+
+@_register("M11", "Add strongs_list column to word_registry + update schema to 3.1.0")
+def _m11(conn: sqlite3.Connection) -> None:
+    # strongs_list stores the JSON result of get_strongs_for_word() discovery:
+    # a JSON array of {"strong": "H5315", "count": 148} objects, sorted by count desc.
+    # Populated by GAP_FILL Stage 1 (term discovery) and readable by later stages.
+    _add_column_if_missing(conn, "word_registry", "strongs_list", "TEXT")
     conn.execute(
         "UPDATE schema_version SET version_code = ?, applied_at = ? WHERE id = 1",
         (EXPECTED_SCHEMA_VERSION, _now()),
@@ -344,6 +354,10 @@ def _update_migration_history(conn: sqlite3.Connection, ref: str,
             "SELECT migration_history FROM schema_version WHERE id = 1"
         ).fetchone()
         history = json.loads(row[0] or "[]")
+        # Idempotent: skip if this ref is already recorded (prevents duplicate
+        # entries when --migrate is run more than once).
+        if any(e.get("version") == ref for e in history):
+            return
         history.append({
             "version": ref,
             "description": description,

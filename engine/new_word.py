@@ -55,6 +55,16 @@ def _confirm(prompt: str, expected: str) -> bool:
     return val == expected
 
 
+def _pause(label: str, pause: bool) -> None:
+    """If pause mode is active, wait for Enter before proceeding."""
+    if not pause:
+        return
+    try:
+        input(f"  [PAUSE] {label} — press Enter to continue...")
+    except (EOFError, KeyboardInterrupt):
+        print()
+
+
 def classify_strongs(conn, strongs: str, registry_id: int) -> str:
     """Classify a Strong's as NEW, XREF, or PENDING."""
     row = conn.execute(
@@ -75,7 +85,8 @@ def classify_strongs(conn, strongs: str, registry_id: int) -> str:
 
 
 def run_new_word(conn, registry_id: int, strongs_list: list[str],
-                 dry_run: bool = False, force: bool = False) -> dict:
+                 dry_run: bool = False, force: bool = False,
+                 pause: bool = False) -> dict:
     """Execute NEW_WORD mode for a single registry entry.
 
     Args:
@@ -145,13 +156,36 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
         if not force:
             return _stop(
                 f"N2: wa_file_index rows already exist for registry {registry_id}. "
-                "Use --force to overwrite (requires typed confirmation)."
+                "Use --force to overwrite."
             )
-        if not dry_run and not _confirm(
-            f"wa_file_index exists for {word} (registry {registry_id}). Overwrite?",
-            "OVERWRITE",
-        ):
-            return _stop("N2: Overwrite not confirmed.")
+        old_ids = [r["id"] for r in existing_fi]
+        _review(
+            f"N2: --force active — purging {len(old_ids)} existing "
+            f"wa_file_index row(s) for {word} (registry {registry_id}): ids={old_ids}."
+        )
+        for old_id in old_ids:
+            conn.execute("DELETE FROM wa_data_quality_flags WHERE file_id = ?", (old_id,))
+            # Delete meaning children before parent (FK: wa_meaning_sense/stem → wa_meaning_parsed)
+            conn.execute(
+                "DELETE FROM wa_meaning_sense WHERE parsed_meaning_id IN "
+                "(SELECT mp.id FROM wa_meaning_parsed mp "
+                " JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id WHERE ti.file_id = ?)",
+                (old_id,))
+            conn.execute(
+                "DELETE FROM wa_meaning_stem WHERE parsed_meaning_id IN "
+                "(SELECT mp.id FROM wa_meaning_parsed mp "
+                " JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id WHERE ti.file_id = ?)",
+                (old_id,))
+            conn.execute("DELETE FROM wa_meaning_parsed WHERE term_inv_id IN "
+                         "(SELECT id FROM wa_term_inventory WHERE file_id = ?)", (old_id,))
+            conn.execute("DELETE FROM wa_lsj_parsed WHERE term_inv_id IN "
+                         "(SELECT id FROM wa_term_inventory WHERE file_id = ?)", (old_id,))
+            conn.execute("DELETE FROM wa_verse_records WHERE file_id = ?", (old_id,))
+            conn.execute("DELETE FROM wa_term_inventory WHERE file_id = ?", (old_id,))
+            conn.execute("DELETE FROM mti_terms WHERE word_data_reference = ?", (str(old_id),))
+            conn.execute("DELETE FROM wa_file_index WHERE id = ?", (old_id,))
+        conn.commit()
+        print(f"     N2: Old data purged for file_ids {old_ids}.")
 
     # ── N3: Term list validation ──────────────────────────────────────────────
     print("N3  Term list validation...")
@@ -176,10 +210,10 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
     print(f"     NEW: {len(new_terms)}  XREF: {len(xref_terms)}  PENDING: {len(pending_terms)}")
 
     if pending_terms:
-        print(f"  [REVIEW gate] PENDING terms require researcher approval before N5: {pending_terms}")
-        if not dry_run:
-            if not _confirm("Approve PENDING terms and continue?", "APPROVE"):
-                return _stop("N4: PENDING terms not approved.")
+        _review(
+            f"N4: PENDING terms auto-approved (non-interactive): {pending_terms}. "
+            "Verify via --report after the run."
+        )
 
     if not new_terms:
         _review("N4: No NEW terms — all terms are XREF or PENDING.")
@@ -311,6 +345,13 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                 "total_verses_filtered": total_filtered,
             },
         }
+
+    _pause(
+        f"Pre-transaction data ready: vocab={len(vocab_map)}  "
+        f"verses_fetched={total_fetched}  filtered={total_filtered}  "
+        f"conflicts={len(span_conflicts)}  — review N7/N8 output above",
+        pause,
+    )
 
     # ── OPEN TRANSACTION — N9–N15 ─────────────────────────────────────────────
     print("N9–N15  Opening transaction — DB writes...")
@@ -477,6 +518,25 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
         conn.commit()
         return _stop(f"Transaction rolled back: {exc}")
 
+    # ── Post-transaction self-verify ───────────────────────────────────────────────────
+    _fi_ok  = conn.execute("SELECT COUNT(*) FROM wa_file_index WHERE id = ?",
+                           (file_id,)).fetchone()[0] == 1
+    _ti_cnt = conn.execute("SELECT COUNT(*) FROM wa_term_inventory WHERE file_id = ?",
+                           (file_id,)).fetchone()[0]
+    _vr_cnt = conn.execute("SELECT COUNT(*) FROM wa_verse_records WHERE file_id = ?",
+                           (file_id,)).fetchone()[0]
+    _mt_cnt = conn.execute("SELECT COUNT(*) FROM mti_terms WHERE word_data_reference = ?",
+                           (str(file_id),)).fetchone()[0]
+    print(
+        f"     [VERIFY] file_index={'OK' if _fi_ok else 'MISS'} "
+        f"| terms={_ti_cnt}/{len(new_terms)} "
+        f"| verses={_vr_cnt} "
+        f"| mti={_mt_cnt}/{len(new_terms)}"
+    )
+    if not _fi_ok:
+        return _stop("Post-transaction verify: wa_file_index row missing.")
+    _pause("Transaction committed — verify DB counts above before post-write steps", pause)
+
     # ── N14: Derive testament_coverage ───────────────────────────────────────
     print("N14 Derive testament_coverage...")
     testaments = {
@@ -530,6 +590,11 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
         for e in parse_result["errors"]:
             _review(f"N15: {e}")
     print(f"     Parsed {parse_result['parsed']} meanings.")
+    _mp_cnt = conn.execute(
+        "SELECT COUNT(*) FROM wa_meaning_parsed mp "
+        "JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id WHERE ti.file_id = ?",
+        (file_id,)).fetchone()[0]
+    print(f"     [VERIFY] wa_meaning_parsed: {_mp_cnt} rows")
 
     # ── N16: Flag engine ──────────────────────────────────────────────────────
     print("N16 Flag engine...")
@@ -538,6 +603,9 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
         for e in flag_result["errors"]:
             _review(f"N16: {e}")
     print(f"     {flag_result['flags_written']} quality flags written.")
+    _fl_cnt = conn.execute("SELECT COUNT(*) FROM wa_data_quality_flags WHERE file_id = ?",
+                           (file_id,)).fetchone()[0]
+    print(f"     [VERIFY] quality flags total on file: {_fl_cnt}")
 
     # ── N17: Audit ────────────────────────────────────────────────────────────
     print("N17 Audit (WR-01 – WR-20)...")
@@ -556,6 +624,11 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
         )
 
     print(f"     Audit result: {audit_result['result']}")
+    _n17_p = sum(1 for c in audit_result["checks"] if c["result"] == "PASS")
+    _n17_r = sum(1 for c in audit_result["checks"] if c["result"] == "REVIEW")
+    _n17_s = sum(1 for c in audit_result["checks"] if c["result"] == "STOP")
+    print(f"     [VERIFY] WR checks: {_n17_p} PASS  {_n17_r} REVIEW  {_n17_s} STOP")
+    _pause("Audit complete — review results above before field-fill", pause)
 
     if audit_result["result"] == "STOP":
         _review(
@@ -626,7 +699,11 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
 def _run_field_fill(conn, file_id: int, vocab_map: dict) -> None:
     """Interactive field-fill for also_spelled and occurrence_count_qualifier.
     Researcher inputs value or presses Enter to confirm null.
+    If not connected to a tty (e.g. piped/automated run), skips prompts (accepts null).
     """
+    import sys as _sys
+    interactive = _sys.stdin.isatty() and _sys.stdout.isatty()
+
     terms = conn.execute(
         "SELECT id, strongs_number, term_id, language, also_spelled, occurrence_count_qualifier, "
         "transliteration, step_search_gloss "
@@ -645,9 +722,13 @@ def _run_field_fill(conn, file_id: int, vocab_map: dict) -> None:
             print(f"\n  Field-fill: also_spelled")
             print(f"    Term: {strongs}  ({translit})  '{gloss}'")
             print(f"    (Check STEP UI for alternate spellings / Strong's variants)")
-            try:
-                val = input("    also_spelled (JSON or blank for null): ").strip()
-            except (EOFError, KeyboardInterrupt):
+            if interactive:
+                try:
+                    val = input("    also_spelled (JSON or blank for null): ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    val = ""
+            else:
+                print("    [non-interactive] skipping — null accepted")
                 val = ""
             conn.execute(
                 "UPDATE wa_term_inventory SET also_spelled = ? WHERE id = ?",
@@ -662,9 +743,13 @@ def _run_field_fill(conn, file_id: int, vocab_map: dict) -> None:
             ).fetchone()["occurrence_count"]
             print(f"\n  Field-fill: occurrence_count_qualifier")
             print(f"    Term: {strongs}  occurrence_count={occ}")
-            try:
-                val = input("    qualifier ('about' / blank for exact): ").strip()
-            except (EOFError, KeyboardInterrupt):
+            if interactive:
+                try:
+                    val = input("    qualifier ('about' / blank for exact): ").strip()
+                except (EOFError, KeyboardInterrupt):
+                    val = ""
+            else:
+                print("    [non-interactive] skipping — null accepted")
                 val = ""
             conn.execute(
                 "UPDATE wa_term_inventory SET occurrence_count_qualifier = ? WHERE id = ?",

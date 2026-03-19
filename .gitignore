@@ -28,12 +28,25 @@ build/
 data/*.db
 data/*.sqlite
 data/*.sqlite3
+data/*.bak
+data/*.bak_*
+
+# ── Live database (analytics folder) ──────────
+analytics/*.db
+analytics/*.sqlite
+analytics/*.sqlite3
+
+# ── Backups folder ────────────────────────────
+backups/
 
 # ── SQLite import / export staging files ──────
 # (these are transient; commit only the schema and .gitkeep files)
 data/imports/*.json
 data/exports/*.json
 data/exports/*.csv
+
+# ── Generated word report CSVs ────────────────
+outputs/word_reports/
 
 # ── Output binaries (track only source .md) ───
 outputs/docx/*.docx

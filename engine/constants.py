@@ -5,7 +5,7 @@ Shared constants for the Session A v9 Automation Engine.
 """
 
 # Schema version this engine build requires.
-EXPECTED_SCHEMA_VERSION = "3.0.0"
+EXPECTED_SCHEMA_VERSION = "3.1.0"
 
 # Engine version string (written to term_fetch_log / engine_run_log).
 ENGINE_VERSION = "1.0.0"

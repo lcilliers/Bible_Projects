@@ -7,8 +7,9 @@ STEP masterSearch preview HTML contains inline <span> tags:
     <span morph='HVqp3ms' strong='H7442B H9001'>sang</span>
 
 The filter rule:
-  - If the queried Strong's appears in the span's strong= attribute → STORE (match=1)
-  - If only related/sibling forms appear → DISCARD (match=0, increment filtered count)
+  - If the queried Strong's, OR any sub-gloss of its numeric base, appears in a span's
+    strong= attribute → STORE (match=1). This means H7965H matches H7965A..H7965F.
+  - Spans containing only grammatical prefix codes (H9xxx / G9xxx) are ignored.
 
 Also extracts target_word from the matching span text.
 Used in: S3 (GAP_FILL), N8 (NEW_WORD), A6 / A3a (AUDIT_WORD).
@@ -38,21 +39,37 @@ def _parse_spans(html: str) -> list[tuple[list[str], str]]:
     return result
 
 
+def _base_prefix(queried_strong: str) -> str | None:
+    """Return the numeric base of a Strong's code (e.g. 'H7965' from 'H7965H').
+
+    Returns None if the code has no letter suffix or has no recognisable prefix.
+    """
+    m = re.match(r'^([HG]\d+)[A-Za-z]$', queried_strong)
+    return m.group(1) if m else None
+
+
 def apply_span_filter(html: str, queried_strong: str) -> dict:
     """Apply the span filter to a single verse's preview HTML.
 
+    Matches if the queried Strong's number OR any sub-gloss with the same
+    numeric base (e.g. H7965A satisfies H7965H) appears in a span.
+
     Returns:
         {
-          "match":       True | False,   # verse should be stored
-          "target_word": str,            # span text for the matching span ('' if none)
+          "match":       True | False,
+          "target_word": str,   # span text for the first matching span ('' if none)
         }
     """
-    spans = _parse_spans(html)
+    spans    = _parse_spans(html)
+    base     = _base_prefix(queried_strong)   # e.g. 'H7965' or None
+
     for numbers, text in spans:
-        # Ignore spans that are purely grammatical prefix codes.
-        content_numbers = [n for n in numbers if not _PREFIX_CODES.match(n)]
-        if queried_strong in content_numbers:
+        content = [n for n in numbers if not _PREFIX_CODES.match(n)]
+        if queried_strong in content:
             return {"match": True, "target_word": text}
+        if base and any(n.startswith(base) for n in content):
+            return {"match": True, "target_word": text}
+
     return {"match": False, "target_word": ""}
 
 
@@ -65,33 +82,27 @@ def filter_verse_records(raw_records: list[dict], queried_strong: str,
                         Each must have 'osisId' key.
         queried_strong: The resolved Strong's number actually searched.
         raw_html_map:   Dict mapping osisId → raw preview HTML string.
-                        (step_client must supply this; see notes below.)
 
     Returns:
         {
-          "stored":   [list of verse dicts with span_strong_match=1 and target_word set],
-          "filtered": [list of verse dicts with span_strong_match=0],
-          "conflict": bool  — True if stored is empty after filtering,
+          "stored":   [list with span_strong_match=1 and target_word set],
+          "filtered": [list with span_strong_match=0],
+          "conflict": bool  — True if stored is empty but filtered is not,
         }
-
-    Notes:
-        step_client.get_verse_records() already extracts target_word from spans.
-        For the filter we need the raw HTML. The step_client should be extended
-        (or called differently) to also return the preview HTML per verse.
-        This function accepts the html_map as a separate argument to keep
-        concerns separated.
     """
-    stored = []
+    stored   = []
     filtered = []
 
     for record in raw_records:
         osis_id = record.get("osisId", "")
-        html = raw_html_map.get(osis_id, "")
+        html    = raw_html_map.get(osis_id, "")
 
         if not html:
-            # No HTML available — default to storing with match=None (will trigger WR-20).
-            record = {**record, "span_strong_match": None, "target_word": record.get("target_word", "")}
-            stored.append(record)
+            stored.append({
+                **record,
+                "span_strong_match": None,
+                "target_word": record.get("target_word", ""),
+            })
             continue
 
         result = apply_span_filter(html, queried_strong)

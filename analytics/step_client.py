@@ -129,6 +129,12 @@ class StepClient:
             query += f"|reference={ref_range}"
         return self._get_json(f"rest/search/masterSearch/{query}")
 
+    def _text_search_range(self, english_word: str, ref_range: Optional[str] = None) -> dict:
+        query = f"version={self.version}|text=+{english_word}"
+        if ref_range:
+            query += f"|reference={ref_range}"
+        return self._get_json(f"rest/search/masterSearch/{query}")
+
     def _resolved_strong(self, strong: str) -> str:
         """Return the Strong's number STEP actually uses for verse tagging.
 
@@ -293,10 +299,33 @@ class StepClient:
             records  — same list as get_verse_records()
             html_map — dict mapping osisId → raw preview HTML string
                        (used by engine/span_filter.py for span confirmation)
+
+        Base-fallback: if a code with a letter suffix (e.g. H7965H) returns
+        very few results, automatically retries with the numeric base (H7965).
+        This handles consolidated/family codes where STEP's verse search uses
+        only the sub-gloss forms (H7965A..H7965F) in practise.
         """
+        import re as _re
         resolved = self._resolved_strong(strong)
         first = self._search_range(resolved)
         total = first.get("total", 0)
+
+        # Base-fallback: if code has a letter suffix and returns <= 5 verses,
+        # try the base number (strip trailing letter), then base+'A' (first sub-gloss).
+        # If either returns substantially more verses, use it instead.
+        # Example: H7965H → H7965 (0 results) → H7965A (148 results).
+        if total <= 5:
+            _base_m = _re.match(r'^([HG]\d+)[A-Za-z]$', resolved)
+            if _base_m:
+                base_code = _base_m.group(1)
+                for try_code in [base_code, base_code + 'A']:
+                    base_first = self._search_range(try_code)
+                    base_total = base_first.get("total", 0)
+                    if base_total > total:
+                        resolved = try_code
+                        first    = base_first
+                        total    = base_total
+                        break
 
         if total == 0:
             return [], {}
@@ -341,6 +370,79 @@ class StepClient:
 
         records.sort(key=lambda r: r["osisId"])
         return records, html_map
+
+    # ── Public API — full extraction ───────────────────────────────────────
+
+    def get_strongs_for_word(self, english_word: str) -> list[dict]:
+        """Return all Strong's numbers that tag the given English word in ESV text.
+
+        Uses STEP's text search (``text=+{word}``), which returns verses whose ESV
+        text contains the English word with full Strong's span tagging.  The span
+        that wraps the matching English word carries the Strong's number(s) for that
+        translation choice.
+
+        Two-level canonical pagination (identical to ``get_verse_records``) handles
+        the 60-result cap.  Grammar-particle codes (H9xxx / G9xxx) are excluded.
+        Suffix variants (H5315G → H5315) are merged into their base numbers.
+
+        Returns a list of ``{"strong": str, "count": int}`` dicts sorted by
+        ``count`` descending.  ``count`` is the number of unique verses where
+        the English word is tagged with that Strong's number.
+
+        Example::
+
+            client.get_strongs_for_word("soul")
+            # → [{"strong": "H5315", "count": 148}, {"strong": "G5590", "count": 31}, …]
+        """
+        # Regex to match <span strong='...'> that contains the English word.
+        span_pat = re.compile(
+            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<",
+            re.IGNORECASE,
+        )
+        word_pat = re.compile(r"\b" + re.escape(english_word) + r"\b", re.IGNORECASE)
+
+        seen: dict[str, str] = {}   # osisId → preview html (dedup verses)
+
+        def _collect(d: dict) -> None:
+            for item in d.get("results", []):
+                osis = item.get("osisId") or item.get("key", "")
+                if osis not in seen:
+                    seen[osis] = item.get("preview", "")
+
+        # Same two-level pagination as get_verse_records.
+        first = self._text_search_range(english_word)
+        total = first.get("total", 0)
+
+        if total <= 60:
+            _collect(first)
+        else:
+            for section, ref_range in _CANON_RANGES:
+                d = self._text_search_range(english_word, ref_range)
+                section_total = d.get("total", 0)
+                if section_total > 60:
+                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
+                        _collect(self._text_search_range(english_word, subrange))
+                else:
+                    _collect(d)
+
+        # Count how many verses tag the English word with each base Strong's.
+        tally: dict[str, int] = {}
+        for html in seen.values():
+            for span_m in span_pat.finditer(html):
+                strongs_attr, word_text = span_m.group(1), span_m.group(2)
+                if not word_pat.search(word_text):
+                    continue
+                for s in strongs_attr.split():
+                    # Skip grammar-particle internal codes (H9xxx / G9xxx)
+                    if not re.match(r"^[HG]\d{4}", s) or re.match(r"^[HG]9", s):
+                        continue
+                    base = re.sub(r"[A-Z]+$", "", s)  # H5315G → H5315
+                    tally[base] = tally.get(base, 0) + 1
+
+        return [
+            {"strong": s, "count": c}
+            for s, c in sorted(tally.items(), key=lambda x: -x[1])
+        ]
 
     # ── Public API — full extraction ───────────────────────────────────────
 

@@ -72,17 +72,37 @@ def _wr03(conn, file_id: int, registry_id: int) -> dict:
 
 
 def _wr04(conn, file_id: int, registry_id: int) -> dict:
-    """All term_ids in mti_terms with status=extracted."""
+    """All wa_term_inventory strongs_number values present in mti_terms."""
+    # Join on strongs_number (not id) — term_id contains legacy formats that
+    # do not match mti_terms.strongs_number.  Rows with null strongs_number
+    # are reported as REVIEW (not STOP) since they may be pre-v9 imports.
+    null_strongs = conn.execute(
+        "SELECT COUNT(*) AS c FROM wa_term_inventory "
+        "WHERE file_id = ? AND (strongs_number IS NULL OR strongs_number = '')",
+        (file_id,),
+    ).fetchone()["c"]
+
     orphans = conn.execute(
-        """SELECT ti.id, ti.term_id FROM wa_term_inventory ti
-           LEFT JOIN mti_terms mt ON mt.id = ti.id AND mt.status = 'extracted'
-           WHERE ti.file_id = ? AND mt.id IS NULL""",
+        """SELECT ti.id, ti.strongs_number FROM wa_term_inventory ti
+           LEFT JOIN mti_terms mt ON mt.strongs_number = ti.strongs_number
+           WHERE ti.file_id = ?
+           AND (ti.strongs_number IS NOT NULL AND ti.strongs_number != '')
+           AND mt.id IS NULL""",
         (file_id,),
     ).fetchall()
-    if not orphans:
+
+    issues = []
+    if null_strongs:
+        issues.append(f"{null_strongs} row(s) with null strongs_number")
+    if orphans:
+        issues.append(f"{len(orphans)} strongs_number(s) not in mti_terms: "
+                      f"{[r['strongs_number'] for r in orphans]}")
+
+    if not issues:
         return _pass("WR-04")
-    ids = [r["id"] for r in orphans]
-    return _fail_stop("WR-04", f"Orphaned wa_term_inventory rows with no mti_terms match: {ids}")
+    # Orphan rows without any mti_terms entry are a REVIEW item — they may be
+    # legitimate XREF terms or pre-v9 imports awaiting AUDIT_WORD back-fill.
+    return _fail_review("WR-04", "; ".join(issues))
 
 
 def _wr05(conn, file_id: int, registry_id: int) -> dict:
@@ -312,10 +332,13 @@ def _wr14(conn, file_id: int, registry_id: int) -> dict:
 
 
 def _wr15(conn, file_id: int, registry_id: int) -> dict:
-    """No duplicate mti_terms per strongs_number for this owning_registry."""
+    """No duplicate active mti_terms per strongs_number for this owning_registry.
+    Rows with exclusion_reason set are intentionally suppressed and are excluded
+    from the duplicate check."""
     dupes = conn.execute(
         """SELECT strongs_number, COUNT(*) AS c FROM mti_terms
-           WHERE owning_registry = ? GROUP BY strongs_number HAVING c > 1""",
+           WHERE owning_registry = ? AND (exclusion_reason IS NULL OR exclusion_reason = '')
+           GROUP BY strongs_number HAVING c > 1""",
         (str(registry_id),),
     ).fetchall()
     if not dupes:

@@ -22,6 +22,8 @@ Steps:
 
 from __future__ import annotations
 
+import json
+import re
 import sys
 import os
 from datetime import datetime, timezone
@@ -36,7 +38,7 @@ from .constants import (
     EXPECTED_SCHEMA_VERSION,
     LOCK_SENTINEL,
 )
-from .db import get_schema_version
+from .db import get_schema_version, get_book_id, get_max_id
 from .audit import run_audit
 from .flag_engine import run_flag_engine, _flag_id
 from .meaning_parser import run_parser_for_file
@@ -44,7 +46,7 @@ from .run_log import (
     make_run_id, open_run, close_run,
     write_word_run_state,
 )
-from .span_filter import apply_span_filter
+from .span_filter import apply_span_filter, filter_verse_records
 
 
 def _now() -> str:
@@ -133,76 +135,159 @@ def run_audit_word(conn, registry_id: int,
     ).fetchone()["c"]
     print(f"     {total_vr} verse records across {len(file_ids)} file(s).")
 
-    # ── A3a: Span back-population ──────────────────────────────────────────────
+    # ── A3a: Verse sync ────────────────────────────────────────────────────────
     backpop_count = 0
     backpop_filtered = 0
+    inserted_count = 0
+    updated_count  = 0
+    orphan_count   = 0
 
     if not skip_span_backpop:
-        print("A3a Span back-population (span_strong_match for pre-v9 verses)...")
-        client = StepClient()
+        print("A3a Verse sync (INSERT missing, UPDATE nulls, mark orphans)...")
+        client_a3 = StepClient()
+        book_misses: list = []
 
-        # Find verse records without span_strong_match set
-        null_span_rows = conn.execute(
-            """SELECT vr.id, vr.term_id, vr.reference, vr.term_inv_id,
-                      ti.strongs_number
-               FROM wa_verse_records vr
-               JOIN wa_term_inventory ti ON ti.id = vr.term_inv_id
-               WHERE vr.file_id IN ({})
-               AND vr.span_strong_match IS NULL""".format(
-                ",".join("?" * len(file_ids))),
-            file_ids,
-        ).fetchall()
+        for fid in file_ids:
+            term_rows = conn.execute(
+                """SELECT id, strongs_number, term_id, transliteration, status_note
+                   FROM wa_term_inventory WHERE file_id = ?""",
+                (fid,),
+            ).fetchall()
 
-        print(f"     {len(null_span_rows)} rows need span_strong_match set.")
+            for ti in term_rows:
+                # Skip terms explicitly marked as having no separate verse record
+                if ti["status_note"] and "no separate verse record" in ti["status_note"].lower():
+                    continue
 
-        if null_span_rows and not dry_run:
-            # Group by strongs_number to batch STEP HTML fetches
-            by_strongs: dict[str, list] = {}
-            for row in null_span_rows:
-                strongs = row["strongs_number"] or row["term_id"]
-                by_strongs.setdefault(strongs, []).append(row)
+                strongs = ti["strongs_number"] or ti["term_id"]
+                ti_id   = ti["id"]
 
-            for strongs, rows in by_strongs.items():
+                # Fetch from STEP
                 try:
-                    _records, html_map = client.get_verse_records_with_html(strongs)
+                    raw_records, html_map = client_a3.get_verse_records_with_html(strongs)
                 except Exception as exc:
                     errors.append(f"A3a: verse fetch failed for {strongs}: {exc}")
                     continue
 
-                for row in rows:
-                    # Find matching HTML by reference
-                    osis_id = _ref_to_osis(row["reference"])
-                    html = html_map.get(osis_id, "")
-                    if not html:
-                        # Try partial match on reference
-                        html = _fuzzy_html_lookup(html_map, row["reference"])
+                filter_result = filter_verse_records(raw_records, strongs, html_map)
+                step_verses   = filter_result["stored"]   # list of dicts with ref etc.
+                step_refs     = {r["ref"] for r in step_verses}
 
-                    if html:
-                        result = apply_span_filter(html, strongs)
-                        match_val = 1 if result["match"] else 0
-                        target = result.get("target_word") or ""
-                        conn.execute(
-                            "UPDATE wa_verse_records SET span_strong_match = ?, "
-                            "target_word = COALESCE(target_word, NULLIF(?, '')) WHERE id = ?",
-                            (match_val, target, row["id"]),
-                        )
-                        if match_val == 1:
-                            backpop_count += 1
-                        else:
-                            backpop_filtered += 1
-                    else:
-                        # No HTML for this verse in STEP — set to 0 (cannot confirm)
-                        conn.execute(
-                            "UPDATE wa_verse_records SET span_strong_match = 0 WHERE id = ?",
-                            (row["id"],),
-                        )
-                        backpop_filtered += 1
+                # Existing rows in table for this term_inv
+                existing_rows = conn.execute(
+                    """SELECT id, reference, span_strong_match, target_word, verse_text
+                       FROM wa_verse_records WHERE term_inv_id = ?""",
+                    (ti_id,),
+                ).fetchall()
+                existing_by_ref = {r["reference"]: r for r in existing_rows}
+                existing_refs   = set(existing_by_ref.keys())
 
+                if not dry_run:
+                    # INSERT: in STEP but not in table
+                    for rec in step_verses:
+                        ref = rec["ref"]
+                        if ref in existing_refs:
+                            continue
+                        book_id = get_book_id(conn, rec["book_code"])
+                        if book_id is None:
+                            book_misses.append(rec["book_code"])
+                            continue
+                        vr_id = get_max_id(conn, "wa_verse_records") + 1
+                        conn.execute(
+                            """INSERT INTO wa_verse_records
+                                   (id, file_id, term_inv_id, term_id, transliteration,
+                                    book_id, reference, chapter, verse_num, testament,
+                                    translation, verse_text, target_word,
+                                    span_strong_match, context_before, context_after)
+                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL)""",
+                            (
+                                vr_id, fid, ti_id, strongs,
+                                ti["transliteration"] or "",
+                                book_id, ref, rec["chapter"], rec["verse_num"],
+                                rec["testament"], rec["esv_text"],
+                                rec.get("target_word", ""),
+                                rec.get("span_strong_match", 1),
+                            ),
+                        )
+                        inserted_count += 1
+
+                    # UPDATE: rows in both — overwrite all STEP-sourced fields.
+                    # Early-stage data may be stale/incomplete; audit is the
+                    # canonical refresh pass so we always write the latest values.
+                    for rec in step_verses:
+                        ref = rec["ref"]
+                        if ref not in existing_refs:
+                            continue
+                        row = existing_by_ref[ref]
+                        updates = ["span_strong_match = ?"]
+                        params  = [rec.get("span_strong_match", 1)]
+                        if rec.get("target_word"):
+                            updates.append("target_word = ?")
+                            params.append(rec["target_word"])
+                        if rec.get("esv_text"):
+                            updates.append("verse_text = ?")
+                            params.append(rec["esv_text"])
+                        if rec.get("context_before") is not None:
+                            updates.append("context_before = ?")
+                            params.append(rec["context_before"])
+                        if rec.get("context_after") is not None:
+                            updates.append("context_after = ?")
+                            params.append(rec["context_after"])
+                        params.append(row["id"])
+                        conn.execute(
+                            f"UPDATE wa_verse_records SET {', '.join(updates)} WHERE id = ?",
+                            params,
+                        )
+                        updated_count += 1
+
+                    # MARK ORPHANS: in table but not in STEP — set span_strong_match = -1
+                    orphan_refs = existing_refs - step_refs
+                    for ref in orphan_refs:
+                        row = existing_by_ref[ref]
+                        if row["span_strong_match"] != -1:
+                            conn.execute(
+                                "UPDATE wa_verse_records SET span_strong_match = -1 WHERE id = ?",
+                                (row["id"],),
+                            )
+                            orphan_count += 1
+                else:
+                    # dry-run counts
+                    inserted_count += len(step_refs - existing_refs)
+                    updated_count  += sum(
+                        1 for rec in step_verses
+                        if rec["ref"] in existing_refs
+                        and existing_by_ref[rec["ref"]]["span_strong_match"] is None
+                    )
+                    orphan_count += len(existing_refs - step_refs)
+
+        if not dry_run:
             conn.commit()
-            print(f"     A3a: set match=1 on {backpop_count}, filtered {backpop_filtered} verse rows.")
 
-        elif dry_run and null_span_rows:
-            print(f"     [DRY-RUN] Would back-populate {len(null_span_rows)} rows.")
+        # Totals for counts
+        backpop_count    = inserted_count + updated_count
+        backpop_filtered = orphan_count
+
+        if book_misses:
+            _unique_misses = sorted(set(book_misses))
+            print(
+                f"\n     [BOOK_MISS] {len(_unique_misses)} unrecognized book name(s): "
+                f"{_unique_misses}"
+            )
+            print(
+                f"     To register an alias: "
+                f'python -m engine.engine --add-book-code "BookName=OsisCode"'
+            )
+
+        prefix = "[DRY-RUN] Would" if dry_run else ""
+        print(
+            f"     A3a: {prefix} inserted={inserted_count}  "
+            f"updated={updated_count}  orphans_marked={orphan_count}"
+        )
+        _total_vr_now = conn.execute(
+            "SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN ({})".format(
+                ",".join("?" * len(file_ids))), file_ids,
+        ).fetchone()[0]
+        print(f"     [VERIFY] total verse records now: {_total_vr_now}")
 
     # ── A4: Refresh wa_term_inventory from STEP ───────────────────────────────
     print("A4  Refreshing term inventory from STEP...")
@@ -245,6 +330,12 @@ def run_audit_word(conn, registry_id: int,
                     errors.append(f"A4: vocab refresh failed for {strongs}: {exc}")
         conn.commit()
     print(f"     A4 complete.")
+    if not dry_run:
+        _ti_count = conn.execute(
+            "SELECT COUNT(*) FROM wa_term_inventory WHERE file_id IN ({})".format(
+                ",".join("?" * len(file_ids))), file_ids,
+        ).fetchone()[0]
+        print(f"     [VERIFY] wa_term_inventory: {_ti_count} rows")
 
     # ── A5: Meaning parser refresh ─────────────────────────────────────────────
     print("A5  Meaning parser refresh...")
@@ -263,6 +354,14 @@ def run_audit_word(conn, registry_id: int,
                 result = run_parser_for_file(conn, file_id, vocab_map)
                 counts["total_meanings_parsed"] += result["parsed"]
     print(f"     A5: {counts['total_meanings_parsed']} meanings re-parsed.")
+    if not dry_run:
+        _mp_count = conn.execute(
+            "SELECT COUNT(*) FROM wa_meaning_parsed mp"
+            " JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id"
+            " WHERE ti.file_id IN ({})".format(",".join("?" * len(file_ids))),
+            file_ids,
+        ).fetchone()[0]
+        print(f"     [VERIFY] wa_meaning_parsed: {_mp_count} rows")
 
     # ── A6: Flag engine refresh ────────────────────────────────────────────────
     print("A6  Flag engine refresh...")
@@ -270,6 +369,12 @@ def run_audit_word(conn, registry_id: int,
         for file_id in file_ids:
             run_flag_engine(conn, file_id, registry_id)
     print(f"     A6 complete.")
+    if not dry_run:
+        _flag_count = conn.execute(
+            "SELECT COUNT(*) FROM wa_data_quality_flags WHERE file_id IN ({})".format(
+                ",".join("?" * len(file_ids))), file_ids,
+        ).fetchone()[0]
+        print(f"     [VERIFY] quality flags: {_flag_count} rows")
 
     # ── A7: Audit (WR-01–WR-20) ───────────────────────────────────────────────
     print("A7  Running audit (WR-01–WR-20)...")
@@ -288,9 +393,13 @@ def run_audit_word(conn, registry_id: int,
         )
 
     print(f"     A7: {audit_result['result']}")
+    _a7_p = sum(1 for c in audit_result["checks"] if c["result"] == "PASS")
+    _a7_r = sum(1 for c in audit_result["checks"] if c["result"] == "REVIEW")
+    _a7_s = sum(1 for c in audit_result["checks"] if c["result"] == "STOP")
+    print(f"     [VERIFY] WR checks: {_a7_p} PASS  {_a7_r} REVIEW  {_a7_s} STOP")
 
     # ── A8: Write SPAN_BACK_POPULATED flag ────────────────────────────────────
-    if not skip_span_backpop and not dry_run and null_span_rows:
+    if not skip_span_backpop and not dry_run and backpop_count > 0:
         print("A8  Writing SPAN_BACK_POPULATED quality flag...")
         fid = _flag_id(conn, "SPAN_BACK_POPULATED")
         if fid:
@@ -300,8 +409,8 @@ def run_audit_word(conn, registry_id: int,
                            (file_id, term_id, flag_id, description)
                        VALUES (?, NULL, ?, ?)""",
                     (file_id, fid,
-                     f"AUDIT_WORD A3a back-populated {backpop_count} verse rows. "
-                     f"{backpop_filtered} filtered (span_strong_match=0)."),
+                     f"AUDIT_WORD A3a verse sync: inserted={inserted_count} "
+                     f"updated={updated_count} orphans_marked={orphan_count}."),
                 )
         conn.commit()
         print(f"     A8: flag written.")
@@ -378,41 +487,119 @@ def run_audit_word(conn, registry_id: int,
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
-def _ref_to_osis(reference: str) -> str:
+# Module-level book name → OSIS code map (common abbreviations + full names).
+# Override or extend at runtime via register_book_override() or
+# data/osis_book_overrides.json.
+_BOOK_MAP: dict[str, str] = {
+    # Standard OSIS abbreviations
+    "Gen": "Gen", "Exod": "Exod", "Lev": "Lev", "Num": "Num",
+    "Deut": "Deut", "Josh": "Josh", "Judg": "Judg", "Ruth": "Ruth",
+    "1Sam": "1Sam", "2Sam": "2Sam", "1Kgs": "1Kgs", "2Kgs": "2Kgs",
+    "1Chr": "1Chr", "2Chr": "2Chr", "Ezra": "Ezra", "Neh": "Neh",
+    "Esth": "Esth", "Job": "Job", "Ps": "Ps", "Prov": "Prov",
+    "Eccl": "Eccl", "Song": "Song", "Isa": "Isa", "Jer": "Jer",
+    "Lam": "Lam", "Ezek": "Ezek", "Dan": "Dan", "Hos": "Hos",
+    "Joel": "Joel", "Amos": "Amos", "Obad": "Obad", "Jonah": "Jonah",
+    "Mic": "Mic", "Nah": "Nah", "Hab": "Hab", "Zeph": "Zeph",
+    "Hag": "Hag", "Zech": "Zech", "Mal": "Mal",
+    "Matt": "Matt", "Mark": "Mark", "Luke": "Luke", "John": "John",
+    "Acts": "Acts", "Rom": "Rom", "1Cor": "1Cor", "2Cor": "2Cor",
+    "Gal": "Gal", "Eph": "Eph", "Phil": "Phil", "Col": "Col",
+    "1Thess": "1Thess", "2Thess": "2Thess", "1Tim": "1Tim",
+    "2Tim": "2Tim", "Titus": "Titus", "Phlm": "Phlm", "Heb": "Heb",
+    "Jas": "Jas", "1Pet": "1Pet", "2Pet": "2Pet",
+    "1John": "1John", "2John": "2John", "3John": "3John",
+    "Jude": "Jude", "Rev": "Rev",
+    # Spaced abbreviations
+    "1 Sam": "1Sam", "2 Sam": "2Sam", "1 Kgs": "1Kgs", "2 Kgs": "2Kgs",
+    "1 Chr": "1Chr", "2 Chr": "2Chr",
+    "1 Cor": "1Cor", "2 Cor": "2Cor",
+    "1 Thess": "1Thess", "2 Thess": "2Thess",
+    "1 Tim": "1Tim", "2 Tim": "2Tim",
+    "1 Pet": "1Pet", "2 Pet": "2Pet",
+    "1 John": "1John", "2 John": "2John", "3 John": "3John",
+    # Full names
+    "Genesis": "Gen", "Exodus": "Exod", "Leviticus": "Lev", "Numbers": "Num",
+    "Deuteronomy": "Deut", "Joshua": "Josh", "Judges": "Judg",
+    "1 Samuel": "1Sam", "2 Samuel": "2Sam",
+    "1 Kings": "1Kgs", "2 Kings": "2Kgs",
+    "1 Chronicles": "1Chr", "2 Chronicles": "2Chr",
+    "Ezra": "Ezra", "Nehemiah": "Neh", "Esther": "Esth",
+    "Psalms": "Ps", "Psalm": "Ps", "Proverbs": "Prov", "Ecclesiastes": "Eccl",
+    "Song of Solomon": "Song", "Song of Songs": "Song", "Song of Sol": "Song",
+    "Isaiah": "Isa", "Jeremiah": "Jer", "Lamentations": "Lam",
+    "Ezekiel": "Ezek", "Daniel": "Dan", "Hosea": "Hos", "Joel": "Joel",
+    "Amos": "Amos", "Obadiah": "Obad", "Jonah": "Jonah", "Micah": "Mic",
+    "Nahum": "Nah", "Habakkuk": "Hab", "Zephaniah": "Zeph",
+    "Haggai": "Hag", "Zechariah": "Zech", "Malachi": "Mal",
+    "Matthew": "Matt", "Mark": "Mark", "Luke": "Luke", "John": "John",
+    "Acts": "Acts", "Romans": "Rom",
+    "1 Corinthians": "1Cor", "2 Corinthians": "2Cor",
+    "Galatians": "Gal", "Ephesians": "Eph", "Philippians": "Phil",
+    "Colossians": "Col",
+    "1 Thessalonians": "1Thess", "2 Thessalonians": "2Thess",
+    "1 Timothy": "1Tim", "2 Timothy": "2Tim",
+    "Titus": "Titus", "Philemon": "Phlm", "Hebrews": "Heb",
+    "James": "Jas",
+    "1 Peter": "1Pet", "2 Peter": "2Pet",
+    "1 John": "1John", "2 John": "2John", "3 John": "3John",
+    "Jude": "Jude", "Revelation": "Rev",
+    # Trailing-dot variants
+    "Ps.": "Ps",
+}
+
+_OVERRIDES_PATH = os.path.join(_ROOT, "data", "osis_book_overrides.json")
+
+
+def _load_book_overrides() -> None:
+    """Load data/osis_book_overrides.json into _BOOK_MAP at module import."""
+    if os.path.isfile(_OVERRIDES_PATH):
+        try:
+            with open(_OVERRIDES_PATH, encoding="utf-8") as f:
+                overrides: dict[str, str] = json.load(f)
+            _BOOK_MAP.update(overrides)
+        except Exception:
+            pass
+
+
+_load_book_overrides()
+
+
+def register_book_override(source_name: str, osis_code: str) -> None:
+    """Register a book name alias and persist it to data/osis_book_overrides.json.
+
+    Example::
+        register_book_override("Psalms", "Ps")
+        # engine --add-book-code "Psalms=Ps"
+    """
+    _BOOK_MAP[source_name] = osis_code
+    # Persist to JSON file
+    existing: dict[str, str] = {}
+    if os.path.isfile(_OVERRIDES_PATH):
+        try:
+            with open(_OVERRIDES_PATH, encoding="utf-8") as f:
+                existing = json.load(f)
+        except Exception:
+            pass
+    existing[source_name] = osis_code
+    os.makedirs(os.path.dirname(_OVERRIDES_PATH), exist_ok=True)
+    with open(_OVERRIDES_PATH, "w", encoding="utf-8") as f:
+        json.dump(existing, f, indent=2, ensure_ascii=False)
+    print(f"[BOOK_CODE] Registered: {source_name!r} → {osis_code!r}")
+
+
     """Convert a reference like 'Gen 1:1' to an OSIS ID like 'Gen.1.1'.
     Returns empty string if conversion fails.
     """
-    import re
     m = re.match(r"^(.+?)\s+(\d+):(\d+)$", reference.strip())
     if not m:
         return ""
     book_name, ch, vs = m.group(1), m.group(2), m.group(3)
-    # Best-effort: map common abbreviations
-    _BOOK_MAP = {
-        "Gen": "Gen", "Exod": "Exod", "Lev": "Lev", "Num": "Num",
-        "Deut": "Deut", "Josh": "Josh", "Judg": "Judg", "Ruth": "Ruth",
-        "1 Sam": "1Sam", "2 Sam": "2Sam", "1 Kgs": "1Kgs", "2 Kgs": "2Kgs",
-        "1 Chr": "1Chr", "2 Chr": "2Chr", "Ezra": "Ezra", "Neh": "Neh",
-        "Esth": "Esth", "Job": "Job", "Ps": "Ps", "Prov": "Prov",
-        "Eccl": "Eccl", "Song": "Song", "Isa": "Isa", "Jer": "Jer",
-        "Lam": "Lam", "Ezek": "Ezek", "Dan": "Dan", "Hos": "Hos",
-        "Joel": "Joel", "Amos": "Amos", "Obad": "Obad", "Jonah": "Jonah",
-        "Mic": "Mic", "Nah": "Nah", "Hab": "Hab", "Zeph": "Zeph",
-        "Hag": "Hag", "Zech": "Zech", "Mal": "Mal",
-        "Matt": "Matt", "Mark": "Mark", "Luke": "Luke", "John": "John",
-        "Acts": "Acts", "Rom": "Rom", "1 Cor": "1Cor", "2 Cor": "2Cor",
-        "Gal": "Gal", "Eph": "Eph", "Phil": "Phil", "Col": "Col",
-        "1 Thess": "1Thess", "2 Thess": "2Thess", "1 Tim": "1Tim",
-        "2 Tim": "2Tim", "Titus": "Titus", "Phlm": "Phlm", "Heb": "Heb",
-        "Jas": "Jas", "1 Pet": "1Pet", "2 Pet": "2Pet",
-        "1 John": "1John", "2 John": "2John", "3 John": "3John",
-        "Jude": "Jude", "Rev": "Rev",
-        # Common alternates
-        "Ps.": "Ps", "Song of Sol": "Song", "Song of Songs": "Song",
-    }
     short = _BOOK_MAP.get(book_name)
     if short:
         return f"{short}.{ch}.{vs}"
+    if _misses is not None:
+        _misses.append(book_name)
     # Fallback: strip spaces and punctuation
     cleaned = re.sub(r"\s+", "", book_name).rstrip(".")
     return f"{cleaned}.{ch}.{vs}"

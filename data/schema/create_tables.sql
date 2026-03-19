@@ -1,9 +1,13 @@
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Bible_Projects – SQLite Schema
 -- File:   data/schema/create_tables.sql
--- Last updated: 2026-03-16
+-- Schema version: v3.1.0
+-- Last updated: 2026-03-19
 -- Run via: python analytics/bible_analytics.py --init-db
 --          OR: python -c "from analytics.db_client import get_connection, init_schema_from_file; conn=get_connection(); init_schema_from_file(conn); conn.close()"
+-- Note: run `python -m engine.engine --migrate` after --init-db on an existing
+--       database.  On a fresh DB all tables created here include migration cols,
+--       so migrations are no-ops.
 --
 -- Table groups:
 --   Section 1  — Reference tables:       books, book_code_variants, themes, sources
@@ -15,6 +19,9 @@
 --   Section 7  — WA cross-registry:      wa_crosslink_type, wa_cross_registry_links
 --   Section 8  — WA verse records:       wa_verse_records
 --   Section 9  — MTI tables:             mti_terms, mti_term_flags, mti_term_cross_refs
+--   Section 10 — Engine control:         engine_run_log, engine_stream_checkpoint, word_run_state, term_fetch_log
+--   Section 11 — Meaning parsing:        wa_meaning_parsed, wa_meaning_sense, wa_meaning_stem, wa_lsj_parsed
+--   Section 12 — Schema metadata:        schema_version
 -- ─────────────────────────────────────────────────────────────────────────────
 
 PRAGMA foreign_keys = ON;
@@ -85,7 +92,15 @@ CREATE TABLE IF NOT EXISTS word_registry (
     phase1_status       TEXT,                       -- import/processing status
     phase1_output_file  TEXT,                       -- produced JSON file name
     phase2_datasets     REAL,
-    notes               TEXT
+    notes               TEXT,
+    -- M03: automation tracking
+    automation_eligible INTEGER DEFAULT 1,          -- 0 = excluded from batch automation
+    last_automation_run TEXT,                       -- ISO-8601 datetime of last successful run
+    automation_run_id   TEXT,                       -- FK to engine_run_log.run_id
+    phase1_term_count   INTEGER,                    -- number of terms found in phase1 output
+    phase1_verse_count  INTEGER,                    -- number of verse records loaded
+    -- M11: term discovery
+    strongs_list        TEXT                        -- JSON: [{"strong":"H5315","count":148}, …] sorted by count desc
 );
 
 -- ═════════════════════════════════════════════════════════════════════════════
@@ -152,7 +167,10 @@ CREATE TABLE IF NOT EXISTS wa_term_inventory (
     somatic_link            INTEGER DEFAULT 0,      -- boolean: inner state linked to bodily expression
     causative_form_present  INTEGER DEFAULT 0,      -- boolean: Hiphil/Piel (Heb) or causative sense present
     status_note             TEXT,                   -- import-time researcher notes and flags (merged from step_search_flag 2026-03-16)
-    last_changed            TEXT    DEFAULT (datetime('now'))
+    last_changed            TEXT    DEFAULT (datetime('now')),
+    -- M04: meaning parsing linkage
+    short_def_mounce        TEXT,                   -- short definition from Mounce lexicon
+    parsed_meaning_id       INTEGER                 -- FK to wa_meaning_parsed.id (set after M06 parse)
 );
 
 CREATE INDEX IF NOT EXISTS idx_wa_ti_file    ON wa_term_inventory (file_id);
@@ -218,15 +236,16 @@ CREATE TABLE IF NOT EXISTS wa_term_phase2_flags (
 
 -- ── 6.1  wa_quality_flag_types ───────────────────────────────────────────────
 -- Two-level lookup: flag_group / flag_code.
--- Created 2026-03-16.  22 codes across 4 groups:
---   DATA_COVERAGE (6): NO_VERSES, THIN_DATA, SMALL_VERSE_SAMPLE, NO_WORD_ANALYSIS,
---                      UNCERTAIN_MEANING, ARAMAIC_EQUIVALENT
+-- Created 2026-03-16.  25 codes across 4 groups (22 original + 3 added by M02):
+--   DATA_COVERAGE (8): NO_VERSES, THIN_DATA, SMALL_VERSE_SAMPLE, NO_WORD_ANALYSIS,
+--                      UNCERTAIN_MEANING, ARAMAIC_EQUIVALENT,
+--                      SPAN_RESOLUTION_CONFLICT, SPAN_FILTER_APPLIED
 --   IMPORT_STATUS (8): STRONGS_RECONCILED, OCCURRENCE_COUNT_MISMATCH,
 --                      FORMAT_ERROR_IN_SOURCE, FORMAT_ISSUE_RESOLVED, PARSE_ERROR,
 --                      TERMS_IN_HEADER_NOT_IN_STEP, DUPLICATE_IN_SOURCE, DUPLICATE_RESOLVED
 --   TERM_ANALYSIS (5): CONSOLIDATION_CANDIDATE, MULTI_SENSE_ENTRY, CROSS_REGISTRY,
 --                      CROSS_PART_ROOT, PERIPHERAL_TERM
---   NOTE (3):          NOTE, NOTE_ON_ROOT_FAMILY, ANOMALY_NOTE
+--   NOTE (4):          NOTE, NOTE_ON_ROOT_FAMILY, ANOMALY_NOTE, SPAN_BACK_POPULATED
 CREATE TABLE IF NOT EXISTS wa_quality_flag_types (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     flag_group  TEXT    NOT NULL,                  -- "DATA_COVERAGE", "IMPORT_STATUS", "TERM_ANALYSIS", "NOTE"
@@ -318,7 +337,12 @@ CREATE TABLE IF NOT EXISTS wa_verse_records (
     claude_output   TEXT,                          -- raw Claude response (JSON string)
     last_changed    TEXT    DEFAULT (datetime('now')),
     created_at      TEXT,
-    updated_at      TEXT                           -- maintained by trigger below
+    updated_at      TEXT,                          -- maintained by trigger below
+    -- M05: span filter and context
+    target_word       TEXT,                        -- exact surface word matched in this verse
+    span_strong_match INTEGER,                     -- 1 = Strong's confirmed in verse span; 0 = absent; NULL = unchecked
+    context_before    TEXT,                        -- ~5 words before target_word
+    context_after     TEXT                         -- ~5 words after target_word
 );
 
 -- Trigger: keep updated_at current on every UPDATE
@@ -394,4 +418,174 @@ CREATE TABLE IF NOT EXISTS mti_term_cross_refs (
 
 CREATE INDEX IF NOT EXISTS idx_cross_refs_term_id  ON mti_term_cross_refs (mti_term_id);
 CREATE INDEX IF NOT EXISTS idx_cross_refs_registry ON mti_term_cross_refs (registry, word);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 10 — ENGINE CONTROL & RUN TRACKING  (M02)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 10.1  engine_run_log ─────────────────────────────────────────────────────
+-- One row per engine run (NEW_WORD, AUDIT_WORD, GAP_FILL, BULK).
+-- run_id is a UUID string generated at run start.
+CREATE TABLE IF NOT EXISTS engine_run_log (
+    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id                TEXT    NOT NULL UNIQUE,
+    mode                  TEXT    NOT NULL,            -- "NEW_WORD", "AUDIT_WORD", "GAP_FILL", "BULK"
+    target_registry_ids   TEXT,                        -- JSON array of registry ids targeted
+    started_at            TEXT    NOT NULL,
+    completed_at          TEXT,
+    outcome               TEXT,                        -- "complete", "stopped", "error"
+    words_attempted       INTEGER DEFAULT 0,
+    words_complete        INTEGER DEFAULT 0,
+    words_stopped         INTEGER DEFAULT 0,
+    total_terms_new       INTEGER DEFAULT 0,
+    total_terms_xref      INTEGER DEFAULT 0,
+    total_verses_inserted INTEGER DEFAULT 0,
+    total_verses_filtered INTEGER DEFAULT 0,
+    total_meanings_parsed INTEGER DEFAULT 0,
+    error_detail          TEXT,
+    resume_from           TEXT                         -- registry_id to resume from after interruption
+);
+
+-- ── 10.2  engine_stream_checkpoint ───────────────────────────────────────────
+-- Tracks progress of individual data streams within a run.
+CREATE TABLE IF NOT EXISTS engine_stream_checkpoint (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id           TEXT    NOT NULL REFERENCES engine_run_log(run_id),
+    stream_name      TEXT    NOT NULL,
+    status           TEXT    NOT NULL DEFAULT 'pending',
+    last_registry_id TEXT,
+    last_strong      TEXT,
+    rows_written     INTEGER DEFAULT 0,
+    rows_filtered    INTEGER DEFAULT 0,
+    error_detail     TEXT,
+    started_at       TEXT,
+    completed_at     TEXT
+);
+
+-- ── 10.3  word_run_state ─────────────────────────────────────────────────────
+-- One row per word per run: tracks per-word outcome and researcher approval.
+CREATE TABLE IF NOT EXISTS word_run_state (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id              TEXT    NOT NULL REFERENCES engine_run_log(run_id),
+    registry_id         TEXT    NOT NULL,
+    word                TEXT    NOT NULL,
+    phase_reached       TEXT,
+    audit_result        TEXT,
+    audit_detail        TEXT,
+    stop_reason         TEXT,
+    researcher_approved INTEGER DEFAULT 0,
+    approved_by         TEXT,
+    approved_at         TEXT
+);
+
+-- ── 10.4  term_fetch_log ─────────────────────────────────────────────────────
+-- One row per Strong's number fetched during a run.
+-- Records STEP API call outcomes and span filter statistics.
+CREATE TABLE IF NOT EXISTS term_fetch_log (
+    id                   INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id               TEXT    NOT NULL REFERENCES engine_run_log(run_id),
+    registry_id          TEXT    NOT NULL,
+    strongs_input        TEXT    NOT NULL,
+    strongs_resolved     TEXT,
+    suffix_resolution    INTEGER DEFAULT 0,
+    vocab_status         TEXT,
+    verse_status         TEXT,
+    verse_count_fetched  INTEGER DEFAULT 0,
+    verse_count_stored   INTEGER DEFAULT 0,
+    verse_count_filtered INTEGER DEFAULT 0,
+    span_conflict        INTEGER DEFAULT 0,
+    api_warnings         TEXT,
+    fetched_at           TEXT
+);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 11 — MEANING PARSING  (M06–M09)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 11.1  wa_meaning_parsed ──────────────────────────────────────────────────
+-- One row per parsed wa_term_inventory entry (1:1 with term).
+-- Parent record for wa_meaning_sense and wa_meaning_stem rows.
+CREATE TABLE IF NOT EXISTS wa_meaning_parsed (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    term_inv_id         INTEGER NOT NULL UNIQUE REFERENCES wa_term_inventory(id),
+    strongs_number      TEXT    NOT NULL,
+    language            TEXT    NOT NULL,
+    top_sense_count     INTEGER DEFAULT 0,
+    stem_count          INTEGER DEFAULT 0,
+    has_causative_stem  INTEGER DEFAULT 0,
+    has_domain_tags     INTEGER DEFAULT 0,
+    parsed_at           TEXT    NOT NULL,
+    parse_version       TEXT    NOT NULL,
+    parse_warnings      TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_meaning_parsed_term_inv ON wa_meaning_parsed (term_inv_id);
+
+-- ── 11.2  wa_meaning_sense ───────────────────────────────────────────────────
+-- Hierarchical sense entries parsed from a term's meaning block.
+-- sort_order preserves the original parse order within the meaning text.
+CREATE TABLE IF NOT EXISTS wa_meaning_sense (
+    id                 INTEGER PRIMARY KEY AUTOINCREMENT,
+    parsed_meaning_id  INTEGER NOT NULL REFERENCES wa_meaning_parsed(id),
+    level_code         TEXT    NOT NULL,
+    level_depth        INTEGER NOT NULL,
+    parent_level_code  TEXT,
+    sense_text         TEXT,
+    is_stem_label      INTEGER DEFAULT 0,
+    stem_label         TEXT,
+    domain_tag         TEXT,
+    sort_order         INTEGER NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_meaning_sense_parsed ON wa_meaning_sense (parsed_meaning_id);
+CREATE INDEX IF NOT EXISTS idx_meaning_sense_level  ON wa_meaning_sense (parsed_meaning_id, level_code);
+
+-- ── 11.3  wa_meaning_stem ────────────────────────────────────────────────────
+-- Stem-level summary for Hebrew/Greek terms (Hiphil, Piel, causative, etc.).
+CREATE TABLE IF NOT EXISTS wa_meaning_stem (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    parsed_meaning_id INTEGER NOT NULL REFERENCES wa_meaning_parsed(id),
+    stem_name         TEXT    NOT NULL,
+    stem_type         TEXT,
+    sense_count       INTEGER DEFAULT 0,
+    top_sense_text    TEXT
+);
+
+CREATE INDEX IF NOT EXISTS idx_meaning_stem_parsed ON wa_meaning_stem (parsed_meaning_id);
+
+-- ── 11.4  wa_lsj_parsed ──────────────────────────────────────────────────────
+-- Greek-only: structured fields parsed from the raw LSJ lexicon entry.
+-- term_inv_id is UNIQUE — one parse record per term.
+CREATE TABLE IF NOT EXISTS wa_lsj_parsed (
+    id                     INTEGER PRIMARY KEY AUTOINCREMENT,
+    term_inv_id            INTEGER NOT NULL UNIQUE REFERENCES wa_term_inventory(id),
+    raw_lsj                TEXT,
+    lsj_gloss              TEXT,
+    lsj_domains            TEXT,
+    lsj_philosophical_note TEXT,
+    lsj_etymology_note     TEXT,
+    lsj_cognate_forms      TEXT,
+    parsed_at              TEXT    NOT NULL,
+    parse_version          TEXT    NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_lsj_parsed_term ON wa_lsj_parsed (term_inv_id);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 12 — SCHEMA METADATA  (M01)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 12.1  schema_version ─────────────────────────────────────────────────────
+-- Single row (id=1) tracking the applied schema version and migration history.
+-- version_code is updated by the final migration of each release group.
+-- On a fresh --init-db this row should be seeded to the current version;
+-- subsequent --migrate runs are then no-ops.
+CREATE TABLE IF NOT EXISTS schema_version (
+    id                 INTEGER PRIMARY KEY,
+    version_code       TEXT    NOT NULL,            -- e.g. "3.1.0"
+    applied_at         TEXT    NOT NULL,            -- ISO-8601 datetime of last update
+    migration_history  TEXT,                        -- JSON array of applied migration refs
+    engine_min_version TEXT                         -- minimum engine version required
+);
+
 
