@@ -374,8 +374,6 @@ def run_gap_fill(conn, registry_id: int,
         ).fetchone() else "UNKNOWN"
     )
 
-    final_status = "In Progress" if audit_res in ("STOP", "REVIEW", "UNKNOWN") else reg_row["phase1_status"]
-
     # Recount verses
     verse_count = conn.execute(
         """SELECT COUNT(*) AS c FROM wa_verse_records
@@ -390,6 +388,15 @@ def run_gap_fill(conn, registry_id: int,
             ",".join("?" * len(file_ids))),
         file_ids,
     ).fetchone()["c"]
+
+    # All-XREF words (0 term_inventory rows) always produce REVIEW audit —
+    # treat REVIEW as Complete when there are no NEW terms.
+    _all_xref = term_count == 0
+    final_status = (
+        "Complete"
+        if audit_res == "PASS" or (_all_xref and audit_res == "REVIEW")
+        else "In Progress"
+    )
 
     conn.execute(
         """UPDATE word_registry SET
@@ -933,19 +940,28 @@ def run_bulk_gap_fill(conn,
                     (file_id,),
                 ).fetchone()["c"]
 
-                # Update counts (phase1_status already set to 'In Progress' by S2).
+                # All-XREF words (0 term_inventory rows) always produce REVIEW
+                # audit result — treat REVIEW as Complete when no NEW terms.
+                _all_xref = term_count == 0
+                new_status = (
+                    "Complete"
+                    if audit_res == "PASS" or (_all_xref and audit_res == "REVIEW")
+                    else "In Progress"
+                )
+
                 conn.execute(
                     """UPDATE word_registry SET
+                           phase1_status      = ?,
                            phase1_term_count  = ?,
                            phase1_verse_count = ?
                        WHERE no = ?""",
-                    (term_count, verse_count, registry_no),
+                    (new_status, term_count, verse_count, registry_no),
                 )
                 conn.commit()
 
                 s4_done += 1
                 print(f"     [{registry_no:3}] {word}: audit={audit_res}  "
-                      f"terms={term_count}  verses={verse_count}")
+                      f"status={new_status}  terms={term_count}  verses={verse_count}")
 
             except Exception as exc:
                 errors.append(f"S4: [{registry_no}] {word}: {exc}")

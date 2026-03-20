@@ -453,19 +453,23 @@ def run_audit_word(conn, registry_id: int,
                 ",".join("?" * len(file_ids))),
             file_ids,
         ).fetchone()["c"]
+        # All-XREF words (0 term_inventory rows) always produce REVIEW audit
+        # result — this is expected and correct; treat REVIEW as Complete.
+        _all_xref = term_count == 0
         final_status = (
-            reg_row["phase1_status"]
-            if audit_result["result"] == "PASS"
+            "Complete"
+            if audit_result["result"] == "PASS" or _all_xref
             else "In Progress"
         )
         conn.execute(
             """UPDATE word_registry SET
+                   phase1_status       = ?,
                    phase1_term_count   = ?,
                    phase1_verse_count  = ?,
                    last_automation_run = ?,
                    automation_run_id   = ?
                WHERE no = ?""",
-            (term_count, verse_count, _now(), run_id, registry_id),
+            (final_status, term_count, verse_count, _now(), run_id, registry_id),
         )
         conn.commit()
         counts["words_complete"] = 1

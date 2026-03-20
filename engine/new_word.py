@@ -73,7 +73,7 @@ def classify_strongs(conn, strongs: str, registry_id: int) -> str:
     ).fetchone()
     if not row:
         return "NEW"
-    if row["status"] in ("extracted",):
+    if row["status"] in ("extracted", "extracted_theological_anchor"):
         # Already extracted under a different registry → XREF
         owner = conn.execute(
             "SELECT owning_registry FROM mti_terms WHERE strongs_number = ? LIMIT 1",
@@ -184,6 +184,11 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
             conn.execute("DELETE FROM wa_term_inventory WHERE file_id = ?", (old_id,))
             conn.execute("DELETE FROM mti_terms WHERE word_data_reference = ?", (str(old_id),))
             conn.execute("DELETE FROM wa_file_index WHERE id = ?", (old_id,))
+        # Also purge XREF cross-refs for this registry+word (not tied to file_id)
+        conn.execute(
+            "DELETE FROM mti_term_cross_refs WHERE registry = ? AND word = ?",
+            (str(registry_id), word),
+        )
         conn.commit()
         print(f"     N2: Old data purged for file_ids {old_ids}.")
 
@@ -495,13 +500,19 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                 ).fetchone()
                 if not mt_row:
                     continue
-                xref_mti_id = get_max_id(conn, "mti_term_cross_refs") + 1
-                conn.execute(
-                    """INSERT OR IGNORE INTO mti_term_cross_refs
-                           (id, mti_term_id, registry, word)
-                       VALUES (?, ?, ?, ?)""",
-                    (xref_mti_id, mt_row["id"], str(registry_id), word),
-                )
+                # Guard against NULL-part duplicate (SQLite UNIQUE treats NULL != NULL)
+                _existing_xref = conn.execute(
+                    "SELECT id FROM mti_term_cross_refs "
+                    "WHERE mti_term_id = ? AND registry = ? AND word = ? AND part IS NULL",
+                    (mt_row["id"], str(registry_id), word),
+                ).fetchone()
+                if not _existing_xref:
+                    xref_mti_id = get_max_id(conn, "mti_term_cross_refs") + 1
+                    conn.execute(
+                        "INSERT INTO mti_term_cross_refs (id, mti_term_id, registry, word) "
+                        "VALUES (?, ?, ?, ?)",
+                        (xref_mti_id, mt_row["id"], str(registry_id), word),
+                    )
                 counts["total_terms_xref"] += 1
 
             print(f"     N12: {counts['total_verses_inserted']} verse records  "
@@ -655,7 +666,10 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
 
     # ── N19: Update word_registry ─────────────────────────────────────────────
     print("N19 Updating word_registry...")
-    final_status = "Complete" if audit_result["result"] == "PASS" else "In Progress"
+    # All-XREF words produce expected REVIEW audit flags (zero terms/verses/coverage).
+    # Treat REVIEW as Complete when there are no NEW terms — nothing left to do.
+    _all_xref = not new_terms
+    final_status = "Complete" if (audit_result["result"] == "PASS" or _all_xref) else "In Progress"
     conn.execute(
         """UPDATE word_registry SET
                phase1_status        = ?,

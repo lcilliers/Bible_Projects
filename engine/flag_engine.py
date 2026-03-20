@@ -74,6 +74,25 @@ def run_flag_engine(conn, file_id: int, registry_id: int,
     errors = []
     flags_written = 0
 
+    # ── Idempotency: remove any previously written derivable flags for this
+    # file before re-evaluating, so re-runs (gap_fill/audit_word) do not
+    # accumulate duplicate rows.  Researcher-entered flags (NOTE, ANOMALY_NOTE,
+    # CROSS_REGISTRY, etc.) are not in this set and are left untouched.
+    _DERIVABLE_FLAGS = {
+        "HIGH_FREQUENCY_ANCHOR", "THIN_DATA", "SMALL_VERSE_SAMPLE",
+        "NO_WORD_ANALYSIS", "NO_VERSES", "SPAN_RESOLUTION_CONFLICT",
+    }
+    _ph = ",".join("?" * len(_DERIVABLE_FLAGS))
+    conn.execute(
+        f"""DELETE FROM wa_data_quality_flags
+            WHERE file_id = ?
+            AND flag_id IN (
+                SELECT id FROM wa_quality_flag_types
+                WHERE flag_code IN ({_ph})
+            )""",
+        (file_id, *_DERIVABLE_FLAGS),
+    )
+
     terms = conn.execute(
         "SELECT * FROM wa_term_inventory WHERE file_id = ?", (file_id,)
     ).fetchall()
