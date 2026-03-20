@@ -100,7 +100,9 @@ CREATE TABLE IF NOT EXISTS word_registry (
     phase1_term_count   INTEGER,                    -- number of terms found in phase1 output
     phase1_verse_count  INTEGER,                    -- number of verse records loaded
     -- M11: term discovery
-    strongs_list        TEXT                        -- JSON: [{"strong":"H5315","count":148}, …] sorted by count desc
+    strongs_list        TEXT,                       -- JSON: [{"strong":"H5315","count":148}, …] sorted by count desc
+    -- M12: word description
+    description         TEXT                        -- ~100-word researcher summary of the word's theological significance
 );
 
 -- ═════════════════════════════════════════════════════════════════════════════

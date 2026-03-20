@@ -1,0 +1,1274 @@
+{
+  "patch_id": "word-descriptions-patch-20260319-v1",
+  "description": "Layman descriptions for all 211 active words in the registry. One paragraph per word, 70-105 words, plain narrative style. Intended for the word_registry.description column.",
+  "table": "word_registry",
+  "column": "description",
+  "records": [
+    {
+      "id": 1,
+      "no": 1,
+      "word": "abomination",
+      "description": "Abomination is the language of moral revulsion — the visceral rejection of what is fundamentally incompatible with God's holiness. The Hebrew vocabulary covers ritual uncleanness (idols, forbidden practices) and ethical corruption (wickedness, injustice); the Greek continues the same double register. At its core it describes something so deeply wrong it cannot merely be disapproved of — it must be repudiated entirely. God himself experiences this state, making abomination one of the clearest windows into the divine moral character."
+    },
+    {
+      "id": 2,
+      "no": 2,
+      "word": "agony",
+      "description": "Agony is extreme suffering at the point where physical and inner pain become inseparable — the writhing, convulsing, shattering experience that overwhelms the whole person. The Hebrew roots carry images of twisting and breaking; the Greek evokes torment that tests a person to their limit. It is not merely suffering but suffering at its most acute, the kind that strips away all composure and manifests outwardly in physical collapse and cry."
+    },
+    {
+      "id": 3,
+      "no": 3,
+      "word": "ambition",
+      "description": "Ambition in the biblical vocabulary is almost entirely a warning. The dominant Greek term describes a self-serving drive to get ahead — factional striving, pushing one's own interests at others' expense. One term carries a more neutral sense of aspiring or pressing toward a goal, which Paul uses positively. But the main note is this: the inner drive to be first, to secure one's own position, is treated as a source of disorder in both the community and the self."
+    },
+    {
+      "id": 4,
+      "no": 4,
+      "word": "anger",
+      "description": "Anger is one of the most structurally rich inner states in Scripture. The most common Hebrew root literally means nose and face — the flared nostril, the reddened face — before it means anger, embedding the emotion bodily from the start. Heat is the dominant image: burning, kindling, being inflamed. God's anger is extensively described alongside human anger using the same vocabulary. Anger can be provoked — kindled in another — and sits at the intersection of justice, honour, and relational rupture."
+    },
+    {
+      "id": 5,
+      "no": 5,
+      "word": "anguish",
+      "description": "Anguish is the experience of being pressed, compressed, squeezed — the inner state of distress when circumstances close in from every side and there is no room to breathe. The Hebrew roots carry images of constriction, writhing, and the pangs of labour; the vocabulary overlaps with distress, grief, and sorrow. What marks anguish is the quality of being trapped: not simply sorrowful but hemmed in with nowhere to turn. It appears across the full range of human crisis — exile, bereavement, defeat, illness — and in the cry to God from within it."
+    },
+    {
+      "id": 6,
+      "no": 6,
+      "word": "anointing",
+      "description": "Anointing is the act of setting apart and empowering by the application of oil — but the biblical vocabulary makes clear that the oil is always a sign of something else: the Spirit, authority, commission, and divine favour. The Hebrew root for anointing gives us the word Messiah — the Anointed One — and the same Greek term gives us Christ. Anointing marks a person as chosen and equipped for a specific purpose. It is one of the clearest points where a physical act and a spiritual reality are inseparable."
+    },
+    {
+      "id": 7,
+      "no": 7,
+      "word": "anxiety",
+      "description": "Anxiety is the divided, unsettled mind — the inner state of being pulled in different directions by competing concerns, unable to rest. The Hebrew captures this as disquieting, multiplying thoughts. The Greek word for worry is the one Jesus addresses directly: do not be anxious about tomorrow. The New Testament also preserves the antonym — to be free from anxiety — as a genuinely attainable condition. Anxiety is not mere nervousness but a fracturing of inner attention that prevents trust, presence, and rest."
+    },
+    {
+      "id": 8,
+      "no": 8,
+      "word": "appetite",
+      "description": "Appetite in this registry is carried by a Hebrew word that means alive or living, which is broader than appetite in the narrow sense. It covers the full range of what it means to be a living, creaturely being: vitality, physical energy, the life-force that animates. Appetite as hunger or craving is the narrowest end of this range. The wider meaning signals that the drive to consume and press toward what sustains life is not a defect of the human condition but is bound up with being alive at all."
+    },
+    {
+      "id": 9,
+      "no": 9,
+      "word": "assent",
+      "description": "Assent — the inner act of agreeing, consenting, or saying yes — does not have its own Hebrew or Greek root in the biblical vocabulary. The concept is carried entirely by the words for faith, trust, and obedience: to believe is already to assent, to trust is already to yield one's inner agreement. The absence of a standalone word for assent is itself a finding: Scripture does not separate intellectual agreement from relational commitment. To agree is to give yourself, not merely your opinion. [Covered by faith (#59), trust (#163), obedience (#114).]"
+    },
+    {
+      "id": 10,
+      "no": 10,
+      "word": "awareness",
+      "description": "Awareness — knowing that you know, being conscious of what is happening within or around you — touches several biblical words without being owned by any single one. The Hebrew word for knowing covers experiential awareness; the word for discerning reaches toward attentive, reflective perception; the Greek for full knowledge captures genuine conscious grasp. This territory is present and well-populated across the registries for conscience, discernment, and knowledge. [Partially covered; research gap noted.]"
+    },
+    {
+      "id": 11,
+      "no": 11,
+      "word": "awe",
+      "description": "Awe is the response of the whole person — trembling, stilled, overwhelmed — to an encounter with something vastly greater than oneself. The Hebrew vocabulary ranges from reverential fear of God to the dread that falls on enemies in battle; the Greek carries the same dual register of holy reverence and sheer terror. What distinguishes awe from ordinary fear is its orientation: it does not flee but is arrested, held, compelled to attention. It is the baseline posture of the creature before the Creator."
+    },
+    {
+      "id": 12,
+      "no": 12,
+      "word": "betrayal",
+      "description": "Betrayal is the violation of trust by someone who was trusted — the wound inflicted not by an enemy but by an ally or friend. The biblical vocabulary for this concept is folded into the words for treachery, faithlessness, and the breaking of covenant. It is one of the most theologically charged forms of relational damage because it mirrors the pattern of Israel's unfaithfulness to God. The pain of betrayal is the pain of a bond broken from the inside. [Replaced by treachery (#203).]"
+    },
+    {
+      "id": 13,
+      "no": 13,
+      "word": "bitterness",
+      "description": "Bitterness is the taste of prolonged hurt turned inward — the inner residue of unresolved grief, injustice, or loss that has curdled into a permanent sourness of soul. The Hebrew vocabulary draws directly on the physical sensation of bitter taste, and the Greek carries this metaphor into the New Testament: a root of bitterness that grows and defiles many. Bitterness is not just sadness; it is sorrow that has calcified into resentment, a hardening of the inner person against the possibility of healing."
+    },
+    {
+      "id": 14,
+      "no": 14,
+      "word": "blamelessness",
+      "description": "Blamelessness is the quality of being without legitimate accusation — a life so ordered that no just charge can be brought against it. The Hebrew vocabulary covers integrity of conduct, wholeness of character, and the kind of moral completeness that leaves no gap for accusation. It is not sinless perfection but consistency: the person whose inner life and outer life match, who does not live one way before others and another way in private. It is closely related to innocence and integrity. [Covered by innocence (#90), integrity (#92), uprightness (#168).]"
+    },
+    {
+      "id": 15,
+      "no": 15,
+      "word": "boastfulness",
+      "description": "Boastfulness is the habit of making oneself larger than one is — claiming credit, demanding recognition, and drawing attention to one's own achievements or status. The biblical vocabulary for this is sparse in Hebrew (a single term related to glory and honour) but the concept runs through the broader moral vocabulary as a characteristic posture of pride. To boast is to place confidence in one's own resources rather than in God, which is why the New Testament redirects the only legitimate boasting toward what God has done."
+    },
+    {
+      "id": 16,
+      "no": 16,
+      "word": "boldness",
+      "description": "Boldness is the freedom to speak and act without holding back — the quality of confidence and directness that marks a person who is not governed by fear of what others will think or do. The Greek vocabulary is vivid: frank speech, openness, the liberty of one who has nothing to hide and no one to fear. In the New Testament it is regularly associated with the Holy Spirit's enabling — the disciples who were frightened before the resurrection speak with boldness after it. It is courage expressed through voice."
+    },
+    {
+      "id": 17,
+      "no": 17,
+      "word": "bondage",
+      "description": "Bondage is the inner and outer condition of being controlled by something — a force, a habit, a person, a system — from which the person cannot free themselves. The Greek term carries the weight of slavery in both its literal and metaphorical dimensions. The New Testament is particularly concerned with the internal form of bondage: the slavery to sin, to fear of death, to the law as a system of condemnation. Freedom from bondage is one of the central gifts of the gospel, and Paul's vocabulary of liberation is built on this word."
+    },
+    {
+      "id": 18,
+      "no": 18,
+      "word": "brokenness",
+      "description": "Brokenness is the state of being shattered — the Hebrew root carries images of fracture, crushing, and collapse. It is used of physical breaking but equally of the inner collapse of the person under grief, judgment, or the weight of their own sin. Brokenness is not entirely negative in Scripture: the broken and contrite heart is what God does not despise (Psalm 51). There is a brokenness that is the end of self-sufficiency and the beginning of dependence on God — which makes it a threshold rather than merely a wound."
+    },
+    {
+      "id": 19,
+      "no": 19,
+      "word": "calling",
+      "description": "Calling is the experience of being summoned — specifically addressed and set apart for a purpose by one who has authority to do the summoning. The Hebrew and Greek vocabulary covers the full range from the literal calling out of a name to the divine commissioning for a specific role or vocation. What distinguishes biblical calling from personal ambition or career choice is its source: it comes from outside the person, from God, and it is received rather than achieved. To be called is to be known, named, and sent."
+    },
+    {
+      "id": 20,
+      "no": 20,
+      "word": "character",
+      "description": "Character is the pattern of the inner person made consistent through time and testing — not a single act or moment but the accumulated shape of who a person actually is when pressure is applied. The Greek term in this registry (dokimē) carries the sense of tested and proven quality, the character that has been refined rather than merely claimed. Character is what remains when the performance stops. It is the inner consistency between what a person professes and what they do when no one is watching."
+    },
+    {
+      "id": 21,
+      "no": 21,
+      "word": "commitment",
+      "description": "Commitment is the inner act of binding oneself to a person, a course of action, or a promise — giving one's word and staking one's reliability on it. The biblical vocabulary distributes this concept across the words for faithfulness, loyalty, and covenant-keeping rather than giving it a single term. Commitment is the interior dimension of covenant: what makes a promise more than a statement of current intent. [Covered by faithfulness (#60), loyalty (#104), covenant (#34).]"
+    },
+    {
+      "id": 22,
+      "no": 22,
+      "word": "communion",
+      "description": "Communion is the experience of genuine shared life — being not merely near someone but truly with them, participant in the same reality. The Greek koinōnia captures this: fellowship, participation, sharing. It is used of the relationship between believers and God, between the Spirit and the believer, and between members of the community of faith. Communion is not just social closeness but ontological togetherness — sharing in something that cannot be possessed alone. [Partially covered by fellowship (#62); research gap noted.]"
+    },
+    {
+      "id": 23,
+      "no": 23,
+      "word": "compassion",
+      "description": "Compassion is feeling the pain of another from the inside — not observing suffering from a distance but being moved by it in the gut. The Hebrew root is the word for womb, suggesting the tender, visceral, maternal quality of this response. God's compassion is described in these terms more than almost any other attribute: it is not merely that he decides to help but that he is moved — compelled — to help by what he sees. Compassion always faces outward toward the one suffering and produces action."
+    },
+    {
+      "id": 24,
+      "no": 24,
+      "word": "condemnation",
+      "description": "Condemnation is the verdict of guilty pronounced with authority — the inner experience of standing under judgment and being found wanting. The Greek vocabulary covers the judicial declaration of guilt and the resulting sentence. In the New Testament it appears most powerfully in the great reversal: there is now no condemnation for those who are in Christ Jesus. Condemnation is not merely guilt (which is the inner sense of having done wrong) but the formal, authoritative declaration of that verdict."
+    },
+    {
+      "id": 25,
+      "no": 25,
+      "word": "conformity",
+      "description": "Conformity is the process of taking on the shape of something else — being moulded or pressed into a pattern from outside. The biblical vocabulary does not give this concept a standalone term but distributes it between the words for likeness, transformation, and image. The New Testament is concerned with both negative conformity (being shaped by the world's pattern) and positive transformation (being conformed to the image of Christ). [Replaced by likeness (#209).]"
+    },
+    {
+      "id": 26,
+      "no": 26,
+      "word": "conscience",
+      "description": "Conscience is the inner moral witness — the faculty that evaluates one's own actions and character against a standard of right and wrong. The Hebrew vocabulary locates this in the kidneys (the organ associated with the most private inner scrutiny); the Greek syneidēsis is the shared knowledge within — the person knowing about themselves what they know. Conscience can be good, clear, seared, or defiled. It is not infallible, but it is a genuine inner faculty of moral self-assessment that Scripture takes seriously."
+    },
+    {
+      "id": 27,
+      "no": 27,
+      "word": "consciousness",
+      "description": "Consciousness — the basic fact of being aware, of inner experience being present to itself — does not have a single biblical term. The concept is distributed across the vocabulary for knowing, perceiving, and being awake. Scripture is more interested in what consciousness is directed toward than in the bare fact of its existence: to be conscious is to be conscious of something, and the question is whether that something is God, self, or the world. [Covered by conscience (#26) and knowledge (#100).]"
+    },
+    {
+      "id": 28,
+      "no": 28,
+      "word": "consecration",
+      "description": "Consecration is the act of being set apart for God — removed from ordinary use and dedicated to a holy purpose. The Hebrew vocabulary is built on the root for holiness (qadash): to consecrate is to make holy, to mark as belonging to God alone. It applies to priests, Nazirites, offerings, and sacred objects. The inner dimension of consecration is the surrender of self-ownership: to be consecrated is to acknowledge that one belongs to God and not to oneself. It is the formal expression of total devotion."
+    },
+    {
+      "id": 29,
+      "no": 29,
+      "word": "contentment",
+      "description": "Contentment is the inner state of being satisfied with what one has — not because there is nothing more to desire but because one has come to a settled acceptance of one's present condition. The Greek term (autarkeia) means self-sufficiency in the Stoic sense, but Paul redefines it: not independence from need but the learned ability to be at rest whether in abundance or in want. Contentment is not apathy but a trained inner freedom from the tyranny of circumstances."
+    },
+    {
+      "id": 30,
+      "no": 30,
+      "word": "contrition",
+      "description": "Contrition is the genuine, deep sorrow of someone who has done wrong and knows it — not the surface shame of being caught but the interior grief of having actually caused harm or broken trust. The biblical vocabulary gives this its strongest expression in the psalms of repentance: the broken and contrite heart, the crushed spirit. Contrition is the inner precondition for genuine repentance: without it, repentance is merely a change of strategy rather than a change of heart. [Covered by repentance (#135), brokenness (#18).]"
+    },
+    {
+      "id": 31,
+      "no": 31,
+      "word": "corruption",
+      "description": "Corruption is the process by which something good decays from the inside — not destroyed from without but rotting from within. The Hebrew and Greek vocabulary covers physical decay (the body returning to dust, the pit) and moral corruption (the inner person becoming rotten, perverted, given over to evil). The body's corruption is one of Paul's key images for what the resurrection reverses. Moral corruption is the steady undoing of the image of God in a person through persistent sin."
+    },
+    {
+      "id": 32,
+      "no": 32,
+      "word": "counsel",
+      "description": "Counsel is the process of deliberate, careful thought about what to do — and the advice, plan, or wisdom that results from it. The Hebrew and Greek vocabulary covers private deliberation, communal decision-making, and the purposes of God. What makes counsel distinctive is its reflective, purposeful character: it is thought in the service of action. God's counsel is supreme and cannot be thwarted; human counsel requires humility, the gathering of wisdom from others, and alignment with what God is doing."
+    },
+    {
+      "id": 33,
+      "no": 33,
+      "word": "courage",
+      "description": "Courage is the capacity to act rightly in the face of fear rather than in its absence. The Hebrew vocabulary is notably concrete: it often uses the word for heart — to take heart, to strengthen the heart — locating courage in the inner will rather than in fearlessness. The Greek term carries confidence and boldness. Scripture does not call people to feel no fear; it calls them to act despite it, grounded in the presence and promise of God. Courage is therefore relational at its root: it is drawn from trust."
+    },
+    {
+      "id": 34,
+      "no": 34,
+      "word": "covenant",
+      "description": "Covenant is the binding agreement that structures the relationship between God and his people — not a contract between equals but a formal, solemn bond in which God commits himself to his people and calls them to commitment in return. The Hebrew vocabulary is built around the cutting of a covenant, which alludes to the ancient practice of walking through divided animals to seal a promise. Covenant is the backbone of the biblical narrative: creation, fall, Abraham, Moses, David, and the new covenant in Christ are all covenant events."
+    },
+    {
+      "id": 35,
+      "no": 35,
+      "word": "covetousness",
+      "description": "Covetousness is the desire to possess what belongs to someone else — not just wanting something similar but wanting that particular thing, which requires taking it from its present owner. The Greek term (pleonexia) literally means wanting more, the insatiable appetite to have and accumulate. It is listed alongside idolatry in the New Testament because it reveals where a person's ultimate trust lies: in what they can possess rather than in God. Covetousness is the heart curved inward on its own security."
+    },
+    {
+      "id": 36,
+      "no": 36,
+      "word": "cowardice",
+      "description": "Cowardice is the failure to act rightly because of fear — specifically the surrender of one's responsibility, values, or calling in order to avoid danger, pain, or disapproval. The Greek vocabulary gives it a single stark term (deilia, timidity) which Paul uses as the opposite of the spirit of power and love and self-control. Cowardice is not the same as fear; it is the giving of fear the final word. [Partially covered by fear (#61); research gap noted.]"
+    },
+    {
+      "id": 37,
+      "no": 37,
+      "word": "darkening",
+      "description": "Darkening of the mind and heart is the progressive loss of the capacity to perceive moral and spiritual reality clearly. The biblical vocabulary describes this as a condition that results from persistent rejection of the truth: the understanding becomes darkened, the heart becomes callous, the person is given over to seeing less and less of what is real. It is both a judgment and a consequence — the inner faculty of perception progressively failing because it has been persistently ignored. [Replaced by blindness (spiritual) (#207).]"
+    },
+    {
+      "id": 38,
+      "no": 38,
+      "word": "deadness",
+      "description": "Deadness is the inner condition of a person whose spirit is unresponsive — alive physically but without genuine life in the deeper sense. The biblical vocabulary uses death as a present condition before physical dying: to be dead in trespasses and sins is to be alive and yet fundamentally unresponsive to God, to love, to what is truly real. Deadness is the opposite of vitality, of aliveness in the full sense. The resurrection of Jesus addresses not only physical death but this inner deadness. [Replaced by deadness (#210).]"
+    },
+    {
+      "id": 39,
+      "no": 39,
+      "word": "debauchery",
+      "description": "Debauchery is the unrestrained indulgence of bodily appetites — the surrender of self-control to whatever the body wants in the moment. The Greek term (aselgeia) carries a note of shamelessness: not merely excess but excess pursued openly, without even the restraint of social decorum. It is listed among the works of the flesh and represents a particular form of inner collapse: the person who has given the appetites complete governance over the person."
+    },
+    {
+      "id": 40,
+      "no": 40,
+      "word": "deceit",
+      "description": "Deceit is the deliberate shaping of another person's perception of reality to serve one's own interests. The Hebrew and Greek vocabulary is rich and varied: lying, treachery, flattery, false appearance, the smooth word that hides hostile intent. Deceit is not merely mistaken communication but the active weaponisation of language and appearance. It is treated as a fundamental violation of human relationship because it treats the other person as a target rather than a fellow bearer of the image of God."
+    },
+    {
+      "id": 41,
+      "no": 41,
+      "word": "defilement",
+      "description": "Defilement is the condition of being made unclean — contaminated by contact with what is impure, in ways that compromise one's standing before God and one's capacity to be in his presence. The biblical vocabulary runs from ritual defilement (specific acts or contacts that require purification) to moral defilement (the contamination of the conscience and the heart by sin). The New Testament shifts the centre of gravity inward: what defiles a person comes from within, not from outside."
+    },
+    {
+      "id": 42,
+      "no": 42,
+      "word": "delight",
+      "description": "Delight is the positive pleasure of the whole person engaged with something genuinely good — not just satisfaction but the active enjoyment of what one loves. The Hebrew vocabulary is exceptionally rich, covering pleasure, sensory enjoyment, the delight of taste and smell, and the deeper satisfaction of what one treasures. God delights in his people; his people are called to delight in him. Delight is one of the strongest indicators of where a person's heart actually is: what we delight in is what we truly value."
+    },
+    {
+      "id": 43,
+      "no": 43,
+      "word": "desire",
+      "description": "Desire is the reaching of the inner person toward what it wants — the movement of the will and appetite toward something not yet possessed. The Hebrew and Greek vocabulary spans a vast range: the desire that is pure longing, the desire that is appetite, the desire that is wish, and the desire that is the settled inclination of the heart. God himself is described using desire vocabulary — he desires, chooses, longs for his people. Desire is not inherently sinful; it is the motive force of the inner life, capable of being rightly or wrongly ordered."
+    },
+    {
+      "id": 44,
+      "no": 44,
+      "word": "despair",
+      "description": "Despair is the collapse of hope — the inner state of the person who has stopped believing that things can be otherwise. The biblical vocabulary includes a Hebrew term that literally means not faithful, the failure of the capacity to trust, alongside images of devastation and the shattering of expectation. Despair is the most complete form of hopelessness: not just sadness but the extinction of the conviction that goodness is possible or that God is present. The psalms are unflinching in naming it."
+    },
+    {
+      "id": 45,
+      "no": 45,
+      "word": "determination",
+      "description": "Determination is the quality of holding a course of action despite difficulty or opposition — the inner resolve that persists when circumstances push against it. The biblical vocabulary distributes this across the words for resolve, steadfastness, and will rather than giving it a single term. What distinguishes godly determination from mere stubbornness is its source and its object: it is grounded in trust and directed by purpose rather than driven by self-will. [Partially covered by resolve (#137) and will (#173).]"
+    },
+    {
+      "id": 46,
+      "no": 46,
+      "word": "devotion",
+      "description": "Devotion is the habitual, consistent orientation of a person toward what they love and serve — not a single act of dedication but the steady pattern of attention and loyalty. The biblical vocabulary covers undivided focus, steadfast loyalty, and the openness of genuine relationship. Devotion is what faithfulness looks like from the inside: not rule-keeping but the inner habit of turning toward God, toward what one loves, toward one's responsibilities, as naturally as turning toward the light."
+    },
+    {
+      "id": 47,
+      "no": 47,
+      "word": "dignity",
+      "description": "Dignity is the intrinsic worth that belongs to a person — the quality that calls for respect simply by virtue of what they are, not what they have achieved. The Hebrew vocabulary draws on images of height, elevation, and glory; the Greek carries the sense of honour and proper esteem. Biblical dignity is grounded not in status or achievement but in bearing the image of God. Every human being carries this dignity, and the violation of it — through contempt, abuse, or dehumanisation — is always a theological offence."
+    },
+    {
+      "id": 48,
+      "no": 48,
+      "word": "diligence",
+      "description": "Diligence is the sustained, careful application of effort to a task — not the burst of enthusiasm but the steady, attentive work that sees something through. The Hebrew vocabulary here is a single term meaning diligently or carefully, emphasising the quality of attention rather than the quantity of effort. Scripture treats diligence as a moral virtue: the sluggard is a consistent negative example, and the ant's steady industry is held up as a model. Diligence is the outward expression of taking one's responsibilities seriously."
+    },
+    {
+      "id": 49,
+      "no": 49,
+      "word": "discernment",
+      "description": "Discernment is the capacity to perceive what is really true in a situation — to see past surface appearances to what is actually going on. The Greek vocabulary in this registry covers insight, understanding, and practical wisdom: the ability to judge correctly in ambiguous circumstances. Discernment is one of the gifts of the Spirit listed in the New Testament, and it is also something that mature believers develop through practice. It is the opposite of gullibility — not suspicion but clear seeing."
+    },
+    {
+      "id": 50,
+      "no": 50,
+      "word": "disobedience",
+      "description": "Disobedience is the refusal to do what one has been commanded — a straightforward act of the will that sets itself against authority. The Greek vocabulary here is precise: the word covers both the failure to listen and the active decision not to comply. In the New Testament it is used to describe humanity's fundamental condition apart from God (disobedience to his word and ways) as well as the specific acts that express it. Disobedience is always relational: it is not breaking a rule in the abstract but refusing the one who gave the command."
+    },
+    {
+      "id": 51,
+      "no": 51,
+      "word": "distress",
+      "description": "Distress is the experience of being pressed hard by circumstances — the inner state of the person who is genuinely struggling, caught in difficulty, under pressure from multiple directions. The Hebrew and Greek vocabulary is extensive and varied, covering physical suffering, emotional anguish, social crisis, and spiritual desolation. What marks distress is not merely that things are difficult but that the difficulty is acute enough to require help from outside oneself. The psalms are full of distress cries — and of the God who hears them."
+    },
+    {
+      "id": 52,
+      "no": 52,
+      "word": "division",
+      "description": "Division is the tearing apart of what belongs together — the rupture of community, relationship, or unity through conflict, disagreement, or deliberate wedge-driving. The Hebrew and Greek vocabulary covers both the literal splitting of things and the social fracturing of communities. The New Testament treats division within the body of Christ as a serious spiritual failure: those who cause it are acting against the grain of the gospel. Division is the opposite of unity, and it carries a particular weight because unity is something God creates."
+    },
+    {
+      "id": 53,
+      "no": 53,
+      "word": "dread",
+      "description": "Dread is the deep, instinctive fear of something overwhelming — a fear that is not merely anxious but physically arresting, the kind that stops the body in its tracks. The Hebrew vocabulary overlaps with terror and fear but carries a specific note of awe-laden dread: the feeling of standing before power vastly greater than oneself. It appears in battle contexts (the dread that falls on enemies), in theophany contexts (the dread of encountering God), and in the experience of facing irreversible consequences."
+    },
+    {
+      "id": 54,
+      "no": 54,
+      "word": "emotion",
+      "description": "Emotion as a category does not have a biblical equivalent — the Hebrews and Greeks did not carve up inner experience in this way. What we call emotions are distributed across specific named states in the biblical vocabulary: grief, joy, fear, love, anger, and so on. The concept is a modern analytical category useful for organising the data but not itself a biblical word. [Special handling — programme-level category, no extraction.]"
+    },
+    {
+      "id": 55,
+      "no": 55,
+      "word": "endurance",
+      "description": "Endurance is the capacity to hold one's ground under sustained pressure — not the explosive strength of a single effort but the steady resilience that keeps going when circumstances are prolonged and difficult. The Hebrew term in this registry (netsach) means perpetuity or everlastingness, suggesting that endurance is a quality of unbroken continuity through time. Scripture consistently commends endurance as a fruit of faith: the ability to remain faithful not in the moment of crisis but across the long stretch of an ordinary, hard life."
+    },
+    {
+      "id": 56,
+      "no": 56,
+      "word": "envy",
+      "description": "Envy is the pain felt at another person's good fortune — not simply wanting what they have but resenting the fact that they have it. The Hebrew root (qana) covers both the negative form (jealousy, envy) and a positive form (zealous devotion); God is described as jealous in the positive sense. What distinguishes envy from desire is the element of resentment: envy is grieved by another's advantage, not merely moved by one's own lack. It is one of the most socially destructive inner states."
+    },
+    {
+      "id": 57,
+      "no": 57,
+      "word": "evil",
+      "description": "Evil is the most comprehensive negative moral category in Scripture — covering everything from individual acts of harm and injustice to the systemic moral disorder of a world turned away from God. The Hebrew vocabulary spans harmful, wicked, bad, and injurious; the Greek picks up the same range. Evil is not primarily an abstract philosophical problem in Scripture but a concrete reality: things done, words spoken, patterns established that damage what God made good. It is also attributed to spiritual beings, not only to human choices."
+    },
+    {
+      "id": 58,
+      "no": 58,
+      "word": "experience",
+      "description": "Experience is the inner accumulation that comes from having actually lived through something — not just knowing about it but knowing it from the inside. The Hebrew root is primarily the word for seeing, suggesting that experience is gained through careful, attentive observation of what actually happens. The Greek adds the sense of being active, engaged. Experience as a category sits at the intersection of knowledge and memory: it is what knowledge looks like after it has been tested against reality."
+    },
+    {
+      "id": 59,
+      "no": 59,
+      "word": "faith",
+      "description": "Faith is the inner act of trusting — placing the weight of one's life on something or someone beyond oneself. The Greek pistis covers both the act of believing and the quality of faithfulness; the Hebrew vocabulary for trust and confidence runs parallel. Faith in Scripture is not primarily intellectual assent to propositions but relational trust: the person who trusts God acts accordingly, which is why faith and obedience are so often linked. It is the foundational posture of the creature before the Creator."
+    },
+    {
+      "id": 60,
+      "no": 60,
+      "word": "faithfulness",
+      "description": "Faithfulness is the quality of being reliably, consistently what one has committed to be — the person or the God who keeps their word over time, across circumstances, regardless of the cost. The Hebrew vocabulary (emeth, hesed, emet) is among the richest in the entire biblical language: truth, steadfast love, reliability, and faithfulness are woven together into a single family of meaning. God's faithfulness is one of the bedrock affirmations of Scripture, and human faithfulness is the response it calls for."
+    },
+    {
+      "id": 61,
+      "no": 61,
+      "word": "fear",
+      "description": "Fear is one of the most complex and extensive inner states in the biblical vocabulary — covering the full range from crippling terror through cautious anxiety to the deep reverence that is the beginning of wisdom. The Hebrew has distinct terms for each register; the Greek covers both the dread of danger and the reverence of worship. Fear of God is not the same as being afraid of God in a cowering sense; it is the right and grounding recognition of who he is. Fear has both a body (trembling, falling, hiding) and a soul."
+    },
+    {
+      "id": 62,
+      "no": 62,
+      "word": "fellowship",
+      "description": "Fellowship is the experience of genuine shared life with others — not just being in the same place but actually participating together in something real. The Greek koinōnia carries the sense of having in common, sharing in, participating in. It is used of the fellowship of the Spirit, the fellowship of suffering, the fellowship of the Lord's Supper. Biblical fellowship is always anchored in something shared at a deeper level than preference or proximity: a shared life in God, a shared story, a shared hope."
+    },
+    {
+      "id": 63,
+      "no": 63,
+      "word": "foolishness",
+      "description": "Foolishness is not mere intellectual error but the moral condition of the person who acts as if God does not exist — who operates from a fundamentally disordered understanding of reality. The Hebrew wisdom vocabulary is clear: the fool is not unintelligent but is morally and spiritually disordered, unable to see what is truly there. The Greek adds the note of empty talk and the proud disregard for what is genuinely wise. Foolishness has a direction: it moves away from God, away from reality, toward what merely seems attractive."
+    },
+    {
+      "id": 64,
+      "no": 64,
+      "word": "forgiveness",
+      "description": "Forgiveness is the release of a legitimate claim against someone who has wronged you — the decision not to hold the debt against them, to cancel the account of injury. The Hebrew and Greek vocabulary covers sending away, releasing, covering over. Forgiveness in Scripture is consistently modelled on what God does: he forgives by genuinely releasing the debt, not by pretending the wrong did not happen. Human forgiveness is called for as a response to having been forgiven, and its absence poisons the inner life of the one who withholds it."
+    },
+    {
+      "id": 65,
+      "no": 65,
+      "word": "generosity",
+      "description": "Generosity is the disposition of the inner person that gives freely — not under compulsion, not calculating return, but moved by genuine care for the other and a loosened grip on one's own resources. The Greek term here (agathos, good) points to the moral quality from which generosity flows: good-heartedness expressed in giving. Scripture consistently connects generosity with freedom from anxiety about one's own security: the generous person is one who trusts God to provide, so their own hand is open rather than closed."
+    },
+    {
+      "id": 66,
+      "no": 66,
+      "word": "gentleness",
+      "description": "Gentleness is the quality of being strong enough to be tender — the ability to handle what is fragile or wounded with appropriate care rather than force. The Greek vocabulary here covers mildness, meekness, and the temperate handling of what could be handled harshly. In the New Testament it is listed as a fruit of the Spirit, and it is the quality Jesus specifically claims for himself: learn from me, for I am gentle and humble in heart. Gentleness is not weakness but power under discipline."
+    },
+    {
+      "id": 67,
+      "no": 67,
+      "word": "goodness",
+      "description": "Goodness is the quality of being genuinely, structurally beneficial — not just pleasing or approved but actually doing good in the deep sense of the word. The Hebrew and Greek vocabulary runs from the aesthetic (pleasant, beautiful) through the moral (righteous, beneficial) to the relational (kind). God is described as good at the very beginning of creation: what he makes is good because it reflects his character. Human goodness is derivative: a participation in and reflection of the goodness that originates in God."
+    },
+    {
+      "id": 68,
+      "no": 68,
+      "word": "grace",
+      "description": "Grace is undeserved gift — the giving of what is needed not because it has been earned but because the giver chooses to give it. The Hebrew vocabulary (hen, favour; chesed, steadfast love) and the Greek (charis) together carry the sense of the one who has the power to grant or withhold choosing freely to give. Grace is the fundamental mode of God's relationship with humanity in Scripture: from creation through covenant through redemption, what humans receive from God is given, not owed. Grace creates the recipient rather than rewarding them."
+    },
+    {
+      "id": 69,
+      "no": 69,
+      "word": "gratitude",
+      "description": "Gratitude is the inner acknowledgement of gift received — recognising that what one has or is came from outside oneself and responding to that recognition with thanks. The Greek term in this registry (eucharistia) covers both the inner attitude of thankfulness and the outward expression of it. In the New Testament, gratitude is treated as one of the marks of a person rightly ordered toward God: those who have lost sight of God are characterised by ingratitude (Romans 1). Gratitude keeps the inner person from the illusion of self-sufficiency."
+    },
+    {
+      "id": 70,
+      "no": 70,
+      "word": "greed",
+      "description": "Greed is the insatiable desire to have more — specifically more than one's share, more than one needs, more at others' expense. The Greek terms here cover the taking by force and the consuming hunger for more. Scripture treats greed as a spiritual disorder: it is idolatry (Colossians 3:5) because it displaces God with the pursuit of wealth and security. The greedy person is one whose inner life is perpetually anxious, never resting in what they have, always reaching for what they do not."
+    },
+    {
+      "id": 71,
+      "no": 71,
+      "word": "grief",
+      "description": "Grief is the inner response to genuine loss — the pain of bereavement, devastation, and the experience of something or someone precious being gone. The Hebrew vocabulary is among the richest in the corpus, spanning the darkness of mourning, the bitterness of affliction, and the sorrow of a broken heart. God himself grieves in Scripture: he is grieved by the wickedness of humanity (Genesis 6), the breaking of the relationship he made. Grief is honoured in the Bible rather than suppressed; it is the appropriate inner response to a world where real loss happens."
+    },
+    {
+      "id": 72,
+      "no": 72,
+      "word": "groaning",
+      "description": "Groaning is the inner sound of the person or creation under the weight of what is wrong — the wordless, involuntary expression of longing for something better. The Hebrew vocabulary covers the heavy sigh, the roar of distress, the deep moan. The Greek adds a specifically theological dimension: Paul describes the whole creation groaning, and the Spirit groaning within believers with words too deep for speech (Romans 8). Groaning is not despair — it is the voice of hope that has not yet arrived at its destination."
+    },
+    {
+      "id": 73,
+      "no": 73,
+      "word": "guilt",
+      "description": "Guilt is the real moral condition of having actually done wrong — not merely feeling bad but being genuinely culpable. The Hebrew vocabulary of guilt is closely tied to the guilt offering, the sacrifice that addresses the actual debt. The New Testament Greek (syneidēsis, conscience) addresses the inner knowing of one's own guilt. Guilt is real before it is felt: the question of whether one feels guilty is separate from the question of whether one is guilty. Scripture addresses both the fact and the experience, and offers genuine resolution for both."
+    },
+    {
+      "id": 74,
+      "no": 74,
+      "word": "hardness",
+      "description": "Hardness of heart is the condition of the inner person that has become resistant to what should move it — unresponsive to truth, to love, to grief, to the voice of God. The Greek term here (pōrōsis) means a hardening or callousing. In Scripture hardness of heart is sometimes a divine judgment (Pharaoh) and sometimes a self-inflicted condition through persistent refusal (Israel). It is one of the most serious spiritual conditions because it undermines the very faculty — the responsive heart — by which a person can receive God."
+    },
+    {
+      "id": 75,
+      "no": 75,
+      "word": "hatred",
+      "description": "Hatred is the inner state of actively opposing the good of another — not mere dislike or indifference but the settled disposition that wishes harm or ruin on a person. The Hebrew vocabulary is stark and simple. Scripture takes hatred seriously as a moral state: hating one's brother is equated in 1 John with murder. God is described as hating — not people as such, but wickedness, injustice, and what destroys his creation. There is also a place in Scripture for what is called holy hatred: the vigorous opposition to what is genuinely evil."
+    },
+    {
+      "id": 76,
+      "no": 76,
+      "word": "holiness",
+      "description": "Holiness is the quality of being set apart — consecrated, different, other, belonging to a distinct category that cannot be mixed with the ordinary. The Hebrew root (qodesh) and the Greek (hagios) carry this sense of separation and belonging: holy things and holy people are those who have been marked as God's. The character dimension of holiness is secondary to this relational dimension: holiness is first about belonging to God, and then about reflecting his character. The holiness of God is the most fundamental fact about who he is."
+    },
+    {
+      "id": 77,
+      "no": 77,
+      "word": "honesty",
+      "description": "Honesty is the inner commitment to correspondence between reality and what one says — speaking and acting in a way that does not misrepresent what is true. The Hebrew vocabulary here (tsedaqah, righteousness) is broader than honesty in the narrow sense, but the commitment to truthful speech is embedded throughout. Scripture treats honesty as a relational virtue: it honours the other person by giving them accurate access to reality. Dishonesty deforms relationship; honesty is one of the foundational conditions for genuine community."
+    },
+    {
+      "id": 78,
+      "no": 78,
+      "word": "hope",
+      "description": "Hope is the inner orientation toward a future good that is not yet visible — the conviction that what God has promised will actually come. The Hebrew vocabulary covers expectation, waiting, confidence; the Greek elpis is the settled trust that something good is coming. Biblical hope is not wishful thinking but grounded expectation: it is based on the character and track record of God rather than on assessment of circumstances. It gives the inner person the capacity to endure the present without being crushed by it."
+    },
+    {
+      "id": 79,
+      "no": 79,
+      "word": "hopelessness",
+      "description": "Hopelessness is the inner state of the person who has stopped believing that things can be different or that God is present and active. It does not have its own biblical vocabulary as a distinct state but is treated as the absence of hope — the void left when hope collapses. The psalms describe this condition without flinching, and the trajectory of the lament psalms models the movement from hopelessness back toward trust. [Covered by the antonym range within hope (#78) and despair (#44).]"
+    },
+    {
+      "id": 80,
+      "no": 80,
+      "word": "humility",
+      "description": "Humility is the accurate assessment of one's own position before God and others — not self-deprecation or false modesty but the clear-eyed recognition that one is a creature, dependent, limited, and in need. The Hebrew and Greek vocabulary covers lowness, poverty of spirit, and the willingness to take the lower place. God consistently works with and through the humble: he resists the proud but gives grace to the humble. Humility is not a diminishment of the self but its proper ordering in relation to God."
+    },
+    {
+      "id": 81,
+      "no": 81,
+      "word": "hypocrisy",
+      "description": "Hypocrisy is the performance of one thing while being another — the wearing of a face that does not correspond to the actual inner state. The Greek word (hypokrisis) comes from the theatre: an actor playing a role. Jesus's fiercest language in the Gospels is directed at hypocrites, those who perform righteousness for human approval while remaining inwardly unchanged. Hypocrisy is particularly destructive because it corrupts the very forms of religion that are supposed to lead toward God."
+    },
+    {
+      "id": 82,
+      "no": 82,
+      "word": "identity",
+      "description": "Identity — who a person fundamentally is, the stable core of self that persists through change — does not have a single biblical term but is addressed through the vocabulary of name, image, and being. To know who you are in the biblical sense is to know whose you are: identity is relational and given rather than constructed and chosen. The vocabulary of calling, election, and naming all contribute to this cluster. [Replaced by name (#204).]"
+    },
+    {
+      "id": 83,
+      "no": 83,
+      "word": "idolatry",
+      "description": "Idolatry is the giving of the trust, devotion, and worship that belong to God alone to something else — an image, a system, a desire, a person, a security. The Hebrew and Greek vocabulary is rich: false gods, worthless idols, the teraphim of the household. The New Testament extends the category inward: covetousness is idolatry (Colossians 3:5) because what you crave most tells you what your heart has made its god. Idolatry is the fundamental disorder of the inner person: worshipping the creature rather than the Creator."
+    },
+    {
+      "id": 84,
+      "no": 84,
+      "word": "image of God",
+      "description": "Image of God (imago Dei) is the designation given to humanity in Genesis 1 — the declaration that human beings uniquely bear the image and likeness of their Creator. This is not primarily about a set of capacities but about a relational status: to bear the image of God is to be God's representative and counterpart in creation, to be the creature in whom something of the Creator is reflected. It grounds human dignity, the prohibition on murder, and the possibility of genuine relationship with God. [Replaced by image (#201).]"
+    },
+    {
+      "id": 85,
+      "no": 85,
+      "word": "imagination",
+      "description": "Imagination is the inner capacity to form mental images of what is not immediately present — to picture, conceive, and give form to what does not yet exist or what cannot be directly seen. The Hebrew vocabulary here covers figures and reflections; the Greek covers reflection and contemplation. In Scripture imagination is treated with some suspicion when it runs unchecked (the imaginations of the heart are evil continually, Genesis 6) but it is also foundational to prayer, prophecy, and the capacity to hope for what is not yet seen."
+    },
+    {
+      "id": 86,
+      "no": 86,
+      "word": "impurity",
+      "description": "Impurity is the condition of being contaminated — ritually, morally, or spiritually — in ways that compromise one's capacity to be in God's presence. The Hebrew and Greek vocabulary covers uncleanness in its full range: the ceremonial uncleanness of specific contacts and conditions, and the moral-spiritual impurity of the heart corrupted by sin. The New Testament consistently moves the centre of gravity inward: what makes a person unclean is not primarily external contact but internal corruption. Purity and impurity are ultimately matters of the heart."
+    },
+    {
+      "id": 87,
+      "no": 87,
+      "word": "indignation",
+      "description": "Indignation is the righteous anger that arises in response to genuine injustice or wrong — the heated moral reaction to what ought not to be. The Hebrew vocabulary distinguishes between indignation as an inner boiling (za'am) and the scorching heat of displeasure. It is regularly attributed to God in response to wickedness and idolatry. Indignation is not the same as personal anger at being hurt: it is anger on behalf of what is right, which gives it a moral character that personal anger does not always have."
+    },
+    {
+      "id": 88,
+      "no": 88,
+      "word": "ingratitude",
+      "description": "Ingratitude is the failure to recognise and acknowledge gift — living as though what one has received was owed, or as though it came entirely from one's own effort. It does not have its own biblical term but is treated as the negative absence of gratitude, and Paul places it at the beginning of the downward spiral of moral decline in Romans 1: they neither glorified him as God nor gave thanks to him. Ingratitude is spiritually diagnostic: it reveals a distorted perception of one's own position and dependence. [Covered by the negative dimension within gratitude (#69).]"
+    },
+    {
+      "id": 89,
+      "no": 89,
+      "word": "iniquity",
+      "description": "Iniquity is the deliberate turning or twisting away from what is right — not accidental wrongdoing but the wilful perversion of the moral order. The primary Hebrew root (avon) carries the image of something bent or twisted out of its proper shape. Iniquity is cumulative: it builds up, is passed down through generations, and creates a kind of moral debt that requires addressing. The word is closely associated with guilt and punishment, because iniquity carries consequences by its nature."
+    },
+    {
+      "id": 90,
+      "no": 90,
+      "word": "innocence",
+      "description": "Innocence is the condition of being genuinely free from guilt in a specific matter — not moral perfection in general but the absence of culpability for a particular wrong. The Hebrew vocabulary here covers integrity, the state of being whole and without hidden fault, and the simple declaration behold, pointing to what is plainly the case. Innocence can be declared (by God, by a judge, by the conscience) and can be established or falsely denied. It is particularly important in psalms of lament where the speaker calls on God to vindicate the innocent."
+    },
+    {
+      "id": 91,
+      "no": 91,
+      "word": "insight",
+      "description": "Insight is the ability to perceive what is beneath the surface — to understand situations, people, and texts at a level of depth that goes beyond the obvious. The Hebrew vocabulary here (sakal, bin) covers both the prudent, circumspect kind of understanding and the discerning grasp that gets to the heart of things. Insight is the fruit of paying careful attention over time; it is teachable but also a gift. In Scripture it is regularly associated with wisdom and with the fear of the Lord, which properly orients the one who seeks to understand."
+    },
+    {
+      "id": 92,
+      "no": 92,
+      "word": "integrity",
+      "description": "Integrity is the quality of being undivided — the same throughout, with no gap between inner conviction and outer conduct. The Hebrew vocabulary here (tom, tummah) means completeness or wholeness: the person of integrity is one whose inner and outer life are not at war with each other. Integrity cannot be performed; it must be genuine. It is closely related to truthfulness, blamelessness, and uprightness, all of which describe different facets of the person whose inner and outer lives correspond."
+    },
+    {
+      "id": 93,
+      "no": 93,
+      "word": "intention",
+      "description": "Intention is what one actually means to do — the inner purpose that stands behind an action and gives it its moral character. The Hebrew term here (mezimmah) covers the deliberate plan, the purpose formed in the mind before action. Scripture cares deeply about intention because it determines the moral weight of what is done: the same external act can be generous or manipulative depending on the intention behind it. God sees and judges the heart, which means he sees and judges intention."
+    },
+    {
+      "id": 94,
+      "no": 94,
+      "word": "intercession",
+      "description": "Intercession is the act of standing between — specifically, placing oneself in the gap between a person and the judgment or need they face, and advocating on their behalf. The Hebrew vocabulary covers the falling upon, the encountering, the meeting that characterises real prayer for another. The New Testament places intercession at the heart of both Jesus's ongoing ministry (he intercedes for us at the right hand of the Father) and the Spirit's ministry within the believer. Intercession is love expressed as prayer on behalf of another."
+    },
+    {
+      "id": 95,
+      "no": 95,
+      "word": "intuition",
+      "description": "Intuition — the capacity to know something without explicit reasoning, the quick inner perception that something is true before it can be fully explained — does not have a dedicated biblical term. The concept is distributed across the vocabulary for discernment, wisdom, and the Spirit's guidance. Biblical epistemology is more relational than intuitive in the strict sense: knowing comes through attentiveness to God and reality rather than through a separate faculty of quick knowing. [Covered by discernment (#49), wisdom (#174).]"
+    },
+    {
+      "id": 96,
+      "no": 96,
+      "word": "jealousy",
+      "description": "Jealousy in this registry is the Greek term that means to make envious — specifically, to provoke or stir up the jealous response in another. This causative use appears in Paul's discussion of how Israel might be provoked to jealousy by the inclusion of the Gentiles (Romans 11). In Scripture jealousy has both a negative form (the envious desire for what another possesses) and a positive form (the zealous, protective concern for what belongs to oneself) — and God himself is described as jealous in this positive sense."
+    },
+    {
+      "id": 97,
+      "no": 97,
+      "word": "joy",
+      "description": "Joy is the deep gladness of the person whose inner life is rightly ordered — not just pleasure in the moment but the settled, exuberant well-being of one who is in a right relationship with God, with others, and with themselves. The Hebrew vocabulary is among the most extensive in the corpus, covering shout, cry aloud, rejoice, and exult; the Greek picks this up with similar range and vitality. God rejoices; his people are called to rejoice. Joy appears in wisdom literature, in prophecy, in the psalms of lament arriving at resolution. It is the emotional signature of the kingdom."
+    },
+    {
+      "id": 98,
+      "no": 98,
+      "word": "justice",
+      "description": "Justice is the setting right of what is wrong — the ordering of relationships, power, and outcomes according to what is true and fair. The Hebrew vocabulary (mishpat, tsedaqah) covers both judicial process and moral rightness; the Greek continues this range. God is consistently described as a God of justice, and the prophets make justice to the poor and vulnerable one of the non-negotiable marks of a society that knows God. Justice is not only punitive (giving wrongdoers what they deserve) but restorative (restoring the right order of things)."
+    },
+    {
+      "id": 99,
+      "no": 99,
+      "word": "kindness",
+      "description": "Kindness is the quality of treating others well — not from obligation but from genuine care, warmth, and good will. The Hebrew hesed is one of the most important words in the entire biblical vocabulary: it covers steadfast love, loyal kindness, and covenant faithfulness. It is the word most often used for what God shows to his people. Human kindness is both an imitation of and a response to divine kindness. It moves outward, toward others, and it tends to seek the practical good of the person rather than stopping at good feelings."
+    },
+    {
+      "id": 100,
+      "no": 100,
+      "word": "knowledge",
+      "description": "Knowledge in the biblical sense is never merely information held in the mind — it is the personal, relational knowing that comes from actual encounter and experience. The Hebrew yada means to know in the deepest sense: to be acquainted with, to have experienced, to recognise from the inside. It is used of the knowledge between husband and wife, the knowledge of God, and the knowledge of good and evil. To know God is not to know about him but to be in relationship with him — which is why biblical knowledge always has moral and relational consequences."
+    },
+    {
+      "id": 101,
+      "no": 101,
+      "word": "laziness",
+      "description": "Laziness is the habitual avoidance of effort — the refusal to expend the energy that responsible living requires. The biblical wisdom vocabulary is unsparing: the sluggard is a figure of consistent ridicule in Proverbs, someone who makes endless excuses, returns to sleep at every opportunity, and eventually ends in poverty and shame. Laziness is treated as a moral failure rather than merely a personality trait because it is a form of irresponsibility: the neglect of the tasks and relationships one has been given. [Replaced by sloth (#208).]"
+    },
+    {
+      "id": 102,
+      "no": 102,
+      "word": "longing",
+      "description": "Longing is the acute, aching desire for something not yet possessed or not yet reached — a desire too strong to be satisfied by substitutes. The Hebrew and Greek vocabulary here covers yearning and eager, almost straining expectation. Longing appears in the psalms as the deep thirst for God himself (as the deer pants for water); it appears in Paul as the groaning of creation and the eager expectation of glory. Longing is the inner posture of the person who knows what they were made for and has not yet arrived there."
+    },
+    {
+      "id": 103,
+      "no": 103,
+      "word": "love",
+      "description": "Love is the most foundational and most theologically dense word in the entire corpus. The Hebrew and Greek vocabulary spans a vast range: the steadfast covenant love of God (hesed), the deep personal affection (ahava), the tender compassion (racham), the Greek agape (self-giving, willed, unconditional love), phileo (warm affection), and eros (passion and longing). God is love: not merely loving but constituted by it. Human love is modelled on and enabled by divine love. Everything else in the moral life is an expression of love rightly ordered."
+    },
+    {
+      "id": 104,
+      "no": 104,
+      "word": "loyalty",
+      "description": "Loyalty is the quality of remaining faithful to a person, a cause, or a commitment even when circumstances would make defection rational or easy. The Hebrew vocabulary here is a form of hesed — the steadfast loving-kindness that stays the course. Loyalty is faithfulness in its relational, tested dimension: it is what commitment looks like when it is put under pressure. It is particularly valued in the context of covenant: the loyal person is the one who does not abandon what they have bound themselves to."
+    },
+    {
+      "id": 105,
+      "no": 105,
+      "word": "lust",
+      "description": "Lust is the desire for sexual pleasure as an end in itself — divorced from the relational, covenantal context in which sexuality belongs. The Hebrew vocabulary here covers fornication and the animal heat of sexual appetite unconstrained by relationship or commitment. Lust is treated in Scripture not as a stronger form of love but as its distortion: it uses the other person rather than serving them. The New Testament consistently addresses lust as an inner condition — it begins in the heart — that must be addressed at the level of desire rather than merely at the level of behaviour."
+    },
+    {
+      "id": 106,
+      "no": 106,
+      "word": "manipulation",
+      "description": "Manipulation is the use of indirect means to control another person's behaviour or perception — achieving one's ends by exploiting the other's vulnerabilities, weaknesses, or trust rather than by honest means. The biblical vocabulary distributes this across deceit, flattery, and the use of power to coerce. Manipulation is a relational violation: it treats the other person as an object to be managed rather than a person to be respected. [Partially covered by deceit (#40).]"
+    },
+    {
+      "id": 107,
+      "no": 107,
+      "word": "meaning",
+      "description": "Meaning — the sense that one's life has purpose, that things matter, that there is a why underneath the what — does not have a dedicated biblical term but is addressed throughout Scripture. The Greek terms here cover significance and the communicative act of meaning something. The biblical answer to the question of meaning is fundamentally relational and given rather than constructed: life has meaning because it is created by and for God, and meaning is found in alignment with that purpose rather than invented against a backdrop of emptiness."
+    },
+    {
+      "id": 108,
+      "no": 108,
+      "word": "meditation",
+      "description": "Meditation is the practice of dwelling on something with sustained, unhurried attention — turning it over in the mind, returning to it repeatedly, allowing it to settle into the inner person. The Hebrew vocabulary here includes higgaion (musical meditation), complaint in the sense of sustained reflection, and the general practice of musing. The psalms are full of meditation: on the law of God, on his works, on his character. Biblical meditation is not emptying the mind but filling it — with what is true, with what God has done and said."
+    },
+    {
+      "id": 109,
+      "no": 109,
+      "word": "meekness",
+      "description": "Meekness is the quality of strength held under discipline — the person who has power but does not deploy it to advance themselves, who can be moved without being destabilised. The Greek vocabulary (prautēs, praotēs) is often poorly translated as weakness or mild-mannered; it is better understood as the trained restraint of one who could act forcefully but chooses not to, out of genuine care for others. Jesus describes himself as meek. In the Beatitudes, it is the meek who inherit the earth — those who do not grasp but receive. [XREF: covered by humility (#80) and gentleness (#66).]"
+    },
+    {
+      "id": 110,
+      "no": 110,
+      "word": "memory",
+      "description": "Memory is the inner capacity to hold the past present — to keep what has happened in living connection with the present so that it shapes how one lives. The Hebrew vocabulary here (zikaron) is primarily the memorial, the act of commemoration. Memory in Scripture is fundamentally theological: Israel is called again and again to remember what God has done. To forget is not merely an intellectual failure but a spiritual one: the person who forgets what God has done loses the foundation of their trust in what he will do."
+    },
+    {
+      "id": 111,
+      "no": 111,
+      "word": "mercy",
+      "description": "Mercy is the compassionate response to someone in need or distress — the willingness to help, relieve, or spare those who have no claim on one's help. The Hebrew and Greek vocabulary is rich: racham (tender compassion, womb-love), chesed (steadfast loving-kindness), eleos (merciful concern). God's mercy is one of the most-repeated themes in Scripture: he is described as rich in mercy, slow to anger, abounding in steadfast love. Mercy has a direction — it always moves toward the one who is suffering or guilty — and it always costs the one who shows it something."
+    },
+    {
+      "id": 112,
+      "no": 112,
+      "word": "mind",
+      "description": "Mind in the biblical sense is the faculty of inner thought, understanding, intention, and disposition — not merely the intellect but the whole interior orientation of a person. The Hebrew vocabulary locates much of this in the heart (lev); the Greek uses nous (mind, understanding, practical reason) and dianoia (the thinking faculty). The mind in Scripture is a moral organ: it can be renewed (Romans 12:2) or given over to degradation (Romans 1:28). To have the mind of Christ is not an intellectual achievement but a spiritual and relational transformation."
+    },
+    {
+      "id": 113,
+      "no": 113,
+      "word": "mourning",
+      "description": "Mourning is the outward expression of inner grief — the practices, gestures, and sounds through which sorrow makes itself known in the world. The Hebrew vocabulary here covers sitting in ashes, tearing garments, wailing, and the professional mourning practices of the ancient world. Mourning is honoured in Scripture as the appropriate response to real loss: Jesus mourns, the psalmists mourn, Lamentations is an entire book of mourning. The Beatitudes name the mourning as those who will be comforted. Mourning is not the failure of faith but its expression."
+    },
+    {
+      "id": 114,
+      "no": 114,
+      "word": "obedience",
+      "description": "Obedience is the act of doing what one has been told by someone with authority over one — the concrete expression of submission and trust in the one who commands. The Greek vocabulary here is precise: the word means to listen under, suggesting that obedience begins with hearing. Obedience in Scripture is not blind compliance but the response of trust: because God's commands are good and his character is trustworthy, doing what he says is the appropriate response. Christ's own obedience to the Father is the supreme model."
+    },
+    {
+      "id": 115,
+      "no": 115,
+      "word": "passion",
+      "description": "Passion in the biblical vocabulary carries both a positive and a negative register. The Greek terms here cover intense desire and defilement: passion can be the consuming love that drives one toward what one values most, or it can be the disordered desire that leads to moral compromise. Paul uses passion vocabulary both to warn against disordered desire (Colossians 3:5) and to describe the intensity of his own apostolic drive. The question is not whether a person has passion but what that passion is directed toward."
+    },
+    {
+      "id": 116,
+      "no": 116,
+      "word": "patience",
+      "description": "Patience is the inner quality of continuing to wait and trust without being unravelled by delay or difficulty. The Hebrew vocabulary here includes silence, the stilling of inner turmoil in the face of what is hard; waiting in the sense of active, expectant trust; and the weariness that must be borne without giving up. The Greek adds the sense of holding back under pressure. Patience is not passive but active: it is the continuous choice to keep trusting while the situation remains unresolved. It is counted among the fruits of the Spirit and the character of God."
+    },
+    {
+      "id": 117,
+      "no": 117,
+      "word": "peace",
+      "description": "Peace is the condition of wholeness, right relationship, and rest — the Hebrew shalom covering far more than the absence of conflict. It means completeness, prosperity, welfare, the flourishing of everything and everyone in their proper place. It is used of the end of hostilities, of the quality of a life well-lived, of the relationship between a person and God when that relationship is restored. The New Testament declares that Christ himself is our peace: through him the fundamental rupture between humanity and God is healed. Peace is the signature of the kingdom."
+    },
+    {
+      "id": 118,
+      "no": 118,
+      "word": "personality",
+      "description": "Personality — the distinctive pattern of traits, tendencies, and ways of being that makes each person uniquely themselves — does not have a dedicated biblical term. The concept is distributed across the vocabulary for character, heart, and the unique naming of each person by God. The biblical account treats personhood as given and known by God before it is described or understood by the person themselves. [Covered by soul (#182), heart (#183), spirit (#184).]"
+    },
+    {
+      "id": 119,
+      "no": 119,
+      "word": "personhood",
+      "description": "Personhood — the status of being a person, with the dignity, relationality, and moral standing that status entails — is addressed in Scripture through the vocabulary of being, image, name, and calling rather than through a single term. To be a person is to be known by God, addressed by God, and accountable to God. Personhood is not a human achievement or a property that can be measured; it is given in the act of creation. [Replaced by being (#211).]"
+    },
+    {
+      "id": 120,
+      "no": 120,
+      "word": "perverseness",
+      "description": "Perverseness is the state of being deliberately crooked — morally twisted away from what is right, not by ignorance but by inclination. The Hebrew vocabulary here carries the image of something bent out of its natural shape, of the path that deviates from the straight way. Perverseness is treated as a settled condition rather than a single act: the perverse person has a habitual orientation away from what is good and true, and their speech and conduct reflect this inner twist."
+    },
+    {
+      "id": 121,
+      "no": 121,
+      "word": "praise",
+      "description": "Praise is the outward expression of one's highest valuation of what is genuinely great and good. The Hebrew vocabulary is exceptional in its breadth: to shine (hallel), to give thanks with outstretched hands (yadah), to sing (zamar), to shout (rua), to boast in the best sense. Praise is directed toward God because he alone is fully worthy of it — the one whose greatness exceeds every other greatness. In Scripture, praise is not merely devotional expression; it is the confession of reality: God is what he is, and praise is the acknowledgement of that."
+    },
+    {
+      "id": 122,
+      "no": 122,
+      "word": "prayer",
+      "description": "Prayer is the act of addressing God directly — speaking and listening within the relationship between the creature and the Creator. The Hebrew and Greek vocabulary covers petition, supplication, intercession, praise, and the casting of one's cares. Prayer is the breath of the inner life in relationship with God: it is how trust is exercised, how need is expressed, how grief is given language, and how the person remains in living contact with the One who made them. It assumes that God hears, that he is personal, and that the relationship is real."
+    },
+    {
+      "id": 123,
+      "no": 123,
+      "word": "pride",
+      "description": "Pride is the inner conviction of one's own superiority — the heart that refuses to occupy its proper place as creature before Creator and equal before equal. The Hebrew vocabulary is extensive: arrogance, haughtiness, the lifting up of oneself, the refusal to bow. Scripture treats pride as the foundational human disorder — the sin beneath sins — because it is the root from which the refusal to trust and obey God grows. God opposes the proud. Yet the same vocabulary is used positively for the legitimate confidence of those who know who they are in God."
+    },
+    {
+      "id": 124,
+      "no": 124,
+      "word": "prophecy",
+      "description": "Prophecy is the speaking of what God has given one to say — the communication of divine perspective, intention, or truth through a human voice. The Hebrew and Greek vocabulary covers both the foretelling of what will happen and the forthtelling of what God is saying now. In the biblical understanding, prophecy is not primarily a human capacity but a gift and a calling: the prophet speaks because they have been given words to speak, not because they are particularly clever or insightful. The Word of God comes through the prophet, not from them."
+    },
+    {
+      "id": 125,
+      "no": 125,
+      "word": "purity",
+      "description": "Purity is the quality of being unmixed — single, uncontaminated, devoted to one thing without internal division or compromise. The Hebrew and Greek vocabulary covers both the ritual purity required for approach to God and the moral-inner purity that makes a person's motives and desires clean. Jesus radically internalises purity: blessed are the pure in heart. Purity of heart in the biblical sense is not innocence of experience but the absence of duplicity — wanting one thing, being directed toward one end."
+    },
+    {
+      "id": 126,
+      "no": 126,
+      "word": "purpose",
+      "description": "Purpose is the settled intention behind action — the why that gives direction and meaning to what one does. The Hebrew and Greek vocabulary is broad, covering purposes of the mind, the deliberate plans of both God and humans, and the underlying reason for existence. In Scripture, God's purpose is the bedrock of reality: what he intends comes to pass. Human purpose finds its proper form in alignment with divine purpose: not the imposition of one's own agenda on the world but the discovery and embrace of the purpose for which one was made."
+    },
+    {
+      "id": 127,
+      "no": 127,
+      "word": "reasoning",
+      "description": "Reasoning is the capacity to think through a problem — to work with ideas, weigh evidence, and arrive at conclusions through a process of deliberate reflection. The Greek vocabulary here covers both the process of disputing and the content of the reasoning itself. Scripture does not oppose reason; the prophets and Jesus and Paul all appeal to it. But reason in the biblical understanding is a dependent faculty: it functions rightly when it is operating within a framework of trust in God, and it goes wrong when it mistakes itself for the final arbiter of truth."
+    },
+    {
+      "id": 128,
+      "no": 128,
+      "word": "rebellion",
+      "description": "Rebellion is the wilful rejection of legitimate authority — the active refusal to be governed by one who has the right to govern. The Hebrew vocabulary is vivid: revolt, transgression, the active pushing against constraint. Rebellion against God is treated as the core of sin in the prophetic literature: Israel's history is narrated as a long pattern of departing from God and returning. Rebellion is not confusion or weakness but deliberate opposition. It is the posture of the person who knows the command and refuses it."
+    },
+    {
+      "id": 129,
+      "no": 129,
+      "word": "recognition",
+      "description": "Recognition is the moment of seeing clearly — knowing someone or something for what they truly are, often after a period of confusion, distance, or blindness. The Greek vocabulary here (epiginōskō) carries the sense of coming to full, accurate knowledge of something, of the fog clearing. In the New Testament it often describes the recognising of Jesus for who he is: the disciples' eyes are opened, they recognise him. Recognition is the inner experience of truth breaking through — and it carries with it the responsibility to act on what has been seen."
+    },
+    {
+      "id": 130,
+      "no": 130,
+      "word": "reconciliation",
+      "description": "Reconciliation is the restoration of broken relationship — the movement from alienation and hostility back to genuine peace and communion. The Greek vocabulary is specific: the exchange of enmity for friendship, the resolution of the thing that stood between two parties. In the New Testament, reconciliation is the great theological word for what God has done in Christ: the relationship between God and humanity, broken by sin, is restored through the cross. Human reconciliation — between individuals, between peoples — is both modelled on and enabled by this divine act."
+    },
+    {
+      "id": 131,
+      "no": 131,
+      "word": "rejection",
+      "description": "Rejection is the experience of being turned away — refused, excluded, deemed unworthy or unwanted by someone whose acceptance mattered. The Greek term here (aposterēsis) covers the deprivation of what one was owed or expected. Rejection in Scripture is both an experience Jesus himself undergoes (he was despised and rejected) and a dynamic at the heart of the human-God relationship: the story of Israel and of humanity is in part the story of rejecting the One who comes to them. The one rejected by humans is vindicated by God."
+    },
+    {
+      "id": 132,
+      "no": 132,
+      "word": "rejoicing",
+      "description": "Rejoicing is the expressive, outward dimension of joy — the breaking out of inner gladness into movement, sound, and celebration. The Hebrew vocabulary here covers laughter, exultation, and the shout of joy. Rejoicing in Scripture is not a private matter; it tends to be communal and visible. The command to rejoice in the Lord is not an instruction to generate a feeling but to express what is genuinely true: that God is good, that his purposes stand, and that his people are in right relationship with him. Rejoicing is the form joy takes when it cannot be contained."
+    },
+    {
+      "id": 133,
+      "no": 133,
+      "word": "reliability",
+      "description": "Reliability is the quality of being trustworthy over time — doing what one has committed to do, being what one has claimed to be, consistently and without need for constant verification. The Hebrew vocabulary for faithfulness (emeth, emunah) covers this fully: reliability is faithfulness made concrete in action. A reliable person is one whose word is their bond and whose track record makes them safe to depend on. [Covered by faithfulness (#60).]"
+    },
+    {
+      "id": 134,
+      "no": 134,
+      "word": "renewal",
+      "description": "Renewal is the process of being made new again — not patched or improved but genuinely refreshed and restored to something better than the deteriorated state. The Hebrew and Greek vocabulary here covers change, the putting on of what is fresh, the process of interior renewal. The New Testament is particularly concerned with the renewal of the mind (Romans 12:2): the transformation of the inner faculty of understanding so that it perceives reality differently. Renewal is both a divine act and a human participation in what God is doing."
+    },
+    {
+      "id": 135,
+      "no": 135,
+      "word": "repentance",
+      "description": "Repentance is the turning — the change of direction in the inner person that results in a different way of living. The Hebrew vocabulary (shuv, nacham) covers returning, relenting, and the change of mind that leads to action; the Greek (metanoia) means a complete change of the inner orientation. Repentance is not guilt or sorrow alone, though both may accompany it; it is the actual turning from one direction and moving in another. God repents (changes his response) in the sense of relenting; human repentance is the return to God from a life turned away from him."
+    },
+    {
+      "id": 136,
+      "no": 136,
+      "word": "resentment",
+      "description": "Resentment is the smouldering inner anger that refuses to be released — the ongoing nursing of grievance against someone who has caused harm. It differs from grief in that it is directed outward at the person responsible; it differs from healthy anger in that it refuses resolution. The biblical vocabulary for this concept is embedded in the broader words for anger and bitterness. Resentment has a particularly corrosive quality: it harms the one who holds it as much as or more than its target. [Replaced by resentment (#205).]"
+    },
+    {
+      "id": 137,
+      "no": 137,
+      "word": "resolve",
+      "description": "Resolve is the inner quality of having decided and committed to a course of action — the settled will that does not waver once it has determined its direction. The Greek vocabulary here (eudokia, goodwill or good pleasure) covers the settled determination to act well rather than mere stubbornness. Resolve in the positive sense is the firm decision made in alignment with what is right and good. Paul uses this vocabulary to describe God's own settled, purposeful will: the good pleasure of his will. [XREF: covered by desire (#43).]"
+    },
+    {
+      "id": 138,
+      "no": 138,
+      "word": "reverence",
+      "description": "Reverence is the deep respect that arises in the presence of what is genuinely great, sacred, or holy — the inner disposition of the person who has recognised that they are in the presence of something that transcends them. The Hebrew vocabulary here (yare, to fear) covers the reverent fear that is the proper response to God. Reverence is closely related to awe but is more sustained: it is not just the momentary arrest of encounter but the ongoing posture of one who lives with a sense of the sacred. It is the foundation of genuine worship."
+    },
+    {
+      "id": 139,
+      "no": 139,
+      "word": "righteousness",
+      "description": "Righteousness is the quality of being in right relationship — with God, with others, with the created order — in a way that is measurably just and true. The Hebrew (tsedaqah) and Greek (dikaiosunē) vocabulary covers both the moral quality of the righteous person and the forensic status of those declared righteous by God. Righteousness is not primarily an inner quality one cultivates but a relational status: to be righteous is to be in right standing, to be in the proper relationship of creature to Creator and person to person."
+    },
+    {
+      "id": 140,
+      "no": 140,
+      "word": "seeking",
+      "description": "Seeking is the sustained orientation of the inner person toward something not yet found — the purposeful reaching toward God, toward truth, toward what one needs. The Hebrew vocabulary (darash, baqash) covers both the diligent searching for something and the ongoing directional movement toward it. To seek God is not merely to pray or to read Scripture; it is the habitual, sustained turning of the inner life toward him as the source of what one most needs. Seeking is one of the fundamental postures of the life of faith."
+    },
+    {
+      "id": 141,
+      "no": 141,
+      "word": "self-awareness",
+      "description": "Self-awareness is the capacity to see oneself accurately — to know one's own inner states, motivations, tendencies, and blindspots as they actually are rather than as one would like them to be. The biblical vocabulary does not give this a single term but distributes it across conscience, knowledge, and the discernment that comes from walking with God. The examined life is not the final goal in Scripture, but the person who is self-aware is more capable of genuine repentance, humility, and growth than the person who is opaque to themselves. [Covered by conscience (#26).]"
+    },
+    {
+      "id": 142,
+      "no": 142,
+      "word": "self-control",
+      "description": "Self-control is the inner capacity to govern oneself — to choose what one does with one's appetites, impulses, and reactions rather than being governed by them. The Greek vocabulary here (egkrateia, sōphrosynē) covers the ability to hold back, the soundness of mind that keeps the whole person in good order. Self-control is listed as a fruit of the Spirit: it is not primarily the product of effort but of the Spirit's work reshaping the inner person. Without it, strength, intelligence, and desire all become dangerous rather than good."
+    },
+    {
+      "id": 143,
+      "no": 143,
+      "word": "sensitivity",
+      "description": "Sensitivity is the quality of being genuinely responsive to others — attuned to their feelings, needs, and state in a way that makes one a good and caring presence. The biblical vocabulary does not isolate this as a distinct inner state but distributes it across compassion, gentleness, and the attentiveness of love. The person of genuine sensitivity is one in whom the image of God's own attentiveness to the creature is reflected. [Partially covered by compassion (#23).]"
+    },
+    {
+      "id": 144,
+      "no": 144,
+      "word": "sensuality",
+      "description": "Sensuality is the dimension of human experience that is directly tied to bodily sensation and pleasure — the realm of taste, touch, smell, beauty, and physical delight. The Greek vocabulary here (aselgeia, debauchery) tends to describe the disordered form of this; the wider biblical picture includes a positive account of created pleasure (the Song of Solomon, the goodness of creation). Sensuality is not inherently sinful but becomes disordered when it displaces other goods or pursues pleasure as an end in itself. [XREF: covered by flesh (#185).]"
+    },
+    {
+      "id": 145,
+      "no": 145,
+      "word": "sexuality",
+      "description": "Sexuality is the dimension of human identity and experience bound up with being male or female — the embodied reality of sexual differentiation, attraction, and union. The biblical vocabulary distributes this across the words for flesh (basar), for the marriage bond, for desire, and for the specific words that address sexual sin. Scripture is neither prudish nor permissive about sexuality: it takes it seriously as a fundamental human reality, grounds it in creation, protects it with law, and addresses its disorders without shame. [Partially covered by sensuality (#144), lust (#105).]"
+    },
+    {
+      "id": 146,
+      "no": 146,
+      "word": "shame",
+      "description": "Shame is the painful inner awareness of being exposed as inadequate, wrong, or unworthy — and the accompanying fear of rejection or contempt. The Hebrew vocabulary is extensive and connected to honour and disgrace: to be shamed is to be publicly diminished, stripped of one's standing. The body is fully implicated: the face falls or is covered, the person wants to disappear. God is said to put to shame those who oppose his people, and to honour those who hope in him. Shame is addressed most directly in the gospel: the one who trusts in him will not be put to shame."
+    },
+    {
+      "id": 147,
+      "no": 147,
+      "word": "sin",
+      "description": "Sin is the most comprehensive word for moral failure in Scripture — covering the full range of actions, attitudes, and conditions that fall short of or actively oppose what God intends. The Hebrew vocabulary spans missing the mark (chata), transgressing a boundary (pesha), twisting what is right (avon), and simply being evil (ra). Sin is not only acts but a condition: Paul describes humanity as being in sin as in a domain of power. The New Testament's great claim is that this condition is addressed by Christ, who takes sin's consequence and breaks its power."
+    },
+    {
+      "id": 148,
+      "no": 148,
+      "word": "sincerity",
+      "description": "Sincerity is the quality of being genuinely what one appears to be — without hidden motives, without the wearing of a face that conceals a different interior. The Greek vocabulary (eilikrineia) covers the testing of something pure in sunlight, the unmixed quality. Sincerity is the inner correspondence between what one says and what one actually means, between the face one presents and the person one actually is. It is closely related to integrity and honesty, but where integrity emphasises consistency over time, sincerity emphasises the unmixed quality of the present moment."
+    },
+    {
+      "id": 149,
+      "no": 149,
+      "word": "slander",
+      "description": "Slander is the deliberate damaging of a person's reputation through false or distorted speech. The Hebrew and Greek vocabulary is rich: blasphemy, reviling, the malicious tongue, the false witness. Slander is treated as a relational weapon: it wounds from a distance, using the power of words to destroy what someone has built. In the New Testament, slander against fellow believers is treated as a serious failure: it expresses contempt for the person God has accepted. Slander of God is blasphemy, the misuse of speech against its maker."
+    },
+    {
+      "id": 150,
+      "no": 150,
+      "word": "sorcery",
+      "description": "Sorcery is the attempt to access and use spiritual power through means other than the revealed and rightful path of relationship with God — through rituals, substances, or alliances with beings other than God. The Hebrew and Greek vocabulary covers both the practice itself and its practitioners. Scripture is consistently and strongly opposed to sorcery throughout both Testaments. The opposition is not because spiritual power is unreal but because accessing it through these means involves alliance with spiritual forces that are opposed to God and destructive to the person who seeks them."
+    },
+    {
+      "id": 151,
+      "no": 151,
+      "word": "sorrow",
+      "description": "Sorrow is the deep inner pain of loss, grief, and distress — the weight of what has gone wrong or been lost. The Hebrew vocabulary here covers the heaviness of grief, the sickness of loss, the dismay of the person who cannot see a way forward. The New Testament introduces the concept of godly sorrow (2 Corinthians 7:10): the grief that turns a person toward God and leads to repentance, as distinct from worldly sorrow that simply produces death. Sorrow in Scripture is not to be suppressed; it is to be brought before God."
+    },
+    {
+      "id": 152,
+      "no": 152,
+      "word": "strife",
+      "description": "Strife is the condition of ongoing quarrel, conflict, and contention between people — the state where relationship has broken down into active hostility or persistent friction. The Hebrew and Greek vocabulary covers both the immediate quarrel and the underlying provocation that keeps conflict alive. Strife is treated as a social pathology: it destroys community, poisons relationships, and reflects the disordered inner states of those who generate it. The peaceable person is not one who never disagrees but one who does not stir up or maintain strife."
+    },
+    {
+      "id": 153,
+      "no": 153,
+      "word": "stubbornness",
+      "description": "Stubbornness is the refusal to be moved — the persistence of a chosen position or direction in the face of contrary evidence, wise counsel, or God's own appeal to change. The Hebrew vocabulary here captures the hardened, stiff quality: the stiff neck is the image of the person who refuses to turn. Stubbornness is different from faithful endurance: endurance holds to what is right under pressure, while stubbornness holds to what is wrong under appeal. Israel's stubbornness toward God is one of the central themes of the prophetic literature."
+    },
+    {
+      "id": 154,
+      "no": 154,
+      "word": "stupor",
+      "description": "Stupor is a deprecated entry in this registry — the data originally filed under this word was correctly a study of sorrow, and has been fully transferred to that registry (#151). The word stupor itself, as the numbness and dullness of inner perception produced by overwhelming experience or judgment, is addressed within the broader vocabulary of spiritual blindness and hardness of heart. [Deprecated — data transferred to sorrow (#151).]"
+    },
+    {
+      "id": 155,
+      "no": 155,
+      "word": "submission",
+      "description": "Submission is the voluntary placing of oneself under the authority of another — not enforced compliance but the willing acknowledgement of a proper ordering of relationship. The Greek vocabulary here is precise: to arrange oneself under, the military and relational sense of taking one's proper place in a structure of authority. Submission in Scripture is always contextual: it flows from love and wisdom rather than from domination. The supreme model is Christ's submission to the Father, which is the ground and example of all other submission."
+    },
+    {
+      "id": 156,
+      "no": 156,
+      "word": "surrender",
+      "description": "Surrender is the giving up of self-governance — the inner act of letting go of one's claim to control one's own life, resources, or outcome. The Hebrew vocabulary here is built around the root for closing, shutting, and the coming out that happens when a city falls to a siege: surrender is what happens when resistance ends. In Scripture, surrender to God is not defeat but the beginning of genuine life: the self that is surrendered to God is not destroyed but restored. The theology of surrender runs through the entire biblical account of what it means to trust."
+    },
+    {
+      "id": 157,
+      "no": 157,
+      "word": "temptation",
+      "description": "Temptation is the enticement toward what is wrong — the pull toward an action, attitude, or choice that would harm oneself, others, or one's relationship with God. The Greek vocabulary covers both the tempting and the testing: the same word is used for the trial that strengthens and the enticement that seeks to lead astray. Jesus is tempted in every way that humans are, yet without sin. Temptation is not sin: it is the moment before the choice. Scripture treats it as an unavoidable feature of creaturely life and promises a way through it."
+    },
+    {
+      "id": 158,
+      "no": 158,
+      "word": "terror",
+      "description": "Terror is the most extreme form of fear — the inner state produced by a threat so overwhelming that it shatters the capacity for rational response. The Hebrew vocabulary here is exceptionally rich: terror, trembling, dismay, shuddering, and the particular phrase terror on every side that appears in Jeremiah. Terror has a theological dimension: the Day of the Lord is described in terror vocabulary, and the enemies of God's people are struck with terror before them. It is the appropriate response of the creature to unconstrained power."
+    },
+    {
+      "id": 159,
+      "no": 159,
+      "word": "testimony",
+      "description": "Testimony is the giving of witness — the public, verbal declaration of what one has seen, experienced, or knows to be true. The Hebrew and Greek vocabulary covers both the formal witness in a legal setting and the personal declaration of what God has done. In the New Testament, testimony is one of the primary modes of gospel proclamation: the witness tells what they have seen and heard. Testimony is personal: it is the one who was there saying this is what happened. It connects inner experience to public truth."
+    },
+    {
+      "id": 160,
+      "no": 160,
+      "word": "thought",
+      "description": "Thought is the interior movement of the mind across ideas, memories, plans, and perceptions — the inner speech of the person reflecting on their world. The Hebrew and Greek vocabulary here is among the broadest in the corpus: saying to oneself, devising, planning, resembling, governing, reckoning. Thought in Scripture is morally freighted: the thought life is where intentions form, where desires take shape, where the fundamental orientation of the person is decided. The renewal of the mind is the renewal of thought."
+    },
+    {
+      "id": 161,
+      "no": 161,
+      "word": "transformation",
+      "description": "Transformation is the process of genuine inner change — not superficial adjustment or improved performance but the actual remaking of what a person is. The Greek vocabulary covers the metamorphosis, the change from one form to another; the Hebrew covers the crossing over from one condition to another. In the New Testament, transformation is the work of the Spirit conforming the believer to the image of Christ: a process that begins in this life and is completed in the resurrection. [Replaced by transformation (#202).]"
+    },
+    {
+      "id": 162,
+      "no": 162,
+      "word": "transgression",
+      "description": "Transgression is the crossing of a boundary — specifically a boundary that has been clearly marked by God or legitimate authority, which the transgressor knew was there and chose to cross. The Hebrew and Greek vocabulary covers both the act of crossing and the condition of having crossed: guilt, trespass, lawlessness. Transgression is wilful in a way that sin (which can be unintentional) is not: to transgress is to know the line and step over it. It is the vocabulary of deliberate moral violation."
+    },
+    {
+      "id": 163,
+      "no": 163,
+      "word": "trust",
+      "description": "Trust is the reliance upon the reliability of another — the inner act of leaning on someone else's strength, faithfulness, or goodness rather than on one's own resources. The Hebrew vocabulary here covers resting upon, taking refuge, the confident security of the person who has found someone worthy to lean on. Trust is the inner side of faith: where faith is the orientation of the whole person, trust is the specific inner act of resting on what one has faith in. The entire psalmic tradition is shaped around the movement between the collapse and the renewal of trust."
+    },
+    {
+      "id": 164,
+      "no": 164,
+      "word": "truthfulness",
+      "description": "Truthfulness is the commitment to correspondence between what one says and what is actually the case — the quality of the person whose word is reliable and whose account of things can be trusted. The Greek vocabulary here (alētheia) covers truth in the deepest sense: not just accurate information but the genuine, unveiled reality of things. Truthfulness is both a character quality (the truthful person) and a relational practice (speaking truth to one another). It is grounded in the character of God, who cannot lie."
+    },
+    {
+      "id": 165,
+      "no": 165,
+      "word": "unbelief",
+      "description": "Unbelief is the refusal to receive and act on what God has said — not merely intellectual doubt but the settled unwillingness to trust. The Greek vocabulary covers both disobedience and unbelief as a single cluster, which is theologically significant: to disbelieve is to disobey, and to disobey is to disbelieve. Unbelief is not presented in Scripture primarily as an intellectual failure (though it may involve one) but as a relational rejection: the person who does not believe God has not received what he has offered."
+    },
+    {
+      "id": 166,
+      "no": 166,
+      "word": "understanding",
+      "description": "Understanding is the capacity to grasp what something means — to perceive not just the surface of a thing but its significance, its inner logic, its connection to everything else. The Hebrew vocabulary (binah, sakal) covers both the insight that perceives and the intelligent action that results from perceiving rightly. Understanding in Scripture is never merely cerebral: it leads to action, to the fear of the Lord, to the reshaping of how one lives. Spiritual understanding is a gift, but it is also cultivated through attentiveness to what God has revealed."
+    },
+    {
+      "id": 167,
+      "no": 167,
+      "word": "unity",
+      "description": "Unity is the condition of many becoming genuinely one — not mere proximity or agreement but the actual shared life of those who are bound together in something deeper than circumstance. The Greek vocabulary here covers the oneness of those who share the same Spirit and the harmony of those who are genuinely aligned. The New Testament is particularly insistent on unity within the community of faith: the prayer of Jesus in John 17 is that his people would be one as he and the Father are one. Unity is both a gift and a calling."
+    },
+    {
+      "id": 168,
+      "no": 168,
+      "word": "uprightness",
+      "description": "Uprightness is the quality of the person who is straight — morally and relationally aligned with what is true and right, without the crooked turns of duplicity or self-interest. The Hebrew vocabulary covers the plain, the level, the path that does not deviate. Uprightness is related to integrity and righteousness but has a particular flavour: it is the quality of the person who goes straight, who does not take the roundabout path of manipulation or self-deception. The upright person is one in whose inner and outer life there is no hidden bend."
+    },
+    {
+      "id": 169,
+      "no": 169,
+      "word": "vulnerability",
+      "description": "Vulnerability is the condition of being genuinely open — capable of being hurt, of being known at depth, of being affected by what happens. The Hebrew and Greek vocabulary here covers nakedness and uncovering: the state of being without the protective layers one normally carries. Scripture presents vulnerability as the necessary condition for genuine relationship: the person who cannot be wounded cannot really love or be loved. The exposure of the cross is the supreme image of divine vulnerability — God making himself open to rejection and suffering."
+    },
+    {
+      "id": 170,
+      "no": 170,
+      "word": "weakness",
+      "description": "Weakness is the condition of being without sufficient strength to accomplish what is needed — the experience of one's own limitation and insufficiency. The Greek vocabulary here (astheneia) covers physical, moral, and spiritual weakness. In the New Testament, weakness is reframed rather than merely lamented: Paul's discovery is that God's power is most clearly visible in human weakness, that the strength that matters is not one's own. Weakness in this frame is not a problem to be solved but a condition to be inhabited honestly, which creates the space for divine strength."
+    },
+    {
+      "id": 171,
+      "no": 171,
+      "word": "whoredom",
+      "description": "Whoredom is the biblical vocabulary for unfaithfulness in the covenant — specifically the turning of devotion and service away from God toward other gods or other sources of security. The Hebrew root (zanah, fornication) is used metaphorically throughout the prophets to describe Israel's idolatry: the nation that was betrothed to God has pursued other lovers. The metaphor is chosen deliberately to capture the relational betrayal involved in idolatry — it is not merely rule-breaking but the breaking of a bond of love and fidelity."
+    },
+    {
+      "id": 172,
+      "no": 172,
+      "word": "wickedness",
+      "description": "Wickedness is the comprehensive term for the condition and conduct of the person who has fundamentally departed from what is right — living by what is harmful, unjust, and ungodly. The Hebrew and Greek vocabulary spans harmful, unjust, and morally corrupt. Wickedness in Scripture is not merely bad behaviour but a settled orientation of the inner person away from God: the wicked person thinks and wants and chooses wrongly as a matter of character rather than accident. It is the spiritual condition that sin, left unaddressed, produces."
+    },
+    {
+      "id": 173,
+      "no": 173,
+      "word": "will",
+      "description": "Will is the inner capacity to choose and act — the faculty by which a person decides what they want, what they will do, and whom they will serve. The Hebrew and Greek vocabulary here is the broadest in the entire corpus: heart, purpose, pleasure, deliberate action, the deep inclination of the person. Will in Scripture is neither the absolute self-determination of modern individualism nor the mere helplessness of determinism; it is the genuine but dependent freedom of the creature whose choices are real and whose character shapes those choices."
+    },
+    {
+      "id": 174,
+      "no": 174,
+      "word": "wisdom",
+      "description": "Wisdom is the capacity to live rightly in the world — to see what is true, choose what is good, and act in a way that fits with how things actually are. The Hebrew vocabulary (chokhmah, binah, sakal) covers both the practical skill of living and the deeper understanding that comes from knowing God. Wisdom begins with the fear of the Lord: the properly ordered relationship with God that makes genuine perception and right action possible. God himself is described as wise; human wisdom is a participation in and reflection of his."
+    },
+    {
+      "id": 175,
+      "no": 175,
+      "word": "wonder",
+      "description": "Wonder is the inner response of the person who has encountered something that exceeds their capacity to contain or explain — the experience of being undone and enlarged at the same time. The Hebrew and Greek vocabulary covers amazement, astonishment, the particular quality of being arrested and struck by what is greater than expected. Wonder in Scripture is not merely a pleasant aesthetic experience but a theological posture: it is the appropriate response to the works and ways of God, whose greatness and goodness continually exceed what could be anticipated."
+    },
+    {
+      "id": 176,
+      "no": 176,
+      "word": "worship",
+      "description": "Worship is the total orientation of the person toward God — expressed in posture, voice, action, and the ordering of the whole life around his worth. The Hebrew vocabulary covers bowing down (shachah) and the service or ministry (abad) that gives God what he is owed; the Greek adds the sense of doing homage. Worship is not merely what happens in a gathered service but the fundamental posture of the creature rightly relating to the Creator: giving God what he is worth, which is everything. It is the outer expression of the inner reality of love, trust, and reverence."
+    },
+    {
+      "id": 177,
+      "no": 177,
+      "word": "worth",
+      "description": "Worth is the intrinsic value of something — what it is actually worth, not what the market assigns to it or what flattery claims for it. The Hebrew vocabulary here covers both the likeness or comparison that establishes value and the formal valuation that sets a price. In Scripture, worth is ultimately theological: the worth of a human being derives from being made in the image of God and known by name. Worth is also relational: to be worthy of something is to be fittingly matched to it."
+    },
+    {
+      "id": 178,
+      "no": 178,
+      "word": "wrath",
+      "description": "Wrath is the settled, purposeful anger of God against everything that corrupts, destroys, and opposes his good creation — not a loss of temper but the moral seriousness of one who will not let evil go unaddressed forever. The Hebrew vocabulary here is spare but intense. Wrath in Scripture is not God's most fundamental attitude toward humanity (love is) but it is his uncompromising response to sin. The gospel addresses wrath directly: what is owed is met, what threatened is turned away, and the wrath that would have fallen is received by the Son."
+    },
+    {
+      "id": 179,
+      "no": 179,
+      "word": "yearning",
+      "description": "Yearning is the deep, physical ache of longing for someone loved and absent — the Hebrew root here (racham, compassion) connects yearning to the tender, womb-like love that longs to hold and protect what it loves. It is one of the most intimate words in the emotional vocabulary: not just wanting but aching, the longing of someone who loves deeply for the one who is away. It appears in only one verse in this registry, but the depth of the word is evident: this is love made urgent by absence."
+    },
+    {
+      "id": 180,
+      "no": 180,
+      "word": "yielding",
+      "description": "Yielding is the act of giving way — producing what is asked, bearing what is expected, surrendering what one has been holding. The Hebrew vocabulary here covers sowing and bearing: the agrarian image of the ground that yields its fruit, and the person who delivers or leads or pays what is owed. Yielding is closely related to surrender and submission but is more concrete: it is the actual handing over, the productive giving of what was asked, rather than the inner orientation that precedes it."
+    },
+    {
+      "id": 181,
+      "no": 181,
+      "word": "zeal",
+      "description": "Zeal is the burning intensity of concern for something one loves — the passionate energy that will not be neutral or half-hearted in relation to what one values. The Greek vocabulary here (spoudē, diligence) captures the eager, earnest quality of zeal rather than its most extreme form. In Scripture, zeal for God is consistently commended, but it must be aligned with knowledge: Paul's warning is that zeal without right understanding is destructive (Romans 10:2). Zeal for the wrong things, or for the right things by wrong means, is one of the great dangers of the religious person."
+    },
+    {
+      "id": 182,
+      "no": 182,
+      "word": "Soul",
+      "description": "Soul (nephesh / psychē) is the most important single word in the entire corpus — the word that comes closest to meaning the living human person as a whole. The Hebrew nephesh originally meant throat or breath, then became the word for the appetite that drives a living creature, then expanded to mean the person's very life and self. The Greek psychē carries similar weight. When Jesus says whoever loses their life will find it, he uses this word. The soul is not a separate part of a person that can be detached; it is the whole person considered as a living, breathing, wanting being."
+    },
+    {
+      "id": 183,
+      "no": 183,
+      "word": "heart",
+      "description": "Heart (lev / kardia) is the most frequently referenced seat of the inner life in the entire biblical corpus — the Hebrew lev and its Greek equivalent kardia carrying a meaning far wider than our word heart. It is the centre of thought, decision, desire, will, emotion, and moral orientation: to think in one's heart, to set one's heart on something, to have a hard heart or a tender heart, to speak from the heart. The heart is the inner person in their totality, which is why the command to love God with all your heart is the command that encompasses everything else."
+    },
+    {
+      "id": 184,
+      "no": 184,
+      "word": "spirit",
+      "description": "Spirit (ruach / pneuma) is the word that bridges the human and the divine — the Hebrew ruach meaning wind, breath, and spirit simultaneously. In the human person, spirit is the dimension of life that is turned toward God and capable of genuine relationship with him. In God, ruach is the creative, life-giving breath that animates creation and moves in history. In the New Testament, the Spirit is personalised as the Holy Spirit: not merely the spiritual dimension of life but God himself as the one who indwells and transforms. Spirit marks the point where the inner life opens to the transcendent."
+    },
+    {
+      "id": 185,
+      "no": 185,
+      "word": "flesh",
+      "description": "Flesh (basar / sarx) is the word for the human person considered as embodied, creaturely, and mortal — made of matter, subject to hunger and pleasure and death. The Hebrew basar covers the physical body and, by extension, shared creatureliness: all flesh is mortal. The Greek sarx in Paul carries an additional weight: flesh becomes the term for the whole person considered as operating apart from the Spirit — the person whose inner life is governed by creaturely appetites rather than by God. Flesh is not evil in itself but becomes disordered when it rules the person rather than being ordered under God."
+    },
+    {
+      "id": 186,
+      "no": 186,
+      "word": "gladness",
+      "description": "Gladness is the lighter, more spontaneous face of joy — the quick, warm delight that arises in the moment rather than the deep settled gladness that comes from a rightly ordered life. The Hebrew and Greek vocabulary covers the being glad, the celebrating together, the simple well-being of a person whose circumstances and relationships are good. Gladness appears alongside joy throughout the psalms and wisdom literature, and it is attributed to God: he is glad over his people. It is one of the emotional signatures of the life lived in right relationship with God and others."
+    },
+    {
+      "id": 187,
+      "no": 187,
+      "word": "strength",
+      "description": "Strength is the capacity to act effectively in the world — not just physical power but the full range of inner and outer resources by which a person accomplishes what they are called to do. The Hebrew vocabulary is the most term-rich in the entire corpus: arm, bone, hand, might, firmness, greatness, power. Strength is both given by God (he gives strength to the weary) and drawn from him (I can do all things through him who strengthens me). The strength that Scripture most values is not the kind that operates independently of God but the kind that knows where it comes from."
+    },
+    {
+      "id": 188,
+      "no": 188,
+      "word": "weeping",
+      "description": "Weeping is the bodily expression of grief, sorrow, or deep emotional intensity — the involuntary overflow of inner pain through tears and the sounds of crying. The Hebrew and Greek vocabulary covers both the act of weeping and the tears themselves. Weeping in Scripture is never treated as weakness or failure: Jesus wept at the tomb of Lazarus. The psalms are full of weeping; Lamentations is written in tears. The promise of the final restoration is that God will wipe away every tear from their eyes — which means the tears were real and are known by him."
+    },
+    {
+      "id": 189,
+      "no": 189,
+      "word": "malice",
+      "description": "Malice is the deliberate desire to harm — the inner disposition that actively wishes ill on another and is pleased when they suffer. The Hebrew vocabulary here covers what is harmful and what is contemptible. Malice is treated in the New Testament as one of the residues of the old life that must be put away: it is listed alongside slander and hypocrisy as things incompatible with a life renewed by God. Malice is distinguished from anger (which responds to wrong) by its pleasure in harm: it is not triggered by injury but is a settled hostile orientation toward others."
+    },
+    {
+      "id": 190,
+      "no": 190,
+      "word": "contempt",
+      "description": "Contempt is the inner dismissal of another as beneath consideration — the attitude that treats someone as worthless, ridiculous, or unworthy of respect. The Hebrew vocabulary covers to lighten, to despise, to taunt, to reject as of no account. Contempt is one of the most socially toxic of inner states because it is incompatible with genuine relationship: the contemptuous person cannot love the one they despise. Jesus's warning in the Sermon on the Mount treats contempt (calling someone a fool) with the same gravity as murder, because both proceed from the same inner dismissal of the other's worth."
+    },
+    {
+      "id": 191,
+      "no": 191,
+      "word": "doubt",
+      "description": "Doubt is the inner state of being pulled in two directions at once — unable to settle fully on trust or disbelief, confident and uncertain at the same moment. The Greek vocabulary here covers both the act of judging (weighing the evidence) and the genuine uncertainty that remains unsettled. Scripture distinguishes doubt from unbelief: Thomas doubts but is not condemned; the disciples doubt but are sent. Doubt in Scripture is often the companion of genuine faith rather than its opposite — the honest wrestling of a person who is trying to trust in the face of difficulty."
+    },
+    {
+      "id": 192,
+      "no": 192,
+      "word": "comfort",
+      "description": "Comfort is the bringing of genuine relief to the person in pain — not the minimising of their suffering but the provision of strength, companionship, and hope that makes the suffering bearable. The Hebrew nacham and the Greek paraklēsis cover both the consoling and the encouraging: comfort is what the Comforter does, and the Comforter is the Spirit. God is the Father of all comfort. Comfort is always relational: it requires the presence of someone who sees the pain and responds to it with something that actually helps."
+    },
+    {
+      "id": 193,
+      "no": 193,
+      "word": "craving",
+      "description": "Craving is the most acute form of desire — the pressing, urgent want that will not wait and has difficulty being satisfied. The Greek vocabulary here covers both the sick longing of intense desire and the aspiration toward something felt as necessary. Craving is desire at the level of physical urgency: the body (or the person considered bodily) pressing toward what it needs or has been trained to want. Scripture is not contemptuous of craving in itself, but it consistently asks whether the craving is rightly directed."
+    },
+    {
+      "id": 194,
+      "no": 194,
+      "word": "blessing",
+      "description": "Blessing is the positive flow of divine favour and goodness toward a person, community, or the world — and the human act of speaking that favour over others and back to God. The Hebrew and Greek vocabulary covers both the bestowing of benefit (God blessing) and the spoken declaration that invokes or honours that benefit (humans blessing). Blessing has a social and physical concreteness in the Old Testament: to be blessed is to have children, land, prosperity, and peace. In the New Testament it is spiritualised without being removed from the concrete: blessed are those who are poor in spirit."
+    },
+    {
+      "id": 195,
+      "no": 195,
+      "word": "spiritual powers",
+      "description": "Spiritual powers is a placeholder category for the non-human spiritual beings described in Scripture — angels, demons, principalities, powers, and the various named beings that populate the biblical world. This category does not have its own Hebrew or Greek term but is a synthesis point for the programme: understanding the inner life of the human person requires understanding the spiritual environment within which that person exists, including the beings that can affect, inhabit, or oppose them. [Special handling — cross-registry synthesis placeholder.]"
+    },
+    {
+      "id": 196,
+      "no": 196,
+      "word": "power",
+      "description": "Power is the capacity to accomplish, to cause things to happen, to exercise effective influence in the world. The Hebrew and Greek vocabulary here is broad: authority, ability, kingdom, salvation, dominion. Power in Scripture is not morally neutral: it matters greatly who has it, what they do with it, and where it comes from. God is the ultimate source of all genuine power; human power is derived and delegated. The New Testament is particularly concerned with the power of the Spirit — the power that enables what would be impossible by ordinary human means."
+    },
+    {
+      "id": 197,
+      "no": 197,
+      "word": "authority",
+      "description": "Authority is the right to exercise power — the legitimacy that distinguishes command from mere force. The Greek vocabulary here covers ruling, lordship, and the right to act with binding effect. Jesus teaches as one who has authority, not as the scribes. In the New Testament, authority is both delegated (the apostles, the governing authorities) and absolute (God's authority, Christ's authority over all things). Authority corrupts when it is exercised for the benefit of the one who holds it rather than those under it."
+    },
+    {
+      "id": 198,
+      "no": 198,
+      "word": "might",
+      "description": "Might is the most physically concentrated vocabulary for power in the entire corpus — the raw, muscular strength that accomplishes by force what cannot be accomplished by subtlety. The Hebrew vocabulary here is the largest term set of any registry, including horn (the image of concentrated animal power), arm, strength in its most energetic forms. God's might is the subject of some of the most exalted poetry in the Old Testament. Human might is real but derivative and limited: the mighty are humbled, but God's might is the ground of all that stands."
+    },
+    {
+      "id": 199,
+      "no": 199,
+      "word": "dominion",
+      "description": "Dominion is the exercise of authority over a domain — the governance, ordering, and stewardship of what has been placed under one's charge. The Hebrew and Greek vocabulary covers ruling, having dominion, lording over, and kingdom. The word appears in the creation narrative: humanity is given dominion over the earth, which is a mandate for care and governance rather than exploitation. The question in Scripture is always whether dominion is exercised as God exercises it — with justice, mercy, and care — or in the pattern of fallen lordship that uses others for one's own benefit."
+    },
+    {
+      "id": 200,
+      "no": 200,
+      "word": "energy",
+      "description": "Energy is the capacity for active work and effort — the inner drive and outer force that enables doing. The Greek vocabulary here (energeia) covers the working activity that produces results. In the New Testament it appears primarily in theological contexts: the energy at work in the believer is God's energy working in and through them (Colossians 1:29). Human energy is real but is sustained and directed by divine energy: it is the working out of what God works in. [XREF: covered by power (#196).]"
+    },
+    {
+      "id": 201,
+      "no": 201,
+      "word": "image",
+      "description": "Image (tselem / eikōn) is the term for the imprint or likeness of something — the representation that carries the form and character of what it represents. In creation, humans are made in the image of God: they are his representatives and counterparts in the world, bearing something of his character and acting on his behalf. In Christ, the image vocabulary is used at its highest: he is the image of the invisible God (Colossians 1:15), the exact representation of the divine nature. The renewal of humanity is described as the restoration of the image."
+    },
+    {
+      "id": 202,
+      "no": 202,
+      "word": "transformation",
+      "description": "Transformation is the process of genuine change from one form into another — not improvement but genuine metamorphosis, the inner person actually becoming different rather than merely behaving differently. The Greek vocabulary here (metamorphoō) is the same root as the transfiguration. In the New Testament, transformation is the work of the Spirit: as believers behold the glory of the Lord, they are transformed into the same image, from glory to glory (2 Corinthians 3:18). Transformation is both process and destination: it begins now and is completed in the resurrection."
+    },
+    {
+      "id": 203,
+      "no": 203,
+      "word": "treachery",
+      "description": "Treachery is the betrayal of trust for personal advantage — specifically the hidden, deliberate decision to work against someone who believes they are safe with you. The Greek vocabulary here (prodotēs, traitor) covers the one who hands over what was entrusted to them. Judas's act is described with this vocabulary. Treachery is distinguished from ordinary conflict by its exploitation of trust: the traitor uses the relationship itself as the means of harm. It is one of the most theologically weighty forms of relational violation."
+    },
+    {
+      "id": 204,
+      "no": 204,
+      "word": "name",
+      "description": "Name (shem / onoma) carries far more weight in the biblical world than a mere label: a name expresses the essence of what a person or being is, their character, their history, their destiny. To know someone's name is to have access to who they really are. God's name is holy — not merely his title but his very self. To call on the name of the Lord is to reach for the person behind the word. To give a name is to establish a relationship; to have one's name written in the book of life is to be known and held by God."
+    },
+    {
+      "id": 205,
+      "no": 205,
+      "word": "resentment",
+      "description": "Resentment is the slow-burning anger that refuses to be released — the holding of grievance over time, nursing the memory of wrongs done and keeping the account open. It differs from righteous anger (which seeks resolution) and from grief (which mourns without hostility). The biblical vocabulary for this concept is embedded in the anger and bitterness families. Resentment is spiritually corrosive: it poisons the person who holds it, keeps old wounds open, and prevents the renewal that forgiveness and reconciliation make possible."
+    },
+    {
+      "id": 206,
+      "no": 206,
+      "word": "vulnerability",
+      "description": "Vulnerability is the condition of being genuinely open and exposed — capable of being wounded, affected, or known at depth. The Hebrew vocabulary here is built on uncovering and nakedness: the state of the person who has no protective shell. In Scripture, vulnerability is the necessary condition for genuine love and genuine relationship: the person who cannot be hurt cannot really give themselves. The cross is the supreme image of divine vulnerability — God in Christ making himself open to rejection, suffering, and death. It is the form love takes when it is fully serious."
+    },
+    {
+      "id": 207,
+      "no": 207,
+      "word": "blindness (spiritual)",
+      "description": "Blindness (spiritual) is the condition of the inner person whose capacity to perceive spiritual and moral reality has been impaired or closed — not the failure of physical sight but the failure of the deeper seeing by which one recognises God, truth, and what is real. The Greek vocabulary covers both darkening and the condition of blindness. Jesus heals physical blindness as a sign of the deeper healing he brings: he is the light of the world, and those who follow him will not walk in darkness. Spiritual blindness can be the result of judgment, of choice, or of deception."
+    },
+    {
+      "id": 208,
+      "no": 208,
+      "word": "sloth",
+      "description": "Sloth is the failure to invest the effort that responsibility and love require — the habitual preference for rest over work, for comfort over the demands of one's calling. The Hebrew and Greek vocabulary here covers sluggishness and the quality of going slack. Sloth is not mere tiredness but the settled orientation of the person who will not press through the friction of genuine engagement. It is treated in Scripture as a moral failure: the servant who buries his talent is the servant who preferred safety to the risk of genuine investment."
+    },
+    {
+      "id": 209,
+      "no": 209,
+      "word": "likeness",
+      "description": "Likeness (homoiōsis) is the Greek word that captures the quality of resemblance — being like, having the same form as. It appears alongside image in Genesis (made in our image and likeness) and in the New Testament in Paul's description of the transformation of believers into the likeness of Christ. Likeness is the relational and experiential dimension of the image: where image points to the formal representation, likeness points to the actual similarity that results from genuine relationship. To become like Christ is the goal of the transformation process."
+    },
+    {
+      "id": 210,
+      "no": 210,
+      "word": "deadness",
+      "description": "Deadness is the condition of what once lived being no longer alive — the absence of responsiveness, vitality, and capacity for relationship. The Hebrew and Greek vocabulary covers both physical death and the spiritual condition of being dead while alive. Paul uses deadness to describe humanity's condition apart from God: dead in trespasses and sins. The resurrection of Jesus is the reversal of deadness: not merely the resuscitation of what was dying but the restoration of genuine life, more fully alive than before."
+    },
+    {
+      "id": 211,
+      "no": 211,
+      "word": "being",
+      "description": "Being — the bare fact of existing, of having reality — is the deepest and most fundamental category of all, underlying everything else in the corpus. The biblical vocabulary for this distributes itself across soul (nephesh, the living being), spirit (ruach, the animated being), and the basic ontological affirmations of creation: God is, God causes to be, the creature is in relation to the Creator. To be is not taken for granted in Scripture: existence is given, sustained, and known by God. [XREF: covered by soul (#182).]"
+    }
+  ]
+}

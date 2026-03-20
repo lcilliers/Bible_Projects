@@ -1,6 +1,6 @@
 # Bible Projects — Database Patch JSON Specification
-Version: 1.2  
-Date: 2026-03-17
+Version: 1.3  
+Date: 2026-03-20
 
 This specification defines the required format for all database patch files targeting the Bible Projects SQLite database. Pass these instructions to any system (Claude or other) producing patch files.
 
@@ -14,15 +14,51 @@ This specification defines the required format for all database patch files targ
 
 Examples:
 - `registry-patch-20260317-v1.json`
-- `WA-phase2-flags-patch-20260316-v2.json`
+- `phase2-flag-reassessment-20260319-v1.json`
+- `stem-extraction-patch-20260319-v1.json`
+- `word-descriptions-patch-20260319-v1.json`
 
-Use lowercase, hyphens only (no underscores, no spaces). Increment `v<N>` for revisions within the same session.
+Use lowercase with hyphens. Increment `v<N>` for revisions within the same session.
 
 ---
 
-## Top-level structure
+## Patch formats
 
-Every patch file must have exactly these top-level keys:
+Two formats are recognised. Choose based on the nature of the operation.
+
+### Format A — Structured operation-block format (recommended for INSERT/UPDATE patches against a single table or tightly related tables)
+
+Uses `_meta` + named operation blocks. The import script generates SQL from the structured data. Suitable when explicit ID assignment and cross-block FK references are needed.
+
+See sections below for full specification.
+
+### Format B — Simplified flat format (used for Claude-native analysis patches)
+
+Used when Claude produces analytical output covering many terms across the corpus (e.g. flag assessments, meaning stem extraction, word descriptions). Top-level keys are free-form; list sections replace the operation-block structure.
+
+```json
+{
+  "patch_id":    "descriptive-name-YYYYMMDD-v1",
+  "produced_at": "2026-03-19T17:51:31Z",
+  "description": "One sentence describing what this patch does.",
+  "summary":     { "terms_assessed": 1517, "flags_to_insert": 2361, ... },
+  "inserts":     [ { "term_inv_id": 1, "flag_code": "THIN_DATA", ... } ],
+  "deletes":     [ { "term_inv_id": 30, "flag_code": "CROSS_PART_ROOT", ... } ]
+}
+```
+
+Rules for Format B:
+- `patch_id` and `produced_at` are required.
+- `summary` is required and contains counts for human verification.
+- List sections (`inserts`, `deletes`, `records`, etc.) are named descriptively.
+- FKs in list rows use **code/name values** (e.g. `flag_code`, `strongs_number`) — the apply script resolves integer IDs from the live DB. Never include raw integer FK IDs.
+- Apply scripts for Format B patches must **always resolve FKs by code lookup** and never trust patch-internal integer IDs.
+
+---
+
+## Top-level structure (Format A)
+
+Every Format A patch file must have exactly these top-level keys:
 
 ```json
 {
@@ -289,22 +325,65 @@ Key tables most likely to be patched:
 
 | Table | Primary key | ID assignment | Common patch type |
 |---|---|---|---|
-| `word_registry` | `id` (INTEGER, explicit) | Always query `MAX(id)`, assign from `MAX+1` | INSERT |
+| `word_registry` | `id` (INTEGER, explicit) | Always query `MAX(id)`, assign from `MAX+1` | INSERT, UPDATE |
 | `phase2_flag_types` | `id` (INTEGER, explicit) | Always query `MAX(id)`, assign from `MAX+1` | INSERT |
+| `wa_quality_flag_types` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when cross-referenced | INSERT |
+| `wa_data_quality_flags` | `id` (AUTOINCREMENT) | Omit `id`; resolved by apply script from `file_id`+`term_id`+`flag_id` | INSERT, DELETE |
 | `wa_term_phase2_flags` | composite `(term_inv_id, flag_id)` | No id column — FKs must reference known IDs | INSERT |
 | `wa_file_index` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when subsequent blocks need this FK | INSERT |
-| `wa_term_inventory` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when subsequent blocks need this FK | INSERT or UPDATE |
+| `wa_term_inventory` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when subsequent blocks need this FK | INSERT, UPDATE |
 | `wa_term_related_words` | `id` (AUTOINCREMENT) | Omit `id` unless cross-referenced | INSERT |
 | `wa_term_root_family` | `id` (AUTOINCREMENT) | Omit `id` unless cross-referenced | INSERT |
-| `wa_data_quality_flags` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when subsequent blocks need this FK | INSERT |
+| `wa_meaning_parsed` | `id` (AUTOINCREMENT) | Resolved by apply script via `term_inv_id` | UPDATE |
+| `wa_meaning_stem` | `id` (AUTOINCREMENT) | Omit `id`; `parsed_meaning_id` resolved by apply script via `term_inv_id` | INSERT |
+| `wa_lsj_parsed` | `id` (AUTOINCREMENT) | Omit `id`; `term_inv_id` is the natural key | INSERT, UPDATE |
+| `mti_terms` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when cross-referenced | INSERT |
+| `mti_term_cross_refs` | `id` (AUTOINCREMENT) | Omit `id` unless cross-referenced | INSERT |
 | `wa_cross_registry_links` | `id` (AUTOINCREMENT) | Query `MAX(id)`, assign explicitly when subsequent blocks need this FK | INSERT |
 
 **Rule:** For AUTOINCREMENT tables, omit `id` from `columns` *only* when no other block in the same patch needs to reference that row's ID as a foreign key. Whenever cross-block FK references are needed, include `id` explicitly (query `MAX(id)` first) and record the baseline in `_meta.id_baseline`.
 
 ### Column reference for frequently patched tables
 
+**`word_registry`** (updated 2026-03-20):
+`id, no, word, source_list, category_hint, phase1_input_file, phase1_status, phase1_output_file, phase2_datasets, notes, automation_eligible, last_automation_run, automation_run_id, phase1_term_count, phase1_verse_count, strongs_list, description`
+
 **`wa_term_related_words`** (updated 2026-03-17):
 `id, term_inv_id, gloss, transliteration, strongs_number, relationship_note`
 
 **`wa_term_root_family`** (updated 2026-03-17):
 `id, term_inv_id, root_code, root_language, root_gloss, note`
+
+**`wa_meaning_parsed`** (added 2026-03-20):
+`id, term_inv_id, strongs_number, language, top_sense_count, stem_count, has_causative_stem, has_domain_tags, parsed_at, parse_version, parse_warnings`
+
+**`wa_meaning_stem`** (added 2026-03-20):
+`id, parsed_meaning_id, stem_name, stem_type, sense_count, top_sense_text`
+
+**`wa_lsj_parsed`** (added 2026-03-20):
+`id, term_inv_id, raw_lsj, lsj_gloss, lsj_domains, lsj_philosophical_note, lsj_etymology_note, lsj_cognate_forms, parsed_at, parse_version`
+
+**`wa_quality_flag_types`** (added 2026-03-20):
+`id, flag_group, flag_code, description`
+
+**`wa_data_quality_flags`** (added 2026-03-20):
+`id, file_id, term_id, flag_id, description, last_changed`
+Note: `term_id` holds the Strong's/STEP code string (e.g. `"H8441"`), not an integer FK.
+
+**`mti_terms`** (added 2026-03-20):
+`id, strongs_number, transliteration, gloss, language, owning_registry, owning_word, owning_part, word_data_reference, status, status_note, exclusion_reason, extraction_date, strongs_reconciled, anchor_note, last_changed`
+
+**`mti_term_cross_refs`** (added 2026-03-20):
+`id, mti_term_id, registry, word, part, word_data_reference`
+
+---
+
+## Patch inventory
+
+Patches applied to the production database (most recent first):
+
+| File | Date | Type | Summary |
+|------|------|------|---------|
+| `word-descriptions-patch-20260319-v1.json` | 2026-03-19 | Format B / UPDATE | `word_registry.description` populated for all 211 words |
+| `phase2-flag-reassessment-20260319-v1.json` | 2026-03-19 | Format B / INSERT+DELETE | 2,361 TERM_ANALYSIS quality flags inserted; 141 stale flags deleted; 19 new flag types added |
+| `stem-extraction-patch-20260319-v1.json` | 2026-03-19 | Format B / UPDATE+INSERT | 695 `wa_meaning_stem` rows inserted; 643+538 `wa_meaning_parsed` rows updated; 15 causative flag corrections |
