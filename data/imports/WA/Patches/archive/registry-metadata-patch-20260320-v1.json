@@ -1,0 +1,2813 @@
+{
+  "_meta": {
+    "patch_id": "registry-metadata-patch-20260320-v1",
+    "date": "2026-03-20",
+    "description": "Populate origin, source_category, inference_note, and anchor_verses for all 211 active registry words; correct source_list values from the combined inner-being words document.",
+    "reason": "The combined inner-being words document (inner_being_words_combined.md) records the analytical reasoning for each word's inclusion across three source lists and eight categories. 26 words added during programme development are classified as Programme Addition. Four new columns are required in word_registry before this patch can be applied.",
+    "produced_by": "Claude Sonnet 4.6 — session 2026-03-20",
+    "import_order": [
+      "1. Execute schema_changes block first — adds four new TEXT columns to word_registry",
+      "2. Execute word_registry_update — updates all 211 rows with metadata values"
+    ],
+    "format": "bible-projects-patch-spec-v1.3",
+    "id_baseline": {
+      "word_registry": 211
+    },
+    "new_columns_note": "Four new columns added to word_registry: origin, source_category, inference_note, anchor_verses. See schema_changes block for DDL."
+  },
+  "schema_changes": {
+    "target_table": "word_registry",
+    "operation": "DDL_ADD_COLUMNS",
+    "_instruction": "Apply BEFORE word_registry_update. For each entry in columns_to_add, execute: ALTER TABLE word_registry ADD COLUMN <name> <type>. If the column already exists, skip silently (use try/except or check PRAGMA table_info first).",
+    "columns_to_add": [
+      {
+        "name": "origin",
+        "type": "TEXT",
+        "description": "Provenance of the word in the registry. Values: 'original_list' (from the 181-word research document) | 'programme_addition' (added during Session A development)."
+      },
+      {
+        "name": "source_category",
+        "type": "TEXT",
+        "description": "Functional category from the original research document. Values: Moral/Conscience | Affective/Emotional | Cognitive/Mind | Relational/Social | Identity/Selfhood | Character/Disposition | Volitional/Will | Spiritual/God-ward | Anthropological/Structural | Volitional/Capacity."
+      },
+      {
+        "name": "inference_note",
+        "type": "TEXT",
+        "description": "For Low Confidence / Inferred words only: the analytical reasoning for inclusion — why the concept is present in the biblical data even when the English word does not have a direct biblical equivalent. Null for all other words."
+      },
+      {
+        "name": "anchor_verses",
+        "type": "TEXT",
+        "description": "The 1-3 key Scripture references identified as most theologically significant for this word. Semi-colon separated. Drawn from STEP Bible Suggestion notes in the research document."
+      }
+    ]
+  },
+  "word_registry_update": {
+    "target_table": "word_registry",
+    "operation": "UPDATE",
+    "pk_column": "id",
+    "columns": [
+      "source_list",
+      "origin",
+      "source_category",
+      "inference_note",
+      "anchor_verses"
+    ],
+    "row_counts": {
+      "total_rows": 211,
+      "origin_original_list": 185,
+      "origin_programme_addition": 26,
+      "source_high_confidence": 75,
+      "source_low_confidence": 24,
+      "source_missing_inner_being": 86,
+      "source_programme_addition": 26,
+      "rows_with_inference_note": 24,
+      "rows_with_anchor_verses": 175
+    },
+    "rows": [
+      {
+        "id": 1,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Prov 6:16-19;  Luke 16:15",
+        "_ref": {
+          "no": 1,
+          "word": "abomination",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 2,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Luke 22:44;  Luke 16:23",
+        "_ref": {
+          "no": 2,
+          "word": "agony",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 3,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Ambition is a morally neutral modern term that Scripture handles through two distinct concepts — selfish ambition (always negative) and godly zeal/aspiration (positive). The neutral modern sense is ABSENT.",
+        "anchor_verses": " Gal 5:20;  Phil 2:3;  Rom 15:20",
+        "_ref": {
+          "no": 3,
+          "word": "ambition",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 4,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Eph 4:26",
+        "_ref": {
+          "no": 4,
+          "word": "anger",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 5,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Rom 9:2; 2 Cor 6:4;  Ps 4:1",
+        "_ref": {
+          "no": 5,
+          "word": "anguish",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 6,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": "Isa 61:1; 1 John 2:20",
+        "_ref": {
+          "no": 6,
+          "word": "anointing",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 7,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Matt 6:25-34;  Phil 4:6",
+        "_ref": {
+          "no": 7,
+          "word": "anxiety",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 8,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Num 11:4;  Prov 27:7",
+        "_ref": {
+          "no": 8,
+          "word": "appetite",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 9,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Assent — the inner act of agreeing, consenting, or affirming — is ABSENT as a direct biblical term. The concept is present in faith, agreement, and confession vocabulary but never as a standalone psychological category.",
+        "anchor_verses": " Rom 10:9-10",
+        "_ref": {
+          "no": 9,
+          "word": "assent",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 10,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 4:4",
+        "_ref": {
+          "no": 10,
+          "word": "awareness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 11,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:28",
+        "_ref": {
+          "no": 11,
+          "word": "awe",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 12,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Luke 22:48;  Ps 73:15",
+        "_ref": {
+          "no": 12,
+          "word": "betrayal",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 13,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Eph 4:31;  Heb 12:15;  Ruth 1:20",
+        "_ref": {
+          "no": 13,
+          "word": "bitterness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 14,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "1 Thess 5:23;  Eph 1:4;  Gen 6:9",
+        "_ref": {
+          "no": 14,
+          "word": "blamelessness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 15,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 1:31; 1 John 2:16",
+        "_ref": {
+          "no": 15,
+          "word": "boastfulness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 16,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " Heb 4:16;  Acts 4:13-31",
+        "_ref": {
+          "no": 16,
+          "word": "boldness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 17,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": " Rom 8:15;  Heb 2:15;  Is 61:1",
+        "_ref": {
+          "no": 17,
+          "word": "bondage",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 18,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Ps 34:18;  Ps 51:17;  Isa 61:1",
+        "_ref": {
+          "no": 18,
+          "word": "brokenness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 19,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Eph 4:1;  Rom 8:28-30;  Jer 1:5",
+        "_ref": {
+          "no": 19,
+          "word": "calling",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 20,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Character as a psychological construct — the sum of stable moral and psychological traits — is ABSENT as a single biblical term. Scripture addresses character through the formed inner person, the fruit of the Spirit, and terms for moral quality.",
+        "anchor_verses": " Rom 5:4; 2 Cor 2:9;  Phil 2:22",
+        "_ref": {
+          "no": 20,
+          "word": "character",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 21,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Commitment as a psychological state — the deliberate binding of the will to a person, cause, or covenant — is ABSENT as a single biblical term. The concept is expressed through covenant, vow, and dedication vocabulary.",
+        "anchor_verses": " Eccl 5:4-5",
+        "_ref": {
+          "no": 21,
+          "word": "commitment",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 22,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "1 John 1:3-7; 2 Cor 13:14",
+        "_ref": {
+          "no": 22,
+          "word": "communion",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 23,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": null,
+        "anchor_verses": " Col 3:12",
+        "_ref": {
+          "no": 23,
+          "word": "compassion",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 24,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Rom 5:16-18",
+        "_ref": {
+          "no": 24,
+          "word": "condemnation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 25,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Conformity — the shaping of the inner person to an external pattern — appears in Scripture in two distinct directions: conformity to Christ (positive) and conformity to the world (negative). The neutral modern term is ABSENT.",
+        "anchor_verses": " Rom 12:2;  Rom 8:29",
+        "_ref": {
+          "no": 25,
+          "word": "conformity",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 26,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 26,
+          "word": "conscience",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 27,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Gen 3:7; 1 Cor 4:4;  Heb 9:14",
+        "_ref": {
+          "no": 27,
+          "word": "consciousness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 28,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": "1 Thess 5:23;  John 17:17",
+        "_ref": {
+          "no": 28,
+          "word": "consecration",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 29,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Phil 4:11; 1 Tim 6:6",
+        "_ref": {
+          "no": 29,
+          "word": "contentment",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 30,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Isa 66:2;  Ps 51:17",
+        "_ref": {
+          "no": 30,
+          "word": "contrition",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 31,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Rom 8:21;  Gal 6:8;  Gen 6:12",
+        "_ref": {
+          "no": 31,
+          "word": "corruption",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 32,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Isa 9:6",
+        "_ref": {
+          "no": 32,
+          "word": "counsel",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 33,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " Josh 1:6-9;  Phil 1:14",
+        "_ref": {
+          "no": 33,
+          "word": "courage",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 34,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "Jer 31:31-34;  Ezek 36:26-27;  Heb 8:10",
+        "_ref": {
+          "no": 34,
+          "word": "covenant",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 35,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Exod 20:17;  Rom 7:7;  Col 3:5",
+        "_ref": {
+          "no": 35,
+          "word": "covetousness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 36,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "2 Tim 1:7;  Rev 21:8",
+        "_ref": {
+          "no": 36,
+          "word": "cowardice",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 37,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Darkening as an inner spiritual/cognitive state — the progressive dimming of spiritual perception — is ABSENT as a single biblical term. The concept is present in specific passages describing the darkened mind or heart.",
+        "anchor_verses": " Rom 1:21;  Eph 4:18",
+        "_ref": {
+          "no": 37,
+          "word": "darkening",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 38,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Spiritual deadness — the condition of the human spirit being non-functional toward God — is ABSENT as a single biblical term. It is expressed through the language of death applied to the inner person.",
+        "anchor_verses": " Eph 2:1;  Rom 8:6;  Lev 26:41",
+        "_ref": {
+          "no": 38,
+          "word": "deadness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 39,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Mark 7:22",
+        "_ref": {
+          "no": 39,
+          "word": "debauchery",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 40,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Mark 7:22;  Ps 55:23;  Prov 12:17-20",
+        "_ref": {
+          "no": 40,
+          "word": "deceit",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 41,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Mark 7:20-23; 1 Cor 8:7;  Rev 3:4",
+        "_ref": {
+          "no": 41,
+          "word": "defilement",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 42,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Rom 7:22;  Ps 37:4",
+        "_ref": {
+          "no": 42,
+          "word": "delight",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 43,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Luke 22:15; Gal 5:16",
+        "_ref": {
+          "no": 43,
+          "word": "desire",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 44,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 1:8",
+        "_ref": {
+          "no": 44,
+          "word": "despair",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 45,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": "Ezra 7:10;  Acts 11:23; 2 Tim 3:10",
+        "_ref": {
+          "no": 45,
+          "word": "determination",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 46,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "2 Pet 1:3-7;  Deut 10:20",
+        "_ref": {
+          "no": 46,
+          "word": "devotion",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 47,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Ps 8:5;  Gen 1:27; 1 Cor 12:23",
+        "_ref": {
+          "no": 47,
+          "word": "dignity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 48,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Prov 4:23;  Heb 6:11; 2 Tim 2:15",
+        "_ref": {
+          "no": 48,
+          "word": "diligence",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 49,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 12:10;  Heb 5:14",
+        "_ref": {
+          "no": 49,
+          "word": "discernment",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 50,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Eph 2:2;  Is 63:10",
+        "_ref": {
+          "no": 50,
+          "word": "disobedience",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 51,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Rom 5:3-5",
+        "_ref": {
+          "no": 51,
+          "word": "distress",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 52,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 1:10-13;  Gal 5:20",
+        "_ref": {
+          "no": 52,
+          "word": "division",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 53,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Job 3:25;  Heb 12:21",
+        "_ref": {
+          "no": 53,
+          "word": "dread",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 54,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Emotion as a category does not exist in Hebrew or Greek thought. Ancient languages do not abstract emotions into a general class — they name specific emotions. The concept is ABSENT as a term but present across hundreds of specific instances.",
+        "anchor_verses": null,
+        "_ref": {
+          "no": 54,
+          "word": "emotion",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 55,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " Rom 5:3-4;  Heb 12:1-3;  Is 40:31",
+        "_ref": {
+          "no": 55,
+          "word": "endurance",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 56,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Prov 14:30;  Matt 27:18",
+        "_ref": {
+          "no": 56,
+          "word": "envy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 57,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Gen 6:5;  Rom 7:19-21;  Matt 12:35",
+        "_ref": {
+          "no": 57,
+          "word": "evil",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 58,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Experience as a general category — the inner accumulation of perceived and felt events — is ABSENT as a biblical term. Scripture addresses specific experiences through suffering, testing, and the knowledge gained through living, but never abstracts them into a general experience category.",
+        "anchor_verses": " Ps 34:8;  Heb 5:8",
+        "_ref": {
+          "no": 58,
+          "word": "experience",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 59,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Gen 15:6",
+        "_ref": {
+          "no": 59,
+          "word": "faith",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 60,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Hab 2:4;  Gal 5:22;  Matt 25:21",
+        "_ref": {
+          "no": 60,
+          "word": "faithfulness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 61,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "1 John 4:18",
+        "_ref": {
+          "no": 61,
+          "word": "fear",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 62,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "Acts 2:42; 1 John 1:3; 1 Cor 1:9",
+        "_ref": {
+          "no": 62,
+          "word": "fellowship",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 63,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Mark 7:22",
+        "_ref": {
+          "no": 63,
+          "word": "foolishness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 64,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Eph 4:32;  Col 3:13",
+        "_ref": {
+          "no": 64,
+          "word": "forgiveness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 65,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Rom 12:8; 2 Cor 9:11;  Prov 22:9",
+        "_ref": {
+          "no": 65,
+          "word": "generosity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 66,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Phil 4:5; 1 Pet 3:4;  Gal 5:23",
+        "_ref": {
+          "no": 66,
+          "word": "gentleness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 67,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Gal 5:22;  Rom 15:14",
+        "_ref": {
+          "no": 67,
+          "word": "goodness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 68,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " John 1:14;  Prov 3:34;  Eph 2:8",
+        "_ref": {
+          "no": 68,
+          "word": "grace",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 69,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Col 3:15-17;  Rom 1:21",
+        "_ref": {
+          "no": 69,
+          "word": "gratitude",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 70,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Col 3:5;  Luke 12:15",
+        "_ref": {
+          "no": 70,
+          "word": "greed",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 71,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 7:10;  Matt 5:4",
+        "_ref": {
+          "no": 71,
+          "word": "grief",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 72,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Rom 8:22-26",
+        "_ref": {
+          "no": 72,
+          "word": "groaning",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 73,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Rom 8:1",
+        "_ref": {
+          "no": 73,
+          "word": "guilt",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 74,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": " Rom 11:25;  Eph 4:18",
+        "_ref": {
+          "no": 74,
+          "word": "hardness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 75,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Prov 6:16-19;  John 15:18-19; 1 John 2:9-11",
+        "_ref": {
+          "no": 75,
+          "word": "hatred",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 76,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:14",
+        "_ref": {
+          "no": 76,
+          "word": "holiness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 77,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Phil 4:8; 1 Pet 2:12",
+        "_ref": {
+          "no": 77,
+          "word": "honesty",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 78,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Rom 5:2-5;  Heb 6:19;  Is 40:31",
+        "_ref": {
+          "no": 78,
+          "word": "hope",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 79,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 1:8",
+        "_ref": {
+          "no": 79,
+          "word": "hopelessness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 80,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " Phil 2:3-8;  James 4:6; 1 Pet 5:5",
+        "_ref": {
+          "no": 80,
+          "word": "humility",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 81,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "1 Tim 4:2;  Gal 2:13",
+        "_ref": {
+          "no": 81,
+          "word": "hypocrisy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 82,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Isa 43:1;  Rev 2:17;  Rom 8:14-16",
+        "_ref": {
+          "no": 82,
+          "word": "identity",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 83,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Gal 5:20;  Col 3:5;  Col 3:5",
+        "_ref": {
+          "no": 83,
+          "word": "idolatry",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 84,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Gen 1:26-27;  Col 3:10; 2 Cor 3:18",
+        "_ref": {
+          "no": 84,
+          "word": "image of God",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 85,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Imagination as a faculty of the mind — the capacity to form mental images and conceive possibilities — is ABSENT as a direct biblical term. Scripture addresses imagination primarily in the context of corrupt mental fabrications rather than as a neutral creative faculty.",
+        "anchor_verses": " Gen 6:5; 2 Cor 10:5",
+        "_ref": {
+          "no": 85,
+          "word": "imagination",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 86,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Matt 23:27",
+        "_ref": {
+          "no": 86,
+          "word": "impurity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 87,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 7:11;  Mark 10:14",
+        "_ref": {
+          "no": 87,
+          "word": "indignation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 88,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": null,
+        "anchor_verses": "2 Tim 3:2;  Rom 1:21",
+        "_ref": {
+          "no": 88,
+          "word": "ingratitude",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 89,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Matt 7:23; 1 John 3:4",
+        "_ref": {
+          "no": 89,
+          "word": "iniquity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 90,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Ps 24:4;  Matt 10:16;  Phil 2:15",
+        "_ref": {
+          "no": 90,
+          "word": "innocence",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 91,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Eph 1:8;  Luke 1:17",
+        "_ref": {
+          "no": 91,
+          "word": "insight",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 92,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Ps 26:1;  Prov 10:9; 2 Cor 1:12",
+        "_ref": {
+          "no": 92,
+          "word": "integrity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 93,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": "Heb 4:12",
+        "_ref": {
+          "no": 93,
+          "word": "intention",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 94,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": "Rom 8:26-27;  Isa 53:12",
+        "_ref": {
+          "no": 94,
+          "word": "intercession",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 95,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Intuition as a psychological concept — direct inner knowing without reasoning — is ABSENT as a biblical term. However the concept appears in Scripture under the functions of the human spirit and conscience.",
+        "anchor_verses": " Prov 20:27; 1 Cor 2:10-16",
+        "_ref": {
+          "no": 95,
+          "word": "intuition",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 96,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Ex 20:5; 2 Cor 11:2;  Gal 5:20",
+        "_ref": {
+          "no": 96,
+          "word": "jealousy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 97,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Phil 4:4;  John 15:11;  Neh 8:10",
+        "_ref": {
+          "no": 97,
+          "word": "joy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 98,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Mic 6:8;  Matt 23:23",
+        "_ref": {
+          "no": 98,
+          "word": "justice",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 99,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "Gal 5:22;  Titus 3:4;  Col 3:12",
+        "_ref": {
+          "no": 99,
+          "word": "kindness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 100,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 100,
+          "word": "knowledge",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 101,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Prov 6:6;  Heb 6:12;  Matt 25:26",
+        "_ref": {
+          "no": 101,
+          "word": "laziness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 102,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Phil 1:8;  Ps 42:1",
+        "_ref": {
+          "no": 102,
+          "word": "longing",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 103,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 103,
+          "word": "love",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 104,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Lam 3:23",
+        "_ref": {
+          "no": 104,
+          "word": "loyalty",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 105,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Luke 22:15; Gal 5:16;  Matt 5:28",
+        "_ref": {
+          "no": 105,
+          "word": "lust",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 106,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Manipulation as a psychological term — using others for selfish ends through indirect or deceptive means — is ABSENT as a single biblical term. The concept is present across several terms covering its component parts.",
+        "anchor_verses": "2 Cor 4:2;  Eph 4:14",
+        "_ref": {
+          "no": 106,
+          "word": "manipulation",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 107,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Eccl 1:2;  Phil 3:14; 1 Tim 1:5",
+        "_ref": {
+          "no": 107,
+          "word": "meaning",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 108,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 108,
+          "word": "meditation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 109,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Matt 5:5;  Matt 11:29;  Gal 5:23",
+        "_ref": {
+          "no": 109,
+          "word": "meekness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 110,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Deut 8:2;  Ps 77:11;  Rev 2:5",
+        "_ref": {
+          "no": 110,
+          "word": "memory",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 111,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "Mic 6:8;  Matt 5:7;  Jas 2:13",
+        "_ref": {
+          "no": 111,
+          "word": "mercy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 112,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Rom 12:2; 1 Cor 2:16;  Phil 4:7",
+        "_ref": {
+          "no": 112,
+          "word": "mind",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 113,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Matt 5:4;  James 4:9;  Zech 12:10",
+        "_ref": {
+          "no": 113,
+          "word": "mourning",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 114,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": "Deut 6:4;  Rom 1:5;  Heb 5:8",
+        "_ref": {
+          "no": 114,
+          "word": "obedience",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 115,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 11:2",
+        "_ref": {
+          "no": 115,
+          "word": "passion",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 116,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " James 1:3-4",
+        "_ref": {
+          "no": 116,
+          "word": "patience",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 117,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Phil 4:7;  Isa 26:3;  Gal 5:22",
+        "_ref": {
+          "no": 117,
+          "word": "peace",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 118,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Personality as a psychological construct does not exist in biblical vocabulary. The concept is ABSENT as a term. Scripture addresses the formed character of the inner person through related but distinct terms.",
+        "anchor_verses": " Heb 13:5",
+        "_ref": {
+          "no": 118,
+          "word": "personality",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 119,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Gen 1:26-27;  Gen 2:7",
+        "_ref": {
+          "no": 119,
+          "word": "personhood",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 120,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Phil 2:15;  Acts 2:40;  Prov 11:20",
+        "_ref": {
+          "no": 120,
+          "word": "perverseness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 121,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Eph 1:6;  Luke 1:46-47",
+        "_ref": {
+          "no": 121,
+          "word": "praise",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 122,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": "1 Thess 5:17;  Phil 4:6;  Matt 6:6",
+        "_ref": {
+          "no": 122,
+          "word": "prayer",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 123,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " James 4:6; 1 Pet 5:5",
+        "_ref": {
+          "no": 123,
+          "word": "pride",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 124,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": "Acts 2:17-18; 1 Cor 14:1",
+        "_ref": {
+          "no": 124,
+          "word": "prophecy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 125,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Matt 5:8;  Ps 51:10; 1 Tim 1:5",
+        "_ref": {
+          "no": 125,
+          "word": "purity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 126,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Rom 8:28;  Eph 3:11",
+        "_ref": {
+          "no": 126,
+          "word": "purpose",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 127,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 10:5",
+        "_ref": {
+          "no": 127,
+          "word": "reasoning",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 128,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": "Eph 2:2",
+        "_ref": {
+          "no": 128,
+          "word": "rebellion",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 129,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Recognition — the inner act of perceiving and identifying something or someone correctly — is ABSENT as a single biblical term. The concept appears in knowledge, acknowledgment, and discernment vocabulary.",
+        "anchor_verses": " Luke 24:31; 1 Cor 13:12;  Ruth 2:10",
+        "_ref": {
+          "no": 129,
+          "word": "recognition",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 130,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 5:18-20;  Rom 5:10-11",
+        "_ref": {
+          "no": 130,
+          "word": "reconciliation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 131,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Rejection as a psychological inner state — the felt experience of being unwanted or cast away — is ABSENT as a single biblical term. Scripture addresses rejection primarily from the perspective of being rejected by God or by people, with some texts addressing the inner experience.",
+        "anchor_verses": "1 Pet 2:4-7;  Is 53:3",
+        "_ref": {
+          "no": 131,
+          "word": "rejection",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 132,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Phil 4:4;  Luke 1:46-47",
+        "_ref": {
+          "no": 132,
+          "word": "rejoicing",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 133,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Matt 25:21; 1 Cor 4:2",
+        "_ref": {
+          "no": 133,
+          "word": "reliability",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 134,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": " Rom 12:2;  Titus 3:5;  Ps 51:10",
+        "_ref": {
+          "no": 134,
+          "word": "renewal",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 135,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 7:10",
+        "_ref": {
+          "no": 135,
+          "word": "repentance",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 136,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:15;  Eph 4:31",
+        "_ref": {
+          "no": 136,
+          "word": "resentment",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 137,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 2:2;  Luke 21:14",
+        "_ref": {
+          "no": 137,
+          "word": "resolve",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 138,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:28; Prov 1:7",
+        "_ref": {
+          "no": 138,
+          "word": "reverence",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 139,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Gen 15:6;  Matt 5:6;  Phil 3:9",
+        "_ref": {
+          "no": 139,
+          "word": "righteousness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 140,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 140,
+          "word": "seeking",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 141,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 13:5;  Ps 139:23-24;  Jas 1:23-24",
+        "_ref": {
+          "no": 141,
+          "word": "self-awareness",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 142,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "Gal 5:23",
+        "_ref": {
+          "no": 142,
+          "word": "self-control",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 143,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Sensitivity as a psychological construct — heightened responsiveness to emotional or spiritual stimuli — is ABSENT as a biblical term. The concept appears in Scripture through tender-heartedness, spiritual perception, and the condition of the conscience.",
+        "anchor_verses": " Eph 4:32;  Phil 1:9; 2 Kgs 22:19",
+        "_ref": {
+          "no": 143,
+          "word": "sensitivity",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 144,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 144,
+          "word": "sensuality",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 145,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Sexuality as a broad category covering sexual identity, orientation, and expression is a modern construct ABSENT as a single biblical term. Scripture addresses specific sexual acts, desires, and relational covenants rather than sexuality as a category.",
+        "anchor_verses": " Gen 2:24; Matt 19:5-6; 1 Cor 6:16",
+        "_ref": {
+          "no": 145,
+          "word": "sexuality",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 146,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:2",
+        "_ref": {
+          "no": 146,
+          "word": "shame",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 147,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 147,
+          "word": "sin",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 148,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 1:12; 1 Cor 5:8",
+        "_ref": {
+          "no": 148,
+          "word": "sincerity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 149,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " Eph 4:31;  Col 3:8;  Mark 7:22",
+        "_ref": {
+          "no": 149,
+          "word": "slander",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 150,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Gal 5:20;  Deut 18:9-12",
+        "_ref": {
+          "no": 150,
+          "word": "sorcery",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 151,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 7:10;  John 16:6",
+        "_ref": {
+          "no": 151,
+          "word": "sorrow",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 152,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Gal 5:20;  Rom 1:29",
+        "_ref": {
+          "no": 152,
+          "word": "strife",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 153,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": " Acts 7:51",
+        "_ref": {
+          "no": 153,
+          "word": "stubbornness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 154,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Spiritual stupor — a supernaturally induced or sin-produced dullness of spiritual perception — is ABSENT as a modern psychological term in Scripture. The concept appears in specific passages describing a spirit or sleep of deep insensibility.",
+        "anchor_verses": " Rom 11:8;  Is 29:10",
+        "_ref": {
+          "no": 154,
+          "word": "stupor",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 155,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": " Jas 4:7;  Jas 4:7",
+        "_ref": {
+          "no": 155,
+          "word": "submission",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 156,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Surrender as a spiritual concept — the yielding of the will to God — is ABSENT as a single biblical term. The concept is expressed through several yielding and presenting terms.",
+        "anchor_verses": " Rom 12:1;  James 4:7;  Ps 37:5",
+        "_ref": {
+          "no": 156,
+          "word": "surrender",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 157,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": " James 1:2-14; 1 Cor 10:13",
+        "_ref": {
+          "no": 157,
+          "word": "temptation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 158,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Heb 10:31",
+        "_ref": {
+          "no": 158,
+          "word": "terror",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 159,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Rev 12:11;  Rom 8:16",
+        "_ref": {
+          "no": 159,
+          "word": "testimony",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 160,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " Heb 4:12",
+        "_ref": {
+          "no": 160,
+          "word": "thought",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 161,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Transformation as a general category is a modern abstraction. Scripture addresses specific transformation processes through distinct terms. The concept is ABSENT as a single term but richly present across multiple specific terms.",
+        "anchor_verses": " Rom 12:2; 2 Cor 3:18",
+        "_ref": {
+          "no": 161,
+          "word": "transformation",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 162,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Ps 51:1-3;  Isa 53:5;  Rom 4:15",
+        "_ref": {
+          "no": 162,
+          "word": "transgression",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 163,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Prov 3:5;  Phil 1:6",
+        "_ref": {
+          "no": 163,
+          "word": "trust",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 164,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "John 8:32;  Ps 15:2;  Eph 4:15",
+        "_ref": {
+          "no": 164,
+          "word": "truthfulness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 165,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " Heb 3:12;  Mark 9:24",
+        "_ref": {
+          "no": 165,
+          "word": "unbelief",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 166,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 166,
+          "word": "understanding",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 167,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Relational/Social",
+        "inference_note": null,
+        "anchor_verses": " Eph 4:3-13",
+        "_ref": {
+          "no": 167,
+          "word": "unity",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 168,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Prov 11:3;  Heb 1:8;  Ps 25:8",
+        "_ref": {
+          "no": 168,
+          "word": "uprightness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 169,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": null,
+        "inference_note": "Vulnerability as a psychological concept — the state of being open to being hurt or the willing openness of authentic relationship — is ABSENT as a biblical term. The concept appears in Scripture through weakness, nakedness, and the openness before God.",
+        "anchor_verses": " Heb 4:13;  Gen 2:25",
+        "_ref": {
+          "no": 169,
+          "word": "vulnerability",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 170,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": "2 Cor 12:9-10;  Rom 8:26;  Jer 17:9",
+        "_ref": {
+          "no": 170,
+          "word": "weakness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 171,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "1 Cor 6:18-20",
+        "_ref": {
+          "no": 171,
+          "word": "whoredom",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 172,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": "Mark 7:22;  Rom 1:29",
+        "_ref": {
+          "no": 172,
+          "word": "wickedness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 173,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": " Rom 7:15-19",
+        "_ref": {
+          "no": 173,
+          "word": "will",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 174,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": " James 3:13-17;  Col 2:3",
+        "_ref": {
+          "no": 174,
+          "word": "wisdom",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 175,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Ps 139:14;  Luke 1:63;  Acts 3:10",
+        "_ref": {
+          "no": 175,
+          "word": "wonder",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 176,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": " John 4:23-24",
+        "_ref": {
+          "no": 176,
+          "word": "worship",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 177,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": "Isa 43:4; 1 Cor 6:20;  Matt 6:26",
+        "_ref": {
+          "no": 177,
+          "word": "worth",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 178,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "Eph 4:31",
+        "_ref": {
+          "no": 178,
+          "word": "wrath",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 179,
+        "source_list": "High Confidence",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 179,
+          "word": "yearning",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 180,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Volitional/Will",
+        "inference_note": null,
+        "anchor_verses": "Rom 6:13-19",
+        "_ref": {
+          "no": 180,
+          "word": "yielding",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 181,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": "John 2:17;  Ps 69:9;  Rom 10:2",
+        "_ref": {
+          "no": 181,
+          "word": "zeal",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 182,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Anthropological/Structural",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 182,
+          "word": "Soul",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 183,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Anthropological/Structural",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 183,
+          "word": "heart",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 184,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Anthropological/Structural",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 184,
+          "word": "spirit",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 185,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Anthropological/Structural",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 185,
+          "word": "flesh",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 186,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 186,
+          "word": "gladness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 187,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 187,
+          "word": "strength",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 188,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 188,
+          "word": "weeping",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 189,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 189,
+          "word": "malice",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 190,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 190,
+          "word": "contempt",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 191,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 191,
+          "word": "doubt",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 192,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 192,
+          "word": "comfort",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 193,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 193,
+          "word": "craving",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 194,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 194,
+          "word": "blessing",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 195,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Spiritual/God-ward",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 195,
+          "word": "spiritual powers",
+          "status": "Excluded"
+        }
+      },
+      {
+        "id": 196,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 196,
+          "word": "power",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 197,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 197,
+          "word": "authority",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 198,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 198,
+          "word": "might",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 199,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 199,
+          "word": "dominion",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 200,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Volitional/Capacity",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 200,
+          "word": "energy",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 201,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 201,
+          "word": "image",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 202,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": "Inner Life",
+        "inference_note": "Transformation as a general category is a modern abstraction. Scripture addresses specific transformation processes through distinct terms. The concept is ABSENT as a single term but richly present across multiple specific terms.",
+        "anchor_verses": " Rom 12:2; 2 Cor 3:18",
+        "_ref": {
+          "no": 202,
+          "word": "transformation",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 203,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Moral/Conscience",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 203,
+          "word": "treachery",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 204,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 204,
+          "word": "name",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 205,
+        "source_list": "Missing Inner Being Words",
+        "origin": "original_list",
+        "source_category": "Affective/Emotional",
+        "inference_note": null,
+        "anchor_verses": " Heb 12:15;  Eph 4:31",
+        "_ref": {
+          "no": 205,
+          "word": "resentment",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 206,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": "Anthropology",
+        "inference_note": "Vulnerability as a psychological concept — the state of being open to being hurt or the willing openness of authentic relationship — is ABSENT as a biblical term. The concept appears in Scripture through weakness, nakedness, and the openness before God.",
+        "anchor_verses": " Heb 4:13;  Gen 2:25",
+        "_ref": {
+          "no": 206,
+          "word": "vulnerability",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 207,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Cognitive/Mind",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 207,
+          "word": "blindness (spiritual)",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 208,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Character/Disposition",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 208,
+          "word": "sloth",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 209,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Identity/Selfhood",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 209,
+          "word": "likeness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 210,
+        "source_list": "Low Confidence / Inferred",
+        "origin": "original_list",
+        "source_category": "Sin & Vice",
+        "inference_note": "Spiritual deadness — the condition of the human spirit being non-functional toward God — is ABSENT as a single biblical term. It is expressed through the language of death applied to the inner person.",
+        "anchor_verses": " Eph 2:1;  Rom 8:6;  Lev 26:41",
+        "_ref": {
+          "no": 210,
+          "word": "deadness",
+          "status": "Complete"
+        }
+      },
+      {
+        "id": 211,
+        "source_list": "Programme Addition",
+        "origin": "programme_addition",
+        "source_category": "Anthropological/Structural",
+        "inference_note": null,
+        "anchor_verses": null,
+        "_ref": {
+          "no": 211,
+          "word": "being",
+          "status": "Complete"
+        }
+      }
+    ]
+  }
+}

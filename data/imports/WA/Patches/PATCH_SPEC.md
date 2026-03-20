@@ -384,6 +384,7 @@ Patches applied to the production database (most recent first):
 
 | File | Date | Type | Summary |
 |------|------|------|---------|
+| `registry-metadata-patch-20260320-v1.json` | 2026-03-20 | Format B / DDL+UPDATE | Added 4 columns to `word_registry` (`origin`, `source_category`, `inference_note`, `anchor_verses`); all 211 rows populated |
 | `word-descriptions-patch-20260319-v1.json` | 2026-03-19 | Format B / UPDATE | `word_registry.description` populated for all 211 words |
 | `phase2-flag-reassessment-20260319-v1.json` | 2026-03-19 | Format B / INSERT+DELETE | 2,361 TERM_ANALYSIS quality flags inserted; 141 stale flags deleted; 19 new flag types added |
 | `stem-extraction-patch-20260319-v1.json` | 2026-03-19 | Format B / UPDATE+INSERT | 695 `wa_meaning_stem` rows inserted; 643+538 `wa_meaning_parsed` rows updated; 15 causative flag corrections |

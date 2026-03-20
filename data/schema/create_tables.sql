@@ -102,7 +102,12 @@ CREATE TABLE IF NOT EXISTS word_registry (
     -- M11: term discovery
     strongs_list        TEXT,                       -- JSON: [{"strong":"H5315","count":148}, …] sorted by count desc
     -- M12: word description
-    description         TEXT                        -- ~100-word researcher summary of the word's theological significance
+    description         TEXT,                       -- ~100-word researcher summary of the word's theological significance
+    -- M13: registry metadata
+    origin              TEXT,                       -- 'original_list' | 'programme_addition'
+    source_category     TEXT,                       -- functional category (e.g. Moral/Conscience, Affective/Emotional)
+    inference_note      TEXT,                       -- reasoning note for Low Confidence / Inferred words only
+    anchor_verses       TEXT                        -- 1-3 key Scripture refs; semi-colon separated
 );
 
 -- ═════════════════════════════════════════════════════════════════════════════
