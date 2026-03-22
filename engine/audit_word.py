@@ -1,23 +1,51 @@
 """
 audit_word.py
 ─────────────
-AUDIT_WORD mode — steps A1 through A10, including A3a.
+AUDIT_WORD mode — steps A1 through A10.
 
-Purpose: Refresh the audit state for a word that was imported before v9
-or that needs its verse records re-examined.
+Purpose: Align the database with STEP as the authoritative source for a single
+registered word.  STEP data always wins; researcher-owned fields are never
+overwritten.
+
+Two-phase design
+────────────────
+Phase 1 — DIFF (--dry-run):
+  Fetch all STEP data, compute the exact changes that would be made, write a
+  diff report to outputs/ and print a summary to console.  No writes to any
+  DB table.  The run stops after the report so the researcher can review.
+
+Phase 2 — APPLY (normal run):
+  Fetch all STEP data, write the diff report, then apply every change:
+    • wa_term_inventory  — overwrite all STEP-owned fields (no COALESCE guards)
+    • wa_verse_records   — INSERT new, UPDATE existing, DELETE obsolete
+                           (rows not returned by STEP after span-filter are
+                            DELETEd, not just marked span_strong_match=-1)
+    • wa_meaning_parsed  — re-parsed from refreshed meaning text (A5)
+    • wa_data_quality_flags — derivable flags re-derived (A6); researcher
+                              flags (not in _DERIVABLE_FLAGS set) are untouched
+    • wa_term_phase2_flags — never touched
+  Followed by: meaning parser (A5), flag engine (A6), audit checks (A7),
+  testament coverage (A9), registry update (A10).
+
+STEP-owned fields in wa_term_inventory (overwritten by audit):
+  transliteration, step_search_gloss, word_analysis_gloss, occurrence_count,
+  meaning, meaning_numbered, lsj_entry, short_def_mounce
+
+Researcher-owned fields (never overwritten):
+  status_note, also_spelled, occurrence_count_qualifier, causative_form_present
+  (also: language, term_id, parsed_meaning_id — structural / downstream)
 
 Steps:
   A1  — Registry + file_index confirmation
   A2  — Schema version check
-  A3  — Load all wa_verse_records for each file_id
-  A3a — Span back-population (new in v4): set span_strong_match for pre-v9 rows
-  A4  — Refresh wa_term_inventory from STEP (vocab re-fetch; non-destructive)
-  A5  — Meaning parser refresh (run_parser_for_file)
+  A3  — STEP fetch: vocab + verses for every term (span-filtered)
+  A3r — Build and write diff report (always; stops here on --dry-run)
+  A4  — Apply STEP data to wa_term_inventory + wa_verse_records
+  A5  — Meaning parser refresh
   A6  — Flag engine refresh
   A7  — Audit (WR-01–WR-20)
-  A8  — Write SPAN_BACK_POPULATED flag (id=25)
-  A9  — Update wa_file_index.testament_coverage
-  A10 — Update word_registry
+  A8  — Update wa_file_index.testament_coverage
+  A9  — Update word_registry
 """
 
 from __future__ import annotations
@@ -61,8 +89,10 @@ def run_audit_word(conn, registry_id: int,
     Args:
         conn:               Open database connection.
         registry_id:        word_registry.no for the target word.
-        dry_run:            If True, analyse only; no writes.
-        skip_span_backpop:  If True, skip A3a span back-population.
+        dry_run:            Phase 1 only — fetch STEP data, write diff report,
+                            print summary, stop without any DB writes.
+                            Re-run without --dry-run to apply.
+        skip_span_backpop:  Deprecated; retained for CLI compatibility.
 
     Returns:
         {"outcome": str, "run_id": str, "audit_result": str, "details": dict}
@@ -71,9 +101,9 @@ def run_audit_word(conn, registry_id: int,
     errors = []
     counts = {
         "words_attempted": 1, "words_complete": 0, "words_stopped": 0,
-        "total_terms_new": 0, "total_terms_xref": 0,
-        "total_verses_inserted": 0, "total_verses_filtered": 0,
-        "total_meanings_parsed": 0, "errors": errors,
+        "total_verses_inserted": 0, "total_verses_updated": 0,
+        "total_verses_deleted": 0, "total_meanings_parsed": 0,
+        "errors": errors,
     }
 
     def _stop(msg: str) -> dict:
@@ -87,9 +117,6 @@ def run_audit_word(conn, registry_id: int,
                 pass
         return {"outcome": "STOPPED", "run_id": run_id, "audit_result": "STOP",
                 "details": errors}
-
-    def _review(msg: str) -> None:
-        print(f"\n  [REVIEW] {msg}")
 
     if not dry_run:
         open_run(conn, run_id, "AUDIT_WORD", [registry_id])
@@ -126,255 +153,387 @@ def run_audit_word(conn, registry_id: int,
             f"expected {EXPECTED_SCHEMA_VERSION!r}."
         )
 
-    # ── A3: Load verse records ─────────────────────────────────────────────────
-    print("A3  Loading verse records...")
-    total_vr = conn.execute(
-        "SELECT COUNT(*) AS c FROM wa_verse_records WHERE file_id IN ({})".format(
-            ",".join("?" * len(file_ids))),
-        file_ids,
-    ).fetchone()["c"]
-    print(f"     {total_vr} verse records across {len(file_ids)} file(s).")
+    # ── A3: STEP fetch ────────────────────────────────────────────────────────
+    # Fetch vocab + verse data for every term in wa_term_inventory.
+    # Same data used for diff report (A3r) and apply (A4).
+    print("A3  Fetching data from STEP for all terms...")
+    client = StepClient()
+    book_misses: list[str] = []
 
-    # ── A3a: Verse sync ────────────────────────────────────────────────────────
-    backpop_count = 0
-    backpop_filtered = 0
-    inserted_count = 0
-    updated_count  = 0
-    orphan_count   = 0
+    # step_data[ti_id] = {
+    #   "strongs": str, "fid": int,
+    #   "vocab": dict | None,
+    #   "step_verses": list[dict],   # span-filtered stored list
+    #   "step_refs": set[str],
+    #   "ti_row": sqlite3.Row,
+    # }
+    step_data: dict[int, dict] = {}
 
-    if not skip_span_backpop:
-        print("A3a Verse sync (INSERT missing, UPDATE nulls, mark orphans)...")
-        client_a3 = StepClient()
-        book_misses: list = []
+    for fid in file_ids:
+        term_rows = conn.execute(
+            """SELECT id, strongs_number, term_id, transliteration, status_note,
+                      step_search_gloss, word_analysis_gloss, meaning,
+                      meaning_numbered, occurrence_count, lsj_entry, short_def_mounce,
+                      language
+               FROM wa_term_inventory WHERE file_id = ?""",
+            (fid,),
+        ).fetchall()
 
-        for fid in file_ids:
-            term_rows = conn.execute(
-                """SELECT id, strongs_number, term_id, transliteration, status_note
-                   FROM wa_term_inventory WHERE file_id = ?""",
-                (fid,),
-            ).fetchall()
+        for ti in term_rows:
+            strongs = ti["strongs_number"] or ti["term_id"]
+            ti_id = ti["id"]
 
-            for ti in term_rows:
-                # Skip terms explicitly marked as having no separate verse record
-                if ti["status_note"] and "no separate verse record" in ti["status_note"].lower():
-                    continue
+            vocab = None
+            try:
+                vocab = client.get_vocab_info(strongs) or None
+            except Exception as exc:
+                errors.append(f"A3: vocab fetch failed for {strongs}: {exc}")
 
-                strongs = ti["strongs_number"] or ti["term_id"]
-                ti_id   = ti["id"]
+            step_verses: list[dict] = []
+            try:
+                if not (ti["status_note"] and
+                        "no separate verse record" in ti["status_note"].lower()):
+                    raw_records, html_map = client.get_verse_records_with_html(strongs)
+                    step_verses = filter_verse_records(raw_records, strongs, html_map)["stored"]
+            except Exception as exc:
+                errors.append(f"A3: verse fetch failed for {strongs}: {exc}")
 
-                # Fetch from STEP
-                try:
-                    raw_records, html_map = client_a3.get_verse_records_with_html(strongs)
-                except Exception as exc:
-                    errors.append(f"A3a: verse fetch failed for {strongs}: {exc}")
-                    continue
+            step_data[ti_id] = {
+                "strongs":     strongs,
+                "fid":         fid,
+                "vocab":       vocab,
+                "step_verses": step_verses,
+                "step_refs":   {r["ref"] for r in step_verses},
+                "ti_row":      ti,
+            }
 
-                filter_result = filter_verse_records(raw_records, strongs, html_map)
-                step_verses   = filter_result["stored"]   # list of dicts with ref etc.
-                step_refs     = {r["ref"] for r in step_verses}
+    total_terms_fetched = len(step_data)
+    print(f"     A3: fetched STEP data for {total_terms_fetched} term(s).")
 
-                # Existing rows in table for this term_inv
-                existing_rows = conn.execute(
-                    """SELECT id, reference, span_strong_match, target_word, verse_text
-                       FROM wa_verse_records WHERE term_inv_id = ?""",
-                    (ti_id,),
-                ).fetchall()
-                existing_by_ref = {r["reference"]: r for r in existing_rows}
-                existing_refs   = set(existing_by_ref.keys())
+    # ── A3r: Build diff and write report ──────────────────────────────────────
+    print("A3r Building diff report...")
 
-                if not dry_run:
-                    # INSERT: in STEP but not in table
-                    for rec in step_verses:
-                        ref = rec["ref"]
-                        if ref in existing_refs:
-                            continue
-                        book_id = get_book_id(conn, rec["book_code"])
-                        if book_id is None:
-                            book_misses.append(rec["book_code"])
-                            continue
-                        vr_id = get_max_id(conn, "wa_verse_records") + 1
-                        conn.execute(
-                            """INSERT INTO wa_verse_records
-                                   (id, file_id, term_inv_id, term_id, transliteration,
-                                    book_id, reference, chapter, verse_num, testament,
-                                    translation, verse_text, target_word,
-                                    span_strong_match, context_before, context_after)
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, NULL, NULL)""",
-                            (
-                                vr_id, fid, ti_id, strongs,
-                                ti["transliteration"] or "",
-                                book_id, ref, rec["chapter"], rec["verse_num"],
-                                rec["testament"], rec["esv_text"],
-                                rec.get("target_word", ""),
-                                rec.get("span_strong_match", 1),
-                            ),
-                        )
-                        inserted_count += 1
+    # STEP-owned wa_term_inventory columns: (db_col, vocab_key)
+    _TI_STEP_FIELDS = [
+        ("transliteration",     "transliteration"),
+        ("step_search_gloss",   "gloss"),
+        ("word_analysis_gloss", "gloss"),
+        ("occurrence_count",    "occurrence_count"),
+        ("meaning",             "medium_def"),
+        ("meaning_numbered",    "medium_def"),   # mirrors meaning
+        ("lsj_entry",           "lsj_entry"),
+        ("short_def_mounce",    "short_def_mounce"),
+    ]
 
-                    # UPDATE: rows in both — overwrite all STEP-sourced fields.
-                    # Early-stage data may be stale/incomplete; audit is the
-                    # canonical refresh pass so we always write the latest values.
-                    for rec in step_verses:
-                        ref = rec["ref"]
-                        if ref not in existing_refs:
-                            continue
-                        row = existing_by_ref[ref]
-                        updates = ["span_strong_match = ?"]
-                        params  = [rec.get("span_strong_match", 1)]
-                        if rec.get("target_word"):
-                            updates.append("target_word = ?")
-                            params.append(rec["target_word"])
-                        if rec.get("esv_text"):
-                            updates.append("verse_text = ?")
-                            params.append(rec["esv_text"])
-                        if rec.get("context_before") is not None:
-                            updates.append("context_before = ?")
-                            params.append(rec["context_before"])
-                        if rec.get("context_after") is not None:
-                            updates.append("context_after = ?")
-                            params.append(rec["context_after"])
-                        params.append(row["id"])
-                        conn.execute(
-                            f"UPDATE wa_verse_records SET {', '.join(updates)} WHERE id = ?",
-                            params,
-                        )
-                        updated_count += 1
+    # STEP-owned wa_verse_records columns: (db_col, verse_dict_key)
+    _VR_STEP_FIELDS = [
+        ("verse_text",        "esv_text"),
+        ("target_word",       "target_word"),
+        ("span_strong_match", "span_strong_match"),
+        ("context_before",    "context_before"),
+        ("context_after",     "context_after"),
+    ]
 
-                    # MARK ORPHANS: in table but not in STEP — set span_strong_match = -1
-                    orphan_refs = existing_refs - step_refs
-                    for ref in orphan_refs:
-                        row = existing_by_ref[ref]
-                        if row["span_strong_match"] != -1:
-                            conn.execute(
-                                "UPDATE wa_verse_records SET span_strong_match = -1 WHERE id = ?",
-                                (row["id"],),
-                            )
-                            orphan_count += 1
-                else:
-                    # dry-run counts
-                    inserted_count += len(step_refs - existing_refs)
-                    updated_count  += sum(
-                        1 for rec in step_verses
-                        if rec["ref"] in existing_refs
-                        and existing_by_ref[rec["ref"]]["span_strong_match"] is None
-                    )
-                    orphan_count += len(existing_refs - step_refs)
+    diff: dict[int, dict] = {}
 
-        if not dry_run:
-            conn.commit()
+    for ti_id, d in step_data.items():
+        ti    = d["ti_row"]
+        vocab = d["vocab"]
 
-        # Totals for counts
-        backpop_count    = inserted_count + updated_count
-        backpop_filtered = orphan_count
+        # Term inventory field diff
+        ti_changes: list[dict] = []
+        if vocab:
+            for db_col, step_key in _TI_STEP_FIELDS:
+                new_val  = vocab.get(step_key) or None
+                current  = ti[db_col] or None
+                if current != new_val:
+                    ti_changes.append({"field": db_col, "current": current, "step": new_val})
 
-        if book_misses:
-            _unique_misses = sorted(set(book_misses))
-            print(
-                f"\n     [BOOK_MISS] {len(_unique_misses)} unrecognized book name(s): "
-                f"{_unique_misses}"
-            )
-            print(
-                f"     To register an alias: "
-                f'python -m engine.engine --add-book-code "BookName=OsisCode"'
-            )
+        # Verse diff
+        step_refs        = d["step_refs"]
+        step_by_ref      = {r["ref"]: r for r in d["step_verses"]}
+        existing_rows    = conn.execute(
+            """SELECT id, reference, verse_text, target_word,
+                      span_strong_match, context_before, context_after
+               FROM wa_verse_records WHERE term_inv_id = ?""",
+            (ti_id,),
+        ).fetchall()
+        existing_by_ref  = {r["reference"]: r for r in existing_rows}
+        existing_refs    = set(existing_by_ref.keys())
 
-        prefix = "[DRY-RUN] Would" if dry_run else ""
-        print(
-            f"     A3a: {prefix} inserted={inserted_count}  "
-            f"updated={updated_count}  orphans_marked={orphan_count}"
+        to_insert = sorted(step_refs - existing_refs)
+        to_delete = sorted(existing_refs - step_refs)
+        to_update = []
+        for ref in sorted(step_refs & existing_refs):
+            rec = step_by_ref[ref]
+            row = existing_by_ref[ref]
+            changed = [db_col for db_col, sk in _VR_STEP_FIELDS
+                       if rec.get(sk) != row[db_col]]
+            if changed:
+                to_update.append({"ref": ref, "fields": changed})
+
+        diff[ti_id] = {
+            "strongs":    d["strongs"],
+            "fid":        d["fid"],
+            "ti_changes": ti_changes,
+            "to_insert":  to_insert,
+            "to_update":  to_update,
+            "to_delete":  to_delete,
+            "unchanged":  len(step_refs & existing_refs) - len(to_update),
+        }
+
+    # Totals for report header
+    total_ti_changes = sum(len(d["ti_changes"]) for d in diff.values())
+    total_insert     = sum(len(d["to_insert"])   for d in diff.values())
+    total_update     = sum(len(d["to_update"])   for d in diff.values())
+    total_delete     = sum(len(d["to_delete"])   for d in diff.values())
+    total_unchanged  = sum(d["unchanged"]        for d in diff.values())
+
+    mode_label = "DRY-RUN (no changes applied)" if dry_run else "APPLY"
+    report_lines: list[str] = [
+        "# Audit Diff Report",
+        f"**Word:** {word}  |  **Registry:** {registry_id}  |  **Run:** {run_id}",
+        f"**Generated:** {_now()}  |  **Mode:** {mode_label}",
+        "",
+        "---",
+        "",
+        "## Summary",
+        "",
+        "| Category | Count |",
+        "|----------|-------|",
+        f"| Terms fetched from STEP | {total_terms_fetched} |",
+        f"| Term inventory field changes | {total_ti_changes} |",
+        f"| Verse records → INSERT | {total_insert} |",
+        f"| Verse records → UPDATE | {total_update} |",
+        f"| Verse records → DELETE | {total_delete} |",
+        f"| Verse records unchanged | {total_unchanged} |",
+        "",
+    ]
+
+    if errors:
+        report_lines += ["### Fetch Errors", ""]
+        for e in errors:
+            report_lines.append(f"- {e}")
+        report_lines.append("")
+
+    for ti_id, d in diff.items():
+        report_lines += ["---", "", f"## Term: {d['strongs']}", ""]
+
+        if d["ti_changes"]:
+            report_lines += [
+                "### Term Inventory Changes",
+                "",
+                "| Field | Current DB | STEP | Action |",
+                "|-------|-----------|------|--------|",
+            ]
+            for ch in d["ti_changes"]:
+                cur = (str(ch["current"]).replace("\n", " ")[:100]
+                       if ch["current"] is not None else "_null_")
+                nw  = (str(ch["step"]).replace("\n", " ")[:100]
+                       if ch["step"] is not None else "_null_")
+                report_lines.append(f"| `{ch['field']}` | {cur} | {nw} | UPDATE |")
+            report_lines.append("")
+        else:
+            report_lines += ["### Term Inventory Changes", "", "_No changes_", ""]
+
+        report_lines.append("### Verse Records")
+        report_lines.append("")
+        ins_str = ", ".join(d["to_insert"]) if d["to_insert"] else "—"
+        report_lines.append(f"**INSERT ({len(d['to_insert'])}):** {ins_str}")
+        report_lines.append("")
+        if d["to_update"]:
+            report_lines.append(f"**UPDATE ({len(d['to_update'])}):**")
+            for u in d["to_update"]:
+                report_lines.append(f"- {u['ref']}: {', '.join(u['fields'])}")
+        else:
+            report_lines.append("**UPDATE (0)**")
+        report_lines.append("")
+        del_str = ", ".join(d["to_delete"]) if d["to_delete"] else "—"
+        report_lines.append(
+            f"**DELETE ({len(d['to_delete'])}) — no longer returned by STEP after span filter:** {del_str}"
         )
-        _total_vr_now = conn.execute(
-            "SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN ({})".format(
-                ",".join("?" * len(file_ids))), file_ids,
-        ).fetchone()[0]
-        print(f"     [VERIFY] total verse records now: {_total_vr_now}")
+        report_lines.append("")
+        report_lines.append(f"**UNCHANGED:** {d['unchanged']}")
+        report_lines.append("")
 
-    # ── A4: Refresh wa_term_inventory from STEP ───────────────────────────────
-    print("A4  Refreshing term inventory from STEP...")
-    if not dry_run:
-        client_local = StepClient()
-        for file_id in file_ids:
-            terms = conn.execute(
-                "SELECT id, strongs_number, term_id FROM wa_term_inventory WHERE file_id = ?",
-                (file_id,),
-            ).fetchall()
-            for t in terms:
-                strongs = t["strongs_number"] or t["term_id"]
-                try:
-                    vocab = client_local.get_vocab_info(strongs)
-                    if not vocab:
-                        continue
-                    medium_def = vocab.get("medium_def", "")
-                    conn.execute(
-                        """UPDATE wa_term_inventory SET
-                               step_search_gloss   = COALESCE(NULLIF(step_search_gloss, ''), ?),
-                               word_analysis_gloss = COALESCE(NULLIF(word_analysis_gloss, ''), ?),
-                               meaning             = COALESCE(NULLIF(meaning, ''), ?),
-                               meaning_numbered    = COALESCE(NULLIF(meaning_numbered, ''), ?),
-                               occurrence_count    = COALESCE(occurrence_count, ?),
-                               lsj_entry           = COALESCE(NULLIF(lsj_entry, ''), ?),
-                               short_def_mounce    = COALESCE(NULLIF(short_def_mounce, ''), ?)
-                           WHERE id = ?""",
-                        (
-                            vocab.get("gloss", ""),
-                            vocab.get("gloss", ""),
-                            medium_def,
-                            medium_def,
-                            vocab.get("occurrence_count"),
-                            vocab.get("lsj_entry") or None,
-                            vocab.get("short_def_mounce") or None,
-                            t["id"],
-                        ),
-                    )
-                except Exception as exc:
-                    errors.append(f"A4: vocab refresh failed for {strongs}: {exc}")
-        conn.commit()
-    print(f"     A4 complete.")
-    if not dry_run:
-        _ti_count = conn.execute(
-            "SELECT COUNT(*) FROM wa_term_inventory WHERE file_id IN ({})".format(
-                ",".join("?" * len(file_ids))), file_ids,
-        ).fetchone()[0]
-        print(f"     [VERIFY] wa_term_inventory: {_ti_count} rows")
+    report_text = "\n".join(report_lines)
+    _date_tag        = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    _report_filename = f"audit_diff_{word}_{registry_id}_{_date_tag}.md"
+    _outputs_dir     = os.path.join(_ROOT, "outputs")
+    os.makedirs(_outputs_dir, exist_ok=True)
+    _report_path     = os.path.join(_outputs_dir, _report_filename)
+    with open(_report_path, "w", encoding="utf-8") as fh:
+        fh.write(report_text)
+
+    print(f"     A3r: report → {_report_path}")
+    print(f"          ti_field_changes={total_ti_changes}  "
+          f"verses INSERT={total_insert}  UPDATE={total_update}  "
+          f"DELETE={total_delete}  unchanged={total_unchanged}")
+
+    if dry_run:
+        print(f"\n=== DRY-RUN complete: {word} | diff report written ===")
+        print(f"    Review: {_report_path}")
+        print(f"    Re-run without --dry-run to apply.")
+        return {
+            "outcome":      "DRY_RUN",
+            "run_id":       run_id,
+            "audit_result": "PENDING",
+            "details": {
+                "report_path":  _report_path,
+                "ti_changes":   total_ti_changes,
+                "verses_insert": total_insert,
+                "verses_update": total_update,
+                "verses_delete": total_delete,
+                "errors":       errors,
+            },
+        }
+
+    # ── A4: Apply STEP data ───────────────────────────────────────────────────
+    print("A4  Applying STEP data...")
+
+    for ti_id, d in diff.items():
+        ti          = step_data[ti_id]["ti_row"]
+        vocab       = step_data[ti_id]["vocab"]
+        strongs     = d["strongs"]
+        step_by_ref = {r["ref"]: r for r in step_data[ti_id]["step_verses"]}
+
+        # A4a: Overwrite all STEP-owned fields in wa_term_inventory (no COALESCE)
+        if vocab:
+            md = vocab.get("medium_def") or None
+            conn.execute(
+                """UPDATE wa_term_inventory SET
+                       transliteration     = ?,
+                       step_search_gloss   = ?,
+                       word_analysis_gloss = ?,
+                       occurrence_count    = ?,
+                       meaning             = ?,
+                       meaning_numbered    = ?,
+                       lsj_entry           = ?,
+                       short_def_mounce    = ?
+                   WHERE id = ?""",
+                (
+                    vocab.get("transliteration") or None,
+                    vocab.get("gloss") or None,
+                    vocab.get("gloss") or None,
+                    vocab.get("occurrence_count"),
+                    md, md,
+                    vocab.get("lsj_entry") or None,
+                    vocab.get("short_def_mounce") or None,
+                    ti_id,
+                ),
+            )
+
+        # A4b: DELETE verses no longer in STEP
+        for ref in d["to_delete"]:
+            conn.execute(
+                "DELETE FROM wa_verse_records WHERE term_inv_id = ? AND reference = ?",
+                (ti_id, ref),
+            )
+            counts["total_verses_deleted"] += 1
+
+        # A4c: INSERT new verses
+        for ref in d["to_insert"]:
+            rec     = step_by_ref[ref]
+            book_id = get_book_id(conn, rec["book_code"])
+            if book_id is None:
+                book_misses.append(rec["book_code"])
+                errors.append(f"A4: unknown book {rec['book_code']!r} ({strongs} {ref})")
+                continue
+            vr_id = get_max_id(conn, "wa_verse_records") + 1
+            conn.execute(
+                """INSERT INTO wa_verse_records
+                       (id, file_id, term_inv_id, term_id, transliteration,
+                        book_id, reference, chapter, verse_num, testament,
+                        translation, verse_text, target_word,
+                        span_strong_match, context_before, context_after)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'ESV', ?, ?, ?, ?, ?)""",
+                (
+                    vr_id, d["fid"], ti_id, strongs,
+                    ti["transliteration"] or "",
+                    book_id, ref, rec["chapter"], rec["verse_num"], rec["testament"],
+                    rec.get("esv_text", ""),
+                    rec.get("target_word", ""),
+                    rec.get("span_strong_match", 1),
+                    rec.get("context_before"),
+                    rec.get("context_after"),
+                ),
+            )
+            counts["total_verses_inserted"] += 1
+
+        # A4d: UPDATE existing verses (all STEP fields, no guards)
+        for u in d["to_update"]:
+            rec = step_by_ref[u["ref"]]
+            conn.execute(
+                """UPDATE wa_verse_records SET
+                       verse_text        = ?,
+                       target_word       = ?,
+                       span_strong_match = ?,
+                       context_before    = ?,
+                       context_after     = ?
+                   WHERE term_inv_id = ? AND reference = ?""",
+                (
+                    rec.get("esv_text", ""),
+                    rec.get("target_word", ""),
+                    rec.get("span_strong_match", 1),
+                    rec.get("context_before"),
+                    rec.get("context_after"),
+                    ti_id, u["ref"],
+                ),
+            )
+            counts["total_verses_updated"] += 1
+
+    conn.commit()
+
+    if book_misses:
+        _unique = sorted(set(book_misses))
+        print(f"     [BOOK_MISS] {len(_unique)} unrecognised book code(s): {_unique}")
+        print(f'     Register: python -m engine.engine --add-book-code "Name=OsisCode"')
+
+    _vr_total = conn.execute(
+        "SELECT COUNT(*) FROM wa_verse_records WHERE file_id IN ({})".format(
+            ",".join("?" * len(file_ids))), file_ids,
+    ).fetchone()[0]
+    print(
+        f"     A4: inserted={counts['total_verses_inserted']}  "
+        f"updated={counts['total_verses_updated']}  "
+        f"deleted={counts['total_verses_deleted']}"
+    )
+    print(f"     [VERIFY] total verse records now: {_vr_total}")
 
     # ── A5: Meaning parser refresh ─────────────────────────────────────────────
     print("A5  Meaning parser refresh...")
-    if not dry_run:
-        for file_id in file_ids:
-            terms = conn.execute(
-                "SELECT id, strongs_number, term_id, meaning "
-                "FROM wa_term_inventory WHERE file_id = ?", (file_id,)
-            ).fetchall()
-            vocab_map = {}
-            for t in terms:
-                s = t["strongs_number"] or t["term_id"]
-                if t["meaning"]:
-                    vocab_map[s] = {"medium_def": t["meaning"]}
-            if vocab_map:
-                result = run_parser_for_file(conn, file_id, vocab_map)
-                counts["total_meanings_parsed"] += result["parsed"]
-    print(f"     A5: {counts['total_meanings_parsed']} meanings re-parsed.")
-    if not dry_run:
-        _mp_count = conn.execute(
-            "SELECT COUNT(*) FROM wa_meaning_parsed mp"
-            " JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id"
-            " WHERE ti.file_id IN ({})".format(",".join("?" * len(file_ids))),
-            file_ids,
-        ).fetchone()[0]
-        print(f"     [VERIFY] wa_meaning_parsed: {_mp_count} rows")
+    for file_id in file_ids:
+        terms = conn.execute(
+            "SELECT id, strongs_number, term_id, meaning "
+            "FROM wa_term_inventory WHERE file_id = ?", (file_id,)
+        ).fetchall()
+        vocab_map = {
+            (t["strongs_number"] or t["term_id"]): {"medium_def": t["meaning"]}
+            for t in terms if t["meaning"]
+        }
+        if vocab_map:
+            result = run_parser_for_file(conn, file_id, vocab_map)
+            counts["total_meanings_parsed"] += result["parsed"]
+    conn.commit()
+    _mp_count = conn.execute(
+        "SELECT COUNT(*) FROM wa_meaning_parsed mp"
+        " JOIN wa_term_inventory ti ON ti.id = mp.term_inv_id"
+        " WHERE ti.file_id IN ({})".format(",".join("?" * len(file_ids))),
+        file_ids,
+    ).fetchone()[0]
+    print(f"     A5: {counts['total_meanings_parsed']} meanings re-parsed.  "
+          f"[VERIFY] wa_meaning_parsed: {_mp_count} rows")
 
     # ── A6: Flag engine refresh ────────────────────────────────────────────────
     print("A6  Flag engine refresh...")
-    if not dry_run:
-        for file_id in file_ids:
-            run_flag_engine(conn, file_id, registry_id)
-    print(f"     A6 complete.")
-    if not dry_run:
-        _flag_count = conn.execute(
-            "SELECT COUNT(*) FROM wa_data_quality_flags WHERE file_id IN ({})".format(
-                ",".join("?" * len(file_ids))), file_ids,
-        ).fetchone()[0]
-        print(f"     [VERIFY] quality flags: {_flag_count} rows")
+    for file_id in file_ids:
+        run_flag_engine(conn, file_id, registry_id)
+    conn.commit()
+    _flag_count = conn.execute(
+        "SELECT COUNT(*) FROM wa_data_quality_flags WHERE file_id IN ({})".format(
+            ",".join("?" * len(file_ids))), file_ids,
+    ).fetchone()[0]
+    print(f"     A6 complete.  [VERIFY] quality flags: {_flag_count} rows")
 
     # ── A7: Audit (WR-01–WR-20) ───────────────────────────────────────────────
     print("A7  Running audit (WR-01–WR-20)...")
@@ -382,242 +541,86 @@ def run_audit_word(conn, registry_id: int,
     for check in audit_result["checks"]:
         if check["result"] != "PASS":
             print(f"     {check['result']:6} {check['check']}: {check['detail']}")
-
-    if not dry_run:
-        write_word_run_state(
-            conn, run_id, registry_id, word,
-            "AUDIT_WORD_A7",
-            audit_result["result"],
-            {c["check"]: {"r": c["result"], "d": c["detail"]} for c in audit_result["checks"]},
-            audit_result.get("stop_reason"),
-        )
-
-    print(f"     A7: {audit_result['result']}")
+    write_word_run_state(
+        conn, run_id, registry_id, word,
+        "AUDIT_WORD_A7",
+        audit_result["result"],
+        {c["check"]: {"r": c["result"], "d": c["detail"]} for c in audit_result["checks"]},
+        audit_result.get("stop_reason"),
+    )
     _a7_p = sum(1 for c in audit_result["checks"] if c["result"] == "PASS")
     _a7_r = sum(1 for c in audit_result["checks"] if c["result"] == "REVIEW")
     _a7_s = sum(1 for c in audit_result["checks"] if c["result"] == "STOP")
-    print(f"     [VERIFY] WR checks: {_a7_p} PASS  {_a7_r} REVIEW  {_a7_s} STOP")
+    print(f"     A7: {audit_result['result']}  ({_a7_p} PASS  {_a7_r} REVIEW  {_a7_s} STOP)")
 
-    # ── A8: Write SPAN_BACK_POPULATED flag ────────────────────────────────────
-    if not skip_span_backpop and not dry_run and backpop_count > 0:
-        print("A8  Writing SPAN_BACK_POPULATED quality flag...")
-        fid = _flag_id(conn, "SPAN_BACK_POPULATED")
-        if fid:
-            for file_id in file_ids:
-                conn.execute(
-                    """INSERT OR IGNORE INTO wa_data_quality_flags
-                           (file_id, term_id, flag_id, description)
-                       VALUES (?, NULL, ?, ?)""",
-                    (file_id, fid,
-                     f"AUDIT_WORD A3a verse sync: inserted={inserted_count} "
-                     f"updated={updated_count} orphans_marked={orphan_count}."),
-                )
-        conn.commit()
-        print(f"     A8: flag written.")
-
-    # ── A9: Update testament_coverage ─────────────────────────────────────────
-    print("A9  Refreshing testament_coverage...")
-    if not dry_run:
-        for file_id in file_ids:
-            testaments = {
-                r["testament"]
-                for r in conn.execute(
-                    "SELECT DISTINCT testament FROM wa_verse_records "
-                    "WHERE file_id = ? AND (span_strong_match = 1 OR span_strong_match IS NULL)",
-                    (file_id,),
-                ).fetchall()
-            }
-            tc = (
-                "OT_only" if testaments == {"OT"} else
-                "NT_only" if testaments == {"NT"} else
-                "both"    if testaments else None
-            )
-            conn.execute(
-                "UPDATE wa_file_index SET testament_coverage = ? WHERE id = ?",
-                (tc, file_id),
-            )
-        conn.commit()
-    print(f"     A9 complete.")
-
-    # ── A10: Update word_registry ─────────────────────────────────────────────
-    print("A10 Updating word_registry...")
-    if not dry_run:
-        verse_count = conn.execute(
-            """SELECT COUNT(*) AS c FROM wa_verse_records
-               WHERE file_id IN ({}) AND (span_strong_match = 1 OR span_strong_match IS NULL)""".format(
-                ",".join("?" * len(file_ids))),
-            file_ids,
-        ).fetchone()["c"]
-        term_count = conn.execute(
-            "SELECT COUNT(*) AS c FROM wa_term_inventory WHERE file_id IN ({})".format(
-                ",".join("?" * len(file_ids))),
-            file_ids,
-        ).fetchone()["c"]
-        # All-XREF words (0 term_inventory rows) always produce REVIEW audit
-        # result — this is expected and correct; treat REVIEW as Complete.
-        _all_xref = term_count == 0
-        final_status = (
-            "Complete"
-            if audit_result["result"] == "PASS" or _all_xref
-            else "In Progress"
+    # ── A8: Update testament_coverage ─────────────────────────────────────────
+    print("A8  Refreshing testament_coverage...")
+    for file_id in file_ids:
+        testaments = {
+            r["testament"]
+            for r in conn.execute(
+                "SELECT DISTINCT testament FROM wa_verse_records "
+                "WHERE file_id = ? AND span_strong_match = 1",
+                (file_id,),
+            ).fetchall()
+        }
+        tc = (
+            "OT_only" if testaments == {"OT"} else
+            "NT_only" if testaments == {"NT"} else
+            "both"    if testaments else None
         )
         conn.execute(
-            """UPDATE word_registry SET
-                   phase1_status       = ?,
-                   phase1_term_count   = ?,
-                   phase1_verse_count  = ?,
-                   last_automation_run = ?,
-                   automation_run_id   = ?
-               WHERE no = ?""",
-            (final_status, term_count, verse_count, _now(), run_id, registry_id),
+            "UPDATE wa_file_index SET testament_coverage = ? WHERE id = ?",
+            (tc, file_id),
         )
-        conn.commit()
-        counts["words_complete"] = 1
+    conn.commit()
+    print("     A8 complete.")
+
+    # ── A9: Update word_registry ──────────────────────────────────────────────
+    print("A9  Updating word_registry...")
+    verse_count = conn.execute(
+        """SELECT COUNT(*) AS c FROM wa_verse_records
+           WHERE file_id IN ({}) AND span_strong_match = 1""".format(
+            ",".join("?" * len(file_ids))),
+        file_ids,
+    ).fetchone()["c"]
+    term_count = conn.execute(
+        "SELECT COUNT(*) AS c FROM wa_term_inventory WHERE file_id IN ({})".format(
+            ",".join("?" * len(file_ids))),
+        file_ids,
+    ).fetchone()["c"]
+    _all_xref    = term_count == 0
+    final_status = (
+        "Complete"
+        if audit_result["result"] == "PASS" or _all_xref
+        else "In Progress"
+    )
+    conn.execute(
+        """UPDATE word_registry SET
+               phase1_status       = ?,
+               phase1_term_count   = ?,
+               phase1_verse_count  = ?,
+               last_automation_run = ?,
+               automation_run_id   = ?
+           WHERE no = ?""",
+        (final_status, term_count, verse_count, _now(), run_id, registry_id),
+    )
+    conn.commit()
+    counts["words_complete"] = 1
 
     close_run(conn, run_id, "COMPLETE", counts)
 
     print(f"\n=== AUDIT_WORD complete: {word} | {audit_result['result']} ===")
     return {
-        "outcome": "COMPLETE",
-        "run_id": run_id,
+        "outcome":      "COMPLETE",
+        "run_id":       run_id,
         "audit_result": audit_result["result"],
         "details": {
-            "backpop_confirmed": backpop_count,
-            "backpop_filtered": backpop_filtered,
+            "report_path":    _report_path,
+            "verses_inserted": counts["total_verses_inserted"],
+            "verses_updated":  counts["total_verses_updated"],
+            "verses_deleted":  counts["total_verses_deleted"],
             "meanings_parsed": counts["total_meanings_parsed"],
+            "errors":          errors,
         },
     }
-
-
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
-# Module-level book name → OSIS code map (common abbreviations + full names).
-# Override or extend at runtime via register_book_override() or
-# data/osis_book_overrides.json.
-_BOOK_MAP: dict[str, str] = {
-    # Standard OSIS abbreviations
-    "Gen": "Gen", "Exod": "Exod", "Lev": "Lev", "Num": "Num",
-    "Deut": "Deut", "Josh": "Josh", "Judg": "Judg", "Ruth": "Ruth",
-    "1Sam": "1Sam", "2Sam": "2Sam", "1Kgs": "1Kgs", "2Kgs": "2Kgs",
-    "1Chr": "1Chr", "2Chr": "2Chr", "Ezra": "Ezra", "Neh": "Neh",
-    "Esth": "Esth", "Job": "Job", "Ps": "Ps", "Prov": "Prov",
-    "Eccl": "Eccl", "Song": "Song", "Isa": "Isa", "Jer": "Jer",
-    "Lam": "Lam", "Ezek": "Ezek", "Dan": "Dan", "Hos": "Hos",
-    "Joel": "Joel", "Amos": "Amos", "Obad": "Obad", "Jonah": "Jonah",
-    "Mic": "Mic", "Nah": "Nah", "Hab": "Hab", "Zeph": "Zeph",
-    "Hag": "Hag", "Zech": "Zech", "Mal": "Mal",
-    "Matt": "Matt", "Mark": "Mark", "Luke": "Luke", "John": "John",
-    "Acts": "Acts", "Rom": "Rom", "1Cor": "1Cor", "2Cor": "2Cor",
-    "Gal": "Gal", "Eph": "Eph", "Phil": "Phil", "Col": "Col",
-    "1Thess": "1Thess", "2Thess": "2Thess", "1Tim": "1Tim",
-    "2Tim": "2Tim", "Titus": "Titus", "Phlm": "Phlm", "Heb": "Heb",
-    "Jas": "Jas", "1Pet": "1Pet", "2Pet": "2Pet",
-    "1John": "1John", "2John": "2John", "3John": "3John",
-    "Jude": "Jude", "Rev": "Rev",
-    # Spaced abbreviations
-    "1 Sam": "1Sam", "2 Sam": "2Sam", "1 Kgs": "1Kgs", "2 Kgs": "2Kgs",
-    "1 Chr": "1Chr", "2 Chr": "2Chr",
-    "1 Cor": "1Cor", "2 Cor": "2Cor",
-    "1 Thess": "1Thess", "2 Thess": "2Thess",
-    "1 Tim": "1Tim", "2 Tim": "2Tim",
-    "1 Pet": "1Pet", "2 Pet": "2Pet",
-    "1 John": "1John", "2 John": "2John", "3 John": "3John",
-    # Full names
-    "Genesis": "Gen", "Exodus": "Exod", "Leviticus": "Lev", "Numbers": "Num",
-    "Deuteronomy": "Deut", "Joshua": "Josh", "Judges": "Judg",
-    "1 Samuel": "1Sam", "2 Samuel": "2Sam",
-    "1 Kings": "1Kgs", "2 Kings": "2Kgs",
-    "1 Chronicles": "1Chr", "2 Chronicles": "2Chr",
-    "Ezra": "Ezra", "Nehemiah": "Neh", "Esther": "Esth",
-    "Psalms": "Ps", "Psalm": "Ps", "Proverbs": "Prov", "Ecclesiastes": "Eccl",
-    "Song of Solomon": "Song", "Song of Songs": "Song", "Song of Sol": "Song",
-    "Isaiah": "Isa", "Jeremiah": "Jer", "Lamentations": "Lam",
-    "Ezekiel": "Ezek", "Daniel": "Dan", "Hosea": "Hos", "Joel": "Joel",
-    "Amos": "Amos", "Obadiah": "Obad", "Jonah": "Jonah", "Micah": "Mic",
-    "Nahum": "Nah", "Habakkuk": "Hab", "Zephaniah": "Zeph",
-    "Haggai": "Hag", "Zechariah": "Zech", "Malachi": "Mal",
-    "Matthew": "Matt", "Mark": "Mark", "Luke": "Luke", "John": "John",
-    "Acts": "Acts", "Romans": "Rom",
-    "1 Corinthians": "1Cor", "2 Corinthians": "2Cor",
-    "Galatians": "Gal", "Ephesians": "Eph", "Philippians": "Phil",
-    "Colossians": "Col",
-    "1 Thessalonians": "1Thess", "2 Thessalonians": "2Thess",
-    "1 Timothy": "1Tim", "2 Timothy": "2Tim",
-    "Titus": "Titus", "Philemon": "Phlm", "Hebrews": "Heb",
-    "James": "Jas",
-    "1 Peter": "1Pet", "2 Peter": "2Pet",
-    "1 John": "1John", "2 John": "2John", "3 John": "3John",
-    "Jude": "Jude", "Revelation": "Rev",
-    # Trailing-dot variants
-    "Ps.": "Ps",
-}
-
-_OVERRIDES_PATH = os.path.join(_ROOT, "data", "osis_book_overrides.json")
-
-
-def _load_book_overrides() -> None:
-    """Load data/osis_book_overrides.json into _BOOK_MAP at module import."""
-    if os.path.isfile(_OVERRIDES_PATH):
-        try:
-            with open(_OVERRIDES_PATH, encoding="utf-8") as f:
-                overrides: dict[str, str] = json.load(f)
-            _BOOK_MAP.update(overrides)
-        except Exception:
-            pass
-
-
-_load_book_overrides()
-
-
-def register_book_override(source_name: str, osis_code: str) -> None:
-    """Register a book name alias and persist it to data/osis_book_overrides.json.
-
-    Example::
-        register_book_override("Psalms", "Ps")
-        # engine --add-book-code "Psalms=Ps"
-    """
-    _BOOK_MAP[source_name] = osis_code
-    # Persist to JSON file
-    existing: dict[str, str] = {}
-    if os.path.isfile(_OVERRIDES_PATH):
-        try:
-            with open(_OVERRIDES_PATH, encoding="utf-8") as f:
-                existing = json.load(f)
-        except Exception:
-            pass
-    existing[source_name] = osis_code
-    os.makedirs(os.path.dirname(_OVERRIDES_PATH), exist_ok=True)
-    with open(_OVERRIDES_PATH, "w", encoding="utf-8") as f:
-        json.dump(existing, f, indent=2, ensure_ascii=False)
-    print(f"[BOOK_CODE] Registered: {source_name!r} → {osis_code!r}")
-
-
-    """Convert a reference like 'Gen 1:1' to an OSIS ID like 'Gen.1.1'.
-    Returns empty string if conversion fails.
-    """
-    m = re.match(r"^(.+?)\s+(\d+):(\d+)$", reference.strip())
-    if not m:
-        return ""
-    book_name, ch, vs = m.group(1), m.group(2), m.group(3)
-    short = _BOOK_MAP.get(book_name)
-    if short:
-        return f"{short}.{ch}.{vs}"
-    if _misses is not None:
-        _misses.append(book_name)
-    # Fallback: strip spaces and punctuation
-    cleaned = re.sub(r"\s+", "", book_name).rstrip(".")
-    return f"{cleaned}.{ch}.{vs}"
-
-
-def _fuzzy_html_lookup(html_map: dict[str, str], reference: str) -> str:
-    """Try to find HTML in html_map for a given reference string.
-    Returns empty string if not found.
-    """
-    osis = _ref_to_osis(reference)
-    if osis and osis in html_map:
-        return html_map[osis]
-    # Last-resort: partial key match on book+chapter+verse
-    for key, html in html_map.items():
-        if osis and osis.lower() in key.lower():
-            return html
-    return ""

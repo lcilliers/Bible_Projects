@@ -397,8 +397,9 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                     """INSERT INTO mti_terms
                            (id, strongs_number, transliteration, gloss, language,
                             owning_registry, owning_word, owning_part,
-                            word_data_reference, status, extraction_date, strongs_reconciled)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, 'extracted', ?, ?)""",
+                            word_data_reference, owning_registry_fk, word_data_ref_fk,
+                            status, extraction_date, strongs_reconciled)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?, ?, 'extracted', ?, ?)""",
                     (
                         mt_id, resolved,
                         vocab.get("transliteration", ""),
@@ -406,6 +407,7 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                         lang,
                         str(registry_id), word,
                         str(file_id),
+                        registry_id, file_id,
                         _today(),
                         1 if resolved != strongs else 0,
                     ),
@@ -509,9 +511,9 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                 if not _existing_xref:
                     xref_mti_id = get_max_id(conn, "mti_term_cross_refs") + 1
                     conn.execute(
-                        "INSERT INTO mti_term_cross_refs (id, mti_term_id, registry, word) "
-                        "VALUES (?, ?, ?, ?)",
-                        (xref_mti_id, mt_row["id"], str(registry_id), word),
+                        "INSERT INTO mti_term_cross_refs (id, mti_term_id, registry, word, registry_fk) "
+                        "VALUES (?, ?, ?, ?, ?)",
+                        (xref_mti_id, mt_row["id"], str(registry_id), word, registry_id),
                     )
                 counts["total_terms_xref"] += 1
 

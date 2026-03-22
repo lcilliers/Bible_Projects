@@ -92,7 +92,12 @@ def get_connection(db_path: Optional[str] = None) -> sqlite3.Connection:
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
-    conn.execute("PRAGMA journal_mode = WAL")  # better concurrent read performance
+    mode = conn.execute("PRAGMA journal_mode").fetchone()[0]
+    if mode != "delete":
+        raise RuntimeError(
+            f"Database journal_mode is '{mode}', expected 'delete'. "
+            "Do not run engine scripts in WAL mode on Google Drive."
+        )
     return conn
 
 

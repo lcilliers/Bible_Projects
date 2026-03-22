@@ -49,7 +49,7 @@ from .backup import pre_migration_backup, pre_run_backup, post_run_backup
 from .register import run_register, run_clear_lock, check_stale_locks
 from .new_word import run_new_word
 from .gap_fill import run_gap_fill, run_bulk_gap_fill
-from .audit_word import run_audit_word, register_book_override
+from .audit_word import run_audit_word
 from .report import print_word_report
 
 
@@ -140,12 +140,10 @@ def main() -> int:
 
     # ── --add-book-code ────────────────────────────────────────────────────────────────────────
     if args.add_book_code:
-        if "=" not in args.add_book_code:
-            print("[ERROR] --add-book-code expects 'SourceName=OsisCode'", file=sys.stderr)
-            return 1
-        _src, _osis = args.add_book_code.split("=", 1)
-        register_book_override(_src.strip(), _osis.strip())
-        return 0
+        print("[INFO] --add-book-code is no longer supported. "
+              "Book aliases are resolved via the book_code_variants table in the database.",
+              file=sys.stderr)
+        return 1
 
     # ── Open DB connection ────────────────────────────────────────────────────
     conn = get_connection(args.db or None)

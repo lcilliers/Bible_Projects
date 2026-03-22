@@ -366,11 +366,11 @@ def run_gap_fill(conn, registry_id: int,
         else conn.execute(
             "SELECT audit_result FROM word_run_state WHERE registry_id = ? "
             "ORDER BY id DESC LIMIT 1",
-            (str(registry_id).zfill(3),),
+            (str(registry_id),),
         ).fetchone()["audit_result"]
         if conn.execute(
             "SELECT id FROM word_run_state WHERE registry_id = ? LIMIT 1",
-            (str(registry_id).zfill(3),),
+            (str(registry_id),),
         ).fetchone() else "UNKNOWN"
     )
 
@@ -615,9 +615,9 @@ def run_bulk_gap_fill(conn,
                             xref_id = get_max_id(conn, "mti_term_cross_refs") + 1
                             conn.execute(
                                 """INSERT OR IGNORE INTO mti_term_cross_refs
-                                       (id, mti_term_id, registry, word)
-                                   VALUES (?, ?, ?, ?)""",
-                                (xref_id, existing_mt["id"], str(registry_no), word),
+                                       (id, mti_term_id, registry, word, registry_fk)
+                                   VALUES (?, ?, ?, ?, ?)""",
+                                (xref_id, existing_mt["id"], str(registry_no), word, registry_no),
                             )
                             xref_terms.append((strong, existing_mt["id"]))
                         else:
@@ -688,9 +688,9 @@ def run_bulk_gap_fill(conn,
                                 """INSERT INTO mti_terms
                                        (id, strongs_number, transliteration, gloss, language,
                                         owning_registry, owning_word, owning_part,
-                                        word_data_reference, status, extraction_date,
-                                        strongs_reconciled)
-                                   VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, 'extracted', ?, ?)""",
+                                        word_data_reference, owning_registry_fk, word_data_ref_fk,
+                                        status, extraction_date, strongs_reconciled)
+                                   VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?, ?, 'extracted', ?, ?)""",
                                 (
                                     mt_id, resolved,
                                     vocab.get("transliteration", ""),
@@ -698,6 +698,7 @@ def run_bulk_gap_fill(conn,
                                     lang,
                                     str(registry_no), word,
                                     str(file_id),
+                                    registry_no, file_id,
                                     _today(),
                                     1 if resolved != strong else 0,
                                 ),
