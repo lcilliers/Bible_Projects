@@ -58,6 +58,13 @@ from .run_log import (
     write_word_run_state, upsert_checkpoint,
 )
 
+# analytics import (optional — graceful fallback if package unavailable)
+try:
+    from analytics.word_export import export_word as _export_word
+    _EXPORT_AVAILABLE = True
+except ImportError:
+    _EXPORT_AVAILABLE = False
+
 _DISCOVERY_DIR = os.path.join(_ROOT, "data", "discovery")
 _SEP = "═" * 66
 
@@ -1271,20 +1278,21 @@ def run_audit_word(
     file_ids = [r["id"] for r in fi_rows]
     print(f"     Word: {word}  |  file_id(s): {file_ids}")
 
-    confirm = input(
-        f"\n  Type CONFIRM to proceed with audit of '{word}' (registry {registry_id}): "
-    ).strip()
-    if confirm != "CONFIRM":
-        conn.execute(
-            "UPDATE word_registry SET last_automation_run = NULL WHERE no = ?",
-            (registry_id,),
-        )
-        conn.commit()
-        print("  Audit aborted by researcher.")
-        return {
-            "outcome": "ABORTED", "run_id": run_id,
-            "audit_result": "ABORTED", "details": ["Confirmation not given."],
-        }
+    if interactive:
+        confirm = input(
+            f"\n  Type CONFIRM to proceed with audit of '{word}' (registry {registry_id}): "
+        ).strip()
+        if confirm != "CONFIRM":
+            conn.execute(
+                "UPDATE word_registry SET last_automation_run = NULL WHERE no = ?",
+                (registry_id,),
+            )
+            conn.commit()
+            print("  Audit aborted by researcher.")
+            return {
+                "outcome": "ABORTED", "run_id": run_id,
+                "audit_result": "ABORTED", "details": ["Confirmation not given."],
+            }
 
     # ── A2: DB snapshot + structural check ───────────────────────────────────
     print("\nA2  Loading DB snapshot (Word Extract Report)...")
@@ -1464,7 +1472,7 @@ def run_audit_word(
     a9_s = sum(1 for c in audit_result["checks"] if c["result"] == "STOP")
     print(f"     A9: {audit_result['result']}  ({a9_p} PASS  {a9_r} REVIEW  {a9_s} STOP)")
 
-    if audit_result["result"] == "STOP":
+    if audit_result["result"] == "STOP" and interactive:
         ans = input(
             "\n  Audit result is STOP. Proceed to registry update (A10)? [y/N]: "
         ).strip().lower()
@@ -1594,10 +1602,32 @@ def run_audit_word(
         ],
     )
 
+    # ── A11: Full-word JSON export ────────────────────────────────────────────
+    export_path: str | None = None
+    if _EXPORT_AVAILABLE:
+        try:
+            print("\nA11  Writing full-word JSON export...")
+            export_data = _export_word(conn, registry_id)
+            date_str    = datetime.now(timezone.utc).strftime("%Y%m%d")
+            filename    = f"{word}_{registry_id}_full_{date_str}.json"
+            out_dir     = os.path.join(_ROOT, "data", "exports")
+            os.makedirs(out_dir, exist_ok=True)
+            export_path = os.path.join(out_dir, filename)
+            import json as _json
+            with open(export_path, "w", encoding="utf-8") as fh:
+                _json.dump(export_data, fh, indent=2, ensure_ascii=False, default=str)
+            size_kb = os.path.getsize(export_path) / 1024
+            print(f"  Exported → {export_path}  ({size_kb:.1f} KB)")
+        except Exception as exc:
+            print(f"  [WARN] Full-word JSON export failed: {exc}")
+    else:
+        print("\nA11  [SKIP] analytics.word_export not available — JSON export skipped.")
+
     return {
         "outcome":      "COMPLETE",
         "run_id":       run_id,
         "audit_result": audit_result["result"],
+        "export_path":  export_path,
         "details": {
             "verses_inserted": counts["total_verses_inserted"],
             "verses_updated":  counts.get("total_verses_updated", 0),

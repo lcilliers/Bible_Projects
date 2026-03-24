@@ -25,6 +25,8 @@ Usage examples:
     python -m engine.engine --report --registry=42
     python -m engine.engine --report --registry=42 --format=markdown
 
+    python -m engine.engine --export-word --registry=42
+
     python -m engine.engine --clear-lock --registry=42
     python -m engine.engine --clear-lock --registry=42 --force
 
@@ -52,6 +54,12 @@ from .gap_fill import run_gap_fill, run_bulk_gap_fill
 from .audit_word import run_audit_word
 from .report import print_word_report
 
+try:
+    from analytics.word_export import export_word as _export_word
+    _EXPORT_AVAILABLE = True
+except ImportError:
+    _EXPORT_AVAILABLE = False
+
 
 def _build_parser() -> argparse.ArgumentParser:
     ap = argparse.ArgumentParser(
@@ -74,6 +82,8 @@ def _build_parser() -> argparse.ArgumentParser:
                             help="Engine mode to run")
     mode_group.add_argument("--report",      action="store_true",
                             help="Print word overview report")
+    mode_group.add_argument("--export-word", action="store_true",
+                            help="Export all data for a word to JSON (data/exports/)")
     mode_group.add_argument("--clear-lock",  action="store_true",
                             help="Clear an IN_PROGRESS sentinel from word_registry")
     mode_group.add_argument("--check-locks", action="store_true",
@@ -137,7 +147,8 @@ def main() -> int:
 
     # Default action: print help if nothing specified
     if not any([args.migrate, args.db_status, args.register, args.mode,
-                args.report, args.clear_lock, args.check_locks,
+                args.report, getattr(args, "export_word", False),
+                args.clear_lock, args.check_locks,
                 args.add_book_code]):
         ap.print_help()
         return 0
@@ -231,7 +242,36 @@ def main() -> int:
             return 1
         print_word_report(conn, args.registry, format=args.format)
         return 0
-
+    # ── --export-word ─────────────────────────────────────────────────────────
+    if getattr(args, "export_word", False):
+        if not args.registry:
+            print("[ERROR] --export-word requires --registry=N", file=sys.stderr)
+            return 1
+        if not _EXPORT_AVAILABLE:
+            print("[ERROR] analytics.word_export is not importable.", file=sys.stderr)
+            return 1
+        import json as _json
+        from datetime import datetime, timezone
+        print(f"Exporting registry {args.registry}...")
+        try:
+            data = _export_word(conn, args.registry)
+        except ValueError as exc:
+            print(f"[ERROR] {exc}", file=sys.stderr)
+            return 1
+        word     = data["_export"]["word"]
+        date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
+        filename = f"{word}_{args.registry}_full_{date_str}.json"
+        out_dir  = os.path.join(_ROOT, "data", "exports")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, filename)
+        with open(out_path, "w", encoding="utf-8") as fh:
+            _json.dump(data, fh, indent=2, ensure_ascii=False, default=str)
+        size_kb = os.path.getsize(out_path) / 1024
+        stats   = data["statistics"]
+        print(f"  Word     : {word}  (registry {args.registry})")
+        print(f"  Terms    : {stats['term_count']}  |  Verses: {stats['verse_count']}")
+        print(f"  File     : {out_path}  ({size_kb:.1f} KB)")
+        return 0
     # ── --mode ────────────────────────────────────────────────────────────────
     if args.mode:
         # gap_fill without --registry = bulk mode; all others require --registry.
