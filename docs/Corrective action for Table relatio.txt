@@ -1,0 +1,350 @@
+Corrective action for Table relationship
+
+Related report: docs/db_relationship_report.md
+
+
+The report is thorough and I now understand every issue precisely. Let me give you a sequenced remediation plan that works with SQLite's constraints and keeps the research meaning intact throughout.
+
+Database Remediation Plan
+Governing principle before anything else. SQLite cannot ALTER TABLE to add a FK constraint to an existing table, and it cannot drop individual columns. Every structural fix requires recreating the table. The sequence below is ordered so that each fix is safe to apply without breaking the fixes before it, and so that the most dangerous data integrity risks are closed first.
+
+Phase 1 — Enable Enforcement (No Data Changes)
+Fix 1: Turn FK enforcement on at every connection
+Issue (G1): PRAGMA foreign_keys = 0 everywhere. All 19 registered FKs are completely unenforced at runtime.
+What to do: In every file that calls get_connection() — specifically analytics/db_client.py and engine/db.py — add PRAGMA foreign_keys = ON immediately after the connection is opened, before any query runs.
+pythonconn = sqlite3.connect(db_path)
+conn.execute("PRAGMA foreign_keys = ON")   # add this line
+Why this first: Everything else depends on enforcement actually firing. Do this before touching any data or structure, so you know immediately if existing data violates the constraints that are already registered.
+Research meaning: This has no effect on the data itself. It just means the database will now refuse inserts or updates that would break a relationship that already exists in the schema. It is purely protective.
+
+Phase 2 — Fix the Zero-Padding Problem (Data Fixes, No Structure Changes)
+This is the most pervasive data quality problem and it must be fixed before any FK registration work, because once FKs are enforced, zero-padded values that don't match their parent's integer ID will block inserts.
+Fix 2: Normalise wa_file_index.registry_id
+Issue (D1 / G3): 17 rows store registry_id as '001', '061' etc. word_registry.id is a plain integer. String join fails silently.
+What to do: Update in place. This is a TEXT column update only — no structure change needed.
+sqlUPDATE wa_file_index
+SET registry_id = CAST(CAST(registry_id AS INTEGER) AS TEXT)
+WHERE registry_id != CAST(CAST(registry_id AS INTEGER) AS TEXT);
+This strips the leading zeros. After this, registry_id values become '1', '61' etc. — matching the string representation of word_registry.id.
+Verify: SELECT registry_id, word_registry_fk FROM wa_file_index WHERE registry_id != CAST(word_registry_fk AS TEXT) should return zero rows.
+Fix 3: Normalise mti_terms.owning_registry
+Issue (D1): 371 rows (26.9%) use zero-padded format. This is the worst absolute count.
+sqlUPDATE mti_terms
+SET owning_registry = CAST(CAST(owning_registry AS INTEGER) AS TEXT)
+WHERE owning_registry GLOB '[0-9]*'
+  AND owning_registry != CAST(CAST(owning_registry AS INTEGER) AS TEXT);
+Fix 4: Normalise mti_term_cross_refs.registry
+Issue (D1): 28 rows, 5 distinct IDs.
+sqlUPDATE mti_term_cross_refs
+SET registry = CAST(CAST(registry AS INTEGER) AS TEXT)
+WHERE registry GLOB '[0-9]*'
+  AND registry != CAST(CAST(registry AS INTEGER) AS TEXT);
+Fix 5: Normalise word_run_state.registry_id
+Issue (D1): 82 of 188 rows (44.1%). This is the engine control table so it does not affect the analytical research data, but leaving it broken means you cannot reliably trace which engine run processed which word.
+sqlUPDATE word_run_state
+SET registry_id = CAST(CAST(registry_id AS INTEGER) AS TEXT)
+WHERE registry_id GLOB '[0-9]*'
+  AND registry_id != CAST(CAST(registry_id AS INTEGER) AS TEXT);
+After all four fixes: Run the orphan queries from the report against each table. All should return zero orphan rows for the zero-padding issue.
+
+Phase 3 — Resolve the Dual-Column Problem in wa_file_index (G3)
+Issue (G3): wa_file_index has two columns pointing to word_registry: registry_id (TEXT, the original column, now normalised in Fix 2) and word_registry_fk (INTEGER, added later, clean, but FK never registered in live DB). Both serve the same relationship. Two columns for one relationship is a maintenance trap.
+Research meaning of this relationship: wa_file_index is the administrative record of Phase 1 for each word. The link back to word_registry is what tells you which registry entry owns this file. It is essential. Every downstream table — wa_term_inventory, wa_verse_records, wa_data_quality_flags, wa_cross_registry_links — uses wa_file_index.id as their file-level anchor. Getting this relationship clean and enforced is the single most important structural fix.
+What to do: Keep word_registry_fk as the authoritative column (it is already clean, integer, correct). Retire registry_id by deprecating it — but do not drop it yet, because application code may be querying it. Instead:
+Step 1: Verify the two columns are consistent after Fix 2.
+sqlSELECT id, registry_id, word_registry_fk
+FROM wa_file_index
+WHERE registry_id != CAST(word_registry_fk AS TEXT);
+This should return zero rows. If it does, the columns agree on every row.
+Step 2: Recreate wa_file_index with the FK properly registered. Because SQLite cannot ALTER TABLE ADD CONSTRAINT, you must recreate the table:
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_file_index_new (
+    id                          INTEGER PRIMARY KEY,
+    word_registry_fk            INTEGER NOT NULL REFERENCES word_registry(id),
+    registry_id                 TEXT,       -- retained for compatibility; deprecated
+    filename                    TEXT NOT NULL,
+    word                        TEXT NOT NULL,
+    part_number                 INTEGER,
+    total_parts                 INTEGER,
+    is_split                    INTEGER,
+    schema_version              TEXT,
+    phase                       TEXT,
+    produced_date               TEXT,
+    source_file                 TEXT,
+    translation_used            TEXT,
+    specification               TEXT,
+    revision_note               TEXT,
+    source_list                 TEXT,
+    category                    TEXT,
+    testament_coverage          TEXT,
+    root_families_in_prior_parts TEXT,
+    last_changed                TEXT DEFAULT (datetime('now'))
+);
+
+INSERT INTO wa_file_index_new SELECT * FROM wa_file_index;
+
+DROP TABLE wa_file_index;
+ALTER TABLE wa_file_index_new RENAME TO wa_file_index;
+
+COMMIT;
+Note on registry_id: Keep it in the schema but mark it deprecated in a comment. The plan is to move all application queries to use word_registry_fk exclusively, then drop registry_id in a future migration once the codebase is updated.
+
+Phase 4 — Register the Six Missing FK Constraints (G2)
+These six FK constraints exist in create_tables.sql but were never registered in the live database because the columns were added via ALTER TABLE after the tables were first created. Since wa_file_index was already recreated in Phase 3, that one is done. The remaining five all require table recreation.
+The correct order matters here. Recreate in parent-before-child order so that when you recreate a child table, its parent already has the correct structure.
+Fix 6: Recreate wa_term_inventory (registers FK to wa_file_index)
+This is the central hub table. Every term detail table hangs off it.
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_term_inventory_new (
+    id                          INTEGER PRIMARY KEY,
+    file_id                     INTEGER NOT NULL REFERENCES wa_file_index(id),
+    language                    TEXT NOT NULL,
+    term_id                     TEXT NOT NULL,
+    strongs_number              TEXT,
+    transliteration             TEXT NOT NULL,
+    step_search_gloss           TEXT,
+    word_analysis_gloss         TEXT,
+    occurrence_count            INTEGER,
+    occurrence_count_qualifier  TEXT,
+    meaning                     TEXT,
+    meaning_numbered            TEXT,
+    also_spelled                TEXT,
+    lsj_entry                   TEXT,
+    testament                   TEXT,
+    god_as_subject              INTEGER DEFAULT 0,
+    somatic_link                INTEGER DEFAULT 0,
+    causative_form_present      INTEGER DEFAULT 0,
+    status_note                 TEXT,
+    last_changed                TEXT DEFAULT (datetime('now')),
+    short_def_mounce            TEXT,
+    parsed_meaning_id           INTEGER   -- soft back-pointer; see Fix 11
+);
+
+INSERT INTO wa_term_inventory_new SELECT * FROM wa_term_inventory;
+
+DROP TABLE wa_term_inventory;
+ALTER TABLE wa_term_inventory_new RENAME TO wa_term_inventory;
+
+COMMIT;
+Fix 7: Recreate wa_term_related_words (registers FK to wa_term_inventory)
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_term_related_words_new (
+    id                  INTEGER PRIMARY KEY,
+    term_inv_id         INTEGER NOT NULL REFERENCES wa_term_inventory(id),
+    gloss               TEXT,
+    transliteration     TEXT,
+    strongs_number      TEXT,
+    relationship_note   TEXT
+);
+
+INSERT INTO wa_term_related_words_new SELECT * FROM wa_term_related_words;
+
+DROP TABLE wa_term_related_words;
+ALTER TABLE wa_term_related_words_new RENAME TO wa_term_related_words;
+
+COMMIT;
+Fix 8: Recreate wa_term_root_family (registers FK to wa_term_inventory)
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_term_root_family_new (
+    id              INTEGER PRIMARY KEY,
+    term_inv_id     INTEGER NOT NULL REFERENCES wa_term_inventory(id),
+    root_code       TEXT NOT NULL,
+    root_language   TEXT,
+    root_gloss      TEXT,
+    note            TEXT
+);
+
+INSERT INTO wa_term_root_family_new SELECT * FROM wa_term_root_family;
+
+DROP TABLE wa_term_root_family;
+ALTER TABLE wa_term_root_family_new RENAME TO wa_term_root_family;
+
+COMMIT;
+Fix 9: Recreate wa_verse_records (registers FKs to wa_file_index and wa_term_inventory)
+This is the largest table (57,130 rows). The recreation will take time. Run it in a transaction and verify row counts before and after.
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_verse_records_new (
+    id                  INTEGER PRIMARY KEY,
+    file_id             INTEGER NOT NULL REFERENCES wa_file_index(id),
+    term_inv_id         INTEGER REFERENCES wa_term_inventory(id),  -- nullable: some verses may be file-level
+    term_id             TEXT,       -- denormalised Strong's code; retained for reference
+    transliteration     TEXT,
+    testament           TEXT,
+    reference           TEXT,
+    verse_text          TEXT,
+    last_changed        TEXT DEFAULT (datetime('now')),
+    book_id             INTEGER REFERENCES books(id),
+    chapter             INTEGER,
+    verse_num           INTEGER,
+    translation         TEXT NOT NULL DEFAULT 'ESV',
+    note                TEXT,
+    claude_output       TEXT,
+    created_at          TEXT,
+    updated_at          TEXT,
+    target_word         TEXT,
+    span_strong_match   INTEGER,
+    context_before      TEXT,
+    context_after       TEXT
+);
+
+INSERT INTO wa_verse_records_new SELECT * FROM wa_verse_records;
+
+DROP TABLE wa_verse_records;
+ALTER TABLE wa_verse_records_new RENAME TO wa_verse_records;
+
+COMMIT;
+After recreation: Rebuild the indexes that existed on the original table. Query sqlite_master for the original index definitions before dropping the table, and recreate them after.
+
+Phase 5 — Fix the wa_data_quality_flags.term_id Problem (G4 / D2)
+Issue (G4): wa_data_quality_flags.term_id is a TEXT column storing Strong's numbers (e.g. H5315). It has no FK to wa_term_inventory. 53 rows reference Strong's codes not present in wa_term_inventory.term_id. Flags cannot be reliably joined to specific term inventory rows.
+Research meaning: This is the most analytically damaging structural gap. Quality and analytical flags are the primary mechanism by which Session B knows what is significant about a term. A flag that cannot be reliably joined to its term is either lost or requires a fragile string match that may silently miss matches when the code format varies.
+The correct fix is a two-column approach:
+Add an integer FK column term_inv_id alongside the existing term_id TEXT column. The integer FK is the reliable join key. The TEXT column is retained as a human-readable label and for legacy rows where the integer ID was not available.
+Step 1: Audit the 53 orphan flags before touching anything.
+sqlSELECT DISTINCT dqf.term_id, dqf.file_id
+FROM wa_data_quality_flags dqf
+WHERE dqf.term_id IS NOT NULL
+  AND NOT EXISTS (
+    SELECT 1 FROM wa_term_inventory wti WHERE wti.term_id = dqf.term_id
+  );
+For each orphan, determine whether it is:
+
+A legacy Strong's code that has been renamed (e.g. G5545B → the current form). Resolve to the current inventory row and update.
+A NO STRONG-… placeholder. These are file-level flags that were incorrectly placed in the term_id column. Move the term_id value to the description field and set term_id = NULL.
+A _related suffixed variant. Resolve to the base term and update.
+
+Step 2: Once orphans are resolved, recreate wa_data_quality_flags with an integer FK column.
+sqlBEGIN TRANSACTION;
+
+CREATE TABLE wa_data_quality_flags_new (
+    id              INTEGER PRIMARY KEY,
+    file_id         INTEGER NOT NULL REFERENCES wa_file_index(id),
+    term_inv_id     INTEGER REFERENCES wa_term_inventory(id),  -- new: integer FK, nullable
+    term_id         TEXT,   -- retained: Strong's code string, human-readable label
+    flag_id         INTEGER NOT NULL REFERENCES wa_quality_flag_types(id),
+    description     TEXT,
+    last_changed    TEXT DEFAULT (datetime('now'))
+);
+
+-- Populate the new integer column from the text column where possible
+INSERT INTO wa_data_quality_flags_new
+    (id, file_id, term_inv_id, term_id, flag_id, description, last_changed)
+SELECT
+    dqf.id,
+    dqf.file_id,
+    wti.id,          -- resolved integer FK where match exists
+    dqf.term_id,
+    dqf.flag_id,
+    dqf.description,
+    dqf.last_changed
+FROM wa_data_quality_flags dqf
+LEFT JOIN wa_term_inventory wti
+    ON wti.term_id = dqf.term_id
+    AND wti.file_id = dqf.file_id;
+
+DROP TABLE wa_data_quality_flags;
+ALTER TABLE wa_data_quality_flags_new RENAME TO wa_data_quality_flags;
+
+COMMIT;
+After this fix: The join from wa_data_quality_flags to wa_term_inventory is term_inv_id = wa_term_inventory.id — a clean integer join. The term_id TEXT column stays for readability and legacy compatibility. Queries no longer need to match on string format.
+Verify: SELECT COUNT(*) FROM wa_data_quality_flags WHERE term_id IS NOT NULL AND term_inv_id IS NULL should return only the genuinely unresolvable cases (the NO STRONG-… placeholders that are file-level, not term-level).
+
+Phase 6 — Flatten the Double-Join Paths
+The report identifies several places where getting from a top-level entity to useful data requires two intermediate joins when it should require one. This is where you flatten.
+Fix 10: Add word_registry_fk directly to wa_term_inventory
+Current path: To go from a word in word_registry to its terms, you must join word_registry → wa_file_index → wa_term_inventory. Two joins.
+The fix: Add word_no (an integer FK to word_registry.no) directly to wa_term_inventory. Populate it from wa_file_index.
+This does require a wa_term_inventory recreation, which was already done in Fix 6. Add the column there:
+sql-- Add to wa_term_inventory_new in Fix 6:
+word_no     INTEGER REFERENCES word_registry(no),  -- direct shortcut to parent word
+Populate it during the INSERT:
+sqlINSERT INTO wa_term_inventory_new
+    (..., word_no)
+SELECT
+    wti.*,
+    wfi.word_registry_fk   -- carries the word_registry.no value (since no = id in word_registry)
+FROM wa_term_inventory wti
+JOIN wa_file_index wfi ON wti.file_id = wfi.id;
+After this: SELECT * FROM wa_term_inventory WHERE word_no = 182 gives you all soul terms directly. The two-join path still works for complex queries but the common case — "give me all terms for this word" — is now one join.
+Fix 11: Add word_no directly to wa_verse_records
+Current path: To go from a word to its verses, you need word_registry → wa_file_index → wa_verse_records. Two joins, and the wa_file_index table has nothing analytically useful to contribute to most verse queries.
+The fix: Add word_no to wa_verse_records, populated from wa_file_index during the Fix 9 recreation. Same pattern as Fix 10.
+After this: SELECT * FROM wa_verse_records WHERE word_no = 182 AND term_inv_id = 492 retrieves all nephesh verses for soul directly.
+Fix 12: Add word_no and strongs_number to wa_data_quality_flags
+Current path: To find all flags for a word, you query wa_data_quality_flags WHERE file_id IN (SELECT id FROM wa_file_index WHERE word_registry_fk = 182). Subquery required.
+The fix: Add word_no to wa_data_quality_flags during the Fix 5 recreation. Populate from wa_file_index. Then SELECT * FROM wa_data_quality_flags WHERE word_no = 182 is a direct single-table query.
+Fix 13: Resolve the MTI double-join to wa_term_inventory
+Current path: MTI terms are linked to word_registry via owning_registry (TEXT, now fixed for zero-padding). But there is no direct link from an MTI term to its corresponding row in wa_term_inventory. To find the inventory entry for an MTI term you must match on strongs_number — a TEXT match with no guarantee of uniqueness across files.
+Research meaning: The MTI is the Master Term Index — it is supposed to be the authoritative cross-registry catalogue of every term. But because it has no integer FK to wa_term_inventory, you cannot reliably say "this MTI entry corresponds to exactly this inventory row". The word_data_reference column was intended for this but labelled "future FK" and never completed.
+The fix: Add a proper integer FK. mti_terms.word_data_reference already holds the intended value (0 orphans reported). Formalise it:
+Recreate mti_terms with word_data_reference changed from TEXT to INTEGER and given a proper FK:
+sqlCREATE TABLE mti_terms_new (
+    id                  INTEGER PRIMARY KEY,
+    strongs_number      TEXT,
+    transliteration     TEXT NOT NULL,
+    gloss               TEXT NOT NULL,
+    language            TEXT,
+    owning_registry     TEXT,           -- now clean after Fix 3; retained for readability
+    owning_registry_fk  INTEGER REFERENCES word_registry(no),   -- new integer FK
+    owning_word         TEXT,
+    owning_part         TEXT,
+    word_data_reference INTEGER REFERENCES wa_file_index(id),   -- promoted from TEXT to INTEGER FK
+    status              TEXT,
+    status_note         TEXT,
+    exclusion_reason    TEXT,
+    extraction_date     TEXT,
+    strongs_reconciled  INTEGER DEFAULT 0,
+    anchor_note         TEXT,
+    last_changed        TEXT DEFAULT (datetime('now'))
+);
+Populate owning_registry_fk from owning_registry (now clean integers as TEXT, cast):
+sqlINSERT INTO mti_terms_new
+    (..., owning_registry_fk, word_data_reference)
+SELECT
+    ...,
+    CAST(owning_registry AS INTEGER),
+    CAST(word_data_reference AS INTEGER)
+FROM mti_terms;
+Similarly update mti_term_cross_refs with an integer FK for its registry column:
+sql-- Add registry_fk INTEGER REFERENCES word_registry(no) alongside existing registry TEXT
+
+Phase 7 — Remove the Bidirectional Soft Loop (G7)
+Issue (G7): wa_term_inventory.parsed_meaning_id is a soft back-pointer to wa_meaning_parsed.id. The authoritative direction is wa_meaning_parsed.term_inv_id FK. Having a reverse pointer with no constraint creates maintenance risk — if a meaning parse row is deleted, the back-pointer in the term table becomes stale with no warning.
+Research meaning: You never need to navigate from a term to its meaning parse directly via this column in a way that the proper join cannot handle. The forward join wa_meaning_parsed WHERE term_inv_id = [term id] gives you the same result. The back-pointer is a convenience shortcut that creates confusion about the authoritative direction.
+What to do: In the recreated wa_term_inventory (Fix 6), either drop parsed_meaning_id entirely, or keep it as a non-authoritative cache but add a comment documenting that wa_meaning_parsed.term_inv_id is the true FK. If you keep it, add a CHECK or trigger to warn when it becomes stale. The simplest safe choice is to drop it — the data is fully accessible through the forward join.
+
+Phase 8 — Resolve the 53 Orphan Flags and 1 Orphan Verse (D2)
+These are data content fixes, not structural.
+53 orphan flags in wa_data_quality_flags.term_id: After the audit in Fix 5 Phase 1, each orphan falls into one of three categories. The resolution for each:
+
+Legacy renamed codes (e.g. G5545B): Find the current inventory entry for that term and update term_id to the current code, then let the Fix 5 reconstruction populate term_inv_id.
+NO STRONG-… placeholders: These represent file-level observations that were written into term_id by mistake. Set term_id = NULL and move the placeholder value into description. The flag remains associated with the file via file_id.
+_related suffixed codes: Strip the suffix, resolve to the base term, update.
+
+1 orphan verse in wa_verse_records.term_id: Find it, identify whether it is a renamed code or a data entry error, and correct term_id to match the current wa_term_inventory.term_id value. Then the reconstruction in Fix 9 will correctly populate term_inv_id.
+
+Phase 9 — Activate Cascade Deletes (Missing Downstream Protection)
+Issue (11.3): No cascade deletes anywhere. Removing a word_registry row leaves orphan wa_file_index rows; removing a wa_file_index row leaves orphan wa_term_inventory rows and so on down the chain.
+Research meaning: In a research database that is being actively added to and occasionally corrected, this is a real operational risk. The three most critical cascades to add are:
+
+wa_file_index → word_registry: ON DELETE RESTRICT (not CASCADE). You do not want accidental deletion of a word to silently wipe its entire term and verse data. RESTRICT means the delete is blocked until you explicitly clean up children, which forces an intentional decision.
+wa_term_inventory → wa_file_index: Same — RESTRICT.
+wa_verse_records → wa_term_inventory: RESTRICT.
+
+These are added during the table recreations in Phases 3 and 4 by changing REFERENCES parent(id) to REFERENCES parent(id) ON DELETE RESTRICT.
+For the meaning and flag tables (which are more clearly owned by their parent terms), ON DELETE CASCADE is appropriate — if a term is deleted, its meaning sense tree, related words, root families, and flags should go with it.
+RelationshipActionwa_file_index → word_registryRESTRICTwa_term_inventory → wa_file_indexRESTRICTwa_verse_records → wa_file_indexRESTRICTwa_verse_records → wa_term_inventoryRESTRICTwa_term_related_words → wa_term_inventoryCASCADEwa_term_root_family → wa_term_inventoryCASCADEwa_meaning_parsed → wa_term_inventoryCASCADEwa_meaning_sense → wa_meaning_parsedCASCADEwa_meaning_stem → wa_meaning_parsedCASCADEwa_lsj_parsed → wa_term_inventoryCASCADEwa_data_quality_flags → wa_file_indexRESTRICT
+
+Summary Sequence
+PhaseWhatFixesRisk1Turn FK enforcement ONFix 1Zero — code change only2Fix zero-padding in all four tablesFixes 2–5Low — UPDATE only, no structure changes3Resolve dual-column in wa_file_index, register FK to word_registryFix 6 (wa_file_index)Medium — table recreation4Register missing FKs on wa_term_inventory, wa_term_related_words, wa_term_root_family, wa_verse_recordsFixes 6–9Medium — table recreations, largest is wa_verse_records5Fix wa_data_quality_flags.term_id orphan problem, add integer FKFix 10Medium — requires orphan audit first6Add direct word_no shortcuts to flatten double joinsFixes 10–13Low — additive columns during recreations already planned7Remove bidirectional soft loop in wa_term_inventoryFix 11Low — drop a column during recreation8Resolve 53 orphan flags and 1 orphan verseData fixesLow — targeted UPDATEs9Add cascade / restrict deletes throughoutPhase 9Low — incorporated into recreations
+
+What Not to Fix
+wa_meaning_sense.parent_level_code (G5): This is a self-referencing TEXT hierarchy — level codes like 1a point to parent 1 by text match. Converting this to an integer self-FK would require assigning stable integer IDs to each level code and rebuilding the hierarchy. The analytical value is low — the hierarchy is readable as-is, and the sense tree is always fetched in full by parsed_meaning_id anyway, so navigation within it is done in application code rather than SQL. Leave it.
+themes and sources (D4): Both are empty. Do not structure them further until there is a clear requirement for what they will contain. Adding FKs to empty tables is premature.
+mti_term_flags (9 rows): The table is structurally fine — it has proper FKs to both mti_terms and phase2_flag_types. The sparseness is a data population issue, not a schema issue. Leave the structure as-is.
+engine_stream_checkpoint sparseness (D3): This is the automation pipeline's checkpoint table. Its sparseness reflects that most runs complete without needing checkpointing. Not a research data concern.

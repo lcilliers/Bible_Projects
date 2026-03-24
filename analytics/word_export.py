@@ -282,6 +282,33 @@ def export_word(conn, registry_id: int) -> dict:
         ).fetchall():
             vr_by_ti.setdefault(r["term_inv_id"], []).append(dict(r))
 
+    # wa_verse_term_links — junction table (may not exist in older DB versions)
+    vtl_by_verse: dict[int, list] = {}
+    all_verse_ids = [v["id"] for vlist in vr_by_ti.values() for v in vlist]
+    if all_verse_ids:
+        vids_sql = "({})".format(",".join("?" * len(all_verse_ids)))
+        try:
+            for r in conn.execute(
+                """SELECT vtl.verse_id, vtl.term_inv_id, vtl.step_subgloss_code,
+                          vtl.step_subgloss_label, vtl.span_strong_match, vtl.target_word,
+                          ti.strongs_number, ti.step_search_gloss
+                   FROM wa_verse_term_links vtl
+                   JOIN wa_term_inventory ti ON ti.id = vtl.term_inv_id
+                   WHERE vtl.verse_id IN {}
+                   ORDER BY vtl.verse_id, vtl.step_subgloss_code""".format(vids_sql),
+                all_verse_ids,
+            ).fetchall():
+                vtl_by_verse.setdefault(r["verse_id"], []).append({
+                    "term_inv_id":        r["term_inv_id"],
+                    "strongs_number":     r["strongs_number"],
+                    "step_subgloss_code": r["step_subgloss_code"],
+                    "step_subgloss_label": r["step_subgloss_label"],
+                    "span_strong_match":  r["span_strong_match"],
+                    "target_word":        r["target_word"],
+                })
+        except Exception:
+            pass  # junction table absent in pre-Phase2 exports
+
     # ── statistics ────────────────────────────────────────────────────────────
     verse_count = sum(len(v) for v in vr_by_ti.values())
     flag_count  = sum(len(v) for v in dqf_by_ti.values())
@@ -319,6 +346,7 @@ def export_word(conn, registry_id: int) -> dict:
         "related_word_count":      sum(len(v) for v in rw_by_ti.values()),
         "mti_term_count":          len(mti_by_strongs),
         "cross_registry_link_count": len(cross_links),
+        "verse_term_link_count":   sum(len(v) for v in vtl_by_verse.values()),
     }
 
     # ── assemble terms ────────────────────────────────────────────────────────
@@ -367,8 +395,12 @@ def export_word(conn, registry_id: int) -> dict:
         else:
             mti_out = None
 
-        # verses
-        vr_out = vr_by_ti.get(ti_id, [])
+        # verses — augment each verse with junction link data
+        vr_out = []
+        for v in vr_by_ti.get(ti_id, []):
+            vd = dict(v)
+            vd["term_links"] = vtl_by_verse.get(v["id"], [])
+            vr_out.append(vd)
 
         # _meta: empty tables
         empty: list[str] = []
@@ -413,4 +445,5 @@ def export_word(conn, registry_id: int) -> dict:
         "cross_registry_links": cross_links,
         "statistics":           statistics,
         "terms":                terms_out,
+        "verse_term_links_count": sum(len(v) for v in vtl_by_verse.values()),
     }

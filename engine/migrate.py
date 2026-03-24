@@ -266,12 +266,48 @@ def _m10(conn: sqlite3.Connection) -> None:
     )
 
 
-@_register("M11", "Add strongs_list column to word_registry + update schema to 3.1.0")
+@_register("M11", "Add strongs_list column to word_registry + update schema to 3.2.0")
 def _m11(conn: sqlite3.Connection) -> None:
     # strongs_list stores the JSON result of get_strongs_for_word() discovery:
     # a JSON array of {"strong": "H5315", "count": 148} objects, sorted by count desc.
     # Populated by GAP_FILL Stage 1 (term discovery) and readable by later stages.
     _add_column_if_missing(conn, "word_registry", "strongs_list", "TEXT")
+    conn.execute(
+        "UPDATE schema_version SET version_code = '3.2.0', applied_at = ? WHERE id = 1",
+        (_now(),),
+    )
+
+
+@_register("M12", "Add delete_flagged columns + wa_verse_term_links + update schema to 3.3.0")
+def _m12(conn: sqlite3.Connection) -> None:
+    # delete_flagged: flag-based soft-delete on three core tables + root family cascade.
+    # Rows with delete_flagged=1 are treated as pending archive; excluded from all counts.
+    _add_column_if_missing(conn, "wa_term_inventory",    "delete_flagged", "INTEGER DEFAULT 0")
+    _add_column_if_missing(conn, "wa_verse_records",     "delete_flagged", "INTEGER DEFAULT 0")
+    _add_column_if_missing(conn, "wa_term_related_words","delete_flagged", "INTEGER DEFAULT 0")
+    _add_column_if_missing(conn, "wa_term_root_family",  "delete_flagged", "INTEGER DEFAULT 0")
+
+    # wa_verse_term_links: junction table (verse × term span data).
+    # Created in create_tables.sql but may be absent in DBs migrated from earlier schema.
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS wa_verse_term_links (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            verse_id            INTEGER NOT NULL REFERENCES wa_verse_records(id) ON DELETE CASCADE,
+            term_inv_id         INTEGER NOT NULL REFERENCES wa_term_inventory(id) ON DELETE CASCADE,
+            step_subgloss_code  TEXT,
+            step_subgloss_label TEXT,
+            span_strong_match   INTEGER,
+            target_word         TEXT,
+            created_at          TEXT DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')),
+            UNIQUE (verse_id, term_inv_id)
+        )
+    """)
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_vtl_verse ON wa_verse_term_links (verse_id)"
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_vtl_term ON wa_verse_term_links (term_inv_id)"
+    )
     conn.execute(
         "UPDATE schema_version SET version_code = ?, applied_at = ? WHERE id = 1",
         (EXPECTED_SCHEMA_VERSION, _now()),

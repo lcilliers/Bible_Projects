@@ -56,8 +56,9 @@ def apply_span_filter(html: str, queried_strong: str) -> dict:
 
     Returns:
         {
-          "match":       True | False,
-          "target_word": str,   # span text for the first matching span ('' if none)
+          "match":          True | False,
+          "target_word":    str,         # span text for the first matching span ('' if none)
+          "span_code_found": str | None, # the specific Strong's code from the matching span
         }
     """
     spans    = _parse_spans(html)
@@ -66,11 +67,13 @@ def apply_span_filter(html: str, queried_strong: str) -> dict:
     for numbers, text in spans:
         content = [n for n in numbers if not _PREFIX_CODES.match(n)]
         if queried_strong in content:
-            return {"match": True, "target_word": text}
-        if base and any(n.startswith(base) for n in content):
-            return {"match": True, "target_word": text}
+            return {"match": True, "target_word": text, "span_code_found": queried_strong}
+        if base:
+            for n in content:
+                if n.startswith(base):
+                    return {"match": True, "target_word": text, "span_code_found": n}
 
-    return {"match": False, "target_word": ""}
+    return {"match": False, "target_word": "", "span_code_found": None}
 
 
 def filter_verse_records(raw_records: list[dict], queried_strong: str,
@@ -110,6 +113,7 @@ def filter_verse_records(raw_records: list[dict], queried_strong: str,
             **record,
             "span_strong_match": 1 if result["match"] else 0,
             "target_word": result["target_word"] or record.get("target_word", ""),
+            "span_code_found": result.get("span_code_found"),
         }
         if result["match"]:
             stored.append(enriched)

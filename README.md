@@ -41,6 +41,10 @@ The research corpus centres on **~211 English words** (e.g. anger, love, sorrow,
 | **Coding & Development** | GitHub Copilot (Claude Sonnet) | Primary AI for coding, database operations, engine development, and data patching. |
 | **Thinker & Writer** | Claude.ai | Primary AI for analysis, synthesis, meaning extraction, flag assessment, and articulation. |
 
+### Communication protocols for GitHub Copilot
+
+Copilot must read and apply the protocols in [`docs/interaction-preferences.md`](docs/interaction-preferences.md) at the start of every session. This file is the authoritative record of how Copilot communicates with the researcher.
+
 ---
 
 ## 3. Toolchain

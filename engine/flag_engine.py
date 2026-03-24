@@ -32,6 +32,16 @@ from .db import get_max_id
 _FLAG_ID_CACHE: dict[str, int] = {}
 
 
+def _ensure_flag_type(conn, flag_group: str, flag_code: str, description: str) -> None:
+    """Insert a flag type row if it does not already exist."""
+    conn.execute(
+        """INSERT OR IGNORE INTO wa_quality_flag_types
+               (flag_group, flag_code, description)
+           VALUES (?, ?, ?)""",
+        (flag_group, flag_code, description),
+    )
+
+
 def _flag_id(conn, flag_code: str) -> int | None:
     if flag_code not in _FLAG_ID_CACHE:
         row = conn.execute(
@@ -74,6 +84,13 @@ def run_flag_engine(conn, file_id: int, registry_id: int,
     errors = []
     flags_written = 0
 
+    # ── Bootstrap: ensure engine-owned flag types exist ───────────────────────
+    _ensure_flag_type(
+        conn, "DATA_COVERAGE", "PROSE_ONLY_MEANING",
+        "Meaning stored as single prose block — STEP medium_def contains no "
+        "structured sense numbering for this term. No further subdivision available.",
+    )
+
     # ── Idempotency: remove any previously written derivable flags for this
     # file before re-evaluating, so re-runs (gap_fill/audit_word) do not
     # accumulate duplicate rows.  Researcher-entered flags (NOTE, ANOMALY_NOTE,
@@ -81,6 +98,7 @@ def run_flag_engine(conn, file_id: int, registry_id: int,
     _DERIVABLE_FLAGS = {
         "HIGH_FREQUENCY_ANCHOR", "THIN_DATA", "SMALL_VERSE_SAMPLE",
         "NO_WORD_ANALYSIS", "NO_VERSES", "SPAN_RESOLUTION_CONFLICT",
+        "PROSE_ONLY_MEANING",
     }
     _ph = ",".join("?" * len(_DERIVABLE_FLAGS))
     conn.execute(
@@ -158,6 +176,25 @@ def run_flag_engine(conn, file_id: int, registry_id: int,
                 "STEP returned no word analysis block for this term.",
             )
             flags_written += 1
+
+        # ── PROSE_ONLY_MEANING — meaning_parser found no structured senses ──
+        mp_row = conn.execute(
+            "SELECT parse_warnings FROM wa_meaning_parsed WHERE term_inv_id = ?",
+            (term_inv_id,),
+        ).fetchone()
+        if mp_row and mp_row["parse_warnings"]:
+            try:
+                warnings = json.loads(mp_row["parse_warnings"])
+            except (ValueError, TypeError):
+                warnings = []
+            if "PROSE_ONLY" in warnings:
+                _write_quality_flag(
+                    conn, file_id, strongs, "PROSE_ONLY_MEANING",
+                    f"Meaning for {strongs} stored as single prose block. "
+                    "STEP medium_def contains no structured sense numbering. "
+                    "No further subdivision available.",
+                )
+                flags_written += 1
 
     conn.commit()
     return {"flags_written": flags_written, "errors": errors}

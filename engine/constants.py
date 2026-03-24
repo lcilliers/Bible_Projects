@@ -5,7 +5,10 @@ Shared constants for the Session A v9 Automation Engine.
 """
 
 # Schema version this engine build requires.
-EXPECTED_SCHEMA_VERSION = "3.2.0"
+EXPECTED_SCHEMA_VERSION = "3.3.0"
+
+# Sentinel written to word_registry.last_automation_run on successful audit completion.
+AUDITED_SENTINEL = "AUDITED"
 
 # Engine version string (written to term_fetch_log / engine_run_log).
 ENGINE_VERSION = "1.0.0"

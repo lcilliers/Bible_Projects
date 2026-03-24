@@ -371,6 +371,26 @@ CREATE INDEX IF NOT EXISTS idx_wa_vr_term        ON wa_verse_records (term_inv_i
 CREATE INDEX IF NOT EXISTS idx_wavr_file_term_pos
     ON wa_verse_records (file_id, term_id, book_id, chapter, verse_num);
 
+-- ── 8.2  wa_verse_term_links ─────────────────────────────────────────────────
+-- Junction table: many-to-many relationship between verse records and terms.
+-- A verse that contains multiple soul-family terms gets one row per term.
+-- The primary term_inv_id on wa_verse_records is kept for backward compatibility;
+-- the full cross-reference lives here.
+CREATE TABLE IF NOT EXISTS wa_verse_term_links (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    verse_id            INTEGER NOT NULL REFERENCES wa_verse_records(id) ON DELETE CASCADE,
+    term_inv_id         INTEGER NOT NULL REFERENCES wa_term_inventory(id) ON DELETE CASCADE,
+    step_subgloss_code  TEXT,       -- e.g. 'H5315H'
+    step_subgloss_label TEXT,       -- e.g. 'soul: life'
+    span_strong_match   INTEGER,    -- 1 = target_word confirmed in span, NULL = unconfirmed
+    target_word         TEXT,       -- English word(s) in the tagged span
+    created_at          TEXT DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')),
+    UNIQUE (verse_id, term_inv_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_vtl_verse ON wa_verse_term_links (verse_id);
+CREATE INDEX IF NOT EXISTS idx_vtl_term  ON wa_verse_term_links (term_inv_id);
+
 -- ═════════════════════════════════════════════════════════════════════════════
 -- SECTION 9 — MTI TABLES
 -- ═════════════════════════════════════════════════════════════════════════════

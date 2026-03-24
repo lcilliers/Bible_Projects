@@ -27,7 +27,9 @@ There is no cater for handling deletions, on all levels.  I think we should use 
 | **A2** | **Load existing records** | Read all existing terms, verses, mti_terms, flags into memory. Schema version check here. | `wa_term_inventory`, `wa_verse_records`, `mti_terms`, `wa_data_quality_flags` | — | Schema mismatch → STOP. No existing records → redirect NEW_WORD |
 | **A3** | **Re-fetch ALL from STEP** | `get_vocab_info()` + `get_verse_records()` per all existing terms. All API calls complete before any write. Span filter applied in memory. `term_fetch_log` written per term. | — | `term_fetch_log` | All failed → STOP (clear lock). Partial → REVIEW |
 | **A3a** | **Span back-population** | For every existing `wa_verse_records` row (regardless of current `span_strong_match`): compare against STEP response. Set 1 (confirmed) or 0 (sibling-only). Derive `target_word`. Write `SPAN_FILTER_APPLIED` (id=24) if any → 0. Write `SPAN_BACK_POPULATED` (id=25) unconditionally. | `wa_verse_records` | `wa_verse_records`, `wa_data_quality_flags` | Partial → REVIEW |
-| **A4** | **Produce gap report** | Compare STEP memory vs DB. Categorise every discrepancy. Print full report. **No DB writes.** Categories: `MISSING`, `STALE`, `NEW_TERM`, `ORPHAN`, `API_ONLY` | All content tables (read-only) | — | Always show before A5 |
+| **A4** | **Produce gap report** | Compare STEP memory vs DB. Categorise every discrepancy. Print full report. **No DB writes.** Categories: `MISSING`, `STALE`, `NEW_TERM`, `ORPHAN`, `API_ONLY`, `DB_ONLY_TERM` | All content tables (read-only) | — | Always show before A5 |
+
+**A4 gap category note — `DB_ONLY_TERM`:** Terms present in `wa_term_inventory` or `mti_terms` for this word but **absent from the current STEP cluster** must be reported as `DB_ONLY_TERM`. These are terms that were added in a prior run (e.g. H4578, H5397 for soul) and are not returned by STEP's current vocabulary cluster. They are not errors — they were legitimately included previously — but the researcher must confirm they should be retained. These rows are candidates for the delete-flag mechanism (see Section 1 RESPONSE on deletion handling) and must never be silently dropped. |
 | **A5** | **Researcher review gate** | Present gap report. Researcher approves which categories to fill. None approved → clean exit. | — | — | None → exit |
 | **A6** | **Fill approved gaps** | Atomic per-word transaction. Only fills approved categories: COALESCE UPDATE `wa_term_inventory`, INSERT missing verses (`span_strong_match=1`), INSERT missing `mti_terms` for NEW_TERMs, INSERT missing `wa_term_related_words`, re-derive `wa_term_inventory.testament` per term, update `wa_file_index.testament_coverage`. Never DELETE. | — | `wa_term_inventory`, `wa_verse_records`, `mti_terms`, `wa_term_related_words`, `wa_file_index` | Failure → STOP + rollback step only |
 | **A7** | **Run meaning parser** | Re-parse all terms. INSERT/UPDATE `wa_meaning_*` tables. UPDATE `parsed_meaning_id`. Show diff if output changed. | `wa_term_inventory` | `wa_meaning_parsed`, `wa_meaning_sense`, `wa_meaning_stem`, `wa_lsj_parsed`, `wa_term_inventory` | Mismatch → REVIEW with diff |
@@ -146,6 +148,65 @@ AUDIT_WORD does not INSERT new terms; it only refreshes existing ones.
 
 Use this space for any other requirements, constraints, or corrections to the framework above
 before implementation begins.
+
+> RESPONSE:
+
+
+---
+
+## 6. New Table — `wa_verse_term_links` Span Population
+
+**Context:** `wa_verse_term_links` is a new many-to-many junction table that was not present when the current `audit_word.py` was written. It is therefore **completely absent** from the existing audit process. This section documents how it must be handled.
+
+### What the table holds
+
+`wa_verse_term_links` (verse_id FK, term_inv_id FK) stores the **per-(verse × term) span result** — meaning one row for each combination of a verse record and a term that appears in it.
+
+The four span columns on this table differ from those on `wa_verse_records`:
+
+| Column | `wa_verse_records` | `wa_verse_term_links` |
+|--------|-------------------|----------------------|
+| `span_strong_match` | verse-level: was the term confirmed in this verse? | link-level: was THIS term confirmed in THIS verse? |
+| `target_word` | surface word for the primary term on the verse record | surface word for this specific (verse, term) link |
+| `context_before` | ✓ (verse-level) | — not on this table |
+| `context_after` | ✓ (verse-level) | — not on this table |
+| `step_subgloss_code` | — not on this table | the matched Strong's code from the span `strong=` attribute (e.g. `H5315H`) |
+| `step_subgloss_label` | — not on this table | English gloss of the matched sub-gloss code (e.g. `"soul: life"`) |
+
+### Where in the audit step sequence this belongs
+
+The span data for `wa_verse_term_links` must be populated during the same step that currently handles span back-population on `wa_verse_records` (**A3a** in the proposed sequence).
+
+**Extended A3a — Span back-population (both tables):**
+
+For each term T loaded in A3, and each verse V returned by the STEP re-fetch:
+
+1. Run `apply_span_filter(preview_html, T.strongs_number)` → get `span_strong_match`, `target_word`, **and `span_code_found`** (requires extending `apply_span_filter()` to return the matched code — see extract design note)
+2. Derive `span_label_found`:
+   - Look up `span_code_found` in the in-memory A3 vocab data (all terms fetched this run have their `gloss` available)
+   - If found → use that term's gloss
+   - If not found (code is a sibling sub-gloss not independently fetched) → call `get_vocab_info(span_code_found).gloss`
+3. Write to **`wa_verse_records`**: `span_strong_match`, `target_word`, `context_before`, `context_after`
+4. Write to **`wa_verse_term_links`**: `span_strong_match`, `target_word`, `step_subgloss_code`, `step_subgloss_label`
+   - **If row exists** (junction row already present): UPDATE the four span columns
+   - **If row does not exist** (junction row missing — first audit since table was created): INSERT with resolved `verse_id` + `term_inv_id` FKs
+
+### FK resolution at audit time
+
+Unlike Step 1 (extract), the audit process has full DB access. Resolution is straightforward:
+
+- `verse_id` → `wa_verse_records.id` — already known from A2 load (the verse row is in memory)
+- `term_inv_id` → `wa_term_inventory.id` — already known from A2 load (the term row is in memory)
+
+No lookup query needed — IDs are available directly from the in-memory records.
+
+### Impact on Table 3 (Tables Touched)
+
+The following row should be added to the Tables Touched table:
+
+| Table | Currently touched | Proposed |
+|---|---|---|
+| `wa_verse_term_links` | **never** | A3a (UPDATE span columns for existing rows; INSERT if missing) |
 
 > RESPONSE:
 

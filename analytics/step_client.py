@@ -444,6 +444,86 @@ class StepClient:
             for s, c in sorted(tally.items(), key=lambda x: -x[1])
         ]
 
+    def get_verse_records_by_english(self, english_word: str) -> list[dict]:
+        """Return all ESV verse records where the given English word appears.
+
+        Each record has the same fields as ``get_verse_records()`` plus:
+          tagging_strongs — list of base Strong's numbers (e.g. 'H5315', 'G5590')
+                            whose span in the verse HTML wraps the matching word.
+                            Grammar-particle codes (H9xxx / G9xxx) are excluded.
+                            Sub-gloss suffixes are stripped (H5315G → H5315).
+
+        Two-level canonical pagination handles the 60-result cap, identical to
+        the Strong's-based search.
+
+        This corresponds to STEP's "English word search" entry point — it finds
+        every verse where the ESV uses this word, regardless of which underlying
+        Hebrew/Greek term is tagged, and reports which term(s) drove each
+        translation choice.
+        """
+        span_pat = re.compile(
+            r"<span[^>]*\bstrong=['\"]([^'\"]+)['\"][^>]*>([^<]+)<",
+            re.IGNORECASE,
+        )
+        word_pat = re.compile(r"\b" + re.escape(english_word) + r"\b", re.IGNORECASE)
+
+        seen: dict[str, dict] = {}  # osisId → raw result item (dedup)
+
+        def _collect(d: dict) -> None:
+            for item in d.get("results", []):
+                osis = item.get("osisId") or item.get("key", "")
+                if osis not in seen:
+                    seen[osis] = item
+
+        first = self._text_search_range(english_word)
+        total = first.get("total", 0)
+
+        if total <= 60:
+            _collect(first)
+        else:
+            for section, ref_range in _CANON_RANGES:
+                d = self._text_search_range(english_word, ref_range)
+                section_total = d.get("total", 0)
+                if section_total > 60:
+                    for _subsect, subrange in _CANON_SUBSPLITS.get(section, []):
+                        _collect(self._text_search_range(english_word, subrange))
+                else:
+                    _collect(d)
+
+        records = []
+        for osisid, item in seen.items():
+            html = item.get("preview", "")
+            book_code, chapter, verse_num = self._parse_osisid(osisid)
+            testament = "NT" if book_code in _NT_BOOKS else "OT"
+
+            # Collect base Strong's numbers from spans that wrap the English word.
+            tagging_strongs: list[str] = []
+            for span_m in span_pat.finditer(html):
+                strongs_attr, word_text = span_m.group(1), span_m.group(2)
+                if not word_pat.search(word_text):
+                    continue
+                for s in strongs_attr.split():
+                    if not re.match(r"^[HG]\d{4}", s) or re.match(r"^[HG]9", s):
+                        continue
+                    base = re.sub(r"[A-Z]+$", "", s)   # H5315G → H5315
+                    if base not in tagging_strongs:
+                        tagging_strongs.append(base)
+
+            records.append({
+                "osisId":          osisid,
+                "ref":             item["key"],
+                "esv_text":        self._strip_html(html),
+                "target_word":     english_word,
+                "testament":       testament,
+                "book_code":       book_code,
+                "chapter":         chapter,
+                "verse_num":       verse_num,
+                "tagging_strongs": tagging_strongs,
+            })
+
+        records.sort(key=lambda r: r["osisId"])
+        return records
+
     # ── Public API — full extraction ───────────────────────────────────────
 
     def extract_word_data(self, strong: str) -> dict:
@@ -504,4 +584,168 @@ class StepClient:
             "verse_count":   vc,
             "testament":     testament,
             "notes":         notes,
+        }
+
+    # ── Public API — term discovery (Phase 1) ─────────────────────────────
+
+    def get_related_term_cluster(self, strong: str) -> dict:
+        """Return the full term cluster for a Strong's number — all sub-glosses
+        and semantically related terms as defined by STEP's ``relatedNos`` field.
+
+        This is a **read-only discovery method** — it never touches the database
+        and performs no extraction.  It is the foundation of Phase 1 term mapping.
+
+        Algorithm:
+          1. Resolve the input code and fetch its vocab.
+          2. Collect all codes from ``relatedNos`` (siblings + relatives).
+          3. Separately enumerate sub-gloss siblings — codes sharing the same
+             numeric base with a single letter suffix (e.g. H5315G … H5315N).
+          4. Union (2) and (3), then fetch vocab + verse_count for every code.
+          5. Return a structured dict separating sub-glosses from related terms.
+
+        Returns a dict:
+          primary_code    — the resolved Strong's code fetched first
+          primary_vocab   — vocab dict for the primary code (from get_vocab_info)
+          sub_glosses     — list of term_entry dicts for sibling sub-glosses
+                            (same numeric base, letter suffix; e.g. H5315G–H5315N)
+          related_terms   — list of term_entry dicts for other related codes
+                            (different numeric base or no suffix relationship)
+          all_codes       — flat list of all Strong's codes in the cluster
+
+        Each term_entry dict:
+          code            — Strong's code (e.g. H5315H)
+          gloss           — STEP stepGloss
+          transliteration — STEP romanisation
+          script_form     — accentedUnicode (Hebrew/Greek script)
+          vocab_count     — occurrence count across all STEP versions
+          verse_count     — verse count in ESV_th (from search API)
+          medium_def      — stripped multi-line definition
+          is_sub_gloss    — True if same numeric base as primary_code
+          is_proper_noun  — True if mediumDef or gloss suggests a name/place
+          notes           — list of warning strings
+
+        Proper-noun detection: if the gloss is title-cased and the definition
+        contains 'proper noun', 'name', or starts with a capital; also flags
+        H/G codes known to be grammar particles (H9xxx / G9xxx).
+        """
+        # ── Step 1: resolve primary code and fetch vocab ──────────────────
+        primary_vocab = self.get_vocab_info(strong)
+        if not primary_vocab:
+            return {
+                "primary_code":  strong,
+                "primary_vocab": {},
+                "sub_glosses":   [],
+                "related_terms": [],
+                "all_codes":     [],
+            }
+        primary_code = primary_vocab["strong_number"]
+
+        # Numeric base: strip trailing letter(s) — H5315G → H5315, G5590G → G5590
+        base_match = re.match(r'^([HG]\d+)[A-Za-z]+$', primary_code)
+        numeric_base = base_match.group(1) if base_match else primary_code
+
+        # ── Step 2: collect related codes from relatedNos ─────────────────
+        related_codes: set[str] = set()
+        for rw in primary_vocab.get("related_words", []):
+            code = rw.get("strong", "").strip()
+            if code and code != primary_code:
+                related_codes.add(code)
+
+        # ── Step 3: collect all sub-glosses via probing (G → N) ──────────
+        # STEP's relatedNos often lists siblings, but probe explicitly to catch any gaps.
+        for suffix in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            candidate = f"{numeric_base}{suffix}"
+            if candidate == primary_code:
+                continue   # already have primary
+            if candidate in related_codes:
+                continue   # already collected
+            # Probe: if STEP returns a vocabInfo for this code, it exists.
+            try:
+                d = self._get_json(
+                    f"rest/module/getInfo/{self.version}//{candidate}//"
+                )
+                vis = d.get("vocabInfos", [])
+                if vis and vis[0].get("strongNumber") == candidate:
+                    related_codes.add(candidate)
+                else:
+                    # No more sub-glosses — stop probing this family
+                    break
+            except Exception:
+                break
+
+        # ── Step 4: fetch vocab + verse_count for every related code ──────
+        def _term_entry(code: str) -> dict:
+            entry_notes: list[str] = []
+            # Skip grammar-particle internal codes
+            if re.match(r'^[HG]9', code):
+                return {}
+            try:
+                v = self.get_vocab_info(code)
+            except Exception as exc:
+                return {"code": code, "notes": [str(exc)]}
+            if not v:
+                return {"code": code, "notes": ["no vocab data"]}
+
+            # Verse count
+            try:
+                sd = self._search_range(code)
+                vc = sd.get("total", 0)
+            except Exception:
+                vc = 0
+                entry_notes.append("verse search failed")
+
+            gloss = v.get("gloss", "")
+            medium_def = v.get("medium_def", "")
+
+            # Is this code a sub-gloss of our primary numeric base?
+            code_base_m = re.match(r'^([HG]\d+)[A-Za-z]+$', code)
+            code_base = code_base_m.group(1) if code_base_m else code
+            is_sub = code_base == numeric_base
+
+            # Proper-noun detection (heuristic)
+            is_proper = bool(
+                re.search(r'\bproper noun\b|\bpersonal name\b|\bplace name\b',
+                          medium_def, re.IGNORECASE)
+                or (gloss and gloss[0].isupper() and len(gloss.split()) == 1
+                    and gloss not in ("I", "A"))
+            )
+
+            return {
+                "code":            code,
+                "gloss":           gloss,
+                "transliteration": v.get("transliteration", ""),
+                "script_form":     v.get("hebrew_unicode", ""),
+                "vocab_count":     v.get("occurrence_count", 0),
+                "verse_count":     vc,
+                "medium_def":      medium_def,
+                "is_sub_gloss":    is_sub,
+                "is_proper_noun":  is_proper,
+                "notes":           entry_notes,
+            }
+
+        sub_glosses: list[dict] = []
+        related_terms: list[dict] = []
+
+        for code in sorted(related_codes):
+            entry = _term_entry(code)
+            if not entry:
+                continue
+            if entry.get("is_sub_gloss"):
+                sub_glosses.append(entry)
+            else:
+                related_terms.append(entry)
+
+        # Sort sub-glosses by code, related terms by verse_count desc
+        sub_glosses.sort(key=lambda e: e["code"])
+        related_terms.sort(key=lambda e: -e.get("verse_count", 0))
+
+        all_codes = [primary_code] + [e["code"] for e in sub_glosses] + \
+                    [e["code"] for e in related_terms]
+
+        return {
+            "primary_code":  primary_code,
+            "primary_vocab": primary_vocab,
+            "sub_glosses":   sub_glosses,
+            "related_terms": related_terms,
+            "all_codes":     all_codes,
         }

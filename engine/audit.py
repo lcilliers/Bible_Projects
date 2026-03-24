@@ -120,7 +120,11 @@ def _wr05(conn, file_id: int, registry_id: int) -> dict:
     ]
     if not gaps:
         return _pass("WR-05", f"IDs {ids[0]}–{ids[-1]} contiguous")
-    return _fail_stop("WR-05", f"ID gaps detected in wa_term_inventory: {gaps}")
+    # Downgraded to REVIEW: gaps can arise from legitimate term restructuring
+    # (e.g. splitting a consolidated entry into sub-glosses) and are not
+    # evidence of a partial write.  Partial-write detection is covered by
+    # cross-checking verse counts in WR-06/WR-07.
+    return _fail_review("WR-05", f"ID gaps detected in wa_term_inventory: {gaps}")
 
 
 def _wr06(conn, file_id: int, registry_id: int) -> dict:
@@ -429,7 +433,8 @@ def _wr19(conn, file_id: int, registry_id: int) -> dict:
         flag_exists = conn.execute(
             """SELECT 1 FROM wa_data_quality_flags dqf
                JOIN wa_quality_flag_types qt ON qt.id = dqf.flag_id
-               WHERE dqf.file_id = ? AND dqf.term_id = ? AND qt.flag_code = 'NOTE'""",
+               WHERE dqf.file_id = ? AND dqf.term_id = ?
+               AND qt.flag_code IN ('NOTE', 'NOTE_ON_ROOT_FAMILY', 'PROSE_ONLY_MEANING')""",
             (file_id, strongs),
         ).fetchone()
         if not flag_exists:

@@ -109,7 +109,11 @@ def _build_parser() -> argparse.ArgumentParser:
 
     # ── --mode=audit_word options ─────────────────────────────────────────────
     ap.add_argument("--skip-span-backpop", action="store_true",
-                    help="Skip span back-population in --mode=audit_word")
+                    help="(deprecated) Skip span back-population in --mode=audit_word")
+    ap.add_argument("--interactive", action="store_true",
+                    help="Enable per-category approve/skip gate in --mode=audit_word")
+    ap.add_argument("--extract-file", metavar="PATH",
+                    help="Explicit Step 1 JSON path for --mode=audit_word (default: auto-select latest)")
 
     # ── --register options ────────────────────────────────────────────────────
     ap.add_argument("--word",     metavar="\"sorrow\"",
@@ -278,7 +282,8 @@ def main() -> int:
             result = run_audit_word(
                 conn, args.registry,
                 dry_run=args.dry_run,
-                skip_span_backpop=args.skip_span_backpop,
+                interactive=getattr(args, "interactive", False),
+                extract_file=getattr(args, "extract_file", None),
             )
             if not args.dry_run and result["outcome"] == "COMPLETE":
                 post_run_backup(f"AUDIT_WORD-reg{args.registry}")
