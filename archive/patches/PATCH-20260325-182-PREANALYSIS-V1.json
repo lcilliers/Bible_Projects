@@ -1,0 +1,240 @@
+{
+  "patch_id": "PATCH-20260325-182-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 182,
+  "registry_word": "soul",
+  "file_id": 36,
+  "source_json_exported_at": "2026-03-24T06:41:36Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for soul (reg 182). Sets anchor verse (Gen 2:7). Extracts all None-status psuch\u0113 sub-glosses and psuch\u0113-compound terms. Sets H5317 no.phet as phase2_enrichment per prior Session B decision. Corrects null anchor_verse on registry record.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Set anchor verse for soul registry. Gen 2:7 \u2014 the constitutive verse: the moment when nephesh comes into existence. God breathes the breath of life into dust and man becomes a living soul (nephesh cha.yah). No other verse in the corpus describes the origin of the soul. This is the irreplaceable structural anchor for the entire registry.",
+      "registry_no": 182,
+      "set": {
+        "anchor_verses": "Gen 2:7"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590G psuch\u0113 [soul] \u2014 extracted.",
+      "mti_id": 1391,
+      "strongs_number": "G5590G",
+      "transliteration": "psuch\u0113",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary Greek soul term. 46 verses. Covers full range: soul vs body (Mat 10:28), soul as life-force (Joh 12:25), soul as the person (1Pe 2:11), eschatological soul (Rev 6:9), the soul of Christ (Mat 26:38). Most analytically important Greek term in registry."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590H psuch\u0113 [soul: life] \u2014 extracted.",
+      "mti_id": 1392,
+      "strongs_number": "G5590H",
+      "transliteration": "psuch\u0113",
+      "set": {
+        "status": "extracted",
+        "status_note": "Soul-as-life sub-gloss. 33 verses. The 'lay down one's life' cluster (Joh 10:11,15,17; 15:13) and 'save your life/lose it' paradox (Mat 16:25 etc). Christologically dense."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590I psuch\u0113 [soul: myself] \u2014 extracted.",
+      "mti_id": 1393,
+      "strongs_number": "G5590I",
+      "transliteration": "psuch\u0113",
+      "set": {
+        "status": "extracted",
+        "status_note": "Reflexive soul use. 6 verses including Magnificat (Luk 1:46 \u2014 'My soul magnifies the Lord'), Gethsemane (Mar 14:34), and Joh 12:27 ('Now is my soul troubled')."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590J psuch\u0113 [soul: person] \u2014 extracted.",
+      "mti_id": 1394,
+      "strongs_number": "G5590J",
+      "transliteration": "psuch\u0113",
+      "set": {
+        "status": "extracted",
+        "status_note": "Collective soul/person use. 8 verses including Act 2:41 (3000 souls added), Rom 13:1 (every person subject to authorities)."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590K psuch\u0113 [soul: animal] \u2014 extracted_thin.",
+      "mti_id": 1395,
+      "strongs_number": "G5590K",
+      "transliteration": "psuch\u0113",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Animal soul sub-gloss. 0 verses in export. Structurally important: same term covers both human soul and animal life \u2014 parallels the Hebrew nephesh."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5591 psuchikos [natural] \u2014 extracted.",
+      "mti_id": 1396,
+      "strongs_number": "G5591",
+      "transliteration": "psuchikos",
+      "set": {
+        "status": "extracted",
+        "status_note": "The soul-vs-spirit boundary term. 5 verses: 1Co 2:14 (natural person does not accept Spirit's things), 1Co 15:44 (sown natural body, raised spiritual body), Jam 3:15, Jude 19. Analytically critical for the spirit-soul distinction."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1634 ekpsuch\u014d [to expire] \u2014 extracted.",
+      "mti_id": 1397,
+      "strongs_number": "G1634",
+      "transliteration": "ekpsuch\u014d",
+      "set": {
+        "status": "extracted",
+        "status_note": "Soul departing at death. 3 verses: Act 5:5 (Ananias), Act 5:10 (Sapphira), Act 12:23 (Herod). Death as the ekpsuch\u0113 \u2014 the soul going out."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1374 dipsuchos [double-minded] \u2014 extracted.",
+      "mti_id": 1398,
+      "strongs_number": "G1374",
+      "transliteration": "dipsuchos",
+      "set": {
+        "status": "extracted",
+        "status_note": "Interior soul-division. 2 verses: Jam 1:8, Jam 4:8. The double-minded person is di-psychos \u2014 soul divided between God and world. The Being-dimension disorder of the soul."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0674 apopsuch\u014d [to faint] \u2014 extracted_thin.",
+      "mti_id": 1399,
+      "strongs_number": "G0674",
+      "transliteration": "apopsuch\u014d",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Soul fainting. 1 verse: Luk 21:26 \u2014 people fainting with fear at eschatological upheaval. Soul-capacity failing under overwhelming circumstances."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0895 apsuchos [lifeless] \u2014 extracted_thin.",
+      "mti_id": 1400,
+      "strongs_number": "G0895",
+      "transliteration": "apsuchos",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Without soul/lifeless. 1 verse: 1Co 14:7 \u2014 lifeless instruments. Defines soul by its absence \u2014 what makes a living being different from an instrument."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2174 eupsuche\u014d [be glad] \u2014 extracted_thin.",
+      "mti_id": 1401,
+      "strongs_number": "G2174",
+      "transliteration": "eupsuche\u014d",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Soul-gladness. 1 verse: Phi 2:19 \u2014 'that I too may be cheered (eu-psyche\u014d).' Soul-wellbeing vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2473 isopsuchos [like-minded] \u2014 extracted_thin.",
+      "mti_id": 1402,
+      "strongs_number": "G2473",
+      "transliteration": "isopsuchos",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Like-souled/like-minded. 1 verse: Phi 2:20 \u2014 Timothy genuinely concerned (iso-psychos). Soul as the seat of concern and orientation."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3642 oligopsuchos [fainthearted] \u2014 extracted.",
+      "mti_id": 1403,
+      "strongs_number": "G3642",
+      "transliteration": "oligopsuchos",
+      "set": {
+        "status": "extracted",
+        "status_note": "Small-souled/fainthearted. 1 verse: 1Th 5:14 \u2014 'encourage the fainthearted (oligopsuchos).' Soul-diminishment vocabulary \u2014 the contraction of the inner person under pressure."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4861 sumpsuchos [harmonious] \u2014 extracted_thin.",
+      "mti_id": 1404,
+      "strongs_number": "G4861",
+      "transliteration": "sumpsuchos",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Same-souled/harmonious. 1 verse: Phi 2:2 \u2014 'being in full accord (sumpsuchos).' Community identity through shared soul-orientation."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5314 na.phash [be refreshed] \u2014 extracted.",
+      "mti_id": 1390,
+      "strongs_number": "H5314",
+      "transliteration": "na.phash",
+      "set": {
+        "status": "extracted",
+        "status_note": "Soul refreshed/restored. 3 verses: Exo 23:12 and 31:17 (even God rested and was refreshed on the seventh day \u2014 the only verse in Scripture attributing soul-refreshment to God). 2Sa 16:14 (David refreshed). Connects soul to Sabbath rest and divine life."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5317 no.phet [honey] \u2014 phase2_enrichment. Carry forward decision from prior Session B work. Pro 27:7 ('one who is full loathes honey, but to one who is hungry everything bitter is sweet') encodes the appetite dimension of nephesh through the honey-as-archetype-of-desire metaphor. Not a primary soul term but enriches the appetite sub-dimension. PH2 flag to be raised in Session B analysis.",
+      "mti_id": 1389,
+      "strongs_number": "H5317",
+      "transliteration": "no.phet",
+      "set": {
+        "status": "phase2_enrichment",
+        "status_note": "Pro 27:7 encodes the appetite dimension of nephesh through honey-as-archetype metaphor. Not primary soul vocabulary. Decision carried forward from prior Session B."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 17,
+    "anchor_verse_set": "Gen 2:7",
+    "terms_extracted": 13,
+    "terms_extracted_thin": 5,
+    "terms_phase2_enrichment": 1,
+    "notes": [
+      "All psuch\u0113 sub-glosses now extracted. G5591 psuchikos extracted \u2014 critical for spirit-soul boundary analysis. H5314 na.phash extracted \u2014 contains the only verse attributing soul-refreshment to God (Exo 31:17)."
+    ]
+  }
+}

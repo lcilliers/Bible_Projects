@@ -1,0 +1,133 @@
+{
+  "patch_id": "PATCH-20260325-184-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 184,
+  "registry_word": "spirit",
+  "file_id": null,
+  "source_json_exported_at": "2026-03-25T09:19:26Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for spirit (reg 184). Sets anchor verse Eze 36:27. Reviews pre-extracted terms. Identifies H7307I ru.ach:side (spatial preposition, no spirit content) for reclassification. Confirms H5397 ne.sha.mah as extracted. Flags H7307J ru.ach:temper as cross-registry shared term with anger. Confirms candidate_delete for bleed vocabulary. Documents H4152 pneumatikos as candidate_delete requiring review.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Set anchor verse for spirit registry. Eze 36:27 \u2014 'And I will put my Spirit within you, and cause you to walk in my statutes and be careful to obey my rules.' Most comprehensive statement of the Spirit's indwelling work in the human person. Directly addresses the heart-spirit boundary (with Eze 36:26), the soul-spirit question (the new spirit placed within the ne.phesh-person), and the Spirit as the agent of moral transformation. Resolves multiple PH2 flags from soul, heart, and fear registries.",
+      "registry_no": 184,
+      "set": {
+        "anchor_verses": "Eze 36:27"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7307I ru.ach [spirit: side] \u2014 reclassify extracted \u2192 candidate_delete. All 7 verses are spatial directional: east/north/south/west side of temple measurements (Eze 42:16-20), gatekeepers on four sides (1Ch 9:24), pomegranates on the sides (Jer 52:23). This is ru.ach as a directional preposition, carrying zero spirit/breath/wind content. No inner-being vocabulary.",
+      "mti_id": 2305,
+      "strongs_number": "H7307I",
+      "set": {
+        "status": "candidate_delete",
+        "status_note": "Spatial directional sub-gloss only. All 7 verses are temple/architectural measurement contexts. No spirit/breath/inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7307J ru.ach [spirit: temper] \u2014 confirm extracted. Cross-registry shared term with anger (reg 4). 10 verses: Pro 14:29 (hasty spirit/temper), Pro 16:32 (he who rules his spirit), Pro 17:27 (cool spirit = understanding), Pro 29:11 (fool gives full vent to his spirit), Ecc 7:9 (quick in spirit to become angry). The temper/disposition sub-gloss captures the spirit as the seat of the person's inner disposition \u2014 which can be hasty, cool, humble, or proud. Shared term with anger registry confirmed.",
+      "mti_id": 2304,
+      "strongs_number": "H7307J",
+      "set": {
+        "status": "extracted",
+        "status_note": "Confirmed extracted. Cross-registry SHARED_TERM with anger (reg 4). The disposition/temper dimension of ru.ach \u2014 spirit as the seat of inner disposition and emotional register."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4152 pneumatikos [spiritual] \u2014 reclassify candidate_delete \u2192 extracted. 28 occurrences. Analytically essential for the two-modes structure: 1Co 15:44-46 (psuchikon soma vs pneumatikon soma \u2014 natural body vs spiritual body) is the most important two-modes statement in the NT. pneumatikos describes the Spirit-constituted mode of existence. Also: Gal 6:1 (you who are spiritual), Eph 1:3 (spiritual blessings), Eph 6:12 (spiritual forces of evil). Currently has 0 verses in this export \u2014 Claude Code must populate verse data before Session B closure.",
+      "strongs_number": "G4152",
+      "set": {
+        "status": "extracted",
+        "status_note": "Essential for two-modes structure (psuchikos/pneumatikos distinction). Requires verse data population before analysis completion."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5397 ne.sha.mah [breath] \u2014 confirm extracted (corrected from candidate_delete). 24 verses with full refs. Gen 2:7 anchor: 'breathed into his nostrils the breath of life, and the man became a living being.' Job 32:8 \u2014 'the breath (ne.sha.mah) of the Almighty makes him understand.' Job 33:4 \u2014 'The Spirit of God has made me, and the breath of the Almighty gives me life.' Pro 20:27 \u2014 'the spirit of man is the lamp of the Lord.' Psa 150:6 \u2014 'let everything that has breath praise the Lord.' Ne.sha.mah and ru.ach together form the dual vocabulary for the divine breath/spirit of life. Ne.sha.mah is more specifically the animating breath of life; ru.ach is the broader spirit/wind/breath vocabulary.",
+      "mti_id": 2230,
+      "strongs_number": "H5397",
+      "set": {
+        "status": "extracted",
+        "status_note": "Confirmed extracted. Gen 2:7 anchor for divine breath of life. With ru.ach, forms the OT dual vocabulary for the animating spirit-breath. Ne.sha.mah = specifically the breath that animates; ru.ach = broader spirit/wind/breath."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "bulk_update_none_to_delete",
+      "target_table": "wa_mti",
+      "description": "Bulk set None-status bleed terms \u2192 delete. The 46 None-status terms are entirely cross-registry bleed from: heart vocabulary (lev/le.vav/kardia/lib.bah), soul vocabulary (ne.phesh sub-glosses G+H+I+J+K+L+M+N, psuch\u0113 sub-glosses G+H+I+J+K, psuchikos, oligopsuchos, dipsuchos, isopsuchos, ekpsuch\u014d, apopsuch\u014d, apsuchos, eupsuche\u014d), and miscellaneous bleed (qum sub-glosses, me.eh, me.a, be.li, ra.phah, na.phash, no.phet, la.vav, lib.bev, le.vi.vah, bal, lev H3821, qa.ma). These are all properly extracted or analysed in their home registries. None carry primary spirit content beyond the cross-registry reference already established in the CRL entries. H5314 na.phash (be refreshed) is soul vocabulary. G4894 suneid\u014d, G0039G hagion (Holy Place) is a place term not a spirit term.",
+      "filter": "registry_no=184 AND mti_status=None",
+      "exclusions": [
+        "H7307G",
+        "H7307H",
+        "H7307I",
+        "H7307J",
+        "H7308",
+        "H5397"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Cross-registry bleed. Home registry analysis covers spirit-boundary content via CRL."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete for all remaining candidate_delete terms (except G4152 pneumatikos, handled in OP-004). Confirmed as bleed/non-primary. Notable: G4154 pne\u014d (to blow) is wind vocabulary but adequately covered by H7307H ru.ach:breath analysis. G0040H hagios:saint adequately covered by G0040G hagios. G4152 pneumatikos excepted \u2014 see OP-004.",
+      "filter": "registry_no=184 AND mti_status=candidate_delete",
+      "exclusions": [
+        "G4152"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Confirmed candidate_delete. Bleed vocabulary. See individual notes."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 7,
+    "anchor_verse_set": "Eze 36:27",
+    "active_terms_post_patch": [
+      "G4151G pneuma spirit (341v)",
+      "G4151H pneuma breath/wind (341v \u2014 shared pool with G4151G)",
+      "G0040G hagios holy (210v)",
+      "H7307G ru.ach spirit (194v)",
+      "H7307H ru.ach breath/wind (137v)",
+      "H5397 ne.sha.mah breath (24v)",
+      "H0178 ov medium (16v)",
+      "H5301 na.phach to breathe (12v)",
+      "H1100I be.liy.ya.al Belial (11v)",
+      "H7308 ru.ach Aramaic spirit (11v)",
+      "H7307J ru.ach temper/disposition (10v)",
+      "H7496 re.pha.im shades (8v)",
+      "H0328B at softly (6v)",
+      "G5326 fantasma ghost (2v)",
+      "G4436 puth\u014dn divining spirit (1v)"
+    ],
+    "reclassified": [
+      "H7307I ru.ach:side \u2192 candidate_delete (spatial preposition, no spirit content)",
+      "G4152 pneumatikos \u2192 extracted (essential for two-modes structure, needs verse data)"
+    ],
+    "notes": [
+      "G4151G and G4151H share the same 341-verse pool (211 verses overlap). Unique verses ~471.",
+      "H7307J ru.ach:temper is SHARED_TERM with anger (reg 4) \u2014 confirmed cross-registry.",
+      "G4152 pneumatikos requires verse data before Session B closure \u2014 Claude Code action needed.",
+      "H5397 ne.sha.mah corrected from candidate_delete to extracted \u2014 Gen 2:7 is the creation-breath anchor."
+    ]
+  }
+}

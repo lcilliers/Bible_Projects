@@ -1,23 +1,47 @@
 """
-audit_word.py (v2)
+audit_word.py (v4)
 ──────────────────
-AUDIT_WORD mode — redesigned steps Pre-A1 through A10.
+AUDIT_WORD mode — steps Pre-A1 through A11.
+Unified pipeline for both new words and existing word re-audits.
+Supersedes new_word.py and gap_fill.py (retained for reference only).
 
 Input: Step 1 JSON file produced by scripts/word_study_extract.py
        data/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
        The latest file for the word is auto-selected unless --extract-file given.
+
+New word workflow:
+  1. Register word: python -m engine.engine --register --word="X" --source="..."
+  2. Create wa_file_index entry (manual or via script)
+  3. Extract: python scripts/word_study_extract.py --word X
+  4. Audit:   python -m engine.engine --mode=audit_word --registry=N
+  Terms and verses are inserted in a single pass. The gap report generates
+  MISSING_VERSE entries for NEW_TERM items, and A6 resolves ti_ids via
+  new_ti_map after term insertion. No second pass required.
 
 Key behaviours
 ──────────────
 • Auto-approve by default — all INSERT / UPDATE / SET delete_flagged actions
   are applied without per-item gates. Use --interactive to enable the gate.
 • STALE fields are updated automatically in auto mode.
-• Quality flags (wa_data_quality_flags) are FULLY RESET and re-derived from
-  STEP data each run. Phase 2 flags (wa_term_phase2_flags) are NOT touched.
+• Quality flags (wa_data_quality_flags) are reset by DATA_COVERAGE group only
+  and re-derived from STEP data each run. Non-derivable flags are preserved.
+  Phase 2 flags (wa_term_phase2_flags) and session research flags
+  (wa_session_research_flags) are NOT touched by any step.
 • No rows are physically deleted — deletions are flagged with delete_flagged=1.
-  A separate ARCHIVE mode performs actual deletion.
+  Exception: wa_term_related_words rows are physically deleted and re-inserted
+  during STALE_TERM updates (via _refresh_related_words) because the source
+  data is a flat list with no stable row identity.
 • word_registry.last_automation_run is set to 'AUDITED' on completion.
 • word_run_state.approved_by is set to 'PROVISIONAL' (audit is not full sign-off).
+
+Flag ownership boundaries (schema v3.6.0)
+──────────────────────────────────────────
+  Category A — Engine-derivable (wa_data_quality_flags, DATA_COVERAGE group)
+    Owner: engine. Written by flag_engine.py. Reset in A8.
+  Category B — Term-level analytical (wa_term_phase2_flags + phase2_flag_types)
+    Owner: researcher (Claude.ai). Engine NEVER writes or deletes.
+  Category C — Session research flags (wa_session_research_flags)
+    Owner: researcher (Claude.ai). Written by apply_session_patch.py. Engine NEVER touches.
 
 Steps
 ─────
@@ -28,10 +52,42 @@ Steps
   A4      Build gap report (Term / Related / Verse / VTL streams)
   A5      Display gap report (+ interactive approve gate if --interactive)
   A6      Apply changes (all streams, one transaction per stream)
-  A7      Meaning handler (parse from JSON; migrate ~33 legacy term-field records)
-  A8      Quality flag full reset + re-derive from STEP data
+            • NEW_TERM inserts, STALE_TERM updates
+            • DB_ONLY_TERM: terms in DB but not in JSON include list
+              - Signal-free, verse-free → delete_flagged=1
+              - Has signals or verses → DB_ONLY_PROTECTED (kept, logged)
+            • RESTORE: clears delete_flagged on terms now back in include list
+            • MISSING_RELATED / ORPHAN_RELATED
+            • MISSING_VERSE / ORPHAN_VERSE / STALE_VERSE inserts/updates/flags
+            • MISSING_VTL / STALE_VTL
+  A6b     Term classification (data-driven, no interpretation)
+            Negative filters (NULL-status terms):
+            • F1: verse_count=0 AND no analytical signals → candidate_delete
+                  (status_note includes occurrence count for reviewer context)
+            • F2: HIGH_FREQUENCY_ANCHOR AND no analytical signals → candidate_delete
+                  (status_note includes verse count for reviewer context)
+            Positive filters (NULL-status terms):
+            • F3: has verses AND has analytical signals → extracted (or extracted_thin)
+            Correction filters (any status):
+            • F4: candidate_delete but has verses + signals → extracted
+            • F5: excluded but has confirmed verses → extracted
+            Analytical signals: god_as_subject, somatic_link, causative_form_present,
+            wa_term_phase2_flags count. All from existing DB columns.
+  A7      Meaning handler (parse from JSON; migrate legacy term-field records)
+  A8      Quality flag reset — DATA_COVERAGE group only, then re-derive
+            • Deletes only DATA_COVERAGE flags (scoped by flag_group)
+            • Re-derives 7 codes via flag_engine.py: HIGH_FREQUENCY_ANCHOR,
+              THIN_DATA, SMALL_VERSE_SAMPLE, NO_WORD_ANALYSIS, NO_VERSES,
+              SPAN_RESOLUTION_CONFLICT, PROSE_ONLY_MEANING
+            • All other flag groups (if any remain) are preserved
   A9      Audit checks WR-01–WR-20 + write word_run_state (PROVISIONAL)
   A10     Registry + file index update, close run, set last_automation_run = 'AUDITED'
+  A11     Full-word JSON export (via analytics.word_export.export_word)
+            • Writes to data/exports/{word}_{registry}_full_{YYYYMMDD}_v{N}.json
+            • Version auto-increments per day (v1, v2, v3...) — previous versions retained
+            • _export.export_version and _export.export_filename included in meta
+            • Includes all term data, flags, research flags, verses
+            • Export is the deliverable for Claude.ai Session B analysis
 """
 
 from __future__ import annotations
@@ -186,7 +242,8 @@ def _load_snapshot(conn, file_ids: list[int], registry_id_int: int) -> dict:
 
     # ── MTI terms ─────────────────────────────────────────────────────────────
     mti_rows = conn.execute(
-        "SELECT * FROM mti_terms WHERE owning_registry = ?", (str(registry_id_int),)
+        "SELECT * FROM mti_terms WHERE owning_registry_fk = ? OR owning_registry = ?",
+        (registry_id_int, str(registry_id_int)),
     ).fetchall()
     mti_by_strongs = {r["strongs_number"]: dict(r) for r in mti_rows if r["strongs_number"]}
     mti_ids = [r["id"] for r in mti_rows]
@@ -385,6 +442,11 @@ def _build_gap_report(snapshot: dict, include_terms: list[dict]) -> dict:
 
         if ti is None:
             gap["NEW_TERM"].append({"code": code, "term_rec": jt})
+            # Also queue verses for new terms (ti_id resolved during A6 apply)
+            for jv in jt.get("verses", []):
+                gap["MISSING_VERSE"].append({
+                    "ti_id": None, "code": code, "ref": jv["ref"], "verse_rec": jv,
+                })
             continue
 
         ti_id = ti["id"]
@@ -511,18 +573,43 @@ def _build_gap_report(snapshot: dict, include_terms: list[dict]) -> dict:
                 })
 
     # ── DB_ONLY_TERM: in DB but not in JSON include_codes ────────────────────
+    # Terms with analytical signals (phase2 flags, god_as_subject, somatic_link,
+    # causative_form_present) or confirmed verses are protected from deletion.
+    # Only signal-free, verse-free terms are flagged for deletion.
+    p2_counts_snap: dict[int, int] = {
+        ti_id: len(flags)
+        for ti_id, flags in snapshot.get("p2flags_by_ti", {}).items()
+    }
+
     for strongs, ti in snapshot["terms_by_strongs"].items():
         if strongs not in include_codes and not ti.get("delete_flagged"):
+            ti_id = ti["id"]
             vc = sum(
                 1 for (tid, _), vr in snapshot["vr_by_ti_ref"].items()
-                if tid == ti["id"] and not vr.get("delete_flagged")
+                if tid == ti_id and not vr.get("delete_flagged")
             )
-            gap["DB_ONLY_TERM"].append({
-                "code":  strongs,
-                "ti_id": ti["id"],
-                "verse_count": vc,
-                "gloss": ti.get("step_search_gloss", "") or ti.get("word_analysis_gloss", ""),
-            })
+            gas = ti.get("god_as_subject") or 0
+            som = ti.get("somatic_link") or 0
+            caus = ti.get("causative_form_present") or 0
+            p2c = p2_counts_snap.get(ti_id, 0)
+            has_signals = gas or som or caus or p2c > 0
+
+            if has_signals or vc > 0:
+                # Protected: has analytical signals or verses — do not delete-flag
+                gap.setdefault("DB_ONLY_PROTECTED", []).append({
+                    "code": strongs,
+                    "ti_id": ti_id,
+                    "verse_count": vc,
+                    "signals": f"gas={gas} som={som} caus={caus} p2={p2c}",
+                    "gloss": ti.get("step_search_gloss", "") or ti.get("word_analysis_gloss", ""),
+                })
+            else:
+                gap["DB_ONLY_TERM"].append({
+                    "code":  strongs,
+                    "ti_id": ti_id,
+                    "verse_count": vc,
+                    "gloss": ti.get("step_search_gloss", "") or ti.get("word_analysis_gloss", ""),
+                })
 
     return gap
 
@@ -541,6 +628,7 @@ def _display_gap_report(gap: dict, word: str, json_date: str) -> None:
         f"  STALE_TERM      : {len(gap['STALE_TERM'])}",
         f"  MISSING_MTI     : {len(gap['MISSING_MTI'])}",
         f"  DB_ONLY_TERM    : {len(gap['DB_ONLY_TERM'])}",
+        f"  DB_ONLY_PROTECT : {len(gap.get('DB_ONLY_PROTECTED', []))}  [kept — has signals or verses]",
         f"  MISSING_ROOT    : {len(gap['MISSING_ROOT'])}  [info only — no auto-fix]",
         "",
         "── STREAM 1b ─── RELATED WORDS ──────────────────────",
@@ -580,6 +668,15 @@ def _display_gap_report(gap: dict, word: str, json_date: str) -> None:
             lines.append(
                 f"    {item['code']:12} ({item.get('gloss',''):<20}) "
                 f"{item['verse_count']} verse(s)"
+            )
+
+    if gap.get("DB_ONLY_PROTECTED"):
+        lines.append("")
+        lines.append("  DB_ONLY_PROTECTED (kept — has analytical signals or verses):")
+        for item in gap["DB_ONLY_PROTECTED"]:
+            lines.append(
+                f"    {item['code']:12} ({item.get('gloss',''):<20}) "
+                f"{item['verse_count']} verse(s)  [{item['signals']}]"
             )
 
     if gap["MISSING_VERSE"]:
@@ -801,6 +898,26 @@ def _apply_changes(
             except Exception as exc:
                 errors.append(f"DB_ONLY_TERM flag {item['code']}: {exc}")
 
+    # ── Stream 1: RESTORE previously delete-flagged terms now back in include ─
+    restored = 0
+    for code, jt in jt_by_code.items():
+        ti = snapshot["terms_by_strongs"].get(code)
+        if ti and ti.get("delete_flagged"):
+            try:
+                conn.execute(
+                    "UPDATE wa_term_inventory SET delete_flagged = 0, last_changed = ? WHERE id = ?",
+                    (now, ti["id"]),
+                )
+                conn.execute(
+                    "UPDATE wa_term_root_family SET delete_flagged = 0 WHERE term_inv_id = ?",
+                    (ti["id"],),
+                )
+                restored += 1
+            except Exception as exc:
+                errors.append(f"RESTORE delete_flagged {code}: {exc}")
+    if restored:
+        print(f"     [RESTORE] Cleared delete_flagged on {restored} term(s) now in include list.")
+
     # ── Stream 1b: ORPHAN_RELATED → set delete_flagged ───────────────────────
     if approvals.get("ORPHAN_RELATED"):
         for item in gap["ORPHAN_RELATED"]:
@@ -875,7 +992,13 @@ def _apply_changes(
             if not ti_id:
                 errors.append(f"MISSING_VERSE: no ti_id for {item['code']} {item['ref']}")
                 continue
-            ti      = snapshot["terms_by_id"].get(ti_id) or {}
+            ti      = snapshot["terms_by_id"].get(ti_id)
+            if not ti:
+                # New term — look up from DB (just inserted by NEW_TERM handler)
+                ti_row = conn.execute(
+                    "SELECT * FROM wa_term_inventory WHERE id = ?", (ti_id,)
+                ).fetchone()
+                ti = dict(ti_row) if ti_row else {}
             book_id = get_book_id(conn, jv.get("book_code", ""))
             if book_id is None:
                 errors.append(
@@ -1126,15 +1249,186 @@ def _run_meaning_handler(conn, include_terms: list[dict], file_ids: list[int]) -
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# A6b — Bleed candidate detection
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) -> dict:
+    """Classify terms based on data signals.  Returns counts dict.
+
+    Negative filters (set candidate_delete on NULL-status terms):
+      Filter 1 — No verses + no analytical signals → candidate_delete
+      Filter 2 — HIGH_FREQUENCY_ANCHOR + no analytical signals → candidate_delete
+
+    Positive filters (set extracted on NULL-status terms):
+      Filter 3 — Has verses + has at least one analytical signal → extracted
+                 (extracted_thin if occurrence_count < THIN_DATA_THRESHOLD)
+
+    Correction filters (fix misclassified terms regardless of current status):
+      Filter 4 — status=candidate_delete but has verses + signals → extracted
+      Filter 5 — status=excluded but has confirmed verses → extracted
+    """
+    from .constants import HIGH_FREQ_THRESHOLD, THIN_DATA_THRESHOLD
+
+    fid_ph = ",".join("?" * len(file_ids))
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    result = {"candidate_delete": 0, "extracted": 0, "extracted_thin": 0, "corrected": 0}
+
+    # Fetch all active terms for this registry
+    terms = conn.execute(
+        f"""SELECT ti.id, ti.strongs_number, ti.god_as_subject, ti.somatic_link,
+                   ti.causative_form_present, ti.occurrence_count
+            FROM wa_term_inventory ti
+            WHERE ti.file_id IN ({fid_ph})
+            AND (ti.delete_flagged = 0 OR ti.delete_flagged IS NULL)""",
+        file_ids,
+    ).fetchall()
+
+    # Pre-compute verse counts per term_inv_id
+    verse_counts: dict[int, int] = {}
+    for row in conn.execute(
+        f"""SELECT term_inv_id, count(*) as cnt
+            FROM wa_verse_records
+            WHERE file_id IN ({fid_ph})
+            AND (delete_flagged = 0 OR delete_flagged IS NULL)
+            GROUP BY term_inv_id""",
+        file_ids,
+    ).fetchall():
+        verse_counts[row["term_inv_id"]] = row["cnt"]
+
+    # Pre-compute phase2 flag counts per term_inv_id
+    ti_ids = [t["id"] for t in terms]
+    p2_counts: dict[int, int] = {}
+    if ti_ids:
+        ti_ph = ",".join("?" * len(ti_ids))
+        for row in conn.execute(
+            f"""SELECT term_inv_id, count(*) as cnt
+                FROM wa_term_phase2_flags
+                WHERE term_inv_id IN ({ti_ph})
+                GROUP BY term_inv_id""",
+            ti_ids,
+        ).fetchall():
+            p2_counts[row["term_inv_id"]] = row["cnt"]
+
+    def _find_mti(strongs):
+        """Find mti_terms row for a strongs code, trying FK then bare match."""
+        row = conn.execute(
+            "SELECT id, status, exclusion_reason FROM mti_terms "
+            "WHERE strongs_number = ? AND owning_registry_fk = ?",
+            (strongs, registry_id_int),
+        ).fetchone()
+        if not row:
+            row = conn.execute(
+                "SELECT id, status, exclusion_reason FROM mti_terms WHERE strongs_number = ?",
+                (strongs,),
+            ).fetchone()
+        return row
+
+    for ti in terms:
+        ti_id   = ti["id"]
+        strongs = ti["strongs_number"]
+        vc      = verse_counts.get(ti_id, 0)
+        p2c     = p2_counts.get(ti_id, 0)
+        gas     = ti["god_as_subject"] or 0
+        som     = ti["somatic_link"] or 0
+        caus    = ti["causative_form_present"] or 0
+        occ     = ti["occurrence_count"] or 0
+
+        has_signals = (gas or som or caus or p2c > 0)
+
+        mti = _find_mti(strongs)
+        if not mti:
+            continue
+        mti_id     = mti["id"]
+        cur_status = mti["status"]
+
+        # ── Correction filters (run first, override current status) ──────
+
+        # Filter 5: excluded but has confirmed verses → correct to extracted
+        if cur_status == "excluded" and vc > 0:
+            new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
+            conn.execute(
+                "UPDATE mti_terms SET status = ?, exclusion_reason = NULL, "
+                "status_note = ?, last_changed = ? WHERE id = ?",
+                (new_status,
+                 f"A6b-F5: corrected from excluded — {vc} confirmed verse(s)",
+                 now, mti_id),
+            )
+            result["corrected"] += 1
+            continue
+
+        # Filter 4: candidate_delete but has verses + signals → correct to extracted
+        if cur_status == "candidate_delete" and vc > 0 and has_signals:
+            new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
+            conn.execute(
+                "UPDATE mti_terms SET status = ?, "
+                "status_note = ?, last_changed = ? WHERE id = ?",
+                (new_status,
+                 f"A6b-F4: corrected from candidate_delete — {vc} verse(s), analytical signals present",
+                 now, mti_id),
+            )
+            result["corrected"] += 1
+            continue
+
+        # ── Classification filters (only act on NULL-status terms) ───────
+        if cur_status is not None:
+            continue
+
+        # Filter 3: has verses + has analytical signals → extracted
+        if vc > 0 and has_signals:
+            new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
+            conn.execute(
+                "UPDATE mti_terms SET status = ?, "
+                "status_note = ?, last_changed = ? WHERE id = ?",
+                (new_status,
+                 f"A6b-F3: {vc} verse(s), analytical signals present "
+                 f"(gas={gas} som={som} caus={caus} p2={p2c})",
+                 now, mti_id),
+            )
+            result[new_status] = result.get(new_status, 0) + 1
+            continue
+
+        # Filter 1: no verses + no analytical signals → candidate_delete
+        if vc == 0 and not has_signals:
+            conn.execute(
+                "UPDATE mti_terms SET status = 'candidate_delete', "
+                "status_note = ?, last_changed = ? WHERE id = ?",
+                (f"A6b-F1: zero verses returned by STEP ({occ} occurrence(s)), zero analytical signals", now, mti_id),
+            )
+            result["candidate_delete"] += 1
+            continue
+
+        # Filter 2: high-frequency anchor + no analytical signals → candidate_delete
+        if occ >= HIGH_FREQ_THRESHOLD and not has_signals:
+            conn.execute(
+                "UPDATE mti_terms SET status = 'candidate_delete', "
+                "status_note = ?, last_changed = ? WHERE id = ?",
+                (f"A6b-F2: high-frequency anchor ({occ} occ), {vc} verse(s) returned, zero analytical signals",
+                 now, mti_id),
+            )
+            result["candidate_delete"] += 1
+            continue
+
+    conn.commit()
+    return result
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # A8 — Quality flag reset
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _reset_quality_flags(conn, file_ids: list[int], registry_id_int: int) -> int:
-    """Delete ALL quality flags for this file and re-derive from STEP data.
-    Phase 2 flags (wa_term_phase2_flags) are NOT touched."""
+    """Delete engine-derivable DATA_COVERAGE quality flags and re-derive from STEP data.
+    Phase 2 flags (wa_term_phase2_flags) are NOT touched.
+    Non-derivable quality flags (if any remain) are preserved."""
     fid_ph = ",".join("?" * len(file_ids))
     conn.execute(
-        f"DELETE FROM wa_data_quality_flags WHERE file_id IN ({fid_ph})", file_ids
+        f"""DELETE FROM wa_data_quality_flags
+            WHERE file_id IN ({fid_ph})
+            AND flag_id IN (
+                SELECT id FROM wa_quality_flag_types
+                WHERE flag_group = 'DATA_COVERAGE'
+            )""",
+        file_ids,
     )
     conn.commit()
 
@@ -1306,8 +1600,8 @@ def run_audit_word(
     snapshot = _load_snapshot(conn, file_ids, registry_id)
     _display_word_extract_report(snapshot, file_ids)
 
-    # Structural completeness check
-    exempt = {"COVERED", "REPLACED", "SPECIAL_HANDLING"}
+    # Structural completeness check — skip for new words (Pending) and exempt statuses
+    exempt = {"COVERED", "REPLACED", "SPECIAL_HANDLING", "PENDING"}
     reg_status = (reg_row["phase1_status"] or "").strip().upper()
     if reg_status not in exempt:
         stop_reasons = []
@@ -1423,6 +1717,24 @@ def run_audit_word(
         f"  verses_updated={counts.get('total_verses_updated', 0)}"
         f"  verses_flagged={counts['total_verses_filtered']}"
     )
+
+    # ── A6b: Term classification (data-driven) ──────────────────────────────
+    print("\nA6b Term classification (data-driven)...")
+    a6b = _detect_bleed_candidates(conn, file_ids, registry_id)
+    a6b_total = sum(a6b.values())
+    if a6b_total:
+        parts = []
+        if a6b.get("extracted"):
+            parts.append(f"{a6b['extracted']} extracted")
+        if a6b.get("extracted_thin"):
+            parts.append(f"{a6b['extracted_thin']} extracted_thin")
+        if a6b.get("candidate_delete"):
+            parts.append(f"{a6b['candidate_delete']} candidate_delete")
+        if a6b.get("corrected"):
+            parts.append(f"{a6b['corrected']} corrected")
+        print(f"     A6b: {', '.join(parts)}")
+    else:
+        print("     A6b: no classifications applied")
 
     # ── A7: Meaning handler ───────────────────────────────────────────────────
     print("\nA7  Meaning handler...")
@@ -1555,6 +1867,9 @@ def run_audit_word(
         else "In Progress"
     )
 
+    # Set session_b_status to 'Ready for Analysis' if audit passed/reviewed
+    sb_status = "Ready for Analysis" if final_status == "Complete" else None
+
     conn.execute(
         """UPDATE word_registry SET
                phase1_status       = ?,
@@ -1563,7 +1878,8 @@ def run_audit_word(
                last_automation_run = ?,
                automation_run_id   = ?,
                strongs_list        = ?,
-               notes               = ?
+               notes               = ?,
+               session_b_status    = COALESCE(session_b_status, ?)
            WHERE no = ?""",
         (
             final_status, term_count, verse_count,
@@ -1571,6 +1887,7 @@ def run_audit_word(
             run_id,
             strongs_list,
             new_notes,
+            sb_status,
             registry_id,
         ),
     )
@@ -1607,11 +1924,23 @@ def run_audit_word(
     if _EXPORT_AVAILABLE:
         try:
             print("\nA11  Writing full-word JSON export...")
-            export_data = _export_word(conn, registry_id)
             date_str    = datetime.now(timezone.utc).strftime("%Y%m%d")
-            filename    = f"{word}_{registry_id}_full_{date_str}.json"
             out_dir     = os.path.join(_ROOT, "data", "exports")
             os.makedirs(out_dir, exist_ok=True)
+
+            # Determine version: scan existing exports for today and increment
+            base_pattern = f"{word}_{registry_id}_full_{date_str}"
+            existing = [
+                f for f in os.listdir(out_dir)
+                if f.startswith(base_pattern) and f.endswith(".json")
+            ]
+            version = len(existing) + 1
+            filename = f"{base_pattern}_v{version}.json"
+
+            export_data = _export_word(conn, registry_id)
+            export_data["_export"]["export_version"] = version
+            export_data["_export"]["export_filename"] = filename
+
             export_path = os.path.join(out_dir, filename)
             import json as _json
             with open(export_path, "w", encoding="utf-8") as fh:

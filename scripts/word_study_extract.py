@@ -65,6 +65,22 @@ def _lookup_registry_id(word: str) -> str:
     return "000"
 
 
+def _lookup_registry_row(word: str) -> dict | None:
+    """Return the full word_registry row as a dict, or None if not found."""
+    try:
+        conn = _db_connect()
+        row = conn.execute(
+            "SELECT * FROM word_registry WHERE word = ? COLLATE NOCASE",
+            (word,),
+        ).fetchone()
+        conn.close()
+        if row:
+            return {k: row[k] for k in row.keys()}
+    except Exception:
+        pass
+    return None
+
+
 def p(msg: str = "") -> None:
     print(msg, flush=True)
 
@@ -123,30 +139,48 @@ def build_clusters(
     client: StepClient,
     word: str,
     explicit_anchors: list[str] | None,
-) -> tuple[list[str], list[tuple[str, dict]]]:
+) -> tuple[list[str], list[tuple[str, dict]], set[str]]:
     """Detect anchors and fetch all term clusters in one pass.
 
-    For explicit anchors: fetch cluster for each given code.
-    For auto-detect: run English text search, then fetch cluster for each
-    candidate code (skipping any already covered by an earlier cluster).
+    Discovery strategy (in priority order):
+      1. Explicit anchors (--anchors flag) — fetch cluster for each code.
+      2. Auto-detect via ``meanings=`` search — STEP's ORIGINAL_MEANING lookup
+         returns a curated list of Hebrew/Greek terms whose meaning relates to
+         the English concept.  This is the data shown in STEP's "Related words"
+         panel and is far more reliable than text search because it catches
+         terms regardless of ESV translation choices.  For each curated term,
+         fetch its cluster to discover sub-glosses and related terms.
 
     Returns:
-        anchor_codes  — ordered list of resolved primary codes
-        clusters      — list of (primary_code, cluster_dict) in the same order
+        anchor_codes    — ordered list of resolved primary codes
+        clusters        — list of (primary_code, cluster_dict) in the same order
+        definition_codes — set of Strong's codes from STEP meanings definitions
+                           (empty if explicit anchors were used)
     """
+    definition_codes: set[str] = set()
+
     if explicit_anchors:
         p(f"[discover] Explicit anchors: {explicit_anchors}")
         candidates = explicit_anchors
     else:
-        p(f"[discover] Auto-detecting anchors via text search for '{word}'...")
-        tally = client.get_strongs_for_word(word)
-        if not tally:
-            p("  ERROR: no Strong's codes found from text search. Is STEP running?")
+        p(f"[discover] Auto-detecting anchors via meanings search for '{word}'...")
+        meaning_data = client.get_meaning_terms(word)
+        definitions  = meaning_data.get("definitions", [])
+        if not definitions:
+            p("  ERROR: no definitions returned from meanings search. Is STEP running?")
             sys.exit(1)
-        candidates = [item["strong"] for item in tally
-                      if not _is_particle_code(item["strong"])]
-        p(f"  Text search returned {len(tally)} codes "
+        # Use the strongNumber from each definition as a candidate anchor.
+        # These are already specific sub-gloss codes (e.g. H0639G, H2734).
+        candidates = [
+            d["strongNumber"] for d in definitions
+            if d.get("strongNumber") and not _is_particle_code(d["strongNumber"])
+        ]
+        definition_codes = set(candidates)
+        p(f"  Meanings search returned {len(definitions)} definitions "
           f"({len(candidates)} after particle filter)")
+        for d in definitions:
+            p(f"    {d.get('strongNumber','?'):10s}  "
+              f"{d.get('gloss',''):30s}  pop={d.get('popularity','?')}")
 
     anchor_codes:    list[str]               = []
     clusters:        list[tuple[str, dict]]  = []
@@ -180,7 +214,7 @@ def build_clusters(
         clusters.append((primary_code, cluster))
 
     p(f"  Anchors resolved: {anchor_codes}")
-    return anchor_codes, clusters
+    return anchor_codes, clusters, definition_codes
 
 
 # ── Phase 3: Build flat terms list ─────────────────────────────────────────
@@ -312,9 +346,20 @@ def apply_filters(
     terms:            list[dict],
     anchor_codes:     list[str],
     particle_ceiling: int,
+    definition_codes: set[str] | None = None,
 ) -> None:
-    """Assign decision_group, action, decision_reason in-place for every term."""
+    """Assign decision_group, action, decision_reason in-place for every term.
+
+    Parameters
+    ----------
+    definition_codes : set[str] | None
+        Strong's codes from STEP's ``meanings=`` definitions list.  Any term
+        whose code appears here is promoted to G1m (meanings-confirmed include)
+        regardless of its cluster section_type, because STEP has curated it as
+        semantically relevant to the English concept.
+    """
     anchor_set = set(anchor_codes)
+    defn_set   = definition_codes or set()
 
     for t in terms:
         code        = t["code"]
@@ -323,6 +368,20 @@ def apply_filters(
         vocab_count = t["vocab_count"]
         is_proper   = t["is_proper_noun"]
         script_form = t["script_form"]
+
+        # F0: code is in STEP meanings definitions → G1m (override)
+        # These terms are curated by STEP as semantically relevant to the
+        # English concept, so they bypass proper-noun / particle / section
+        # checks.  Particle-ceiling still applies (high-frequency grammar
+        # words occasionally leak into definitions).
+        if code in defn_set and vocab_count <= particle_ceiling:
+            t["decision_group"]  = "G1m"
+            t["action"]          = "include"
+            t["decision_reason"] = (
+                f"F0: code in STEP meanings definitions "
+                f"(parent={parent}, section_type={section})"
+            )
+            continue
 
         # F1: proper noun → G3
         if is_proper:
@@ -482,13 +541,14 @@ def build_meta(
     terms:            list[dict],
     particle_ceiling: int,
     step_version:     str,
+    registry_row:     dict | None = None,
 ) -> dict:
     groups: dict[str, int] = {}
     for t in terms:
         g = t["decision_group"] or "?"
         groups[g] = groups.get(g, 0) + 1
 
-    return {
+    meta = {
         "english_anchor":        word,
         "generated":             date.today().isoformat(),
         "step_version":          step_version,
@@ -499,6 +559,9 @@ def build_meta(
         "include_codes":         [t["code"] for t in terms if t["action"] == "include"],
         "exclude_codes":         [t["code"] for t in terms if t["action"] == "exclude"],
     }
+    if registry_row:
+        meta["registry"] = registry_row
+    return meta
 
 
 # ── Output writers ─────────────────────────────────────────────────────────
@@ -528,7 +591,8 @@ def write_md(data: dict, path: str) -> None:
         "| Group | Action | Count |",
         "|-------|--------|-------|",
     ]
-    action_map = {"G1": "include", "G2": "include", "G2r": "include",
+    action_map = {"G1m": "include", "G1": "include", "G2": "include",
+                  "G2r": "include",
                   "G3": "exclude", "G4": "exclude",  "G5": "exclude"}
     for group, count in sorted(meta["summary_by_group"].items()):
         action = action_map.get(group, "?")
@@ -623,8 +687,10 @@ def main() -> None:
 
     # ── Phase 1+2: Anchors + cluster discovery ────────────────────────────
     p("=== Phase 1/2: Anchor detection + cluster discovery ===")
-    anchor_codes, clusters = build_clusters(client, word, explicit_anchors)
+    anchor_codes, clusters, definition_codes = build_clusters(client, word, explicit_anchors)
     p(f"  Clusters found: {len(clusters)}")
+    if definition_codes:
+        p(f"  Definition codes (meanings=): {len(definition_codes)}")
     p()
 
     # ── Phase 3: Build flat terms list ────────────────────────────────────
@@ -637,8 +703,8 @@ def main() -> None:
     terms_by_code: dict[str, dict] = {t["code"]: t for t in terms}
 
     # ── Phase 4: Apply decision filters ──────────────────────────────────
-    p("=== Phase 4: Applying decision filters (F1–F5) ===")
-    apply_filters(terms, anchor_codes, ceiling)
+    p("=== Phase 4: Applying decision filters (F0–F5) ===")
+    apply_filters(terms, anchor_codes, ceiling, definition_codes)
     for t in terms:
         p(f"  {t['code']:12s}  {t['step_section_type']:12s}  "
           f"→ {t['decision_group']:3s}  {t['decision_reason'][:72]}")
@@ -651,7 +717,8 @@ def main() -> None:
 
     # ── Phase 6: Build output and write files ─────────────────────────────
     p("=== Phase 6: Writing output files ===")
-    meta     = build_meta(word, anchor_codes, terms, ceiling, client.version)
+    reg_row  = _lookup_registry_row(word)
+    meta     = build_meta(word, anchor_codes, terms, ceiling, client.version, reg_row)
     output   = {"meta": meta, "terms": terms}
     write_json(output, json_path)
     write_md(output, md_path)
@@ -663,7 +730,7 @@ def main() -> None:
     p(f"  Include / Exclude: "
       f"{len(meta['include_codes'])} / {len(meta['exclude_codes'])}")
     for group, count in sorted(meta["summary_by_group"].items()):
-        action = "include" if group in ("G1", "G2", "G2r") else "exclude"
+        action = "include" if group in ("G1m", "G1", "G2", "G2r") else "exclude"
         p(f"  {group}: {count:3d}  ({action})")
     p(f"  JSON  → {json_path}")
     p(f"  MD    → {md_path}")

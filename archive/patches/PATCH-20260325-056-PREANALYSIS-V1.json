@@ -1,0 +1,340 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-056-PREANALYSIS-V1",
+    "registry_id": 56,
+    "word": "envy",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis MTI classification for all 31 None-status terms in registry 056 (envy). The original Phase 1 captured 9 terms (the qa.na/phthonos/zelos core); the audit expanded to 31 by pulling fire (pur) and eye (ophthalmos) families. Core envy vocabulary: qa.na family (H7065/H7067G/H7067H/H7068/H7072), phthonos/phthoneō (G5355/G5354), zelos/zeloo/zelotes/parazeloo (G2205/G2206/G2207/G3863). Fire family: G4442/G4448 classified candidate_delete — zeal-as-fire semantic is fully carried by the Hebrew qin.ah corpus; Greek pur terms add no envy content. Pure fire/fever/colour terms (G4443-G4451 minus G4448) classified delete. Eye family: G3788 ophthalmos extracted_thin (evil-eye verses only); G3442/G3700 delete. Unknown Hebrew terms H4657/H6424/H6425 delete (no envy content despite STEP glosses). H7520 and G6041 extracted_thin. Zeal-as-heat family (G0329/G2200/G2204) extracted_thin."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "H7065",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY HEBREW CORE. qa.na — to be jealous, to envy, to be zealous. 34 occ, 29 verses. The root of the entire qana family. Covers: human envy of prosperity (Gen 26:14 Philistines envy Isaac; Gen 30:1 Rachel envies Leah; Gen 37:11 brothers jealous of Joseph; Psa 73:3 envious of the arrogant); marital jealousy (Num 5:14/30); divine jealousy for God's honour (1 Ki 19:10/14 Elijah zealous for the Lord; Num 25:11/13 Phinehas jealous for God; Zec 1:14; 8:2 God jealous for Jerusalem); prohibition of envy in wisdom literature (Psa 37:1; Pro 3:31; 23:17; 24:1/19). GOD_AS_SUBJECT flag present. Dual register (negative envy / positive zeal) is the defining structural feature of this root."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H7067G",
+      "set": {
+        "status": "extracted",
+        "status_note": "HEBREW CORE. qan.na — Jealous (as divine name/title). 1 occ. Exo 34:14: 'the Lord, whose name is Jealous, is a jealous God.' The divine name El Qanna — jealousy as an attribute so fundamental it functions as a proper name for God. Thin data (1 verse) but analytically irreplaceable."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H7067H",
+      "set": {
+        "status": "extracted",
+        "status_note": "HEBREW CORE. qan.na — jealous (divine adjective). 5 occ, 5 verses. The adjectival form used exclusively of God: Exo 20:5 (Ten Commandments — I am a jealous God); Exo 34:14; Deu 4:24 (a consuming fire, a jealous God — fire and jealousy directly linked in the Hebrew); Deu 5:9; Deu 6:15. GOD_AS_SUBJECT throughout. These are the Decalogue and covenant renewal jealousy clauses — the theological ground of the entire divine-jealousy theme."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H7068",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY HEBREW CORE. qin.ah — jealousy, envy, zeal. 43 occ, 42 verses — the largest verse set in this registry. The noun form of the root. Covers: marital jealousy law (Num 5:14-30 — the ordeal of jealousy, six uses in this passage alone); human destructive jealousy (Job 5:2: jealousy slays the simple; Pro 6:34: jealousy makes a man furious; Pro 14:30 ANCHOR: envy makes the bones rot; Pro 27:4: who can stand before jealousy?; Ecc 4:4: all toil comes from envy; Son 8:6: jealousy fierce as the grave); divine jealousy (Psa 79:5; Eze 5:13; 16:38/42; 23:25; 36:5-6; 38:19; Zep 1:18; 3:8; Zec 1:14; 8:2); divine zeal as positive attribute (2 Ki 19:31; Psa 69:9; 119:139; Isa 9:7; 37:32; 42:13; 59:17; 63:15). GOD_AS_SUBJECT flag. SOMATIC_INNER_LINK flag (bones rot, Pro 14:30)."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H7072",
+      "set": {
+        "status": "extracted",
+        "status_note": "HEBREW CORE. qan.no — jealous (intensive adjective). 2 occ, 2 verses. Jos 24:19 (Joshua's covenant warning: God is a jealous God, he will not forgive transgressions) and Nah 1:2 (the Lord is a jealous and avenging God). Both are covenantal-judgment contexts — divine jealousy as the ground of moral consequence."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G5355",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY NT CORE. phthonos — envy. 9 occ, 10 verses. The purest Greek envy term — ill-will at another's good fortune. Mat 27:18 / Mar 15:10 ANCHOR: Pilate knew it was out of envy that the chief priests delivered Jesus — the only verse in the NT where phthonos is named as the direct cause of the crucifixion. Also: vice lists (Rom 1:29; Gal 5:21; 1 Ti 6:4; Tit 3:3; 1 Pet 2:1); Phil 1:15 (preaching Christ out of envy); Jas 4:5 (God yearns jealously over the spirit — divine phthonos-adjacent yearning)."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "G5354",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT CORE. phthoneō — to envy (verb). 1 occ, 1 verse. Gal 5:26: 'let us not become conceited, provoking one another, envying one another.' The only NT occurrence of the verb; thin data but the pure envy vocabulary. The triad conceited/provoking/envying maps the social dynamics of envy precisely."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "G2205",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT CORE. zēlos — zeal, jealousy. 48 occ, 18 verses. The NT heir to the qana root — covers both positive zeal (Joh 2:17: zeal for your house; Rom 10:2: zeal for God; 2 Cor 7:7/11; 9:2; 11:2: divine jealousy for the church) and negative jealousy (Act 5:17; 13:45: filled with jealousy; 1 Cor 3:3; Gal 5:20; Jas 3:14/16: bitter jealousy). VOLITIONAL_COMPONENT flag. The same dual-register structure as Hebrew qana is replicated in the Greek."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G2206",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT CORE. zēloō — to be zealous, to envy, to earnestly desire. 44 occ, 11 verses. Covers: negative jealousy (Act 7:9: patriarchs jealous of Joseph; Act 17:5: Jews filled with jealousy; 1 Cor 13:4: love does not envy; Jas 4:2: you covet and cannot obtain); positive zealous desire (1 Cor 12:31; 14:1/39: earnestly desire spiritual gifts; Rev 3:19: be zealous and repent); divine jealousy (2 Cor 11:2). GOD_AS_SUBJECT flag. DIVINE_HUMAN_PARALLEL flag."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G2207",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT CORE. zēlōtēs — zealot, one who is zealous. 13 occ, 6 verses. The person defined by zeal — covers: Jewish zealotry (Act 21:20; 22:3; Gal 1:14 — Paul's pre-conversion zealotry); positive Christian zeal (1 Cor 14:12; Tit 2:14 — zealous for good works; 1 Pet 3:13 — zealous for what is good). The human subject of zeal as a defining identity, not merely an occasional state."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G3863",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT CORE. parazēloō — to provoke to jealousy. 11 occ, 4 verses. The causative form — making another jealous as a deliberate theological strategy. Rom 10:19 / 11:11 / 11:14: God provoking Israel to jealousy through Gentile salvation — Paul's most theologically developed use of the zeal/jealousy vocabulary as a redemptive mechanism. 1 Cor 10:22: 'shall we provoke the Lord to jealousy?' — the human capacity to arouse divine jealousy through idolatry. Directly bridges human and divine jealousy registers."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G0329",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ZEAL-AS-HEAT. anazōpureō — to fan into flame, rekindle. 2 occ, 1 verse. 2 Ti 1:6: 'fan into flame the gift of God in you.' The rekindling of zeal as an inner-state management act — the ardour of the inner person as a fire that can die down and must be revived. Somatic metaphor for the intensity of zeal."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G2200",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ZEAL-AS-HEAT. zestos — hot, fervent. 3 occ, 2 verses. Rev 3:15-16 (the Laodicean letter: neither cold nor hot — the demand for hot zeal vs. lukewarm indifference). The temperature metaphor for inner-state intensity — zeal as heat, indifference as lukewarmness. Directly relevant to the ardour dimension of the zeal/envy register."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G2204",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ZEAL-AS-HEAT. zeō — to boil, to be fervent. 4 occ, 2 verses. Act 18:25 (Apollos fervent in spirit); Rom 12:11 (be fervent in spirit — the commanded intensity of zeal). The boiling/seething quality of ardent inner commitment — zeal experienced as inner heat."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G3788",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "EYE FAMILY — EVIL EYE. ophthalmos — eye. 641 occ, 88 verses. HIGH_FREQUENCY_ANCHOR. Analysis strictly confined to the evil-eye / envy-eye register. Key verses: Mat 20:15 ('do you begrudge my generosity?' — lit. 'is your eye evil?' — ophthalmos ponēros as the idiomatic expression for envy); Mar 7:22 (ophthalmos ponēros in vice list alongside phthonos — the two envy terms in direct proximity); Mat 6:22-23 / Luk 11:34 (the bad eye / evil eye as the organ through which darkness enters the inner person — envy as a perceptual disorder that darkens the whole inner life). The evil-eye idiom is the Hebrew ayin ra'ah carried into Greek — envy expressed as a malign gaze. VOLUME_LIMITATION flag required. Full corpus of 88 verses must not be used."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "G3442",
+      "set": {
+        "status": "delete",
+        "status_note": "monophthalmos — one-eyed. 2 verses (Mat 18:9; Mar 9:47 — 'better to enter life with one eye'). Appears in the 'if your eye causes you to sin' context. The envy/evil-eye connection that brings ophthalmos into this registry does not extend to monophthalmos — these are amputation-of-sin-cause verses, not envy verses. Delete."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "G3700",
+      "set": {
+        "status": "delete",
+        "status_note": "optanomai — to appear. Act 1:3 only (Christ appearing after resurrection). No envy connection. Delete."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "G4442",
+      "set": {
+        "status": "candidate_delete",
+        "status_note": "FIRE FAMILY. pur — fire. 507 occ, 69 verses. HIGH_FREQUENCY_ANCHOR. The connection to envy/zeal runs through the Hebrew qin.ah corpus (qin.ah burns like fire: Psa 79:5; Eze 38:19; Zep 1:18; Deu 4:24 — 'consuming fire, a jealous God') but this is a Hebrew semantic. The Greek pur corpus in this export (69 verses) yields only 4 verses with zeal/consume language and none are envy-specific. The zeal-as-fire semantic is fully carried by the Hebrew terms; G4442 adds no analytical value to this registry. Classified candidate_delete pending researcher confirmation."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "G4443",
+      "set": {
+        "status": "delete",
+        "status_note": "pura — funeral pyre, bonfire. Act 28:2-3 (Paul on Malta building a fire). No envy or zeal content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "G4445",
+      "set": {
+        "status": "delete",
+        "status_note": "puressō — to have a fever. Mat 8:14; Mar 1:30 (Peter's mother-in-law with fever). Medical/physical fever only. Delete."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "G4446",
+      "set": {
+        "status": "delete",
+        "status_note": "puretos — fever. Mat 8:15; Luk 4:38 etc — healing of fever. No envy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "G4447",
+      "set": {
+        "status": "delete",
+        "status_note": "purinos — fiery red (colour). Rev 9:17 only (breastplates fiery red). Colour descriptor. Delete."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "G4448",
+      "set": {
+        "status": "candidate_delete",
+        "status_note": "FIRE FAMILY. puroō — to burn, to be inflamed. 23 occ, 6 verses. 1 Cor 7:9 ('better to marry than to burn with passion') is the closest to an inner-state burning verse — but this is desire/passion, not envy. 2 Cor 11:29 ('who is made to fall and I am not indignant/burning?') — Paul's pastoral burning is closer to concern than envy. Remaining verses are eschatological fire (2 Pet 3:12) and literal/apocalyptic (Rev). The inner-burning sense is present but thin and not envy-specific. Classified candidate_delete pending researcher confirmation."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "G4449",
+      "set": {
+        "status": "delete",
+        "status_note": "purrazō — to be red (sky colour). Mat 16:2-3 only (red sky at evening/morning). Weather observation. Delete."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "G4450",
+      "set": {
+        "status": "delete",
+        "status_note": "purros — fiery red (colour). Rev 6:4 (red horse); Rev 12:3 (red dragon). Colour in apocalyptic vision. Delete."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "G4451",
+      "set": {
+        "status": "delete",
+        "status_note": "purōsis — burning, fiery trial. 1 Pet 4:12 (fiery trial); Rev 18:9/18 (burning of Babylon). Trials and judgment — no envy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "H4657",
+      "set": {
+        "status": "delete",
+        "status_note": "miph.las — balancings (clouds). Job 37:16 only: 'the balancings of the clouds.' No envy content. STEP gloss 'swaying' — possible extraction artefact. Delete."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H6424",
+      "set": {
+        "status": "delete",
+        "status_note": "pa.las — to weigh, make level, ponder (paths). 6 verses: Psa 58:2 (deal out violence), Psa 78:50 (made a path for anger), Pro 4:26 / 5:6 / 5:21 (ponder/level the path), Isa 26:7 (make level the way). STEP gloss 'to envy' is not supported by any of the 6 verses — all are about weighing/levelling paths. Phase2 flags show CAUSATIVE_OF_INNER_STATE and WISDOM_LITERATURE_CONCENTRATION but the verses themselves carry no envy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "H6425",
+      "set": {
+        "status": "delete",
+        "status_note": "pe.les — balance, scales. Pro 16:11 (just balance and scales are the Lord's); Isa 40:12 (marked off heavens with a span). Scales of justice/measurement. No envy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "H7520",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ra.tsad — to watch with envy, to gaze with hatred. 1 occ, 1 verse. Psa 68:16: 'Why do you look with hatred [ra.tsad], O many-peaked mountain, at the mount that God desired for his abode?' The envious gaze of the mountains at Zion — envy as a hostile, fixed watching. Connects the eye/gaze metaphor (ophthalmos) to the Hebrew root vocabulary. Very thin (1 verse) but genuine."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "G6041",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "zēleuō — to envy (verb). 1 occ, 0 verse records in export. Related to zēlos. NO_VERSES flag applies — VOLUME_LIMITATION flag required. The term exists and is genuinely envy vocabulary but cannot be analysed without verse data."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 56,
+        "file_id": 11,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-056-001",
+        "strongs_reference": "G3788",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "G3788 ophthalmos has 641 occurrences and 88 verses in export. Classified extracted_thin under evil-eye/envy-eye analysis only (Mat 20:15; Mar 7:22; Mat 6:22-23). Full corpus must not be used in synthesis. Phase 2 independent review of the complete ophthalmos corpus required.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 56,
+        "file_id": 11,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-056-002",
+        "strongs_reference": "G6041",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "G6041 zeleuō (to envy) has 1 occurrence but 0 verse records in export. Genuine envy vocabulary but cannot be analysed. Phase 2 independent research required.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 33,
+    "update_mti_status": 31,
+    "insert_research_flags": 2,
+    "classifications": {
+      "extracted": 11,
+      "extracted_thin": 7,
+      "candidate_delete": 2,
+      "delete": 11,
+      "active_for_session_b": 18,
+      "note": "G4442 pur and G4448 puroō classified candidate_delete — researcher to confirm. If confirmed delete, active terms reduce to 16. Core envy vocabulary: H7065/H7067G/H7067H/H7068/H7072 (Hebrew qa.na family) + G5354/G5355 (phthonos/phthoneō) + G2205/G2206/G2207/G3863 (zelos family) = 11 extracted terms. Peripheral: G0329/G2200/G2204 (zeal-as-heat) + G3788 (evil-eye) + H7520/G6041 (thin) = 7 extracted_thin."
+    }
+  }
+}

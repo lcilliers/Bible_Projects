@@ -1,0 +1,422 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-026-PREANALYSIS-V1",
+    "registry_id": 26,
+    "word": "conscience",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis MTI classification for all 29 None-status terms in registry 026 (conscience). Broad-sweep approach per researcher instruction: inclusion is the default, treating this registry as a wide-angle exploration of the full knowing/conscience/moral-awareness semantic field. Only G4862 (sun, Greek preposition 'with') is classified delete \u2014 it has no conscience-field contribution. All other 28 terms classified extracted or extracted_thin, grouped into five functional clusters: (1) core conscience vocabulary, (2) moral knowing vocabulary, (3) ignorance as conscience-failure vocabulary, (4) moral judgment/discernment vocabulary, (5) structural/peripheral vocabulary. H3629 kilyah retained in full including sacrificial verses \u2014 the ritual use grounds the inner-being-seat theology. Status notes distinguish core from peripheral for analytical clarity."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G4893",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 1 \u2014 CORE. suneid\u0113sis \u2014 conscience. The primary NT conscience term (33 occ, 29 verses). The compound sun + eid\u0113sis (shared knowledge, co-knowing) names the conscience as the faculty that knows alongside the self. Covers: good conscience (Act 23:1; 1 Ti 1:5; Heb 13:18), weak conscience (1 Cor 8:7/10/12), seared conscience (1 Ti 4:2), defiled conscience (Tit 1:15), conscience cleansed by Christ's blood (Heb 9:14), conscience bearing witness (Rom 2:15; Rom 9:1; 2 Cor 1:12), conscience as the ground of obedience (Rom 13:5), and baptism as appeal for a good conscience (1 Pet 3:21). CRL to guilt (073) registered."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "G4894",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 1 \u2014 CORE. suneid\u014d \u2014 to be aware of, to be conscious of (verb). Cognate of suneid\u0113sis. 5 occ, 3 verses. Act 5:2 (Sapphira's knowledge of the deception \u2014 shared guilty awareness); Act 12:12 (Peter realising where he was); Act 14:6 (they became aware of the plot). CRL to guilt (073) registered."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "G6083",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 1 \u2014 CORE. sunoida \u2014 to be conscious of, to share knowledge with oneself. 1 occ, 1 verse. 1 Cor 4:4: 'I am not aware of anything against myself, but I am not thereby acquitted. It is the Lord who judges me.' One of the most analytically significant conscience verses in the corpus \u2014 the conscience can be clear while the final verdict belongs to God. Thin data but irreplaceable."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "G2589",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 1 \u2014 CORE. kardiogn\u014dst\u0113s \u2014 heart-knower (compound: kardia + gn\u014dst\u0113s). 2 occ, 2 verses. Act 1:24 and Act 15:8 \u2014 both describe God as the one who knows the hearts of all. The divine conscience-counterpart: God is the ultimate moral knower of persons. Directly relevant to the conscience's structure as co-knowing with God."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H3629",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 1 \u2014 CORE. kil.yah \u2014 kidneys. 31 occ, 26 verses. The OT anatomical seat of conscience and deepest inner scrutiny. Corpus splits: 13 sacrificial/anatomical verses (Exo/Lev ritual use \u2014 kidneys as the innermost fat offered to God, grounding the inner-being theology); 13 conscience-seat verses in Psalms and Prophets: Psa 7:9 (God tests minds/hearts), Psa 16:7 (kidneys instruct in the night), Psa 26:2 (test my heart and mind), Psa 73:21 (pricked in heart \u2014 kilyah), Psa 139:13 (you formed my inward parts), Pro 23:16 (my inmost being will exult), Jer 11:20 / 17:10 / 20:12 (God searches heart and kidneys/mind). Full verse set retained \u2014 the sacrificial use is the theological ground for the inner-being application."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G1097",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. gin\u014dsk\u014d \u2014 to know, come to know, recognise. 824 occ, 120 verses in export. The primary NT knowing verb. Conscience-relevant subset includes: Mat 6:3 (do not let your left hand know what your right hand is doing \u2014 moral self-knowledge), Rom 7:7 (through the law I came to know sin), 1 Cor 8:2-3 (knowing as moral epistemology \u2014 the one who thinks he knows does not yet know as he ought), 1 Cor 13:12 (now I know in part; then fully known \u2014 eschatological conscience resolution), Gal 4:9 (known by God). HIGH_FREQUENCY_ANCHOR applies \u2014 824 occurrences; analysis confined to conscience-relevant verses. Vol limitation flag required."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "G1492H",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. eid\u014d (perceive/see sense) \u2014 to see, perceive, observe. 396 occ, 119 verses. Conscience-relevant verses are a subset \u2014 perceptual knowledge that grounds moral awareness. HIGH_FREQUENCY_ANCHOR applies. Vol limitation flag required. Analysis confined to verses with moral-perception content."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "G1492I",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. eid\u014d (know/understand sense) \u2014 to know, possess information, understand. 365 occ, 27 verses. The moral-knowledge register of eid\u014d; conscience-relevant verses include Mat 25:26 (you knew that I reap where I have not sown \u2014 moral responsibility grounded in prior knowledge), Mat 27:18 (Pilate knew it was out of envy). HIGH_FREQUENCY_ANCHOR applies. Vol limitation flag required."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G1921",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. epigin\u014dsk\u014d \u2014 to know fully, recognise, come to understand. 136 occ, 39 verses. The intensive/perfective knowing verb. Key conscience-relevant verses: Mar 2:8 (Jesus perceiving in his spirit their inner questionings), Luk 5:22 (perceived their thoughts), Rom 1:32 (though they know God's righteous decree \u2014 moral knowledge that intensifies culpability), 2 Cor 13:5 (examine yourselves \u2014 self-knowledge as conscience act), 2 Pe 2:21 (better not to have known the way of righteousness than to turn back). Recognition and moral self-examination are the conscience-relevant registers."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G1922",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. epign\u014dsis \u2014 full knowledge, recognition, moral-relational knowing. 25 occ, 20 verses. Directly conscience-relevant: Rom 1:28 (did not see fit to acknowledge God \u2014 epign\u014dsis as moral acknowledgment refused), Rom 3:20 (through the law comes knowledge of sin), Heb 10:26 (sinning deliberately after receiving the knowledge of the truth \u2014 conscience as the site of wilful post-knowledge sin). Also: Col 3:10 (renewed in knowledge after the image of the creator \u2014 restored conscience as image-restoration)."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G1108",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 2 \u2014 MORAL KNOWING. gn\u014dsis \u2014 knowledge, understanding. 71 occ, 28 verses. The 1 Cor 8 passage is the central conscience-and-knowledge discourse in the NT: gn\u014dsis (knowledge) and suneid\u0113sis (conscience) are explicitly in dialogue across 1 Cor 8:1-12. 'Knowledge puffs up' (v.1) vs the weak conscience (v.7/10/12) \u2014 gn\u014dsis without love/conscience is destructive. Also: 2 Cor 4:6 (light of the knowledge of the glory of God in the face of Christ \u2014 moral illumination as conscience-awakening), 2 Cor 10:5 (taking every thought captive to the knowledge of God)."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G0050",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 3 \u2014 IGNORANCE/CONSCIENCE-FAILURE. agnoe\u014d \u2014 to be ignorant, not know, not understand. 30 occ, 21 verses. The moral-ignorance register is the conscience's failure mode. Key verses: Act 3:17 (acted in ignorance \u2014 moral ignorance as partial exculpation), Act 13:27 (rulers did not recognise him nor understand the prophets \u2014 culpable ignorance), Rom 7:15 (I do not understand my own actions \u2014 the divided self that cannot account for its own moral behaviour), 1 Cor 14:38 (if anyone is ignorant, let him be ignorant \u2014 moral self-deception as its own judgment), 1 Ti 1:13 (I acted ignorantly in unbelief \u2014 Paul's pre-conversion conscience state)."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G0052",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 3 \u2014 IGNORANCE/CONSCIENCE-FAILURE. agnoia \u2014 ignorance, the state of moral/spiritual unawareness. 15 occ, 4 verses. Act 3:17 (acted in ignorance), Act 17:30 (God overlooked the times of ignorance, but now commands repentance \u2014 the transition from pre-conscience ignorance to accountability), Eph 4:18 (darkened in their understanding, alienated from God due to ignorance \u2014 hardness of heart as the cause of conscience-darkening), 1 Pet 1:14 (former ignorances \u2014 the pre-conversion conscience state named collectively)."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G0056",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 3 \u2014 IGNORANCE/CONSCIENCE-FAILURE. agn\u014dsia \u2014 ignorance, especially of God, moral/spiritual blindness. 3 occ, 2 verses. 1 Cor 15:34 (some have no knowledge of God \u2014 agn\u014dsia as willful moral-spiritual blindness) and 1 Pet 2:15 (silencing the ignorance of foolish people \u2014 the conscience-void state of those who act without moral grounding). The focused anti-God sense gives this term its conscience-relevance."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G0057",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 3 \u2014 IGNORANCE/CONSCIENCE-FAILURE. agn\u014dstos \u2014 unknown. 1 occ, 1 verse. Act 17:23 (altar to the unknown God \u2014 the Athenian conscience groping toward a divine reality it cannot name). Thin data; analytically interesting as the conscience-in-absence-of-revelation passage \u2014 the pagan conscience sensing what it cannot articulate."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "G1106",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. gn\u014dm\u0113 \u2014 judgment, purpose, considered opinion, consent. 33 occ, 8 verses. The conscience as faculty of moral judgment/deliberation. Key verses: 1 Cor 7:25 (I give my judgment as one who by the Lord's mercy is trustworthy \u2014 moral deliberation from a formed conscience), 1 Cor 7:40 (in my judgment \u2014 apostolic moral assessment), Phm 14 (without your consent \u2014 gn\u014dm\u0113 as voluntary moral agency, not compelled action), Rev 17:13/17 (of one mind \u2014 gn\u014dm\u0113 as unified moral orientation, here in the service of the beast vs God's purposes). The organ-of-judgment primary LSJ sense supports its inclusion."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "G1107",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. gn\u014driz\u014d \u2014 to make known, reveal, disclose. 90 occ, 23 verses. The externalisation of inner knowing \u2014 conscience made public or communicated. Key verses: Joh 15:15 (I have made known to you everything \u2014 Jesus making the Father's mind known, the divine conscience disclosed), Phil 4:6 (let your requests be made known to God \u2014 the conscience-prayer interface), Eph 1:9 (making known the mystery of his will \u2014 divine moral purpose disclosed). Conscience as inner knowing that moves toward disclosure."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "G1109",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. gn\u014dst\u0113s \u2014 one who knows, expert in. 5 occ, 1 verse. Act 26:3 (Agrippa is familiar with Jewish customs and controversies \u2014 Paul appealing to a conscience formed by knowledge of the law). Thin; the expert-knowledge sense is the conscience formed by deep acquaintance with moral tradition."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "G1110",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. gn\u014dstos / gn\u014drimos \u2014 known, acquainted with, well-known. 31 occ, 15 verses. The passive dimension of moral knowing \u2014 being known, recognised. Key verse: 2 Cor 6:9 (as unknown and yet well known \u2014 the apostolic conscience transparent to God while unrecognised by the world). Also: Joh 18:15-16 (the disciple who was known to the high priest \u2014 conscience-of-identity in a dangerous context); Act 4:16 (notable miracle known to all)."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "G1231",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. diagin\u014dsk\u014d \u2014 to determine, decide, examine carefully. 6 occ, 2 verses. Act 23:15 (examine him more carefully \u2014 judicial discernment) and Act 24:22 (Felix with accurate knowledge of the Way, deferred judgment). The careful discrimination that conscience requires; thin but the judicial-discernment sense is conscience-adjacent."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "G1232",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. diagn\u014driz\u014d \u2014 to make known publicly, report. 1 occ, 1 verse. Luk 2:17 (shepherds made known the saying about the child). The public externalisation of received knowledge \u2014 the conscience's disclosure function in its most basic form. Very thin."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "G4267",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT / DIVINE KNOWING. progin\u014dsk\u014d \u2014 to foreknow, to know beforehand. 5 occ, 5 verses. Divine foreknowledge as the supreme form of moral knowing \u2014 God's conscience encompasses all persons across all time. Rom 8:29 (foreknew and predestined \u2014 the conscience of God toward his people), Rom 11:2 (God has not rejected his people whom he foreknew), 1 Pet 1:20 (Christ foreknown before the foundation of the world). Also 2 Pet 3:17 (knowing this beforehand \u2014 human anticipatory moral awareness). The pro- family positions God as the ultimate moral knower who knows before the conscience registers anything."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "G4268",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 DIVINE KNOWING. progn\u014dsis \u2014 foreknowledge. 2 occ, 2 verses. Act 2:23 (delivered up according to the definite plan and foreknowledge of God), 1 Pet 1:2 (according to the foreknowledge of God the Father). Divine moral foreknowledge as the ground of the atonement \u2014 the conscience of God as the frame within which human conscience operates."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "G4275",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 4 \u2014 DIVINE KNOWING. proeidon \u2014 to foresee, see beforehand. 2 occ, 2 verses. Act 2:31 (David foresaw the resurrection) and Gal 3:8 (the Scripture foreseeing that God would justify the Gentiles). Prophetic foresight as a form of conscience informed by the Spirit \u2014 seeing morally/theologically before the event."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "G4774",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 4 \u2014 MORAL JUDGMENT. sungn\u014dm\u0113 \u2014 concession, forbearance, leniency of judgment. 1 occ, 1 verse. 1 Cor 7:6 (as a concession, not a command). The conscience exercising lenient judgment rather than absolute rule \u2014 moral flexibility grounded in pastoral wisdom. Very thin data but the term's LSJ range (fellow-feeling, pardon) is conscience-adjacent."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "G0314",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 5 \u2014 STRUCTURAL/PERIPHERAL. anagin\u014dsk\u014d \u2014 to read, read aloud. 83 occ, 29 verses. The public reading of Scripture as the external standard against which conscience is calibrated. Key conscience-relevant verses: 'Have you not read...?' (Mat 12:3/5; 19:4 etc \u2014 Jesus invoking the read text as the moral norm), 2 Cor 3:2 (you are our letter written on our hearts, to be known and read by all \u2014 the conscience as a text), 2 Cor 3:15 (when Moses is read a veil lies over their hearts \u2014 the hardened conscience that cannot receive the written standard), Rev 1:3 (blessed is the one who reads aloud and keeps \u2014 reading as moral formation). The law-reading / Scripture-reading dimension is the external formation of the inner conscience."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "G0319",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "GROUP 5 \u2014 STRUCTURAL/PERIPHERAL. anagn\u014driz\u014d \u2014 to recognise, make known again. 2 occ, 1 verse. Act 7:13 (Joseph made himself known to his brothers \u2014 self-disclosure after concealment). The re-recognition motif: conscience as the faculty that re-knows what was formerly hidden or denied. Thin."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H3627",
+      "set": {
+        "status": "extracted",
+        "status_note": "GROUP 5 \u2014 STRUCTURAL/PERIPHERAL. ke.li \u2014 vessel, article, utensil, implement. 325 occ, 225 verses. The primary conscience-relevant register is the vessel/container metaphor for the person as the bearer of inner moral content \u2014 1 Pet 3:7 ('the weaker vessel') and the Temple vessel theology (vessels consecrated/clean vs defiled). The majority of the corpus is literal (weapons, bags, jewelry) but the vessel-as-person metaphor runs through both testaments. HIGH_FREQUENCY_ANCHOR applies \u2014 analysis focused on the metaphorical/theological vessel register. Vol limitation flag required. Note: this is the broadest-sweep inclusion in this registry and should be treated with particular caution in synthesis."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "G4862",
+      "set": {
+        "status": "delete",
+        "status_note": "Greek preposition \u03c3\u03cd\u03bd ('with'). 278 occurrences. No conscience-field contribution regardless of analytical approach. Confirmed extraction artefact \u2014 same issue identified in registry 097 (joy). Delete."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": 8,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-026-001",
+        "strongs_reference": "G1097",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "G1097 gin\u014dsk\u014d has 824 occurrences and 120 verses in export. Only a conscience-relevant subset has been analysed. Full corpus is far beyond Session B scope. Phase 2 independent research required before synthesis-level conclusions drawn from this term's full range.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": 8,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-026-002",
+        "strongs_reference": "G1492H",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "G1492H eid\u014d (see/perceive) has 396 occurrences and 119 verses in export. Only conscience-morally-relevant subset analysed. Phase 2 required.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": 8,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-026-003",
+        "strongs_reference": "G1492I",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "G1492I eid\u014d (know/understand) has 365 occurrences and 27 verses in export. Conscience-morally-relevant subset only. Phase 2 required.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": 8,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-026-004",
+        "strongs_reference": "H3627",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H3627 ke.li has 325 occurrences and 225 verses in export. Classified extracted under broad-sweep approach for vessel/container metaphor relevance. The majority of the corpus is literal (weapons, bags, utensils) \u2014 not conscience vocabulary. Analysis must be confined strictly to the vessel-as-person / consecrated-vessel theological register. Phase 2 review required before any synthesis-level use of this term.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": 8,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-026-005",
+        "strongs_reference": "G1921",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G1921 epigin\u014dsk\u014d has 136 occurrences and 39 verses in export. Conscience-relevant subset (recognition, moral self-examination, spiritual perception) is a minority of the full corpus. Phase 2 required for full assessment.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "registry_note",
+      "registry_no": 26,
+      "note": "BROAD-SWEEP REGISTRY: conscience (026) has been classified under a researcher-directed broad-sweep approach \u2014 inclusion as default, treating the registry as a wide-angle exploration of the full knowing/conscience/moral-awareness semantic field. 28 of 29 terms extracted or extracted_thin; only G4862 (preposition) deleted. Session B analysis must handle the resulting corpus with explicit acknowledgment of the five functional groups and their varying proximity to the conscience core. The HIGH_FREQUENCY_ANCHOR terms (G1097, G1492H, G1492I, H3627) require particular analytical caution \u2014 synthesis-level conclusions must not be drawn from their full verse corpora."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 35,
+    "update_mti_status": 29,
+    "insert_research_flags": 5,
+    "registry_note": 1,
+    "note_on_duplicate": "OP-018 is a placeholder noting G1108 was already classified in OP-011; no DB action needed",
+    "classifications": {
+      "extracted": 21,
+      "extracted_thin": 7,
+      "delete": 1,
+      "active_terms_for_session_b": 28,
+      "five_groups": {
+        "group_1_core_conscience": [
+          "G4893",
+          "G4894",
+          "G6083",
+          "G2589",
+          "H3629"
+        ],
+        "group_2_moral_knowing": [
+          "G1097",
+          "G1492H",
+          "G1492I",
+          "G1921",
+          "G1922",
+          "G1108"
+        ],
+        "group_3_ignorance_conscience_failure": [
+          "G0050",
+          "G0052",
+          "G0056",
+          "G0057"
+        ],
+        "group_4_moral_judgment_divine_knowing": [
+          "G1106",
+          "G1107",
+          "G1109",
+          "G1110",
+          "G1231",
+          "G1232",
+          "G4267",
+          "G4268",
+          "G4275",
+          "G4774"
+        ],
+        "group_5_structural_peripheral": [
+          "G0314",
+          "G0319",
+          "H3627"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-097-PREANALYSIS-V1",
+    "registry_id": 97,
+    "word": "joy",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for joy registry 97. CRITICAL: restores H8055/H8056/H8057 (samach family) from erroneous delete status to extracted. Schema investigation notes for H7442A/B/H7444 verse sharing. Classifies 23 None-status terms (10 extract, 13 delete). Confirms G3166 candidate_delete. Adds HF flags for G0021, G2165, G2167, G2172, G4862, G6110."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "CRITICAL_restore_from_delete",
+      "strongs_number": "H8055",
+      "set": {
+        "status": "extracted",
+        "status_note": "sa.mach: to rejoice (occ=161, 147 verses) — the primary Hebrew joy verb. Erroneously marked delete with exclusion_reason 'bleed. Primary in joy registry.' The exclusion_reason itself confirms these are the primary joy terms and should be extracted, not deleted. H8055 is the most frequent joy verb in the OT — Lev 23:40 (feast rejoicing), Deu 12:7, 12, 18; 14:26; 16:11, 14-15 (rejoice before the Lord commands); Psa 97:1 (the Lord reigns — let the earth rejoice); Isa 9:3; 25:9; 35:1; 61:10; Zep 3:17; Zec 10:7. 147 verses. GOD_AS_SUBJECT present (Zep 3:17 — he will exult with loud singing).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "CRITICAL_restore_from_delete",
+      "strongs_number": "H8056",
+      "set": {
+        "status": "extracted",
+        "status_note": "sa.me.ach: glad/joyful (adjective, occ=21, 21 verses) — the joy adjective. Erroneously deleted. Deu 16:15 'you shall be altogether joyful'; 1 Ki 1:40 'rejoicing with great joy'; Psa 113:9 'a joyful mother'; Pro 15:13 'a glad heart makes a cheerful face'. 21 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "CRITICAL_restore_from_delete",
+      "strongs_number": "H8057",
+      "set": {
+        "status": "extracted",
+        "status_note": "sim.chah: joy/gladness (noun, occ=94, 89 verses) — the primary Hebrew joy noun. Erroneously deleted. Gen 31:27; Num 10:10; Deu 28:47; Neh 8:10 ('the joy of the Lord is your strength'); Psa 16:11 ('fullness of joy in your presence'); 30:5 ('weeping may tarry for the night but joy comes with the morning'); Ecc 2:1-11; Isa 35:10; 51:3, 11; 61:3. 89 verses. Programme-significance: this family (H8055/H8056/H8057) is the central Hebrew joy vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H7442A,H7442B,H7444",
+      "description": "Three sub-glosses (H7442A id=565 occ=2, H7442B id=566 occ=54, H7444 id=567 occ=0) all share the exact same 53 verse records. H7442B (ra.nan: to sing/rejoice, occ=54) is the operative term with proper target_word assignments. H7442A (run: to overcome, occ=2) and H7444 (ran.nen: to sing, occ=0) have all target_word=None across all 53 verses — they are carrying the sibling verse records as spurious data. Analysis: H7442B is the correct operative term for all 53 verses. H7442A occ=2 is legitimately 2 occurrences of the 'overcome' sense; its 53 verse records are all spurious bleed from H7442B. H7444 occ=0 has no occurrences and all 53 verses are spurious. Both H7442A and H7444 should ideally have their verse records detached. Non-blocking for analysis: all 53 verses are read once under H7442B and both H7442A and H7444 are noted as schema investigation items."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H1524B",
+      "description": "H1524B (gil: youth, occ=1, v=8) shares verse records with sibling H1523 (gil: to rejoice, extracted, 44v) and H1524A (gil: rejoicing, extracted, 9v). All 8 verse records show links to H1524B but the 'youth/circle' sense has occ=1. The contamination is cross-sub-gloss verse sharing. Non-blocking: analysis uses H1524A/H1523 for the rejoicing vocabulary."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H2304",
+      "description": "H2304 (ched.vah: joy, occ=2, v=3) — 1 of 3 verses (Ezr 6:16) has target_word=None and links=[], suggesting a spurious verse. The 2 legitimate verses (1Ch 16:27; Neh 8:10) are directly relevant. Non-blocking: note the spurious Ezr 6:16 record; analysis uses 2 legitimate verses."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "schema_investigation_note",
+      "strongs_number": "G4796",
+      "description": "G4796 (sunchairō: to rejoice with, occ=8, v=9) — 1 extra verse record. 8 of 9 verses have valid target_word assignments; 1 appears to be minor contamination. Non-blocking. Analysis uses 8 legitimate verses."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "G2744",
+      "set": {
+        "status": "extracted",
+        "status_note": "kauchaomai: to boast/glory/rejoice in (occ=63, 32 verses) — the boasting/glorying verb. Ranges from improper boasting (Rom 2:17) to proper glorying in God and in suffering (Rom 5:2-3 — 'we rejoice/boast in hope of the glory of God... we rejoice/boast in our sufferings'). The joy-boasting vocabulary is the NT expression of joy in the face of what is hard. CRL with pride (123) already recorded. 32 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G2745",
+      "set": {
+        "status": "extracted",
+        "status_note": "kauchēma: boasting/pride/joy (noun, occ=25, 11 verses) — the content of boasting/glorying. 1 Th 2:19 — 'what is our hope or joy or crown of boasting (kauchēma)?'; Phil 1:26 — 'your ground for glorying in Christ Jesus'; Heb 3:6 — 'our confidence and our boasting in our hope'. 11 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G2746",
+      "set": {
+        "status": "extracted",
+        "status_note": "kauchēsis: boasting/glorying (noun, occ=21, 12 verses) — the act or process of glorying. Rom 3:27 — 'boasting is excluded'; 2 Cor 7:4 — 'I have great boasting/pride in you'; 2 Cor 11:10 — 'this boasting of mine will not be silenced'. 12 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G2165",
+      "set": {
+        "status": "extracted",
+        "status_note": "eufrainō: to celebrate/make glad/rejoice (occ=207, 14 verses — HF) — the celebration/feasting joy verb. Luk 12:19 'eat, drink, be merry'; 15:23-32 (prodigal son — 'let us eat and celebrate', 'your brother was dead and is alive... we had to celebrate'); Act 2:26 (from Psa 16 — 'my heart was glad'); Rev 11:10 ('those who dwell on earth will rejoice'); 18:20 ('Rejoice over her, O heaven'). 14 verses (HF — needs flag).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G6110",
+      "set": {
+        "status": "extracted",
+        "status_note": "agalliama: a leap for joy / exultation noun (occ=12, NO_VERSES) — the exultation noun from the agalliao root (G0021 already extracted). Luk 1:14 — 'joy and gladness (agalliama)'; Luk 1:44 — 'the baby leaped for joy (agalliama)'; Act 2:46 — 'with glad and generous hearts (agalliama)'; Heb 1:9 — 'the oil of gladness (agalliama)'; Jude 24 — 'with great joy (agalliama)'. NO_VERSES in export — schema issue. 12 occurrences. Phase 2 flag required.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "H1082",
+      "set": {
+        "status": "extracted",
+        "status_note": "ba.lag: to gleam/smile/be cheerful (occ=4, 4 verses) — to beam, brighten, cheer up. Job 9:27 'I would be of good cheer'; Job 10:20 'let me have a little cheer'; Psa 39:13 'that I may smile again'; Amos 5:9 'who makes destruction flash forth'. The smile/brightening vocabulary — the face as the somatic expression of joy. 4 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "H1906",
+      "set": {
+        "status": "extracted",
+        "status_note": "hed: shout of joy (noun, occ=1, 1 verse) — Eze 7:7 'joyful shouting'. Single occurrence of the shout-of-joy noun. Rounds out the vocal/shout joy vocabulary alongside H7440 (rin.nah, 33v) and H7442B (ra.nan, 53v). 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H1960",
+      "set": {
+        "status": "extracted",
+        "status_note": "huy.ye.dot: songs of praise/thanksgiving (occ=1, 1 verse) — Neh 12:8 'Judah was in charge of the songs of thanksgiving'. Single occurrence of the thanksgiving-songs noun. Rounds out the praise-joy family. 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "H2305",
+      "set": {
+        "status": "extracted",
+        "status_note": "ched.vah: joy (Aramaic, occ=1, 1 verse) — Ezr 6:16 'the people of Israel celebrated the dedication of this house with joy (ched.vah)'. Aramaic form of H2304. Single verse. Completes the Aramaic joy family alongside H2304 (extracted). 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "H7438",
+      "set": {
+        "status": "extracted",
+        "status_note": "ron: ringing cry/shout (noun, occ=1, 1 verse) — Psa 32:7 'shouts of deliverance'. Single occurrence of the ringing-cry noun. Root family with H7440 (rin.nah, 33v) and H7445 (re.na.nah, 4v). 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "H7445",
+      "set": {
+        "status": "extracted",
+        "status_note": "re.na.nah: ringing cry/shout for joy (noun, occ=4, 4 verses) — Job 3:7 'joyful cry'; Job 20:5 'the triumphing of the wicked is short'; Psa 100:2 'come into his presence with singing'; Psa 105:43 'his chosen ones with shouts of joy'. Completes the ra.nan/rin.nah root family. 4 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "H6682",
+      "set": {
+        "status": "extracted",
+        "status_note": "tse.va.chah: outcry/shout (noun, occ=4, 4 verses) — includes joy-shout uses: Psa 144:14 (no distress — the absence of outcry as condition of peace/joy); Job 30:5 (outcry in the night); Isa 24:14 ('they lift up their voices, they sing for joy; over the majesty of the Lord they shout from the west'); Jer 20:16 (alarm). The shout vocabulary straddles joy and distress. 4 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "confirm_delete",
+      "strongs_number": "G3166",
+      "description": "G3166 (megalaucheō: to boast/brag, occ=3, NO_VERSES) — candidate_delete confirmed. No verse records; not directly joy vocabulary. Delete confirmed."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "G4862",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sun: with (preposition, occ=278, v=99 — HF 36%) — the Greek preposition 'with'. Entered registry as prefix component of sunchairō (G4796: rejoice with, already extracted). The bare preposition carries no joy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "G2172",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "euchomai: to pray/wish for (occ=64, v=7) — prayer and wishing vocabulary. Act 26:29 — 'I would that you might become as I am'; 2 Cor 13:7 'we pray to God'. Wishful desire but not joy vocabulary. The joy-adjacent sense (wishing for good outcomes) is too indirect. Delete."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "G2620",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "katakauchaomai: to boast over/triumph over (occ=7, v=3) — Rom 11:18 'do not be arrogant toward the branches'; Jam 2:13 'mercy triumphs over judgment'; Jam 3:14 'do not boast/brag'. The triumph-over sense is more pride/arrogance than joy. Content covered by kauchaomai (G2744, extracted). Delete."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "H1524B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H1524B (gil: youth/circle, occ=1, v=8 — cross-sub-gloss contamination) — the 'youth/circle/age' sense of gil is not joy vocabulary. The 8 verse records are contamination from sibling H1523 (gil: to rejoice, 44v) and H1524A (rejoicing, 9v). Joy content covered by siblings. Delete."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "H1750",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H1750 (duts: to leap/dance, occ=1, 1 verse — Job 41:22 about Leviathan 'dances') — dancing leap used of a sea creature, not a joy expression. Single occurrence with no joy semantic content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "H2269",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H2269 (cha.var: fellow/companion, Aramaic, occ=3, v=6 — contamination) — companion/associate vocabulary, not joy. The 6 verse records are cross-sub-gloss contamination. Delete."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "H2273",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H2273 (chav.rah: associate, Aramaic, occ=1, 1 verse — Dan 7:20 companions) — companion vocabulary. No joy content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H2306",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H2306 (cha.di: breast/chest, Aramaic, occ=1, 1 verse — Dan 2:32) — anatomical term, no joy content. Root bleed through Aramaic ched.vah family. Delete."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "H2323",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H2323 (cha.dat: new, Aramaic, occ=1, 1 verse — Ezr 6:4) — 'new' adjective. No joy content. Root bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "H7443",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H7443 (re.na.nim: ostrich, occ=1, 1 verse — Job 39:13) — ostrich named for its piercing cry (same root as ra.nan). The animal name is not joy vocabulary. Delete."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "H8063",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "H8063 (se.mi.khah: rug/coverlet, occ=1, 1 verse — Judg 4:18) — household object. No joy content. Root bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "add_quality_flag",
+      "strongs_number": "G0021",
+      "term_inv_id": 572,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "agalliaō (occ=75, v=11, 15%) — below 20% threshold."
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "add_quality_flag",
+      "strongs_number": "G2165",
+      "term_inv_id": 2825,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "eufrainō (occ=207, v=14, 7%) — below 20% threshold."
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "add_quality_flag",
+      "strongs_number": "G2167",
+      "term_inv_id": 569,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "eufrosunē (occ=114, v=2, 2%) — below 20% threshold."
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "add_quality_flag",
+      "strongs_number": "G6110",
+      "term_inv_id": 2819,
+      "flag_code": "NO_VERSES",
+      "description": "agalliama (occ=12, v=0) — no verse records in export. Schema issue. Phase 2 flag required."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 35,
+    "critical_restores": 3,
+    "schema_investigation_notes": 4,
+    "mti_extract": 12,
+    "mti_delete": 9,
+    "candidate_delete_confirmed": 1,
+    "quality_flag_inserts": 4,
+    "note": "CRITICAL: The three most important Hebrew joy terms — sa.mach (H8055, 147v), sa.me.ach (H8056, 21v), sim.chah (H8057, 89v) — were erroneously marked as 'delete' with the exclusion_reason explicitly stating they are 'primary in joy registry.' This is a database error that must be corrected before re-export. After restoration and application of all patch operations, projected active inventory: 22 existing extracted + 3 restored + 12 newly extracted = 37 active terms. Total verses estimated ~740-780 (adding samach family ~257v, kauchaomai family ~55v, eufrainō 14v, plus smaller terms). This will make joy the second-largest registry in the programme after peace. Re-export required."
+  }
+}

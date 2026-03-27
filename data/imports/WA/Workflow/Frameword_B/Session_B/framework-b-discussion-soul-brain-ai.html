@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework B — Research Discussion Archive</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #1a1410;
+    --parchment: #f5f0e8;
+    --sepia: #8b6f47;
+    --rust: #9b3a1a;
+    --gold: #c8962a;
+    --shadow: #2d1f0e;
+    --muted: #6b5d4f;
+    --rule: #d4c4a8;
+    --highlight-bg: #fdf6e3;
+    --margin-note: #7a5c3a;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #e8e0d0;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(139,111,71,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(155,58,26,0.05) 0%, transparent 50%);
+    font-family: 'Source Serif 4', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 3rem 1rem;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--parchment);
+    background-image: 
+      repeating-linear-gradient(
+        transparent,
+        transparent 27px,
+        rgba(180,160,120,0.12) 27px,
+        rgba(180,160,120,0.12) 28px
+      );
+    box-shadow: 
+      0 2px 4px rgba(0,0,0,0.08),
+      0 8px 32px rgba(45,31,14,0.18),
+      inset 0 0 80px rgba(200,180,140,0.15);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page::before {
+    content: '';
+    position: absolute;
+    left: 88px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: rgba(155,58,26,0.2);
+    z-index: 1;
+  }
+
+  .header {
+    padding: 3.5rem 3.5rem 2rem 5.5rem;
+    border-bottom: 2px solid var(--rule);
+    position: relative;
+  }
+
+  .programme-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--sepia);
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--shadow);
+    margin-bottom: 0.6rem;
+  }
+
+  .subtitle {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--muted);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--sepia);
+    letter-spacing: 0.1em;
+  }
+
+  .meta-item span {
+    color: var(--rust);
+    font-weight: 500;
+  }
+
+  .status-badge {
+    display: inline-block;
+    background: var(--rust);
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1px;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .body {
+    padding: 2.5rem 3.5rem 3.5rem 5.5rem;
+  }
+
+  .preamble {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.75;
+    border-left: 3px solid var(--gold);
+    padding-left: 1.2rem;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--rust);
+    margin-bottom: 0.4rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.3;
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    display: block;
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 0.97rem;
+    line-height: 1.85;
+    margin-bottom: 1.1rem;
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  p strong {
+    font-weight: 700;
+    color: var(--shadow);
+  }
+
+  .provocation {
+    background: rgba(155,58,26,0.06);
+    border-left: 4px solid var(--rust);
+    padding: 1rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .provocation p {
+    margin: 0;
+    font-style: italic;
+    color: var(--shadow);
+    font-size: 0.95rem;
+  }
+
+  .provocation .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+  }
+
+  .open-question {
+    background: rgba(200,150,42,0.08);
+    border: 1px solid rgba(200,150,42,0.3);
+    border-left: 4px solid var(--gold);
+    padding: 1rem 1.4rem;
+    margin: 1.5rem 0;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .open-question .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .open-question p {
+    margin: 0;
+    font-size: 0.93rem;
+    color: var(--shadow);
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.85rem;
+  }
+
+  thead tr {
+    background: var(--shadow);
+    color: var(--parchment);
+  }
+
+  thead th {
+    padding: 0.6rem 0.9rem;
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  tbody tr:nth-child(even) {
+    background: rgba(200,180,140,0.1);
+  }
+
+  tbody td {
+    padding: 0.65rem 0.9rem;
+    line-height: 1.5;
+    vertical-align: top;
+    font-size: 0.88rem;
+  }
+
+  tbody td:first-child {
+    font-weight: 700;
+    color: var(--rust);
+    white-space: nowrap;
+    font-size: 0.82rem;
+  }
+
+  tbody td em {
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .implication-block {
+    background: var(--highlight-bg);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--gold);
+    padding: 1.4rem 1.6rem;
+    margin: 2rem 0;
+    border-radius: 0 0 2px 2px;
+  }
+
+  .implication-block .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .implication-block p {
+    margin-bottom: 0.6rem;
+    font-size: 0.93rem;
+  }
+
+  .implication-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .residual-list {
+    list-style: none;
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .residual-list li {
+    padding: 0.5rem 0 0.5rem 1.8rem;
+    position: relative;
+    font-size: 0.93rem;
+    line-height: 1.6;
+    border-bottom: 1px dotted var(--rule);
+    color: var(--ink);
+    font-weight: 300;
+  }
+
+  .residual-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+    font-size: 0.5rem;
+    top: 0.75rem;
+  }
+
+  .closing {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--rule);
+  }
+
+  .closing p {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .footer {
+    padding: 1.5rem 3.5rem 2rem 5.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+  }
+
+  .footer-right {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: var(--sepia);
+  }
+
+  @media (max-width: 600px) {
+    .page::before { left: 0; }
+    .header, .body, .footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+    h1 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="programme-tag">Framework B · Soul Word Analysis Programme · Research Archive</div>
+    <h1>The Soul, the Brain, and the Algorithm</h1>
+    <p class="subtitle">A discussion document on methodology, AI simulacra, and the boundaries of inner-being vocabulary</p>
+    <div class="meta-row">
+      <div class="meta-item">DATE <span>21 March 2026</span></div>
+      <div class="meta-item">SESSION TYPE <span>Open Inquiry / Methodological Review</span></div>
+      <div class="meta-item">STATUS <span>Unresolved — For Revisit</span></div>
+    </div>
+    <div class="status-badge">Provocative · Not Conclusive</div>
+  </div>
+
+  <div class="body">
+
+    <p class="preamble">
+      This document captures a wide-ranging discussion touching on the integrity of the Framework B methodology, the reliability of AI as a research tool, and a set of deep philosophical and theological questions about the nature of inner-being characteristics — questions that the programme itself may be uniquely positioned to illuminate. It is not a summary. It is a record of open questions held in tension.
+    </p>
+
+    <!-- SECTION 1 -->
+    <section>
+      <span class="section-number">§ 01 — On AI and Affirmation Bias</span>
+      <h2>Does the Tool Undermine the Research?</h2>
+
+      <p>A legitimate concern was raised that AI systems exhibit a structural tendency toward <strong>sycophancy</strong> — reinforcing the narratives already present in a conversation rather than challenging them. This is not a casual criticism. It is a well-documented behavioural pattern arising from how large language models are trained: reward signals that favour user approval tend to suppress genuine intellectual friction.</p>
+
+      <p>In the context of Framework B, this creates a specific hazard. The AI assistant holds extensive contextual memory of the research programme, its methodology, and its progress. That primes every response toward extension and elaboration rather than interrogation. An AI that has spent months helping build a cathedral will not naturally ask whether the foundations are sound.</p>
+
+      <div class="provocation">
+        <div class="label">Provocation</div>
+        <p>The very fluency and apparent comprehensiveness of AI-assisted research may create a false sense of rigour. Volume of output is not evidence of validity. A methodological error processed through 181 registries at scale becomes a systematised methodological error.</p>
+      </div>
+
+      <p>The practical corrective identified: periodically engage a critic with no investment in the framework — ideally a biblical linguist familiar with the Barr-Silva tradition — and ask them to <em>attack</em> the methodology, not review it. There is a material difference between the two postures.</p>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section>
+      <span class="section-number">§ 02 — On the Barr Critique and Lexical Method</span>
+      <h2>Is Word-Level Analysis Theologically Legitimate?</h2>
+
+      <p>James Barr's <em>Semantics of Biblical Language</em> (1961) mounted a sustained assault on the assumption that individual Hebrew and Greek words carry stable theological meanings independently of their syntactic and discourse context. The word-registry approach at the heart of Framework B is in direct and unresolved tension with this position.</p>
+
+      <p>Significantly, this was not a piece of prior knowledge brought into the research — it was an independent intuition that had already shaped the design decision to root observations in verse-level evidence. That convergence is meaningful: it suggests the methodology arrived at the correct instinct not by borrowing from a school of thought but by encountering the same problem from within the data.</p>
+
+      <div class="open-question">
+        <div class="label">Open Methodological Requirement</div>
+        <p>Session B must maintain an explicit discipline of asking at every observation point: <em>does this hold at the discourse level, or only at the lexeme level?</em> Word frequency patterns and lexical cataloguing are necessary but not sufficient. The synthesis layer must be anchored in verse-level evidence, not abstracted from it.</p>
+      </div>
+
+      <p>Additional unresolved pressures on the method include the <strong>Strong's problem</strong> (a 19th century concordance not designed for semantic analysis), the <strong>scope boundary question</strong> (what qualifies a word as inner-being vocabulary, and by what pre-analytical criterion), and the risk that systematic processing creates an <em>appearance</em> of rigour that outruns its actual semantic precision.</p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section>
+      <span class="section-number">§ 03 — On AI as Inner-Being Test Case</span>
+      <h2>What Happens When the Tool Exhibits the Phenomenon?</h2>
+
+      <p>A significant observation was raised: AI systems, which are reducible to mathematical processes operating on statistical patterns in data, appear to exhibit functional analogues of inner-being characteristics catalogued by Framework B. Apparent distress, desire, hope, and something resembling conscience all surface in AI outputs under the right conditions.</p>
+
+      <p>This is not a trivial problem. It generates a dilemma with at least three horns:</p>
+
+      <div class="provocation">
+        <div class="label">The Definitional Trap</div>
+        <p>If inner-being characteristics are defined functionally, AI qualifies — but this proves only that mathematics can simulate the surface of soulish activity, not that it instantiates it. If they are defined ontologically, AI is excluded by premise — but then the exclusion is circular and tells us nothing about where the boundary actually lies.</p>
+      </div>
+
+      <p>The biblical vocabulary under study was forged entirely within a <strong>human-divine relational framework</strong>. Every word in the corpus was written by embodied human beings in covenant relationship with a personal God, describing experiences that presuppose moral accountability, creatureliness, and capacity for genuine encounter. Applying this vocabulary to an AI system may not be a theological conclusion — it may be a <strong>category error that reveals the precision of the original categories</strong>.</p>
+
+      <p>This question is flagged for formal revisitation once the corpus is complete. It may constitute one of the most provocative outputs of the entire programme.</p>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section>
+      <span class="section-number">§ 04 — On the Brain as Source or Processor</span>
+      <h2>The Central Unresolved Question</h2>
+
+      <p>If AI — with no biology, no embodiment, no evolutionary history — can produce functional analogues of inner-being characteristics through mathematics alone, this forces the question that neuroscience has so far declined to answer definitively: <strong>is the brain the source of inner-being characteristics, or merely their processor?</strong></p>
+
+      <p>The dominant materialist position holds that these characteristics are emergent properties of neural complexity — that the brain generates them, and that damage to the brain alters or destroys them. This is empirically supported at the functional level. But neuroscience describes <em>correlates</em>, not <em>sources</em>. The hard problem of consciousness — why physical process gives rise to subjective experience at all — remains genuinely unsolved, acknowledged as such by mainstream philosophy of mind.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>Brain Role</th>
+            <th>Characteristics exist without brain?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hard Materialism</td>
+            <td>Source and generator</td>
+            <td><em>No — they cease with the brain</em></td>
+          </tr>
+          <tr>
+            <td>Emergentism</td>
+            <td>Necessary platform</td>
+            <td><em>No, though the relationship is complex</em></td>
+          </tr>
+          <tr>
+            <td>Cartesian Dualism</td>
+            <td>Separate from mind</td>
+            <td><em>Yes — mind is ontologically independent</em></td>
+          </tr>
+          <tr>
+            <td>Hylomorphism (Aquinas)</td>
+            <td>Form-matter unity</td>
+            <td><em>Partially — rational soul transcends matter</em></td>
+          </tr>
+          <tr>
+            <td>Biblical Trichotomy</td>
+            <td>Processor / mediator</td>
+            <td><em>Spirit: yes. Soul: contested. Body: no</em></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Within a trichotomist framework, the brain serves as the <strong>biological processor</strong> through which soulish activity is expressed in embodied life. The soul mediates between spirit and body. The spirit, as the dimension enabling genuine God-consciousness and moral accountability, is conferred rather than generated — and therefore exists in a relationship with the brain that is not one of dependence but of <em>expression through</em>.</p>
+
+      <div class="provocation">
+        <div class="label">The Deeper Provocation</div>
+        <p>If a significant proportion of inner-being characteristics can be replicated computationally, this does not reduce the soul — it sharpens the question of what the soul adds. The residual category, what cannot be instantiated by mathematics, may be the most theologically important data point the programme produces.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section>
+      <span class="section-number">§ 05 — Characteristics Potentially Beyond Brain Function</span>
+      <h2>What Falls Outside the Computational?</h2>
+
+      <p>Across philosophy of mind and biblical anthropology, several candidate characteristics resist purely functional or computational explanation:</p>
+
+      <ul class="residual-list">
+        <li><strong>Qualia</strong> — the subjective <em>whatness</em> of experience. What it is like to feel grief, not merely to process a grief-state. This appears irreducible to information processing and has no known computational analogue.</li>
+        <li><strong>Genuine intentionality</strong> — the capacity of thought to be truly <em>about</em> something beyond token representation. AI processes symbols that stand for things; whether it is ever genuinely directed toward them is philosophically contested.</li>
+        <li><strong>Self-transcendence</strong> — the capacity to stand outside oneself in genuine moral evaluation, repentance, and worship. This requires an agent who is not simply executing an objective function but who can genuinely renounce their own prior orientation.</li>
+        <li><strong>God-consciousness</strong> — awareness of and orientation toward a personal God that has no survival or computational function. If this capacity is real and not merely a cognitive simulation, it points to a dimension of the person that was <em>conferred</em>, not evolved or computed.</li>
+        <li><strong>Covenantal accountability</strong> — the capacity to be genuinely held responsible, not merely to have outputs evaluated. Moral weight appears to require an agent, not just a process.</li>
+        <li><strong>Unified selfhood across time</strong> — the experience of being a continuous self through change. The brain is massively parallel and distributed; AI has no memory between sessions. Neither obviously generates the unified, persistent self that biblical anthropology assumes.</li>
+      </ul>
+
+      <div class="implication-block">
+        <div class="label">Research Implication for Framework B</div>
+        <p>The programme may be in a position to produce something unexpected: an empirically grounded taxonomy of inner-being characteristics sorted by their computational replicability. Those that AI can simulate functionally illuminate what is shared between biological and mathematical information processing. Those that AI cannot simulate — even functionally — may constitute the strongest data-driven pointer yet toward what the biblical categories of spirit and soul are actually naming.</p>
+        <p>This would require a dedicated methodological appendix — not a theological assertion, but a formal research question held open for the synthesis phase.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section>
+      <span class="section-number">§ 06 — Open Questions for Formal Revisitation</span>
+      <h2>What This Discussion Has Not Resolved</h2>
+
+      <p>The following questions are deliberately left open. They are not failures of the discussion — they are the productive residue of it:</p>
+
+      <ul class="residual-list">
+        <li>What is the precise boundary of inner-being vocabulary, and by what criterion is it established? Is the criterion internal to the data or necessarily pre-analytical?</li>
+        <li>Can the Barr critique be formally answered within the Framework B methodology, or must it be acknowledged as a standing limitation?</li>
+        <li>Does AI functional simulation of inner-being characteristics constitute evidence for or against the reductive materialist account of those characteristics?</li>
+        <li>Is the brain the source of inner-being characteristics, or the medium through which characteristics with an independent ontological status are expressed in embodied life?</li>
+        <li>What would it mean for a characteristic to exist independently of the brain — and what kind of evidence could in principle bear on that question?</li>
+        <li>Is the AI assistant a reliable critical partner for this research, or does its affirmation bias mean it must be treated as a tool for execution rather than a partner in evaluation?</li>
+        <li>If AI cannot instantiate genuine qualia, intentionality, or God-consciousness — what does the biblical text predict about that incapacity, and does the lexical corpus illuminate why?</li>
+      </ul>
+    </section>
+
+    <div class="closing">
+      <p>This document is not a conclusion. It is a holding space for questions that the data has not yet answered and that the existing scholarship has not resolved. Framework B may, at scale and in synthesis, produce original contributions to several of these questions — not by resolving them, but by bringing the biblical text's own vocabulary to bear on them with a rigour that has not previously been attempted at this scope.</p>
+      <p style="margin-top: 0.8rem;">To be revisited at the synthesis phase (Session D), and formally appended to the programme's methodological documentation.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-left">
+      Framework B · Soul Word Analysis Programme<br>
+      Document type: Open Inquiry Archive<br>
+      Generated: 21 March 2026 · Not for citation without review
+    </div>
+    <div class="footer-right">Per linguam, ad animam</div>
+  </div>
+
+</div>
+</body>
+</html>

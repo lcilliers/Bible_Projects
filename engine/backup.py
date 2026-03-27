@@ -91,15 +91,28 @@ def integrity_check(db_path: Path | None = None) -> bool:
 
 
 def _prune_pre_run_backups() -> None:
-    """Keep only the N most recent pre-run backups; delete the rest."""
-    pattern = re.compile(r"bible_research_backup_\d{8}_\d{6}_.*\.db$")
-    backups = sorted(
-        [p for p in _BACKUPS_DIR.iterdir() if pattern.match(p.name)],
-        key=lambda p: p.stat().st_mtime,
-        reverse=True,
-    )
-    for old in backups[BACKUP_RETENTION:]:
-        try:
-            old.unlink()
-        except Exception:
-            pass
+    """Keep only the N most recent backups per category; delete the rest.
+
+    Categories pruned independently:
+      - pre-run:  bible_research_backup_*.db
+      - post-run: bible_research_*_post.db
+      - manual/checkpoint: bible_research_manual_*.db, bible_research_checkpoint_*.db
+
+    Pre-migration backups are never pruned (permanent).
+    """
+    categories = [
+        re.compile(r"bible_research_backup_\d{8}_\d{6}_.*\.db$"),
+        re.compile(r"bible_research_\d{8}_\d{6}_.*_post\.db$"),
+        re.compile(r"bible_research_(manual|checkpoint)_.*\.db$"),
+    ]
+    for pattern in categories:
+        backups = sorted(
+            [p for p in _BACKUPS_DIR.iterdir() if pattern.match(p.name)],
+            key=lambda p: p.stat().st_mtime,
+            reverse=True,
+        )
+        for old in backups[BACKUP_RETENTION:]:
+            try:
+                old.unlink()
+            except Exception:
+                pass

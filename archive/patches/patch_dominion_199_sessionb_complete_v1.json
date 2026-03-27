@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-199-sessionb-complete-V1",
+    "registry_id": 199,
+    "word": "dominion",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.3 analysis",
+    "session_b_status": "Session B Complete",
+    "description": "Session B analysis complete for registry 199 dominion. Updates session_b_status to Analysis Complete and records the output document filename. Analysis document: FrameworkB-SessionB-Registry199-Dominion-20260326.docx."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 199
+      },
+      "set": {
+        "session_b_status": "Analysis Complete",
+        "phase2_datasets": "FrameworkB-SessionB-Registry199-Dominion-20260326.docx"
+      },
+      "description": "Set session_b_status = Analysis Complete and record Session B output document filename for registry 199 dominion."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "update_registry": 1
+  }
+}

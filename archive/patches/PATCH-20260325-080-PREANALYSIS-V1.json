@@ -1,0 +1,218 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-080-PREANALYSIS-V1",
+    "registry_id": 80,
+    "word": "humility",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for humility registry. Classifies 12 None-status terms; restores H6035, H6037, H6038 from delete to extracted (Leroux decision); restores H8213 from delete_flagged to in-scope (Leroux decision); adds HIGH_FREQUENCY_ANCHOR flags to 4 under-flagged capped terms; records occurrence-count anomaly note for G4236; records book-abbreviation duplicate note for G5012."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "H6031B",
+      "set": {
+        "status": "extracted",
+        "status_note": "Core humility/affliction verb. a.nah (to afflict/humble, occ=82) covers both the experience of being humbled by external agency and the inner state of lowness. Closely related to the ANAV root family. 76 verses in export.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H6041",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.ni (afflicted/humble/poor, occ=89) — the person in the state produced by humbling. The afflicted ones whom God defends. Core humility vocabulary in Psalms and Prophets. 72 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H6040",
+      "set": {
+        "status": "extracted",
+        "status_note": "o.ni (affliction/poverty/misery, occ=36) — the condition of the afflicted. Paired with a.ni (H6041) as noun and adjective of the same experiential state. 36 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "G5013",
+      "set": {
+        "status": "extracted",
+        "status_note": "tapeinoō (to humble, occ=155) — the primary NT humility verb. Active: to humble oneself; passive: to be humbled/brought low. The Luk 14:11/18:14 pattern ('whoever humbles himself will be exalted'). Core vocabulary. 11 verses in export.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "G5014",
+      "set": {
+        "status": "extracted",
+        "status_note": "tapeinōsis (lowliness/humiliation, occ=31) — the state of being lowly or brought low. Luk 1:48 (God saw the lowly state of his servant), Php 3:21 (body of humiliation). 4 verses in export.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G4236",
+      "set": {
+        "status": "extracted",
+        "status_note": "praotēs (gentleness/meekness, occ reported as 3 but 7 verses present — occurrence_count appears under-reported; see schema_investigation_note OP-013). Gentleness as the outward expression of humility. Fruit of the Spirit (Gal 5:23); clothing of the new person (Col 3:12). 7 verses in export.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H6800A",
+      "set": {
+        "status": "extracted",
+        "status_note": "tsa.na (to be humble/modest/lowly, occ=1) — single occurrence verb. Mic 6:8: 'walk humbly with your God.' The only occurrence but a programme-defining verse. 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H8589",
+      "set": {
+        "status": "extracted",
+        "status_note": "ta.a.nit (fasting as humiliation, occ=1) — humility expressed through the somatic practice of fasting. Single verse (Est 9:31 or equivalent). Connects humility to somatic self-lowering. 1 verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H6031A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.nah sub-sense A (be occupied/busied, occ=2) — occupational/activity sense with no humility semantic content. Bleed from the polysemous a.nah root. Core humility sense covered by H6031B."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "H6033",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.na Aramaic form (occ=1) — thin Aramaic variant. Semantic content covered by H6031B and H6041. Insufficient verse presence for independent analytical contribution."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H6039",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "e.nut (affliction, occ=1) — single-occurrence nominal derivative. Semantic content fully covered by o.ni (H6040) and a.ni (H6041). Insufficient independent presence."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G5424",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "frēn (thinking/understanding, occ=12) — cognitive faculty term, not humility vocabulary. Appears in humility context only obliquely. 1Cor 14:20 (thinking as a child vs as an adult) is about maturity not humility. Bleed from the meekness/wisdom boundary."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "schema_investigation_note",
+      "strongs_number": "G4236",
+      "description": "G4236 praotēs has occurrence_count=3 in wa_term_inventory but 7 unique verse records in the export, all correctly linked to G4236 with no contamination. The occurrence_count field appears under-reported. This may reflect sub-gloss splitting at the STEP data source level (praotēs vs prautēs G4240 overlap). Claude Code to investigate: check STEP occurrence data for G4236 and confirm whether occ=3 is correct for this specific sub-gloss or whether the field needs updating to occ=7. Non-blocking for analysis — working from the 7 verse records as the operative set."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "schema_investigation_note",
+      "strongs_number": "G5012",
+      "description": "G5012 tapeinofrosunē has two verse records for Philippians 2:3: id=3746 (ref='Php 2:3', target_word=None, term_links=[]) and id=77761 (ref='Phili 2:3', target_word='humility', term_links=['G5012']). These are duplicate records under different book abbreviations for the same verse. Claude Code to investigate: check whether both verse IDs refer to the same canonical verse and if so delete the record with the non-standard abbreviation (id=3746, 'Php 2:3') and retain id=77761. Non-blocking — analysis uses id=77761 as the operative Php 2:3 record."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H6035",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.nav (poor/meek/humble, occ=34) — restored from delete. Leroux decision 2026-03-25. The ANAV root is the primary OT humility lexeme: the poor and lowly ones whom God exalts (Psa 37:11 — the meek shall inherit the land; Isa 61:1 — good news to the afflicted/meek). Cross-registry link to meekness (109) already recorded. Analytically essential.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "H6037",
+      "set": {
+        "status": "extracted",
+        "status_note": "an.vah (gentleness/humility, occ=2) — restored from delete. Leroux decision 2026-03-25. GOD_AS_SUBJECT and DIVINE_HUMAN_PARALLEL flags: God's own humility vocabulary (Psa 18:35; Psa 45:4 — the king's majesty riding in the cause of truth and humble meekness). 2 verses only but analytically critical for the divine dimension.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "H6038",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.na.vah (humility/gentleness, occ=5) — restored from delete. Leroux decision 2026-03-25. GOD_AS_SUBJECT and DIVINE_HUMAN_PARALLEL flags. Pro 15:33, 18:12 — humility before honour. Pro 22:4 — the reward of humility and fear of the Lord. Zep 2:3 — seek humility. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "restore_delete_flagged",
+      "term_inv_ids": [321],
+      "description": "Restore H8213 sha.phel (to abase/bring low, term_inv_id=321) to in-scope by setting delete_flagged=0. Leroux decision 2026-03-25. H8213 has GOD_AS_SUBJECT, CAUSATIVE_OF_INNER_STATE, and DIVINE_HUMAN_PARALLEL flags. 29 verses. God as the agent who brings down the proud and the lofty (Isa 2:11, 2:17; Eze 21:26) and raises the lowly (1 Sa 2:7; Job 5:11). This is the involuntary/divine-agency humbling vocabulary — the structural counterpart to chosen humility. Analytically essential for the two-forms structure. SQL: UPDATE wa_term_inventory SET delete_flagged=0 WHERE id=321."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "add_quality_flag",
+      "strongs_number": "G5013",
+      "term_inv_id": 2629,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "tapeinoō (to humble, occ=155) — 11 verses in export, 7% coverage. Below 20% threshold. Requires VOLUME_LIMITATION PH2 flag at Session B analysis stage."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "add_quality_flag",
+      "strongs_number": "G5011",
+      "term_inv_id": 326,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "tapeinos (lowly, occ=55) — 8 verses in export, 15% coverage. Below 20% threshold."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "add_quality_flag",
+      "strongs_number": "G5014",
+      "term_inv_id": 2630,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "tapeinōsis (lowliness, occ=31) — 4 verses in export, 13% coverage. Below 20% threshold."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "add_quality_flag",
+      "strongs_number": "G5424",
+      "term_inv_id": 2631,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "frēn (thinking, occ=12) — 1 verse in export, 8% coverage. Below 20% threshold. Note: this term is classified delete in OP-012; flag is added for completeness of the data record."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 22,
+    "mti_extract": 8,
+    "mti_delete": 3,
+    "mti_restore_from_delete": 3,
+    "delete_flag_restorations": 1,
+    "quality_flag_inserts": 4,
+    "schema_investigation_notes": 2,
+    "note": "OP-018 is a manual operation (restore_delete_flagged, PATCH_SPEC §4.4). All others are structured auto-applicable operations. After patch application, re-export humility_80_full for Session B analysis."
+  }
+}

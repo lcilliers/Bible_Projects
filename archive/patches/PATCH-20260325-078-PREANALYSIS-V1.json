@@ -1,0 +1,466 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-078-PREANALYSIS-V1",
+    "registry_id": 78,
+    "word": "hope",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for hope registry 78. Classifies all 44 None-status terms (14 extract, 30 delete); confirms 2 candidate_delete terms as delete; adds HF flag for G4253; adds schema investigation note for H6960B contamination and H7663B contamination."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H6960B",
+      "description": "H6960B (qa.vah: to collect, id=305, occ=3, v=43) shares 43 verse records with sibling sub-gloss H6960A (qa.vah: to await, id=303, occ=48, v=44). The occ=3 vs v=43 discrepancy is severe — this is cross-sub-gloss verse sharing where the minority sub-gloss carries nearly all sibling verses. Analytically non-blocking: H6960A (44 verses) carries the full hope/await corpus. Analysis uses H6960A as the operative term. Claude Code to investigate: (1) whether H6960B verse records should be detached or whether the sub-gloss split is valid; (2) if valid, confirm which verses belong properly to the 'to collect' sense."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H7663B",
+      "description": "H7663B (sa.var: to await, id=304, occ=6, v=9) has v=9 vs occ=6 — 3 extra verse records, likely from Neh 2:13 and 2:15 where target_word is None (non-hope context). Contamination is minor. Analysis uses 6 legitimate hope verses; 3 spurious Nehemiah records noted."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H2342B,H2342K,H2427B,H7951",
+      "description": "Four None-status terms show occ < v (cross-sub-gloss verse sharing): H2342B (occ=3, v=10), H2342K (occ=8, v=10), H2427B (occ=1, v=6), H7951 (occ=5, v=6). All four are classified delete in this patch. Contamination is non-blocking. Claude Code to note for data audit."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H3176G",
+      "set": {
+        "status": "extracted",
+        "status_note": "ya.chal: to wait/wait sense (occ=18, 15 verses) — the waiting-with-expectation sense of ya.chal. CRL already recorded with patience (116). Core hope-patience bridge term. Psa 130:5 'I wait for the Lord'; Job 14:14 'all the days of my service I would wait'. 15 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H3176H",
+      "set": {
+        "status": "extracted",
+        "status_note": "ya.chal: to wait/hope sense (occ=26, 26 verses) — the hope/trust sense of ya.chal. The forward-expectation dimension. Psa 31:24 'be strong, all you who wait for the Lord'; Isa 51:5 'the coastlands hope for me'. 26 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "H0983",
+      "set": {
+        "status": "extracted",
+        "status_note": "be.tach: security/safely (adverb, occ=42, 41 verses) — the security/safety adverb from the ba.tach root (already extracted). Describes the condition of one who dwells safely/securely. Lev 25:18 'live in safety'; Psa 4:8 'dwell in safety'; Pro 3:29 'dwells trustingly'. 41 verses of the trust-security condition.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H0985",
+      "set": {
+        "status": "extracted",
+        "status_note": "bit.chah: trust/confidence (occ=1, 1 verse — Isa 30:15 'in quietness and trust shall be your strength') — the trust-confidence noun. Single occurrence but programme-defining verse.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H0987",
+      "set": {
+        "status": "extracted",
+        "status_note": "bat.tu.chot: security/safety (plural noun, occ=1, 1 verse — Job 12:6 'who bring their god in their hand, those whose god is their strength/security') — the security vocabulary plural form. Single occurrence; rounds out the ba.tach family.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H3690",
+      "set": {
+        "status": "extracted",
+        "status_note": "kis.lah: confidence/folly (occ=2, 2 verses — Job 31:24 'if I have made gold my trust'; Psa 85:8 'let them not turn back to folly') — confidence vocabulary from the ke.sel/loin root. The two verses show both the legitimate (trust in God) and illegitimate (trust in gold) dimensions of confidence. 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "H2622",
+      "set": {
+        "status": "extracted",
+        "status_note": "cha.sut: refuge/shelter (occ=1, 1 verse — Isa 30:2 'who take refuge in the shadow of Egypt') — refuge vocabulary from the cha.sah root (already extracted, 36v). Single occurrence as the refuge-shelter noun. Rounds out the refuge family.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H4723C",
+      "set": {
+        "status": "extracted",
+        "status_note": "miq.veh: collection/gathered waters (occ=3, 3 verses — Gen 1:10 'God called the dry land Earth, and the waters that were gathered together he called Seas'; Exo 7:19; Lev 11:36) — the collection/gathering sense of the miq.veh root. Related to H4723B (miq.veh: hope, already extracted). The root meaning of 'gathering together' underlies both hope (the gathering of expectation toward a point) and water collection. 3 verses — analytically significant for the semantic root analysis.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "H8615A",
+      "set": {
+        "status": "extracted",
+        "status_note": "tiq.vah: cord/thread (occ=2, 2 verses — Jos 2:18, 21: Rahab's scarlet cord in the window) — the cord sense of tiq.vah. Analytically significant: the same word that means 'hope' (H8615B, 31v) also means a physical cord. The structural link is the root qa.vah (to bind/stretch/wait) — hope is the cord that holds; the Rahab cord is the physical expression of the same root. 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "H5027",
+      "set": {
+        "status": "extracted",
+        "status_note": "na.vat: to look/regard (occ=72, 67 verses) — to look toward, fix one's gaze on. The visual dimension of hope: hope is directional looking. Psa 34:5 'those who look to him are radiant'; Isa 51:6 'lift up your eyes to the heavens'; Num 21:9 'when anyone looked at the bronze serpent'. 67 verses. The visual metaphor grounds the entire hope vocabulary in the act of directed attention.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "H7663A",
+      "set": {
+        "status": "extracted",
+        "status_note": "sa.var: to inspect/examine (occ=3, 2 verses — Neh 2:13, 15: Nehemiah inspecting the walls of Jerusalem at night) — the inspection sense of sa.var. Related to H7663B (sa.var: to await, already extracted). The inspection sense illuminates the root: sa.var involves careful looking/examining — the same attentiveness that characterises hoping. 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "confirm_delete",
+      "strongs_number": "G7379",
+      "description": "epelpizō: to raise hope (occ=4, NO_VERSES) — candidate_delete confirmed. No verse records; thin data; content covered by G1679 (elpizō: to hope, 33v) and G1680 (elpis: hope, 50v). Delete confirmed."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "confirm_delete",
+      "strongs_number": "H6961",
+      "description": "qa.veh: line (occ=9, NO_VERSES) — candidate_delete confirmed. The line/measuring-line sense of qa.vah; no verse records; covered by H6957B (line, 13v) and H8615A (tiq.vah cord, 2v). Delete confirmed."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul: tremble/fear sense (occ=12) — trembling/writhing before danger. The pain-writhing dimension, not hope. Content covered by H2342I (writhe in pain) and H2342K (anticipate anxiously). Delete."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chil: be firm (occ=3, contaminated v=10 — cross-sub-gloss bleed, OP-003) — be firm/strong sense of chul. Not hope vocabulary. Contamination noted. Delete."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul: give birth (occ=9) — birthing/travail sense. Pain/labour not hope. Delete."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul: writhe in pain/wound (occ=25) — pain and wounding. Not hope vocabulary. Cross-registry with distress/grief. Delete."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul: dance/shake (occ=10) — dancing/shaking sense of chul. Not hope vocabulary. Delete."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "H2342K",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul: anticipate/wait anxiously (occ=8, contaminated v=10, OP-003) — anxious anticipation/writhing with pain. While tangentially related to tense waiting, the semantic weight is anxiety and pain rather than hope. CRL with anguish (005) already noted. Contamination noted. Delete."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "H2344",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chol: sand (occ=23) — sand as a material. No hope content. Root bleed from chul family."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "H2426",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chel: rampart/fortress (occ=9) — military fortification. No hope content. Root bleed from chul."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "H2427A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chil: agony/anguish (occ=6) — pain and anguish. Cross-registry with anguish (005) as CRL. Not hope vocabulary in primary sense. Delete."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "H2427B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chi.lah: agony (occ=1, contaminated v=6, OP-003) — agony sub-gloss. Contaminated. Delete."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "H2430",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "che.lah: bulwark/rampart (occ=1) — military fortification. No hope content. Root bleed."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H2479",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chal.cha.lah: anguish/trembling (occ=4) — anguish and terror. Not hope vocabulary. Cross-registry with anguish."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "H3684",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ke.sil: fool (occ=70) — foolishness. Root bleed from ke.sel/loin/hope family (H3689 already extracted). The fool sense is the negative: the foolish person misplaces confidence. Analytically interesting but not independently part of the hope vocabulary. 70 verses would skew coverage. Delete."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "H3685H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ke.sil: constellation (Orion, occ=1) — astronomical. Root bleed from ke.sel. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "H3687",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ke.si.lut: stupidity (occ=1) — foolishness noun. Root bleed. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "strongs_number": "H3688",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ka.sal: be stupid (occ=1) — foolishness verb. Root bleed. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "strongs_number": "H4234",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.chol: dance (occ=6) — dancing. Root bleed from chul. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "strongs_number": "H4246",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "me.cho.lah: dance (occ=8) — dancing. Root bleed from chul. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "strongs_number": "H4723A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qo.veh: Kue (place name, occ=4) — geographic location (Egypt/Asia Minor region). Root bleed from miq.veh. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "strongs_number": "H5033",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.vekh: spring (occ=1) — spring/water source. No hope content. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "strongs_number": "H5528",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.khal: be foolish (occ=8) — foolishness. Root bleed from ke.sel family. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "strongs_number": "H6957A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qav: cord/measuring-line (occ=12, v=2, below 20% — OP-003 note) — measuring-line sense. Content covered by H8615A (tiq.vah cord, extracted) and H6957B. Low coverage. Delete."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "strongs_number": "H6957B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qav: cord/line (occ=13, 13 verses) — measuring-line in architectural/prophetic contexts. The cord sense is covered by H8615A (tiq.vah cord, Rahab narrative). The measuring-line sense (Eze 40 temple measurements, Isa 28:17 plumb line) does not carry hope semantic content independently. Delete."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "strongs_number": "H6978",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qav.qav: might (occ=4, v=2) — uncertain meaning, possibly 'might' or a place name. Thin data; no hope content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "strongs_number": "H7951",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sha.lah: to prosper/be at ease (occ=5, contaminated v=6, OP-003) — ease and prosperity. This term belongs to the peace registry (117, where it is extracted). It entered the hope registry as bleed from the ease/security proximity. Contamination noted. Delete."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "strongs_number": "H7952",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sha.lah: to neglect (occ=2) — negligence sense. No hope content."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "strongs_number": "H7954",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "she.leh: be safe (Aramaic, occ=1) — Aramaic ease/safety. Belongs to peace registry. Delete."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "strongs_number": "H7959",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sha.lu: prosperity (occ=1) — ease/prosperity. Belongs to peace registry (117, extracted there). Bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "strongs_number": "H7961",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sha.lev: at ease (occ=8) — ease. Belongs to peace registry (117, active there). Bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "strongs_number": "H7962",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shal.vah: ease/prosperity (occ=8) — belongs to peace registry (117, extracted there). Bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "strongs_number": "H7987",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "she.li: quietness (occ=1) — belongs to peace registry (117, extracted there). Bleed. Delete."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "strongs_number": "G3784",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ofeilō: to owe/be obligated (occ=50) — debt and obligation vocabulary. No hope semantic content. Bleed from pro- prefix proximity to proelpizō (G4276, already extracted). Delete."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "strongs_number": "G4253",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pro: before/in front of (preposition, occ=245, v=48, 20% — OP-003 note) — Greek preposition 'before' (temporal/spatial). Entered registry as prefix component of proelpizō (G4276: to hope beforehand, already extracted). The bare preposition carries no hope content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "add_quality_flag",
+      "strongs_number": "G4253",
+      "term_inv_id": 2767,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "pro (before, occ=245) — 48 verses in export, 20% coverage. Classified delete in OP-049; flag added for record completeness."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 50,
+    "schema_investigation_notes": 3,
+    "mti_extract": 11,
+    "mti_delete": 30,
+    "candidate_delete_confirmed": 2,
+    "quality_flag_inserts": 1,
+    "note": "After application, projected active inventory: 21 existing extracted + 11 newly extracted = 32 active terms. Total verses estimated ~550-570 (adding ya.chal sub-glosses ~41v, be.tach security ~41v, na.vat ~67v, and other smaller terms). Re-export required before Session B analysis. The hope registry has a notably well-curated existing extraction — the 44 None-status terms contain significant bleed from the peace/ease vocabulary and from the chul/pain family, neither of which is hope proper."
+  }
+}

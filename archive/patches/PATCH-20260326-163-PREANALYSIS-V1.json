@@ -1,0 +1,1781 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-163-PREANALYSIS-V1",
+    "registry_id": 163,
+    "word": "trust",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Full pre-analysis for registry 163 (trust). Classifies all 169 NULL terms. NULL→extracted: 17, NULL→extracted_thin: 27, NULL→delete: 125. HFA reclassify: H5921A (al, 5802 occ). Candidate→delete: G6381. Major bleed families deleted: galal/gilgal (15), chul/chil (11), nasa 22 sub-glosses (all non-trust), shalom family (15), washing (3), kesil/fool (5), massa/burden (5), dance (2), foundation/base (3). 2 flags raised: PH2-163-001 (G4100 volume note), PH2-163-002 (extraction anomaly, eighth consecutive)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1679",
+      "mti_term_id": 4101,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4006",
+      "mti_term_id": 4031,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4100",
+      "mti_term_id": 4039,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4102G",
+      "mti_term_id": 4037,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4103",
+      "mti_term_id": 4040,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0529",
+      "mti_term_id": 4020,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0530",
+      "mti_term_id": 4015,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0539",
+      "mti_term_id": 4013,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0571G",
+      "mti_term_id": 4014,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0982",
+      "mti_term_id": 4034,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2620",
+      "mti_term_id": 4070,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3176H",
+      "mti_term_id": 4178,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4009",
+      "mti_term_id": 4033,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4268",
+      "mti_term_id": 4069,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6960A",
+      "mti_term_id": 4072,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8172",
+      "mti_term_id": 4102,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8615B",
+      "mti_term_id": 4074,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0569",
+      "mti_term_id": 4043,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0570",
+      "mti_term_id": 4042,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0571",
+      "mti_term_id": 4041,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3640",
+      "mti_term_id": 4044,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4102H",
+      "mti_term_id": 4038,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4104",
+      "mti_term_id": 4046,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4276",
+      "mti_term_id": 4099,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0540",
+      "mti_term_id": 4022,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0543",
+      "mti_term_id": 4017,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0544",
+      "mti_term_id": 4028,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0548",
+      "mti_term_id": 4025,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0551",
+      "mti_term_id": 4019,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0552",
+      "mti_term_id": 4021,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0571H",
+      "mti_term_id": 4016,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0571I",
+      "mti_term_id": 4018,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0986",
+      "mti_term_id": 4035,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0987",
+      "mti_term_id": 4036,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2622",
+      "mti_term_id": 4071,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3175",
+      "mti_term_id": 4181,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3176G",
+      "mti_term_id": 4179,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3690",
+      "mti_term_id": 4050,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4723B",
+      "mti_term_id": 4076,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4937A",
+      "mti_term_id": 4104,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4937B",
+      "mti_term_id": 4105,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375O",
+      "mti_term_id": 4107,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7365",
+      "mti_term_id": 4160,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8431",
+      "mti_term_id": 4180,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0374",
+      "mti_term_id": 4140,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0545",
+      "mti_term_id": 4138,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G2138",
+      "mti_term_id": 4141,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3958",
+      "mti_term_id": 4032,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3980",
+      "mti_term_id": 4139,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3981",
+      "mti_term_id": 4142,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3988",
+      "mti_term_id": 4143,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4101",
+      "mti_term_id": 4045,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4253",
+      "mti_term_id": 4100,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0403",
+      "mti_term_id": 4092,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0525",
+      "mti_term_id": 4023,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0541",
+      "mti_term_id": 4026,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0542",
+      "mti_term_id": 4027,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0545",
+      "mti_term_id": 4029,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0546",
+      "mti_term_id": 4024,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0547",
+      "mti_term_id": 4030,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1530G",
+      "mti_term_id": 4148,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1530H",
+      "mti_term_id": 4147,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1534",
+      "mti_term_id": 4150,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1536",
+      "mti_term_id": 4158,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1538",
+      "mti_term_id": 4149,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1543",
+      "mti_term_id": 4152,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1544",
+      "mti_term_id": 4145,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1550A",
+      "mti_term_id": 4159,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1550B",
+      "mti_term_id": 4155,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1552",
+      "mti_term_id": 4153,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1556",
+      "mti_term_id": 4144,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1557",
+      "mti_term_id": 4156,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1558",
+      "mti_term_id": 4151,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1560",
+      "mti_term_id": 4157,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1561",
+      "mti_term_id": 4154,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342A",
+      "mti_term_id": 4165,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342B",
+      "mti_term_id": 4166,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342H",
+      "mti_term_id": 4167,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342I",
+      "mti_term_id": 4168,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342J",
+      "mti_term_id": 4169,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2342K",
+      "mti_term_id": 4164,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2344",
+      "mti_term_id": 4170,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2426",
+      "mti_term_id": 4172,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2427A",
+      "mti_term_id": 4173,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2427B",
+      "mti_term_id": 4176,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2430",
+      "mti_term_id": 4177,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2479",
+      "mti_term_id": 4175,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559A",
+      "mti_term_id": 4083,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559B",
+      "mti_term_id": 4084,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559H",
+      "mti_term_id": 4085,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559I",
+      "mti_term_id": 4086,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559J",
+      "mti_term_id": 4087,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3559K",
+      "mti_term_id": 4082,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3561",
+      "mti_term_id": 4095,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3563A",
+      "mti_term_id": 4089,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3563B",
+      "mti_term_id": 4094,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3651A",
+      "mti_term_id": 4090,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3651C",
+      "mti_term_id": 4088,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3684",
+      "mti_term_id": 4048,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3685H",
+      "mti_term_id": 4051,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3687",
+      "mti_term_id": 4052,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3688",
+      "mti_term_id": 4053,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3689",
+      "mti_term_id": 4047,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4039",
+      "mti_term_id": 4146,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4234",
+      "mti_term_id": 4174,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4246",
+      "mti_term_id": 4171,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4349",
+      "mti_term_id": 4093,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4350",
+      "mti_term_id": 4091,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4369",
+      "mti_term_id": 4097,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4723C",
+      "mti_term_id": 4077,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4853A",
+      "mti_term_id": 4126,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4853B",
+      "mti_term_id": 4127,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4856",
+      "mti_term_id": 4132,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4858",
+      "mti_term_id": 4133,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4864",
+      "mti_term_id": 4128,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4938A",
+      "mti_term_id": 4106,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4938B",
+      "mti_term_id": 4103,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375G",
+      "mti_term_id": 4108,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375H",
+      "mti_term_id": 4109,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375I",
+      "mti_term_id": 4110,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375J",
+      "mti_term_id": 4111,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375K",
+      "mti_term_id": 4112,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375L",
+      "mti_term_id": 4113,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375M",
+      "mti_term_id": 4114,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375N",
+      "mti_term_id": 4115,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375P",
+      "mti_term_id": 4116,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375Q",
+      "mti_term_id": 4117,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375R",
+      "mti_term_id": 4118,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375S",
+      "mti_term_id": 4119,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375T",
+      "mti_term_id": 4120,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375U",
+      "mti_term_id": 4121,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375V",
+      "mti_term_id": 4122,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375W",
+      "mti_term_id": 4123,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5375X",
+      "mti_term_id": 4124,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5376",
+      "mti_term_id": 4131,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5379",
+      "mti_term_id": 4134,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5385",
+      "mti_term_id": 4135,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5387A",
+      "mti_term_id": 4125,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5387B",
+      "mti_term_id": 4130,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5528",
+      "mti_term_id": 4049,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6957A",
+      "mti_term_id": 4078,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6957B",
+      "mti_term_id": 4075,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6960B",
+      "mti_term_id": 4073,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6961",
+      "mti_term_id": 4081,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6978",
+      "mti_term_id": 4079,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7364",
+      "mti_term_id": 4161,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7366",
+      "mti_term_id": 4162,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7367",
+      "mti_term_id": 4163,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7613",
+      "mti_term_id": 4129,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7863",
+      "mti_term_id": 4136,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7865",
+      "mti_term_id": 4137,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965G",
+      "mti_term_id": 4055,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965H",
+      "mti_term_id": 4056,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965I",
+      "mti_term_id": 4057,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965J",
+      "mti_term_id": 4054,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965K",
+      "mti_term_id": 4058,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7965L",
+      "mti_term_id": 4059,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7966",
+      "mti_term_id": 4065,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7999A",
+      "mti_term_id": 4060,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7999B",
+      "mti_term_id": 4063,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8001",
+      "mti_term_id": 4064,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8002",
+      "mti_term_id": 4061,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8003",
+      "mti_term_id": 4062,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8005",
+      "mti_term_id": 4066,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8011",
+      "mti_term_id": 4067,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8021",
+      "mti_term_id": 4068,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8498",
+      "mti_term_id": 4096,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8499",
+      "mti_term_id": 4098,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8615A",
+      "mti_term_id": 4080,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5921A",
+      "mti_term_id": 755,
+      "set": {
+        "status": "delete"
+      },
+      "note": "Reclassify extracted→delete: HFA preposition (al, 5802 occ), researcher authorised"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G6381",
+      "mti_term_id": 4182,
+      "set": {
+        "status": "delete"
+      },
+      "note": "Confirm candidate_delete → delete: no verses"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 163,
+        "file_id": 192,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-163-001",
+        "strongs_reference": "G4100",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G4100 pisteuō (to trust, 297 occ, 120 verses, 40%) — good coverage but note cross-registry with faith (59). Phase 2 review recommended.",
+        "session_raised": "Session B v4.4",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 163,
+        "file_id": 192,
+        "flag_code": "PH2_DATA_ERROR",
+        "flag_label": "PH2-163-002",
+        "strongs_reference": "H5921A",
+        "priority": "HIGH",
+        "session_target": "B",
+        "description": "EXTRACTION ANOMALY — eighth consecutive registry. H5921A al (upon, 5802 occ HFA preposition) incorrectly extracted. Reclassified to delete. See PH2-034-005.",
+        "session_raised": "Session B v4.4",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING ANOMALY — eighth consecutive registry. H5921A al (HFA preposition, 5802 occ) incorrectly extracted. Programme-wide audit urgently required (PH2-034-005). Also: large bleed families confirmed — galal/gilgal (15 terms), chul/chil (11 terms), nasa (22 sub-glosses), shalom (15 terms), washing family."
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 163,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "update_mti_status": 171,
+    "insert": 2,
+    "schema_investigation_note": 1,
+    "update_registry": 1
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-042-SESSIONB-V1",
+    "registry_id": 42,
+    "word": "delight",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 42 (delight). Sets session_b_status to Session B Complete. Analysis document: WA-42-delight-analysis-20260326.docx (543 paragraphs, 6 parts). 58 working terms analysed. Key families: chaphets (delight-as-will), samach/simchah (commanded rejoicing), gil (exultant joy), ratson (acceptance), anag (luxuriant self-abandonment), shaashuim (Ps 119 delight in the law), chamad (desire and covetousness), eudokeo/eudokia, chairo/chara, sunēdomai (Rom 7:22). Key finding: delight is reciprocal — God delights in people and calls them to delight in him. Sixth consecutive applicator anomaly corrected by OP-001."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 42,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — sixth consecutive registry (98, 34, 160, 126, 59, 42). update_registry ops in PREANALYSIS patches continue not executing. OP-001 corrects registry 42 directly. Claude Code must resolve immediately — this has now affected every registry this session."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 42 (delight). Document: WA-42-delight-analysis-20260326.docx. Working set: 58 terms (34 extracted, 24 extracted_thin | Hebrew 48, Greek 10). 1 volume flag: PH2-042-001 (G0021 agalliao). 1 data error flag: PH2-042-002 (H4100, H0227A — sixth extraction anomaly). Cross-registry notes: H2896A tov overlaps with goodness/creation registries; H2530A chamad connects to desire registry 043."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-007-PREANALYSIS-V1",
+    "registry_id": 7,
+    "word": "anxiety",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis MTI classification for all 15 None-status terms in registry 007 (anxiety). G3077 classified as xref_sorrow (covered in full in grief/sorrow registries). G4328/G4329 classified extracted_thin (anticipatory/apprehension dimension present but not primary semantic range). H7599/H7600 classified extracted (antithetical pole — false security / absence of appropriate anxiety). All other core terms classified extracted."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G3309",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary NT anxiety term. merimnaō — to be anxious, to have a divided, distracted mind. Core vocabulary for Matt 6:25-34 and Phil 4:6 anchor passages. 17 verses, 25 occurrences."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "G3308",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary NT anxiety noun. merimna — care, anxiety, the weight of divided concern. Appears in parable of the sower (thorns = cares of the world) and 1 Pet 5:7. 6 verses, 8 occurrences."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H1672",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary Hebrew anxiety verb. da.ag — to be anxious, to fear, to worry. CRL to fear (061) registered. 7 verses, 7 occurrences. Full coverage."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H1674",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary Hebrew anxiety noun. de.agah — anxiety, care, worry. CRL to sorrow (154) registered. Pro 12:25 (anxiety weighs down the heart) is anchor verse. 6 verses, 6 occurrences. Full coverage."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H8312",
+      "set": {
+        "status": "extracted",
+        "status_note": "sar.ap.pim — disquieting thoughts, anxious inner division. Rare term (2 occ) but analytically significant: Psa 94:19 (many anxious thoughts / God's consolations) and Psa 139:23 (search me and know my thoughts). Both are inner-state introspection verses."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "H5587A",
+      "set": {
+        "status": "extracted",
+        "status_note": "se.ip.pah — division of opinion, halting between two thoughts. 1 Ki 18:21 (limping between two opinions — Elijah on Carmel). Thin data (1 verse) but relevant as the divided-mind dimension of anxiety."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H5587B",
+      "set": {
+        "status": "extracted",
+        "status_note": "se.ip.pim — disquieting thoughts, anxious contemplations. Job 4:13 (thoughts from visions of the night) and Job 20:2 (haste within me). Thin (2 verses) but part of the divided-thought family alongside H5587A and H8312."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H7599",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.an — to be at ease, to rest securely. Antithetical pole of anxiety — the absence of anxious dread. Includes both positive ease (Pro 1:33: at ease without dread of disaster, as fruit of wisdom) and morally neutral ease (Job 3:18). 5 verses, full coverage."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H7600",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.a.nan — at ease, secure, complacent. Predominantly the condemned false-security register: Amos 6:1 (woe to those at ease in Zion), Isa 32:9/11 (complacent women rebuked), 2 Ki 19:28 (complacency as sin). Also positive: Isa 32:18 (God's people in secure dwellings). 10 verses, full coverage. Analytically important as the pathological pole — false ease that should be anxiety."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G4328",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "prosdokaō — to expect, look for, wait for. Primary sense is neutral expectation/attention; not an anxiety term per se. However, a subset of its 15 verse records carries genuine anticipatory-dread content: Act 27:33 (suspense on the ship), Act 28:6 (waiting for Paul to die), Mat 24:50/Luk 12:46 (vigilant suspense of judgment context). The anxiety-dimension is contextual not lexical. Analysis must work from anxiety-valenced verses only. THIN_DATA flag applies to the anxiety register specifically."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G4329",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "prosdokia — expectation, foreboding, apprehension. Noun form skews toward fearful expectation in classical usage (LSJ: 'more commonly fear'). Luk 21:26 (fainting with fear and foreboding of what is coming) is the clearest anxiety-register verse. Only 2 verses in export (5 occurrences); data very thin. Analysis is cautious and limited to the foreboding sense."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G0253",
+      "set": {
+        "status": "extracted",
+        "status_note": "alupos — free from anxiety, without grief or pain. Privative adjective; the negated form illuminates the positive term. Phil 2:28: Paul sends Epaphroditus so they may be 'less anxious' (comparative). 1 verse in export (3 occurrences)."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G0275",
+      "set": {
+        "status": "extracted",
+        "status_note": "amerimnos — free from care, unconcerned. The NT positive counterpart to merimnaō. 1 Cor 7:32 (Paul's desire that believers be free from anxieties) and Mat 28:14 (guards promised they will be kept out of trouble). 2 verses, full coverage."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G4305",
+      "set": {
+        "status": "extracted",
+        "status_note": "promerimnaō — to be anxious beforehand, to worry in advance. Intensified/prefixed form of merimnaō. Mar 13:11 (do not worry beforehand what to say when brought to trial). 1 verse, 1 occurrence. Thin but genuine anxiety vocabulary — the pre-emptive, anticipatory register."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G3077",
+      "set": {
+        "status": "xref_sorrow",
+        "status_note": "lupē — grief, sorrow, pain of mind. Primary semantic range is grief/sorrow, not anxiety. Fully covered in grief (071) and sorrow (154) registries. CRL to sorrow (154) already registered. Excluded from Session B anxiety analysis."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 7,
+        "file_id": 7,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-007-001",
+        "strongs_reference": "G4329",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G4329 prosdokia has 5 occurrences (STEP) but only 2 verse records in export. The foreboding/apprehension sense (Luk 21:26) is analytically significant but the dataset is too thin for confident conclusions. Phase 2 independent research required before synthesis-level use of this term.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 7,
+        "file_id": 7,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-007-002",
+        "strongs_reference": "G4328",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "G4328 prosdokaō has 20 occurrences but only 15 verses in export; anxiety-register content is present in a minority of these. The anxiety dimension is contextual not lexical. Analysis limited to anxiety-valenced verses (Act 27:33, Act 28:6, Mat 24:50/Luk 12:46 context). Full corpus review in Phase 2 recommended.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 17,
+    "update_mti_status": 15,
+    "insert": 2,
+    "classifications": {
+      "extracted": 11,
+      "extracted_thin": 2,
+      "xref_sorrow": 1,
+      "note": "G3077 lupē classified xref_sorrow (covered in grief/sorrow registries). G4328/G4329 extracted_thin — anticipatory/apprehension dimension present but not primary semantic range. H7599/H7600 extracted as antithetical pole (false security / legitimate ease). Active terms for Session B analysis: 14."
+    }
+  }
+}

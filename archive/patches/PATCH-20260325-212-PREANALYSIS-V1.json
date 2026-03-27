@@ -1,0 +1,461 @@
+{
+  "patch_id": "PATCH-20260325-212-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 212,
+  "registry_word": "pray",
+  "file_id": null,
+  "source_json_exported_at": "2026-03-25T11:07:52Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for pray (reg 212). First iteration export. No terms extracted yet \u2014 all None or candidate_delete. Sets anchor verse. Extracts primary prayer vocabulary (17 terms). Rescues 3 terms from candidate_delete. Confirms 1 extracted_thin. Bulk-deletes bleed vocabulary. Flags 4 missing terms requiring Phase 1 supplement from Claude Code before Session B closure.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Set provisional anchor verse Rom 8:26-27 ('the Spirit himself intercedes for us with groanings too deep for words... according to the will of God'). Most comprehensive single statement about prayer as spirit-to-Spirit communication: the believer's weakness, the Spirit's intercession, and the Father's will in one passage. To be confirmed after verse reading. Secondary candidate: Mat 6:6 (pray to your Father in secret) or 1Co 14:14-15 (spirit prays / mind unfruitful).",
+      "registry_no": 212,
+      "set": {
+        "anchor_verses": "Rom 8:26-27"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4336 proseuchomai \u2192 extracted. PRIMARY NT PRAY VERB. 167 occurrences, 81 verses. The most important NT prayer term. Cover",
+      "mti_id": 2338,
+      "strongs_number": "G4336",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY NT PRAY VERB. 167 occurrences, 81 verses. The most important NT prayer term. Covers: the Lord's teaching on prayer (Mat 6:5-9), Gethsemane (Mat 26:36-44), apostolic instruction (Rom 12:12; Eph 6:18; Phi 4:6; Col 4:2; 1Th 5:17), Paul's own prayer practice (Rom 1:10; Phi 1:9), praying in the Spirit (Eph 6:18; Jude 20), and the prayer that raises the sick (Jam 5:14-18). Mat 6:6 \u2014 'when you pr"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4335 proseuch\u0113 \u2192 extracted. PRIMARY NT PRAYER NOUN. 103 occurrences, 36 verses. Phi 4:6 \u2014 'in everything by prayer (pr",
+      "mti_id": 2337,
+      "strongs_number": "G4335",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY NT PRAYER NOUN. 103 occurrences, 36 verses. Phi 4:6 \u2014 'in everything by prayer (proseuche) and petition (de\u0113sis) with thanksgiving.' Act 1:14 \u2014 'all these with one accord were devoting themselves to prayer (proseuche).' Eph 6:18 \u2014 'praying at all times in the Spirit, with all prayer (proseuche) and supplication.' The noun form of proseuchomai \u2014 covers the act, the content, and the practice"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6419 pa.lal \u2192 extracted. PRIMARY OT PRAY VERB. 84 occurrences, 82 verses. Gen 20:7 \u2014 'he is a prophet, so that he w",
+      "mti_id": 2342,
+      "strongs_number": "H6419",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY OT PRAY VERB. 84 occurrences, 82 verses. Gen 20:7 \u2014 'he is a prophet, so that he will pray (pa.lal) for you.' 1Sa 1:10 \u2014 Hannah praying in bitterness of soul. 1Ki 8:28-54 \u2014 Solomon's temple dedication prayer (pa.lal used 9 times). Dan 9:4 \u2014 Daniel's great intercessory prayer. The primary Hebrew verb for directed address to God. Covers individual petition, intercession for others, and litur"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8605 te.phil.lah \u2192 extracted. PRIMARY OT PRAYER NOUN. 77 occurrences, 70 verses. 1Ki 8:28 \u2014 'have regard to the prayer (",
+      "mti_id": 2341,
+      "strongs_number": "H8605",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRIMARY OT PRAYER NOUN. 77 occurrences, 70 verses. 1Ki 8:28 \u2014 'have regard to the prayer (te.phil.lah) of your servant.' Psa 72:20 \u2014 'the prayers (te.phi.lot) of David, son of Jesse, are ended.' Hab 3:1 \u2014 'a prayer (te.phil.lah) of Habakkuk.' The primary Hebrew noun for prayer \u2014 covers individual petitions, collected prayers, and the great intercessory prayers of the OT. Shares root with pa.lal."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6279 a.tar \u2192 extracted. TO ENTREAT/PRAY. 20 occurrences, 19 verses. Gen 25:21 \u2014 'Isaac prayed (a.tar) to the Lord ",
+      "mti_id": 2384,
+      "strongs_number": "H6279",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO ENTREAT/PRAY. 20 occurrences, 19 verses. Gen 25:21 \u2014 'Isaac prayed (a.tar) to the Lord for his wife, because she was barren.' Exo 8:8-30 \u2014 Moses entreating God to remove the plagues (used 4 times). 2Sa 21:14 \u2014 'God was moved by prayer (a.tar) for the land.' The a.tar vocabulary covers urgent petition that moves God to act \u2014 particularly concentrated in Exodus and the patriarchal narratives."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8467 te.chin.nah \u2192 extracted. SUPPLICATION (noun). 25 occurrences, 24 verses. 1Ki 8:28 \u2014 'have regard to the prayer and ",
+      "mti_id": 2328,
+      "strongs_number": "H8467",
+      "set": {
+        "status": "extracted",
+        "status_note": "SUPPLICATION (noun). 25 occurrences, 24 verses. 1Ki 8:28 \u2014 'have regard to the prayer and to his plea (te.chin.nah).' 1Ki 8:30,38,45,49,52,54 \u2014 Solomon's supplication throughout the dedication prayer. Psa 28:2 \u2014 'hear the voice of my pleas (te.chin.nah) for mercy.' Ezr 9:8 \u2014 'grace has been shown from the Lord our God.' The supplication-for-grace vocabulary \u2014 prayer as the plea for undeserved favo"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8469 ta.cha.nun \u2192 extracted. SUPPLICATION/PLEA FOR MERCY (noun). 18 occurrences, 18 verses. 2Ch 6:21 \u2014 'listen to the p",
+      "mti_id": 2329,
+      "strongs_number": "H8469",
+      "set": {
+        "status": "extracted",
+        "status_note": "SUPPLICATION/PLEA FOR MERCY (noun). 18 occurrences, 18 verses. 2Ch 6:21 \u2014 'listen to the pleas (ta.cha.nun) of your servant.' Dan 9:3 \u2014 'I turned my face to the Lord God, seeking him by prayer and pleas (ta.cha.nun) for mercy.' Dan 9:17,18,20,23 \u2014 the great Daniel prayer uses ta.cha.nun repeatedly. Closely related to H8467 te.chin.nah (same root, cha.nan). The earnest pleading for mercy vocabulary"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1162 de\u0113sis \u2192 extracted. PETITION/SUPPLICATION (NT noun). 75 occurrences (STEP count), 16 verses. Luk 1:13 \u2014 'your ",
+      "mti_id": 2335,
+      "strongs_number": "G1162",
+      "set": {
+        "status": "extracted",
+        "status_note": "PETITION/SUPPLICATION (NT noun). 75 occurrences (STEP count), 16 verses. Luk 1:13 \u2014 'your prayer (de\u0113sis) has been heard.' Phi 4:6 \u2014 'by prayer (proseuche) and petition (de\u0113sis) with thanksgiving.' 1Ti 2:1 \u2014 'supplications (de\u0113seis), prayers, intercessions, and thanksgivings be made for all people.' Rom 10:1 \u2014 'my heart's desire and prayer (de\u0113sis) to God for them is that they may be saved.' Speci"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2603A cha.nan \u2192 extracted. TO IMPLORE/PLEAD FOR GRACE. 81 occurrences, 72 verses. Genuine split: ~17 verses are praye",
+      "mti_id": 2324,
+      "strongs_number": "H2603A",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO IMPLORE/PLEAD FOR GRACE. 81 occurrences, 72 verses. Genuine split: ~17 verses are prayer/imploring uses, ~55 are favour/graciousness uses. Extract for the prayer dimension: Deu 3:23 \u2014 'I pleaded (cha.nan) with the Lord at that time.' 1Ki 8:33,47,59 \u2014 Solomon's prayer uses cha.nan for the people's imploring. Psa 30:8 \u2014 'to the Lord I cried, and to my Lord I pleaded (cha.nan) for mercy.' The pray"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6293 pa.ga \u2192 extracted. TO INTERCEDE (one sense). 46 occurrences, 43 verses. WARNING: pa.ga has three distinct sen",
+      "mti_id": 2369,
+      "strongs_number": "H6293",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO INTERCEDE (one sense). 46 occurrences, 43 verses. WARNING: pa.ga has three distinct senses in the OT: (1) to meet/encounter (Gen 23:8; 28:11; 32:1 \u2014 meeting on a road), (2) to fall upon/attack (Judg 8:21; 1Sa 22:17 \u2014 military violence), (3) to intercede/entreat on behalf of another (Isa 53:12 \u2014 'made intercession for the transgressors'; Jer 7:16; 27:18; 36:25; Ruth 1:16). The intercession sense"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7878 si.ach \u2192 extracted. TO MUSE/MEDITATE/POUR OUT. 20 occurrences, 20 verses. 1Sa 1:16 \u2014 Hannah: 'I have been spea",
+      "mti_id": 2372,
+      "strongs_number": "H7878",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO MUSE/MEDITATE/POUR OUT. 20 occurrences, 20 verses. 1Sa 1:16 \u2014 Hannah: 'I have been speaking (si.ach) out of my great anxiety and vexation.' Psa 55:17 \u2014 'Evening and morning and at noon I utter my complaint (si.ach) and moan, and he hears my voice.' Psa 77:3 \u2014 'when I meditate (si.ach), my spirit faints.' Psa 119:15,23,27,48,78,97,99,148 \u2014 meditating on God's word/precepts. The si.ach vocabulary"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7879 si.ach \u2192 extracted. COMPLAINT/MEDITATION (noun form). 14 occurrences, 14 verses. 1Ki 18:27 \u2014 Elijah: 'either h",
+      "mti_id": 2373,
+      "strongs_number": "H7879",
+      "set": {
+        "status": "extracted",
+        "status_note": "COMPLAINT/MEDITATION (noun form). 14 occurrences, 14 verses. 1Ki 18:27 \u2014 Elijah: 'either he is musing (si.ach).' Job 7:13 \u2014 'my couch will ease my complaint (si.ach).' Psa 64:1 \u2014 'hear my voice, O God, in my complaint (si.ach).' Psa 102:1 \u2014 'a prayer (te.phil.lah) of one afflicted, when he is faint and pours out his complaint (si.ach) before the Lord.' The noun form of H7878 si.ach: the complaint/"
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7881 si.chah \u2192 extracted. MEDITATION (noun form, feminine). 3 occurrences, 3 verses. Job 15:4 \u2014 'you are doing away ",
+      "mti_id": 2374,
+      "strongs_number": "H7881",
+      "set": {
+        "status": "extracted",
+        "status_note": "MEDITATION (noun form, feminine). 3 occurrences, 3 verses. Job 15:4 \u2014 'you are doing away with the fear of God and hindering meditation (si.chah) before God.' Psa 119:97 \u2014 'oh how I love your law! It is my meditation (si.chah) all the day.' Psa 119:99 \u2014 'I have more understanding... because your testimonies are my meditation (si.chah).' The meditative-prayer vocabulary in its most contemplative fo"
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4862 mish.a.lah \u2192 extracted. PETITION/DESIRE (noun). 2 occurrences, 2 verses. Psa 20:5 \u2014 'may the Lord fulfil all your ",
+      "mti_id": 2359,
+      "strongs_number": "H4862",
+      "set": {
+        "status": "extracted",
+        "status_note": "PETITION/DESIRE (noun). 2 occurrences, 2 verses. Psa 20:5 \u2014 'may the Lord fulfil all your petitions (mish.a.lot).' Psa 37:4 \u2014 'he will give you the desires (mish.a.lot) of your heart.' Cross-registry with desire (reg 43) \u2014 already noted there. Prayer as the articulated desire brought before God."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1156 be.a \u2192 extracted. TO ASK/REQUEST (Aramaic). 12 occurrences, 12 verses. All in Daniel. Dan 6:7,11,12,13 \u2014 Dan",
+      "mti_id": 2350,
+      "strongs_number": "H1156",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO ASK/REQUEST (Aramaic). 12 occurrences, 12 verses. All in Daniel. Dan 6:7,11,12,13 \u2014 Daniel's three-daily prayer practice. Dan 6:10 \u2014 'he went to his house... and prayed (ba.a) and gave thanks before his God, as he had done previously.' The Aramaic prayer verb \u2014 Daniel's habitual prayer practice is described with be.a. Cross-registry with desire (reg 43)."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7596 she.e.lah \u2192 extracted. PETITION/REQUEST (noun). 14 occurrences, 14 verses. 1Sa 1:17 \u2014 'the God of Israel grant yo",
+      "mti_id": 2357,
+      "strongs_number": "H7596",
+      "set": {
+        "status": "extracted",
+        "status_note": "PETITION/REQUEST (noun). 14 occurrences, 14 verses. 1Sa 1:17 \u2014 'the God of Israel grant your petition (she.e.lah).' 1Sa 1:27 \u2014 'for this child I prayed, and the Lord has granted me my petition (she.e.lah).' Est 5:6,7,8; 7:2,3; 9:12 \u2014 Esther's petition to the king. Ezr 7:6 \u2014 'the king granted him all that he asked (she.e.lah).' Hannah's prayer is the paradigm: the petition specifically asked, and s"
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1159 ba.u \u2192 extracted. PETITION (Aramaic noun). 2 occurrences, 2 verses. Dan 6:7 \u2014 'whoever makes petition (ba.u)",
+      "mti_id": 2353,
+      "strongs_number": "H1159",
+      "set": {
+        "status": "extracted",
+        "status_note": "PETITION (Aramaic noun). 2 occurrences, 2 verses. Dan 6:7 \u2014 'whoever makes petition (ba.u) to any god or man for thirty days.' Dan 6:13 \u2014 'Daniel pays no attention... and makes his petition (ba.u) three times a day.' The Aramaic noun form of H1156 be.a \u2014 Daniel's prayer specifically named as petition/ba.u in the royal decree context."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6415 pe.li.lah \u2192 extracted. PRAYER/INTERCESSION. 1 occurrence, 1 verse. Job 31:11 \u2014 'that would be a heinous crime; th",
+      "mti_id": 2344,
+      "strongs_number": "H6415",
+      "set": {
+        "status": "extracted",
+        "status_note": "PRAYER/INTERCESSION. 1 occurrence, 1 verse. Job 31:11 \u2014 'that would be a heinous crime; that would be an iniquity to be punished by the judges (pe.li.lim).' NOTE: the gloss 'judge' appears, but pe.li.lah (root: pa.lal) in Job 31:28 context means 'punishable iniquity requiring intercession/judgment.' Marginal; include as extracted_thin \u2014 the root pa.lal connects this to the prayer vocabulary but th"
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2171 euch\u0113 [vow/prayer] \u2192 extracted_thin. 76 occurrences but only 3 verses in export. Act 18:18 \u2014 Paul under a vow. Act 21:23 \u2014 four men under a vow. Jam 5:15 \u2014 'the prayer of faith will save the sick.' The euch\u0113 vocabulary covers the vow-dimension of prayer (the committed prayer) and the faith-prayer of Jam 5:15. Thin extraction: 3 verses insufficient for pattern analysis; requires Phase 2 supplementary verse check.",
+      "mti_id": 2340,
+      "strongs_number": "G2171",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Vow/prayer vocabulary. Only 3 verses in export despite 76 occurrences \u2014 STEP verse coverage issue. Jam 5:15 ('the prayer of faith'), Act 18:18, 21:23 (Paul's vow). Phase 2 verse data check needed."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1189 deomai \u2192 extracted (rescued from candidate_delete). TO PRAY/BEG EARNESTLY. 69 occurrences, 22 verses. Incorrectly in candidate_delete. Mat 9:3",
+      "mti_id": 2336,
+      "strongs_number": "G1189",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO PRAY/BEG EARNESTLY. 69 occurrences, 22 verses. Incorrectly in candidate_delete. Mat 9:38 \u2014 'therefore pray earnestly (de\u0113th\u0113te) to the Lord of the harvest to send out laborers.' Luk 5:12 \u2014 the leper 'fell on his face and begged (edeito) him.' Luk 9:38,40 \u2014 father pleading for son. 2Co 5:20 \u2014 'we implore (deometha) you on behalf of Christ, be reconciled to God.' Gal 4:12 \u2014 'I beg (deomai) of you"
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2172 euchomai \u2192 extracted (rescued from candidate_delete). TO PRAY/WISH FOR. 64 occurrences, 7 verses. Incorrectly in candidate_delete. Act 26:29 \u2014 '",
+      "mti_id": 2339,
+      "strongs_number": "G2172",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO PRAY/WISH FOR. 64 occurrences, 7 verses. Incorrectly in candidate_delete. Act 26:29 \u2014 'I would to God (euchomai pros ton theon) that not only you but also all who hear me this day might become such as I am.' Act 27:29 \u2014 'they prayed (euchonto) that day would come.' 2Co 13:7,9 \u2014 Paul wishing/praying for the Corinthians. 3Jo 2 \u2014 'I pray (euchomai) that all may go well with you.' Jam 5:16 \u2014 'pray "
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6739 tse.la \u2192 extracted (rescued from candidate_delete). TO PRAY (Aramaic). 2 occurrences, 2 verses. Incorrectly in candidate_delete. Ezr 6:10 \u2014 't",
+      "mti_id": 2381,
+      "strongs_number": "H6739",
+      "set": {
+        "status": "extracted",
+        "status_note": "TO PRAY (Aramaic). 2 occurrences, 2 verses. Incorrectly in candidate_delete. Ezr 6:10 \u2014 'that they may offer pleasing sacrifices to the God of heaven and pray (tse.la) for the life of the king.' Dan 6:10 \u2014 'Daniel... went to his house where he had windows in his upper chamber open toward Jerusalem. He got down on his knees three times a day and prayed (tse.la) and gave thanks before his God.' The "
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0577 a.n.na [Please! / I beseech thee] \u2192 extracted_thin (rescued from candidate_delete). 13 occurrences, 12 verses. The OT's most urgent entreaty particle \u2014 used in prayer contexts where the petitioner is at their most desperate. Gen 50:17 \u2014 Joseph's brothers: 'please (a.n.na) forgive the transgression.' Exo 32:31 \u2014 Moses: 'alas (a.n.na), this people has sinned.' Neh 1:5 \u2014 Nehemiah's prayer opening: 'O Lord God of heaven, the great and awesome God... a.n.na.' Psa 116:4 \u2014 'O Lord, I pray, deliver my soul.' Jon 1:14 \u2014 the sailors: 'please (a.n.na), O Lord.' Dan 9:4 \u2014 Daniel's prayer. The urgency particle that marks a prayer as a cry from extremity.",
+      "mti_id": 2314,
+      "strongs_number": "H0577",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Urgency entreaty particle in prayer contexts. Exo 32:31 (Moses), Neh 1:5 (Nehemiah), Psa 116:4, Jon 1:14 (sailors), Dan 9:4 (Daniel). Marks prayer at its most desperate/urgent. Not a prayer verb but the particle that intensifies prayer."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "bulk_update_none_to_delete",
+      "target_table": "wa_mti",
+      "description": "Bulk set None-status bleed terms \u2192 delete. Three main bleed families: (1) H1697 da.var word sub-glosses (entered via proximity of 'word' to prayer texts \u2014 not prayer vocabulary). (2) G3844 para, G2564 kale\u014d \u2014 Greek grammatical/calling bleed. (3) Sickness/weakness vocabulary (H2470/H2483/H4245 \u2014 grief/desire registry vocabulary). (4) Asking vocabulary (G3870, G2065, H7592) \u2014 these are primary in the desire registry (reg 43) and will be CRL-linked rather than re-extracted here. (5) H4994 na (please particle) \u2014 purely grammatical, 260 verses; its urgency dimension is captured by H0577 a.n.na already extracted. (6) Miscellaneous bleed: sanctuary, bee, pestilence, Sheol, love, pasture, raft.",
+      "filter": "registry_no=212 AND mti_status=None",
+      "exclusions": [
+        "G4336",
+        "G4335",
+        "H6419",
+        "H8605",
+        "H6279",
+        "H8467",
+        "H8469",
+        "G1162",
+        "H2603A",
+        "H6293",
+        "H7878",
+        "H7879",
+        "H7881",
+        "H4862",
+        "H1156",
+        "H7596",
+        "H1159",
+        "H7808",
+        "H6415",
+        "G2171"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. See bulk note."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete \u2192 delete for remaining candidate_delete terms (all except G1189 deomai, G2172 euchomai, H6739 tse.la, H0577 a.n.na \u2014 handled above). Key confirmations: (1) elenchos/elench\u014d/elegxis/exelench\u014d/elenchos rebuke family (G1649-1651, G1827, G1246) \u2014 no prayer content, entered via 'hearing' or 'speaking' proximity. (2) leg\u014d:name (G3004H) \u2014 speech act not prayer. (3) e.mer/im.rah/o.mer/o.mer (H0561, H0562, H0565A, H0565B, H0534) \u2014 word/saying vocabulary, bleed. (4) pa.lil/pe.li.li/pe.li.liy.yah (H6414, H6416, H6417) \u2014 judicial 'judge' vocabulary, entered via H6419 pa.lal proximity (same root but different semantic field). (5) tsa.la/tse.la:limp (H6760, H6761) \u2014 entered via H6739 tse.la proximity but different word entirely. (6) pe.ga:chance/miph.ga:target (H6294, H4645) \u2014 entered via H6293 pa.ga proximity. (7) cha.nan.el tower (H2606), chin beauty (H2433), cha.ni.nah favour (H2594) \u2014 minor bleed. (8) ma.a.mar command (H3982), antileg\u014d/proleg\u014d (G0483, G4302), epileg\u014d/kataleg\u014d (G1951, G2639) \u2014 speaking/saying vocabulary.",
+      "filter": "registry_no=212 AND mti_status=candidate_delete",
+      "exclusions": [
+        "G1189",
+        "G2172",
+        "H6739",
+        "H0577"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Confirmed candidate_delete. See bulk note."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "add_cross_registry_links",
+      "target_table": "wa_cross_registry_links",
+      "description": "Add cross-registry links. The pray registry has no CRL entries in this export. Required links: (1) desire (reg 43) \u2014 the asking vocabulary (sha.al, aite\u014d, er\u014dta\u014d, parakale\u014d) in the desire registry covers the petition/desire dimension of prayer; these are SEMANTIC_OVERLAP, not re-extracted here. (2) spirit (reg 184) \u2014 Rom 8:26-27 (Spirit intercedes), 1Co 14:14-15 (spirit prays), Eph 6:18 / Jude 20 (praying in the Spirit) \u2014 THEOLOGICAL cross-registry. (3) humility (reg 80) \u2014 the posture of prayer (kneeling, face to ground) connects to the humility vocabulary. (4) hope (reg 78) \u2014 'pray without ceasing' / 'devoted to prayer' as expressions of hope-orientation. (5) grief (reg 71) \u2014 lament prayer (si.ach complaint vocabulary); parakale\u014d comfort connection.",
+      "links": [
+        {
+          "linked_registry_id": 43,
+          "connecting_term": "sha.al / aite\u014d / er\u014dta\u014d",
+          "type_code": "SEMANTIC_OVERLAP",
+          "note": "Asking/petition vocabulary primary in desire registry; pray registry focuses on the specifically God-directed prayer vocabulary"
+        },
+        {
+          "linked_registry_id": 184,
+          "connecting_term": "proseuchomai / pneuma",
+          "type_code": "THEOLOGICAL",
+          "note": "Rom 8:26-27 Spirit intercedes; 1Co 14:14-15 my spirit prays; Eph 6:18 / Jude 20 praying in the Spirit"
+        },
+        {
+          "linked_registry_id": 80,
+          "connecting_term": "pa.lal / cha.nan",
+          "type_code": "SEMANTIC_OVERLAP",
+          "note": "Prayer posture vocabulary shares with humility registry; cha.nan imploring as expression of humility before God"
+        },
+        {
+          "linked_registry_id": 71,
+          "connecting_term": "si.ach / parakale\u014d",
+          "type_code": "SEMANTIC_OVERLAP",
+          "note": "Lament prayer (si.ach as complaint/outpouring) connects grief and prayer; parakale\u014d bridges petition and comfort"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "phase1_supplement_required",
+      "target_table": "wa_file_index",
+      "description": "FLAG: Four terms are missing from the registry entirely and require a Phase 1 supplement extraction from Claude Code before Session B closure. (1) G1793 entugchan\u014d \u2014 to intercede (~5 occ): Rom 8:27 (Spirit intercedes according to the will of God), Rom 8:34 (Christ intercedes at God's right hand), Heb 7:25 (always lives to intercede), Rom 11:2 (Elijah intercedes against Israel), Isa 59:16 LXX. The intercession vocabulary is essential for the Spirit's and Christ's prayer ministry. (2) G1783 enteuxis \u2014 intercession noun (~2 occ): 1Ti 2:1 (intercessions for all people), 1Ti 4:5 (sanctified by the word of God and prayer/enteuxis). (3) G1100 gl\u014dssa \u2014 tongue (~50 occ): 1Co 12:10,28,30; 13:1,8; 14:2-40 \u2014 the tongues-prayer vocabulary. 1Co 14:14-15 (my spirit prays in a tongue) is the most direct biblical statement about spirit-to-Spirit prayer. (4) H7836 sha.char \u2014 to seek earnestly/at dawn (~12 occ): Psa 63:1 ('O God, you are my God; earnestly I seek you; my soul thirsts for you'), Pro 8:17 \u2014 the dawn-prayer seeking vocabulary. These four are absent from the current export and cannot be patched without Claude Code running a Phase 1 supplement.",
+      "registry_no": 212,
+      "phase1_supplement": {
+        "missing_terms": [
+          {
+            "strongs": "G1793",
+            "trans": "entugchan\u014d",
+            "gloss": "to intercede",
+            "approx_occ": 5,
+            "key_verses": [
+              "Rom 8:27",
+              "Rom 8:34",
+              "Heb 7:25"
+            ]
+          },
+          {
+            "strongs": "G1783",
+            "trans": "enteuxis",
+            "gloss": "intercession noun",
+            "approx_occ": 2,
+            "key_verses": [
+              "1Ti 2:1",
+              "1Ti 4:5"
+            ]
+          },
+          {
+            "strongs": "G1100",
+            "trans": "gl\u014dssa",
+            "gloss": "tongue",
+            "approx_occ": 50,
+            "key_verses": [
+              "1Co 14:2",
+              "1Co 14:14",
+              "1Co 14:15"
+            ]
+          },
+          {
+            "strongs": "H7836",
+            "trans": "sha.char",
+            "gloss": "to seek earnestly",
+            "approx_occ": 12,
+            "key_verses": [
+              "Psa 63:1",
+              "Pro 8:17"
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 28,
+    "anchor_set": "Rom 8:26-27 (provisional \u2014 confirm after verse reading)",
+    "terms_extracted": {
+      "primary_from_none": 17,
+      "rescued_from_candidate_delete": 3,
+      "extracted_thin": 2,
+      "total": 22
+    },
+    "terms_deleted": {
+      "none_to_delete": "~47 bleed terms",
+      "candidate_delete_confirmed": "~30 terms"
+    },
+    "phase1_supplement_required": [
+      "G1793 entugchan\u014d (intercede)",
+      "G1783 enteuxis (intercession noun)",
+      "G1100 gl\u014dssa (tongue \u2014 for tongues-prayer vocabulary)",
+      "H7836 sha.char (seek earnestly at dawn)"
+    ],
+    "cross_registry_links_added": 4,
+    "ph2_flags": [
+      "PH2-212-001: H6293 pa.ga has three senses (meet/attack/intercede) \u2014 only intercession uses (~8-10v) are primary pray vocabulary",
+      "PH2-212-002: Phase 1 supplement required for G1793, G1783, G1100, H7836 before Session B closure",
+      "PH2-212-003: G2171 euch\u0113 occ=76 but only 3 verses in export \u2014 STEP verse coverage issue",
+      "PH2-212-004: H2603A cha.nan is a SHARED_TERM between pray registry and future favour/grace registry"
+    ],
+    "reading_estimate_post_patch": "~553 verses across ~22 extracted terms (before Phase 1 supplement)"
+  }
+}

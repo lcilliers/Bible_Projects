@@ -524,6 +524,47 @@ class StepClient:
         records.sort(key=lambda r: r["osisId"])
         return records
 
+    # ── Public API — meaning-based term discovery ─────────────────────────
+
+    def get_meaning_terms(self, english_word: str) -> dict:
+        """Return STEP's curated list of terms whose meaning relates to a word.
+
+        Uses the ``meanings=`` search parameter, which maps to STEP's
+        ``ORIGINAL_MEANING`` search type.  This is the data shown in STEP's
+        **Related words** panel — a lexically curated set of Hebrew/Greek
+        terms whose meaning encompasses the English concept, regardless of
+        how the ESV translates each occurrence.
+
+        This is fundamentally different from ``get_strongs_for_word()``, which
+        only finds codes where the ESV uses the literal English word.  For
+        example, ``meanings=anger`` returns H2734 (חָרָה, "to be incensed")
+        which the ESV never translates as "anger" but which is semantically
+        central to the concept.
+
+        Returns a dict:
+          definitions       — list of term dicts, each with:
+                                strongNumber, matchingForm, stepTransliteration,
+                                gloss, type ('word'/'verb'), popularity (str)
+          strong_highlights — list of Strong's codes (same terms, flat list)
+          total_verses      — total verse count from the search
+
+        Example::
+
+            client.get_meaning_terms("anger")
+            # → {"definitions": [...37 terms...],
+            #    "strong_highlights": ["H0644", "H2734", ...],
+            #    "total_verses": 687}
+        """
+        d = self._get_json(
+            f"rest/search/masterSearch/version={self.version}"
+            f"|meanings={english_word}"
+        )
+        return {
+            "definitions":       d.get("definitions", []),
+            "strong_highlights": d.get("strongHighlights", []),
+            "total_verses":      d.get("total", 0),
+        }
+
     # ── Public API — full extraction ───────────────────────────────────────
 
     def extract_word_data(self, strong: str) -> dict:

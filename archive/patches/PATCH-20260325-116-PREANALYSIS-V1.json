@@ -1,0 +1,156 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-116-PREANALYSIS-V1",
+    "registry_id": 116,
+    "word": "patience",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for patience registry. Restores four delete_flagged terms (H0639, H1826, H2442, H3176) to in-scope; extracts H0639G (primary anger/patience sub-gloss, 212 verses); classifies 13 remaining None-status terms (8 delete, 5 extract); deletes H0639H and H0639I sub-glosses as bleed."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "restore_delete_flagged",
+      "term_inv_ids": [371, 367, 368, 369],
+      "description": "Restore H0639 (aph: face/anger, id=371), H1826 (da.mam: silence/stationary, id=367), H2442 (cha.khah: to wait, id=368), H3176 (ya.chal: to wait/hope, id=369) to in-scope by setting delete_flagged=0 on all four. Leroux decision 2026-03-25. All four are core patience vocabulary: H0639 is the root of the Hebrew slow-to-anger idiom (erekh aph); H1826 is the silence/stillness vocabulary (Psa 37:7); H2442 is the active waiting verb (Isa 30:18, Hab 2:3, Zep 3:8); H3176 is the hope-waiting verb (cross-registry link to hope already recorded). SQL: UPDATE wa_term_inventory SET delete_flagged=0 WHERE id IN (371, 367, 368, 369)."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H0639G",
+      "set": {
+        "status": "extracted",
+        "status_note": "aph sub-gloss G (face: anger sense, occ=225, 212 verses) — the primary anger/patience semantic sub-gloss. The Hebrew idiom for patience is erekh aph (long-nosed = slow to anger), built on this root. SOMATIC_INNER_LINK and BODY_INNER_EXPRESSION flags on parent H0639 relate to this sub-gloss's content. Required for the patience/slow-to-anger analysis. Extract alongside restored H0639 parent.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H0639H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "aph sub-gloss H (face: nose sense, occ=27) — somatic/anatomical sense of the nose as body part. Semantic content covered analytically by H0639G (anger sense) and the erekh aph patience idiom. Bleed from the polysemous aph root."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H0639I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "aph sub-gloss I (face sense, occ=24) — face/countenance meaning with no patience semantic content. Bleed from the polysemous aph root."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H0599",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.naph (to be angry, occ=14, 14 verses) — the anger verb from the same APH root. Required for the patience analysis: patience is the restraint of this impulse. The anger/patience polarity runs through the APH family — to be patient is precisely not to a.naph. Cross-registry link to anger (004) recorded.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G3116",
+      "set": {
+        "status": "extracted",
+        "status_note": "makrothumōs (patiently, adverb, occ=1, 1 verse — Acts 26:3) — the adverbial form of makrothumia. Single occurrence but rounds out the makrothumia family. 'I beg you to hear us briefly and with patience (makrothumōs).' In scope as the adverb of the primary Greek patience term.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H8513",
+      "set": {
+        "status": "extracted",
+        "status_note": "te.la.ah (hardship/toil/weariness, occ=5, 5 verses) — the burden that patience must bear without giving up. The sense 'weariness from prolonged effort' directly maps onto the patience domain: the la.ah root (H3811, already extracted) is related; te.la.ah names the external condition of hardship that tests patience. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H0752",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.rokh (long, adjective, occ=3, 3 verses) — the adjective form of the AREKH root (a.rakh H0748, a.rekh H0750 already extracted). Required to complete the root family. The erekh aph idiom (slow to anger = long of nostrils) depends on this root family. 3 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G0530",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "hapax (once, occ=52) — frequency adverb with no patience semantic content. Bleed; likely entered the export through association with the efapax/once-for-all vocabulary in patience contexts. Not patience vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G0537",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "hapas (all/every/whole, occ=99) — totality adverb. No patience semantic content. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G2178",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "efapax (once for all, occ=5) — once-for-all theological adverb (Rom 6:10; Heb 7:27; 9:12; 10:10). No patience semantic content. Bleed from association with endurance contexts."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "H0600",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.naph Aramaic (face/nose, occ=2) — Aramaic cognate of aph, anatomical sense only. Semantic content covered by H0639G. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "H0601",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.na.phah (heron, occ=2) — an unclean bird listed in Lev 11 and Deu 14. Etymological bleed from the APH root; zero patience semantic content."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "H0724",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.ru.khah (health/restoration/healing, occ=6) — restoration and healing vocabulary (Jer 8:22, 30:17; Isa 58:8). Shares root proximity to AREKH but semantic content is medical/healing, not patience. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H0754",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ar.kha Aramaic (lengthening/prolongation, occ=2) — Aramaic derivative. Thin data; semantic content covered by H0753 (o.rekh: length, already extracted). Bleed."
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 15,
+    "delete_flag_restorations": 1,
+    "mti_extract": 5,
+    "mti_delete": 8,
+    "note": "OP-001 is a manual operation (restore_delete_flagged, PATCH_SPEC §4.4) covering all four restored terms in a single SQL statement. OP-002 through OP-015 are structured auto-applicable update_mti_status operations. After application, active term inventory will be: 8 previously extracted + H0639G + H0599 + G3116 + H8513 + H0752 + 4 restored (H0639, H1826, H2442, H3176) = 17 active terms. Re-export required before Session B analysis."
+  }
+}

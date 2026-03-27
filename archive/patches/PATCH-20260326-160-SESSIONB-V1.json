@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-160-SESSIONB-V1",
+    "registry_id": 160,
+    "word": "thought",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 160 (thought). Sets session_b_status to Session B Complete. Corrects the recurring applicator anomaly where update_registry in the PREANALYSIS patch left session_b_status as Pre-Analysis Complete rather than Analysis Complete. Session B analysis document produced: WA-160-thought-analysis-20260326.docx. 74 working terms analysed across 6 parts. 3 research flags active (PH2-160-001 HIGH extraction anomaly; PH2-160-002 phronesis vol. limit; PH2-160-003 logismos vol. limit). This is the third consecutive registry with the recurring applicator anomaly."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 160,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — third consecutive registry (98 justice, 34 covenant, 160 thought). update_registry ops in PREANALYSIS patches are not executing: session_b_status remains Pre-Analysis Complete instead of Analysis Complete. patch_history shows patch_id=null and applied_at=null for all three registries. OP-001 in this patch sets registry 160 directly to Session B Complete. Claude Code must investigate and resolve the patch applicator engine before the next registry. The pattern is consistent: update_registry ops fail silently while update_mti_status ops succeed."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 160 (thought). Document: WA-160-thought-analysis-20260326.docx (649 paragraphs, 6 parts). Working set: 74 terms (56 extracted, 18 extracted_thin). Pre-analysis conducted across two patches: V1 (167 ops, 164 deletes including 5 HFA DB_ONLY_PROTECTED) and V2 (66 ops, 63 NULL classifications, 2 vol. limit flags, registry update). Key finding: thought vocabulary is always morally directional in Scripture. Significant analytical cluster: chashav, machashavah, nous/phronema, renewal of mind. HIGH priority: PH2-160-001 extraction anomaly requires programme-wide audit."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

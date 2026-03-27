@@ -1,0 +1,1021 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-117-PREANALYSIS-V1",
+    "registry_id": 117,
+    "word": "peace",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for peace registry. Restores three delete_flagged YHWH compound names; classifies all 98 None-status terms (39 extract, 59 delete); adds schema investigation note for H7999A dual-entry; adds HF flags for 5 under-flagged capped terms; adds schema investigation note for 7 contamination cases."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "restore_delete_flagged",
+      "term_inv_ids": [644, 645, 646],
+      "description": "Restore H3073 YHWH-Shalom (id=644), H3072 YHWH-Tsidkenu (id=645), H3071 YHWH-Nissi (id=646) to in-scope by setting delete_flagged=0. Leroux decision 2026-03-25. All three are extracted_theological_anchor — divine name compounds analytically essential for the peace Part 3 divine dimension. H3073 YHWH-Shalom (Judg 6:24) directly names God as peace. H3072 YHWH-Tsidkenu (Jer 23:6, 33:16) names God as righteousness — the covenant context of peace. H3071 YHWH-Nissi (Exo 17:15) names God as banner — the victory/protection dimension of peace. SQL: UPDATE wa_term_inventory SET delete_flagged=0 WHERE id IN (644, 645, 646)."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H7999A",
+      "description": "H7999A appears twice in the export with different id values: id=625 (gloss='to ally', occ=106, NO_VERSES, mti=extracted) and id=627 (gloss='to complete', occ=103, 94 verses, mti=extracted). Both share mti_id=416. This appears to be a sub-gloss split under the same Strong's number where id=625 has no verse records. Claude Code to investigate: (1) confirm whether these are two legitimate sub-glosses or a data duplication; (2) if sub-glosses, assign distinct Strong's sub-gloss identifiers (e.g. H7999A/H7999B); (3) if duplication, determine which record is correct and delete the other. Analysis proceeds using id=627 (94 verses) as the operative H7999A record."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H1826B,H1826I,H5183B,H5207,H5945G,H5945H,H7280C",
+      "description": "Seven None-status terms show verse counts exceeding their occurrence_count values: H1826B (occ=1, v=9), H1826I (occ=5, v=9), H5183B (occ=1, v=6), H5207 (occ=43, v=44), H5945G (occ=3, v=20), H5945H (occ=5, v=20), H7280C (occ=1, v=6). Diagnosis: H1826B/I and H5945G/H share verse records with sibling sub-glosses (cross-sub-gloss verse sharing); H5183B and H7280C have occ under-reporting; H5207 has one contaminating verse (Joh 1:18 — 'Son' linked to H5207 incorrectly). Non-blocking for active analysis — all seven are classified delete in this patch. Claude Code to note for data audit."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H7965G",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lom: peace sense (occ=164, 148 verses) — the primary peace sub-gloss covering completeness, wholeness, safety, welfare, covenant peace. The core of the entire registry. Required for analysis.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H7965I",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lom: well-being sense (occ=54, 46 verses) — wholeness as personal welfare and flourishing. Essential dimension of shalom's semantic range.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "H7965J",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lom: friendship/covenant sense (occ=5, 5 verses) — peace as relational covenant bond between parties. The social-relational dimension of shalom.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H7965K",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lom: greeting sense (occ=12, 8 verses) — 'shalom' as a greeting encoding the wish for wholeness. The social/liturgical expression of peace.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H7965L",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lom: completely/fully sense (occ=1, 1 verse) — adverbial use expressing totality. Completes the shalom family inventory.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H7999B",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lam: to be in covenant of peace/be at peace (occ=13, 13 verses) — the peace-covenant sense of the SHALAM root. Distinct from the completeness sense of H7999A. Required for the covenant peace analysis.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "H8003",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lem: complete/whole/at peace (occ=28, 27 verses) — adjective form of SHALAM: perfect, whole, full, at peace. E.g. 'a whole heart', 'complete devotion'. Essential for the wholeness dimension.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H4496H",
+      "set": {
+        "status": "extracted",
+        "status_note": "me.nu.chah: resting place/rest (occ=21, 21 verses) — the noun form of rest as a place and condition. Psa 23:2 'beside still waters'; Isa 11:10 'his resting place shall be glorious'. The peace-as-rest vocabulary. 21 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "H4494",
+      "set": {
+        "status": "extracted",
+        "status_note": "ma.no.ach: resting place/state of rest (occ=6, 6 verses) — rest as condition and location. Related to H5117 (nu.ach). Includes Rut 3:1 'rest' as security/peace for Ruth; Lam 1:3 'no resting place'. 6 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "H5183A",
+      "set": {
+        "status": "extracted",
+        "status_note": "na.chat: quietness/rest (occ=7, 6 verses) — rest and quietness as a condition of inner peace. Ecc 4:6 'Better is one handful of quietness than two hands full of toil.' The quietness-as-peace vocabulary. 6 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "H5207",
+      "set": {
+        "status": "extracted",
+        "status_note": "ni.cho.ach: soothing/tranquillising (occ=43, 44 verses — 1 verse anomaly noted, schema_investigation_note OP-003) — the soothing/appeasing aroma of offerings. 'Pleasing aroma to the Lord' in the sacrificial vocabulary. Analytically relevant as the peace-dimension of the offering system. Working from 43 legitimate verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H7962",
+      "set": {
+        "status": "extracted",
+        "status_note": "shal.vah: ease/prosperity/quietness (occ=8, 8 verses) — ease and security as a condition. Psa 122:7 'Peace be within your walls and security within your towers'. Zec 7:7 'when Jerusalem was inhabited and at ease'. 8 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "H7951",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lah: to prosper/be at rest/be quiet (occ=5, 5 verses) — prosperity and rest as aspects of peace. Job 3:26 'I am not at ease, nor am I quiet, nor am I at rest'. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "H7599",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.an: to rest/be at ease/be quiet (occ=5, 5 verses) — resting securely, being at peace. Jer 30:10 'Jacob shall return and have quiet and ease'. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "H7946",
+      "set": {
+        "status": "extracted",
+        "status_note": "shal.a.nan: at ease/quiet/secure (occ=1, 1 verse — Jer 48:11 'Moab has been at ease from his youth') — the condition of undisturbed rest. Single occurrence but within the core SHALAM semantic field.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "H7987",
+      "set": {
+        "status": "extracted",
+        "status_note": "she.li: quietness/private (occ=1, 1 verse — Job 3:26 'I have no quietness') — Job's lament of absent peace. Single occurrence; rounds out the quietness vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "H8253",
+      "set": {
+        "status": "extracted",
+        "status_note": "she.qet: quietness/tranquillity (occ=1, 1 verse — 1Ch 22:9 'a man of rest... his name shall be Solomon, and I will give peace and quiet to Israel') — the quietness-peace compound in the Solomon naming passage. Analytically significant as a divine promise of peace through the son's reign.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "H7282",
+      "set": {
+        "status": "extracted",
+        "status_note": "ra.ge.a: restful/quiet (occ=1, 1 verse — Jer 47:6 'Ah, sword of the Lord! How long till you are quiet? Put yourself into your scabbard; rest and be still!') — quietness/stillness as peace. Single occurrence in peace context.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "H7280A",
+      "set": {
+        "status": "extracted",
+        "status_note": "ra.ga: to disturb/stir up (occ=6, 6 verses) — the disturbance that peace resolves. Related to H7280B (to rest, already extracted) as the paired contra-term. Isa 51:15 'I am the Lord your God who stirs up the sea'. The peace-disturbance polarity.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "H1748",
+      "set": {
+        "status": "extracted",
+        "status_note": "du.mam: silence (adv., occ=3, 3 verses) — adverbial silence/stillness related to the da.mam root. Psa 62:1 'For God alone my soul waits in silence'. Core peace-as-stillness vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "H1826A",
+      "set": {
+        "status": "extracted",
+        "status_note": "da.mam: stationary/still (occ=9, 9 verses) — be silent, be still, wait. The stillness sense of da.mam. Psa 37:7 'Be still before the Lord'. Core peace-stillness vocabulary distinct from H1826H (silent) and H1826B/I (delete).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "H1826H",
+      "set": {
+        "status": "extracted",
+        "status_note": "da.mam: silent sense (occ=15, 15 verses) — silence as inner quietness. Lam 3:28 'let him sit alone in silence'. 15 verses of silence-as-peace vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "H1827",
+      "set": {
+        "status": "extracted",
+        "status_note": "de.ma.mah: whisper/calm (occ=3, 3 verses) — still small voice / gentle whisper. 1Ki 19:12 'a still small voice'. The peace dimension of divine gentleness.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "H1820",
+      "set": {
+        "status": "extracted",
+        "status_note": "da.mah: to cease/perish/be cut off (occ=15, 13 verses) — cessation as related to peace: the stilling of conflict, the ending of opposition. Psa 49:12 'man in his pomp will not remain; he is like the beasts that perish'. The contra-peace pattern of unrest ending in cessation.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H1288",
+      "set": {
+        "status": "extracted",
+        "status_note": "ba.rakh: to bless (occ=330, 249 verses) — blessing as the active conferral of peace and wellbeing. Already linked to H1293 (be.ra.khah: blessing, already extracted). The verb form. The Aaronic blessing (Num 6:24-26) pronounces peace through blessing. Core vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "H0136",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "a.do.na: Lord [God] (occ=447, 187 verses) — Adonai as divine title. Part 3 divine-name term for the peace registry. The Lord who speaks peace (Psa 85:8 'Let me hear what God the Lord will speak, for he will speak peace'). Theological anchor for the divine peace vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "H5945B",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "el.yon: Most High [God] (occ=25, 25 verses) — divine name Most High. Part 3 theological anchor. The Most High who gives peace: Num 6:26 context; the Most High who rules. Hebrew theological anchor.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "H5943",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "il.lay: Most High [God] Aramaic (occ=40, 10 verses) — Aramaic equivalent of el.yon. Part 3 theological anchor for the Daniel/Ezra divine-name vocabulary in the peace context.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "strongs_number": "H5946",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "el.yon: Most High [God] Aramaic variant (occ=4, 4 verses) — Aramaic form of el.yon. Part 3 theological anchor.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "strongs_number": "H7706",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "shad.day: Almighty [God] (occ=48, 48 verses) — El Shaddai as divine name. Part 3 theological anchor. The Almighty who gives peace: Job's encounter with God; patriarchal covenant context.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "strongs_number": "H5769G",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "o.lam: forever/everlasting/enduring (occ=391, 272 verses) — the eternal/everlasting dimension. Part 3 anchor: Isa 9:6 'Prince of Peace... everlasting Father'; Isa 26:3 'perfect peace' (shalom shalom) is everlasting in character. The eternal peace vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "strongs_number": "H5769H",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "o.lam: Everlasting [God] (occ=1, 1 verse) — divine name El Olam. Part 3 theological anchor: God as the Everlasting, the one whose peace is eternal.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "strongs_number": "H6635A",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "tsa.va: army/host (occ=148, 136 verses) — the army/host noun form. Part 3 anchor: LORD of Hosts (YHWH Tsevaoth) is the primary divine name in the peace registry. The armies that secure peace. Related to H6635B (already extracted_theological_anchor).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "strongs_number": "H6664G",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "tse.deq: righteousness (occ=117, 110 verses) — righteousness as structurally linked to peace. Isa 32:17 'the effect of righteousness will be peace'. Psa 85:10 'righteousness and peace have kissed each other'. Part 3 anchor alongside H6664H (already extracted_theological_anchor).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "strongs_number": "H7067H",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "qan.na: jealous [God] (occ=5, 5 verses) — God as jealous/zealous. Part 3 anchor: divine jealousy is the other face of the covenant peace — God's zeal for the peace of his people presupposes his jealous covenant loyalty. Related to H7067G (already extracted_theological_anchor).",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "strongs_number": "H5251H",
+      "set": {
+        "status": "extracted",
+        "status_note": "nes: ensign/banner/standard (occ=20, 20 verses) — the military banner/signal. Related to H3071 YHWH-Nissi (YHWH my banner). Isa 11:10 'the root of Jesse shall stand as a signal for the peoples'. The banner/standard as a peace-securing instrument.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "strongs_number": "G1518",
+      "set": {
+        "status": "extracted",
+        "status_note": "eirēnopoios: peacemaker (occ=1, 1 verse — Mat 5:9 'Blessed are the peacemakers, for they shall be called sons of God') — the Beatitude peacemaker term. Single occurrence but programme-defining for the active, relational peace vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "strongs_number": "G2271",
+      "set": {
+        "status": "extracted",
+        "status_note": "hēsuchia: quietness/tranquillity (occ=11, 4 verses) — inner quietness and settled calm. 2Th 3:12 'do their work quietly'; 1Ti 2:11,12 'in quietness'. The settled-quiet dimension of peace.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "strongs_number": "G2272",
+      "set": {
+        "status": "extracted",
+        "status_note": "hēsuchios: quiet/tranquil/peaceful (occ=3, 2 verses) — quiet and peaceable as character quality. 1Ti 2:2 'a peaceful and quiet life'; 1Pe 3:4 'a gentle and quiet spirit'. The peaceable-spirit vocabulary.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "strongs_number": "G4602",
+      "set": {
+        "status": "extracted",
+        "status_note": "sigē: silence (occ=2, 2 verses) — silence as a condition. Act 21:40; Rev 8:1 'there was silence in heaven for about half an hour'. The eschatological silence — the final peace of heaven. 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "strongs_number": "H3070",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "yir.eh: Provider [God] / YHWH-Yireh (occ=1, 0 verses — NO_VERSES) — YHWH-Yireh, 'The Lord will provide' (Gen 22:14). Part 3 theological anchor: the provision of God as the basis of peace. NO_VERSES flag maintained; analytical contribution from sense data.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "strongs_number": "H2010",
+      "set": {
+        "status": "extracted",
+        "status_note": "ha.na.chah: holiday/day of rest (occ=1, 1 verse — Est 9:22 'the month... had been turned for them from sorrow to gladness and from mourning into a holiday') — a day of rest as peace-restoration. Single occurrence linking rest and peace to the reversal of grief.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "strongs_number": "H5118",
+      "set": {
+        "status": "extracted",
+        "status_note": "nu.ach: resting place (noun, occ=2, 2 verses) — variant spelling of me.nu.chah. The resting-place noun. Completes the NUACH rest vocabulary alongside H5117 (already extracted) and H4496H.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "strongs_number": "H4771",
+      "set": {
+        "status": "extracted",
+        "status_note": "mar.go.a: rest (occ=1, 1 verse — Jer 6:16 'walk in it and find rest for your souls') — rest as the outcome of the good way. Programme-defining verse for inner peace-as-rest. Single occurrence.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "strongs_number": "H4774",
+      "set": {
+        "status": "extracted",
+        "status_note": "mar.ge.ah: repose/rest (occ=1, 1 verse — Isa 28:12 'This is rest; give rest to the weary') — rest as God's offer of peace to the burdened. Single occurrence but analytically significant.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "strongs_number": "H7959",
+      "set": {
+        "status": "extracted",
+        "status_note": "sha.lu: prosperity/ease (occ=1, 1 verse — Psa 122:7 'Peace be within your walls, prosperity within your towers') — prosperity and peace together in the Jerusalem peace formula. Single occurrence.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "strongs_number": "H8000",
+      "set": {
+        "status": "extracted",
+        "status_note": "she.lem: be complete/finished/sound (Aramaic, occ=3, 3 verses) — completeness as the Aramaic shalom equivalent. Ezr 5:16 'from then until now it has been in building, and it is not yet finished'. The completion vocabulary as peace.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "strongs_number": "H8005",
+      "set": {
+        "status": "extracted",
+        "status_note": "shil.lem: recompense/requital (occ=1, 1 verse) — restoration as making whole. The shillem/shalom connection: recompense as the restoration of wholeness.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "strongs_number": "H7952",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sha.lah: to neglect (occ=2) — negligence sense of sha.lah, distinct from the rest/prosperity sense (H7951, extracted). No peace semantic content."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "strongs_number": "H7966",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shil.lum: recompense/retribution (occ=3) — retributive payment, not restorative. Mic 7:3; Hos 9:7. Legal penalty sense, not peace vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "strongs_number": "H8011",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shil.lu.mah: retribution/reward (occ=1) — retributive sense. No peace semantic content. Covered by H8005 if restoration sense needed."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "strongs_number": "H8021",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shal.mon: reward/bribe (occ=1) — bribery vocabulary. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "strongs_number": "H1290",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "be.rekh: knee (occ=28) — anatomical term. Bleed from ba.rakh (to bless) through shared root. No peace semantic content."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "strongs_number": "H1294H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "be.ra.khah: Beracah [Valley] (occ=2) — place name. Geographic bleed from blessing vocabulary. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "strongs_number": "H1295G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "be.re.khah: [Shelah] Pool (occ=1) — place name/pool. Geographic bleed. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "strongs_number": "H1295H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "be.re.khah: pool/pond (occ=16) — physical pool. No peace semantic content. Bleed from blessing root."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "strongs_number": "H1584",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ga.mar: to cease/complete (occ=5) — cessation vocabulary. Overlaps marginally with completeness but does not contribute to the peace semantic field independently. Content covered by H7999A (to complete) and H8003 (sha.lem)."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "strongs_number": "H1596",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ge.naz: treasure (Aramaic, occ=3) — treasure/treasury. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "strongs_number": "H1611",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gaph: wing (Aramaic, occ=3) — wing of a bird. No peace content. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "strongs_number": "H1635",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ge.ram: bone (Aramaic, occ=1) — anatomical term. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_mti_status",
+      "strongs_number": "H1655",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ge.shem: body (Aramaic, occ=8) — body as physical entity. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_mti_status",
+      "strongs_number": "H1724",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "da.ham: to astonish (occ=1) — astonishment. No peace content."
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_mti_status",
+      "strongs_number": "H1818",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "dam: blood (occ=363) — blood vocabulary. No peace semantic content despite extensive verse set. Bleed from da.mam root proximity."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_mti_status",
+      "strongs_number": "H1822",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "dum.mah: destroyed/silenced-by-destruction (occ=1) — destruction/silencing. Not peace vocabulary; contra-pattern at most. Content noted in analysis if needed."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update_mti_status",
+      "strongs_number": "H1826B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "da.mam: wail sense (occ=1, contaminated — v=9 shared with sibling sub-glosses). Wailing sense is the opposite of peace-stillness. Contamination noted in OP-003. Delete."
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update_mti_status",
+      "strongs_number": "H1826I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "da.mam: destroyed/silenced-by-destruction sense (occ=5, contaminated — v=9 shared). Destruction sense not peace vocabulary. Contamination noted OP-003. Delete."
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update_mti_status",
+      "strongs_number": "H2758",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.rish: plowing/ploughing time (occ=3) — agricultural ploughing, not silence. Bleed from H2790A (to plow/be silent, already extracted). Ploughing-season meaning has no peace content."
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update_mti_status",
+      "strongs_number": "H2759",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.ri.shi: scorching/hot/silent (occ=1) — hot/sultry/silent with uncertain meaning. Thin data; no clear peace semantic content."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update_mti_status",
+      "strongs_number": "H2791A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "che.resh: silently/secretly (adverb, occ=1) — thin data; secretive silence not peace silence. Content covered by H2790B (cha.resh: be quiet, already extracted)."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update_mti_status",
+      "strongs_number": "H2791B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "che.resh: magic art/craftily (occ=2) — magic/craft sense of cha.resh root. No peace content. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update_mti_status",
+      "strongs_number": "H2793H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cho.resh: wood/forest (occ=3) — wooded area. No peace content. Root bleed from cha.rash."
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update_mti_status",
+      "strongs_number": "H2794",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cho.resh: artificer/craftsman (occ=2) — craftsman. No peace content. Root bleed."
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update_mti_status",
+      "strongs_number": "H2795",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "che.resh: deaf (occ=9) — deafness. No peace content. Root bleed from cha.resh."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update_mti_status",
+      "strongs_number": "H2796",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.rash cha.ra.shim: craftsman/artisan (occ=36) — craftsmen/artificers. No peace content. Root bleed."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update_mti_status",
+      "strongs_number": "H2799",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.ro.shet: carving/skilled working (occ=4) — craftsmanship. No peace content. Root bleed."
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update_mti_status",
+      "strongs_number": "H3068H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ye.ho.vah: Jerusalem sub-gloss (occ=1) — geographic location sub-gloss (Jerusalem of the Lord). Not the divine name proper. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update_mti_status",
+      "strongs_number": "H3068I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ye.ho.vah: [Jerusalem of] the Lord sub-gloss (occ=1) — geographic sub-gloss. Not the divine name proper. Bleed."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update_mti_status",
+      "strongs_number": "H0410I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "el: El [Elohe] compound sub-gloss (occ=1) — specific compound sub-gloss. Covered by Elohim theological anchor. Thin and redundant."
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update_mti_status",
+      "strongs_number": "H0410J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "el: El [Most High] sub-gloss (occ=5) — covered by H5945B (el.yon Most High, extracted_theological_anchor). Redundant."
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update_mti_status",
+      "strongs_number": "H0430H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "e.lo.him: [LORD]-Elohe compound (occ=1) — specific compound sub-gloss. Thin data; covered by main Elohim theological anchor."
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update_mti_status",
+      "strongs_number": "H0430I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "e.lo.him: [Gibeath]-elohim (occ=1) — place name compound. Geographic bleed."
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update_mti_status",
+      "strongs_number": "H1180",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ba.a.li: Baal [used for God] (occ=1) — transitional name for God in Hos 2:16. Thin data; not a peace-specific divine name."
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update_mti_status",
+      "strongs_number": "H4281",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.cha.re.shah: plowshare (occ=3) — agricultural implement. No peace content. Root bleed from cha.rash."
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update_mti_status",
+      "strongs_number": "H5183B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.chat: descent/judgment-descent (occ=1, contaminated v=6) — descent of judgment, not peace. Contamination noted OP-003. Peace content covered by H5183A (quietness, extracted)."
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update_mti_status",
+      "strongs_number": "H5251G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "nes: Banner [God] sub-gloss (occ=1) — single-occurrence divine-name sub-gloss. Covered by H3071 YHWH-Nissi (restored) and H5251H (nes: ensign, extracted)."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update_mti_status",
+      "strongs_number": "H5769I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "o.lam: any time (occ=5) — temporal 'at any time' sense. Not the everlasting/eternal dimension. Content covered by H5769G (enduring/eternal, extracted_theological_anchor)."
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update_mti_status",
+      "strongs_number": "H5769J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "o.lam: antiquity/old (occ=44) — past-time sense of olam ('from of old'). Distinct from the eternal-peace dimension. Content covered by H5769G."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update_mti_status",
+      "strongs_number": "H5920H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "al: height (occ=4) — spatial height adverb. No peace content. Root bleed from el.yon family."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update_mti_status",
+      "strongs_number": "H5945A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "el.yon: high (adjective, occ=20) — high/upper in non-divine contexts (upper gate, upper pool). Content covered by H5945B (Most High God, extracted_theological_anchor)."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update_mti_status",
+      "strongs_number": "H5945G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "el.yon: Upper Beth Horon (place name, occ=3, contaminated v=20). Geographic sub-gloss; contamination noted OP-003. Delete."
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update_mti_status",
+      "strongs_number": "H5945H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "el.yon: [LORD] Most High sub-gloss (occ=5, contaminated v=20). Covered by H5945B. Contamination noted OP-003. Delete."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update_mti_status",
+      "strongs_number": "H6635H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tsa.va: army: war sense (occ=42) — warfare sub-sense. Covered analytically by H6635B (LORD of Hosts, extracted_theological_anchor) and H6635A (army, extracted_theological_anchor). Delete to avoid duplication."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update_mti_status",
+      "strongs_number": "H6635I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tsa.va: duty/service sense (occ=13) — service/duty in the tabernacle sense. Covered by H6635A/B. Delete."
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update_mti_status",
+      "strongs_number": "H7067H",
+      "set": {
+        "status": "extracted_theological_anchor",
+        "status_note": "qan.na: jealous (adjective, occ=5, 5 verses) — extracted in OP-038 above. This entry is a duplicate OP entry — see OP-038.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update_mti_status",
+      "strongs_number": "H7200N",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah: Provider [God] / YHWH-Roeh (occ=1) — the Shepherd divine name sub-gloss. Covered by H3070 (YHWH-Yireh, extracted_theological_anchor). Thin; not a peace-specific divine name."
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update_mti_status",
+      "strongs_number": "H7280C",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ga: to harden (occ=1, contaminated v=6) — hardening sense. Contamination noted OP-003. Peace content covered by H7280A (disturb, extracted) and H7280B (rest, already extracted)."
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update_mti_status",
+      "strongs_number": "H8036",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shum: name (Aramaic, occ=12) — proper name/noun. No peace content. Bleed from Aramaic vocabulary in the Daniel/Ezra context."
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update_mti_status",
+      "strongs_number": "G0447",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "aniēmi: to loosen/leave/abandon (occ=37) — releasing/abandoning. Peripheral to peace vocabulary; the loosening sense does not constitute peace. Bleed from Heb 13:5 'I will never leave you' context."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update_mti_status",
+      "strongs_number": "G2048",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "erēmos: deserted/wilderness (occ=396) — wilderness/desert as a place. The desert is a place of solitude and sometimes peace-encounter but erēmos itself is not peace vocabulary. Bleed from quietness/solitude context. Insufficient direct peace semantic content to justify inclusion given volume."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "add_quality_flag",
+      "strongs_number": "G1516",
+      "term_inv_id": 638,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "eirēnikos (peaceful, occ=40) — 2 verses in export, 5% coverage. Below 20% threshold."
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "add_quality_flag",
+      "strongs_number": "G2270",
+      "term_inv_id": 635,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "hēsuchazō (be quiet, occ=38) — 5 verses in export, 13% coverage. Below 20% threshold."
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "add_quality_flag",
+      "strongs_number": "G4519",
+      "term_inv_id": 648,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "sabaōth (hosts, occ=67) — 2 verses in export, 3% coverage. Below 20% threshold."
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "add_quality_flag",
+      "strongs_number": "G0447",
+      "term_inv_id": 2713,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "aniēmi (to loosen, occ=37) — 4 verses in export, 11% coverage. Classified delete in OP-101; flag added for completeness of data record."
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "add_quality_flag",
+      "strongs_number": "H7999A",
+      "term_inv_id": 625,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "H7999A (to ally, occ=106, id=625) — 0 verses, NO_VERSES. Schema investigation flagged OP-002."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 107,
+    "manual_operations": 1,
+    "mti_extract": 35,
+    "mti_extract_theological_anchor": 11,
+    "mti_delete": 51,
+    "quality_flag_inserts": 5,
+    "schema_investigation_notes": 2,
+    "delete_flag_restorations": 1,
+    "note": "OP-001 is a manual operation (restore_delete_flagged). OP-097 is a duplicate entry of OP-038 — Claude Code should skip OP-097 as H7067H was already classified in OP-038. After application, projected active inventory: 30 existing extracted + 35 newly extracted + 11 newly extracted_theological_anchor + 3 restored YHWH compounds = approximately 79 active terms. Re-export required before Session B analysis. Note: H3068G (YHWH/Yahweh, occ=10284, 463 verses) remains delete_flagged=1 per existing programme decision — this patch does not alter that status."
+  }
+}

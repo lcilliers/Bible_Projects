@@ -1,0 +1,1178 @@
+{
+  "patch_id": "PATCH-20260325-103-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 103,
+  "registry_word": "love",
+  "file_id": 22,
+  "source_json_exported_at": "2026-03-24T17:10:19Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for love (reg 103). Sets anchor verse (1Jo 4:8). Confirms delete of G0080 adelfos (bleed). Extracts and classifies all 102 None-status terms across extract, extract_thin, xref, and delete categories.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Set anchor verse for love registry. 1Jo 4:8 \u2014 'Anyone who does not love does not know God, because God is love.' This is the most theologically radical statement in the love vocabulary and the entire corpus: love is not merely an attribute of God but a predicate of his being (theos agap\u0113 estin). It establishes the ontological ground within which every other love statement in the corpus must be read. The fear registry's anchor (1Jo 4:18) is in the same passage \u2014 anchoring both sides of the love-fear opposition which is the top Session D priority (PH2-103-003 and PH2-061-001).",
+      "registry_no": 103,
+      "set": {
+        "anchor_verses": "1Jo 4:8"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0080 adelfos [brother] \u2014 confirm delete. del_flag=1 already set. 340 occurrences, 310 verses, but adelfos is kinship/community vocabulary not love vocabulary. It entered via the philadelphia/filadelfia (brotherly love) relatedNos. Primary analysis is in the fellowship/community registry. The brotherhood love concept is adequately covered by G5360 filadelfia (extracted) and G5361 filadelfos (extracted).",
+      "mti_id": 557,
+      "strongs_number": "G0080",
+      "transliteration": "adelfos",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed from filadelfia/brotherly-love root. Brotherhood kinship vocabulary; primary analysis in community/fellowship registry. Love content adequately covered by G5360 filadelfia (extracted)."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0157G [Primary love verb a.hev (to love: lover) - 207 occ. Cross-re]",
+      "strongs_number": "H0157G",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary love verb a.hev (to love: lover) - 207 occ. Cross-registry link to desire (reg 43) confirmed. Primary analysis held in desire registry per xref_desire."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0157H [a.hev: friend sub-gloss - love as friendship. 13 occ.]",
+      "strongs_number": "H0157H",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "a.hev: friend sub-gloss - love as friendship. 13 occ."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5689 [a.gav to lust/love intensely - 10 occ. Erotic love vocabular]",
+      "strongs_number": "H5689",
+      "set": {
+        "status": "extracted",
+        "status_note": "a.gav to lust/love intensely - 10 occ. Erotic love vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5690 [a.gav lust (noun form) - 2 occ.]",
+      "strongs_number": "H5690",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "a.gav lust (noun form) - 2 occ."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7356A [ra.cham womb - 6 occ. Connects compassion to its physical ro]",
+      "strongs_number": "H7356A",
+      "set": {
+        "status": "extracted",
+        "status_note": "ra.cham womb - 6 occ. Connects compassion to its physical root (womb-love). Somatic dimension of ra.cham family."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7358 [re.chem womb - 26 occ. The anatomical root of the compassion]",
+      "strongs_number": "H7358",
+      "set": {
+        "status": "extracted",
+        "status_note": "re.chem womb - 26 occ. The anatomical root of the compassion/love (ra.cha.mim) vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7349 [ra.chum compassionate - 13 occ. Divine attribute. God descri]",
+      "strongs_number": "H7349",
+      "set": {
+        "status": "extracted",
+        "status_note": "ra.chum compassionate - 13 occ. Divine attribute. God described as compassionate."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7359 [ra.cha.min compassion - 1 occ. Aramaic form.]",
+      "strongs_number": "H7359",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ra.cha.min compassion - 1 occ. Aramaic form."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7362 [ra.cha.ma.ni compassionate - 1 occ.]",
+      "strongs_number": "H7362",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ra.cha.ma.ni compassionate - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2616A [cha.sad be kind - 2 occ. Verbal form of chesed root.]",
+      "strongs_number": "H2616A",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "cha.sad be kind - 2 occ. Verbal form of chesed root."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8135 [sin.ah hating - 17 occ. Abstract noun of sa.ne (to hate - al]",
+      "strongs_number": "H8135",
+      "set": {
+        "status": "extracted",
+        "status_note": "sin.ah hating - 17 occ. Abstract noun of sa.ne (to hate - already extracted). Love-hate opposition vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8131 [se.na to hate - 4 occ. Aramaic form of sa.ne.]",
+      "strongs_number": "H8131",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "se.na to hate - 4 occ. Aramaic form of sa.ne."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8146 [sa.ni hated - 1 occ.]",
+      "strongs_number": "H8146",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "sa.ni hated - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2617B [che.sed shame - 3 occ. The semantic range of chesed includes]",
+      "strongs_number": "H2617B",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "che.sed shame - 3 occ. The semantic range of chesed includes disgrace as its opposite pole."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2530A [cha.mad to desire/covet - 21 occ. Desire as love-adjacent; a]",
+      "strongs_number": "H2530A",
+      "set": {
+        "status": "extracted",
+        "status_note": "cha.mad to desire/covet - 21 occ. Desire as love-adjacent; also the 10th commandment word."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2531 [che.med delight - 6 occ. Noun of cha.mad. Delight as love ex]",
+      "strongs_number": "H2531",
+      "set": {
+        "status": "extracted",
+        "status_note": "che.med delight - 6 occ. Noun of cha.mad. Delight as love expression."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2532A [chem.dah desire - 17 occ. Desire vocabulary.]",
+      "strongs_number": "H2532A",
+      "set": {
+        "status": "extracted",
+        "status_note": "chem.dah desire - 17 occ. Desire vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2532B [cha.mu.dah desirable thing - 8 occ.]",
+      "strongs_number": "H2532B",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "cha.mu.dah desirable thing - 8 occ."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2530B [cha.mu.dah precious thing - 8 occ.]",
+      "strongs_number": "H2530B",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "cha.mu.dah precious thing - 8 occ."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4261 [mach.mad desire/beloved - 14 occ. Used of God's temple (what]",
+      "strongs_number": "H4261",
+      "set": {
+        "status": "extracted",
+        "status_note": "mach.mad desire/beloved - 14 occ. Used of God's temple (what is beloved)."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4262 [mach.mod desirable - 4 occ.]",
+      "strongs_number": "H4262",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "mach.mod desirable - 4 occ."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2836A [cha.shaq to desire/cling to - 8 occ. Love as attachment; use]",
+      "strongs_number": "H2836A",
+      "set": {
+        "status": "extracted",
+        "status_note": "cha.shaq to desire/cling to - 8 occ. Love as attachment; used of God's love for Israel (Deu 7:7)."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2837 [che.sheq desire - 4 occ. Noun of cha.shaq.]",
+      "strongs_number": "H2837",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "che.sheq desire - 4 occ. Noun of cha.shaq."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2838 [cha.shuq ring/attachment - 8 occ. Borderline; physical attac]",
+      "strongs_number": "H2838",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "cha.shuq ring/attachment - 8 occ. Borderline; physical attachment imagery."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7453 [re.a neighbor/friend - 191 occ. \"Love your neighbor as yours]",
+      "strongs_number": "H7453",
+      "set": {
+        "status": "extracted",
+        "status_note": "re.a neighbor/friend - 191 occ. \"Love your neighbor as yourself\" (Lev 19:18). Primary relational object of love."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7463 [re.eh friend - 6 occ. From ra.ah shepherd-friend root.]",
+      "strongs_number": "H7463",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "re.eh friend - 6 occ. From ra.ah shepherd-friend root."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7464 [re.ah companion - 5 occ.]",
+      "strongs_number": "H7464",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "re.ah companion - 5 occ."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7468 [re.ut neighbor - 6 occ.]",
+      "strongs_number": "H7468",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "re.ut neighbor - 6 occ."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4828 [me.re.a companion - 7 occ. Friend/companion vocabulary.]",
+      "strongs_number": "H4828",
+      "set": {
+        "status": "extracted",
+        "status_note": "me.re.a companion - 7 occ. Friend/companion vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3302 [ya.phah be beautiful - 8 occ. Beauty as love-related quality]",
+      "strongs_number": "H3302",
+      "set": {
+        "status": "extracted",
+        "status_note": "ya.phah be beautiful - 8 occ. Beauty as love-related quality."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3308 [yo.phi beauty - 19 occ. Noun of ya.phah.]",
+      "strongs_number": "H3308",
+      "set": {
+        "status": "extracted",
+        "status_note": "yo.phi beauty - 19 occ. Noun of ya.phah."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3304 [ye.pheh-phiy.yah pretty - 2 occ.]",
+      "strongs_number": "H3304",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "ye.pheh-phiy.yah pretty - 2 occ."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5276 [na.em be pleasant - 8 occ. Pleasantness as love dimension.]",
+      "strongs_number": "H5276",
+      "set": {
+        "status": "extracted",
+        "status_note": "na.em be pleasant - 8 occ. Pleasantness as love dimension."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5278 [no.am pleasantness - 7 occ. Jonathan's love for David: \"very]",
+      "strongs_number": "H5278",
+      "set": {
+        "status": "extracted",
+        "status_note": "no.am pleasantness - 7 occ. Jonathan's love for David: \"very pleasant have you been to me\" (2Sa 1:26)."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5282 [na.a.man pleasantness - 1 occ.]",
+      "strongs_number": "H5282",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "na.a.man pleasantness - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5273B [na.im musical - 2 occ.]",
+      "strongs_number": "H5273B",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "na.im musical - 2 occ."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1730G [dod beloved - 33 occ. The beloved in Song of Songs; also unc]",
+      "strongs_number": "H1730G",
+      "set": {
+        "status": "extracted",
+        "status_note": "dod beloved - 33 occ. The beloved in Song of Songs; also uncle. Love as intimate relationship."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1730I [dod: male relative - 18 occ. The kinship dimension of the do]",
+      "strongs_number": "H1730I",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "dod: male relative - 18 occ. The kinship dimension of the dod root."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1736 [du.day mandrake - 6 occ. Love-plant in Song of Songs.]",
+      "strongs_number": "H1736",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "du.day mandrake - 6 occ. Love-plant in Song of Songs."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5384 [filos friendly/friend - 101 occ. Friendship love; also fig t]",
+      "strongs_number": "G5384",
+      "set": {
+        "status": "extracted",
+        "status_note": "filos friendly/friend - 101 occ. Friendship love; also fig tree parable, Lazarus \"our friend\"."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5373 [filia friendship - 10 occ. Abstract noun of philos.]",
+      "strongs_number": "G5373",
+      "set": {
+        "status": "extracted",
+        "status_note": "filia friendship - 10 occ. Abstract noun of philos."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2705 [katafile\u014d to kiss - 21 occ. Intimate love expression; the pr]",
+      "strongs_number": "G2705",
+      "set": {
+        "status": "extracted",
+        "status_note": "katafile\u014d to kiss - 21 occ. Intimate love expression; the prodigal's father, Judas's betrayal."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5370 [fil\u0113ma kiss - 9 occ. Holy kiss vocabulary.]",
+      "strongs_number": "G5370",
+      "set": {
+        "status": "extracted",
+        "status_note": "fil\u0113ma kiss - 9 occ. Holy kiss vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5382 [filoxenos hospitable - 3 occ. Love of strangers as Christian]",
+      "strongs_number": "G5382",
+      "set": {
+        "status": "extracted",
+        "status_note": "filoxenos hospitable - 3 occ. Love of strangers as Christian virtue."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5381 [filoxenia hospitality - 2 occ. Noun form.]",
+      "strongs_number": "G5381",
+      "set": {
+        "status": "extracted",
+        "status_note": "filoxenia hospitality - 2 occ. Noun form."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5364 [filanthr\u014dp\u014ds benevolently - 1 occ.]",
+      "strongs_number": "G5364",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "filanthr\u014dp\u014ds benevolently - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5391 [filofr\u014dn friendly - 1 occ.]",
+      "strongs_number": "G5391",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "filofr\u014dn friendly - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5390 [filofron\u014ds hospitably - 1 occ.]",
+      "strongs_number": "G5390",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "filofron\u014ds hospitably - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5389 [filotimeomai to aspire - 3 occ. To \"love honour\" - ambition ]",
+      "strongs_number": "G5389",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "filotimeomai to aspire - 3 occ. To \"love honour\" - ambition as love-adjacent."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5367 [filautos selfish - 1 occ. Self-love as the disordered form.]",
+      "strongs_number": "G5367",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "filautos selfish - 1 occ. Self-love as the disordered form."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G7493 [era\u014d to love passionately - 2 occ. Erotic love; absent from ]",
+      "strongs_number": "G7493",
+      "set": {
+        "status": "extracted",
+        "status_note": "era\u014d to love passionately - 2 occ. Erotic love; absent from NT but present in LXX contexts."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0079 [adelf\u0113 sister - 130 occ. Female sibling; sister in Christ. L]",
+      "strongs_number": "G0079",
+      "set": {
+        "status": "extracted",
+        "status_note": "adelf\u0113 sister - 130 occ. Female sibling; sister in Christ. Love as family relationship."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0081 [adelfot\u0113s brotherhood - 2 occ. The community of brotherly lo]",
+      "strongs_number": "G0081",
+      "set": {
+        "status": "extracted",
+        "status_note": "adelfot\u0113s brotherhood - 2 occ. The community of brotherly love."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5569 [pseudadelfos false brother - 2 occ. The counterfeit of broth]",
+      "strongs_number": "G5569",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "pseudadelfos false brother - 2 occ. The counterfeit of brotherly love."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0018 [agathos good - 505 occ. The good as the object and expressio]",
+      "strongs_number": "G0018",
+      "set": {
+        "status": "extracted",
+        "status_note": "agathos good - 505 occ. The good as the object and expression of love."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0019 [agath\u014dsun\u0113 goodness - 17 occ. Fruit of the Spirit; love as m]",
+      "strongs_number": "G0019",
+      "set": {
+        "status": "extracted",
+        "status_note": "agath\u014dsun\u0113 goodness - 17 occ. Fruit of the Spirit; love as moral character."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0015 [agathopoie\u014d to do good - 14 occ. Love in action.]",
+      "strongs_number": "G0015",
+      "set": {
+        "status": "extracted",
+        "status_note": "agathopoie\u014d to do good - 14 occ. Love in action."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0014 [agathoerge\u014d to do good - 2 occ.]",
+      "strongs_number": "G0014",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "agathoerge\u014d to do good - 2 occ."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0016 [agathopoiia doing good - 1 occ.]",
+      "strongs_number": "G0016",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "agathopoiia doing good - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0017 [agathopoios doing good - 1 occ.]",
+      "strongs_number": "G0017",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "agathopoios doing good - 1 occ."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0865 [afilagathos hating good - 1 occ. The opposite of love of goo]",
+      "strongs_number": "G0865",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "afilagathos hating good - 1 occ. The opposite of love of good."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1515 [eir\u0113n\u0113 peace - 307 occ. Peace as love's relational outcome. ]",
+      "strongs_number": "G1515",
+      "set": {
+        "status": "extracted",
+        "status_note": "eir\u0113n\u0113 peace - 307 occ. Peace as love's relational outcome. Already cross-registry linked to peace (reg 117)."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1516 [eir\u0113nikos peaceful - 40 occ. Already in cross-registry link.]",
+      "strongs_number": "G1516",
+      "set": {
+        "status": "extracted",
+        "status_note": "eir\u0113nikos peaceful - 40 occ. Already in cross-registry link."
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1514 [eir\u0113neu\u014d be at peace - 14 occ.]",
+      "strongs_number": "G1514",
+      "set": {
+        "status": "extracted",
+        "status_note": "eir\u0113neu\u014d be at peace - 14 occ."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1517 [eir\u0113nopoie\u014d to make peace - 2 occ.]",
+      "strongs_number": "G1517",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "eir\u0113nopoie\u014d to make peace - 2 occ."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1518 [eir\u0113nopoios peacemaker - 1 occ. Matt 5:9 blessed are the pea]",
+      "strongs_number": "G1518",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "eir\u0113nopoios peacemaker - 1 occ. Matt 5:9 blessed are the peacemakers."
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4416 [pr\u014dtotokos firstborn - 134 occ. The beloved firstborn; Chris]",
+      "strongs_number": "G4416",
+      "set": {
+        "status": "extracted",
+        "status_note": "pr\u014dtotokos firstborn - 134 occ. The beloved firstborn; Christ as firstborn. Love expressed through priority."
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4415 [pr\u014dtotokia birthright - 10 occ.]",
+      "strongs_number": "G4415",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "pr\u014dtotokia birthright - 10 occ."
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2244 \u2014 delete. cha.va to hide - bleed from cha.vav/chesed root. No love content.",
+      "strongs_number": "H2244",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.va to hide - bleed from cha.vav/chesed root. No love content."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2247 \u2014 delete. cha.vah to hide - bleed from same. No love content.",
+      "strongs_number": "H2247",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.vah to hide - bleed from same. No love content."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2616B \u2014 delete. cha.sad to shame - bleed from chesed root. Opposite semantic pole, no love conte",
+      "strongs_number": "H2616B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.sad to shame - bleed from chesed root. Opposite semantic pole, no love content."
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2624 \u2014 delete. cha.si.dah stork - bleed from chasid root. Animal name, no love content.",
+      "strongs_number": "H2624",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.si.dah stork - bleed from chasid root. Animal name, no love content."
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2839 \u2014 delete. chish.shuq spoke (of a wheel) - bleed from chashaq root. No love content.",
+      "strongs_number": "H2839",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chish.shuq spoke (of a wheel) - bleed from chashaq root. No love content."
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4516 \u2014 delete. man.am.mim delicacy - bleed from no.am root. Food term, no love content.",
+      "strongs_number": "H4516",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "man.am.mim delicacy - bleed from no.am root. Food term, no love content."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4999 \u2014 delete. na.vah habitation - bleed from naeh/lovely root. Place name, no love content.",
+      "strongs_number": "H4999",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.vah habitation - bleed from naeh/lovely root. Place name, no love content."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5748 \u2014 delete. u.gav pipe/flute - bleed from agav/lust root. Musical instrument, no love conten",
+      "strongs_number": "H5748",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "u.gav pipe/flute - bleed from agav/lust root. Musical instrument, no love content."
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7462A \u2014 delete. bet-e.qed House of Shepherds - bleed from ra.ah root. Place name, no love conten",
+      "strongs_number": "H7462A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "bet-e.qed House of Shepherds - bleed from ra.ah root. Place name, no love content."
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7462B \u2014 delete. ra.ah to pasture - bleed from re.a/friend root. Shepherding verb, no love conten",
+      "strongs_number": "H7462B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah to pasture - bleed from re.a/friend root. Shepherding verb, no love content."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7462C \u2014 delete. ra.ah to accompany - bleed from re.a root. No primary love content.",
+      "strongs_number": "H7462C",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah to accompany - bleed from re.a root. No primary love content."
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7462D \u2014 delete. ra.ah to befriend - borderline but bleed from re.a root. No independent verse se",
+      "strongs_number": "H7462D",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah to befriend - borderline but bleed from re.a root. No independent verse set."
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1717 \u2014 delete. dad breast - bleed from dod/beloved root. Anatomical term, no love content.",
+      "strongs_number": "H1717",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "dad breast - bleed from dod/beloved root. Anatomical term, no love content."
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1731 \u2014 delete. dud pot - bleed from dod/beloved root. Cooking vessel, no love content.",
+      "strongs_number": "H1731",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "dud pot - bleed from dod/beloved root. Cooking vessel, no love content."
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1733 \u2014 delete. do.dah aunt - bleed from dod root. Kinship term only, primary in family vocabula",
+      "strongs_number": "H1733",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "do.dah aunt - bleed from dod root. Kinship term only, primary in family vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2896A \u2014 delete. tov pleasant - bleed from tuv/goodness. Core term already served by H2898 tuv an",
+      "strongs_number": "H2896A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tov pleasant - bleed from tuv/goodness. Core term already served by H2898 tuv and H2895 tov (both extracted)."
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2896B \u2014 delete. tov good - bleed. Same reasoning.",
+      "strongs_number": "H2896B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tov good - bleed. Same reasoning."
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2896C \u2014 delete. to.vah welfare - bleed. Same reasoning.",
+      "strongs_number": "H2896C",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "to.vah welfare - bleed. Same reasoning."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0156 \u2014 delete. a.dash to thresh - bleed from a.hav root. No love content.",
+      "strongs_number": "H0156",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "a.dash to thresh - bleed from a.hav root. No love content."
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0159 \u2014 delete. o.hav beloved - borderline; but adequately covered by H0158 a.hav (extracted) an",
+      "strongs_number": "H0159",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "o.hav beloved - borderline; but adequately covered by H0158 a.hav (extracted) and H0160 a.ha.vah (extracted)."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3039B \u2014 delete. ya.di.dah love - adequately covered by H3039A ya.did beloved (extracted).",
+      "strongs_number": "H3039B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ya.di.dah love - adequately covered by H3039A ya.did beloved (extracted)."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5273B \u2014 delete. na.im musical - bleed from no.am/pleasant. Musical context only.",
+      "strongs_number": "H5273B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.im musical - bleed from no.am/pleasant. Musical context only."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5282 \u2014 delete. na.a.man pleasantness - bleed from no.am. Adequately covered by H5278 no.am (ext",
+      "strongs_number": "H5282",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.a.man pleasantness - bleed from no.am. Adequately covered by H5278 no.am (extract above)."
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4413G \u2014 delete. pr\u014dtos first - bleed from pr\u014dtotokos/firstborn. Ordinal adjective, no love conte",
+      "strongs_number": "G4413G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtos first - bleed from pr\u014dtotokos/firstborn. Ordinal adjective, no love content."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4413H \u2014 delete. pr\u014dtos first: previous - bleed. No love content.",
+      "strongs_number": "G4413H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtos first: previous - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4413I \u2014 delete. pr\u014dtos first: chief - bleed. No love content.",
+      "strongs_number": "G4413I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtos first: chief - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4413J \u2014 delete. pr\u014dtos first: best - bleed. No love content.",
+      "strongs_number": "G4413J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtos first: best - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4412 \u2014 delete. pr\u014dton first - bleed. No love content.",
+      "strongs_number": "G4412",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dton first - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4409 \u2014 delete. pr\u014dteu\u014d be first - bleed. No love content.",
+      "strongs_number": "G4409",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dteu\u014d be first - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4410 \u2014 delete. pr\u014dtokathedria seat of honor - bleed. No love content.",
+      "strongs_number": "G4410",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtokathedria seat of honor - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4411 \u2014 delete. pr\u014dtoklisia place of honor - bleed. No love content.",
+      "strongs_number": "G4411",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtoklisia place of honor - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4414 \u2014 delete. pr\u014dtostat\u0113s ringleader - bleed. No love content.",
+      "strongs_number": "G4414",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pr\u014dtostat\u0113s ringleader - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1207 \u2014 delete. deuteropr\u014dtos second-first - bleed. No love content.",
+      "strongs_number": "G1207",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "deuteropr\u014dtos second-first - bleed. No love content."
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5376K \u2014 delete. filippos Philippi - bleed from philos. Place name.",
+      "strongs_number": "G5376K",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "filippos Philippi - bleed from philos. Place name."
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0157G a.hev [to love: lover] \u2014 xref_desire. Primary love verb (207 occ). Cross-registry link to desire (reg 43) already confirmed in CRL table. Primary analysis held in desire registry. This is the most important cross-registry relationship in the love inventory.",
+      "strongs_number": "H0157G",
+      "set": {
+        "status": "xref_desire",
+        "status_note": "Primary Hebrew love verb (207 occ). Primary analysis held in desire registry (reg 43) per established cross-registry link. Note in love Session B analysis."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 105,
+    "anchor_verse_set": "1Jo 4:8",
+    "notes": [
+      "G0080 adelfos confirmed delete \u2014 310 verses, bleed from brotherhood vocabulary.",
+      "102 None-status terms classified: ~60 extract/extract_thin, ~35 delete, 1 xref_desire.",
+      "Key extractions: H7453 re.a (neighbor \u2014 'love your neighbor as yourself'), H7358 re.chem (womb \u2014 anatomical root of compassion), H0157G classified xref_desire, G5384 filos (friend \u2014 101 occ), G0018 agathos (good \u2014 505 occ), G1515 eir\u0113n\u0113 (peace \u2014 307 occ).",
+      "Note: love_patch operations on None-status terms use strongs_number only (no mti_id available from this export for None-status terms). Claude Code should resolve mti_id from wa_mti table by strongs_number + owning_registry=103."
+    ]
+  }
+}

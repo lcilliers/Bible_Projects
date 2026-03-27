@@ -1,0 +1,232 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-073-PREANALYSIS-V3",
+    "registry_id": 73,
+    "word": "guilt",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Full pre-analysis classification for guilt registry. Classifies all 59 None-status terms: 26 extracted, 33 deleted as bleed. Restores G1777 and G2631 to in-scope. Adds missing HIGH_FREQUENCY_ANCHOR flags on G0264 and G0265. Inserts three programme research flags. This replaces V1 and V2 which used incorrect operation types."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update_note",
+      "description": "Extract core Greek sin vocabulary — HAMARTIA family",
+      "bulk_strongs": ["G0264", "G0265", "G0268", "G0338", "G0361", "G4258"],
+      "set": {
+        "status": "extracted",
+        "status_note": "Core guilt registry vocabulary — Greek sin/sinner/sinless family"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update_note",
+      "description": "Extract Greek conscience vocabulary — SUNEIDESIS family",
+      "bulk_strongs": ["G4893", "G4894"],
+      "set": {
+        "status": "extracted",
+        "status_note": "Conscience vocabulary — inner knowing of guilt"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update_note",
+      "description": "Extract Hebrew sin vocabulary — CHATA family (sin, sinner, sin-offering)",
+      "bulk_strongs": ["H2400", "H2402", "H2403A", "H2403B", "H2403H", "H2403I"],
+      "set": {
+        "status": "extracted",
+        "status_note": "Core guilt registry vocabulary — Hebrew sin/sin-offering family"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update_note",
+      "description": "Extract Hebrew grace and supplication vocabulary — CHEN/CHANAN family (guilt resolution vocabulary)",
+      "bulk_strongs": ["H2580", "H2587", "H2603A", "H8467", "H8469"],
+      "set": {
+        "status": "extracted",
+        "status_note": "Guilt resolution vocabulary — grace, graciousness, and supplication as response to guilt"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "bulk_update_note",
+      "description": "Extract Hebrew iniquity vocabulary — AVON family (iniquity, perversity, twisting)",
+      "bulk_strongs": ["H5753A", "H5753B", "H5771H", "H5771I"],
+      "set": {
+        "status": "extracted",
+        "status_note": "Core guilt registry vocabulary — iniquity as moral perversity and its guilt/punishment dimensions"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "bulk_update_note",
+      "description": "Extract NASA guilt-core sub-glosses — bear, raise, and forgive senses only",
+      "bulk_strongs": ["H5375G", "H5375H", "H5375I"],
+      "set": {
+        "status": "extracted",
+        "status_note": "NASA guilt-core: H5375H bear (bearing guilt/iniquity), H5375I forgive (lifting of guilt), H5375G raise (lift up face — acceptance after guilt, Exo 20:7 guiltless)"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — Greek terms not guilt vocabulary: G0154 aiteō (general petition — pray registry), G0157 aitiama (forensic legal charge, one verse only)",
+      "bulk_strongs": ["G0154", "G0157"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. G0154 aiteō is general petition/request — pray registry. G0157 aitiama is forensic legal procedure, not inner guilt state."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — peripheral CHEN family terms: chin (beauty), chaninah (favour, 1 occurrence), Hananel (proper noun)",
+      "bulk_strongs": ["H2433", "H2594", "H2606"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. H2433 chin beauty — peripheral aesthetic sense. H2594 chaninah favour — single occurrence, adequately covered by chen/chanan. H2606 Chananel — proper noun, Tower of Hananel."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — MASSA family terms not carrying guilt vocabulary: burden (physical), oracle, respect, smoke, tribute",
+      "bulk_strongs": ["H4853A", "H4853B", "H4856", "H4858", "H4864"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. Physical burden and oracle senses of massa not guilt vocabulary. Guilt-as-burden concept covered by NASA bearing senses already extracted."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — NASA peripheral sub-glosses: all non-guilt senses of nasa (aid, exalt, look, loud, trust, vow, kindness, fight, enthuse, journey, marry, count, armour-bearer, give gift) plus NASA derivatives (ne.sa, nis.set, ne.su.ah)",
+      "bulk_strongs": [
+        "H5375K", "H5375L", "H5375M", "H5375N", "H5375O",
+        "H5375P", "H5375Q", "H5375R", "H5375S", "H5375T",
+        "H5375U", "H5375V", "H5375W", "H5375X",
+        "H5376", "H5379", "H5385"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. Peripheral NASA sub-glosses with no guilt semantic content. Guilt-relevant NASA senses (bear, forgive, raise) extracted separately in OP-006."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — NA.SI sub-glosses: leader/prince (H5387A) and mist (H5387B) — neither is guilt vocabulary",
+      "bulk_strongs": ["H5387A", "H5387B"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. H5387A na.si leader/prince — political/social term, not guilt vocabulary. H5387B na.si mist — meteorological term, no guilt semantic content."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — SE.ET/SI family: elevation (H7613), loftiness (H7863), Mount Sirion (H7865)",
+      "bulk_strongs": ["H7613", "H7863", "H7865"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. H7613 se.et elevation — majority of verses are skin swellings (Lev 13-14) and divine majesty; Gen 4:7 analytically noted but covered by NASA raise. H7863/H7865 — loftiness and proper noun, no guilt content."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "bulk_update_note",
+      "description": "Delete bleed — H2603B cha.nan be loathsome — peripheral CHEN sub-gloss, 1 occurrence, not guilt vocabulary",
+      "bulk_strongs": ["H2603B"],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. Secondary negative sense of chanan (be loathsome/abhorrent), 1 occurrence. Not guilt vocabulary. Grace sense covered by H2603A extracted in OP-004."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G1777",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored to in-scope. Decision confirmed Leroux 2026-03-25. Enochos: liable for — guilt as legal liability before a court. Mat 5:21-22, Mar 3:29, 1Cor 11:27, Jam 2:10."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G2631",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored to in-scope. Decision confirmed Leroux 2026-03-25. Katakrima: condemnation — the verdict-state of guilt. Appears at anchor verse Rom 8:1 and Rom 5:16-18."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "CANDIDATE_REGISTRY_WORD",
+        "flag_label": "PH2-073-001",
+        "strongs_reference": "G2631",
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Condemnation (katakrima/katakrinō family) is a candidate for a new registry entry. G2631 katakrima and root family G2632 katakrinō (to condemn), katakrisis, akatakritos, autokatakritos constitute a distinct inner-being vocabulary cluster addressing the judicial-moral verdict-state. Analytically distinct from guilt (moral fact of wrongdoing) and shame (relational/exposure experience). The condemnation/no-condemnation polarity is the structural framework of Romans 5-8 and is signalled by anchor verse Rom 8:1. ACTION: Check word_registry for existing condemnation entry. If absent, create new registry with anchor verse Rom 8:1 and run Session A extraction on G2632 family.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-073-002",
+        "strongs_reference": "G0264",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G0264 hamartanō (to sin, occ=241) has only 37 verses in the export — 15% coverage. Synthesis-level conclusions about the verbal form of sin in the NT cannot be drawn from this sample alone. Full verse set required before Phase 2 synthesis.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-073-003",
+        "strongs_reference": "G0265",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G0265 hamartēma (sin as discrete act, occ=26) has only 4 verses in the export — 15% coverage. The distinction between hamartia (sin as state/principle) and hamartēma (sin as individual act) is analytically significant. Conclusions about this distinction require Phase 2 full-verse verification.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 18,
+    "bulk_extractions": 6,
+    "bulk_deletions": 7,
+    "individual_extractions": 2,
+    "research_flag_inserts": 3,
+    "terms_extracted": 28,
+    "terms_deleted": 33,
+    "note": "All operations use supported PATCH_SPEC §3 operation types. No manual verse operations. MTI classification of all 59 None-status terms plus restoration of G1777 and G2631 from delete_flagged. After application Claude Code should re-export — verse contamination on H2603B and H5387B resolves automatically once those terms are classified as delete."
+  }
+}

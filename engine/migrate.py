@@ -310,6 +310,138 @@ def _m12(conn: sqlite3.Connection) -> None:
     )
     conn.execute(
         "UPDATE schema_version SET version_code = ?, applied_at = ? WHERE id = 1",
+        ("3.3.0", _now()),
+    )
+
+
+@_register("M13", "Create wa_session_research_flags table (Session B/C/D findings)")
+def _m13(conn: sqlite3.Connection) -> None:
+    conn.execute("""
+        CREATE TABLE IF NOT EXISTS wa_session_research_flags (
+            id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            registry_id         INTEGER NOT NULL,
+            file_id             INTEGER,
+            flag_code           TEXT    NOT NULL,
+            flag_label          TEXT    NOT NULL UNIQUE,
+            strongs_reference   TEXT,
+            cross_registry_id   INTEGER,
+            priority            TEXT    DEFAULT 'MEDIUM',
+            session_target      TEXT    DEFAULT 'D',
+            description         TEXT    NOT NULL,
+            session_raised      TEXT    NOT NULL,
+            raised_date         TEXT    NOT NULL,
+            resolved            INTEGER NOT NULL DEFAULT 0,
+            resolved_date       TEXT,
+            resolved_note       TEXT,
+            FOREIGN KEY (registry_id) REFERENCES word_registry(id),
+            FOREIGN KEY (file_id) REFERENCES wa_file_index(id),
+            FOREIGN KEY (cross_registry_id) REFERENCES word_registry(id)
+        )
+    """)
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_wsrf_registry ON wa_session_research_flags (registry_id)"
+    )
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_wsrf_resolved ON wa_session_research_flags (resolved)"
+    )
+    conn.execute(
+        "UPDATE schema_version SET version_code = '3.4.0', applied_at = ? WHERE id = 1",
+        (_now(),),
+    )
+
+
+@_register("M14", "Extend wa_term_phase2_flags with description, source, raised_date")
+def _m14(conn: sqlite3.Connection) -> None:
+    _add_column_if_missing(conn, "wa_term_phase2_flags", "description", "TEXT")
+    _add_column_if_missing(conn, "wa_term_phase2_flags", "source",      "TEXT")
+    _add_column_if_missing(conn, "wa_term_phase2_flags", "raised_date", "TEXT")
+    conn.execute(
+        "UPDATE schema_version SET version_code = '3.5.0', applied_at = ? WHERE id = 1",
+        (_now(),),
+    )
+
+
+@_register("M15", "Migrate TERM_ANALYSIS flags + clean up unused flag types")
+def _m15(conn: sqlite3.Connection) -> None:
+    # ── Step 1: Migrate 1,114 TERM_ANALYSIS rows from wa_data_quality_flags
+    #            into wa_term_phase2_flags, deduplicating against existing rows.
+    # Build code→id map for phase2_flag_types
+    p2_map = {
+        r[0]: r[1]
+        for r in conn.execute("SELECT flag_code, id FROM phase2_flag_types").fetchall()
+    }
+    # Fetch all TERM_ANALYSIS quality flag rows
+    ta_rows = conn.execute("""
+        SELECT dqf.file_id, dqf.term_id, dqf.description, dqf.last_changed,
+               qft.flag_code
+        FROM wa_data_quality_flags dqf
+        JOIN wa_quality_flag_types qft ON qft.id = dqf.flag_id
+        WHERE qft.flag_group = 'TERM_ANALYSIS'
+    """).fetchall()
+    migrated = 0
+    skipped  = 0
+    for row in ta_rows:
+        flag_code = row[4]  # flag_code from quality type
+        p2_id     = p2_map.get(flag_code)
+        if not p2_id:
+            skipped += 1
+            continue
+        # Resolve term_inv_id from file_id + strongs_number (term_id)
+        ti = conn.execute(
+            "SELECT id FROM wa_term_inventory WHERE file_id = ? AND strongs_number = ?",
+            (row[0], row[1]),
+        ).fetchone()
+        if not ti:
+            skipped += 1
+            continue
+        ti_id = ti[0]
+        # Check for duplicate (composite PK: term_inv_id, flag_id)
+        exists = conn.execute(
+            "SELECT 1 FROM wa_term_phase2_flags WHERE term_inv_id = ? AND flag_id = ?",
+            (ti_id, p2_id),
+        ).fetchone()
+        if exists:
+            skipped += 1
+            continue
+        conn.execute(
+            "INSERT INTO wa_term_phase2_flags (term_inv_id, flag_id, description, source, raised_date) "
+            "VALUES (?, ?, ?, 'bulk_patch', ?)",
+            (ti_id, p2_id, row[2], row[3]),
+        )
+        migrated += 1
+    print(f"     M15: Migrated {migrated} TERM_ANALYSIS rows, skipped {skipped} (dup/unmapped).")
+
+    # ── Step 2: Delete migrated TERM_ANALYSIS rows from wa_data_quality_flags
+    ta_flag_ids = [
+        r[0] for r in conn.execute(
+            "SELECT id FROM wa_quality_flag_types WHERE flag_group = 'TERM_ANALYSIS'"
+        ).fetchall()
+    ]
+    if ta_flag_ids:
+        ph = ",".join("?" * len(ta_flag_ids))
+        deleted = conn.execute(
+            f"DELETE FROM wa_data_quality_flags WHERE flag_id IN ({ph})", ta_flag_ids
+        ).rowcount
+        print(f"     M15: Deleted {deleted} TERM_ANALYSIS rows from wa_data_quality_flags.")
+
+    # ── Step 3: Delete unused flag types from wa_quality_flag_types
+    #   - All IMPORT_STATUS (8), NOTE (4), REGISTRY_STATUS (2)
+    #   - UNCERTAIN_MEANING, ARAMAIC_EQUIVALENT
+    #   - All TERM_ANALYSIS codes (now migrated)
+    groups_to_delete = ('IMPORT_STATUS', 'NOTE', 'REGISTRY_STATUS', 'TERM_ANALYSIS')
+    gph = ",".join("?" * len(groups_to_delete))
+    conn.execute(
+        f"DELETE FROM wa_quality_flag_types WHERE flag_group IN ({gph})", groups_to_delete
+    )
+    # Delete specific unused DATA_COVERAGE codes
+    conn.execute(
+        "DELETE FROM wa_quality_flag_types WHERE flag_code IN ('UNCERTAIN_MEANING', 'ARAMAIC_EQUIVALENT')"
+    )
+    remaining = conn.execute("SELECT count(*) FROM wa_quality_flag_types").fetchone()[0]
+    print(f"     M15: wa_quality_flag_types cleaned. {remaining} codes remain (DATA_COVERAGE only).")
+
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? WHERE id = 1",
         (EXPECTED_SCHEMA_VERSION, _now()),
     )
 

@@ -1,0 +1,50 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-059-SESSIONB-V1",
+    "registry_id": 59,
+    "word": "faith",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 59 (faith). Sets session_b_status to Session B Complete. Also corrects G4101 pistikos (pure nard) from extracted_thin to delete: verse analysis confirms it refers to a type of ointment, not to the faith/faithfulness semantic domain. Recurring applicator anomaly correction included (fifth consecutive registry). Analysis document: WA-59-faith-analysis-20260326.docx (386 paragraphs, 6 parts)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 59,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4101",
+      "mti_term_id": 3772,
+      "set": {
+        "status": "delete"
+      },
+      "note": "Post-analysis correction: G4101 pistikos (pure nard, 2 occ) was classified extracted_thin in PREANALYSIS-V1 on root affinity with pistis. Verse analysis (Mk 14:3; Jn 12:3) confirms it refers to a type of ointment only. No semantic connection to faith/faithfulness. Reclassify to delete."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — fifth consecutive registry (98, 34, 160, 126, 59). update_registry in PREANALYSIS patches not executing. OP-001 corrects registry 59 to Session B Complete. Claude Code must resolve before next registry."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 59 (faith). Document: WA-59-faith-analysis-20260326.docx. Effective working set: 35 terms (22 extracted, 13 extracted_thin after G4101 correction). Hebrew 23, Greek 12. Key families: aman/emunah, emet, chesed, bagad/maal (breach), pistis/pisteuō, oligopistos, apistia/apistos, elpis. Key finding: faith is relational trust not cognitive assent; faithlessness is moral condition of the heart, not merely intellectual doubt."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 4,
+    "update_registry": 1,
+    "update_mti_status": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

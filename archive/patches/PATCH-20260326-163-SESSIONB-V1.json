@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-163-SESSIONB-V1",
+    "registry_id": 163,
+    "word": "trust",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 163 (trust). Sets session_b_status to Session B Complete. Analysis document: WA-163-trust-analysis-20260326.docx (6 parts). 47 working terms analysed. Key families: batach (trust verb), betach (security), chasah/machseh (refuge), shaan (lean/rely), qavah/tiqvah (await/hope), yachal (hope in darkness), aman/emunah/emet, peithō/pepoithēsis, pisteuō/pistis/pistos, elpizō. Key finding: trust is defined by its object; biblical trust is a posture of the whole inner person — rest, leaning, sheltering, waiting. Eighth consecutive applicator anomaly corrected by OP-001. Largest bleed of the session: 129 terms deleted including galal/chul/nasa/shalom families."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 163,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — eighth consecutive registry (98, 34, 160, 126, 59, 42, 23, 163). update_registry ops in PREANALYSIS patches not executing. OP-001 corrects registry 163 directly. Claude Code must resolve this before any further session work."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 163 (trust). Document: WA-163-trust-analysis-20260326.docx. Working set: 47 terms (20 extracted, 27 extracted_thin | Hebrew 34, Greek 13). Cross-registry: pisteuō/pistis family shared with faith (59). Largest bleed correction in current session: 129 terms deleted. Programme flags: PH2-163-001 (G4100 cross-registry), PH2-163-002 (H5921A — eighth consecutive extraction anomaly)."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

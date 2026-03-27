@@ -1,0 +1,90 @@
+{
+  "patch_id": "PATCH-20260325-146-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 146,
+  "registry_word": "shame",
+  "file_id": 28,
+  "source_json_exported_at": "2026-03-25T05:51:31Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for shame (reg 146). Anchor confirmed: Heb 12:2. Phase 1 status = In Progress (three data files). Extracts H2616B cha.sad (3v, None-status). Extracts G1870 epaischunomai (be ashamed of, 14 occ, 0v) from candidate_delete \u2014 critical for the not-ashamed-of-Christ vocabulary (Rom 1:16, Heb 2:11). Confirms candidate_delete for bleed vocabulary. Notes pa.neh (face) sub-glosses as bleed. Notes phase1 incomplete status.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Confirm anchor verse Heb 12:2. 'looking to Jesus, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame (aischun\u0113n), and is seated at the right hand of the throne of God.' Most concentrated NT shame statement: Jesus endured shame, despised it, was seated in glory. The two-forms structure applied to the cross.",
+      "registry_no": 146,
+      "set": {
+        "anchor_verses": "Heb 12:2"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2616B cha.sad [to shame] \u2192 extracted. 3 verses. Pro 25:10 \u2014 'lest he who hears you bring shame upon you, and your ill repute have no end' \u2014 the shame that comes from betraying confidence. 2Sa 22:26 / Psa 18:25 use cha.sad as God showing himself merciful to the merciful \u2014 the che.sed/cha.sad root covers both kindness and its opposite (shaming). Term extracts the shame-through-betrayal dimension.",
+      "mti_id": 1636,
+      "strongs_number": "H2616B",
+      "set": {
+        "status": "extracted",
+        "status_note": "Shame through betrayal of confidence. Pro 25:10 \u2014 ill repute from broken confidence."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1870 epaischunomai [be ashamed of] \u2192 extracted_thin. 14 occurrences, 0 verses in this export. Critical: Rom 1:16 (not ashamed of gospel), Mar 8:38/Luk 9:26 (ashamed of Jesus and words), Heb 2:11 (Jesus not ashamed to call them brothers), 2Ti 1:8,12,16 (not ashamed of testimony). The directed-shame vocabulary \u2014 shame as orientation toward Christ. Requires verse data from Claude Code.",
+      "strongs_number": "G1870",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Directed shame vocabulary: ashamed/not-ashamed of Christ/gospel. Requires verse data."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update_none_to_delete",
+      "target_table": "wa_mti",
+      "description": "Set all None-status terms without verses \u2192 delete. Bleed vocabulary: pa.neh face sub-glosses (H6440H/I/J/K/L/M/N \u2014 face entered via 'shame covered face' contexts but pa.neh itself is face not shame), para (Greek preposition), che.sed sub-glosses (H2617A primary in love; H2616A kindness), qa.lal (lighten/curse), pe.ni.mi/pe.ni.mah (inner/within), ba.ash (stink \u2014 primary in abomination registry), ka.saph (to long), cha.sad (H2616A kindness, distinct from H2616B extracted), be.esh, chag.ga, pa.nah Corner Gate.",
+      "filter": "registry_no=146 AND mti_status=None AND verse_count=0",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. No primary shame content."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete \u2192 delete for remaining 62 terms (all except G1870 epaischunomai, handled in OP-003). Key confirmations: G0821 atimo\u014d (covered by G0818 atimaz\u014d extracted), H3001 ya.vesh (withering not shame), G5196 hubris (covered by G5195 hubriz\u014d), G5092/G5093/G5091 tim\u0113/timios/tima\u014d (honor vocabulary \u2014 shame's opposite but not shame itself), H7045 qe.la.lah (curse), H5953A a.lal (abuse), H2282/H2287 chag/cha.gag (feast vocabulary), H2658 cha.phar (to search \u2014 different from H2659 cha.pher already extracted).",
+      "filter": "registry_no=146 AND mti_status=candidate_delete",
+      "exclusions": [
+        "G1870"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Confirmed candidate_delete. Bleed or adequately covered."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "registry_note",
+      "target_table": "wa_file_index",
+      "description": "Phase 1 status = 'In Progress'. Three data files registered (parts 1-3, all Phase 1 STEP Data Assimilation status=None). This is noted for Claude Code. The Session B analysis proceeds with the 27 extracted terms (441 verses) that are present. The phase1 incomplete status does not block Session B \u2014 the active vocabulary is sufficient for a complete analysis. Any additional terms from incomplete Phase 1 processing will require a supplementary export when Phase 1 is closed.",
+      "registry_no": 146,
+      "set": {
+        "session_b_note": "Phase 1 In Progress \u2014 3 data files pending. Session B analysis based on 27 extracted terms (441 verses). Supplement on Phase 1 completion."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 6,
+    "anchor_confirmed": "Heb 12:2",
+    "new_extractions": [
+      "H2616B cha.sad (3v) \u2014 shame through betrayal",
+      "G1870 epaischunomai (0v) \u2014 be ashamed of Christ"
+    ],
+    "phase1_note": "Phase 1 = In Progress. Three data files registered but status=None. Session B proceeds with current 27 extracted terms.",
+    "key_finding": "G1870 epaischunomai \u2014 the not-ashamed-of-Christ vocabulary (Rom 1:16; Mar 8:38; Heb 2:11) \u2014 incorrectly in candidate_delete; extracted_thin, requires verse data."
+  }
+}

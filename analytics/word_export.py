@@ -20,6 +20,8 @@ JSON structure
   "files":    [ ...wa_file_index rows ],
   "run_history": [ ...word_run_state rows ],
   "cross_registry_links": [ ...wa_cross_registry_links + type_code ],
+  "patch_history": [ ...engine_run_log SESSION_PATCH entries for this registry ],
+  "session_research_flags": [ ...wa_session_research_flags rows ],
   "statistics": {
       term_count, verse_count, flag_count,
       terms_by_language, verses_by_testament, span_match_distribution
@@ -120,6 +122,18 @@ def export_word(conn, registry_id: int) -> dict:
         (registry_id,),
     ).fetchall())
 
+    # ── patch_history (SESSION_PATCH entries from engine_run_log) ─────────────
+    patch_history = _rows(conn.execute(
+        """SELECT run_id, mode, started_at, completed_at, outcome, error_detail
+           FROM engine_run_log
+           WHERE mode = 'SESSION_PATCH'
+           AND (target_registry_ids = ? OR target_registry_ids = ?
+                OR run_id LIKE ?)
+           ORDER BY started_at""",
+        (str(registry_id), registry_id,
+         f"%-{registry_id:03d}-%"),
+    ).fetchall())
+
     # ── wa_cross_registry_links ───────────────────────────────────────────────
     cross_links = _rows(conn.execute(
         """SELECT crl.*, ct.type_code, ct.description AS link_type_description
@@ -129,6 +143,14 @@ def export_word(conn, registry_id: int) -> dict:
            ORDER BY crl.linked_word""".format(file_ids_sql),
         file_ids,
     ).fetchall()) if file_ids else []
+
+    # ── wa_session_research_flags ─────────────────────────────────────────────
+    research_flags = _rows(conn.execute(
+        """SELECT * FROM wa_session_research_flags
+           WHERE registry_id = ?
+           ORDER BY flag_label""",
+        (registry_id,),
+    ).fetchall())
 
     # ── wa_term_inventory (all terms for this word) ───────────────────────────
     ti_rows = _rows(conn.execute(
@@ -209,7 +231,8 @@ def export_word(conn, registry_id: int) -> dict:
     p2f_by_ti: dict[int, list] = {}
     if ti_ids:
         for r in conn.execute(
-            """SELECT p.term_inv_id, ft.flag_code, ft.description
+            """SELECT p.term_inv_id, ft.flag_code, ft.description AS type_description,
+                      p.description AS instance_description, p.source, p.raised_date
                FROM wa_term_phase2_flags p
                JOIN phase2_flag_types ft ON ft.id = p.flag_id
                WHERE p.term_inv_id IN {}
@@ -218,7 +241,10 @@ def export_word(conn, registry_id: int) -> dict:
         ).fetchall():
             p2f_by_ti.setdefault(r["term_inv_id"], []).append({
                 "flag_code":    r["flag_code"],
-                "description":  r["description"],
+                "description":  r["type_description"],
+                "detail":       r["instance_description"],
+                "source":       r["source"],
+                "raised_date":  r["raised_date"],
             })
 
     # wa_term_related_words
@@ -239,14 +265,19 @@ def export_word(conn, registry_id: int) -> dict:
         ).fetchall():
             rf_by_ti.setdefault(r["term_inv_id"], []).append(dict(r))
 
-    # mti_terms (lookup by strongs_number; one row per strong)
+    # mti_terms (lookup by strongs_number; prefer row matching this registry)
     mti_by_strongs: dict[str, dict] = {}
     if ti_strongs:
         for r in conn.execute(
-            "SELECT * FROM mti_terms WHERE strongs_number IN {}".format(strongs_sql),
-            ti_strongs,
+            "SELECT * FROM mti_terms WHERE strongs_number IN {} "
+            "ORDER BY CASE WHEN owning_registry_fk = ? THEN 0 "
+            "              WHEN owning_registry = ? THEN 0 "
+            "              ELSE 1 END".format(strongs_sql),
+            ti_strongs + [registry_id, str(registry_id)],
         ).fetchall():
-            mti_by_strongs[r["strongs_number"]] = dict(r)
+            # First match per strongs wins (registry-matched rows sorted first)
+            if r["strongs_number"] not in mti_by_strongs:
+                mti_by_strongs[r["strongs_number"]] = dict(r)
 
     mti_ids     = [r["id"] for r in mti_by_strongs.values()]
     mti_ids_sql = "({})".format(",".join("?" * len(mti_ids))) if mti_ids else "(NULL)"
@@ -347,6 +378,7 @@ def export_word(conn, registry_id: int) -> dict:
         "mti_term_count":          len(mti_by_strongs),
         "cross_registry_link_count": len(cross_links),
         "verse_term_link_count":   sum(len(v) for v in vtl_by_verse.values()),
+        "research_flag_count":     len(research_flags),
     }
 
     # ── assemble terms ────────────────────────────────────────────────────────
@@ -443,6 +475,8 @@ def export_word(conn, registry_id: int) -> dict:
         "files":                files,
         "run_history":          run_history,
         "cross_registry_links": cross_links,
+        "patch_history":        patch_history,
+        "session_research_flags": research_flags,
         "statistics":           statistics,
         "terms":                terms_out,
         "verse_term_links_count": sum(len(v) for v in vtl_by_verse.values()),

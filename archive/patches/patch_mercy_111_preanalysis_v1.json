@@ -1,0 +1,262 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-111-preanalysis-V1",
+    "registry_id": 111,
+    "word": "mercy",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.3 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis MTI classification for 50 None-status terms in registry 111 mercy. Core mercy vocabulary extracted: eleos/ele\u0113m\u014dn family; hilasmos/hilaskomai propitiation group; che.sed (H2617A \u2014 primary term); ra.cham/ra.cha.mim/ra.chum womb-compassion family; re.chem womb; chen/chan.nun grace-favor family; chus/cha.mal pity-spare family; kip.per/kap.poret atonement group; cha.sid faithful-kind; ta.cha.nun supplication; hosios holy/devout group. Deleted: Aramaic rum/raz (no mercy content); atar sub-glosses (bleed)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted",
+      "terms": [
+        {
+          "strongs_number": "G1655",
+          "term_inv_id": 3299
+        },
+        {
+          "strongs_number": "G1654",
+          "term_inv_id": 3302
+        },
+        {
+          "strongs_number": "G1652",
+          "term_inv_id": 3303
+        },
+        {
+          "strongs_number": "G0415",
+          "term_inv_id": 3300
+        },
+        {
+          "strongs_number": "G3627",
+          "term_inv_id": 3285
+        },
+        {
+          "strongs_number": "G3629",
+          "term_inv_id": 3293
+        },
+        {
+          "strongs_number": "G2433",
+          "term_inv_id": 3311
+        },
+        {
+          "strongs_number": "G2434",
+          "term_inv_id": 3312
+        },
+        {
+          "strongs_number": "G2436",
+          "term_inv_id": 3301
+        },
+        {
+          "strongs_number": "H2617A",
+          "term_inv_id": 1047
+        },
+        {
+          "strongs_number": "H7355",
+          "term_inv_id": 3295
+        },
+        {
+          "strongs_number": "H7356B",
+          "term_inv_id": 3289
+        },
+        {
+          "strongs_number": "H7356A",
+          "term_inv_id": 1044
+        },
+        {
+          "strongs_number": "H7349",
+          "term_inv_id": 3294
+        },
+        {
+          "strongs_number": "H7362",
+          "term_inv_id": 3297
+        },
+        {
+          "strongs_number": "H7358",
+          "term_inv_id": 3296
+        },
+        {
+          "strongs_number": "H2580",
+          "term_inv_id": 3273
+        },
+        {
+          "strongs_number": "H2587",
+          "term_inv_id": 3276
+        },
+        {
+          "strongs_number": "H2347",
+          "term_inv_id": 3317
+        },
+        {
+          "strongs_number": "H2550",
+          "term_inv_id": 3287
+        },
+        {
+          "strongs_number": "H2551",
+          "term_inv_id": 3286
+        },
+        {
+          "strongs_number": "H4263",
+          "term_inv_id": 3288
+        },
+        {
+          "strongs_number": "H2616A",
+          "term_inv_id": 3280
+        },
+        {
+          "strongs_number": "H2623",
+          "term_inv_id": 3282
+        },
+        {
+          "strongs_number": "H3722A",
+          "term_inv_id": 3304
+        },
+        {
+          "strongs_number": "H3724A",
+          "term_inv_id": 3305
+        },
+        {
+          "strongs_number": "H3725",
+          "term_inv_id": 3306
+        },
+        {
+          "strongs_number": "H8469",
+          "term_inv_id": 3275
+        },
+        {
+          "strongs_number": "H2600",
+          "term_inv_id": 3274
+        },
+        {
+          "strongs_number": "G3741",
+          "term_inv_id": 3313
+        }
+      ],
+      "description": "Set mti_status = extracted for 30 terms in registry 111 mercy"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted_thin",
+      "terms": [
+        {
+          "strongs_number": "H2617B",
+          "term_inv_id": 3284
+        },
+        {
+          "strongs_number": "H2603B",
+          "term_inv_id": 3272
+        },
+        {
+          "strongs_number": "H2594",
+          "term_inv_id": 3279
+        },
+        {
+          "strongs_number": "H2616B",
+          "term_inv_id": 3281
+        },
+        {
+          "strongs_number": "G3742",
+          "term_inv_id": 3315
+        },
+        {
+          "strongs_number": "G3743",
+          "term_inv_id": 3316
+        },
+        {
+          "strongs_number": "G0462",
+          "term_inv_id": 3314
+        },
+        {
+          "strongs_number": "H2433",
+          "term_inv_id": 3278
+        },
+        {
+          "strongs_number": "H2624",
+          "term_inv_id": 3283
+        },
+        {
+          "strongs_number": "H3722B",
+          "term_inv_id": 3308
+        }
+      ],
+      "description": "Set mti_status = extracted_thin for 10 terms in registry 111 mercy"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update_mti_status",
+      "status": "candidate_delete",
+      "terms": [
+        {
+          "strongs_number": "H3724B",
+          "term_inv_id": 3309
+        },
+        {
+          "strongs_number": "H3724C",
+          "term_inv_id": 3307
+        },
+        {
+          "strongs_number": "H3724D",
+          "term_inv_id": 3310
+        },
+        {
+          "strongs_number": "H2606",
+          "term_inv_id": 3277
+        },
+        {
+          "strongs_number": "H2345",
+          "term_inv_id": 3318
+        }
+      ],
+      "description": "Set mti_status = candidate_delete for 5 terms in registry 111 mercy"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update_mti_status",
+      "status": "delete",
+      "terms": [
+        {
+          "strongs_number": "H7313",
+          "term_inv_id": 3292
+        },
+        {
+          "strongs_number": "H7314",
+          "term_inv_id": 3291
+        },
+        {
+          "strongs_number": "H7328",
+          "term_inv_id": 3290
+        },
+        {
+          "strongs_number": "H6282A",
+          "term_inv_id": 3319
+        },
+        {
+          "strongs_number": "H6282B",
+          "term_inv_id": 3320
+        }
+      ],
+      "description": "Set mti_status = delete for 5 terms in registry 111 mercy"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 111
+      },
+      "set": {
+        "session_b_status": "Ready for Analysis"
+      },
+      "description": "Pre-analysis classification complete. session_b_status remains Ready for Analysis."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "bulk_update_mti_status": 4,
+    "update_registry": 1
+  }
+}

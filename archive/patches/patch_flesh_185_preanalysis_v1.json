@@ -1,0 +1,234 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-185-preanalysis-V1",
+    "registry_id": 185,
+    "word": "flesh",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.3 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis MTI classification for 43 None-status terms in registry 185 flesh. 5 extracted, 12 extracted_thin, 5 candidate_delete, 21 delete. Large bleed groups: ya.tsa sub-gloss family (H3318H-P, H4161, H4163, H8444), la.cham/mil.cha.mah war cluster, sha.ar remnant root. epithumia/epithume\u014d family and prothumos retained for flesh/desire intersection. me.eh belly/womb retained (cross-registry with soul reg 182). she.ri.rut stubbornness retained as flesh-of-the-will register."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted",
+      "terms": [
+        {
+          "strongs_number": "G1939",
+          "term_inv_id": 3136
+        },
+        {
+          "strongs_number": "G1937",
+          "term_inv_id": 3137
+        },
+        {
+          "strongs_number": "G4289",
+          "term_inv_id": 3140
+        },
+        {
+          "strongs_number": "G4560",
+          "term_inv_id": 3145
+        },
+        {
+          "strongs_number": "H4578",
+          "term_inv_id": 3133
+        }
+      ],
+      "description": "Set mti_status = extracted for 5 terms in registry 185 flesh"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted_thin",
+      "terms": [
+        {
+          "strongs_number": "G1938",
+          "term_inv_id": 3143
+        },
+        {
+          "strongs_number": "G0120",
+          "term_inv_id": 3142
+        },
+        {
+          "strongs_number": "G2114",
+          "term_inv_id": 3139
+        },
+        {
+          "strongs_number": "G2115",
+          "term_inv_id": 3141
+        },
+        {
+          "strongs_number": "G4288",
+          "term_inv_id": 3138
+        },
+        {
+          "strongs_number": "G4290",
+          "term_inv_id": 3144
+        },
+        {
+          "strongs_number": "H4577",
+          "term_inv_id": 3134
+        },
+        {
+          "strongs_number": "H8307",
+          "term_inv_id": 3170
+        },
+        {
+          "strongs_number": "H7608",
+          "term_inv_id": 3149
+        },
+        {
+          "strongs_number": "H6631",
+          "term_inv_id": 3165
+        },
+        {
+          "strongs_number": "H8326",
+          "term_inv_id": 3175
+        },
+        {
+          "strongs_number": "H8306",
+          "term_inv_id": 3174
+        }
+      ],
+      "description": "Set mti_status = extracted_thin for 12 terms in registry 185 flesh"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update_mti_status",
+      "status": "candidate_delete",
+      "terms": [
+        {
+          "strongs_number": "H4579",
+          "term_inv_id": 3135
+        },
+        {
+          "strongs_number": "H1251",
+          "term_inv_id": 3146
+        },
+        {
+          "strongs_number": "H1325",
+          "term_inv_id": 3147
+        },
+        {
+          "strongs_number": "H3329",
+          "term_inv_id": 3169
+        },
+        {
+          "strongs_number": "H3319",
+          "term_inv_id": 3168
+        }
+      ],
+      "description": "Set mti_status = candidate_delete for 5 terms in registry 185 flesh"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update_mti_status",
+      "status": "delete",
+      "terms": [
+        {
+          "strongs_number": "H3318H",
+          "term_inv_id": 3154
+        },
+        {
+          "strongs_number": "H3318I",
+          "term_inv_id": 3155
+        },
+        {
+          "strongs_number": "H3318J",
+          "term_inv_id": 3156
+        },
+        {
+          "strongs_number": "H3318K",
+          "term_inv_id": 3157
+        },
+        {
+          "strongs_number": "H3318L",
+          "term_inv_id": 3158
+        },
+        {
+          "strongs_number": "H3318M",
+          "term_inv_id": 3159
+        },
+        {
+          "strongs_number": "H3318N",
+          "term_inv_id": 3160
+        },
+        {
+          "strongs_number": "H3318O",
+          "term_inv_id": 3161
+        },
+        {
+          "strongs_number": "H3318P",
+          "term_inv_id": 3162
+        },
+        {
+          "strongs_number": "H4161",
+          "term_inv_id": 3163
+        },
+        {
+          "strongs_number": "H4163",
+          "term_inv_id": 3167
+        },
+        {
+          "strongs_number": "H8444",
+          "term_inv_id": 3164
+        },
+        {
+          "strongs_number": "H3898A",
+          "term_inv_id": 3151
+        },
+        {
+          "strongs_number": "H3898B",
+          "term_inv_id": 3152
+        },
+        {
+          "strongs_number": "H3901",
+          "term_inv_id": 3153
+        },
+        {
+          "strongs_number": "H4421",
+          "term_inv_id": 3150
+        },
+        {
+          "strongs_number": "H7604",
+          "term_inv_id": 3148
+        },
+        {
+          "strongs_number": "H6627",
+          "term_inv_id": 3166
+        },
+        {
+          "strongs_number": "H8285",
+          "term_inv_id": 3173
+        },
+        {
+          "strongs_number": "H8324",
+          "term_inv_id": 3171
+        },
+        {
+          "strongs_number": "H8333",
+          "term_inv_id": 3172
+        }
+      ],
+      "description": "Set mti_status = delete for 21 terms in registry 185 flesh"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 185
+      },
+      "set": {
+        "session_b_status": "Ready for Analysis"
+      },
+      "description": "Pre-analysis classification complete. session_b_status remains Ready for Analysis pending Session B analysis patch."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "bulk_update_mti_status": 4,
+    "update_registry": 1
+  }
+}

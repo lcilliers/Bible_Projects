@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-023-SESSIONB-V1",
+    "registry_id": 23,
+    "word": "compassion",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 23 (compassion). Sets session_b_status to Session B Complete. Analysis document: WA-23-compassion-analysis-20260326.docx (435 paragraphs, 6 parts). 42 working terms analysed. Key families: racham/rachamim (womb-rooted compassion), rechem (womb as etymological ground), chen/chesed/chanan (favour and covenant-loyalty), chamal/chus (enacted pity), nacham (comfort and relenting), splanchnizomai/splanchnon (gut-level compassion in Jesus), elee-/oikte- (mercy/compassion in Paul and Luke). Key finding: compassion is an inner movement before it is an action; the womb metaphor grounds divine compassion as felt, costly, and particularised. Seventh consecutive applicator anomaly corrected by OP-001."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 23,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — seventh consecutive registry (98, 34, 160, 126, 59, 42, 23). update_registry ops in PREANALYSIS patches continue not executing. OP-001 corrects registry 23 directly. Claude Code must resolve this before any further session work. Pattern now confirmed across the entire current session."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 23 (compassion). Document: WA-23-compassion-analysis-20260326.docx. Working set: 42 terms (21 extracted, 21 extracted_thin | Hebrew 29, Greek 13). 2 volume flags: PH2-023-001 (G1656 eleos 11%), PH2-023-002 (G3628 oiktirmos 14%). 1 data error: PH2-023-003 (H0854 et — seventh consecutive extraction anomaly). Cross-registry notes: chesed spans compassion (23), faith (59), delight (42); racham/shalom linkage in Isa 54:10 for Session D."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

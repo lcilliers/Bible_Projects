@@ -1,0 +1,152 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-073-PREANALYSIS-V2",
+    "registry_id": 73,
+    "word": "guilt",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Corrective patch for guilt registry. V1 applied ops 1 and 3 as INSERT rather than UPDATE, creating duplicate verse records instead of reassigning them. This patch (a) removes duplicates created by V1 and correctly clears contaminated verse records, (b) locates correct verses for H2603B and H5387B, (c) restores G1777 and G2631 to in-scope, (d) adds missing HIGH_FREQUENCY_ANCHOR quality flags on G0264 and G0265, (e) inserts three programme research flags."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "reassign_verses",
+      "description": "STEP 1 of 2 for H2603A/B fix. V1 copied 72 records from H2603B (term_inv_id=2574) to H2603A (term_inv_id=2566) without deleting originals. H2603A now has 144 verses with 72 duplicates. DELETE the 72 duplicate records from H2603A: keep MIN(id) for each verse_id, delete the higher-id duplicate. SQL: DELETE FROM verse_term_links WHERE term_inv_id=2566 AND id NOT IN (SELECT MIN(id) FROM verse_term_links WHERE term_inv_id=2566 GROUP BY verse_id).",
+      "from_term_inv_id": 2574,
+      "to_term_inv_id": 2566,
+      "expected_count": 72,
+      "post_action": "H2603A should have ~72 records with no duplicate verse references. Proceed to OP-002."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "reassign_verses",
+      "description": "STEP 2 of 2 for H2603A/B fix. DELETE all 72 remaining contaminating verse records from H2603B (term_inv_id=2574). SQL: DELETE FROM verse_term_links WHERE term_inv_id=2574. Then search verse table for the single correct verse for H2603B in its loathsome/abhorrent sense (H2603 secondary meaning). If found: INSERT verse_term_link record assigning it to term_inv_id=2574. If not found: proceed to OP-003.",
+      "from_term_inv_id": 2574,
+      "to_term_inv_id": 2574,
+      "expected_count": 0,
+      "post_action": "H2603B should have 0 records after deletion, then 0 or 1 after correct verse search. If 0: apply OP-003."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "add_quality_flag",
+      "strongs_number": "H2603B",
+      "term_inv_id": 2574,
+      "flag_code": "NO_VERSES",
+      "description": "CONDITIONAL — apply only if OP-002 finds no correct verse for H2603B (cha.nan: be loathsome, occ=1). Signals that this term has no verse record in the current export after contamination is cleared."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "reassign_verses",
+      "description": "STEP 1 of 2 for H5387A/B fix. V1 copied 116 records from H5387B (term_inv_id=2612) to H5387A (term_inv_id=2607) without deleting originals. H5387A now has 232 verses with 116 duplicates. DELETE the 116 duplicate records from H5387A: keep MIN(id) for each verse_id, delete the higher-id duplicate. SQL: DELETE FROM verse_term_links WHERE term_inv_id=2607 AND id NOT IN (SELECT MIN(id) FROM verse_term_links WHERE term_inv_id=2607 GROUP BY verse_id).",
+      "from_term_inv_id": 2612,
+      "to_term_inv_id": 2607,
+      "expected_count": 116,
+      "post_action": "H5387A should have ~116 records with no duplicate verse references. Proceed to OP-005."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "reassign_verses",
+      "description": "STEP 2 of 2 for H5387A/B fix. DELETE all 116 remaining contaminating verse records from H5387B (term_inv_id=2612). SQL: DELETE FROM verse_term_links WHERE term_inv_id=2612. Then search verse table for the 4 correct verses for H5387B in its meteorological sense (nasi: rising mist, vapour). If found: INSERT verse_term_link records assigning them to term_inv_id=2612. If not found: proceed to OP-006.",
+      "from_term_inv_id": 2612,
+      "to_term_inv_id": 2612,
+      "expected_count": 0,
+      "post_action": "H5387B should have 0 records after deletion, then 0-4 after correct verse search. If 0: apply OP-006."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "add_quality_flag",
+      "strongs_number": "H5387B",
+      "term_inv_id": 2612,
+      "flag_code": "NO_VERSES",
+      "description": "CONDITIONAL — apply only if OP-005 finds no correct verses for H5387B (na.si: mist, occ=4). Signals that this term has no verse records in the current export after contamination is cleared."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "restore_delete_flagged",
+      "term_inv_ids": [293, 294],
+      "description": "Restore G1777 (enochos: liable for, term_inv_id=293) and G2631 (katakrima: condemnation, term_inv_id=294) to in-scope by setting delete_flagged=0 on both. Decision confirmed by Leroux 2026-03-25. G2631 appears at the guilt anchor verse Rom 8:1 and in Rom 5:16-18 — the condemnation/no-condemnation transformation is the structural core of the NT guilt resolution. G1777 appears in Mat 5:21-22, Mar 3:29, 1Cor 11:27, Jam 2:10. SQL: UPDATE wa_term_inventory SET delete_flagged=0 WHERE id IN (293, 294)."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "add_quality_flag",
+      "strongs_number": "G0264",
+      "term_inv_id": 2580,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "High-frequency term: 241 occurrences. Verse sample (37 verses) represents 15% of all occurrences — below the programme 20% threshold. Requires VOLUME_LIMITATION PH2 flag at Session B analysis stage. Synthesis-level conclusions about this term require Phase 2 full-verse verification."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "add_quality_flag",
+      "strongs_number": "G0265",
+      "term_inv_id": 2581,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "High-frequency term: 26 occurrences. Verse sample (4 verses) represents 15% of all occurrences — below the programme 20% threshold. Requires VOLUME_LIMITATION PH2 flag at Session B analysis stage."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "CANDIDATE_REGISTRY_WORD",
+        "flag_label": "PH2-073-001",
+        "strongs_reference": "G2631",
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Condemnation (katakrima/katakrinō family) is a candidate for a new registry entry. G2631 katakrima (occ=3) and its root family — G2632 katakrinō (to condemn), katakrisis (condemnation), akatakritos (uncondemned), autokatakritos (self-condemned) — constitute a distinct inner-being vocabulary cluster addressing the judicial-moral verdict-state. Analytically distinct from guilt (moral fact of wrongdoing) and shame (relational/exposure experience). The condemnation/no-condemnation polarity is the structural framework of Romans 5-8 and is signalled by the guilt anchor verse Rom 8:1. ACTION: Check word_registry for existing condemnation entry. If absent, create new registry with anchor verse Rom 8:1 and run Session A extraction on G2632 family. Guilt Session B will generate cross-registry links to condemnation requiring a target registry.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-073-002",
+        "strongs_reference": "G0264",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G0264 hamartanō (to sin, occ=241) has only 37 verses in the export — 15% coverage. Synthesis-level conclusions about the verbal form of sin in the NT cannot be drawn from this sample alone. Full verse set required before Phase 2 synthesis.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": 18,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-073-003",
+        "strongs_reference": "G0265",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G0265 hamartēma (sin as discrete act, occ=26) has only 4 verses in the export — 15% coverage. The distinction between hamartia (sin as state/principle) and hamartēma (sin as individual act) is analytically significant for the guilt registry. Conclusions about this distinction require Phase 2 full-verse verification.",
+        "session_raised": "Session B v4.1",
+        "raised_date": "2026-03-25",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 12,
+    "manual_verse_reassignments": 4,
+    "conditional_quality_flag_inserts": 2,
+    "delete_flag_restorations": 1,
+    "quality_flag_inserts": 2,
+    "research_flag_inserts": 3,
+    "note": "OP-001 through OP-007 are manual operations per PATCH_SPEC.md §4. OP-003 and OP-006 are conditional — apply only if OP-002 and OP-005 respectively find no correct verse. OP-008 through OP-012 are structured operations per PATCH_SPEC.md §3 and are auto-applicable."
+  }
+}

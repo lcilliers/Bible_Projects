@@ -1,0 +1,168 @@
+{
+  "patch_id": "PATCH-20260325-004-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 4,
+  "registry_word": "anger",
+  "file_id": 4,
+  "source_json_exported_at": "2026-03-24T17:05:48Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for anger (reg 4). Confirms existing anchor verse Eph 4:26. Extracts 4 genuine anger terms from None-status pool (H0599, H2194, H3708A, G3950). Confirms delete of G3949_related (duplicate). Issues bulk_delete note for 92 delete-flagged terms and the None-status bleed families. Requests new JSON export after patch application due to scale of None-status bleed requiring full verse verification.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Confirm anchor verse for anger registry: Eph 4:26 \u2014 'Be angry and do not sin; do not let the sun go down on your anger.' Already set in registry. This is the correct anchor: the only NT verse that explicitly permits anger while naming its moral condition \u2014 the two-forms structure (righteous anger / sinful anger) encoded in a single imperative. Confirming and retaining.",
+      "registry_no": 4,
+      "set": {
+        "anchor_verses": "Eph 4:26"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0599 a.naph [be angry] \u2014 extracted. Genuine anger vocabulary from None-status pool.",
+      "mti_id": 1405,
+      "strongs_number": "H0599",
+      "transliteration": "a.naph",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary anger verb. 14 verses all confirmed anger of God: Deu 1:37, 4:21, 9:8, 9:20 \u2014 God angry with Moses and Israel. Always describes divine anger in this registry. Genuine anger vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2194 za.am [be indignant] \u2014 extracted. Genuine anger vocabulary from None-status pool.",
+      "mti_id": 1553,
+      "strongs_number": "H2194",
+      "transliteration": "za.am",
+      "set": {
+        "status": "extracted",
+        "status_note": "Verbal form of H2195 za.am indignation (already extracted). 11 verses. Psa 7:11 'God feels indignation every day.' Num 23:7-8 (Balaam cannot curse whom God has not cursed). Genuine anger vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3708A ka.as [vexation (noun)] \u2014 extracted. Genuine anger vocabulary from None-status pool.",
+      "mti_id": 1408,
+      "strongs_number": "H3708A",
+      "transliteration": "ka.as",
+      "set": {
+        "status": "extracted",
+        "status_note": "Noun form of H3707 ka.as (already extracted). 22 verses. Deu 32:19 provocation of sons and daughters; 1Sa 1:6 Hannah's rival used to provoke her to irritate her. The vexation/provocation noun. Genuine anger vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3950 parorgismos [anger] \u2014 extracted. Genuine anger vocabulary from None-status pool.",
+      "mti_id": 1411,
+      "strongs_number": "G3950",
+      "transliteration": "parorgismos",
+      "set": {
+        "status": "extracted",
+        "status_note": "Noun form of G3949 parorgiz\u014d (already extracted). 1 verse: Eph 4:26 \u2014 the anchor verse itself. 'Do not let the sun go down on your anger (parorgismos).' Genuine anger vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3949_related parorgiz\u014d \u2014 confirm delete. Duplicate entry of G3949 parorgiz\u014d (already extracted). del_flag already set. mti_id=41.",
+      "mti_id": 41,
+      "strongs_number": "G3949_related",
+      "transliteration": "parorgiz\u014d",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Duplicate entry of G3949 parorgiz\u014d (mti_id=40, extracted). del_flag already set."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "bulk_update_note",
+      "target_table": "wa_mti",
+      "description": "BULK NOTE: 92 delete-flagged None-status terms. These were assigned delete_flagged=1 during prior Session B work (documented in FrameworkB-SessionB-Handover-20260324.docx). The handover confirms these are confirmed bleed: na.phal (fall), a.var (pass), pa.neh (face), pa.nah (turn), qum (arise), shem (name), lev (heart), ya.da (know), and 80+ related sub-glosses \u2014 all entering via H0639G aph (face:anger) extended relatedNos network. Bulk set mti status=delete on all 92 delete-flagged None-status terms in this registry.",
+      "filter": "registry_no=4 AND delete_flagged=1 AND mti_status IS NULL",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Session A v4 relatedNos bleed confirmed by prior Session B review. See FrameworkB-SessionB-Handover-20260324.docx \u00a73.4."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "bulk_update_note",
+      "target_table": "wa_mti",
+      "description": "BULK NOTE: Remaining None-status bleed (with verses) not already delete-flagged. Identified bleed families requiring delete: G3844 para (preposition, 867 occ), H5674A a.var to pass (513 occ), H6440H pa.neh face (417 occ), H5307G na.phal to fall (280 occ), H7307G/H ru.ach spirit/breath (216+145 occ \u2014 xref to spirit registry), H6437G pa.nah to turn (134 occ), H6440I/J/K/L/N pa.neh sub-glosses, H5307H/I/J na.phal sub-glosses, H5676G/H e.ver side, H5668 a.vur for-sake-of, H7381 re.ach aroma, H6442 pe.ni.mi inner, H5674C/D a.var sub-glosses, H7271 re.gal foot, H2553 cham.man pillar, H4569B ford, H4658 carcass, H5861 bird of prey, H7308 ru.ach (Aramaic - xref spirit), H4307H guardhouse, H2527 chom heat, H6441 within, H7306 ri.ach to smell, G3691 oxus sharp, H5308 ne.phal Aramaic fall. Claude Code: set mti_status=delete for all these strongs_numbers in registry 4.",
+      "bulk_strongs": [
+        "G3844",
+        "H5674A",
+        "H6440H",
+        "H5307G",
+        "H7307G",
+        "H7307H",
+        "H6437G",
+        "H6440I",
+        "H6440J",
+        "H6440K",
+        "H6440L",
+        "H6440N",
+        "H5307H",
+        "H5307I",
+        "H5307J",
+        "H5676G",
+        "H5676H",
+        "H5668",
+        "H7381",
+        "H6442",
+        "H5674C",
+        "H5674D",
+        "H7271",
+        "H2553",
+        "H4569B",
+        "H4658",
+        "H5861",
+        "H7308",
+        "H4307H",
+        "H2527",
+        "H6441",
+        "H7306",
+        "H3708A",
+        "G3691",
+        "H5308",
+        "H2529A",
+        "H2244"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Session A v4 relatedNos bleed from aph/face root family and secondary chains. No anger content."
+      },
+      "xref_exceptions": {
+        "H7307G": "xref_spirit \u2014 ru.ach (spirit) primary in spirit registry (reg 184)",
+        "H7307H": "xref_spirit \u2014 ru.ach (spirit: breath) primary in spirit registry",
+        "H7308": "xref_spirit \u2014 ru.ach Aramaic form, primary in spirit registry"
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 8,
+    "anchor_verse": "Eph 4:26 (confirmed, already set)",
+    "terms_extracted": 4,
+    "terms_confirmed_delete": 1,
+    "bulk_delete_92_flagged": true,
+    "bulk_delete_remaining_bleed": true,
+    "new_json_requested": true,
+    "notes": [
+      "Anger is a Session A v4 registry with extensive bleed \u2014 the largest pre-analysis cleaning task of the three words.",
+      "4 genuine terms extracted from None-status: H0599 a.naph, H2194 za.am, H3708A ka.as, G3950 parorgismos.",
+      "ru.ach sub-glosses (H7307G, H7307H, H7308) classified as xref_spirit not delete \u2014 they entered via H7307J ru.ach:temper (extracted) but their primary analysis is in the spirit registry.",
+      "IMPORTANT: After bulk deletes are applied, a fresh JSON export is requested. The anger registry needs verification of its clean active inventory before Session B analysis begins. The 177 None-status terms cannot be fully verified from the current export given the bleed depth.",
+      "The 92 delete-flagged terms confirmed as correctly flagged per prior Session B work (handover documentation)."
+    ]
+  }
+}

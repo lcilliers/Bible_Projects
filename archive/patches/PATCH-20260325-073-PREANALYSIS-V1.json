@@ -1,0 +1,152 @@
+{
+  "patch_id": "PATCH-20260325-073-PREANALYSIS-V1",
+  "registry_id": 73,
+  "word": "guilt",
+  "produced_by": "Session B v4.1",
+  "produced_date": "2026-03-25",
+  "produced_in_session": "New chat \u2014 guilt Session B v4.1 startup",
+  "priority": "BLOCKING",
+  "blocking_reason": "Two confirmed verse contamination issues (H2603B, H5387B) make verse reading of those terms analytically invalid. Op 5 decision now resolved. Ops 1-4 and 6-8 are executable immediately. Full reexport required before Session B analysis proceeds on clean data.",
+  "data_integrity_flags": [
+    {
+      "dif_id": "DIF-073-001",
+      "term": "H2603B (cha.nan: be loathsome)",
+      "term_inv_id": 2574,
+      "issue_type": "VERSE_CONTAMINATION",
+      "observed": "72 verse records assigned to H2603B (term_inv_id=2574) in verse_term_links. Occurrence count for H2603B is 1.",
+      "expected": "H2603B should have at most 1 verse record. All 72 records show target words consistent with H2603A (cha.nan: be gracious) \u2014 'graciously given', 'graciously', 'begged', etc.",
+      "evidence": "verse_ids 75701-75772 assigned to term_inv_id=2574. Sample: Gen 33:5 target='graciously given', Gen 33:11 target='graciously', Gen 42:21 target='begged'. Correct owner is H2603A (term_inv_id=2566).",
+      "blocking": "YES",
+      "patch_action": "Reassign all 72 verse_term_link records from term_inv_id=2574 (H2603B) to term_inv_id=2566 (H2603A), then locate and assign the single correct verse for H2603B if present in verse table."
+    },
+    {
+      "dif_id": "DIF-073-002",
+      "term": "H5387B (na.si: mist)",
+      "term_inv_id": 2612,
+      "issue_type": "VERSE_CONTAMINATION",
+      "observed": "116 verse records assigned to H5387B (term_inv_id=2612) in verse_term_links. Occurrence count for H5387B is 4.",
+      "expected": "H5387B should have at most 4 verse records. All sampled records show target words consistent with H5387A (na.si: leader/prince) \u2014 'princes', 'prince', etc.",
+      "evidence": "verse_ids 77439-77554 (116 records) assigned to term_inv_id=2612. Sample: Gen 17:20 target='princes', Gen 23:6 target='prince', Gen 25:16 target='princes'. Correct owner is H5387A (term_inv_id=2607).",
+      "blocking": "YES",
+      "patch_action": "Reassign all 116 verse_term_link records from term_inv_id=2612 (H5387B) to term_inv_id=2607 (H5387A), then locate and assign the 4 correct verses for H5387B (mist sense) if present in verse table."
+    },
+    {
+      "dif_id": "DIF-073-003",
+      "term": "G1777 (enochos: liable for) and G2631 (katakrima: condemnation)",
+      "term_inv_ids": [
+        293,
+        294
+      ],
+      "issue_type": "STRUCTURAL_ANOMALY",
+      "observed": "Both terms have delete_flagged=1 in wa_term_inventory but MTI status=extracted. G1777 has 8 verse records including the Sermon on the Mount (Mat 5:21-22); G2631 has 3 verses including Rom 5:16-18.",
+      "expected": "Terms marked delete_flagged=1 should either (a) have MTI status=delete and no verses, or (b) have delete_flagged=0 if they are genuinely extracted. The current state is contradictory: extracted in MTI but deleted in the term table.",
+      "evidence": "G1777 id=293 delete_flagged=1 | MTI status=extracted. G2631 id=294 delete_flagged=1 | MTI status=extracted. Both have verse records and PH2/quality flags indicating active analytical status.",
+      "blocking": "PARTIAL \u2014 these terms have verses and analytical flags; their current state is ambiguous. Analysis can note the ambiguity but cannot confidently include or exclude them.",
+      "patch_action": "DECISION REQUIRED: Leroux to confirm whether G1777 (enochos: liable for, Mat 5:21-22, Heb 2:15) and G2631 (katakrima: condemnation, Rom 5:16-18) are in scope for guilt registry. If yes: set delete_flagged=0 on both terms. If no: confirm delete_flagged=1 is correct and update MTI status to delete for both."
+    },
+    {
+      "dif_id": "DIF-073-004",
+      "term": "G0264 (hamartan\u014d) and G0265 (hamart\u0113ma)",
+      "term_inv_ids": [
+        2580,
+        2581
+      ],
+      "issue_type": "STRUCTURAL_ANOMALY",
+      "observed": "G0264 (occ=241, verses=37, coverage=15%) and G0265 (occ=26, verses=4, coverage=15%) are below the 20% threshold per \u00a712.1 Check 3, but neither carries a HIGH_FREQUENCY_ANCHOR quality flag. G0266 (occ=586, verses=112, coverage=19%) correctly carries the flag.",
+      "expected": "Any term with coverage below 20% should carry HIGH_FREQUENCY_ANCHOR to signal that the verse set is a thin sample and synthesis-level conclusions are restricted.",
+      "evidence": "G0264 id=2580 quality_flags=NO_WORD_ANALYSIS, PROSE_ONLY_MEANING only. G0265 id=2581 quality_flags=NO_WORD_ANALYSIS, PROSE_ONLY_MEANING, SMALL_VERSE_SAMPLE only.",
+      "blocking": "NO \u2014 non-blocking. Analysis proceeds with PH2 flag noting the thin coverage.",
+      "patch_action": "Add HIGH_FREQUENCY_ANCHOR quality flag to G0264 (term_inv_id=2580) and G0265 (term_inv_id=2581) with detail noting coverage ratio."
+    },
+    {
+      "dif_id": "DIF-073-005",
+      "term": "G0266 (hamartia: sin)",
+      "term_inv_id": 292,
+      "issue_type": "STRUCTURAL_ANOMALY",
+      "observed": "7 verse records for G0266 have empty term_links arrays and null target_word. Verse IDs: 3364-3370 (Heb 9:26, Heb 12:1, 1Jn 1:7, 1Jn 1:8, 1Jn 3:4, 1Jn 3:8, 1Jn 5:17). These account for the discrepancy between stats.verse_count (2444) and stats.verse_term_link_count (2426) along with the 11 empty-link records on G1777.",
+      "expected": "Each verse record should have at least one entry in the term_links array identifying the Strong's number and target word. Verses without term_links cannot be analytically attributed.",
+      "evidence": "G0266 id=292. Seven verses with term_links=[]: ids 3364, 3365, 3366, 3367, 3368, 3369, 3370.",
+      "blocking": "NO \u2014 non-blocking. The verse texts are present and readable; only the span-match linkage metadata is missing. Analysis can proceed on the verse text.",
+      "patch_action": "Investigate and populate missing term_links entries for verse_ids 3364-3370. These are all NT epistolary uses of hamartia \u2014 the target_word field should be resolvable from the verse text and Strong's concordance."
+    }
+  ],
+  "operations": [
+    {
+      "op_id": 1,
+      "op_type": "REASSIGN_VERSE_RECORDS",
+      "target_table": "verse_term_links",
+      "action": "UPDATE verse_term_links SET term_inv_id = 2566 WHERE term_inv_id = 2574. This reassigns all 72 contaminated verse records from H2603B (cha.nan: be loathsome, id=2574) to H2603A (cha.nan: be gracious, id=2566).",
+      "rationale": "DIF-073-001. All 72 records assigned to H2603B carry H2603A semantic content (grace, graciousness, petition). The correct term for these verses is H2603A.",
+      "verify": "After operation: H2603B (term_inv_id=2574) has 0 verse_term_link records. H2603A (term_inv_id=2566) verse count increases by 72 (from ~72 to ~144 \u2014 confirm against full verse table). Note: this may mean H2603A now has duplicate verse references that need deduplication."
+    },
+    {
+      "op_id": 2,
+      "op_type": "LOCATE_AND_ASSIGN_CORRECT_VERSE",
+      "target_table": "verse_term_links",
+      "action": "After op_id=1: search verse table for the single occurrence of H2603B (cha.nan in its 'be loathsome' sense, Strongs H2603 secondary meaning). If located, create a verse_term_link record assigning it to term_inv_id=2574. If not located in the current verse table, add NO_VERSES quality flag to H2603B.",
+      "rationale": "H2603B has occ=1. The correct verse for the 'be loathsome' sense must be identified and assigned, or the term confirmed as having no verse record in this export.",
+      "verify": "H2603B (term_inv_id=2574) has exactly 0 or 1 verse records after this operation. If 0, NO_VERSES flag is present."
+    },
+    {
+      "op_id": 3,
+      "op_type": "REASSIGN_VERSE_RECORDS",
+      "target_table": "verse_term_links",
+      "action": "UPDATE verse_term_links SET term_inv_id = 2607 WHERE term_inv_id = 2612. This reassigns all 116 contaminated verse records from H5387B (na.si: mist, id=2612) to H5387A (na.si: leader/prince, id=2607).",
+      "rationale": "DIF-073-002. All 116 records assigned to H5387B carry H5387A semantic content (prince, leader, chief). The correct term for these verses is H5387A.",
+      "verify": "After operation: H5387B (term_inv_id=2612) has 0 verse_term_link records. H5387A (term_inv_id=2607) verse count increases (confirm deduplication if needed)."
+    },
+    {
+      "op_id": 4,
+      "op_type": "LOCATE_AND_ASSIGN_CORRECT_VERSES",
+      "target_table": "verse_term_links",
+      "action": "After op_id=3: search verse table for the 4 occurrences of H5387B (na.si in its 'mist' or 'vapour' sense). If located, create verse_term_link records assigning them to term_inv_id=2612. If not located, add NO_VERSES quality flag to H5387B.",
+      "rationale": "H5387B has occ=4. The correct verses for the 'mist/vapour' sense must be identified and assigned.",
+      "verify": "H5387B (term_inv_id=2612) has 0 or up to 4 verse records after this operation."
+    },
+    {
+      "op_id": 5,
+      "op_type": "DECISION_GATE",
+      "target_table": "wa_term_inventory",
+      "action": "UPDATE wa_term_inventory SET delete_flagged = 0 WHERE id IN (293, 294). Decision: G1777 (enochos: liable for) and G2631 (katakrima: condemnation) are IN SCOPE for guilt registry Session B analysis. Leroux confirmed 2026-03-25.",
+      "rationale": "DIF-073-003 resolved. G2631 appears in Rom 5:16, 5:18, and 8:1 \u2014 the guilt anchor verse. Its three occurrences span the condemnation-to-no-condemnation transformation that is the structural core of the NT guilt resolution. G1777 appears in Mat 5:21-22 (liability-for-judgment in the Sermon on the Mount), Mar 3:29 (eternal guilt), 1Cor 11:27 (guilty of the body and blood of the Lord), and Jam 2:10 (guilty of the whole law). Both are analytically essential. In scope confirmed by Leroux.",
+      "verify": "G1777 (id=293) and G2631 (id=294) both have delete_flagged=0. Both appear in the re-exported term inventory as active terms."
+    },
+    {
+      "op_id": 6,
+      "op_type": "ADD_QUALITY_FLAG",
+      "target_table": "quality_flags",
+      "action": "INSERT quality flag HIGH_FREQUENCY_ANCHOR for G0264 (term_inv_id=2580): flag_group='DATA_COVERAGE', description='High-frequency term: 241 occurrences. Verse sample (37 verses) represents 15% of occurrences \u2014 below programme 20% threshold.', detail='Coverage ratio 15% triggers VOLUME_LIMITATION PH2 flag requirement at Session B analysis stage.'",
+      "rationale": "DIF-073-004. G0264 has 15% coverage and no HF flag. Programme standard requires HF_ANCHOR flag on sub-20% coverage terms.",
+      "verify": "G0264 (term_inv_id=2580) has HIGH_FREQUENCY_ANCHOR in quality_flags."
+    },
+    {
+      "op_id": 7,
+      "op_type": "ADD_QUALITY_FLAG",
+      "target_table": "quality_flags",
+      "action": "INSERT quality flag HIGH_FREQUENCY_ANCHOR for G0265 (term_inv_id=2581): flag_group='DATA_COVERAGE', description='High-frequency term: 26 occurrences. Verse sample (4 verses) represents 15% of occurrences \u2014 below programme 20% threshold.', detail='Coverage ratio 15% triggers VOLUME_LIMITATION PH2 flag requirement at Session B analysis stage.'",
+      "rationale": "DIF-073-004. G0265 has 15% coverage and no HF flag.",
+      "verify": "G0265 (term_inv_id=2581) has HIGH_FREQUENCY_ANCHOR in quality_flags."
+    },
+    {
+      "op_id": 8,
+      "op_type": "INVESTIGATE_AND_REPAIR",
+      "target_table": "verse_term_links",
+      "action": "Investigate missing term_links for verse_ids 3364, 3365, 3366, 3367, 3368, 3369, 3370 (all assigned to G0266, term_inv_id=292). These are: Heb 9:26, Heb 12:1, 1Jn 1:7, 1Jn 1:8, 1Jn 3:4, 1Jn 3:8, 1Jn 5:17. Populate term_links with the correct strongs_number (G0266), step_subgloss_code, step_subgloss_label, and target_word for each verse.",
+      "rationale": "DIF-073-005. 7 verse records for the primary NT guilt term are missing their term_link attribution metadata. The verse texts are present and readable but the span-match linkage is absent.",
+      "verify": "All 7 verse_ids have non-empty term_links arrays with strongs_number=G0266 and a non-null target_word after repair."
+    }
+  ],
+  "reexport_required": true,
+  "reexport_note": "After ops 1-4 and 6-8 are applied (op 5 pending decision): re-export guilt_73_full_[date].json. Corrected export should show: H2603B verses=0 or 1; H5387B verses=0 or up to 4; H2603A and H5387A verse counts increased accordingly; G0264 and G0265 carrying HIGH_FREQUENCY_ANCHOR flags; G0266 7 previously empty verse term_links populated. Re-run Session B v4.1 Data Integrity Check on corrected export before proceeding to analysis.",
+  "programme_notes": [
+    {
+      "note_id": "PN-073-001",
+      "type": "CANDIDATE_REGISTRY_WORD",
+      "word_candidate": "condemnation",
+      "raised_by": "Session B v4.1 pre-analysis \u2014 Leroux confirmed 2026-03-25",
+      "basis": "G2631 katakrima (condemnation, occ=3) and its root family \u2014 katakrino (to condemn, G2632, occ not yet assessed), katakrisis (condemnation), akatakritos (uncondemned), autokatakritos (self-condemned) \u2014 constitute a distinct inner-being vocabulary cluster addressing the judicial-moral state of being under condemnation. This is analytically distinct from guilt (the moral fact of wrongdoing) and from shame (the relational/exposure experience). Condemnation is the verdict-state: the declared standing of one who is guilty before a judicial authority. The structural polarity guilt/condemnation vs. justification/no-condemnation is the explicit framework of Romans 5-8 and is signalled by the guilt anchor verse (Rom 8:1). G2632 katakrin\u014d alone has sufficient occurrences to warrant a full registry.",
+      "action_required": "Claude Code to check if condemnation is already registered in word_registry table. If not: create new registry entry for condemnation with anchor verse Rom 8:1 (shared with guilt, which is appropriate \u2014 the verse addresses both the fact of guilt and the verdict of condemnation). If already registered: confirm registry number and link to guilt registry via cross_registry_links.",
+      "priority": "HIGH"
+    }
+  ]
+}

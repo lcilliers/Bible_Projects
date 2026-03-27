@@ -1,0 +1,374 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260324-182-SESSIONB-V1",
+    "registry_id": 182,
+    "word": "Soul",
+    "produced_date": "2026-03-24",
+    "produced_by": "Session B v3.0 first pass",
+    "instruction_version": "FrameworkB-SessionB-Instruction-v3-20260320",
+    "source_json": "Soul_182_full_20260324.json",
+    "schema_version": "2.3",
+    "patch_type": "session_b_outputs",
+    "description": "MTI status assignments for 16 unreconciled terms, Phase 2 flags from Session B analysis, and registry status update."
+  },
+
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status and reconciled flag for G5590G (psuchē: soul) — primary Greek anchor",
+      "match": { "strongs_number": "G5590G", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. Primary Greek psuchē anchor. 825 occurrences, 46 verses in export (volume-sampling noted in PH2-182-002). Analytically central.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G5590H (psuchē: life)",
+      "match": { "strongs_number": "G5590H", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. Secondary Greek anchor. NT parallel to H5315H. 42 occurrences, 33 verses. Includes the key laying-down-of-life sayings (Joh 10-15; Mk 8:35; 1Jo 3:16).",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G5590I (psuchē: myself)",
+      "match": { "strongs_number": "G5590I", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. Reflexive psuchē. 6 verses. All analytically significant: Magnificat (Luk 1:46), Gethsemane (Mk 14:34), Heb 10:38, 3Jo 2.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G5590J (psuchē: person)",
+      "match": { "strongs_number": "G5590J", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. NT parallel to H5315J. 8 verses. Includes Acts Pentecost counting (Act 2:41), Eze 18:4 parallel (Rom 13:1), 1Pe 3:20.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G5590K (psuchē: animal)",
+      "match": { "strongs_number": "G5590K", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted_thin",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 occurrence, 0 verses in export (NO_VERSES flag). NT parallel to H5315K. Confirmed in corpus (Rev 8:9; 16:3). Thin data — insufficient for independent analysis.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G5591 (psuchikos)",
+      "match": { "strongs_number": "G5591", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. Analytically critical: the only NT adjective marking soul as a mode of existence contrasted with spirit. 5 verses (1Cor 2:14; 15:44, 46; Jam 3:15; Jude 19). Phase 2 flag PH2-182-003 raised for spirit-soul boundary study.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G1634 (ekpsuchō)",
+      "match": { "strongs_number": "G1634", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 3 verses (Act 5:5, 10; 12:23). All three are divine judgment contexts. Preserves the breath/expire root (ekpsucho = breathe out/expire). Analytically useful for the soul-and-death dimension.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G3642 (oligopsuchos)",
+      "match": { "strongs_number": "G3642", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (1Th 5:14). Small-souled / fainthearted. Placed in community pastoral triad (idle, fainthearted, weak). Analytically informative as a soul-level capacity descriptor.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G1374 (dipsuchos)",
+      "match": { "strongs_number": "G1374", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 2 verses (Jam 1:8; 4:8). Double-minded / two-souled. Analytically significant: encodes inner division at the soul level. Opposite of sumpsuchos / integrity.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G4861 (sumpsuchos)",
+      "match": { "strongs_number": "G4861", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (Phil 2:2). One-souled / harmonious. Part of a relational-coherence compound cluster with isopsuchos (Phil 2:20).",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G2473 (isopsuchos)",
+      "match": { "strongs_number": "G2473", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (Phil 2:20). Equal-souled / like-minded. Part of relational-coherence compound cluster with sumpsuchos.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G2174 (eupsucheō)",
+      "match": { "strongs_number": "G2174", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (Phil 2:19). Good-souled / be of good cheer. Minor compound; lexically informative. The lifted soul as a NT pastoral category.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G0674 (apopsuchō)",
+      "match": { "strongs_number": "G0674", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted_thin",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (Luk 21:26). Fainting with fear / breathing out. Preserves breath-root in Greek parallel to H5314 na.phash. Thin data but verse is analytically useful in eschatological soul-fear context.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for G0895 (apsuchos)",
+      "match": { "strongs_number": "G0895", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted_thin",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 1 verse (1Cor 14:7). Lifeless / soulless. Used by Paul to argue by contrast: instruments without a soul cannot produce meaningful speech. Thin data but verse is analytically useful.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for H5314 (na.phash)",
+      "match": { "strongs_number": "H5314", "owning_registry_fk": 182 },
+      "set": {
+        "status": "extracted",
+        "strongs_reconciled": 1,
+        "status_note": "Session B v3.0 confirmation. 3 verses (Exo 23:12; 31:17; 2Sa 16:14). Verb: be refreshed / breathe again. Etymological anchor for the breath-root underlying ne.phesh. Exo 31:17 applies it to God — analytically significant.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "mti_terms",
+      "description": "Set MTI status for H5317 (no.phet, honey)",
+      "match": { "strongs_number": "H5317", "owning_registry_fk": 182 },
+      "set": {
+        "status": "phase2_enrichment",
+        "strongs_reconciled": 0,
+        "status_note": "Session B v3.0 boundary decision. H5317 is not a soul term. Entered registry via STEP relatedNos for H5315G. Five verses (Psa 19:10; Pro 5:3; Pro 24:13; Pro 27:7; Song 4:11) illuminate the appetite dimension (H5315L) through the honey-as-archetype-of-desire metaphor. Retained as Phase 2 cross-reference enrichment only. See PH2-182-001.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    },
+
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: H5317 honey — appetite dimension enrichment",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-182-001",
+        "strongs_reference": "H5317",
+        "description": "H5317 (no.phet, honey) is not a soul term but enriches the appetite dimension of ne.phesh (H5315L). Key verse: Pro 27:7 (one who is full loathes honey, but to one who is hungry everything bitter is sweet). Cross-reference with Pro 16:24 (gracious words are sweetness to the soul). Independent Phase 2 study of the honey/appetite metaphor cluster recommended before appetite-dimension synthesis.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: G5590G verse coverage limitation",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-182-002",
+        "strongs_reference": "G5590G",
+        "description": "G5590G (psuchē: soul) has 825 occurrences but only 46 verses in the export (ratio 0.056). Synthesis-level conclusions about the NT use of psuchē must be held provisional. Priority Phase 2 coverage: Synoptic soul-sayings in full; Pauline pastoral soul-vocabulary; 1 Peter (concentrated pastoral soul theology in 1Pe 1-4); Revelation soul-references.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: psuchikos and the spirit-soul boundary",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_CROSS_REGISTRY_REQUIRED",
+        "flag_label": "PH2-182-003",
+        "strongs_reference": "G5591",
+        "description": "G5591 (psuchikos) marks soul-level existence as contrasted with spirit-level (1Cor 2:14; 15:44-46; Jam 3:15; Jude 19). Full mapping of the soul-spirit boundary requires cross-registry analysis with spirit (H7307/G4151) and heart registries. Flag for Session D comparative analysis: soul vs spirit as levels of the inner person.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: Heb 4:12 soul-spirit division",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_EXEGETICAL_STUDY_REQUIRED",
+        "flag_label": "PH2-182-004",
+        "strongs_reference": "G5590G",
+        "description": "Heb 4:12 claims the word of God pierces to the division of soul and spirit. This implies soul and spirit are normally indistinguishable, becoming separable only under divine precision. Requires dedicated Phase 2 exegetical study of the soul-spirit boundary in Hebrews, in context of the book's anthropology. Cannot be resolved by single-word analysis.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: Isa 53 servant soul and atonement",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_THEOLOGICAL_DEPTH_REQUIRED",
+        "flag_label": "PH2-182-005",
+        "strongs_reference": "H5315H",
+        "description": "Isa 53:10-12 contains three ne.phesh (H5315H) uses constituting the OT's most concentrated soul-and-atonement text (soul as guilt offering; anguish of soul; soul poured out to death). Requires Phase 2 study in full Isaianic context with NT ransom sayings (Mat 20:28; Mk 10:45; Joh 10:11-17; 1Jo 3:16). Critical for the soul-substitution-atonement nexus in Session D.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "wa_phase2_flags",
+      "description": "Phase 2 flag: dead soul and post-mortem identity",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "PH2_ESCHATOLOGICAL_STUDY_REQUIRED",
+        "flag_label": "PH2-182-006",
+        "strongs_reference": "H5315M",
+        "description": "H5315M (ne.phesh: dead body) applies ne.phesh paradoxically to a corpse, suggesting the term carries the form or identity of the person even after life departs. Intersects with Sheol-vocabulary and Psalms' hope for soul-rescue from the pit (Psa 16:10; 49:15). Phase 2 research required: the soul in OT eschatology and the semantics of dead ne.phesh in relation to post-mortem identity.",
+        "session_raised": "Session B v3.0",
+        "raised_date": "2026-03-24",
+        "resolved": 0
+      }
+    },
+
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "word_registry",
+      "description": "Update registry record to reflect Session B completion",
+      "match": { "id": 182 },
+      "set": {
+        "notes": "4 terms (4 extracted). 1 part. Session A Instruction v7. MTI: extracted.\n[AUDIT 2026-03-23] result=REVIEW  terms=24  verses=757  run_id=RUN-20260323_202200-AUDIT_WORD\n[SESSION B 2026-03-24] Session B v3.0 complete. Analysis document: WA-182-soul-analysis-2026-03-24.md. 16 MTI terms reconciled. 6 Phase 2 flags raised (PH2-182-001 through PH2-182-006). H5317 classified as phase2_enrichment. Session D priority: Wave 1 structural anchor — soul as the constitutive dimension of Circle Two.",
+        "last_changed": "2026-03-24T00:00:00"
+      }
+    }
+
+  ],
+
+  "_patch_summary": {
+    "total_operations": 23,
+    "mti_updates": 16,
+    "phase2_flag_inserts": 6,
+    "registry_updates": 1,
+    "terms_set_to_extracted": 12,
+    "terms_set_to_extracted_thin": 3,
+    "terms_set_to_phase2_enrichment": 1,
+    "all_strongs_reconciled_except": ["H5317"],
+    "h5317_decision": "phase2_enrichment — not a primary soul term; retained as appetite-dimension cross-reference only"
+  }
+}

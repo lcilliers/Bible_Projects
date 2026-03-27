@@ -1,0 +1,511 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-199-preanalysis-V1",
+    "registry_id": 199,
+    "word": "dominion",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.3 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis MTI classification for all 103 terms in registry 199 dominion. Governing principle: maximum inclusion \u2014 the analytical shape of dominion is to emerge from verse data. 57 terms extracted, 31 extracted_thin, 7 candidate_delete, 14 delete. Two HIGH_FREQUENCY_ANCHOR yad terms receive PH2_VOLUME_LIMITATION research flags."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted",
+      "terms": [
+        {
+          "strongs_number": "G0746",
+          "term_inv_id": 3039
+        },
+        {
+          "strongs_number": "G0747",
+          "term_inv_id": 3043
+        },
+        {
+          "strongs_number": "G0757",
+          "term_inv_id": 3040
+        },
+        {
+          "strongs_number": "G0932",
+          "term_inv_id": 1507
+        },
+        {
+          "strongs_number": "G0933",
+          "term_inv_id": 3082
+        },
+        {
+          "strongs_number": "G0934",
+          "term_inv_id": 3083
+        },
+        {
+          "strongs_number": "G0936",
+          "term_inv_id": 3079
+        },
+        {
+          "strongs_number": "G0937",
+          "term_inv_id": 3080
+        },
+        {
+          "strongs_number": "G0938G",
+          "term_inv_id": 3084
+        },
+        {
+          "strongs_number": "G1849",
+          "term_inv_id": 3035
+        },
+        {
+          "strongs_number": "G1850",
+          "term_inv_id": 3037
+        },
+        {
+          "strongs_number": "G2634",
+          "term_inv_id": 3129
+        },
+        {
+          "strongs_number": "G2715",
+          "term_inv_id": 3038
+        },
+        {
+          "strongs_number": "G2904",
+          "term_inv_id": 3106
+        },
+        {
+          "strongs_number": "G2961",
+          "term_inv_id": 1506
+        },
+        {
+          "strongs_number": "G2962H",
+          "term_inv_id": 3096
+        },
+        {
+          "strongs_number": "G2963",
+          "term_inv_id": 3095
+        },
+        {
+          "strongs_number": "G4821",
+          "term_inv_id": 3081
+        },
+        {
+          "strongs_number": "H4410",
+          "term_inv_id": 3089
+        },
+        {
+          "strongs_number": "H4427A",
+          "term_inv_id": 3086
+        },
+        {
+          "strongs_number": "H4438",
+          "term_inv_id": 3087
+        },
+        {
+          "strongs_number": "H4467",
+          "term_inv_id": 3085
+        },
+        {
+          "strongs_number": "H4468",
+          "term_inv_id": 3090
+        },
+        {
+          "strongs_number": "H4474",
+          "term_inv_id": 3052
+        },
+        {
+          "strongs_number": "H4475",
+          "term_inv_id": 3049
+        },
+        {
+          "strongs_number": "H4896",
+          "term_inv_id": 3111
+        },
+        {
+          "strongs_number": "H4910",
+          "term_inv_id": 1505
+        },
+        {
+          "strongs_number": "H4915B",
+          "term_inv_id": 3047
+        },
+        {
+          "strongs_number": "H4951",
+          "term_inv_id": 3045
+        },
+        {
+          "strongs_number": "H7287A",
+          "term_inv_id": 1504
+        },
+        {
+          "strongs_number": "H7980",
+          "term_inv_id": 3054
+        },
+        {
+          "strongs_number": "H7981",
+          "term_inv_id": 3055
+        },
+        {
+          "strongs_number": "H7984",
+          "term_inv_id": 3056
+        },
+        {
+          "strongs_number": "H7985",
+          "term_inv_id": 1503
+        },
+        {
+          "strongs_number": "H7990",
+          "term_inv_id": 3053
+        },
+        {
+          "strongs_number": "H3027G",
+          "term_inv_id": 3058
+        },
+        {
+          "strongs_number": "H3027H",
+          "term_inv_id": 3059
+        },
+        {
+          "strongs_number": "H3027W",
+          "term_inv_id": 3057
+        },
+        {
+          "strongs_number": "H1166H",
+          "term_inv_id": 3116
+        },
+        {
+          "strongs_number": "H1167G",
+          "term_inv_id": 3118
+        },
+        {
+          "strongs_number": "H1167J",
+          "term_inv_id": 3122
+        },
+        {
+          "strongs_number": "H1167K",
+          "term_inv_id": 3121
+        }
+      ],
+      "description": "Set mti_status = extracted for 42 terms in registry 199 dominion"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update_mti_status",
+      "status": "extracted_thin",
+      "terms": [
+        {
+          "strongs_number": "G0193",
+          "term_inv_id": 3108
+        },
+        {
+          "strongs_number": "G0756",
+          "term_inv_id": 3044
+        },
+        {
+          "strongs_number": "G1832",
+          "term_inv_id": 3036
+        },
+        {
+          "strongs_number": "G2900",
+          "term_inv_id": 3109
+        },
+        {
+          "strongs_number": "G2908",
+          "term_inv_id": 3107
+        },
+        {
+          "strongs_number": "G2909",
+          "term_inv_id": 3110
+        },
+        {
+          "strongs_number": "H3027I",
+          "term_inv_id": 3060
+        },
+        {
+          "strongs_number": "H3027J",
+          "term_inv_id": 3061
+        },
+        {
+          "strongs_number": "H3027K",
+          "term_inv_id": 3062
+        },
+        {
+          "strongs_number": "H3027L",
+          "term_inv_id": 3063
+        },
+        {
+          "strongs_number": "H3027M",
+          "term_inv_id": 3064
+        },
+        {
+          "strongs_number": "H3027O",
+          "term_inv_id": 3066
+        },
+        {
+          "strongs_number": "H3027P",
+          "term_inv_id": 3067
+        },
+        {
+          "strongs_number": "H3027Q",
+          "term_inv_id": 3068
+        },
+        {
+          "strongs_number": "H3027R",
+          "term_inv_id": 3069
+        },
+        {
+          "strongs_number": "H3027S",
+          "term_inv_id": 3070
+        },
+        {
+          "strongs_number": "H3027T",
+          "term_inv_id": 3071
+        },
+        {
+          "strongs_number": "H3027U",
+          "term_inv_id": 3072
+        },
+        {
+          "strongs_number": "H3027V",
+          "term_inv_id": 3073
+        },
+        {
+          "strongs_number": "H3027X",
+          "term_inv_id": 3074
+        },
+        {
+          "strongs_number": "H3028",
+          "term_inv_id": 3078
+        },
+        {
+          "strongs_number": "H3709G",
+          "term_inv_id": 3075
+        },
+        {
+          "strongs_number": "H3709H",
+          "term_inv_id": 3077
+        },
+        {
+          "strongs_number": "H1166I",
+          "term_inv_id": 3117
+        },
+        {
+          "strongs_number": "H1167H",
+          "term_inv_id": 3119
+        },
+        {
+          "strongs_number": "H1167I",
+          "term_inv_id": 3120
+        },
+        {
+          "strongs_number": "H1172",
+          "term_inv_id": 3124
+        },
+        {
+          "strongs_number": "H1180",
+          "term_inv_id": 3128
+        },
+        {
+          "strongs_number": "H1168I",
+          "term_inv_id": 3125
+        },
+        {
+          "strongs_number": "H2505A",
+          "term_inv_id": 3099
+        },
+        {
+          "strongs_number": "H2506A",
+          "term_inv_id": 3098
+        },
+        {
+          "strongs_number": "H2508",
+          "term_inv_id": 3097
+        },
+        {
+          "strongs_number": "H4911A",
+          "term_inv_id": 3051
+        },
+        {
+          "strongs_number": "H4911B",
+          "term_inv_id": 3050
+        },
+        {
+          "strongs_number": "H7860",
+          "term_inv_id": 3112
+        },
+        {
+          "strongs_number": "H8280",
+          "term_inv_id": 3046
+        },
+        {
+          "strongs_number": "H7886",
+          "term_inv_id": 3115
+        },
+        {
+          "strongs_number": "H7862",
+          "term_inv_id": 3113
+        },
+        {
+          "strongs_number": "H7300",
+          "term_inv_id": 3130
+        },
+        {
+          "strongs_number": "H4436G",
+          "term_inv_id": 3091
+        },
+        {
+          "strongs_number": "H4436H",
+          "term_inv_id": 3088
+        },
+        {
+          "strongs_number": "H4446",
+          "term_inv_id": 3092
+        }
+      ],
+      "description": "Set mti_status = extracted_thin for 42 terms in registry 199 dominion"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update_mti_status",
+      "status": "candidate_delete",
+      "terms": [
+        {
+          "strongs_number": "H3027N",
+          "term_inv_id": 3065
+        },
+        {
+          "strongs_number": "H3709I",
+          "term_inv_id": 3076
+        },
+        {
+          "strongs_number": "H2505B",
+          "term_inv_id": 3100
+        },
+        {
+          "strongs_number": "H7287B",
+          "term_inv_id": 3132
+        },
+        {
+          "strongs_number": "H4915A",
+          "term_inv_id": 3048
+        }
+      ],
+      "description": "Set mti_status = candidate_delete for 5 terms in registry 199 dominion"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update_mti_status",
+      "status": "delete",
+      "terms": [
+        {
+          "strongs_number": "H2562",
+          "term_inv_id": 3101
+        },
+        {
+          "strongs_number": "H2591",
+          "term_inv_id": 3104
+        },
+        {
+          "strongs_number": "H2597",
+          "term_inv_id": 3103
+        },
+        {
+          "strongs_number": "H4255",
+          "term_inv_id": 3105
+        },
+        {
+          "strongs_number": "H4427B",
+          "term_inv_id": 3094
+        },
+        {
+          "strongs_number": "H4428H",
+          "term_inv_id": 3093
+        },
+        {
+          "strongs_number": "H4788",
+          "term_inv_id": 3131
+        },
+        {
+          "strongs_number": "H1173G",
+          "term_inv_id": 3127
+        },
+        {
+          "strongs_number": "H1179",
+          "term_inv_id": 3126
+        },
+        {
+          "strongs_number": "H1187",
+          "term_inv_id": 3123
+        },
+        {
+          "strongs_number": "H7876",
+          "term_inv_id": 3114
+        },
+        {
+          "strongs_number": "H2499",
+          "term_inv_id": 3102
+        },
+        {
+          "strongs_number": "G0536",
+          "term_inv_id": 3042
+        },
+        {
+          "strongs_number": "G0744",
+          "term_inv_id": 3041
+        }
+      ],
+      "description": "Set mti_status = delete for 14 terms in registry 199 dominion"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 199,
+        "file_id": 220,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-199-001",
+        "strongs_reference": "H3027G",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "H3027G (yad) has 742 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+        "session_raised": "Session B v4.3",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 199,
+        "file_id": 220,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-199-002",
+        "strongs_reference": "H3027H",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "H3027H (yad) has 585 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+        "session_raised": "Session B v4.3",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 199
+      },
+      "set": {
+        "session_b_status": "Ready for Analysis"
+      },
+      "description": "Pre-analysis classification complete. session_b_status remains Ready for Analysis pending Session B analysis patch."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 7,
+    "bulk_update_mti_status": 4,
+    "insert_research_flags": 2,
+    "update_registry": 1
+  }
+}

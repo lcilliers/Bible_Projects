@@ -1,0 +1,703 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-197-SESSIONB-V1",
+    "registry_id": 197,
+    "word": "authority",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.2",
+    "session_b_status": "Analysis Complete",
+    "description": "Session B analysis patch for authority registry 197. Sets owning_registry_fk=197 for 84 active terms with null FK. Sets strongs_reconciled=1 for 59 extracted terms. Sets anchor_note for 8 primary anchor terms. Adds 6 cross-registry link proposals. Updates registry status to Analysis Complete."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G0744",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G0746",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G0747",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G0756",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G0757",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G0758",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1291",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1296",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1297",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1299",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1410",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1411",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1412",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1413",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1414",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1415",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1743",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1832",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1849",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G1850",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G2004",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G2616",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G2715",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G2962H",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G2963",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G4173",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G4174",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G4176",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G4177",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G5021",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G5242",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "G5247",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H2627",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H2631",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H2632",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027G",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027H",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027R",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027S",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027W",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3027X",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3028",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3676",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3678G",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3678H",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3678I",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3709G",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H3764",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4474",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4475",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4662H",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4766",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4768",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4910",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H4915B",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6485A",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6485H",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6485I",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6485J",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6485K",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6486",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6487",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6488",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6490",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H6496",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7235A",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7236",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7238",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7287A",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7558",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7980",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7981",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7983",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7984",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7985",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7986",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7989",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H7990",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8623",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8630",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8632A",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8632B",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8633",
+          "owning_registry_fk": 197
+        },
+        {
+          "strongs_number": "H8660",
+          "owning_registry_fk": 197
+        }
+      ],
+      "_note": "Set owning_registry_fk=197 for all 84 active terms with null FK"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G0746",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G0747",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G0756",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G0757",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G0758",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G0831",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1291",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1296",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1299",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1410",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1411",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1412",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1415",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1743",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1832",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1849",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G1850",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2003",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2004",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2616",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2715",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2962H",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G2963",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G5021",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G5242",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "G5247",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H1935",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H2631",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H2632",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3027G",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3027H",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3027R",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3027S",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3028",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3678G",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H3764",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H4475",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H4910",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6485A",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6485H",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6485I",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6485J",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6486",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6490",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H6496",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7238",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7287A",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7980",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7981",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7983",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7984",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7985",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7989",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H7990",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H8630",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H8632A",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H8632B",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H8633",
+          "strongs_reconciled": 1
+        },
+        {
+          "strongs_number": "H8660",
+          "strongs_reconciled": 1
+        }
+      ],
+      "_note": "Set strongs_reconciled=1 for all 59 extracted terms"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G1849",
+          "anchor_note": "PRIMARY ANCHOR: Mt 28:18 — all authority given to Christ. Jn 19:10-11 — authority from above. Rom 13:1 — no authority except from God. Rev 12:10 — authority of his Christ."
+        },
+        {
+          "strongs_number": "G0746",
+          "anchor_note": "ANCHOR: Eph 1:21 — above all rule and authority. Col 2:10,15 — head of rule/authority; disarmed. Jude 6 — angels left their proper archē."
+        },
+        {
+          "strongs_number": "G1411",
+          "anchor_note": "ANCHOR: Eph 1:21 — power in cosmic hierarchy. Lk 9:1 — power and authority over demons. 1Cor 15:24 — destroying every power."
+        },
+        {
+          "strongs_number": "H7985",
+          "anchor_note": "ANCHOR: Dan 7:13-14 — everlasting dominion to Son of Man. Dan 4:34-35 — Nebuchadnezzar's doxology. Dan 7:27 — dominion to saints."
+        },
+        {
+          "strongs_number": "H7287A",
+          "anchor_note": "ANCHOR: Gen 1:26-28 — creation mandate dominion."
+        },
+        {
+          "strongs_number": "H4910",
+          "anchor_note": "ANCHOR: Gen 1:18 — rule day/night; Gen 4:7 — rule over sin; Ps 22:28 — dominion to LORD."
+        },
+        {
+          "strongs_number": "H3678G",
+          "anchor_note": "ANCHOR: 2Sa 7:13-16 — throne established forever. Dan 7:9 — Ancient of Days seated. Isa 66:1 — heaven is my throne."
+        },
+        {
+          "strongs_number": "H3027H",
+          "anchor_note": "ANCHOR: Gen 14:20 — delivered into your hand. Gen 31:29 — in my power to harm. 2Ki 8:20 — rule of Judah idiom."
+        }
+      ],
+      "_note": "Set anchor_note for primary anchor terms"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "add_cross_registry_links",
+      "links": [
+        {
+          "from_registry": 197,
+          "to_registry": 196,
+          "type_code": "SISTER_REGISTRY",
+          "note": "Power (#196) and Authority (#197) — exousia and dunamis co-occur systematically (Lk 9:1; Eph 1:21; Col 1:16). Right vs capacity."
+        },
+        {
+          "from_registry": 197,
+          "to_registry": 199,
+          "type_code": "OVERLAPPING_DOMAIN",
+          "note": "Dominion (#199) shares H7985 sholtan, H4475 memshalah, G2963 kuriotēs. Phase 2 boundary resolution required."
+        },
+        {
+          "from_registry": 197,
+          "to_registry": 17,
+          "type_code": "CAUSATIVE_CHAIN",
+          "note": "Bondage (#17) — katadunasteuō (G2616) links oppressive authority to bondage. Act 10:38 explicit."
+        },
+        {
+          "from_registry": 197,
+          "to_registry": 61,
+          "type_code": "THEMATIC_LINK",
+          "note": "Fear (#61) — Lk 12:5 links ultimate authority (cast into hell) with proper fear."
+        },
+        {
+          "from_registry": 197,
+          "to_registry": 73,
+          "type_code": "THEMATIC_LINK",
+          "note": "Guilt (#73) — H6485H paqad-punish shares divine accountability/judgment dimension."
+        },
+        {
+          "from_registry": 197,
+          "to_registry": 80,
+          "type_code": "THEMATIC_LINK",
+          "note": "Humility (#80) — Mt 20:25-28 authority-as-service pericope is structurally a humility text."
+        }
+      ],
+      "_note": "Cross-registry relationships identified in Session B analysis"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 197
+      },
+      "set": {
+        "session_b_status": "Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "bulk_update_owning_registry_fk": 84,
+    "bulk_update_strongs_reconciled": 59,
+    "bulk_update_anchor_notes": 8,
+    "add_cross_registry_links": 6,
+    "update_registry": 1
+  }
+}

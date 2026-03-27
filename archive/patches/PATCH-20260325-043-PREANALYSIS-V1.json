@@ -1,0 +1,215 @@
+{
+  "patch_id": "PATCH-20260325-043-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 43,
+  "registry_word": "desire",
+  "file_id": null,
+  "source_json_exported_at": "2026-03-25T05:55:20Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for desire (reg 43). Confirms anchor Luk 22:15 / Gal 5:16. Restores 5 deleted cha.mad terms to extracted \u2014 their delete status is incorrectly applied (the notes say 'Bleed: desire registry' but they ARE in the desire registry). Extracts 7 None-status terms. Confirms G4658 skuth\u0113s candidate_delete (place-holder/ethnic name, not desire vocabulary). Documents H0157G xref_desire status and reading scope.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Confirm dual anchor: Luk 22:15 ('I have earnestly desired to eat this Passover with you before I suffer' \u2014 divine desire, epithumia epethumesa double form) + Gal 5:16 ('walk by the Spirit and you will not gratify the desires of the flesh' \u2014 two-forms structure). Together they frame desire as the inner motivating force that can be oriented toward God (Luk 22:15) or toward the flesh (Gal 5:16).",
+      "registry_no": 43,
+      "set": {
+        "anchor_verses": "Luk 22:15; Gal 5:16"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2530A cha.mad [to desire/covet] \u2014 restore delete \u2192 extracted. 20 verses. The 10th commandment verb (Exo 20:17: 'you shall not covet'). Gen 3:6 (tree desirable to the eyes). Psa 68:16 (God desired Zion for his abode). Pro 6:25 (do not desire her beauty). Isa 53:2 (no form or majesty that we should desire him). Mic 2:2 (they covet fields). The delete note reads 'Bleed: desire registry (reg 43)' which is CIRCULAR \u2014 cha.mad IS primary desire vocabulary and belongs in this registry. Delete status was misapplied.",
+      "strongs_number": "H2530A",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored from delete. Primary covet/desire verb. Exo 20:17 (10th commandment), Gen 3:6, Psa 68:16, Isa 53:2."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2530B cha.mu.dah [precious/desirable] \u2014 restore delete \u2192 extracted. 20 verses (same pool as H2530A). Precious/desirable adjective form of cha.mad. Dan 9:23 \u2014 Daniel 'greatly beloved/desired' (cha.mudat). Song 2:3 \u2014 'with great delight I sat in his shadow.' Isa 53:2 \u2014 'no form that we should desire him'. Shares verse pool with H2530A \u2014 the sub-gloss covers the adjectival/nominal form.",
+      "strongs_number": "H2530B",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored from delete. Adjectival/nominal form of cha.mad. Precious/desirable things. Same verse pool as H2530A."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2531 che.med [delight/desirability] \u2014 restore delete \u2192 extracted. 6 verses. Isa 27:2 (pleasant vineyard), Isa 32:12 (pleasant fields), Eze 23:6,12,23 (desirable young men \u2014 the desire vocabulary in the Oholah/Oholibah allegory of Israel's disordered desire), Amo 5:11 (houses of hewn stone). The Eze 23 uses are analytically significant \u2014 desirable men as the object of Israel's illicit covenantal desire.",
+      "strongs_number": "H2531",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored from delete. Delight/desirability noun. Eze 23 uses are the covenantal-infidelity desire vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2532A chem.dah [desired/precious thing] \u2014 restore delete \u2192 extracted. 16 verses. Jer 3:19 ('a pleasant land, a heritage most beautiful of all nations' \u2014 God's desired gift to Israel), Dan 11:37 ('the thing beloved by women' \u2014 a desired deity), Hag 2:7 ('the treasures of all nations shall come in'), Jer 12:10 ('pleasant portion'). The chem.dah vocabulary covers precious/desirable things \u2014 the objects of desire. Distinct from cha.mad (the act of desiring).",
+      "strongs_number": "H2532A",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored from delete. Precious/desirable things vocabulary. Jer 3:19, Dan 11:37, Hag 2:7."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4261 mach.mad [precious thing/desire] \u2014 restore delete \u2192 extracted. 13 verses. Song 5:16 \u2014 'he is altogether desirable (mach.mad). This is my beloved.' The most concentrated single desire-word in the Song. Eze 24:16,21,25 \u2014 God will take away the prophet's delight (mach.mad eyes), the temple as the people's mach.mad. Lam 1:10,11 \u2014 enemy seized her precious things (mach.mad). The loss of what is desired as judgment.",
+      "strongs_number": "H4261",
+      "set": {
+        "status": "extracted",
+        "status_note": "Restored from delete. Precious/desired thing. Song 5:16 (altogether desirable), Eze 24:16 (delight of your eyes), Lam 1:10 (precious things seized)."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2836A cha.shaq [to desire] \u2192 extracted. Intense desire/attachment. Deu 7:7 \u2014 'the Lord set his love on you' (cha.shaq \u2014 ",
+      "mti_id": 1900,
+      "strongs_number": "H2836A",
+      "set": {
+        "status": "extracted",
+        "status_note": "Intense desire/attachment. Deu 7:7 \u2014 'the Lord set his love on you' (cha.shaq \u2014 divine desire as choosing Israel). Deu 10:15 \u2014 'the Lord set his heart in love on your fathers.' Psa 91:14 \u2014 'because he holds fast to me in love.' Deu 21:11 \u2014 desire for a captive woman. Gen 34:8 \u2014 'the soul of my son S"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2836B cha.shaq [to connect] \u2192 extracted. Sub-gloss of H2836A. Same verse pool (8 verses). The connection/attachment sense",
+      "mti_id": 1901,
+      "strongs_number": "H2836B",
+      "set": {
+        "status": "extracted",
+        "status_note": "Sub-gloss of H2836A. Same verse pool (8 verses). The connection/attachment sense of cha.shaq \u2014 desire as the bond that connects. Deu 7:7 and Deu 10:15 feature the divine cha.shaq for Israel as both desire and covenantal attachment."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2837 che.sheq [desire] \u2192 extracted. Noun form of cha.shaq. 1Ki 9:1 \u2014 'all that Solomon desired to do.' 1Ki 9:19 / 2C",
+      "mti_id": 1903,
+      "strongs_number": "H2837",
+      "set": {
+        "status": "extracted",
+        "status_note": "Noun form of cha.shaq. 1Ki 9:1 \u2014 'all that Solomon desired to do.' 1Ki 9:19 / 2Ch 8:6 \u2014 cities for all Solomon's desires. Isa 21:4 \u2014 'the twilight I longed for has been turned into trembling.' Desire as the planned goal of action."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3700 ka.saph [to long] \u2192 extracted. Intense longing. Gen 31:30 \u2014 'you longed greatly for your father's house.' Job 1",
+      "mti_id": 2040,
+      "strongs_number": "H3700",
+      "set": {
+        "status": "extracted",
+        "status_note": "Intense longing. Gen 31:30 \u2014 'you longed greatly for your father's house.' Job 14:15 \u2014 'you would long for the work of your hands' \u2014 God's longing for his creature. Psa 84:2 \u2014 'my soul longs, yes faints for the courts of the Lord.' Psa 17:12 \u2014 like a lion eager to tear. Zep 2:1 \u2014 gather together (in"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3713 oreg\u014d [to aspire] \u2192 extracted. To reach/aspire toward. 1Ti 3:1 \u2014 'if anyone aspires to the office of overseer, ",
+      "mti_id": 2066,
+      "strongs_number": "G3713",
+      "set": {
+        "status": "extracted",
+        "status_note": "To reach/aspire toward. 1Ti 3:1 \u2014 'if anyone aspires to the office of overseer, he desires a noble task.' 1Ti 6:10 \u2014 'through this craving some have wandered away.' Heb 11:16 \u2014 'they desire a better country, that is, a heavenly one.' The upward-reaching desire vocabulary \u2014 aspiration toward a goal."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5690 a.gav [lust] \u2192 extracted. Licentious desire/lust. Eze 33:31-32 \u2014 'they hear what you say but do not do it.",
+      "mti_id": 1646,
+      "strongs_number": "H5690",
+      "set": {
+        "status": "extracted",
+        "status_note": "Licentious desire/lust. Eze 33:31-32 \u2014 'they hear what you say but do not do it... you are to them like one who sings lustful songs.' The lustful-song context is the desire vocabulary at its most disordered \u2014 desire divorced from reality and response. Related to H5691 a.ga.vah (lust) in the love reg"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4262 mach.mod [desirable] \u2192 extracted. Desirable/precious. Lam 1:7 \u2014 'Jerusalem remembers... all the precious things (m",
+      "mti_id": 1632,
+      "strongs_number": "H4262",
+      "set": {
+        "status": "extracted",
+        "status_note": "Desirable/precious. Lam 1:7 \u2014 'Jerusalem remembers... all the precious things (mach.mad) that were hers.' Variant form of H4261 mach.mad. Desire vocabulary in the loss context \u2014 precious things remembered after they are taken."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "registry_note",
+      "target_table": "wa_file_index",
+      "description": "H0157G a.hev [to love: lover] \u2014 xref_desire status confirmed. Note from prior Session B analysis: primary love verb with 184 verses (207 occurrences). Session B v3.0 note states primary analysis is held in desire registry (reg 43) with cross-ref to love (reg 103) via PH2-103-001. All 184 verses have been read. This term's desire-dimension (love as the supreme desire) is treated in Session B analysis for desire registry. Session D cross-registry resolution required between love (103) and desire (43) for this term.",
+      "registry_no": 43,
+      "set": {
+        "xref_note": "H0157G a.hev read with all 1,717 verses. Desire-as-love dimension analysed. Session D resolution needed."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete \u2192 delete for 110 terms. Key confirmations: G4658 skuth\u0113s (Scythian ethnic name, not desire vocabulary \u2014 entered via Col 3:11 context), H4057B mid.bar (wilderness), H5375H na.sa:bear (carry vocabulary), H3423H ya.rash:take (possession vocabulary), G1905 eper\u014dta\u014d (to question \u2014 different from er\u014dta\u014d to ask), H1696I da.var:promise (speech vocabulary), H2654A cha.phets:to delight (covered by H2656 che.phets extracted), H7521 ra.tsah:to accept (covered by H7522 ra.tson extracted), H1934 ha.va:to be (Aramaic existence verb), H0160 a.ha.vah:love (primary in love registry), H5315 ne.phesh sub-glosses (soul vocabulary \u2014 covered in soul registry), G1012 boul\u0113:plan (covered by G1014 boulomai and G1013 boul\u0113ma extracted), G2106 eudoke\u014d:to delight (covered by G2107 eudokia extracted), G0700 aresk\u014d:to please (covered by G0701 arestos extracted).",
+      "filter": "registry_no=43 AND mti_status=candidate_delete",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Confirmed candidate_delete. Bleed vocabulary or adequately covered by extracted terms."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "bulk_update_none_to_delete",
+      "target_table": "wa_mti",
+      "description": "Set remaining None-status terms without verses \u2192 delete. Bleed vocabulary: H1697G da.var (word), G3844 para (preposition), G2564G kale\u014d (to call), H3701G ke.seph (silver), H0176A o (or), H5315 ne.phesh sub-glosses G-N (soul/appetite vocabulary \u2014 covered in soul registry), G1012 boul\u0113 (covered by extracted boulomai/boul\u0113ma), H5375J na.sa:guilt, H0160 a.ha.vah:love (primary in love registry), H7613 se.et (elevation), H6440 pa.neh sub-glosses (face), G1380 doke\u014d (to think), G2095 eu (well/well done), G3874 parakl\u0113sis (encouragement \u2014 covered by parakale\u014d extracted), H7521 ra.tsah (accept \u2014 covered by ra.tson extracted), H2654A cha.phets (delight \u2014 covered by che.phets extracted), H1934 ha.va (to be, Aramaic).",
+      "filter": "registry_no=43 AND mti_status=None AND verse_count=0",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary or adequately covered by extracted terms."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 16,
+    "anchor_confirmed": "Luk 22:15 (divine desire \u2014 double epithumia form); Gal 5:16 (two-forms structure: flesh vs Spirit desire)",
+    "restorations_from_delete": [
+      "H2530A cha.mad (to desire/covet, 20v) \u2014 Exo 20:17 10th commandment",
+      "H2530B cha.mu.dah (precious/desirable, 20v) \u2014 adjectival form",
+      "H2531 che.med (delight, 6v) \u2014 Eze 23 covenantal desire",
+      "H2532A chem.dah (desired thing, 16v) \u2014 Jer 3:19, Dan 11:37",
+      "H4261 mach.mad (precious/desire, 13v) \u2014 Song 5:16, Eze 24:16"
+    ],
+    "new_extractions_from_none": [
+      "H2836A cha.shaq (desire, 8v) \u2014 divine desire for Israel, Deu 7:7",
+      "H2836B cha.shaq:connect (8v) \u2014 same pool",
+      "H2837 che.sheq (desire noun, 4v)",
+      "H3700 ka.saph (to long, 5v) \u2014 Psa 84:2, Job 14:15",
+      "G3713 oreg\u014d (to aspire, 3v) \u2014 Heb 11:16 heavenly country",
+      "H5690 a.gav (lust, 2v) \u2014 Eze 33",
+      "H4262 mach.mod (desirable, 1v) \u2014 Lam 1:7"
+    ],
+    "reading_scope": "1,717 verses across 56 terms (43 extracted + 7 None-status + 1 xref_desire + 5 restored-delete)",
+    "key_finding": "The cha.mad family (Exo 20:17 10th commandment vocabulary) was incorrectly deleted. Restored. H2836A cha.shaq establishes divine desire for Israel (Deu 7:7) as a primary desire-vocabulary term alongside the human coveting vocabulary."
+  }
+}

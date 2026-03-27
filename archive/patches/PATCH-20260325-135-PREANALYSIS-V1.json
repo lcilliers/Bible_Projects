@@ -1,0 +1,326 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260325-135-PREANALYSIS-V1",
+    "registry_id": 135,
+    "word": "repentance",
+    "produced_date": "2026-03-25",
+    "produced_by": "Session B v4.1 pre-analysis",
+    "description": "Pre-analysis patch for repentance registry 135. Confirms H7725 (id=413) delete status; classifies all 28 None-status terms (8 extract, 20 delete); confirms 2 candidate_delete terms; adds HF flags for G3328, G3334, G3344; schema investigation note for H7725 family duplicate."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "schema_investigation_note",
+      "strongs_number": "H7725",
+      "description": "H7725 (id=413, mti=extracted, df=1, occ=645, v=0) is a superseded master record for shuv replaced by the sub-gloss split (H7725G through H7725O). It is already delete_flagged=1 and has 0 verses — correctly excluded from analysis. Separately, H7725G (id=2806, candidate_delete, occ=645, v=345) is the general-return sub-gloss proposed for deletion because its 345 verses cover the broad return vocabulary (going back, restoring, rescuing) not specific to repentance. The repentance-specific sub-glosses H7725I/J/N/O are already extracted (247 verses). Claude Code to note the relationship between these records for future audit."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "confirm_delete",
+      "strongs_number": "H7725G",
+      "description": "H7725G (shuv: to return/general, occ=645, v=345) — candidate_delete confirmed. This is the general-return sense of shuv (physical return, going back) not the repentance/relational-turning sense. Repentance content is already covered by H7725I (turn back, 91v), H7725J (again/return, 73v), H7725N (recall, 7v), H7725O (repent, 77v). Delete confirmed."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "confirm_delete",
+      "strongs_number": "G8298",
+      "description": "G8298 (metameleia, occ=1, NO_VERSES) — candidate_delete confirmed. No verse records; the repentance-regret sense is covered by G3338 (metamellomai, 5v). Delete confirmed."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H4878",
+      "set": {
+        "status": "extracted",
+        "status_note": "me.shu.vah: faithlessness/apostasy/backsliding (occ=15, 12 verses) — the noun of apostasy derived from shuv. The structural opposite of repentance within the same root family. Pro 1:32 — the backsliding of fools destroys them; Jer 2:19, 3:6, 3:8, 3:11 — Israel's apostasy as the object of prophetic confrontation. This is the contra-term that defines repentance by negation: me.shu.vah is what repentance turns away from. 12 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H7726",
+      "set": {
+        "status": "extracted",
+        "status_note": "sho.vav: backsliding/turning back (adjective, occ=7, 4 verses) — the backslider/apostate as a person. Isa 57:17 — 'he went on backsliding (sho.vav) in the way of his own heart'. Jer 3:14 — 'Return, O faithless (sho.vav) children'. The companion to me.shu.vah: where me.shu.vah is the act/condition of apostasy, sho.vav names the person who has apostatised. Both are the contra-terms that give repentance its definition. 4 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "H7728",
+      "set": {
+        "status": "extracted",
+        "status_note": "sho.vev: backsliding/apostate (adjective, occ=3, 3 verses) — apostasy adjective. Jer 31:22 — 'O faithless (sho.vev) daughter'; Jer 49:4 — 'O faithless (sho.vev) daughter'. Related to sho.vav; both name the person in the condition of having turned away. The three apostasy terms (me.shu.vah, sho.vav, sho.vev) complete the contra-repentance family. 3 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H5150",
+      "set": {
+        "status": "extracted",
+        "status_note": "ni.chum: comfort/compassion (occ=3, 3 verses) — comfort noun from the na.cham root (H5162G/H already extracted). Isa 57:18 — 'I will restore comfort (ni.chum) to him and his mourners'; Hos 11:8 — 'my compassion (ni.chum) grows warm and tender'. The comfort/compassion that God's relenting produces — the relational consequence of divine na.cham. 3 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H5165",
+      "set": {
+        "status": "extracted",
+        "status_note": "ne.cha.mah: comfort (occ=2, 2 verses) — the comfort noun from the na.cham root. Job 6:10 — 'this would be my comfort'; Psa 119:50 — 'this is my comfort in my affliction'. Completes the na.cham comfort family alongside ni.chum and the extracted H5164 (no.cham: repentance). 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H8575",
+      "set": {
+        "status": "extracted",
+        "status_note": "tan.chum: consolation(s) (occ=5, 5 verses) — consolation/comfort noun. Job 15:11 — 'Are the comforts of God too small for you?'; Job 21:2 — 'let this be your comfort'; Psa 94:19 — 'your consolations cheer my soul'. From the na.cham comfort family. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "H8666",
+      "set": {
+        "status": "extracted",
+        "status_note": "te.shu.vah: return/turn/answer (occ=8, 8 verses) — return and answering from the shuv root. 2 Sam 11:1 — 'the time when kings go out'; 1 Ki 20:9 — 'Tell my lord the king: All that you sent for to your servant at first I will do'; 2 Ch 36:13 — 'he stiffened his neck and hardened his heart against turning to (shuv) the Lord'. While covering return and answer, te.shu.vah also appears in contexts directly related to turning toward/away from God. 8 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H7725H",
+      "set": {
+        "status": "extracted",
+        "status_note": "shuv: rescue/restore sense (occ=124, 102 verses) — the restoration sense of shuv. God restoring Israel's fortunes, reversing exile, restoring health (Job 33:25-26). While not specifically 'repentance', the restoration sense is the divine-action counterpart to human repentance: when Israel turns back (H7725O/I), God restores (H7725H). The structural pairing of human turning and divine restoring is essential to the shuv theology. 102 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G3339",
+      "set": {
+        "status": "extracted",
+        "status_note": "metamorfoō: to transform/transfigure (occ=4, 4 verses) — transformation/transfiguration. Mat 17:2; Mar 9:2 — the Transfiguration; Rom 12:2 — 'be transformed (metamorfoō) by the renewal of your mind'; 2 Cor 3:18 — 'being transformed into the same image'. The transformation verb is analytically significant for repentance: the meta- prefix shared across the repentance family (metanoia, metamellomai) is here applied to the deepest possible change — the visible transformation of the person. Rom 12:2 is the repentance-transformation link: mind-renewal as the mechanism. 4 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G0276",
+      "set": {
+        "status": "extracted",
+        "status_note": "ametathetos: unchangeable (occ=2, 2 verses) — Heb 6:17-18: 'the unchangeable character of his purpose... two unchangeable things in which it is impossible for God to lie'. Analytically significant as the negative form of the meta- (change) root applied to God: God is ametathetos — his purposes do not change. This provides the theological ground of hope for those who repent: the God to whom they return is unchangeable in his covenantal commitments. 2 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G3346",
+      "set": {
+        "status": "extracted",
+        "status_note": "metatithēmi: to transfer/change/desert (occ=19, 5 verses) — to change position, transfer, desert. Gal 1:6 — 'so quickly deserting (metatithēmi) him who called you in the grace of Christ and turning to a different gospel'. Acts 7:16 — transported/carried. Heb 7:12 — change in the priesthood. The desertion sense (Gal 1:6) is the repentance contra-pattern: metanoia is turning toward God; metatithēmi (deserting) is turning away. 5 verses.",
+        "exclusion_reason": null
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G3327",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metabainō: to depart/leave/move (occ=12) — physical movement from place to place. Jn 5:24 'passed from death to life' is the only repentance-adjacent use. No direct repentance semantic content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "G3328",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metaballō: to change one's mind (occ=23, v=1 — 4% below HF threshold) — Act 28:6 only (Maltese villagers changing their mind about Paul being a murderer). Thin data; no theological repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "G3329",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metagō: to steer/turn/guide (occ=5) — steering ships and horses (Jam 3:3-4). Physical directional control. The metaphorical potential is present but the actual verse set is mechanical. Delete."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "G3331",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metathesis: removal/change/transformation (occ=3) — Heb 7:12 (change in priesthood), 11:5 (Enoch translated), 12:27 (removal of created things). Structural/covenantal change but not repentance. Delete."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "G3332",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metairō: to depart/move on (occ=8, v=2) — Jesus departing from places (Mat 13:53, 19:1). Physical movement. No repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "G3334",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metakineō: to shift/be moved (occ=7, v=1 — 14% below HF threshold) — Col 1:23 'not shifting from the hope of the gospel'. The stability of faith is the context but the term itself is a physical displacement metaphor. Thin data. Delete."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "G3335",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metalambanō: to partake/share in (occ=7) — receiving food, sharing in spiritual realities (Act 2:46, 2 Ti 2:6, Heb 6:7). No repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "G3337",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metallassō: to exchange (occ=4) — Rom 1:25-26: exchanging truth for a lie, natural relations for unnatural. The exchange is the sin, not the repentance. Cross-registry with other moral terms but not repentance vocabulary. Delete."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "G3344",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metastrefō: to pervert/change (occ=21, v=3 — 14% below HF threshold) — Act 2:20 (sun turned to darkness), Gal 1:7 (distorting the gospel), Jam 4:9 (turn laughter to mourning). The distortion/perversion sense is the opposite of repentance. Thin active data. Delete."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "G3345",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "metaschēmatizō: to transform/masquerade (occ=5) — 1 Cor 4:6 (applied figuratively), 2 Cor 11:13-15 (false apostles masquerading). The disguise/masquerade sense is contra-repentance — it is the deceptive appearance of transformation without reality. Analytically interesting but the actual verse set is about false transformation. Delete."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "H7725K",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shuv: pay/repay/reward sense (occ=32) — legal restitution, revenge, reward repayment. The pay-back sense of shuv has no repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "H7725L",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shuv: refuse/turn face sense (occ=7) — refusing requests (1 Ki 2:16-17). Physical turning of the face as refusal. No repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "H7725M",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shuv: reply/answer sense (occ=29) — verbal reply as 'returning words'. Speech act, not repentance. Delete."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "H7870",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "shi.vah: captivity/restoration (occ=1, 1 verse — Psa 126:1 'when the Lord restored the fortunes of Zion'). Single occurrence; restoration-from-captivity sense. Content better addressed through H7725H (shuv: rescue/restore, extracted). Delete."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "H8421G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tuv: to return (Aramaic P'al, occ=3, v=2) — Dan 4:34, 36: Nebuchadnezzar's reason returning. General return verb. Nebuchadnezzar's restoration is significant but the specific repentance vocabulary is better addressed through the extracted shuv sub-glosses. Delete."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "H8421H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tuv: rescue/restore (Aramaic Aphel, occ=1, 1 verse — Ezr 6:5: gold vessels restored to temple). Physical restoration. No repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "H8421I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tuv: reply (Aramaic, occ=4) — returning words/answer in Ezra epistolary contexts. Speech act. No repentance content. Delete."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "add_quality_flag",
+      "strongs_number": "G3328",
+      "term_inv_id": 2800,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "metaballō (occ=23, v=1, 4%) — below 20% threshold. Classified delete in OP-016; flag added for record completeness."
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "add_quality_flag",
+      "strongs_number": "G3334",
+      "term_inv_id": 2801,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "metakineō (occ=7, v=1, 14%) — below 20% threshold. Classified delete in OP-020; flag added for record completeness."
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "add_quality_flag",
+      "strongs_number": "G3344",
+      "term_inv_id": 2795,
+      "flag_code": "HIGH_FREQUENCY_ANCHOR",
+      "description": "metastrefō (occ=21, v=3, 14%) — below 20% threshold. Classified delete in OP-023; flag added for record completeness."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 34,
+    "schema_investigation_notes": 1,
+    "mti_extract": 11,
+    "mti_delete": 17,
+    "candidate_delete_confirmed": 2,
+    "quality_flag_inserts": 3,
+    "note": "After application, projected active inventory: 12 existing extracted + 11 newly extracted = 23 active terms. The repentance registry is the leanest in the programme — 23 terms is appropriate given the focused semantic field. Total verses estimated ~600-650 (adding me.shu.vah 12v, sho.vav 4v, sho.vev 3v, ni.chum 3v, ne.cha.mah 2v, tan.chum 5v, te.shu.vah 8v, H7725H 102v, G3339 4v, G0276 2v, G3346 5v). The H7725 shuv family will dominate — H7725H (rescue/restore, 102v) is the largest single addition and is the divine-response counterpart to human repentance. Re-export required before Session B analysis."
+  }
+}

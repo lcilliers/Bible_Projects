@@ -1,0 +1,910 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-197-PREANALYSIS-V1",
+    "registry_id": 197,
+    "word": "authority",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.2 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis MTI classification for authority registry 197. All 146 None-status terms classified: 59 extracted, 28 extracted_thin, 56 delete, 3 candidate_delete. VOLUME_LIMITATION flags raised for 6 high-frequency/zero-verse terms. 2 schema investigation notes. Registry status set to Pre-Analysis Complete."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G1849",
+          "status": "extracted",
+          "status_note": "Core NT authority term. exousia. Jesus teaches with authority Mt 7:29; grants to disciples Mt 10:1; authority over demons, sin; Pauline cosmological term Eph 1:21; 6:12; Col 2:15; Rom 13:1. Primary anchor."
+        },
+        {
+          "strongs_number": "G1850",
+          "status": "extracted",
+          "status_note": "exousiazō - exercise authority over. Lk 22:25; 1Cor 6:12; 7:4. Verbal form of G1849. PROCESS_DYNAMIC: authority over inner person/body."
+        },
+        {
+          "strongs_number": "G2715",
+          "status": "extracted",
+          "status_note": "katexousiazō - exercise full authority over. Mt 20:25; Mk 10:42. Rulers lord over subjects. Jesus reframes as anti-model. PROCESS_DYNAMIC."
+        },
+        {
+          "strongs_number": "G1832",
+          "status": "extracted",
+          "status_note": "exesti/exon - to be permitted/lawful. 34 occ. Authority as bounds of what is lawful. Pharisee-Jesus disputes; Jesus asserts divine authority over Sabbath."
+        },
+        {
+          "strongs_number": "G0746",
+          "status": "extracted",
+          "status_note": "archē - beginning/authority/principality. 237 occ. Cosmic ruling powers Eph 1:21; 3:10; 6:12; Col 1:16; 2:10; 2:15; Rom 8:38; Tit 3:1. Key cosmological authority term. VOLUME_LIMITATION applies."
+        },
+        {
+          "strongs_number": "G0747",
+          "status": "extracted",
+          "status_note": "archēgos - author/leader/founder. Act 3:15 Author of life; Act 5:31 Leader and Savior; Heb 2:10; 12:2. Christ as authoritative originating leader."
+        },
+        {
+          "strongs_number": "G0756",
+          "status": "extracted",
+          "status_note": "archomai - to rule/begin. 0 verses in export. Archē cognate; ruling-sense present. Include with PH2 VOLUME_LIMITATION for zero verse coverage."
+        },
+        {
+          "strongs_number": "G0757",
+          "status": "extracted",
+          "status_note": "archō - to be first/rule. 174 occ, 63 verses. Begin-sense dominant in sample but cognate family anchor for rule-over. Ruling-register present in background."
+        },
+        {
+          "strongs_number": "G0758",
+          "status": "extracted",
+          "status_note": "archōn - ruler/prince. 617 occ. HIGH_FREQUENCY_ANCHOR. Rulers of synagogue; prince of demons Jn 12:31; 14:30; 16:11; governing rulers Rom 13. Critical term."
+        },
+        {
+          "strongs_number": "G1410",
+          "status": "extracted",
+          "status_note": "dunamai - to be able/have capacity. 444 occ, 120 verses. Capacity-to-act as authority foundation. God able to raise sons; faith unlocking ability. HIGH_FREQUENCY. Inner-being: inability and power."
+        },
+        {
+          "strongs_number": "G1411",
+          "status": "extracted",
+          "status_note": "dunamis - power/mighty works. 579 occ. HIGH_FREQUENCY_ANCHOR. Spirit-power; miraculous authority; power of resurrection. Essential."
+        },
+        {
+          "strongs_number": "G1412",
+          "status": "extracted",
+          "status_note": "dunamoō - to empower/strengthen. Col 1:11. Divine strengthening with all power. Authority as empowerment from above."
+        },
+        {
+          "strongs_number": "G1415",
+          "status": "extracted",
+          "status_note": "dunatos - able/powerful/possible. 189 occ, 34 verses. All things possible with God; powerful vs weak; Christ powerful. Core capacity-authority vocabulary."
+        },
+        {
+          "strongs_number": "G1743",
+          "status": "extracted",
+          "status_note": "endunamoō - to strengthen from within. Eph 6:10; Phil 4:13; 2Ti 2:1. Spirit-empowerment. Inner-being: authority received through divine strengthening."
+        },
+        {
+          "strongs_number": "G2963",
+          "status": "extracted",
+          "status_note": "kuriotēs - lordship/dominion. Eph 1:21; Col 1:16; 2Pe 2:10; Jude 8. Ranked cosmic authority tier. Core cosmological term."
+        },
+        {
+          "strongs_number": "G2962H",
+          "status": "extracted",
+          "status_note": "kurios - lord: master. 114 occ, 69 verses. Mt 6:24 two masters; Mt 10:24-25 servant/master dynamic; Mk 12:8 lord of Sabbath. Authority-in-relationship; master-servant power asymmetry."
+        },
+        {
+          "strongs_number": "G5242",
+          "status": "extracted",
+          "status_note": "huperechō - surpassing/governing authority. Rom 13:1; 1Pe 2:13. Governing authorities to whom subject. Direct authority-over-persons."
+        },
+        {
+          "strongs_number": "G5247",
+          "status": "extracted",
+          "status_note": "huperochē - superior position/authority. 1Cor 2:1; 1Ti 2:2. Those in high positions. Authority as elevated standing."
+        },
+        {
+          "strongs_number": "G2003",
+          "status": "extracted",
+          "status_note": "epitagē - authoritative command. Rom 16:26; 1Cor 7:6; Tit 1:3. Apostolic/divine command as authority expression."
+        },
+        {
+          "strongs_number": "G2004",
+          "status": "extracted",
+          "status_note": "epitassō - command with authority. Mk 1:27; Lk 4:36 with authority and power commands unclean spirits. Command-authority nexus."
+        },
+        {
+          "strongs_number": "G1291",
+          "status": "extracted",
+          "status_note": "diastellō - strictly charge/order. 57 occ, 7 verses. Jesus strictly charged silence Mk 5:43; 7:36; 8:15; 9:9. Authoritative restriction."
+        },
+        {
+          "strongs_number": "G1299",
+          "status": "extracted",
+          "status_note": "diatassō - direct/arrange/command. 30 occ, 16 verses. Lk 3:13 authorized; Act 7:44 God directed; Paul ordered by Christ. Authoritative ordering."
+        },
+        {
+          "strongs_number": "G1296",
+          "status": "extracted",
+          "status_note": "diatagē - ordinance/authoritative arrangement. Act 7:53; Rom 13:2. Law and divine appointment as authority-forms."
+        },
+        {
+          "strongs_number": "G5021",
+          "status": "extracted",
+          "status_note": "tassō - to appoint/arrange/assign. Rom 13:1 authorities appointed by God; Act 13:48 appointed to eternal life. Authority as divinely-ordered appointment."
+        },
+        {
+          "strongs_number": "G2616",
+          "status": "extracted",
+          "status_note": "katadunasteuō - oppress/exercise power over unjustly. Act 10:38 devil oppressed; Jam 2:6 rich oppress poor. Authority misused as domination. PROCESS_DYNAMIC."
+        },
+        {
+          "strongs_number": "G0831",
+          "status": "extracted",
+          "status_note": "authenteō - to domineer/exercise authority over. 1Ti 2:12 only. Genuine authority term; domineering authority over another. PROCESS_DYNAMIC."
+        },
+        {
+          "strongs_number": "H3678G",
+          "status": "extracted",
+          "status_note": "kissē - throne. 124 occ, 114 verses. Seat of royal authority: Pharaoh, David, Solomon, God on heavenly throne. Authority as seat/position. Gen 41:40; Ps 47:8; Isa 66:1; 2Sa 7:13. Central."
+        },
+        {
+          "strongs_number": "H3764",
+          "status": "extracted",
+          "status_note": "korsē (Aramaic) - throne. Dan 7:9 thrones placed, Ancient of Days seated; Dan 5:20 brought down from throne. Cosmic throne-authority in Daniel vision."
+        },
+        {
+          "strongs_number": "H4910",
+          "status": "extracted",
+          "status_note": "mashal - to rule/have dominion. 84 occ, 74 verses. Gen 1:18 lights to rule; Gen 3:16 husband rule; Gen 37:8 will you rule; Ps 22:28 dominion to LORD. Core authority-of-rulership verb."
+        },
+        {
+          "strongs_number": "H4475",
+          "status": "extracted",
+          "status_note": "memshalah - dominion/realm. Gen 1:16; Ps 103:22; Isa 9:7 increase of his government. Dominion as sphere of ruling authority."
+        },
+        {
+          "strongs_number": "H7287A",
+          "status": "extracted",
+          "status_note": "radah - to rule/have dominion. Gen 1:26-28 dominion over creation; Lev 25:43 not ruthlessly; 1Ki 4:24 ruled all. Core creation-mandate authority term. Dominion assigned by God."
+        },
+        {
+          "strongs_number": "H7980",
+          "status": "extracted",
+          "status_note": "shalat - to domineer/have mastery. Ps 119:133 let no iniquity have dominion over me; Ecc 2:19; Neh 5:15 governors laid heavy burdens. PROCESS_DYNAMIC: authority-as-mastery including inner-person dimension."
+        },
+        {
+          "strongs_number": "H7981",
+          "status": "extracted",
+          "status_note": "shelet (Aramaic) - to rule. Dan 2:38-39; 2:48; 3:27; 5:7; 5:16. Nebuchadnezzar given rule; Daniel made ruler; God rules kingdoms. Core Aramaic rule term."
+        },
+        {
+          "strongs_number": "H7983",
+          "status": "extracted",
+          "status_note": "shilton - power/authority of the king. Ecc 8:4 word of king supreme; 8:8 no power over death or spirit. Supreme royal authority; limits of human authority."
+        },
+        {
+          "strongs_number": "H7984",
+          "status": "extracted",
+          "status_note": "shilton (Aramaic) - governor. Dan 3:2-3. Governmental authority figure."
+        },
+        {
+          "strongs_number": "H7985",
+          "status": "extracted",
+          "status_note": "sholtan (Aramaic) - dominion. Dan 4:3; 4:22; 4:34; 6:26; 7:6; 7:12; 7:14; 7:26-27. Dominion of God everlasting; kingdoms dominion taken/given. Central cosmic-authority term in Daniel."
+        },
+        {
+          "strongs_number": "H7989",
+          "status": "extracted",
+          "status_note": "shallit - domineering/having authority. Gen 42:6 Joseph governor; Ecc 7:19; 8:8 no man has power over death/spirit; Ecc 10:5 error from ruler. Authority-as-mastery over death and the spirit."
+        },
+        {
+          "strongs_number": "H7990",
+          "status": "extracted",
+          "status_note": "shallit (Aramaic) - ruling/authorized. Ezr 4:20; 7:24; Dan 2:10; 4:17; 4:25. Mighty kings ruled; lawful decree; watchers sentence. Aramaic authority-authorization."
+        },
+        {
+          "strongs_number": "H6485J",
+          "status": "extracted",
+          "status_note": "paqad - appoint as overseer. Gen 39:4-5; 40:4; 41:34; Num 1:50. Joseph made overseer; appoint overseers over land. Appointment-authority; oversight as delegated rule."
+        },
+        {
+          "strongs_number": "H6496",
+          "status": "extracted",
+          "status_note": "paqid - overseer/appointed official. Gen 41:34; Judg 9:28; 2Ki 25:19; Neh 11:9. Officer appointed to oversight. Authority as office."
+        },
+        {
+          "strongs_number": "H6486",
+          "status": "extracted",
+          "status_note": "pequddah - appointment/oversight/punishment. Num 3:32 oversight; Isa 10:3 day of reckoning. Authority as accountability-structure and appointed oversight."
+        },
+        {
+          "strongs_number": "H6490",
+          "status": "extracted",
+          "status_note": "piqqud - precept/commandment. Ps 19:8; 103:18; 111:7; 119 multiple. God precepts as expressions of divine authority. Authority-as-precept. Inner-being: heart rejoices in precepts."
+        },
+        {
+          "strongs_number": "H6485A",
+          "status": "extracted",
+          "status_note": "paqad - to reckon/muster/number. 129 occ, 88 verses. Census as sovereign authority act Exo 30:12-14; mustering armies. Authority expressed in counting and accountability."
+        },
+        {
+          "strongs_number": "H6485H",
+          "status": "extracted",
+          "status_note": "paqad - punish/reckon. 51 occ, 48 verses. God punishing sin as authority in judgment Ps 59:5; 89:32; Isa 10:12. PROCESS_DYNAMIC: punishing authority over persons."
+        },
+        {
+          "strongs_number": "H6485I",
+          "status": "extracted",
+          "status_note": "paqad - visit/attend to. 47 occ, 40 verses. God visited Sarah Gen 21:1; Joseph God will visit you. Divine authority as redemptive visitation."
+        },
+        {
+          "strongs_number": "H1935",
+          "status": "extracted",
+          "status_note": "hod - splendor/majesty/authority. Num 27:20 invest Joshua with authority (hod explicitly); 1Ch 29:11; Ps 21:5; 45:3; 96:6; Dan 10:8. Majestic authority as attribute of divine sovereignty and delegated to leaders."
+        },
+        {
+          "strongs_number": "H3027H",
+          "status": "extracted",
+          "status_note": "yad - hand: power/authority. 585 occ, 278 verses. HIGH_FREQUENCY_ANCHOR. Delivered into your hand Gen 14:20; in your power Gen 16:6; power to harm Gen 31:29; rule of Judah 2Ki 8:20. Hand as locus of power and dominion. Core Hebrew authority idiom."
+        },
+        {
+          "strongs_number": "H3028",
+          "status": "extracted",
+          "status_note": "yad (Aramaic) - hand/power. Dan 2:34; 2:38; 2:45; Ezr 7:14-25. Stone cut by no human hand; kingdom given into hand; Ezra given authority. Aramaic cognate of H3027H."
+        },
+        {
+          "strongs_number": "H3027R",
+          "status": "extracted",
+          "status_note": "yad - ordain/fill the hand. Exo 28:41; 29:9-35; Lev 8:33; 16:32. Fill the hand = priestly ordination/consecration. Authority conferred through ritual filling."
+        },
+        {
+          "strongs_number": "H3027S",
+          "status": "extracted",
+          "status_note": "yad - hand: oath/raised vow. Exo 6:8; Num 14:30; Deu 32:40; Ps 106:26. Raising hand to swear = oath-bound divine commitment. Authority expressed in sworn promise."
+        },
+        {
+          "strongs_number": "H3027G",
+          "status": "extracted",
+          "status_note": "yad - hand (general). 742 occ, 375 verses. HIGH_FREQUENCY_ANCHOR. Many verses carry authority-over meaning Gen 9:2; 14:22; 16:12. Include with VOLUME_LIMITATION - verse sample partial; authority and instrumental uses co-present."
+        },
+        {
+          "strongs_number": "H7238",
+          "status": "extracted",
+          "status_note": "revu (Aramaic) - greatness/authority. Dan 4:22 greatness reaches heaven; 5:18-19 God gave N. greatness; 7:27 greatness of kingdoms given to people of Most High. Greatness-as-authority in Daniel cosmic framework."
+        },
+        {
+          "strongs_number": "H2632",
+          "status": "extracted",
+          "status_note": "chesen (Aramaic) - authority/power. Dan 2:37 God gave kingdom, power and might; Dan 4:30 built by my mighty power. Direct authority-power term."
+        },
+        {
+          "strongs_number": "H2631",
+          "status": "extracted",
+          "status_note": "chasan (Aramaic) - to possess/receive. Dan 7:18; 7:22 saints receive/possess kingdom. Authority received as inheritance."
+        },
+        {
+          "strongs_number": "H8630",
+          "status": "extracted",
+          "status_note": "taqeph - to prevail over. Job 14:20; 15:24; Ecc 4:12. God prevails over man; anguish prevails; two prevail against one. Prevailing as exercise of stronger authority."
+        },
+        {
+          "strongs_number": "H8632A",
+          "status": "extracted",
+          "status_note": "teqaph (Aramaic) - might/power. Dan 4:30 built by my mighty power. Direct power-authority."
+        },
+        {
+          "strongs_number": "H8632B",
+          "status": "extracted",
+          "status_note": "teqoph (Aramaic) - might/power. Dan 2:37 God gave the power. Same family as H8632A."
+        },
+        {
+          "strongs_number": "H8633",
+          "status": "extracted",
+          "status_note": "toqeph - power/authority. Est 9:29 full written authority; Est 10:2 acts of his power; Dan 11:17 strength of whole kingdom. Formal authority and military power."
+        },
+        {
+          "strongs_number": "H8660",
+          "status": "extracted",
+          "status_note": "tirshatha - Persian governor title. Ezr 2:63; Neh 7:65; 8:9; 10:1. Nehemiah as governor. Authority as gubernatorial office."
+        }
+      ]
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G0744",
+          "status": "extracted_thin",
+          "status_note": "archaios - ancient/of old. 28 occ, 11 verses. Mt 5:21-33 authority of old word vs authority of Jesus. Thin but contextually present."
+        },
+        {
+          "strongs_number": "G1413",
+          "status": "extracted_thin",
+          "status_note": "dunastēs - ruler/sovereign. 39 occ, 3 verses. VOLUME_LIMITATION. Lk 1:52; Act 8:27; 1Ti 6:15 only Sovereign King of kings. Thin but genuine."
+        },
+        {
+          "strongs_number": "G1414",
+          "status": "extracted_thin",
+          "status_note": "dunateō - to be powerful. 3 occ, 1 verse. 2Cor 13:3. Thin."
+        },
+        {
+          "strongs_number": "G1297",
+          "status": "extracted_thin",
+          "status_note": "diatagma - edict/decree. Heb 11:23. Single verse. Thin."
+        },
+        {
+          "strongs_number": "G4173",
+          "status": "extracted_thin",
+          "status_note": "politarchēs - city magistrate/authority. Act 17:6-8. Civil authority figure. Thin."
+        },
+        {
+          "strongs_number": "G4177",
+          "status": "extracted_thin",
+          "status_note": "politēs - citizen. Lk 19:14 citizens rejecting kingly authority. Citizenship as basis of rights/standing. Thin."
+        },
+        {
+          "strongs_number": "G4174",
+          "status": "extracted_thin",
+          "status_note": "politeia - citizenship/commonwealth. Act 22:28; Eph 2:12 alienated from commonwealth. Civic-authority standing. Thin."
+        },
+        {
+          "strongs_number": "G4176",
+          "status": "extracted_thin",
+          "status_note": "politeuō - live as citizen/conduct under polity governance. Phil 1:27; Act 23:1. Thin."
+        },
+        {
+          "strongs_number": "H3678H",
+          "status": "extracted_thin",
+          "status_note": "kissē - Hall of the Throne. 1Ki 7:7. Physical space of judicial authority. Thin."
+        },
+        {
+          "strongs_number": "H3678I",
+          "status": "extracted_thin",
+          "status_note": "kissē - throne: seat. 10 occ, 9 verses. Eli on seat; Est 3:1 throne. Seat as position of authority. Thin."
+        },
+        {
+          "strongs_number": "H3676",
+          "status": "extracted_thin",
+          "status_note": "kes - throne. Exo 17:16 only. Hand upon throne of Lord - oath-authority. Thin but high-value."
+        },
+        {
+          "strongs_number": "H4474",
+          "status": "extracted_thin",
+          "status_note": "mimshal - dominion/rule. Dan 11:3-5. Dominion of mighty king. Thin."
+        },
+        {
+          "strongs_number": "H4915B",
+          "status": "extracted_thin",
+          "status_note": "moshel - dominion. Dan 11:4; Zec 9:10 dominion from sea to sea. Thin."
+        },
+        {
+          "strongs_number": "H7986",
+          "status": "extracted_thin",
+          "status_note": "shalleteth - imperious/domineering. Eze 16:30 only. Imperious self-authority as negative moral portrait. PROCESS_DYNAMIC. Thin."
+        },
+        {
+          "strongs_number": "H7558",
+          "status": "extracted_thin",
+          "status_note": "rishyon - permission/authorization. Ezr 3:7 by permission of Cyrus. Delegated authority-permission. Thin."
+        },
+        {
+          "strongs_number": "H6488",
+          "status": "extracted_thin",
+          "status_note": "pequidut - oversight. Jer 37:13. Single verse. Thin."
+        },
+        {
+          "strongs_number": "H6485K",
+          "status": "extracted_thin",
+          "status_note": "paqad - missing/absent from post. 1Sa 20:6-27. Absence from appointed-place as accountability failure. Thin."
+        },
+        {
+          "strongs_number": "H6487",
+          "status": "extracted_thin",
+          "status_note": "piqqadon - deposit/thing entrusted. Gen 41:36; Lev 6:2-4. Breach of trust with deposit. Stewardship-authority dimension. Thin."
+        },
+        {
+          "strongs_number": "H3027W",
+          "status": "extracted_thin",
+          "status_note": "yad - hand: owner/under the hand of. 2Ki 8:20-22 Edom/Libnah revolted from under the hand (rule) of Judah. Dominion idiom. Thin."
+        },
+        {
+          "strongs_number": "H3027X",
+          "status": "extracted_thin",
+          "status_note": "yad - hand: swear/put hand under thigh. Gen 24:2,9; 47:29; 1Ch 29:24 pledged allegiance to king. Oath-taking gesture confirming authority-relationship. Thin."
+        },
+        {
+          "strongs_number": "H3709G",
+          "status": "extracted_thin",
+          "status_note": "kaph - palm of hand. 147 occ, 133 verses. Gen 40:11; Exo 9:29; 1Ki 8:22 spreading palms in prayer/blessing. Palm as instrument of blessing and priestly act. Thin authority dimension."
+        },
+        {
+          "strongs_number": "H4662H",
+          "status": "extracted_thin",
+          "status_note": "miphqad - appointment/muster/inspection. 2Sa 24:9; 1Ch 21:5 census results to king; 2Ch 31:13 overseers; Eze 43:21 appointed place. Administrative appointment-authority. Thin."
+        },
+        {
+          "strongs_number": "H7235A",
+          "status": "extracted_thin",
+          "status_note": "ravah - to multiply/increase. 242 occ, 211 verses. Gen 1:28 fruitful and multiply alongside dominion mandate. Primarily growth term but embedded in Gen 1:28 authority-mandate context with H7287A. Thin direct authority content."
+        },
+        {
+          "strongs_number": "H7236",
+          "status": "extracted_thin",
+          "status_note": "revah (Aramaic) - to grow great. Dan 4:11; 4:20; 4:22. Tree grew great = Nebuchadnezzar authority reaching heaven. Greatness-authority in Daniel."
+        },
+        {
+          "strongs_number": "H2627",
+          "status": "extracted_thin",
+          "status_note": "chassir (Aramaic) - lacking/found wanting. Dan 5:27 Tekel found deficient. Weighed and found lacking before God. Single high-value authority-accountability verse."
+        },
+        {
+          "strongs_number": "H4766",
+          "status": "extracted_thin",
+          "status_note": "marveh - abundance/greatness. Isa 9:7 of the increase of his government and peace no end. Expanding authority/dominion idiom. Thin."
+        },
+        {
+          "strongs_number": "H4768",
+          "status": "extracted_thin",
+          "status_note": "marbit - greatness/majority. 2Ch 9:6 half the greatness of your wisdom; 1Ch 12:29 majority kept allegiance. Greatness and allegiance-authority thin dimension."
+        },
+        {
+          "strongs_number": "H8623",
+          "status": "extracted_thin",
+          "status_note": "taqqiph - mighty/powerful. Ecc 6:10 man cannot dispute with one mightier. Might as superior authority. Thin."
+        }
+      ]
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "G0916",
+          "status": "delete",
+          "exclusion_reason": "bareō - to burden/weigh down. Verses: heavy eyes; hearts weighed down; ecclesiastical burden. No authority content. Bleed from burden family."
+        },
+        {
+          "strongs_number": "G0917",
+          "status": "delete",
+          "exclusion_reason": "bareōs - heavily/with difficulty. Mt 13:15; Acts 28:27. Hearing difficulty. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G0922",
+          "status": "delete",
+          "exclusion_reason": "baros - burden/weight. Gal 6:2; 2Cor 4:17; 1Th 2:6. Carrying burdens; weight of glory. Metaphorical weight not authority. Bleed."
+        },
+        {
+          "strongs_number": "G0925",
+          "status": "delete",
+          "exclusion_reason": "barunō - to weigh down. 0 verses. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G0926",
+          "status": "delete",
+          "exclusion_reason": "barus - weighty/heavy/burdensome. Mt 23:4 heavy burdens; 1Jo 5:3 not burdensome. Moral weight not authority. Bleed."
+        },
+        {
+          "strongs_number": "G0927",
+          "status": "delete",
+          "exclusion_reason": "barutimos - expensive/precious. Mt 26:7. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G1912",
+          "status": "delete",
+          "exclusion_reason": "epibareō - to burden. 2Cor 2:5; 1Th 2:9; 2Th 3:8. Paul not a burden. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G2599",
+          "status": "delete",
+          "exclusion_reason": "katabareō - to burden. 2Cor 12:16. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G0004",
+          "status": "delete",
+          "exclusion_reason": "abarēs - not burdensome. 2Cor 11:9. No authority content. Bleed from burden family."
+        },
+        {
+          "strongs_number": "G0101",
+          "status": "delete",
+          "exclusion_reason": "adunateō - be impossible. Mt 17:20; Lk 1:37. Impossibility. Negation of capacity not authority. Bleed via alpha-privative from dunamis."
+        },
+        {
+          "strongs_number": "G0102",
+          "status": "delete",
+          "exclusion_reason": "adunatos - unable/impossible. Mt 19:26; Rom 8:3. Impossibility consistently. Bleed."
+        },
+        {
+          "strongs_number": "G0536",
+          "status": "delete",
+          "exclusion_reason": "aparchē - firstfruits. Rom 8:23; 1Cor 15:20-23. Firstfruits of Spirit/resurrection. No authority content. Bleed via archē stem."
+        },
+        {
+          "strongs_number": "G0939",
+          "status": "delete",
+          "exclusion_reason": "basis - foot/base. Act 3:7 only (1 of 82 occ). Feet made strong. No authority content. Low ratio bleed."
+        },
+        {
+          "strongs_number": "G3166",
+          "status": "delete",
+          "exclusion_reason": "megalaucheō - boast greatly. 0 verses. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G6094",
+          "status": "delete",
+          "exclusion_reason": "aucheō - to boast. Jas 3:5. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "G2969",
+          "status": "delete",
+          "exclusion_reason": "kōmopolis - village/town. Mk 1:38. Geographical. No authority content. Bleed via polis stem."
+        },
+        {
+          "strongs_number": "G3390",
+          "status": "delete",
+          "exclusion_reason": "mētropolis - capital city. 0 verses. Geographical. No authority content. Bleed via polis stem."
+        },
+        {
+          "strongs_number": "G4724",
+          "status": "delete",
+          "exclusion_reason": "stellō - to avoid/withdraw. 2Cor 8:20; 2Th 3:6. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H4915A",
+          "status": "delete",
+          "exclusion_reason": "moshel - likeness/comparison. Job 41:33 no creature like Leviathan. Comparison sense of mashal. No authority content. Bleed within mashal family."
+        },
+        {
+          "strongs_number": "H4911A",
+          "status": "delete",
+          "exclusion_reason": "mashal - to liken/compare. Job 30:19; Ps 49:12-20; Isa 14:10. Comparison-likeness. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H4911B",
+          "status": "delete",
+          "exclusion_reason": "mashal - to use a proverb. Num 21:27; Eze 12:23; 16:44; 18:2. Proverb-speech. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H7287B",
+          "status": "delete",
+          "exclusion_reason": "radah - to scrape/tread grapes. Same verse-set as H7287A but grape-treading sub-gloss. No authority content in this sub-gloss. Bleed within radah family."
+        },
+        {
+          "strongs_number": "H3027I",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: themselves/reflexive. 78 occ. Verses: bringing gold from their hand; money in sacks; can afford. Reflexive/possessive instrumental use. No authority content. Bleed within yad family."
+        },
+        {
+          "strongs_number": "H3027J",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: by/through (instrumental preposition). 73 occ. Commandment by Moses; Lord spoke by Moses. Instrumental preposition use only. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027K",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: to/toward (directional). 70 occ. Submit to your mistress; handed to servants. Directional/preposition use. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027L",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: times/multiplier. Gen 43:34 five times; Dan 1:20 ten times. Numerical multiplier. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027M",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: monument/stele. Isa 56:5. Memorial/monument use. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027N",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: penis. Isa 57:8. Anatomical euphemism. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027O",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: tool/weapon-handle. Num 35:17-18. Object/tool. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027P",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: bank/side. Num 13:29; Ps 141:6. Geographical side. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027Q",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: spacious/room. Judg 18:10; Neh 7:4; Isa 22:18. Spacious land. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027T",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: expend/afford. Lev 5:11; 14:22; 27:8. Financial affordability idiom. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027U",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: undertake/set hand to. Deu 12:7; 15:10; 28:8. Endeavour idiom. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3027V",
+          "status": "delete",
+          "exclusion_reason": "yad - hand: certainly/assuredly. Pro 11:21; 16:5. Certainty idiom. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3709H",
+          "status": "delete",
+          "exclusion_reason": "kaph - sole of foot. Deu 2:5; 11:24; 28:35. Sole of foot treading. No authority content. Bleed within kaph family."
+        },
+        {
+          "strongs_number": "H3709I",
+          "status": "delete",
+          "exclusion_reason": "kaph - dish/bowl (tabernacle vessel). Exo 25:29; 37:16; Num 4:7. Temple vessel. No authority content. Bleed within kaph family."
+        },
+        {
+          "strongs_number": "H4662G",
+          "status": "delete",
+          "exclusion_reason": "miphqad - Muster Gate (toponym). Neh 3:31. Proper noun place name. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H7235B",
+          "status": "delete",
+          "exclusion_reason": "ravah - to shoot (arrows). Same verse-set as H7235A but archery sub-gloss. No authority content. Bleed within ravah family."
+        },
+        {
+          "strongs_number": "H8671",
+          "status": "delete",
+          "exclusion_reason": "teshii - ninth (ordinal). Already noted."
+        },
+        {
+          "strongs_number": "H8672",
+          "status": "delete",
+          "exclusion_reason": "tesha - nine. Already noted."
+        },
+        {
+          "strongs_number": "H8673",
+          "status": "delete",
+          "exclusion_reason": "tishim - ninety. Already noted."
+        },
+        {
+          "strongs_number": "H3658",
+          "status": "delete",
+          "exclusion_reason": "kinnor - lyre/harp. 42 occ. Musical instrument. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3672G",
+          "status": "delete",
+          "exclusion_reason": "Kinnereth - Sea of Galilee toponym. Geographical. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3677",
+          "status": "delete",
+          "exclusion_reason": "kese - full moon. Ps 81:3; Pro 7:20. Lunar calendar. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H3680",
+          "status": "delete",
+          "exclusion_reason": "kasah - to cover/conceal. 155 occ. Waters covered mountains; concealing; hiding. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H0697",
+          "status": "delete",
+          "exclusion_reason": "arbeh - locust. 24 occ. Plague locust; insect. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H4767",
+          "status": "delete",
+          "exclusion_reason": "mirbah - much/great quantity. Eze 23:32. Quantity. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H4932G",
+          "status": "delete",
+          "exclusion_reason": "mishneh - Second Quarter (Jerusalem toponym). 2Ki 22:14; Zep 1:10. Toponym. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8449",
+          "status": "delete",
+          "exclusion_reason": "tor - turtledove. 14 occ. Sacrificial bird. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8635",
+          "status": "delete",
+          "exclusion_reason": "tarbut - increase/brood. Num 32:14. Increase in sin. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8636",
+          "status": "delete",
+          "exclusion_reason": "tarbit - interest on money/usury. Lev 25:36; Eze 18:8. Financial interest. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8638",
+          "status": "delete",
+          "exclusion_reason": "tirgem - to translate. Ezr 4:7. Document translation. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8645",
+          "status": "delete",
+          "exclusion_reason": "tirzah - cypress tree. Isa 44:14. Tree species. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8650",
+          "status": "delete",
+          "exclusion_reason": "toren - mast of ship. Isa 30:17; 33:23; Eze 27:5. Ship mast. No authority content. Bleed."
+        },
+        {
+          "strongs_number": "H8655",
+          "status": "delete",
+          "exclusion_reason": "teraphim - household gods/idols. Gen 31:19; Judg 17:5; 1Sa 19:13. Cult objects. No authority content as primary sense. Bleed."
+        },
+        {
+          "strongs_number": "H8658",
+          "status": "delete",
+          "exclusion_reason": "tarshish - gemstone (beryl/jasper). Exo 28:20; Eze 1:16. Gemstone. No authority content. Bleed."
+        }
+      ]
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "records": [
+        {
+          "strongs_number": "H6485B",
+          "status": "candidate_delete",
+          "exclusion_reason": "pequdim - reckoning. Occ=1 but 88 verses in export matching H6485A verse-set. Possible sub-gloss contamination from H6485A. Researcher review recommended before confirming status."
+        },
+        {
+          "strongs_number": "H6485L",
+          "status": "candidate_delete",
+          "exclusion_reason": "paqad - to reckon: put. Occ=4 but 88 verses in export matching H6485A. Same contamination pattern as H6485B. Researcher review recommended."
+        },
+        {
+          "strongs_number": "H2635",
+          "status": "candidate_delete",
+          "exclusion_reason": "chasaph (Aramaic) - clay/pottery clay. Dan 2:33-43 iron and clay feet/toes of statue. Clay = material of weakness in divided kingdom symbol. Clay itself is not an authority term; the symbol containing it is. Researcher decision requested: include as part of Daniel authority imagery or delete as symbolic material."
+        }
+      ]
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-001",
+        "strongs_reference": "H3027G",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "yad - hand (general). 742 occ. Verse sample of 375 represents approximately 51% of occurrences. Authority and instrumental uses co-present; analysis cannot assume all occurrences are authority-register.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-002",
+        "strongs_reference": "H3027H",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "yad - hand: power. 585 occ. Verse sample of 278 represents approximately 48% of occurrences. Core authority idiom but sample is partial.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-003",
+        "strongs_reference": "G0758",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "archōn - ruler/prince. 617 occ. Verse sample of 36 represents approximately 6% of occurrences. HIGH_FREQUENCY_ANCHOR: sample is highly partial. Full analysis requires Phase 2 independent research on unsampled occurrences.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-004",
+        "strongs_reference": "G1411",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "dunamis - power. 579 occ. HIGH_FREQUENCY_ANCHOR. Verse sample of 107 represents approximately 18% of occurrences. Power-as-authority dimension requires full corpus coverage for synthesis conclusions.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-005",
+        "strongs_reference": "G0756",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "archomai - to rule/begin. 55 occ. ZERO verses in export. No verse data available for analysis. Phase 2 research required before synthesis conclusions can be drawn on this term.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 197,
+        "file_id": 218,
+        "flag_code": "VOLUME_LIMITATION",
+        "flag_label": "PH2-197-006",
+        "strongs_reference": "G1410",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "dunamai - to be able. 444 occ. Verse sample of 120 represents approximately 27% of occurrences. Capacity-authority dimension is present but sample partial.",
+        "session_raised": "Session B v4.2",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "schema_investigation_note",
+      "description": "WR-05: ID gap detected in wa_term_inventory between IDs 1472 and 2901 (gap of 1428 IDs). Reported by AUDIT run RUN-20260326_052421-AUDIT_WORD. Claude Code to investigate whether gap represents deleted records, a bulk-insert numbering skip, or schema anomaly. No action required unless data integrity is affected."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "schema_investigation_note",
+      "description": "WR-09: wa_file_index.testament_coverage is null for registry 197 file_id 218. Value should be both (OT: 2813 verses; NT: 764 verses). Claude Code to update if column is writable."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 197
+      },
+      "set": {
+        "session_b_status": "Pre-Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 13,
+    "bulk_update_extracted": 59,
+    "bulk_update_extracted_thin": 28,
+    "bulk_update_delete": 56,
+    "bulk_update_candidate_delete": 3,
+    "insert_research_flags": 6,
+    "schema_investigation_notes": 2,
+    "update_registry": 1
+  }
+}

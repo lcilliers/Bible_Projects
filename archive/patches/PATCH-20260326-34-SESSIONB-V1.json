@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-34-SESSIONB-V1",
+    "registry_id": 34,
+    "word": "covenant",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 34 (covenant). Sets session_b_status to Session B Complete. Also corrects the recurring applicator anomaly where update_registry in the PREANALYSIS patch left session_b_status as Pre-Analysis Complete rather than Analysis Complete. Session B analysis document produced: WA-34-covenant-analysis-20260326.docx. 18 working terms analysed across 6 parts. 5 research flags raised (PH2-34-001 through PH2-34-005). Programme-level HIGH priority flag: PH2-34-005 Phase 1 extraction anomaly (7,835 occurrences of grammatical function words incorrectly extracted)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 34,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — third instance confirmed (registries 98 and 34). The update_registry operation in PREANALYSIS patches is not being applied, leaving word_registry.session_b_status at Pre-Analysis Complete rather than Analysis Complete. patch_history shows patch_id=null and applied_at=null for both registries. This is a systemic engine logging and execution failure. Claude Code must investigate the patch applicator engine: (1) why update_registry ops in PREANALYSIS patches are not executing; (2) why patch_id and applied_at are not being written to patch_history; (3) confirm whether any other registries are affected. OP-001 in this patch corrects registry 34 status directly to Session B Complete."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 34 (covenant). Document: WA-34-covenant-analysis-20260326.docx. Working set: 18 terms (11 extracted, 7 extracted_thin). 31 deleted, 8 candidate_delete, 10 xref_peace. Key Phase 1 extraction anomaly corrected: 7 HFA function words reclassified delete. Research flags PH2-34-001 through PH2-34-005 raised. HIGH priority: PH2-34-005 Phase 1 extraction anomaly requires programme-wide audit."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

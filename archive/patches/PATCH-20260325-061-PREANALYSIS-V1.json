@@ -1,0 +1,1565 @@
+{
+  "patch_id": "PATCH-20260325-061-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 61,
+  "registry_word": "fear",
+  "file_id": 12,
+  "source_json_exported_at": "2026-03-25T05:40:37Z",
+  "patch_produced_at": "2026-03-25",
+  "patch_version": "1",
+  "description": "Pre-Session B term classification for fear (reg 61). Applies all extract, extract_thin, xref, delete, and candidate_delete confirmations established during pre-analysis. Covers: pre-analysis flags 1-4, Group J decisions, Group A genuine fear vocabulary (35 terms), Group B cross-registry terms (8 terms), Group C-I bleed deletions (~66 terms), and correction of G7949 candidate_delete->extracted_thin.",
+  "spec_reference": "FrameworkB-SessionB-PreAnalysis-Fear61-20260325.docx",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200B ra.ah \u2014 confirm delete. High-frequency anchor bleed. del_flag already set. Correcting mti status to match.",
+      "mti_id": 303,
+      "strongs_number": "H7200B",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "High-frequency anchor bleed. ra.ah root (to see) entered registry via STEP relatedNos. 425 verses all show 'God saw / they saw' content. No fear content. Pre-analysis flag 1.",
+        "status_note": "Confirmed delete by researcher 2026-03-25."
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5590 sa.ar \u2014 confirm delete. Storm/rage sub-gloss, not fear. del_flag already set.",
+      "mti_id": 300,
+      "strongs_number": "H5590",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Storm/tempest sub-gloss of sa.ar root. Not a fear term. Pre-analysis flag 3.",
+        "status_note": "Confirmed delete by researcher 2026-03-25."
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6343 pa.chad \u2014 promote to extracted. Pre-analysis flag 2 (partially applied; this term was missed). GOD_AS_SUBJECT=1, SOMATIC_INNER_LINK=1, 48 verses. 'Fear of Isaac' divine title (Gen 31:42).",
+      "mti_id": 1683,
+      "strongs_number": "H6343",
+      "transliteration": "pa.chad",
+      "set": {
+        "status": "extracted",
+        "status_note": "Pre-analysis flag 2 \u2014 unclassified genuine term with 48 verses. Promoted 2026-03-25."
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4116A ma.har [to hasten] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 299,
+      "strongs_number": "H4116A",
+      "transliteration": "ma.har",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "All 64 verses read. Temporal urgency only, no fear content. Pre-analysis flag 4."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4116B ma.har [to buy] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1737,
+      "strongs_number": "H4116B",
+      "transliteration": "ma.har",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Verse set shared from H4116A (brideprice, not fear)."
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4117 ma.har [to pay brideprice] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1741,
+      "strongs_number": "H4117",
+      "transliteration": "ma.har",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Brideprice vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4118A ma.her [quick] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1742,
+      "strongs_number": "H4118A",
+      "transliteration": "ma.her",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Adjectival speed, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4118B ma.her [quickly] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1739,
+      "strongs_number": "H4118B",
+      "transliteration": "ma.her",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Adverbial speed, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4120 me.he.rah [haste] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1738,
+      "strongs_number": "H4120",
+      "transliteration": "me.he.rah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Noun of haste, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4106 ma.hir [quick] \u2014 delete. ma.har/haste root family bleed.",
+      "mti_id": 1740,
+      "strongs_number": "H4106",
+      "transliteration": "ma.hir",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.har root bleed. Adjectival speed, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6344 pa.chad [thigh] \u2014 delete. Group J researcher decision.",
+      "mti_id": 1705,
+      "strongs_number": "H6344",
+      "transliteration": "pa.chad",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pa.chad root bleed. Anatomical 'thigh' \u2014 no fear content. Group J."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2119A za.chal [to crawl] \u2014 delete. Group J researcher decision.",
+      "mti_id": 1735,
+      "strongs_number": "H2119A",
+      "transliteration": "za.chal",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed from za.chal root. Physical movement, not inner state. Group J."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4656 miph.le.tset [horror] \u2014 delete. Group J researcher decision.",
+      "mti_id": 1718,
+      "strongs_number": "H4656",
+      "transliteration": "miph.le.tset",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Object-focus (Maacah's image 1Ki 15:13), not an inner fear state. Group J."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G7949 katafobos [fear] \u2014 correct from candidate_delete to extracted_thin. Signal 1 filter staged correctly; human decision is EXTRACT. kata+phobos compound = very afraid / filled with fear.",
+      "mti_id": 1707,
+      "strongs_number": "G7949",
+      "transliteration": "katafobos",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Genuine Greek fear compound (kata+phobos). 1 occurrence, no verses returned by STEP. Thin annotation. Corrected from candidate_delete 2026-03-25."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2865 cha.tat [to be dismayed] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1725,
+      "strongs_number": "H2865",
+      "transliteration": "cha.tat",
+      "set": {
+        "status": "extracted",
+        "status_note": "Primary OT term for inner collapse of courage. Shattered/dismayed/afraid. 46 verses confirmed."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7264 ra.gaz [to tremble] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1795,
+      "strongs_number": "H7264",
+      "transliteration": "ra.gaz",
+      "set": {
+        "status": "extracted",
+        "status_note": "Tremble/quake/be agitated. 40 verses confirmed. Cross-registry overlap with anger noted."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4422 ptoe\u014d [to frighten] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1690,
+      "strongs_number": "G4422",
+      "transliteration": "ptoe\u014d",
+      "set": {
+        "status": "extracted",
+        "status_note": "NT fear term. Passive: to be terrified, startled. 2 verses."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2851 chit.tit [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1727,
+      "strongs_number": "H2851",
+      "transliteration": "chit.tit",
+      "set": {
+        "status": "extracted",
+        "status_note": "Noun from cha.tat root. Direct terror vocabulary. 8 verses."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4288 me.chit.tah [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1726,
+      "strongs_number": "H4288",
+      "transliteration": "me.chit.tah",
+      "set": {
+        "status": "extracted",
+        "status_note": "Terror, dismay, object of terror. cha.tat family. 11 verses."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1629 ekfobe\u014d [to terrify] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1691,
+      "strongs_number": "G1629",
+      "transliteration": "ekfobe\u014d",
+      "set": {
+        "status": "extracted",
+        "status_note": "Compound ek+fobe\u014d. Direct fear vocabulary. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2844A chat [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1723,
+      "strongs_number": "H2844A",
+      "transliteration": "chat",
+      "set": {
+        "status": "extracted",
+        "status_note": "Fear, terror. Related to cha.tat root. 2 verses."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0366 a.yom [terrible] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1722,
+      "strongs_number": "H0366",
+      "transliteration": "a.yom",
+      "set": {
+        "status": "extracted",
+        "status_note": "Terrible, dreadful. Adjective for what is fearful/awe-inspiring. 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8175A sa.ar [to shudder] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1744,
+      "strongs_number": "H8175A",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "extracted",
+        "status_note": "Shudder, dread, bristle with horror. Distinct from H5590 sa.ar (storm, deleted). 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8178A sa.ar [shuddering] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1746,
+      "strongs_number": "H8178A",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "extracted",
+        "status_note": "Terror, horror. Noun from H8175A. 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7460 ra.ad [to tremble] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1793,
+      "strongs_number": "H7460",
+      "transliteration": "ra.ad",
+      "set": {
+        "status": "extracted",
+        "status_note": "To tremble, quake. Fear-trembling vocabulary. 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7461A ra.ad [trembling] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1792,
+      "strongs_number": "H7461A",
+      "transliteration": "ra.ad",
+      "set": {
+        "status": "extracted",
+        "status_note": "Trembling. Alternate form of re.a.dah H7461B (already extracted). 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7268 rag.gaz [quivering] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1797,
+      "strongs_number": "H7268",
+      "transliteration": "rag.gaz",
+      "set": {
+        "status": "extracted",
+        "status_note": "Trembling, quivering. From ra.gaz root. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7269 rog.zah [quivering] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1798,
+      "strongs_number": "H7269",
+      "transliteration": "rog.zah",
+      "set": {
+        "status": "extracted",
+        "status_note": "Trembling, quivering. From ra.gaz root. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2119B za.chal [to fear] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1734,
+      "strongs_number": "H2119B",
+      "transliteration": "za.chal",
+      "set": {
+        "status": "extracted",
+        "status_note": "Aramaic: to fear, be afraid. Explicit fear meaning. 2 verses."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8429 te.vah [be startled] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1733,
+      "strongs_number": "H8429",
+      "transliteration": "te.vah",
+      "set": {
+        "status": "extracted",
+        "status_note": "Aramaic: to be startled, alarmed. Fear/alarm vocabulary. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8557 te.mes [melting] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1755,
+      "strongs_number": "H8557",
+      "transliteration": "te.mes",
+      "set": {
+        "status": "extracted",
+        "status_note": "Dissolving, melting away. Somatic fear response; connects to H4549 ma.sas. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G6015 deos [fear] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1706,
+      "strongs_number": "G6015",
+      "transliteration": "deos",
+      "set": {
+        "status": "extracted",
+        "status_note": "Fear, reverence, awe. Some MSS at Heb 12:28. Textual variant note analytically significant. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2317 theosebeia [reverence for God] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1697,
+      "strongs_number": "G2317",
+      "transliteration": "theosebeia",
+      "set": {
+        "status": "extracted",
+        "status_note": "Noun form of G2318 theoseb\u0113s (already extracted). Fear-of-God vocabulary. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4637 ma.a.ra.tsah [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1776,
+      "strongs_number": "H4637",
+      "transliteration": "ma.a.ra.tsah",
+      "set": {
+        "status": "extracted",
+        "status_note": "Awful shock, crash, terror. From H6206 a.rats root. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6178 a.ruts [dreadful] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1777,
+      "strongs_number": "H6178",
+      "transliteration": "a.ruts",
+      "set": {
+        "status": "extracted",
+        "status_note": "Dreadful. Adjective from a.rats family. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8606 tiph.le.tset [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1720,
+      "strongs_number": "H8606",
+      "transliteration": "tiph.le.tset",
+      "set": {
+        "status": "extracted",
+        "status_note": "Shuddering, horror. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4426 pturomai [to frighten] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1692,
+      "strongs_number": "G4426",
+      "transliteration": "pturomai",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Cognate of G4422 ptoe\u014d. Passive: to be frightened/terrified. 1 occurrence, thin."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6184 a.rits [ruthless] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1775,
+      "strongs_number": "H6184",
+      "transliteration": "a.rits",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Terror-striking, awe-inspiring. Causative dimension \u2014 those who induce fear. 20 verses but thin annotation on fear-state reading."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3512A ka.ah [be disheartened] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1699,
+      "strongs_number": "H3512A",
+      "transliteration": "ka.ah",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "To be sad, cowed. Hiphil causes sadness/cowering. Fear-adjacent. 3 verses, thin."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3512B ka.eh [disheartened] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1700,
+      "strongs_number": "H3512B",
+      "transliteration": "ka.eh",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Be cowed. Adjective of ka.ah. 3 verses, thin."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8541 tim.ma.hon [bewilderment] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1732,
+      "strongs_number": "H8541",
+      "transliteration": "tim.ma.hon",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Astonishment, bewilderment, stupefaction under overwhelming threat. 2 verses, thin. PH2 note required."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8540 te.mah [wonder] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1731,
+      "strongs_number": "H8540",
+      "transliteration": "te.mah",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Wonder/awe. Cognate of H8539 ta.mah (already extracted). Awe register adjacent to reverential fear. 3 verses, thin."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2847 chit.tah [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1728,
+      "strongs_number": "H2847",
+      "transliteration": "chit.tah",
+      "set": {
+        "status": "extracted",
+        "status_note": "Gen 35:5 'a terror from God fell upon the cities'. cha.tat family. Clear fear content. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2849 chat.chat [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1729,
+      "strongs_number": "H2849",
+      "transliteration": "chat.chat",
+      "set": {
+        "status": "extracted",
+        "status_note": "Ecc 12:5 'terrors are in the way'. Reduplication form of chat root. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2866 cha.tat [terror] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1730,
+      "strongs_number": "H2866",
+      "transliteration": "cha.tat",
+      "set": {
+        "status": "extracted",
+        "status_note": "Job 6:21 'you see my calamity and are afraid'. Noun from cha.tat. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2844B chat [shattered] \u2014 extracted_thin. Group A genuine fear vocabulary.",
+      "mti_id": 1724,
+      "strongs_number": "H2844B",
+      "transliteration": "chat",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "1Sa 2:4 'bows of the mighty are broken'. Dismay/shattering register. 2 verses, thin."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6426 pa.lats [to shudder] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1719,
+      "strongs_number": "H6426",
+      "transliteration": "pa.lats",
+      "set": {
+        "status": "extracted",
+        "status_note": "Job 9:6 shaking/trembling. From pa.lats root; H6427 pal.la.tsut (shuddering) already extracted. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7578 re.tet [trembling] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1713,
+      "strongs_number": "H7578",
+      "transliteration": "re.tet",
+      "set": {
+        "status": "extracted",
+        "status_note": "Hos 13:1 'when Ephraim spoke, there was trembling'. Fear-trembling vocabulary. 1 verse."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1169 deilos [timid] \u2014 extracted. Group A genuine fear vocabulary.",
+      "mti_id": 1701,
+      "strongs_number": "G1169",
+      "transliteration": "deilos",
+      "set": {
+        "status": "extracted",
+        "status_note": "Mat 8:26 'why are you afraid, O you of little faith?' Base lemma form; G1169A (del_flagged) and G1169B (del_flagged) are sub-glosses. 12 occurrences, 3 verses."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7267 ro.gez [turmoil] \u2014 xref_anger. Group B cross-registry.",
+      "mti_id": 1794,
+      "strongs_number": "H7267",
+      "transliteration": "ro.gez",
+      "set": {
+        "status": "xref_anger",
+        "status_note": "CRL #46 confirmed. Turmoil/agitation overlaps fear but anger is primary registry."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1674 de.a.gah [anxiety] \u2014 xref_sorrow. Group B cross-registry.",
+      "mti_id": 1694,
+      "strongs_number": "H1674",
+      "transliteration": "de.a.gah",
+      "set": {
+        "status": "xref_sorrow",
+        "status_note": "CRL #43 confirmed. Primary analysis in sorrow/anxiety cluster."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6973 quts [to loathe] \u2014 xref_distress. Group B cross-registry.",
+      "mti_id": 1748,
+      "strongs_number": "H6973",
+      "transliteration": "quts",
+      "set": {
+        "status": "xref_distress",
+        "status_note": "CRL #44 confirmed. Primary analysis in distress registry."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6962 qut [to loathe] \u2014 xref_distress. Group B cross-registry.",
+      "mti_id": 1749,
+      "strongs_number": "H6962",
+      "transliteration": "qut",
+      "set": {
+        "status": "xref_distress",
+        "status_note": "Cognate of H6973. Same semantic field. Primary in distress."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2427A chil [agony] \u2014 xref_anguish. Group B cross-registry.",
+      "mti_id": 1787,
+      "strongs_number": "H2427A",
+      "transliteration": "chil",
+      "set": {
+        "status": "xref_anguish",
+        "status_note": "Writhing of fear/anguish. chul/chil family primary in anguish (CRL #45)."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2427B chi.lah [agony] \u2014 xref_anguish. Group B cross-registry.",
+      "mti_id": 1790,
+      "strongs_number": "H2427B",
+      "transliteration": "chi.lah",
+      "set": {
+        "status": "xref_anguish",
+        "status_note": "Alternate spelling of H2427A. Same reasoning."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2479 chal.cha.lah [anguish] \u2014 xref_anguish. Group B cross-registry.",
+      "mti_id": 1789,
+      "strongs_number": "H2479",
+      "transliteration": "chal.cha.lah",
+      "set": {
+        "status": "xref_anguish",
+        "status_note": "Pain, trembling, terror, writhing. Fear content present but anguish is primary registry."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342A chul [to twist: tremble] \u2014 xref_anguish. Group B cross-registry.",
+      "mti_id": 1778,
+      "strongs_number": "H2342A",
+      "transliteration": "chul",
+      "set": {
+        "status": "xref_anguish",
+        "status_note": "CRL #45. Cross-registry via chul root. Primary in anguish."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200I ra.ah [to see: behold!] \u2014 delete. Bleed term.",
+      "mti_id": 1758,
+      "strongs_number": "H7200I",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200H ra.ah [to see: examine] \u2014 delete. Bleed term.",
+      "mti_id": 1757,
+      "strongs_number": "H7200H",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200J ra.ah [to see: select] \u2014 delete. Bleed term.",
+      "mti_id": 1759,
+      "strongs_number": "H7200J",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200K ra.ah [to see: enjoy] \u2014 delete. Bleed term.",
+      "mti_id": 1760,
+      "strongs_number": "H7200K",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200L ra.ah [to see: seer] \u2014 delete. Bleed term.",
+      "mti_id": 1756,
+      "strongs_number": "H7200L",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200M ra.ah [to see: approach] \u2014 delete. Bleed term.",
+      "mti_id": 1761,
+      "strongs_number": "H7200M",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To see' sub-gloss. No fear content."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7200N ra.ah [Provider [God]] \u2014 delete. Bleed term.",
+      "mti_id": 1762,
+      "strongs_number": "H7200N",
+      "transliteration": "ra.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Divine name via ra.ah root, not a fear term."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7203A ro.eh [seer] \u2014 delete. Bleed term.",
+      "mti_id": 1765,
+      "strongs_number": "H7203A",
+      "transliteration": "ro.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Prophetic seer, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7203B ro.eh [vision] \u2014 delete. Bleed term.",
+      "mti_id": 1770,
+      "strongs_number": "H7203B",
+      "transliteration": "ro.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Prophetic vision, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7210 ro.i [sight] \u2014 delete. Bleed term.",
+      "mti_id": 1766,
+      "strongs_number": "H7210",
+      "transliteration": "ro.i",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Sight/spectacle, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7202 ra.eh [to see] \u2014 delete. Bleed term.",
+      "mti_id": 1769,
+      "strongs_number": "H7202",
+      "transliteration": "ra.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Participial 'seeing', no fear content."
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7209 re.i [mirror] \u2014 delete. Bleed term.",
+      "mti_id": 1771,
+      "strongs_number": "H7209",
+      "transliteration": "re.i",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Mirror, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7212 re.ut [sight] \u2014 delete. Bleed term.",
+      "mti_id": 1772,
+      "strongs_number": "H7212",
+      "transliteration": "re.ut",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Sight, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4758 mar.eh [appearance] \u2014 delete. Bleed term.",
+      "mti_id": 1763,
+      "strongs_number": "H4758",
+      "transliteration": "mar.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Visual appearance, no fear content. 82 propagated verses all 'beautiful in appearance' etc."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4759A mar.ah [vision] \u2014 delete. Bleed term.",
+      "mti_id": 1764,
+      "strongs_number": "H4759A",
+      "transliteration": "mar.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Prophetic vision, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4759B mar.ah [mirror] \u2014 delete. Bleed term.",
+      "mti_id": 1768,
+      "strongs_number": "H4759B",
+      "transliteration": "mar.ah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. Mirror, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7299 rev [appearance] \u2014 delete. Bleed term.",
+      "mti_id": 1767,
+      "strongs_number": "H7299",
+      "transliteration": "rev",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed (Aramaic). Appearance, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1481A gur [to sojourn] \u2014 delete. Bleed term.",
+      "mti_id": 1709,
+      "strongs_number": "H1481A",
+      "transliteration": "gur",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gur root family bleed. Sojourn/dwell, not fear. H1481C gur (to dread) is the legitimate extracted term."
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1481B gur [to quarrel] \u2014 delete. Bleed term.",
+      "mti_id": 1711,
+      "strongs_number": "H1481B",
+      "transliteration": "gur",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gur root family bleed. Quarrel sub-gloss, not fear."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H1616 ger [sojourner] \u2014 delete. Bleed term.",
+      "mti_id": 1708,
+      "strongs_number": "H1616",
+      "transliteration": "ger",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gur root family bleed. Sojourner/foreigner, no fear content. 83 propagated verses all sojourn context."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4033 ma.gor [sojourning] \u2014 delete. Bleed term.",
+      "mti_id": 1710,
+      "strongs_number": "H4033",
+      "transliteration": "ma.gor",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gur root family bleed. Sojourning place, distinct from H4032 ma.gor (terror, already extracted)."
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342I chul [to twist: writhe in pain] \u2014 delete. Bleed term.",
+      "mti_id": 1781,
+      "strongs_number": "H2342I",
+      "transliteration": "chul",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Pain/writhing sub-gloss. Primary in anguish registry."
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342J chul [to twist: dance] \u2014 delete. Bleed term.",
+      "mti_id": 1782,
+      "strongs_number": "H2342J",
+      "transliteration": "chul",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Dance sub-gloss, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342H chul [to twist: give birth] \u2014 delete. Bleed term.",
+      "mti_id": 1780,
+      "strongs_number": "H2342H",
+      "transliteration": "chul",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Birth/travail sub-gloss, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342K chul [to twist: anticipate] \u2014 delete. Bleed term.",
+      "mti_id": 1783,
+      "strongs_number": "H2342K",
+      "transliteration": "chul",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Wait/anticipate sub-gloss, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2342B chil [be firm] \u2014 delete. Bleed term.",
+      "mti_id": 1779,
+      "strongs_number": "H2342B",
+      "transliteration": "chil",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Firmness/strength sub-gloss, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4234 ma.chol [dance] \u2014 delete. Bleed term.",
+      "mti_id": 1788,
+      "strongs_number": "H4234",
+      "transliteration": "ma.chol",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Dance noun, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4246 me.cho.lah [dance] \u2014 delete. Bleed term.",
+      "mti_id": 1785,
+      "strongs_number": "H4246",
+      "transliteration": "me.cho.lah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root bleed. Dancing noun, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2426 chel [rampart] \u2014 delete. Bleed term.",
+      "mti_id": 1786,
+      "strongs_number": "H2426",
+      "transliteration": "chel",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul/che.lah root bleed. Rampart/fortress, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2430 che.lah [bulwark] \u2014 delete. Bleed term.",
+      "mti_id": 1791,
+      "strongs_number": "H2430",
+      "transliteration": "che.lah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul/che.lah root bleed. Bulwark, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8175B sa.ar [to storm] \u2014 delete. Bleed term.",
+      "mti_id": 1745,
+      "strongs_number": "H8175B",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.ar root bleed. Storm/sweep away sub-gloss. Distinct from H8175A (shudder, extracted)."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8178B sa.ar [storm] \u2014 delete. Bleed term.",
+      "mti_id": 1747,
+      "strongs_number": "H8178B",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.ar root bleed. Storm/tempest noun. Distinct from H8178A (shuddering/terror, extracted)."
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8175C sa.ar [to know] \u2014 delete. Bleed term.",
+      "mti_id": 1743,
+      "strongs_number": "H8175C",
+      "transliteration": "sa.ar",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.ar root bleed. Uncertain meaning; no fear content."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2304 theios [divine] \u2014 delete. Bleed term.",
+      "mti_id": 1685,
+      "strongs_number": "G2304",
+      "transliteration": "theios",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Abstract divinity, no fear content. Entered via G4576 sebomai relatedNos."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2299 thea [goddess] \u2014 delete. Bleed term.",
+      "mti_id": 1684,
+      "strongs_number": "G2299",
+      "transliteration": "thea",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Goddess, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2320 theot\u0113s [deity] \u2014 delete. Bleed term.",
+      "mti_id": 1688,
+      "strongs_number": "G2320",
+      "transliteration": "theot\u0113s",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Deity/godhead, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2313 theomache\u014d [to fight God] \u2014 delete. Bleed term.",
+      "mti_id": 1689,
+      "strongs_number": "G2313",
+      "transliteration": "theomache\u014d",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Fighting God, no fear content. Confirm candidate_delete -> delete."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2314 theomachos [opposing God] \u2014 delete. Bleed term.",
+      "mti_id": 1687,
+      "strongs_number": "G2314",
+      "transliteration": "theomachos",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Opposing God, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4574 sebasma [object of worship] \u2014 delete. Bleed term.",
+      "mti_id": 1696,
+      "strongs_number": "G4574",
+      "transliteration": "sebasma",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. Object of veneration, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4573 sebazomai [to worship] \u2014 delete. Bleed term.",
+      "mti_id": 1698,
+      "strongs_number": "G4573",
+      "transliteration": "sebazomai",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "theios family bleed. To worship/venerate, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2129 eulogia [praise] \u2014 delete. Bleed term.",
+      "mti_id": 1702,
+      "strongs_number": "G2129",
+      "transliteration": "eulogia",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Phonological bleed via eu- prefix. Praise/blessing, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2095 eu [well/well done!] \u2014 delete. Bleed term.",
+      "mti_id": 1703,
+      "strongs_number": "G2095",
+      "transliteration": "eu",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Phonological bleed via eu- prefix. Exclamation, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1620 ektith\u0113mi [to explain/expose] \u2014 delete. Bleed term.",
+      "mti_id": 1721,
+      "strongs_number": "G1620",
+      "transliteration": "ektith\u0113mi",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Phonological bleed via ek- prefix (cf. ekfobos). Expose/explain, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0112 atheos [without God] \u2014 delete. Bleed term.",
+      "mti_id": 1686,
+      "strongs_number": "G0112",
+      "transliteration": "atheos",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Indirect bleed via theomache\u014d chain. Godless, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0765 aseb\u0113s [ungodly] \u2014 delete. Bleed term.",
+      "mti_id": 1695,
+      "strongs_number": "G0765",
+      "transliteration": "aseb\u0113s",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed via sebomai antonym pathway. Ungodly/impious, not a fear term."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6346 pe.chah [governor] \u2014 delete. Bleed term.",
+      "mti_id": 1704,
+      "strongs_number": "H6346",
+      "transliteration": "pe.chah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "pa.chad root phonological bleed (pe.chah/pa.chad consonants). Governor, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4522 mas [taskworker] \u2014 delete. Bleed term.",
+      "mti_id": 1750,
+      "strongs_number": "H4522",
+      "transliteration": "mas",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ma.sas phonological bleed (mas/mas.sas). Taskworker, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4523 mas [despairing] \u2014 delete. Bleed term.",
+      "mti_id": 1752,
+      "strongs_number": "H4523",
+      "transliteration": "mas",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mas chain bleed from H4522. Despairing \u2014 sorrow-register, not fear. Primary in distress/sorrow."
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4185 mush [to remove] \u2014 delete. Bleed term.",
+      "mti_id": 1714,
+      "strongs_number": "H4185",
+      "transliteration": "mush",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mo.rah/mo.rag cluster bleed. To depart/remove, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2344 chol [sand] \u2014 delete. Bleed term.",
+      "mti_id": 1784,
+      "strongs_number": "H2344",
+      "transliteration": "chol",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chul root phonological bleed (chol/chul). Sand, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4171 mur [to change] \u2014 delete. Bleed term.",
+      "mti_id": 1715,
+      "strongs_number": "H4171",
+      "transliteration": "mur",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mo.rah/mo.rag cluster bleed. To change/exchange, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4531B mas.sah [trial] \u2014 delete. Bleed term.",
+      "mti_id": 1751,
+      "strongs_number": "H4531B",
+      "transliteration": "mas.sah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mas chain bleed. Testing/trial \u2014 distress-register, not fear."
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4531A mas.sah [despair] \u2014 delete. Bleed term.",
+      "mti_id": 1754,
+      "strongs_number": "H4531A",
+      "transliteration": "mas.sah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mas chain bleed from H4549. Despair \u2014 sorrow-register, not fear."
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8545 te.mu.rah [exchange] \u2014 delete. Bleed term.",
+      "mti_id": 1716,
+      "strongs_number": "H8545",
+      "transliteration": "te.mu.rah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mo.rah/mo.rag cluster bleed. Exchange/substitute, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4460 mam.me.gu.rot [granary] \u2014 delete. Bleed term.",
+      "mti_id": 1712,
+      "strongs_number": "H4460",
+      "transliteration": "mam.me.gu.rot",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gur->ger->me.gu.rah chain bleed. Granary/storehouse, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4530 mis.sat [payment] \u2014 delete. Bleed term.",
+      "mti_id": 1753,
+      "strongs_number": "H4530",
+      "transliteration": "mis.sat",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mas cluster bleed. Payment/sufficiency, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4173 mo.rag [threshing sled] \u2014 delete. Bleed term.",
+      "mti_id": 1717,
+      "strongs_number": "H4173",
+      "transliteration": "mo.rag",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "mo.rah/mo.rag cluster bleed. Agricultural implement, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3070 yir.eh [Provider [God]] \u2014 delete. Bleed term.",
+      "mti_id": 1773,
+      "strongs_number": "H3070",
+      "transliteration": "yir.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah/ya.re network bleed. Divine name YHWH-Yireh \u2014 'The LORD will provide'. Not a fear term. Confirm candidate_delete -> delete."
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0712 ar.gaz [box] \u2014 delete. Bleed term.",
+      "mti_id": 1796,
+      "strongs_number": "H0712",
+      "transliteration": "ar.gaz",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.gaz phonological bleed (ar.gaz/ra.gaz consonants). Box/chest/coffer, no fear content."
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2120 zo.che.let [Serpent's [Stone]] \u2014 delete. Bleed term.",
+      "mti_id": 1736,
+      "strongs_number": "H2120",
+      "transliteration": "zo.che.let",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "za.chal root bleed. Place name (location near En-rogel), no fear content."
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7207 ray.yah [to behold] \u2014 delete. Bleed term.",
+      "mti_id": 1774,
+      "strongs_number": "H7207",
+      "transliteration": "ray.yah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ra.ah root family bleed. 'To behold', no fear content. Confirm candidate_delete -> delete."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 118,
+    "set_to_delete": 73,
+    "set_to_extracted": 29,
+    "set_to_extracted_thin": 8,
+    "set_to_xref": 8,
+    "notes": [
+      "Groups C-I bleed deletions applied in bulk based on root-family analysis confirmed in pre-analysis.",
+      "All candidate_delete terms resolved: G2313->delete, G7949->extracted_thin, H3070->delete, H7207->delete.",
+      "H4172B mo.rah already corrected to extracted_thin in previous patch \u2014 not repeated here.",
+      "H3372H and H3373 already extracted in previous patch \u2014 not repeated here.",
+      "Terms with existing del_flag=1 (H7200B, H5590, H2844, H2119) have mti status updated to 'delete' for consistency.",
+      "After patch: ~86 extracted/extracted_thin, 8 xref, ~77 delete, 0 unresolved None-status in pre-analysis scope."
+    ]
+  }
+}

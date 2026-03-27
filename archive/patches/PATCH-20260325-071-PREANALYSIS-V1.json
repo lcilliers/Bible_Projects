@@ -1,0 +1,182 @@
+{
+  "patch_id": "PATCH-20260325-071-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 71,
+  "registry_word": "grief",
+  "file_id": 15,
+  "source_json_exported_at": "2026-03-25T05:48:41Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for grief (reg 71). Anchor verses already set (2Co 7:10; Mat 5:4) \u2014 confirmed after reading all 485 verses. Extracts 7 None-status terms with verse data: H7451C ra.ah (disaster/harm, 152v), G3076 lupe\u014d (to grieve, 21v), H3708B ka.a.s (vexation, 26v), H6087A a.tsav (to hurt, 15v), H3015 ya.gon (sorrow, 14v), H3511 ke.ev (pain, 6v), G3601 odun\u0113 (anguish, 2v). Reviews None-status terms without verses. Confirms candidate_delete for bleed terms.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7451C ra.ah [distress: harm] \u2192 extracted. Major OT distress/harm/disaster term. 152 verses. The ra.ah vocabulary covers th",
+      "mti_id": 1917,
+      "strongs_number": "H7451C",
+      "set": {
+        "status": "extracted",
+        "status_note": "Major OT distress/harm/disaster term. 152 verses. The ra.ah vocabulary covers the objective disaster/calamity that causes grief \u2014 it is the grievous circumstance rather than the inner response. Key uses: God 'relented from the ra.ah' (Exo 32:14; Jon 3:10; 4:2), suggesting ra.ah is the divinely-withh"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3076 lupe\u014d [to grieve] \u2192 extracted. THE primary NT grief verb. 56 occurrences, 21 verses. Covers: sorrow at loss (Ma",
+      "mti_id": 1918,
+      "strongs_number": "G3076",
+      "set": {
+        "status": "extracted",
+        "status_note": "THE primary NT grief verb. 56 occurrences, 21 verses. Covers: sorrow at loss (Mat 17:23 \u2014 disciples distressed at death prediction), sorrowful departure (Mat 19:22 \u2014 rich young man), Gethsemane grief (Mat 26:37 \u2014 Jesus 'sorrowful and troubled'), Paul's grief-causing letter (2Co 2:2-5), and criticall"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3708B ka.a.s [vexation] \u2192 extracted. Overlapping sub-gloss with H3708A ka.as (already extracted, 22v). Together they ",
+      "mti_id": 1922,
+      "strongs_number": "H3708B",
+      "set": {
+        "status": "extracted",
+        "status_note": "Overlapping sub-gloss with H3708A ka.as (already extracted, 22v). Together they form the ka.as/ka.a.s vexation cluster: grief as bitter aggravation and provocation. 1Sa 1:6-16 \u2014 Hannah's rival provoking her grievously; Hannah's 'great anxiety and vexation' (ka.a.s). Psa 6:7 \u2014 'my eye wastes away bec"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6087A a.tsav [to hurt] \u2192 extracted. Critical term: Gen 6:6 \u2014 'it grieved him (a.tsav) to his heart' \u2014 GOD GRIEVED at",
+      "mti_id": 1920,
+      "strongs_number": "H6087A",
+      "set": {
+        "status": "extracted",
+        "status_note": "Critical term: Gen 6:6 \u2014 'it grieved him (a.tsav) to his heart' \u2014 GOD GRIEVED at humanity's wickedness. This is the divine grief anchor for the entire registry. Also: Psa 78:40 \u2014 'they grieved him in the desert'; Isa 63:10 \u2014 'they rebelled and grieved his Holy Spirit' (a.tsav + ru.ach qad.sho \u2014 the "
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3015 ya.gon [sorrow] \u2192 extracted. Sorrow as the sustained inner state of grief. Gen 42:38, 44:31 \u2014 Jacob's 'grey h",
+      "mti_id": 1919,
+      "strongs_number": "H3015",
+      "set": {
+        "status": "extracted",
+        "status_note": "Sorrow as the sustained inner state of grief. Gen 42:38, 44:31 \u2014 Jacob's 'grey hairs brought down in sorrow to Sheol' \u2014 the most poignant grief-image in the patriarchal narrative. Jer 8:18 \u2014 'my joy is gone; grief (ya.gon) is upon me.' Isa 35:10; 51:11 \u2014 the eschatological promise: 'sorrow and sighi"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3511 ke.ev [pain] \u2192 extracted. Grief as bodily-felt pain. Job 2:13 \u2014 the seven-day silence before Job's pain, a",
+      "mti_id": 1921,
+      "strongs_number": "H3511",
+      "set": {
+        "status": "extracted",
+        "status_note": "Grief as bodily-felt pain. Job 2:13 \u2014 the seven-day silence before Job's pain, a benchmark for how to sit with those in ke.ev. Job 16:6 \u2014 'if I speak, my pain is not assuaged.' Psa 39:2 \u2014 'my distress grew worse' (ke.ev). Isa 65:14 \u2014 'cry out for pain of heart.' Jer 15:18 \u2014 'why is my pain unceasing"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3601 odun\u0113 [anguish] \u2192 extracted. Anguish as unceasing grief. Only 2 verses but both critical: Rom 9:2 \u2014 'I have g",
+      "mti_id": 1916,
+      "strongs_number": "G3601",
+      "set": {
+        "status": "extracted",
+        "status_note": "Anguish as unceasing grief. Only 2 verses but both critical: Rom 9:2 \u2014 'I have great sorrow and unceasing anguish (odun\u0113) in my heart' \u2014 Paul's grief over Israel. 1Ti 6:10 \u2014 'through this craving [for money] some have wandered away from the faith and pierced themselves with many pangs (odynais).' An"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H0060 e.vel [mourning] \u2192 extracted_thin. Noun form: mourning. 24 occurrences, 0 verses in export. Related to H0056 a.val ",
+      "strongs_number": "H0060",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Noun form: mourning. 24 occurrences, 0 verses in export. Related to H0056 a.val (to mourn) and H0057 a.vel (mourning). Adequately covered by H0056/H0057 verse analysis but the noun deserves registration."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4726 stenagmos [groan] \u2192 extracted_thin. Noun form of G4727 stenaz\u014d (already extracted, 6v). 23 occurrences. The groan as",
+      "strongs_number": "G4726",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Noun form of G4727 stenaz\u014d (already extracted, 6v). 23 occurrences. The groan as a communicative act \u2014 Act 7:34 (God heard Israel's groanings in Egypt). Rom 8:26 uses it for the Spirit's intercession."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3600 oduna\u014d [be anguished] \u2192 extracted_thin. Verbal form of G3601 odun\u0113 (extracted above). 12 occurrences. Luk 2:48 \u2014 parents",
+      "strongs_number": "G3600",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Verbal form of G3601 odun\u0113 (extracted above). 12 occurrences. Luk 2:48 \u2014 parents' anguish at losing Jesus; Luk 16:24,25 \u2014 Dives in torment. Act 20:38 \u2014 grieving at Paul's departure."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "bulk_update_none_to_delete",
+      "target_table": "wa_mti",
+      "description": "Set remaining None-status terms \u2192 delete. Bleed vocabulary: H7451I/A ra.ah sub-glosses (evil/bad \u2014 not grief-specific), H7489A ra.a (be evil), H6041 a.ni (poor/afflicted \u2014 primary in humility/anguish), H3707 ka.as (to provoke \u2014 primary in anger), H5999 a.mal (trouble/labour), H4751 mar (bitter \u2014 general bitter taste), H6035 a.nav (poor/humble \u2014 primary in humility), G5604 \u014ddin (birth labour), H7455 ro.a (evil), H6089A e.tsev (toil \u2014 root shared with H6094 ats.tse.vet already extracted), H6038 a.na.vah (gentleness \u2014 primary in humility registry).",
+      "filter": "registry_no=71 AND mti_status=None",
+      "exclusions": [
+        "H7451C",
+        "G3076",
+        "H3708B",
+        "H6087A",
+        "H3015",
+        "H3511",
+        "G3601",
+        "H0060",
+        "G4726",
+        "G3600"
+      ],
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Bleed vocabulary. See bulk note."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete \u2192 delete for 32 terms. Includes: H7451H/B ra sub-glosses (evil/bad general), H6031B a.nah (to afflict \u2014 primary in anguish/humility), H2470H/B/A cha.lah sub-glosses (ill/weak/beg \u2014 sickness vocabulary covered by H2470I grieved), H4753 mor (myrrh), H5998 a.mal (to toil), H7489B ra.a (to shatter), G7929 katastenaz\u014d (to groan \u2014 adequately covered by G4727 stenaz\u014d), H6001B a.mel (laborious), H4245B ma.cha.lah / H4251 ma.cha.luy (sickness), H4846 me.ro.rah (gall), H8563 tam.rur (bitterness \u2014 adequately covered by H4843 ma.rar).",
+      "filter": "registry_no=71 AND mti_status=candidate_delete",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Confirmed candidate_delete. Bleed or adequately covered by extracted terms."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 12,
+    "anchor_confirmed": "2Co 7:10 (primary \u2014 two-forms structure); Mat 5:4 (secondary \u2014 beatitude of grief)",
+    "new_extractions": [
+      "H7451C ra.ah (152v)",
+      "G3076 lupe\u014d (21v)",
+      "H3708B ka.a.s (26v)",
+      "H6087A a.tsav (15v)",
+      "H3015 ya.gon (14v)",
+      "H3511 ke.ev (6v)",
+      "G3601 odun\u0113 (2v)"
+    ],
+    "thin_extractions": [
+      "H0060 e.vel (0v)",
+      "G4726 stenagmos (0v)",
+      "G3600 oduna\u014d (0v)"
+    ],
+    "key_finding": "H6087A a.tsav \u2014 Gen 6:6 (God grieved) and Isa 63:10 (they grieved his Holy Spirit) \u2014 the divine grief anchor for the registry and the OT precedent for Eph 4:30 (do not grieve the Holy Spirit)."
+  }
+}

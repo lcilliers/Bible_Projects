@@ -1,0 +1,795 @@
+{
+  "patch_id": "PATCH-20260325-183-PREANALYSIS-V1",
+  "patch_type": "pre_session_b_classification",
+  "registry_no": 183,
+  "registry_word": "heart",
+  "file_id": 37,
+  "source_json_exported_at": "2026-03-25T05:44:38Z",
+  "patch_produced_at": "2026-03-25",
+  "description": "Pre-Session B classification for heart (reg 183). Sets anchor verse Pro 4:23. Extracts the two primary Hebrew heart terms H3820A lev and H3824 le.vav from None-status (the registry's most significant gap). Extracts H3825 (Aramaic le.vav, Daniel), H3826 lib.bah (poetic), H3823A la.vav (verbal \u2014 to captivate the heart), H3512A ka.ah (be disheartened), H3512B ka.eh (disheartened), H2243 chov (breast/bosom). Extracts G4697 splanchniz\u014d and G2293 tharse\u014d from None-status. Confirms candidate_delete for bleed terms. Flags H1079 bal as data anomaly for schema review.",
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "target_table": "wa_file_index",
+      "description": "Set anchor verse for heart registry. Pro 4:23 \u2014 'Keep your heart with all vigilance, for from it flow the springs of life.' The most comprehensive definitional statement about the heart in the corpus. Declares the heart as the source (ma.kor \u2014 spring/fountain) from which the whole of life flows. The command 'with all vigilance' (be.khol-mish.mar \u2014 above all guarding) positions the heart as the supreme object of the person's care. Covers all dimensions simultaneously: the cognitive heart, the volitional heart, the moral heart, and the relational heart all flow from this single declaration.",
+      "registry_no": 183,
+      "set": {
+        "anchor_verses": "Pro 4:23"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3820A lev [heart] \u2192 extracted. THE primary Hebrew heart term. 331 verses with refs. Covers the full semantic ra",
+      "strongs_number": "H3820A",
+      "set": {
+        "status": "extracted",
+        "status_note": "THE primary Hebrew heart term. 331 verses with refs. Covers the full semantic range: cognitive centre (lev as the seat of thought, planning, wisdom), moral centre (pure/evil/upright/deceitful heart), volitional centre (the heart that chooses, inclines, hardens), relational centre (hearts knit together, turned away, wholly given). Most concentrated in wisdom literature and Deuteronomic covenant vocabulary. Must be extracted as the registry's anchor term."
+      },
+      "mti_id": 1436,
+      "term_id": 501
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3824 le.vav [heart] \u2192 extracted. Variant/fuller form of lev. 236 verses with refs. Slightly more elevated registe",
+      "strongs_number": "H3824",
+      "set": {
+        "status": "extracted",
+        "status_note": "Variant/fuller form of lev. 236 verses with refs. Slightly more elevated register \u2014 predominates in covenant and theological statements: Deu 6:5 (love the Lord with all your le.vav), Deu 30:6 (circumcision of the heart), Jer 17:9 (the deceitful le.vav), Jer 31:33 (law written on the le.vav), Eze 36:26 (heart of stone \u2192 heart of flesh). The two forms lev and le.vav are functionally synonymous but le.vav appears more in elevated theological and covenantal contexts."
+      },
+      "mti_id": 1435,
+      "term_id": 499
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3826 lib.bah [heart] \u2192 extracted. Poetic variant/plural form. 7 verses, all in the Psalms and Proverbs. Psa 7:9, 1",
+      "strongs_number": "H3826",
+      "set": {
+        "status": "extracted",
+        "status_note": "Poetic variant/plural form. 7 verses, all in the Psalms and Proverbs. Psa 7:9, 125:4, Pro 15:11, 17:3, 21:2, 24:12 \u2014 all in contexts of God testing and weighing the hearts of people. Eze 16:30. The plural/intensive form intensifies the examination motif."
+      },
+      "mti_id": 1442,
+      "term_id": 498
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3825 le.vav [heart (Aramaic)] \u2192 extracted. Aramaic form of le.vav. 6 verses, all in Daniel. Dan 2:30, 4:16, 5:20-22, 7:4. C",
+      "strongs_number": "H3825",
+      "set": {
+        "status": "extracted",
+        "status_note": "Aramaic form of le.vav. 6 verses, all in Daniel. Dan 2:30, 4:16, 5:20-22, 7:4. Covers the heart in Babylonian court and apocalyptic contexts \u2014 Nebuchadnezzar's heart changed to a beast's heart, Belshazzar's unhumbled heart, Daniel's heart troubled by visions. Important for the cross-cultural scope of the heart vocabulary."
+      },
+      "mti_id": 1441,
+      "term_id": 500
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3823A la.vav [to captivate heart] \u2192 extracted. Verbal form of the lev root \u2014 to take the heart, captivate, encourage. 5 verses.",
+      "strongs_number": "H3823A",
+      "set": {
+        "status": "extracted",
+        "status_note": "Verbal form of the lev root \u2014 to take the heart, captivate, encourage. 5 verses. Song 4:9 (twice) \u2014 'you have captivated my heart, my sister, my bride; you have captivated my heart with one glance of your eyes.' The verbal action of the heart being seized in love. Also 2Sa 13:6 (Amnon's feigned illness to lure Tamar \u2014 the manipulation of the heart-captivation dynamic). Job 11:12 (the stupid man who gets understanding). The verb form shows the heart as capable of being acted upon from outside \u2014 the relational and vulnerable dimension."
+      },
+      "mti_id": 1444,
+      "term_id": 507
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3512A ka.ah [be disheartened] \u2192 extracted. To be disheartened, to become faint of heart. 4 verses. Psa 109:16 (the brokenhe",
+      "strongs_number": "H3512A",
+      "set": {
+        "status": "extracted",
+        "status_note": "To be disheartened, to become faint of heart. 4 verses. Psa 109:16 (the brokenhearted), Eze 13:22 (disheartening the righteous falsely), Dan 11:30 (being afraid and withdrawing). Already in fear registry \u2014 cross-registry shared term. The heart that loses courage, becomes faint. Important for the heart's volitional-courage dimension and its vulnerability to external attack."
+      },
+      "mti_id": 1699
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3512B ka.eh [disheartened] \u2192 extracted_thin. Adjectival form of ka.ah \u2014 disheartened. 0 verses in export. Adequately covered ",
+      "strongs_number": "H3512B",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Adjectival form of ka.ah \u2014 disheartened. 0 verses in export. Adequately covered by H3512A ka.ah analysis."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2243 chov [breast/heart] \u2192 extracted_thin. Job 31:33 \u2014 'if I have concealed my transgressions as others do by hiding my ini",
+      "strongs_number": "H2243",
+      "set": {
+        "status": "extracted_thin",
+        "status_note": "Job 31:33 \u2014 'if I have concealed my transgressions as others do by hiding my iniquity in my heart (chov).' The bosom/breast as a place of concealment \u2014 the innermost hidden dimension of the heart. 1 verse only. Contributes the concealment metaphor of the heart."
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4697 splanchniz\u014d [to pity/have compassion] \u2192 extracted.",
+      "strongs_number": "G4697",
+      "set": {
+        "status": "extracted",
+        "status_note": "Verbal form of G4698 splanchnon (already extracted). 12 occurrences, 0 verses in export. The compassion-movement verb \u2014 Jesus 'moved with compassion' (Mat 9:36, 14:14, 15:32, 20:34; Mar 1:41, 6:34, 8:2; Luk 7:13, 10:33, 15:20). Always describes the visceral movement of compassion in the Gospels. Shares the bowel/entrails root with splanchnon."
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2293 tharse\u014d [take heart] \u2192 extracted.",
+      "strongs_number": "G2293",
+      "set": {
+        "status": "extracted",
+        "status_note": "Imperative form of tharre\u014d (already extracted as G2292). 20 occurrences \u2014 Jesus's repeated command 'take heart' (tharsei/tharseo) in the Synoptics. Mat 9:2,22; Mat 14:27; Mar 6:50; Mar 10:49; Joh 16:33; Act 23:11. The divine address to the failing heart \u2014 parallel to the OT 'fear not' pattern. Extracted to capture the imperative register."
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "schema_investigation_note",
+      "target_table": "wa_mti",
+      "description": "H1079 bal [mind] (mti_id=586, term_id=506) \u2014 DATA ANOMALY. This term is currently extracted with 538 verses, but: (1) its verse_ref fields are all blank ('?'), (2) its verses appear to be a curated subset of the lev/levav pool, and (3) its strongs_number H1079 is the Aramaic word 'bal' (mind/heart in Daniel/Ezra contexts \u2014 only 1 occurrence listed but 538 verses present). Claude Code should investigate whether this term should be: (a) renamed/relinked to the primary lev strongs numbers, (b) retained as an aggregate reference set with status=reference_set, or (c) merged into H3820A/H3824. Do NOT delete \u2014 retain as extracted pending investigation. Session B analysis will use H3820A and H3824 as primary verse sources.",
+      "mti_id": 586,
+      "strongs_number": "H1079",
+      "transliteration": "bal",
+      "action": "investigate_only",
+      "set": {
+        "status_note": "DATA ANOMALY: 538 verses without refs held under Aramaic 'bal' strongs. Retain as extracted pending schema investigation. Primary lev analysis uses H3820A and H3824."
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "bulk_confirm_candidate_delete",
+      "target_table": "wa_mti",
+      "description": "Confirm candidate_delete status for 54 terms already flagged. Main bleed families: gin\u014dsk\u014d G1097 (824 occ \u2014 knowledge vocabulary entered via kardia+gn\u014dsis), eid\u014d G1492H/I (396+365 occ \u2014 same), ka.vod H3519 (200 occ \u2014 glory entered via 'weight on the heart'), qa.rav H7126G/H (168+112 occ \u2014 approach/offering entered via 'inner parts' qe.rev), na.vel H5035B (harp \u2014 bleed from na.vel/wither root), me.eh H4578 (belly \u2014 candidate review: see OP below), others. All correctly identified as bleed.",
+      "filter": "registry_no=183 AND mti_status=candidate_delete",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Session A relatedNos bleed confirmed in pre-analysis review. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H4578 me.eh [belly/inner parts] \u2014 DELETE from heart registry. Currently candidate_delete. me.eh (belly/womb/inner parts) entered via the qe.rev (inner parts) vocabulary. While me.eh does appear in emotional/inner contexts (Isa 16:11 \u2014 'my inner parts moan like a lyre for Moab'), its primary analysis belongs in the soul or compassion vocabulary. The heart registry's inner-parts dimension is adequately covered by H7130H qe.rev (extracted, 212 verses) and H2910 tu.chot (extracted). Delete from heart registry.",
+      "strongs_number": "H4578",
+      "transliteration": "me.eh",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Inner-parts vocabulary adequately covered by H7130H qe.rev and H2910 tu.chot. me.eh primary analysis in soul/compassion vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590G \u2014 delete (bleed). psuch\u0113 soul \u2014 None-status bleed from kardia+psuch\u0113 pairing. Primary in soul regi",
+      "strongs_number": "G5590G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "psuch\u0113 soul \u2014 None-status bleed from kardia+psuch\u0113 pairing. Primary in soul registry (reg 182)."
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6965B \u2014 delete (bleed). qum to arise \u2014 bleed. No heart content.",
+      "strongs_number": "H6965B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qum to arise \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2556G \u2014 delete (bleed). kakos evil \u2014 bleed from heart-is-evil vocabulary. No direct heart term.",
+      "strongs_number": "G2556G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "kakos evil \u2014 bleed from heart-is-evil vocabulary. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3627 \u2014 delete (bleed). ke.li article/utensil \u2014 bleed. No heart content.",
+      "strongs_number": "H3627",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ke.li article/utensil \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315G \u2014 delete (bleed). ne.phesh soul \u2014 None-status bleed. Primary in soul registry.",
+      "strongs_number": "H5315G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh soul \u2014 None-status bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315H \u2014 delete (bleed). ne.phesh soul:life \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5315H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh soul:life \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H7130G \u2014 delete (bleed). qe.rev among \u2014 bleed from H7130H (extracted). The preposition 'among' sub-gloss ",
+      "strongs_number": "H7130G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qe.rev among \u2014 bleed from H7130H (extracted). The preposition 'among' sub-gloss has no heart content."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8055 \u2014 delete (bleed). sa.mach to rejoice \u2014 bleed. Primary in joy registry.",
+      "strongs_number": "H8055",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.mach to rejoice \u2014 bleed. Primary in joy registry."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2451 \u2014 delete (bleed). chokh.mah wisdom \u2014 bleed via wisdom-in-heart vocabulary. Primary in wisdom regis",
+      "strongs_number": "H2451",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chokh.mah wisdom \u2014 bleed via wisdom-in-heart vocabulary. Primary in wisdom registry."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2450 \u2014 delete (bleed). cha.kham wise \u2014 bleed. Primary in wisdom registry.",
+      "strongs_number": "H2450",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.kham wise \u2014 bleed. Primary in wisdom registry."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1921 \u2014 delete (bleed). epigin\u014dsk\u014d to know \u2014 bleed from knowledge-of-heart vocabulary. No direct heart t",
+      "strongs_number": "G1921",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "epigin\u014dsk\u014d to know \u2014 bleed from knowledge-of-heart vocabulary. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315I \u2014 delete (bleed). ne.phesh: myself \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5315I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh: myself \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315J \u2014 delete (bleed). ne.phesh: person \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5315J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh: person \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8057 \u2014 delete (bleed). sim.chah joy \u2014 bleed. Primary in joy registry.",
+      "strongs_number": "H8057",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sim.chah joy \u2014 bleed. Primary in joy registry."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3513G \u2014 delete (bleed). ka.ved to honor \u2014 bleed from ka.ved/heavy root. Primary in other registries.",
+      "strongs_number": "H3513G",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ka.ved to honor \u2014 bleed from ka.ved/heavy root. Primary in other registries."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1108 \u2014 delete (bleed). gn\u014dsis knowledge \u2014 bleed. No direct heart term.",
+      "strongs_number": "G1108",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gn\u014dsis knowledge \u2014 bleed. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315L \u2014 delete (bleed). ne.phesh: appetite \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5315L",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh: appetite \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2095 \u2014 delete (bleed). eu well \u2014 bleed. No heart content.",
+      "strongs_number": "G2095",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "eu well \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590H \u2014 delete (bleed). psuch\u0113 soul:life \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G5590H",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "psuch\u0113 soul:life \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3515 \u2014 delete (bleed). ka.ved heavy \u2014 bleed. No heart content.",
+      "strongs_number": "H3515",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ka.ved heavy \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6965I \u2014 delete (bleed). qum to arise:establish \u2014 bleed. No heart content.",
+      "strongs_number": "H6965I",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qum to arise:establish \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6965J \u2014 delete (bleed). qum to arise:attack \u2014 bleed. No heart content.",
+      "strongs_number": "H6965J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qum to arise:attack \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1106 \u2014 delete (bleed). gn\u014dm\u0113 resolution \u2014 bleed. No direct heart term.",
+      "strongs_number": "G1106",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "gn\u014dm\u0113 resolution \u2014 bleed. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2449 \u2014 delete (bleed). cha.kham be wise \u2014 bleed. Primary in wisdom registry.",
+      "strongs_number": "H2449",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.kham be wise \u2014 bleed. Primary in wisdom registry."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1922 \u2014 delete (bleed). epign\u014dsis knowledge \u2014 bleed. No direct heart term.",
+      "strongs_number": "G1922",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "epign\u014dsis knowledge \u2014 bleed. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H8056 \u2014 delete (bleed). sa.me.ach glad \u2014 bleed. Primary in joy registry.",
+      "strongs_number": "H8056",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sa.me.ach glad \u2014 bleed. Primary in joy registry."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590J \u2014 delete (bleed). psuch\u0113:person \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G5590J",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "psuch\u0113:person \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2836A \u2014 delete (bleed). cha.shaq to desire \u2014 bleed. Primary in desire registry (already in CRL).",
+      "strongs_number": "H2836A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.shaq to desire \u2014 bleed. Primary in desire registry (already in CRL)."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2838 \u2014 delete (bleed). cha.shuq ring \u2014 bleed from cha.shaq root. No heart content.",
+      "strongs_number": "H2838",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.shuq ring \u2014 bleed from cha.shaq root. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G3642 \u2014 delete (bleed). oligopsuchos fainthearted \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G3642",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "oligopsuchos fainthearted \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3834 \u2014 delete (bleed). le.vi.vah cake \u2014 bleed from lev root. Food term. No heart content.",
+      "strongs_number": "H3834",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "le.vi.vah cake \u2014 bleed from lev root. Food term. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5314 \u2014 delete (bleed). na.phash be refreshed \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5314",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.phash be refreshed \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G1374 \u2014 delete (bleed). dipsuchos double-minded \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G1374",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "dipsuchos double-minded \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2473 \u2014 delete (bleed). isopsuchos like-minded \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G2473",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "isopsuchos like-minded \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3823B \u2014 delete (bleed). lib.bev to bake \u2014 bleed from la.vav/lev root. Cooking term. No heart content.",
+      "strongs_number": "H3823B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "lib.bev to bake \u2014 bleed from la.vav/lev root. Cooking term. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5315N \u2014 delete (bleed). ne.phesh: neck \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "H5315N",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "ne.phesh: neck \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6965K \u2014 delete (bleed). qum to arise:guard \u2014 bleed. No heart content.",
+      "strongs_number": "H6965K",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qum to arise:guard \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0674 \u2014 delete (bleed). apopsuch\u014d to faint \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G0674",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "apopsuch\u014d to faint \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0895 \u2014 delete (bleed). apsuchos lifeless \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G0895",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "apsuchos lifeless \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2174 \u2014 delete (bleed). eupsuche\u014d be glad \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G2174",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "eupsuche\u014d be glad \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4861 \u2014 delete (bleed). sumpsuchos harmonious \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G4861",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "sumpsuchos harmonious \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G5590K \u2014 delete (bleed). psuch\u0113:animal \u2014 bleed. Primary in soul registry.",
+      "strongs_number": "G5590K",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "psuch\u0113:animal \u2014 bleed. Primary in soul registry."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2245 \u2014 delete (bleed). cha.vav to love \u2014 bleed. Primary in love registry.",
+      "strongs_number": "H2245",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.vav to love \u2014 bleed. Primary in love registry."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2839 \u2014 delete (bleed). chish.shuq spoke (wheel) \u2014 bleed. No heart content.",
+      "strongs_number": "H2839",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chish.shuq spoke (wheel) \u2014 bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H6965A \u2014 delete (bleed). qa.ma Leb-kamai \u2014 place name bleed. No heart content.",
+      "strongs_number": "H6965A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "qa.ma Leb-kamai \u2014 place name bleed. No heart content."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2837 \u2014 delete (bleed). che.sheq desire \u2014 bleed. Primary in desire/love registry.",
+      "strongs_number": "H2837",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "che.sheq desire \u2014 bleed. Primary in desire/love registry."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G0056 \u2014 delete (bleed). agn\u014dsia ignorance \u2014 bleed. No direct heart term.",
+      "strongs_number": "G0056",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "agn\u014dsia ignorance \u2014 bleed. No direct heart term."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H2836B \u2014 delete (bleed). cha.shaq to connect \u2014 bleed. Primary in desire registry.",
+      "strongs_number": "H2836B",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "cha.shaq to connect \u2014 bleed. Primary in desire registry."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G4894 \u2014 delete (bleed). suneid\u014d be aware \u2014 bleed into conscience territory. Primary in conscience regist",
+      "strongs_number": "G4894",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "suneid\u014d be aware \u2014 bleed into conscience territory. Primary in conscience registry."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5034A \u2014 delete (bleed). na.val be senseless \u2014 bleed from na.vel/wither root. Primary in foolishness voca",
+      "strongs_number": "H5034A",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "na.val be senseless \u2014 bleed from na.vel/wither root. Primary in foolishness vocabulary."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H5317 \u2014 delete (bleed). no.phet honey \u2014 bleed. Primary in soul registry as phase2_enrichment.",
+      "strongs_number": "H5317",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "no.phet honey \u2014 bleed. Primary in soul registry as phase2_enrichment."
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "G2294 \u2014 delete (bleed). tharsos courage \u2014 bleed from tharre\u014d root (already extracted as G2292/G2293). Ad",
+      "strongs_number": "G2294",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "tharsos courage \u2014 bleed from tharre\u014d root (already extracted as G2292/G2293). Adequately covered."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_mti_status",
+      "target_table": "wa_mti",
+      "description": "H3629 kil.yah [kidney] \u2014 delete from heart registry. Primary analysis belongs in conscience registry (reg 26, already in CRL as SHARED_TERM). Jer 11:20 ('the Lord tests the heart and mind/kidneys') is the key verse. kil.yah in the inner-knowing/moral-examination vocabulary belongs to conscience not heart as a primary entry.",
+      "strongs_number": "H3629",
+      "transliteration": "kil.yah",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Primary analysis in conscience registry (reg 26). CRL: SHARED_TERM established. Heart registry sufficiently covered by lev/le.vav/kardia for the heart-testing dimension."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "bulk_confirm_delete_flagged",
+      "target_table": "wa_mti",
+      "description": "Confirm delete for 3 delete-flagged terms. These were already flagged for deletion in the export. Confirm and set status=delete.",
+      "filter": "registry_no=183 AND delete_flagged=1",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "Already delete-flagged in prior Session A/B review. Confirmed delete."
+      }
+    }
+  ],
+  "summary": {
+    "total_operations": 68,
+    "anchor_verse_set": "Pro 4:23",
+    "critical_extractions": [
+      "H3820A lev (heart, 331v) \u2014 THE primary Hebrew heart term, was None-status",
+      "H3824 le.vav (heart, 236v) \u2014 major variant form, was None-status",
+      "H3825 le.vav Aramaic (6v Daniel) \u2014 extracted",
+      "H3826 lib.bah poetic (7v) \u2014 extracted",
+      "H3823A la.vav verbal (5v) \u2014 extracted",
+      "H3512A ka.ah be-disheartened (4v) \u2014 extracted",
+      "G4697 splanchniz\u014d (0v in export) \u2014 extracted",
+      "G2293 tharse\u014d take-heart (0v in export) \u2014 extracted"
+    ],
+    "data_anomaly": "H1079 bal holds 538 verses without refs \u2014 investigate schema before merging or deleting",
+    "notes": [
+      "The heart registry had its two primary terms (lev/le.vav) in None-status \u2014 this is the most significant pre-analysis finding.",
+      "H1079 bal is a data anomaly requiring Claude Code investigation before action.",
+      "None-status bleed is extensive \u2014 49 terms set to delete, mostly soul/wisdom/joy/desire vocabulary that entered via the semantic overlap of those terms with heart vocabulary.",
+      "The active inventory post-patch: H1079+H3820A+H3824+H3825+H3826+H3823A+H3512A+H2243 (Hebrew) + kardia+splanchnon+tharre\u014d+tharse\u014d+ekkake\u014d+skl\u0113rokardia+kardiogn\u014dst\u0113s+eusplanchnos+G4697+G1457+G2155 and the heart-compound terms (Greek)."
+    ]
+  }
+}

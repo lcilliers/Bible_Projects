@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-126-SESSIONB-V1",
+    "registry_id": 126,
+    "word": "purpose",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4",
+    "session_b_status": "Session B Complete",
+    "description": "Session B completion patch for registry 126 (purpose). Sets session_b_status to Session B Complete, correcting the recurring applicator anomaly (fourth consecutive registry: 98, 34, 160, 126). Session B analysis document: WA-126-purpose-analysis-20260326.docx (479 paragraphs, 6 parts). 48 working terms analysed. 3 research flags active: PH2-126-000 HIGH extraction anomaly, PH2-126-001 and PH2-126-002 volume limitation. Key finding: purpose is primarily a divine attribute; human purposing operates within, against, or in alignment with prior divine purpose."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 126,
+      "set": {
+        "session_b_status": "Session B Complete"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "schema_investigation_note",
+      "description": "RECURRING APPLICATOR ANOMALY — fourth consecutive registry (98, 34, 160, 126). update_registry ops in PREANALYSIS patches continue to not execute. session_b_status remains Pre-Analysis Complete; patch_id and applied_at null. OP-001 corrects registry 126 directly to Session B Complete. Claude Code must resolve this before the next registry. Pattern confirmed: update_mti_status ops succeed; update_registry ops fail silently."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "registry_note",
+      "description": "Session B analysis complete for registry 126 (purpose). Document: WA-126-purpose-analysis-20260326.docx. Working set: 48 terms (32 extracted, 16 extracted_thin | Hebrew 27, Greek 21). Pre-analysis: single patch PREANALYSIS-V1 (216 ops). Most extensive bleed of any registry to date: davar family (10 sub-glosses), natan family (12 sub-glosses), avar family (6 sub-glosses) all removed. Also corrected H3820A lev (heart) cross-registry contamination. HIGH priority: PH2-126-000 extraction anomaly = fourth consecutive instance. Programme-wide audit urgently required (PH2-34-005)."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "update_registry": 1,
+    "schema_investigation_note": 1,
+    "registry_note": 1
+  }
+}

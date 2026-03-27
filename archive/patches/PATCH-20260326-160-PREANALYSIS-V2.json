@@ -1,0 +1,694 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260326-160-PREANALYSIS-V2",
+    "registry_id": 160,
+    "word": "thought",
+    "produced_date": "2026-03-26",
+    "produced_by": "Session B v4.4 pre-analysis",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Full pre-analysis completion patch for registry 160 (thought). Classifies all 63 remaining NULL terms: 39 extracted, 18 extracted_thin, 1 candidate_delete, 5 delete. Raises 2 PH2_VOLUME_LIMITATION research flags. Updates registry session_b_status to Analysis Complete. Full working set across both patches: 56 extracted, 18 extracted_thin, 5 candidate_delete, 169 delete, 0 xref."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0143",
+      "mti_term_id": 3374,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0275",
+      "mti_term_id": 3325,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G0514",
+      "mti_term_id": 3470,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1261",
+      "mti_term_id": 3390,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1270",
+      "mti_term_id": 3408,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1271",
+      "mti_term_id": 3366,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1760",
+      "mti_term_id": 3392,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1761",
+      "mti_term_id": 3391,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1771",
+      "mti_term_id": 3372,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G1963",
+      "mti_term_id": 3375,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3049",
+      "mti_term_id": 3410,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3053",
+      "mti_term_id": 3409,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3308",
+      "mti_term_id": 3323,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3309",
+      "mti_term_id": 3324,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3539",
+      "mti_term_id": 3368,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G3563",
+      "mti_term_id": 3367,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4305",
+      "mti_term_id": 3326,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G4307",
+      "mti_term_id": 3373,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5283",
+      "mti_term_id": 3376,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5424",
+      "mti_term_id": 3460,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5426",
+      "mti_term_id": 3493,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5427",
+      "mti_term_id": 3494,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5428",
+      "mti_term_id": 3495,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5429",
+      "mti_term_id": 3459,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "G5430",
+      "mti_term_id": 3461,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0534",
+      "mti_term_id": 3526,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0995",
+      "mti_term_id": 3528,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H0998",
+      "mti_term_id": 3532,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1843",
+      "mti_term_id": 3362,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1844",
+      "mti_term_id": 3361,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H1847",
+      "mti_term_id": 3358,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2031",
+      "mti_term_id": 3350,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2154",
+      "mti_term_id": 3378,
+      "set": {
+        "status": "candidate_delete"
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2161",
+      "mti_term_id": 3379,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2162",
+      "mti_term_id": 3380,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2803H",
+      "mti_term_id": 3335,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2803I",
+      "mti_term_id": 3334,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2803J",
+      "mti_term_id": 3336,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H2810",
+      "mti_term_id": 3338,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3045",
+      "mti_term_id": 3357,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H3982",
+      "mti_term_id": 3525,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4069",
+      "mti_term_id": 3359,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4093",
+      "mti_term_id": 3356,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4129",
+      "mti_term_id": 3364,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4130",
+      "mti_term_id": 3365,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4209",
+      "mti_term_id": 3377,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4284",
+      "mti_term_id": 3333,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4486",
+      "mti_term_id": 3363,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H4609A",
+      "mti_term_id": 3416,
+      "set": {
+        "status": "delete"
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5587A",
+      "mti_term_id": 3322,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H5587B",
+      "mti_term_id": 3321,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6245B",
+      "mti_term_id": 3445,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6246",
+      "mti_term_id": 3482,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H6250",
+      "mti_term_id": 3442,
+      "set": {
+        "status": "extracted_thin"
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7454",
+      "mti_term_id": 3453,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7476",
+      "mti_term_id": 3449,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7725N",
+      "mti_term_id": 3508,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7725O",
+      "mti_term_id": 3509,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7878",
+      "mti_term_id": 3446,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7879",
+      "mti_term_id": 3447,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H7881",
+      "mti_term_id": 3448,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8312",
+      "mti_term_id": 3320,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_mti_status",
+      "table": "mti_terms",
+      "strongs_number": "H8394",
+      "mti_term_id": 3531,
+      "set": {
+        "status": "extracted"
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 160,
+        "file_id": 189,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-160-002",
+        "strongs_reference": "G5428",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G5428 (understanding) — 39 occurrences, 2 verses in export (5% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions.",
+        "session_raised": "Session B v4.4",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 160,
+        "file_id": 189,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-160-003",
+        "strongs_reference": "G3053",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G3053 (thought) — 26 occurrences, 2 verses in export (8% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions.",
+        "session_raised": "Session B v4.4",
+        "raised_date": "2026-03-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "registry_no": 160,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 66,
+    "update_mti_status": 63,
+    "insert_research_flags": 2,
+    "update_registry": 1
+  }
+}
