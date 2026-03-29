@@ -1,0 +1,94 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260327-211-SESSIONB-V1",
+    "registry_id": 211,
+    "word": "being",
+    "produced_date": "2026-03-27",
+    "produced_by": "WA-SessionB-Analysis-Instruction-v5.1",
+    "session_b_status": "Analysis Complete",
+    "description": "Session B closing patch for registry 211 — being. Records analysis document filename. Writes evidential status notes to all 54 active terms. Sets session_b_status to Analysis Complete."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "registry_note",
+      "description": "Analysis document: wa-211-being-analysis-20260327.docx"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "bulk_update",
+      "table": "mti_terms",
+      "updates": [
+        { "mti_id": 4442, "strongs_number": "G0050", "evidential_status": "confirmed", "status_note": "Core contra-wisdom term. 21 verses. Ignorance as a correctable inner state; ranges from culpable (Rom 10:3) to involuntary (1 Tim 1:13) to pastoral prevention." },
+        { "mti_id": 4452, "strongs_number": "G0120", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Col 3:21). Discouragement as inner-being state produced by parental provocation. Thin data; connection plausible." },
+        { "mti_id": 4482, "strongs_number": "G0639", "evidential_status": "confirmed", "status_note": "Perplexity as inner-being state. 5 verses. 2 Cor 4:8 anchor: perplexed but not in despair." },
+        { "mti_id": 4444, "strongs_number": "G0662", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Rom 10:20). Bold speech; inner-being dimension present but thin." },
+        { "mti_id": 4491, "strongs_number": "G1167", "evidential_status": "confirmed", "status_note": "extracted_thin. 1 verse (2 Tim 1:7) but theologically dense: deilia explicitly named as a spirit the Spirit displaces. Confirmed despite thin data." },
+        { "mti_id": 4489, "strongs_number": "G1168", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Joh 14:27). Inner fear addressed by Jesus. PH2-211-004. Thin data." },
+        { "mti_id": 4490, "strongs_number": "G1169", "evidential_status": "confirmed", "status_note": "Cowardice as inner-being disposition. 3 verses including Rev 21:8 — most severe canonical statement. Jesus rebukes it as little faith (Mat 8:26, Mar 4:40)." },
+        { "mti_id": 4481, "strongs_number": "G1280", "evidential_status": "confirmed", "status_note": "Intensive perplexity. 5 verses. Consistently a response to divine action exceeding comprehension." },
+        { "mti_id": 4436, "strongs_number": "G2204", "evidential_status": "confirmed", "status_note": "Fervency in spirit. 2 verses. Inner spiritual intensity described as burning (Act 18:25; Rom 12:11)." },
+        { "mti_id": 4435, "strongs_number": "G2206", "evidential_status": "confirmed", "status_note": "Eager desire / zealous intensity. 11 verses. Double semantic range: earnest desire (positive) and jealousy (negative) — same inner force." },
+        { "mti_id": 4454, "strongs_number": "G2292", "evidential_status": "confirmed", "status_note": "Settled confidence. 6 verses. Pauline: confidence as disposition not dependent on circumstances (2 Cor 5:6-8)." },
+        { "mti_id": 4455, "strongs_number": "G2293", "evidential_status": "confirmed", "status_note": "Imparted courage. 7 verses. Six of seven are Jesus speaking directly: Take heart. Courage as imparted inner steadiness." },
+        { "mti_id": 4456, "strongs_number": "G2686", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Act 7:19). Shrewd/cunning disposition; here belonging to an oppressor. Inner-being connection plausible but thin." },
+        { "mti_id": 4469, "strongs_number": "G3471", "evidential_status": "confirmed", "status_note": "Becoming foolish. 4 verses. Rom 1:22 pivotal: claiming wisdom they became fools. Process of inner-being inversion." },
+        { "mti_id": 4470, "strongs_number": "G3474", "evidential_status": "confirmed", "status_note": "Foolish as character type. 12 verses. God chose the moros to shame the wise (1 Cor 1:27)." },
+        { "mti_id": 4445, "strongs_number": "G3954", "evidential_status": "confirmed", "status_note": "Boldness / confident openness. 31 verses. Acts (evangelical) and 1 John (before God on the day of judgment, grounded in perfected love). Most substantial boldness term." },
+        { "mti_id": 4447, "strongs_number": "G3955", "evidential_status": "confirmed", "status_note": "Bold proclamation. 9 verses. Parresia in action (Acts). Inner-being disposition expressed through speech." },
+        { "mti_id": 4457, "strongs_number": "G4678", "evidential_status": "confirmed", "status_note": "Wisdom. 49 verses. Two-wisdom contrast (James 3), Christ as wisdom (1 Cor 1:30), wisdom as Spirit-given capacity. Most substantial Greek wisdom term." },
+        { "mti_id": 4459, "strongs_number": "G4679", "evidential_status": "plausible", "status_note": "extracted_thin. 2 verses. Scriptures making wise for salvation (2 Tim 3:15). PH2-211-003. Thin data." },
+        { "mti_id": 4458, "strongs_number": "G4680", "evidential_status": "confirmed", "status_note": "Wise. 19 verses (PH2-211-002). God alone truly wise (Rom 16:27). Theological inversion of human wisdom." },
+        { "mti_id": 4465, "strongs_number": "G4704", "evidential_status": "confirmed", "status_note": "Diligent / make every effort. 11 verses. Committed inner disposition expressed in paraenetic contexts." },
+        { "mti_id": 4467, "strongs_number": "G4705", "evidential_status": "confirmed", "status_note": "Earnest. 2 verses. Character description of Titus (2 Cor 8:17, 22)." },
+        { "mti_id": 4466, "strongs_number": "G4710", "evidential_status": "confirmed", "status_note": "Diligence / earnestness. 12 verses. Inner quality of earnest commitment (2 Cor 7:11; Heb 6:11; 2 Pet 1:5)." },
+        { "mti_id": 4446, "strongs_number": "G5111", "evidential_status": "confirmed", "status_note": "Daring / be bold. 15 verses. The inner overcoming of restraint to act. Range from daring to ask to daring to die (Rom 5:7)." },
+        { "mti_id": 4448, "strongs_number": "G5112", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Rom 15:15). Comparative form; inner-being dimension present but thin." },
+        { "mti_id": 4449, "strongs_number": "G5113", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (2 Pet 2:10). Bold and willful as negative character type. Thin data." },
+        { "mti_id": 4453, "strongs_number": "G5187", "evidential_status": "confirmed", "status_note": "Puffed up / conceited. 3 verses. Pride as inflation; 1 Tim 3:6, 6:4, 2 Tim 3:4. Conceit as end-times character marker." },
+        { "mti_id": 4473, "strongs_number": "G5252", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Rom 12:3). Thinking too highly of oneself; sober judgment as the counter-disposition. Thin data." },
+        { "mti_id": 4440, "strongs_number": "G5308", "evidential_status": "confirmed", "status_note": "Haughty / proud (inner-being subset). 11 verses of 198 occ (PH2-211-001). Lk 16:15 anchor: what is exalted among men is abomination to God." },
+        { "mti_id": 4439, "strongs_number": "G5309", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (1 Tim 6:17). Arrogance disposition. Thin data." },
+        { "mti_id": 4441, "strongs_number": "G5424", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (1 Cor 14:20). Mind/thinking as inner capacity. PH2-211-005. Thin data but clarifies phroneo root." },
+        { "mti_id": 4474, "strongs_number": "G5426", "evidential_status": "confirmed", "status_note": "Set the mind / orientation of thinking. 19 verses. Mind set on flesh vs. Spirit (Rom 8:5); having the mind of Christ (Phil 2:5). Key inner-operations term." },
+        { "mti_id": 4451, "strongs_number": "G5431", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Tit 3:8). Inner attentiveness to good works. Thin data." },
+        { "mti_id": 4443, "strongs_number": "G6083", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (1 Cor 4:4). Self-awareness as inner capacity; self-assessment does not constitute acquittal. Thin data." },
+        { "mti_id": 4450, "strongs_number": "H1198", "evidential_status": "confirmed", "status_note": "Stupid / brutish. 5 verses. Inner incapacity to know; Psa 73:22 notable as self-assessment of prior brutish ignorance before God." },
+        { "mti_id": 4437, "strongs_number": "H1672", "evidential_status": "confirmed", "status_note": "Be anxious. 7 verses. Worried preoccupation distinguished from stark fear. Relational objects: person, outcome, enemy." },
+        { "mti_id": 4438, "strongs_number": "H1674", "evidential_status": "confirmed", "status_note": "Anxiety. 6 verses. Pro 12:25 anchor: anxiety weighs the heart down; good word lifts it. Body-inner interaction." },
+        { "mti_id": 4494, "strongs_number": "H2450", "evidential_status": "confirmed", "status_note": "Wise / chakam. 127 verses. Core Hebrew wisdom term. Enacted understanding: royal counsellor, craftsman, sage, moral exemplar. Wisdom is a formed inner capacity." },
+        { "mti_id": 4478, "strongs_number": "H2954", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Psa 119:70). Heart unfeeling like fat — insensitivity as inner state using bodily metaphor. Thin data." },
+        { "mti_id": 4471, "strongs_number": "H2974", "evidential_status": "confirmed", "status_note": "Be willing / content / pleased. 19 verses. Volitional inner disposition of acquiescence. Covers human willingness and divine pleasure." },
+        { "mti_id": 4462, "strongs_number": "H3512A", "evidential_status": "confirmed", "status_note": "Be disheartened. 3 verses. Eze 13:22 significant: false prophets disheartened the righteous — inner state produced by external agents." },
+        { "mti_id": 4463, "strongs_number": "H3512B", "evidential_status": "confirmed", "status_note": "Disheartened (adj). 3 verses. Same verses as H3512A." },
+        { "mti_id": 4475, "strongs_number": "H3665", "evidential_status": "confirmed", "status_note": "Be humble / subdued. 32 verses. Predominantly Ring 2. Humility as crisis-response posture when confronted by divine reality. 2 Ch 7:14 anchor." },
+        { "mti_id": 4472, "strongs_number": "H3688", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Jer 10:8). Stupidity in context of idol-worship. Thin data." },
+        { "mti_id": 4487, "strongs_number": "H6175", "evidential_status": "confirmed", "status_note": "Prudent / crafty — arum. 11 verses. Double semantic range: prudence (Proverbs positive) and craftiness (Gen 3:1 negative). Morally neutral capacity." },
+        { "mti_id": 4486, "strongs_number": "H6191", "evidential_status": "confirmed", "status_note": "Be shrewd — aram. 5 verses. Inner capacity for strategic perception." },
+        { "mti_id": 4488, "strongs_number": "H6195", "evidential_status": "confirmed", "status_note": "Craftiness / prudence — ormah. 5 verses. Noun form of aram. Positively: wisdom imparts ormah (Pro 1:4, 8:5, 8:12)." },
+        { "mti_id": 4485, "strongs_number": "H6349", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Gen 49:4). Recklessness as contra-character disposition. Thin data." },
+        { "mti_id": 4476, "strongs_number": "H6800A", "evidential_status": "confirmed", "status_note": "Walk humbly — tsana'. 1 verse (Mic 6:8). Rare; pivotal ethical summary. Retained." },
+        { "mti_id": 4477, "strongs_number": "H6800B", "evidential_status": "confirmed", "status_note": "Humble — tsanua'. 1 verse (Pro 11:2). Humility paired with wisdom." },
+        { "mti_id": 4483, "strongs_number": "H7672", "evidential_status": "plausible", "status_note": "extracted_thin. 1 verse (Dan 5:9). Perplexity at divine writing. Thin data." },
+        { "mti_id": 4479, "strongs_number": "H7696", "evidential_status": "confirmed", "status_note": "Be mad. 6 verses. Range: genuine madness (divine judgment), feigned madness (1 Sam 21), prophetic behaviour read as madness (Hos 9:7)." },
+        { "mti_id": 4480, "strongs_number": "H7697", "evidential_status": "confirmed", "status_note": "Madness. 3 verses. Deu 28:28: paired with blindness and confusion of mind as divine judgments." },
+        { "mti_id": 4464, "strongs_number": "H8382", "evidential_status": "uncertain", "status_note": "extracted_thin. 2 verses (Song 4:2; 6:6). Both verses describe physical twinning of sheep. No inner-being connection found in corpus. Retained on retention default. Researcher review recommended for delete." }
+      ]
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_registry",
+      "registry_no": 211,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Session B analysis complete for registry 211 — being. Narrative document: wa-211-being-analysis-20260327.docx."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "registry_note": 1,
+    "bulk_update_mti_terms": 54,
+    "update_registry": 1
+  }
+}

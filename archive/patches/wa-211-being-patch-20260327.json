@@ -1,0 +1,567 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260327-211-PREANALYSIS-V1",
+    "registry_id": 211,
+    "word": "being",
+    "produced_date": "2026-03-27",
+    "produced_by": "WA-SessionB-DataPrep-Instruction-v5.1",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis classification patch for registry 211 — being. 55 None-status terms classified. 4 candidate_delete terms confirmed delete. H7919B classified xref_wisdom (sub-gloss contamination: 61 verses belong to H7919A; wisdom to be analysed as separate registry). PH2_VOLUME_LIMITATION flags inserted for 5 low-coverage terms. update_registry final operation."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "H2450",
+      "term_inv_id": 4615,
+      "new_status": "extracted",
+      "description": "Core Hebrew wisdom term — wise (chakam). 127 verses. Primary registry vocabulary."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H6175",
+      "term_inv_id": 4608,
+      "new_status": "extracted",
+      "description": "Prudent — arum. 11 verses. Inner-being disposition: shrewdness/prudence."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H6191",
+      "term_inv_id": 4607,
+      "new_status": "extracted",
+      "description": "Be shrewd — aram. 5 verses. Inner-being disposition."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H6195",
+      "term_inv_id": 4609,
+      "new_status": "extracted",
+      "description": "Craftiness — ormah. 5 verses. Disposition/character quality."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "H2974",
+      "term_inv_id": 4592,
+      "new_status": "extracted",
+      "description": "Be willing — ya'al. 19 verses. Volitional inner-being disposition."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "H3665",
+      "term_inv_id": 4596,
+      "new_status": "extracted",
+      "description": "Be humble — kana'. 32 verses. Core inner disposition/character quality."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "H6800A",
+      "term_inv_id": 4597,
+      "new_status": "extracted",
+      "description": "Be humble — tsana'. 1 verse. Humility disposition."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "H6800B",
+      "term_inv_id": 4598,
+      "new_status": "extracted",
+      "description": "Humble — tsanua'. 1 verse. Humility disposition."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "H6349",
+      "term_inv_id": 4606,
+      "new_status": "extracted_thin",
+      "description": "Recklessness — pachaz. 1 verse. Inner-being disposition, thin data."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "H7919B",
+      "term_inv_id": 4605,
+      "new_status": "xref_wisdom",
+      "description": "Sub-gloss contamination: H7919B (to cross hands, 1 occurrence) carries 61 verses belonging to H7919A (sakhal — act wisely/prudently). All verse content is wisdom/prudence vocabulary. Classified xref_wisdom per researcher instruction — wisdom to be analysed as a separate registry. H7919A absent from this registry."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G4678",
+      "term_inv_id": 4578,
+      "new_status": "extracted",
+      "description": "Sophia — wisdom. 49 verses. Core Greek wisdom term."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G4680",
+      "term_inv_id": 4579,
+      "new_status": "extracted",
+      "description": "Sophos — wise. 19 verses (of 182 occ). PH2_VOLUME_LIMITATION flagged separately. Core Greek wisdom adjective."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G4679",
+      "term_inv_id": 4580,
+      "new_status": "extracted_thin",
+      "description": "Sophizo — to make wise. 2 verses (of 14 occ). PH2_VOLUME_LIMITATION flagged separately. Thin data."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G5426",
+      "term_inv_id": 4595,
+      "new_status": "extracted",
+      "description": "Phroneo — to reason/think/set the mind. 19 verses. Inner operations — cognitive/dispositional."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "G5424",
+      "term_inv_id": 4562,
+      "new_status": "extracted_thin",
+      "description": "Phren — thinking/mind. 1 verse (of 12 occ). PH2_VOLUME_LIMITATION flagged separately. Thin data."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "G3474",
+      "term_inv_id": 4591,
+      "new_status": "extracted",
+      "description": "Moros — foolish. 12 verses. Contra-disposition; inner-being character quality."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "G3471",
+      "term_inv_id": 4590,
+      "new_status": "extracted",
+      "description": "Moraino — be foolish/become insipid. 4 verses. Contra-disposition."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "G0050",
+      "term_inv_id": 4563,
+      "new_status": "extracted",
+      "description": "Agnoeo — be ignorant. 21 verses. Ignorance as inner-being state; contra-wisdom."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "H1198",
+      "term_inv_id": 4571,
+      "new_status": "extracted",
+      "description": "Ba'ar — stupid/brutish. 5 verses. Inner-being disposition: stupidity/ignorance."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "H3688",
+      "term_inv_id": 4593,
+      "new_status": "extracted_thin",
+      "description": "Kasal — be stupid. 1 verse. Contra-wisdom disposition, thin data."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "H2954",
+      "term_inv_id": 4599,
+      "new_status": "extracted_thin",
+      "description": "Taphash — be insensitive/dull. 1 verse. Inner-being state, thin data."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "G3954",
+      "term_inv_id": 4566,
+      "new_status": "extracted",
+      "description": "Parresia — boldness/confidence/freedom of speech. 31 verses. Core inner-being disposition."
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "G5111",
+      "term_inv_id": 4567,
+      "new_status": "extracted",
+      "description": "Tolmao — be bold/dare. 15 verses. Inner-being disposition."
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "G3955",
+      "term_inv_id": 4568,
+      "new_status": "extracted",
+      "description": "Parresiaomai — speak boldly/preach boldly. 9 verses. Boldness in action."
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_mti_status",
+      "strongs_number": "G5112",
+      "term_inv_id": 4569,
+      "new_status": "extracted_thin",
+      "description": "Tolmerotos — more boldly. 1 verse. Comparative form, thin data."
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_mti_status",
+      "strongs_number": "G5113",
+      "term_inv_id": 4570,
+      "new_status": "extracted_thin",
+      "description": "Tolmetes — bold man. 1 verse. Character noun, thin data."
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_mti_status",
+      "strongs_number": "G0662",
+      "term_inv_id": 4565,
+      "new_status": "extracted_thin",
+      "description": "Apotolmao — be bold/dare greatly. 1 verse. Intensive form of tolmao, thin data."
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_mti_status",
+      "strongs_number": "G2292",
+      "term_inv_id": 4575,
+      "new_status": "extracted",
+      "description": "Tharrheo — be confident/courageous. 6 verses. Inner-being disposition."
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_mti_status",
+      "strongs_number": "G2293",
+      "term_inv_id": 4576,
+      "new_status": "extracted",
+      "description": "Tharseo — take heart/be of good cheer. 7 verses. Inner-being disposition."
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_mti_status",
+      "strongs_number": "G6083",
+      "term_inv_id": 4564,
+      "new_status": "extracted_thin",
+      "description": "Sunoida — be conscious of/aware. 1 verse. Inner-being self-awareness, thin data."
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_mti_status",
+      "strongs_number": "G2204",
+      "term_inv_id": 4557,
+      "new_status": "extracted",
+      "description": "Zeo — be fervent/burn (in spirit). 2 verses. Inner spiritual intensity."
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_mti_status",
+      "strongs_number": "G4704",
+      "term_inv_id": 4586,
+      "new_status": "extracted",
+      "description": "Spoudazo — be eager/diligent. 11 verses. Inner-being disposition."
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_mti_status",
+      "strongs_number": "G4705",
+      "term_inv_id": 4588,
+      "new_status": "extracted",
+      "description": "Spoudaios — eager/earnest. 2 verses. Disposition adjective."
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_mti_status",
+      "strongs_number": "G4710",
+      "term_inv_id": 4587,
+      "new_status": "extracted",
+      "description": "Spoude — diligence/eagerness/haste. 12 verses. Inner-being disposition and character quality."
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_mti_status",
+      "strongs_number": "G1169",
+      "term_inv_id": 4611,
+      "new_status": "extracted",
+      "description": "Deilos — timid/cowardly. 3 verses. Contra-boldness disposition."
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_mti_status",
+      "strongs_number": "G1167",
+      "term_inv_id": 4612,
+      "new_status": "extracted_thin",
+      "description": "Deilia — timidity/cowardice. 1 verse. Disposition noun, thin data."
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_mti_status",
+      "strongs_number": "G1168",
+      "term_inv_id": 4610,
+      "new_status": "extracted_thin",
+      "description": "Deiliao — be timid/afraid. 1 verse (of 13 occ). PH2_VOLUME_LIMITATION flagged separately. Thin data."
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_mti_status",
+      "strongs_number": "G0120",
+      "term_inv_id": 4573,
+      "new_status": "extracted_thin",
+      "description": "Athumeo — be discouraged/despondent. 1 verse. Inner-being state, thin data."
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_mti_status",
+      "strongs_number": "G8485",
+      "term_inv_id": 4589,
+      "new_status": "candidate_delete",
+      "description": "Oligopsuchos — faint-hearted. 0 verses in export despite 7 occurrences. No verse data available for classification. Candidate delete — researcher decision required."
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_mti_status",
+      "strongs_number": "G5308",
+      "term_inv_id": 4561,
+      "new_status": "extracted",
+      "description": "Hupselos — high/haughty. 11 verses (of 198 occ — 5.6% ratio). PH2_VOLUME_LIMITATION flagged separately. The 11 verses are the inner-being subset: proud/haughty disposition."
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_mti_status",
+      "strongs_number": "G5309",
+      "term_inv_id": 4560,
+      "new_status": "extracted_thin",
+      "description": "Hupselophroneo — be arrogant/high-minded. 1 verse. Arrogance disposition, thin data."
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_mti_status",
+      "strongs_number": "G5252",
+      "term_inv_id": 4594,
+      "new_status": "extracted_thin",
+      "description": "Huperphroneo — be haughty/think more highly of oneself. 1 verse. Pride disposition, thin data."
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_mti_status",
+      "strongs_number": "G5187",
+      "term_inv_id": 4574,
+      "new_status": "extracted",
+      "description": "Tuphoo — be conceited/puffed up. 3 verses. Arrogance/pride as inner disposition."
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_mti_status",
+      "strongs_number": "H1672",
+      "term_inv_id": 4558,
+      "new_status": "extracted",
+      "description": "Da'ag — be anxious/fearful. 7 verses. Inner-being state of anxiety."
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_mti_status",
+      "strongs_number": "H1674",
+      "term_inv_id": 4559,
+      "new_status": "extracted",
+      "description": "De'agah — anxiety/care/sorrow. 6 verses. Inner-being state."
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_mti_status",
+      "strongs_number": "H3512A",
+      "term_inv_id": 4583,
+      "new_status": "extracted",
+      "description": "Ka'ah — be disheartened/discouraged. 3 verses. Inner-being disposition of discouragement."
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_mti_status",
+      "strongs_number": "H3512B",
+      "term_inv_id": 4584,
+      "new_status": "extracted",
+      "description": "Ke'eh — disheartened. 3 verses. Adjectival form of H3512A."
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_mti_status",
+      "strongs_number": "H7696",
+      "term_inv_id": 4600,
+      "new_status": "extracted",
+      "description": "Shaga' — be mad/insane. 6 verses. Inner-being disorder state."
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_mti_status",
+      "strongs_number": "H7697",
+      "term_inv_id": 4601,
+      "new_status": "extracted",
+      "description": "Shigga'on — madness. 3 verses. Inner-being disorder noun."
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_mti_status",
+      "strongs_number": "G0639",
+      "term_inv_id": 4603,
+      "new_status": "extracted",
+      "description": "Aporeo — be perplexed/at a loss. 5 verses. Inner-being state of perplexity."
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_mti_status",
+      "strongs_number": "G1280",
+      "term_inv_id": 4602,
+      "new_status": "extracted",
+      "description": "Diaporeo — be greatly perplexed. 5 verses. Intensive form of aporeo."
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_mti_status",
+      "strongs_number": "H7672",
+      "term_inv_id": 4604,
+      "new_status": "extracted_thin",
+      "description": "Shevash — be perplexed/troubled. 1 verse. Thin data."
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_mti_status",
+      "strongs_number": "G2686",
+      "term_inv_id": 4577,
+      "new_status": "extracted_thin",
+      "description": "Katasophizomai — be cunning/deal craftily with. 1 verse. Thin data; inner-being disposition at boundary with conduct."
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_mti_status",
+      "strongs_number": "H8382",
+      "term_inv_id": 4585,
+      "new_status": "extracted_thin",
+      "description": "Ta'am — be double/twin. 2 verses (Gen 25:24, Gen 38:27). Scope uncertain — physical twinning rather than inner-being. Retained pending cross-registry review. Assumption: retained on retention default — confirm with researcher."
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_mti_status",
+      "strongs_number": "G5431",
+      "term_inv_id": 4572,
+      "new_status": "extracted_thin",
+      "description": "Phrontizo — be careful/take thought. 1 verse. Inner concern/attentiveness, thin data."
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "bulk_confirm_candidate_delete",
+      "term_inv_ids": [4582, 4581, 4613, 4614],
+      "strongs_numbers": ["G6023", "G6185", "G6629", "G6656"],
+      "new_status": "delete",
+      "description": "Researcher confirmed delete all 4 candidate_delete terms. All NO_VERSES: G6023 (be discouraged, 0 occ), G6185 (be discouraged, 3 occ, 0 verses), G6629 (be unwise, 1 occ, 0 verses), G6656 (be weighed down, 2 occ, 0 verses). No verse data available for analysis."
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 211,
+        "file_id": 237,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-211-001",
+        "strongs_reference": "G5308",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G5308 hupselos: 198 occurrences but only 11 verses in export (5.6% ratio). Inner-being subset (proud/haughty) is a small fraction of total usage. Analysis based on 11 verses only.",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 211,
+        "file_id": 237,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-211-002",
+        "strongs_reference": "G4680",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G4680 sophos: 182 occurrences but only 19 verses in export (10.4% ratio). Analysis based on 19 verses only.",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 211,
+        "file_id": 237,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-211-003",
+        "strongs_reference": "G4679",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "G4679 sophizo: 14 occurrences but only 2 verses in export (14.3% ratio). Thin data.",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 211,
+        "file_id": 237,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-211-004",
+        "strongs_reference": "G1168",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "G1168 deiliao: 13 occurrences but only 1 verse in export (7.7% ratio). Thin data.",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 211,
+        "file_id": 237,
+        "flag_code": "PH2_VOLUME_LIMITATION",
+        "flag_label": "PH2-211-005",
+        "strongs_reference": "G5424",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "G5424 phren: 12 occurrences but only 1 verse in export (8.3% ratio). Thin data.",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_registry",
+      "registry_no": 211,
+      "set": {
+        "session_b_status": "Pre-Analysis Complete"
+      },
+      "description": "Term classifications applied — registry 211 being ready for Session B analysis."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 62,
+    "update_mti_status": 56,
+    "bulk_confirm_candidate_delete": 1,
+    "insert_research_flags": 5,
+    "update_registry": 1
+  }
+}

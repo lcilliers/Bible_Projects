@@ -1,19 +1,21 @@
 # CLAUDE.md — Claude Code Project Reference
 
-> Auto-generated 2026-03-24 by Claude Code after full codebase exploration.
+> Auto-generated 2026-03-24; updated 2026-03-28 for v5.1/v5.2 document architecture.
 > This file is read by Claude Code at the start of every conversation.
 
 ---
 
 ## 1. What This Project Is
 
-A structured academic Bible research platform centred on **~211 English words** (anger, love, soul, peace, etc.) describing the **inner life of mankind**. Each word maps to Hebrew (OT) and Greek (NT) terms via Strong's numbers. The system captures occurrence data, verse records, parse analysis, semantic flags, and cross-registry links — all in a relational SQLite database processed by a custom Python automation engine.
+A structured academic Bible research platform centred on **~212 English words** (anger, love, soul, peace, etc.) describing the **inner life of mankind**. Each word maps to Hebrew (OT) and Greek (NT) terms via Strong's numbers. The system captures occurrence data, verse records, parse analysis, semantic flags, and cross-registry links — all in a relational SQLite database processed by a custom Python automation engine.
 
 **Owner:** le Roux Cilliers (leRoux) — sole researcher, ultimate authority on scope and methodology.
 
 **AI roles:**
-- **Claude Code** — coding, database operations, engine development, data patching
-- **Claude.ai** — analysis, synthesis, meaning extraction, flag assessment, articulation
+- **Claude Code** — database engine: patch application, JSON export, schema migrations, validation queries, programme state reporting
+- **Claude AI** — analytical engine: term classification, verse analysis, scope judgements, narrative production, JSON extraction
+
+**Governing documents (v5.1/v5.2, March 2026):** Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/` supersede the monolithic v4.4 instruction. Claude Code's consolidated responsibilities are in `WA-SessionB-ClaudeCode-Instructions.md`. Key versions: WA-Reference-v5.1, WA-SessionB-Extraction-Instruction-v5.2, WA-Registry-Management-Guide-v7.
 
 ---
 
@@ -28,9 +30,9 @@ Bible_study_projects/              ← Google Drive root = working directory
 │
 ├── engine/                        ← Python automation engine (the core application)
 │   ├── engine.py                  ← CLI entry point (python -m engine.engine)
-│   ├── constants.py               ← Schema version (3.3.0), thresholds, sentinels
+│   ├── constants.py               ← Schema version (3.6.0), thresholds, sentinels
 │   ├── db.py                      ← Connection factory (WAL mode), query helpers
-│   ├── migrate.py                 ← Schema migrations M01–M12 (v2.2 → v3.3.0)
+│   ├── migrate.py                 ← Schema migrations M01–M15 (v2.2 → v3.6.0)
 │   ├── backup.py                  ← Pre/post-run + manual backups (rolling 10)
 │   ├── register.py                ← REGISTER mode + lock management
 │   ├── new_word.py                ← NEW_WORD mode (N1–N19): first-time STEP fetch
@@ -81,7 +83,9 @@ Bible_study_projects/              ← Google Drive root = working directory
 │   │   ├── Word_Data/             ← Source markdown from STEP research
 │   │   ├── Session_B_Analysis/    ← Analysis markdown outputs
 │   │   ├── Session_C_Synthesis/   ← Cross-part synthesis documents
-│   │   └── Workflow/              ← Session instruction templates (v4, v5, v9)
+│   │   └── Workflow/              ← Session instruction templates
+│   │       ├── Frameword_B/Session_B/  ← v5 governing documents (active)
+│   │       └── Sessionlogs/            ← Historical session logs
 │   ├── exports/                   ← JSON exports for Claude (word_export output)
 │   └── discovery/                 ← STEP discovery output (word_study_extract.py)
 │
@@ -117,7 +121,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 
 ---
 
-## 3. The Database — Schema v3.6.0
+## 3. The Database — Schema v3.7.0
 
 **File:** `data/bible_research.db` (SQLite, ~40 MB, excluded from Git)
 
@@ -126,7 +130,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 | # | Group | Key Tables | Purpose |
 |---|-------|------------|---------|
 | 1 | Reference | `books`, `book_code_variants`, `themes`, `sources` | Static: 66 Bible books, code aliases |
-| 2 | Registry | `word_registry` | Master list of ~211 words (the anchor for everything) |
+| 2 | Registry | `word_registry` | Master list of ~212 words (the anchor for everything) |
 | 3 | WA File Index | `wa_file_index` | One row per imported Session A JSON; parent for all WA tables |
 | 4 | WA Term Data | `wa_term_inventory`, `wa_term_related_words`, `wa_term_root_family` | Per-term metadata: glosses, meaning, occurrences, flags |
 | 5 | Phase 2 Flags | `phase2_flag_types`, `wa_term_phase2_flags` | Semantic/analytical flags (set by Claude) |
@@ -138,6 +142,8 @@ Bible_study_projects/              ← Google Drive root = working directory
 | 10 | Engine Control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Full audit trail for every engine run |
 | 11 | Meaning Parse | `wa_meaning_parsed`, `wa_meaning_sense`, `wa_meaning_stem`, `wa_lsj_parsed` | Structured parse of meaning text |
 | 12 | Metadata | `schema_version` | Current schema version and migration history |
+| 13 | Session B Structured | `wa_session_b_dimensions`, `wa_session_b_findings` | Dimensional profiles and key findings per registry (v3.7.0) |
+| 14 | Session D | `session_d_runs`, `session_d_verse_links`, `session_d_term_links`, `session_d_observations` | Cross-registry synthesis capture (v3.7.0) |
 
 ### Key Relationships
 
@@ -218,7 +224,7 @@ engine.py (CLI dispatcher)
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| EXPECTED_SCHEMA_VERSION | `"3.6.0"` | Engine refuses mismatched schema |
+| EXPECTED_SCHEMA_VERSION | `"3.7.0"` | Engine refuses mismatched schema |
 | LOCK_SENTINEL | `"IN_PROGRESS"` | Prevents concurrent runs |
 | AUDITED_SENTINEL | `"AUDITED"` | Marks successful audit completion |
 | HIGH_FREQ_THRESHOLD | 500 | Above → HIGH_FREQUENCY_ANCHOR flag |
@@ -322,10 +328,21 @@ Claude.ai produces JSON → data/imports/WA/Patches/*.json
 
 ### Database → Claude.ai
 ```
-python scripts/export_word_json.py --registry=N
-    → data/exports/{word}_{registry}_full_{YYYYMMDD}.json
+python -m engine.engine --export-word --registry=N
+    → data/exports/{word}_{registry}_{scope}_{YYYYMMDD}_v{N}.json
 ```
-Or via engine: `python -m engine.engine --export-word --registry=N`
+Scope is `full` (pre-analysis) or `final` (Analysis Complete / Session B Complete).
+Version auto-increments: v1, v2, v3 per day.
+
+### Post-Patch Outputs (v5.2)
+
+After an analysis completion patch is applied, two additional files are produced:
+```
+Final registry extract: data/exports/{word}_{registry}_final_{YYYYMMDD}_v{N}.json
+Session D pointers:     data/exports/session_d/wa-{nnn}-{word}-sessiond-pointers-{YYYYMMDD}.json
+```
+The final extract is a cross-table view for Session D. The sdpointers file carries
+evaluated cross-registry observations with synthesis questions.
 
 ### STEP API → Database
 ```
@@ -343,7 +360,49 @@ python -m engine.engine --mode=new_word --registry=N --terms=H1234,G5678
 
 ---
 
-## 10. Common Operations Quick Reference
+## 10. v5.1/v5.2 Document Architecture (March 2026)
+
+Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/`:
+
+| Document | Version | Purpose | Primary Audience |
+| -------- | ------- | ------- | ---------------- |
+| WA-Implementation-Instruction | v5 | Schema changes, new tables, programme operations (Tasks 1-8) | Claude Code |
+| WA-Reference | **v5.1** | Controlled vocabulary, naming conventions, schema reference, post-patch output templates | Both systems |
+| WA-Registry-Management-Guide | **v7** | Registry structure, status lifecycle, cluster assignments (C01-C22), periodic reviews | Both systems |
+| WA-SessionB-DataPrep-Instruction | v5 | Term classification, data preparation, pre-analysis patches | Claude AI |
+| WA-SessionB-Analysis-Instruction | v5 | Verse reading, ten-step analysis protocol, narrative production | Claude AI |
+| WA-SessionB-Extraction-Instruction | **v5.2** | JSON extraction, analysis patches, **four outputs per registry** | Claude AI |
+| **WA-SessionB-ClaudeCode-Instructions.md** | — | **Consolidated Claude Code responsibilities** | **Claude Code** |
+
+### v5.1/v5.2 Key Changes
+
+- **Four outputs per registry** (was two): Session B JSON, analysis patch, final registry extract, Session D pointers file
+- **Post-patch outputs**: `final` and `sdpointers` files produced AFTER patch confirmation (not during patch cycle)
+- **source_category → dimensions**: Repurposed as comma-delimited multi-value field derived from Session B
+- **Dimensional weight vocabulary**: PRIMARY / SECONDARY / PERIPHERAL per dimension
+- **sdpointers file is evaluative**: carries synthesis_questions, significance, research_depth_required, prose_notes
+- **session_b_revision_candidates**: Required field in final extract (empty array = explicit sync confirmation)
+- **Cluster assignments complete**: All 212 words assigned to C01-C22. C01 (mind, Soul, heart, spirit, flesh, being) is complete.
+
+### v5.2 Session B Workflow
+
+```
+DataPrep (Claude AI) → pre-analysis patch → Claude Code applies → re-export JSON
+    → Analysis (Claude AI) → narrative document
+    → Extraction (Claude AI, batch of ~5):
+        1. Session B JSON
+        2. Analysis completion patch → Claude Code applies → status = Analysis Complete
+        3. Final registry extract (post-patch) → wa-{nnn}-{word}-final-{date}.json
+        4. Session D pointers file (post-patch) → wa-{nnn}-{word}-sdpointers-{date}.json
+```
+
+### Implementation Tasks Status
+
+Tasks 1-8 from WA-Implementation-Instruction-v5: **all complete** (schema v3.7.0, migration M16). Clustering (Task 4) applied. Zero-term investigation (Task 5) documented.
+
+---
+
+## 11. Common Operations Quick Reference
 
 ```bash
 # Schema status
@@ -381,7 +440,7 @@ conn.row_factory = sqlite3.Row
 
 ---
 
-## 11. Git Conventions
+## 12. Git Conventions
 
 - `data/bible_research.db` — **excluded** from Git
 - `backups/` — **excluded** from Git
@@ -392,7 +451,7 @@ conn.row_factory = sqlite3.Row
 
 ---
 
-## 12. Environment
+## 13. Environment
 
 - **Platform:** Windows 11, Google Drive mount at `G:\My Drive\Bible_study_projects`
 - **Python:** 3.14.0

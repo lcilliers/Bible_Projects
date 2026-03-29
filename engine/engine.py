@@ -260,9 +260,34 @@ def main() -> int:
             return 1
         word     = data["_export"]["word"]
         date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
-        filename = f"{word}_{args.registry}_full_{date_str}.json"
         out_dir  = os.path.join(_ROOT, "data", "exports")
         os.makedirs(out_dir, exist_ok=True)
+
+        # Determine scope: "final" only if v5.2 extraction cycle is complete
+        # (session_b_status AND wa_session_b_dimensions populated)
+        reg_row = conn.execute(
+            "SELECT session_b_status FROM word_registry WHERE no = ?",
+            (args.registry,),
+        ).fetchone()
+        sb_status = reg_row["session_b_status"] if reg_row else None
+        has_dimensions = conn.execute(
+            "SELECT 1 FROM wa_session_b_dimensions WHERE registry_id = ?",
+            (args.registry,),
+        ).fetchone()
+        scope = "final" if sb_status in ("Analysis Complete", "Session B Complete") and has_dimensions else "full"
+        data["_export"]["scope"] = scope
+
+        # Version incrementing: scan existing exports for today and increment
+        base_pattern = f"{word}_{args.registry}_{scope}_{date_str}"
+        existing = [
+            f for f in os.listdir(out_dir)
+            if f.startswith(base_pattern) and f.endswith(".json")
+        ]
+        version  = len(existing) + 1
+        filename = f"{base_pattern}_v{version}.json"
+        data["_export"]["export_version"]  = version
+        data["_export"]["export_filename"] = filename
+
         out_path = os.path.join(out_dir, filename)
         with open(out_path, "w", encoding="utf-8") as fh:
             _json.dump(data, fh, indent=2, ensure_ascii=False, default=str)
@@ -270,6 +295,7 @@ def main() -> int:
         stats   = data["statistics"]
         print(f"  Word     : {word}  (registry {args.registry})")
         print(f"  Terms    : {stats['term_count']}  |  Verses: {stats['verse_count']}")
+        print(f"  Scope    : {scope}  |  Version: v{version}")
         print(f"  File     : {out_path}  ({size_kb:.1f} KB)")
         return 0
     # ── --mode ────────────────────────────────────────────────────────────────

@@ -1,0 +1,2311 @@
+{
+  "meta": {
+    "export_type": "registry_clustering_output",
+    "export_date": "2026-03-27",
+    "total_registries": 212,
+    "total_clusters": 22,
+    "schema_version": "3.7.0",
+    "source_file": "wa-registry-clustering-input-20260327.json",
+    "purpose": "Cluster assignments for all 212 registries \u2014 DB update patch input"
+  },
+  "cluster_summary": [
+    {
+      "cluster": "C01",
+      "label": "Anthropological Core",
+      "member_count": 6,
+      "sb_complete_count": 4,
+      "members": [
+        {
+          "registry_id": 112,
+          "word": "mind"
+        },
+        {
+          "registry_id": 182,
+          "word": "Soul"
+        },
+        {
+          "registry_id": 183,
+          "word": "heart"
+        },
+        {
+          "registry_id": 184,
+          "word": "spirit"
+        },
+        {
+          "registry_id": 185,
+          "word": "flesh"
+        },
+        {
+          "registry_id": 211,
+          "word": "being"
+        }
+      ]
+    },
+    {
+      "cluster": "C02",
+      "label": "Cognitive Operations",
+      "member_count": 13,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 32,
+          "word": "counsel"
+        },
+        {
+          "registry_id": 49,
+          "word": "discernment"
+        },
+        {
+          "registry_id": 85,
+          "word": "imagination"
+        },
+        {
+          "registry_id": 91,
+          "word": "insight"
+        },
+        {
+          "registry_id": 93,
+          "word": "intention"
+        },
+        {
+          "registry_id": 100,
+          "word": "knowledge"
+        },
+        {
+          "registry_id": 108,
+          "word": "meditation"
+        },
+        {
+          "registry_id": 110,
+          "word": "memory"
+        },
+        {
+          "registry_id": 126,
+          "word": "purpose"
+        },
+        {
+          "registry_id": 127,
+          "word": "reasoning"
+        },
+        {
+          "registry_id": 160,
+          "word": "thought"
+        },
+        {
+          "registry_id": 166,
+          "word": "understanding"
+        },
+        {
+          "registry_id": 174,
+          "word": "wisdom"
+        }
+      ]
+    },
+    {
+      "cluster": "C03",
+      "label": "Positive Affect I",
+      "member_count": 9,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 11,
+          "word": "awe"
+        },
+        {
+          "registry_id": 29,
+          "word": "contentment"
+        },
+        {
+          "registry_id": 42,
+          "word": "delight"
+        },
+        {
+          "registry_id": 69,
+          "word": "gratitude"
+        },
+        {
+          "registry_id": 97,
+          "word": "joy"
+        },
+        {
+          "registry_id": 132,
+          "word": "rejoicing"
+        },
+        {
+          "registry_id": 175,
+          "word": "wonder"
+        },
+        {
+          "registry_id": 186,
+          "word": "gladness"
+        },
+        {
+          "registry_id": 192,
+          "word": "comfort"
+        }
+      ]
+    },
+    {
+      "cluster": "C04",
+      "label": "Positive Affect II and Longing",
+      "member_count": 7,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 8,
+          "word": "appetite"
+        },
+        {
+          "registry_id": 43,
+          "word": "desire"
+        },
+        {
+          "registry_id": 78,
+          "word": "hope"
+        },
+        {
+          "registry_id": 102,
+          "word": "longing"
+        },
+        {
+          "registry_id": 115,
+          "word": "passion"
+        },
+        {
+          "registry_id": 179,
+          "word": "yearning"
+        },
+        {
+          "registry_id": 193,
+          "word": "craving"
+        }
+      ]
+    },
+    {
+      "cluster": "C05",
+      "label": "Negative Affect I",
+      "member_count": 9,
+      "sb_complete_count": 1,
+      "members": [
+        {
+          "registry_id": 2,
+          "word": "agony"
+        },
+        {
+          "registry_id": 5,
+          "word": "anguish"
+        },
+        {
+          "registry_id": 18,
+          "word": "brokenness"
+        },
+        {
+          "registry_id": 51,
+          "word": "distress"
+        },
+        {
+          "registry_id": 71,
+          "word": "grief"
+        },
+        {
+          "registry_id": 72,
+          "word": "groaning"
+        },
+        {
+          "registry_id": 113,
+          "word": "mourning"
+        },
+        {
+          "registry_id": 151,
+          "word": "sorrow"
+        },
+        {
+          "registry_id": 188,
+          "word": "weeping"
+        }
+      ]
+    },
+    {
+      "cluster": "C06",
+      "label": "Negative Affect II",
+      "member_count": 8,
+      "sb_complete_count": 3,
+      "members": [
+        {
+          "registry_id": 7,
+          "word": "anxiety"
+        },
+        {
+          "registry_id": 44,
+          "word": "despair"
+        },
+        {
+          "registry_id": 53,
+          "word": "dread"
+        },
+        {
+          "registry_id": 61,
+          "word": "fear"
+        },
+        {
+          "registry_id": 79,
+          "word": "hopelessness"
+        },
+        {
+          "registry_id": 146,
+          "word": "shame"
+        },
+        {
+          "registry_id": 158,
+          "word": "terror"
+        },
+        {
+          "registry_id": 190,
+          "word": "contempt"
+        }
+      ]
+    },
+    {
+      "cluster": "C07",
+      "label": "Anger and Hostility",
+      "member_count": 10,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 4,
+          "word": "anger"
+        },
+        {
+          "registry_id": 13,
+          "word": "bitterness"
+        },
+        {
+          "registry_id": 56,
+          "word": "envy"
+        },
+        {
+          "registry_id": 75,
+          "word": "hatred"
+        },
+        {
+          "registry_id": 87,
+          "word": "indignation"
+        },
+        {
+          "registry_id": 96,
+          "word": "jealousy"
+        },
+        {
+          "registry_id": 136,
+          "word": "resentment"
+        },
+        {
+          "registry_id": 178,
+          "word": "wrath"
+        },
+        {
+          "registry_id": 181,
+          "word": "zeal"
+        },
+        {
+          "registry_id": 205,
+          "word": "resentment"
+        }
+      ]
+    },
+    {
+      "cluster": "C08",
+      "label": "Character and Virtue",
+      "member_count": 11,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 16,
+          "word": "boldness"
+        },
+        {
+          "registry_id": 33,
+          "word": "courage"
+        },
+        {
+          "registry_id": 46,
+          "word": "devotion"
+        },
+        {
+          "registry_id": 48,
+          "word": "diligence"
+        },
+        {
+          "registry_id": 55,
+          "word": "endurance"
+        },
+        {
+          "registry_id": 65,
+          "word": "generosity"
+        },
+        {
+          "registry_id": 66,
+          "word": "gentleness"
+        },
+        {
+          "registry_id": 80,
+          "word": "humility"
+        },
+        {
+          "registry_id": 109,
+          "word": "meekness"
+        },
+        {
+          "registry_id": 116,
+          "word": "patience"
+        },
+        {
+          "registry_id": 142,
+          "word": "self-control"
+        }
+      ]
+    },
+    {
+      "cluster": "C09",
+      "label": "Character and Disposition",
+      "member_count": 10,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 15,
+          "word": "boastfulness"
+        },
+        {
+          "registry_id": 36,
+          "word": "cowardice"
+        },
+        {
+          "registry_id": 74,
+          "word": "hardness"
+        },
+        {
+          "registry_id": 101,
+          "word": "laziness"
+        },
+        {
+          "registry_id": 123,
+          "word": "pride"
+        },
+        {
+          "registry_id": 128,
+          "word": "rebellion"
+        },
+        {
+          "registry_id": 133,
+          "word": "reliability"
+        },
+        {
+          "registry_id": 153,
+          "word": "stubbornness"
+        },
+        {
+          "registry_id": 170,
+          "word": "weakness"
+        },
+        {
+          "registry_id": 208,
+          "word": "sloth"
+        }
+      ]
+    },
+    {
+      "cluster": "C10",
+      "label": "Moral Integrity",
+      "member_count": 11,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 14,
+          "word": "blamelessness"
+        },
+        {
+          "registry_id": 60,
+          "word": "faithfulness"
+        },
+        {
+          "registry_id": 67,
+          "word": "goodness"
+        },
+        {
+          "registry_id": 77,
+          "word": "honesty"
+        },
+        {
+          "registry_id": 90,
+          "word": "innocence"
+        },
+        {
+          "registry_id": 92,
+          "word": "integrity"
+        },
+        {
+          "registry_id": 125,
+          "word": "purity"
+        },
+        {
+          "registry_id": 139,
+          "word": "righteousness"
+        },
+        {
+          "registry_id": 148,
+          "word": "sincerity"
+        },
+        {
+          "registry_id": 164,
+          "word": "truthfulness"
+        },
+        {
+          "registry_id": 168,
+          "word": "uprightness"
+        }
+      ]
+    },
+    {
+      "cluster": "C11",
+      "label": "Moral Failure and Sin",
+      "member_count": 10,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 31,
+          "word": "corruption"
+        },
+        {
+          "registry_id": 40,
+          "word": "deceit"
+        },
+        {
+          "registry_id": 57,
+          "word": "evil"
+        },
+        {
+          "registry_id": 81,
+          "word": "hypocrisy"
+        },
+        {
+          "registry_id": 89,
+          "word": "iniquity"
+        },
+        {
+          "registry_id": 120,
+          "word": "perverseness"
+        },
+        {
+          "registry_id": 147,
+          "word": "sin"
+        },
+        {
+          "registry_id": 162,
+          "word": "transgression"
+        },
+        {
+          "registry_id": 172,
+          "word": "wickedness"
+        },
+        {
+          "registry_id": 203,
+          "word": "treachery"
+        }
+      ]
+    },
+    {
+      "cluster": "C12",
+      "label": "Defilement and Vice",
+      "member_count": 10,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 1,
+          "word": "abomination"
+        },
+        {
+          "registry_id": 39,
+          "word": "debauchery"
+        },
+        {
+          "registry_id": 41,
+          "word": "defilement"
+        },
+        {
+          "registry_id": 86,
+          "word": "impurity"
+        },
+        {
+          "registry_id": 105,
+          "word": "lust"
+        },
+        {
+          "registry_id": 144,
+          "word": "sensuality"
+        },
+        {
+          "registry_id": 149,
+          "word": "slander"
+        },
+        {
+          "registry_id": 157,
+          "word": "temptation"
+        },
+        {
+          "registry_id": 171,
+          "word": "whoredom"
+        },
+        {
+          "registry_id": 189,
+          "word": "malice"
+        }
+      ]
+    },
+    {
+      "cluster": "C13",
+      "label": "Conscience, Guilt and Justice",
+      "member_count": 9,
+      "sb_complete_count": 4,
+      "members": [
+        {
+          "registry_id": 24,
+          "word": "condemnation"
+        },
+        {
+          "registry_id": 26,
+          "word": "conscience"
+        },
+        {
+          "registry_id": 30,
+          "word": "contrition"
+        },
+        {
+          "registry_id": 35,
+          "word": "covetousness"
+        },
+        {
+          "registry_id": 50,
+          "word": "disobedience"
+        },
+        {
+          "registry_id": 70,
+          "word": "greed"
+        },
+        {
+          "registry_id": 73,
+          "word": "guilt"
+        },
+        {
+          "registry_id": 98,
+          "word": "justice"
+        },
+        {
+          "registry_id": 135,
+          "word": "repentance"
+        }
+      ]
+    },
+    {
+      "cluster": "C14",
+      "label": "Volitional and Will",
+      "member_count": 10,
+      "sb_complete_count": 1,
+      "members": [
+        {
+          "registry_id": 17,
+          "word": "bondage"
+        },
+        {
+          "registry_id": 21,
+          "word": "commitment"
+        },
+        {
+          "registry_id": 25,
+          "word": "conformity"
+        },
+        {
+          "registry_id": 45,
+          "word": "determination"
+        },
+        {
+          "registry_id": 114,
+          "word": "obedience"
+        },
+        {
+          "registry_id": 137,
+          "word": "resolve"
+        },
+        {
+          "registry_id": 155,
+          "word": "submission"
+        },
+        {
+          "registry_id": 156,
+          "word": "surrender"
+        },
+        {
+          "registry_id": 173,
+          "word": "will"
+        },
+        {
+          "registry_id": 180,
+          "word": "yielding"
+        }
+      ]
+    },
+    {
+      "cluster": "C15",
+      "label": "God-ward and Prayer",
+      "member_count": 9,
+      "sb_complete_count": 3,
+      "members": [
+        {
+          "registry_id": 59,
+          "word": "faith"
+        },
+        {
+          "registry_id": 94,
+          "word": "intercession"
+        },
+        {
+          "registry_id": 121,
+          "word": "praise"
+        },
+        {
+          "registry_id": 122,
+          "word": "prayer"
+        },
+        {
+          "registry_id": 138,
+          "word": "reverence"
+        },
+        {
+          "registry_id": 140,
+          "word": "seeking"
+        },
+        {
+          "registry_id": 163,
+          "word": "trust"
+        },
+        {
+          "registry_id": 176,
+          "word": "worship"
+        },
+        {
+          "registry_id": 212,
+          "word": "pray"
+        }
+      ]
+    },
+    {
+      "cluster": "C16",
+      "label": "God-ward and Calling",
+      "member_count": 10,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 6,
+          "word": "anointing"
+        },
+        {
+          "registry_id": 28,
+          "word": "consecration"
+        },
+        {
+          "registry_id": 76,
+          "word": "holiness"
+        },
+        {
+          "registry_id": 83,
+          "word": "idolatry"
+        },
+        {
+          "registry_id": 124,
+          "word": "prophecy"
+        },
+        {
+          "registry_id": 150,
+          "word": "sorcery"
+        },
+        {
+          "registry_id": 159,
+          "word": "testimony"
+        },
+        {
+          "registry_id": 165,
+          "word": "unbelief"
+        },
+        {
+          "registry_id": 191,
+          "word": "doubt"
+        },
+        {
+          "registry_id": 194,
+          "word": "blessing"
+        }
+      ]
+    },
+    {
+      "cluster": "C17",
+      "label": "Relational and Social",
+      "member_count": 11,
+      "sb_complete_count": 5,
+      "members": [
+        {
+          "registry_id": 22,
+          "word": "communion"
+        },
+        {
+          "registry_id": 23,
+          "word": "compassion"
+        },
+        {
+          "registry_id": 34,
+          "word": "covenant"
+        },
+        {
+          "registry_id": 62,
+          "word": "fellowship"
+        },
+        {
+          "registry_id": 64,
+          "word": "forgiveness"
+        },
+        {
+          "registry_id": 68,
+          "word": "grace"
+        },
+        {
+          "registry_id": 99,
+          "word": "kindness"
+        },
+        {
+          "registry_id": 103,
+          "word": "love"
+        },
+        {
+          "registry_id": 111,
+          "word": "mercy"
+        },
+        {
+          "registry_id": 117,
+          "word": "peace"
+        },
+        {
+          "registry_id": 130,
+          "word": "reconciliation"
+        }
+      ]
+    },
+    {
+      "cluster": "C18",
+      "label": "Relational and Conflict",
+      "member_count": 7,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 12,
+          "word": "betrayal"
+        },
+        {
+          "registry_id": 52,
+          "word": "division"
+        },
+        {
+          "registry_id": 104,
+          "word": "loyalty"
+        },
+        {
+          "registry_id": 106,
+          "word": "manipulation"
+        },
+        {
+          "registry_id": 131,
+          "word": "rejection"
+        },
+        {
+          "registry_id": 152,
+          "word": "strife"
+        },
+        {
+          "registry_id": 167,
+          "word": "unity"
+        }
+      ]
+    },
+    {
+      "cluster": "C19",
+      "label": "Identity and Selfhood",
+      "member_count": 11,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 19,
+          "word": "calling"
+        },
+        {
+          "registry_id": 47,
+          "word": "dignity"
+        },
+        {
+          "registry_id": 82,
+          "word": "identity"
+        },
+        {
+          "registry_id": 84,
+          "word": "image of God"
+        },
+        {
+          "registry_id": 107,
+          "word": "meaning"
+        },
+        {
+          "registry_id": 119,
+          "word": "personhood"
+        },
+        {
+          "registry_id": 141,
+          "word": "self-awareness"
+        },
+        {
+          "registry_id": 177,
+          "word": "worth"
+        },
+        {
+          "registry_id": 201,
+          "word": "image"
+        },
+        {
+          "registry_id": 204,
+          "word": "name"
+        },
+        {
+          "registry_id": 209,
+          "word": "likeness"
+        }
+      ]
+    },
+    {
+      "cluster": "C20",
+      "label": "Power and Capacity",
+      "member_count": 7,
+      "sb_complete_count": 2,
+      "members": [
+        {
+          "registry_id": 187,
+          "word": "strength"
+        },
+        {
+          "registry_id": 195,
+          "word": "spiritual powers"
+        },
+        {
+          "registry_id": 196,
+          "word": "power"
+        },
+        {
+          "registry_id": 197,
+          "word": "authority"
+        },
+        {
+          "registry_id": 198,
+          "word": "might"
+        },
+        {
+          "registry_id": 199,
+          "word": "dominion"
+        },
+        {
+          "registry_id": 200,
+          "word": "energy"
+        }
+      ]
+    },
+    {
+      "cluster": "C21",
+      "label": "Transformation and Darkness",
+      "member_count": 8,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 37,
+          "word": "darkening"
+        },
+        {
+          "registry_id": 38,
+          "word": "deadness"
+        },
+        {
+          "registry_id": 134,
+          "word": "renewal"
+        },
+        {
+          "registry_id": 154,
+          "word": "stupor"
+        },
+        {
+          "registry_id": 161,
+          "word": "transformation"
+        },
+        {
+          "registry_id": 202,
+          "word": "transformation"
+        },
+        {
+          "registry_id": 207,
+          "word": "blindness (spiritual)"
+        },
+        {
+          "registry_id": 210,
+          "word": "deadness"
+        }
+      ]
+    },
+    {
+      "cluster": "C22",
+      "label": "Multi-dimensional and Uncertain",
+      "member_count": 16,
+      "sb_complete_count": 0,
+      "members": [
+        {
+          "registry_id": 3,
+          "word": "ambition"
+        },
+        {
+          "registry_id": 9,
+          "word": "assent"
+        },
+        {
+          "registry_id": 10,
+          "word": "awareness"
+        },
+        {
+          "registry_id": 20,
+          "word": "character"
+        },
+        {
+          "registry_id": 27,
+          "word": "consciousness"
+        },
+        {
+          "registry_id": 54,
+          "word": "emotion"
+        },
+        {
+          "registry_id": 58,
+          "word": "experience"
+        },
+        {
+          "registry_id": 63,
+          "word": "foolishness"
+        },
+        {
+          "registry_id": 88,
+          "word": "ingratitude"
+        },
+        {
+          "registry_id": 95,
+          "word": "intuition"
+        },
+        {
+          "registry_id": 118,
+          "word": "personality"
+        },
+        {
+          "registry_id": 129,
+          "word": "recognition"
+        },
+        {
+          "registry_id": 143,
+          "word": "sensitivity"
+        },
+        {
+          "registry_id": 145,
+          "word": "sexuality"
+        },
+        {
+          "registry_id": 169,
+          "word": "vulnerability"
+        },
+        {
+          "registry_id": 206,
+          "word": "vulnerability"
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "registry_id": 1,
+      "word": "abomination",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 2,
+      "word": "agony",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 3,
+      "word": "ambition",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 4,
+      "word": "anger",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 5,
+      "word": "anguish",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 6,
+      "word": "anointing",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 7,
+      "word": "anxiety",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 8,
+      "word": "appetite",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 9,
+      "word": "assent",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 10,
+      "word": "awareness",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 11,
+      "word": "awe",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 12,
+      "word": "betrayal",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 13,
+      "word": "bitterness",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 14,
+      "word": "blamelessness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 15,
+      "word": "boastfulness",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 16,
+      "word": "boldness",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 17,
+      "word": "bondage",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 18,
+      "word": "brokenness",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 19,
+      "word": "calling",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 20,
+      "word": "character",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 21,
+      "word": "commitment",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 22,
+      "word": "communion",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 23,
+      "word": "compassion",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 24,
+      "word": "condemnation",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 25,
+      "word": "conformity",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 26,
+      "word": "conscience",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 27,
+      "word": "consciousness",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 28,
+      "word": "consecration",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 29,
+      "word": "contentment",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 30,
+      "word": "contrition",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 31,
+      "word": "corruption",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 32,
+      "word": "counsel",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 33,
+      "word": "courage",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 34,
+      "word": "covenant",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 35,
+      "word": "covetousness",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 36,
+      "word": "cowardice",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 37,
+      "word": "darkening",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 38,
+      "word": "deadness",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 39,
+      "word": "debauchery",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 40,
+      "word": "deceit",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 41,
+      "word": "defilement",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 42,
+      "word": "delight",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 43,
+      "word": "desire",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 44,
+      "word": "despair",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 45,
+      "word": "determination",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 46,
+      "word": "devotion",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 47,
+      "word": "dignity",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 48,
+      "word": "diligence",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 49,
+      "word": "discernment",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 50,
+      "word": "disobedience",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 51,
+      "word": "distress",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 52,
+      "word": "division",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 53,
+      "word": "dread",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 54,
+      "word": "emotion",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 55,
+      "word": "endurance",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 56,
+      "word": "envy",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 57,
+      "word": "evil",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 58,
+      "word": "experience",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 59,
+      "word": "faith",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 60,
+      "word": "faithfulness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 61,
+      "word": "fear",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 62,
+      "word": "fellowship",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 63,
+      "word": "foolishness",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 64,
+      "word": "forgiveness",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 65,
+      "word": "generosity",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 66,
+      "word": "gentleness",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 67,
+      "word": "goodness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 68,
+      "word": "grace",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 69,
+      "word": "gratitude",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 70,
+      "word": "greed",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 71,
+      "word": "grief",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 72,
+      "word": "groaning",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 73,
+      "word": "guilt",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 74,
+      "word": "hardness",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 75,
+      "word": "hatred",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 76,
+      "word": "holiness",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 77,
+      "word": "honesty",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 78,
+      "word": "hope",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 79,
+      "word": "hopelessness",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 80,
+      "word": "humility",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 81,
+      "word": "hypocrisy",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 82,
+      "word": "identity",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 83,
+      "word": "idolatry",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 84,
+      "word": "image of God",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 85,
+      "word": "imagination",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 86,
+      "word": "impurity",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 87,
+      "word": "indignation",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 88,
+      "word": "ingratitude",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 89,
+      "word": "iniquity",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 90,
+      "word": "innocence",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 91,
+      "word": "insight",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 92,
+      "word": "integrity",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 93,
+      "word": "intention",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 94,
+      "word": "intercession",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 95,
+      "word": "intuition",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 96,
+      "word": "jealousy",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 97,
+      "word": "joy",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 98,
+      "word": "justice",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 99,
+      "word": "kindness",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 100,
+      "word": "knowledge",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 101,
+      "word": "laziness",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 102,
+      "word": "longing",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 103,
+      "word": "love",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 104,
+      "word": "loyalty",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 105,
+      "word": "lust",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 106,
+      "word": "manipulation",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 107,
+      "word": "meaning",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 108,
+      "word": "meditation",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 109,
+      "word": "meekness",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 110,
+      "word": "memory",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 111,
+      "word": "mercy",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 112,
+      "word": "mind",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 113,
+      "word": "mourning",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 114,
+      "word": "obedience",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 115,
+      "word": "passion",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 116,
+      "word": "patience",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 117,
+      "word": "peace",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 118,
+      "word": "personality",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 119,
+      "word": "personhood",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 120,
+      "word": "perverseness",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 121,
+      "word": "praise",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 122,
+      "word": "prayer",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 123,
+      "word": "pride",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 124,
+      "word": "prophecy",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 125,
+      "word": "purity",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 126,
+      "word": "purpose",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 127,
+      "word": "reasoning",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 128,
+      "word": "rebellion",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 129,
+      "word": "recognition",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 130,
+      "word": "reconciliation",
+      "cluster_assignment": "assigned:C17",
+      "cluster_label": "Relational and Social"
+    },
+    {
+      "registry_id": 131,
+      "word": "rejection",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 132,
+      "word": "rejoicing",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 133,
+      "word": "reliability",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 134,
+      "word": "renewal",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 135,
+      "word": "repentance",
+      "cluster_assignment": "assigned:C13",
+      "cluster_label": "Conscience, Guilt and Justice"
+    },
+    {
+      "registry_id": 136,
+      "word": "resentment",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 137,
+      "word": "resolve",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 138,
+      "word": "reverence",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 139,
+      "word": "righteousness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 140,
+      "word": "seeking",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 141,
+      "word": "self-awareness",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 142,
+      "word": "self-control",
+      "cluster_assignment": "assigned:C08",
+      "cluster_label": "Character and Virtue"
+    },
+    {
+      "registry_id": 143,
+      "word": "sensitivity",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 144,
+      "word": "sensuality",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 145,
+      "word": "sexuality",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 146,
+      "word": "shame",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 147,
+      "word": "sin",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 148,
+      "word": "sincerity",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 149,
+      "word": "slander",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 150,
+      "word": "sorcery",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 151,
+      "word": "sorrow",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 152,
+      "word": "strife",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 153,
+      "word": "stubbornness",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 154,
+      "word": "stupor",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 155,
+      "word": "submission",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 156,
+      "word": "surrender",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 157,
+      "word": "temptation",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 158,
+      "word": "terror",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 159,
+      "word": "testimony",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 160,
+      "word": "thought",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 161,
+      "word": "transformation",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 162,
+      "word": "transgression",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 163,
+      "word": "trust",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 164,
+      "word": "truthfulness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 165,
+      "word": "unbelief",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 166,
+      "word": "understanding",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 167,
+      "word": "unity",
+      "cluster_assignment": "assigned:C18",
+      "cluster_label": "Relational and Conflict"
+    },
+    {
+      "registry_id": 168,
+      "word": "uprightness",
+      "cluster_assignment": "assigned:C10",
+      "cluster_label": "Moral Integrity"
+    },
+    {
+      "registry_id": 169,
+      "word": "vulnerability",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 170,
+      "word": "weakness",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 171,
+      "word": "whoredom",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 172,
+      "word": "wickedness",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 173,
+      "word": "will",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 174,
+      "word": "wisdom",
+      "cluster_assignment": "assigned:C02",
+      "cluster_label": "Cognitive Operations"
+    },
+    {
+      "registry_id": 175,
+      "word": "wonder",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 176,
+      "word": "worship",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    },
+    {
+      "registry_id": 177,
+      "word": "worth",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 178,
+      "word": "wrath",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 179,
+      "word": "yearning",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 180,
+      "word": "yielding",
+      "cluster_assignment": "assigned:C14",
+      "cluster_label": "Volitional and Will"
+    },
+    {
+      "registry_id": 181,
+      "word": "zeal",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 182,
+      "word": "Soul",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 183,
+      "word": "heart",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 184,
+      "word": "spirit",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 185,
+      "word": "flesh",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 186,
+      "word": "gladness",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 187,
+      "word": "strength",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 188,
+      "word": "weeping",
+      "cluster_assignment": "assigned:C05",
+      "cluster_label": "Negative Affect I"
+    },
+    {
+      "registry_id": 189,
+      "word": "malice",
+      "cluster_assignment": "assigned:C12",
+      "cluster_label": "Defilement and Vice"
+    },
+    {
+      "registry_id": 190,
+      "word": "contempt",
+      "cluster_assignment": "assigned:C06",
+      "cluster_label": "Negative Affect II"
+    },
+    {
+      "registry_id": 191,
+      "word": "doubt",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 192,
+      "word": "comfort",
+      "cluster_assignment": "assigned:C03",
+      "cluster_label": "Positive Affect I"
+    },
+    {
+      "registry_id": 193,
+      "word": "craving",
+      "cluster_assignment": "assigned:C04",
+      "cluster_label": "Positive Affect II and Longing"
+    },
+    {
+      "registry_id": 194,
+      "word": "blessing",
+      "cluster_assignment": "assigned:C16",
+      "cluster_label": "God-ward and Calling"
+    },
+    {
+      "registry_id": 195,
+      "word": "spiritual powers",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 196,
+      "word": "power",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 197,
+      "word": "authority",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 198,
+      "word": "might",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 199,
+      "word": "dominion",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 200,
+      "word": "energy",
+      "cluster_assignment": "assigned:C20",
+      "cluster_label": "Power and Capacity"
+    },
+    {
+      "registry_id": 201,
+      "word": "image",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 202,
+      "word": "transformation",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 203,
+      "word": "treachery",
+      "cluster_assignment": "assigned:C11",
+      "cluster_label": "Moral Failure and Sin"
+    },
+    {
+      "registry_id": 204,
+      "word": "name",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 205,
+      "word": "resentment",
+      "cluster_assignment": "assigned:C07",
+      "cluster_label": "Anger and Hostility"
+    },
+    {
+      "registry_id": 206,
+      "word": "vulnerability",
+      "cluster_assignment": "assigned:C22",
+      "cluster_label": "Multi-dimensional and Uncertain"
+    },
+    {
+      "registry_id": 207,
+      "word": "blindness (spiritual)",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 208,
+      "word": "sloth",
+      "cluster_assignment": "assigned:C09",
+      "cluster_label": "Character and Disposition"
+    },
+    {
+      "registry_id": 209,
+      "word": "likeness",
+      "cluster_assignment": "assigned:C19",
+      "cluster_label": "Identity and Selfhood"
+    },
+    {
+      "registry_id": 210,
+      "word": "deadness",
+      "cluster_assignment": "assigned:C21",
+      "cluster_label": "Transformation and Darkness"
+    },
+    {
+      "registry_id": 211,
+      "word": "being",
+      "cluster_assignment": "assigned:C01",
+      "cluster_label": "Anthropological Core"
+    },
+    {
+      "registry_id": 212,
+      "word": "pray",
+      "cluster_assignment": "assigned:C15",
+      "cluster_label": "God-ward and Prayer"
+    }
+  ]
+}

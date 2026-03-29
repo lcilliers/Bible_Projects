@@ -1,0 +1,283 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260327-112-PREANALYSIS-V1",
+    "registry_id": 112,
+    "word": "mind",
+    "produced_date": "2026-03-27",
+    "produced_by": "WA-SessionB-DataPrep-Instruction-v5",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis classification patch for registry 112 — mind. 64 None-status terms classified (49 extracted, 15 extracted_thin). 3 candidate_delete terms reclassified as extracted_thin (zero verses, lexically attested). 3 PH2_DATA_ERROR flags for occurrence_count anomalies."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "bulk_update_mti_status",
+      "new_status": "extracted",
+      "term_inv_ids": [
+        1069,
+        4316,
+        4317,
+        4320,
+        4322,
+        4324,
+        4325,
+        4333,
+        4378,
+        4381,
+        4398,
+        4399,
+        4406,
+        4419,
+        4420,
+        4443,
+        4459,
+        4463,
+        4465,
+        4469,
+        4477,
+        4478,
+        4482,
+        4495,
+        4496,
+        4497,
+        4498,
+        4499,
+        4501,
+        4504,
+        4506,
+        4507,
+        4508,
+        4509,
+        4510,
+        4518,
+        4520,
+        4522,
+        4539,
+        4541,
+        4544,
+        4545,
+        4546,
+        4548,
+        4549,
+        4550,
+        4552,
+        4554,
+        4555
+      ],
+      "description": "Classified 49 terms as extracted — confirmed mind registry vocabulary"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "G1013",
+      "term_inv_id": 4524,
+      "new_status": "extracted_thin",
+      "description": "Deliberative mind — boulēma, only 3 occurrences"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "G2473",
+      "term_inv_id": 4344,
+      "new_status": "extracted_thin",
+      "description": "Mind-disposition compound — isopsuchos like-minded, 1 verse"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "G3328",
+      "term_inv_id": 4474,
+      "new_status": "extracted_thin",
+      "description": "Change of mind — metaballō, only 1 verse"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "G3420",
+      "term_inv_id": 4540,
+      "new_status": "extracted_thin",
+      "description": "Memory — mnēmē, only 1 verse"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G3912",
+      "term_inv_id": 4313,
+      "new_status": "extracted_thin",
+      "description": "Mind-state — parafroneō be insane, 1 verse"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "G3913",
+      "term_inv_id": 4315,
+      "new_status": "extracted_thin",
+      "description": "Mind-state noun — parafronia insanity, 1 verse"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "G4994",
+      "term_inv_id": 4318,
+      "new_status": "extracted_thin",
+      "description": "sōfrōn family — sōfronizō, 1 verse"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G4996",
+      "term_inv_id": 4319,
+      "new_status": "extracted_thin",
+      "description": "sōfrōn family — sōfronōs, 1 verse"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G5424",
+      "term_inv_id": 4386,
+      "new_status": "extracted_thin",
+      "description": "Thinking faculty — frēn, 1 verse only"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H1079",
+      "term_inv_id": 4404,
+      "new_status": "extracted_thin",
+      "description": "Mind — bal (Aramaic), 1 occurrence, Daniel only"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "H1948",
+      "term_inv_id": 4467,
+      "new_status": "extracted_thin",
+      "description": "Madness/folly — ho.le.lut, 1 occurrence"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "H2810",
+      "term_inv_id": 4502,
+      "new_status": "extracted_thin",
+      "description": "Cognitive invention — chish.sha.von, 2 verses"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "H5069",
+      "term_inv_id": 4321,
+      "new_status": "extracted_thin",
+      "description": "Willingness — ne.dav (Aramaic), 3 verses"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H5587B",
+      "term_inv_id": 4328,
+      "new_status": "extracted_thin",
+      "description": "Divided thoughts — se.ip.pim, 2 verses"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "H5588",
+      "term_inv_id": 4326,
+      "new_status": "extracted_thin",
+      "description": "Divided mind — se.eph, 1 verse"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "G7774",
+      "term_inv_id": 4348,
+      "new_status": "extracted_thin",
+      "description": "evil-minded — zero biblical verses but lexically attested Greek phronē- compound; note in analysis document"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "G8272",
+      "term_inv_id": 4377,
+      "new_status": "extracted_thin",
+      "description": "high-minded — zero biblical verses but lexically attested Greek phronē- compound; note in analysis document"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "G8878",
+      "term_inv_id": 4349,
+      "new_status": "extracted_thin",
+      "description": "gentle-minded — zero biblical verses but lexically attested Greek phronē- compound; note in analysis document"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "PH2_DATA_ERROR",
+        "flag_label": "PH2-112-001",
+        "strongs_reference": "G3403",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "mimnēskō occurrence_count=194 but only 2 verses in export — occurrence_count field anomaly, verse pool correct",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "PH2_DATA_ERROR",
+        "flag_label": "PH2-112-002",
+        "strongs_reference": "G3415",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "mnaomai occurrence_count=6 but 21 verses in export — occurrence_count field anomaly, verse pool correct",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "PH2_DATA_ERROR",
+        "flag_label": "PH2-112-003",
+        "strongs_reference": "H2803J",
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "cha.shav (think) occurrence_count=9 but 26 verses in export — occurrence_count field anomaly, verse pool correct",
+        "session_raised": "WA-SessionB-DataPrep-Instruction-v5",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_registry",
+      "registry_id": 112,
+      "field": "session_b_status",
+      "value": "Pre-Analysis Complete",
+      "description": "Term classifications applied — ready for Session B analysis"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 23,
+    "bulk_update_mti_status": 1,
+    "update_mti_status": 18,
+    "insert_research_flags": 3,
+    "update_registry": 1
+  }
+}

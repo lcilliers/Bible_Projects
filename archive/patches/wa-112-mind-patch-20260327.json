@@ -1,0 +1,1358 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260327-112-ANALYSIS-V1",
+    "registry_id": 112,
+    "word": "mind",
+    "produced_date": "2026-03-27",
+    "produced_by": "WA-SessionB-Extraction-Instruction-v5.1",
+    "session_b_status": "Analysis Complete",
+    "description": "Analysis completion patch for registry 112 — mind. Populates dedicated v5 schema fields: evidential_status, retention_note (wa_term_inventory), dimensional profile (wa_session_b_dimensions), inner being standing (word_registry), key findings (wa_session_b_findings), Session D pointers (wa_session_research_flags)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4552,
+      "strongs_number": "G0363",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G0363 anamimnēskō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4554,
+      "strongs_number": "G0364",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G0364 anamnēsis — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4522,
+      "strongs_number": "G1011",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1011 bouleuō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4520,
+      "strongs_number": "G1012",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1012 boulē — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4524,
+      "strongs_number": "G1013",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Thin corpus; both verses relevant. Retained."
+      },
+      "description": "G1013 boulēma — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4518,
+      "strongs_number": "G1014",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1014 boulomai — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1070,
+      "strongs_number": "G1106",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1106 gnōmē — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4504,
+      "strongs_number": "G1260",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1260 dialogizomai — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4506,
+      "strongs_number": "G1261",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1261 dialogismos — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1062,
+      "strongs_number": "G1271",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1271 dianoia — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4333,
+      "strongs_number": "G1374",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1374 dipsuchos — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4399,
+      "strongs_number": "G1771",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1771 ennoia — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4398,
+      "strongs_number": "G1950",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1950 epilanthanō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4344,
+      "strongs_number": "G2473",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; compound with psychē makes it relevant. Retained."
+      },
+      "description": "G2473 isopsuchos — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1068,
+      "strongs_number": "G3105",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3105 mainomai — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1076,
+      "strongs_number": "G3130",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3130 mania — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4474,
+      "strongs_number": "G3328",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; genuine mind-change usage. Retained."
+      },
+      "description": "G3328 metaballō — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4482,
+      "strongs_number": "G3338",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3338 metamellomai — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4477,
+      "strongs_number": "G3340",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": "Shared with Reg 135; mind-change primary function."
+      },
+      "description": "G3340 metanoeō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4478,
+      "strongs_number": "G3341",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": "Shared with Reg 135; definitionally a mind vocabulary term."
+      },
+      "description": "G3341 metanoia — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4545,
+      "strongs_number": "G3403",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Occurrence count anomaly (PH2-112-001); verse pool correct. Retained."
+      },
+      "description": "G3403 mimnēskō — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4541,
+      "strongs_number": "G3415",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": "Occurrence count anomaly (PH2-112-002); verse pool correct."
+      },
+      "description": "G3415 mnaomai — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4544,
+      "strongs_number": "G3417",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3417 mneia — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4540,
+      "strongs_number": "G3420",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; genuine memory term. Retained."
+      },
+      "description": "G3420 mnēmē — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4539,
+      "strongs_number": "G3421",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3421 mnēmoneuō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1080,
+      "strongs_number": "G3510",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Rev 2:23 significant; Hebrew background of kidney as inner seat. Retained."
+      },
+      "description": "G3510 nefros — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4443,
+      "strongs_number": "G3524",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3524 nēfaleos — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4320,
+      "strongs_number": "G3525",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3525 nēfō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4406,
+      "strongs_number": "G3540",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3540 noēma — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1060,
+      "strongs_number": "G3563",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3563 nous — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1078,
+      "strongs_number": "G3675",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3675 homofrōn — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4313,
+      "strongs_number": "G3912",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; attests boundary of mind vocabulary. Retained."
+      },
+      "description": "G3912 parafroneō — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4315,
+      "strongs_number": "G3913",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; attests boundary of mind vocabulary. Retained."
+      },
+      "description": "G3913 parafronia — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4324,
+      "strongs_number": "G4893",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G4893 suneidēsis — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4325,
+      "strongs_number": "G4894",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Shared root with suneidēsis; Acts usage only. Retained."
+      },
+      "description": "G4894 suneidō — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1067,
+      "strongs_number": "G4993",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G4993 sōfroneō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4318,
+      "strongs_number": "G4994",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Thin; family is confirmed. Retained."
+      },
+      "description": "G4994 sōfronizō — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4319,
+      "strongs_number": "G4996",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Thin; family is confirmed. Retained."
+      },
+      "description": "G4996 sōfronōs — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4317,
+      "strongs_number": "G4997",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G4997 sōfrosunē — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4316,
+      "strongs_number": "G4998",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G4998 sōfrōn — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4420,
+      "strongs_number": "G5279",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5279 hupomimnēskō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4419,
+      "strongs_number": "G5280",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5280 hupomnēsis — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1079,
+      "strongs_number": "G5391",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (1 Pet 3:8); inner disposition context. Retained."
+      },
+      "description": "G5391 filofrōn — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4386,
+      "strongs_number": "G5424",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5424 frēn — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1063,
+      "strongs_number": "G5426",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5426 froneō — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1064,
+      "strongs_number": "G5427",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5427 fronēma — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4348,
+      "strongs_number": "G7774",
+      "set": {
+        "evidential_status": "uncertain",
+        "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+      },
+      "description": "G7774 kakofrōn — evidential_status: uncertain"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4377,
+      "strongs_number": "G8272",
+      "set": {
+        "evidential_status": "uncertain",
+        "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+      },
+      "description": "G8272 megalofrōn — evidential_status: uncertain"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4349,
+      "strongs_number": "G8878",
+      "set": {
+        "evidential_status": "uncertain",
+        "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+      },
+      "description": "G8878 prauthumos — evidential_status: uncertain"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4550,
+      "strongs_number": "H0234",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Ritual memory; indirect inner-being connection. Retained."
+      },
+      "description": "H0234 az.ka.rah — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4404,
+      "strongs_number": "H1079",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; genuine 'set mind' usage (Dan 6:14). Retained."
+      },
+      "description": "H1079 bal — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4465,
+      "strongs_number": "H1947",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H1947 ho.le.lah — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4467,
+      "strongs_number": "H1948",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse; madness vocabulary. Retained."
+      },
+      "description": "H1948 ho.le.lut — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4459,
+      "strongs_number": "H1984C",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H1984C ha.lal — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4463,
+      "strongs_number": "H1984I",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H1984I ha.lal — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4546,
+      "strongs_number": "H2142",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H2142 za.khar — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4548,
+      "strongs_number": "H2143",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H2143 ze.kher — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4549,
+      "strongs_number": "H2146",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H2146 zik.ka.ron — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4496,
+      "strongs_number": "H2803G",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Artistic design sub-gloss; devising faculty present but indirect. Retained."
+      },
+      "description": "H2803G cha.shav — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4497,
+      "strongs_number": "H2803H",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H2803H cha.shav — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4495,
+      "strongs_number": "H2803I",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H2803I cha.shav — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4498,
+      "strongs_number": "H2803J",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": "Occurrence count anomaly (PH2-112-003); verse pool correct."
+      },
+      "description": "H2803J cha.shav — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4501,
+      "strongs_number": "H2808",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Ecclesiastes reckoning; cognitive activity present. Retained."
+      },
+      "description": "H2808 chesh.bon — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4502,
+      "strongs_number": "H2810",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One Ecc verse relevant; thin corpus. Retained."
+      },
+      "description": "H2810 chish.sha.von — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4381,
+      "strongs_number": "H3335I",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Divine planning; same root as ye.tser. Retained."
+      },
+      "description": "H3335I ya.tsar — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4378,
+      "strongs_number": "H3336",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H3336 ye.tser — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4499,
+      "strongs_number": "H4284",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H4284 ma.cha.sha.vah — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4322,
+      "strongs_number": "H5068",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5068 na.dav — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4321,
+      "strongs_number": "H5069",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Aramaic counterpart; Ezra context. Retained."
+      },
+      "description": "H5069 ne.dav — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1069,
+      "strongs_number": "H5162G",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5162G na.cham — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4469,
+      "strongs_number": "H5162H",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5162H na.cham — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4328,
+      "strongs_number": "H5587B",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5587B se.ip.pim — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4326,
+      "strongs_number": "H5588",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5588 se.eph — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4555,
+      "strongs_number": "H7896K",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H7896K shit — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4507,
+      "strongs_number": "H8104G",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Primary semantic field is obedience; inner-being connection indirect. Cross-registry review warranted."
+      },
+      "description": "H8104G sha.mar — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4508,
+      "strongs_number": "H8104H",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Primary field is guarding; inner-facing subset relevant. Retained."
+      },
+      "description": "H8104H sha.mar — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4509,
+      "strongs_number": "H8104I",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "Surveillance/watching; inner-being connection through attentiveness. Retained."
+      },
+      "description": "H8104I sha.mar — evidential_status: plausible"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 4510,
+      "strongs_number": "H8104J",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H8104J sha.mar — evidential_status: confirmed"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "wa_session_b_dimensions",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "relational_environment": 1,
+        "relational_environment_note": "All four rings active. Ring 1 dominates. Ring 2 substantially present (God remembers, searches minds, renews the nous, writes law on dianoia, gives mind of Christ). Ring 3 present through shared-mind vocabulary, remembrance in prayer, conscience in community. Ring 4 marginal through noēma (Satan's designs on the mind).",
+        "spirit_soul_body": 1,
+        "spirit_soul_body_note": "Mind operates primarily at soul-level. Spirit-mind distinction explicit in 1 Cor 14:14-15 (nous vs pneuma in prayer). Body appears as instrument and marker of mind-states. Somatic-attention connection implicit throughout sha.mar corpus.",
+        "inner_operations": 1,
+        "inner_operations_note": "Full range documented: remembering and forgetting; planning and devising; inclining and orienting; evaluating from within (conscience); changing (metanoeō, na.cham); collapsing into madness or maintaining sobriety; attending deliberately. Renewal of the mind (Rom 12:2) is the most distinctive inner operation.",
+        "being": 1,
+        "being_note": "Ye.tser (formed inclination) is the primary dispositional Hebrew term. Sōfrōn family documents formed character of sound-mindedness. Froneō operates as characterising disposition in Phil 2:5. Mind of Christ (1 Cor 2:16) is the supreme example of transferred orientation of being.",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "Dimensional profile for registry 112 — all four dimensions active"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update_registry",
+      "registry_no": 112,
+      "set": {
+        "sb_classification": "confirmed_characteristic",
+        "sb_classification_reasoning": null,
+        "carry_forward": 1
+      },
+      "description": "Inner being standing: confirmed_characteristic. Carry forward: true."
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F001",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "term_behaviour",
+        "finding": "Memory in biblical vocabulary is an active, covenantal, morally significant act — not passive cognitive retrieval. God's remembering produces redemptive action; Israel's commanded remembering constitutes covenant identity; forgetting is moral defection.",
+        "anchor_verses": "Gen 8:1, Exo 2:24, Deu 5:15, Deu 8:2, Joh 14:26",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F001 — term_behaviour"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F002",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "theological_note",
+        "finding": "The mind is a moral organ before it is an intellectual one. It can be debased, blinded, corrupted, renewed, and transferred (mind of Christ). Romans 12:2 presents renewal of the nous as the locus of personal transformation.",
+        "anchor_verses": "Rom 1:28, Rom 12:2, Eph 4:17, Col 1:21, 1Cor 2:16",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F002 — theological_note"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F003",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "etymology",
+        "finding": "The ye.tser (formed inclination) is the OT anthropology's closest approach to a foundational moral disposition. Gen 6:5 and 8:21 establish it as bent toward evil from youth — the dispositional substrate generating particular thoughts and plans.",
+        "anchor_verses": "Gen 6:5, Gen 8:21, Isa 26:3",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F003 — etymology"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F004",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "verse_pattern",
+        "finding": "The cha.shav root documents that the same mental faculty produces artistic design, moral reasoning, and malicious plotting — there is no separate creative vs rational faculty in Hebrew anthropology. God's planning uses the same root as wicked scheming.",
+        "anchor_verses": "Pro 12:5, Pro 15:26, Jer 29:11, Ps 140:2",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F004 — verse_pattern"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F005",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "theological_note",
+        "finding": "Fronēma (the set mindset) in Romans 8:5-7 is the determinative factor for life or death, peace or enmity with God — making the mind's fundamental orientation soteriologically significant, not merely morally relevant.",
+        "anchor_verses": "Rom 8:5, Rom 8:6, Rom 8:7",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F005 — theological_note"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F006",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "theological_note",
+        "finding": "Suneidēsis (conscience) is the NT's distinctive contribution with no direct Hebrew equivalent. The conscience can be weak, clear, seared, or purified (Heb 9:14), and functions as a bridge between inner life and relational/covenantal domains.",
+        "anchor_verses": "Rom 2:15, 1Cor 8:7, Heb 9:14, 1Tim 4:2",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F006 — theological_note"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F007",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "verse_pattern",
+        "finding": "Deu 4:9 functionally links the sha.mar attentiveness cluster with the za.khar memory cluster: vigilant attentiveness is the means by which memory is maintained; forgetting is the product of failed attentiveness.",
+        "anchor_verses": "Deu 4:9",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F007 — verse_pattern"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F008",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "term_behaviour",
+        "finding": "The 1 Cor 14:14-15 nous/pneuma distinction is the sharpest NT terminological boundary between mind-level and spirit-level inner operation — directly relevant to the Framework B spirit-soul-body boundary investigation.",
+        "anchor_verses": "1Cor 14:14, 1Cor 14:15",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F008 — term_behaviour"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F009",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "verse_pattern",
+        "finding": "Double-mindedness (dipsuchos/se.eph) documents inner division as a cross-testament pathology. James presents inner unity as a condition for receiving from God and for effective action; Ps 119:113 makes it a moral stance.",
+        "anchor_verses": "Jas 1:8, Jas 4:8, Psa 119:113",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F009 — verse_pattern"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "112-F010",
+        "registry_id": 112,
+        "file_id": 148,
+        "finding_type": "theological_note",
+        "finding": "The Hebrews new covenant quotation (Heb 8:10; 10:16) names both dianoia (mind) and kardia (heart) as sites of internalized law — anticipating the structural relationship between Registries 112 and 183 for Session D investigation.",
+        "anchor_verses": "Heb 8:10, Heb 10:16",
+        "raised_date": "2026-03-27",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.1"
+      },
+      "description": "112-F010 — theological_note"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD001",
+        "strongs_reference": "G3340",
+        "cross_registry_id": 135,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G3340 metanoeō, G3341 metanoia, G3338 metamellomai, and H5162H na.cham (relent) all present in Reg 112 and Reg 135 (repentance). Structural overlap at intersection of cognitive reorientation and mind-change.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD001 — term_co_occurrence — G3340"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD002",
+        "strongs_reference": "H5162G",
+        "cross_registry_id": 71,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H5162G na.cham (comfort) likely shared with Reg 071 (grief) and Reg 135. Na.cham root operates across mind-change (112), comfort of the grieving (071), and divine relenting (135).",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD002 — term_co_occurrence — H5162G"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD003",
+        "strongs_reference": "H5068",
+        "cross_registry_id": 43,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H5068 na.dav (willing) likely shared with desire and will registries. Volitional inner movement of na.dav borders desire and will clusters.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD003 — term_co_occurrence — H5068"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD004",
+        "strongs_reference": "G4893",
+        "cross_registry_id": 183,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G4893 suneidēsis has no Hebrew counterpart in this registry. Intersection with heart (183) and spirit (184) registries for Session D investigation of conscience as NT/Hellenistic category.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD004 — term_co_occurrence — G4893"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD005",
+        "strongs_reference": "H8104G",
+        "cross_registry_id": 173,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H8104G sha.mar/obey (195v) has significant overlap with will/obedience registries. Cross-registry boundary review recommended — may belong primarily to a different cluster.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD005 — verse_overlap — H8104G"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD006",
+        "strongs_reference": "G1271",
+        "cross_registry_id": 183,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Heb 8:10 and 10:16 name both dianoia (mind) and kardia (heart) as sites of new covenant law-writing. Structural overlap between Reg 112 and Reg 183.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD006 — verse_overlap — G1271"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD007",
+        "strongs_reference": "H2142",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H2142 za.khar operates across memory, worship, and ritual domains. Possible overlap with worship or praise registries (1 Chr 16:4 Levitical invoke/remember; Ps 38/70 memorial offering context).",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD007 — term_co_occurrence — H2142"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD008",
+        "strongs_reference": "G3340",
+        "cross_registry_id": 135,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Spirit-mind distinction in 1 Cor 14:14-15 is the sharpest NT terminological boundary between nous and pneuma. Session D: map against Reg 184 (spirit).",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD008 — evidential_uncertainty — G3340"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD009",
+        "strongs_reference": "H3336",
+        "cross_registry_id": 173,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Ye.tser (formed inclination) in Gen 6:5 and 8:21 is the OT closest equivalent to fundamental moral disposition. Session D: relationship between ye.tser and will cluster.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD009 — evidential_uncertainty — H3336"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 112,
+        "file_id": 148,
+        "flag_code": "SD_POINTER",
+        "flag_label": "112-SD010",
+        "strongs_reference": "G5426",
+        "cross_registry_id": 183,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "1 Cor 2:16 and Phil 2:5 present mind-orientation as transferable through participation in Christ. Key integration point for transformation of inner being across soul/mind/heart registries.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.1",
+        "raised_date": "2026-03-27",
+        "resolved": 0
+      },
+      "description": "112-SD010 — term_co_occurrence — G5426"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update_registry",
+      "registry_no": 112,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Session B extraction complete — wa-112-mind-analysis-20260327.docx — JSON: wa-112-mind-json-20260327.json"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 101,
+    "update_evidential_status": 78,
+    "insert_session_b_dimensions": 1,
+    "update_registry_sb_classification": 1,
+    "insert_session_b_findings": 10,
+    "insert_sd_pointer_flags": 10,
+    "update_registry_status": 1
+  }
+}

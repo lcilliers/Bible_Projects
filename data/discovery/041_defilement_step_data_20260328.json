@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "english_anchor": "defilement",
+    "generated": "2026-03-28",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "G3436"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 2,
+    "summary_by_group": {
+      "G1": 1,
+      "G2r": 1
+    },
+    "include_codes": [
+      "G3436",
+      "G3435"
+    ],
+    "exclude_codes": [],
+    "registry": {
+      "id": 41,
+      "no": 41,
+      "word": "defilement",
+      "source_list": "Missing Inner Being Words",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": null,
+      "automation_eligible": 1,
+      "last_automation_run": null,
+      "automation_run_id": "RUN-20260318_134133-BULK_GAP_FILL",
+      "phase1_term_count": 1,
+      "phase1_verse_count": 1,
+      "strongs_list": "[{\"strong\": \"G3436\", \"count\": 1}]",
+      "description": "Defilement is the condition of being made unclean — contaminated by contact with what is impure, in ways that compromise one's standing before God and one's capacity to be in his presence. The biblical vocabulary runs from ritual defilement (specific acts or contacts that require purification) to moral defilement (the contamination of the conscience and the heart by sin). The New Testament shifts the centre of gravity inward: what defiles a person comes from within, not from outside.",
+      "origin": "original_list",
+      "source_category": "Moral/Conscience",
+      "inference_note": null,
+      "anchor_verses": "Mark 7:20-23; 1 Cor 8:7;  Rev 3:4",
+      "session_b_status": null,
+      "cluster_assignment": "C12",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1
+    }
+  },
+  "terms": [
+    {
+      "code": "G3436",
+      "gloss": "defilement",
+      "transliteration": "molusmos",
+      "script_form": "μολυσμός",
+      "language": "Greek",
+      "vocab_count": 2,
+      "medium_def": "contamination, defilement \npollution, defilement, contamination 2Cor. 7:1*",
+      "lsj_entry": "μολ-υσμός, ὁ, \ndefilement, pollution, [LXX+1st c.BC+]",
+      "short_def_mounce": "contamination, defilement",
+      "related_words": [
+        {
+          "strong": "G3435",
+          "form": "μολύνω",
+          "gloss": "to defile",
+          "translit": "molunō"
+        }
+      ],
+      "raw_related_numbers": "G3435",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;;;;;1;1;1;1;1;1;1;2@1;1;1;1;1;1",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G3436",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent G3436 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "2Cor.7.1",
+          "ref": "2Cor 7:1",
+          "book_code": "2Cor",
+          "chapter": 7,
+          "verse_num": 1,
+          "esv_text": "2Cor 7:1 Since we have these promises , beloved , let us cleanse ourselves from every defilement of body and spirit , bringing holiness to completion in the fear of God .",
+          "target_word": "defilement",
+          "testament": "NT",
+          "fetched_under_code": "G3436",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.7.1' class='verseLink'><span class='verseNumber'>2Cor 7:1</span></a> <span morph='CONJ' strong='G3767'>Since</span> we <span morph='V-PAP-NPM' strong='G2192'>have</span> <span morph='D-APF' strong='G3778'>these</span> <span morph='N-APF' strong='G1860'>promises</span>, <span morph='A-VPM' strong='G0027'>beloved</span>, <span class='normal'></span> let us <span morph='V-AAS-1P' strong='G2511'>cleanse</span> <span morph='F-1APM' strong='G1438'>ourselves</span> <span morph='PREP' strong='G0575'>from</span> <span morph='A-GSM' strong='G3956'>every</span> <span morph='N-GSM' strong='G3436'>defilement</span> of <span morph='N-GSF' strong='G4561'>body</span>   <span morph='CONJ' strong='G2532'>and</span> <span morph='N-GSN' strong='G4151G'>spirit</span>, bringing <span morph='N-ASF' strong='G0042'>holiness</span> to <span morph='V-PAP-NPM' strong='G2005'>completion</span> <span morph='PREP' strong='G1722'>in</span> the <span morph='N-DSM' strong='G5401'>fear</span> of <span morph='N-GSM-T' strong='G2316'>God</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G3436",
+          "span_label_found": "defilement",
+          "context_before": "us cleanse ourselves from every",
+          "context_after": "of body and spirit ,"
+        }
+      ]
+    },
+    {
+      "code": "G3435",
+      "gloss": "to defile",
+      "transliteration": "molunō",
+      "script_form": "μολύνω",
+      "language": "Greek",
+      "vocab_count": 15,
+      "medium_def": "to defile, soil, stain, make impure \nprimarily to stain, sully; to defile, contaminate, make impure morally, 1Cor. 8:7; Rev. 14:4; to soil, Rev. 3:4*",
+      "lsj_entry": "μολύνω, \nfuture - ῠνῶ [LXX]aorist ἐμόλῡνα[LXX]: perfect μεμόλυγκα [Refs 4th c.AD+]:—passive, future μολυνθήσομαι [LXX]aorist 1 ἐμολύνθην[LXX]perfect μεμόλυσμαι[LXX+1st c.AD+]:—stain, sully, defile, τὴν ὑπήνην [Refs 5th c.BC+]; simply, sprinkle, ἀλεύρῳ [Refs 3rd c.BC+]; make a beast of, τινας (of Circe) [Refs 5th c.BC+]; defile, debauch, παῖδα [Refs 3rd c.BC+]:—passive, become vile, disgrace oneself, [NT+5th c.BC+]; ὥσπερ θηρίον ὕειον ἐν ἀμαθίᾳ μολύνεσθαι wallow in ignorance, [NT+5th c.BC+]\n__2 stain, dye, χιτωνίσκον αἵματι [Refs 1st c.AD+] — passive, ἔρια μεμολυσμένα ἄνθεσι[Refs]\n__II see at {μωλύω}.",
+      "short_def_mounce": "to defile, soil, stain, make impure",
+      "related_words": [
+        {
+          "strong": "G3189",
+          "form": "μέλας",
+          "gloss": "black",
+          "translit": "melas"
+        },
+        {
+          "strong": "G3436",
+          "form": "μολυσμός",
+          "gloss": "defilement",
+          "translit": "molusmos"
+        }
+      ],
+      "raw_related_numbers": "G3189, G3436",
+      "freq_list": "3;5@3;3;3;3;;5@3;5@3;3;3;3;5@3;;3;;;;;3;3;3;3;3;3;3;5@3;10;12;3;12;3",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G3436",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent G3436 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 3,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of G3435 ('to defile') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "1Cor.8.7",
+          "ref": "1Cor 8:7",
+          "book_code": "1Cor",
+          "chapter": 8,
+          "verse_num": 7,
+          "esv_text": "1Cor 8:7 However , not all possess this knowledge . But some , through former association with idols , eat food as really offered to an idol , and their conscience , being weak , is defiled .",
+          "target_word": "defiled",
+          "testament": "NT",
+          "fetched_under_code": "G3435",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><p></p><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Cor.8.7' class='verseLink'><span class='verseNumber'>1Cor 8:7</span></a> <span morph='CONJ' strong='G0235'>However</span>, <span morph='PRT-N' strong='G3756'>not</span> <span morph='A-DPM' strong='G3956'>all</span> <span morph='PREP' strong='G1722'>possess</span> this <span morph='N-NSF' strong='G1108'>knowledge</span>. <span morph='CONJ' strong='G1161'>But</span> <span morph='X-NPM' strong='G5100'>some</span>, <span class='normal'></span> through <span morph='N-DSF' strong='G4914'>former association</span> with <span morph='N-GSN' strong='G1497'>idols</span>, <span morph='V-PAI-3P' strong='G2068'>eat</span> food <span morph='PRT' strong='G5613'>as</span> really offered to an <span morph='A-ASN' strong='G1494'>idol</span>, and  <span morph='P-GPM' strong='G0846'>their</span> <span morph='N-DSF CONJ' strong='G4893 G2532'>conscience</span>, <span morph='V-PAP-NSF' strong='G1510'>being</span> <span morph='A-NSF' strong='G0772G'>weak</span>, is <span morph='V-PPI-3S' strong='G3435'>defiled</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G3435",
+          "span_label_found": "to defile",
+          "context_before": ", being weak , is",
+          "context_after": "."
+        },
+        {
+          "osisId": "Rev.14.4",
+          "ref": "Rev 14:4",
+          "book_code": "Rev",
+          "chapter": 14,
+          "verse_num": 4,
+          "esv_text": "Rev 14:4 It is these who have not defiled themselves with women , for they are virgins . It is these who follow the Lamb wherever he goes . These have been redeemed from mankind as firstfruits for God and the Lamb ,",
+          "target_word": "defiled themselves",
+          "testament": "NT",
+          "fetched_under_code": "G3435",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rev.14.4' class='verseLink'><span class='verseNumber'>Rev 14:4</span></a> It <span morph='V-PAI-3P' strong='G1526'>is</span> <span morph='D-NPM' strong='G3778'>these</span> <span morph='R-NPM' strong='G3739'>who</span> have <span morph='PRT-N' strong='G3756'>not</span> <span morph='V-API-3P' strong='G3435'>defiled themselves</span> <span morph='PREP' strong='G3326'>with</span> <span morph='N-GPF' strong='G1135G'>women</span>, <span morph='CONJ' strong='G1063'>for</span>  they <span morph='V-PAI-3P' strong='G1526'>are</span> <span morph='N-NPM' strong='G3933'>virgins</span>. It <span morph='V-PAI-3P' strong='G1526'>is</span> <span morph='D-NPM' strong='G3778'>these</span>  <span strong='G3588'>who</span> <span morph='V-PAP-NPM' strong='G0190'>follow</span> the <span morph='N-DSN' strong='G0721'>Lamb</span> <span morph='CONJ PRT' strong='G3699 G0302'>wherever</span> he <span morph='V-PAS-3S' strong='G5217'>goes</span>. <span morph='D-NPM' strong='G3778'>These</span> have been <span morph='V-API-3P' strong='G0059'>redeemed</span> <span morph='PREP' strong='G0575'>from</span> <span morph='N-GPM' strong='G0444'>mankind</span> as  <span morph='N-NSF' strong='G0536'>firstfruits</span> for <span morph='N-DSM-T' strong='G2316'>God</span> <span morph='CONJ' strong='G2532'>and</span> the <span morph='N-DSN' strong='G0721'>Lamb</span>,</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G3435",
+          "span_label_found": "to defile",
+          "context_before": "is these who have not",
+          "context_after": "with women , for they"
+        },
+        {
+          "osisId": "Rev.3.4",
+          "ref": "Rev 3:4",
+          "book_code": "Rev",
+          "chapter": 3,
+          "verse_num": 4,
+          "esv_text": "Rev 3:4 Yet you have still a few names in Sardis , people who have not soiled their garments , and they will walk with me in white , for they are worthy .",
+          "target_word": "soiled",
+          "testament": "NT",
+          "fetched_under_code": "G3435",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rev.3.4' class='verseLink'><span class='verseNumber'>Rev 3:4</span></a> <span class='q'>Yet you <span morph='V-PAI-2S' strong='G2192'>have</span> still a <span morph='A-APN' strong='G3641'>few</span> <span morph='N-APN' strong='G3686'>names</span> <span morph='PREP' strong='G1722'>in</span> <span morph='N-DPF-L' strong='G4554'>Sardis</span>, people <span morph='R-NPN' strong='G3739'>who</span> have <span morph='PRT-N' strong='G3756'>not</span>  <span morph='V-AAI-3P' strong='G3435'>soiled</span> <span morph='P-GPM' strong='G0846'>their</span> <span morph='N-APN' strong='G2440'>garments</span>, <span morph='CONJ' strong='G2532'>and</span> they will <span morph='V-FAI-3P' strong='G4043'>walk</span> <span morph='PREP' strong='G3326'>with</span> <span morph='S-1SGSN' strong='G1700'>me</span>  <span morph='PREP' strong='G1722'>in</span> <span morph='A-DPN' strong='G3022'>white</span>, <span morph='CONJ' strong='G3754H'>for</span> they <span morph='V-PAI-3P' strong='G1526'>are</span>  <span morph='A-NPM' strong='G0514'>worthy</span>.</span></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G3435",
+          "span_label_found": "to defile",
+          "context_before": ", people who have not",
+          "context_after": "their garments , and they"
+        }
+      ]
+    }
+  ]
+}

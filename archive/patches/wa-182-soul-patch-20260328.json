@@ -1,0 +1,658 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260328-182-ANALYSIS-V1",
+    "registry_id": 182,
+    "word": "Soul",
+    "produced_date": "2026-03-28",
+    "produced_by": "WA-SessionB-Extraction-Instruction-v5.2",
+    "session_b_status": "Analysis Complete",
+    "description": "Analysis completion patch for registry 182 — Soul. Populates dedicated v5 schema fields: evidential_status and retention_note (wa_term_inventory), dimensional profile (wa_session_b_dimensions), inner being standing (word_registry), key findings (wa_session_b_findings), Session D pointers (wa_session_research_flags)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1548,
+      "strongs_number": "G0674",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (Luk 21:26) — soul fainting under eschatological dread. Thin but genuine soul-exhaustion vocabulary. Retained."
+      },
+      "description": "G0674 apopsuchō — plausible"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1549,
+      "strongs_number": "G0895",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (1Co 14:7) — lifeless instruments. Defines soul negatively by its absence. Thin but analytically present. Retained."
+      },
+      "description": "G0895 apsuchos — plausible"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1547,
+      "strongs_number": "G1374",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1374 dipsuchos — confirmed"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1546,
+      "strongs_number": "G1634",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G1634 ekpsuchō — confirmed"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1550,
+      "strongs_number": "G2174",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (Phi 2:19) — soul-gladness at good news. Thin; soul-wellbeing vocabulary confirmed. Retained."
+      },
+      "description": "G2174 eupsucheō — plausible"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1551,
+      "strongs_number": "G2473",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (Phi 2:20) — like-souled, same inner orientation. Thin but confirms relational soul-vocabulary. Retained."
+      },
+      "description": "G2473 isopsuchos — plausible"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1552,
+      "strongs_number": "G3642",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G3642 oligopsuchos — confirmed"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1553,
+      "strongs_number": "G4861",
+      "set": {
+        "evidential_status": "plausible",
+        "retention_note": "One verse (Phi 2:2) — same-souled community. Thin; community soul-vocabulary confirmed. Retained."
+      },
+      "description": "G4861 sumpsuchos — plausible"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1540,
+      "strongs_number": "G5590G",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5590G psuchē — confirmed"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1541,
+      "strongs_number": "G5590H",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5590H psuchē — confirmed"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1542,
+      "strongs_number": "G5590I",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5590I psuchē — confirmed"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1543,
+      "strongs_number": "G5590J",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5590J psuchē — confirmed"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1544,
+      "strongs_number": "G5590K",
+      "set": {
+        "evidential_status": "uncertain",
+        "retention_note": "Zero verses in export. Cannot contribute to corpus. Retained per programme default."
+      },
+      "description": "G5590K psuchē — uncertain"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1545,
+      "strongs_number": "G5591",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "G5591 psuchikos — confirmed"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1539,
+      "strongs_number": "H5314",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5314 na.phash — confirmed"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1530,
+      "strongs_number": "H5315G",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315G ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1531,
+      "strongs_number": "H5315H",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315H ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1532,
+      "strongs_number": "H5315I",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315I ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1533,
+      "strongs_number": "H5315J",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315J ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1534,
+      "strongs_number": "H5315K",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315K ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1535,
+      "strongs_number": "H5315L",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315L ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1536,
+      "strongs_number": "H5315M",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315M ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_evidential_status",
+      "table": "wa_term_inventory",
+      "term_inv_id": 1537,
+      "strongs_number": "H5315N",
+      "set": {
+        "evidential_status": "confirmed",
+        "retention_note": null
+      },
+      "description": "H5315N ne.phesh — confirmed"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "wa_session_b_dimensions",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "relational_environment": 1,
+        "relational_environment_note": "All four rings active. Ring 1 dominates — soul as the inner experiential centre. Ring 2 substantially present: God creates soul (Gen 2:7), owns all souls (Eze 18:4), redeems/preserves/requires the soul, refreshes (Exo 31:17), Christ as Shepherd and Overseer of souls (1Pe 2:25). Ring 3 present through soul-to-soul bonding (1Sa 18:1), corporate soul-unity (Act 4:32), sumpsuchos and isopsuchos (Phi 2:2,20). Ring 4 marginal.",
+        "spirit_soul_body": 1,
+        "spirit_soul_body_note": "Soul is the primary term of Circle Two by definition. Spirit-soul boundary established by G5591 psuchikos (soul without Spirit = natural/creaturely mode) and Heb 4:12 (Word divides soul and spirit). Soul-body boundary collapses: ne.phesh IS the animated body, not a component within it. 1Th 5:23 tripartite preservation. 1Co 15:44-46 eschatological trajectory: psuchikon → pneumatikon.",
+        "inner_operations": 1,
+        "inner_operations_note": "Full range documented: desiring and craving (H5315L), experiencing emotion (H5315G — cast down, bitter, joyful), self-address and reflexive observation (Psa 42:5), soul-to-soul bonding (1Sa 18:1), soul departing at death (G1634, Gen 35:18), soul-refreshment (H5314), soul fainting under pressure (G0674), double-mindedness (G1374). The soul's self-address (commanding its own hope) is its most distinctive inner operation.",
+        "being": 1,
+        "being_note": "Soul as identity — the self that persists, is threatened, can be lost and found (Mat 10:39). Soul as moral accountability — Eze 18:4 soul who sins shall die. Soul as object of salvation (1Pe 1:9). Soul as created appetite — constitutively oriented toward something; the question is always the object of orientation. Dipsuchos documents the soul's division as a character condition, not merely an event.",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "Dimensional profile for registry 182 — all four dimensions active"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_registry",
+      "registry_no": 182,
+      "set": {
+        "sb_classification": "confirmed_characteristic",
+        "sb_classification_reasoning": null,
+        "carry_forward": 1
+      },
+      "description": "Inner being standing: confirmed_characteristic. Carry forward: true."
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F001",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "etymology",
+        "finding": "Ne.phesh derives from the Hebrew word for throat — the passage through which breath and food move. The soul begins as somatic (throat, breath, hunger) and develops organically to denote the whole animated person, not by metaphorical extension but by the unity of breathing, desiring, and living.",
+        "anchor_verses": "Psa 69:1, Psa 105:18, Gen 2:7",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F001 — etymology"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F002",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "theological_note",
+        "finding": "The soul is not an immortal substance lodged within the body — it is the animated body itself. Lev 17:11 identifies the soul with the blood. H5315M (dead soul = corpse) confirms the soul does not vacate a container at death but ceases to animate its flesh. The biblical soul is not Cartesian.",
+        "anchor_verses": "Lev 17:11, Gen 35:18, Num 19:11",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F002 — theological_note"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F003",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "theological_note",
+        "finding": "The human soul shares its category (ne.phesh cha.yah — living creature) with animals (Gen 1:20,21,24). What distinguishes the human soul is not the noun but the act — the direct divine inbreathing of Gen 2:7. The soul is not uniquely human as a category but is uniquely constituted in the human.",
+        "anchor_verses": "Gen 1:20, Gen 1:24, Gen 2:7",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F003 — theological_note"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F004",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "term_behaviour",
+        "finding": "The soul is constitutively appetitive — it is always reaching toward something. H5315L establishes this as the soul's fundamental structure. The critical question is always the object of craving: the soul that pants for God (Psa 42:1) and the soul that hungers for food (Deu 12:20) are using the same capacity.",
+        "anchor_verses": "Psa 42:1, Deu 12:20, Ecc 6:7, Isa 5:14",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F004 — term_behaviour"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F005",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "verse_pattern",
+        "finding": "The soul-life paradox of the NT: the soul that clings to itself loses itself; the soul that gives itself away finds itself. Mat 10:39 and its parallels structure the soul as both the thing most desperately sought (self-preservation) and the thing that must be released to be truly found. This is the transformation dynamic at the heart of the NT soul vocabulary.",
+        "anchor_verses": "Mat 10:39, Mat 16:25, Joh 12:25, Mar 8:35",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F005 — verse_pattern"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F006",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "theological_note",
+        "finding": "G5591 psuchikos establishes the soul without the Spirit as a real condition — the natural creaturely mode of human existence. The soul is not evil in this mode, but incomplete. 1Co 15:45 establishes the eschatological trajectory: the psuchikon (Adamic) is raised as the pneumatikon (Christic). The soul is the beginning of the journey, not its end.",
+        "anchor_verses": "1Co 2:14, 1Co 15:44, 1Co 15:45, Jude 19",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F006 — theological_note"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F007",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "verse_pattern",
+        "finding": "God employs soul-vocabulary for his own inner states: Exo 31:17 (God refreshed — na.phash), Isa 42:1 (God's soul delights), Jer 32:41 (God's whole-soul commitment). Soul-language is the available language for divine inner states analogous to human inner states — not asserting God has a creaturely soul but using soul vocabulary analogically for divine pathos.",
+        "anchor_verses": "Exo 31:17, Isa 42:1, Jer 32:41, Eze 18:4",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F007 — verse_pattern"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F008",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "term_behaviour",
+        "finding": "The soul's self-address in Psa 42-43 (the psalmist speaks to his own soul, diagnoses it, gives it a counter-command) is the OT's most psychologically sophisticated move. The person who can observe their own soul from outside and command it is more whole, not less — this reflexive capacity is a distinctive feature of the soul vocabulary.",
+        "anchor_verses": "Psa 42:5, Psa 42:11, Psa 43:5, Luk 12:19",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F008 — term_behaviour"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F009",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "theological_note",
+        "finding": "Heb 4:12 — the Word of God divides soul and spirit as a sword divides joints and marrow. The soul cannot reliably distinguish itself from the spirit by introspection alone. The soul-spirit distinction is real but requires divine speech to make it visible — it is not self-evident to the person.",
+        "anchor_verses": "Heb 4:12, 1Th 5:23",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F009 — theological_note"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "182-F010",
+        "registry_id": 182,
+        "file_id": 36,
+        "finding_type": "verse_pattern",
+        "finding": "The soul is constitutively relational: to God (Psa 42:1, 62:1, 63:1), to other souls (1Sa 18:1, Act 4:32), to its own orientation (dipsuchos — inner division). Soul-to-soul bonding (sumpsuchos, isopsuchos) documents genuine union of orientation between persons — community is possible when souls share direction.",
+        "anchor_verses": "1Sa 18:1, Act 4:32, Phi 2:2, Phi 2:20",
+        "raised_date": "2026-03-28",
+        "session_b_instruction": "WA-SessionB-Extraction-Instruction-v5.2"
+      },
+      "description": "182-F010 — verse_pattern"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD001",
+        "strongs_reference": "G5591",
+        "cross_registry_id": 184,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G5591 psuchikos establishes soul-spirit boundary from within the soul registry. Structural overlap with spirit registry (184) — the soul without the Spirit is the soul's defining limit.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD001 — SD_POINTER — G5591"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD002",
+        "strongs_reference": "H5315L",
+        "cross_registry_id": 43,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H5315L ne.phesh:appetite is a SHARED_TERM with desire registry (043). The soul IS the desiring capacity — ne.phesh and ta.a.vah used in synonymous parallelism in Deu 14:26.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD002 — SD_POINTER — H5315L"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD003",
+        "strongs_reference": "G5590H",
+        "cross_registry_id": 61,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Mat 10:28 — soul introduced as dimension surviving bodily death in fear context. Soul and fear registries share verse at the intersection of ultimate threat and ultimate protection.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD003 — SD_POINTER — G5590H"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD004",
+        "strongs_reference": "H5315G",
+        "cross_registry_id": 71,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H5315G ne.phesh connects to grief (071) — soul cast down in lament Psalter; hope (078) — Psa 42:5 soul addressed and commanded to hope; peace (117) — Lam 3:17 soul bereft of peace, Heb 6:19 soul anchored.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD004 — SD_POINTER — H5315G"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD005",
+        "strongs_reference": "G1374",
+        "cross_registry_id": 112,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "G1374 dipsuchos shared with mind registry (112). Inner division documented in both soul and mind vocabularies — double-minded (soul) and double-minded (nous). Cross-registry pattern of inner unity vs division.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD005 — SD_POINTER — G1374"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD006",
+        "strongs_reference": "H5314",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "H5314 na.phash in Exo 31:17 — God refreshed after creation. Soul-vocabulary applied to God. Structural observation: soul-language used analogically for divine inner states alongside similar usage in Isa 42:1 and Jer 32:41.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD006 — SD_POINTER — H5314"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD007",
+        "strongs_reference": "G5590G",
+        "cross_registry_id": 183,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "1Th 5:23 tripartite statement (spirit, soul, body) and Heb 4:12 (soul-spirit division) are the primary structural cross-registry verses linking soul (182), heart (183), and spirit (184). The soul's place in the triad cannot be fully mapped without all three registries.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD007 — SD_POINTER — G5590G"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 182,
+        "file_id": 36,
+        "flag_code": "SD_POINTER",
+        "flag_label": "182-SD008",
+        "strongs_reference": "G5590H",
+        "cross_registry_id": 135,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Mat 10:39 soul-loss/soul-finding paradox connects to repentance (135) — the soul's release of self-preservation instinct is structurally related to repentance as cognitive-volitional reorientation.",
+        "session_raised": "WA-SessionB-Extraction-Instruction-v5.2",
+        "raised_date": "2026-03-28",
+        "resolved": 0
+      },
+      "description": "182-SD008 — SD_POINTER — G5590H"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update_registry",
+      "registry_no": 182,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Session B extraction complete — WA-182-soul-analysis-20260325.md — JSON: wa-182-soul-json-20260328.json"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 44,
+    "update_evidential_status": 23,
+    "insert_session_b_dimensions": 1,
+    "update_registry_sb_classification": 1,
+    "insert_session_b_findings": 10,
+    "insert_sd_pointer_flags": 8,
+    "update_registry_status": 1
+  }
+}

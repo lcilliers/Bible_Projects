@@ -1,0 +1,26 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260328-112-DIMENSIONS-V1",
+    "registry_id": 112,
+    "word": "mind",
+    "produced_date": "2026-03-28",
+    "produced_by": "WA-SessionB-Extraction-Instruction-v5.2",
+    "session_b_status": "Analysis Complete",
+    "description": "Update word_registry.dimensions for registry 112 — mind. Replaces single-value source_category with multi-value comma-delimited dimensions derived from Session B analysis per WA-Reference-v5.1 Section 4.3."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "registry_no": 112,
+      "set": {
+        "dimensions": "Cognitive/Mind, Volitional, Relational/Social, Spiritual/God-ward, Moral/Conscience"
+      },
+      "description": "Dimensions for registry 112 mind: Cognitive/Mind (primary — thinking, memory, reasoning, orientation); Volitional (boulē/boulomai, na.dav, ye.tser, metanoeō); Relational/Social (shared-mind vocabulary, suneidēsis in community, na.cham comfort, remembrance in prayer); Spiritual/God-ward (za.khar covenant memory, nous renewal Rom 12:2, mind of Christ 1Cor 2:16, law on dianoia Heb 8:10); Moral/Conscience (suneidēsis 29v, moral evaluation of thought throughout cha.shav corpus, ye.tser moral disposition)."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "update_registry": 1
+  }
+}

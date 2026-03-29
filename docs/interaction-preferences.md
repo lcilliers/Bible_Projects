@@ -1,6 +1,6 @@
-# Interaction Preferences — GitHub Copilot (Claude Sonnet)
+# Interaction Preferences — Claude Code
 
-This file is the authoritative record of communication protocols between the researcher (leRoux) and GitHub Copilot. Copilot must read and apply these protocols at the start of every session.
+This file is the authoritative record of communication protocols between the researcher (leRoux) and Claude Code. Claude Code must read and apply these protocols at the start of every session.
 
 ---
 

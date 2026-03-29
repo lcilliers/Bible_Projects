@@ -1612,10 +1612,23 @@ def run_audit_word(
         if not snapshot["mti_by_strongs"]:
             stop_reasons.append("mti_terms is empty")
         if stop_reasons:
-            return _stop(
-                f"A2: Structural data missing: {'; '.join(stop_reasons)}. "
-                "Run --mode=new_word or check source data."
+            # Check if a Step 1 extract JSON is available — if so, treat as first-time
+            # population and continue (A3/A4/A6 will ingest the data)
+            _discover_dir = os.path.join(_ROOT, "data", "discovery")
+            _has_extract = extract_file or (
+                os.path.isdir(_discover_dir)
+                and any(
+                    f.endswith(".json") and f.startswith(f"{registry_id:03d}_")
+                    for f in os.listdir(_discover_dir)
+                )
             )
+            if _has_extract:
+                print(f"  [A2 NOTE] {'; '.join(stop_reasons)} — Step 1 JSON available, proceeding with first-time population.")
+            else:
+                return _stop(
+                    f"A2: Structural data missing: {'; '.join(stop_reasons)}. "
+                    "Run --mode=new_word or check source data."
+                )
 
     # ── A3: Load Step 1 JSON ──────────────────────────────────────────────────
     print("\nA3  Loading Step 1 extract JSON...")
@@ -1928,8 +1941,24 @@ def run_audit_word(
             out_dir     = os.path.join(_ROOT, "data", "exports")
             os.makedirs(out_dir, exist_ok=True)
 
+            export_data = _export_word(conn, registry_id)
+
+            # Determine scope: "final" only if v5.2 extraction cycle is complete
+            # (session_b_status AND wa_session_b_dimensions populated)
+            reg_row = conn.execute(
+                "SELECT session_b_status FROM word_registry WHERE no = ?",
+                (registry_id,),
+            ).fetchone()
+            sb_status = reg_row["session_b_status"] if reg_row else None
+            has_dimensions = conn.execute(
+                "SELECT 1 FROM wa_session_b_dimensions WHERE registry_id = ?",
+                (registry_id,),
+            ).fetchone()
+            scope = "final" if sb_status in ("Analysis Complete", "Session B Complete") and has_dimensions else "full"
+            export_data["_export"]["scope"] = scope
+
             # Determine version: scan existing exports for today and increment
-            base_pattern = f"{word}_{registry_id}_full_{date_str}"
+            base_pattern = f"{word}_{registry_id}_{scope}_{date_str}"
             existing = [
                 f for f in os.listdir(out_dir)
                 if f.startswith(base_pattern) and f.endswith(".json")
@@ -1937,7 +1966,6 @@ def run_audit_word(
             version = len(existing) + 1
             filename = f"{base_pattern}_v{version}.json"
 
-            export_data = _export_word(conn, registry_id)
             export_data["_export"]["export_version"] = version
             export_data["_export"]["export_filename"] = filename
 

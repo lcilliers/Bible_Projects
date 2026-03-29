@@ -1,0 +1,219 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260328-182-CORRECTION-V1",
+    "registry_id": 182,
+    "word": "Soul",
+    "produced_date": "2026-03-28",
+    "produced_by": "WA-SessionB-Extraction-Instruction-v5.2",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Correction patch for registry 182 — Soul. PATCH-20260324-182-SESSIONB-V1 incorrectly set 16 active terms to delete status. This patch restores the correct mti_status values as documented in the Session B narrative WA-182-soul-analysis-20260325.md Section 1 term inventory. Source of truth: narrative Section 1 table — all 757 verses were read before the narrative was written."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G5590G",
+      "term_inv_id": 1540,
+      "new_status": "extracted",
+      "description": "Restore G5590G psuchē — narrative Section 1: extracted, 46 verses, core psuchē vocabulary"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "G5590H",
+      "term_inv_id": 1541,
+      "new_status": "extracted",
+      "description": "Restore G5590H psuchē:life — narrative Section 1: extracted, 33 verses"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "G5590I",
+      "term_inv_id": 1542,
+      "new_status": "extracted",
+      "description": "Restore G5590I psuchē:myself — narrative Section 1: extracted, 6 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "G5590J",
+      "term_inv_id": 1543,
+      "new_status": "extracted",
+      "description": "Restore G5590J psuchē:person — narrative Section 1: extracted, 8 verses"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_mti_status",
+      "strongs_number": "G5590K",
+      "term_inv_id": 1544,
+      "new_status": "extracted_thin",
+      "description": "Restore G5590K psuchē:animal — narrative Section 1: extracted_thin, 0 verses in export"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update_mti_status",
+      "strongs_number": "G5591",
+      "term_inv_id": 1545,
+      "new_status": "extracted",
+      "description": "Restore G5591 psuchikos — narrative Section 1: extracted, 5 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update_mti_status",
+      "strongs_number": "G1634",
+      "term_inv_id": 1546,
+      "new_status": "extracted",
+      "description": "Restore G1634 ekpsuchō — narrative Section 1: extracted, 3 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update_mti_status",
+      "strongs_number": "G1374",
+      "term_inv_id": 1547,
+      "new_status": "extracted",
+      "description": "Restore G1374 dipsuchos — narrative Section 1: extracted, 2 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update_mti_status",
+      "strongs_number": "G3642",
+      "term_inv_id": 1552,
+      "new_status": "extracted",
+      "description": "Restore G3642 oligopsuchos — narrative Section 1: extracted, 1 verse"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update_mti_status",
+      "strongs_number": "G0674",
+      "term_inv_id": 1548,
+      "new_status": "extracted_thin",
+      "description": "Restore G0674 apopsuchō — narrative Section 1: extracted_thin, 1 verse"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "G0895",
+      "term_inv_id": 1549,
+      "new_status": "extracted_thin",
+      "description": "Restore G0895 apsuchos — narrative Section 1: extracted_thin, 1 verse"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update_mti_status",
+      "strongs_number": "G2174",
+      "term_inv_id": 1550,
+      "new_status": "extracted_thin",
+      "description": "Restore G2174 eupsucheō — narrative Section 1: extracted_thin, 1 verse"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update_mti_status",
+      "strongs_number": "G2473",
+      "term_inv_id": 1551,
+      "new_status": "extracted_thin",
+      "description": "Restore G2473 isopsuchos — narrative Section 1: extracted_thin, 1 verse. Note: already extracted_thin in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update_mti_status",
+      "strongs_number": "G4861",
+      "term_inv_id": 1553,
+      "new_status": "extracted_thin",
+      "description": "Restore G4861 sumpsuchos — narrative Section 1: extracted_thin, 1 verse"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315G",
+      "term_inv_id": 1530,
+      "new_status": "extracted",
+      "description": "Restore H5315G ne.phesh:soul — narrative Section 1: extracted, 179 verses. Primary Hebrew soul term."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315H",
+      "term_inv_id": 1531,
+      "new_status": "extracted",
+      "description": "Restore H5315H ne.phesh:life — narrative Section 1: extracted, 180 verses"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315I",
+      "term_inv_id": 1532,
+      "new_status": "extracted",
+      "description": "Restore H5315I ne.phesh:myself — narrative Section 1: extracted, 126 verses"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315J",
+      "term_inv_id": 1533,
+      "new_status": "extracted",
+      "description": "Restore H5315J ne.phesh:person — narrative Section 1: extracted, 83 verses"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315K",
+      "term_inv_id": 1534,
+      "new_status": "extracted",
+      "description": "Restore H5315K ne.phesh:animal — narrative Section 1: extracted, 12 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315L",
+      "term_inv_id": 1535,
+      "new_status": "extracted",
+      "description": "Restore H5315L ne.phesh:appetite — narrative Section 1: extracted, 45 verses"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315M",
+      "term_inv_id": 1536,
+      "new_status": "extracted",
+      "description": "Restore H5315M ne.phesh:dead — narrative Section 1: extracted, 13 verses. Note: already extracted in current export — included for completeness."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update_mti_status",
+      "strongs_number": "H5315N",
+      "term_inv_id": 1537,
+      "new_status": "extracted",
+      "description": "Restore H5315N ne.phesh:neck — narrative Section 1: extracted, 2 verses"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update_mti_status",
+      "strongs_number": "H5314",
+      "term_inv_id": 1539,
+      "new_status": "extracted",
+      "description": "Restore H5314 na.phash — narrative Section 1: extracted, 3 verses"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update_mti_status",
+      "strongs_number": "H5317",
+      "term_inv_id": 1538,
+      "new_status": "phase2_enrichment",
+      "description": "Restore H5317 no.phet — narrative Section 1: phase2_enrichment, 5 verses. Excluded from active analysis."
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update_registry",
+      "registry_no": 182,
+      "set": {
+        "session_b_status": "Pre-Analysis Complete"
+      },
+      "description": "Reset session_b_status to Pre-Analysis Complete pending correct extraction session. Previous SESSIONB patch was applied against incorrect term statuses and must be treated as void."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 25,
+    "update_mti_status": 24,
+    "update_registry": 1
+  }
+}

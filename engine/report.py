@@ -202,7 +202,9 @@ def print_word_report(conn, registry_id: int,
             (fi["id"],),
         ).fetchall()
         for btr in by_term:
-            p(f"    {btr['term_id']:12} {btr['testament']:3}  "
+            tid = btr['term_id'] or '(null)'
+            tst = btr['testament'] or '?'
+            p(f"    {tid:12} {tst:3}  "
               f"confirmed={btr['confirmed']}  filtered={btr['filtered']}")
         if not by_term:
             p("    (no verse records)")

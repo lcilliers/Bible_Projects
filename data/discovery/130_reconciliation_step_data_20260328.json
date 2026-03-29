@@ -1,0 +1,300 @@
+{
+  "meta": {
+    "english_anchor": "reconciliation",
+    "generated": "2026-03-28",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "G2643"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 2,
+    "summary_by_group": {
+      "G1": 1,
+      "G2r": 1
+    },
+    "include_codes": [
+      "G2643",
+      "G2644"
+    ],
+    "exclude_codes": [],
+    "registry": {
+      "id": 130,
+      "no": 130,
+      "word": "reconciliation",
+      "source_list": "Missing Inner Being Words",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": null,
+      "automation_eligible": 1,
+      "last_automation_run": null,
+      "automation_run_id": "RUN-20260318_134133-BULK_GAP_FILL",
+      "phase1_term_count": 1,
+      "phase1_verse_count": 4,
+      "strongs_list": "[{\"strong\": \"G2643\", \"count\": 4}]",
+      "description": "Reconciliation is the restoration of broken relationship — the movement from alienation and hostility back to genuine peace and communion. The Greek vocabulary is specific: the exchange of enmity for friendship, the resolution of the thing that stood between two parties. In the New Testament, reconciliation is the great theological word for what God has done in Christ: the relationship between God and humanity, broken by sin, is restored through the cross. Human reconciliation — between individuals, between peoples — is both modelled on and enabled by this divine act.",
+      "origin": "original_list",
+      "source_category": "Relational/Social",
+      "inference_note": null,
+      "anchor_verses": "2 Cor 5:18-20;  Rom 5:10-11",
+      "session_b_status": null,
+      "cluster_assignment": "C17",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1
+    }
+  },
+  "terms": [
+    {
+      "code": "G2643",
+      "gloss": "reconciliation",
+      "transliteration": "katallagē",
+      "script_form": "καταλλαγή",
+      "language": "Greek",
+      "vocab_count": 5,
+      "medium_def": "primarily an exchange; reconciliation, restoration to favor, Rom. 5:11; 11:15; 2Cor. 5:18, 19*",
+      "lsj_entry": "καταλλ-ᾰγή, ἡ, \nexchange, especially of money, [Refs 4th c.BC+]\n__2 money-changer's profit, agio, [Refs 4th c.BC+]\n__3 freight, merchandise, metaphorically, [ἀραὶ] βαρεῖαι κ.[Refs 4th c.BC+]\n__4 change, difference, [Refs 1st c.BC+]\n__II change from enmity to friendship, reconciliation, καταλλαγὰς ποιεῖσθαι πρός τινας [Refs 5th c.BC+]\n__II.2 reconciliation of sinners with God, [NT]",
+      "short_def_mounce": "reconciliation",
+      "related_words": [
+        {
+          "strong": "G2644",
+          "form": "καταλλάσσω",
+          "gloss": "to reconcile",
+          "translit": "katallassō"
+        }
+      ],
+      "raw_related_numbers": "G2644",
+      "freq_list": "4;4;4;4;4;;4;4;4;4;4;4;3;4;;;;;4;4;4;4;4;4;4;5@4;1;1;4;1;4",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G2643",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent G2643 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 4,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "2Cor.5.18",
+          "ref": "2Cor 5:18",
+          "book_code": "2Cor",
+          "chapter": 5,
+          "verse_num": 18,
+          "esv_text": "2Cor 5:18 All this is from God , who through Christ reconciled us to himself and gave us the ministry of reconciliation ;",
+          "target_word": "reconciliation",
+          "testament": "NT",
+          "fetched_under_code": "G2643",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.5.18' class='verseLink'><span class='verseNumber'>2Cor 5:18</span></a> <span morph='A-NPN' strong='G3956'>All</span> <span morph='CONJ' strong='G1161'>this</span> is <span morph='PREP' strong='G1537'>from</span> <span morph='N-GSM-T' strong='G2316'>God</span>, <span class='normal'></span> <span strong='G3588'>who</span> <span morph='PREP' strong='G1223'>through</span> <span morph='N-GSM-T' strong='G5547'>Christ</span> <span morph='V-AAP-GSM' strong='G2644'>reconciled</span> <span morph='P-1AP' strong='G2248'>us</span> to <span morph='F-3DSM' strong='G1438'>himself</span> <span morph='CONJ' strong='G2532'>and</span> <span morph='V-2AAP-GSM' strong='G1325'>gave</span> <span morph='P-1DP' strong='G2254'>us</span>  the <span morph='N-ASF' strong='G1248'>ministry</span> of <span morph='N-GSF' strong='G2643'>reconciliation</span>;</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2643",
+          "span_label_found": "reconciliation",
+          "context_before": "gave us the ministry of",
+          "context_after": ";"
+        },
+        {
+          "osisId": "2Cor.5.19",
+          "ref": "2Cor 5:19",
+          "book_code": "2Cor",
+          "chapter": 5,
+          "verse_num": 19,
+          "esv_text": "2Cor 5:19 that is , in Christ God was reconciling the world to himself , not counting their trespasses against them , and entrusting to us the message of reconciliation .",
+          "target_word": "reconciliation",
+          "testament": "NT",
+          "fetched_under_code": "G2643",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.5.19' class='verseLink'><span class='verseNumber'>2Cor 5:19</span></a> <span morph='CONJ' strong='G3754H'>that</span> <span morph='PRT' strong='G5613'>is</span>, <span morph='PREP' strong='G1722'>in</span> <span morph='N-DSM-T' strong='G5547'>Christ</span> <span morph='N-NSM-T' strong='G2316'>God</span> <span morph='V-IAI-3S' strong='G1510'>was</span> <span morph='V-PAP-NSM' strong='G2644'>reconciling</span>   the <span morph='N-ASM' strong='G2889'>world</span> to <span morph='F-3DSM' strong='G1438'>himself</span>, <span class='normal'></span> <span morph='PRT-N' strong='G3361'>not</span> <span morph='V-PNP-NSM' strong='G3049'>counting</span> <span morph='P-DPM' strong='G0846'>their</span> <span morph='N-APN' strong='G3900'>trespasses</span> against <span morph='P-GPM' strong='G0846'>them</span>, <span morph='CONJ' strong='G2532'>and</span> <span morph='V-2AMP-NSM' strong='G5087'>entrusting</span> <span morph='PREP' strong='G1722'>to</span> <span morph='P-1DP' strong='G2254'>us</span>  the <span morph='N-ASM' strong='G3056'>message</span> of <span morph='N-GSF' strong='G2643'>reconciliation</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2643",
+          "span_label_found": "reconciliation",
+          "context_before": "to us the message of",
+          "context_after": "."
+        },
+        {
+          "osisId": "Rom.11.15",
+          "ref": "Rom 11:15",
+          "book_code": "Rom",
+          "chapter": 11,
+          "verse_num": 15,
+          "esv_text": "Rom 11:15 For if their rejection means the reconciliation of the world , what will their acceptance mean but life from the dead ?",
+          "target_word": "reconciliation",
+          "testament": "NT",
+          "fetched_under_code": "G2643",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rom.11.15' class='verseLink'><span class='verseNumber'>Rom 11:15</span></a> <span morph='CONJ' strong='G1063'>For</span> <span morph='COND' strong='G1487G'>if</span> <span morph='P-GPM' strong='G0846'>their</span> <span morph='N-NSF' strong='G0580'>rejection</span> means  the <span morph='N-NSF' strong='G2643'>reconciliation</span> of the <span morph='N-GSM' strong='G2889'>world</span>, <span morph='I-NSF' strong='G5101'>what</span> will their <span morph='N-NSF' strong='G4356'>acceptance</span> mean <span morph='COND PRT-N' strong='G1487G G3361'>but</span> <span morph='N-NSF' strong='G2222'>life</span> <span morph='PREP' strong='G1537'>from</span> the <span morph='A-GPM' strong='G3498'>dead</span>?</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2643",
+          "span_label_found": "reconciliation",
+          "context_before": "if their rejection means the",
+          "context_after": "of the world , what"
+        },
+        {
+          "osisId": "Rom.5.11",
+          "ref": "Rom 5:11",
+          "book_code": "Rom",
+          "chapter": 5,
+          "verse_num": 11,
+          "esv_text": "Rom 5:11 More than that , we also rejoice in God through our Lord Jesus Christ , through whom we have now received reconciliation .",
+          "target_word": "reconciliation",
+          "testament": "NT",
+          "fetched_under_code": "G2643",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rom.5.11' class='verseLink'><span class='verseNumber'>Rom 5:11</span></a> <span morph='PRT-N A-ASN' strong='G3756 G3440'>More than</span> <span morph='CONJ' strong='G1161'>that</span>, we <span morph='CONJ' strong='G2532'>also</span> <span morph='V-PNP-NPM' strong='G2744'>rejoice</span> <span morph='PREP' strong='G1722'>in</span> <span morph='N-DSM-T' strong='G2316'>God</span> <span morph='PREP' strong='G1223'>through</span> <span morph='P-1GP' strong='G2257'>our</span> <span morph='N-GSM-T' strong='G2962G'>Lord</span> <span morph='N-GSM-P' strong='G2424G'>Jesus</span> <span morph='N-GSM-T' strong='G5547'>Christ</span>, <span morph='PREP' strong='G1223'>through</span> <span morph='R-GSM' strong='G3739'>whom</span> we have <span morph='ADV' strong='G3568'>now</span> <span morph='V-2AAI-1P' strong='G2983'>received</span>  <span morph='N-ASF' strong='G2643'>reconciliation</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2643",
+          "span_label_found": "reconciliation",
+          "context_before": "whom we have now received",
+          "context_after": "."
+        }
+      ]
+    },
+    {
+      "code": "G2644",
+      "gloss": "to reconcile",
+      "transliteration": "katallassō",
+      "script_form": "καταλλάσσω",
+      "language": "Greek",
+      "vocab_count": 7,
+      "medium_def": "to reconcile (among human beings or between human beings and God) \nto change, exchange; to reconcile;, passive to be reconciled, Rom. 5:10 (2x); 1Cor. 7:11; 2Cor. 5:18, 19, 20*",
+      "lsj_entry": "καταλλ-άσσω, \nAttic dialect καταλλάττω, change money, [Refs 1st c.AD+] (also in middle, [Refs 4th c.BC+]:—passive, Matreas cited in [Refs 2nd c.AD+], with a play on signification [Refs]; change or give away, τὴν Χάριν τῶν νόμων for the laws, [Refs 4th c.BC+]; καταλλάσσειν τὸν βίον to leave life, [Refs 2nd c.AD+]\n__b absolutely, transgress, contravene regulations, [Refs]\n__2 middle, exchange one thing for another, ἡδονὰς πρὸς ἡδονάς [Refs 5th c.BC+]; ἀντί τινος πάντα [Refs 4th c.BC+]: absolutely, exchange prisoners, [Refs 2nd c.AD+]\n__II change a person from enmity to friendship, reconcile, σφέας [NT+5th c.BC+]middle, καταλλάσσεσθαι τὴν ἔχθρην τινί to make up one's enmity with any one, [Refs 5th c.BC+] —passive, especially in aorist κατηλλάχθην or κατηλλάγην (former preferred by Trag., latter in Prose), to become reconciled, τινι [Refs 5th c.BC+]; θεοῖσιν ὡς καταλλαχθῇ Χόλου that he may be reconciled to them after his anger, [Refs 5th c.BC+]\n__II.2 passive, of an offence, to be atoned for, φόνον ἐπιγαμίαις μὴ καταλλάσσεσθαι μηδὲ Χρήμασιν [Refs 3rd c.BC+]",
+      "short_def_mounce": "to reconcile (among human beings or between human beings and God)",
+      "related_words": [
+        {
+          "strong": "G0236",
+          "form": "ἀλλάσσω",
+          "gloss": "to change",
+          "translit": "allassō"
+        },
+        {
+          "strong": "G0604",
+          "form": "ἀποκαταλλάσσω",
+          "gloss": "to reconcile",
+          "translit": "apokatallassō"
+        },
+        {
+          "strong": "G2596",
+          "form": "κατά",
+          "gloss": "according to",
+          "translit": "kata"
+        },
+        {
+          "strong": "G2643",
+          "form": "καταλλαγή",
+          "gloss": "reconciliation",
+          "translit": "katallagē"
+        }
+      ],
+      "raw_related_numbers": "G2596, G0236, G2643, G0604",
+      "freq_list": "6@5;6@5;6@5;5;6@5;;6@5;6@5;6@5;6@5;6@5;6@5;1;6@5;;;;;6@5;6@5;6@5;6@5;6@5;6@5;6@5;10@5;1;1;6@5;1;6@5",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G2643",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent G2643 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 5,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of G2644 ('to reconcile') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "1Cor.7.11",
+          "ref": "1Cor 7:11",
+          "book_code": "1Cor",
+          "chapter": 7,
+          "verse_num": 11,
+          "esv_text": "1Cor 7:11 ( but if she does , she should remain unmarried or else be reconciled to her husband ), and the husband should not divorce his wife .",
+          "target_word": "reconciled",
+          "testament": "NT",
+          "fetched_under_code": "G2644",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='1Cor.7.11' class='verseLink'><span class='verseNumber'>1Cor 7:11</span></a> (<span morph='CONJ' strong='G1161'>but</span> <span morph='COND' strong='G1437'>if</span> <span morph='V-APS-3S' strong='G5563'>she does</span>,  she should <span morph='V-PAM-3S' strong='G3306'>remain</span> <span morph='N-NSF' strong='G0022'>unmarried</span> <span morph='CONJ' strong='G2228'>or</span> else be <span morph='V-2APM-3S' strong='G2644'>reconciled</span> to her <span morph='N-DSM' strong='G0435H'>husband</span>), <span morph='CONJ' strong='G2532'>and</span>  the <span morph='N-ASM' strong='G0435H'>husband</span> should <span morph='PRT-N' strong='G3361'>not</span> <span morph='V-PAN' strong='G0863G'>divorce</span> his <span morph='N-ASF' strong='G1135H'>wife</span>.<p></p></span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2644",
+          "span_label_found": "to reconcile",
+          "context_before": "remain unmarried or else be",
+          "context_after": "to her husband ), and"
+        },
+        {
+          "osisId": "2Cor.5.18",
+          "ref": "2Cor 5:18",
+          "book_code": "2Cor",
+          "chapter": 5,
+          "verse_num": 18,
+          "esv_text": "2Cor 5:18 All this is from God , who through Christ reconciled us to himself and gave us the ministry of reconciliation ;",
+          "target_word": "reconciled",
+          "testament": "NT",
+          "fetched_under_code": "G2644",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.5.18' class='verseLink'><span class='verseNumber'>2Cor 5:18</span></a> <span morph='A-NPN' strong='G3956'>All</span> <span morph='CONJ' strong='G1161'>this</span> is <span morph='PREP' strong='G1537'>from</span> <span morph='N-GSM-T' strong='G2316'>God</span>, <span class='normal'></span> <span strong='G3588'>who</span> <span morph='PREP' strong='G1223'>through</span> <span morph='N-GSM-T' strong='G5547'>Christ</span> <span morph='V-AAP-GSM' strong='G2644'>reconciled</span> <span morph='P-1AP' strong='G2248'>us</span> to <span morph='F-3DSM' strong='G1438'>himself</span> <span morph='CONJ' strong='G2532'>and</span> <span morph='V-2AAP-GSM' strong='G1325'>gave</span> <span morph='P-1DP' strong='G2254'>us</span>  the <span morph='N-ASF' strong='G1248'>ministry</span> of <span morph='N-GSF' strong='G2643'>reconciliation</span>;</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2644",
+          "span_label_found": "to reconcile",
+          "context_before": "God , who through Christ",
+          "context_after": "us to himself and gave"
+        },
+        {
+          "osisId": "2Cor.5.19",
+          "ref": "2Cor 5:19",
+          "book_code": "2Cor",
+          "chapter": 5,
+          "verse_num": 19,
+          "esv_text": "2Cor 5:19 that is , in Christ God was reconciling the world to himself , not counting their trespasses against them , and entrusting to us the message of reconciliation .",
+          "target_word": "reconciling",
+          "testament": "NT",
+          "fetched_under_code": "G2644",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.5.19' class='verseLink'><span class='verseNumber'>2Cor 5:19</span></a> <span morph='CONJ' strong='G3754H'>that</span> <span morph='PRT' strong='G5613'>is</span>, <span morph='PREP' strong='G1722'>in</span> <span morph='N-DSM-T' strong='G5547'>Christ</span> <span morph='N-NSM-T' strong='G2316'>God</span> <span morph='V-IAI-3S' strong='G1510'>was</span> <span morph='V-PAP-NSM' strong='G2644'>reconciling</span>   the <span morph='N-ASM' strong='G2889'>world</span> to <span morph='F-3DSM' strong='G1438'>himself</span>, <span class='normal'></span> <span morph='PRT-N' strong='G3361'>not</span> <span morph='V-PNP-NSM' strong='G3049'>counting</span> <span morph='P-DPM' strong='G0846'>their</span> <span morph='N-APN' strong='G3900'>trespasses</span> against <span morph='P-GPM' strong='G0846'>them</span>, <span morph='CONJ' strong='G2532'>and</span> <span morph='V-2AMP-NSM' strong='G5087'>entrusting</span> <span morph='PREP' strong='G1722'>to</span> <span morph='P-1DP' strong='G2254'>us</span>  the <span morph='N-ASM' strong='G3056'>message</span> of <span morph='N-GSF' strong='G2643'>reconciliation</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2644",
+          "span_label_found": "to reconcile",
+          "context_before": ", in Christ God was",
+          "context_after": "the world to himself ,"
+        },
+        {
+          "osisId": "2Cor.5.20",
+          "ref": "2Cor 5:20",
+          "book_code": "2Cor",
+          "chapter": 5,
+          "verse_num": 20,
+          "esv_text": "2Cor 5:20 Therefore , we are ambassadors for Christ , God making his appeal through us . We implore you on behalf of Christ , be reconciled to God .",
+          "target_word": "reconciled",
+          "testament": "NT",
+          "fetched_under_code": "G2644",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='2Cor.5.20' class='verseLink'><span class='verseNumber'>2Cor 5:20</span></a> <span morph='CONJ' strong='G3767'>Therefore</span>, <span class='normal'></span> we are <span morph='V-PAI-1P' strong='G4243'>ambassadors</span> <span morph='PREP' strong='G5228'>for</span> <span morph='N-GSM-T' strong='G5547'>Christ</span>, <span class='normal'></span> <span morph='N-GSM-T' strong='G2316'>God</span> making his <span morph='V-PAP-GSM' strong='G3870'>appeal</span> <span morph='PREP' strong='G1223'>through</span> <span morph='P-1GP' strong='G2257'>us</span>. We <span morph='V-PNI-1P' strong='G1189'>implore</span> you on <span morph='PREP' strong='G5228'>behalf</span> of <span morph='N-GSM-T' strong='G5547'>Christ</span>, be <span morph='V-2APM-2P' strong='G2644'>reconciled</span> to <span morph='N-DSM-T' strong='G2316'>God</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2644",
+          "span_label_found": "to reconcile",
+          "context_before": "behalf of Christ , be",
+          "context_after": "to God ."
+        },
+        {
+          "osisId": "Rom.5.10",
+          "ref": "Rom 5:10",
+          "book_code": "Rom",
+          "chapter": 5,
+          "verse_num": 10,
+          "esv_text": "Rom 5:10 For if while we were enemies we were reconciled to God by the death of his Son , much more , now that we are reconciled , shall we be saved by his life .",
+          "target_word": "reconciled",
+          "testament": "NT",
+          "fetched_under_code": "G2644",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rom.5.10' class='verseLink'><span class='verseNumber'>Rom 5:10</span></a> <span morph='CONJ' strong='G1063'>For</span> <span morph='COND' strong='G1487G'>if</span>  while we <span morph='V-PAP-NPM' strong='G1510'>were</span> <span morph='N-NPM' strong='G2190'>enemies</span>  we were <span morph='V-2API-1P' strong='G2644'>reconciled</span> to <span morph='N-DSM-T' strong='G2316'>God</span> <span morph='PREP' strong='G1223'>by</span> the <span morph='N-GSM' strong='G2288'>death</span> of <span morph='P-GSM' strong='G0846'>his</span> <span morph='N-GSM' strong='G5207'>Son</span>, <span morph='A-DSN' strong='G4183'>much</span> <span morph='ADV' strong='G3123G'>more</span>, now that we are <span morph='V-2APP-NPM' strong='G2644'>reconciled</span>, shall we be <span morph='V-FPI-1P' strong='G4982'>saved</span> <span morph='PREP' strong='G1722'>by</span>  <span morph='P-GSM' strong='G0846'>his</span> <span morph='N-DSF' strong='G2222'>life</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G2644",
+          "span_label_found": "to reconcile",
+          "context_before": "we were enemies we were",
+          "context_after": "to God by the death"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,462 @@
+{
+  "meta": {
+    "english_anchor": "rejection",
+    "generated": "2026-03-28",
+    "step_version": "ESV_th",
+    "anchor_codes": [
+      "G0580"
+    ],
+    "particle_ceiling": 1000,
+    "total_terms_evaluated": 4,
+    "summary_by_group": {
+      "G1": 1,
+      "G4": 1,
+      "G2r": 2
+    },
+    "include_codes": [
+      "G0580",
+      "G0577",
+      "G1000"
+    ],
+    "exclude_codes": [
+      "G0575"
+    ],
+    "registry": {
+      "id": 131,
+      "no": 131,
+      "word": "rejection",
+      "source_list": "Low Confidence / Inferred",
+      "category_hint": null,
+      "phase1_input_file": null,
+      "phase1_status": "Complete",
+      "phase1_output_file": null,
+      "phase2_datasets": null,
+      "notes": null,
+      "automation_eligible": 1,
+      "last_automation_run": null,
+      "automation_run_id": "RUN-20260318_134133-BULK_GAP_FILL",
+      "phase1_term_count": 1,
+      "phase1_verse_count": 1,
+      "strongs_list": "[{\"strong\": \"G0580\", \"count\": 1}]",
+      "description": "Rejection is the experience of being turned away — refused, excluded, deemed unworthy or unwanted by someone whose acceptance mattered. The Greek term here (aposterēsis) covers the deprivation of what one was owed or expected. Rejection in Scripture is both an experience Jesus himself undergoes (he was despised and rejected) and a dynamic at the heart of the human-God relationship: the story of Israel and of humanity is in part the story of rejecting the One who comes to them. The one rejected by humans is vindicated by God.",
+      "origin": "original_list",
+      "source_category": null,
+      "inference_note": "Rejection as a psychological inner state — the felt experience of being unwanted or cast away — is ABSENT as a single biblical term. Scripture addresses rejection primarily from the perspective of being rejected by God or by people, with some texts addressing the inner experience.",
+      "anchor_verses": "1 Pet 2:4-7;  Is 53:3",
+      "session_b_status": null,
+      "cluster_assignment": "C18",
+      "sb_classification": null,
+      "sb_classification_reasoning": null,
+      "carry_forward": 1
+    }
+  },
+  "terms": [
+    {
+      "code": "G0580",
+      "gloss": "deprivation",
+      "transliteration": "apobolē",
+      "script_form": "ἀποβολή",
+      "language": "Greek",
+      "vocab_count": 2,
+      "medium_def": "rejection; loss \na casting off; rejection, reprobation, Rom. 11:15; loss, deprivation, of life, etc., Acts 27:22*",
+      "lsj_entry": "ἀποβολ-ή, ῆς, ἡ, \nthrowing away, e.g. ὅπλων [prev. work = 5th-6th c.BC: Plato Philosophus “Leges”] 943ef; jettison, [Refs 1st c.AD+]; in Grammars, dropping of a letter, etc., [Refs 2nd c.AD+]\n__2 loss, opposed to κτῆσις, χρημάτων[Refs 5th c.BC+]",
+      "short_def_mounce": "rejection; loss",
+      "related_words": [
+        {
+          "strong": "G0575",
+          "form": "ἀπό",
+          "gloss": "away from",
+          "translit": "apo"
+        },
+        {
+          "strong": "G0577",
+          "form": "ἀποβάλλω",
+          "gloss": "to throw away",
+          "translit": "apoballō"
+        },
+        {
+          "strong": "G1000",
+          "form": "βολή",
+          "gloss": "throwing",
+          "translit": "bolē"
+        }
+      ],
+      "raw_related_numbers": "G0575, G1000, G0577",
+      "freq_list": "2;2;2;2;2;1;2;2;2;2;2;2;;2;;;;;2;2;2;2;2;2;2;2;;;2;;2",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G0580",
+      "step_section_type": "primary",
+      "decision_group": "G1",
+      "action": "include",
+      "decision_reason": "F4: parent G0580 in anchor list, section_type=primary",
+      "verses_fetched": true,
+      "verse_count": 2,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": [
+        {
+          "osisId": "Acts.27.22",
+          "ref": "Act 27:22",
+          "book_code": "Acts",
+          "chapter": 27,
+          "verse_num": 22,
+          "esv_text": "Act 27:22 Yet now I urge you to take heart , for there will be no loss of life among you , but only of the ship .",
+          "target_word": "loss",
+          "testament": "NT",
+          "fetched_under_code": "G0580",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Acts.27.22' class='verseLink'><span class='verseNumber'>Act 27:22</span></a> <span morph='CONJ' strong='G2532'>Yet</span> <span morph='ADV' strong='G3569'>now</span> I <span morph='V-PAI-1S' strong='G3867'>urge</span> <span morph='P-2AP' strong='G5209'>you</span> to  <span morph='V-PAN' strong='G2114'>take heart</span>, <span morph='CONJ' strong='G1063'>for</span> there will <span morph='V-FDI-3S' strong='G1510'>be</span> <span morph='A-NSF' strong='G3762'>no</span> <span morph='N-NSF' strong='G0580'>loss</span> of <span morph='N-GSF' strong='G5590H'>life</span> <span morph='PREP' strong='G1537'>among</span> <span morph='P-2GP' strong='G5216'>you</span>, <span morph='PREP' strong='G4133'>but</span> only of the <span morph='N-GSN' strong='G4143'>ship</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G0580",
+          "span_label_found": "deprivation",
+          "context_before": "for there will be no",
+          "context_after": "of life among you ,"
+        },
+        {
+          "osisId": "Rom.11.15",
+          "ref": "Rom 11:15",
+          "book_code": "Rom",
+          "chapter": 11,
+          "verse_num": 15,
+          "esv_text": "Rom 11:15 For if their rejection means the reconciliation of the world , what will their acceptance mean but life from the dead ?",
+          "target_word": "rejection",
+          "testament": "NT",
+          "fetched_under_code": "G0580",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Rom.11.15' class='verseLink'><span class='verseNumber'>Rom 11:15</span></a> <span morph='CONJ' strong='G1063'>For</span> <span morph='COND' strong='G1487G'>if</span> <span morph='P-GPM' strong='G0846'>their</span> <span morph='N-NSF' strong='G0580'>rejection</span> means  the <span morph='N-NSF' strong='G2643'>reconciliation</span> of the <span morph='N-GSM' strong='G2889'>world</span>, <span morph='I-NSF' strong='G5101'>what</span> will their <span morph='N-NSF' strong='G4356'>acceptance</span> mean <span morph='COND PRT-N' strong='G1487G G3361'>but</span> <span morph='N-NSF' strong='G2222'>life</span> <span morph='PREP' strong='G1537'>from</span> the <span morph='A-GPM' strong='G3498'>dead</span>?</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G0580",
+          "span_label_found": "deprivation",
+          "context_before": "Rom 11:15 For if their",
+          "context_after": "means the reconciliation of the"
+        }
+      ]
+    },
+    {
+      "code": "G0575",
+      "gloss": "away from",
+      "transliteration": "apo",
+      "script_form": "ἀπό",
+      "language": "Greek",
+      "vocab_count": 4193,
+      "medium_def": "forth, from, away from; hence, it variously signifies departure; distance of time or place; avoidance; riddance; derivation from a quarter, source, or material; origination from agency or instrumentality",
+      "lsj_entry": "ἀπό, \nAeolic dialect, Thess., [Refs 7th c.BC+], etc.:—preposition usually with Gen. but see below [Refs 5th c.BC+] (Cf. Sanskrit \n__A ápa, Latin ab, Umbr. ap-ehtre 'ab extra', Gothic af, O[Refs 5th c.BC+] af, cef, of, etc.) Orig. sense, from. [ᾰπο?~X: where ἀπο ¯ is found in Epic dialect before see or liquids (as ἀπὸ ἕθεν[Refs 8th c.BC+] was sometimes written in later texts,[Refs] — ᾱ for the sake of meter in _Epic dialect_ compounds, such as ἀπονέεσθαι.] \n__A.I OF PLACE, the earliest, and in [Refs 8th c.BC+]\n__A.I.1 of Motion, from, away from, ἐσσεύοντο νεῶν ἄπο καὶ κλισιάων[Refs 8th c.BC+]; pleonastic, ἀ. Τροίηθεν[LXX+8th c.BC+]; also ἀπ᾽ αἰῶνος νέος ὤλεο, implying departure from life, [Refs]; opposed to ἐξ, of relatively superficial motion, λαμβάνομεν οὔτε ἐκ τῆς γῆς οὐδέν, οὔτ᾽ ἀπὸ τῶν οἰκιῶν[Refs 5th c.BC+]; similarly of the cause or ground, ἐξ ὧν προηγώνισθε καὶ ἀφ᾽ ὧν εἰκάζω[Refs 5th c.BC+]:— frequently of warriors fighting from chariots, etc., οἱ μὲν ἀφ᾽ ἵππων, οἱ δ᾽ ἀ. νηῶν.. μάχοντο[Refs 8th c.BC+]; λαμπὰς ἔσται ἀφ᾽ ἵππων on horseback, [Refs 5th c.BC+]; ὀμμάτων ἄπο.. κατέσταζον γένυν, of tears, [Refs 5th c.BC+]\n__A.I.2 of Position, away from, far from, μένων ἀ. ἧς ἀλόχοιο[Refs 8th c.BC+] to live apart from a man or husband, [Refs 8th c.BC+]; ἀπ᾽ ὀφθαλμῶν, ἀπ᾽ οὔατος, far from sight or hearing, [Refs 8th c.BC+]; σπεύδειν ἀ. ῥυτῆρος far from, i.e. without using the rein, [Refs 8th c.BC+]; in measurement of distances, ὅσον ιέ στάδια ἀ. Φυλῆς[Refs 5th c.BC+]; but later the numeral follows ἀ., πηγὰς ἔχων ἀ. μ σταδίων τῆς θαλάσσης[Refs 1st c.BC+]; κατεστρατοπέδευσεν ἀ. ν σταδίων fifty stades away, [Refs 1st c.AD+]\n__A.I.3 of the mind, ἀ. θυμοῦ away from, i. e. alien from, my heart, [Refs 8th c.BC+]; οὐδὲν ἀ. τρόπου not without reason, [Refs 5th c.BC+]; οὐκ ἀ. σκοποῦ, καιροῦ, [Refs 5th c.BC+]\n__A.I.4 in pregnant sense, with Verbs of rest, previous motion being implied (compare ἐκ), ἀνὰ δ᾽ ἐβόασεν.. ἀ. πέτρας σταθείς[Refs 5th c.BC+]; ἀ.τῆς ἐμῆς κεφαλῆς τὴν [ἐκείνου] κεφαλὴν ἀναδήσω, i. e. taking the chaplet off my head, and placing it on his, [Refs 5th c.BC+] is more common, ἁψαμένη βρόχον ἀ. μελάθρου[Refs 8th c.BC+]\n__A.I.5 with the Article, where the sense of motion often disappears, οἱ ἀ. τῶν οἰκιῶν φεύγουσιν, i.e. οἱ ἐν ταῖς οἰκίαις φεύγουσιν ἀπ᾽ αὐτῶν, [Refs 5th c.BC+]; οἱ ἀ. τῶν πύργων.. ἐπαρήξουσι[Refs 5th c.BC+]; αἱ ἵπποι αἱ ἀ. τοῦ ἅρματος variant in [Refs 5th c.BC+]\n__A.I.6 partitive, λαχὼν ἀ. ληΐδος αἶσαν part taken from the booty, a share of it, [Refs 8th c.BC+]\n__A.I.7 in Mathematics texts, of figures described upon a base, κῶνον ἀναγράφειν ἀ. κύκλου[Refs 3rd c.BC+]; τὸ ἀ. τῆς AB τετράγωνον the square on AB, [Refs 3rd c.BC+]; εἴδεα ἀ... [Refs 3rd c.BC+]\n__A.I.8 ἀ. ἀνθρώπου ἕως γυναικός man and woman, [LXX]; ἀ. ἀρσενικοῦ ἕως θηλυκοῦ [prev. work] LXX.Num.5.3. \n__A.I.9 from being, instead of, ἀθανάταν ἀ. θνατᾶς.. ἐποίησας Βερενίκαν[Refs 3rd c.BC+]\n__A.I.10 privative, free from, without, ἀ. πάσης ἀκαθαρσίας[Refs 2nd c.AD+]; ἀ. ζημίας[Refs 3rd c.AD+]\n__A.II OF TIME, from, after, [Refs 8th c.BC+] rising up from, i.e. after,[Refs 5th c.BC+]; ἀ. δείπνου εἶναι or γενέσθαι, [Refs 5th c.BC+]; in narrative, τὸ ἀ. τούτου or το̄δε, from this point onwards, [Refs 5th c.BC+]; more often ἀπ᾽ or ἀφ᾽ οὗ, [Refs 5th c.BC+]; εὐθὺς ἀ. παλαιοῦ, ἀ. τοῦ πάνυ ἀρχαίου, of olden time, [Refs 5th c.BC+]; ἀφ᾽ ἑσπέρας from the beginning of evening, i.e. at eventide, [Refs 5th c.BC+]; ἀ. πρώτου ὕπνου[Refs 5th c.BC+]; ἀπ᾽ ἀγροῦ fresh from field-work, [NT+5th c.BC+]; χρονίζειν ἀ. τοῦ καιροῦ tarry beyond the time, [LXX]; ἀ. τέλους ἐννέα μηνῶν at the end of..,[Refs 1st c.AD+]; οἱ ἀ. ὑπατείας, = consulares, [Refs 2nd c.AD+]; but ἀ. τινος the freedman of.., [Refs 2nd c.AD+]\n__A.III OF ORIGIN, CAUSE, etc.: \n__A.III.1 of that from which one is born, οὐ γὰρ ἀ. δρυός ἐσσι οὐδ᾽ ἀ. πέτρης not sprung from oak or rock, [Refs 8th c.BC+] immediate, descent, τοὺς μὲν ἀ. θεῶν, τοὺς δ᾽ ἐξ αὐτῶν τῶν θεῶν γεγονότας[Refs 5th c.BC+]; τρίτος ἀ. Διός third in descent from Zeus, [Refs 5th c.BC+]; οἱ ἀ. γένους τινός his descendants, [Refs 5th c.BC+]: of the place one springs from, ἵπποι.. ποταμοῦ ἄπο Σελλήεντος[Refs 8th c.BC+]\n__A.III.1.b metaphorically of things, Χαρίτων ἄπο κάλλος ἔχουσαι[Refs 8th c.BC+]; θεῶν ἄπο μήδεα εἰδώς[Refs 5th c.BC+]; ὁ ἀ. τῶν πολεμίων φόβος fear inspired by the enemy, [Refs 5th c.BC+]\n__A.III.1.c of persons, οἱ ἀ. τῆς χώρας, τῆς πόλεως, country folk, townsfolk, [Refs 2nd c.BC+]; and so of connexion with the founder or leader of a sect, οἱ ἀ. Πυθαγόρου[Refs 1st c.AD+]; οἱ ἀ. τοῦ περιπάτου, ἀ. τῆς Στοᾶς, etc., [Refs 2nd c.AD+] stage players, [Refs 1st c.AD+]; ὁ ἀφ᾽ ἑστίας παῖς, see at {ἑστί; ἀπ᾽ ἐξωμίδος} with only an ἐξωμίς, [Refs 2nd c.AD+]\n__A.III.2 of the material from or of which a thing is made, εἵματα ἀ. ξύλου πεποιημένα[NT+5th c.BC+] of or weighing [Refs 4th c.BC+]; κρᾶσις ἀ. τε τῆς ἡδονῆς συγκεκραμένη καὶ ἀ. τῆς λύπης[Refs 5th c.BC+]; so, by an extension of this use, εἰδεχθής τις ἀ. τοῦ προσώπου ugly of countenance, [Refs 4th c.BC+]\n__A.III.3 of the instrument from or by which a thing is done, τοὺς.. πέφνεν ἀπ᾽ ἀργυρέοιο βιοῖο by arrow shot from silver bow, [Refs 8th c.BC+]; γυμνάζεσθαι ἀ. σκελῶν, χειρῶν, τραχήλου, [LXX+5th c.BC+]\n__A.III.4 of the person from whom an act comes, i.e. by whom it is done, οὐδὲν μέγα ἔργον ἀπ᾽ αὐτοῦ ἐγένετο[Refs 5th c.BC+]; so τἀπ᾽ ἐμοῦ, τἀπὸ σοῦ, [Refs 5th c.BC+]; in later Greek frequently of the direct agent, [NT+2nd c.BC+]; in codices this may sometimes be due to confusion with ὑπό, but[Refs 1st c.AD+]\n__A.III.5 of the source from which life, power, etc., are sustained, ζῆν ἀπ᾽ ὕλης ἀγρίης[Refs 5th c.BC+]; ἀ. κτήνεων καὶ ἰχθύων[Refs 5th c.BC+]quaestum corpore facere, [Refs 1st c.AD+]\n__A.III.6 of the cause, means, or occasion from, by, or because of which a thing is done, ἀ. τούτου κριοπρόσωπον τὤγαλμα τοῦ Διὸς ποιεῦσι[Refs 5th c.BC+]; ἀ. τινος ἐπαινεῖσθαι, θαυμάζεσθαι, ὠφελεῖσθαι, [Refs 5th c.BC+]; ἀ. τοῦ πάθους in consequence of.., [Refs 5th c.BC+]; τρόπαιον ἀ. τινος εἱστήκει on occasion of his defeat, [Refs]; τλήμων οὖσ᾽ ἀπ᾽ εὐτόλμου φρενός[Refs 4th c.BC+]; ἀ. δικαιοσύνης by reason of it (variant for{ὑπό}), [Refs 5th c.BC+]; ἀ. τῶν αὐτῶν λημμάτων on the same scale of profits, [Refs 4th c.BC+]; for ὅσον ἀ. βοῆς ἕνεκα, see at {ἕνεκα}: hence in half adverbial usages, ἀ. σπουδῆς in earnest, eagerly, [Refs 8th c.BC+]; ἀ. τοῦἴσου, ἀ. τῆς ἴσης, or ἀπ᾽ ἴσης, equally, [Refs 5th c.BC+]; ἀ. τοῦ εὐθέος straightforwardly, [Refs]; ἀ. τοῦ αὐτομάτου of free-will, [Refs 5th c.BC+]; ἀ. γλώσσης by word of mouth, [Refs 5th c.BC+] (but also, from hearsay, [Refs 5th c.BC+]; ἀπ᾽ ὄψεως at sight, [Refs 5th c.BC+]; ἀ. χειρὸς λογίζεσθαι on your fingers, [Refs 5th c.BC+]; ὀμμάτων ἄπο in the public gaze, [Refs 5th c.BC+]; τριηράρχους αἱρεῖσθαι ἀ. τῆς οὐσίας Canon Laws texts cited in [Refs 4th c.BC+]; ἀφ᾽ ἑαυτοῦ from oneself, on one's own account, [Refs 5th c.BC+]; ἀ. συνθήματος, ἀ. παραγγέλματος, by agreement, by word of command, [Refs 5th c.BC+]; ἀ. σάλπιγγος by sound of trumpet, [Refs 5th c.BC+]; ἐπίτροπος ἀ. τῶν λόγων, = Latin procurator a rationibus, Ann.epigram.[Refs 2nd c.AD+]\n__A.III.7 of the object spoken of, τὰ ἀ. τῆς νήσου οἰκότα ἐστί the things told from or of the island.., [Refs 5th c.BC+]\n__B in [Refs 4th c.AD+]; ἀπὺ τᾷ ζᾷ[Refs]\n__B.2 in later Greek ἀπό is found with accusative, [Refs 4th c.AD+]\n__C in [Refs 8th c.BC+] frequent with Verbs in tmesi, as [Refs 8th c.BC+]\n__D IN COMPOSITION (joined with other words),\n__D.1 asunder, as ἀποκόπτω, ἀπολύω, ἀποτέμνω: and hence, away, off, as ἀποβάλλω, ἀποβαίν; denoting, remoual of an accusation, as ἀπολογέομαι, ἀποψηφίζομαι. \n__D.2 finishing off, completing, ἀπεργάζομαι, ἀπανδρόω, ἀπανθρωπίζω, ἀπογλαυκόω. \n__D.3 ceasing from, leaving off, as ἀπαλγέω, ἀποκηδεύω, ἀπολοφύρομαι, ἀποζέω, ἀπανθίζω, ἀφυβρίζω. \n__D.4 back again, as ἀποδίδωμι, ἀπολαμβάνω, ἀπόπλους: also, in full, or what is one's own, as ἀπέχω, ἀπολαμβάνω: frequently it only strengthens the sense of the simple. \n__D.5 by way of abuse, as in ἀποκαλέω. \n__D.6 almost ={ἀ-} privative; sometimes with Verbs, as ἀπαυδάω, ἀπαγορεύ; more frequently with Adjectives, as ἀποχρήματος, ἀπότιμος, ἀπόσιτος, ἀπόφονος. \n__E ἄπο, by anastrophe for ἀπό, when it follows its Noun, as ὀμμάτων ἄπο[Refs 5th c.BC+]; never in Prose. \n__E.2 ἄπο for ἄπεστι, [Refs 7th c.BC+]",
+      "short_def_mounce": "from, away from",
+      "related_words": [],
+      "raw_related_numbers": "",
+      "freq_list": "611@566;675@616;54@53;591;581@541;941@552;652@586;648@584;637@590;645@590;48@47;657@602;;661@605;;;;;645@590;637@582;671@617;655@605;650@593;671@616;661@604;619@513;3187@2658;3415@2797;651@602;3439@2797;656@602",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G0580",
+      "step_section_type": "related_term",
+      "decision_group": "G4",
+      "action": "exclude",
+      "decision_reason": "F2: vocab_count 4193 > particle_ceiling 1000",
+      "verses_fetched": false,
+      "verse_count": null,
+      "testament_coverage": null,
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [],
+      "quality_flag_detail": {},
+      "verses": []
+    },
+    {
+      "code": "G0577",
+      "gloss": "to throw away",
+      "transliteration": "apoballō",
+      "script_form": "ἀποβάλλω",
+      "language": "Greek",
+      "vocab_count": 8,
+      "medium_def": "to throw away \nto cast, or throw off, cast aside, Mk. 10:50; Heb. 10:35*",
+      "lsj_entry": "ἀποβάλλω, \nfuture -βαλῶ, throw off, ἀπὸ δὲ χλαῖναν βάλε[Refs 8th c.BC+]: with genitive, throw off from, ἀ. ὀμμάτων ὕπνον[Refs 5th c.BC+]:—middle, throw off from oneself, cast off, δύναμιν βασιλέως[Refs 5th c.BC+]\n__2 throw away, [Refs 5th c.BC+]; τὸν ἄνδρα τὸν πάρος ἀ. reject him, [Refs 5th c.BC+]; ἀ. τὰ κέρατα, τὰς ὁπλάς, cast, shed, [Refs 4th c.BC+]:—middle, [Refs 5th c.BC+]; οὐδεὶς ἀ. ἑκών jettisons cargo, [Refs 4th c.BC+]; expose a child, [Refs]; despise, reject, [Refs 5th c.BC+]:—passive, ἀποβληθεὶς τῆς τυραννίδος[Refs 1st c.AD+]\n__2.b throw away, sell too cheap, [Refs 5th c.BC+]\n__3 lose, τὴν τυραννίδα[Refs 5th c.BC+]; τὰ πατρώια, τὸν στρατόν, τὴν κεφαλήν, [Refs 5th c.BC+]; opposed to κτᾶσθαι, [Refs 5th c.BC+]; ἀ.δόξαν, τέχνην, [Refs 5th c.BC+]:—in middle, ἀγαθὸν πολίτην[Refs]\n__3.b Grammars, drop a letter, etc., [Refs 2nd c.AD+]\n__4 degrade, [Refs 5th c.BC+]",
+      "short_def_mounce": "to throw away",
+      "related_words": [
+        {
+          "strong": "G0306",
+          "form": "ἀναβάλλω",
+          "gloss": "to defer",
+          "translit": "anaballō"
+        },
+        {
+          "strong": "G0474",
+          "form": "ἀντιβάλλω",
+          "gloss": "to discuss",
+          "translit": "antiballō"
+        },
+        {
+          "strong": "G0575",
+          "form": "ἀπό",
+          "gloss": "away from",
+          "translit": "apo"
+        },
+        {
+          "strong": "G0579",
+          "form": "ἀπόβλητος",
+          "gloss": "rejected",
+          "translit": "apoblētos"
+        },
+        {
+          "strong": "G0580",
+          "form": "ἀποβολή",
+          "gloss": "deprivation",
+          "translit": "apobolē"
+        },
+        {
+          "strong": "G0641",
+          "form": "ἀπορρίπτω",
+          "gloss": "to throw off",
+          "translit": "aporriptō"
+        },
+        {
+          "strong": "G0906G",
+          "form": "βάλλω",
+          "gloss": "to throw: throw",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906H",
+          "form": "βάλλω",
+          "gloss": "to throw: put",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906I",
+          "form": "βάλλω",
+          "gloss": "to throw: sow",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906J",
+          "form": "βάλλω",
+          "gloss": "to throw: pour",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906K",
+          "form": "βάλλω",
+          "gloss": "to throw: hit",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G1225",
+          "form": "διαβάλλω",
+          "gloss": "to accuse",
+          "translit": "diaballō"
+        },
+        {
+          "strong": "G1544",
+          "form": "ἐκβάλλω",
+          "gloss": "to expel",
+          "translit": "ekballō"
+        },
+        {
+          "strong": "G1685",
+          "form": "ἐμβάλλω",
+          "gloss": "to throw in",
+          "translit": "emballō"
+        },
+        {
+          "strong": "G1911",
+          "form": "ἐπιβάλλω",
+          "gloss": "to put on/seize",
+          "translit": "epiballō"
+        },
+        {
+          "strong": "G1977",
+          "form": "ἐπιρρίπτω",
+          "gloss": "to throw on",
+          "translit": "epirriptō"
+        },
+        {
+          "strong": "G2598",
+          "form": "καταβάλλω",
+          "gloss": "to lay/throw down",
+          "translit": "kataballō"
+        },
+        {
+          "strong": "G3846",
+          "form": "παραβάλλω",
+          "gloss": "to arrive",
+          "translit": "paraballō"
+        },
+        {
+          "strong": "G4016",
+          "form": "περιβάλλω",
+          "gloss": "to clothe",
+          "translit": "periballō"
+        },
+        {
+          "strong": "G4261",
+          "form": "προβάλλω",
+          "gloss": "to put forth",
+          "translit": "proballō"
+        },
+        {
+          "strong": "G4496",
+          "form": "ῥίπτω",
+          "gloss": "to throw/lay down",
+          "translit": "riptō"
+        },
+        {
+          "strong": "G4820",
+          "form": "συμβάλλω",
+          "gloss": "to ponder/confer",
+          "translit": "sumballō"
+        },
+        {
+          "strong": "G5235",
+          "form": "ὑπερβάλλω",
+          "gloss": "to surpass",
+          "translit": "huperballō"
+        },
+        {
+          "strong": "G5260",
+          "form": "ὑποβάλλω",
+          "gloss": "to instigate",
+          "translit": "hupoballō"
+        }
+      ],
+      "raw_related_numbers": "G0575, G0906, G0906, G0906, G0906, G0906, G0579, G0580, G0306, G0474, G0641, G1225, G1544, G1685, G1911, G1977, G2598, G3846, G4016, G4261, G4495, G4496, G4820, G5235, G5260",
+      "freq_list": "2;3@2;4@2;2;2;2;3@2;3@2;2;2;4@2;3@2;;2;;;;;3;2;2;3;2;2;2;3@2;3;4;3;4;3",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G0580",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent G0580 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 2,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of G0577 ('to throw away') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Heb.10.35",
+          "ref": "Heb 10:35",
+          "book_code": "Heb",
+          "chapter": 10,
+          "verse_num": 35,
+          "esv_text": "Heb 10:35 Therefore do not throw away your confidence , which has a great reward .",
+          "target_word": "throw away",
+          "testament": "NT",
+          "fetched_under_code": "G0577",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Heb.10.35' class='verseLink'><span class='verseNumber'>Heb 10:35</span></a> <span morph='CONJ' strong='G3767'>Therefore</span> do <span morph='PRT-N' strong='G3361'>not</span> <span morph='V-2AAS-2P' strong='G0577'>throw away</span> <span morph='P-2GP' strong='G5216'>your</span> <span morph='N-ASF' strong='G3954'>confidence</span>, <span morph='R-NSF' strong='G3748'>which</span> <span morph='V-PAI-3S' strong='G2192'>has</span>  a <span morph='A-ASF' strong='G3173'>great</span> <span morph='N-ASF' strong='G3405'>reward</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G0577",
+          "span_label_found": "to throw away",
+          "context_before": "Heb 10:35 Therefore do not",
+          "context_after": "your confidence , which has"
+        },
+        {
+          "osisId": "Mark.10.50",
+          "ref": "Mar 10:50",
+          "book_code": "Mark",
+          "chapter": 10,
+          "verse_num": 50,
+          "esv_text": "Mar 10:50 And throwing off his cloak , he sprang up and came to Jesus .",
+          "target_word": "throwing off",
+          "testament": "NT",
+          "fetched_under_code": "G0577",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Mark.10.50' class='verseLink'><span class='verseNumber'>Mar 10:50</span></a> <span morph='CONJ' strong='G1161'>And</span> <span morph='V-2AAP-NSM' strong='G0577'>throwing off</span> <span morph='P-GSM' strong='G0846'>his</span>  <span morph='N-ASN' strong='G2440'>cloak</span>, he <span morph='V-AAP-NSM' strong='G6008'>sprang up</span> and <span morph='V-2AAI-3S' strong='G2064'>came</span> <span morph='PREP' strong='G4314'>to</span> <span morph='N-ASM-P' strong='G2424G'>Jesus</span>.</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G0577",
+          "span_label_found": "to throw away",
+          "context_before": "Mar 10:50 And",
+          "context_after": "his cloak , he sprang"
+        }
+      ]
+    },
+    {
+      "code": "G1000",
+      "gloss": "throwing",
+      "transliteration": "bolē",
+      "script_form": "βολή",
+      "language": "Greek",
+      "vocab_count": 2,
+      "medium_def": "throwing \na cast, a throw; the distance to which a thing can be thrown, Lk. 22:41*",
+      "lsj_entry": "βολή, ἡ, \nthrow: \n__1 stroke or wound of a missile (opposed to πληγή, of sword or pike), [Refs 8th c.BC+]shafts of love, [Refs]; βολαῖς.. σφόγγος ὤλεσεν γραφήν by its stroke or touch, [Refs 4th c.BC+]; swing of ἁλτῆρες, [Refs 2nd c.AD+]\n__2 κύβων βολαί throws or casts of dicc, [Refs 5th c.BC+]\n__3 metaphorically, β. ὀφθαλμῶν quick glances, [Refs 8th c.BC+]\n__4 β. κεραύνιοι thunder-bolts, [Refs 4th c.BC+]; βολαὶ ἡλίου sun-beams, [Refs 5th c.BC+]; χρυσοῦ.. βολαῖς with golden rays, of a statue, [Refs 3rd c.AD+]; βολαὶ χιόνος radiance, [Refs 5th c.BC+]\n__5 βολαί, ={ὠδῖνες}, [Refs 6th c.AD+]\n__6 payment, ἀποδώσω ἐπὶ βολαῖς δυσίν [Refs 6th c.AD+]",
+      "short_def_mounce": "throwing",
+      "related_words": [
+        {
+          "strong": "G0906G",
+          "form": "βάλλω",
+          "gloss": "to throw: throw",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906H",
+          "form": "βάλλω",
+          "gloss": "to throw: put",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906I",
+          "form": "βάλλω",
+          "gloss": "to throw: sow",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906J",
+          "form": "βάλλω",
+          "gloss": "to throw: pour",
+          "translit": "ballō"
+        },
+        {
+          "strong": "G0906K",
+          "form": "βάλλω",
+          "gloss": "to throw: hit",
+          "translit": "ballō"
+        }
+      ],
+      "raw_related_numbers": "G0906, G0906, G0906, G0906, G0906",
+      "freq_list": "1;1;1;1;1;;1;1;1;1;1;1;;1;;;;;1;1;1;1;1;1;1;1;1;1;1;1;1",
+      "is_proper_noun": false,
+      "is_sub_gloss": false,
+      "step_parent_code": "G0580",
+      "step_section_type": "related_term",
+      "decision_group": "G2r",
+      "action": "include",
+      "decision_reason": "F5b: parent G0580 in anchor list, section_type=related_term, root NOT confirmed",
+      "verses_fetched": true,
+      "verse_count": 1,
+      "testament_coverage": "NT_only",
+      "meaning_numbered": false,
+      "causative_form_present": false,
+      "data_quality_flags": [
+        "NOTE_ON_ROOT_FAMILY"
+      ],
+      "quality_flag_detail": {
+        "NOTE_ON_ROOT_FAMILY": "Root family of G1000 ('throwing') not confirmed from STEP data alone. Root consonants may not match the anchor cluster root."
+      },
+      "verses": [
+        {
+          "osisId": "Luke.22.41",
+          "ref": "Luk 22:41",
+          "book_code": "Luke",
+          "chapter": 22,
+          "verse_num": 41,
+          "esv_text": "Luk 22:41 And he withdrew from them about a stone’s throw , and knelt down and prayed ,",
+          "target_word": "throw",
+          "testament": "NT",
+          "fetched_under_code": "G1000",
+          "preview_html": "<div tabindex='-1' style='direction: ltr;' class='passageContentHolder'><span lang='en' dir='ltr' class='verse ltrDirection'><a name='Luke.22.41' class='verseLink'><span class='verseNumber'>Luk 22:41</span></a> <span morph='CONJ' strong='G2532'>And</span> <span morph='P-NSM' strong='G0846'>he</span> <span morph='V-API-3S' strong='G0645'>withdrew</span> <span morph='PREP' strong='G0575'>from</span> <span morph='P-GPM' strong='G0846'>them</span> <span morph='PREP' strong='G5616'>about</span> a <span morph='N-GSM' strong='G3037'>stone’s</span> <span morph='N-ASF' strong='G1000'>throw</span>, <span morph='CONJ' strong='G2532'>and</span>  <span morph='V-2AAP-NSM' strong='G5087'>knelt</span> <span morph='N-APN' strong='G1119'>down</span> and <span morph='V-INI-3S' strong='G4336'>prayed</span>,</span> </div>",
+          "span_strong_match": 1,
+          "span_code_found": "G1000",
+          "span_label_found": "throwing",
+          "context_before": "from them about a stone’s",
+          "context_after": ", and knelt down and"
+        }
+      ]
+    }
+  ]
+}

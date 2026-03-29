@@ -1,0 +1,61 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260327-112-CORRECTION-V2",
+    "registry_id": 112,
+    "word": "mind",
+    "produced_date": "2026-03-27",
+    "produced_by": "WA-SessionB-DataPrep-Instruction-v5.1",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Correction patch: restore G1271 dianoia, G3563 nous, G5426 froneō, G3105 mainomai from delete to extracted — researcher confirmed all four are core mind vocabulary and must be included in Session B analysis"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G3563",
+      "term_inv_id": 994,
+      "new_status": "extracted",
+      "description": "Restore nous — primary NT mind/understanding term, core registry vocabulary"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "G1271",
+      "term_inv_id": 995,
+      "new_status": "extracted",
+      "description": "Restore dianoia — thinking faculty/understanding, core NT mind vocabulary"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "G5426",
+      "term_inv_id": 996,
+      "new_status": "extracted",
+      "description": "Restore froneō — to think/set the mind on, high-frequency Pauline mind vocabulary"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "G3105",
+      "term_inv_id": 1000,
+      "new_status": "extracted",
+      "description": "Restore mainomai — to be out of one's mind/mad, attests the boundary state of mind in NT usage"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_registry",
+      "registry_no": 112,
+      "set": {
+        "session_b_status": "Pre-Analysis Complete"
+      },
+      "description": "Registry status confirmed Pre-Analysis Complete after correction of four erroneously deleted terms"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "update_mti_status": 4,
+    "restore_delete_flagged": 0,
+    "insert_research_flags": 0,
+    "update_registry": 1
+  }
+}
