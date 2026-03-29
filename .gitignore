@@ -43,6 +43,8 @@ backups/
 # (these are transient; commit only the schema and .gitkeep files)
 data/imports/*.json
 data/exports/*.json
+!data/exports/database_schema_*.json
+!data/exports/wa-registry-overview-*.json
 data/exports/*.csv
 
 # ── Generated word report CSVs ────────────────

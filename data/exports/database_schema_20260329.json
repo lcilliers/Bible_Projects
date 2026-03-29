@@ -1,0 +1,3795 @@
+{
+  "meta": {
+    "export_date": "2026-03-29T06:10:51Z",
+    "schema_version": "3.7.0",
+    "database_file": "data/bible_research.db",
+    "table_count": 36
+  },
+  "tables": {
+    "book_code_variants": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "code",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "book_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 112,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_book_code_variants_1",
+          "unique": true,
+          "columns": [
+            "code"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "book_id",
+          "table": "books",
+          "to": "id"
+        }
+      ]
+    },
+    "books": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "abbreviation",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "book_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "full_name",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "short_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "verse_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "last_updated",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": "strftime('%Y-%m-%dT%H:%M:%S','now')",
+          "pk": false
+        }
+      ],
+      "row_count": 66,
+      "indexes": [
+        {
+          "name": "uq_books_short_code",
+          "unique": true,
+          "columns": [
+            "short_code"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_books_3",
+          "unique": true,
+          "columns": [
+            "book_order"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_books_2",
+          "unique": true,
+          "columns": [
+            "abbreviation"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_books_1",
+          "unique": true,
+          "columns": [
+            "name"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "engine_run_log": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "mode",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "target_registry_ids",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "started_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "completed_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "outcome",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "words_attempted",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "words_complete",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "words_stopped",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "total_terms_new",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "total_terms_xref",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "total_verses_inserted",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "total_verses_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "total_meanings_parsed",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "error_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "resume_from",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 494,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_engine_run_log_1",
+          "unique": true,
+          "columns": [
+            "run_id"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "engine_stream_checkpoint": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "stream_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": "'pending'",
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "last_registry_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "last_strong",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "rows_written",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "rows_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "error_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "started_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "completed_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 1139,
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "from": "run_id",
+          "table": "engine_run_log",
+          "to": "run_id"
+        }
+      ]
+    },
+    "mti_term_cross_refs": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "registry",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "word",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "part",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "word_data_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 463,
+      "indexes": [
+        {
+          "name": "idx_cross_refs_term_id",
+          "unique": false,
+          "columns": [
+            "mti_term_id"
+          ]
+        },
+        {
+          "name": "idx_cross_refs_registry",
+          "unique": false,
+          "columns": [
+            "registry",
+            "word"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_mti_term_cross_refs_1",
+          "unique": true,
+          "columns": [
+            "mti_term_id",
+            "registry",
+            "word",
+            "part"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "registry_fk",
+          "table": "word_registry",
+          "to": "id"
+        },
+        {
+          "from": "mti_term_id",
+          "table": "mti_terms",
+          "to": "id"
+        }
+      ]
+    },
+    "mti_term_flags": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        }
+      ],
+      "row_count": 9,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_mti_term_flags_1",
+          "unique": true,
+          "columns": [
+            "mti_term_id",
+            "flag_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "flag_id",
+          "table": "phase2_flag_types",
+          "to": "id"
+        },
+        {
+          "from": "mti_term_id",
+          "table": "mti_terms",
+          "to": "id"
+        }
+      ]
+    },
+    "mti_terms": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "gloss",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "language",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "owning_registry",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "owning_registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "owning_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "owning_part",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "word_data_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "word_data_ref_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "status_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "exclusion_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "extraction_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "strongs_reconciled",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "anchor_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "datetime('now')",
+          "pk": false
+        }
+      ],
+      "row_count": 7487,
+      "indexes": [
+        {
+          "name": "idx_mti_terms_reg_fk",
+          "unique": false,
+          "columns": [
+            "owning_registry_fk"
+          ]
+        },
+        {
+          "name": "idx_mti_terms_strongs",
+          "unique": false,
+          "columns": [
+            "strongs_number"
+          ]
+        },
+        {
+          "name": "idx_mti_terms_word",
+          "unique": false,
+          "columns": [
+            "owning_word"
+          ]
+        },
+        {
+          "name": "idx_mti_terms_status",
+          "unique": false,
+          "columns": [
+            "status"
+          ]
+        },
+        {
+          "name": "idx_mti_terms_registry",
+          "unique": false,
+          "columns": [
+            "owning_registry"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "word_data_ref_fk",
+          "table": "wa_file_index",
+          "to": "id"
+        },
+        {
+          "from": "owning_registry_fk",
+          "table": "word_registry",
+          "to": "id"
+        }
+      ]
+    },
+    "phase2_flag_types": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 25,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_phase2_flag_types_1",
+          "unique": true,
+          "columns": [
+            "flag_code"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "schema_version": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "version_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "applied_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "migration_history",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "engine_min_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 1,
+      "indexes": [],
+      "foreign_keys": []
+    },
+    "session_d_observations": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "observation_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "observation_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "registries_implicated",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "terms_implicated",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "structural_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "source_refs",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "researcher_flag",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_session_d_observations_1",
+          "unique": true,
+          "columns": [
+            "observation_id"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "session_d_runs": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "run_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "cluster_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "registries_in_scope",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "registries_completed_at_run",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "session_b_sources",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "run_summary",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "json_filename",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_session_d_runs_1",
+          "unique": true,
+          "columns": [
+            "run_id"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "session_d_term_links": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "strongs_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "registry_data",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "status_divergence",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [],
+      "foreign_keys": []
+    },
+    "session_d_verse_links": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "verse_ref",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "registry_ids",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "terms_involved",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "overlap_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "threshold_met",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "gate",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [],
+      "foreign_keys": []
+    },
+    "sources": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "zotero_key",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "title",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "author",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "year",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "source_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_sources_1",
+          "unique": true,
+          "columns": [
+            "zotero_key"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "term_fetch_log": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "strongs_input",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "strongs_resolved",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "suffix_resolution",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "vocab_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "verse_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "verse_count_fetched",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "verse_count_stored",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "verse_count_filtered",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "span_conflict",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "api_warnings",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "fetched_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 2307,
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "from": "run_id",
+          "table": "engine_run_log",
+          "to": "run_id"
+        }
+      ]
+    },
+    "themes": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "name",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 0,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_themes_1",
+          "unique": true,
+          "columns": [
+            "name"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "wa_cross_registry_links": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "linked_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "linked_registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "connection_type_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "connecting_term",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 158,
+      "indexes": [
+        {
+          "name": "idx_wa_xrl_linked",
+          "unique": false,
+          "columns": [
+            "linked_registry_id"
+          ]
+        },
+        {
+          "name": "idx_wa_xrl_file",
+          "unique": false,
+          "columns": [
+            "file_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "connection_type_id",
+          "table": "wa_crosslink_type",
+          "to": "id"
+        },
+        {
+          "from": "linked_registry_id",
+          "table": "word_registry",
+          "to": "id"
+        },
+        {
+          "from": "file_id",
+          "table": "wa_file_index",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_crosslink_type": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "type_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 11,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_crosslink_type_1",
+          "unique": true,
+          "columns": [
+            "type_code"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "wa_data_quality_flags": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 21551,
+      "indexes": [
+        {
+          "name": "idx_wdqf_flag",
+          "unique": false,
+          "columns": [
+            "flag_id"
+          ]
+        },
+        {
+          "name": "idx_wdqf_file",
+          "unique": false,
+          "columns": [
+            "file_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "flag_id",
+          "table": "wa_quality_flag_types",
+          "to": "id"
+        },
+        {
+          "from": "file_id",
+          "table": "wa_file_index",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_file_index": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "filename",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "word_registry_fk",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "part_number",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "total_parts",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "is_split",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "schema_version",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "phase",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "produced_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "translation_used",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "specification",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "revision_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "source_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "testament_coverage",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "root_families_in_prior_parts",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "datetime('now')",
+          "pk": false
+        }
+      ],
+      "row_count": 203,
+      "indexes": [
+        {
+          "name": "idx_wa_fi_reg",
+          "unique": false,
+          "columns": [
+            "registry_id"
+          ]
+        },
+        {
+          "name": "idx_wa_fi_word",
+          "unique": false,
+          "columns": [
+            "word"
+          ]
+        },
+        {
+          "name": "idx_wa_fi_wrfk",
+          "unique": false,
+          "columns": [
+            "word_registry_fk"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "word_registry_fk",
+          "table": "word_registry",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_lsj_parsed": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "raw_lsj",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "lsj_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "lsj_domains",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "lsj_philosophical_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "lsj_etymology_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "lsj_cognate_forms",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "parsed_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "parse_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 2,
+      "indexes": [
+        {
+          "name": "idx_lsj_parsed_term",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_wa_lsj_parsed_1",
+          "unique": true,
+          "columns": [
+            "term_inv_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_meaning_parsed": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "language",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "top_sense_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "stem_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "has_causative_stem",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "has_domain_tags",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "parsed_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "parse_version",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "parse_warnings",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 7254,
+      "indexes": [
+        {
+          "name": "idx_meaning_parsed_term_inv",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_wa_meaning_parsed_1",
+          "unique": true,
+          "columns": [
+            "term_inv_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_meaning_sense": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "level_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "level_depth",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "parent_level_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "sense_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "is_stem_label",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "stem_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "domain_tag",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 15593,
+      "indexes": [
+        {
+          "name": "idx_meaning_sense_level",
+          "unique": false,
+          "columns": [
+            "parsed_meaning_id",
+            "level_code"
+          ]
+        },
+        {
+          "name": "idx_meaning_sense_parsed",
+          "unique": false,
+          "columns": [
+            "parsed_meaning_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "parsed_meaning_id",
+          "table": "wa_meaning_parsed",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_meaning_stem": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "stem_name",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "stem_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "sense_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "top_sense_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 13,
+      "indexes": [
+        {
+          "name": "idx_meaning_stem_parsed",
+          "unique": false,
+          "columns": [
+            "parsed_meaning_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "parsed_meaning_id",
+          "table": "wa_meaning_parsed",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_quality_flag_types": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "flag_group",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 14,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_quality_flag_types_1",
+          "unique": true,
+          "columns": [
+            "flag_code"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "wa_session_b_dimensions": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "relational_environment",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "relational_environment_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "spirit_soul_body",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "spirit_soul_body_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "inner_operations",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "inner_operations_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "being",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "being_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "session_b_instruction",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 2,
+      "indexes": [],
+      "foreign_keys": []
+    },
+    "wa_session_b_findings": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "finding_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "finding_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "finding",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "anchor_verses",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "session_b_instruction",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 20,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_session_b_findings_1",
+          "unique": true,
+          "columns": [
+            "finding_id"
+          ]
+        }
+      ],
+      "foreign_keys": []
+    },
+    "wa_session_research_flags": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "flag_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "flag_label",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "strongs_reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "cross_registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "priority",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'MEDIUM'",
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "session_target",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "'D'",
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "session_raised",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "resolved",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "resolved_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "resolved_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 102,
+      "indexes": [
+        {
+          "name": "idx_wsrf_resolved",
+          "unique": false,
+          "columns": [
+            "resolved"
+          ]
+        },
+        {
+          "name": "idx_wsrf_registry",
+          "unique": false,
+          "columns": [
+            "registry_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_wa_session_research_flags_1",
+          "unique": true,
+          "columns": [
+            "flag_label"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "cross_registry_id",
+          "table": "word_registry",
+          "to": "id"
+        },
+        {
+          "from": "file_id",
+          "table": "wa_file_index",
+          "to": "id"
+        },
+        {
+          "from": "registry_id",
+          "table": "word_registry",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_term_inventory": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "language",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "step_search_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "word_analysis_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "occurrence_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "occurrence_count_qualifier",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "meaning",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "meaning_numbered",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "also_spelled",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "lsj_entry",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "god_as_subject",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "somatic_link",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "causative_form_present",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "status_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "datetime('now')",
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "short_def_mounce",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 21,
+          "name": "parsed_meaning_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 22,
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 23,
+          "name": "evidential_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        },
+        {
+          "cid": 24,
+          "name": "retention_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        },
+        {
+          "cid": 25,
+          "name": "term_owner_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        }
+      ],
+      "row_count": 7355,
+      "indexes": [
+        {
+          "name": "idx_wa_ti_strongs",
+          "unique": false,
+          "columns": [
+            "strongs_number"
+          ]
+        },
+        {
+          "name": "idx_wa_ti_lang",
+          "unique": false,
+          "columns": [
+            "language"
+          ]
+        },
+        {
+          "name": "idx_wa_ti_id",
+          "unique": false,
+          "columns": [
+            "term_id"
+          ]
+        },
+        {
+          "name": "idx_wa_ti_file",
+          "unique": false,
+          "columns": [
+            "file_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "file_id",
+          "table": "wa_file_index",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_term_phase2_flags": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 2,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "source",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "raised_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 1563,
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_term_phase2_flags_1",
+          "unique": true,
+          "columns": [
+            "term_inv_id",
+            "flag_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "flag_id",
+          "table": "phase2_flag_types",
+          "to": "id"
+        },
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_term_related_words": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "strongs_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "relationship_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        }
+      ],
+      "row_count": 99348,
+      "indexes": [
+        {
+          "name": "idx_wa_rw",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_term_root_family": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "root_code",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "root_language",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "root_gloss",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        }
+      ],
+      "row_count": 661,
+      "indexes": [
+        {
+          "name": "idx_wa_rf",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_verse_records": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "file_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "term_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "transliteration",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "testament",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "reference",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "verse_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "datetime('now')",
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "book_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "chapter",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "verse_num",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "translation",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": "'ESV'",
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "claude_output",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "target_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "span_strong_match",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "context_before",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "context_after",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 21,
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 22,
+          "name": "mti_term_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        }
+      ],
+      "row_count": 224529,
+      "indexes": [
+        {
+          "name": "idx_wa_vr_term",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        },
+        {
+          "name": "idx_wavr_book_ch_v",
+          "unique": false,
+          "columns": [
+            "book_id",
+            "chapter",
+            "verse_num"
+          ]
+        },
+        {
+          "name": "idx_wavr_reference",
+          "unique": false,
+          "columns": [
+            "reference"
+          ]
+        },
+        {
+          "name": "idx_wavr_term_id",
+          "unique": false,
+          "columns": [
+            "term_id"
+          ]
+        },
+        {
+          "name": "idx_wavr_file_term_pos",
+          "unique": false,
+          "columns": [
+            "file_id",
+            "term_id",
+            "book_id",
+            "chapter",
+            "verse_num"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "book_id",
+          "table": "books",
+          "to": "id"
+        },
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        },
+        {
+          "from": "file_id",
+          "table": "wa_file_index",
+          "to": "id"
+        }
+      ]
+    },
+    "wa_verse_term_links": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "verse_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "term_inv_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "step_subgloss_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "step_subgloss_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "span_strong_match",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "target_word",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "strftime('%Y-%m-%dT%H:%M:%S','now')",
+          "pk": false
+        }
+      ],
+      "row_count": 221542,
+      "indexes": [
+        {
+          "name": "idx_vtl_term",
+          "unique": false,
+          "columns": [
+            "term_inv_id"
+          ]
+        },
+        {
+          "name": "idx_vtl_verse",
+          "unique": false,
+          "columns": [
+            "verse_id"
+          ]
+        },
+        {
+          "name": "sqlite_autoindex_wa_verse_term_links_1",
+          "unique": true,
+          "columns": [
+            "verse_id",
+            "term_inv_id"
+          ]
+        }
+      ],
+      "foreign_keys": [
+        {
+          "from": "term_inv_id",
+          "table": "wa_term_inventory",
+          "to": "id"
+        },
+        {
+          "from": "verse_id",
+          "table": "wa_verse_records",
+          "to": "id"
+        }
+      ]
+    },
+    "word_registry": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "source_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "category_hint",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "phase1_input_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "phase1_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "phase1_output_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "phase2_datasets",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "automation_eligible",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "1",
+          "pk": false
+        },
+        {
+          "cid": 11,
+          "name": "last_automation_run",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 12,
+          "name": "automation_run_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 13,
+          "name": "phase1_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 14,
+          "name": "phase1_verse_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 15,
+          "name": "strongs_list",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 16,
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 17,
+          "name": "origin",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 18,
+          "name": "source_category",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 19,
+          "name": "inference_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 20,
+          "name": "anchor_verses",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 21,
+          "name": "session_b_status",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 22,
+          "name": "cluster_assignment",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "\"unassigned\"",
+          "pk": false
+        },
+        {
+          "cid": 23,
+          "name": "sb_classification",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        },
+        {
+          "cid": 24,
+          "name": "sb_classification_reasoning",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": "NULL",
+          "pk": false
+        },
+        {
+          "cid": 25,
+          "name": "carry_forward",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "1",
+          "pk": false
+        },
+        {
+          "cid": 26,
+          "name": "unique_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 27,
+          "name": "shared_term_count",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 28,
+          "name": "term_sharing_ratio",
+          "type": "REAL",
+          "notnull": false,
+          "default_value": "0.0",
+          "pk": false
+        }
+      ],
+      "row_count": 212,
+      "indexes": [],
+      "foreign_keys": []
+    },
+    "word_run_state": {
+      "columns": [
+        {
+          "cid": 0,
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": null,
+          "pk": true
+        },
+        {
+          "cid": 1,
+          "name": "run_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 2,
+          "name": "registry_id",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 3,
+          "name": "word",
+          "type": "TEXT",
+          "notnull": true,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 4,
+          "name": "phase_reached",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 5,
+          "name": "audit_result",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 6,
+          "name": "audit_detail",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 7,
+          "name": "stop_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 8,
+          "name": "researcher_approved",
+          "type": "INTEGER",
+          "notnull": false,
+          "default_value": "0",
+          "pk": false
+        },
+        {
+          "cid": 9,
+          "name": "approved_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        },
+        {
+          "cid": 10,
+          "name": "approved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default_value": null,
+          "pk": false
+        }
+      ],
+      "row_count": 429,
+      "indexes": [],
+      "foreign_keys": [
+        {
+          "from": "run_id",
+          "table": "engine_run_log",
+          "to": "run_id"
+        }
+      ]
+    }
+  }
+}
