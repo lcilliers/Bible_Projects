@@ -1,0 +1,2562 @@
+{
+  "_export": {
+    "word": "contentment",
+    "registry": 29,
+    "scope": "full",
+    "exported_at": "2026-03-28T14:05:15Z",
+    "schema_version": "3.7.0",
+    "export_version": 1,
+    "export_filename": "contentment_29_full_20260328_v1.json"
+  },
+  "registry": {
+    "id": 29,
+    "no": 29,
+    "word": "contentment",
+    "source_list": "Missing Inner Being Words",
+    "category_hint": null,
+    "phase1_input_file": null,
+    "phase1_status": "Complete",
+    "phase1_output_file": null,
+    "phase2_datasets": null,
+    "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=8  verses=28  run_id=RUN-20260328_140513-AUDIT_WORD",
+    "automation_eligible": 1,
+    "last_automation_run": "AUDITED",
+    "automation_run_id": "RUN-20260328_140513-AUDIT_WORD",
+    "phase1_term_count": 8,
+    "phase1_verse_count": 28,
+    "strongs_list": "[{\"strong\": \"H7961\", \"count\": 8}, {\"strong\": \"H7962\", \"count\": 8}, {\"strong\": \"H7951\", \"count\": 5}, {\"strong\": \"G0841\", \"count\": 2}, {\"strong\": \"H7952\", \"count\": 2}, {\"strong\": \"G0842\", \"count\": 1}, {\"strong\": \"H7959\", \"count\": 1}, {\"strong\": \"H7987\", \"count\": 1}]",
+    "description": "Contentment is the inner state of being satisfied with what one has — not because there is nothing more to desire but because one has come to a settled acceptance of one's present condition. The Greek term (autarkeia) means self-sufficiency in the Stoic sense, but Paul redefines it: not independence from need but the learned ability to be at rest whether in abundance or in want. Contentment is not apathy but a trained inner freedom from the tyranny of circumstances.",
+    "origin": "original_list",
+    "source_category": "Affective/Emotional",
+    "inference_note": null,
+    "anchor_verses": "Phil 4:11; 1 Tim 6:6",
+    "session_b_status": "Ready for Analysis",
+    "cluster_assignment": "C03",
+    "sb_classification": null,
+    "sb_classification_reasoning": null,
+    "carry_forward": 1
+  },
+  "files": [
+    {
+      "id": 75,
+      "filename": "RUN-20260318_134133-BULK_GAP_FILL",
+      "registry_id": "29",
+      "word_registry_fk": 29,
+      "word": "contentment",
+      "part_number": null,
+      "total_parts": null,
+      "is_split": 0,
+      "schema_version": null,
+      "phase": "Phase 1",
+      "produced_date": "2026-03-18",
+      "source_file": null,
+      "translation_used": "ESV",
+      "specification": "Session A v9 Automation",
+      "revision_note": null,
+      "source_list": "See word_confidence_split",
+      "category": null,
+      "testament_coverage": "both",
+      "root_families_in_prior_parts": null,
+      "last_changed": "2026-03-18 13:41:34"
+    }
+  ],
+  "run_history": [
+    {
+      "id": 21,
+      "run_id": "RUN-20260318_140550-BULK_GAP_FILL",
+      "registry_id": "29",
+      "word": "contentment",
+      "phase_reached": "BULK_GAP_FILL_S4",
+      "audit_result": "REVIEW",
+      "audit_detail": "{\"WR-01\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-02\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-03\": {\"r\": \"PASS\", \"d\": \"1 terms\"}, \"WR-04\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-05\": {\"r\": \"PASS\", \"d\": \"IDs 760\\u2013760 contiguous\"}, \"WR-06\": {\"r\": \"PASS\", \"d\": \"1 confirmed verse records\"}, \"WR-07\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-08\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-09\": {\"r\": \"REVIEW\", \"d\": \"wa_file_index.testament_coverage is null\"}, \"WR-10\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-11\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-12\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-13\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-14\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-15\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-16\": {\"r\": \"PASS\", \"d\": \"no obviously flaggable terms \\u2014 flag engine assumed complete\"}, \"WR-17\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-18\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-19\": {\"r\": \"REVIEW\", \"d\": \"Parse warnings without NOTE flag: ['G0841']\"}, \"WR-20\": {\"r\": \"PASS\", \"d\": \"ok\"}}",
+      "stop_reason": null,
+      "researcher_approved": 0,
+      "approved_by": null,
+      "approved_at": null,
+      "run_started": "2026-03-18T14:05:50",
+      "run_completed": "2026-03-18T14:05:53",
+      "run_outcome": "COMPLETE"
+    }
+  ],
+  "cross_registry_links": [],
+  "patch_history": [],
+  "session_research_flags": [],
+  "statistics": {
+    "term_count": 8,
+    "verse_count": 28,
+    "quality_flag_count": 26,
+    "phase2_flag_count": 0,
+    "terms_by_language": {
+      "Greek": 2,
+      "Hebrew": 6
+    },
+    "verses_by_testament": {
+      "NT": 3,
+      "OT": 25
+    },
+    "span_match_distribution": {
+      "match": 28,
+      "no_match": 0,
+      "no_html": 0
+    },
+    "meaning_parsed_count": 8,
+    "lsj_parsed_count": 0,
+    "root_family_count": 0,
+    "related_word_count": 50,
+    "mti_term_count": 8,
+    "cross_registry_link_count": 0,
+    "verse_term_link_count": 28,
+    "research_flag_count": 0
+  },
+  "terms": [
+    {
+      "id": 760,
+      "file_id": 75,
+      "language": "Greek",
+      "term_id": "G0841",
+      "strongs_number": "G0841",
+      "transliteration": "autarkeia",
+      "step_search_gloss": "self-sufficiency",
+      "word_analysis_gloss": "self-sufficiency",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "αὐτάρκ-εια, ἡ, \nself-sufficiency, independence, [Refs 5th c.BC+]\n__II concrete, a sufficiency, [Refs 3rd c.AD+]; a competence, [Refs 2nd c.AD+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-18 13:41:34",
+      "short_def_mounce": "contentment, having all of one’s needs, sufficiency",
+      "parsed_meaning_id": 10717,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10717,
+        "term_inv_id": 760,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 25939,
+            "parsed_meaning_id": 10717,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "contentment, having all of one’s needs, sufficiency \na competence of the necessaries of life, sufficiency 2Cor. 9:8; a frame of mind viewing one's lot as sufficient, contentedness, 1Tim. 6:6*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G0841. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G0841 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 2 confirmed verse records for G0841. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 3047,
+          "term_inv_id": 760,
+          "gloss": "self-sufficient",
+          "transliteration": "autarkēs",
+          "strongs_number": "G0842",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 743,
+        "strongs_number": "G0841",
+        "transliteration": "autarkeia",
+        "gloss": "self-sufficiency",
+        "language": "Greek",
+        "owning_registry": "29",
+        "owning_registry_fk": 29,
+        "owning_word": "contentment",
+        "owning_part": null,
+        "word_data_reference": "75",
+        "word_data_ref_fk": 75,
+        "status": "extracted",
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-18",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-18 13:41:34",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 15117,
+          "file_id": 75,
+          "term_inv_id": 760,
+          "term_id": "G0841",
+          "transliteration": "autarkeia",
+          "testament": "NT",
+          "reference": "2Cor 9:8",
+          "verse_text": "2Cor 9:8 And God is able to make all grace abound to you , so that having all sufficiency in all things at all times , you may abound in every good work .",
+          "last_changed": "2026-03-18 13:45:39",
+          "book_id": 47,
+          "chapter": 9,
+          "verse_num": 8,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": null,
+          "updated_at": "2026-03-28T14:05:14",
+          "target_word": "sufficiency",
+          "span_strong_match": 1,
+          "context_before": ", so that having all",
+          "context_after": "in all things at all",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 760,
+              "strongs_number": "G0841",
+              "step_subgloss_code": "G0841",
+              "step_subgloss_label": "self-sufficiency",
+              "span_strong_match": 1,
+              "target_word": "sufficiency"
+            }
+          ]
+        },
+        {
+          "id": 148147,
+          "file_id": 75,
+          "term_inv_id": 760,
+          "term_id": "G0841",
+          "transliteration": "autarkeia",
+          "testament": "NT",
+          "reference": "1Ti 6:6",
+          "verse_text": "1Ti 6:6 But godliness with contentment is great gain ,",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 54,
+          "chapter": 6,
+          "verse_num": 6,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "contentment",
+          "span_strong_match": 1,
+          "context_before": "1Ti 6:6 But godliness with",
+          "context_after": "is great gain ,",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 760,
+              "strongs_number": "G0841",
+              "step_subgloss_code": "G0841",
+              "step_subgloss_label": "self-sufficiency",
+              "span_strong_match": 1,
+              "target_word": "contentment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5018,
+      "file_id": 75,
+      "language": "Greek",
+      "term_id": "G0842",
+      "strongs_number": "G0842",
+      "transliteration": "autarkēs",
+      "step_search_gloss": "self-sufficient",
+      "word_analysis_gloss": "self-sufficient",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "αὐτάρκ-ης, ες, \n(ἀρκέω) sufficient in oneself, self-supporting, independent of others, ἀνθρώπου σῶμα ἓν οὐδὲν αὔ. ἐστιν[Refs 5th c.BC+]; εἰς εὐδαιμονίαν, of ἀρετή, [Refs 5th c.BC+]helping itself, acting instinctively, [Refs 4th c.BC+]; αὐ. βοή a self-reliant shout, [Refs 5th c.BC+]; οἰκία -έστερον ἑνός, πόλις δ᾽ οἰκίας[Refs 4th c.BC+]; σῶμα αὔ. πρός τι strong enough for a thing, [Refs 5th c.BC+]: with infinitive, able of oneself to do a thing, εἰ γὰρ αὐτάρκη τὰ ψηφίσματα ἦν ἢ ὑμᾶς ἀναγκάζειν κτλ.[Refs 5th c.BC+]. adverb -κως, ἔχειν[Refs 4th c.BC+]: superlative -έστατα, ζῆν[Refs 5th c.BC+]\n__II sufficient in quantity, ἀργύριον αὔ. εἰς σιτωνίαν[Refs 1st c.AD+]; ὄξους τὸ -έστατον[Refs 2nd c.AD+]adverb -κως sufficiently, [Refs 1st c.AD+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": "content; (possibly) self-sufficient",
+      "parsed_meaning_id": 10724,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10724,
+        "term_inv_id": 5018,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 25954,
+            "parsed_meaning_id": 10724,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "content; (possibly) self-sufficient \nprimarily sufficient or adequate in one's self; contented with one's lot, Phil. 4:11*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G0842. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G0842 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for G0842. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65819,
+          "term_inv_id": 5018,
+          "gloss": "be sufficient",
+          "transliteration": "arkeō",
+          "strongs_number": "G0714",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65820,
+          "term_inv_id": 5018,
+          "gloss": "self-sufficiency",
+          "transliteration": "autarkeia",
+          "strongs_number": "G0841",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4898,
+        "strongs_number": "G0842",
+        "transliteration": "autarkēs",
+        "gloss": "self-sufficient",
+        "language": "Greek",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "self-sufficient",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148148,
+          "file_id": 75,
+          "term_inv_id": 5018,
+          "term_id": "G0842",
+          "transliteration": "autarkēs",
+          "testament": "NT",
+          "reference": "Phili 4:11",
+          "verse_text": "Phili 4:11 Not that I am speaking of being in need , for I have learned , in whatever situation I am , to be content .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 50,
+          "chapter": 4,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "content",
+          "span_strong_match": 1,
+          "context_before": "I am , to be",
+          "context_after": ".",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5018,
+              "strongs_number": "G0842",
+              "step_subgloss_code": "G0842",
+              "step_subgloss_label": "self-sufficient",
+              "span_strong_match": 1,
+              "target_word": "content"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5014,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7951",
+      "strongs_number": "H7951",
+      "transliteration": "sha.lah",
+      "step_search_gloss": "to prosper",
+      "word_analysis_gloss": "to prosper",
+      "occurrence_count": 5,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10720,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10720,
+        "term_inv_id": 5014,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 25946,
+            "parsed_meaning_id": 10720,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to be at rest, prosper, be quiet, be at ease",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 25947,
+            "parsed_meaning_id": 10720,
+            "level_code": "1a",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "(Qal)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          },
+          {
+            "id": 25948,
+            "parsed_meaning_id": 10720,
+            "level_code": "1a1",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "to be or have quiet",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 2
+          },
+          {
+            "id": 25949,
+            "parsed_meaning_id": 10720,
+            "level_code": "1a2",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "to be at ease, prosper Aramaic equivalent: she.lah (שְׁלֵה \"safe\" H7954)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 3
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7951. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 5. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65787,
+          "term_inv_id": 5014,
+          "gloss": "to neglect",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7952",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65788,
+          "term_inv_id": 5014,
+          "gloss": "be safe",
+          "transliteration": "she.leh",
+          "strongs_number": "H7954",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65789,
+          "term_inv_id": 5014,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65790,
+          "term_inv_id": 5014,
+          "gloss": "prosperity",
+          "transliteration": "sha.lu",
+          "strongs_number": "H7959",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65791,
+          "term_inv_id": 5014,
+          "gloss": "at ease",
+          "transliteration": "sha.lev",
+          "strongs_number": "H7961",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65792,
+          "term_inv_id": 5014,
+          "gloss": "ease",
+          "transliteration": "shal.vah",
+          "strongs_number": "H7962",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65793,
+          "term_inv_id": 5014,
+          "gloss": "quietness",
+          "transliteration": "she.li",
+          "strongs_number": "H7987",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65794,
+          "term_inv_id": 5014,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4894,
+        "strongs_number": "H7951",
+        "transliteration": "sha.lah",
+        "gloss": "to prosper",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "to prosper",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148140,
+          "file_id": 75,
+          "term_inv_id": 5014,
+          "term_id": "H7951",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "Job 3:26",
+          "verse_text": "Job 3:26 I am not at ease , nor am I quiet ; I have no rest , but trouble comes .”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 18,
+          "chapter": 3,
+          "verse_num": 26,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "ease",
+          "span_strong_match": 1,
+          "context_before": "3:26 I am not at",
+          "context_after": ", nor am I quiet",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5014,
+              "strongs_number": "H7951",
+              "step_subgloss_code": "H7951",
+              "step_subgloss_label": "to prosper",
+              "span_strong_match": 1,
+              "target_word": "ease"
+            }
+          ]
+        },
+        {
+          "id": 148139,
+          "file_id": 75,
+          "term_inv_id": 5014,
+          "term_id": "H7951",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "Job 12:6",
+          "verse_text": "Job 12:6 The tents of robbers are at peace, and those who provoke God are secure , who bring their god in their hand .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 18,
+          "chapter": 12,
+          "verse_num": 6,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "who",
+          "span_strong_match": 1,
+          "context_before": "are at peace, and those",
+          "context_after": "provoke God are secure ,",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5014,
+              "strongs_number": "H7951",
+              "step_subgloss_code": "H7951",
+              "step_subgloss_label": "to prosper",
+              "span_strong_match": 1,
+              "target_word": "who"
+            }
+          ]
+        },
+        {
+          "id": 148142,
+          "file_id": 75,
+          "term_inv_id": 5014,
+          "term_id": "H7951",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "Psa 122:6",
+          "verse_text": "Psa 122:6 Pray for the peace of Jerusalem ! “May they be secure who love you !",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 19,
+          "chapter": 122,
+          "verse_num": 6,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "secure",
+          "span_strong_match": 1,
+          "context_before": "Jerusalem ! “May they be",
+          "context_after": "who love you !",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5014,
+              "strongs_number": "H7951",
+              "step_subgloss_code": "H7951",
+              "step_subgloss_label": "to prosper",
+              "span_strong_match": 1,
+              "target_word": "secure"
+            }
+          ]
+        },
+        {
+          "id": 148138,
+          "file_id": 75,
+          "term_inv_id": 5014,
+          "term_id": "H7951",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "Jer 12:1",
+          "verse_text": "Jer 12:1 Righteous are you , O Lord , when I complain to you; yet I would plead my case before you. Why does the way of the wicked prosper ? Why do all who are treacherous thrive ?",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 24,
+          "chapter": 12,
+          "verse_num": 1,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "thrive",
+          "span_strong_match": 1,
+          "context_before": "do all who are treacherous",
+          "context_after": "?",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5014,
+              "strongs_number": "H7951",
+              "step_subgloss_code": "H7951",
+              "step_subgloss_label": "to prosper",
+              "span_strong_match": 1,
+              "target_word": "thrive"
+            }
+          ]
+        },
+        {
+          "id": 148141,
+          "file_id": 75,
+          "term_inv_id": 5014,
+          "term_id": "H7951",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "Lam 1:5",
+          "verse_text": "Lam 1:5 Her foes have become the head ; her enemies prosper , because the Lord has afflicted her for the multitude of her transgressions ; her children have gone away, captives before the foe .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 25,
+          "chapter": 1,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "prosper",
+          "span_strong_match": 1,
+          "context_before": "the head ; her enemies",
+          "context_after": ", because the Lord has",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5014,
+              "strongs_number": "H7951",
+              "step_subgloss_code": "H7951",
+              "step_subgloss_label": "to prosper",
+              "span_strong_match": 1,
+              "target_word": "prosper"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5015,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7952",
+      "strongs_number": "H7952",
+      "transliteration": "sha.lah",
+      "step_search_gloss": "to neglect",
+      "word_analysis_gloss": "to neglect",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10721,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10721,
+        "term_inv_id": 5015,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 2,
+        "stem_count": 0,
+        "has_causative_stem": 1,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 25950,
+            "parsed_meaning_id": 10721,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "(Niphal) to be negligent",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 25951,
+            "parsed_meaning_id": 10721,
+            "level_code": "2",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "(Hiphil) to mislead Aramaic equivalent: sha.lah (שָׁלָה \"error\" H7955)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7952. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 2 confirmed verse records for H7952. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65795,
+          "term_inv_id": 5015,
+          "gloss": "irreverence",
+          "transliteration": "shal",
+          "strongs_number": "H7944",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65796,
+          "term_inv_id": 5015,
+          "gloss": "to prosper",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7951",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65797,
+          "term_inv_id": 5015,
+          "gloss": "to extract",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7953",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65798,
+          "term_inv_id": 5015,
+          "gloss": "error",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7955",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65799,
+          "term_inv_id": 5015,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65800,
+          "term_inv_id": 5015,
+          "gloss": "prosperity",
+          "transliteration": "sha.lu",
+          "strongs_number": "H7959",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65801,
+          "term_inv_id": 5015,
+          "gloss": "at ease",
+          "transliteration": "sha.lev",
+          "strongs_number": "H7961",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65802,
+          "term_inv_id": 5015,
+          "gloss": "ease",
+          "transliteration": "shal.vah",
+          "strongs_number": "H7962",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65803,
+          "term_inv_id": 5015,
+          "gloss": "quietness",
+          "transliteration": "she.li",
+          "strongs_number": "H7987",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65804,
+          "term_inv_id": 5015,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4895,
+        "strongs_number": "H7952",
+        "transliteration": "sha.lah",
+        "gloss": "to neglect",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "to neglect",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148144,
+          "file_id": 75,
+          "term_inv_id": 5015,
+          "term_id": "H7952",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "2Ki 4:28",
+          "verse_text": "2Ki 4:28 Then she said , “Did I ask my lord for a son ? Did I not say , ‘Do not deceive me ?’”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 12,
+          "chapter": 4,
+          "verse_num": 28,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "deceive",
+          "span_strong_match": 1,
+          "context_before": "not say , ‘Do not",
+          "context_after": "me ?’”",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5015,
+              "strongs_number": "H7952",
+              "step_subgloss_code": "H7952",
+              "step_subgloss_label": "to neglect",
+              "span_strong_match": 1,
+              "target_word": "deceive"
+            }
+          ]
+        },
+        {
+          "id": 148143,
+          "file_id": 75,
+          "term_inv_id": 5015,
+          "term_id": "H7952",
+          "transliteration": "sha.lah",
+          "testament": "OT",
+          "reference": "2Ch 29:11",
+          "verse_text": "2Ch 29:11 My sons , do not now be negligent , for the Lord has chosen you to stand in his presence , to minister to him and to be his ministers and make offerings to him.”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 14,
+          "chapter": 29,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "negligent",
+          "span_strong_match": 1,
+          "context_before": ", do not now be",
+          "context_after": ", for the Lord has",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5015,
+              "strongs_number": "H7952",
+              "step_subgloss_code": "H7952",
+              "step_subgloss_label": "to neglect",
+              "span_strong_match": 1,
+              "target_word": "negligent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5016,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7959",
+      "strongs_number": "H7959",
+      "transliteration": "sha.lu",
+      "step_search_gloss": "prosperity",
+      "word_analysis_gloss": "prosperity",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10722,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10722,
+        "term_inv_id": 5016,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 25952,
+            "parsed_meaning_id": 10722,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "ease, prosperity",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7959. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for H7959 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for H7959. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65805,
+          "term_inv_id": 5016,
+          "gloss": "to prosper",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7951",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65806,
+          "term_inv_id": 5016,
+          "gloss": "to neglect",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7952",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65807,
+          "term_inv_id": 5016,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65808,
+          "term_inv_id": 5016,
+          "gloss": "at ease",
+          "transliteration": "sha.lev",
+          "strongs_number": "H7961",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65809,
+          "term_inv_id": 5016,
+          "gloss": "ease",
+          "transliteration": "shal.vah",
+          "strongs_number": "H7962",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65810,
+          "term_inv_id": 5016,
+          "gloss": "quietness",
+          "transliteration": "she.li",
+          "strongs_number": "H7987",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65811,
+          "term_inv_id": 5016,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4896,
+        "strongs_number": "H7959",
+        "transliteration": "sha.lu",
+        "gloss": "prosperity",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "prosperity",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148145,
+          "file_id": 75,
+          "term_inv_id": 5016,
+          "term_id": "H7959",
+          "transliteration": "sha.lu",
+          "testament": "OT",
+          "reference": "Psa 30:6",
+          "verse_text": "Psa 30:6 As for me , I said in my prosperity , “I shall never be moved .”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 19,
+          "chapter": 30,
+          "verse_num": 6,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "prosperity",
+          "span_strong_match": 1,
+          "context_before": ", I said in my",
+          "context_after": ", “I shall never be",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5016,
+              "strongs_number": "H7959",
+              "step_subgloss_code": "H7959",
+              "step_subgloss_label": "prosperity",
+              "span_strong_match": 1,
+              "target_word": "prosperity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5012,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7961",
+      "strongs_number": "H7961",
+      "transliteration": "sha.lev",
+      "step_search_gloss": "at ease",
+      "word_analysis_gloss": "at ease",
+      "occurrence_count": 8,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10718,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10718,
+        "term_inv_id": 5012,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 25940,
+            "parsed_meaning_id": 10718,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "quiet, at ease, prosperous",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 25941,
+            "parsed_meaning_id": 10718,
+            "level_code": "1a",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "at ease (of persons)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          },
+          {
+            "id": 25942,
+            "parsed_meaning_id": 10718,
+            "level_code": "1b",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "quiet (of land)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 2
+          },
+          {
+            "id": 25943,
+            "parsed_meaning_id": 10718,
+            "level_code": "1c",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "quiet, ease",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 3
+          },
+          {
+            "id": 25944,
+            "parsed_meaning_id": 10718,
+            "level_code": "1d",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "ease (subst)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 4
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7961. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 8. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65772,
+          "term_inv_id": 5012,
+          "gloss": "to prosper",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7951",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65773,
+          "term_inv_id": 5012,
+          "gloss": "to neglect",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7952",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65774,
+          "term_inv_id": 5012,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65775,
+          "term_inv_id": 5012,
+          "gloss": "prosperity",
+          "transliteration": "sha.lu",
+          "strongs_number": "H7959",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65776,
+          "term_inv_id": 5012,
+          "gloss": "ease",
+          "transliteration": "shal.vah",
+          "strongs_number": "H7962",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65777,
+          "term_inv_id": 5012,
+          "gloss": "quietness",
+          "transliteration": "she.li",
+          "strongs_number": "H7987",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65778,
+          "term_inv_id": 5012,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4892,
+        "strongs_number": "H7961",
+        "transliteration": "sha.lev",
+        "gloss": "at ease",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "at ease",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148122,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "1Ch 4:40",
+          "verse_text": "1Ch 4:40 where they found rich , good pasture , and the land was very broad , quiet , and peaceful , for the former inhabitants there belonged to Ham .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 13,
+          "chapter": 4,
+          "verse_num": 40,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "peaceful",
+          "span_strong_match": 1,
+          "context_before": "broad , quiet , and",
+          "context_after": ", for the former inhabitants",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "peaceful"
+            }
+          ]
+        },
+        {
+          "id": 148125,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Job 16:12",
+          "verse_text": "Job 16:12 I was at ease , and he broke me apart; he seized me by the neck and dashed me to pieces ; he set me up as his target ;",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 18,
+          "chapter": 16,
+          "verse_num": 12,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "ease",
+          "span_strong_match": 1,
+          "context_before": "Job 16:12 I was at",
+          "context_after": ", and he broke me",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "ease"
+            }
+          ]
+        },
+        {
+          "id": 148126,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Job 20:20",
+          "verse_text": "Job 20:20 “ Because he knew no contentment in his belly , he will not let anything in which he delights escape him.",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 18,
+          "chapter": 20,
+          "verse_num": 20,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "contentment",
+          "span_strong_match": 1,
+          "context_before": "“ Because he knew no",
+          "context_after": "in his belly , he",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "contentment"
+            }
+          ]
+        },
+        {
+          "id": 148127,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Job 21:23",
+          "verse_text": "Job 21:23 One dies in his full vigor , being wholly at ease and secure ,",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 18,
+          "chapter": 21,
+          "verse_num": 23,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "secure",
+          "span_strong_match": 1,
+          "context_before": "being wholly at ease and",
+          "context_after": ",",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "secure"
+            }
+          ]
+        },
+        {
+          "id": 148128,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Psa 73:12",
+          "verse_text": "Psa 73:12 Behold , these are the wicked ; always at ease , they increase in riches .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 19,
+          "chapter": 73,
+          "verse_num": 12,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "ease",
+          "span_strong_match": 1,
+          "context_before": "the wicked ; always at",
+          "context_after": ", they increase in riches",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "ease"
+            }
+          ]
+        },
+        {
+          "id": 148124,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Jer 49:31",
+          "verse_text": "Jer 49:31 “Rise up , advance against a nation at ease, that dwells securely , declares the Lord , that has no gates or bars , that dwells alone .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 24,
+          "chapter": 49,
+          "verse_num": 31,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "against a",
+          "span_strong_match": 1,
+          "context_before": "49:31 “Rise up , advance",
+          "context_after": "nation at ease, that dwells",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "against a"
+            }
+          ]
+        },
+        {
+          "id": 148123,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Eze 23:42",
+          "verse_text": "Eze 23:42 The sound of a carefree multitude was with her; and with men of the common sort , drunkards were brought from the wilderness ; and they put bracelets on the hands of the women, and beautiful crowns on their heads .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 26,
+          "chapter": 23,
+          "verse_num": 42,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "carefree",
+          "span_strong_match": 1,
+          "context_before": "23:42 The sound of a",
+          "context_after": "multitude was with her; and",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "carefree"
+            }
+          ]
+        },
+        {
+          "id": 148129,
+          "file_id": 75,
+          "term_inv_id": 5012,
+          "term_id": "H7961",
+          "transliteration": "sha.lev",
+          "testament": "OT",
+          "reference": "Zec 7:7",
+          "verse_text": "Zec 7:7 Were not these the words that the Lord proclaimed by the former prophets , when Jerusalem was inhabited and prosperous , with her cities around her, and the South and the lowland were inhabited ?'”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 38,
+          "chapter": 7,
+          "verse_num": 7,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "prosperous",
+          "span_strong_match": 1,
+          "context_before": "when Jerusalem was inhabited and",
+          "context_after": ", with her cities around",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5012,
+              "strongs_number": "H7961",
+              "step_subgloss_code": "H7961",
+              "step_subgloss_label": "at ease",
+              "span_strong_match": 1,
+              "target_word": "prosperous"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5013,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7962",
+      "strongs_number": "H7962",
+      "transliteration": "shal.vah",
+      "step_search_gloss": "ease",
+      "word_analysis_gloss": "ease",
+      "occurrence_count": 8,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10719,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10719,
+        "term_inv_id": 5013,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 25945,
+            "parsed_meaning_id": 10719,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "quietness, ease, prosperity\nAramaic equivalent: she.le.vah (שְׁלֵוָה \"ease\" H7963)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7962. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for H7962 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 8. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65779,
+          "term_inv_id": 5013,
+          "gloss": "to prosper",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7951",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65780,
+          "term_inv_id": 5013,
+          "gloss": "to neglect",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7952",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65781,
+          "term_inv_id": 5013,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65782,
+          "term_inv_id": 5013,
+          "gloss": "prosperity",
+          "transliteration": "sha.lu",
+          "strongs_number": "H7959",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65783,
+          "term_inv_id": 5013,
+          "gloss": "at ease",
+          "transliteration": "sha.lev",
+          "strongs_number": "H7961",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65784,
+          "term_inv_id": 5013,
+          "gloss": "ease",
+          "transliteration": "she.le.vah",
+          "strongs_number": "H7963",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65785,
+          "term_inv_id": 5013,
+          "gloss": "quietness",
+          "transliteration": "she.li",
+          "strongs_number": "H7987",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65786,
+          "term_inv_id": 5013,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4893,
+        "strongs_number": "H7962",
+        "transliteration": "shal.vah",
+        "gloss": "ease",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "ease",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148137,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Psa 122:7",
+          "verse_text": "Psa 122:7 Peace be within your walls and security within your towers !”",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 19,
+          "chapter": 122,
+          "verse_num": 7,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "security",
+          "span_strong_match": 1,
+          "context_before": "be within your walls and",
+          "context_after": "within your towers !”",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "security"
+            }
+          ]
+        },
+        {
+          "id": 148135,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Pro 1:32",
+          "verse_text": "Pro 1:32 For the simple are killed by their turning away , and the complacency of fools destroys them ;",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 20,
+          "chapter": 1,
+          "verse_num": 32,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "complacency",
+          "span_strong_match": 1,
+          "context_before": "turning away , and the",
+          "context_after": "of fools destroys them ;",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "complacency"
+            }
+          ]
+        },
+        {
+          "id": 148136,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Pro 17:1",
+          "verse_text": "Pro 17:1 Better is a dry morsel with quiet than a house full of feasting with strife .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 20,
+          "chapter": 17,
+          "verse_num": 1,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "quiet",
+          "span_strong_match": 1,
+          "context_before": "is a dry morsel with",
+          "context_after": "than a house full of",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "quiet"
+            }
+          ]
+        },
+        {
+          "id": 148134,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Jer 22:21",
+          "verse_text": "Jer 22:21 I spoke to you in your prosperity , but you said , ‘I will not listen .’ This has been your way from your youth , that you have not obeyed my voice .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 24,
+          "chapter": 22,
+          "verse_num": 21,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "prosperity",
+          "span_strong_match": 1,
+          "context_before": "spoke to you in your",
+          "context_after": ", but you said ,",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "prosperity"
+            }
+          ]
+        },
+        {
+          "id": 148133,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Eze 16:49",
+          "verse_text": "Eze 16:49 Behold , this was the guilt of your sister Sodom : she and her daughters had pride , excess of food , and prosperous ease , but did not aid the poor and needy .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 26,
+          "chapter": 16,
+          "verse_num": 49,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "prosperous",
+          "span_strong_match": 1,
+          "context_before": "excess of food , and",
+          "context_after": "ease , but did not",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "prosperous"
+            }
+          ]
+        },
+        {
+          "id": 148132,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Dan 8:25",
+          "verse_text": "Dan 8:25 By his cunning he shall make deceit prosper under his hand , and in his own mind he shall become great . Without warning he shall destroy many . And he shall even rise up against the Prince of princes , and he shall be broken —but by no human hand .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 27,
+          "chapter": 8,
+          "verse_num": 25,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "warning",
+          "span_strong_match": 1,
+          "context_before": "shall become great . Without",
+          "context_after": "he shall destroy many .",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "warning"
+            }
+          ]
+        },
+        {
+          "id": 148130,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Dan 11:21",
+          "verse_text": "Dan 11:21 In his place shall arise a contemptible person to whom royal majesty has not been given . He shall come in without warning and obtain the kingdom by flatteries .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 27,
+          "chapter": 11,
+          "verse_num": 21,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "warning",
+          "span_strong_match": 1,
+          "context_before": "He shall come in without",
+          "context_after": "and obtain the kingdom by",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "warning"
+            }
+          ]
+        },
+        {
+          "id": 148131,
+          "file_id": 75,
+          "term_inv_id": 5013,
+          "term_id": "H7962",
+          "transliteration": "shal.vah",
+          "testament": "OT",
+          "reference": "Dan 11:24",
+          "verse_text": "Dan 11:24 Without warning he shall come into the richest parts of the province , and he shall do what neither his fathers nor his fathers ’ fathers have done , scattering among them plunder , spoil , and goods . He shall devise plans against strongholds , but only for a time .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 27,
+          "chapter": 11,
+          "verse_num": 24,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "warning",
+          "span_strong_match": 1,
+          "context_before": "Dan 11:24 Without",
+          "context_after": "he shall come into the",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5013,
+              "strongs_number": "H7962",
+              "step_subgloss_code": "H7962",
+              "step_subgloss_label": "ease",
+              "span_strong_match": 1,
+              "target_word": "warning"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5017,
+      "file_id": 75,
+      "language": "Hebrew",
+      "term_id": "H7987",
+      "strongs_number": "H7987",
+      "transliteration": "she.li",
+      "step_search_gloss": "quietness",
+      "word_analysis_gloss": "quietness",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:05:14",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 10723,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 10723,
+        "term_inv_id": 5017,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:05:14",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 25953,
+            "parsed_meaning_id": 10723,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "quiet, private, quietness",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7987. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for H7987 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for H7987. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 65812,
+          "term_inv_id": 5017,
+          "gloss": "to prosper",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7951",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65813,
+          "term_inv_id": 5017,
+          "gloss": "to neglect",
+          "transliteration": "sha.lah",
+          "strongs_number": "H7952",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65814,
+          "term_inv_id": 5017,
+          "gloss": "Shelah",
+          "transliteration": "she.lah",
+          "strongs_number": "H7956",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65815,
+          "term_inv_id": 5017,
+          "gloss": "prosperity",
+          "transliteration": "sha.lu",
+          "strongs_number": "H7959",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65816,
+          "term_inv_id": 5017,
+          "gloss": "at ease",
+          "transliteration": "sha.lev",
+          "strongs_number": "H7961",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65817,
+          "term_inv_id": 5017,
+          "gloss": "ease",
+          "transliteration": "shal.vah",
+          "strongs_number": "H7962",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 65818,
+          "term_inv_id": 5017,
+          "gloss": "Shelanite",
+          "transliteration": "she.la.ni",
+          "strongs_number": "H8024",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 4897,
+        "strongs_number": "H7987",
+        "transliteration": "she.li",
+        "gloss": "quietness",
+        "language": "Hebrew",
+        "owning_registry": "29",
+        "owning_registry_fk": null,
+        "owning_word": "quietness",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:05:14",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 148146,
+          "file_id": 75,
+          "term_inv_id": 5017,
+          "term_id": "H7987",
+          "transliteration": "she.li",
+          "testament": "OT",
+          "reference": "2Sa 3:27",
+          "verse_text": "2Sa 3:27 And when Abner returned to Hebron , Joab took him aside into the midst of the gate to speak with him privately , and there he struck him in the stomach , so that he died , for the blood of Asahel his brother .",
+          "last_changed": "2026-03-28 14:05:14",
+          "book_id": 10,
+          "chapter": 3,
+          "verse_num": 27,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:05:14",
+          "updated_at": null,
+          "target_word": "privately",
+          "span_strong_match": 1,
+          "context_before": "gate to speak with him",
+          "context_after": ", and there he struck",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5017,
+              "strongs_number": "H7987",
+              "step_subgloss_code": "H7987",
+              "step_subgloss_label": "quietness",
+              "span_strong_match": 1,
+              "target_word": "privately"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verse_term_links_count": 28
+}

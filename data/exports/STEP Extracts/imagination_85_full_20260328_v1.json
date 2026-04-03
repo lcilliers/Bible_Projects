@@ -1,0 +1,1654 @@
+{
+  "_export": {
+    "word": "imagination",
+    "registry": 85,
+    "scope": "full",
+    "exported_at": "2026-03-28T14:08:24Z",
+    "schema_version": "3.7.0",
+    "export_version": 1,
+    "export_filename": "imagination_85_full_20260328_v1.json"
+  },
+  "registry": {
+    "id": 85,
+    "no": 85,
+    "word": "imagination",
+    "source_list": "Low Confidence / Inferred",
+    "category_hint": null,
+    "phase1_input_file": null,
+    "phase1_status": "Complete",
+    "phase1_output_file": null,
+    "phase2_datasets": null,
+    "notes": "[AUDIT 2026-03-28] result=REVIEW  terms=6  verses=16  run_id=RUN-20260328_140820-AUDIT_WORD",
+    "automation_eligible": 1,
+    "last_automation_run": "AUDITED",
+    "automation_run_id": "RUN-20260328_140820-AUDIT_WORD",
+    "phase1_term_count": 6,
+    "phase1_verse_count": 16,
+    "strongs_list": "[{\"strong\": \"H4906\", \"count\": 6}, {\"strong\": \"G1761\", \"count\": 4}, {\"strong\": \"G1760\", \"count\": 3}, {\"strong\": \"H7907\", \"count\": 1}, {\"strong\": \"H7914\", \"count\": 1}, {\"strong\": \"H7915\", \"count\": 1}]",
+    "description": "Imagination is the inner capacity to form mental images of what is not immediately present — to picture, conceive, and give form to what does not yet exist or what cannot be directly seen. The Hebrew vocabulary here covers figures and reflections; the Greek covers reflection and contemplation. In Scripture imagination is treated with some suspicion when it runs unchecked (the imaginations of the heart are evil continually, Genesis 6) but it is also foundational to prayer, prophecy, and the capacity to hope for what is not yet seen.",
+    "origin": "original_list",
+    "source_category": null,
+    "inference_note": "Imagination as a faculty of the mind — the capacity to form mental images and conceive possibilities — is ABSENT as a direct biblical term. Scripture addresses imagination primarily in the context of corrupt mental fabrications rather than as a neutral creative faculty.",
+    "anchor_verses": " Gen 6:5; 2 Cor 10:5",
+    "session_b_status": "Ready for Analysis",
+    "cluster_assignment": "C02",
+    "sb_classification": null,
+    "sb_classification_reasoning": null,
+    "carry_forward": 1
+  },
+  "files": [
+    {
+      "id": 123,
+      "filename": "RUN-20260318_134133-BULK_GAP_FILL",
+      "registry_id": "85",
+      "word_registry_fk": 85,
+      "word": "imagination",
+      "part_number": null,
+      "total_parts": null,
+      "is_split": 0,
+      "schema_version": null,
+      "phase": "Phase 1",
+      "produced_date": "2026-03-18",
+      "source_file": null,
+      "translation_used": "ESV",
+      "specification": "Session A v9 Automation",
+      "revision_note": null,
+      "source_list": "See word_confidence_split",
+      "category": null,
+      "testament_coverage": "both",
+      "root_families_in_prior_parts": null,
+      "last_changed": "2026-03-18 13:41:38"
+    }
+  ],
+  "run_history": [
+    {
+      "id": 69,
+      "run_id": "RUN-20260318_140550-BULK_GAP_FILL",
+      "registry_id": "85",
+      "word": "imagination",
+      "phase_reached": "BULK_GAP_FILL_S4",
+      "audit_result": "REVIEW",
+      "audit_detail": "{\"WR-01\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-02\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-03\": {\"r\": \"PASS\", \"d\": \"2 terms\"}, \"WR-04\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-05\": {\"r\": \"PASS\", \"d\": \"IDs 957\\u2013958 contiguous\"}, \"WR-06\": {\"r\": \"PASS\", \"d\": \"3 confirmed verse records\"}, \"WR-07\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-08\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-09\": {\"r\": \"REVIEW\", \"d\": \"wa_file_index.testament_coverage is null\"}, \"WR-10\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-11\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-12\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-13\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-14\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-15\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-16\": {\"r\": \"PASS\", \"d\": \"no obviously flaggable terms \\u2014 flag engine assumed complete\"}, \"WR-17\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-18\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-19\": {\"r\": \"REVIEW\", \"d\": \"Parse warnings without NOTE flag: ['G1761']\"}, \"WR-20\": {\"r\": \"PASS\", \"d\": \"ok\"}}",
+      "stop_reason": null,
+      "researcher_approved": 0,
+      "approved_by": null,
+      "approved_at": null,
+      "run_started": "2026-03-18T14:05:50",
+      "run_completed": "2026-03-18T14:05:53",
+      "run_outcome": "COMPLETE"
+    }
+  ],
+  "cross_registry_links": [],
+  "patch_history": [],
+  "session_research_flags": [],
+  "statistics": {
+    "term_count": 6,
+    "verse_count": 16,
+    "quality_flag_count": 20,
+    "phase2_flag_count": 1,
+    "terms_by_language": {
+      "Greek": 2,
+      "Hebrew": 4
+    },
+    "verses_by_testament": {
+      "NT": 7,
+      "OT": 9
+    },
+    "span_match_distribution": {
+      "match": 16,
+      "no_match": 0,
+      "no_html": 0
+    },
+    "meaning_parsed_count": 6,
+    "lsj_parsed_count": 0,
+    "root_family_count": 0,
+    "related_word_count": 25,
+    "mti_term_count": 6,
+    "cross_registry_link_count": 0,
+    "verse_term_link_count": 16,
+    "research_flag_count": 0
+  },
+  "terms": [
+    {
+      "id": 5682,
+      "file_id": 123,
+      "language": "Greek",
+      "term_id": "G1760",
+      "strongs_number": "G1760",
+      "transliteration": "enthumeomai",
+      "step_search_gloss": "to reflect on",
+      "word_analysis_gloss": "to reflect on",
+      "occurrence_count": 9,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "ἐνθῡμ-έομαι, \nfuture -ήσομαι[Refs 5th c.BC+], later -ηθήσομαι [Refs 1st c.AD+]: aorist ἐνεθυμήθην [Refs 5th c.BC+]: perfect ἐντεθύμημαι [Refs 5th c.BC+]: pluperfect ἐνετεθύμητο [Refs 5th c.BC+]:—lay to heart, ponder, ἤτοι κρίνομέν γε ἢ ἐνθυμούμεθα ὀρθῶς τὰ πράγματα [Refs 5th c.BC+]; ἐ. καὶ λογίζεσθαι frequently joined in [Refs 4th c.BC+]\n__b with genitive, ἐνθυμεῖσθαί τινος think much or deeply of, τοῦ θανόντος [Refs 7th c.BC+]\n__c followed by a relative, ἐ. ὅτι.. notice or consider that.., [Refs 5th c.BC+]; ὡς.. how.., [Refs 5th c.BC+]\n__d with participle, οὐκ ἐντεθύμηται ἐπαιρόμενος is not conscious that he is becoming excited, [Refs 5th c.BC+]\n__2 take to heart, be concerned or angry at, τι [Refs 5th c.BC+]: absolutely, to be concerned, [Refs 5th c.BC+]\n__3 form a plan, κράτιστος ἐνθυμηθῆναι [Refs 5th c.BC+]; take care, see to it, ἐ. ἵνα μηθεὶς ἀδικῇ [Refs 3rd c.BC+]\n__4 infer, conclude, τί οὖν ἐκ τούτων.. ἐνθυμεῖσθαι δε; [Refs 4th c.BC+]\n__II active, ἐνθυμέω [Refs 5th c.BC+]; ἐνθυμέομαι, in passive sense, to be in a person's thoughts, to be desired, κρατεῖν τῶν ἐνθυμουμένων [Refs 2nd c.AD+]: perfect [Refs 5th c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:08:23",
+      "short_def_mounce": "to think, ponder, reflect",
+      "parsed_meaning_id": 11583,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11583,
+        "term_inv_id": 5682,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 27779,
+            "parsed_meaning_id": 11583,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to think, ponder, reflect \nto revolve thoroughly in the mind, consider carefully, ponder, reflect, Acts 10:19*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G1760. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G1760 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 3 confirmed verse records for G1760. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 9. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 76176,
+          "term_inv_id": 5682,
+          "gloss": "in/on/among",
+          "transliteration": "en",
+          "strongs_number": "G1722",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76177,
+          "term_inv_id": 5682,
+          "gloss": "reflection",
+          "transliteration": "enthumēsis",
+          "strongs_number": "G1761",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76178,
+          "term_inv_id": 5682,
+          "gloss": "wrath",
+          "transliteration": "thumos",
+          "strongs_number": "G2372",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5570,
+        "strongs_number": "G1760",
+        "transliteration": "enthumeomai",
+        "gloss": "to reflect on",
+        "language": "Greek",
+        "owning_registry": "85",
+        "owning_registry_fk": null,
+        "owning_word": "to reflect on",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:08:23",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 169907,
+          "file_id": 123,
+          "term_inv_id": 5682,
+          "term_id": "G1760",
+          "transliteration": "enthumeomai",
+          "testament": "NT",
+          "reference": "Mat 1:20",
+          "verse_text": "Mat 1:20 But as he considered these things , behold , an angel of the Lord appeared to him in a dream , saying , “ Joseph , son of David , do not fear to take Mary as your wife , for that which is conceived in her is from the Holy Spirit .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 40,
+          "chapter": 1,
+          "verse_num": 20,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "considered",
+          "span_strong_match": 1,
+          "context_before": "Mat 1:20 But as he",
+          "context_after": "these things , behold ,",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5682,
+              "strongs_number": "G1760",
+              "step_subgloss_code": "G1760",
+              "step_subgloss_label": "to reflect on",
+              "span_strong_match": 1,
+              "target_word": "considered"
+            }
+          ]
+        },
+        {
+          "id": 169908,
+          "file_id": 123,
+          "term_inv_id": 5682,
+          "term_id": "G1760",
+          "transliteration": "enthumeomai",
+          "testament": "NT",
+          "reference": "Mat 9:4",
+          "verse_text": "Mat 9:4 But Jesus , knowing their thoughts , said , “ Why do you think evil in your hearts ?",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 40,
+          "chapter": 9,
+          "verse_num": 4,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "think",
+          "span_strong_match": 1,
+          "context_before": ", “ Why do you",
+          "context_after": "evil in your hearts ?",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5682,
+              "strongs_number": "G1760",
+              "step_subgloss_code": "G1760",
+              "step_subgloss_label": "to reflect on",
+              "span_strong_match": 1,
+              "target_word": "think"
+            }
+          ]
+        },
+        {
+          "id": 169906,
+          "file_id": 123,
+          "term_inv_id": 5682,
+          "term_id": "G1760",
+          "transliteration": "enthumeomai",
+          "testament": "NT",
+          "reference": "Act 10:19",
+          "verse_text": "Act 10:19 And while Peter was pondering the vision , the Spirit said to him , “ Behold , three men are looking for you .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 44,
+          "chapter": 10,
+          "verse_num": 19,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "pondering",
+          "span_strong_match": 1,
+          "context_before": "10:19 And while Peter was",
+          "context_after": "the vision , the Spirit",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5682,
+              "strongs_number": "G1760",
+              "step_subgloss_code": "G1760",
+              "step_subgloss_label": "to reflect on",
+              "span_strong_match": 1,
+              "target_word": "pondering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 958,
+      "file_id": 123,
+      "language": "Greek",
+      "term_id": "G1761",
+      "strongs_number": "G1761",
+      "transliteration": "enthumēsis",
+      "step_search_gloss": "reflection",
+      "word_analysis_gloss": "reflection",
+      "occurrence_count": 4,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "ἐνθῡμ-ησις, εως, ἡ, \nconsideration, esteem, [Refs 5th c.BC+]\n__II consideration, reflection, [NT+5th c.BC+]\n__II.2 idea, conception, εἰς ἐ. ἐσθήτων ἦλθον [Refs 4th c.BC+]\n__III anxiety, worry, [Refs 5th c.BC+]\n__IV resolution, [Refs 4th c.AD+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-18 13:41:38",
+      "short_def_mounce": "thought, reflection; design, idea",
+      "parsed_meaning_id": 11579,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11579,
+        "term_inv_id": 958,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 27773,
+            "parsed_meaning_id": 11579,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "thought, reflection; design, idea \nthe act of thought, reflection, Mt. 9:4; 12:25; Heb. 4:12; the result of thought, invention, device, Acts 17:29*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G1761. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G1761 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 4 confirmed verse records for G1761. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 4. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [
+        {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "description": "Term covers 4 or more distinct semantic domains; breadth warrants attention in Session B cross-part synthesis",
+          "detail": null,
+          "source": "bulk_patch",
+          "raised_date": "2026-03-19T18:18:06Z"
+        }
+      ],
+      "related_words": [
+        {
+          "id": 4764,
+          "term_inv_id": 958,
+          "gloss": "to reflect on",
+          "transliteration": "enthumeomai",
+          "strongs_number": "G1760",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 917,
+        "strongs_number": "G1761",
+        "transliteration": "enthumēsis",
+        "gloss": "reflection",
+        "language": "Greek",
+        "owning_registry": "85",
+        "owning_registry_fk": 85,
+        "owning_word": "imagination",
+        "owning_part": null,
+        "word_data_reference": "123",
+        "word_data_ref_fk": 123,
+        "status": "extracted",
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-18",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-26T11:47:32Z",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 169905,
+          "file_id": 123,
+          "term_inv_id": 958,
+          "term_id": "G1761",
+          "transliteration": "enthumēsis",
+          "testament": "NT",
+          "reference": "Mat 9:4",
+          "verse_text": "Mat 9:4 But Jesus , knowing their thoughts , said , “ Why do you think evil in your hearts ?",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 40,
+          "chapter": 9,
+          "verse_num": 4,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "thoughts",
+          "span_strong_match": 1,
+          "context_before": "But Jesus , knowing their",
+          "context_after": ", said , “ Why",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 958,
+              "strongs_number": "G1761",
+              "step_subgloss_code": "G1761",
+              "step_subgloss_label": "reflection",
+              "span_strong_match": 1,
+              "target_word": "thoughts"
+            }
+          ]
+        },
+        {
+          "id": 169904,
+          "file_id": 123,
+          "term_inv_id": 958,
+          "term_id": "G1761",
+          "transliteration": "enthumēsis",
+          "testament": "NT",
+          "reference": "Mat 12:25",
+          "verse_text": "Mat 12:25 Knowing their thoughts , he said to them , “ Every kingdom divided against itself is laid waste , and no city or house divided against itself will stand .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 40,
+          "chapter": 12,
+          "verse_num": 25,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "thoughts",
+          "span_strong_match": 1,
+          "context_before": "Mat 12:25 Knowing their",
+          "context_after": ", he said to them",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 958,
+              "strongs_number": "G1761",
+              "step_subgloss_code": "G1761",
+              "step_subgloss_label": "reflection",
+              "span_strong_match": 1,
+              "target_word": "thoughts"
+            }
+          ]
+        },
+        {
+          "id": 169903,
+          "file_id": 123,
+          "term_inv_id": 958,
+          "term_id": "G1761",
+          "transliteration": "enthumēsis",
+          "testament": "NT",
+          "reference": "Act 17:29",
+          "verse_text": "Act 17:29 Being then God’s offspring , we ought not to think that the divine being is like gold or silver or stone , an image formed by the art and imagination of man .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 44,
+          "chapter": 17,
+          "verse_num": 29,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "imagination",
+          "span_strong_match": 1,
+          "context_before": "formed by the art and",
+          "context_after": "of man .",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 958,
+              "strongs_number": "G1761",
+              "step_subgloss_code": "G1761",
+              "step_subgloss_label": "reflection",
+              "span_strong_match": 1,
+              "target_word": "imagination"
+            }
+          ]
+        },
+        {
+          "id": 25237,
+          "file_id": 123,
+          "term_inv_id": 958,
+          "term_id": "G1761",
+          "transliteration": "enthumēsis",
+          "testament": "NT",
+          "reference": "Heb 4:12",
+          "verse_text": "Heb 4:12 For the word of God is living and active , sharper than any two-edged sword , piercing to the division of soul and of spirit , of joints and of marrow , and discerning the thoughts and intentions of the heart .",
+          "last_changed": "2026-03-18 13:47:05",
+          "book_id": 58,
+          "chapter": 4,
+          "verse_num": 12,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": null,
+          "updated_at": "2026-03-28T14:08:23",
+          "target_word": "thoughts",
+          "span_strong_match": 1,
+          "context_before": "marrow , and discerning the",
+          "context_after": "and intentions of the heart",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 958,
+              "strongs_number": "G1761",
+              "step_subgloss_code": "G1761",
+              "step_subgloss_label": "reflection",
+              "span_strong_match": 1,
+              "target_word": "thoughts"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 957,
+      "file_id": 123,
+      "language": "Hebrew",
+      "term_id": "H4906",
+      "strongs_number": "H4906",
+      "transliteration": "mas.kit",
+      "step_search_gloss": "figure",
+      "word_analysis_gloss": "figure",
+      "occurrence_count": 6,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-18 13:41:38",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 11578,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11578,
+        "term_inv_id": 957,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 27770,
+            "parsed_meaning_id": 11578,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "show-piece, figure, imagination, image, idol, picture",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 27771,
+            "parsed_meaning_id": 11578,
+            "level_code": "1a",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "show-piece, carved figure (of idols)",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          },
+          {
+            "id": 27772,
+            "parsed_meaning_id": 11578,
+            "level_code": "1b",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "imagination, conceit",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 2
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H4906. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 6. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 4759,
+          "term_inv_id": 957,
+          "gloss": "Sachia",
+          "transliteration": "sa.khe.yah",
+          "strongs_number": "H7634",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 4760,
+          "term_inv_id": 957,
+          "gloss": "Secu",
+          "transliteration": "se.khu",
+          "strongs_number": "H7906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 4761,
+          "term_inv_id": 957,
+          "gloss": "heart",
+          "transliteration": "sekh.vi",
+          "strongs_number": "H7907",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 4762,
+          "term_inv_id": 957,
+          "gloss": "craft",
+          "transliteration": "se.khiy.yah",
+          "strongs_number": "H7914",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 4763,
+          "term_inv_id": 957,
+          "gloss": "knife",
+          "transliteration": "sak.kin",
+          "strongs_number": "H7915",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 916,
+        "strongs_number": "H4906",
+        "transliteration": "mas.kit",
+        "gloss": "figure",
+        "language": "Hebrew",
+        "owning_registry": "85",
+        "owning_registry_fk": 85,
+        "owning_word": "imagination",
+        "owning_part": null,
+        "word_data_reference": "123",
+        "word_data_ref_fk": 123,
+        "status": "extracted",
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-18",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-18 13:41:38",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 25235,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Lev 26:1",
+          "verse_text": "Lev 26:1 “You shall not make idols for yourselves or erect an image or pillar , and you shall not set up a figured stone in your land to bow down to it, for I am the Lord your God .",
+          "last_changed": "2026-03-18 13:47:05",
+          "book_id": 3,
+          "chapter": 26,
+          "verse_num": 1,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": null,
+          "updated_at": "2026-03-28T14:08:23",
+          "target_word": "figured",
+          "span_strong_match": 1,
+          "context_before": "shall not set up a",
+          "context_after": "stone in your land to",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "figured"
+            }
+          ]
+        },
+        {
+          "id": 25236,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Num 33:52",
+          "verse_text": "Num 33:52 then you shall drive out all the inhabitants of the land from before you and destroy all their figured stones and destroy all their metal images and demolish all their high places .",
+          "last_changed": "2026-03-18 13:47:05",
+          "book_id": 4,
+          "chapter": 33,
+          "verse_num": 52,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": null,
+          "updated_at": "2026-03-28T14:08:23",
+          "target_word": "figured stones",
+          "span_strong_match": 1,
+          "context_before": "you and destroy all their",
+          "context_after": "and destroy all their metal",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "figured stones"
+            }
+          ]
+        },
+        {
+          "id": 169899,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Psa 73:7",
+          "verse_text": "Psa 73:7 Their eyes swell out through fatness ; their hearts overflow with follies .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 19,
+          "chapter": 73,
+          "verse_num": 7,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "follies",
+          "span_strong_match": 1,
+          "context_before": "; their hearts overflow with",
+          "context_after": ".",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "follies"
+            }
+          ]
+        },
+        {
+          "id": 169897,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Pro 18:11",
+          "verse_text": "Pro 18:11 A rich man’s wealth is his strong city , and like a high wall in his imagination .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 20,
+          "chapter": 18,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "imagination",
+          "span_strong_match": 1,
+          "context_before": "a high wall in his",
+          "context_after": ".",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "imagination"
+            }
+          ]
+        },
+        {
+          "id": 169898,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Pro 25:11",
+          "verse_text": "Pro 25:11 A word fitly spoken is like apples of gold in a setting of silver .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 20,
+          "chapter": 25,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "setting",
+          "span_strong_match": 1,
+          "context_before": "apples of gold in a",
+          "context_after": "of silver .",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "setting"
+            }
+          ]
+        },
+        {
+          "id": 169896,
+          "file_id": 123,
+          "term_inv_id": 957,
+          "term_id": "H4906",
+          "transliteration": "mas.kit",
+          "testament": "OT",
+          "reference": "Eze 8:12",
+          "verse_text": "Eze 8:12 Then he said to me, “ Son of man , have you seen what the elders of the house of Israel are doing in the dark , each in his room of pictures ? For they say , ‘The Lord does not see us, the Lord has forsaken the land .’”",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 26,
+          "chapter": 8,
+          "verse_num": 12,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "pictures",
+          "span_strong_match": 1,
+          "context_before": "each in his room of",
+          "context_after": "? For they say ,",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 957,
+              "strongs_number": "H4906",
+              "step_subgloss_code": "H4906",
+              "step_subgloss_label": "figure",
+              "span_strong_match": 1,
+              "target_word": "pictures"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5679,
+      "file_id": 123,
+      "language": "Hebrew",
+      "term_id": "H7907",
+      "strongs_number": "H7907",
+      "transliteration": "sekh.vi",
+      "step_search_gloss": "heart",
+      "word_analysis_gloss": "heart",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:08:23",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 11580,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11580,
+        "term_inv_id": 5679,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 27774,
+            "parsed_meaning_id": 11580,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "a celestial appearance or phenomenon, mind",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 27775,
+            "parsed_meaning_id": 11580,
+            "level_code": "1a",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "meaning uncertain",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7907. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for H7907. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 76160,
+          "term_inv_id": 5679,
+          "gloss": "figure",
+          "transliteration": "mas.kit",
+          "strongs_number": "H4906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76161,
+          "term_inv_id": 5679,
+          "gloss": "Sachia",
+          "transliteration": "sa.khe.yah",
+          "strongs_number": "H7634",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76162,
+          "term_inv_id": 5679,
+          "gloss": "Secu",
+          "transliteration": "se.khu",
+          "strongs_number": "H7906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76163,
+          "term_inv_id": 5679,
+          "gloss": "craft",
+          "transliteration": "se.khiy.yah",
+          "strongs_number": "H7914",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76164,
+          "term_inv_id": 5679,
+          "gloss": "knife",
+          "transliteration": "sak.kin",
+          "strongs_number": "H7915",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5567,
+        "strongs_number": "H7907",
+        "transliteration": "sekh.vi",
+        "gloss": "heart",
+        "language": "Hebrew",
+        "owning_registry": "85",
+        "owning_registry_fk": null,
+        "owning_word": "heart",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:08:23",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 169900,
+          "file_id": 123,
+          "term_inv_id": 5679,
+          "term_id": "H7907",
+          "transliteration": "sekh.vi",
+          "testament": "OT",
+          "reference": "Job 38:36",
+          "verse_text": "Job 38:36 Who has put wisdom in the inward parts or given understanding to the mind ?",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 18,
+          "chapter": 38,
+          "verse_num": 36,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "mind",
+          "span_strong_match": 1,
+          "context_before": "or given understanding to the",
+          "context_after": "?",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5679,
+              "strongs_number": "H7907",
+              "step_subgloss_code": "H7907",
+              "step_subgloss_label": "heart",
+              "span_strong_match": 1,
+              "target_word": "mind"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5680,
+      "file_id": 123,
+      "language": "Hebrew",
+      "term_id": "H7914",
+      "strongs_number": "H7914",
+      "transliteration": "se.khiy.yah",
+      "step_search_gloss": "craft",
+      "word_analysis_gloss": "craft",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:08:23",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 11581,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11581,
+        "term_inv_id": 5680,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": null,
+        "senses": [
+          {
+            "id": 27776,
+            "parsed_meaning_id": 11581,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "image, ship, craft",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          },
+          {
+            "id": 27777,
+            "parsed_meaning_id": 11581,
+            "level_code": "1a",
+            "level_depth": 2,
+            "parent_level_code": null,
+            "sense_text": "meaning very uncertain",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 1
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7914. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for H7914. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 76165,
+          "term_inv_id": 5680,
+          "gloss": "figure",
+          "transliteration": "mas.kit",
+          "strongs_number": "H4906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76166,
+          "term_inv_id": 5680,
+          "gloss": "Sachia",
+          "transliteration": "sa.khe.yah",
+          "strongs_number": "H7634",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76167,
+          "term_inv_id": 5680,
+          "gloss": "Secu",
+          "transliteration": "se.khu",
+          "strongs_number": "H7906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76168,
+          "term_inv_id": 5680,
+          "gloss": "heart",
+          "transliteration": "sekh.vi",
+          "strongs_number": "H7907",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76169,
+          "term_inv_id": 5680,
+          "gloss": "knife",
+          "transliteration": "sak.kin",
+          "strongs_number": "H7915",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5568,
+        "strongs_number": "H7914",
+        "transliteration": "se.khiy.yah",
+        "gloss": "craft",
+        "language": "Hebrew",
+        "owning_registry": "85",
+        "owning_registry_fk": null,
+        "owning_word": "craft",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:08:23",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 169901,
+          "file_id": 123,
+          "term_inv_id": 5680,
+          "term_id": "H7914",
+          "transliteration": "se.khiy.yah",
+          "testament": "OT",
+          "reference": "Isa 2:16",
+          "verse_text": "Isa 2:16 against all the ships of Tarshish , and against all the beautiful craft .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 23,
+          "chapter": 2,
+          "verse_num": 16,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "craft",
+          "span_strong_match": 1,
+          "context_before": "and against all the beautiful",
+          "context_after": ".",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5680,
+              "strongs_number": "H7914",
+              "step_subgloss_code": "H7914",
+              "step_subgloss_label": "craft",
+              "span_strong_match": 1,
+              "target_word": "craft"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5681,
+      "file_id": 123,
+      "language": "Hebrew",
+      "term_id": "H7915",
+      "strongs_number": "H7915",
+      "transliteration": "sak.kin",
+      "step_search_gloss": "knife",
+      "word_analysis_gloss": "knife",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": null,
+      "testament": "OT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-03-28T14:08:23",
+      "short_def_mounce": null,
+      "parsed_meaning_id": 11582,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 11582,
+        "term_inv_id": 5681,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-03-28T14:08:23",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 27778,
+            "parsed_meaning_id": 11582,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "knife",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for H7915. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for H7915 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for H7915. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 76170,
+          "term_inv_id": 5681,
+          "gloss": "figure",
+          "transliteration": "mas.kit",
+          "strongs_number": "H4906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76171,
+          "term_inv_id": 5681,
+          "gloss": "Sachia",
+          "transliteration": "sa.khe.yah",
+          "strongs_number": "H7634",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76172,
+          "term_inv_id": 5681,
+          "gloss": "to hedge",
+          "transliteration": "sukh",
+          "strongs_number": "H7753",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76173,
+          "term_inv_id": 5681,
+          "gloss": "Secu",
+          "transliteration": "se.khu",
+          "strongs_number": "H7906",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76174,
+          "term_inv_id": 5681,
+          "gloss": "heart",
+          "transliteration": "sekh.vi",
+          "strongs_number": "H7907",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 76175,
+          "term_inv_id": 5681,
+          "gloss": "craft",
+          "transliteration": "se.khiy.yah",
+          "strongs_number": "H7914",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5569,
+        "strongs_number": "H7915",
+        "transliteration": "sak.kin",
+        "gloss": "knife",
+        "language": "Hebrew",
+        "owning_registry": "85",
+        "owning_registry_fk": null,
+        "owning_word": "knife",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:08:23",
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 169902,
+          "file_id": 123,
+          "term_inv_id": 5681,
+          "term_id": "H7915",
+          "transliteration": "sak.kin",
+          "testament": "OT",
+          "reference": "Pro 23:2",
+          "verse_text": "Pro 23:2 and put a knife to your throat if you are given to appetite .",
+          "last_changed": "2026-03-28 14:08:23",
+          "book_id": 20,
+          "chapter": 23,
+          "verse_num": 2,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-03-28T14:08:23",
+          "updated_at": null,
+          "target_word": "knife",
+          "span_strong_match": 1,
+          "context_before": "Pro 23:2 and put a",
+          "context_after": "to your throat if you",
+          "delete_flagged": 0,
+          "term_links": [
+            {
+              "term_inv_id": 5681,
+              "strongs_number": "H7915",
+              "step_subgloss_code": "H7915",
+              "step_subgloss_label": "knife",
+              "span_strong_match": 1,
+              "target_word": "knife"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verse_term_links_count": 16
+}
