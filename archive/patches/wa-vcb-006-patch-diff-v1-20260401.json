@@ -1,0 +1,149 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260401-VCB006-VERSECONTEXT-DIFF-V1",
+    "batch_id": "VCB-006",
+    "produced_date": "2026-04-01",
+    "produced_by": "WA-VerseContext-Instruction-v2.1-20260401.md",
+    "session_b_status": null,
+    "patch_type": "DIFFERENTIAL",
+    "corrects": "PATCH-20260331-VCB006-VERSECONTEXT-V1",
+    "description": "Differential correction patch — applies if PATCH-20260331-VCB006-VERSECONTEXT-V1 has already been applied to the database. Restores H7451A (raʿ — bad: harmful, mti_id=235) group 235-001 which was incorrectly dissolved in V1. Operations: 1 INSERT into verse_context_group; 5 UPDATEs to verse_context rows (changing from set-aside to classified under group 235-001). No other terms are affected. Claude Code must: (1) execute the group INSERT first; (2) capture last_insert_rowid() as the integer id for group 235-001; (3) use that integer id in all 5 verse_context UPDATEs. The group_code '235-001' in the UPDATE operations is a human-readable reference only — the actual group_id field must be populated with the captured integer."
+  },
+  "operations": [
+    {
+      "op_id": "DIFF-OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 235,
+        "group_code": "235-001",
+        "context_description": "Bad news and evil report as occasion of inner fear, grief or sadness",
+        "notes": "Restored by differential patch PATCH-20260401-VCB006-VERSECONTEXT-DIFF-V1: group was incorrectly dissolved in V1 due to duplicate group code in observations file",
+        "delete_flagged": 0
+      },
+      "description": "INSERT group 235-001 for H7451A: Bad news and evil report as occasion of inner fear, grief or sadness",
+      "claude_code_instruction": "After INSERT, capture last_insert_rowid() as integer_id_235_001. Use this integer in DIFF-OP-002 through DIFF-OP-006."
+    },
+    {
+      "op_id": "DIFF-OP-002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 155993,
+        "mti_term_id": 235
+      },
+      "set": {
+        "group_id": "integer_id_235_001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Restored by DIFF-V1: incorrectly set aside in V1 — Neh 2:2 sadness of the heart is explicitly inner-being relevant",
+        "delete_flagged": 0
+      },
+      "description": "Neh 2:2 vid=155993 — UPDATE from set-aside to anchor, group 235-001",
+      "verse_text": "Neh 2:2 And the king said to me, 'Why is your face sad, seeing you are not sick? This is nothing but sadness of the heart.'"
+    },
+    {
+      "op_id": "DIFF-OP-003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 155992,
+        "mti_term_id": 235
+      },
+      "set": {
+        "group_id": "integer_id_235_001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Restored by DIFF-V1: incorrectly set aside in V1",
+        "delete_flagged": 0
+      },
+      "description": "Neh 2:1 vid=155992 — UPDATE from set-aside to related, group 235-001",
+      "verse_text": "Neh 2:1 In the month of Nisan, in the twentieth year of King Artaxerxes, when wine was before him, I took up the wine and gave it to the king. Now I had not been sad in his presence."
+    },
+    {
+      "op_id": "DIFF-OP-004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 155978,
+        "mti_term_id": 235
+      },
+      "set": {
+        "group_id": "integer_id_235_001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Restored by DIFF-V1: incorrectly set aside in V1",
+        "delete_flagged": 0
+      },
+      "description": "Gen 40:7 vid=155978 — UPDATE from set-aside to related, group 235-001",
+      "verse_text": "Gen 40:7 So he asked Pharaoh's officers who were with him in custody in his master's house, 'Why are your faces downcast today?'"
+    },
+    {
+      "op_id": "DIFF-OP-005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 155964,
+        "mti_term_id": 235
+      },
+      "set": {
+        "group_id": "integer_id_235_001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Restored by DIFF-V1: incorrectly set aside in V1",
+        "delete_flagged": 0
+      },
+      "description": "Exo 33:4 vid=155964 — UPDATE from set-aside to related, group 235-001",
+      "verse_text": "Exo 33:4 When the people heard this disastrous word, they mourned, and no one put on his ornaments."
+    },
+    {
+      "op_id": "DIFF-OP-006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 12362,
+        "mti_term_id": 235
+      },
+      "set": {
+        "group_id": "integer_id_235_001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Restored by DIFF-V1: incorrectly set aside in V1",
+        "delete_flagged": 0
+      },
+      "description": "Psa 112:7 vid=12362 — UPDATE from set-aside to related, group 235-001",
+      "verse_text": "Psa 112:7 He is not afraid of bad news; his heart is firm, trusting in the Lord."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "group_inserts": 1,
+    "group_updates": 0,
+    "verse_context_inserts": 0,
+    "verse_context_updates": 5,
+    "affected_term": "H7451A mti_id=235",
+    "affected_registry": "Registry 057 — evil"
+  },
+  "_application_sequence": [
+    "Step 1: Execute DIFF-OP-001 — INSERT verse_context_group for 235-001",
+    "Step 2: Capture last_insert_rowid() → store as integer_id_235_001",
+    "Step 3: Execute DIFF-OP-002: UPDATE verse_context WHERE verse_record_id=155993 AND mti_term_id=235 — set group_id=integer_id_235_001, is_relevant=1, is_anchor=1, is_related=0",
+    "Step 4: Execute DIFF-OP-003: UPDATE verse_context WHERE verse_record_id=155992 AND mti_term_id=235 — set group_id=integer_id_235_001, is_relevant=1, is_anchor=0, is_related=1",
+    "Step 5: Execute DIFF-OP-004: UPDATE verse_context WHERE verse_record_id=155978 AND mti_term_id=235 — set group_id=integer_id_235_001, is_relevant=1, is_anchor=0, is_related=1",
+    "Step 6: Execute DIFF-OP-005: UPDATE verse_context WHERE verse_record_id=155964 AND mti_term_id=235 — set group_id=integer_id_235_001, is_relevant=1, is_anchor=0, is_related=1",
+    "Step 7: Execute DIFF-OP-006: UPDATE verse_context WHERE verse_record_id=12362 AND mti_term_id=235 — set group_id=integer_id_235_001, is_relevant=1, is_anchor=0, is_related=1",
+    "Step 8: Validate — query verse_context WHERE mti_term_id=235: confirm 19 rows is_relevant=1, 45 rows is_relevant=0, group 235-001 has 1 anchor and 4 related"
+  ],
+  "_pre_application_check": {
+    "verify_before_applying": [
+      "Confirm PATCH-20260331-VCB006-VERSECONTEXT-V1 has been applied (verse_context rows exist for mti_term_id=235)",
+      "Confirm group_code '235-001' does NOT yet exist in verse_context_group for mti_term_id=235",
+      "Confirm verse_context rows for vid=155993,155992,155978,155964,12362 with mti_term_id=235 exist and have is_relevant=0"
+    ]
+  }
+}

@@ -1,0 +1,3598 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260402-VCB012-H2617A-SUPPLEMENTAL-V1",
+    "batch_id": "VCB-012",
+    "produced_date": "2026-04-02",
+    "produced_by": "WA-VerseContext-Instruction-v2.3-20260401",
+    "session_b_status": null,
+    "description": "Supplemental verse_context inserts for H2617A (mti:536, chesed) — completes classification of 223 remaining verse records. Groups 536-001, 536-002, 536-003 already in database from primary patch. No new group inserts. After application Registry 103 completion check may proceed.",
+    "patch_type": "VERSECONTEXT-SUPPLEMENTAL",
+    "prerequisite": "wa-vcb-012-patch-v1-20260402.json must be applied first"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3875,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 19:19 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3878,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3879,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:14 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3880,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:27 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3882,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 32:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3883,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 39:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3886,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 15:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3887,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 20:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3888,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 34:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3889,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 34:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3891,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 14:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3892,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 14:19 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3893,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 5:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3894,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 7:9 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3895,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 7:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3906,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 2:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3908,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 7:15 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3913,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 15:20 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3915,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 22:51 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3917,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 3:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3918,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 8:23 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3920,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 16:34 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3921,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 16:41 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3922,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 17:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3924,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 1:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3925,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 5:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3926,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 6:14 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3927,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 6:42 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3928,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 7:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3929,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 7:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3930,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 20:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3934,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ezr 3:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3935,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ezr 7:28 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3936,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ezr 9:9 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3937,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 1:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3938,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 9:17 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3939,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 9:32 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3941,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 13:22 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3945,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 10:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3946,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 37:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3947,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 5:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3948,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 6:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3949,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 13:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3950,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 17:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3951,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 18:50 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3952,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 21:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3953,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 23:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3954,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 25:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3955,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 25:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3956,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 25:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3957,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 26:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3958,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 31:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3959,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 31:16 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3960,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 31:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3961,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 32:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3962,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 33:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3963,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 33:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3964,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 33:22 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3965,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 36:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3966,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 36:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3967,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 36:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3968,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 40:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3969,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 40:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3970,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 42:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3971,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 44:26 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3972,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 48:9 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3973,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 51:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3974,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 52:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3975,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 52:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3976,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 57:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3977,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 57:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3978,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 59:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3979,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 59:16 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3980,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 59:17 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3981,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 61:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3982,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 62:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3984,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 66:20 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3985,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 69:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3986,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 69:16 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3987,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 77:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3988,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 85:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3989,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 85:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3990,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 86:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3991,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 86:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3992,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 86:15 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3993,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 88:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3994,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3995,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3996,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:14 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3997,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:24 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3998,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:28 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3999,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:33 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4000,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:49 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4001,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 90:14 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4002,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 92:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4003,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 94:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4004,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 98:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4005,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 100:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4006,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 101:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4007,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 103:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4008,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 103:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4009,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 103:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4010,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 103:17 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4011,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 106:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4012,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 106:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4013,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 106:45 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4014,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4015,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4016,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:15 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4017,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4018,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:31 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4019,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 107:43 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4020,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 108:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4023,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 109:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4024,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 109:26 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4025,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 115:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4026,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 117:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4027,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 118:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4028,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 118:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4029,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 118:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4030,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 118:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4031,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 118:29 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4032,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:41 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4033,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:64 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4034,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:76 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4035,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:88 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4036,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:124 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4037,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:149 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4038,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:159 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4039,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 130:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4040,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:1 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4041,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4042,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4043,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4044,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4045,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:6 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4046,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4047,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4048,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:9 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4049,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4050,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4051,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4052,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4053,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:14 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4054,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:15 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4055,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:16 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4056,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:17 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4057,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4058,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:19 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4059,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:20 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4060,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:21 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4061,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:22 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4062,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:23 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4063,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:24 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4064,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:25 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4065,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 136:26 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4066,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 138:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4067,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 138:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4069,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 143:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4070,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 143:12 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0161",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4071,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 144:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4072,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 145:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4073,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 147:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0164",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4084,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 16:5 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0165",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4086,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:8 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0166",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4087,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:10 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0167",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4088,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 55:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0168",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4090,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 63:7 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0169",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4092,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 9:24 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0170",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4094,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 31:3 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0171",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4095,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 32:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0172",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4096,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 33:11 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0173",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4098,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 3:32 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0174",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4099,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 1:9 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0175",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4100,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 9:4 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0176",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4101,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 2:19 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0177",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4107,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Joe 2:13 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0178",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4109,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jon 4:2 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0179",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4111,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mic 7:18 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0180",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4112,
+        "mti_term_id": 536,
+        "group_id": "536-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mic 7:20 — related, group 536-001: divine steadfast love"
+    },
+    {
+      "op_id": "OP-0181",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3876,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 20:13 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0182",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3877,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 21:23 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0183",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3881,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:49 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0184",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3884,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 40:14 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0185",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3885,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 47:29 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0186",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3896,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 2:12 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0187",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3897,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 2:14 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0188",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3898,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Rut 1:8 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0189",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3899,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Rut 2:20 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0190",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3901,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 15:6 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0191",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3902,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:8 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0192",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3903,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:14 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0193",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3904,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:15 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0194",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3905,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 2:5 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0195",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3907,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 3:8 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0196",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3909,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 9:1 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0197",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3910,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 9:3 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0198",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3911,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 9:7 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0199",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3912,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 10:2 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0200",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3914,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 16:17 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0201",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3916,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:7 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0202",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3919,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 20:31 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0203",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3923,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 19:2 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0204",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4068,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 141:5 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0205",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4075,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 11:17 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0206",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4076,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 14:22 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0207",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4077,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 14:34 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0208",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4078,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 16:6 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0209",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4079,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 19:22 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0210",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4080,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 20:6 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0211",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4081,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 20:28 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0212",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4082,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 21:21 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0213",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4083,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 31:26 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0214",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4089,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:1 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0215",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4105,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 10:12 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0216",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4106,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 12:6 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0217",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4113,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Zec 7:9 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0218",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 65455,
+        "mti_term_id": 536,
+        "group_id": "536-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 1:24 — related, group 536-002: human covenantal loyalty"
+    },
+    {
+      "op_id": "OP-0219",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3931,
+        "mti_term_id": 536,
+        "group_id": "536-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 24:22 — related, group 536-003: failure/withdrawal of chesed"
+    },
+    {
+      "op_id": "OP-0220",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4021,
+        "mti_term_id": 536,
+        "group_id": "536-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 109:12 — related, group 536-003: failure/withdrawal of chesed"
+    },
+    {
+      "op_id": "OP-0221",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4022,
+        "mti_term_id": 536,
+        "group_id": "536-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 109:16 — related, group 536-003: failure/withdrawal of chesed"
+    },
+    {
+      "op_id": "OP-0222",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 4093,
+        "mti_term_id": 536,
+        "group_id": "536-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 16:5 — related, group 536-003: failure/withdrawal of chesed"
+    },
+    {
+      "op_id": "OP-0223",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 65456,
+        "mti_term_id": 536,
+        "group_id": "536-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 8:35 — related, group 536-003: failure/withdrawal of chesed"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 223,
+    "group_inserts": 0,
+    "group_updates": 0,
+    "verse_context_inserts": 223,
+    "verse_context_updates": 0,
+    "relevant_verses": 223,
+    "set_aside_verses": 0,
+    "anchor_verses": 0,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0,
+    "_notes": {
+      "group_id_resolution": "group_id values are group_code strings ('536-001', '536-002', '536-003'). Claude Code must resolve to integer ids from verse_context_group table before inserting.",
+      "registry_103_gate": "After this patch is applied and all integrity checks pass, Registry 103 (love) completion check may run. verse_context_status may advance to Complete if XREF conditions are also met."
+    }
+  }
+}

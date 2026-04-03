@@ -4,14 +4,24 @@
 
 Controlled Vocabulary | Naming Conventions | Schema
 
-Version 5.1 | March 2026 | Schema v3.7.0 | Referenced by all instruction documents
+Version 5.2 | March 2026 | Schema v3.7.0 | Referenced by all instruction documents
 
 | **Document** | **Value** |
 | --- | --- |
-| Filename | WA-Reference-v5.1-20260328.docx |
-| Supersedes | WA-Reference-v5-20260327.docx |
+| Filename | WA-Reference-v5.2-20260329.docx |
+| Supersedes | WA-Reference-v5.1-20260328.docx |
 | Purpose | Single authoritative source for all controlled vocabulary, file naming, and schema reference |
 | Usage | Referenced by all v5 instruction documents. Do not duplicate these values in other documents — always refer here. |
+
+**Change Control Note — v5.2**
+
+| **Change** | **Detail** |
+| --- | --- |
+| Section 13.1 | word_registry: added unique_term_count, shared_term_count, term_sharing_ratio |
+| Section 13.3 | wa_term_inventory: added term_owner_type (OWNER/XREF) |
+| Section 13.6 | wa_verse_records: added mti_term_id (direct FK to mti_terms), target_word, span_strong_match |
+| Section 13.11 | New: wa_quality_flag_types — CONCRETE_PHYSICAL flag documented |
+| Section 15 | New: Term ownership and housekeeping reference |
 
 **Change Control Note — v5.1**
 
@@ -272,11 +282,11 @@ Used in sdpointers file research_depth_required:
 
 # **13. Database Schema Summary**
 
-Source: database_schema_20260328.json — schema version 3.7.0. Key tables for Session B programme work:
+Source: database_schema_20260329.json — schema version 3.7.0. Key tables for Session B programme work:
 
 ## **13.1 word_registry — Core fields**
 
-| id (PK) │ no │ word │ source_list │ category_hint │ phase1_status │ phase1_term_count │ phase1_verse_count │ session_b_status │ origin │ dimensions (formerly source_category — see Section 4.3) │ notes │ anchor_verses │ cluster_assignment │ sb_classification │ sb_classification_reasoning │ carry_forward |
+| id (PK) │ no │ word │ source_list │ category_hint │ phase1_status │ phase1_term_count │ phase1_verse_count │ session_b_status │ origin │ dimensions (formerly source_category — see Section 4.3) │ notes │ anchor_verses │ cluster_assignment │ sb_classification │ sb_classification_reasoning │ carry_forward │ unique_term_count (new v5.2) │ shared_term_count (new v5.2) │ term_sharing_ratio (new v5.2) |
 | --- |
 
 ## **13.2 mti_terms — Term classification**
@@ -286,7 +296,7 @@ Source: database_schema_20260328.json — schema version 3.7.0. Key tables for S
 
 ## **13.3 wa_term_inventory — Per-file term record**
 
-| id (PK) │ file_id │ language │ term_id │ strongs_number │ transliteration │ step_search_gloss │ word_analysis_gloss │ occurrence_count │ testament │ delete_flagged │ status_note │ evidential_status (new v3.7.0) │ retention_note (new v3.7.0) |
+| id (PK) │ file_id │ language │ term_id │ strongs_number │ transliteration │ step_search_gloss │ word_analysis_gloss │ occurrence_count │ testament │ delete_flagged │ status_note │ evidential_status (new v3.7.0) │ retention_note (new v3.7.0) │ term_owner_type (new v5.2) |
 | --- |
 
 ## **13.4 wa_session_research_flags — Research flags**
@@ -301,7 +311,7 @@ Source: database_schema_20260328.json — schema version 3.7.0. Key tables for S
 
 ## **13.6 wa_verse_records — Verse corpus**
 
-| id (PK) │ file_id │ term_inv_id │ reference │ verse_text │ testament │ translation │ book_id │ chapter │ verse_num │ delete_flagged |
+| id (PK) │ file_id │ term_inv_id │ reference │ verse_text │ testament │ translation │ book_id │ chapter │ verse_num │ delete_flagged │ target_word │ span_strong_match │ mti_term_id (new v5.2) |
 | --- |
 
 ## **13.7 wa_cross_registry_links — Cross-registry connections**
@@ -490,4 +500,51 @@ Purpose: Evaluated, elaborated pointer file per registry. This is an analytical 
 
 ---
 
-WA-Reference-v5.1 | 20260328 | Schema v3.7.0 | Supersedes WA-Reference-v5-20260327.docx
+# **15. Term Ownership and Housekeeping**
+
+## **15.1 term_owner_type**
+
+Each record in `wa_term_inventory` is classified as OWNER or XREF:
+
+| **Value** | **Meaning** |
+| --- | --- |
+| OWNER | This registry is the canonical home for this Strong's number. Verses are active. |
+| XREF | Cross-reference copy — term belongs primarily to another registry. Verses are delete_flagged. |
+
+XREF term records remain active (delete_flagged = 0) for cross-registry linkage queries. Their verse records are delete_flagged to prevent duplicate counting.
+
+## **15.2 Term Sharing Fields on word_registry**
+
+| **Field** | **Meaning** |
+| --- | --- |
+| unique_term_count | Number of OWNER terms whose Strong's number appears only in this registry |
+| shared_term_count | Number of OWNER terms whose Strong's number also appears in other registries |
+| term_sharing_ratio | shared_term_count / (unique + shared). 0.0 = all unique. 1.0 = all shared. |
+
+A word with term_sharing_ratio = 0.0 can be analysed independently — no cross-registry verse overlap.
+
+## **15.3 mti_term_id on wa_verse_records**
+
+Direct FK from verse record to mti_terms.id. Provides one-hop path from verse to master term index without joining through wa_term_inventory.
+
+## **15.4 CONCRETE_PHYSICAL Quality Flag**
+
+Terms flagged as CONCRETE_PHYSICAL denote concrete physical objects (sand, hand, stork). They are flagged but NOT excluded — verse analysis may reveal inner-being usage in context. Filter with:
+
+| SELECT term_id FROM wa_data_quality_flags dqf JOIN wa_quality_flag_types qft ON qft.id = dqf.flag_id WHERE qft.flag_code = 'CONCRETE_PHYSICAL' |
+| --- |
+
+## **15.5 Housekeeping Rules (delete_flagged)**
+
+Records with delete_flagged = 1 are excluded from all standard queries and exports. They include:
+
+- Particle terms (ki, asher, al, im, etc.) across all registries
+- Terms where mti_status = delete (synced from mti_terms)
+- Verse records under delete_flagged terms
+- XREF verse records (duplicate verses belonging to non-owner registries)
+
+No physical deletion occurs. All flagged records remain in the database.
+
+---
+
+WA-Reference-v5.2 | 20260329 | Schema v3.7.0 | Supersedes WA-Reference-v5-20260327.docx

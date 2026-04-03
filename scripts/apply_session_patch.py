@@ -75,10 +75,19 @@ def _validate(conn, patch: dict) -> list[str]:
         if existing:
             errors.append(f"Patch {patch_id} already applied (found in engine_run_log)")
 
-    # Require session_b_status in _patch_meta — except for CLUSTERING and SESSIOND patches
+    # Require session_b_status in _patch_meta — except for exempt patch types
     patch_type = meta.get("patch_type", "")
+    pid = meta.get("patch_id", "")
+    # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR")
+    is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
+    if not is_exempt:
+        for token in sb_exempt_types:
+            if token in pid:
+                is_exempt = True
+                break
     sb_status = meta.get("session_b_status")
-    if not sb_status and patch_type not in ("CLUSTERING", "SESSIOND"):
+    if not sb_status and not is_exempt:
         errors.append("_patch_meta.session_b_status is required (e.g. 'Pre-Analysis Complete', 'Analysis Complete')")
 
     for op in patch.get("operations", []):
@@ -133,6 +142,49 @@ def _validate(conn, patch: dict) -> list[str]:
                     errors.append(f"{op_id}: word_registry id={reg_match_id} not found")
 
     return errors
+
+
+def _resolve_group_id(raw_id: str, counts: dict, conn, op_id: str):
+    """Resolve a group_code string or placeholder to an integer group id.
+
+    Handles:
+      - Direct group_code (e.g. '235-001') from _group_code_map or DB lookup
+      - Placeholder 'integer_id_NNN_NNN' pattern → converted to group_code 'NNN-NNN'
+    Returns integer id or None on failure.
+    """
+    group_code_map = counts.get("_group_code_map", {})
+
+    # Handle integer_id_ placeholder pattern (e.g. 'integer_id_235_001' -> '235-001')
+    if raw_id.startswith("integer_id_"):
+        parts = raw_id[len("integer_id_"):]
+        # Convert underscore-separated to dash-separated group_code
+        # Pattern: integer_id_{mti_id}_{serial} -> {mti_id}-{serial}
+        segments = parts.split("_")
+        if len(segments) >= 2:
+            gc = f"{segments[0]}-{segments[1]}"
+            if gc in group_code_map:
+                return group_code_map[gc]
+            existing = conn.execute(
+                "SELECT id FROM verse_context_group WHERE group_code = ?", (gc,)
+            ).fetchone()
+            if existing:
+                return existing[0]
+        print(f"  {op_id}: [ERROR] Cannot resolve placeholder '{raw_id}'")
+        return None
+
+    # Direct group_code lookup
+    if raw_id in group_code_map:
+        return group_code_map[raw_id]
+
+    # DB lookup
+    existing = conn.execute(
+        "SELECT id FROM verse_context_group WHERE group_code = ?", (raw_id,)
+    ).fetchone()
+    if existing:
+        return existing[0]
+
+    print(f"  {op_id}: [ERROR] Cannot resolve group_code '{raw_id}' to integer id")
+    return None
 
 
 def _apply_operation(conn, op: dict, counts: dict) -> None:
@@ -508,6 +560,93 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
         counts["research_flags_inserted"] = counts.get("research_flags_inserted", 0) + 1
         print(f"  {op_id}: wa_session_research_flags INSERT {rec.get('flag_label', '?')}")
 
+    elif table == "verse_context_group" and operation == "insert":
+        rec = op["record"]
+        conn.execute(
+            """INSERT INTO verse_context_group
+               (mti_term_id, group_code, context_description, notes, delete_flagged)
+               VALUES (?, ?, ?, ?, ?)""",
+            (
+                rec.get("mti_term_id"),
+                rec.get("group_code"),
+                rec.get("context_description"),
+                rec.get("notes"),
+                rec.get("delete_flagged", 0),
+            ),
+        )
+        new_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
+        # Store group_code → integer id mapping for verse_context inserts in same patch
+        if "_group_code_map" not in counts:
+            counts["_group_code_map"] = {}
+        counts["_group_code_map"][rec.get("group_code")] = new_id
+        counts["vc_groups_inserted"] = counts.get("vc_groups_inserted", 0) + 1
+        print(f"  {op_id}: verse_context_group INSERT {rec.get('group_code')} -> id={new_id}")
+
+    elif table == "verse_context_group" and operation == "update":
+        match = op["match"]
+        set_vals = dict(op["set"])
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        where_clauses = " AND ".join(f"{k} = ?" for k in match)
+        params = list(set_vals.values()) + list(match.values())
+        conn.execute(
+            f"UPDATE verse_context_group SET {set_clauses} WHERE {where_clauses}",
+            params,
+        )
+        counts["vc_groups_updated"] = counts.get("vc_groups_updated", 0) + 1
+        print(f"  {op_id}: verse_context_group UPDATE id={match.get('id', '?')}")
+
+    elif table == "verse_context" and operation == "insert":
+        rec = op["record"]
+        # Resolve group_id: if it's a group_code string, look up the integer id
+        group_id = rec.get("group_id")
+        if isinstance(group_id, str):
+            group_id = _resolve_group_id(group_id, counts, conn, op_id)
+            if group_id is None:
+                counts["errors"] = counts.get("errors", 0) + 1
+        try:
+            conn.execute(
+                """INSERT INTO verse_context
+                   (verse_record_id, mti_term_id, group_id, is_anchor, is_relevant, is_related, notes, delete_flagged)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    rec.get("verse_record_id"),
+                    rec.get("mti_term_id"),
+                    group_id,
+                    rec.get("is_anchor", 0),
+                    rec.get("is_relevant", 0),
+                    rec.get("is_related", 0),
+                    rec.get("notes"),
+                    rec.get("delete_flagged", 0),
+                ),
+            )
+            counts["vc_inserts"] = counts.get("vc_inserts", 0) + 1
+        except Exception as e:
+            if "UNIQUE constraint" in str(e):
+                print(f"  {op_id}: [SKIP] Duplicate verse_context — vr={rec.get('verse_record_id')} mti={rec.get('mti_term_id')} grp={group_id}")
+                counts["vc_skipped_dupes"] = counts.get("vc_skipped_dupes", 0) + 1
+            else:
+                raise
+
+    elif table == "verse_context" and operation == "update":
+        match = op["match"]
+        set_vals = dict(op["set"])
+        # Resolve group_id if it's a group_code string
+        if "group_id" in set_vals and isinstance(set_vals["group_id"], str):
+            resolved = _resolve_group_id(set_vals["group_id"], counts, conn, op_id)
+            if resolved is not None:
+                set_vals["group_id"] = resolved
+            else:
+                counts["errors"] = counts.get("errors", 0) + 1
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        where_clauses = " AND ".join(f"{k} = ?" for k in match)
+        params = list(set_vals.values()) + list(match.values())
+        conn.execute(
+            f"UPDATE verse_context SET {set_clauses} WHERE {where_clauses}",
+            params,
+        )
+        counts["vc_updated"] = counts.get("vc_updated", 0) + 1
+        print(f"  {op_id}: verse_context UPDATE id={match.get('id', '?')}")
+
     elif table == "word_registry" and operation == "update":
         match    = op["match"]
         set_vals = dict(op["set"])
@@ -672,10 +811,11 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         for op in ops:
             _apply_operation(conn, op, counts)
         _log_patch(conn, patch_id, meta, counts)
-        # Update session_b_status on the registry (skip for CLUSTERING/SESSIOND)
+        # Update session_b_status on the registry (skip for exempt types)
         patch_reg_id = meta.get("registry_id")
         patch_type = meta.get("patch_type", "")
-        if patch_reg_id and sb_status and patch_type not in ("CLUSTERING", "SESSIOND"):
+        sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE")
+        if patch_reg_id and sb_status and patch_type not in sb_skip_types:
             conn.execute(
                 "UPDATE word_registry SET session_b_status = ? WHERE no = ?",
                 (sb_status, patch_reg_id),
@@ -707,7 +847,7 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         if patch_reg_id:
             sd_report_path = _export_sessiond_pointers(patch_reg_id, patch_word, patch_id)
 
-    print(f"\n{'─' * 60}")
+    print(f"\n{'-' * 60}")
     print(f"  PATCH APPLIED: {patch_id}")
     for k, v in counts.items():
         print(f"    {k}: {v}")
@@ -715,7 +855,7 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         print(f"    archived: {archive_path}")
     if sd_report_path:
         print(f"    session_d_report: {sd_report_path}")
-    print(f"{'─' * 60}\n")
+    print(f"{'-' * 60}\n")
 
     return {"status": "COMPLETE", "sd_report": sd_report_path, **counts}
 

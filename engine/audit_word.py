@@ -385,11 +385,12 @@ def _display_word_extract_report(snapshot: dict, file_ids: list[int]) -> None:
 
 # STEP-owned term fields compared for STALE_TERM: (db_column, json_field)
 _TERM_STALE_FIELDS: list[tuple[str, str]] = [
-    ("transliteration",   "transliteration"),
-    ("step_search_gloss", "gloss"),
-    ("occurrence_count",  "vocab_count"),
-    ("lsj_entry",         "lsj_entry"),
-    ("short_def_mounce",  "short_def_mounce"),
+    ("transliteration",      "transliteration"),
+    ("step_search_gloss",    "gloss"),
+    ("word_analysis_gloss",  "gloss"),
+    ("occurrence_count",     "vocab_count"),
+    ("lsj_entry",            "lsj_entry"),
+    ("short_def_mounce",     "short_def_mounce"),
 ]
 
 # STEP-owned verse fields compared for STALE_VERSE: (db_column, json_field)
@@ -752,6 +753,7 @@ def _refresh_related_words(conn, ti_id: int, jt: dict,
 
 
 def _insert_new_term(conn, jt: dict, file_id: int, str_reg: str,
+                     registry_id_int: int,
                      now: str, today: str, counts: dict,
                      errors: list[str]) -> int | None:
     """Insert NEW_TERM into wa_term_inventory + wa_term_related_words + mti_terms.
@@ -786,16 +788,23 @@ def _insert_new_term(conn, jt: dict, file_id: int, str_reg: str,
                 "(term_inv_id, strongs_number, gloss, transliteration) VALUES (?, ?, ?, ?)",
                 (new_ti_id, rw.get("strong"), rw.get("gloss"), rw.get("translit")),
             )
-        conn.execute(
-            """INSERT INTO mti_terms
-                   (strongs_number, transliteration, gloss, language,
-                    owning_registry, owning_word, extraction_date)
-               VALUES (?, ?, ?, ?, ?, ?, ?)""",
-            (
-                code, jt.get("transliteration"), jt.get("gloss"), lang,
-                str_reg, jt.get("gloss", ""), today,
-            ),
-        )
+        # Check if mti_terms row already exists for this Strong's — reuse if so
+        existing_mti = conn.execute(
+            "SELECT id FROM mti_terms WHERE strongs_number = ? AND delete_flagged = 0",
+            (code,),
+        ).fetchone()
+        if not existing_mti:
+            conn.execute(
+                """INSERT INTO mti_terms
+                       (strongs_number, transliteration, gloss, language,
+                        owning_registry, owning_registry_fk, owning_word,
+                        extraction_date)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    code, jt.get("transliteration"), jt.get("gloss"), lang,
+                    str_reg, registry_id_int, jt.get("gloss", ""), today,
+                ),
+            )
         return new_ti_id
     except Exception as exc:
         errors.append(f"NEW_TERM insert {code}: {exc}")
@@ -951,9 +960,16 @@ def _apply_changes(
             ti   = snapshot["terms_by_id"].get(item["ti_id"]) or {}
             code = item["code"]
             lang = "Hebrew" if code.startswith("H") else "Greek"
+            # Skip if mti_terms row already exists for this Strong's
+            existing_mti = conn.execute(
+                "SELECT id FROM mti_terms WHERE strongs_number = ? AND delete_flagged = 0",
+                (code,),
+            ).fetchone()
+            if existing_mti:
+                continue
             try:
                 conn.execute(
-                    """INSERT OR IGNORE INTO mti_terms
+                    """INSERT INTO mti_terms
                                (strongs_number, transliteration, gloss, language,
                                 owning_registry, owning_word, extraction_date)
                            VALUES (?, ?, ?, ?, ?, ?, ?)""",
@@ -975,7 +991,8 @@ def _apply_changes(
         for item in gap["NEW_TERM"]:
             jt = item["term_rec"]
             new_ti_id = _insert_new_term(
-                conn, jt, primary_fid, str_reg, now, today, counts, errors
+                conn, jt, primary_fid, str_reg, registry_id_int,
+                now, today, counts, errors
             )
             if new_ti_id:
                 new_ti_map[jt["code"]] = new_ti_id
