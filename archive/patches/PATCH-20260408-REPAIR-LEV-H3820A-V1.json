@@ -1,0 +1,40 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260408-REPAIR-LEV-H3820A-V1",
+    "produced_date": "2026-04-08",
+    "produced_by": "WA-VerticalPass-LevQuery-v1.0-2026-04-08.md \u2014 vertical pass investigation",
+    "session_b_status": "Verse Context Reset",
+    "description": "REPAIR: Restore H3820A lev (mti=581) from status=delete to status=extracted. Term was incorrectly caught in bulk cleanup \u2014 status_note on mti=581 explicitly identifies it as the canonical anchor term for Registry 183 (heart). Registry 183 verse_context_status reset to In Progress: VCB was completed without H3820A, which means the heart registry's verse context classification is incomplete. A targeted VCB session for H3820A lev is required before Registry 183 can return to Complete."
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "id": 581
+      },
+      "set": {
+        "status": "extracted",
+        "exclusion_reason": null,
+        "status_note": "THE primary Hebrew heart term \u2014 H3820A lev. Must be extracted as the registry anchor term for Registry 183. RESTORED 2026-04-08: incorrectly set to delete during bulk cleanup. Vertical pass investigation surfaced the error via Jer 7:24 analysis."
+      },
+      "description": "Restore H3820A lev mti=581 to status=extracted \u2014 canonical heart anchor term"
+    },
+    {
+      "op_id": "OP-0002",
+      "operation": "update_registry",
+      "registry_no": 183,
+      "set": {
+        "verse_context_status": "In Progress"
+      },
+      "description": "Reset Registry 183 (heart) verse_context_status to In Progress \u2014 VCB was completed without H3820A lev. Targeted VCB session required for lev before registry can return to Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "mti_updates": 1,
+    "registry_updates": 1,
+    "rationale": "mti=581 H3820A lev status_note explicitly states this is the canonical anchor term for Registry 183. Status=delete was set in error during bulk cleanup. Five other H3820A entries (mti=1436, 2265, 4183, 4922, 6603) are legitimate deletes \u2014 phantom/bleed entries \u2014 and are not touched by this patch. Only mti=581 (owning_registry_fk=183, delete_flagged=0) is restored."
+  }
+}
