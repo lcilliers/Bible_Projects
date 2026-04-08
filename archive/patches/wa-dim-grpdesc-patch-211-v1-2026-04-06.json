@@ -1,0 +1,190 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMGRPDESC-211-V1",
+    "registry_id": 211,
+    "word": "being",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.1-2026-04-06 — CA repair",
+    "session_b_status": null,
+    "patch_type": "DIMREVIEW-GRPDESC",
+    "description": "Repair patch — Registry 211 (being): replace 15 placeholder context_descriptions in verse_context_group with correct descriptions from wa-vcb-029-term-observations-v1.1-20260406.md. Root cause: patch construction for VCB-029 did not draw Reg 211 group descriptions from the observations file. The wa_dimension_index.context_description field must be synced after application."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4482-001" },
+      "set": {
+        "context_description": "Term names the inner state of perplexity — being at a loss, uncertain, or disturbed without being driven to despair",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4482-001 (aporeō, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4481-001" },
+      "set": {
+        "context_description": "Term names deep inner perplexity — the state of being thoroughly at a loss before spiritual or extraordinary reality",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4481-001 (diaporeō, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4473-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of thinking too highly of oneself — self-inflated assessment contrasted with sober self-knowledge",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4473-001 (huperfroneō, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4440-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of haughtiness — self-elevation and valuing what is exalted among people, warned against in favour of humility and fear",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4440-001 (hupsēlos, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4439-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of arrogance — the haughtiness of the wealthy person who sets themselves above others and above God",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4439-001 (hupsēlofroneō, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4451-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of careful attentiveness — the thoughtful orientation of the person toward devoted action",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4451-001 (frontizō, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4450-001" },
+      "set": {
+        "context_description": "Term names the inner condition of brutish insensibility — the person who is beast-like in understanding, unable or unwilling to perceive what is true",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4450-001 (ba.ar, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4478-001" },
+      "set": {
+        "context_description": "Term names the insensitive heart — rendered unfeeling like fat, incapable of genuine response to God or his word",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4478-001 (ta.phash, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4475-001" },
+      "set": {
+        "context_description": "Term names the inner act of humbling oneself before God — the voluntary posture of the heart that turns from pride and seeks God's face",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4475-001 (ka.na group A, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4475-002" },
+      "set": {
+        "context_description": "Term names God's act of bringing down the proud or disciplining the people — the inner condition of the person whose heart is humbled by affliction or judgment",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4475-002 (ka.na group B, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4485-001" },
+      "set": {
+        "context_description": "Term names reckless instability of character — the inner disposition that acts impulsively without regard for moral boundaries",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4485-001 (pa.chaz, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4483-001" },
+      "set": {
+        "context_description": "Term names the inner state of perplexity and bewilderment — the person at a complete loss before an inexplicable event",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4483-001 (she.vash, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4479-001" },
+      "set": {
+        "context_description": "Term names apparent or feigned madness — the inner state or outer presentation that leads others to perceive a person as mad",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4479-001 (sha.ga group A, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4479-002" },
+      "set": {
+        "context_description": "Term names the dismissal of prophetic intensity as madness, or the inner disintegration produced by divine judgment",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4479-002 (sha.ga group B, Reg 211): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "4480-001" },
+      "set": {
+        "context_description": "Term names madness as a condition of the inner being — whether reckless furious intensity or the madness of divine judgment",
+        "notes": "REPAIR-20260406: placeholder description replaced with correct description from wa-vcb-029-term-observations-v1.1-20260406.md"
+      },
+      "description": "4480-001 (shig.ga.on, Reg 211): correct context_description from observations file"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 15,
+    "verse_context_group_updates": 15,
+    "registries_affected": 1,
+    "source": "wa-vcb-029-term-observations-v1.1-20260406.md"
+  },
+  "_post_application_instruction": {
+    "required": true,
+    "action": "After applying all 15 verse_context_group updates, sync wa_dimension_index.context_description for all rows where group_code IN ('4482-001','4481-001','4473-001','4440-001','4439-001','4451-001','4450-001','4478-001','4475-001','4475-002','4485-001','4483-001','4479-001','4479-002','4480-001'). Set wa_dimension_index.context_description = verse_context_group.context_description WHERE wa_dimension_index.group_code = verse_context_group.group_code. Then regenerate the C01 cluster extract.",
+    "verification": "Confirm that no wa_dimension_index row for Registry 211 retains a context_description beginning with 'Context group for'. Report count of rows updated in both tables."
+  }
+}

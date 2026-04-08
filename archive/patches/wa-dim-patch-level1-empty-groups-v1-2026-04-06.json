@@ -1,0 +1,65 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-LEVEL1-EMPTYGROUPS-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Level 1 audit — delete_flag 2 empty verse_context_group shells and record Session B findings for the affected terms."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "id": 789 },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Deleted 2026-04-06: Level 1 audit finding L1-A2/A5. Empty shell — group was created but never received any verse_context records. H7379 (riv) has 2 healthy active groups (234-001 strife/contention, 234-002 pleading one's cause). The indictment/controversy sense (prophetic lawsuit context) was identified but not classified. Recorded as Session B finding DIM-051-001 for analyst attention."
+      },
+      "description": "Delete-flag empty group vcg 789 (234-003, H7379 riv, distress #51)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "id": 2130 },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Deleted 2026-04-06: Level 1 audit finding L1-A2/A5. Group had 4 verse_context records (Deu 4:9, Deu 7:4, 2Ki 3:3, Num 16:26), all subsequently delete_flagged. Group shell not delete_flagged at that time — oversight now corrected. The 4 verses are orphaned (not in any active group). Reason for original deletion not recoverable. Recorded as Session B finding DIM-128-001 for analyst review of orphaned verses."
+      },
+      "description": "Delete-flag empty group vcg 2130 (6077-002, H5493H sur, rebellion #128)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-051-001",
+        "registry_id": 51,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H7379 (riv, strife/contention) has 2 healthy active groups in distress (#51): 234-001 (strife/contention, 19 verses) and 234-002 (pleading one's cause, 26 verses). A third group was created for the indictment/controversy sense — God's legal case against his people in the prophetic tradition — but was never populated with verse_context records and has been delete_flagged. Session B analyst should assess whether this prophetic lawsuit dimension of H7379 belongs within distress and whether the verse evidence warrants a third group. Candidate verses would be found in prophetic lawsuit texts (Isaiah, Jeremiah, Micah) where H7379 names God's formal contention with Israel.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-06",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+      },
+      "description": "Session B finding — distress (#51): H7379 indictment/controversy sense unpopulated — analyst to assess"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-128-001",
+        "registry_id": 128,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H5493H (sur, to turn aside/depart) in rebellion (#128) has 2 healthy active groups: 6077-001 (departure of God's Spirit, 5 verses) and 6077-003 (departure of inner strength, 3 verses). A third group (6077-002, departure from God) had 4 verse_context records that were all subsequently delete_flagged for unknown reasons. The 4 orphaned verses are: Deu 4:9 (warning not to turn aside from what was seen), Deu 7:4 (intermarriage turning sons from following God), 2Ki 3:3 (not departing from the sin of Jeroboam), Num 16:26 (command to depart from tents of Korah). The group shell has been delete_flagged. Session B analyst should review whether any of these 4 verses meet the inner-being filter for rebellion and should be reassigned to 6077-001 or 6077-003, or whether a distinct apostasy group is warranted.",
+        "anchor_verses": "Deu 4:9, Deu 7:4, 2Ki 3:3, Num 16:26",
+        "raised_date": "2026-04-06",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+      },
+      "description": "Session B finding — rebellion (#128): H5493H orphaned verses need analyst review"
+    }
+  ]
+}

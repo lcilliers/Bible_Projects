@@ -1,0 +1,211 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-GRPDESC-VCB022-R192-V1",
+    "registry_id": 192,
+    "word": "comfort",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Group description correction \u2014 comfort (Registry 192): restore 7 context_descriptions truncated at 80 chars in VCB-022 patch. Full descriptions sourced from wa-vcb-022-term-observations-v2.8-20260404.md"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3073
+      },
+      "set": {
+        "context_description": "Term names comfort as God's gift in affliction \u2014 the divine consolation that flows through shared suffering and enables comforting others in turn",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1290-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6215
+      },
+      "set": {
+        "context_description": "Term names comfort as God's gift in affliction \u2014 the divine consolation that flows through shared suffering and enables comforting others in turn",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1290-001"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3074
+      },
+      "set": {
+        "context_description": "Term names encouragement as the inner orientation toward hope \u2014 the exhortation that calls believers to endurance, the Scriptures as the source of encouraging hope, and the Spirit's comfort that builds the church",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1290-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6216
+      },
+      "set": {
+        "context_description": "Term names encouragement as the inner orientation toward hope \u2014 the exhortation that calls believers to endurance, the Scriptures as the source of encouraging hope, and the Spirit's comfort that builds the church",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1290-002"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3075
+      },
+      "set": {
+        "context_description": "Term names encouragement as the inner-community act \u2014 the mutual comfort of believers that refreshes hearts, the prophetic word that builds up, and the joy of shared ministry",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1290-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6217
+      },
+      "set": {
+        "context_description": "Term names encouragement as the inner-community act \u2014 the mutual comfort of believers that refreshes hearts, the prophetic word that builds up, and the joy of shared ministry",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1290-003"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3078
+      },
+      "set": {
+        "context_description": "Term names comfort as the inner state grounded in faithfulness to God's word and promise \u2014 the comfort that comes not from ease but from covenant integrity",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1291-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6220
+      },
+      "set": {
+        "context_description": "Term names comfort as the inner state grounded in faithfulness to God's word and promise \u2014 the comfort that comes not from ease but from covenant integrity",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1291-001"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3079
+      },
+      "set": {
+        "context_description": "Term names consolation as God's gift that cheers the soul amid inner anxiety \u2014 the divine presence that offers what no human comfort can adequately supply",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1292-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6221
+      },
+      "set": {
+        "context_description": "Term names consolation as God's gift that cheers the soul amid inner anxiety \u2014 the divine presence that offers what no human comfort can adequately supply",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1292-001"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3076
+      },
+      "set": {
+        "context_description": "Term names the tender comfort of love \u2014 the personal warmth that soothes the inner person within the community of Christ",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1293-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6218
+      },
+      "set": {
+        "context_description": "Term names the tender comfort of love \u2014 the personal warmth that soothes the inner person within the community of Christ",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1293-001"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3077
+      },
+      "set": {
+        "context_description": "Term names the comfort given by faithful companions \u2014 the inner sustenance received through loyal fellowship in ministry",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1294-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6219
+      },
+      "set": {
+        "context_description": "Term names the comfort given by faithful companions \u2014 the inner sustenance received through loyal fellowship in ministry",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1294-001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 14,
+    "dimension_updates": 0,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 0,
+    "session_d_pointers_inserted": 0,
+    "group_description_corrections": 7,
+    "wa_dimension_index_syncs": 7
+  }
+}

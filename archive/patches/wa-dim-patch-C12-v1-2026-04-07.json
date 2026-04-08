@@ -1,0 +1,1657 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C12-V1",
+    "cluster": "C12",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C12: 96 group dimension updates (25 confirmed, 38 corrected, 33 newly assigned); 5 Session B findings; 1 Session D pointer"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3407
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Theological/Divine-Human. Divine sustained moral displeasure toward wickedness \u2014 divine inner disposition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "114-001 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3408
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Affective/Emotional. Human indignation as responsive inner emotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "114-002 \u2014 abomination: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3400
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Theological/Divine-Human. Divine moral perception assessing human inner character as detestable.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "12-001 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3401
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Sin & Vice. Abominable inner character from gap between profession and conduct.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "13-001 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3402
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "14-001 \u2014 abomination: Character/Disposition"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3403
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Theological/Divine-Human. Divine revulsion toward person's inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "14-002 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3425
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Pride-based inner self-deception.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1720-001 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3409
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "197-001 \u2014 abomination: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3410
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Inner orientation toward detestable idolatrous objects.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "245-001 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3411
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Person becoming like what they love \u2014 inner conformation to detestable things.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "245-002 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3412
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "246-001 \u2014 abomination: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3413
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "246-002 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3414
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. God's inner disposition of acceptance toward the afflicted.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "246-003 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3415
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Sin & Vice. Idolatrous inner devotion toward detestable objects.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "247-001 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3416
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Divine inner loathing directed at pride.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "248-001 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3417
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Theological/Divine-Human. Divine assessment of human inner character as detestable.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "250-001 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3418
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "250-002 \u2014 abomination: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3419
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "250-003 \u2014 abomination: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3420
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "250-004 \u2014 abomination: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3421
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Divine categories of abominable conduct.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "250-005 \u2014 abomination: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3422
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "252-001 \u2014 abomination: Character/Disposition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3423
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Perverted moral revulsion directed against justice and truth.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "252-002 \u2014 abomination: Sin & Vice"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3424
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Divine sustained inner abhorrence toward the persistently corrupt.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "252-003 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3404
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. New covenant \u2014 divine law written on inner mind and heart.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3272-001 \u2014 abomination: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3405
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3280-001 \u2014 abomination: Volitional/Will"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3406
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "90-001 \u2014 abomination: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3913
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Salvation of inner person by grace through faith.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4986-001 \u2014 debauchery: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3914
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Healing through faith as inner instrument.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4986-002 \u2014 debauchery: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3915
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Cry for rescue as inner posture of dependent appeal.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4986-003 \u2014 debauchery: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3916
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Saviour as object of inner-being trust, joy, and hope.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4988-001 \u2014 debauchery: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3917
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Identity/Selfhood \u2192 Theological/Divine-Human. Christ's identity as Saviour and his inner-being transformation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4988-002 \u2014 debauchery: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3918
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4989-001 \u2014 debauchery: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3912
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Reckless inner orientation of self-squandering.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4990-001 \u2014 debauchery: Sin & Vice"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3911
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Dissolute self-indulgence contrasted with Spirit-filling.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "779-001 \u2014 debauchery: Sin & Vice"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3936
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Defilement as corruption of inner conscience.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5001-001 \u2014 defilement: Sin & Vice"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3937
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Defilement of spirit as inner condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "787-001 \u2014 defilement: Sin & Vice"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4722
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional. Inner restlessness, spiritual straying, inner alienation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5571-001 \u2014 impurity: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4723
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional. Bodily tossing as expression of inner restlessness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5572-001 \u2014 impurity: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4726
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Moral defilement following grievous sin.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5573-001 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4710
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Unclean spirit expelled by Christ \u2014 inner captivity released.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5574-001 \u2014 impurity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4711
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Uncleanness as separating condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5574-002 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4712
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Divine healing/cleansing act encountered in faith.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5575-001 \u2014 impurity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4713
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Spiritual/God-ward. Purification of conscience and heart \u2014 inner transformation toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5575-002 \u2014 impurity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4715
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Character/Disposition. Clean heart and clear conscience as stable inner character qualities.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5576-001 \u2014 impurity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4716
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Theological/Divine-Human. Cleanness as status conferred by divine act.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5576-002 \u2014 impurity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4714
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5577-001 \u2014 impurity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4717
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5581-001 \u2014 impurity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4718
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Active self-defilement through idolatry and sexual sin.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5581-002 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4721
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Uncleanness as separating condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5582-001 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4724
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Ritual condition governing sacred and communal standing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "918-001 \u2014 impurity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4725
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Extended defilement condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "918-002 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4709
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Heart and desires oriented away from holiness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "919-001 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4719
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "920-001 \u2014 impurity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4720
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Sin & Vice. Comprehensive moral defilement.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "920-002 \u2014 impurity: Sin & Vice"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5022
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5840-001 \u2014 lust: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5019
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Inner orientation fixed on dishonest gain and violence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5841-001 \u2014 lust: Sin & Vice"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5024
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Character/Disposition \u2192 Sin & Vice. Disordered desire driving spiritual whoredom.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "969-001 \u2014 lust: Sin & Vice"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5021
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Character/Disposition \u2192 Sin & Vice. Greed as inner disposition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "970-001 \u2014 lust: Sin & Vice"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5023
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Insatiable inner craving for foreign gods.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "971-001 \u2014 lust: Sin & Vice"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5020
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "972-001 \u2014 lust: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5498
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1127-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5499
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Inner contempt expressed as damaging speech.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1127-002 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5502
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Inner hostility expressed as slander.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1128-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5508
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Sin & Vice. Inner contempt through malicious speech.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1129-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5506
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Sin & Vice. Inner contempt within intimate community.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1130-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5505
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Inner contempt and faithlessness in speech.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1131-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5507
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Sin & Vice. Inner contempt expressed in speech.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1132-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5512
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Sin & Vice. Habitual slanderous inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1133-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5501
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Enduring defamation as test of inner faithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1134-001 \u2014 slander: Character/Disposition"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5504
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Sin & Vice. Reviling as inner contempt expressed outward.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1135-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5500
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Sin & Vice. Contempt toward God in speech.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6248-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5503
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Slanderous inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6252-001 \u2014 slander: Sin & Vice"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5509
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6253-001 \u2014 slander: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5510
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Spiritual/God-ward. Posture of inner humility, desperation, or devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6253-002 \u2014 slander: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5511
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Volitional/Capacity \u2192 Character/Disposition. Perseverance under testing \u2014 character disposition (corrects non-standard label).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6254-001 \u2014 slander: Character/Disposition"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5513
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6256-001 \u2014 slander: Relational/Social"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5573
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1150-001 \u2014 temptation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5574
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Faith formation through trials \u2014 inner being's orientation of faith/endurance toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6504-001 \u2014 temptation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5572
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6505-001 \u2014 temptation: Character/Disposition"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5571
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Temptation as assault on inner being in spiritual domain.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6506-001 \u2014 temptation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5570
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Character/Disposition \u2192 Sin & Vice. Demanding proof from God \u2014 presumptuous inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6507-001 \u2014 temptation: Sin & Vice"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5575
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Will. Inner act of attempting from desire or orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6510-001 \u2014 temptation: Volitional/Will"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5567
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6511-001 \u2014 temptation: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5577
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6514-001 \u2014 temptation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5576
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6515-001 \u2014 temptation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5578
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6516-001 \u2014 temptation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5568
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Character/Disposition. Moral blamelessness and clear conscience as stable character qualities.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6517-001 \u2014 temptation: Character/Disposition"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5569
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Theological/Divine-Human. Divine preservation producing blameless inner condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6518-001 \u2014 temptation: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5704
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Internal spirit/disposition of whoredom driving inner corruption.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1220-001 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5699
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Covenantal heart-departure toward foreign gods.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1221-001 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5700
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Character/Disposition \u2192 Sin & Vice. Spirit of whoredom as driving inner moral-spiritual failure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1221-002 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5701
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Disordered inner desire mechanism \u2014 heart and eyes as root.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1221-003 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5702
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Volitional inner act of sexual unfaithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1221-004 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5703
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Sin & Vice. Whoring heart as spiritual condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1221-005 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5705
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Sin & Vice. Whoredom as defilement of relational space with God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1222-001 \u2014 whoredom: Sin & Vice"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6184
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Character/Disposition \u2192 Sin & Vice. Malice as deep-seated enmity and contempt.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1275-001 \u2014 malice: Sin & Vice"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-001-001",
+        "registry_id": 1,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The new covenant transformation group (3272-001: diatith\u0113mi \u2014 the covenantal act writing divine law on the inner mind and heart) appears in the abomination registry. This places the new covenant's inner transformation as the divine answer to abomination and inner defilement. Session B should examine whether the abomination cluster's verse evidence shows the new covenant specifically as the remedy for abomination \u2014 and whether this pattern recurs across the cluster.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 abomination: new covenant transformation as divine answer to abomination"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-039-002",
+        "registry_id": 39,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 779-001 (as\u014dtia \u2014 debauchery) is explicitly contrasted with Spirit-filling in Eph 5:18: 'do not be drunk with wine, in which is debauchery, but be filled with the Spirit.' This creates a fundamental inner-being polarity: disordered inner filling (debauchery) vs. divine inner filling (Spirit). Session B should map this antithesis as a structural inner-being pair and examine whether it reflects a broader pattern in the cluster between defilement and the Spirit's filling/cleansing.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 debauchery: debauchery/Spirit-filling as structural inner-being antithesis"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-086-001",
+        "registry_id": 86,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 5574-001 (akathartos \u2014 unclean spirit) presents the unclean spirit as an inner occupant whose presence produces inner captivity and whose expulsion by Christ restores inner freedom. Session B should examine this as a model of inner-being occupation and liberation \u2014 the inner person as the site of spiritual occupancy \u2014 and how this relates to the programme's understanding of the inner being's relationship to spiritual forces.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 impurity: unclean spirit as inner occupant; Christ's expulsion as inner liberation"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-149-001",
+        "registry_id": 149,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The slander registry contains three foot-related groups (6253-001: moral life direction; 6253-002: relational submission/devotion; 6256-001: teaching to walk) whose connection to slander is via the XREF lexical path rather than conceptual affinity. Session B should assess whether these groups contribute meaningfully to the slander analysis or whether they represent peripheral inner-being vocabulary that should be noted as structurally incidental.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 slander: foot-related groups structurally peripheral to slander concept"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-171-001",
+        "registry_id": 171,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "All seven whoredom groups are dominated by spiritual/covenantal whoredom \u2014 Israel's heart-departure toward foreign gods. The literal sexual dimension appears in only one group (1221-004). Session B should examine how the spiritual whoredom metaphor relates to the literal sexual meaning as inner-being phenomena, and whether covenantal faithfulness is the primary inner-being register of this vocabulary in Scripture.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 whoredom: spiritual/covenantal whoredom dominates; literal dimension marginal"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 1,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-001-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 39,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The new covenant transformation group (3272-001) appears in the abomination registry and salvation vocabulary groups appear in the debauchery registry (Reg 39) \u2014 both placing redemptive vocabulary within moral-failure/defilement registries through the XREF mechanism. Session D should examine whether this is a programme-wide pattern: are there other clusters where redemptive/salvation vocabulary appears in moral-failure registries via XREF, and what does this reveal about the inner-being logic connecting defilement and redemption in Scripture?",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-001-SD001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 102,
+    "dimension_updates": 96,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 5,
+    "session_d_pointers_inserted": 1,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

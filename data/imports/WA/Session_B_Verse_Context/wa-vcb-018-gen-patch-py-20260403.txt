@@ -1,0 +1,435 @@
+import json, datetime
+
+with open('/mnt/user-data/uploads/wa-vcb-018-extract-20260403.json') as f:
+    data = json.load(f)
+
+terms_by_mti = {}
+terms_order = []
+for t in data['terms']:
+    mti = t['mti_term_id']
+    vids = {v['verse_record_id']: v['reference'] for v in t['verses']}
+    terms_by_mti[mti] = {'strongs': t['strongs_number'], 'gloss': t['gloss'],
+                          'vids': vids, 'all_vids': set(v['verse_record_id'] for v in t['verses'])}
+    terms_order.append(mti)
+
+# ─── HELPER ──────────────────────────────────────────────────────────
+def ref(mti, vid):
+    return terms_by_mti[mti]['vids'].get(vid, f"vid:{vid}")
+
+def strongs(mti):
+    return terms_by_mti[mti]['strongs']
+
+# ─── COMPUTE DERIVED GROUPS ──────────────────────────────────────────
+def derive_set_aside(mti, anchors, *related_lists):
+    assigned = set(anchors)
+    for lst in related_lists: assigned |= set(lst)
+    return sorted(terms_by_mti[mti]['all_vids'] - assigned)
+
+# G1510 derived
+grp1_1239 = [48822,48840,48842,48843,48844,48848,48854,48855,48849,48850,48853,48857,48812,48813,48817,48802,48803,48838,48839,48835]
+grp2_1239 = [48824,48825,48826,48806,48807,48819,48820,48821,48828,48827,48856]
+grp3_1239 = sorted(terms_by_mti[1239]['all_vids']-{48846}-set(grp1_1239)-{48823}-set(grp2_1239)-{48811}-{48829,48858})
+
+# G3195 derived
+grp1_1240=[48891,48861,48863,48862,48871,48872,48866,48870,48864,48882,48879,48877]
+grp2_1240=[48889,48881,48884,48883,48885,48880]
+grp3_1240=[48865,48868]
+
+# G3361 derived
+grp1_1227=[47213,47215,47212,47231,47224,47228,47226,47230,47180,47182]
+grp2_1227=[47223,47184,47185,47191,47193,47187,47188,47189,47190,47192,47198,47195,47196,47207,47200,47202,47203,47204,47205,47209,47174]
+grp3_1227=sorted(terms_by_mti[1227]['all_vids']-{47225,47179,47186}-set(grp1_1227)-set(grp2_1227)-{47217,47232,47197,47175,47183})
+
+# H1209 derived
+grp1_1209=[206709,206713,206711,206712,206714,206719,206721,206716,206717,45729,45720,45731,45728,206705,45711,45712,45715,45716,45717,45718,45719,45732]
+
+# H3162B derived
+grp1_6634=[206738,206811,206815,206804,206768,206769,206786,206776,206744,206751,206752,206756]
+grp2_6634=[206814,206817,206816,206809,206812,206807,206800,206801,206802,206791,206794,206726,206724,206797,206803,206773,206759,206760,206762,206763,206764,206765,206766,206767,206771,206775,206784,206730,206746,206736,206723,206799,206757]
+
+# H8085G derived
+assigned_1203=set()
+_1203_grps=[
+    ([45265],[45177,45179,45181,45196,45202,45200,45201,45375,45377,45386,45388,45330,45300,45302,45307,45316,45318,45245,45260,45355,45364,45374,45372,45373,45225,45351,45344,45402,45382]),
+    ([45287],[45198,45178,45204,45205,45211,45213,45219,45220,45328,45329,45333,45334,45358,45357,45319,45320,45232,45240,45248,45252,45255,45272,45277,45230,45343]),
+    ([45326],[45403,45378,45390,45392,45391,45379,45381,45324,45327,45291,45293,45292,45295,45294,45299,45301,45305,45308,45309,45312,45310,45311,45315,45313,45314,45317,45321,45325,45212,45224,45337,45338,45342,45233,45231,45288,45289,45290,45237,45241,45242,45243,45244,45246,45249,45250,45251,45253,45267,45268,45269,45270,45271,45273,45274,45275,45276,45278,45279,45280,45284,45285,45286,45281,45282,45283,45228,45229,45345,45346,45347,45348,45349,45350,45370,45371]),
+    ([45197],[45199,45191,45192,45206,45207,45210,45215,45222,45339,45340,45354,45359,45360,45361,45365,45366,45368,45297,45296,45298,45304,45376,45238,45239,45256,45261,45227,45226,45353]),
+]
+for g in _1203_grps:
+    for v in g[0]+g[1]: assigned_1203.add(v)
+set_aside_1203=sorted(terms_by_mti[1203]['all_vids']-assigned_1203)
+
+# H1980G derived
+assigned_1235={48183,48191,48179,48159,48227,48233,48090,48106,48187,48150,48156,48184,48175,48255,48258,48280,48201,48154,48155,48152,48246,48181,48217,48205,48157,48161,48130,48132,48287,48282,48283,48180,48092,48119,48230,48097,48218,48170,48292,48294,48296,48302,48256,48257,48239,48225,48226,48229,48174,48228}
+set_aside_1235=sorted(terms_by_mti[1235]['all_vids']-assigned_1235)
+
+# H3427 derived (D-003 applied)
+assigned_1238={48709,48714,48741,48651,48661,48717,48685,48690,48800,48687,48718,48679,48693,48697,48699,48746,48634,48711,48680,48681,48682,48742,48650,48648,48652,48649,48796,48797,48799,48637,48683,48700,48601,48633,48662,48721,48749,48616,48632,48790}
+set_aside_1238=sorted(terms_by_mti[1238]['all_vids']-assigned_1238)
+
+# H3477G fixed (add vid:232304 to grp3)
+grp3_1216_extra = [232304]
+
+# H7563 fixed (add vid:46438 to grp4)
+grp4_1223_extra = [46438]
+
+# ─── FULL CLASSIFICATION TABLE ───────────────────────────────────────
+# Each entry: (group_code, description, [anchor_vids], [related_vids])
+CLF = {
+4031:[('4031-001','Confident assurance directed toward God or Christ — inner disposition of relational trust upward',[122525],[122527]),
+      ('4031-002','Confidence as inner disposition of assurance toward persons or in one\'s own standing',[122526],[122523,122524,122528])],
+1196:[('1196-001','Inner disposition of trust/security as relational posture toward God',[122722],[122721,44792,122717,44786,44787,122705,122723]),
+      ('1196-002','Security as covenantal/eschatological promise — divinely granted dwelling in safety',[44788],[44796,44797,44798,122704,122706,122703,122702,44789,44790,122707,122709,122710,122711,122714,122712,122713,122716,122715,44784,122724,44785]),
+      ('1196-003','Personal security as inner fruit of integrity and wise living',[122718],[122719,122720,44799])],
+1195:[('1195-001','Trust as inner disposition of reliance on God — source of strength',[44782],[])],
+4104:[('4104-001','Divine support as inner-being ground of confidence in calamity',[124775],[124777])],
+4105:[('4105-001','Divine support as inner-being ground of confidence in calamity',[124778],[124780])],
+4160:[('4160-001','Trust in God expressed through courageous inner commitment at cost to self',[125938],[])],
+4102:[('4102-001','Inner reliance on God as the proper object of trust',[124745],[124746,124748,124755,124758]),
+      ('4102-002','Misplaced or hypocritical inner reliance on wrong objects — people, military, self',[124764],[124747,124756,124757,124762,124760,124753])],
+1197:[('1197-001','Truth as transforming/shaping force on the inner person — sanctification, purification, self-orientation',[204387],[204388,204355,204367,44987,204395,44989,44990]),
+      ('1197-002','Truth as the proper object of the will — accepting, obeying, refusing, or rejecting truth as inner act',[45002],[204365,204366,44996,44997,204397,204373,204359,204360,204369,204379,204409,44982,44998,44978,204372,204398,204399]),
+      ('1197-003','Truth as inner quality of character — integrity, authenticity, living and speaking truthfully',[204347],[204348,204350,204351,204352,204378,44983,44993,44979,204391,44984,44980,44991,44992,45004,204394,204396,204357]),
+      ('1197-004','Truth as the Spirit\'s identity and work in the inner person — Spirit of truth',[204382],[204386,204384,204385,204353,204354]),
+      ('1197-005','Truth as relational/theological identity — who Christ is; worship in spirit and truth',[204392],[204393,204383,204389,204349,204380,204381,204361,204362,204364,45003,45000]),
+      ('1197-006','Truth as the gospel received inwardly — knowledge of truth as saving and formational event',[204356],[204370,204371,204408,44988,44986,44999,204358,204363,44995,44994,45001,204368,204377])],
+6590:[('6590-001','Truthful speech as inner act of integrity — in relationship and spiritual growth',[204479],[204480])],
+6588:[('6588-001','Truthfulness as inner character quality — integrity, genuineness, the true heart',[204458],[204451,204439,204459,204438,204437,204436,204442])],
+6587:[('6587-001','Genuineness as inner-being orientation — true worship, turning to the true God, inner fidelity',[204413],[204420,204412,204425,204410,204411])],
+6589:[('6589-001','"Truly" as qualifier of inner-being recognition, knowing, confession, and reception',[204464],[204466,204467,204468,204469,204470,204465,204463,204462,204461,204476,204478,204475])],
+1199:[('1199-001','Wilful inner refusal — disobedience as an act of the will toward God, his Son, or his word',[204810],[204809,45017,45013,204804,204805,204806,204807,45012,45011]),
+      ('1199-002','Unbelief as a persistent inner state with communal and relational consequences — hardness, poisoning of minds, mercy withheld or extended',[45014],[45015,45016,204808])],
+1198:[('1198-001','Unbelief as an inner condition of the heart — described, rebuked, or personally wrestled with',[45005],[204484,204482,204485,204483,204481,45009]),
+      ('1198-002','Unbelief as a persistent inner state with decisive consequences — for individuals and communities',[45010],[45007,45008,45006])],
+6602:[('6602-001','dē intensifying an inner-being directive or volitional divine command',[204868],[204869])],
+1202:[('1202-001','Senselessness as an inner condition — failure of understanding as a heart-state',[45173],[205773,205772,45174,45175])],
+1207:[('1207-001','Genuine knowing as an inner quality verified through the conduct of wisdom',[54646],[])],
+1201:[('1201-001','Intelligence/discernment as an inner capacity — and its paradoxical limits before divine revelation',[205776],[205775,205774,45172])],
+1205:[('1205-001','Understanding as an inner receptive act — the mind/heart grasping revealed truth',[205765],[205763,205764,205766,205767,205768,205769,205770,205771,205758,205760,205755,205757,205756,205753,205751,205752,45704,45703]),
+      ('1205-002','Lack of understanding as an inner condition — hearts hardened against perception',[205759],[205761,205762,205754]),
+      ('1205-003','Understanding as a practical inner act — discerning the will of God and one\'s situation',[45702],[45701])],
+1204:[('1204-001','Understanding as a divinely given inner capacity',[45700],[])],
+1200:[('1200-001','Insight as a Spirit-endowed inner capacity — divine gift producing interpretive and cognitive power',[45145],[45146,45147])],
+1203:[('1203-001','God hears — attentive divine listening to prayer, affliction, and cry',[45265],[45177,45179,45181,45196,45202,45200,45201,45375,45377,45386,45388,45330,45300,45302,45307,45316,45318,45245,45260,45355,45364,45374,45372,45373,45225,45351,45344,45402,45382]),
+      ('1203-002','Hearing as responsive obedience or wilful refusal — inner act of compliance or hardness toward God\'s word',[45287],[45198,45178,45204,45205,45211,45213,45219,45220,45328,45329,45333,45334,45358,45357,45319,45320,45232,45240,45248,45252,45255,45272,45277,45230,45343]),
+      ('1203-003','Hearing as receptive understanding — attentive inner engagement with God\'s word, wisdom, or prophetic speech',[45326],[45403,45378,45390,45392,45391,45379,45381,45324,45327,45291,45293,45292,45295,45294,45299,45301,45305,45308,45309,45312,45310,45311,45315,45313,45314,45317,45321,45325,45212,45224,45337,45338,45342,45233,45231,45288,45289,45290,45237,45241,45242,45243,45244,45246,45249,45250,45251,45253,45267,45268,45269,45270,45271,45273,45274,45275,45276,45278,45279,45280,45284,45285,45286,45281,45282,45283,45228,45229,45345,45346,45347,45348,45349,45350,45370,45371]),
+      ('1203-004','Hearing producing an inner-being response — fear, grief, anger, joy, worship, courage',[45197],[45199,45191,45192,45206,45207,45210,45215,45222,45339,45340,45354,45359,45360,45361,45365,45366,45368,45297,45296,45298,45304,45376,45238,45239,45256,45261,45227,45226,45353])],
+1208:[('1208-001','Unity as inner-being relational achievement and goal — the Spirit\'s bond and the faith\'s convergence',[45710],[45709])],
+6636:[('6636-001','Inner-being joining — the soul/heart united in its orientation; refusing solidarity with the violent',[206833],[206831])],
+1209:[('1209-001','Togetherness/unitedness as inner-being relational state — hearts joined, shared inner orientation, communal response',[206701],grp1_1209)],
+6634:[('6634-001','Together in shared inner-being orientation toward God — worship, covenant commitment, seeking, joy',[206808],grp1_6634),
+      ('6634-002','Together in shared inner-being condition — conspiracy, corruption, shame, compassion, relational fellowship',[206806],grp2_6634)],
+6635:[('6635-001','The only/beloved — preciousness of the unique as inner-being object of love and grief',[206822],[206820,206821,206824,206823,206819,206830,206825]),
+      ('6635-002','The solitary/alone — inner-being condition of aloneness and its resolution',[206827],[206826,206828,206829])],
+6637:[],  # AVF
+1218:[('1218-001','Uprightness as the defining moral character of Christ\'s kingship — inner quality expressed in sovereign rule',[46285],[])],
+1211:[('1211-001','Uprightness as an inner quality of the heart — tested by God, contrasted with wickedness, invoked as protection',[232243],[232245,232244,232253,232252]),
+      ('1211-002','Uprightness as the path/way — inner orientation expressed in the direction of life',[232248],[232250,232251,232249,232246]),
+      ('1211-003','Uprightness expressed in speech — words as disclosure of inner integrity',[45951],[45952])],
+1216:[('1216-001','Regnal moral assessment — "did right/what was right in the eyes of the Lord" — moral orientation of the will under divine evaluation',[232258],[232292,232290,232284,232285,232287,232288,232294,232254,232255,232256,232257,232259,232273,232275,232276,232277,232278,232279,232280,232281,232282,232262,232263,232264,232265,232266,232267,232268,232269,232271,232272,45971,232260,45970,45972,45973]),
+      ('1216-002','"Right in his own eyes" — moral self-determination; inner conscience as its own arbiter',[45982],[45983,232298,232301,232307,232312,232283,232286]),
+      ('1216-003','"The upright" / "upright in heart" — uprightness as stable inner moral character, especially in Psalms and Proverbs',[232341],[232322,232323,232333,232334,232336,232337,232338,232339,232340,232343,232344,232320,232324,232325,232326,232327,232329,232330,232309,232308,232318,232319,232296,232297,232295,232299,232302,232300,232305,232306,232310,232314,232311,232313,232315,232316,232317,232270,232261,45987,45968,45985,45986,45984]+grp3_1216_extra),
+      ('1216-004','Uprightness as divine character — God and his word described as upright/right',[232289],[232332,232335,232342,232328,232331]),
+      ('1216-005','Job as the upright man — blameless and upright as defining inner character under testing',[45974],[45975,45977,45980,45981,45976,45978,45979,45988]),
+      ('1216-006','"God made man upright, but they have sought out many schemes" — original moral constitution and its departure',[232291],[])],
+1215:[('1215-001','Uprightness of heart directed toward God — inner moral orientation of relational fidelity',[54647],[])],
+1212:[('1212-001','Uprightness as the standard and quality of right judgment — divine and demanded of human authorities',[232395],[232392,232393,232394,232396,232397,232398,45956]),
+      ('1212-002','Uprightness as inner character formation — wisdom\'s goal; the inmost being rejoices at rightness',[232389],[232387,232388,232391,232386,232399,45954,45955])],
+7492:[('7492-001','"Before the face/presence of the Lord" — relational orientation of prayer, lament, and honest speech toward God',[232426],[232420,232429]),
+      ('7492-002','"Before their faces" — the stumbling block of iniquity as the primary object of inner attention (Ezekiel)',[232413],[232414,232415]),
+      ('7492-003','"Directly forward" — inner directedness; focused and undistracted attention',[232428],[])],
+1217:[('1217-001','Straightforwardness as honest inner character — rightness of speech, claims, and conduct',[232431],[232430,232432,46284])],
+1214:[('1214-001','Uprightness resisted, absent, or refused — the inner being\'s failure to receive or produce what is right',[45965],[45964,45966,232405])],
+1219:[('1219-001','Weakness as the inner-being condition of limitation, vulnerability, and human frailty — the site of divine power',[46299],[46298,46287,46288,46290,46291,46289,46296,46297,46294]),
+      ('1219-002','Weakness and power in tension — the body\'s present weakness versus resurrection power; Christ\'s weakness as the pattern',[46292],[46286,46295])],
+6638:[],  # AVF
+6642:[('6642-001','Weakness in faith and conscience — the inner-being condition of limited conviction or vulnerable moral formation',[207083],[207085,207084,207074,207075,207082]),
+      ('6642-002','Weakness as the inner-being posture Paul embraces — solidarity, paradox, and power through weakness',[207078],[207076,207077,207079,207080,207081,207086])],
+6641:[],  # AVF
+6643:[('6643-001','The failings of the weak — inner-being scruples to be borne in community',[207087],[])],
+6639:[('6639-001','"The spirit is willing but the flesh is weak" — the inner-being\'s aspiration limited by the weakness of the flesh',[207047],[207046]),
+      ('6639-002','Weak in conscience — vulnerability of the inner moral faculty',[207037],[207038,207036,207039,207033]),
+      ('6639-003','Human weakness as the condition of grace — God chooses, Christ dies for, the weak',[207048],[207031,207032,207035,207034,207044,207041,207045,207040])],
+6640:[],  # AVF
+6644:[('6644-001','Divine strengthening of the inner being after suffering — God restores what weakness has depleted',[207088],[])],
+1221:[('1221-001','Spiritual whoredom — Israel/Judah "whoring after" foreign gods, forsaking the Lord; covenantal heart-departure',[46310],[207101,207102,46338,46340,46341,207100,46335,46336,46337,207092,207095,207096,207132,207131,207114,46311,46312,46315,46316,46317,46318,46319,46320,46321,46322,46323,46324,46325,46345,46346,46326,46327,46328,46329,46330,46331,46348]),
+      ('1221-002','"A spirit of whoredom" — whoredom as a driving inner disposition and inner-being faculty',[46314],[46313]),
+      ('1221-003','"Your heart and your own eyes, which you are inclined to whore after" — the inner mechanism of desire as the root of whoredom',[46347],[]),
+      ('1221-004','Literal fornication as inner-being act — the will and desire engaged in sexual unfaithfulness',[207130],[46307,46309,46339,46344,207099,207098,46333,46334,207129,207127,207128]),
+      ('1221-005','Ezekiel\'s "whoring heart" allegory — inner-being characterisation of Jerusalem/Israel\'s spiritual condition',[207121],[207103,207104,207105,207106,207107,207108,207109,207110,207111,207112,207113,207116,207120,207115,207117,207118,207119])],
+1220:[('1220-001','Whoredom as a spiritual condition — the spirit of whoredom within, leading Israel astray',[46305],[46304,46301,46302,46303,207089,207090,207091,46306,46300])],
+1222:[('1222-001','Whoredom as inner-being corruption — defilement of the relational space with God; the act that takes away understanding',[46349],[46354,46352,46353,46351,207152,207153,207154,46350])],
+1226:[('1226-001','Lawlessness as an inner disposition requiring forgiveness and forming a bond of slavery',[47173],[47172,47169,47171]),
+      ('1226-002','Loving righteousness and hating wickedness — inner dispositions in contrast',[47170],[])],
+1224:[('1224-001','Divine incomparability expressed through comparison — "who is like you/me?" names God\'s unique inner-being character',[46851],[46818,46819,46821,46822,46826,46828,46838,46841]),
+      ('1224-002','"As yourself" — the reflexive inner-being standard for love of neighbour',[46849],[46850]),
+      ('1224-003','Inner-being states compared — the heart hard as stone, desire like a heated oven, suffering like birth pangs',[46810],[46842,46813,46814,46823,46824,46847,46809,46812,46825]),
+      ('1224-004','Job\'s inner-being comparisons — anguish, asymmetry, self-presentation, and character before God',[46844],[46843,46831,46833,46836,46837,46829,46834,46804,46805,46853,46852,46855,46816,46811,46808])],
+6650:[('6650-001','Wickedness as defining inner character',[207342],[])],
+1225:[('1225-001','Acting wickedly — inner act of moral departure from God and righteousness',[46857],[207317,207312,207316,207314,207315,46873,207324,207323,207319,46859,46858,46856,46867]),
+      ('1225-002','Condemnation and guilt — the verdict of wickedness on the inner moral condition',[46863],[207320,207318,207311,46871,46872,46864,46862,46865,46866,46868,46869,46870,207325,207326,207321,207322,46860,46861])],
+1223:[('1223-001','The wicked\'s inner character — thoughts, heart, soul, desires directed toward evil',[207284],[207282,207283,207280,207281,207218,207240,207250,207263,207266,207267]),
+      ('1223-002','The way of the wicked — inner-being orientation expressed in life direction; the call to forsake it',[46401],[207277,207278,207279,207272,207273,207239,207254,46402,46403]),
+      ('1223-003','Transgression speaking to the wicked deep in his heart — the internal voice of wickedness',[207297],[]),
+      ('1223-004','The wicked in contrast to the righteous — moral antithesis in Psalms and Proverbs',[207276],[207293,207306,207309,207307,207308,207285,207286,207287,207288,207290,207289,207291,207292,207294,207295,207296,207298,207299,207300,207301,207302,207303,207304,207305,207261,207270,207271,207274,207275,207223,207226,207227,207216,207217,207219,207220,207221,207222,207224,207225,207233,207234,207235,207228,207229,207230,207231,207232,207241,207242,207236,207237,207238,207245,207246,207243,207244,207247,207248,207249,207252,207253,207251,207255,207256,207257,207258,207259,207260,207262,207268,207269,207264,207265,46388,46389,207193,207194,207185,207186,207189,207187,46397,46399,46393,46394,46395,46396,46398,46400,46408,46404,46405,46406,46407,46387,46437,46391,46390,46392,207310,46435,46436,46424,46432,46433,46434,46409,46410,46411,46412,46413,46415,46414,46419,46416,46417,46418,46420,46421,46423,46422,46425,46426,46428,46427,46429,46430,46431,207192,207195,207191]+grp4_1223_extra),
+      ('1223-005','"If the wicked turns from his way…he shall live" — Ezekiel\'s theology of moral turning',[207208],[207206,207207,207196,207197,207198,207199,207200,207201,207202,207203,207204,207205,207213,207214,207209,207210,207211,207212,207184,207188,207190])],
+3083:[('3083-001','Choosing as inner act of will — divine election and human deliberate choice',[90706],[90707,90705])],
+3082:[('3082-001','Sect/faction as an expression of chosen inner orientation — religious commitment, communal division, or doctrinal choice',[90699],[90703,90701,90696,90704,90697])],
+3085:[('3085-001','Divine election as inner-being delight — God\'s chosen servant named with his soul\'s pleasure',[90711],[])],
+3089:[('3089-001','Self-will as inner-being vice — arrogant self-assertion and willful presumption',[90715],[90716])],
+3081:[('3081-001','Acting of one\'s own accord — voluntary inner impulse expressed in giving and service',[90695],[90694])],
+1239:[('3239-001','Inner-being identity and relational status — "I am," "we are," being named in relation to God, sin, grace, the flesh',[48846],grp1_1239),
+      ('3239-002','No one righteous, no one seeks — the universal inner-being condition of humanity',[48823],grp2_1239),
+      ('3239-003','The word is near, in your mouth and in your heart; hope, conviction, calling — inner-being states named through "being"',[48811],grp3_1239)],
+1240:[('1240-001','Eschatological orientation — things to come, the age to come, glory to be revealed — shaping inner hope and expectation',[48890],grp1_1240),
+      ('1240-002','Imminence of consequence or trial — shaping inner response of fear, endurance, or urgent action',[48867],grp2_1240),
+      ('1240-003','Faith acting toward the future — Abraham, Isaac, future blessings',[48869],grp3_1240)],
+1227:[('1227-001','"By no means!" — strong inner-being moral assertion against misapplication of grace',[47225],grp1_1227),
+      ('1227-002','"Do not say in your heart" and other inner-being directives — mē shaping the inner life',[47179],grp2_1227),
+      ('1227-003','Inner-being absence or incapacity named through negation — no fear of God, cannot see, did not seek',[47186],grp3_1227)],
+3087:[('3087-001','The heart\'s inner decision as the governing act of will — giving from inner resolve, not compulsion',[90713],[])],
+3084:[('3084-001','Divine appointment — God\'s will expressed in calling and commissioning persons for purposes',[90708],[90710,90709])],
+3088:[('3088-001','Divine pre-selection of witnesses — God\'s choice of those who encounter the risen Christ',[90714],[])],
+1234:[('1234-001','Divine betrothal — God\'s covenantal commitment grounded in inner-being character qualities; the goal: knowing the Lord',[48087],[48088])],
+1231:[('1231-001','"This mystery has been revealed" — de.nah pointing to inner vision, divine disclosure, and the thoughts of the mind',[47706],[47702,47704,47705,47707,47709,47710,47716,47717,47731,47729]),
+      ('1231-002','Inner resolve, loyalty, spirit, and judgment — de.nah pointing to inner-being conditions in Daniel and his accusers',[47726],[47711,47713,47719,47722,47727,47724,47701])],
+1235:[('1235-001','Divine commission — "Go!" as the inner-being call to prophetic obedience and vocation',[48183],[48090,48106,48187,48150,48156,48184,48175,48255,48258,48280]),
+      ('1235-002','Going after other gods / false loves — inner-being movement toward idolatry and spiritual infidelity',[48191],[48201,48154,48155,48152,48246,48181,48217,48205,48157,48161]),
+      ('1235-003','The way you should go — divine guidance of inner direction; God going before or with his people',[48179],[48130,48132,48287,48282,48283,48180,48092]),
+      ('1235-004','Going to/seeking God or failing to find him — inner-being orientation toward the divine',[48159],[48119,48230,48097,48218,48170,48292,48294,48296,48302,48256,48257]),
+      ('1235-005','Going toward death — inner-being confrontation with mortality and departure',[48227],[48239,48225,48226,48229,48174,48228]),
+      ('1235-006','"My heart has gone after my eyes" — inner-being mechanism of moral departure',[48233],[])],
+3057:[('3057-001','Foolishness as inner-being condition — deluded judgment, sinful folly, and the incapacity to know God\'s way',[90297],[90299,90296,90298])],
+3055:[('3055-001','Being willing, content, or pleased — the inner state of consent, determination, or desire governing action',[90275],[90273,90274,90272,90271,90279,90282,90283,90266,90267,90270,90268,90269,90265,90277,90276,90278,90280,90281])],
+1230:[('1230-001','"There is hope" / "there is a reward" — existential inner-being anchor in desolation',[47689],[47671,47672,47665,47667,47666,47668,47688]),
+      ('1230-002','Inner moral existence and its absence — "is there any righteous?", "there is no fear of God", "lies in the heart"',[47663],[47640,47670,47680,47682,47679,47660,47661,47662,47664,47691]),
+      ('1230-003','Consent, willingness, and relational existence — "if you are willing", "the Lord is with us"',[47686],[47642,47641,47643,47644,47645,47646,47648,47647,47654,47655,47656,47657,47659,47687,47697,47673,47674,47676,47677,47690])],
+1238:[('1238-001','God enthroned / dwelling in the midst of his people — divine presence as the ground of inner security',[48709],[48685,48690,48800,48687]),
+      ('1238-002','Dwelling in darkness / sitting in ashes — inner-being conditions of desolation, lament, and humiliation',[48714],[48718,48679,48693,48697,48699,48746,48634,48711]),
+      ('1238-003','Dwelling as eschatological rest and security — the promise of peaceful habitation',[48741],[48680,48681,48682,48742,48650,48648]),
+      ('1238-004','Covenantal dwelling — "dwell as mine", "I will dwell in your midst", the intimate possession of dwelling',[48651],[48652,48649,48796,48797,48799,48637,48683]),
+      ('1238-005','The arrogant heart\'s aspiration to sit on high — inner pride named in the will to enthrone oneself',[48661],[48700,48601,48633,48662,48721]),
+      ('1238-006','Inner-being grief and solidarity expressed in sitting — sitting in ashes, sitting with the suffering',[48717],[48749,48616,48632,48790])],
+1237:[('1237-001','"How long?" — the inner-being cry of anguish, longing, and tested patience',[48574],[48584,48582,48579,48580,48575,48576,48577,48578,48581,48570,48569,48573,48572,48571])],
+3077:[('3077-001','The freewill offering — inner-being voluntary devotion expressed in giving, sacrifice, and praise',[90649],[90665,90663,90664,90655,90648,90643,90644,90650,90660,90656,90657,90658,90659,90661,90662,90646,90645,90647,90642,90652,90653,90654,90651,90666])],
+}
+
+set_aside_6634 = [206722, 206725, 206727, 206728, 206729, 206731, 206732, 206733, 206734, 206735, 206737, 206739, 206740, 206741, 206742, 206743, 206745, 206747, 206748, 206749, 206750, 206753, 206754, 206755, 206758, 206761, 206770, 206772, 206774, 206777, 206778, 206779, 206780, 206781, 206782, 206783, 206785, 206787, 206788, 206789, 206790, 206792, 206793, 206795, 206796, 206798, 206805, 206810, 206813, 206818]
+# ─── EXPLICIT SET_ASIDE TABLE ─────────────────────────────────────────
+SA = {
+4031:[],
+1196:[44783,44795,44794,44793,122708,44791,122725],
+1195:[],4104:[124776],4105:[124779],4160:[],
+4102:[124749,124750,124751,124752,124754,124759,124761,124763],
+1197:[204402,204376,204374,204400,204406,204403,204401,204404,204405,44985,44981,204375,204407,204390],
+6590:[],
+6588:[204440,204441,204443,204444,204445,204446,204447,204448,204449,204450,204452,204453,204454,204455,204456,204457,204460],
+6587:[204416,204421,204422,204423,204424,204417,204418,204419,204414,204415,204434,204433,204435,204426,204427,204429,204430,204428,204431,204432],
+6589:[204477,204474,204473,204471,204472],
+1199:[],1198:[],
+6602:[204872,204871,204870],
+1202:[],1207:[],1201:[],1205:[],1204:[],1200:[],
+1203:set_aside_1203,
+1208:[],
+6636:[206832],
+1209:derive_set_aside(1209,[206701],grp1_1209),
+6634:set_aside_6634,
+6635:[],
+1210:[45917, 206916, 206918, 206919, 206920, 206921, 206922, 206923, 206924, 206925, 206926, 206927, 206930, 206931, 206932, 206933, 206934, 206935, 206936, 206937, 206938, 206940, 206941, 206942, 206943, 206945, 206966, 206968, 206969, 206970, 206971, 206976, 206977, 206978, 206980, 206981, 206984, 206985, 206987, 206988, 206989, 206990, 206991, 206992, 206993, 206996, 206997, 206998, 206999, 207000, 207001, 207002, 207003, 207004, 207005, 207006, 207007, 207008, 207009, 207010, 207011, 207012, 207013, 207014, 207016, 207017, 207018, 207019, 207020],
+6637:sorted(terms_by_mti[6637]['all_vids']),  # AVF all
+1218:[],
+1211:[45950,232247],
+1216:sorted(terms_by_mti[1216]['all_vids']-{232258,45982,232341,232289,45974}-set([232292,232290,232284,232285,232287,232288,232294,232254,232255,232256,232257,232259,232273,232275,232276,232277,232278,232279,232280,232281,232282,232262,232263,232264,232265,232266,232267,232268,232269,232271,232272,45971,232260,45970,45972,45973])-set([45983,232298,232301,232307,232312,232283,232286])-set([232322,232323,232333,232334,232336,232337,232338,232339,232340,232343,232344,232320,232324,232325,232326,232327,232329,232330,232309,232308,232318,232319,232296,232297,232295,232299,232302,232300,232305,232306,232310,232314,232311,232313,232315,232316,232317,232270,232261,45987,45968,45985,45986,45984,232304])-set([232332,232335,232342,232328,232331])-set([45975,45977,45980,45981,45976,45978,45979,45988])-{232291}),
+1215:[],
+1212:[232390,232400,45953],
+7492:[232418,232419,232410,232411,232412,232427,232421,232422,232423,232424,232425,232406,232407,232408,232409,232416,232417],
+1217:[],1214:[],
+1219:[46293],
+6638:sorted(terms_by_mti[6638]['all_vids']),  # AVF
+6642:[],
+6641:sorted(terms_by_mti[6641]['all_vids']),  # AVF
+6643:[],
+6639:[207043,207042],
+6640:sorted(terms_by_mti[6640]['all_vids']),  # AVF
+6644:[],
+1221:[46308,46332,46342,46343,207093,207094,207097,207122,207123,207124,207125,207126],
+1220:[],1222:[],
+1226:[],
+1224:[46802,46803,46806,46845,46846,46854,46830,46832,46835,46839,46840,46815,46817,46820,46827,46848,46807],
+6650:[],
+1225:[207313],
+1223:[46439,207215],
+3083:[],3082:[90698,90700,90702],3085:[],3089:[],3081:[],
+1239:[48829,48858],
+1240:[48887,48888,48873,48874,48875,48886,48876,48878],
+1227:[47217,47232,47197,47175,47183],
+3087:[],3084:[],3088:[],1234:[],
+1231:[47732,47700,47703,47708,47714,47715,47712,47723,47718,47720,47721,47728,47725,47730],
+1235:set_aside_1235,
+3057:[],3055:[],
+1230:[47652,47653,47649,47650,47651,47698,47699,47696,47685,47683,47684,47692,47693,47694,47695,47681,47675,47678,47658,47669],
+1238:set_aside_1238,
+1237:[48583],3077:[],
+}
+
+# ─── COVERAGE VALIDATION ─────────────────────────────────────────────
+errors = []
+for mti in terms_order:
+    all_v = terms_by_mti[mti]['all_vids']
+    assigned = set()
+    for grp in CLF.get(mti,[]):
+        for v in grp[2]+grp[3]:
+            if v in assigned:
+                errors.append(f"DUPLICATE vid:{v} in mti:{mti}")
+            assigned.add(v)
+    for v in SA.get(mti,[]):
+        if v in assigned:
+            errors.append(f"SA OVERLAP vid:{v} in mti:{mti}")
+        assigned.add(v)
+    missing = all_v - assigned
+    extra = assigned - all_v
+    if missing: errors.append(f"mti:{mti} MISSING {missing}")
+    if extra:   errors.append(f"mti:{mti} EXTRA {extra}")
+
+if errors:
+    print("COVERAGE ERRORS:")
+    for e in errors: print(" ",e)
+else:
+    print("ALL COVERAGE CHECKS PASSED — 73 terms fully assigned")
+
+# ─── OP GENERATION ───────────────────────────────────────────────────
+ops = []
+op_num = 1
+
+stats = {'group_inserts':0,'verse_context_inserts':0,'relevant':0,'set_aside':0,'anchors':0}
+
+for mti in terms_order:
+    s = strongs(mti)
+    groups = CLF.get(mti, [])
+    set_asides = SA.get(mti, [])
+
+    for grp_code, grp_desc, anchor_vids, related_vids in groups:
+        # Group insert
+        ops.append({
+            "op_id": f"OP-{op_num:04d}",
+            "operation": "insert",
+            "table": "verse_context_group",
+            "record": {
+                "mti_term_id": mti,
+                "group_code": grp_code,
+                "context_description": grp_desc,
+                "notes": None,
+                "delete_flagged": 0
+            },
+            "description": f"New group for {s}: {grp_desc[:60]}"
+        })
+        op_num += 1
+        stats['group_inserts'] += 1
+
+        # Anchor(s)
+        for vid in anchor_vids:
+            r = ref(mti, vid)
+            ops.append({
+                "op_id": f"OP-{op_num:04d}",
+                "operation": "insert",
+                "table": "verse_context",
+                "record": {
+                    "verse_record_id": vid,
+                    "mti_term_id": mti,
+                    "group_id": grp_code,
+                    "is_anchor": 1,
+                    "is_relevant": 1,
+                    "is_related": 0,
+                    "notes": None,
+                    "delete_flagged": 0
+                },
+                "description": f"{r} — anchor, group {grp_code}: {grp_desc[:50]}"
+            })
+            op_num += 1
+            stats['verse_context_inserts'] += 1
+            stats['relevant'] += 1
+            stats['anchors'] += 1
+
+        # Related
+        for vid in related_vids:
+            r = ref(mti, vid)
+            ops.append({
+                "op_id": f"OP-{op_num:04d}",
+                "operation": "insert",
+                "table": "verse_context",
+                "record": {
+                    "verse_record_id": vid,
+                    "mti_term_id": mti,
+                    "group_id": grp_code,
+                    "is_anchor": 0,
+                    "is_relevant": 1,
+                    "is_related": 1,
+                    "notes": None,
+                    "delete_flagged": 0
+                },
+                "description": f"{r} — related, group {grp_code}"
+            })
+            op_num += 1
+            stats['verse_context_inserts'] += 1
+            stats['relevant'] += 1
+
+    # Set-aside
+    for vid in set_asides:
+        r = ref(mti, vid)
+        ops.append({
+            "op_id": f"OP-{op_num:04d}",
+            "operation": "insert",
+            "table": "verse_context",
+            "record": {
+                "verse_record_id": vid,
+                "mti_term_id": mti,
+                "group_id": None,
+                "is_anchor": 0,
+                "is_relevant": 0,
+                "is_related": 0,
+                "notes": None,
+                "delete_flagged": 0
+            },
+            "description": f"{r} — set aside, no inner-being engagement for {s}"
+        })
+        op_num += 1
+        stats['verse_context_inserts'] += 1
+        stats['set_aside'] += 1
+
+print(f"\nOperations generated: {len(ops)}")
+print(f"  Group inserts: {stats['group_inserts']}")
+print(f"  verse_context inserts: {stats['verse_context_inserts']}")
+print(f"  Relevant: {stats['relevant']} (anchors: {stats['anchors']})")
+print(f"  Set aside: {stats['set_aside']}")
+
+# ─── ASSEMBLE PATCH ──────────────────────────────────────────────────
+patch = {
+    "_patch_meta": {
+        "patch_id": "PATCH-20260403-VCB018-V1",
+        "batch_id": "VCB-018",
+        "produced_date": "2026-04-03",
+        "produced_by": "Claude AI — WA-VerseContext-Instruction-v2.4-20260403",
+        "governing_instruction": "WA-VerseContext-Instruction-v2.4-20260403.md",
+        "observations_file": "wa-vcb-018-term-observations-v2.8-20260403.md",
+        "session_b_status": None,
+        "description": "VCB-018 full batch — Registries 163-173 (10 registries, 73 terms). Corrections: mti:6588 anchor corrected to Phili 4:8 (vid:204458); mti:1221 Version 2 classification (5 groups); mti:1238 Job 2:13 anchor grp6 only; Isa 47:8 to grp5 only; mti:1239/1227 vid cross-contamination resolved; mti:1216 Pro 15:8 added to grp3; mti:1223 Num 16:26 added to grp4; mti:1230 Gen 24:23/Jer 31:6 placed. AVF confirmed: mti:6637, 6638, 6641, 6640."
+    },
+    "operations": ops,
+    "_patch_summary": {
+        "total_operations": len(ops),
+        "group_inserts": stats['group_inserts'],
+        "group_updates": 0,
+        "verse_context_inserts": stats['verse_context_inserts'],
+        "verse_context_updates": 0,
+        "relevant_verses": stats['relevant'],
+        "set_aside_verses": stats['set_aside'],
+        "anchor_verses": stats['anchors'],
+        "dual_context_verses": 0,
+        "revisions_to_prior": 0
+    }
+}
+
+out = '/home/claude/wa-vcb-018-patch-v1-20260403.json'
+with open(out, 'w') as f:
+    json.dump(patch, f, indent=2)
+print(f"\nPatch written to {out}")

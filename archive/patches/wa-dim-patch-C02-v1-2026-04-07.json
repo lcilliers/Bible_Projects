@@ -1,0 +1,2827 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C02-V1",
+    "cluster": "C02",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C02: 157 dimension updates across 13 registries; 15 group description corrections; 2 DR-8 C01 anchor corrections (979-001, 1188-001); 4 Session B findings inserted; 1 Session D pointer inserted"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 401
+      },
+      "set": {
+        "context_description": "Term names the inner experience of enduring hostile plots \u2014 suffering, tears, and faithful perseverance of the person who serves God while subject to covert opposition.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 counsel 2110-001"
+      },
+      "description": "Group 2110-001 \u2014 counsel: description revised"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3813
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 group names the experience of the victim of plots, not the plotter's will; Character/Disposition governs; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term names the inner experience of enduring hostile plots \u2014 suffering, tears, and faithful perseverance of the person who serves God while subject to covert opposition."
+      },
+      "description": "2110-001 \u2014 counsel: Character/Disposition (description revised)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3816
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4921-001 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3827
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "748-001 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3828
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "748-002 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3829
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 divine eternal counsel is constitutively relational, not a human volitional act; Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "748-003 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3830
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 deliberate moral refusal of known counsel; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "748-004 \u2014 counsel: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3817
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "749-001 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3818
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "749-002 \u2014 counsel: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3819
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "749-003 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3815
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "750-001 \u2014 counsel: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3822
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 covenantal intimacy as constitutively relational phenomenon",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "751-001 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3823
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 prophetic council membership as covenantal standing",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "751-002 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3824
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 deliberate concealment of hostile purpose; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "751-003 \u2014 counsel: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3825
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Character/Disposition",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "751-004 \u2014 counsel: Character/Disposition"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3831
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 confirmed per Theological/Divine-Human correction pass",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "753-001 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3832
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 cognitive reception of instruction; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "753-002 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 421
+      },
+      "set": {
+        "context_description": "The mouth as the site through which inner resolve becomes binding commitment \u2014 the irrevocable inner obligation created when the person opens their mouth to God or to another.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 counsel 753-003"
+      },
+      "description": "Group 753-003 \u2014 counsel: description revised"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3833
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from UNCLASSIFIED \u2014 Volitional/Will; mouth as site of binding inner resolve; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "The mouth as the site through which inner resolve becomes binding commitment \u2014 the irrevocable inner obligation created when the person opens their mouth to God or to another."
+      },
+      "description": "753-003 \u2014 counsel: Volitional/Will (description revised)"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3834
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 being constitutively addressed and bound by divine word",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "753-004 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3835
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Spiritual/God-ward \u2014 awe, humility, restraint as soul's posture before God; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "753-005 \u2014 counsel: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3826
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 planning as inner cognitive-deliberative act; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "754-001 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3820
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 wickedness and rebellion as governing inner moral orientation; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "758-001 \u2014 counsel: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3821
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "758-002 \u2014 counsel: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3814
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 constitutively addressed by divine counsel; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "760-001 \u2014 counsel: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4119
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5098-001 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4117
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5099-001 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4118
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Affective/Emotional",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5099-002 \u2014 discernment: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4115
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "816-001 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4116
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "816-002 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4113
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 perceptive faculty is cognitive; moral discrimination is its application",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "817-001 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4114
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 trained cognitive capacity; developmental dimension significant",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "818-001 \u2014 discernment: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4706
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 deliberate inner reflection is cognitive; moral object does not change the faculty",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3392-001 \u2014 imagination: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4708
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "916-001 \u2014 imagination: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4707
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 inner cognitive content as subject of divine perception",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "917-001 \u2014 imagination: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4780
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 contemplative attention; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5662-001 \u2014 insight: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4776
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 discerning capacity is cognitive; moral discrimination is its application",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "932-001 \u2014 insight: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4777
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "932-002 \u2014 insight: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4778
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "932-003 \u2014 insight: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4779
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "932-004 \u2014 insight: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4930
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 interrogative as inner cognitive probe; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1533-001 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4931
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Affective/Emotional \u2014 why? as cry of grief and lament; affective dimension governs; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1533-002 \u2014 knowledge: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1504
+      },
+      "set": {
+        "context_description": "Knowledge as the foundational inner capacity \u2014 rooted in the fear of the Lord (Pro 1:7) and experienced inwardly as delight in the soul (Pro 2:10); the cognitive-spiritual capacity that grounds wisdom.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 knowledge 955-001"
+      },
+      "description": "Group 955-001 \u2014 knowledge: description revised"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4920
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 knowledge spiritually-rooted in fear of Lord; Spiritual/God-ward; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Knowledge as the foundational inner capacity \u2014 rooted in the fear of the Lord (Pro 1:7) and experienced inwardly as delight in the soul (Pro 2:10); the cognitive-spiritual capacity that grounds wisdom."
+      },
+      "description": "955-001 \u2014 knowledge: Spiritual/God-ward (description revised)"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4921
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 knowledge of God as defining orientation toward/away from God",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "955-002 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4922
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 Spirit-given endowment received by soul",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "955-003 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4923
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "955-004 \u2014 knowledge: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4924
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "955-005 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4925
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Relational/Social \u2014 covenantal mutual knowing is constitutively divine-human; structurally parallel to 958-003",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "958-001 \u2014 knowledge: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4926
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "958-002 \u2014 knowledge: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4927
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 being known by God is constitutively relational; Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "958-003 \u2014 knowledge: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4928
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "958-004 \u2014 knowledge: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1513
+      },
+      "set": {
+        "context_description": "God's revelatory self-disclosure \u2014 his acts, name, and purposes made known that the human person may come to recognise, receive, and respond inwardly to God's sovereign purposes.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 knowledge 958-005"
+      },
+      "description": "Group 958-005 \u2014 knowledge: description revised"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4929
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 God's revelatory self-disclosure calling forth human recognition; Spiritual/God-ward; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "God's revelatory self-disclosure \u2014 his acts, name, and purposes made known that the human person may come to recognise, receive, and respond inwardly to God's sovereign purposes."
+      },
+      "description": "958-005 \u2014 knowledge: Spiritual/God-ward (description revised)"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1502
+      },
+      "set": {
+        "context_description": "God's perfect knowledge as the ground of moral accountability \u2014 all human action weighed by him (1Sa 2:3); and the inner rebellion of those who deny God's knowledge (Psa 73:11), refusing moral scrutiny.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 knowledge 959-001"
+      },
+      "description": "Group 959-001 \u2014 knowledge: description revised"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4918
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 ground of moral accountability; Theological/Divine-Human; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "God's perfect knowledge as the ground of moral accountability \u2014 all human action weighed by him (1Sa 2:3); and the inner rebellion of those who deny God's knowledge (Psa 73:11), refusing moral scrutiny."
+      },
+      "description": "959-001 \u2014 knowledge: Theological/Divine-Human (description revised)"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4919
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 soul formed by knowledge of God; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "959-002 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4932
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "960-001 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4933
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 reason as constitutive of humanness; cognitive faculty claim",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "960-002 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4916
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 formed judgment held and disclosed; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "961-001 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4917
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "961-002 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4934
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 divine gift received by soul; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "962-001 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4935
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Capacity \u2014 reason as constitutive of humanness; cognitive faculty",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "962-002 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4911
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "963-001 \u2014 knowledge: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4912
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "963-002 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4913
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Identity/Selfhood",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "963-003 \u2014 knowledge: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4914
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human confirmed via anchor \u2014 divine knowledge of human person as constitutive relational reality",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "963-004 \u2014 knowledge: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4915
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "963-005 \u2014 knowledge: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5037
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 resolved Phase B directional-faculty finding; morally neutral cognitive act; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5883-001 \u2014 meditation: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5039
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 sustained devotional orientation toward God; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "975-001 \u2014 meditation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5036
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Spiritual/God-ward \u2014 pause for heart to attend to divine action; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "976-001 \u2014 meditation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5035
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "977-001 \u2014 meditation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5038
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "978-001 \u2014 meditation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1735
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "CORRECTED from Volitional/Capacity (C01 anchor) \u2014 DR-8 researcher confirmed 2026-04-07: remembrance as cognitive capacity holding content in living consciousness; programme-level principle: the will directing a faculty does not make that faculty volitional",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "979-001 \u2014 memory: Cognitive/Mind (manual_override=1 DR-8)"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5040
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "980-001 \u2014 memory: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5355
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 divine prothesis as constitutive covenantal context; Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1065-001 \u2014 purpose: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5356
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Volitional/Will",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1065-002 \u2014 purpose: Volitional/Will"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5362
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Volitional/Will \u2014 faithfulness/slackness toward divinely commissioned work; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1068-001 \u2014 purpose: Volitional/Will"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5363
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1068-002 \u2014 purpose: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5364
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 inner-being goal is soul's orientation toward God; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1069-001 \u2014 purpose: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5365
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 God's covenantal inner motivation as disclosed purpose; Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1069-002 \u2014 purpose: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5366
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Character/Disposition",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1071-001 \u2014 purpose: Character/Disposition"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5358
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 inner directionality toward a telos is volitional; Volitional/Will",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1079-001 \u2014 purpose: Volitional/Will"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5359
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Character/Disposition",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1079-002 \u2014 purpose: Character/Disposition"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5357
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed via anchor \u2014 directional-faculty pattern: civic prudent foresight vs. provision for fleshly desire; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3373-001 \u2014 purpose: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5354
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Character/Disposition \u2014 moral failure context governs; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3375-001 \u2014 purpose: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5361
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 moral wickedness of the scheming heart is the governing characterisation",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3380-001 \u2014 purpose: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5360
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 purposive inner reasoning rather than volitional resolve; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3554-001 \u2014 purpose: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5367
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Spiritual/God-ward (KEYWORD_STRONG) \u2014 automated label matched on worship context; inner-being content is deliberate inner resolve; Volitional/Will; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3591-001 \u2014 purpose: Volitional/Will"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5368
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1080-001 \u2014 reasoning: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5370
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 corrupt moral origin in the heart governs; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1081-001 \u2014 reasoning: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5369
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6065-001 \u2014 reasoning: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5607
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Capacity \u2014 creative-cognitive act; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1174-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5605
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1175-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5597
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1177-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5610
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 ease-induced contempt as moral inner attitude; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1178-001 \u2014 thought: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5614
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 God knowing and declaring human thought is constitutively relational; Theological/Divine-Human; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1181-001 \u2014 thought: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5604
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 hope, fear, intercession as soul's Godward orientation; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1183-001 \u2014 thought: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5595
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 inner cognitive valuation/estimation; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1185-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5598
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Character/Disposition \u2014 three-directional moral assessment structure; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1186-001 \u2014 thought: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5601
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1187-001 \u2014 thought: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1705
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "CORRECTED from Volitional/Capacity (C01 anchor) \u2014 DR-8 researcher confirmed 2026-04-07: mind's contents are a cognitive faculty; volitional and spiritual forces act upon the faculty but do not change its nature; programme-level principle applied",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1188-001 \u2014 thought: Cognitive/Mind (manual_override=1 DR-8)"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5606
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3350-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5596
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3408-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5600
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3409-001 \u2014 thought: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5599
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3410-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5611
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 fragility of cognitive purposing at death; not a volitional act; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3442-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2296
+      },
+      "set": {
+        "context_description": "The hope and cry that God would direct his thought toward persons in their need \u2014 the inner appeal for divine attention as a response to crisis (Jon 1:6).",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 thought 3445-001"
+      },
+      "description": "Group 3445-001 \u2014 thought: description revised"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5608
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 hope/cry for divine attention as Godward orientation; Spiritual/God-ward; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "The hope and cry that God would direct his thought toward persons in their need \u2014 the inner appeal for divine attention as a response to crisis (Jon 1:6)."
+      },
+      "description": "3445-001 \u2014 thought: Spiritual/God-ward (description revised)"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5613
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3449-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5612
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 resolved Phase B directional-faculty finding; revised description; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3453-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2291
+      },
+      "set": {
+        "context_description": "Shrewdness as an inner quality of practical wisdom \u2014 the capacity for perceptive, pragmatic discernment in worldly dealings, commended even when applied by those without spiritual orientation (Luk 16:8).",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 thought 3459-001"
+      },
+      "description": "Group 3459-001 \u2014 thought: description revised"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5602
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 confirmed via anchor; single pole (pragmatic wisdom); description tightened",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Shrewdness as an inner quality of practical wisdom \u2014 the capacity for perceptive, pragmatic discernment in worldly dealings, commended even when applied by those without spiritual orientation (Luk 16:8)."
+      },
+      "description": "3459-001 \u2014 thought: Cognitive/Mind (description revised)"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5603
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3461-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5609
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Volitional/Will \u2014 royal planning as cognitive act; excellent spirit is character basis; Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3482-001 \u2014 thought: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5657
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1200-001 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5652
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1201-001 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5650
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1202-001 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5658
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Spiritual/God-ward \u2014 being heard by God is constitutively relational; Theological/Divine-Human",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1203-001 \u2014 understanding: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5659
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1203-002 \u2014 understanding: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5660
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1203-003 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2349
+      },
+      "set": {
+        "context_description": "The inner responsiveness produced by hearing \u2014 the full range of inner-being movement that hearing triggers: fear, grief, anger, worship, courage, compassion; hearing as the precipitating event of inner-being engagement.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 understanding 1203-004"
+      },
+      "description": "Group 1203-004 \u2014 understanding: description revised"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5661
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Spiritual/God-ward (KEYWORD_STRONG) \u2014 inner responsiveness produced by hearing; Affective/Emotional; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "The inner responsiveness produced by hearing \u2014 the full range of inner-being movement that hearing triggers: fear, grief, anger, worship, courage, compassion; hearing as the precipitating event of inner-being engagement."
+      },
+      "description": "1203-004 \u2014 understanding: Affective/Emotional (description revised)"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2344
+      },
+      "set": {
+        "context_description": "Understanding as the inner receptive capacity that God recognises and enriches \u2014 those who have understanding receive wisdom and knowledge from God (Dan 2:21); the cognitive-spiritual capacity for discernment.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 understanding 1204-001"
+      },
+      "description": "Group 1204-001 \u2014 understanding: description revised"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5656
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 confirmed via anchor; receptive capacity; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Understanding as the inner receptive capacity that God recognises and enriches \u2014 those who have understanding receive wisdom and knowledge from God (Dan 2:21); the cognitive-spiritual capacity for discernment."
+      },
+      "description": "1204-001 \u2014 understanding: Cognitive/Mind (description revised)"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5653
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1205-001 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5654
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1205-002 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5655
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1205-003 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5651
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1207-001 \u2014 understanding: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5773
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 cunning as moral orientation toward deception; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4456-001 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5778
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4458-001 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5779
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Character/Disposition \u2014 moral distortion of wisdom turned inward; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4458-002 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5798
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 prudence as learnable cognitive faculty; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4486-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5799
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 craftiness as moral orientation toward deception; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4486-002 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5796
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4487-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5797
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Character/Disposition \u2014 moral orientation toward deception governs; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4487-002 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2483
+      },
+      "set": {
+        "context_description": "Term designates a skilled or instructive song as an act of worship \u2014 the inner devotional origin implied in the call to praise God as King of all the earth (Psa 47:7); an expression of the inward orientation of worship through outward skill.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 518-001"
+      },
+      "description": "Group 518-001 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5795
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Spiritual/God-ward \u2014 confirmed via anchor; inner devotional origin implied; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term designates a skilled or instructive song as an act of worship \u2014 the inner devotional origin implied in the call to praise God as King of all the earth (Psa 47:7); an expression of the inward orientation of worship through outward skill."
+      },
+      "description": "518-001 \u2014 wisdom: Spiritual/God-ward (description revised)"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5802
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "519-001 \u2014 wisdom: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2491
+      },
+      "set": {
+        "context_description": "Term names the inner wisdom that produces wise conduct and success \u2014 the capacity for prudent discernment in action that governs how the person acts (Isa 52:13); wisdom as the inner quality expressed in competent, God-aligned conduct.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 519-002"
+      },
+      "description": "Group 519-002 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5803
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 anchor names inner wisdom-in-action; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term names the inner wisdom that produces wise conduct and success \u2014 the capacity for prudent discernment in action that governs how the person acts (Isa 52:13); wisdom as the inner quality expressed in competent, God-aligned conduct."
+      },
+      "description": "519-002 \u2014 wisdom: Cognitive/Mind (description revised)"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5792
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "521-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5800
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "522-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5801
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Character/Disposition \u2014 premeditated malice; moral orientation governs; Moral/Conscience",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "522-002 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2471
+      },
+      "set": {
+        "context_description": "Term names Israel's wisdom and understanding as demonstrated through faithful obedience to God's statutes \u2014 the inner capacity for discernment made visible in the life of the covenant people (Deu 4:6).",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 523-001"
+      },
+      "description": "Group 523-001 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5783
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED description \u2014 anchor names human understanding (Deu 4:6), not divine attribute; Cognitive/Mind confirmed; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term names Israel's wisdom and understanding as demonstrated through faithful obedience to God's statutes \u2014 the inner capacity for discernment made visible in the life of the covenant people (Deu 4:6)."
+      },
+      "description": "523-001 \u2014 wisdom: Cognitive/Mind (description revised)"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5784
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "523-002 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5805
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 Option A precedent: divine attribute with contextually implied human engagement (bestowal dimension present); same pattern as 527-001",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "524-001 \u2014 wisdom: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5806
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "524-002 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5804
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "525-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5807
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 Option A researcher confirmed 2026-04-07; contextually implied human inner-being engagement; note added",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "527-001 \u2014 wisdom: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5808
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "527-002 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5785
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "528-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5786
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 divine endowment received by soul; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "528-002 \u2014 wisdom: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5787
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 Godward orientation from fear of Lord governs; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "528-003 \u2014 wisdom: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5777
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "530-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5782
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed \u2014 Cognitive/Mind",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "531-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5774
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 Option A precedent: doxological human response present (Rom 11:33); reception of Christ as wisdom (1Cor 1:24)",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "532-001 \u2014 wisdom: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2463
+      },
+      "set": {
+        "context_description": "Term names wisdom as received from and embodied in Christ \u2014 the incarnate divine wisdom who became to us wisdom, righteousness, sanctification and redemption (1Cor 1:30); and wisdom as the inner-forming gift given by the Spirit, filling and shaping the person toward maturity in Christ.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 532-002"
+      },
+      "description": "Group 532-002 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5775
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 wisdom received, indwelt and operative; description revised to foreground human reception",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term names wisdom as received from and embodied in Christ \u2014 the incarnate divine wisdom who became to us wisdom, righteousness, sanctification and redemption (1Cor 1:30); and wisdom as the inner-forming gift given by the Spirit, filling and shaping the person toward maturity in Christ."
+      },
+      "description": "532-002 \u2014 wisdom: Theological/Divine-Human (description revised)"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5776
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 reception and pursuit of divine wisdom; Spiritual/God-ward",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "532-003 \u2014 wisdom: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2479
+      },
+      "set": {
+        "context_description": "Term names the divinely-imposed humiliation that continues until the inner transformation occurs \u2014 the recognition of God's sovereignty as the governing inner-being event that terminates the beast-like condition (Dan 5:21).",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 6670-001"
+      },
+      "description": "Group 6670-001 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5791
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological/Divine-Human \u2014 confirmed via anchor; inner recognition of God's sovereignty as governing inner-being event; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "Term names the divinely-imposed humiliation that continues until the inner transformation occurs \u2014 the recognition of God's sovereignty as the governing inner-being event that terminates the beast-like condition (Dan 5:21)."
+      },
+      "description": "6670-001 \u2014 wisdom: Theological/Divine-Human (description revised)"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5793
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral/Conscience \u2014 inner pride as cause of beast-like degradation; dimension assigned on narrative context; note added",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6672-001 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2482
+      },
+      "set": {
+        "context_description": "The inner desire to understand divine mysteries \u2014 Daniel's deep drive to comprehend the meaning of the terrifying apocalyptic vision (Dan 7:19); curiosity and longing for revelatory understanding.",
+        "notes": "Revised during Dimension Review Phase C/anchor consultation: description corrected \u2014 wisdom 6672-002"
+      },
+      "description": "Group 6672-002 \u2014 wisdom: description revised"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5794
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Spiritual/God-ward \u2014 confirmed via anchor; inner desire to understand divine mysteries; description revised",
+        "last_modified": "2026-04-07T00:00:00",
+        "context_description": "The inner desire to understand divine mysteries \u2014 Daniel's deep drive to comprehend the meaning of the terrifying apocalyptic vision (Dan 7:19); curiosity and longing for revelatory understanding."
+      },
+      "description": "6672-002 \u2014 wisdom: Spiritual/God-ward (description revised)"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5772
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Moral/Conscience \u2014 absence of wisdom as inner cognitive-character deficit; moral consequences do not change the nature of the absent capacity; Cognitive/Mind; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6676-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5780
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 inner orientation toward human wisdom as deceptive substitute for Christ is a moral displacement; Moral/Conscience; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6678-001 \u2014 wisdom: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5781
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 philosopher's inner orientation takes the gospel as directional counterpoint; Spiritual/God-ward (orientation away from God's wisdom); Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6679-001 \u2014 wisdom: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5788
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 Option A precedent applied; bestowal language in description indicates constitutively relational reception; Theological/Divine-Human; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6696-001 \u2014 wisdom: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5789
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "CORRECTED from Cognitive/Mind \u2014 wisdom received from God enabling divine revelation; constitutively relational; Theological/Divine-Human; Phase B + Phase C remediation 2026-04-07",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6696-002 \u2014 wisdom: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5790
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cognitive/Mind \u2014 dream as inner cognitive-experiential medium; UNCLASSIFIED assigned",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6697-001 \u2014 wisdom: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-108-002",
+        "registry_id": 108,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Higgayon (H1902H) operates as a directionally-determined cognitive act \u2014 the same reflective faculty deployed in devout meditation toward God (975-001) and in hostile scheming against others (5883-001). The act is morally neutral in itself; direction determines its character. This is Sub-pattern A of the directionally-determined inner faculty pattern identified across C02.",
+        "anchor_verses": "Psa 19:14; Psa 9:16",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 meditation: higgayon as directionally-determined cognitive act"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-127-002",
+        "registry_id": 127,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Dialogismos (G1261) displays the full range of its directionally-determined character in C02: 1081-001 names corrupt inner reasoning originating in the heart (Moral/Conscience) and 1081-002 names the mind's legitimate deliberation on contested matters (Cognitive/Mind). Same root, same faculty, opposite moral orientation. Session B should treat dialogismos as a directionally-determined term whose dimension shifts with context.",
+        "anchor_verses": "Mar 7:21; Rom 14:1",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 reasoning: dialogismos corrupt vs. legitimate poles"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-160-004",
+        "registry_id": 160,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 160 (thought) contains three instances of the directionally-determined inner faculty pattern: (1) re.a (H7454) \u2014 3453-001 names thoughts known by God and God's thoughts precious to the psalmist, the same relational faculty operating from both sides of the divine-human boundary simultaneously (Sub-pattern C); (2) dialogismos (G1261) \u2014 3409-001 names inner thoughts as site of spiritual warfare and accusation (Moral/Conscience) and 3410-001 names inner reckoning as the ground of faith (Cognitive/Mind) \u2014 same root, opposite orientation; (3) fronimos (G5429) pattern carries from C01: prudence and craftiness as the same perceptive faculty (Sub-pattern B). Session B must treat these as analytically distinct uses of the same terms.",
+        "anchor_verses": "Psa 139:17; Rom 2:15; Rom 4:9",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 thought: directionally-determined faculty instances in R160"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-174-001",
+        "registry_id": 174,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 174 (wisdom) contains multiple directionally-determined term pairs: (1) a.rum (H6175) and or.mah (H6195) \u2014 prudence as cognitive faculty vs. craftiness as moral orientation toward deception (Sub-pattern B); (2) sofos/sofia (G4680/G4678) \u2014 wisdom toward God (4458-001, Moral/Conscience character type) vs. wisdom turned inward as self-deception (4458-002, Moral/Conscience distortion); (3) cha.kham (H2449/H2450) \u2014 wisdom from fear of Lord (528-003, Spiritual/God-ward) vs. wisdom self-attributed (528-003 note). The cluster reveals that wisdom vocabulary in Scripture is structurally shaped by the direction of the soul's orientation. Session B should treat wisdom terms as directionally-sensitive throughout.",
+        "anchor_verses": "Pro 1:4; Gen 3:1; Pro 3:7; Isa 52:13",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 wisdom: directionally-determined faculty pattern across R174"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 160,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-160-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Directionally-determined inner faculty pattern \u2014 a recurring structural principle identified across C02 registries (108, 127, 160, 174, 49, 126): the same inner faculty or act appears in morally or directionally opposite forms within a single term. Three sub-patterns: (A) directional opposition \u2014 same reflective act, Godward vs. against another; (B) capacity and its corruption \u2014 prudence vs. craftiness as the same perceptive faculty; (C) relational symmetry \u2014 a term operating from both sides of the divine-human boundary simultaneously. Open question for Session D: is this a new dimension of the inner life, or a structural principle about how inner dimensions work? Cannot be resolved from C02 data alone. Requires cross-cluster synthesis to assess scope and implications.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 directionally-determined faculty pattern: cross-cluster synthesis question"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 177,
+    "dimension_updates": 157,
+    "dimensions_anchored": 2,
+    "session_b_findings_inserted": 4,
+    "session_d_pointers_inserted": 1,
+    "group_description_corrections": 15,
+    "wa_dimension_index_syncs": 15
+  }
+}

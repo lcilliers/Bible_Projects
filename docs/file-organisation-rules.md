@@ -22,6 +22,12 @@ Programme data exported from the database for consumption by Claude AI or the re
 | `data/exports/` (root) | Only subfolders — no files in root |  |
 | `data/exports/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_full_{date}_v{n}.json` |
 | `data/exports/verse_context/` | Verse Context batch extracts | `wa-vcb-{nnn}-extract-{date}.json` |
+| `data/exports/dimension_review/` | Dimension Review extracts (cluster, group verification, existing pointers) | `wa-dim-extract-{cluster}-{date}.json`, `wa-dim-grpverify-{group_code}-{date}.json`, `wa-dim-existing-pointers-{cluster}-{date}.json` |
+| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-cc-directive-{scope}-v{n}-{date}.md` |
+| `data/exports/dimension_review/directives/archive/` | Processed directives (moved after execution) | |
+| `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{date}.json` |
+| `data/exports/vertical_pass/directives/` | Pending CC directives. Processed directives move to `directives/archive/`. | `WA-VerticalPass-{scope}-v{n}-{date}.md` |
+| `data/exports/vertical_pass/directives/archive/` | Processed directives (moved after execution) | |
 | `data/exports/session_d/` | Session D pointers files | `wa-{nnn}-{word}-sdpointers-{date}.json` |
 | `data/exports/pool_analysis/` | Pool analysis datasets | `wa-pool-{pool_id}-analysis-{date}.json` |
 
@@ -33,7 +39,27 @@ All patch files received from Claude AI. Applied patches are moved to `archive/p
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Pending patches | `wa-{nnn}-{word}-patch-{date}.json`, `wa-vcb-{nnn}-patch-{date}.json` |
+| Pending patches | `wa-{nnn}-{word}-patch-{date}.json`, `wa-vcb-{nnn}-patch-{date}.json`, `wa-dim-patch-{cluster}-v{n}-{date}.json`, `wa-dim-grpdesc-patch-{reg}-v{n}-{date}.json` |
+
+### `data/imports/WA/Session_B_Dimension_Review/`
+
+Claude AI session outputs from Dimension Review work.
+
+| What goes here | Naming pattern |
+|---------------|----------------|
+| Cluster review assessments | `wa-dim-cluster-review-{cluster}-v{n}-{date}.md` |
+| Dimension refinement logs | `wa-dim-refinement-log-v{n}-{date}.md` |
+| Session logs | `wa-dim-session-log-{scope}-v{n}-{date}.md` |
+
+### `data/imports/WA/vertical_pass/`
+
+Claude AI session outputs from Vertical Pass work.
+
+| What goes here | Naming pattern |
+|---------------|----------------|
+| Session logs | `wa-verticalpass-session-log-{scope}-v{n}-{date}.md` |
+| Patches | `wa-verticalpass-patch-{scope}-v{n}-{date}.json` |
+| Analysis outputs | `wa-verticalpass-{scope}-v{n}-{date}.md` |
 
 ### `data/imports/WA/Workflow/Frameword_B/Session_B/`
 

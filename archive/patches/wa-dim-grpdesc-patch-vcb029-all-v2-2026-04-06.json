@@ -1,0 +1,580 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMGRPDESC-VCB029-ALL-V2",
+    "registries_affected": [206, 207, 208, 209, 212],
+    "words_affected": ["vulnerability", "blindness (spiritual)", "sloth", "likeness", "pray"],
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.1-2026-04-06 — CA repair",
+    "session_b_status": null,
+    "patch_type": "DIMREVIEW-GRPDESC",
+    "supersedes": "PATCH-20260406-DIMGRPDESC-VCB029-ALL-V1 (incorrect group_code keys — used strongs-based codes instead of mti-based codes)",
+    "description": "Repair patch v2 — VCB-029 Registries 206, 207, 208, 209, 212: replace 45 placeholder context_descriptions. Group codes are mti_term_id-serial as per programme convention. Mapping verified against anchor verse references in original patch. Source: wa-vcb-029-term-observations-v1.1-20260406.md. Companion: PATCH-20260406-DIMGRPDESC-211-V1 covers Reg 211. Both must be applied before regenerating cluster extracts."
+  },
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1368-001" },
+      "set": {
+        "context_description": "Term describes the pouring out of the innermost self — the soul poured to death, the Spirit poured upon the people — the act of ultimate inner giving",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 53:12"
+      },
+      "description": "1368-001 (a.rah H6168, Reg 206 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1368-002" },
+      "set": {
+        "context_description": "Term describes the divine act of uncovering and exposing the person in judgment, bringing shame and humiliation",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 3:17"
+      },
+      "description": "1368-002 (a.rah H6168, Reg 206 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1368-003" },
+      "set": {
+        "context_description": "Term names the violation of intimate covering — the uncovering of sexual boundaries that carries moral consequence and iniquity",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Lev 20:18"
+      },
+      "description": "1368-003 (a.rah H6168, Reg 206 group C): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1368-004" },
+      "set": {
+        "context_description": "Term expresses the person's inner vulnerability and the prayer not to be left defenseless before God",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Psa 141:8"
+      },
+      "description": "1368-004 (a.rah H6168, Reg 206 group D): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7407-001" },
+      "set": {
+        "context_description": "Term names the intimate dignity of the person — the nakedness that the law protects from sexual violation and that defines moral and relational boundaries",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Lev 18:6"
+      },
+      "description": "7407-001 (er.vah H6172, Reg 206 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7407-002" },
+      "set": {
+        "context_description": "Term names nakedness as the person's vulnerability that God covers in covenantal love — the act of covering as the foundation of belonging",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Eze 16:8"
+      },
+      "description": "7407-002 (er.vah H6172, Reg 206 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7407-003" },
+      "set": {
+        "context_description": "Term names nakedness as the shame and exposure that follows spiritual unfaithfulness — judgment as uncovering",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 47:3"
+      },
+      "description": "7407-003 (er.vah H6172, Reg 206 group C): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7407-004" },
+      "set": {
+        "context_description": "Term names the covering required for dignity in the divine presence — nakedness that must not be exposed before the holy God",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Exo 20:26"
+      },
+      "description": "7407-004 (er.vah H6172, Reg 206 group D): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1369-001" },
+      "set": {
+        "context_description": "Term names the pre-fall state of nakedness without shame — the person's original inner freedom from guilt and fear before God and the other",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Gen 2:25"
+      },
+      "description": "1369-001 (a.rom H6174, Reg 206 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1369-002" },
+      "set": {
+        "context_description": "Term expresses the radical existential nakedness of the human person — coming and returning with nothing, utterly dependent",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Job 1:21"
+      },
+      "description": "1369-002 (a.rom H6174, Reg 206 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1369-003" },
+      "set": {
+        "context_description": "Term describes nakedness as prophetic or ecstatic expression — the person's body and inner being made a visible sign before God and others",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 20:2"
+      },
+      "description": "1369-003 (a.rom H6174, Reg 206 group C): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1369-004" },
+      "set": {
+        "context_description": "Term names the nakedness of the vulnerable, the oppressed, and the captive — a condition that calls for inner-being response",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 58:7"
+      },
+      "description": "1369-004 (a.rom H6174, Reg 206 group D): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1369-005" },
+      "set": {
+        "context_description": "Term names the nakedness of divine judgment — the stripping that accompanies wrath, exposing what was hidden",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Amo 2:16"
+      },
+      "description": "1369-005 (a.rom H6174, Reg 206 group E): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7409-001" },
+      "set": {
+        "context_description": "Term names the originary nakedness and bareness of the person — utter vulnerability before God's care intervenes",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Eze 16:7"
+      },
+      "description": "7409-001 (er.yah H6181, Reg 206 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7409-002" },
+      "set": {
+        "context_description": "Term names nakedness as the shame and exposure that judgment brings upon spiritual unfaithfulness",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Mic 1:11"
+      },
+      "description": "7409-002 (er.yah H6181, Reg 206 group B): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7408-001" },
+      "set": {
+        "context_description": "Term names the razor as the instrument of divine shaming — used to strip the honour and dignity of the person in judgment",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Isa 7:20"
+      },
+      "description": "7408-001 (ta.ar H8593, Reg 206 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7408-002" },
+      "set": {
+        "context_description": "Term names the razor as what the consecrated person avoids — its avoidance marking the person's inner dedication to God",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Num 6:5"
+      },
+      "description": "7408-002 (ta.ar H8593, Reg 206 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7408-003" },
+      "set": {
+        "context_description": "Term frames a comparison that characterises the inner disposition of deceit — the tongue like a razor, plotting destruction",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Psa 52:2"
+      },
+      "description": "7408-003 (ta.ar H8593, Reg 206 group C): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7435-001" },
+      "set": {
+        "context_description": "Term names the inner darkness that fills the person when their inner orientation is corrupted — the whole inner life darkened by a bad eye",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Mat 6:23"
+      },
+      "description": "7435-001 (skoteinos G4652, Reg 207): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7433-001" },
+      "set": {
+        "context_description": "Term names darkness as the inner condition of spiritual alienation — the state of the person who hates, does not know where they are going, and has not come to the light",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: 1Jo 2:11"
+      },
+      "description": "7433-001 (skotia G4653, Reg 207 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7433-002" },
+      "set": {
+        "context_description": "Term names the darkness of concealment — the inner life hidden in secret, which will be brought to light",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Luk 12:3"
+      },
+      "description": "7433-002 (skotia G4653, Reg 207 group B): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7434-001" },
+      "set": {
+        "context_description": "Term describes the darkening of inner capacities — understanding, heart, and eyes — as the consequence of wilful rejection of God or as divine judicial act",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Eph 4:18"
+      },
+      "description": "7434-001 (skotizō G4654, Reg 207): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7432-001" },
+      "set": {
+        "context_description": "Term names darkness as the inner-spiritual domain the person inhabits, is rescued from, or identifies with — their fundamental spiritual condition and identity",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Eph 5:8"
+      },
+      "description": "7432-001 (skotos G4655, Reg 207 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7432-002" },
+      "set": {
+        "context_description": "Term names darkness as the moral domain of works and powers the person either participates in or is called to renounce",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Rom 13:12"
+      },
+      "description": "7432-002 (skotos G4655, Reg 207 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7432-003" },
+      "set": {
+        "context_description": "Term names the darkness of the inner life — hidden purposes, corrupted inner light, self-deception about one's inner state",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: 1Cor 4:5"
+      },
+      "description": "7432-003 (skotos G4655, Reg 207 group C): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7432-004" },
+      "set": {
+        "context_description": "Term names the outer darkness of eschatological judgment — the ultimate inner-being consequence of exclusion from God",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Mat 22:13"
+      },
+      "description": "7432-004 (skotos G4655, Reg 207 group D): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1371-001" },
+      "set": {
+        "context_description": "Term describes the plunging of the person/domain into darkness as divine judgment, producing inner anguish",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Rev 16:10"
+      },
+      "description": "1371-001 (skotoō G4656, Reg 207): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1372-001" },
+      "set": {
+        "context_description": "Term names spiritual blindness as the inner condition of the person who claims to see but does not — self-deception, hardness, and inability to perceive spiritual reality",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Joh 9:41"
+      },
+      "description": "1372-001 (tuflos G5185, Reg 207 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1372-002" },
+      "set": {
+        "context_description": "Term names physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Luk 4:18"
+      },
+      "description": "1372-002 (tuflos G5185, Reg 207 group B): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7438-001" },
+      "set": {
+        "context_description": "Term describes the act of blinding the inner capacities — eyes and mind — whether through hatred, spiritual adversary, or divine judicial action",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: 2Cor 4:4"
+      },
+      "description": "7438-001 (tufloō G5186, Reg 207): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7359-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of delay and hesitation — the reluctance to act that must be overcome in urgent obedience",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Act 9:38"
+      },
+      "description": "7359-001 (okneō G3635, Reg 208): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1376-001" },
+      "set": {
+        "context_description": "Term names the inner disposition of laziness and reluctance — contrasted with zealous, fervent inner engagement",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Rom 12:11"
+      },
+      "description": "1376-001 (oknēros G3636, Reg 208): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7353-001" },
+      "set": {
+        "context_description": "Term names sluggishness as the inner disposition of hesitation that must be overcome in pursuing God's purpose",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Judg 18:9"
+      },
+      "description": "7353-001 (a.tsel H6101, Reg 208): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1374-001" },
+      "set": {
+        "context_description": "Term names the sluggard as a person whose inner desire craves but whose will refuses to act — passivity, inertia, and self-defeating inner contradiction",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Pro 13:4"
+      },
+      "description": "1374-001 (a.tsel H6102, Reg 208 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1374-002" },
+      "set": {
+        "context_description": "Term names the sluggard's inner self-deception — rationalisation and inflated self-regard enabling continued avoidance",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Pro 26:16"
+      },
+      "description": "1374-002 (a.tsel H6102, Reg 208 group B): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1373-001" },
+      "set": {
+        "context_description": "Term names slothfulness as an inner disposition that produces stupor and material ruin — inaction consuming the person from within",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Pro 19:15"
+      },
+      "description": "1373-001 (ats.lah H6103, Reg 208): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7354-001" },
+      "set": {
+        "context_description": "Term names idleness as an inner disposition that the person of virtue refuses — its absence marking inner diligence and character",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Pro 31:27"
+      },
+      "description": "7354-001 (ats.lut H6104, Reg 208): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1375-001" },
+      "set": {
+        "context_description": "Term names the inner collapse of courage and resolve — feeble hands, fainting spirit, melting heart in the face of threat or judgment",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Eze 21:7"
+      },
+      "description": "1375-001 (ra.phah H7503, Reg 208 group A): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1375-002" },
+      "set": {
+        "context_description": "Term expresses divine faithfulness as the refusal to forsake — the assurance that addresses the inner fear of abandonment",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Deu 31:6"
+      },
+      "description": "1375-002 (ra.phah H7503, Reg 208 group B): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1375-003" },
+      "set": {
+        "context_description": "Term describes the inner act of releasing, ceasing, or becoming still — letting go of wrath, being still before God, holding or releasing what matters",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Psa 46:10"
+      },
+      "description": "1375-003 (ra.phah H7503, Reg 208 group C): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1375-004" },
+      "set": {
+        "context_description": "Term names the inner disposition of slackness and procrastination — the failure to act that is morally equivalent to destruction",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Pro 18:9"
+      },
+      "description": "1375-004 (ra.phah H7503, Reg 208 group D): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "7360-001" },
+      "set": {
+        "context_description": "Term describes the person's conformity to the image and likeness of Christ — the inner and eschatological telos of the person's transformation",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Rom 8:29"
+      },
+      "description": "7360-001 (summorfos G4832, Reg 209): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "1377-001" },
+      "set": {
+        "context_description": "Term describes the person's inner conformity to Christ through suffering — the act of becoming like him in his death as an inner-being participation",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Phili 3:10"
+      },
+      "description": "1377-001 (summorfoomai G4833, Reg 209): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "2314-001" },
+      "set": {
+        "context_description": "Term (particle of entreaty) discloses the inner posture of urgent, humble pleading before God — the orientation of the person in the moment of prayer or anguished appeal",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Psa 116:4"
+      },
+      "description": "2314-001 (a.n.na H0577, Reg 212): correct context_description from observations file"
+    },
+
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "2381-001" },
+      "set": {
+        "context_description": "Term names the act of prayer — the deliberate inner orientation of the person toward God in petition, thanksgiving, and intercession",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-029-term-observations-v1.1. Anchor: Dan 6:10"
+      },
+      "description": "2381-001 (tse.la H6739, Reg 212): correct context_description from observations file"
+    }
+
+  ],
+  "_patch_summary": {
+    "total_operations": 45,
+    "verse_context_group_updates": 45,
+    "by_registry": {
+      "206_vulnerability": 18,
+      "207_blindness_spiritual": 12,
+      "208_sloth": 11,
+      "209_likeness": 2,
+      "212_pray": 2
+    },
+    "source": "wa-vcb-029-term-observations-v1.1-20260406.md",
+    "mapping_method": "Each group_code verified against anchor verse in original VCB-029 patch, then matched to corresponding description in observations file by anchor reference"
+  },
+  "_post_application_instruction": {
+    "required": true,
+    "step_1": "Apply companion patch PATCH-20260406-DIMGRPDESC-211-V1 (Reg 211, 15 operations) if not already applied",
+    "step_2": "Sync wa_dimension_index.context_description for all 60 affected group_codes: UPDATE wa_dimension_index SET context_description = (SELECT context_description FROM verse_context_group WHERE verse_context_group.group_code = wa_dimension_index.group_code) WHERE wa_dimension_index.group_code IN (the 60 group_codes across both patches)",
+    "step_3": "Verify zero rows remain in wa_dimension_index for Registries 206, 207, 208, 209, 211, 212 with context_description LIKE 'Context group for%'",
+    "step_4": "Report update counts for both tables (verse_context_group and wa_dimension_index)",
+    "step_5": "Regenerate the dimension report and all affected cluster extracts",
+    "affected_group_codes_this_patch": [
+      "1368-001","1368-002","1368-003","1368-004",
+      "7407-001","7407-002","7407-003","7407-004",
+      "1369-001","1369-002","1369-003","1369-004","1369-005",
+      "7409-001","7409-002",
+      "7408-001","7408-002","7408-003",
+      "7435-001",
+      "7433-001","7433-002",
+      "7434-001",
+      "7432-001","7432-002","7432-003","7432-004",
+      "1371-001",
+      "1372-001","1372-002",
+      "7438-001",
+      "7359-001",
+      "1376-001",
+      "7353-001",
+      "1374-001","1374-002",
+      "1373-001",
+      "7354-001",
+      "1375-001","1375-002","1375-003","1375-004",
+      "7360-001",
+      "1377-001",
+      "2314-001",
+      "6739-001"
+    ]
+  }
+}

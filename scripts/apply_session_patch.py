@@ -1,7 +1,7 @@
 """
 apply_session_patch.py
 ──────────────────────
-Generic applicator for Session B/C/D JSON patches.
+Generic applicator for Session B/C/D/DimensionReview JSON patches.
 
 Handles operation types:
   - update_mti_status     → UPDATE status on mti_terms by strongs_number
@@ -13,26 +13,33 @@ Handles operation types:
   - insert (wa_session_research_flags) → Research flag inserts
   - insert (wa_session_b_dimensions)   → Session B dimensional profile
   - insert (wa_session_b_findings)     → Session B key findings
+  - update (wa_dimension_index)        → Dimension review updates
+  - update (verse_context_group)       → Group description corrections
   - registry_note / schema_investigation_note → Documentation only
   - bulk_update           → Generic bulk update on any table
 
 Supported patch types (in _patch_meta.patch_type):
-  - PREANALYSIS  → Pre-analysis classification patch
-  - SESSIONB     → Analysis completion patch
-  - SESSIOND     → Session D discovery JSON patch
-  - CLUSTERING   → Cluster assignment patch
+  - PREANALYSIS     → Pre-analysis classification patch
+  - SESSIONB        → Analysis completion patch
+  - SESSIOND        → Session D discovery JSON patch
+  - CLUSTERING      → Cluster assignment patch
+  - DIMREVIEW       → Dimension review patch (wa_dimension_index updates + B/D pointers)
+  - DIMREVIEW-GRPDESC → Group description correction (verse_context_group + dimension_index sync)
 
 Supported tables:
   - mti_terms              → MTI status, reconciled flag, status_note
   - wa_session_research_flags → Phase 2 research flag inserts
   - wa_session_b_dimensions → Session B dimensional profiles
   - wa_session_b_findings  → Session B key findings
+  - wa_dimension_index     → Dimension review updates
+  - verse_context_group    → Group description corrections
   - word_registry          → registry notes, anchor_verses, last_changed
 
 Safety:
   - Transaction-wrapped: all-or-nothing
   - Idempotency: refuses patches already applied (by patch_id in engine_run_log)
   - Validates registry_id, strongs_numbers, flag_label uniqueness before applying
+  - Dimension review: protects manual_override=1 rows from unintended modification
 
 Usage:
   python scripts/apply_session_patch.py <patch_file> [--dry-run]
@@ -79,13 +86,16 @@ def _validate(conn, patch: dict) -> list[str]:
     patch_type = meta.get("patch_type", "")
     pid = meta.get("patch_id", "")
     # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
-    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR")
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC")
     is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
     if not is_exempt:
         for token in sb_exempt_types:
             if token in pid:
                 is_exempt = True
                 break
+    # Also exempt VCB-prefixed patches (Verse Context batches)
+    if not is_exempt and "VCB" in pid:
+        is_exempt = True
     sb_status = meta.get("session_b_status")
     if not sb_status and not is_exempt:
         errors.append("_patch_meta.session_b_status is required (e.g. 'Pre-Analysis Complete', 'Analysis Complete')")
@@ -131,6 +141,41 @@ def _validate(conn, patch: dict) -> list[str]:
                 ).fetchone()
                 if existing:
                     errors.append(f"{op_id}: flag_label '{label}' already exists in wa_session_research_flags")
+
+        # Validate wa_dimension_index updates: check id exists, manual_override protection, dominant_subject values
+        if table == "wa_dimension_index" and operation == "update":
+            match = op.get("match", {})
+            di_id = match.get("id")
+            set_vals = op.get("set", {})
+            if di_id:
+                row = conn.execute(
+                    "SELECT id, manual_override FROM wa_dimension_index WHERE id = ?", (di_id,)
+                ).fetchone()
+                if not row:
+                    errors.append(f"{op_id}: wa_dimension_index id={di_id} not found")
+                elif row["manual_override"] == 1:
+                    if "manual_override" not in set_vals:
+                        errors.append(
+                            f"{op_id}: wa_dimension_index id={di_id} has manual_override=1 — "
+                            f"cannot update without explicit manual_override in set fields"
+                        )
+            # Validate dominant_subject values (DR-12)
+            ds = set_vals.get("dominant_subject")
+            if ds is not None:
+                valid_ds = {"GOD", "HUMAN", "OTHER_HUMAN", "UNSEEN", "NONE"}
+                if ds not in valid_ds:
+                    errors.append(f"{op_id}: invalid dominant_subject '{ds}' (valid: {valid_ds})")
+
+        # Validate wa_session_b_findings inserts: finding_id uniqueness
+        if table == "wa_session_b_findings" and operation == "insert":
+            rec = op.get("record", {})
+            fid = rec.get("finding_id")
+            if fid:
+                existing = conn.execute(
+                    "SELECT 1 FROM wa_session_b_findings WHERE finding_id = ?", (fid,)
+                ).fetchone()
+                if existing:
+                    errors.append(f"{op_id}: finding_id '{fid}' already exists in wa_session_b_findings")
 
         # Validate word_registry updates
         if table == "word_registry" and operation == "update":
@@ -562,25 +607,28 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
 
     elif table == "verse_context_group" and operation == "insert":
         rec = op["record"]
+        # Accept group_code or group_id as the code field (Claude AI uses either)
+        group_code = rec.get("group_code") or rec.get("group_id")
         conn.execute(
             """INSERT INTO verse_context_group
-               (mti_term_id, group_code, context_description, notes, delete_flagged)
-               VALUES (?, ?, ?, ?, ?)""",
+               (mti_term_id, group_code, context_description, notes, delete_flagged, vertical_pass_flag)
+               VALUES (?, ?, ?, ?, ?, ?)""",
             (
                 rec.get("mti_term_id"),
-                rec.get("group_code"),
+                group_code,
                 rec.get("context_description"),
                 rec.get("notes"),
                 rec.get("delete_flagged", 0),
+                rec.get("vertical_pass_flag", 0),
             ),
         )
         new_id = conn.execute("SELECT last_insert_rowid()").fetchone()[0]
         # Store group_code → integer id mapping for verse_context inserts in same patch
         if "_group_code_map" not in counts:
             counts["_group_code_map"] = {}
-        counts["_group_code_map"][rec.get("group_code")] = new_id
+        counts["_group_code_map"][group_code] = new_id
         counts["vc_groups_inserted"] = counts.get("vc_groups_inserted", 0) + 1
-        print(f"  {op_id}: verse_context_group INSERT {rec.get('group_code')} -> id={new_id}")
+        print(f"  {op_id}: verse_context_group INSERT {group_code} -> id={new_id}")
 
     elif table == "verse_context_group" and operation == "update":
         match = op["match"]
@@ -597,8 +645,10 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
 
     elif table == "verse_context" and operation == "insert":
         rec = op["record"]
-        # Resolve group_id: if it's a group_code string, look up the integer id
+        # Resolve group_id: accept group_id (int or string) or group_code as fallback
         group_id = rec.get("group_id")
+        if group_id is None and rec.get("group_code"):
+            group_id = rec["group_code"]
         if isinstance(group_id, str):
             group_id = _resolve_group_id(group_id, counts, conn, op_id)
             if group_id is None:
@@ -606,8 +656,9 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
         try:
             conn.execute(
                 """INSERT INTO verse_context
-                   (verse_record_id, mti_term_id, group_id, is_anchor, is_relevant, is_related, notes, delete_flagged)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+                   (verse_record_id, mti_term_id, group_id, is_anchor, is_relevant, is_related, notes, delete_flagged,
+                    vertical_pass_flag, set_aside_reason)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
                 (
                     rec.get("verse_record_id"),
                     rec.get("mti_term_id"),
@@ -617,6 +668,8 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
                     rec.get("is_related", 0),
                     rec.get("notes"),
                     rec.get("delete_flagged", 0),
+                    rec.get("vertical_pass_flag", 0),
+                    rec.get("set_aside_reason"),
                 ),
             )
             counts["vc_inserts"] = counts.get("vc_inserts", 0) + 1
@@ -697,6 +750,25 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
             )
         counts["bulk_updates"] = counts.get("bulk_updates", 0) + len(records)
         print(f"  {op_id}: {table} BULK_UPDATE {len(records)} row(s)")
+
+    elif table == "wa_dimension_index" and operation == "update":
+        match = op["match"]
+        set_vals = dict(op["set"])
+        di_id = match.get("id")
+        # Safety: verify manual_override protection was already validated
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        params = list(set_vals.values()) + [di_id]
+        conn.execute(
+            f"UPDATE wa_dimension_index SET {set_clauses} WHERE id = ?",
+            params,
+        )
+        counts["dim_index_updated"] = counts.get("dim_index_updated", 0) + 1
+        if set_vals.get("manual_override") == 1:
+            counts["dim_anchored"] = counts.get("dim_anchored", 0) + 1
+        if set_vals.get("dominant_subject") is not None:
+            counts["dominant_subject_assigned"] = counts.get("dominant_subject_assigned", 0) + 1
+        gc = op.get("description", "")[:60]
+        print(f"  {op_id}: wa_dimension_index UPDATE id={di_id} -> {set_vals.get('dimension', '?')} {gc}")
 
     else:
         print(f"  {op_id}: [SKIP] Unsupported operation: {operation} on {table}")
@@ -814,7 +886,7 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         # Update session_b_status on the registry (skip for exempt types)
         patch_reg_id = meta.get("registry_id")
         patch_type = meta.get("patch_type", "")
-        sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE")
+        sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "DIMREVIEW")
         if patch_reg_id and sb_status and patch_type not in sb_skip_types:
             conn.execute(
                 "UPDATE word_registry SET session_b_status = ? WHERE no = ?",
@@ -838,6 +910,26 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         archive_path = dest
     except Exception as exc:
         print(f"  [WARN] Could not archive patch: {exc}")
+
+    # Post-apply integrity: verify context_description sync for DIMREVIEW-GRPDESC patches
+    if "DIMGRPDESC" in patch_id or (patch_type and "GRPDESC" in patch_type):
+        conn2 = sqlite3.connect(DB_PATH)
+        conn2.row_factory = sqlite3.Row
+        mismatches = conn2.execute("""
+            SELECT di.id, di.group_code, di.context_description as di_desc,
+                   vcg.context_description as vcg_desc
+            FROM wa_dimension_index di
+            JOIN verse_context_group vcg ON vcg.id = di.verse_context_group_id
+            WHERE di.context_description != vcg.context_description
+            AND di.delete_flagged = 0 AND vcg.delete_flagged = 0
+        """).fetchall()
+        if mismatches:
+            print(f"\n  [INTEGRITY] {len(mismatches)} context_description mismatches found:")
+            for m in mismatches[:5]:
+                print(f"    di.id={m['id']} ({m['group_code']}): di!=vcg")
+        else:
+            print(f"\n  [INTEGRITY] context_description sync verified — all matched")
+        conn2.close()
 
     # Export Session D pointers report if any SD_POINTER flags were inserted
     sd_report_path = None

@@ -1,0 +1,2309 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C13-V1",
+    "cluster": "C13",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C13: 122 dimension updates (CLAUDE_AI confidence), 11 Session B findings, 8 Session D pointers"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3767
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: description names God's inner character of just dealing as the ground of justice \u2014 divine attribute.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3189-001 \u2014 condemnation: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3768
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: human moral orientation and disposition to seek and do right.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3189-002 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3769
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner cry and longing directed toward God for vindication.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3189-003 \u2014 condemnation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3770
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: inner person standing in appeal before divine judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3252-001 \u2014 condemnation: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3763
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: condemnation grounded in inner state \u2014 unbelief, doubt, moral failure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4846-001 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3764
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: freedom from condemnation \u2014 inner security before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4846-002 \u2014 condemnation: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3762
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: self-condemnation, conscience turned against the self.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4848-001 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3771
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral failure as ground of divine judicial consequence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "736-001 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3765
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: weight of moral judgment falling on conscience.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "738-001 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3766
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: fearful expectation of divine verdict shaping inner life.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "739-001 \u2014 condemnation: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3772
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: culpable spiritual ignorance as inner moral condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1838-001 \u2014 conscience: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3773
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: identity and standing constituted by God's prior knowing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1842-001 \u2014 conscience: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3774
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: divine sovereign foreknowledge as ground of redemption.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1847-001 \u2014 conscience: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3775
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner capacity of prophetic/divine perception.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1848-001 \u2014 conscience: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3776
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: self-aware moral consciousness subject to God's higher judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2739-001 \u2014 conscience: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3777
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Capacity: inward parts as seat of innermost self \u2014 the deepest layer of personhood God searches and knows.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "455-001 \u2014 conscience: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3778
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Capacity: experiential content \u2014 joy, pain, instruction, affliction felt in the deepest place.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "455-002 \u2014 conscience: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3907
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: eagerness as stable inner disposition of readiness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2074-001 \u2014 covetousness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3902
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: inner courage/cheerfulness amid crisis.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2075-001 \u2014 covetousness: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3903
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: cheerfulness as affective ground of praise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2075-002 \u2014 covetousness: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3908
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: willing spirit directed toward God in tension with flesh.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2076-001 \u2014 covetousness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3909
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Will: eagerness as inner motivation directing toward mission.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2076-002 \u2014 covetousness: Volitional/Will"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3904
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: cheerful inner composure in adversarial contexts.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2077-001 \u2014 covetousness: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3901
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner state of discouragement \u2014 loss of heart.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2078-001 \u2014 covetousness: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3910
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: eager willing service as inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2079-001 \u2014 covetousness: Volitional/Will"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3905
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: covetousness as stable insatiable inner orientation toward acquisition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "778-001 \u2014 covetousness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3906
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: covetousness as idolatry \u2014 foundational misorientation substituting created for Creator.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "778-002 \u2014 covetousness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4123
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: wilful refusal to hear \u2014 stable inner orientation of closed attention or contempt.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5111-001 \u2014 disobedience: Character/Disposition"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4120
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: disobedience as defining character-orientation of active resistance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "819-001 \u2014 disobedience: Character/Disposition"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4121
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: disobedience as disposition preventing entry into God's rest \u2014 spiritual self-exclusion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "819-002 \u2014 disobedience: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4122
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: disobedience as defining inner act with moral-covenantal consequence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "820-001 \u2014 disobedience: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4546
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: inner person as object of spiritual contest \u2014 demonic snatching vs divine security.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5493-001 \u2014 greed: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4547
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine catching-away \u2014 protective/eschatological act bringing person to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5493-002 \u2014 greed: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4545
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: greed as stable inner condition of rapacious desire vs inner freedom.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "892-001 \u2014 greed: Character/Disposition"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4548
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: greedy person as moral-character type defined by insatiable acquisitive desire.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "893-001 \u2014 greed: Character/Disposition"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4600
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: personal confession as inner turning directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "125-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4601
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: sustained inner orientation away from God \u2014 negative God-ward pole.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "125-002 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4602
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral wisdom about sin and inner protective posture.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "125-003 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4603
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: sin as burden before God addressed through divine grace.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "126-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4605
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: named offence confessed to God with prayer for covering.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "127-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4610
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: iniquity as moral debt before God \u2014 accumulated perversion God marks, bears, forgives.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "182-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4589
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: guiltlessness as inner moral condition of innocence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2426-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4611
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: guilt as felt weight of iniquity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2437-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4612
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: experienced weight of punishment as felt from within \u2014 subjective inner burden.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2438-001 \u2014 guilt: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4609
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inward act of perverting and committing iniquity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2439-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4588
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: sinner as object of Christ's calling \u2014 inner condition as ground of divine mercy.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2441-001 \u2014 guilt: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4590
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: prior unrepented sin as inner moral condition Paul mourns and addresses.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2444-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4606
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: sin as offence before God addressed through repentance and cleansing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2446-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4607
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: sin offering addressing guilt-condition; Servant's soul as fulfilment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2447-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4604
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: sinner as moral-character type with persistent inner orientation against God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2448-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4608
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine consequence/chastisement on persisters in sin.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2449-001 \u2014 guilt: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4583
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral ground of inner standing \u2014 basis for guilt or innocence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4584
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: Christ as causal ground of guilt-absence and salvation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5-001 \u2014 guilt: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4591
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: conscience as inner moral witness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "53-001 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4592
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: conscience as morally vulnerable.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "53-002 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4593
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: conscience as interior moral foundation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "53-003 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4594
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: conscience as object of Christ's purification.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "53-004 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4595
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner event of incurring and realising guilt before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "86-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4596
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: bearing guilt, inner acknowledgement, confession \u2014 moral-conscience engagement.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "86-002 \u2014 guilt: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4597
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: guilt offering addressing guilt-condition before God; Servant's soul as supreme locus.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "87-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4598
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: self-named guilt before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "88-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4599
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: guiltiness as accumulated condition before God addressed through atonement.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "89-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4585
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: sin as guilt/offence before God \u2014 relational breach addressed through Christ.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "9-001 \u2014 guilt: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4586
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Capacity: sin as indwelling power ruling and enslaving inner capacities. Note vocabulary tension.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "9-002 \u2014 guilt: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4587
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: sin as universal human condition overcome only by God's righteousness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "9-003 \u2014 guilt: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4855
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: inner commitment to justice in institutional form. Note: QA-EXTERNALISED.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3186-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4856
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: sovereign inner orientation toward justice. Note: QA-EXTERNALISED.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3188-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4838
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Spiritual/God-ward: person's inner quality of uprightness \u2014 Moral/Conscience.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3193-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4839
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Moral/Conscience: divine attribute of justice \u2014 God's inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3193-002 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4843
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG corrected from Moral/Conscience: divine act of justification transforming inner standing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3194-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4834
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner condition of unrighteousness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3197-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4844
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: adverbial moral alignment in conduct.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3199-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4836
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Capacity: inner response to adversary \u2014 urgency, persistence, vigilance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3200-001 \u2014 justice: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4853
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner act of moral condemnation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3201-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4833
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Spiritual/God-ward: inner moral deficit \u2014 primarily moral.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3202-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4845
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Spiritual/God-ward: justification as divine act restoring standing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3203-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4846
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Capacity: inner act of rejecting divinely appointed authority.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3204-001 \u2014 justice: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4852
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral logic of appropriate retribution.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3205-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4835
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: patient endurance as inner disposition when wronged.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3206-001 \u2014 justice: Character/Disposition"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4837
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine righteous judgment confronting hard-hearted inner condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3207-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4854
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: inner standing of moral accountability before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3208-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4863
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: law as revealer of inner moral/religious orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3220-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4857
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: God's inner determination to vindicate and execute justice.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3233-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4858
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral obligation for just advocacy.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3233-002 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4861
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: authoritative verdict shaping inner destiny.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3236-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4862
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: God's inner justice defining true judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3237-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4864
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner act of perceiving and approving what is right.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3241-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4865
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral uprightness as inner quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3241-002 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4866
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner straightness walking before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3244-001 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4851
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine avenging authority and inner justice.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3250-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4867
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral distortion at community level.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3262-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4868
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: soul's affective orientation toward God's mishpat.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "940-001 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4869
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral-spiritual orientation of heart.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "940-002 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4870
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral standard for human judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "940-003 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4871
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: humility, complaint, vindication-hope as inner affective states in judicial encounter.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "940-004 \u2014 justice: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4872
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: spirit-given capacity for discernment and righteous action.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "940-005 \u2014 justice: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4879
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner qualities required for just judging.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "941-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4880
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Moral/Conscience: inner cry to God for vindication \u2014 Spiritual/God-ward.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "941-002 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4881
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: inner moral condition as basis of divine judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "941-003 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4882
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: God's righteous character expressed through just acts.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "941-004 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4875
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: righteousness as defining inner quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "942-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4876
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: righteousness as divine attribute.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "942-002 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4877
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: active pursuit of righteousness as inner orientation directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "942-003 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4878
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner character required for just governance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "942-004 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4859
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner moral commitment to just advocacy.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "943-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4860
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Will: authoritative verdict \u2014 divine/judicial determination of guilt or innocence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "943-002 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4848
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: persistent inner cry and appeal to God for justice.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "944-001 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4849
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: divine inner determination to right wrongs.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "944-002 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4850
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: divine vengeance from inner righteousness and human cry.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "945-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4873
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: inner moral standing before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "947-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4874
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner discernment required for just judicial act.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "947-002 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4847
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: consequence of inner condition of wickedness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "949-001 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4840
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine righteousness imputed as ground of human standing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "950-001 \u2014 justice: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4841
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: human righteousness as inner quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "950-002 \u2014 justice: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4842
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: faith-orientation seeking righteousness through trust in God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "950-003 \u2014 justice: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5412
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Relational/Social: turning from truth and grace \u2014 God-ward failure of orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2654-001 \u2014 repentance: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5410
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Will: divine immutability as ground producing inner encouragement and hope.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2658-001 \u2014 repentance: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5411
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: irrevocable calling grounding identity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "440-001 \u2014 repentance: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5413
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: divine inner disposition of withheld compassion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "443-001 \u2014 repentance: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5414
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner act of deliberate recall and reflective turning.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "450-001 \u2014 repentance: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5415
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: repentance as inner turning toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "451-001 \u2014 repentance: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5416
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: God's relenting as divine inner-relational response.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "451-002 \u2014 repentance: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-24-001",
+        "registry_id": 24,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H4941H mish.pat appears in both Reg 24 (condemnation) and Reg 98 (justice) \u2014 three groups each. Session B must read both registries' mish.pat groups together to form a complete inner-being profile of this term.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 condemnation: H4941H mish.pat cross-registry profile"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-26-001",
+        "registry_id": 26,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The conscience (suneidesis/sunoida) groups in Reg 26 show a consistent pattern: moral self-awareness operating under divine authority \u2014 conscience as inner witness that remains subordinate to God's judgment. Session B should examine the relationship between conscience-as-moral-witness and divine judgment as the higher court.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 conscience: inner witness under divine authority"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-35-001",
+        "registry_id": 35,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Reg 35 contains two analytically distinct sub-clusters: (1) willing-spirit/eager-disposition (prothumia, prothumos, prothum\u014ds, euthume\u014d, euthumos, athume\u014d) and (2) covetous-desire proper (pleonexia). Session B should treat these as distinct inner-being phenomena requiring separate analytical attention.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 covetousness: two distinct sub-clusters"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-50-001",
+        "registry_id": 50,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Reg 50 shows disobedience operating across three distinct inner-being dimensions in only 4 groups: Character/Disposition (defining orientation), Spiritual/God-ward (self-exclusion from divine rest), and Moral/Conscience (covenantal consequence). Session B should examine whether disobedience is primarily a dispositional, relational, or moral-act category in Scripture.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 disobedience: three inner-being dimensions in compact registry"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-70-001",
+        "registry_id": 70,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "G0726 harpaz\u014d appears in two groups with contrasting inner-being engagements: [5493-001] predatory violation of inner content (Spiritual/God-ward) and [5493-002] divine protective snatching (Theological/Divine-Human). Session B should examine whether these two uses require distinct analytical treatment or represent a unified category of inner-being vulnerability and security.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 greed: harpaz\u014d dual inner-being engagements"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-73-001",
+        "registry_id": 73,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The guilt registry (Reg 73) shows Spiritual/God-ward as the dominant dimension \u2014 sin and guilt are primarily framed in Scripture as relational conditions before God rather than psychological states. Session B analysis should proceed from this orientation: guilt is fundamentally a God-ward condition, with Moral/Conscience and Affective/Emotional dimensions secondary.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 guilt: Spiritual/God-ward as dominant dimension"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-73-002",
+        "registry_id": 73,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "G4893 suneidesis in Reg 73 shows a four-dimensional conscience profile: (1) moral witness [53-001], (2) vulnerability [53-002], (3) interior foundation [53-003], (4) object of purification [53-004]. Session B should analyse these four functions as a coherent inner-being anatomy of conscience.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 guilt: G4893 suneidesis four-dimensional conscience profile"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-98-001",
+        "registry_id": 98,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H4941G mish.pat (Reg 98) and H4941H mish.pat (Reg 24) are the same Hebrew term across two registries: five groups in Reg 98 and three groups in Reg 24 constitute the full inner-being profile. Session B must read both registries' mish.pat groups together for a complete analysis.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 justice: H4941G mish.pat cross-registry profile with Reg 24"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-98-002",
+        "registry_id": 98,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The dikaios/dikaiosun\u0113/dikai\u014dsis/dikaio\u014d family (G1342, G1343, G1344, G1347) shows a consistent tension: righteousness as divine act/attribute (Theological/Divine-Human) vs righteousness as human inner quality (Moral/Conscience). This is one of the most analytically significant tensions in the programme. Session B must examine this carefully.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 justice: dikaios family divine-human righteousness tension"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-98-003",
+        "registry_id": 98,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H6664G tsedeq and H6663 tsadeq produce four distinct groups: (1) human inner quality [942-001], (2) divine attribute [942-002], (3) pursued inner orientation [942-003], (4) moral basis for governance [942-004]. This fourfold pattern in a single Hebrew root is a major Session B analytical focus.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 justice: tsedeq/tsadeq fourfold pattern"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-135-001",
+        "registry_id": 135,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 135 shows a consistent human-divine mirroring structure: nearly every human inner-being act (turning, relenting, comforting, recalling) has a divine counterpart in the same registry (God relenting, God comforting, God withholding wrath). Session B should analyse this pairing as a key structural feature of the repentance domain in Scripture.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 repentance: human-divine mirroring structure"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 24,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-24-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 73,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The polarity structure of condemnation (verdict/no-verdict) is the governing framework of Reg 24 and maps onto the no-condemnation freedom of Romans 8. Session D should examine the condemnation/no-condemnation polarity as the judicial frame within which the guilt-repentance-justification arc operates across C13.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 condemnation: no-condemnation polarity as judicial frame for C13"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 26,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-26-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 26 includes G4267 progin\u014dsk\u014d (Identity/Selfhood) alongside conscience terms \u2014 this brings together the epistemic cluster (knowing, perception) with the identity-constituting dimension of divine foreknowing. Session D should examine whether being-known-by-God and knowing-oneself-morally form a coherent inner-being pairing that constitutes a distinct dimension of conscience.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 conscience: being-known vs knowing-oneself as inner-being pairing"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 35,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-35-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 70,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The positive desire vocabulary (prothumia, prothumos, prothum\u014ds) in Reg 35 may have natural affinity with volitional vocabulary elsewhere. The contrast between eager willing (prothumia) and acquisitive desire (pleonexia) in the same registry is analytically significant for understanding how Scripture distinguishes rightly-oriented from wrongly-oriented inner desire. Session D should examine this alongside Reg 70 (greed) and the broader desire vocabulary.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 covetousness/greed: rightly vs wrongly oriented inner desire"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 70,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-70-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 35,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The greed vocabulary in C13 (pleonexia, pleonekt\u0113s, harpag\u0113) shows consistent convergence on Character/Disposition. Session D should examine the relationship between greed (Reg 70), covetousness (Reg 35), and positive desire (prothumia) \u2014 the cluster's contrast between rightly- and wrongly-directed inner desire is a synthesis question.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 greed: Character/Disposition convergence and desire polarity with Reg 35"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-73-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 24,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "The inner-being movement from guilt-incurred (Reg 73) through repentance (Reg 135) to freedom from condemnation (Reg 24) and justification (Reg 98) constitutes the governing arc of C13. Session D should examine whether this four-registry trajectory (guilt \u2192 repentance \u2192 no-condemnation \u2192 justification) maps a complete inner-being soteriology visible in Scripture.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 guilt: guilt-repentance-condemnation-justification arc across C13"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 98,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-98-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 24,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Reg 98 (justice) shows repeated convergence between inner moral quality (Moral/Conscience) and divine action (Theological/Divine-Human) \u2014 particularly in justification/righteousness terminology. Session D should examine the relationship between the justice cluster and the condemnation registry (Reg 24) as structurally complementary: condemnation and justification are the negative and positive poles of the same judicial framework.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 justice: justification/condemnation as judicial poles with Reg 24"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 98,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-98-SD002",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "Two groups in Reg 98 \u2014 [3186-001] H0197H ulam (Hall of Justice) and [3188-001] H0197I ulam (Hall of Throne) \u2014 are QA-EXTERNALISED: they describe physical structures. Session D should examine the question of institutional/architectural embodiment of inner commitment to justice \u2014 to what extent does the justice vocabulary in Scripture include structural referents, and what is their inner-being significance.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 justice: institutional/architectural embodiment of justice vocabulary"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 135,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-135-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 98,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The divine-relenting vocabulary (na.cham, shuv divine pole) in Reg 135 is closely related to the divine-judging vocabulary in Reg 98 and the condemnation/no-condemnation polarity in Reg 24. Session D should examine whether divine relenting, divine withholding of condemnation, and divine justification constitute a unified inner-being arc \u2014 the inner person moving from guilt through repentance to freedom.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 repentance: divine relenting linked to no-condemnation and justification arc"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 141,
+    "dimension_updates": 122,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 11,
+    "session_d_pointers_inserted": 8,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

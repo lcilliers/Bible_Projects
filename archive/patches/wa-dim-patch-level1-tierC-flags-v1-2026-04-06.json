@@ -1,0 +1,67 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-LEVEL1-TIERC-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Level 1 Tier C audit findings — Phase B quality flags on 4 groups and Session B pointer for group 4986-001 (salvation vocabulary in debauchery registry)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "group_code": "765-002" },
+      "set": {
+        "notes": "QA-REVIEW (Level 1 Tier C, 2026-04-06): Description 'The Sinai/Mosaic covenant — bilateral covenant of law and obedience' is slightly externalised. Anchor Deu 7:9 holds the inner dimension (love, fear, faithfulness) but the description foregrounds the structural/legal covenant frame. 76 related verses include external covenant-making contexts. Phase B should verify whether the inner-being engagement (the human response of love, fear, and obedience) is sufficiently characterised and distinct from purely structural covenant uses."
+      },
+      "description": "QA-REVIEW flag — covenant 765-002: description slightly externalised"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "group_code": "784-001" },
+      "set": {
+        "notes": "QA-REVIEW (Level 1 Tier C, 2026-04-06): Description 'Falsehood as the inner orientation of the wicked — lying tongue and lying heart' reaches beyond what the anchor verse explicitly states. Anchor Pro 12:22 names the external expression (lying lips are an abomination) and implies the inner orientation. The inner-orientation claim is accurate but inferential. Phase B should verify that the inner orientation claim is directly supported across the 73-verse set rather than resting on implication from the anchor alone."
+      },
+      "description": "QA-REVIEW flag — deceit 784-001: description reaches beyond anchor"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "group_code": "3304-001" },
+      "set": {
+        "notes": "QA-REVIEW (Level 1 Tier C, 2026-04-06): Anchor Jer 31:33 (I will write my law on their hearts) is excellent — the most inner-being covenant text in the corpus. But 66 related verses include covenant-making contexts (Gen 15:18, Gen 21:27-32) that are primarily external acts. Description 'Divine covenant initiated by God — the relational framework of his commitment' holds at a high level but may not be specific enough to distinguish inner-being uses from structural covenant uses. Phase B should verify that 'relational framework' is adequately precise."
+      },
+      "description": "QA-REVIEW flag — covenant 3304-001: related verse set may include external uses"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "group_code": "632-002" },
+      "set": {
+        "notes": "QA-BROAD (Level 1 Tier C, 2026-04-06): Description 'Ya.tav as moral goodness and doing good: inner moral orientation' conflates two distinguishable uses. Anchors Jer 13:23 (can you do good who are accustomed to do evil?) and Jer 32:41 (I will rejoice in doing them good, with all my heart and soul) name the inner moral capacity and divine inner motivation respectively. But many related verses (Deu 4:40, 5:16, 5:29, 6:3, 6:18 — that it may go well with you) express covenantal wellbeing/prosperity, not inner moral orientation. Phase B should assess whether these two uses warrant separation into distinct groups or whether a refined description can hold both."
+      },
+      "description": "QA-BROAD flag — gladness 632-002: conflates moral orientation with covenantal wellbeing"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-039-001",
+        "registry_id": 39,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 4986-001 in debauchery (#39, C12) contains 57 verses of salvation vocabulary (sōzō/sōtēria), anchored at Eph 2:8 ('by grace you have been saved through faith'). Related verses span the NT salvation corpus: Mat 10:22, 19:25, 24:13, Mar 16:16, Luk 8:12, Joh 3:17, Act 2:21, 4:12, and more. This group is structurally unexpected in the debauchery registry but was placed there on the basis of the verse evidence — salvation vocabulary appears in debauchery-adjacent contexts. Session B analyst should assess the connection: is salvation specifically named as the remedy for debauchery/licentiousness in these contexts, does the term appear because the debauchery file included a broad NT lexical sweep, or is there a distinct theological pattern linking salvation and debauchery vocabulary in Scripture? The answer has implications for how the inner-being dimension of salvation is characterised within this registry. This is also a Session D synthesis candidate — the relationship between salvation and debauchery vocabulary across the programme.",
+        "anchor_verses": "Eph 2:8",
+        "raised_date": "2026-04-06",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+      },
+      "description": "Session B finding — debauchery (#39): salvation vocabulary in 4986-001 requires analytical assessment"
+    }
+  ]
+}

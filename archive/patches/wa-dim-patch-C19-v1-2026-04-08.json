@@ -1,0 +1,549 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260408-DIMREVIEW-C19-V1",
+    "cluster": "C19",
+    "produced_date": "2026-04-08",
+    "produced_by": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+    "session_b_status": null,
+    "description": "Dimension review patch — C19: Phase C dimension and dominant_subject assignments for all 97 groups across calling (19), dignity (47), meaning (107), worth (177), image (201), name (204), likeness (209). Includes Session B and D pointers. Divine-Human Correspondence dominates at 38% — highest concentration in programme to date."
+  },
+  "operations": [
+
+    { "op_id": "OP-001", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3727 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God's naming act constitutes human inner identity and relational standing (Isa 62:4; Hos 2:16). The correspondence — divine naming producing human identity — is the analytically significant feature.",
+        "last_modified": "2026-04-08" }, "description": "4822-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-002", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3728 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Leah naming sons from inner states of affliction, longing, and gratitude (Gen 29:32-35). Dominant anchor-states negatively valenced (affliction, being hated). Secondary Emotion-Positive strand (Judah — praise) noted.",
+        "last_modified": "2026-04-08" }, "description": "4822-002 — calling: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-003", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3729 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Compelled cry from the depths of inner distress (Ps 34:6; Ps 69:3 anchors). Large corpus (35 verses) spans urgency and outrage but anchor evidence is consistently distress-driven.",
+        "last_modified": "2026-04-08" }, "description": "4823-001 — calling: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-004", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3730 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "QA-REVIEW retained. Exo 34:6 (God proclaiming his name and character) and Jer 20:8 (Jeremiah compelled to cry out by the word of the Lord within him). Divine character proclaimed through human inner compulsion — correspondence governs.",
+        "last_modified": "2026-04-08" }, "description": "4823-002 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-005", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3731 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation of preparedness and accountability before God in approaching divine encounter (Exo 19:17; Amos 4:12).",
+        "last_modified": "2026-04-08" }, "description": "4825-001 — calling: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-006", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3732 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine communication through prophetic proclamation producing human inner accountability (Jon 3:2). Small group; correspondence structure clear.",
+        "last_modified": "2026-04-08" }, "description": "4832-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-007", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3717 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "The called person's identity constituted by the divine act of calling — correspondence between divine calling and human identity-formation (Rom 1:7; Rev 17:14).",
+        "last_modified": "2026-04-08" }, "description": "4835-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-008", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3719 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "QA-REVIEW retained. GOD (Spirit/Christ) acts; human inner life is the site of transformation and advocacy (John 14:26; 1 John 2:1). Divine action on the human inner being.",
+        "last_modified": "2026-04-08" }, "description": "4837-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-009", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3721 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Stable inner moral condition of hardness and impenitence — heart closed against God's claims (Rom 2:5).",
+        "last_modified": "2026-04-08" }, "description": "4838-001 — calling: Moral Character / HUMAN" },
+
+    { "op_id": "OP-010", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3723 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "QA-REVIEW retained. Spirit's hidden working within the human person, known by effects but untraceable in origin (John 3:8). Divine hidden movement producing visible inner change.",
+        "last_modified": "2026-04-08" }, "description": "4840-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-011", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3724 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation of invoking God as only source of help and salvation — creaturely dependence expressed in prayer and worship (Gen 12:8; Joel 2:32).",
+        "last_modified": "2026-04-08" }, "description": "717-001 — calling: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-012", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3725 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Sovereign divine call creating identity and belonging as the ground of the human inner person's orientation (Isa 43:1; Hos 11:1 — 'I have called you by name, you are mine').",
+        "last_modified": "2026-04-08" }, "description": "717-002 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-013", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3726 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Soul's distress-driven cry toward God — originating in inner anguish (Ps 22:2 anchor).",
+        "last_modified": "2026-04-08" }, "description": "717-003 — calling: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-014", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3716 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine calling as constitutive act grounding human person's identity and vocation (Eph 4:1; 2 Tim 1:9).",
+        "last_modified": "2026-04-08" }, "description": "718-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-015", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3722 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Personal call reaching the inner person, constituting identity and evoking trust (Luke 23:46; John 10:3 — shepherd calling sheep by name).",
+        "last_modified": "2026-04-08" }, "description": "719-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-016", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3720 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine calling engaging human inner orientation toward specific vocation and service (Acts 2:39; Acts 13:2).",
+        "last_modified": "2026-04-08" }, "description": "720-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-017", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3713 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Golden chain of calling, justification, glorification — divine sovereign action producing human inner standing (Rom 8:30; 2 Tim 1:9). Largest calling group (29 verses).",
+        "last_modified": "2026-04-08" }, "description": "722-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-018", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3714 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine naming conferring human identity — 'called sons of God' (Matt 5:9; 1 John 3:1). GOD is the naming agent; HUMAN bears the identity.",
+        "last_modified": "2026-04-08" }, "description": "722-002 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-019", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3715 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Human volitional response to the call — will and inner orientation engaged by the call to repentance (Mark 2:17). Distinct from identity-constituting calling groups.",
+        "last_modified": "2026-04-08" }, "description": "722-003 — calling: Volition / HUMAN" },
+
+    { "op_id": "OP-020", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3733 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of binding the will through solemn oath — directed volitional commitment (Lev 5:4; Neh 10:29).",
+        "last_modified": "2026-04-08" }, "description": "724-001 — calling: Volition / HUMAN" },
+
+    { "op_id": "OP-021", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3734 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God's binding commitment as ground of human inner security and covenantal relationship (Gen 26:3; Jer 11:5). Divine oath and human inner standing correspond directly.",
+        "last_modified": "2026-04-08" }, "description": "724-002 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-022", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3711 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation of faith expressed through invoking God — creaturely appeal and dependence (Rom 10:12).",
+        "last_modified": "2026-04-08" }, "description": "726-001 — calling: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-023", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3712 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of moral self-accountability before God as witness (2 Cor 1:23).",
+        "last_modified": "2026-04-08" }, "description": "726-002 — calling: Moral Character / HUMAN" },
+
+    { "op_id": "OP-024", "operation": "update", "table": "wa_dimension_index", "match": { "id": 3718 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Spirit of adoption crying 'Abba! Father!' from within the human person (Rom 8:15; Gal 4:6). Prototypical Divine-Human Correspondence: GOD (the Spirit) acting from within the HUMAN inner being, producing an expression simultaneously divine and human.",
+        "last_modified": "2026-04-08" }, "description": "727-001 — calling: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-025", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4104 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Settled inner character quality of moral gravity commanding respect (Phil 4:8).",
+        "last_modified": "2026-04-08" }, "description": "5066-001 — dignity: Moral Character / HUMAN" },
+
+    { "op_id": "OP-026", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4106 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Stable inner moral character of pride and arrogance — arrogant heart as an abomination (Pro 16:5).",
+        "last_modified": "2026-04-08" }, "description": "5068-001 — dignity: Moral Character / HUMAN" },
+
+    { "op_id": "OP-027", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4107 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God's evaluative seeing penetrates outward appearance to inner character (1 Sam 16:7 — 'the Lord looks on the heart'). Divine discernment of inner person against human surface-evaluation.",
+        "last_modified": "2026-04-08" }, "description": "5068-002 — dignity: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-028", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4108 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation toward another — recognition of worth in another person; and its negation: partiality (Lev 19:32 anchor).",
+        "last_modified": "2026-04-08" }, "description": "5071-001 — dignity: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-029", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4112 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of awe and reverence directed toward God — creaturely trembling before divine holiness (Ps 96:9 — 'tremble before him').",
+        "last_modified": "2026-04-08" }, "description": "5072-001 — dignity: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-030", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4105 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Stable inner character quality of dignified gravity shaping life and conduct (Tit 2:7).",
+        "last_modified": "2026-04-08" }, "description": "812-001 — dignity: Moral Character / HUMAN" },
+
+    { "op_id": "OP-031", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4109 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine majesty as object of human inner awe, worship, and doxological meditation — God's splendour meeting human contemplation (Ps 104:1).",
+        "last_modified": "2026-04-08" }, "description": "813-001 — dignity: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-032", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4110 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God crowning humanity with glory and honour — divine bestowing meeting human receiving of dignity (Ps 8:5). Ps 8 is one of the programme's key Divine-Human Correspondence texts.",
+        "last_modified": "2026-04-08" }, "description": "813-002 — dignity: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-033", "operation": "update", "table": "wa_dimension_index", "match": { "id": 4111 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner condition of lament over stripped dignity — majesty departed, nobility brought low (Lam 1:6). Related: Isa 53:2 (Servant without majesty).",
+        "last_modified": "2026-04-08" }, "description": "813-003 — dignity: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-034", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5032 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "QA-REVIEW retained. The 'what' framing divine sovereignty against human limits — what God knows versus what man cannot know or question (Dan 2:22; 4:35). Grammatical carrier acknowledged.",
+        "last_modified": "2026-04-08" }, "description": "5858-001 — meaning: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-035", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5033 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Manna as divine instrument of inner transformation — humbling, testing, forming dependence on God's word (Deu 8:3; Ps 78:24). God acts through the manna to change the human inner person.",
+        "last_modified": "2026-04-08" }, "description": "5859-001 — meaning: Transformation / GOD" },
+
+    { "op_id": "OP-036", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5034 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "QA-REVIEW retained. The 'who' framing divine unchallengeable sovereignty against human inner accountability and courage (Dan 3:15; 4:17). Grammatical carrier acknowledged.",
+        "last_modified": "2026-04-08" }, "description": "5860-001 — meaning: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-037", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5027 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of understanding opened through interpretation — Scripture illuminating Christ; tongues interpreted for community comprehension (Luke 24:27; 1 Cor 14:5).",
+        "last_modified": "2026-04-08" }, "description": "5862-001 — meaning: Cognition / HUMAN" },
+
+    { "op_id": "OP-038", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5030 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of grasping theological meaning through translation — name's significance disclosed (John 9:7; Heb 7:2).",
+        "last_modified": "2026-04-08" }, "description": "5863-001 — meaning: Cognition / HUMAN" },
+
+    { "op_id": "OP-039", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5029 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Spirit gives interpretation capacity; human exercises it for communal building (1 Cor 12:10; 14:26). Gift and exercise correspond across divine-human boundary.",
+        "last_modified": "2026-04-08" }, "description": "5864-001 — meaning: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-040", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5026 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "When no interpreter is present, inner orientation turns directly toward God — sustained inner communion (1 Cor 14:28).",
+        "last_modified": "2026-04-08" }, "description": "5865-001 — meaning: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-041", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5028 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Spiritual dullness as stable inner condition resisting teaching (Heb 5:11 — 'dull of hearing').",
+        "last_modified": "2026-04-08" }, "description": "5866-001 — meaning: Moral Character / HUMAN" },
+
+    { "op_id": "OP-042", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5031 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Translation reveals that the name Immanuel is itself a divine-human correspondence statement: God present with human persons (Matt 1:23).",
+        "last_modified": "2026-04-08" }, "description": "973-001 — meaning: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-043", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5025 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "QA-BROAD retained. Anchor Acts 8:32 (Servant's willed silence in suffering) governs — stable inner character quality of restraint. Mute idols (1 Cor 12:2) secondary; 2 Pet 2:16 weak fit noted.",
+        "last_modified": "2026-04-08" }, "description": "974-001 — meaning: Moral Character / HUMAN" },
+
+    { "op_id": "OP-044", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5870 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner evaluative act of assessing comparative worth — cognitive judgement of value (Est 5:13 — Haman's inner estimation).",
+        "last_modified": "2026-04-08" }, "description": "1260-001 — worth: Cognition / HUMAN" },
+
+    { "op_id": "OP-045", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5871 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Deliberate inner act of placing God's word as governing standard (Ps 119:30 — 'I set your rules before me').",
+        "last_modified": "2026-04-08" }, "description": "1260-002 — worth: Volition / HUMAN" },
+
+    { "op_id": "OP-046", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5872 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner posture of contented rest in God — creaturely trust in its most settled form (Ps 131:2 — weaned child with mother).",
+        "last_modified": "2026-04-08" }, "description": "1260-003 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-047", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5873 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine claim of incomparability met by human inner recognition of it (Isa 40:25 — 'to whom will you compare me?'). Divine uniqueness confronting and transforming human inner evaluation.",
+        "last_modified": "2026-04-08" }, "description": "1260-004 — worth: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-048", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5874 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner disposition shaped by association — character conformation risk through likeness to another (Pro 26:4).",
+        "last_modified": "2026-04-08" }, "description": "1260-005 — worth: Moral Character / HUMAN" },
+
+    { "op_id": "OP-049", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5875 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner condition of unparalleled grief at the extreme of human suffering (Lam 2:13 — 'your ruin is vast as the sea').",
+        "last_modified": "2026-04-08" }, "description": "1260-006 — worth: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-050", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5868 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner cognitive limit before wisdom's incomparable value — man does not know its worth (Job 28:13).",
+        "last_modified": "2026-04-08" }, "description": "1261-001 — worth: Cognition / HUMAN" },
+
+    { "op_id": "OP-051", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5869 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner bond of relational equality — valued companionship whose betrayal is deeply felt (Ps 55:13).",
+        "last_modified": "2026-04-08" }, "description": "1261-002 — worth: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-052", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5854 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine worthiness as object of human inner doxological recognition — Rev 4:11; 5:9. Divine worth confronting human inner person in worship; implicitly frames human unworthiness as correspondence.",
+        "last_modified": "2026-04-08" }, "description": "1262-001 — worth: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-053", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5855 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner moral character constituting or negating worthiness before God and others (Heb 11:38; Rev 3:4).",
+        "last_modified": "2026-04-08" }, "description": "1262-002 — worth: Moral Character / HUMAN" },
+
+    { "op_id": "OP-054", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5876 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Deliberate creaturely orientation keeping God at the centre — inner stability rooted in dependence (Ps 16:8). H7737B term variant of 1260-003 class.",
+        "last_modified": "2026-04-08" }, "description": "6732-001 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-055", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5877 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Deliberate inner act of self-composure under extreme suffering — volitional regulation (Isa 38:13 — Hezekiah calming himself until morning).",
+        "last_modified": "2026-04-08" }, "description": "6732-002 — worth: Volition / HUMAN" },
+
+    { "op_id": "OP-056", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5878 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God bestows splendour; human person is elevated — direct correspondence (Ps 21:5).",
+        "last_modified": "2026-04-08" }, "description": "6732-003 — worth: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-057", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5879 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God inflicting radical punitive inner transformation — mind changed to beast-likeness as divine judgment (Dan 5:21). H7739A term variant.",
+        "last_modified": "2026-04-08" }, "description": "6733-001 — worth: Transformation / GOD" },
+
+    { "op_id": "OP-058", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5858 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner moral quality of integrity expressed through just measurement — ephah as standard of inner honesty in commerce (Amos 8:5; Zec 5:8).",
+        "last_modified": "2026-04-08" }, "description": "6747-001 — worth: Moral Character / HUMAN" },
+
+    { "op_id": "OP-059", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5856 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "QA-REVIEW retained. Inner cognitive orientation of searching for wisdom and its source — the 'where?' question as inner epistemic act (Job 28:12).",
+        "last_modified": "2026-04-08" }, "description": "6748-001 — worth: Cognition / HUMAN" },
+
+    { "op_id": "OP-060", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5857 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner condition of helplessness and grief expressed through the desolation question — where can comfort be found? (Nah 3:7).",
+        "last_modified": "2026-04-08" }, "description": "6748-002 — worth: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-061", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5861 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner cognitive act of comparison-as-recognition — assessing relative worth and naming incomparability (Job 28:17; Isa 40:18).",
+        "last_modified": "2026-04-08" }, "description": "6750-001 — worth: Cognition / HUMAN" },
+
+    { "op_id": "OP-062", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5862 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of presenting one's case before God — creaturely accountability and appeal; reasoning as the only offering before divine judgment (Job 13:18; Ps 5:3).",
+        "last_modified": "2026-04-08" }, "description": "6750-002 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-063", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5860 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "QA-REVIEW retained. Continual setting of showbread before the Lord as expression of sustained covenantal orientation toward God (Lev 24:7; 2 Chr 13:11). Inner-being content contextually carried.",
+        "last_modified": "2026-04-08" }, "description": "6752-001 — worth: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-064", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5863 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Marshalling a legal case before God — creaturely accountability before divine judgment (Job 13:18). H6186B term variant of 6750-002.",
+        "last_modified": "2026-04-08" }, "description": "6753-001 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-065", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5864 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Comparison revealing divine incomparability confronting human inner recognition — 'none can compare with you' (Ps 40:5).",
+        "last_modified": "2026-04-08" }, "description": "6753-002 — worth: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-066", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5865 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Deliberate creaturely act of presenting oneself before God in morning prayer (Ps 5:3).",
+        "last_modified": "2026-04-08" }, "description": "6753-003 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-067", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5866 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "God's terrors directly assaulting the human inner being — spirit as site of divine judgment (Job 6:4 — 'the arrows of the Almighty are in me; my spirit drinks their poison').",
+        "last_modified": "2026-04-08" }, "description": "6753-004 — worth: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-068", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5867 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner posture of confident trust grounded in God's ordered covenant — creaturely security resting in divine reliability (2 Sam 23:5).",
+        "last_modified": "2026-04-08" }, "description": "6753-005 — worth: Dependence/Creatureliness / HUMAN" },
+
+    { "op_id": "OP-069", "operation": "update", "table": "wa_dimension_index", "match": { "id": 5859 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner volitional act of purposing and planning — the plans of the heart belong to man, subject to divine redirection (Pro 16:1).",
+        "last_modified": "2026-04-08" }, "description": "6755-001 — worth: Volition / HUMAN" },
+
+    { "op_id": "OP-070", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6412 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Foundational imago Dei statement — human person constituted by and corresponding to the divine image (Gen 1:27). GOD is the original; HUMAN bears the likeness. Ontological correspondence.",
+        "last_modified": "2026-04-08" }, "description": "1359-001 — image: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-071", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6413 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation of spiritual allegiance directed toward false objects — misplaced worship (Eze 16:17).",
+        "last_modified": "2026-04-08" }, "description": "1359-002 — image: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-072", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6414 },
+      "set": { "dimension": "Vitality / Existence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner-being recognition of human insubstantiality and transience — 'a man goes about as a shadow' (Ps 39:6). Fragility and shadow-like nature of human existence before God.",
+        "last_modified": "2026-04-08" }, "description": "1359-003 — image: Vitality/Existence / HUMAN" },
+
+    { "op_id": "OP-073", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6408 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Human person's constitutive likeness to God — imago Dei as inner ground of dignity (Gen 1:26). Second imago Dei group (cf. 1359-001, 1361-001). Ontological correspondence under de.mut (likeness) term.",
+        "last_modified": "2026-04-08" }, "description": "1360-001 — image: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-074", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6409 },
+      "set": { "dimension": "Emotion - Negative", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Overwhelming inner response of prostration and weakness before likeness of divine glory (Eze 1:28 — 'I fell on my face'). Secondary creaturely posture noted.",
+        "last_modified": "2026-04-08" }, "description": "1360-002 — image: Emotion-Negative / HUMAN" },
+
+    { "op_id": "OP-075", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6410 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "QA-BROAD retained. Anchor Isa 40:18 governs — act of comparing God to human categories exposes inner moral inadequacy. Related verses note various inner dispositions; anchor-governed assignment.",
+        "last_modified": "2026-04-08" }, "description": "1360-003 — image: Moral Character / HUMAN" },
+
+    { "op_id": "OP-076", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6405 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Human person's constitutive dignity as image-bearer (1 Cor 11:7 — 'a man is the image and glory of God'). Third imago Dei group; Divine-Human Correspondence confirmed consistently across tse.lem, de.mut, and eikōn.",
+        "last_modified": "2026-04-08" }, "description": "1361-001 — image: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-077", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6406 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Progressive inner transformation toward the divine image — 'transformed into the same image from glory to glory' (2 Cor 3:18). God is the transformer; human inner person is being changed.",
+        "last_modified": "2026-04-08" }, "description": "1361-002 — image: Transformation / GOD" },
+
+    { "op_id": "OP-078", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6407 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner relational orientation directed toward false worship objects, or the refusal to so direct it (Rom 1:23; Rev 13–14 Daniel 3 pole). Both poles are relational dispositions.",
+        "last_modified": "2026-04-08" }, "description": "1361-003 — image: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-079", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6415 },
+      "set": { "dimension": "Volition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Deliberate inner act of refusing idolatrous worship under extreme pressure — the three men's inner volitional choice is the governing phenomenon (Dan 3:18).",
+        "last_modified": "2026-04-08" }, "description": "7328-001 — image: Volition / HUMAN" },
+
+    { "op_id": "OP-080", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6411 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Predatory inner disposition characterised through simile — eager to destroy (Ps 17:12).",
+        "last_modified": "2026-04-08" }, "description": "7332-001 — image: Moral Character / HUMAN" },
+
+    { "op_id": "OP-081", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6404 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner instability of the doubting person — self-deception and unreliable orientation (Jas 1:6 — wave driven and tossed).",
+        "last_modified": "2026-04-08" }, "description": "7333-001 — image: Moral Character / HUMAN" },
+
+    { "op_id": "OP-082", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6433 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine name as self-disclosure of God's character meeting human inner knowing and worshipping (Ps 8:1; Isa 57:15). GOD's self-disclosure grounds the human inner orientation.",
+        "last_modified": "2026-04-08" }, "description": "1366-001 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-083", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6434 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Human inner orientation of trust, praise, fear, and desire directed toward God through the divine name (Ps 9:10; Isa 26:8 — 'your name and remembrance are the desire of our soul'). Very large group (112 verses).",
+        "last_modified": "2026-04-08" }, "description": "1366-002 — name: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-084", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6435 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Name as outward expression of stable inner moral character — 'a good name is better than precious ointment' (Pro 22:1; Ecc 7:1).",
+        "last_modified": "2026-04-08" }, "description": "1366-003 — name: Moral Character / HUMAN" },
+
+    { "op_id": "OP-085", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6436 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine renaming as identity transformation — God's act changing the human person's standing and calling (Gen 17:5 — Abram to Abraham). Note: Gen 29:32 also in this group; here focus is identity transformation rather than emotional expression (cf. 4822-002).",
+        "last_modified": "2026-04-08" }, "description": "1366-004 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-086", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6437 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner orientation toward fame and legacy — how the person's name stands before others (Gen 11:4 — 'let us make a name for ourselves'; Gen 12:2).",
+        "last_modified": "2026-04-08" }, "description": "1366-005 — name: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-087", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6424 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Greek counterpart to 1366-001 — divine name as self-disclosure meeting human inner orientation (Phil 2:9; 1 Tim 6:1).",
+        "last_modified": "2026-04-08" }, "description": "1367-001 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-088", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6425 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Human relational orientation through the divine name — hallowing, believing in, enduring for, working in (Matt 6:9; 1 John 3:23). Very large group (61 verses). Greek counterpart to 1366-002.",
+        "last_modified": "2026-04-08" }, "description": "1367-002 — name: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-089", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6426 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Name as register of inner moral standing and eschatological belonging — names written in heaven; reputation of being alive but dead (Luke 10:20; Rev 3:1).",
+        "last_modified": "2026-04-08" }, "description": "1367-003 — name: Moral Character / HUMAN" },
+
+    { "op_id": "OP-090", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6427 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine naming conferring identity — 'call his name Jesus' (Matt 1:21); hidden new name (Rev 2:17). Greek counterpart to 1366-004.",
+        "last_modified": "2026-04-08" }, "description": "1367-004 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-091", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6428 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "QA-VAGUE retained. Social-relational standing of the name before others (Mark 6:14). Anchor evidence supports Relational Disposition; description inadequate.",
+        "last_modified": "2026-04-08" }, "description": "1367-005 — name: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-092", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6429 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Supremacy of divine name over all created powers — divine authority and human/cosmic recognition of it (Eph 1:21).",
+        "last_modified": "2026-04-08" }, "description": "7352-001 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-093", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6430 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner act of naming the Lord as expression of relational commitment and moral orientation — 'depart from iniquity' (2 Tim 2:19).",
+        "last_modified": "2026-04-08" }, "description": "7352-002 — name: Relational Disposition / HUMAN" },
+
+    { "op_id": "OP-094", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6431 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Name as register of inner moral state — gap between named identity and actual character (1 Cor 5:11 — bearing the name of brother while living in sin).",
+        "last_modified": "2026-04-08" }, "description": "7352-003 — name: Moral Character / HUMAN" },
+
+    { "op_id": "OP-095", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6432 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Jesus naming the twelve apostles; every family named from the Father (Luke 6:13; Eph 3:15). Divine naming conferring vocation and identity.",
+        "last_modified": "2026-04-08" }, "description": "7352-004 — name: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-096", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6496 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "manual_override": 0,
+        "notes": "Inner conformity to Christ through suffering — active participation in the pattern of Christ's death as inner-being transformation (Phil 3:10). HUMAN as grammatical subject of transforming act; Christ is the model.",
+        "last_modified": "2026-04-08" }, "description": "1377-001 — likeness: Transformation / HUMAN" },
+
+    { "op_id": "OP-097", "operation": "update", "table": "wa_dimension_index", "match": { "id": 6495 },
+      "set": { "dimension": "Divine-Human Correspondence", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "GOD", "manual_override": 0,
+        "notes": "Divine predestination driving human toward the likeness of Christ — correspondence between the divine image (Christ) and the human person being formed toward it (Rom 8:29). GOD as purposing agent; HUMAN as site of conformity.",
+        "last_modified": "2026-04-08" }, "description": "7360-001 — likeness: Divine-Human Correspondence / GOD" },
+
+    { "op_id": "OP-098", "operation": "insert", "table": "wa_session_b_findings",
+      "record": { "finding_id": "DIM-19-001", "registry_id": 19, "file_id": null, "finding_type": "DIMENSION_REVIEW",
+        "finding": "The calling registry (Reg 19) has 13 of 24 groups (54%) assigned Divine-Human Correspondence — the highest concentration of any single registry in the programme to date. The calling vocabulary is structurally a divine-human act: God calls, names, and constitutes; the human receives, responds, and is formed. Session B should examine how the human inner person is changed by the divine call, and what distinguishes the groups where HUMAN volition or emotion is the primary inner-being phenomenon from those where the divine calling act is the governing feature.",
+        "anchor_verses": "Rom 8:30; Isa 43:1; Gal 4:6", "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08" },
+      "description": "Session B pointer — calling: 54% Divine-Human Correspondence — highest single-registry concentration" },
+
+    { "op_id": "OP-099", "operation": "insert", "table": "wa_session_b_findings",
+      "record": { "finding_id": "DIM-19-002", "registry_id": 19, "file_id": null, "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 727-001 (krazō — 'Abba! Father!', Rom 8:15; Gal 4:6) is the programme's clearest example of the Spirit acting from within the human inner being: the Spirit's cry is simultaneously divine and human. This is the most acute instance of Divine-Human Correspondence encountered so far — not the Spirit acting on the human from outside, but the Spirit expressing itself through and as the human inner person's deepest cry. Session B should examine whether this represents a distinct sub-type of Divine-Human Correspondence (indwelling rather than external correspondence) that may warrant distinction in the vocabulary.",
+        "anchor_verses": "Romans 8:15; Galatians 4:6", "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08" },
+      "description": "Session B pointer — calling: krazō Abba-cry as acute Divine-Human Correspondence — Spirit within the human person" },
+
+    { "op_id": "OP-100", "operation": "insert", "table": "wa_session_b_findings",
+      "record": { "finding_id": "DIM-201-001", "registry_id": 201, "file_id": null, "finding_type": "DIMENSION_REVIEW",
+        "finding": "Three groups in the image registry (1359-001 tse.lem, 1360-001 de.mut, 1361-001 eikōn) all assign Divine-Human Correspondence to the imago Dei statement under three different terms. This convergence across Hebrew tse.lem, Hebrew de.mut, and Greek eikōn is analytically significant: all three terms independently arrive at the same dimension for the same verse (Gen 1:26-27). Session B should examine the imago Dei as the ontological foundation of Divine-Human Correspondence throughout the programme — whether the image-bearing of the human person is the root from which all other divine-human correspondences in the inner being flow.",
+        "anchor_verses": "Genesis 1:26-27; 1 Corinthians 11:7", "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08" },
+      "description": "Session B pointer — image: imago Dei triple-term convergence on Divine-Human Correspondence" },
+
+    { "op_id": "OP-101", "operation": "insert", "table": "wa_session_b_findings",
+      "record": { "finding_id": "DIM-201-002", "registry_id": 201, "file_id": null, "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 1361-002 (eikōn — 2 Cor 3:18, 'transformed into the same image from glory to glory') is assigned Transformation. This group is structurally adjacent to the three imago Dei groups but names a process rather than a state — the inner person being actively changed toward the divine image. Session B should examine the relationship between bearing the image (static ontological correspondence) and being transformed toward it (dynamic process) — these may be two aspects of a single inner-being reality that need to be held together.",
+        "anchor_verses": "2 Corinthians 3:18; Romans 8:29; Colossians 3:10", "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08" },
+      "description": "Session B pointer — image: bearing the image (correspondence) versus being transformed toward it — two aspects of a single inner-being reality" },
+
+    { "op_id": "OP-102", "operation": "insert", "table": "wa_session_b_findings",
+      "record": { "finding_id": "DIM-204-001", "registry_id": 204, "file_id": null, "finding_type": "DIMENSION_REVIEW",
+        "finding": "The name registry (Reg 204) shows a consistent Hebrew-Greek parallel structure: 1366-001/1367-001 (divine name as self-disclosure), 1366-002/1367-002 (human orientation through the divine name), 1366-003/1367-003 (name as moral character), 1366-004/1367-004 (naming as identity transformation). The same inner-being structure appears under both shem and onoma. Session B should examine whether this structural parallel reflects a unified understanding of naming as inner-being constitutive act across the Testaments, or whether there are genuine differences between the Hebrew and Greek registers.",
+        "anchor_verses": "Psalms 9:10; Isaiah 26:8; Philippians 2:9", "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08" },
+      "description": "Session B pointer — name: Hebrew-Greek structural parallel in shem/onoma groups" },
+
+    { "op_id": "OP-103", "operation": "insert", "table": "wa_session_research_flags",
+      "record": { "registry_id": 201, "file_id": null, "flag_code": "SD_POINTER", "flag_label": "DIM-201-SD001",
+        "strongs_reference": "H6754; H1823; G1504", "cross_registry_id": 209, "priority": "HIGH",
+        "session_target": "D",
+        "description": "The imago Dei groups (tse.lem 1359-001, de.mut 1360-001, eikōn 1361-001) across Registries 201 and 209 are all assigned Divine-Human Correspondence and converge on Gen 1:26-27. These groups may constitute the ontological foundation of Divine-Human Correspondence as a dimension across the entire programme — the human person as image-bearer is the ground from which all other divine-human inner-being correspondences arise. Session D should examine whether dimension 11 (Divine-Human Correspondence) ultimately rests on the imago Dei, and what this means for the programme's account of the human inner person as a whole.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.6-2026-04-08", "raised_date": "2026-04-08", "resolved": 0 },
+      "description": "Session D pointer (HIGH) — imago Dei as ontological foundation of Divine-Human Correspondence across the programme" },
+
+    { "op_id": "OP-104", "operation": "insert", "table": "wa_session_research_flags",
+      "record": { "registry_id": 19, "file_id": null, "flag_code": "SD_POINTER", "flag_label": "DIM-19-SD001",
+        "strongs_reference": null, "cross_registry_id": 201, "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C19 produces 37 of 97 groups (38%) assigned Divine-Human Correspondence — the highest cluster-level concentration in the programme so far (C18 was 20%). The concentration is highest in calling (54%) and image/likeness (imago Dei groups). Together with C18's 9 Divine-Human Correspondence groups, the programme now has a substantial body of data on this dimension. Session D should examine whether Divine-Human Correspondence is distributed across all semantic domains or concentrated in particular types of vocabulary (calling, identity, image, dignity), and what this distribution reveals about the structure of the inner being in relation to God.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.6-2026-04-08", "raised_date": "2026-04-08", "resolved": 0 },
+      "description": "Session D pointer — C19 Divine-Human Correspondence at 38% — programme-level distribution question" }
+
+  ]
+}

@@ -1,8 +1,8 @@
 -- ─────────────────────────────────────────────────────────────────────────────
 -- Bible_Projects – SQLite Schema
 -- File:   data/schema/create_tables.sql
--- Schema version: v3.1.0
--- Last updated: 2026-03-19
+-- Schema version: v3.8.0
+-- Last updated: 2026-04-06
 -- Run via: python analytics/bible_analytics.py --init-db
 --          OR: python -c "from analytics.db_client import get_connection, init_schema_from_file; conn=get_connection(); init_schema_from_file(conn); conn.close()"
 -- Note: run `python -m engine.engine --migrate` after --init-db on an existing
@@ -17,11 +17,16 @@
 --   Section 5  — Phase-2 flags (shared): phase2_flag_types, wa_term_phase2_flags
 --   Section 6  — WA quality flags:       wa_quality_flag_types, wa_data_quality_flags
 --   Section 7  — WA cross-registry:      wa_crosslink_type, wa_cross_registry_links
---   Section 8  — WA verse records:       wa_verse_records
+--   Section 8  — WA verse records:       wa_verse_records, wa_verse_term_links
 --   Section 9  — MTI tables:             mti_terms, mti_term_flags, mti_term_cross_refs
 --   Section 10 — Engine control:         engine_run_log, engine_stream_checkpoint, word_run_state, term_fetch_log
 --   Section 11 — Meaning parsing:        wa_meaning_parsed, wa_meaning_sense, wa_meaning_stem, wa_lsj_parsed
 --   Section 12 — Schema metadata:        schema_version
+--   Section 13 — Session research:       wa_session_research_flags (M13)
+--   Section 14 — Session B structured:   wa_session_b_dimensions, wa_session_b_findings (M16)
+--   Section 15 — Session D:              session_d_runs, session_d_verse_links, session_d_term_links, session_d_observations (M16)
+--   Section 16 — Verse Context:          verse_context_group, verse_context (M18)
+--   Section 17 — Dimension Index:        wa_dimension_index
 -- ─────────────────────────────────────────────────────────────────────────────
 
 PRAGMA foreign_keys = ON;
@@ -105,10 +110,25 @@ CREATE TABLE IF NOT EXISTS word_registry (
     description         TEXT,                       -- ~100-word researcher summary of the word's theological significance
     -- M13: registry metadata
     origin              TEXT,                       -- 'original_list' | 'programme_addition'
-    source_category     TEXT,                       -- functional category (e.g. Moral/Conscience, Affective/Emotional)
-    inference_note      TEXT,                       -- reasoning note for Low Confidence / Inferred words only
-    anchor_verses       TEXT                        -- 1-3 key Scripture refs; semi-colon separated
+    dimensions          TEXT,                       -- comma-delimited multi-value dimension tags (renamed from source_category in M17)
+    inference_note      TEXT,                       -- reasoning note for Low Confidence / Inferred words only (researcher-set only)
+    -- M16: Session B / pipeline control
+    session_b_status    TEXT,                       -- 'Verse Context Reset' | 'Ready for Analysis' | 'Pre-Analysis Complete' | 'Analysis Complete' | 'Session B Complete'
+    cluster_assignment  TEXT    DEFAULT 'unassigned', -- C01–C22 cluster code
+    sb_classification   TEXT    DEFAULT NULL,        -- inner-being standing classification (Claude AI)
+    sb_classification_reasoning TEXT DEFAULT NULL,   -- reasoning for non-confirmed classifications (Claude AI)
+    carry_forward       INTEGER DEFAULT 1,          -- 1 = include in future analysis rounds
+    unique_term_count   INTEGER DEFAULT 0,          -- count of OWNER-only terms
+    shared_term_count   INTEGER DEFAULT 0,          -- count of terms shared with other registries
+    term_sharing_ratio  REAL    DEFAULT 0.0,         -- shared / (unique + shared)
+    -- M18: Verse Context
+    verse_context_status TEXT   DEFAULT NULL          -- NULL | 'In Progress' | 'Complete'
 );
+
+CREATE INDEX IF NOT EXISTS idx_wr_no         ON word_registry (no);
+CREATE INDEX IF NOT EXISTS idx_wr_vc_status  ON word_registry (verse_context_status);
+CREATE INDEX IF NOT EXISTS idx_wr_sb_status  ON word_registry (session_b_status);
+CREATE INDEX IF NOT EXISTS idx_wr_cluster    ON word_registry (cluster_assignment);
 
 -- ═════════════════════════════════════════════════════════════════════════════
 -- SECTION 3 — WA FILE INDEX
@@ -177,13 +197,21 @@ CREATE TABLE IF NOT EXISTS wa_term_inventory (
     last_changed            TEXT    DEFAULT (datetime('now')),
     -- M04: meaning parsing linkage
     short_def_mounce        TEXT,                   -- short definition from Mounce lexicon
-    parsed_meaning_id       INTEGER                 -- FK to wa_meaning_parsed.id (set after M06 parse)
+    parsed_meaning_id       INTEGER,                -- FK to wa_meaning_parsed.id (set after M06 parse)
+    -- M12: ownership and soft-delete
+    delete_flagged          INTEGER DEFAULT 0,      -- soft-delete flag (XREF verses delete_flagged)
+    -- M16: Session B classification
+    evidential_status       TEXT    DEFAULT NULL,    -- confirmed | plausible | uncertain | instrumental | relational_only
+    retention_note          TEXT    DEFAULT NULL,    -- reasoning for non-confirmed terms
+    term_owner_type         TEXT    DEFAULT NULL     -- 'OWNER' | 'XREF'
 );
 
 CREATE INDEX IF NOT EXISTS idx_wa_ti_file    ON wa_term_inventory (file_id);
 CREATE INDEX IF NOT EXISTS idx_wa_ti_strongs ON wa_term_inventory (strongs_number);
 CREATE INDEX IF NOT EXISTS idx_wa_ti_id      ON wa_term_inventory (term_id);
 CREATE INDEX IF NOT EXISTS idx_wa_ti_lang    ON wa_term_inventory (language);
+CREATE INDEX IF NOT EXISTS idx_wa_ti_owner   ON wa_term_inventory (term_owner_type, delete_flagged);
+CREATE INDEX IF NOT EXISTS idx_wa_ti_strongs_owner ON wa_term_inventory (strongs_number, term_owner_type, delete_flagged);
 
 -- ── 4.2  wa_term_related_words ────────────────────────────────────────────────
 -- Related words cluster for each term (from the STEP word analysis block).
@@ -370,6 +398,8 @@ CREATE INDEX IF NOT EXISTS idx_wa_vr_term        ON wa_verse_records (term_inv_i
 -- Covers: WHERE file_id IN (...)  ORDER BY term_id, book_id, chapter, verse_num
 CREATE INDEX IF NOT EXISTS idx_wavr_file_term_pos
     ON wa_verse_records (file_id, term_id, book_id, chapter, verse_num);
+CREATE INDEX IF NOT EXISTS idx_wavr_term_del
+    ON wa_verse_records (term_inv_id, delete_flagged);
 
 -- ── 8.2  wa_verse_term_links ─────────────────────────────────────────────────
 -- Junction table: many-to-many relationship between verse records and terms.
@@ -404,23 +434,29 @@ CREATE TABLE IF NOT EXISTS mti_terms (
     transliteration     TEXT    NOT NULL,
     gloss               TEXT    NOT NULL,
     language            TEXT,
-    owning_registry     TEXT,                      -- registry number of the parent word
+    owning_registry     TEXT,                      -- registry number of the parent word (text, legacy)
+    owning_registry_fk  INTEGER REFERENCES word_registry(id),  -- M12: integer FK to word_registry.id
     owning_word         TEXT,                      -- English word this term belongs to
     owning_part         TEXT,                      -- part number (raw: '1', 'Part1', 1, null)
     word_data_reference TEXT,                      -- future FK to wa_file_index
-    status              TEXT,
+    word_data_ref_fk    INTEGER REFERENCES wa_file_index(id),  -- M12: integer FK to wa_file_index.id
+    status              TEXT,                      -- extracted | extracted_thin | delete | excluded | candidate_delete | NULL
     status_note         TEXT,
     exclusion_reason    TEXT,
     extraction_date     TEXT,
     strongs_reconciled  INTEGER DEFAULT 0,         -- boolean 0/1
     anchor_note         TEXT,
-    last_changed        TEXT    DEFAULT (datetime('now'))
+    last_changed        TEXT    DEFAULT (datetime('now')),
+    delete_flagged      INTEGER DEFAULT 0          -- M12: soft-delete flag
 );
 
 CREATE INDEX IF NOT EXISTS idx_mti_terms_strongs  ON mti_terms (strongs_number);
 CREATE INDEX IF NOT EXISTS idx_mti_terms_registry ON mti_terms (owning_registry);
 CREATE INDEX IF NOT EXISTS idx_mti_terms_word     ON mti_terms (owning_word);
 CREATE INDEX IF NOT EXISTS idx_mti_terms_status   ON mti_terms (status);
+CREATE INDEX IF NOT EXISTS idx_mti_terms_reg_fk   ON mti_terms (owning_registry_fk);
+CREATE INDEX IF NOT EXISTS idx_mti_status_del     ON mti_terms (status, delete_flagged);
+CREATE INDEX IF NOT EXISTS idx_mti_strongs_status  ON mti_terms (strongs_number, status);
 
 -- ── 9.2  mti_term_flags ──────────────────────────────────────────────────────
 -- Junction: MTI term ↔ phase2_flag_types (many-to-many).
@@ -609,10 +645,221 @@ CREATE INDEX IF NOT EXISTS idx_lsj_parsed_term ON wa_lsj_parsed (term_inv_id);
 -- subsequent --migrate runs are then no-ops.
 CREATE TABLE IF NOT EXISTS schema_version (
     id                 INTEGER PRIMARY KEY,
-    version_code       TEXT    NOT NULL,            -- e.g. "3.1.0"
+    version_code       TEXT    NOT NULL,            -- e.g. "3.8.0"
     applied_at         TEXT    NOT NULL,            -- ISO-8601 datetime of last update
     migration_history  TEXT,                        -- JSON array of applied migration refs
     engine_min_version TEXT                         -- minimum engine version required
 );
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 13 — SESSION RESEARCH FLAGS  (M13)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 13.1  wa_session_research_flags ──────────────────────────────────────────
+-- Cross-session research flags for Sessions B, C, and D findings.
+-- flag_code: PH2_*, SB_FINDING, SB_DIMENSION, SB_INNER_BEING, SD_POINTER, SD_CLUSTER,
+--            CANDIDATE_REGISTRY_WORD, VOLUME_LIMITATION
+CREATE TABLE IF NOT EXISTS wa_session_research_flags (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    registry_id       INTEGER NOT NULL REFERENCES word_registry(id),
+    file_id           INTEGER REFERENCES wa_file_index(id),
+    flag_code         TEXT    NOT NULL,             -- structured code (see above)
+    flag_label        TEXT    NOT NULL UNIQUE,      -- human-readable unique label
+    strongs_reference TEXT,                         -- Strong's number(s) implicated
+    cross_registry_id INTEGER REFERENCES word_registry(id),
+    priority          TEXT    DEFAULT 'MEDIUM',     -- HIGH | MEDIUM | LOW
+    session_target    TEXT    DEFAULT 'D',          -- B | C | D
+    description       TEXT    NOT NULL,             -- full finding description
+    session_raised    TEXT    NOT NULL,             -- session in which flag was raised
+    raised_date       TEXT    NOT NULL,             -- ISO-8601
+    resolved          INTEGER NOT NULL DEFAULT 0,
+    resolved_date     TEXT,
+    resolved_note     TEXT
+);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 14 — SESSION B STRUCTURED  (M16)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 14.1  wa_session_b_dimensions ────────────────────────────────────────────
+-- Dimensional profile per registry — populated during Session B extraction.
+CREATE TABLE IF NOT EXISTS wa_session_b_dimensions (
+    id                          INTEGER PRIMARY KEY AUTOINCREMENT,
+    registry_id                 INTEGER NOT NULL REFERENCES word_registry(id),
+    file_id                     INTEGER REFERENCES wa_file_index(id),
+    relational_environment      INTEGER DEFAULT 0,
+    relational_environment_note TEXT,
+    spirit_soul_body            INTEGER DEFAULT 0,
+    spirit_soul_body_note       TEXT,
+    inner_operations            INTEGER DEFAULT 0,
+    inner_operations_note       TEXT,
+    being                       INTEGER DEFAULT 0,
+    being_note                  TEXT,
+    raised_date                 TEXT    NOT NULL,   -- ISO-8601
+    session_b_instruction       TEXT    NOT NULL    -- instruction version used
+);
+
+-- ── 14.2  wa_session_b_findings ──────────────────────────────────────────────
+-- Key findings per registry — populated during Session B extraction.
+CREATE TABLE IF NOT EXISTS wa_session_b_findings (
+    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    finding_id            TEXT    NOT NULL UNIQUE,
+    registry_id           INTEGER NOT NULL REFERENCES word_registry(id),
+    file_id               INTEGER REFERENCES wa_file_index(id),
+    finding_type          TEXT    NOT NULL,         -- finding category
+    finding               TEXT    NOT NULL,         -- full finding text
+    anchor_verses         TEXT,                     -- supporting verse references
+    raised_date           TEXT    NOT NULL,         -- ISO-8601
+    session_b_instruction TEXT    NOT NULL          -- instruction version used
+);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 15 — SESSION D  (M16)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 15.1  session_d_runs ─────────────────────────────────────────────────────
+-- Session D run metadata and scope.
+CREATE TABLE IF NOT EXISTS session_d_runs (
+    id                          INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id                      TEXT    NOT NULL UNIQUE,
+    run_date                    TEXT    NOT NULL,
+    cluster_ref                 TEXT,               -- cluster(s) in scope
+    registries_in_scope         TEXT    NOT NULL,   -- JSON array of registry ids
+    registries_completed_at_run INTEGER,
+    session_b_sources           TEXT,               -- Session B input files used
+    run_summary                 TEXT,
+    json_filename               TEXT
+);
+
+-- ── 15.2  session_d_verse_links ──────────────────────────────────────────────
+-- Cross-registry verse-level linkages discovered in Session D.
+CREATE TABLE IF NOT EXISTS session_d_verse_links (
+    id              INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id          TEXT    NOT NULL,
+    verse_ref       TEXT    NOT NULL,
+    registry_ids    TEXT    NOT NULL,               -- JSON array of registry ids sharing this verse
+    terms_involved  TEXT,                           -- Strong's numbers at this verse
+    overlap_count   INTEGER,
+    threshold_met   INTEGER DEFAULT 0,
+    gate            TEXT    NOT NULL,               -- gate classification
+    raised_date     TEXT    NOT NULL
+);
+
+-- ── 15.3  session_d_term_links ───────────────────────────────────────────────
+-- Cross-registry term-level linkages discovered in Session D.
+CREATE TABLE IF NOT EXISTS session_d_term_links (
+    id                INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id            TEXT    NOT NULL,
+    strongs_id        TEXT    NOT NULL,
+    transliteration   TEXT,
+    registry_data     TEXT    NOT NULL,             -- JSON: registries where this term appears
+    status_divergence INTEGER DEFAULT 0,           -- 1 = status differs across registries
+    gate              TEXT    NOT NULL,
+    raised_date       TEXT    NOT NULL
+);
+
+-- ── 15.4  session_d_observations ─────────────────────────────────────────────
+-- Structural observations from Session D synthesis.
+CREATE TABLE IF NOT EXISTS session_d_observations (
+    id                    INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id                TEXT    NOT NULL,
+    observation_id        TEXT    NOT NULL UNIQUE,
+    observation_type      TEXT    NOT NULL,
+    registries_implicated TEXT    NOT NULL,
+    terms_implicated      TEXT,
+    structural_note       TEXT,
+    source_refs           TEXT,
+    gate                  TEXT    NOT NULL,
+    researcher_flag       INTEGER DEFAULT 0,
+    raised_date           TEXT    NOT NULL
+);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 16 — VERSE CONTEXT  (M18)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 16.1  verse_context_group ────────────────────────────────────────────────
+-- Contextual meaning groups per term. Each group describes one way a term
+-- engages the inner being across its verse corpus.
+-- Populated by Claude AI classification → VERSECONTEXT patches.
+CREATE TABLE IF NOT EXISTS verse_context_group (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    mti_term_id         INTEGER NOT NULL REFERENCES mti_terms(id),
+    group_code          TEXT    NOT NULL UNIQUE,    -- '{mti_term_id}-{serial}', e.g. '235-001'
+    context_description TEXT    NOT NULL,           -- brief inner-being engagement description
+    notes               TEXT    DEFAULT NULL,
+    delete_flagged      INTEGER DEFAULT 0,          -- 0 = active; 1 = dissolved
+    vertical_pass_flag  INTEGER DEFAULT 0           -- 0 = not analysed; 1 = vertical pass complete
+);
+
+CREATE INDEX IF NOT EXISTS idx_vcg_mti ON verse_context_group (mti_term_id);
+
+-- ── 16.2  verse_context ──────────────────────────────────────────────────────
+-- Per-verse classification: relevance, group assignment, anchor/related status.
+-- One row per verse per term per group (dual-context = 2 rows, different groups).
+-- UNIQUE on (verse_record_id, mti_term_id, group_id).
+CREATE TABLE IF NOT EXISTS verse_context (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    verse_record_id  INTEGER NOT NULL REFERENCES wa_verse_records(id),
+    mti_term_id      INTEGER NOT NULL REFERENCES mti_terms(id),
+    group_id         INTEGER REFERENCES verse_context_group(id),  -- NULL if is_relevant = 0
+    is_anchor        INTEGER NOT NULL DEFAULT 0,   -- 1 = anchor verse for its group
+    is_relevant      INTEGER NOT NULL DEFAULT 0,   -- 0 = set aside; 1 = inner-being relevant
+    is_related       INTEGER NOT NULL DEFAULT 0,   -- 1 = shares group meaning with anchor
+    notes            TEXT    DEFAULT NULL,          -- dual-context flags, borderline notes
+    delete_flagged   INTEGER DEFAULT 0,
+    vertical_pass_flag INTEGER DEFAULT 0,          -- 0 = not analysed; 1 = vertical pass complete
+    set_aside_reason TEXT    DEFAULT NULL,          -- no_inner_being | wrong_face | divine_subject | avf_homograph | pending_revision
+    UNIQUE (verse_record_id, mti_term_id, group_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_vc_vr        ON verse_context (verse_record_id);
+CREATE INDEX IF NOT EXISTS idx_vc_mti       ON verse_context (mti_term_id);
+CREATE INDEX IF NOT EXISTS idx_vc_mti_del   ON verse_context (mti_term_id, delete_flagged);
+CREATE INDEX IF NOT EXISTS idx_vc_grp       ON verse_context (group_id);
+CREATE INDEX IF NOT EXISTS idx_vc_grp_anchor ON verse_context (group_id, is_anchor, delete_flagged);
+
+-- Logical consistency rules (enforced by application, not constraints):
+--   R1: is_relevant = 0 → group_id IS NULL, is_anchor = 0, is_related = 0
+--   R2: is_anchor = 1  → is_relevant = 1, is_related = 0, group_id NOT NULL
+--   R3: is_related = 1 → is_relevant = 1, group_id references a group with at least one active anchor
+--   R4: Every term must have at least one active anchor before Session B may proceed
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 17 — DIMENSION INDEX
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 17.1  wa_dimension_index ─────────────────────────────────────────────────
+-- Denormalized index of verse_context_group records with theological dimension
+-- classification. Populated by scripts/populate_dimension_index.py.
+-- dimension field: classified by Claude AI or mechanical keyword matching.
+CREATE TABLE IF NOT EXISTS wa_dimension_index (
+    id                       INTEGER PRIMARY KEY AUTOINCREMENT,
+    verse_context_group_id   INTEGER NOT NULL REFERENCES verse_context_group(id),
+    mti_term_id              INTEGER NOT NULL REFERENCES mti_terms(id),
+    strongs_number           TEXT    NOT NULL,
+    transliteration          TEXT,
+    gloss                    TEXT,
+    language                 TEXT,
+    owning_registry_no       INTEGER NOT NULL,
+    owning_registry_word     TEXT    NOT NULL,
+    cluster_assignment       TEXT,
+    group_code               TEXT    NOT NULL,
+    context_description      TEXT    NOT NULL,
+    dimension                TEXT,                  -- one of 14 controlled values (see populate script) or NULL
+    dimension_confidence     TEXT    DEFAULT NULL,  -- KEYWORD_STRONG | KEYWORD_WEAK | CLAUDE_AI | UNCLASSIFIED
+    manual_override          INTEGER DEFAULT 0,     -- 1 = researcher override, preserved on repopulate
+    notes                    TEXT    DEFAULT NULL,
+    last_modified            TEXT    DEFAULT NULL,
+    anchor_count             INTEGER DEFAULT 0,
+    related_count            INTEGER DEFAULT 0,
+    set_aside_count          INTEGER DEFAULT 0,
+    total_verse_count        INTEGER DEFAULT 0,
+    delete_flagged           INTEGER DEFAULT 0,
+    dominant_subject         TEXT    DEFAULT NULL     -- GOD | HUMAN | OTHER_HUMAN | UNSEEN | NONE — assigned during Dimension Review
+);
+
+CREATE INDEX IF NOT EXISTS idx_wdi_vcg ON wa_dimension_index (verse_context_group_id);
+CREATE INDEX IF NOT EXISTS idx_wdi_dim ON wa_dimension_index (dimension);
 
 

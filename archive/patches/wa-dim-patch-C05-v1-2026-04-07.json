@@ -1,0 +1,4156 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C05-V1",
+    "cluster": "C05",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch C05: 262 dimension updates (CLAUDE_AI); 27 anchors (Reg 18, 113, 188); delete_flagged=1 for 234-003 and verse_context_group 789; 9 Session B findings inserted"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3427
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4583-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3426
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4584-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3428
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4585-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3435
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4586-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3436
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4587-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3437
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4588-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3450
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Single-verse metaphorical term; label provisional. Session B pointer raised."
+      },
+      "description": "4595-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3445
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4645-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3442
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4648-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3443
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4648-002: Sin & Vice"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3444
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4648-003: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3441
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4649-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3451
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4650-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3452
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4650-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3453
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4650-003: Volitional/Will"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3448
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Uncertain boundary between Spiritual/God-ward and Volitional/Will for helmsman/prayer-calling context. Session B pointer raised."
+      },
+      "description": "4651-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3446
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Pledge-handling as external diagnostic of inner character; inner-being filter borderline. Session B pointer raised."
+      },
+      "description": "4652-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3447
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Pledge-handling as external diagnostic of inner character; inner-being filter borderline. Session B pointer raised."
+      },
+      "description": "4654-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3449
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4655-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3431
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4681-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3429
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: torment is the inner affective state; moral environment is circumstantial."
+      },
+      "description": "4682-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3430
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4682-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3432
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4683-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3433
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4683-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3434
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4684-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3454
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7446-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3440
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7449-001: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3439
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7472-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3438
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7473-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3532
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Somatic/Embodied: inner crisis driving prayer is primary; somatic manifestation secondary."
+      },
+      "description": "1-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3545
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "117-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3546
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "142-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3547
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "142-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3548
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "156-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3549
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "161-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3550
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "161-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3553
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "162-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3554
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "163-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3555
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "163-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3556
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: existential bitterness as taste of life is primary affective experience."
+      },
+      "description": "163-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3558
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "174-001: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3562
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "185-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3563
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "185-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3564
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "185-003: Sin & Vice"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3565
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Affective/Emotional: anguish constituted by love for another in spiritual danger; relational bond is primary."
+      },
+      "description": "192-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3566
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "209-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3567
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "209-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3568
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "210-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3569
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "213-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3570
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "213-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3571
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "213-003: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3572
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Theological/Divine-Human: dread and panic are the inner affective state; divine judgment is the occasion."
+      },
+      "description": "221-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3575
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "225-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3577
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "236-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3578
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "236-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3579
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "240-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3537
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "35-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3538
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Relational/Social: anguish/suffering is the primary inner engagement; relational loss is the cause."
+      },
+      "description": "35-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3539
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "36-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3540
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "36-002: Sin & Vice"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3541
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "45-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3542
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "45-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3551
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4603-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3552
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4603-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3559
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4638-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3560
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4638-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3561
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4638-003: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3557
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4639-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3573
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4667-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3574
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Affective/Emotional: divine pathos \u2014 God himself moved by his people's misery. Session B pointer raised."
+      },
+      "description": "4667-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3576
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4668-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3543
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "55-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3544
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "55-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3533
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "21-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3534
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "21-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3535
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "21-003: Relational/Social"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3536
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "21-004: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3706
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Theological/Divine-Human: being overwhelmed is the primary affective experience; theological source of the waves is contextual. Anchored."
+      },
+      "description": "4814-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3705
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "4815-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3710
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Somatic/Embodied: breaking of the heart is the inner affective event; embodied anguish is its expression. Anchored."
+      },
+      "description": "4816-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3707
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "716-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3708
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "716-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3709
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "716-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4130
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "10-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4131
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "10-002: Volitional/Will"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4156
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "116-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4157
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "116-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4158
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "145-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4162
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "147-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4163
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "152-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4166
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "155-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4132
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "16-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4168
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "173-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4169
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "191-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4172
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "199-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4125
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4126
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4135
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "20-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4173
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "200-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4174
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "201-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4175
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "201-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4176
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "202-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4177
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "203-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4178
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Spiritual/God-ward: inner constraint and confinement is the primary experience; before God is contextual."
+      },
+      "description": "204-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4179
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "205-001: Sin & Vice"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4182
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "208-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4183
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "211-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4184
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "212-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4185
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "214-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4186
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "215-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4187
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "215-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4188
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "216-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4189
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "217-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4190
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "218-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4191
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "226-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4192
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "226-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4199
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "234-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4200
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "234-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4202
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "235-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4203
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Harmful spirit sent by God sits on boundary between demonological, psychological, and theological dimensions; existing vocabulary may be inadequate. Session B pointer raised."
+      },
+      "description": "235-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4204
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "235-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4205
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "237-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4206
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "237-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4207
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "237-003: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4208
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "239-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4209
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "239-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4210
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "239-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4211
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; contemplative/cognitive group arriving via XREF. Session B should treat as peripheral."
+      },
+      "description": "242-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4212
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "242-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4136
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Relational/Social: inner suffering and oppression is primary; social framing secondary."
+      },
+      "description": "25-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4137
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "30-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4138
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Relational/Social: grief and pain are the primary inner engagement; relational cause is secondary."
+      },
+      "description": "30-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4139
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "30-003: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4159
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; divine creative/formative action on inner person arriving via XREF. Session B should treat as peripheral."
+      },
+      "description": "3600-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4160
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Spiritual/God-ward: potter-clay names creatureliness and dependence before God rather than person's movement toward God."
+      },
+      "description": "3601-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4140
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "48-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4141
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "50-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4142
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "51-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4134
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; amazement arriving via XREF."
+      },
+      "description": "5124-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4133
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; astonishment arriving via XREF."
+      },
+      "description": "5126-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4164
+      },
+      "set": {
+        "dimension": "Sin & Vice",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5129-001: Sin & Vice"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4165
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; inner receptivity to God arriving via XREF. Session B should treat as peripheral."
+      },
+      "description": "5129-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4171
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5157-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4213
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5162-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4127
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5166-001: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4128
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5166-002: Volitional/Will"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4124
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Outlier in C05; embrace/fulfilment arriving via XREF."
+      },
+      "description": "5168-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4129
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5169-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4153
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5171-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4154
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5171-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4155
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5171-003: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4196
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5178-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4197
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5178-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4198
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5178-003: Relational/Social"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4161
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5179-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4151
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5187-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4152
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5187-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4148
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5189-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4193
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5192-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4194
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5192-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4195
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5192-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4170
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5196-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4180
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5212-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4181
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5212-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4167
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5213-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4143
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "54-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4144
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "54-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4145
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "75-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4146
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "75-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4147
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "91-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4149
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "92-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4150
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "92-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4554
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "131-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4555
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "131-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4556
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: suffering/grief borne as inner-being condition is primary; vicarious dimension is theological context."
+      },
+      "description": "133-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4557
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "141-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4558
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "146-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4559
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "157-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4560
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Relational/Social: bitterness and grief are the primary affective state; relational cause is secondary."
+      },
+      "description": "164-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4561
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Spiritual/God-ward: bitterness as inner affective condition is primary; divine involvement is contextual."
+      },
+      "description": "166-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4562
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "166-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4563
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "186-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4564
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "190-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4565
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "190-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4566
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "196-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4567
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "198-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4568
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "219-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4569
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "249-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4549
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "42-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4550
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "43-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4551
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "49-001: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4552
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "71-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4553
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "72-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4578
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5494-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4580
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5500-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4581
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5500-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4575
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5501-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4576
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5501-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4579
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "894-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4582
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "895-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4577
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "896-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4572
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "897-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4573
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "897-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4574
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "898-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4570
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "899-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4571
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "900-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5083
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1011-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5081
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1012-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5088
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1013-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5084
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1014-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5089
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1015-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5087
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1017-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5079
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1018-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5080
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1018-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5082
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1019-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5085
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "5929-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5086
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "5929-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5528
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "104-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5529
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "105-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5530
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "106-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5531
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "107-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5532
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "108-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5534
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "109-001: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5536
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "118-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5537
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "118-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5542
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "134-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5547
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "154-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5548
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "159-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5549
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: toil and pain as experienced condition is primary; moral causes are contextual."
+      },
+      "description": "193-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5550
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: experienced pain is primary inner engagement; moral weight is one of several contextual causes."
+      },
+      "description": "194-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5551
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "195-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5552
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "238-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5518
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "44-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5519
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "52-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5546
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6332-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5527
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6333-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5545
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6337-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5533
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Volitional/Capacity: grief-induced exhaustion and desolation is an affective-existential condition."
+      },
+      "description": "6384-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5535
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Moral/Conscience: faintness and sickness of inner being is the affective state; moral context is one cause among several."
+      },
+      "description": "6385-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5524
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6396-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5540
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Sin & Vice: vicarious suffering of the Servant is an affective-experiential inner event; Sin & Vice does not fit."
+      },
+      "description": "6426-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5541
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6427-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5539
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6431-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5544
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6433-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5538
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6434-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5520
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "69-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5521
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "70-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5522
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "73-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5523
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "74-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5525
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "76-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5526
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "77-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6180
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1269-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6175
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1270-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6176
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1270-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6177
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1270-003: Relational/Social"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6178
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1270-004: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6174
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1271-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6183
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1272-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6181
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "1273-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6179
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Anchored."
+      },
+      "description": "7115-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6182
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Corrected from Affective/Emotional: prophet's grief hidden from people but present before God; Spiritual/God-ward is more precise. Anchored."
+      },
+      "description": "7117-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4201
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Researcher decision 2026-04-07: empty group (anchor_count=0, total_verse_count=0); no verse evidence was ever assigned. Flagged for deletion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "234-003 (riv, indictment/controversy): set delete_flagged=1 \u2014 empty group, researcher decision"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 789
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Researcher decision 2026-04-07: empty group, no verse evidence assigned. Flagged for deletion."
+      },
+      "description": "verse_context_group id 789 (234-003): set delete_flagged=1"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-002-001",
+        "registry_id": 2,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 2 (agony) contains two analytically distinct sub-clusters: (1) the ag\u014dn- word family (6 terms: G0075, G0073, G0464, G1864, G2610, G4865), all Volitional/Will, naming directed spiritual striving rather than suffering \u2014 these are misaligned with C05's dominant suffering theme; (2) the basaniz\u014d/basanismos/basanos torment family (5 terms), all Affective/Emotional, naming eschatological and post-mortem suffering. Session B should treat these sub-clusters separately.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-002-001: Registry 2 (agony) contains two analytically distinct sub-clusters: (1) the ag\u014dn..."
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-002-002",
+        "registry_id": 2,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Groups 4652-001 and 4654-001 (H2258A cha.vol and H2258B cha.vo.lah, pledge): assigned Moral/Conscience but the inner-being filter is borderline \u2014 pledge-handling is primarily an external economic act whose moral significance is diagnostic of inner character rather than a direct inner-being engagement. Session B should examine whether the verse evidence sustains the Moral/Conscience assignment or whether these groups are better treated as externalised moral diagnostics.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-002-002: Groups 4652-001 and 4654-001 (H2258A cha.vol and H2258B cha.vo.lah, pledge): ass..."
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-002-003",
+        "registry_id": 2,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 4651-001 (H2259 cho.vel, pilot): assigned Spiritual/God-ward but the boundary with Volitional/Will is uncertain. The helmsman figure calling the crew to prayer in extremity may name an authority/directional dimension rather than a personal God-ward orientation. Session B should examine the verse evidence to determine whether the inner-being engagement is volitional direction, spiritual appeal, or some combination.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-002-003: Group 4651-001 (H2259 cho.vel, pilot): assigned Spiritual/God-ward but the bound..."
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-005-001",
+        "registry_id": 5,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 4667-002 (H7114A qa.tser, be short \u2014 divine yielding): assigned Theological/Divine-Human. This group names divine pathos \u2014 God himself moved by the misery of his people. It is one of the clearest instances in the anguish registry of Scripture attributing an inner affective response to God. Session B should note this as a significant theological dimension within Registry 5 and consider its relationship to the broader divine-pathos theme across C05.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-005-001: Group 4667-002 (H7114A qa.tser, be short \u2014 divine yielding): assigned Theologica..."
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-018-001",
+        "registry_id": 18,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 18 (brokenness) is the most dimensionally uniform registry in C05: all 6 groups converge on Affective/Emotional. The she.ver and related vocabulary names breaking, wounding, and shattering as inner-being conditions. This sub-theme \u2014 the inner person as something that can be broken and must be healed \u2014 is a coherent and distinctive contribution within the C05 cluster that Session B should treat as a unit.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-018-001: Registry 18 (brokenness) is the most dimensionally uniform registry in C05: all ..."
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-051-002",
+        "registry_id": 51,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 235-002 (H7451A ra, harmful spirit afflicting Saul): assigned Theological/Divine-Human. This group sits on the boundary between demonological, psychological, and theological dimensions \u2014 the harmful spirit is theologically constituted (sent by God per 1 Sam 16) but produces what functions as an inner-psychological affliction. The existing dimension vocabulary may be inadequate to name this precisely. Session B should examine the verse evidence and consider whether a note on the vocabulary gap is warranted.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-051-002: Group 235-002 (H7451A ra, harmful spirit afflicting Saul): assigned Theological/..."
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-051-003",
+        "registry_id": 51,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 51 (distress) contains a significant cluster of outlier groups arriving via XREF terms that are outside the suffering domain: 242-001 (meditation/contemplation, Cognitive/Mind), 3600-001 (divine forming of the inner person, Theological/Divine-Human), 5129-002 (opened ear as inner receptivity, Spiritual/God-ward), 5168-001 (embrace as expression of fulfilment, Affective/Emotional), 5124-001 and 5126-001 (amazement/astonishment). These should be treated as peripheral in Session B analysis of Registry 51 and may warrant a vocabulary or cluster note.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-051-003: Registry 51 (distress) contains a significant cluster of outlier groups arriving..."
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-072-001",
+        "registry_id": 72,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 899-001 (G4726 stenagmos, the Spirit's inarticulate groaning in Romans 8): assigned Spiritual/God-ward. This is a pneumatological dimension unique in the C05 cluster \u2014 the Spirit interceding within the inner being through groaning that is beyond the person's own capacity for articulation. Session B should examine this group as a distinctive case of the inner being as the locus of the Spirit's intercessory activity.",
+        "anchor_verses": "Rom 8:26",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-072-001: Group 899-001 (G4726 stenagmos, the Spirit's inarticulate groaning in Romans 8):..."
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-002-004",
+        "registry_id": 2,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 4595-001 (H4865 mish.be.tsot, filigree): assigned Character/Disposition on the basis of the metaphor of inner adornment with honour. Single-verse term with 8 set-aside verses; the description is working from a narrow evidential base. Session B should verify whether the verse evidence sustains the character/adornment reading or whether the inner-being application is marginal.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-002-004: Group 4595-001 (H4865 mish.be.tsot, filigree): assigned Character/Disposition on..."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 272,
+    "dimension_updates": 261,
+    "dimensions_anchored": 27,
+    "delete_flagged_updates": 2,
+    "session_b_findings_inserted": 9,
+    "session_d_pointers_inserted": 0,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

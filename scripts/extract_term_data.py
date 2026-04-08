@@ -100,10 +100,20 @@ def extract(conn, strongs, include_deleted=False):
         """, (vcg['id'],)).fetchone()[0]
         result["verse_context"]["groups"].append(group)
 
-    result["verse_context"]["set_aside_count"] = conn.execute(f"""
-        SELECT COUNT(*) FROM verse_context vc
+    set_aside_rows = conn.execute(f"""
+        SELECT vc.id as vc_id, vc.notes as vc_notes,
+               vr.id as vr_id, vr.reference, vr.verse_text, vr.target_word
+        FROM verse_context vc
+        JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
         WHERE vc.mti_term_id = ? AND vc.is_relevant = 0 {df_vc}
-    """, (mt['id'],)).fetchone()[0]
+        ORDER BY vr.book_id, vr.chapter, vr.verse_num
+    """, (mt['id'],)).fetchall()
+    result["verse_context"]["set_aside_count"] = len(set_aside_rows)
+    result["verse_context"]["set_aside_verses"] = [
+        {"reference": r["reference"], "verse_text": r["verse_text"],
+         "target_word": r["target_word"], "vr_id": r["vr_id"]}
+        for r in set_aside_rows
+    ]
 
     # ── 3. Every registry this term appears in ───────────────────────────
     ti_rows = conn.execute(f"""

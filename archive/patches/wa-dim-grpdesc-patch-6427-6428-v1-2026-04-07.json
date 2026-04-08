@@ -1,0 +1,69 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-GRPDESC-6427-6428-V1",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Group description correction — sorrow (Registry 151): groups 6427-001 (H2490B cha.lal) and 6428-001 (H2490I cha.lal) had identical descriptions not grounded in the anchor verse. Both anchor on Psa 109:22. Descriptions revised to reflect the verse directly. Dimension assigned to 6428-001 (Affective/Emotional, CLAUDE_AI) to complete C05 Phase C."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {"id": 2253},
+      "set": {
+        "context_description": "Term names the wounded, stricken heart of the afflicted person — the inner-being condition of one who is poor, needy, and inwardly pierced by their affliction",
+        "notes": "Revised during Dimension Review Phase B: prior description was generic and not grounded in anchor verse (Psa 109:22). Duplication with 6428-001 (H2490I) confirmed — both entries point to the same verse token. Description rewritten to reflect verse content directly."
+      },
+      "description": "verse_context_group 2253 (6427-001 H2490B cha.lal): revised description grounded in Psa 109:22"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5541},
+      "set": {
+        "context_description": "Term names the wounded, stricken heart of the afflicted person — the inner-being condition of one who is poor, needy, and inwardly pierced by their affliction",
+        "notes": "Description updated to match verse_context_group correction. Duplication with 6428-001 (H2490I) is a lexicographic artefact — both sub-gloss entries classify to the same verse token in Psa 109:22.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync — group 6427-001 (id 5541)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {"id": 2254},
+      "set": {
+        "context_description": "Term names the wounded, stricken heart of the afflicted person — the inner-being condition of one who is poor, needy, and inwardly pierced by their affliction",
+        "notes": "Revised during Dimension Review Phase B: prior description was identical to 6427-001 (H2490B) and not grounded in anchor verse (Psa 109:22). Duplication confirmed as lexicographic artefact — both H2490B and H2490I sub-gloss entries classify to the same verse token. Description rewritten to reflect verse content directly."
+      },
+      "description": "verse_context_group 2254 (6428-001 H2490I cha.lal): revised description grounded in Psa 109:22"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5543},
+      "set": {
+        "context_description": "Term names the wounded, stricken heart of the afflicted person — the inner-being condition of one who is poor, needy, and inwardly pierced by their affliction",
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Description updated to match verse_context_group correction. Dimension assigned (deferred from PATCH-20260407-DIMREVIEW-C05-V1 pending description correction). Duplication with 6427-001 (H2490B) is a lexicographic artefact — both sub-gloss entries classify to the same verse token in Psa 109:22.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index 6428-001 (id 5543): description sync + dimension assigned Affective/Emotional CLAUDE_AI"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 4,
+    "dimension_updates": 1,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 0,
+    "session_d_pointers_inserted": 0,
+    "group_description_corrections": 2,
+    "wa_dimension_index_syncs": 2
+  }
+}

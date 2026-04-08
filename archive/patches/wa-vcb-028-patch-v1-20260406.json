@@ -1,0 +1,6116 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-VCB028-VERSECONTEXT-V1",
+    "batch_id": "VCB-028",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-VerseContext-Instruction-v2.4-20260403",
+    "session_b_status": null,
+    "description": "Verse context classification \u2014 batch VCB-028, 11 terms (Reg 198 might), 371 verses"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1344,
+        "group_code": "1344-001",
+        "context_description": "H1934 predicates an inner character quality or spiritual state as present within a person",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1934: H1934 predicates an inner character quality or spiritual state as present within a person"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1344,
+        "group_code": "1344-002",
+        "context_description": "H1934 as the verbal form carrying an act of inner contemplation or reflective observation",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1934: H1934 as the verbal form carrying an act of inner contemplation or reflective observation"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53999,
+        "mti_term_id": 1344,
+        "group_id": "1344-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:3 \u2014 anchor, group 1344-001: H1934 predicates an inner character quality or spiritual state as present within a person"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54010,
+        "mti_term_id": 1344,
+        "group_id": "1344-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:8 \u2014 anchor, group 1344-002: H1934 as the verbal form carrying an act of inner contemplation or reflective observation"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54000,
+        "mti_term_id": 1344,
+        "group_id": "1344-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:4 \u2014 related, group 1344-001"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53973,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:20 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53974,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:28 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53975,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:29 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53976,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:31 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53977,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:34 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53978,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:35 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53979,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:40 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53980,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:41 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53981,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:42 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53982,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:43 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53983,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:45 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53984,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 3:18 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53985,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:10 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53986,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:13 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53987,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:25 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53988,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:27 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53989,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:29 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53990,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:4 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53991,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:17 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53992,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:19 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53993,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:29 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53994,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:1 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53995,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:10 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53996,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:14 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53997,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:2 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53998,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:26 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54001,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:11 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54002,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:13 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54003,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:19 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54004,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:2 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54005,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:21 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54006,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:23 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54007,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:4 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54008,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:6 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54009,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:7 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54011,
+        "mti_term_id": 1344,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:9 \u2014 set aside, no inner-being engagement for H1934"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53942,
+        "mti_term_id": 1342,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 64:1 \u2014 set aside, no inner-being engagement for H2151A"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53943,
+        "mti_term_id": 1342,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 64:3 \u2014 set aside, no inner-being engagement for H2151A"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53927,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 9:15 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53928,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 27:1 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53929,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 28:2 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53930,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 40:10 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53931,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 21:5 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53932,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 31:11 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53933,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 32:21 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53934,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 50:34 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53935,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 37:18 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53936,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 5:15 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53937,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:26 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53938,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 1:10 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53939,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 13:18 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53940,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 13:31 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53941,
+        "mti_term_id": 1341,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 20:20 \u2014 set aside, no inner-being engagement for H2389"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1339,
+        "group_code": "1339-001",
+        "context_description": "H3627 as vessel metaphor conveying the inner quality, worth, or relational status attributed to a person or people",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H3627: H3627 as vessel metaphor conveying the inner quality, worth, or relational status attributed to a person or people"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1339,
+        "group_code": "1339-002",
+        "context_description": "H3627 as vessel metaphor conveying inner character formation, moral orientation, or condition of desolation",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H3627: H3627 as vessel metaphor conveying inner character formation, moral orientation, or condition of desolation"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53528,
+        "mti_term_id": 1339,
+        "group_id": "1339-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 8:8 \u2014 anchor, group 1339-001: H3627 as vessel metaphor conveying the inner quality, worth, or relational status attributed to a person or people"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53557,
+        "mti_term_id": 1339,
+        "group_id": "1339-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 48:11 \u2014 anchor, group 1339-002: H3627 as vessel metaphor conveying inner character formation, moral orientation, or condition of desolation"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53545,
+        "mti_term_id": 1339,
+        "group_id": "1339-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 22:28 \u2014 related, group 1339-001"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53533,
+        "mti_term_id": 1339,
+        "group_id": "1339-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 32:7 \u2014 related, group 1339-002"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53563,
+        "mti_term_id": 1339,
+        "group_id": "1339-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 51:34 \u2014 related, group 1339-002"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53518,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 1:2 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53519,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:8 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53520,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:53 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53521,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 27:3 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53522,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 31:37 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53523,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 42:25 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53524,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:11 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53525,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 45:20 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53526,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 49:5 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53527,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 13:15 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53529,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 10:28 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53530,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 13:5 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53531,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 18:2 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53532,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 22:24 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53534,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 39:2 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53535,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 52:11 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53536,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:16 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53537,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:17 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53538,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 61:10 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53539,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 65:4 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53540,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 66:20 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53541,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 14:3 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53542,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 18:4 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53543,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 19:11 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53544,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 21:4 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53546,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 22:7 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53547,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 25:34 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53548,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 27:16 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53549,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 27:18 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53550,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 27:19 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53551,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 27:21 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53552,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 28:3 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53553,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 28:6 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53554,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 32:14 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53555,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 40:10 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53556,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 46:19 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53558,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 48:12 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53559,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 48:38 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53560,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 49:29 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53561,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 50:25 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53562,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 51:20 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53564,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 52:18 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53565,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 52:20 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53566,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 28:17 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53567,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:11 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53568,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:16 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53569,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:17 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53570,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 9:54 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53571,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 11:32 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53572,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 11:33 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53573,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 11:34 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53574,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:49 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53575,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:52 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53576,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:53 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53577,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:57 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53578,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:58 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53579,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 13:59 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53580,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 14:5 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53581,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 14:50 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53582,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:12 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53583,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:22 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53584,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:23 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53585,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:26 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53586,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:4 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53587,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 15:6 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53588,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 6:28 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53589,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 8:11 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53590,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Nah 2:9 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53591,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 10:39 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53592,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 12:36 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53593,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 13:5 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53594,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 13:8 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53595,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 13:9 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53596,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 1:50 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53597,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 18:3 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53598,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 19:15 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53599,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 19:17 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53600,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 19:18 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53601,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 3:31 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53602,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 3:36 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53603,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 3:8 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53604,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 31:20 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53605,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 31:50 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53606,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 31:51 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53607,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 31:6 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53608,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:16 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53609,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:18 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53610,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:22 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53611,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:10 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53612,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:12 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53613,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:14 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53614,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:15 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53615,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:16 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53616,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:26 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53617,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:32 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53618,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 4:9 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53619,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 5:17 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53620,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 7:1 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53621,
+        "mti_term_id": 1339,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 7:85 \u2014 set aside, no inner-being engagement for H3627"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54012,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:15 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54013,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:16 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54014,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:18 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54015,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:20 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54016,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:23 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54017,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:25 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54018,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:30 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54019,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:33 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54020,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:35 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54021,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:39 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54022,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:41 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54023,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:42 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54024,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:47 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54025,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:49 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54026,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:5 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54027,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:6 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54028,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:8 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54029,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 3:15 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54030,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 3:17 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54031,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 3:22 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54032,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 3:26 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54033,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:12 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54034,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:13 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54035,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:14 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54036,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:16 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54037,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:23 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54038,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:25 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54039,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:26 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54040,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:31 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54041,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:32 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54042,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:33 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54043,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 4:6 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54044,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:13 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54045,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:19 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54046,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:2 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54047,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:20 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54048,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:21 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54049,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:24 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54050,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 5:3 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54051,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:10 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54052,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:12 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54053,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:13 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54054,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:2 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54055,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:20 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54056,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:23 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54057,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:26 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54058,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:27 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54059,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 6:7 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54060,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:10 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54061,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:11 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54062,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:16 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54063,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:17 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54064,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:19 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54065,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:20 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54066,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:23 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54067,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:3 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54068,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:4 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54069,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:7 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54070,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 7:8 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54071,
+        "mti_term_id": 1345,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 10:11 \u2014 set aside, no inner-being engagement for H4481"
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1335,
+        "group_code": "1335-001",
+        "context_description": "H4592 qualifies the significance, sufficiency, or weight of inner-being experience, spiritual privilege, or relational claim",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4592: H4592 qualifies the significance, sufficiency, or weight of inner-being experience, spiritual privilege, or relational claim"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1335,
+        "group_code": "1335-002",
+        "context_description": "H4592 qualifies the temporal scope or duration of a divine inner-being state (wrath, anger)",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4592: H4592 qualifies the temporal scope or duration of a divine inner-being state (wrath, anger)"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52944,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 15:11 \u2014 anchor, group 1335-001: H4592 qualifies the significance, sufficiency, or weight of inner-being experience, spiritual privilege, or relational claim"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52935,
+        "mti_term_id": 1335,
+        "group_id": "1335-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 10:25 \u2014 anchor, group 1335-002: H4592 qualifies the temporal scope or duration of a divine inner-being state (wrath, anger)"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52953,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 16:9 \u2014 related, group 1335-001"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52940,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 7:13 \u2014 related, group 1335-001"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52943,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 10:20 \u2014 related, group 1335-001"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52923,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 30:15 \u2014 related, group 1335-001"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52952,
+        "mti_term_id": 1335,
+        "group_id": "1335-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 16:13 \u2014 related, group 1335-001"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52938,
+        "mti_term_id": 1335,
+        "group_id": "1335-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 26:20 \u2014 related, group 1335-002"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52917,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:23 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52918,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:34 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52919,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 18:4 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52920,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:17 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52921,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:43 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52922,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:10 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52924,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 30:30 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52925,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:11 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52926,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:2 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52927,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 44:25 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52928,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 47:9 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52929,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hag 1:6 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52930,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hag 1:9 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52931,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hag 2:6 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52932,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 1:4 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52933,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 8:10 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52934,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 1:9 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52936,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 10:7 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52937,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 16:14 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52939,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 29:17 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52941,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 42:2 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52942,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 51:33 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52945,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 24:24 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52946,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 32:22 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52947,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 4:19 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52948,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 25:52 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52949,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 2:12 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52950,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Neh 7:4 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52951,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 13:18 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52954,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 26:54 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52955,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 26:56 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52956,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 33:54 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52957,
+        "mti_term_id": 1335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:8 \u2014 set aside, no inner-being engagement for H4592"
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52865,
+        "mti_term_id": 1330,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 42:25 \u2014 set aside, no inner-being engagement for H5807"
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 228551,
+        "mti_term_id": 1330,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 145:6 \u2014 set aside, no inner-being engagement for H5807"
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 228552,
+        "mti_term_id": 1330,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 78:4 \u2014 set aside, no inner-being engagement for H5807"
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1337,
+        "group_code": "1337-001",
+        "context_description": "H6435 introduces or prevents an inner-being act, claim, orientation, or state \u2014 the lest clause carries or defines an inner response",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H6435: H6435 introduces or prevents an inner-being act, claim, orientation, or state \u2014 the lest clause carries or defines an inner response"
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1337,
+        "group_code": "1337-002",
+        "context_description": "H6435 directly qualifies or negates an inner-being state that must be maintained or avoided",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H6435: H6435 directly qualifies or negates an inner-being state that must be maintained or avoided"
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52985,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 6:10 \u2014 anchor, group 1337-001: H6435 introduces or prevents an inner-being act, claim, orientation, or state \u2014 the lest clause carries or defines an inner response"
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52991,
+        "mti_term_id": 1337,
+        "group_id": "1337-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 51:46 \u2014 anchor, group 1337-002: H6435 directly qualifies or negates an inner-being state that must be maintained or avoided"
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52998,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 7:2 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52983,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 48:5 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52984,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 48:7 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52994,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 36:18 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52993,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 32:13 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52968,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:9 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52972,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 31:31 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52977,
+        "mti_term_id": 1337,
+        "group_id": "1337-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 44:34 \u2014 related, group 1337-001"
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52990,
+        "mti_term_id": 1337,
+        "group_id": "1337-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 4:4 \u2014 related, group 1337-002"
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52992,
+        "mti_term_id": 1337,
+        "group_id": "1337-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 6:8 \u2014 related, group 1337-002"
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52969,
+        "mti_term_id": 1337,
+        "group_id": "1337-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 3:22 \u2014 related, group 1337-002"
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52962,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 11:4 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52963,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 19:15 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52964,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 19:17 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52965,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 19:19 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52966,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 24:6 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-291",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52967,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:7 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-292",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52970,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 3:3 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-293",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52971,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 31:24 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-294",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52973,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 32:11 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-295",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52974,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 38:11 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-296",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52975,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 38:23 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-297",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52976,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 42:4 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-298",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52978,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 45:11 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-299",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52979,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 2:3 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-300",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52980,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 27:3 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-301",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52981,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 28:22 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-302",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52982,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 36:18 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-303",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52986,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 1:17 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-304",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52987,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 10:24 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-305",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52988,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 21:12 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-306",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52989,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 38:19 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-307",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52995,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:15 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-308",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52996,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 15:12 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-309",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52997,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:25 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-310",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52999,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 9:54 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-311",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53000,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 10:7 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-312",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53001,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mal 4:6 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-313",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53002,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 16:26 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-314",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53003,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 16:34 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-315",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53004,
+        "mti_term_id": 1337,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 20:18 \u2014 set aside, no inner-being engagement for H6435"
+    },
+    {
+      "op_id": "OP-316",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1332,
+        "group_code": "1332-001",
+        "context_description": "H7161A as metaphor for the dignity, strength, and honour of a person or people \u2014 the inner-being quality of strength in its possession, loss, or restoration",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7161A: H7161A as metaphor for the dignity, strength, and honour of a person or people \u2014 the inner-being quality of strength in its possession, loss, or restoration"
+    },
+    {
+      "op_id": "OP-317",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52883,
+        "mti_term_id": 1332,
+        "group_id": "1332-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 16:15 \u2014 anchor, group 1332-001: H7161A as metaphor for the dignity, strength, and honour of a person or people \u2014 the inner-being quality of strength in its possession, loss, or restoration"
+    },
+    {
+      "op_id": "OP-318",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52882,
+        "mti_term_id": 1332,
+        "group_id": "1332-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 48:25 \u2014 related, group 1332-001"
+    },
+    {
+      "op_id": "OP-319",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52885,
+        "mti_term_id": 1332,
+        "group_id": "1332-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 2:3 \u2014 related, group 1332-001"
+    },
+    {
+      "op_id": "OP-320",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52894,
+        "mti_term_id": 1332,
+        "group_id": "1332-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mic 4:13 \u2014 related, group 1332-001"
+    },
+    {
+      "op_id": "OP-321",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52870,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:20 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-322",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52871,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:21 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-323",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52872,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:3 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-324",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52873,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:5 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-325",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52874,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:6 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-326",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52875,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:7 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-327",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52876,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:8 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-328",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52877,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:9 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-329",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52878,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 22:13 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-330",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52879,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hab 3:4 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-331",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52880,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 5:1 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-332",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52881,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 17:1 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-333",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52884,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 2:17 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-334",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52886,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 16:18 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-335",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52887,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 4:18 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-336",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52888,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 4:25 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-337",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52889,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 4:30 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-338",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52890,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 4:34 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-339",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52891,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 4:7 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-340",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52892,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 8:15 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-341",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 52893,
+        "mti_term_id": 1332,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 9:9 \u2014 set aside, no inner-being engagement for H7161A"
+    },
+    {
+      "op_id": "OP-342",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1347,
+        "group_code": "1347-001",
+        "context_description": "H7337 describes the expansion or widening of a negative inner drive \u2014 greed, consuming appetite, or spiritual unfaithfulness",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7337: H7337 describes the expansion or widening of a negative inner drive \u2014 greed, consuming appetite, or spiritual unfaithfulness"
+    },
+    {
+      "op_id": "OP-343",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1347,
+        "group_code": "1347-002",
+        "context_description": "H7337 describes the enlarging of the heart or mouth as an expressive inner-being act \u2014 joyful exultation or contemptuous mocking",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7337: H7337 describes the enlarging of the heart or mouth as an expressive inner-being act \u2014 joyful exultation or contemptuous mocking"
+    },
+    {
+      "op_id": "OP-344",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54133,
+        "mti_term_id": 1347,
+        "group_id": "1347-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hab 2:5 \u2014 anchor, group 1347-001: H7337 describes the expansion or widening of a negative inner drive \u2014 greed, consuming appetite, or spiritual unfaithfulness"
+    },
+    {
+      "op_id": "OP-345",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54140,
+        "mti_term_id": 1347,
+        "group_id": "1347-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 60:5 \u2014 anchor, group 1347-002: H7337 describes the enlarging of the heart or mouth as an expressive inner-being act \u2014 joyful exultation or contemptuous mocking"
+    },
+    {
+      "op_id": "OP-346",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54136,
+        "mti_term_id": 1347,
+        "group_id": "1347-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 5:14 \u2014 related, group 1347-001"
+    },
+    {
+      "op_id": "OP-347",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54139,
+        "mti_term_id": 1347,
+        "group_id": "1347-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:8 \u2014 related, group 1347-001"
+    },
+    {
+      "op_id": "OP-348",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54138,
+        "mti_term_id": 1347,
+        "group_id": "1347-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:4 \u2014 related, group 1347-002"
+    },
+    {
+      "op_id": "OP-349",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54132,
+        "mti_term_id": 1347,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:22 \u2014 set aside, no inner-being engagement for H7337"
+    },
+    {
+      "op_id": "OP-350",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54134,
+        "mti_term_id": 1347,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 30:23 \u2014 set aside, no inner-being engagement for H7337"
+    },
+    {
+      "op_id": "OP-351",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54135,
+        "mti_term_id": 1347,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 30:33 \u2014 set aside, no inner-being engagement for H7337"
+    },
+    {
+      "op_id": "OP-352",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54137,
+        "mti_term_id": 1347,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:2 \u2014 set aside, no inner-being engagement for H7337"
+    },
+    {
+      "op_id": "OP-353",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54141,
+        "mti_term_id": 1347,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mic 1:16 \u2014 set aside, no inner-being engagement for H7337"
+    },
+    {
+      "op_id": "OP-354",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1343,
+        "group_code": "1343-001",
+        "context_description": "H8074G describes the desolation of a person or personified community in a way that directly discloses or occasions an inner state of abandonment, comfortlessness, or grief",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H8074G: H8074G describes the desolation of a person or personified community in a way that directly discloses or occasions an inner state of abandonment, comfortlessness, or grief"
+    },
+    {
+      "op_id": "OP-355",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53954,
+        "mti_term_id": 1343,
+        "group_id": "1343-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:1 \u2014 anchor, group 1343-001: H8074G describes the desolation of a person or personified community in a way that directly discloses or occasions an inner state of abandonment, comfortlessness, or grief"
+    },
+    {
+      "op_id": "OP-356",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53961,
+        "mti_term_id": 1343,
+        "group_id": "1343-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 1:16 \u2014 related, group 1343-001"
+    },
+    {
+      "op_id": "OP-357",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53944,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:31 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-358",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53945,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 12:11 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-359",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53946,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 8:13 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-360",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53947,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 9:18 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-361",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53948,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 9:26 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-362",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53949,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 9:27 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-363",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53950,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 2:12 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-364",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53951,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 33:8 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-365",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53952,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 49:19 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-366",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53953,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 49:8 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-367",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53955,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:3 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-368",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53956,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 61:4 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-369",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53957,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 10:25 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-370",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53958,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 12:11 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-371",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53959,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 33:10 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-372",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53960,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 16:7 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-373",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53962,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 1:4 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-374",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53963,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 4:5 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-375",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53964,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lam 5:18 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-376",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53965,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:22 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-377",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53966,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:31 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-378",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53967,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:32 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-379",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53968,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:34 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-380",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53969,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:35 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-381",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53970,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:43 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-382",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53971,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mic 6:13 \u2014 set aside, no inner-being engagement for H8074G"
+    },
+    {
+      "op_id": "OP-383",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 53972,
+        "mti_term_id": 1343,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 21:30 \u2014 set aside, no inner-being engagement for H8074G"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 383,
+    "group_inserts": 12,
+    "group_updates": 0,
+    "verse_context_inserts": 371,
+    "verse_context_updates": 0,
+    "relevant_verses": 40,
+    "set_aside_verses": 331,
+    "anchor_verses": 12,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0
+  }
+}

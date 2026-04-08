@@ -1,0 +1,51 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMGRPDESC-VCB022-V1",
+    "registries_affected": [187],
+    "words_affected": ["strength"],
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.1-2026-04-06 — CA repair",
+    "session_b_status": null,
+    "patch_type": "DIMREVIEW-GRPDESC",
+    "description": "Repair patch — VCB-022 Registry 187 (strength): replace 2 placeholder context_descriptions for H6105A (mti:6892, group 6892-001) and H6105B (mti:6893, group 6893-001). These are parallel homograph groups sharing the same verse set and the same inner-being description. Source: wa-vcb-022-term-observations-v2.8-20260404.md. Anchor verification: both groups anchor at Psa 139:17 (vid=215535) and Psa 40:12 (vid=215537), confirmed against original patch."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "6892-001" },
+      "set": {
+        "context_description": "Term names vastness in the inner-being dimension — the uncountable greatness of God's thoughts and works, and the overwhelming vastness of iniquity or misplaced trust",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-022-term-observations-v2.8-20260404.md. H6105A (a.tsom — be vast). Anchors: Psa 139:17, Psa 40:12. Parallel group to 6893-001 (H6105B homograph)."
+      },
+      "description": "6892-001 (a.tsom H6105A, Reg 187 strength): correct context_description from observations file"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": { "group_code": "6893-001" },
+      "set": {
+        "context_description": "Term names vastness in the inner-being dimension — the uncountable greatness of God's thoughts and works, and the overwhelming vastness of iniquity or misplaced trust",
+        "notes": "REPAIR-20260406: placeholder replaced from wa-vcb-022-term-observations-v2.8-20260404.md. H6105B (a.tsam — to shut eyes). Anchors: Psa 139:17, Psa 40:12. Parallel group to 6892-001 (H6105A homograph). Same verse set and description as 6892-001 — homograph pair sharing identical verse evidence."
+      },
+      "description": "6893-001 (a.tsam H6105B, Reg 187 strength): correct context_description from observations file"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "verse_context_group_updates": 2,
+    "by_registry": {
+      "187_strength": 2
+    },
+    "source": "wa-vcb-022-term-observations-v2.8-20260404.md"
+  },
+  "_post_application_instruction": {
+    "required": true,
+    "step_1": "Sync wa_dimension_index.context_description for group_codes '6892-001' and '6893-001': UPDATE wa_dimension_index SET context_description = (SELECT context_description FROM verse_context_group WHERE verse_context_group.group_code = wa_dimension_index.group_code) WHERE wa_dimension_index.group_code IN ('6892-001', '6893-001')",
+    "step_2": "Verify zero rows remain in wa_dimension_index for these group_codes with context_description LIKE 'Context group for%'",
+    "step_3": "Report update counts for both tables",
+    "note": "This patch completes the VCB-022 repair. Combined with the two VCB-029 repair patches, all known corrupt group descriptions across the programme are now resolved. The dimension report and all cluster extracts should be regenerated only after all three repair patches are confirmed applied."
+  }
+}

@@ -1,0 +1,2323 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C03-V1",
+    "cluster": "C03",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C03 (awe, contentment, delight, gratitude, joy, rejoicing, wonder, gladness, comfort): 122 dimension assignments, 7 group description corrections, 12 Session B findings, 5 Session D pointers"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3656
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1681-001 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3657
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1681-002 \u2014 awe: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3652
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1682-001 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3653
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1682-002 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3654
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 responsive inner state directed at God's self-disclosure; sits at intersection of Affective/Emotional and Spiritual/God-ward."
+      },
+      "description": "1682-003 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3655
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1682-004 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3646
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1690-001 \u2014 awe: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3645
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 inner-being impact of overwhelming force."
+      },
+      "description": "1691-001 \u2014 awe: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3647
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1692-001 \u2014 awe: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3649
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "703-001 \u2014 awe: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3650
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 commanded absence of dismay grounded in divine presence and promise."
+      },
+      "description": "703-002 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3651
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 divinely induced terror; creature's response to divine holiness. Researcher confirmed accept as-is."
+      },
+      "description": "703-003 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3648
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "704-001 \u2014 awe: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3797
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4898-001 \u2014 contentment: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3796
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 settled condition of sufficiency is stable dispositional, not transient affective."
+      },
+      "description": "743-001 \u2014 contentment: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3946
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 longing/desire for the precious object. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names the precious/desirable thing as the object of inner-being longing \u2014 the valued possession or quality that the inner person holds dear, desires, or is drawn toward"
+      },
+      "description": "1630-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3947
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 inner grief at loss/desecration."
+      },
+      "description": "1630-002 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3958
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 pleasantness in God's presence."
+      },
+      "description": "1652-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3959
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Cognitive/Mind. Corrected \u2014 pleasantness in human relationships is affective. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names pleasantness as the quality of harmonious human relationships and wisdom \u2014 the inner-being experience of what is genuinely good and agreeable in community and in the life of understanding"
+      },
+      "description": "1652-002 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3961
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 soul-refreshing pleasantness."
+      },
+      "description": "1654-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3956
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Volitional/Will \u2014 refusal as act of will; discipline against enticement."
+      },
+      "description": "1655-001 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3962
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 misplaced trust in pleasant things away from God."
+      },
+      "description": "1656-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3951
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2070-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3952
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 human delight toward God and his word."
+      },
+      "description": "2070-002 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3953
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Volitional/Will \u2014 dominant pattern is desire/will as inner faculty."
+      },
+      "description": "2070-003 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3955
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2071-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3938
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Theological/Divine-Human \u2014 divine delight declared over Son and Servant."
+      },
+      "description": "2098-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3939
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Theological/Divine-Human \u2014 divine pleasure as criterion of acceptance."
+      },
+      "description": "2098-002 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3940
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2098-003 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3945
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 joy as inner-being overflow of delight."
+      },
+      "description": "2693-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3943
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Volitional/Will \u2014 warring desires displacing the good; volitional conflict."
+      },
+      "description": "3090-001 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3965
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 deep satisfaction and deprivation at loss. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names the delicacy or delight as what gives the inner person deep satisfaction \u2014 the luxurious good that is held as precious and whose loss constitutes inner deprivation"
+      },
+      "description": "3833-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3963
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Character/Disposition \u2014 stable orientation of pleasure-seeking pride."
+      },
+      "description": "3834-001 \u2014 delight: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3964
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 delight directed at God's goodness and provision."
+      },
+      "description": "3836-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3966
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 anticipated satisfaction and mourned loss. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names delight or pleasure as an expected or lost inner experience \u2014 the satisfaction of the body and inner person, whether anticipated with longing or mourned in its absence"
+      },
+      "description": "3837-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3970
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3843-001 \u2014 delight: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3975
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 delight in God's word; rest in his statutes."
+      },
+      "description": "3844-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3941
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3857-001 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3942
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3859-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3948
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "788-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3949
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 parallel to 2070-002."
+      },
+      "description": "788-002 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3950
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Volitional/Will \u2014 parallel to 2070-003."
+      },
+      "description": "788-003 \u2014 delight: dimension=Volitional/Will"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3968
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 satisfaction found in God."
+      },
+      "description": "789-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3976
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 settled orientation toward God's law."
+      },
+      "description": "790-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3974
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Cognitive/Mind. Confirmed. Volitional dimension also present (wilful hardening) but Cognitive/Mind is primary."
+      },
+      "description": "791-001 \u2014 delight: dimension=Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3977
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional."
+      },
+      "description": "792-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3971
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "795-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3972
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "795-002 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3973
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Relational/Social \u2014 receipt of favour in relational context."
+      },
+      "description": "795-003 \u2014 delight: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3967
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 thin corpus (2 verses)."
+      },
+      "description": "797-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3960
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 soul-level pleasantness."
+      },
+      "description": "798-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3957
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 satisfaction and its loss."
+      },
+      "description": "799-001 \u2014 delight: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3969
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Volitional/Will. Corrected \u2014 Sabbath as delight is covenantal orientation."
+      },
+      "description": "800-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3954
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Identity/Selfhood. Corrected \u2014 divine delight encoded as name; Theological/Divine-Human."
+      },
+      "description": "801-001 \u2014 delight: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3944
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 delight in God's law in the inner being."
+      },
+      "description": "802-001 \u2014 delight: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4542
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5480-001 \u2014 gratitude: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4544
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Character/Disposition \u2014 disposition of the renewed person."
+      },
+      "description": "5481-001 \u2014 gratitude: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4543
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Spiritual/God-ward. Corrected \u2014 thanksgiving as stable quality and disposition; God-ward direction expressed through it."
+      },
+      "description": "891-001 \u2014 gratitude: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4821
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 triumphant cry and diagnostic absence."
+      },
+      "description": "2683-001 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4816
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 joyful cry from divine rescue."
+      },
+      "description": "2684-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4810
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Relational/Social. Corrected \u2014 joy in God's provision; communal form, God-ward content."
+      },
+      "description": "2688-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4806
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 absence of joy as marker of inner collapse."
+      },
+      "description": "2694-001 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4808
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2695-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4827
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Relational/Social. Corrected \u2014 gladness grounded in God, salvation, and covenantal flourishing."
+      },
+      "description": "355-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4828
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "355-002 \u2014 joy: dimension=Moral/Conscience"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4809
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "356-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4829
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "357-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4830
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "357-002 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4805
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 eschatological joy in divine renewal."
+      },
+      "description": "358-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4804
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 gladness of the righteous, those who love God's salvation. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names rejoicing as an inner quality that belongs to particular persons, relationships, and occasions \u2014 the gladness of the righteous, of those who love God's salvation, and of restored covenant community"
+      },
+      "description": "359-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4812
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "360-001 \u2014 joy: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4813
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 silencing of gladness by judgment."
+      },
+      "description": "360-002 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4831
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 exultation characterising life in God's presence."
+      },
+      "description": "361-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4832
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "361-002 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4802
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Cognitive/Mind. Corrected \u2014 rejoicing in God arising from trust; knowledge is the ground not the dimension."
+      },
+      "description": "362-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4803
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Relational/Social. Corrected \u2014 cosmic rejoicing before the Lord in response to divine kingship."
+      },
+      "description": "362-002 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4822
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "363-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4823
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "363-002 \u2014 joy: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4814
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "364-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4824
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "365-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4825
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "365-002 \u2014 joy: dimension=Moral/Conscience"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4826
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 divine inner rejoicing over people."
+      },
+      "description": "365-003 \u2014 joy: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4811
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 inner cheer and its diagnostic absence."
+      },
+      "description": "366-001 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4817
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "367-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4818
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "367-002 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4807
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "368-001 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4815
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Relational/Social. Corrected \u2014 jubilation in response to divine acts; God-ward content."
+      },
+      "description": "369-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4819
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 spontaneous cry in response to direct divine act."
+      },
+      "description": "370-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4820
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 singing directed toward God or called forth by his acts."
+      },
+      "description": "372-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4793
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 joy arising in God's presence and from his salvation."
+      },
+      "description": "376-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4795
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 joy in God's presence and provision."
+      },
+      "description": "377-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4800
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Character/Disposition \u2014 abiding, characterising joy is a stable disposition of the life of faith."
+      },
+      "description": "378-001 \u2014 joy: dimension=Character/Disposition"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4801
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Volitional/Will. Corrected \u2014 joy as teleological goal of inner life completed in God. Session D pointer raised on this group."
+      },
+      "description": "378-002 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4796
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "379-001 \u2014 joy: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4794
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 exultant rejoicing before God, in response to his work."
+      },
+      "description": "380-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4798
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 abiding orientation of gladness in the Lord."
+      },
+      "description": "381-001 \u2014 joy: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4799
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "381-002 \u2014 joy: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4797
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 shared joy as expression of love within community."
+      },
+      "description": "382-001 \u2014 joy: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5404
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Affective/Emotional. Corrected \u2014 malicious joy assessed through moral/conscience dimension."
+      },
+      "description": "1096-001 \u2014 rejoicing: dimension=Moral/Conscience"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5815
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Identity/Selfhood. Corrected \u2014 divine self-disclosure as wonder-worker; Theological/Divine-Human."
+      },
+      "description": "1243-001 \u2014 wonder: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5813
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 wondrous works evoke wonder and praise toward God."
+      },
+      "description": "1244-001 \u2014 wonder: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5814
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Volitional/Capacity. Corrected \u2014 condition of being exceeded in comprehension is cognitive."
+      },
+      "description": "1244-002 \u2014 wonder: dimension=Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5809
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1245-001 \u2014 wonder: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5811
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 astonishment/marvelling."
+      },
+      "description": "1246-001 \u2014 wonder: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5810
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 astonishment and its absence."
+      },
+      "description": "1247-001 \u2014 wonder: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5816
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: Identity/Selfhood. Corrected \u2014 divine identity and knowledge as incomprehensible; Theological/Divine-Human."
+      },
+      "description": "6700-001 \u2014 wonder: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5812
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Theological/Divine-Human \u2014 wondrous works designed to evoke wonder; teleological divine framing."
+      },
+      "description": "6701-001 \u2014 wonder: dimension=Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5968
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Relational/Social \u2014 gladness lifted by good news from a beloved."
+      },
+      "description": "630-001 \u2014 gladness: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5971
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Affective/Emotional \u2014 merry heart in festive contexts. Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names the heart being glad or merry \u2014 the inner state of lightness and well-being expressed in festive eating, drinking, and communal celebration"
+      },
+      "description": "632-001 \u2014 gladness: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5972
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "632-002 \u2014 gladness: dimension=Moral/Conscience"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5973
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Description corrected (Phase B QA-VAGUE).",
+        "context_description": "Term names the inner state of being pleased or finding something good \u2014 the approval, satisfaction, or favour that the inner person extends toward a person, course of action, or situation"
+      },
+      "description": "632-003 \u2014 gladness: dimension=Affective/Emotional"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5970
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "633-001 \u2014 gladness: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5966
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 authentic gladness in divine presence."
+      },
+      "description": "634-001 \u2014 gladness: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5967
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Moral/Conscience \u2014 disordered celebration."
+      },
+      "description": "634-002 \u2014 gladness: dimension=Moral/Conscience"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5969
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 rejoicing in God's saving acts."
+      },
+      "description": "635-001 \u2014 gladness: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6215
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 comfort as God's gift in affliction."
+      },
+      "description": "1290-001 \u2014 comfort: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6216
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 hope-orientation grounded in Scripture and Spirit."
+      },
+      "description": "1290-002 \u2014 comfort: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6217
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Relational/Social \u2014 mutual comfort within community."
+      },
+      "description": "1290-003 \u2014 comfort: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6220
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 comfort grounded in covenantal faithfulness to God's word."
+      },
+      "description": "1291-001 \u2014 comfort: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6221
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Spiritual/God-ward \u2014 divine consolation beyond human supply."
+      },
+      "description": "1292-001 \u2014 comfort: dimension=Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6218
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Relational/Social \u2014 tender personal comfort of love within community."
+      },
+      "description": "1293-001 \u2014 comfort: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6219
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "last_modified": "2026-04-07T00:00:00",
+        "notes": "Automated: UNCLASSIFIED. Assigned Relational/Social \u2014 comfort through faithful companionship."
+      },
+      "description": "1294-001 \u2014 comfort: dimension=Relational/Social"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 534
+      },
+      "set": {
+        "context_description": "Term names the precious/desirable thing as the object of inner-being longing \u2014 the valued possession or quality that the inner person holds dear, desires, or is drawn toward",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 1630-001: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 547
+      },
+      "set": {
+        "context_description": "Term names pleasantness as the quality of harmonious human relationships and wisdom \u2014 the inner-being experience of what is genuinely good and agreeable in community and in the life of understanding",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 1652-002: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 553
+      },
+      "set": {
+        "context_description": "Term names the delicacy or delight as what gives the inner person deep satisfaction \u2014 the luxurious good that is held as precious and whose loss constitutes inner deprivation",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 3833-001: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 554
+      },
+      "set": {
+        "context_description": "Term names delight or pleasure as an expected or lost inner experience \u2014 the satisfaction of the body and inner person, whether anticipated with longing or mourned in its absence",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 3837-001: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2837
+      },
+      "set": {
+        "context_description": "Term names the heart being glad or merry \u2014 the inner state of lightness and well-being expressed in festive eating, drinking, and communal celebration",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 632-001: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2839
+      },
+      "set": {
+        "context_description": "Term names the inner state of being pleased or finding something good \u2014 the approval, satisfaction, or favour that the inner person extends toward a person, course of action, or situation",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 632-003: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1388
+      },
+      "set": {
+        "context_description": "Term names rejoicing as an inner quality that belongs to particular persons, relationships, and occasions \u2014 the gladness of the righteous, of those who love God's salvation, and of restored covenant community",
+        "notes": "Revised during Dimension Review Phase B: description was too vague. Revised from anchor verse context and registry-level observations."
+      },
+      "description": "Group 359-001: revised context_description (Phase B QA-VAGUE correction)"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-11-001",
+        "registry_id": 11,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Awe spans both Affective/Emotional and Spiritual/God-ward dimensions. God-ward groups (1682-001, 1682-003, 703-002, 703-003) show that the deepest fear/awe content is Spiritual/God-ward rather than merely affective. Session B should examine whether awe functions as a distinct inner-being category integrating affective intensity and God-ward orientation \u2014 the two are inseparable in the data.",
+        "anchor_verses": "Psa 27:1; Psa 111:10; Isa 8:13; Deu 6:5",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-11-001: Registry 11"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-29-001",
+        "registry_id": 29,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Both contentment terms name a stable inner condition independent of circumstances \u2014 a learned/acquired disposition of sufficiency, not a transient emotional state. Session B should examine whether contentment constitutes a distinct sub-dimension of Character/Disposition, and how it relates to the Philippians 4 context where it appears alongside joy and peace.",
+        "anchor_verses": "Phili 4:11; 1Ti 6:6; 2Cor 9:8",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-29-001: Registry 29"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-42-001",
+        "registry_id": 42,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The delight vocabulary spans every dimension of the inner being. This breadth suggests delight is not a single category but a family of engagements organised around the axis of what the inner person is oriented toward. Session B analysis should map this orientation axis as the structuring principle of the registry.",
+        "anchor_verses": "Psa 37:4; Isa 58:13; Phili 4:8; Rom 7:22",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-42-001: Registry 42"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-42-002",
+        "registry_id": 42,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "H2654A (cha.phets) and H2654B (cha.phats) produce parallel three-group structures with equivalent classifications. Their functional equivalence across the corpus is a lexical data point for Session B \u2014 whether the two forms represent a single semantic range or carry distinguishable nuances.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-42-002: Registry 42"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-42-003",
+        "registry_id": 42,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 3090-001 (h\u0113don\u0113 \u2014 pleasure as the competing inner orientation, desires that war within) occupies a significant counter-position to the positive delight vocabulary. Pleasure as the adversary of the will toward God is a distinctive NT inner-being concept. Session B should examine the h\u0113don\u0113 / delight tension as a structural feature of the inner life.",
+        "anchor_verses": "Jas 4:1-3; Luk 8:14; Tit 3:3",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-42-003: Registry 42"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-69-001",
+        "registry_id": 69,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "All three gratitude terms converge on Character/Disposition \u2014 gratitude is not a transient affective response but a stable inner reorientation of the whole person. The absence of gratitude as a diagnostic marker of inner corruption (5480-001) is a particularly significant finding. Session B should examine gratitude as a diagnostic indicator of inner-being health.",
+        "anchor_verses": "Rom 1:21; Phili 4:6; Col 3:15; 1Th 5:18",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-69-001: Registry 69"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-97-001",
+        "registry_id": 97,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "After dimension correction, 27 of 40 joy groups align with Spiritual/God-ward. Joy in Scripture is not primarily a free-floating affective state but is characteristically grounded in and directed toward God, his salvation, his presence, and his word. Session B should foreground this as the dominant finding of the registry.",
+        "anchor_verses": "Psa 16:11; Phili 4:4; Neh 8:10; Rom 15:13",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-97-001: Registry 97"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-97-002",
+        "registry_id": 97,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Three groups name joy that persists through or is intensified by suffering: 364-001 (salad \u2014 defiant exultation), 381-002 (chairo \u2014 paradoxical joy in tribulation), and 3859-001 in Registry 42 (h\u0113dista \u2014 most gladly in weakness). This convergent cross-term pattern names a distinct inner-being mode. Session B should examine joy-through-suffering as a structural feature rather than an anomaly.",
+        "anchor_verses": "2Cor 12:9-10; Jas 1:2; Rom 5:3; 1Pet 4:13",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-97-002: Registry 97"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-97-003",
+        "registry_id": 97,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 378-001 (chara \u2014 abiding inner state) is assigned Character/Disposition rather than Affective/Emotional because it names a stable characterising inner quality. This parallels gratitude in Registry 69. Both registries produce at least one group where the inner state is stable and dispositional rather than episodic. Session B should examine whether there is a category of joy-as-character-quality distinct from joy-as-affective-experience.",
+        "anchor_verses": "Joh 15:11; Gal 5:22; Rom 14:17",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-97-003: Registry 97"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-175-001",
+        "registry_id": 175,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Wonder vocabulary divides between the divine side (Theological/Divine-Human) and the human response (Affective/Emotional). Session B should examine wonder as the inner state at the interface between human capacity and divine transcendence \u2014 the point where the inner person's capacity to comprehend is exceeded by what God is and does.",
+        "anchor_verses": "Psa 77:14; Isa 9:6; Act 3:10-11; Heb 2:4",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-175-001: Registry 175"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-186-001",
+        "registry_id": 186,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Ya.tav (H3190) produces three materially distinct dimension patterns: Affective/Emotional (merry heart), Moral/Conscience (moral goodness), and Affective/Emotional (approval/pleasure). This bridges the moral and affective dimensions within a single gladness/goodness term. Session B should examine whether the Hebrew gladness/goodness vocabulary reveals an integration of moral and affective categories that the programme's dimension vocabulary treats separately.",
+        "anchor_verses": "Jdg 19:6; Psa 34:8; Gen 1:31; Deu 6:18",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-186-001: Registry 186"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-192-001",
+        "registry_id": 192,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Comfort vocabulary splits cleanly: God-given comfort (Spiritual/God-ward) and community-given comfort (Relational/Social). Parakl\u0113sis spans both dimensions across its three groups. Session B should examine the structural relationship between divine and human comfort \u2014 the data suggests divine comfort both enables and models the human comfort that flows from it.",
+        "anchor_verses": "2Cor 1:3-4; Phili 2:1; Col 4:11; Psa 94:19",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-192-001: Registry 192"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 11,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-11-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The commanded-inner-state pattern \u2014 Scripture commanding specific inner orientations (do not be dismayed / fear the Lord / rejoice always) \u2014 appears across Registries 11, 97, 42 and likely others. Session D should trace this pattern across clusters and examine its implications for understanding the inner being as subject to divine instruction.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-11-SD001"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 42,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-42-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 97,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "The Theological/Divine-Human cluster within delight/joy registries \u2014 God's pleasure/displeasure as the criterion of acceptance \u2014 names a structural feature of the inner-being relationship with God: divine inner states (delight, pleasure, exultation) are constitutive of the human inner-being condition. Session D should examine divine inner states as a programme-level category and their relationship to human inner states across all clusters.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-42-SD001"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 42,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-42-SD002",
+        "strongs_reference": null,
+        "cross_registry_id": 97,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Morally negative joy/gladness appears across multiple C03 registries: 355-002 and 365-002 (R97), 1096-001 (R132), 634-002 (R186). The same inner-being faculty appears in both ordered and disordered forms. Session D should examine how the positive/negative pairing of inner states recurs across the programme \u2014 whether positive inner capacities have systematic corrupted counterparts.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-42-SD002"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 42,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-42-SD003",
+        "strongs_reference": null,
+        "cross_registry_id": 175,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Two groups name the inner life as designed toward an end: 378-002 (chara \u2014 joy as the goal/completion of the inner life in God) and 6701-001 (miph.la.ah \u2014 wondrous works designed to evoke wonder). Researcher note: this may also include what God intends as the inner state of the person. These groups point toward a dimension the existing vocabulary does not name \u2014 the inner life as oriented toward a divinely intended goal. Session D should examine whether a new vocabulary category is needed.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-42-SD003"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 42,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-42-SD004",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Group 3090-001 (h\u0113don\u0113) occupies a counter-position to the positive delight vocabulary. The pleasure/delight tension in the NT \u2014 where h\u0113don\u0113 names the adversary of the ordered inner life \u2014 is a significant cross-registry pattern. Session D should examine the structured opposition between competing inner orientations as a programme-level finding.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-42-SD004"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 146,
+    "dimension_updates": 122,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 12,
+    "session_d_pointers_inserted": 5,
+    "group_description_corrections": 7,
+    "wa_dimension_index_syncs": 7
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-SPECIALSTATUS-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Document extracted_theological_anchor and phase2_enrichment terms in registry notes for peace (#117) and soul (#182). No status or data changes — documentation only."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 117 },
+      "set": {
+        "notes": "34 terms (26 extracted). 8 extracted_theological_anchor terms. 1 part. MTI: extracted.\n[AUDIT 2026-03-25] result=REVIEW  terms=128  verses=3418  run_id=RUN-20260325_125227-AUDIT_WORD\n[2026-04-06] SPECIAL STATUS TERMS DOCUMENTED: 15 terms carry status=extracted_theological_anchor (818 active verses). These are divine names, titles, and eternal/hosts vocabulary added as theological frame references — not direct inner-being terms. They are deliberately excluded from VCB classification and produce no verse_context records. Their active verses remain unflagged by design. These terms surface in Session B as theological context for the peace vocabulary: the peace that Scripture describes is grounded in who God is (YHWH-Shalom, LORD of Hosts, El Shaddai, Adonai, El Olam, YHWH-Tsidkenu, YHWH-Nissi, El Elyon). Terms: G4519 (sabaoth), H0136 (Adonai), H3068G (YHWH), H3070 (YHWH-Yireh — note: owner registry mismatch, flagged for CC investigation), H3071 (YHWH-Nissi), H3072 (YHWH-Tsidkenu), H3073 (YHWH-Shalom), H5769G (olam/everlasting, 272 verses), H5769H (El Olam), H5943 (il.lay/Most High Aramaic), H5946 (el.yon/Most High Aramaic), H6635A (tsava/army-host, 136 verses), H6635B (tsava/Hosts, 156 verses), H6664H (tsedeq/righteousness), H7706 (Shaddai/Almighty, 48 verses). These terms will be available to Session B analysts via status_note documentation and active verse records."
+      },
+      "description": "Peace (#117) — theological anchor terms documented in registry notes"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 182 },
+      "set": {
+        "notes": "4 terms (4 extracted). 1 phase2_enrichment term. 1 part. Session A Instruction v7. MTI: extracted.\n[AUDIT 2026-03-23] result=REVIEW  terms=24  verses=757  run_id=RUN-20260323_202200-AUDIT_WORD\n[SESSION B 2026-03-24] Session B work exists — superseded by Verse Context Reset.\n[2026-04-06] SPECIAL STATUS TERM DOCUMENTED: 1 term carries status=phase2_enrichment (5 active verses). H5317 (nophet/honey) — Pro 27:7 encodes the appetite dimension of nephesh through honey as archetype metaphor (one who is full loathes honey; to one who is hungry everything bitter is sweet). Not primary soul vocabulary. Deliberately excluded from VCB — no verse_context records. Active verses remain unflagged by design. Decision carried forward from prior Session B. This term surfaces in Session B as contextual support for understanding the soul's appetitive dimension. Verses: Psa 19:10, Pro 5:3, Pro 24:13, Pro 27:7, Song 4:11."
+      },
+      "description": "Soul (#182) — phase2_enrichment term documented in registry notes"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-SEXUALITY145-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Reg 145 (sexuality) — reclassify from PARTIAL to Session D pointer. Notes updated with decision rationale. No status field changes."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 145 },
+      "set": {
+        "notes": "SESSION D POINTER — Researcher decision 2026-04-06. Reclassified from PARTIAL. Sexuality as a modern category has no single biblical lexical anchor (inference_note confirmed at Session A). The positive, created dimension of human sexuality is distributed across existing registries: flesh (#185, basar — embodied creatureliness), desire (#43, somatic dimension), covenant (#34), love (#103), and union/faithfulness vocabulary. The inner-being significance of sexual identity as a gendered being before God is a cross-registry synthesis question, not a single-term analysis question. No Session A run required. Session D synthesis should address: how the programme's data across flesh, desire, covenant, love, and unity together articulate the inner-being reality of sexuality as Scripture presents it. Source: Session-A-v9-Empty-Words-Analysis-20260318 (original); researcher decision 2026-04-06."
+      },
+      "description": "Reg 145 (sexuality) notes updated — PARTIAL closed, Session D pointer recorded"
+    }
+  ]
+}

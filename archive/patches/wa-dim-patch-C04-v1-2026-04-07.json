@@ -1,0 +1,2209 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C04-V1",
+    "cluster": "C04",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension Review Phase C — C04 cluster. 136 dimension assignments (CLAUDE_AI confidence). 12 automated label corrections. 6 Session B findings. 3 Session D pointers. 31 groups deferred (QA-VAGUE, QA-BROAD, QA-REVIEW, QA-EXTERNALISED) — require follow-up session.",
+    "patch_type": "DIMREVIEW"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3640
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Word of God and Spirit as source of inner-being life — divine impartation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [4738-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3641
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine revival of depleted inner person. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [4738-003] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3644
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Communal inner renewal as divine favour overturning desolation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [4739-001] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3637
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Living God (Aramaic) as object of inner acknowledgment, worship, trust. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [4740-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3643
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Existential-affective paradox: biological life without inner aliveness. Corrected from Relational/Social. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [4742-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3633
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Living God as ground of soul's thirst, worship, trust. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [699-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3634
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Life as God-given condition framing whole inner responsive existence. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [699-002] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3636
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Life as fruit of divine redemption and inner turning. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [699-004] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4058
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine favour as inner disposition of acceptance. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [456-001] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4059
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine acceptability standard — moral and aesthetic criterion. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [456-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4060
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine will as sovereign purpose. Corrected from Volitional/Will — divine subject. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [456-003] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4061
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human will or pleasure as inner self-directing faculty. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [456-004] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4039
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desirability as object-quality drawing the inner being. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [457-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4043
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Delight as inner orientation toward its object. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [458-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4052
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Cherished object of deepest desire; grief at its loss. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [460-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4034
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Destructive inner desire — evil craving of the wicked soul. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [464-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4050
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Object of inner desire as purposive concrete end. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [465-001] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4049
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine inner attachment — God's love set on a people as inner binding. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [467-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4068
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Destructive craving of the wicked driving boasting, grasping, ruin. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [469-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4069
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Righteous desire oriented toward God or genuine good. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [469-002] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4070
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as primal inner state — pre-moral dispositional draw. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [469-003] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4071
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as deep relational attraction toward another. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [470-001] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4055
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Lust or erotic desire as inner disposition. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [471-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4017
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Concentrated inner wish — desire at peak affective intensity. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [472-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4053
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desires of heart as petitions before God. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [473-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4045
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human delight or pleasure as inner orientation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [474-002] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4046
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as practical want or request in relational context. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [474-003] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4047
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Absence of desire or care — inner state of indifference. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [474-004] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4026
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Prayer as urgent petition to God. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [477-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4027
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Petition toward human authority — inner orientation of request. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [477-002] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4062
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inquiring of God — seeking divine guidance. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [478-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4063
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Asking or inquiring of a person. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [478-002] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4064
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inquiry by divination — misdirected spiritual seeking through forbidden channels. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [478-003] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4065
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God questioning or requiring — divine purposive demand. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [478-004] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4066
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Asking as expression of personal desire — craving framed as request. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [478-005] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4022
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's elective choosing. Corrected from Volitional/Will — divine election. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [479-001] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4023
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's choosing of a place. Corrected from Spiritual/God-ward — divine act. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [479-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4024
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human moral or volitional choosing. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [479-003] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4025
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Practical human choosing. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [479-004] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4018
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Craving as disruptive inner force overriding proper orientation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [480-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4019
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as governing orientation of the soul — ruling inclination. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [480-002] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4020
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Intense personal longing — soul in active yearning. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [480-003] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4021
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Sovereign desire of God — divine purposive longing expressed as will. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [480-004] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4035
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Coveting — prohibited acquisitive desire violating boundaries. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [481-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4036
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as positive orientation — delight in what is genuinely good. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [481-002] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4037
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Idolatrous or misdirected desire toward what does not profit. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [481-003] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4038
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine inner desire — God's own longing for a place or his people. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [481-004] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4051
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Intense longing — straining, fainting, yearning with great force. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [483-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4067
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Intense panting desire — longing as bodily urgency, gasping, panting. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [484-001] -> Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4029
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hostile will seeking to harm — inner intention of enmity. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [486-002] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4030
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Seeking wisdom, understanding, or moral good. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [486-003] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4031
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Seeking the beloved — inner longing for another. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [486-004] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4032
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Petitioning or seeking person in authority — dependence orientation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [486-005] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4041
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human compassion or its withholding. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [487-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4042
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine compassion or its withholding. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [487-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4056
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Sovereign divine will. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [488-001] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4057
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human inner desire for understanding. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [488-002] -> Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3987
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Desire as generative mechanism — origin of sin. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [492-003] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3990
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Longing as response to godly grief and separation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [496-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4013
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Consuming inner appetite driving disordered conduct. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [497-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3984
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner orientation constitutively toward evil. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [498-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3992
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Asking Jesus — inner posture of approach with need or faith. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [502-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3993
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Jesus asking the Father. Corrected from Spiritual/God-ward — Christological register. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [502-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3979
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Forceful demanding desire — aggressive hostile acquisition. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [504-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4012
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Compelling passion overriding prior commitment. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [505-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4011
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Deep personal affective longing — tender desire. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [506-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4014
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Comfort toward afflicted inner being. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [510-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4015
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Urgent plea from inner need; direction pending verse review. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [510-002] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4016
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Pastoral or apostolic appeal — relational care and authority. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [510-003] -> Relational/Social"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3997
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner orientation toward God and kingdom. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [511-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3998
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inward misdirection of desire toward self-interest. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [511-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4000
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner demand for external confirmation — sign-seeking. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [511-004] -> Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4001
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inward intention of hostility or betrayal. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [511-005] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4002
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Paradox of self-preservation instinct and its inversion. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [511-006] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3981
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Seeking what is truly good — orientation toward word and heavenly. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [512-002] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4006
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divided inner will — conflict between willing and doing. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [513-001] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4007
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's own inner willing. Corrected from Volitional/Will — divine subject. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [513-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4008
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Submitted or aligned will — human willingness to yield. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [513-003] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4009
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Misdirected or self-serving will. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [513-004] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4003
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine will as object of human alignment and submission. Corrected from Cognitive/Mind. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [514-001] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4004
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine will as sovereign inner purpose. Corrected from Volitional/Will — divine subject. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [514-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4005
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human will as inner faculty. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [514-003] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4650
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner state of security or settled ease. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2611-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4669
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine act of looking — God's inner attentive regard. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2617-003] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4657
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hoping in God — soul orientation toward steadfast love. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2619-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4658
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope tested or disappointed — inner experience of hope meeting its negative. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2619-002] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4656
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Patient waiting as sustained expectant posture. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2620-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4660
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Confidence grounded in fear of God and integrity. Corrected from Spiritual/God-ward. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2624-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4659
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Cognitive and moral dullness as inner condition. Corrected from Spiritual/God-ward KEYWORD_STRONG mismatch. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2627-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4653
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Misplaced refuge as object of seeking — seeking orientation even when misdirected. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [2628-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4666
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Communal hope as inner orientation toward God. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [383-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4662
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Confidence in God as inner assurance. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [384-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4663
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Confidence in inadequate objects — misplaced trust. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [384-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4676
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope as fundamental inner capacity. Corrected from Cognitive/Mind. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [385-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4661
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Expectation misplaced and collapsed into shame. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [386-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4674
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope defined by affective outcomes — joy or heart-sickness. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [387-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4675
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Perishing or collapse of hope. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [387-002] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4673
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope in God combining trust and expectation. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [388-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4664
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God as inner person's refuge — whole person turning to God. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [390-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4665
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Misplaced refuge in lies or inadequate protection. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [390-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4670
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Waiting for God as sustained expectant orientation. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [391-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4671
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Unfulfilled or hostile waiting — thwarted hope. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [391-002] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4672
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Looking to or hoping in God. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [392-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4654
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner despair or hopelessness — collapse of expectation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [394-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4651
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Taking refuge in God — whole-person God-ward orientation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [396-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4652
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Taking refuge in inadequate objects — misplaced refuge. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [396-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4646
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Trusting in God as whole-person reliance. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [397-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4647
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Trust in persons or self — misplaced reliance. Corrected from Spiritual/God-ward. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [397-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4648
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Trust as inner state of security or ease. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [397-003] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4649
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Ground or object of inner trust — what confidence rests upon. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [398-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4655
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Waiting quietly — patient still expectation. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [399-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4644
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Wish or longing as inner orientation toward the not-yet. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [400-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4641
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope as eschatological inner orientation. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [401-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4642
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hope as constitutive permanent inner quality alongside faith and love. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [401-002] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4643
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Absence or loss of hope as inner desolation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [401-003] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4638
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Expecting nothing in return — posture of love. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [402-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4645
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Proleptic hope in Christ. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [403-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4639
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Setting hope on God or Christ. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [404-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4640
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Hoping for specific future outcome — forward-oriented expectation. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [404-002] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4937
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Beloved as object of deep inner longing. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5804-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4940
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Consuming action of God's wrath or jealousy. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5808-001] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4941
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Person or community consumed by inner rebellion. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5808-002] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4945
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Exhausting of God's wrath in judgment. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5809-002] -> Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4942
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner resolution or fixed determination. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5811-001] -> Volitional/Will"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4943
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Soul's consuming longing for God, salvation, and word. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5811-002] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4948
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Failing of inner faculties under judgment. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5813-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4951
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Limit of human perfection against inexhaustible scope of God's commandment. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5815-001] -> Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4946
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Failing of eyes through consuming longing. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [965-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4949
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Rushing yearning intensity of soul's longing. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [966-001] -> Affective/Emotional"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4950
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "All-consuming longing for God's word and rules. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [967-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4936
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Intense forward-straining disposition of eager expectation. Confirmed KEYWORD_STRONG. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [968-001] -> Character/Disposition"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5095
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Defiling passion as inner drive — desire that defiles. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [1023-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5094
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Moral or ritual defilement as inner condition. Confirmed KEYWORD_WEAK. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [5948-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5891
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Deepest inner yearning for sanctuary. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [1264-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6222
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Sick/morbid craving producing moral disorder. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [1295-001] -> Moral/Conscience"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6224
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner aspiration toward the heavenly. DimensionReview C04 2026-04-07.",
+        "last_modified": "2026-04-07"
+      },
+      "description": "Dimension assessment [1296-001] -> Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-8-001",
+        "registry_id": 8,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 8 (appetite) contributes zero desiderative groups — all 12 groups belong to the life/vitality semantic domain (Hebrew chai/chayah family). The appetite register, as extracted, has no desiderative content. Session B should establish what the appetite registry actually contributes to C04 inner-being analysis.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-8-001"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-43-001",
+        "registry_id": 43,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 43 (desire) shows a consistent divine/human register split: divine desire, will, and longing = Theological/Divine-Human; human desire and will = Volitional/Will or desiderative. These two registers appear throughout the vocabulary. Session B should read them in parallel and assess how Scripture's account of divine desire relates to human desire.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-43-001"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-43-002",
+        "registry_id": 43,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Misdirected desire dominates a large segment of Registry 43 — 10+ groups (464-001, 469-001, 480-001, 481-001, 481-003, 492-003, 497-001, 498-001, 504-001, 505-001) name desire as moral disorder. Session B should examine whether Scripture treats desire's moral valence as its primary theological concern, and how the disordered and rightly-ordered forms relate.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-43-002"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-43-003",
+        "registry_id": 43,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 513-001 names the divided inner will — the person wills good but does what they do not will (Romans 7 pattern). This is analytically foundational for understanding desire's relationship to action. Session B should give this sustained attention as a key inner-being mechanism.",
+        "anchor_verses": "Rom 7:15-20",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-43-003"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-78-001",
+        "registry_id": 78,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Hope in Registry 78 divides into three distinct modes: (a) hope as orientation or act directed toward God (Spiritual/God-ward — 30 groups across cluster); (b) hope as a constitutive inner quality or capacity of the person (Character/Disposition — groups 385-001, 401-002, 402-001, 968-001); (c) hope's absence, collapse, or disappointment (Affective/Emotional). Session B should assess whether these are three aspects of one dimension or three distinct inner-being engagements.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-78-001"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-115-001",
+        "registry_id": 115,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 115 (passion) contributes zero desiderative groups in Phase C. Group 1023-001 names defiling passion as moral drive; 5948-001 names moral defilement; 1432-001 (deferred) names patient attentiveness. Session B should clarify what the passion registry actually covers in its term set and whether the English label accurately reflects the Hebrew/Greek semantic range.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer — DIM-115-001"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 8,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-8-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Programme-wide: groups where God is the subject of a volitional or desiderative act are systematically misclassified as Volitional/Will or Spiritual/God-ward. In C04, 8 groups were corrected (456-003, 479-001, 479-002, 502-002, 513-002, 514-002 and others). This correction pattern likely applies across all clusters. Session D should audit all clusters for this systematic label error.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer — DIM-8-SD001"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 43,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-43-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C04 desiderative density is 62% — 65 of 172 groups carry non-desiderative primary content. Question: is the desiderative vocabulary of Scripture proportionally smaller than the volitional-relational vocabulary, or are there programme coverage gaps? Session D should cross-check C04 terms against other clusters and assess whether key desiderative terms are absent from the programme or misassigned.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer — DIM-43-SD001"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 78,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-78-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The trust/refuge vocabulary of Registry 78 (hope) and the desiderative vocabulary of Registry 43 (desire) share the inner-being ground of orientation toward an object. Session D should examine the relationship between hope/trust and desire/longing as paired inner-being orientations, and how fear/reverence (other clusters) functions as their counterpart.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer — DIM-78-SD001"
+    }
+  ]
+}

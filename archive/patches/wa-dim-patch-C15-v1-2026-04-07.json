@@ -1,0 +1,2873 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C15-V1",
+    "cluster": "C15",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C15: 164 dimension updates, 8 Session B findings, 5 Session D pointers"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4349
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: faithfulness as stable inner disposition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3768-001 \u2014 faith: Character/Disposition"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4341
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: unbelief as inner condition with named consequences.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3769-001 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4342
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral category of faithlessness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3769-002 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4339
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Will: inner refusal or failure to receive truth.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3771-001 \u2014 faith: Volitional/Will"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4340
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: failure of covenant fidelity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3771-002 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4353
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: firm persuasion/settled conviction as inner state.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3773-001 \u2014 faith: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4366
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: treachery as inner moral condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3786-001 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4368
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: integrity gap between inner state and outward profession.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3787-001 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4367
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: betrayal as defining inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3789-001 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4347
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: faith as inner act/disposition of trust-reliance directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "860-001 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4348
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Identity/Selfhood: faith as the community/content constituting identity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "860-002 \u2014 faith: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4370
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: covenant breach directed against the Lord \u2014 negative God-ward pole.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "861-001 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4371
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: faithlessness as inner moral condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "861-002 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4372
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: intimate covenant breach.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "861-003 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4369
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: volitional inner act of covenant unfaithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "862-001 \u2014 faith: Volitional/Will"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4360
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Spiritual/God-ward: divine faithfulness as God's reliable inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "863-001 \u2014 faith: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4361
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: human faithfulness walking before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "863-002 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4362
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: communal inner crisis of lost faithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "863-003 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4343
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: diminished faith \u2014 deficient God-ward trust.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "864-001 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4354
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: weak inner trust falling short.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "865-001 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4344
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: fundamental inner disposition of trust-reliance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "866-001 \u2014 faith: Character/Disposition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4345
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: sign-dependent or intellectual belief.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "866-002 \u2014 faith: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4346
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Identity/Selfhood: community defined by the constitutive believing event.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "866-003 \u2014 faith: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4363
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: treachery as faithlessness toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "867-001 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4364
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral category of betrayers.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "867-002 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4365
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: interpersonal betrayal as inner moral act.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "867-003 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4355
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: reliability and integrity as moral quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "868-001 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4356
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral category of reliable persons before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "868-002 \u2014 faith: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4357
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine faithfulness as enduring inner attribute.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "869-001 \u2014 faith: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4358
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: practised human faithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "869-002 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4359
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: communal moral crisis of absent faithfulness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "869-003 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4350
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine faithfulness \u2014 will do what promised.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "871-001 \u2014 faith: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4351
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: human faithfulness in reliable service.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "871-002 \u2014 faith: Character/Disposition"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4352
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral category of believers.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "871-003 \u2014 faith: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4787
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: hope and endurance as inner states.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5694-001 \u2014 intercession: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4788
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: Spirit's intercession \u2014 divine inner advocacy in human weakness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5696-001 \u2014 intercession: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4789
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: intercession directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "937-001 \u2014 intercession: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4790
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral burden of substitutionary bearing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "937-002 \u2014 intercession: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4786
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: intercession as God-directed inner act.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "938-001 \u2014 intercession: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5239
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: praise as defining inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1027-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5240
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: God as content and source of praise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1027-002 \u2014 praise: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5241
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: praise transforming inner state.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1027-003 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5217
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine illuminating presence as condition of inner flourishing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1028-001 \u2014 praise: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5229
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: whole-person orientation of gratitude toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1029-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5230
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: confession toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1029-002 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5231
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: acknowledging God's name as inner act of return.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1029-003 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5204
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: commendation from God reaching hidden heart.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1030-001 \u2014 praise: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5205
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Will: all life toward praise of God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1030-002 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5206
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: cognitive discipline of thinking on praiseworthy things.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1030-003 \u2014 praise: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5224
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: whole-person singing praise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1031-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5196
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: universal inner response to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1032-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5223
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: song as inner expression toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1033-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5237
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: praise in gratitude and awe.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1034-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5238
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: misdirected praise to false gods.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1034-002 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5197
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: spontaneous praise from recognition and awe.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1035-001 \u2014 praise: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5208
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: spirit, mind, heart in worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1036-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5234
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: adorning God with worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1037-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5216
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: praise-celebration as inner devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1038-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5242
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: thanksgiving sacrifice.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1039-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5243
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: communal gratitude expression.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1039-002 \u2014 praise: Relational/Social"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5213
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: corporate confession before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1040-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5214
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: corporate commitment or lament.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1040-002 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5209
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: covenantal oneness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1041-001 \u2014 praise: Relational/Social"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5210
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: corporate united will.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1041-002 \u2014 praise: Volitional/Will"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5211
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG corrected from Identity/Selfhood: uniqueness of God \u2014 divine attribute.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1041-003 \u2014 praise: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5212
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: intensification of subjective inner experience. Note: QA-VAGUE \u2014 low confidence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1041-004 \u2014 praise: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5244
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: beginning disclosing inner condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1042-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5236
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: inner capacity of self-restraint.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1044-001 \u2014 praise: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5235
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: high praise extolling God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1045-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5232
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: praise testing inner character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1046-001 \u2014 praise: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5198
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: divine glory as supreme inner orientation target.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1047-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5199
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: transforming beholding \u2014 glory to glory.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1047-002 \u2014 praise: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5200
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Volitional/Will: teleological orientation toward God's glory.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1047-003 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5201
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: eschatological hope sustaining inner life.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1047-004 \u2014 praise: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5202
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG corrected from Identity/Selfhood: inner act of confessing God's worth.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1048-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5207
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: singing praise in congregation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1050-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5195
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Cognitive/Mind: praise as sacrificial offering of inner life.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1051-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5218
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: sustained whole-being direction toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4333-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5219
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: corporate praise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4333-002 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5220
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: discernment of who deserves praise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4333-003 \u2014 praise: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5221
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: glorying in God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4334-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5222
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Non-standard \"Sin & Vice\" corrected to Character/Disposition: wrongful boast as prideful inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4334-002 \u2014 praise: Character/Disposition"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5215
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: pride (Helel) leading to catastrophic downfall.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5968-001 \u2014 praise: Character/Disposition"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5228
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: thanks and praise toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5986-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5203
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: extolling God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5989-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5233
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: psalm directing inner life toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5990-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5225
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: faith tested in coerced worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5991-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5226
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: melody as vehicle of authentic worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5992-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5227
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: the Lord as inner song.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5994-001 \u2014 praise: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5250
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: prayer as sustained inner orientation toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1053-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5251
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: prayer as inner medium of access.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1053-002 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5245
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: petition as whole-person act toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1054-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5255
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: whispered intimate inner cry.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1057-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5248
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: intercession directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1058-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5249
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: vow and prayer binding will to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1059-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5246
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: earnest petition to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2336-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5247
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Spiritual/God-ward: apostolic inter-human entreaty.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2336-002 \u2014 prayer: Relational/Social"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5252
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: prayer as inner surrender \u2014 Gethsemane model.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4336-001 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5253
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: prayer as instructed discipline.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4336-002 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5254
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: corporate and intercessory prayer.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4336-003 \u2014 prayer: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5422
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: wholehearted seeking of God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1100-001 \u2014 seeking: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5423
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: seeking divine guidance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1100-002 \u2014 seeking: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5424
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: seeking evil \u2014 negative God-ward orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1100-003 \u2014 seeking: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5425
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK corrected from Relational/Social: God seeking his people \u2014 divine initiative.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1100-004 \u2014 seeking: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5426
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: finding relational favour.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1101-001 \u2014 seeking: Relational/Social"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5427
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: finding wisdom through inner search.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1101-002 \u2014 seeking: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5428
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: God finding inner moral condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1101-003 \u2014 seeking: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5429
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner state of found rest/relief.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1101-004 \u2014 seeking: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5421
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: emphatic I foregrounding relational commitment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1102-001 \u2014 seeking: Relational/Social"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5430
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: earnest yearning seeking toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1103-001 \u2014 seeking: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5420
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: inner decision to attempt action.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1104-001 \u2014 seeking: Volitional/Will"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5418
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: inner source disclosing origin of identity and action.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1105-001 \u2014 seeking: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5419
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: transformation through divine resurrection power.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1105-002 \u2014 seeking: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5623
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: trust and conviction directed toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1194-001 \u2014 trust: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5629
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: trust as stable disposition of reliance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1195-001 \u2014 trust: Character/Disposition"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5626
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: security as stable inner relational posture.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1196-001 \u2014 trust: Character/Disposition"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5627
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divinely granted covenantal security.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1196-002 \u2014 trust: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5628
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition: security from inner integrity and wise living.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1196-003 \u2014 trust: Character/Disposition"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5624
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: confident relational trust toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4031-001 \u2014 trust: Character/Disposition"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5625
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: confidence as inner disposition of assurance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4031-002 \u2014 trust: Character/Disposition"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5633
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: proper inner reliance on God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4102-001 \u2014 trust: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5634
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: misplaced trust \u2014 moral/spiritual failure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4102-002 \u2014 trust: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5630
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine support as ground of confidence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4104-001 \u2014 trust: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5631
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human: divine support as ground of confidence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4105-001 \u2014 trust: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5632
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: costly trust in God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "4160-001 \u2014 trust: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5847
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: worship as prostration \u2014 complete inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1248-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5848
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: idolatrous prostration.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1248-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5849
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Non-standard Somatic/Embodied corrected to Relational/Social: social prostration as relational deference.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1248-003 \u2014 worship: Relational/Social"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5826
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: genuine worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1249-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5827
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: idolatrous worship misdirected.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1249-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5828
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Non-standard Somatic/Embodied corrected to Relational/Social: social prostration.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1249-003 \u2014 worship: Relational/Social"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5833
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: worship-prostration in response to revelation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1250-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5834
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: faithful refusal of coerced false worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1250-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5821
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: worship/service as inner devotional orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1251-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5822
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: service to idols \u2014 misplaced inner devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1251-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5823
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: priestly/liturgical worship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1251-003 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5835
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: wholehearted devotion to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1252-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5836
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: service of idols \u2014 misdirected.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1252-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5820
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: worship as divinely oriented inner service.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1253-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5852
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: priestly ministry as devoted vocation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1255-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5853
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: personal attendance as relational devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1255-002 \u2014 worship: Relational/Social"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5817
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: piety as inner orientation toward divine.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1256-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5825
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: spiritual worship from inner person.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1257-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5818
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: religion/worship as organised inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1258-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5824
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: ministry as sacred service.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1259-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5851
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: existential peril \u2014 trapped, facing annihilation. Note: QA-EXTERNALISED.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6706-001 \u2014 worship: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5850
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: moral self-entrapment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6707-001 \u2014 worship: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5819
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: moral character type hostile to the holy.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6708-001 \u2014 worship: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5829
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: true worshiper defined by inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6709-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5832
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: prostration misdirected to idols.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6711-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5831
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: deliberate inner intention.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6713-001 \u2014 worship: Volitional/Will"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5837
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: commanded inner devotion to God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6715-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5838
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward: Levitical service as enacted vocation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6715-002 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5839
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: labour as expression of inner wisdom.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6716-001 \u2014 worship: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5840
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG confirmed: burden of covenantal service.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6717-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5844
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: temple ministry.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6719-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5845
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: work as moral vocation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6720-001 \u2014 worship: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5841
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: purposeful action \u2014 God's acts and Daniel's prayer.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6721-001 \u2014 worship: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5843
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Affective/Emotional: service as inner experience \u2014 groaning vs stirred heart.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6722-001 \u2014 worship: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5846
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Capacity: slavery as inner condition of bondage.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6723-001 \u2014 worship: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5830
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: works subject to divine scrutiny.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6725-001 \u2014 worship: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5842
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience: inner character in acts under divine oversight.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6726-001 \u2014 worship: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6519
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: urgent humble pleading before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2314-001 \u2014 pray: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6520
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK confirmed: prayer as deliberate inner orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2381-001 \u2014 pray: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-59-001",
+        "registry_id": 59,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The faith registry contains two analytically distinct inner-being poles: faith/faithfulness as inner orientation toward God (trust, reliance, integrity), and unfaithfulness/treachery as the inner act of betrayal (maal, bagad, bogedet). Session B should treat these as mirror-image inner-being categories \u2014 what it means for the inner person to be faithful vs faithless.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-59-001"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-59-002",
+        "registry_id": 59,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "G4102G pistis (faith) [860-001] and G4100 pisteu\u014d (believing) [866-001] represent the noun form (faith as disposition) and verb form (believing as act) of the same inner-being phenomenon. Session B must analyse these together to characterise how Scripture frames trust-reliance as both a stable disposition and an active inner act.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-59-002"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-94-001",
+        "registry_id": 94,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "[5696-001] names the Spirit's intercession within the person in wordless groanings \u2014 the intersection of the Spirit's inner work and the human inner-being in weakness. Session B should examine this group in relation to the prayer vocabulary in Reg 122, as the Spirit's intercession frames what human prayer is when language fails.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-94-001"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-121-001",
+        "registry_id": 121,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The doxa/glory sub-cluster ([1047-001] through [1047-004]) in Reg 121 shows glory operating as: (1) supreme inner orientation target, (2) transforming agent through beholding, (3) doxological purpose, (4) eschatological hope. Session B should analyse this fourfold glory pattern as a significant inner-being framework within the praise domain.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-121-001"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-122-001",
+        "registry_id": 122,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The prayer registry shows a nearly uniform Spiritual/God-ward dimension profile. Session B should examine what distinguishes prayer from other Spiritual/God-ward orientations (praise, worship, seeking, faith) \u2014 what is specifically constitutive of prayer as an inner act: the bringing of the will and need before God.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-122-001"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-140-001",
+        "registry_id": 140,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The seeking registry contains seeking vocabulary (darash, shachar) that is among the most intense inner-being orientation language in Scripture \u2014 the soul yearning for God. Session B should examine seeking as a specific form of Spiritual/God-ward orientation distinct from faith (trust-reliance) and worship (devotional service) \u2014 seeking names the active inner pursuit of encounter with God.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-140-001"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-163-001",
+        "registry_id": 163,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The trust registry shows Character/Disposition as the dominant dimension \u2014 trust as a stable inner posture of reliance rather than primarily an act. Session B should examine the relationship between trust-as-posture (Character/Disposition) and faith-as-act (Volitional/Will in faith registry) \u2014 two complementary ways Scripture names the inner orientation toward God.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-163-001"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-176-001",
+        "registry_id": 176,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The worship registry contains three distinct sub-clusters worth separate Session B attention: (1) proskune\u014d/shachah \u2014 prostration as the physical-inner act of submission/devotion; (2) avodah/latreia \u2014 service/ministry as vocation; (3) non-worship XREF vocabulary (pit, dog, work, bondage). Session B should focus primarily on (1) and (2) as the core worship inner-being domain.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 DIM-176-001"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 59,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-59-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 163,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Reg 59 (faith) and Reg 163 (trust) share the same inner-being territory \u2014 both name the inner disposition of reliance on God. Session D must examine whether these two registries describe the same phenomenon, overlapping phenomena, or genuinely distinct inner-being categories: faith as conviction-oriented; trust as security-oriented.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-59-SD001"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 94,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-94-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 122,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 94 (intercession), Reg 122 (prayer), and Reg 212 (pray) cover closely related inner-being territory. Session D should assess whether these three registries should be treated as a unified prayer domain or whether intercession is analytically distinct enough to sustain its own analysis.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-94-SD001"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 121,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-121-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 176,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 121 (praise) and Reg 176 (worship) both contain avodah/service/devotion vocabulary and multiple overlapping terms. Session D should assess whether praise and worship are analytically distinct enough to sustain separate Session B analyses, or whether a joint analysis is more appropriate.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-121-SD001"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 138,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-138-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 138 (reverence) has zero verse context groups \u2014 no inner-being verse evidence exists for this domain. The fear-of-God vocabulary (yare) may cover this territory in other registries. Session D should assess whether a Phase 2 research pass is needed, and whether any existing registry (fear, seeking, worship) adequately covers reverence as an inner-being category.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-138-SD001"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 176,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-176-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Two groups in Reg 176 ([1248-003] and [1249-003]) carry the non-standard automated label Somatic/Embodied. These have been corrected to Relational/Social (standard dimension). Session D should decide whether Somatic/Embodied warrants formal introduction as a programme dimension to track embodied inner-being expressions, or whether Relational/Social remains the appropriate label.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 DIM-176-SD001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 177,
+    "dimension_updates": 164,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 8,
+    "session_d_pointers_inserted": 5,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

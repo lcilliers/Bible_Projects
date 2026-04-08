@@ -1,0 +1,6630 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-VCB027-VERSECONTEXT-V1",
+    "batch_id": "VCB-027",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-VerseContext-Instruction-v2.4-20260403",
+    "session_b_status": null,
+    "description": "Verse context classification \u2014 batch VCB-027, 30 terms, 380 verses, Reg 199 (dominion)"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1358,
+        "group_code": "1358-001",
+        "context_description": "The kingdom as the sphere entered through inner transformation \u2014 repentance, humility, righteousness as entry conditions",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0932: The kingdom as the sphere entered through inner transformation \u2014 repentance, humility, righteousness as entry conditions"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1358,
+        "group_code": "1358-002",
+        "context_description": "The kingdom as the supreme object of desire, seeking, and prayer \u2014 the will oriented toward the kingdom",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0932: The kingdom as the supreme object of desire, seeking, and prayer \u2014 the will oriented toward the kingdom"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1358,
+        "group_code": "1358-003",
+        "context_description": "The kingdom as the inheritance conditioned on moral character \u2014 those who will or will not inherit",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0932: The kingdom as the inheritance conditioned on moral character \u2014 those who will or will not inherit"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1358,
+        "group_code": "1358-004",
+        "context_description": "The kingdom as the identity, belonging, and lived reality of the redeemed",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0932: The kingdom as the identity, belonging, and lived reality of the redeemed"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1358,
+        "group_code": "1358-005",
+        "context_description": "The kingdom as the object of hope that orients the person toward the eschatological future",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0932: The kingdom as the object of hope that orients the person toward the eschatological future"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87908,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87908 \u2014 anchor, group 1358-001: The kingdom as the sphere entered through inner transformati"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87937,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87937 \u2014 anchor, group 1358-001: The kingdom as the sphere entered through inner transformati"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87961,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87961 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87938,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87938 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87954,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87954 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87955,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87955 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87960,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87960 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87964,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87964 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87945,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87945 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87948,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87948 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87940,
+        "mti_term_id": 1358,
+        "group_id": "1358-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87940 \u2014 related, group 1358-001"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87963,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87963 \u2014 anchor, group 1358-002: The kingdom as the supreme object of desire, seeking, and pr"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87962,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87962 \u2014 anchor, group 1358-002: The kingdom as the supreme object of desire, seeking, and pr"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87929,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87929 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87930,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87930 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87917,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87917 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87939,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87939 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87935,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87935 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87944,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87944 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87951,
+        "mti_term_id": 1358,
+        "group_id": "1358-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87951 \u2014 related, group 1358-002"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54372,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54372 \u2014 anchor, group 1358-003: The kingdom as the inheritance conditioned on moral characte"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54371,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54371 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54375,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54375 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54376,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54376 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87958,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87958 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87959,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87959 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87941,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87941 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87942,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87942 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87927,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87927 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87928,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87928 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87946,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87946 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87952,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87952 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87966,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87966 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87965,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87965 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87907,
+        "mti_term_id": 1358,
+        "group_id": "1358-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87907 \u2014 related, group 1358-003"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54380,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54380 \u2014 anchor, group 1358-004: The kingdom as the identity, belonging, and lived reality of"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54373,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54373 \u2014 anchor, group 1358-004: The kingdom as the identity, belonging, and lived reality of"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54389,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54389 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54388,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54388 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54381,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54381 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87926,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87926 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54369,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54369 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87903,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87903 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87902,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87902 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87904,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "dual-context verse",
+        "delete_flagged": 0
+      },
+      "description": "vid=87904 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54374,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54374 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54379,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "dual-context verse",
+        "delete_flagged": 0
+      },
+      "description": "vid=54379 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54370,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54370 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87916,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87916 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87932,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87932 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87920,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87920 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87910,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87910 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87921,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87921 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87922,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87922 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87911,
+        "mti_term_id": 1358,
+        "group_id": "1358-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87911 \u2014 related, group 1358-004"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87906,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87906 \u2014 anchor, group 1358-005: The kingdom as the object of hope that orients the person to"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87914,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87914 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87915,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87915 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87934,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87934 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87953,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87953 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87949,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87949 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87956,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87956 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87967,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87967 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54379,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "dual-context verse",
+        "delete_flagged": 0
+      },
+      "description": "vid=54379 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87904,
+        "mti_term_id": 1358,
+        "group_id": "1358-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "dual-context verse",
+        "delete_flagged": 0
+      },
+      "description": "vid=87904 \u2014 related, group 1358-005"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54368,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54368 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54377,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54377 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54378,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54378 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54382,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54382 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54383,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54383 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54384,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54384 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54385,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54385 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54386,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54386 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54387,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54387 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87905,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87905 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87909,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87909 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87912,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87912 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87913,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87913 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87918,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87918 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87919,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87919 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87923,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87923 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87924,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87924 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87925,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87925 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87931,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87931 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87933,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87933 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87936,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87936 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87943,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87943 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87947,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87947 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87950,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87950 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87957,
+        "mti_term_id": 1358,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87957 \u2014 set aside, no inner-being engagement for G0932"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87993,
+        "mti_term_id": 2945,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87993 \u2014 set aside, no inner-being engagement for G0933"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2946,
+        "group_code": "2946-001",
+        "context_description": "Term names the royal-priestly identity bestowed on the people of God \u2014 their constituted dignity and calling before him",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0934: Term names the royal-priestly identity bestowed on the people of God \u2014 their constituted dignity and calling before him"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87994,
+        "mti_term_id": 2946,
+        "group_id": "2946-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87994 \u2014 anchor, group 2946-001: Term names the royal-priestly identity bestowed on the peopl"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2942,
+        "group_code": "2942-001",
+        "context_description": "Term names reigning as the domination of sin or grace over the inner life \u2014 the person as one who is ruled by competing powers",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0936: Term names reigning as the domination of sin or grace over the inner life \u2014 the person as one who is ruled by competing powers"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2942,
+        "group_code": "2942-002",
+        "context_description": "Term names reigning as the vocation and eschatological state of the faithful \u2014 those whose inner fidelity issues in co-reign with Christ",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0936: Term names reigning as the vocation and eschatological state of the faithful \u2014 those whose inner fidelity issues in co-reign with Christ"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2942,
+        "group_code": "2942-003",
+        "context_description": "Term names reigning as the authority the inner will either refuses or submits to \u2014 the disposition of rejection or acceptance of Christ's rule",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0936: Term names reigning as the authority the inner will either refuses or submits to \u2014 the disposition of rejection or acceptance of Christ's rule"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87985,
+        "mti_term_id": 2942,
+        "group_id": "2942-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87985 \u2014 anchor, group 2942-001: Term names reigning as the domination of sin or grace over t"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87983,
+        "mti_term_id": 2942,
+        "group_id": "2942-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87983 \u2014 anchor, group 2942-001: Term names reigning as the domination of sin or grace over t"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87984,
+        "mti_term_id": 2942,
+        "group_id": "2942-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87984 \u2014 related, group 2942-001"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87982,
+        "mti_term_id": 2942,
+        "group_id": "2942-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87982 \u2014 related, group 2942-001"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87978,
+        "mti_term_id": 2942,
+        "group_id": "2942-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87978 \u2014 anchor, group 2942-002: Term names reigning as the vocation and eschatological state"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87979,
+        "mti_term_id": 2942,
+        "group_id": "2942-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87979 \u2014 related, group 2942-002"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87980,
+        "mti_term_id": 2942,
+        "group_id": "2942-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87980 \u2014 related, group 2942-002"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87981,
+        "mti_term_id": 2942,
+        "group_id": "2942-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87981 \u2014 related, group 2942-002"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87972,
+        "mti_term_id": 2942,
+        "group_id": "2942-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87972 \u2014 anchor, group 2942-003: Term names reigning as the authority the inner will either r"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87973,
+        "mti_term_id": 2942,
+        "group_id": "2942-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87973 \u2014 related, group 2942-003"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87969,
+        "mti_term_id": 2942,
+        "group_id": "2942-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87969 \u2014 related, group 2942-003"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87968,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87968 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87970,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87970 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87971,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87971 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87974,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87974 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87975,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87975 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87976,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87976 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87977,
+        "mti_term_id": 2942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87977 \u2014 set aside, no inner-being engagement for G0936"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2943,
+        "group_code": "2943-001",
+        "context_description": "Term qualifies the law of love as royal \u2014 the supremacy of love as the governing principle of inner conduct toward others",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0937: Term qualifies the law of love as royal \u2014 the supremacy of love as the governing principle of inner conduct toward others"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87988,
+        "mti_term_id": 2943,
+        "group_id": "2943-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87988 \u2014 anchor, group 2943-001: Term qualifies the law of love as royal \u2014 the supremacy of l"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87986,
+        "mti_term_id": 2943,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87986 \u2014 set aside, no inner-being engagement for G0937"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87987,
+        "mti_term_id": 2943,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87987 \u2014 set aside, no inner-being engagement for G0937"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87989,
+        "mti_term_id": 2943,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87989 \u2014 set aside, no inner-being engagement for G0937"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87990,
+        "mti_term_id": 2943,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87990 \u2014 set aside, no inner-being engagement for G0937"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2947,
+        "group_code": "2947-001",
+        "context_description": "Term names the proud inner self-designation of arrogance \u2014 claiming queenly immunity from loss and mourning",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G0938G: Term names the proud inner self-designation of arrogance \u2014 claiming queenly immunity from loss and mourning"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87995,
+        "mti_term_id": 2947,
+        "group_id": "2947-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87995 \u2014 anchor, group 2947-001: Term names the proud inner self-designation of arrogance \u2014 c"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2992,
+        "group_code": "2992-001",
+        "context_description": "Term names the domineering exercise of authority over others \u2014 the disposition of control that stands opposed to servant leadership",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G2634: Term names the domineering exercise of authority over others \u2014 the disposition of control that stands opposed to servant leadership"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88930,
+        "mti_term_id": 2992,
+        "group_id": "2992-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88930 \u2014 anchor, group 2992-001: Term names the domineering exercise of authority over others"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88928,
+        "mti_term_id": 2992,
+        "group_id": "2992-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88928 \u2014 anchor, group 2992-001: Term names the domineering exercise of authority over others"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88931,
+        "mti_term_id": 2992,
+        "group_id": "2992-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88931 \u2014 related, group 2992-001"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88929,
+        "mti_term_id": 2992,
+        "group_id": "2992-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88929 \u2014 related, group 2992-001"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1357,
+        "group_code": "1357-001",
+        "context_description": "Term names dominating lordship as a power \u2014 sin, death, or law exercising control over the inner life of the person",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G2961: Term names dominating lordship as a power \u2014 sin, death, or law exercising control over the inner life of the person"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1357,
+        "group_code": "1357-002",
+        "context_description": "Term names the domineering lordship over others' faith and freedom \u2014 the disposition of authority that overpowers rather than serves",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G2961: Term names the domineering lordship over others' faith and freedom \u2014 the disposition of authority that overpowers rather than serves"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54365,
+        "mti_term_id": 1357,
+        "group_id": "1357-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54365 \u2014 anchor, group 1357-001: Term names dominating lordship as a power \u2014 sin, death, or l"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54367,
+        "mti_term_id": 1357,
+        "group_id": "1357-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54367 \u2014 anchor, group 1357-001: Term names dominating lordship as a power \u2014 sin, death, or l"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54366,
+        "mti_term_id": 1357,
+        "group_id": "1357-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54366 \u2014 related, group 1357-001"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54364,
+        "mti_term_id": 1357,
+        "group_id": "1357-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54364 \u2014 related, group 1357-001"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54363,
+        "mti_term_id": 1357,
+        "group_id": "1357-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54363 \u2014 anchor, group 1357-002: Term names the domineering lordship over others' faith and f"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88927,
+        "mti_term_id": 1357,
+        "group_id": "1357-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88927 \u2014 related, group 1357-002"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88926,
+        "mti_term_id": 1357,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88926 \u2014 set aside, no inner-being engagement for G2961"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2944,
+        "group_code": "2944-001",
+        "context_description": "Term names co-reigning with Christ as the eschatological outcome of inner faithfulness and endurance",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for G4821: Term names co-reigning with Christ as the eschatological outcome of inner faithfulness and endurance"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87992,
+        "mti_term_id": 2944,
+        "group_id": "2944-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87992 \u2014 anchor, group 2944-001: Term names co-reigning with Christ as the eschatological out"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 87991,
+        "mti_term_id": 2944,
+        "group_id": "2944-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=87991 \u2014 related, group 2944-001"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2979,
+        "group_code": "2979-001",
+        "context_description": "Term names the rule of other lords over the people \u2014 the domination experienced by those whose inner allegiance is drawn away from God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1166H: Term names the rule of other lords over the people \u2014 the domination experienced by those whose inner allegiance is drawn away from God"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88758,
+        "mti_term_id": 2979,
+        "group_id": "2979-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88758 \u2014 anchor, group 2979-001: Term names the rule of other lords over the people \u2014 the dom"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88757,
+        "mti_term_id": 2979,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88757 \u2014 set aside, no inner-being engagement for H1166H"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2980,
+        "group_code": "2980-001",
+        "context_description": "Term names God as husband of his people \u2014 the defining relational bond expressing belonging, delight, and faithful claim",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1166I: Term names God as husband of his people \u2014 the defining relational bond expressing belonging, delight, and faithful claim"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2980,
+        "group_code": "2980-002",
+        "context_description": "Term names the marriage bond as the expression of spiritual allegiance \u2014 its faithful or unfaithful orientation toward God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1166I: Term names the marriage bond as the expression of spiritual allegiance \u2014 its faithful or unfaithful orientation toward God"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88763,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88763 \u2014 anchor, group 2980-001: Term names God as husband of his people \u2014 the defining relat"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88764,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88764 \u2014 anchor, group 2980-001: Term names God as husband of his people \u2014 the defining relat"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88762,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88762 \u2014 related, group 2980-001"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88765,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88765 \u2014 related, group 2980-001"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88766,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88766 \u2014 related, group 2980-001"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88767,
+        "mti_term_id": 2980,
+        "group_id": "2980-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88767 \u2014 related, group 2980-001"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88768,
+        "mti_term_id": 2980,
+        "group_id": "2980-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88768 \u2014 anchor, group 2980-002: Term names the marriage bond as the expression of spiritual "
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88759,
+        "mti_term_id": 2980,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88759 \u2014 set aside, no inner-being engagement for H1166I"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88760,
+        "mti_term_id": 2980,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88760 \u2014 set aside, no inner-being engagement for H1166I"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88761,
+        "mti_term_id": 2980,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88761 \u2014 set aside, no inner-being engagement for H1166I"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88769,
+        "mti_term_id": 2980,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88769 \u2014 set aside, no inner-being engagement for H1166I"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2981,
+        "group_code": "2981-001",
+        "context_description": "Term names the owner's relationship to possessions \u2014 the inner futility and self-harm of holding wealth as master over it",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1167G: Term names the owner's relationship to possessions \u2014 the inner futility and self-harm of holding wealth as master over it"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88781,
+        "mti_term_id": 2981,
+        "group_id": "2981-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88781 \u2014 anchor, group 2981-001: Term names the owner's relationship to possessions \u2014 the inn"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88770,
+        "mti_term_id": 2981,
+        "group_id": "2981-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88770 \u2014 related, group 2981-001"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88771,
+        "mti_term_id": 2981,
+        "group_id": "2981-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88771 \u2014 related, group 2981-001"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88800,
+        "mti_term_id": 2981,
+        "group_id": "2981-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88800 \u2014 related, group 2981-001"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88783,
+        "mti_term_id": 2981,
+        "group_id": "2981-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88783 \u2014 related, group 2981-001"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88772,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88772 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88773,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88773 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88774,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88774 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88775,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88775 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88776,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88776 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88777,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88777 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88778,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88778 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88779,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88779 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88780,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88780 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88782,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88782 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88784,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88784 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88785,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88785 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88786,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88786 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88787,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88787 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88788,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88788 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88789,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88789 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88790,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88790 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88791,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88791 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88792,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88792 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88793,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88793 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88794,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88794 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88795,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88795 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88796,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88796 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88797,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88797 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88798,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88798 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88799,
+        "mti_term_id": 2981,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88799 \u2014 set aside, no inner-being engagement for H1167G"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2982,
+        "group_code": "2982-001",
+        "context_description": "Term names the marital bond as the arena of inner honour, trust, and grief \u2014 the husband-relationship as constitutive of inner dignity, faithfulness, and loss",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1167H: Term names the marital bond as the arena of inner honour, trust, and grief \u2014 the husband-relationship as constitutive of inner dignity, faithfulness, and loss"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88811,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88811 \u2014 anchor, group 2982-001: Term names the marital bond as the arena of inner honour, tr"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88812,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88812 \u2014 anchor, group 2982-001: Term names the marital bond as the arena of inner honour, tr"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88805,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88805 \u2014 related, group 2982-001"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88806,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88806 \u2014 related, group 2982-001"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88801,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88801 \u2014 related, group 2982-001"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88809,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88809 \u2014 related, group 2982-001"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88814,
+        "mti_term_id": 2982,
+        "group_id": "2982-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88814 \u2014 related, group 2982-001"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88802,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88802 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88803,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88803 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88804,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88804 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88807,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88807 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88808,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88808 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88810,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88810 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88813,
+        "mti_term_id": 2982,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88813 \u2014 set aside, no inner-being engagement for H1167H"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2983,
+        "group_code": "2983-001",
+        "context_description": "Term names a person as \"master\" of an inner quality or capacity \u2014 defined by anger, appetite, or ability as their characteristic inner possession",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1167I: Term names a person as \"master\" of an inner quality or capacity \u2014 defined by anger, appetite, or ability as their characteristic inner possession"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88824,
+        "mti_term_id": 2983,
+        "group_id": "2983-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88824 \u2014 anchor, group 2983-001: Term names a person as \"master\" of an inner quality or capac"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88825,
+        "mti_term_id": 2983,
+        "group_id": "2983-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88825 \u2014 anchor, group 2983-001: Term names a person as \"master\" of an inner quality or capac"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88826,
+        "mti_term_id": 2983,
+        "group_id": "2983-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88826 \u2014 related, group 2983-001"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88827,
+        "mti_term_id": 2983,
+        "group_id": "2983-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88827 \u2014 related, group 2983-001"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88818,
+        "mti_term_id": 2983,
+        "group_id": "2983-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88818 \u2014 related, group 2983-001"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88815,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88815 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88816,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88816 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88817,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88817 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88819,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88819 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88820,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88820 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88821,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88821 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88822,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88822 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88823,
+        "mti_term_id": 2983,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88823 \u2014 set aside, no inner-being engagement for H1167I"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2985,
+        "group_code": "2985-001",
+        "context_description": "Term names a person as the possessor of an inner quality or capacity \u2014 wisdom, wickedness, a sworn commitment \u2014 that defines and shapes their inner life",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1167J: Term names a person as the possessor of an inner quality or capacity \u2014 wisdom, wickedness, a sworn commitment \u2014 that defines and shapes their inner life"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88844,
+        "mti_term_id": 2985,
+        "group_id": "2985-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88844 \u2014 anchor, group 2985-001: Term names a person as the possessor of an inner quality or "
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88848,
+        "mti_term_id": 2985,
+        "group_id": "2985-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88848 \u2014 anchor, group 2985-001: Term names a person as the possessor of an inner quality or "
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88845,
+        "mti_term_id": 2985,
+        "group_id": "2985-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88845 \u2014 related, group 2985-001"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88847,
+        "mti_term_id": 2985,
+        "group_id": "2985-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88847 \u2014 related, group 2985-001"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88849,
+        "mti_term_id": 2985,
+        "group_id": "2985-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88849 \u2014 related, group 2985-001"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88841,
+        "mti_term_id": 2985,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88841 \u2014 set aside, no inner-being engagement for H1167J"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88842,
+        "mti_term_id": 2985,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88842 \u2014 set aside, no inner-being engagement for H1167J"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88843,
+        "mti_term_id": 2985,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88843 \u2014 set aside, no inner-being engagement for H1167J"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88846,
+        "mti_term_id": 2985,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88846 \u2014 set aside, no inner-being engagement for H1167J"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2984,
+        "group_code": "2984-001",
+        "context_description": "Term names a person as the master/possessor of a defining inner quality \u2014 vision, wrath, malice, or destruction \u2014 as their characteristic disposition",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1167K: Term names a person as the master/possessor of a defining inner quality \u2014 vision, wrath, malice, or destruction \u2014 as their characteristic disposition"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88832,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88832 \u2014 anchor, group 2984-001: Term names a person as the master/possessor of a defining in"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88840,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88840 \u2014 anchor, group 2984-001: Term names a person as the master/possessor of a defining in"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88836,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88836 \u2014 related, group 2984-001"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88839,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88839 \u2014 related, group 2984-001"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88830,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88830 \u2014 related, group 2984-001"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88831,
+        "mti_term_id": 2984,
+        "group_id": "2984-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88831 \u2014 related, group 2984-001"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88828,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88828 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88829,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88829 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88833,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88833 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88834,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88834 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88835,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88835 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88837,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88837 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88838,
+        "mti_term_id": 2984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88838 \u2014 set aside, no inner-being engagement for H1167K"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2988,
+        "group_code": "2988-001",
+        "context_description": "Term names Baal-worship as the outward expression of inward spiritual allegiance misoriented away from God \u2014 serving, following, forgetting, and whoring after false gods",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1168I: Term names Baal-worship as the outward expression of inward spiritual allegiance misoriented away from God \u2014 serving, following, forgetting, and whoring after false gods"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88862,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88862 \u2014 anchor, group 2988-001: Term names Baal-worship as the outward expression of inward "
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88909,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88909 \u2014 anchor, group 2988-001: Term names Baal-worship as the outward expression of inward "
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88867,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88867 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88860,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88860 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88868,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88868 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88870,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88870 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88869,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88869 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88871,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88871 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88893,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88893 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88895,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88895 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88896,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88896 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88897,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88897 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88894,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88894 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88902,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88902 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88905,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88905 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88910,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88910 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88912,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88912 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88913,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88913 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88914,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88914 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88920,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88920 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88911,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88911 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88858,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88858 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88899,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88899 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88900,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88900 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88901,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88901 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88903,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88903 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88904,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88904 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88908,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88908 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88918,
+        "mti_term_id": 2988,
+        "group_id": "2988-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88918 \u2014 related, group 2988-001"
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88859,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88859 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88861,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88861 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88863,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88863 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88864,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88864 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88865,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88865 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88866,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88866 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88872,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88872 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88873,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88873 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88874,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88874 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88875,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88875 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88876,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88876 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88877,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88877 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88878,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88878 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88879,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88879 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88880,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88880 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-291",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88881,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88881 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-292",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88882,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88882 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-293",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88883,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88883 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-294",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88884,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88884 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-295",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88885,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88885 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-296",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88886,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88886 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-297",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88887,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88887 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-298",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88888,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88888 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-299",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88889,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88889 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-300",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88890,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88890 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-301",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88891,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88891 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-302",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88892,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88892 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-303",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88898,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88898 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-304",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88906,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88906 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-305",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88907,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88907 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-306",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88915,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88915 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-307",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88916,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88916 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-308",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88917,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88917 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-309",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88919,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88919 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-310",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88921,
+        "mti_term_id": 2988,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88921 \u2014 set aside, no inner-being engagement for H1168I"
+    },
+    {
+      "op_id": "OP-311",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2987,
+        "group_code": "2987-001",
+        "context_description": "Term names a person as the possessor of spiritual power \u2014 a medium or sorceress defined by her mastery of occult capacities",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H1172: Term names a person as the possessor of spiritual power \u2014 a medium or sorceress defined by her mastery of occult capacities"
+    },
+    {
+      "op_id": "OP-312",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88856,
+        "mti_term_id": 2987,
+        "group_id": "2987-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88856 \u2014 anchor, group 2987-001: Term names a person as the possessor of spiritual power \u2014 a "
+    },
+    {
+      "op_id": "OP-313",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88857,
+        "mti_term_id": 2987,
+        "group_id": "2987-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88857 \u2014 related, group 2987-001"
+    },
+    {
+      "op_id": "OP-314",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88855,
+        "mti_term_id": 2987,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88855 \u2014 set aside, no inner-being engagement for H1172"
+    },
+    {
+      "op_id": "OP-315",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2960,
+        "group_code": "2960-001",
+        "context_description": "Term names the divinely assigned portion as the condition imposed on human pride \u2014 what God apportions to the person who exalts himself",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H2508: Term names the divinely assigned portion as the condition imposed on human pride \u2014 what God apportions to the person who exalts himself"
+    },
+    {
+      "op_id": "OP-316",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88547,
+        "mti_term_id": 2960,
+        "group_id": "2960-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88547 \u2014 anchor, group 2960-001: Term names the divinely assigned portion as the condition im"
+    },
+    {
+      "op_id": "OP-317",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88548,
+        "mti_term_id": 2960,
+        "group_id": "2960-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88548 \u2014 related, group 2960-001"
+    },
+    {
+      "op_id": "OP-318",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88549,
+        "mti_term_id": 2960,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88549 \u2014 set aside, no inner-being engagement for H2508"
+    },
+    {
+      "op_id": "OP-319",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2954,
+        "group_code": "2954-001",
+        "context_description": "Term names the queen as one who seeks wisdom with deep inner desire and receptivity \u2014 coming with questions, disclosing her heart, and responding with generous wonder",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4436G: Term names the queen as one who seeks wisdom with deep inner desire and receptivity \u2014 coming with questions, disclosing her heart, and responding with generous wonder"
+    },
+    {
+      "op_id": "OP-320",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88358,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88358 \u2014 anchor, group 2954-001: Term names the queen as one who seeks wisdom with deep inner"
+    },
+    {
+      "op_id": "OP-321",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88354,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88354 \u2014 anchor, group 2954-001: Term names the queen as one who seeks wisdom with deep inner"
+    },
+    {
+      "op_id": "OP-322",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88355,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88355 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-323",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88356,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88356 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-324",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88357,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88357 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-325",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88359,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88359 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-326",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88360,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88360 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-327",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88361,
+        "mti_term_id": 2954,
+        "group_id": "2954-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88361 \u2014 related, group 2954-001"
+    },
+    {
+      "op_id": "OP-328",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2951,
+        "group_code": "2951-001",
+        "context_description": "Term names the queen as one whose inner will, courage, and intercession move history \u2014 inner resistance, love for her people, and courageous self-offering",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4436H: Term names the queen as one whose inner will, courage, and intercession move history \u2014 inner resistance, love for her people, and courageous self-offering"
+    },
+    {
+      "op_id": "OP-329",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2951,
+        "group_code": "2951-002",
+        "context_description": "Term names the queen as the one whose incomparable worth evokes praise \u2014 even rivals are moved to honour what they recognise",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4436H: Term names the queen as the one whose incomparable worth evokes praise \u2014 even rivals are moved to honour what they recognise"
+    },
+    {
+      "op_id": "OP-330",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88310,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88310 \u2014 anchor, group 2951-001: Term names the queen as one whose inner will, courage, and i"
+    },
+    {
+      "op_id": "OP-331",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88297,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88297 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-332",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88300,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88300 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-333",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88301,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88301 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-334",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88304,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88304 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-335",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88306,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88306 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-336",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88312,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88312 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-337",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88313,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88313 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-338",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88315,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88315 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-339",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88319,
+        "mti_term_id": 2951,
+        "group_id": "2951-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88319 \u2014 related, group 2951-001"
+    },
+    {
+      "op_id": "OP-340",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88321,
+        "mti_term_id": 2951,
+        "group_id": "2951-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88321 \u2014 anchor, group 2951-002: Term names the queen as the one whose incomparable worth evo"
+    },
+    {
+      "op_id": "OP-341",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88296,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88296 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-342",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88298,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88298 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-343",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88299,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88299 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-344",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88302,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88302 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-345",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88303,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88303 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-346",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88305,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88305 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-347",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88307,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88307 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-348",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88308,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88308 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-349",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88309,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88309 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-350",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88311,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88311 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-351",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88314,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88314 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-352",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88316,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88316 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-353",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88317,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88317 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-354",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88318,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88318 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-355",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88320,
+        "mti_term_id": 2951,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88320 \u2014 set aside, no inner-being engagement for H4436H"
+    },
+    {
+      "op_id": "OP-356",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2953,
+        "group_code": "2953-001",
+        "context_description": "Term names the kingdom as what is given or withdrawn in response to the moral character of its holder",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4468: Term names the kingdom as what is given or withdrawn in response to the moral character of its holder"
+    },
+    {
+      "op_id": "OP-357",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88345,
+        "mti_term_id": 2953,
+        "group_id": "2953-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88345 \u2014 anchor, group 2953-001: Term names the kingdom as what is given or withdrawn in resp"
+    },
+    {
+      "op_id": "OP-358",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88346,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88346 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-359",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88347,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88347 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-360",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88348,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88348 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-361",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88349,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88349 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-362",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88350,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88350 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-363",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88351,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88351 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-364",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88352,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88352 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-365",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88353,
+        "mti_term_id": 2953,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88353 \u2014 set aside, no inner-being engagement for H4468"
+    },
+    {
+      "op_id": "OP-366",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2974,
+        "group_code": "2974-001",
+        "context_description": "Term names the rule of cosmic order as beyond human establishment \u2014 evoking the inner posture of humility before divine authority",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4896: Term names the rule of cosmic order as beyond human establishment \u2014 evoking the inner posture of humility before divine authority"
+    },
+    {
+      "op_id": "OP-367",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88726,
+        "mti_term_id": 2974,
+        "group_id": "2974-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88726 \u2014 anchor, group 2974-001: Term names the rule of cosmic order as beyond human establis"
+    },
+    {
+      "op_id": "OP-368",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2908,
+        "group_code": "2908-001",
+        "context_description": "Term names governance as the outward expression of the ruler's inner character \u2014 wisdom, justice, righteousness, and peace embodied in dominion",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H4951: Term names governance as the outward expression of the ruler's inner character \u2014 wisdom, justice, righteousness, and peace embodied in dominion"
+    },
+    {
+      "op_id": "OP-369",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 86658,
+        "mti_term_id": 2908,
+        "group_id": "2908-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=86658 \u2014 anchor, group 2908-001: Term names governance as the outward expression of the ruler"
+    },
+    {
+      "op_id": "OP-370",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 86659,
+        "mti_term_id": 2908,
+        "group_id": "2908-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=86659 \u2014 related, group 2908-001"
+    },
+    {
+      "op_id": "OP-371",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2993,
+        "group_code": "2993-001",
+        "context_description": "Term names inner restlessness \u2014 the driven, unsettled condition of one in distress, or the restless spirit that refuses subjection or return to God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7300: Term names inner restlessness \u2014 the driven, unsettled condition of one in distress, or the restless spirit that refuses subjection or return to God"
+    },
+    {
+      "op_id": "OP-372",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88935,
+        "mti_term_id": 2993,
+        "group_id": "2993-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88935 \u2014 anchor, group 2993-001: Term names inner restlessness \u2014 the driven, unsettled condit"
+    },
+    {
+      "op_id": "OP-373",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88932,
+        "mti_term_id": 2993,
+        "group_id": "2993-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88932 \u2014 anchor, group 2993-001: Term names inner restlessness \u2014 the driven, unsettled condit"
+    },
+    {
+      "op_id": "OP-374",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88934,
+        "mti_term_id": 2993,
+        "group_id": "2993-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88934 \u2014 related, group 2993-001"
+    },
+    {
+      "op_id": "OP-375",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88933,
+        "mti_term_id": 2993,
+        "group_id": "2993-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88933 \u2014 related, group 2993-001"
+    },
+    {
+      "op_id": "OP-376",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2975,
+        "group_code": "2975-001",
+        "context_description": "Term names the official as the one required to address and shape the inner dispositions of those under authority \u2014 demanding righteousness, confronting fear, embodying moral integrity",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7860: Term names the official as the one required to address and shape the inner dispositions of those under authority \u2014 demanding righteousness, confronting fear, embodying moral integrity"
+    },
+    {
+      "op_id": "OP-377",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88736,
+        "mti_term_id": 2975,
+        "group_id": "2975-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88736 \u2014 anchor, group 2975-001: Term names the official as the one required to address and s"
+    },
+    {
+      "op_id": "OP-378",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88734,
+        "mti_term_id": 2975,
+        "group_id": "2975-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88734 \u2014 anchor, group 2975-001: Term names the official as the one required to address and s"
+    },
+    {
+      "op_id": "OP-379",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88730,
+        "mti_term_id": 2975,
+        "group_id": "2975-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88730 \u2014 related, group 2975-001"
+    },
+    {
+      "op_id": "OP-380",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88751,
+        "mti_term_id": 2975,
+        "group_id": "2975-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88751 \u2014 related, group 2975-001"
+    },
+    {
+      "op_id": "OP-381",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88727,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88727 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-382",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88728,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88728 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-383",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88729,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88729 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-384",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88731,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88731 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-385",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88732,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88732 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-386",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88733,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88733 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-387",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88735,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88735 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-388",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88737,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88737 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-389",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88738,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88738 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-390",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88739,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88739 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-391",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88740,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88740 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-392",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88741,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88741 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-393",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88742,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88742 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-394",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88743,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88743 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-395",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88744,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88744 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-396",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88745,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88745 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-397",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88746,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88746 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-398",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88747,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88747 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-399",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88748,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88748 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-400",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88749,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88749 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-401",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88750,
+        "mti_term_id": 2975,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88750 \u2014 set aside, no inner-being engagement for H7860"
+    },
+    {
+      "op_id": "OP-402",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2976,
+        "group_code": "2976-001",
+        "context_description": "Term names the gift/tribute brought to God as the expression of inner homage, reverence, and acknowledgment of his supremacy",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7862: Term names the gift/tribute brought to God as the expression of inner homage, reverence, and acknowledgment of his supremacy"
+    },
+    {
+      "op_id": "OP-403",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88754,
+        "mti_term_id": 2976,
+        "group_id": "2976-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88754 \u2014 anchor, group 2976-001: Term names the gift/tribute brought to God as the expression"
+    },
+    {
+      "op_id": "OP-404",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88752,
+        "mti_term_id": 2976,
+        "group_id": "2976-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88752 \u2014 related, group 2976-001"
+    },
+    {
+      "op_id": "OP-405",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88753,
+        "mti_term_id": 2976,
+        "group_id": "2976-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88753 \u2014 related, group 2976-001"
+    },
+    {
+      "op_id": "OP-406",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2978,
+        "group_code": "2978-001",
+        "context_description": "Term marks the point of convergence of the peoples' obedience and allegiance \u2014 the fulfilment of inner loyalty directed toward the one to whom dominion belongs",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7886: Term marks the point of convergence of the peoples' obedience and allegiance \u2014 the fulfilment of inner loyalty directed toward the one to whom dominion belongs"
+    },
+    {
+      "op_id": "OP-407",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 88756,
+        "mti_term_id": 2978,
+        "group_id": "2978-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=88756 \u2014 anchor, group 2978-001: Term marks the point of convergence of the peoples' obedienc"
+    },
+    {
+      "op_id": "OP-408",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1355,
+        "group_code": "1355-001",
+        "context_description": "Term names the everlasting dominion of God as the object that grounds inner praise, fear, and obedience \u2014 and human dominion as the precarious condition that reveals inner pride or humility",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7985: Term names the everlasting dominion of God as the object that grounds inner praise, fear, and obedience \u2014 and human dominion as the precarious condition that reveals inner pride or humility"
+    },
+    {
+      "op_id": "OP-409",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54308,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54308 \u2014 anchor, group 1355-001: Term names the everlasting dominion of God as the object tha"
+    },
+    {
+      "op_id": "OP-410",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54307,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54307 \u2014 anchor, group 1355-001: Term names the everlasting dominion of God as the object tha"
+    },
+    {
+      "op_id": "OP-411",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54306,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54306 \u2014 related, group 1355-001"
+    },
+    {
+      "op_id": "OP-412",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54309,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54309 \u2014 related, group 1355-001"
+    },
+    {
+      "op_id": "OP-413",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54311,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54311 \u2014 related, group 1355-001"
+    },
+    {
+      "op_id": "OP-414",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54313,
+        "mti_term_id": 1355,
+        "group_id": "1355-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54313 \u2014 related, group 1355-001"
+    },
+    {
+      "op_id": "OP-415",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54310,
+        "mti_term_id": 1355,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54310 \u2014 set aside, no inner-being engagement for H7985"
+    },
+    {
+      "op_id": "OP-416",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54312,
+        "mti_term_id": 1355,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54312 \u2014 set aside, no inner-being engagement for H7985"
+    },
+    {
+      "op_id": "OP-417",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54314,
+        "mti_term_id": 1355,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=54314 \u2014 set aside, no inner-being engagement for H7985"
+    },
+    {
+      "op_id": "OP-418",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2909,
+        "group_code": "2909-001",
+        "context_description": "Term names striving with God as the defining inner act \u2014 tenacious, costly engagement with the divine that transforms identity",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H8280: Term names striving with God as the defining inner act \u2014 tenacious, costly engagement with the divine that transforms identity"
+    },
+    {
+      "op_id": "OP-419",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 86660,
+        "mti_term_id": 2909,
+        "group_id": "2909-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=86660 \u2014 anchor, group 2909-001: Term names striving with God as the defining inner act \u2014 ten"
+    },
+    {
+      "op_id": "OP-420",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 86661,
+        "mti_term_id": 2909,
+        "group_id": "2909-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "vid=86661 \u2014 related, group 2909-001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 420,
+    "group_inserts": 38,
+    "group_updates": 0,
+    "verse_context_inserts": 382,
+    "verse_context_updates": 0,
+    "relevant_verses": 203,
+    "set_aside_verses": 179,
+    "anchor_verses": 54,
+    "dual_context_verses": 2,
+    "revisions_to_prior": 0
+  }
+}

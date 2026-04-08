@@ -1955,7 +1955,7 @@ def run_audit_word(
         try:
             print("\nA11  Writing full-word JSON export...")
             date_str    = datetime.now(timezone.utc).strftime("%Y%m%d")
-            out_dir     = os.path.join(_ROOT, "data", "exports")
+            out_dir     = os.path.join(_ROOT, "data", "exports", "STEP Extracts")
             os.makedirs(out_dir, exist_ok=True)
 
             export_data = _export_word(conn, registry_id)

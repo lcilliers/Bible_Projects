@@ -12,7 +12,7 @@ def p(s=''): lines.append(s)
 
 p(f'# Programme Status Report — {today}')
 p()
-p('> Schema v3.8.0 | VCB-001 through VCB-012 applied (+ VCB-006 diff + VCB-012 H2617A supplemental)')
+p('> Schema v3.8.0 | VCB-001 through VCB-021 applied | 81% Stage 1 complete')
 p()
 
 # 1. Overview
@@ -56,25 +56,12 @@ p('| Metric | Count |')
 p('|--------|-------|')
 p(f'| Registries Complete | **{vc_complete}** / 181 ({vc_complete/181*100:.1f}%) |')
 p(f'| Registries In Progress | {vc_progress} |')
-p(f'| Batches processed | 12 + 2 supplemental/differential |')
+p(f'| Batches processed | 21 + supplementals |')
 p(f'| verse_context_group records | {groups:,} |')
 p(f'| verse_context records | {vc_total:,} |')
 p(f'| --- Anchors | {anchors:,} |')
 p(f'| --- Related | {relevant - anchors:,} |')
 p(f'| --- Set aside | {set_aside:,} |')
-p()
-
-# Completed registries - compact list
-p('### 3.1 Completed Registries')
-p()
-completed = conn.execute('''
-    SELECT no, word FROM word_registry
-    WHERE verse_context_status = 'Complete' ORDER BY no
-''').fetchall()
-items = [f'{r["no"]}-{r["word"]}' for r in completed]
-for i in range(0, len(items), 4):
-    chunk = items[i:i+4]
-    p('  ' + '  |  '.join(f'{item:>20s}' for item in chunk))
 p()
 
 # Remaining
@@ -98,42 +85,29 @@ remaining_vr = conn.execute('''
     ) sub
 ''').fetchone()[0] or 0
 
-p('### 3.2 Remaining Work')
+p('### 3.1 Remaining Work')
 p()
 p('| Metric | Count |')
 p('|--------|-------|')
 p(f'| Terms unclassified | {eligible:,} |')
 p(f'| Verses to classify | {remaining_vr:,} |')
-p(f'| Estimated batches remaining | ~{remaining_vr // 2250} |')
+p(f'| Estimated batches remaining | ~{max(1, remaining_vr // 2250)} |')
 p()
 
-# Partial registries
-p('### 3.3 Partial Registries')
+# Registries still In Progress
+p('### 3.2 Registries In Progress')
 p()
-partials = conn.execute('''
-    SELECT wr.no, wr.word,
-           COUNT(DISTINCT mt.id) as total_owner,
-           SUM(CASE WHEN EXISTS (
-               SELECT 1 FROM verse_context vc WHERE vc.mti_term_id = mt.id AND vc.delete_flagged = 0
-           ) THEN 1 ELSE 0 END) as classified
+in_progress = conn.execute('''
+    SELECT wr.no, wr.word, wr.cluster_assignment
     FROM word_registry wr
-    JOIN wa_file_index fi ON fi.word_registry_fk = wr.id
-    JOIN wa_term_inventory ti ON ti.file_id = fi.id AND ti.term_owner_type = 'OWNER' AND ti.delete_flagged = 0
-    JOIN mti_terms mt ON mt.strongs_number = ti.strongs_number AND mt.delete_flagged = 0
-      AND mt.status IN ('extracted', 'extracted_thin')
     WHERE wr.verse_context_status = 'In Progress'
-      AND EXISTS (SELECT 1 FROM wa_verse_records vr WHERE vr.term_inv_id = ti.id AND vr.delete_flagged = 0)
-    GROUP BY wr.no
-    HAVING classified > 0 AND classified < COUNT(DISTINCT mt.id)
     ORDER BY wr.no
 ''').fetchall()
-if partials:
-    p('| Reg | Word | Classified | Total | Remaining |')
-    p('|-----|------|-----------|-------|-----------|')
-    for r in partials:
-        p(f'| {r["no"]} | {r["word"]} | {r["classified"]} | {r["total_owner"]} | {r["total_owner"] - r["classified"]} |')
-else:
-    p('No partial registries.')
+if in_progress:
+    p('| Reg | Word | Cluster |')
+    p('|-----|------|---------|')
+    for r in in_progress:
+        p(f'| {r["no"]} | {r["word"]} | {r["cluster_assignment"]} |')
 p()
 
 # 4. Data Health
@@ -170,26 +144,6 @@ for c in conn.execute('''
     GROUP BY cluster_assignment ORDER BY cluster_assignment
 '''):
     p(f'| {c["cluster_assignment"]} | {c["total"]} | {c["done"]} | {c["ip"]} | {c["ex"]} |')
-p()
-
-# 6. Batch History
-p('## 6. Batch History')
-p()
-p('| Batch | Terms | Registries completed | Notes |')
-p('|-------|-------|---------------------|-------|')
-p('| VCB-001 | 178 | abomination, agony, ambition, anger, anguish (5) | |')
-p('| VCB-002 | 65 | anointing, anxiety, appetite, awe, bitterness, boldness, bondage, brokenness (8) | |')
-p('| VCB-003 | 112 | calling, character, compassion, condemnation, consecration, contentment, corruption (7) | |')
-p('| VCB-004 | 119 | conscience, courage, covenant, covetousness, debauchery, deceit, defilement, delight (8) | 2 errors fixed |')
-p('| VCB-005 | 81 | despair, devotion, dignity, diligence, discernment, disobedience (6) | |')
-p('| VCB-006 | 135 | distress, division, dread, endurance, envy (5) | + diff correction |')
-p('| VCB-007 | 74 | evil, experience, faith, faithfulness (4) | |')
-p('| VCB-008 | 112 | fear, fellowship, foolishness, forgiveness, generosity, gentleness, goodness, grace, gratitude, greed, grief, groaning (12) | |')
-p('| VCB-009 | 100 | hardness, hatred, holiness, honesty, hope, humility, hypocrisy, idolatry, imagination, impurity, indignation (11) | 1 deferred term |')
-p('| VCB-010 | 91 | iniquity, innocence, insight, integrity, intercession, jealousy, joy (7) | |')
-p('| VCB-011 | 25 | justice (1) | kindness partial |')
-p('| VCB-012 | 120 | kindness, knowledge, longing, love, lust, meaning, meditation (7) | + H2617A supplemental |')
-p(f'| **Total** | **1,212** | **{vc_complete} registries** | |')
 p()
 
 p('---')

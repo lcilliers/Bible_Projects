@@ -1,0 +1,910 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260408-DIMREVIEW-C18-V1",
+    "cluster": "C18",
+    "produced_date": "2026-04-08",
+    "produced_by": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+    "session_b_status": null,
+    "description": "Dimension review patch — C18: Phase C dimension and dominant_subject assignments for all 46 groups across division (52), rejection (131), strife (152), unity (167). Includes Session B and D pointers. New dimension 11 (Divine-Human Correspondence) first applied."
+  },
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4228 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human person orienting wholly toward God as ultimate portion. Inner relational stance of trust and belonging directed upward. Anchor Ps 16:5 confirms human speaker.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "2961-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4229 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner posture of accepting divinely assigned lot. Contentment as creaturely response to limitation and divine ordering. Human receiving and resting in what has been allotted.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "2961-002 — division: Dependence/Creatureliness / HUMAN"
+    },
+
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4230 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral stakes of standing before God — inner character securing or forfeiting share in God's community. The moral nature of the person determines the outcome. Eschatological-relational dimension secondary.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "2961-003 — division: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4226 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner conflict and desire to dominate as relational-volitional condition. Division as expression of inner allegiance fracture.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "2962-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4227 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Anchor Job 39:17 — God withholding understanding from the ostrich (GOD acting, cognitive domain). Related verses span divine allotment of understanding, pain, and reward to human subjects. Divine distribution meeting human reception across cognitive, affective, and moral domains is the analytically significant feature. GOD dominates anchor; human reception is the counterpart throughout.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "2962-002 — division: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4231 },
+      "set": {
+        "dimension": "Emotion - Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God experiencing grief over the loss of what was precious. Negatively valenced inner affect in divine subject. Retained for Session B: divine grief as inner-being characteristic informing study of human grief.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5235-001 — division: Emotion-Negative / GOD"
+    },
+
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4232 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Stable inner quality of moral deception — double heart and smooth speech as enduring character trait.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5237-001 — division: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4233 },
+      "set": {
+        "dimension": "Emotion - Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-VAGUE retained. Anchor Ps 73:18 — God placing wicked in slippery places. Inner-being content sits with the human: false security of apparent prosperity ending in ruin. Ps 73 context (psalmist's crisis and resolution) is the deeper inner-being reality. Emotion-Negative as closest fit for the inner condition of precarious illusory security.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5237-002 — division: Emotion-Negative / HUMAN"
+    },
+
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4224 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-VAGUE retained. Anchor Acts 14:4 — city divided over Paul and Barnabas; inner allegiance commitments producing communal fracture. Note: Mark 1:10 (heavens torn open) is a weak-fit related verse with no inner-being subject — flagged for researcher awareness.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5272-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4221 },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner cognitive condition of present limitation — knowing incompletely, seeing through a veil. Anchor grounded in 1 Cor 13.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5273-001 — division: Cognition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4222 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-VAGUE retained. Anchor John 13:8 — having or being denied a share with Christ. Inner condition of relational belonging to Christ and his community. Eschatological verses (Rev) add moral-destiny weight but relational belonging dominates. Note: 1Cor 11:18 uses meros adverbially (partly) — weak-fit related verse.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5273-002 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4217 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner act of a will divided between competing objects of loyalty. Directed volitional condition — the will unable to commit wholly.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5274-001 — division: Volition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4218 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Measure of faith divinely assigned — God distributes faith as sovereign act; human receives and exercises it. Divine granting and human bearing correspond directly. Anchor governs with GOD as distributing subject.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5274-002 — division: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4215 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. All four verses Lukan (Lk 11:17-18, 12:52-53) — interpersonal relational fracture driven by ultimate allegiance to Christ. Distinct from 5274-001 (volitional inner division): diamerizō is the relational consequence of allegiance, not the inner state of the will. Luke cluster confirmed as governing context.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5275-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4219 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-VAGUE retained. Anchor Luke 10:42 (Mary choosing the good portion) governs — deliberate orientation of whole person toward Christ. Volitional choosing is primary inner act; belonging is the relational consequence. Secondary: Acts 8:21 adds inner moral-character strand (heart not right before God).",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5276-001 — division: Volition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4223 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner orientation of shared participation — belonging to common calling and service. Relational stance of togetherness in purpose.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5279-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4235 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human inner responses (gratitude, obligation, trust) grounded in and corresponding to God's ransoming act. Inner states only make sense in direct correspondence with the divine act that grounds them. Human bears the inner states; divine act is their necessary correlate.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5280-001 — division: Divine-Human Correspondence / HUMAN"
+    },
+
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4236 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner posture of urgent creaturely appeal — longing and crying toward God as only source of redemption. Dominant inner-being character is posture of utter reliance.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5280-002 — division: Dependence/Creatureliness / HUMAN"
+    },
+
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4238 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Recognition of creaturely insufficiency — inner acknowledgement that self-redemption is impossible. Focus is on the inner recognition of inadequacy rather than the appeal (cf. 5280-002).",
+        "last_modified": "2026-04-08"
+      },
+      "description": "5282-001 — division: Dependence/Creatureliness / HUMAN"
+    },
+
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4234 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Freely offered volitional orientation — inner act of willingness directed toward God's work.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "821-001 — division: Volition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4225 },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Johannine uses (7:43, 9:16, 10:19) ground this in cognitive-evaluative inner act: assessing Jesus's identity and authority. Corinthian uses (unity of mind and judgment) confirm cognitive dimension. Identity/Selfhood (automated) was defensible but Cognition better captures evaluative-judgement character of Johannine divisions.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "822-001 — division: Cognition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4237 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's redemptive provision is direct ground of human inner hope. Divine act and human inner response (hope) correspond directly — hope only exists because provision exists. GOD as providing subject; HUMAN hope as the corresponding inner state.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "824-001 — division: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4216 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner relational orientation toward ultimate allegiance producing rupture of lesser bonds. Radical loyalty with relational consequence.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "826-001 — division: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4214 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Stable inner character quality — disposition toward schism as enduring trait. Moral Character rather than Relational Disposition: names what the person is, not how they are oriented toward another.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "827-001 — division: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 4220 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's word penetrating and dividing the innermost person (Heb 4:12). Divine act of penetrating discernment and human inner experience of being known at deepest level correspond directly. GOD as acting subject; human soul/spirit as site of the correspondence.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "828-001 — division: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5403 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Rom 11:15 — God's act of casting away Israel; world's reconciliation results. Rejection is divine in origin; inner-relational consequence borne by those rejected; redemptive significance extends to others. Correspondence across divine-human boundary is analytically significant. Theological density preserved for Session B.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1094-001 — rejection: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5402 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Anchor Heb 10:35 governs — warned-against deliberate abandonment of inner confidence (trust) under pressure. Related: Mark 10:50 (Bartimaeus casting aside cloak in urgent pursuit) is inverse volitional act. Both volitional; anchor's warning governs dimension. Two-directional volitional acts noted for Session B.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6115-001 — rejection: Volition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5554 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Stable inner orientation of contention rooted in jealousy and envy — named among works of the flesh. Inner moral quality generating strife.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1139-001 — strife: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5557 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner moral quality of pride, insolence, and refusal to submit as stable root of strife. Distinct from 1139-001 (jealousy/envy root) — pride/self-assertion root.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1140-001 — strife: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5559 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner orientation of rebellion and contention directed toward God or toward others. Relational stance of hostility — inner person facing God or neighbour with provocation. God-directed rebellion has Divine-Human Correspondence quality but human relational orientation dominates.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1141-001 — strife: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5561 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "QA-BROAD retained. Anchors: Isa 1:11 (multitude of sacrifices rejected — divine relational disposition) and Lam 3:32 (abundance of steadfast love as ground of hope — divine compassion). Both anchors GOD as subject. Related verses span human moral-failure pole (iniquity, transgression) and divine compassion pole (steadfast love). Magnitude of divine characteristic directly corresponds to and frames magnitude of human moral condition. Anchor-governed assignment: Divine-Human Correspondence.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1142-001 — strife: Divine-Human Correspondence / GOD"
+    },
+
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5553 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Servant's restraint named by absence of quarrelling — stable inner character quality. Note: Servant's identity (human or divine) is Session B question; dominant_subject assigned HUMAN as grammatical subject of description.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6462-001 — strife: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5555 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner disposition of contentious word-quarrelling as stable character trait producing harmful relational effects.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6463-001 — strife: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5556 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner root of word-quarrelling — conceit and disordered craving as stable moral qualities. Relational destruction is consequence, not the dimension.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6464-001 — strife: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5560 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner hostility and rivalry as originating relational orientation. Striving in conflict as expression of directed inner stance of enmity toward others or God.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6465-001 — strife: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5558 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner orientation of hostile contention directed against God's community. Relational disposition of enmity with eschatological futility.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6467-001 — strife: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5662 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Achieved inner-relational state of genuine togetherness — unity of persons bound by Spirit. Human community's inner relational condition as goal and achievement.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1208-001 — unity: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5667 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shared inner relational state of hearts joined in common orientation. Corporate relational disposition.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1209-001 — unity: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5663 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Anchor Ps 23:4 governs — even in the valley of death, no fear, for you are with me. Intensification function of gam marks extreme case of creaturely trust: fearlessness grounded in divine presence at limit of threat. Anchor-governed dimension. Cross-dimensional range of related verses acknowledged.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1210-001 — unity: Dependence/Creatureliness / HUMAN"
+    },
+
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5664 },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "QA-REVIEW retained. Anchor Joel 2:29 — Spirit poured out even on servants (divine act of radical inclusion extending to unexpected human recipients). Extension function of gam consistently marks God-human correspondence across 72-verse footprint — divine acts extending to humans, human conditions mirrored in divine response. Subject genuinely dual. Note: Ps 133:1 appearing in this group is significant — core unity verse under gam's extension function; Session B pointer raised.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1210-002 — unity: Divine-Human Correspondence / NONE"
+    },
+
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5665 },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Ecclesiastes verdict of meaninglessness as inner cognitive-evaluative judgement applied universally. gam function serves intellectual sweep of the vanity conclusion.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "1210-003 — unity: Cognition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5668 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shared inner orientation of community toward God — worship, seeking, covenant commitment as corporate relational acts. Communal relational disposition directed God-ward.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6634-001 — unity: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5669 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "QA-BROAD retained. Anchor Ps 14:3 (together they have become corrupt) governs. Majority of related verses confirm shared moral failure (conspiracy, corruption, shame) as dominant strand. Note: Job 2:11 (friends gathering to comfort) is minority compassion strand — retained as flag observation for Session B.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6634-002 — unity: Moral Character / HUMAN"
+    },
+
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5670 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Preciousness of the unique beloved — inner orientation of love and grief toward the only one. Relational disposition of deep attachment with grief as its shadow.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6635-001 — unity: Relational Disposition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5671 },
+      "set": {
+        "dimension": "Emotion - Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner condition of aloneness experienced as a negatively valenced state requiring resolution. Movement from isolation toward belonging is a secondary observation for Session B.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6635-002 — unity: Emotion-Negative / HUMAN"
+    },
+
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 5666 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Deliberate uniting of inner person in single orientation — both positive act (soul/heart united) and negative act (refusing solidarity with violent) are volitional inner acts. The will directing the whole person.",
+        "last_modified": "2026-04-08"
+      },
+      "description": "6636-001 — unity: Volition / HUMAN"
+    },
+
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-52-001",
+        "registry_id": 52,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The Greek division vocabulary in the division registry (schizō G4977, schisma G4978, merizō G3307, diamerizō G1266, meris G3310, meros G3313) shows a differentiated inner-being landscape: schisma/schizō name communal fracture over identity evaluation; merizō names internal volitional division; diamerizō names interpersonal fracture from ultimate allegiance; meris/meros name relational belonging and volitional orientation toward Christ. Session B should examine these terms in relation to each other and to the Hebrew portion vocabulary (chelek, cheleq, chalaq).",
+        "anchor_verses": "1Cor 1:10; Luke 12:53; John 13:8; Luke 10:42",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — division: Greek division/portion vocabulary differentiation"
+    },
+
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-52-002",
+        "registry_id": 52,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Five groups in the division registry are assigned Divine-Human Correspondence (2962-002, 5274-002, 5280-001, 824-001, 828-001). This is a significant concentration. The portion/lot vocabulary (chelek, chalaq, meros, meris) consistently operates in divine-human correspondence mode — God allots, human receives, inner states arise in response. Session B should examine whether this correspondence structure is intrinsic to the portion concept or a feature of the particular biblical corpus.",
+        "anchor_verses": "Job 39:17; Heb 4:12; Rom 8:24",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — division: concentration of Divine-Human Correspondence in portion vocabulary"
+    },
+
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-52-003",
+        "registry_id": 52,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Mark 1:10 (heavens torn open at Jesus's baptism) appears as a related verse in group 5272-001 (schizō). This is a cosmic/physical use of schizō with no inner-being subject in the term itself. Its presence in the inner-being corpus may reflect an over-broad Verse Context classification. Session B should assess whether the heavens-torn-open image carries inner-being significance through its context (divine approval, identity revelation) or whether it represents a classification gap.",
+        "anchor_verses": "Mark 1:10",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — division: Mark 1:10 schizō — cosmic versus inner-being classification"
+    },
+
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-131-001",
+        "registry_id": 131,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "apobolē (1094-001, Rom 11:15) carries one of the highest concentrations of theological density in the programme — rejection, reconciliation, and life from the dead in a single verse. The group is assigned Divine-Human Correspondence with GOD as dominant subject. Session B should examine the inner-being dynamic of Israel's covenantal rejection: what the inner-relational experience of being cast off by God means for the human inner person, and how it relates to the redemptive correspondence that Paul draws.",
+        "anchor_verses": "Romans 11:15",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — rejection: apobolē theological density — covenantal rejection and redemptive correspondence"
+    },
+
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-131-002",
+        "registry_id": 131,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "apoballō (6115-001) covers only two NT verses (Heb 10:35 and Mark 10:50) — one warning against throwing away confidence, one depicting urgent casting aside of impediment toward Christ. These are inverse volitional acts: one guarding an inner disposition, one releasing an external obstacle. Session B should examine whether these two uses illuminate a single inner-being faculty (the will's relationship to what it holds or releases) or represent genuinely different phenomena.",
+        "anchor_verses": "Hebrews 10:35; Mark 10:50",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — rejection: apoballō two-directional volitional acts"
+    },
+
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-167-001",
+        "registry_id": 167,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Psalm 133:1 ('how good and pleasant it is when brothers dwell in unity') appears as a related verse in group 1210-002 (gam — extension function) rather than in a unity-specific group. This is analytically notable: the programme's most direct unity statement appears under a grammatical particle's extension function. Session B should examine whether this reflects the Verse Context classification correctly placing gam as the owning term, or whether Ps 133:1 belongs under a different unity term.",
+        "anchor_verses": "Psalms 133:1",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — unity: Ps 133:1 appearing under gam extension function"
+    },
+
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-167-002",
+        "registry_id": 167,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The unity registry contains three groups for gam (H1571, 404 occurrences) with a very high set-aside rate (272 of 404). The three groups capture distinct inner-being functions: intensification (Ps 23:4 paradigm → Dependence/Creatureliness), extension (Joel 2:29 paradigm → Divine-Human Correspondence), and the Ecclesiastes vanity-verdict (Cognition). Session B should examine whether gam's assignment to the unity registry is semantically justified beyond the additive/inclusive surface connection, and whether the three groups together reveal a coherent inner-being contribution.",
+        "anchor_verses": "Psalms 23:4; Joel 2:29; Ecclesiastes 2:1",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+      },
+      "description": "Session B pointer — unity: gam three-group structure and registry assignment"
+    },
+
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 52,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-52-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 167,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C18 produces 9 groups assigned Divine-Human Correspondence across division (5), rejection (1), strife (1), and unity (2) — 20% of the cluster. This is the first systematic appearance of dimension 11 in the programme. Session D should examine whether Divine-Human Correspondence groups cluster around particular semantic domains (belonging/portion, rejection, abundance) or whether they represent a cross-domain phenomenon. The C18 data suggests that relational vocabulary — division, unity, belonging — is intrinsically prone to divine-human correspondence structure.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — C18 Divine-Human Correspondence concentration: first systematic appearance of dimension 11"
+    },
+
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 152,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-152-SD001",
+        "strongs_reference": "H7230",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "rov (H7230, abundance) in the strife registry (group 1142-001) is assigned Divine-Human Correspondence because both anchors have GOD as subject (divine weariness of ritual; divine steadfast love) while related verses carry the human moral-failure pole. This raises a programme-level question: does the biblical vocabulary of magnitude (rov, rabah, and cognates) consistently operate in divine-human correspondence mode — the greatness of divine attributes set against and corresponding to the weight of human moral condition? Session D should examine this across all registries where magnitude vocabulary appears.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — magnitude vocabulary (rov) and Divine-Human Correspondence across registries"
+    }
+
+  ]
+}

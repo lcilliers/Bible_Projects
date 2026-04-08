@@ -1,0 +1,2005 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C10-V1",
+    "cluster": "C10",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Dimension review patch \u2014 C10: 111 group dimension updates (52 confirmed, 25 corrected, 34 newly assigned); 8 Session B findings; 4 Session D pointers"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4373
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine covenantal commitment expressed through giving. UNCLASSIFIED \u2192 Theological/Divine-Human.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-001 \u2014 faithfulness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4374
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine inner disposition of love and compassion in responsive relationship. Correction: Spiritual/God-ward \u2192 Theological/Divine-Human.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-002 \u2014 faithfulness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4375
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine endowment of inner-being capacities. Correction: Cognitive/Mind \u2192 Spiritual/God-ward.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-003 \u2014 faithfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4376
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: divine moral response to faithlessness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-004 \u2014 faithfulness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4377
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: human inner act of giving as orientation toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-005 \u2014 faithfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4378
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Ascribing worth to God \u2014 inner act of worship. UNCLASSIFIED \u2192 Spiritual/God-ward.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-006 \u2014 faithfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4379
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Eschatological divine action transforming inner conditions. UNCLASSIFIED \u2192 Theological/Divine-Human.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "872-007 \u2014 faithfulness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4525
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: doxological assertion of divine goodness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-001 \u2014 goodness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4526
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: human moral character assessed as good.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-002 \u2014 goodness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4527
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: inner experiential good as orientation toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-003 \u2014 goodness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4528
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Moral/Conscience. Better-than sayings rank inner qualities \u2014 moral wisdom judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-004 \u2014 goodness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4529
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God's good word and promise \u2014 divine covenantal character. UNCLASSIFIED \u2192 Theological/Divine-Human.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-005 \u2014 goodness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4530
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: negative moral assessment of inner orientations.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "884-006 \u2014 goodness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4522
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Volitional/Will \u2192 Character/Disposition. Spirit-produced inner disposition, not volitional choice.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "885-001 \u2014 goodness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4523
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: divine disposition of goodwill.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "886-001 \u2014 goodness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4524
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Character/Disposition. Spirit-produced inner disposition of kindness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "886-002 \u2014 goodness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4632
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: constitutive inner moral character.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3246-001 \u2014 honesty: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4633
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: divine evaluation of inner moral condition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3246-002 \u2014 honesty: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4634
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: affective-spiritual orientation of the righteous toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3246-003 \u2014 honesty: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4635
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: inner moral character expressed in conduct.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "911-001 \u2014 honesty: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4636
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: credited moral standing before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "911-002 \u2014 honesty: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4637
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Reception of divine righteousness as inner orientation of longing and hope.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "911-003 \u2014 honesty: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4770
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Freedom from moral guilt is primary inner-being content.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5620-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4763
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5621-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4764
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Moral weight of innocent blood.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5621-002 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4765
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5621-003 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4766
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed (same as 5621-001, orthographic variant).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5624-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4767
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience (same as 5621-002).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5624-002 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4768
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed (same as 5621-003).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5624-003 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4761
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "QA-VAGUE provisional: covering in death/judgment \u2014 provisional Moral/Conscience. Researcher decision pending.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5627-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4743
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: self-offering toward God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-001 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4744
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: confessional disclosure before God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-002 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4745
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-003 \u2014 innocence: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4746
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-004 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4747
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Inner experience of encounter with divine power.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-005 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4748
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Spiritual/God-ward. QA-BROAD: dominant register is God-ward orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5629-006 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4749
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Temporal framing of inner states in divine relationship context.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5630-001 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4757
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed: moral-spiritual corruption dimension.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5632-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4774
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Blamelessness/wholeness is primary inner moral quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5637-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4771
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5638-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4772
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Wholeness of beloved evoking devotion \u2014 dispositional quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5638-002 \u2014 innocence: Character/Disposition"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4762
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5641-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4775
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5642-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4769
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience (orthographic variant of 5620-001).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "928-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4758
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "929-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4759
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "929-002 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4760
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "929-003 \u2014 innocence: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4750
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-001 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4751
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Spiritual/God-ward. Confessional disclosure before God is primary dimension.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-002 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4752
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Theophanic encounter.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-003 \u2014 innocence: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4753
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Divine disclosure of orientation toward people.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-004 \u2014 innocence: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4754
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-005 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4755
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed (QA-BROAD, dominant register Moral/Conscience).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-006 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4756
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed (QA-BROAD, dominant register Spiritual/God-ward).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "930-007 \u2014 innocence: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4773
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "931-001 \u2014 innocence: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4783
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Integrity as moral character; 'before God' is frame.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "933-001 \u2014 integrity: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4784
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Theological/Divine-Human. Divine character perfection as ground of trust.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "934-001 \u2014 integrity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4785
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Torah as source of inner renewal.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "934-002 \u2014 integrity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4781
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Eschatological transformation \u2014 best available fit; vocabulary gap noted.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "935-001 \u2014 integrity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4782
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Quality of inner love characterized by incorruptibility.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "935-002 \u2014 integrity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5334
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Character/Disposition. Stable inner character disposition of purity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1062-001 \u2014 purity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5342
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Inner life free from corruption \u2014 moral purity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1063-001 \u2014 purity: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5343
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1063-002 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5344
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Sin & Vice \u2192 Spiritual/God-ward. Group describes restoration toward God, not the sin pole.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1063-003 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5345
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1063-004 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5340
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Purity as apostolic character disposition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1064-001 \u2014 purity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5338
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6053-001 \u2014 purity: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5339
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6053-002 \u2014 purity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5335
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6054-001 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5336
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6054-002 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5337
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Inner orientation of readiness and covenantal participation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6055-001 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5341
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6056-001 \u2014 purity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5347
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6057-001 \u2014 purity: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5348
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Covenantal restoration through prescribed cleansing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6057-002 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5349
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Relational/Social \u2192 Theological/Divine-Human. Divine purifying action on the community.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6057-003 \u2014 purity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5352
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Covenantal pathway for restored sacred participation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6058-001 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5353
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6058-002 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5350
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "QA-EXTERNALISED provisional: Spiritual/God-ward. Researcher decision pending.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6059-001 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5346
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Moral/Conscience \u2192 Theological/Divine-Human. Divine moral purity \u2014 character of God's inner nature.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6060-001 \u2014 purity: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5351
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "QA-EXTERNALISED provisional: same as 6059-001. Researcher decision pending.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6061-001 \u2014 purity: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5417
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1099-001 \u2014 righteousness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5496
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Character/Disposition. Sincerity as stable character quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1126-001 \u2014 sincerity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5497
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6231-001 \u2014 sincerity: Character/Disposition"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5635
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Spiritual/God-ward. Truth as transforming force on the inner person.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-001 \u2014 truthfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5636
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Volitional/Will. Truth as object of volitional acceptance or rejection.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-002 \u2014 truthfulness: Volitional/Will"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5637
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Truth as stable inner character quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-003 \u2014 truthfulness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5638
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Identity/Selfhood \u2192 Theological/Divine-Human. Spirit of truth as divine inner agent.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-004 \u2014 truthfulness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5639
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-005 \u2014 truthfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5640
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1197-006 \u2014 truthfulness: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5643
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6587-001 \u2014 truthfulness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5642
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Truthfulness as inner character quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6588-001 \u2014 truthfulness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5644
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Cognitive/Mind. 'Truly' qualifies inner knowing and recognition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6589-001 \u2014 truthfulness: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5641
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Truthful speech as expression of inner integrity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "6590-001 \u2014 truthfulness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5673
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Sin & Vice \u2192 Moral/Conscience. Uprightness as positive inner quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1211-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5674
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Path of uprightness as moral life orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1211-002 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5675
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Speech as disclosure of inner integrity.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1211-003 \u2014 uprightness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5683
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Uprightness as moral standard for judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1212-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5684
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Cognitive/Mind \u2192 Character/Disposition. Inner character formation as wisdom's goal.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1212-002 \u2014 uprightness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5689
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Negated uprightness as inner moral failure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1214-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5682
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction: Spiritual/God-ward \u2192 Moral/Conscience. Uprightness of heart is primary content.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1215-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5676
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5677
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-002 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5678
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-003 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5679
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Theological/Divine-Human. Divine character described as upright.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-004 \u2014 uprightness: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5680
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Job's inner character under testing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-005 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5681
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1216-006 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5688
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Honest inner character as stable disposition.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1217-001 \u2014 uprightness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5672
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1218-001 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5685
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7492-001 \u2014 uprightness: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5686
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Moral/Conscience. Inward attention to stumbling block of iniquity (Ezek.).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7492-002 \u2014 uprightness: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5687
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "UNCLASSIFIED \u2192 Character/Disposition. Inner directedness as character quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7492-003 \u2014 uprightness: Character/Disposition"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-60-001",
+        "registry_id": 60,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Three groups (872-001, 872-002, 872-007) in the faithfulness registry describe divine action \u2014 covenantal giving, compassionate giving, and eschatological transformation. The faithfulness registry operates significantly in the Theological/Divine-Human register, not primarily as human character description. Session B should map this divine-human asymmetry and assess whether 'faithfulness' as a registry label adequately captures the term natan's actual inner-being range.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 faithfulness: divine-human asymmetry in natan groups"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-67-001",
+        "registry_id": 67,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The tov word family spans Theological/Divine-Human (divine goodness), Moral/Conscience (human moral character), Spiritual/God-ward (experiential good), and Character/Disposition (Spirit-fruit) \u2014 a very wide dimensional range for one term. Session B should analyse whether these are genuinely distinct inner-being phenomena or expressions of a unified category of 'goodness' that the English vocabulary separates but Hebrew integrates.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 goodness: wide dimensional range of tov"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-77-001",
+        "registry_id": 77,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 911-002 (tsedeqah) is the only group in C10 explicitly engaging imputed righteousness \u2014 moral standing credited to the person by God. Session B should examine the theological significance of credited moral standing as a distinct inner-being category, and how it relates to the possessed moral character described in adjacent groups.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 honesty/righteousness: imputed righteousness as distinct inner-being category"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-90-001",
+        "registry_id": 90,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The functional presentational particles (hen H2005, hinneh H2009, hennah H2008) classified into the innocence registry produce a very wide group range \u2014 covering confession, theophany, moral verdict, wisdom reflection, and emotional experience. The innocence registry functions as a container for inner-being disclosure framing. Session B should assess whether this breadth is analytically productive or whether the verse context classifications for these particles should be re-examined.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 innocence: presentational particles produce wide group range"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-92-001",
+        "registry_id": 92,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 935-001 (aftharsia \u2014 incorruptibility) introduces the eschatological transformation of the person at resurrection \u2014 a dimension not well captured by existing vocabulary labels. Assigned Theological/Divine-Human as best available fit. Session B should address whether incorruptibility belongs in the integrity domain or warrants separate treatment, and how eschatological constitution of the person relates to present moral character.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 integrity: eschatological incorruptibility as distinct dimension"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-125-001",
+        "registry_id": 125,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The tahor/taher word family in the purity registry spans ritual cleansing (external covenantal state), moral purification (inner), and divine restorative action. Session B should map how the ritual and moral dimensions relate \u2014 and whether the programme treats purity primarily as an inner character quality or as a covenantal status granted and maintained through prescribed practice.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 purity: ritual vs moral dimensions of tahor/taher"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-164-001",
+        "registry_id": 164,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The aletheia word family spans five distinct inner-being dimensions across 10 groups: Spiritual/God-ward, Volitional/Will, Character/Disposition, Theological/Divine-Human, Cognitive/Mind. No single dimension captures the full range. Session B should examine whether 'truthfulness' is the right registry label, and whether the term's biblical range is better described as 'truth-orientation' or another formulation that captures both the character quality and the transformational/pneumatological dimensions.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 truthfulness: aletheia family spans five dimensions"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-168-001",
+        "registry_id": 168,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 1216-006 (ya.shar \u2014 'God made man upright, but they have sought out many schemes', Eccl. 7:29) is the only group in C10 explicitly addressing the original moral constitution of the human person and its departure. Session B should treat this as a significant anthropological statement and examine its implications for understanding uprightness as a creational category within the inner-being framework.",
+        "anchor_verses": "Eccl 7:29",
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 uprightness: original moral constitution (Eccl. 7:29)"
+    },
+    {
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 77,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-77-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 139,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Registry 77 is named 'honesty' but all its terms are standard Hebrew righteousness vocabulary (tsaddiq H6662 and tsedeqah H6666). The registry label does not match its actual lexical content. Session D should address whether Registry 77 should be renamed 'righteousness' to accurately reflect its vocabulary, and how this relates to Registry 139 (righteousness, dikaioma G1345).",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 Registry 77 label mismatch: honesty vs. righteousness vocabulary",
+      "op_id": "OP-120"
+    },
+    {
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 90,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-90-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "The programme vocabulary has no Emotional/Affective dimension. Multiple groups across C10 \u2014 particularly in innocence (930-007: anguish, dread, despair, hope) and goodness (884-003: satisfaction, longing) \u2014 describe inner states that resist classification under Moral/Conscience, Spiritual/God-ward, or Character/Disposition. Session D should assess whether the programme vocabulary requires an Emotional/Affective category to adequately map the inner-being landscape.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 vocabulary gap: no Emotional/Affective dimension in current vocabulary",
+      "op_id": "OP-121"
+    },
+    {
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 92,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-92-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 60,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The eschatological transformation of the person (incorruptibility at resurrection, aftharsia G0861 in integrity Reg. 92; ashes to beauty, faint spirit to praise in faithfulness Reg. 60 group 872-007) is not adequately captured by existing dimension labels. Both groups are assigned Theological/Divine-Human as the best available fit. Session D should consider whether the programme needs a dedicated label for eschatological or transformational dimensions of the inner being.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 vocabulary gap: eschatological/transformational inner-being dimension",
+      "op_id": "OP-122"
+    },
+    {
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 164,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-164-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The aletheia word family spans five distinct inner-being dimensions \u2014 the widest dimensional range of any single word family reviewed in C10. This raises the question of whether 'truthfulness' is a sufficiently narrow or accurate registry label for what these terms express in their biblical usage. Session D should address the vocabulary fit and whether a broader label such as 'truth-orientation' or a restructured approach to this registry is warranted.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 truthfulness registry label question: aletheia five-dimension range",
+      "op_id": "OP-123"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 123,
+    "dimension_updates": 111,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 8,
+    "session_d_pointers_inserted": 4,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

@@ -1,0 +1,4376 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260408-DIMREVIEW-C17-V1",
+    "cluster": "C17",
+    "produced_date": "2026-04-08",
+    "produced_by": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+    "session_b_status": null,
+    "description": "Dimension review patch — C17: 284 wa_dimension_index updates (dimension + dominant_subject + dimension_confidence); 4 wa_session_b_findings inserts; 2 wa_session_research_flags inserts"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3761
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1616-001 compassion/ra.cha.ma.ni: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3756
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's steadfast love as defining inner character — Relational Disposition / GOD. Automated null."
+      },
+      "description": "1633-001 compassion/che.sed: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3757
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human covenantal loyalty as stable character quality. Automated Character/Disposition → Moral Character."
+      },
+      "description": "1633-002 compassion/che.sed: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3758
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1633-003 compassion/che.sed: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3755
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1635-001 compassion/cha.sad: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3751
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine compassion as inward movement of mercy. Automated Theological/Divine-Human → Relational Disposition / GOD."
+      },
+      "description": "2192-001 compassion/chem.lah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3753
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's inner disposition of grace toward the undeserving. Automated Theological/Divine-Human → Relational Disposition / GOD."
+      },
+      "description": "2325-001 compassion/cha.nan: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3754
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Humble appeal from need = inner posture of reliance. Automated Spiritual/God-ward → Dependence/Creatureliness."
+      },
+      "description": "2325-002 compassion/cha.nan: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3752
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "2330-001 compassion/chan.nun: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3741
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3167-001 compassion/eleēmosunē: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3740
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Spiritual destitution as negatively valenced inner state. Automated null."
+      },
+      "description": "3168-001 compassion/eleeinos: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3749
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3182-001 compassion/chus: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3750
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3182-002 compassion/chus: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3747
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3980-001 compassion/sumpathēs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3748
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Solidarity with another's suffering = Relational Disposition. Automated Volitional/Capacity → Relational Disposition."
+      },
+      "description": "3986-001 compassion/sumpaschō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3742
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Controlled emotional moderation = stable Moral Character. Automated Affective/Emotional → Moral Character."
+      },
+      "description": "3988-001 compassion/metriopatheō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3744
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "4011-001 compassion/polusplanchnos: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3760
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine compassion through maternal image. Automated Theological/Divine-Human → Relational Disposition / GOD."
+      },
+      "description": "729-001 compassion/ra.cham: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3745
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "730-001 compassion/splanchnizō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3743
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine inner disposition of sovereign mercy. Automated Theological/Divine-Human → Relational Disposition / GOD."
+      },
+      "description": "731-001 compassion/oikteirō: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3759
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "733-001 compassion/ni.chum: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3746
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner orientation of shared suffering. Automated Affective/Emotional → Relational Disposition."
+      },
+      "description": "734-001 compassion/sumpatheō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3876
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3270-001 covenant/kibōtos: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3877
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3271-001 covenant/kibōtos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3869
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3284-001 covenant/asunthetos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3894
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3303-001 covenant/ka.rat: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3890
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3304-001 covenant/ka.rat: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3891
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "3304-002 covenant/ka.rat: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3892
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3304-003 covenant/ka.rat: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3893
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3304-004 covenant/ka.rat: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3886
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3306-001 covenant/ke.ri.tut: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3887
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3306-002 covenant/ke.ri.tut: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3897
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3308-001 covenant/sha.va: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3898
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "3308-002 covenant/sha.va: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3899
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "3308-003 covenant/sha.va: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3900
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "3308-004 covenant/sha.va: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3895
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Agency / Power / GOD"
+      },
+      "description": "3314-001 covenant/sha.vu.a: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3896
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "3314-002 covenant/sha.vu.a: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3881
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "765-001 covenant/be.rit: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3882
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "765-002 covenant/be.rit: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3883
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / HUMAN"
+      },
+      "description": "765-003 covenant/be.rit: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3884
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "765-004 covenant/be.rit: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3885
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "765-005 covenant/be.rit: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3870
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "766-001 covenant/diathēkē: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3871
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / HUMAN"
+      },
+      "description": "766-002 covenant/diathēkē: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3872
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Covenantal standing = stable inner quality. Automated Identity/Selfhood → Moral Character."
+      },
+      "description": "766-003 covenant/diathēkē: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3888
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "767-001 covenant/ka.rat: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3889
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "767-002 covenant/ka.rat: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3878
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "772-001 covenant/a.lah: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3879
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "772-002 covenant/a.lah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3880
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "774-001 covenant/a.ma.nah: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3873
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / HUMAN"
+      },
+      "description": "777-001 covenant/kainos: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3874
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / HUMAN"
+      },
+      "description": "777-002 covenant/kainos: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3875
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / HUMAN"
+      },
+      "description": "777-003 covenant/kainos: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4469
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5367-001 fellowship/koinōnos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4470
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5367-002 fellowship/koinōnos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4467
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "873-001 fellowship/koinōnia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4468
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "873-002 fellowship/koinōnia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4492
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "5376-001 forgiveness/afiēmi: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4493
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5376-002 forgiveness/afiēmi: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4494
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5376-003 forgiveness/afiēmi: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4495
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "5377-001 forgiveness/afiēmi: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4496
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5377-002 forgiveness/afiēmi: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4497
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5378-001 forgiveness/afiēmi: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4498
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5378-002 forgiveness/afiēmi: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4499
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "5379-001 forgiveness/sa.lach: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4500
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5379-002 forgiveness/sa.lach: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4501
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "5379-003 forgiveness/sa.lach: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4502
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Forgiveness as stable divine attribute. Automated Theological/Divine-Human → Moral Character / GOD."
+      },
+      "description": "5380-001 forgiveness/sal.lach: Moral Character / GOD"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4490
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "879-001 forgiveness/afesis: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4491
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "879-002 forgiveness/afesis: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4503
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Forgiveness as divine attribute = Moral Character / GOD."
+      },
+      "description": "880-001 forgiveness/se.li.chah: Moral Character / GOD"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4531
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Agency / Power / GOD"
+      },
+      "description": "5470-001 grace/charizō: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4532
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5470-002 grace/charizō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4537
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Grace bestowed transforms the person. Automated Relational/Social → Transformation / GOD."
+      },
+      "description": "5471-001 grace/charitoō: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4533
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "888-001 grace/charis: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4534
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "888-002 grace/charis: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4535
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "888-003 grace/charis: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4536
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Grace as power enabling ministry = Agency/Power. Automated Identity/Selfhood → Agency/Power."
+      },
+      "description": "888-004 grace/charis: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4538
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "889-001 grace/chen: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4539
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "889-002 grace/chen: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4540
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Gracious disposition = stable Moral Character. Automated Cognitive/Mind → Moral Character."
+      },
+      "description": "889-003 grace/chen: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4541
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "890-001 grace/ta.cha.nun: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4883
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5729-001 kindness/chrēsteuomai: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4884
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5730-001 kindness/chrēstologia: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4906
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "5731-001 kindness/me.im: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4902
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "5732-001 kindness/am: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4895
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5733-001 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4907
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "5735-001 kindness/im: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4896
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's relational disposition toward his people. Automated Moral/Conscience → Relational Disposition / GOD."
+      },
+      "description": "5737-001 kindness/am: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4897
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Corporate inner moral-spiritual condition. Automated Spiritual/God-ward → Moral Character."
+      },
+      "description": "5737-002 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4898
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Communal inner identity. Automated Identity/Selfhood → Moral Character."
+      },
+      "description": "5737-003 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4899
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "5738-001 kindness/am: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4900
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5738-002 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4901
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5738-003 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4903
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "5739-001 kindness/am: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4904
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5739-002 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4905
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5739-003 kindness/am: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4894
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5769-001 kindness/zu: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4892
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Cognition / HUMAN"
+      },
+      "description": "5771-001 kindness/zoh: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4890
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5772-001 kindness/da: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4893
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "5775-001 kindness/zo: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4891
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "951-001 kindness/zeh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4908
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Trust and security in divine presence = Dependence/Creatureliness. Automated Spiritual/God-ward."
+      },
+      "description": "952-001 kindness/im.ma.di: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4909
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "952-002 kindness/im.ma.di: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4910
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "952-003 kindness/im.ma.di: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4886
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "953-001 kindness/a.dam: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4887
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Creaturely limitation and dependence. Automated Spiritual/God-ward → Dependence/Creatureliness."
+      },
+      "description": "953-002 kindness/a.dam: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4888
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's purposeful action and calling = Agency/Power / GOD. Automated Volitional/Will → Agency/Power."
+      },
+      "description": "953-003 kindness/a.dam: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4889
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "953-004 kindness/a.dam: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4885
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "954-001 kindness/chrēstos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4988
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1579-001 love/filos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4982
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1580-001 love/filēma: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4967
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Somatic/Embodied (legacy label, not in v1.4). Inner states (love, grief, reunion) are primary; Emotion — Positive as dominant valence."
+      },
+      "description": "1581-001 love/katafileō: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4983
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1588-001 love/filia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4992
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1600-001 love/a.hev: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4997
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1602-001 love/dod: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4963
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1609-001 love/adelfē: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4964
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1610-001 love/adelfotēs: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4991
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1611-001 love/pseudadelfos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5010
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "1614-001 love/ra.chum: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5013
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1617-001 love/re.a: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5006
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1619-001 love/me.re.a: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5014
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1623-001 love/re.eh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5015
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1624-001 love/re.ah: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4966
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1651-001 love/eirēnopoios: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5018
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "1663-001 love/se.na: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4970
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Christ's identity-constituting primacy. Automated Identity/Selfhood → Moral Character / GOD."
+      },
+      "description": "1671-001 love/prōtotokos: Moral Character / GOD"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4969
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "1679-001 love/prōtotokia: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4998
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "533-001 love/dod: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5005
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "534-001 love/ya.did: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5004
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "535-001 love/ye.di.dut: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4999
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "536-001 love/che.sed: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5000
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "536-002 love/che.sed: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5001
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "536-003 love/che.sed: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4994
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "537-001 love/a.ha.vah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4995
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "537-002 love/a.ha.vah: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4996
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "537-003 love/a.ha.vah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4993
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "539-001 love/a.hav: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5002
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "540-001 love/cha.sid: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5003
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "542-001 love/tov: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5012
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "544-001 love/ra.cha.mim: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5016
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "545-001 love/ra.yah: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5007
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "547-001 love/na.eh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5009
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "548-001 love/a.ga.vah: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5008
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "549-001 love/na.im: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5017
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "550-001 love/sa.ne: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5011
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "551-001 love/ra.cham: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4984
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "553-001 love/filotheos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4989
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "554-001 love/filostorgos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4961
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "555-001 love/agapētos: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4962
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Believer as beloved = identity-constituting. Automated Identity/Selfhood → Moral Character."
+      },
+      "description": "555-002 love/agapētos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4975
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "556-001 love/filanthrōpia: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4972
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "558-001 love/filadelfia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4990
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "559-001 love/filoteknos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4986
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "560-001 love/filoneikos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4974
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "561-001 love/filandros: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4958
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "562-001 love/agapē: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4959
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Love as defining inner virtue = stable Moral Character. Automated null."
+      },
+      "description": "562-002 love/agapē: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4960
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "562-003 love/agapē: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4985
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "563-001 love/filoneikia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4976
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "564-001 love/filarguria: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4968
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Cognition / HUMAN"
+      },
+      "description": "565-001 love/prosfilēs: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4971
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "566-001 love/filagathos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4973
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "567-001 love/filadelfos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4977
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "568-001 love/filarguros: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4965
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "569-001 love/afilarguros: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4981
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "570-001 love/filēdonos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4953
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "571-001 love/agapaō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4954
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "571-002 love/agapaō: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4955
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "571-003 love/agapaō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4956
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "571-004 love/agapaō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4957
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "571-005 love/agapaō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4978
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "572-001 love/fileō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4979
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "572-002 love/fileō: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4980
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "572-003 love/fileō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4987
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "573-001 love/filoprōteuō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5055
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's compassion as character standard. Automated Character/Disposition → Moral Character / GOD."
+      },
+      "description": "3158-001 mercy/oiktirmōn: Moral Character / GOD"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5047
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3164-001 mercy/eleēmōn: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5041
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3165-001 mercy/aneleēmōn: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5053
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "3166-001 mercy/hileōs: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5059
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3169-001 mercy/kip.per: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5060
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3169-002 mercy/kip.per: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5061
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3169-003 mercy/kip.per: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5065
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3170-001 mercy/ko.pher: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5066
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3170-002 mercy/ko.pher: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5067
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3171-001 mercy/kip.pu.rim: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5062
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3173-001 mercy/ka.phar: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5063
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3173-002 mercy/ka.phar: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5064
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "3173-003 mercy/ka.phar: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5050
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "3176-001 mercy/hilaskomai: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5051
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "3177-001 mercy/hilasmos: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5043
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3179-001 mercy/anosios: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5056
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "3181-001 mercy/hosiōs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5044
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "God's sovereign mercy = Agency/Power / GOD. Automated Theological/Divine-Human → Agency/Power."
+      },
+      "description": "981-001 mercy/eleeō: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5045
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Inner anguish as negatively valenced. Automated Affective/Emotional → Emotion — Negative."
+      },
+      "description": "981-002 mercy/eleeō: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5046
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Human act of mercy as inner relational disposition. Automated Character/Disposition → Relational Disposition."
+      },
+      "description": "981-003 mercy/eleeō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5068
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "982-001 mercy/kap.po.ret: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5048
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "983-001 mercy/eleos: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5049
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "983-002 mercy/eleos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5057
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "984-001 mercy/cha.nan: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5075
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "985-001 mercy/te.chin.nah: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5076
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "985-002 mercy/te.chin.nah: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5069
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "986-001 mercy/lo ru.cha.mah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5072
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "987-001 mercy/a.tar: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5073
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "987-002 mercy/a.tar: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5074
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "988-001 mercy/ra.cha.min: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5058
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "989-001 mercy/cha.nan: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5070
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "990-001 mercy/od: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5071
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "What the adverb amplifies is God's sustained relational stance. Automated Character/Disposition → Relational Disposition / GOD."
+      },
+      "description": "990-002 mercy/od: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5052
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "991-001 mercy/hilastērios: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5054
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "992-001 mercy/oiktirmos: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5042
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "993-001 mercy/anileōs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5166
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "2521-001 peace/nes: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5125
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Shift in inner relational orientation = Transformation. Automated Spiritual/God-ward."
+      },
+      "description": "2535-001 peace/ba.a.li: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5119
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Stable inner quality of settled quiet. Automated Spiritual/God-ward → Moral Character."
+      },
+      "description": "2558-001 peace/hēsuchia: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5120
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "2559-001 peace/hēsuchios: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5122
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2560-001 peace/sigē: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5173
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2577-001 peace/shal.a.nan: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5178
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2583-001 peace/she.qet: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5163
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "2584-001 peace/ni.cho.ach: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5164
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "2584-002 peace/ni.cho.ach: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5165
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "2584-003 peace/ni.cho.ach: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5149
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Positively valenced inner rest. Automated Spiritual/God-ward → Emotion — Positive."
+      },
+      "description": "2585-001 peace/me.nu.chah: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5150
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2585-002 peace/me.nu.chah: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5151
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "2585-003 peace/me.nu.chah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5148
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "2586-001 peace/ma.no.ach: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5162
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2587-001 peace/na.chat: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5134
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2589-001 peace/ha.na.chah: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5168
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Agency / Power / GOD"
+      },
+      "description": "2591-001 peace/ra.ga: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5152
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2593-001 peace/mar.go.a: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5153
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2594-001 peace/mar.ge.ah: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5170
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "2595-001 peace/ra.ge.a: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5132
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Deliberate inner volitional stilling. Automated Spiritual/God-ward → Volition."
+      },
+      "description": "2596-001 peace/da.mam: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5131
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "2597-001 peace/da.mam: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5130
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "2601-001 peace/da.mah: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5129
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "2602-001 peace/du.mam: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5133
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "2603-001 peace/de.ma.mah: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5138
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "408-001 peace/cha.resh: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5139
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "408-002 peace/cha.resh: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5140
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Cognition / HUMAN"
+      },
+      "description": "408-003 peace/cha.resh: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5141
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "408-004 peace/cha.resh: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5142
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "408-005 peace/cha.resh: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5143
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "408-006 peace/cha.resh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5144
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "409-001 peace/cha.shah: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5145
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "409-002 peace/cha.shah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5146
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "409-003 peace/cha.shah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5147
+      },
+      "set": {
+        "dimension": "Volition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Volition / HUMAN"
+      },
+      "description": "409-004 peace/cha.shah: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5126
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "410-001 peace/be.ra.khah: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5127
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Agency / Power / HUMAN"
+      },
+      "description": "410-002 peace/be.ra.khah: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5171
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "413-001 peace/sha.a.nan: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5172
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "413-002 peace/sha.a.nan: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5128
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "415-001 peace/ge.mar: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5136
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "417-001 peace/cha.rash: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5137
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "417-002 peace/cha.rash: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5174
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Quietness and trust as posture of dependence. Automated Spiritual/God-ward → Dependence/Creatureliness."
+      },
+      "description": "418-001 peace/sha.qat: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5175
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "418-002 peace/sha.qat: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5176
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "418-003 peace/sha.qat: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5177
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "418-004 peace/sha.qat: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5154
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "419-001 peace/nu.ach: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5155
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "419-002 peace/nu.ach: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5156
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "419-003 peace/nu.ach: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5157
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Cognition / HUMAN"
+      },
+      "description": "419-004 peace/nu.ach: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5158
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "419-005 peace/nu.ach: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5159
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Dependence / Creatureliness / HUMAN"
+      },
+      "description": "419-006 peace/nu.ach: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5169
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "420-001 peace/ra.ga: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5135
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "421-001 peace/has: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5111
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "422-001 peace/eirēneuō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5123
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Negative / HUMAN"
+      },
+      "description": "423-001 peace/siōpaō: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5118
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "424-001 peace/hēsuchazō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5121
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "425-001 peace/sigaō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5112
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Divine peace received as positively valenced inner state. Automated Spiritual/God-ward → Emotion — Positive."
+      },
+      "description": "426-001 peace/eirēnē: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5113
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "426-002 peace/eirēnē: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5114
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / HUMAN"
+      },
+      "description": "426-003 peace/eirēnē: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5115
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "427-001 peace/eirēnikos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5117
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "428-001 peace/ēremos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5110
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "429-001 peace/anesis: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5116
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Transformation / GOD"
+      },
+      "description": "430-001 peace/eirēnopoieō: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5124
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Moral Character / HUMAN"
+      },
+      "description": "431-001 peace/fimoō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5167
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Relational Disposition / GOD"
+      },
+      "description": "439-001 peace/qan.na: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5160
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "5118-001 peace/nu.ach: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5161
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dominant_subject": "HUMAN",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Phase C assessment: Emotion — Positive / HUMAN"
+      },
+      "description": "5118-002 peace/nu.ach: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5400
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Reconciliation = inner transformation accomplished by God. Automated Identity/Selfhood → Transformation / GOD."
+      },
+      "description": "1093-001 reconciliation/katallagē: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5401
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dominant_subject": "GOD",
+        "dimension_confidence": "CLAUDE_AI",
+        "notes": "Active reconciliation = Transformation / GOD. Automated Relational/Social → Transformation."
+      },
+      "description": "6114-001 reconciliation/katallassō: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-103-001",
+        "registry_id": 103,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The love registry spans the broadest relational vocabulary in the programme — agapē, phileō, chesed, and related terms — encompassing God's love for humanity (GOD dominant), human love toward God, mutual love among persons, and disordered love. Session B should map the full spectrum of love's inner-being architecture: what distinguishes the different forms, how they interrelate, and what the coexistence of eros/philia/agapē in the same registry reveals about the inner-being's capacity for love.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — love: full spectrum of love vocabulary and its inner-being architecture"
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-117-002",
+        "registry_id": 117,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The peace registry's inner-being content is unusually wide — spanning the felt inner state of rest/peace (Emotion — Positive), the inner posture of quietness before God (Moral Character/Relational Disposition), the divine giving of rest (Transformation/GOD), and God's own inner states of rest, restraint, and jealousy. Session B should examine what shalom names as an inner-being reality: is it primarily a felt state, a relational condition, a divine gift, or an eschatological reality — and how do these dimensions interrelate?",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — peace: shalom as multi-dimensional inner-being reality"
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-111-001",
+        "registry_id": 111,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The atonement/propitiation vocabulary (kipper, kaphar, kapporet, hilasmos, hilastērios) within the mercy registry produces a cluster of Transformation/GOD groups where moral standing is transformed through atoning acts. Session B should examine the relationship between mercy as divine inner disposition (Relational Disposition/GOD) and atonement as its structural mechanism — how God's inner relational orientation of mercy is expressed in and through transformative acts that alter the person's standing.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — mercy: relationship between divine relational disposition and atonement mechanism"
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-34-001",
+        "registry_id": 34,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Three groups within the covenant registry show the new covenant as inner transformation (765-003, 766-002, 777-001 — law written on heart, new covenant through Spirit, new self/creation in Christ). Session B should examine the covenant registry's inner transformation dimension: how the trajectory from the Sinai covenant (obedience required externally, inner-being orientation demanded) to the new covenant (transformation from within, law on heart) is encoded in the Dimension Review data and what this discloses about the inner person as the site of covenantal fulfilment.",
+        "anchor_verses": "Jer 31:31-34; 2 Cor 3; Eph 4:24",
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — covenant: Sinai to new covenant trajectory as inner transformation"
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 103,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-103-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Group 1581-001 (katafileō, to kiss) was assigned Emotion — Positive for the inner states expressed through the physical act. The legacy Somatic/Embodied automated label raised a genuine question about whether Scripture encodes inner-being content in bodily expression in ways the v1.4 vocabulary does not capture. Session D should assess whether a Somatic dimension is warranted across the programme — for groups where inner-being content is carried by or expressed through physical/bodily acts (kiss, embrace, prostration, anointing, tears). This may require a v1.4 vocabulary revision.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — Somatic/Embodied dimension gap: bodily expression of inner states across the programme"
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 103,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-103-SD002",
+        "strongs_reference": null,
+        "cross_registry_id": 117,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C17 shows a significant concentration of Relational Disposition groups with GOD as dominant subject — the divine inner being as relationally oriented toward persons. These span love (God's chesed and agapē), compassion (divine racham), mercy (God's eleos), grace (God's charis/chen), and peace (God's shalom-giving). Combined with the Transformation/GOD groups (atonement, forgiveness, Spirit-impartation) and Moral Character/GOD groups (forgiveness as divine attribute, compassion as God's character), C17 reveals the fullest picture yet of God's inner being. Session D should synthesise across C17 and other clusters to characterise the inner being of God as Scripture describes it — his relational dispositions, inner emotional range, and what this reveals about the divine nature in relation to the human person created in his image.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — C17 as the fullest portrait of God's inner being: love, compassion, mercy, grace, peace"
+    }
+  ]
+}

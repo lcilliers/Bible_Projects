@@ -1,0 +1,83 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-SPECIALSTATUS-POINTERS-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Active Session B findings for special-status terms in peace (#117) and soul (#182). Ensures theological anchor and phase2_enrichment terms surface at Session B DataPrep. Two CC investigation flags for peace registry anomalies."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-117-001",
+        "registry_id": 117,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Peace (#117) carries 15 terms with status=extracted_theological_anchor (818 active verses). These are divine names, titles, and eternal/hosts vocabulary — YHWH-Shalom, LORD of Hosts (H6635A/B, 292 verses), El Shaddai (H7706, 48 verses), Adonai (H0136, 187 verses), El Olam (H5769G/H, 273 verses), El Elyon (H5943/H5946, 14 verses), YHWH-Nissi, YHWH-Tsidkenu, YHWH-Tsidkenu (H6664H, 2 verses), sabaoth (G4519, 2 verses). Deliberately excluded from VCB — no verse_context records exist for these terms. Their active verses remain unflagged by design. Session B DataPrep must include these terms as theological frame context for the peace word analysis. Verse records are accessible via wa_verse_records joined through wa_term_inventory. See word_registry.notes for full term list.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-06",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+      },
+      "description": "Session B finding — peace (#117): theological anchor terms must be surfaced at DataPrep"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-182-003",
+        "registry_id": 182,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Soul (#182) carries 1 term with status=phase2_enrichment: H5317 (nophet/honey, 5 active verses). Pro 27:7 — one who is full loathes honey; to one who is hungry everything bitter is sweet — encodes the appetite dimension of nephesh through honey as archetype metaphor. Deliberately excluded from VCB — no verse_context records exist. Active verses remain unflagged by design. Decision carried forward from prior Session B. Session B DataPrep must include this term as contextual support for understanding the soul's appetitive dimension. Verses: Psa 19:10, Pro 5:3, Pro 24:13, Pro 27:7, Song 4:11.",
+        "anchor_verses": "Pro 27:7",
+        "raised_date": "2026-04-06",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+      },
+      "description": "Session B finding — soul (#182): phase2_enrichment term H5317 must be surfaced at DataPrep"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 117,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-117-SD001",
+        "strongs_reference": "H3070",
+        "cross_registry_id": 58,
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "H3070 (YHWH-Yireh, YHWH-Jireh) registration anomaly: owner_registry field points to experience (#58) but this term is registered as extracted_theological_anchor in peace (#117). Requires CC investigation to confirm correct owner registry assignment before Session B begins on peace. If owner should be peace, update mti_terms.owning_registry accordingly.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.2",
+        "raised_date": "2026-04-06",
+        "resolved": 0
+      },
+      "description": "CC investigation flag — H3070 owner registry mismatch: experience vs peace"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 117,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-117-SD002",
+        "strongs_reference": "H3068G",
+        "cross_registry_id": null,
+        "priority": "LOW",
+        "session_target": "D",
+        "description": "H3068G (YHWH/Yahweh) registration anomaly: owner_registry = NULL, active_verse_count = 0. This is the primary divine name; its absence of an owner registry and zero active verses is structurally unusual. May be a registration placeholder. Requires CC investigation before Session B begins on peace to confirm whether this is intentional (placeholder, handled via H3068 variants elsewhere) or an incomplete registration.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.2",
+        "raised_date": "2026-04-06",
+        "resolved": 0
+      },
+      "description": "CC investigation flag — H3068G no owner registry and zero verses"
+    }
+  ]
+}

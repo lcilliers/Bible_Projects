@@ -1,0 +1,1212 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260408-DIMREVIEW-C16-V1",
+    "cluster": "C16",
+    "produced_date": "2026-04-08",
+    "produced_by": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+    "session_b_status": null,
+    "description": "Dimension review patch — C16: 135 wa_dimension_index updates (dimension + dominant_subject + dimension_confidence); 5 wa_session_b_findings inserts; 2 wa_session_research_flags inserts"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3596},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Positively valenced felt inner state: fullness, satisfaction, delight in the satisfied soul"},
+      "description": "111-001 anointing/da.shen: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3597},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God's favour and blessing directed toward person — inner standing grounded in divine relational act"},
+      "description": "111-002 anointing/da.shen: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3583},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Opening of inner perception = inner change in what can be known; anointing as transformative gift"},
+      "description": "15-001 anointing/enchriō: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3600},
+      "set": {"dimension": "Moral Character", "dominant_subject": "UNSEEN", "dimension_confidence": "CLAUDE_AI", "notes": "Pride corrupting originally exalted moral standing — stable inner quality; UNSEEN (cherubic/angelic figure)"},
+      "description": "158-001 anointing/mimshach: Moral Character / UNSEEN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3601},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit-reception producing inner change — paradigmatic transformation: Spirit rushing upon and transforming inner life"},
+      "description": "167-001 anointing/mashach: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3602},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner moral orientation of reverence for divine appointment — stable prohibition reflecting moral character"},
+      "description": "167-002 anointing/mashach: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3603},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God exercising capacity to appoint and commission — the act that designates and marks divine favour"},
+      "description": "167-003 anointing/mashach: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3604},
+      "set": {"dimension": "Moral Character", "dominant_subject": "NONE", "dimension_confidence": "CLAUDE_AI", "notes": "Oil as sacred medium; inner-being content is the consecrated state enacted. No dominant human subject — NONE."},
+      "description": "169-001 anointing/mishchah: Moral Character / NONE"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3605},
+      "set": {"dimension": "Moral Character", "dominant_subject": "NONE", "dimension_confidence": "CLAUDE_AI", "notes": "H4888B variant — same content and dimension as 169-001 (H4888A). Oil as sacred medium; NONE dominant."},
+      "description": "170-001 anointing/mashechah: Moral Character / NONE"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3606},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Priest's moral condition (sin/purity) as inner-being substance carrying covenantal weight"},
+      "description": "171-001 anointing/mashiach: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3607},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Set-apart identity and moral standing before God — stable quality of the anointed king"},
+      "description": "171-002 anointing/mashiach: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3608},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "Messiah as exercise of divine authority and fulfilment of God's sovereign purpose. Automated Volitional/Will incorrect — reassigned."},
+      "description": "171-003 anointing/mashiach: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3609},
+      "set": {"dimension": "Emotion — Negative", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Grief as negatively valenced felt inner state expressed outwardly through abstention from anointing"},
+      "description": "179-001 anointing/sukh: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3610},
+      "set": {"dimension": "Transformation", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God as agent of inner restoration — claiming and beautifying what was degraded"},
+      "description": "179-002 anointing/sukh: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3586},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Perceptual restoration = inner change. Automated Volitional/Will incorrect — this is Transformation."},
+      "description": "18-001 anointing/epichriō: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3613},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "QA-VAGUE: description names inner quality and character broadly — Moral Character is broadest defensible assignment"},
+      "description": "243-001 anointing/shemen: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3614},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Joy as positively valenced inner state — oil of gladness"},
+      "description": "243-002 anointing/shemen: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3615},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner consecration as stable set-apart quality — oil as outward sign of inner state"},
+      "description": "243-003 anointing/shemen: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3616},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Disordered stable inner quality — moral character in negative register: self-indulgence and spiritual unfaithfulness"},
+      "description": "243-004 anointing/shemen: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3617},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Oil penetrating to deepest interior — metaphor for inner-being reaching and transforming"},
+      "description": "243-005 anointing/shemen: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3587},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation of love and devotion toward Christ — anticipatory act of anointing in preparation for burial"},
+      "description": "34-001 anointing/murizō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3582},
+      "set": {"dimension": "Moral Character", "dominant_subject": "UNSEEN", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit of denial as stable negative moral character — UNSEEN (spirit of antichrist). Automated Cognitive/Mind reassigned."},
+      "description": "4692-001 anointing/antichristos: Moral Character / UNSEEN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3611},
+      "set": {"dimension": "Transformation", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God as agent of negative inner transformation — causing the heart to become dull and unresponsive (judicial hardening)"},
+      "description": "4697-001 anointing/shamen: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3612},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner movement from dependence to self-sufficiency — abundance producing inner dulling and turning from God"},
+      "description": "4697-002 anointing/shamen: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3584},
+      "set": {"dimension": "Transformation", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God as agent of erasure/forgiveness — inner change in standing before God through blotting out of sin"},
+      "description": "4701-001 anointing/exaleifō: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3585},
+      "set": {"dimension": "Transformation", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God as eschatological agent of inner reversal — final wiping away of all inner suffering in renewed creation"},
+      "description": "4701-002 anointing/exaleifō: Transformation / GOD"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3588},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation of love and honour toward Christ expressed through costly devotion"},
+      "description": "4703-001 anointing/muron: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3599},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Satisfaction as positively valenced felt inner state — inner fullness of delight when nourished by God's provision"},
+      "description": "4722-001 anointing/deshen: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3598},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Flourishing and vitality as positively valenced inner state — sustained through trust in God. Automated Spiritual/God-ward reassigned."},
+      "description": "4723-001 anointing/dashen: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3589},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit's anointing as inner knowing/teaching — remains and teaches from within, guarding against deception. Automated Cognitive/Mind maps to Cognition."},
+      "description": "65-001 anointing/chrisma: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3590},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "G5545B variant — same content as 65-001. Spirit's inner teaching and knowing function."},
+      "description": "66-001 anointing/chrisis: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3591},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Faith as inner relational orientation toward Christ as ground of life. Automated Identity/Selfhood reassigned — the inner-being content is the person's faith-orientation, not identity per se."},
+      "description": "67-001 anointing/christos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3592},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Union with Christ = inner transformation; being in Christ constitutes a new inner state"},
+      "description": "67-002 anointing/christos: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3593},
+      "set": {"dimension": "Dependence / Creatureliness", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner life resting on received truth of Christ's death and resurrection — posture of trust and dependence on what is outside the self"},
+      "description": "67-003 anointing/christos: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3594},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "Jesus anointed with Spirit for ministry — divine capacity given for exercise. Automated Volitional/Capacity reassigned to Agency/Power."},
+      "description": "68-001 anointing/chriō: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3595},
+      "set": {"dimension": "Dependence / Creatureliness", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner certainty/firmness grounded in God's anointing act — security from outside the self"},
+      "description": "68-002 anointing/chriō: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3580},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner regard, love, and honour directed toward another — expressed through anointing"},
+      "description": "7-001 anointing/aleifō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3581},
+      "set": {"dimension": "Dependence / Creatureliness", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Faith and intercession as inner posture of reliance — prayer as dependence on God for healing. Automated Spiritual/God-ward reassigned."},
+      "description": "7-002 anointing/aleifō: Dependence / Creatureliness / HUMAN"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3783},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Holy standing and inner dedication as stable inner quality — crown as outward sign. Automated Spiritual/God-ward reassigned."},
+      "description": "4862-001 consecration/nezer: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3784},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Rupture of consecration = inner change of standing — movement from dedicated to rejected state"},
+      "description": "4863-001 consecration/nezer-hair: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3780},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Directed inner act of willing consecration or separation — core volitional act of self-dedication or rejection"},
+      "description": "4864-001 consecration/nazar: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3781},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Voluntary inner commitment of total dedication — Nazirite vow as outward form of inner volitional act"},
+      "description": "4865-001 consecration/nazar-Nazirite: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3791},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Covenant loyalty as stable inner orientation — dedication as expression of what the person is before God"},
+      "description": "4867-001 consecration/qadash-dedicate: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3792},
+      "set": {"dimension": "Moral Character", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God's holiness as stable divine character quality — manifested before nations. Automated Theological/Divine-Human maps to Moral Character. GOD dominant."},
+      "description": "4870-001 consecration/qadash-holiness: Moral Character / GOD"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3779},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Reverence and awe as inner orientation called forth by the sanctuary — how the person faces God in the sacred space. Automated Spiritual/God-ward reassigned."},
+      "description": "4873-001 consecration/miqdash: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3794},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner readiness, solemnity, and responsibility as moral qualities required for approach to the Holy Place. Automated Spiritual/God-ward reassigned."},
+      "description": "4874-001 consecration/qodesh-HolyPlace: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3786},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner wisdom and discernment as primary content — Spirit is agent; human person is subject of the resulting knowing function. Automated Cognitive/Mind maps to Cognition."},
+      "description": "4875-001 consecration/qaddish: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3787},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner identity constituted by holy belonging — stable moral quality of the saints of the Most High. Automated Identity/Selfhood maps to Moral Character."},
+      "description": "4875-002 consecration/qaddish-saints: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3785},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Holy character, orientation, and standing before God as defining quality — Moral Character in its fullest form. Automated Spiritual/God-ward reassigned."},
+      "description": "4877-001 consecration/qadosh-saint: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3795},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Moral hypocrisy and covenantal violation — stable inner quality in negative register. Automated Moral/Conscience maps to Moral Character."},
+      "description": "4879-001 consecration/qedeshah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3793},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Purified inner condition as criterion for participation — holiness as inner quality defining access"},
+      "description": "4881-001 consecration/qodesh-WayHoliness: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3782},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "The consecrated state itself — stable inner quality of dedication; whole person oriented toward God"},
+      "description": "740-001 consecration/nezer-Nazirite: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3788},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God exercising capacity to set apart — the constituting act that makes persons holy. Automated Identity/Selfhood reassigned to Agency/Power (names what God does, not the outcome)."},
+      "description": "741-001 consecration/qadash-consecrate: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3789},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Voluntary self-dedication — the inner act of orienting the whole person toward God. Automated Spiritual/God-ward reassigned."},
+      "description": "741-002 consecration/qadash-self: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 3790},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation toward God in time — facing God through the Sabbath rhythm of sacred rest and encounter"},
+      "description": "741-003 consecration/qadash-Sabbath: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4624},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Holiness as inner moral quality — set apart inwardly from defilement. Automated Spiritual/God-ward reassigned."},
+      "description": "3178-001 holiness/hosios: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4629},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Core Moral Character group — holiness as inner moral character and set-apart orientation by which person is consecrated to God. Automated Moral/Conscience maps to Moral Character."},
+      "description": "904-001 holiness/qodesh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4630},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Reverence, worship, and desire evoked by encountering God's holiness — inner orientation toward God. Automated Spiritual/God-ward reassigned."},
+      "description": "904-002 holiness/qodesh: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4631},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit's grief and placement within people — relational disposition of God toward his people. GOD dominant. Automated Relational/Social maps to Relational Disposition."},
+      "description": "904-003 holiness/qodesh: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4621},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Sanctification as transformative process — holiness as goal of Christian life and fruit of Spirit's work. Automated Moral/Conscience reassigned; the process of arriving is Transformation."},
+      "description": "905-001 holiness/hagiasmos: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4623},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Holiness as inner moral quality actively pursued and established in the heart — the quality itself. Automated Moral/Conscience maps to Moral Character."},
+      "description": "906-001 holiness/hagiōsunē: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4625},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Constitutive inner character quality — holiness paired with righteousness as what the new person is. Automated Moral/Conscience maps to Moral Character."},
+      "description": "907-001 holiness/hosiotēs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4626},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Moral character as imperative — be holy as God is holy; inner life grounded in God's character. Automated Moral/Conscience maps to Moral Character."},
+      "description": "908-001 holiness/qadosh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4627},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Diverse inner orientations toward the Holy One — trust, awe, joy, rejection, unwillingness. Relational Disposition captures the directedness. Automated Spiritual/God-ward reassigned."},
+      "description": "908-002 holiness/qadosh: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4628},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Set-apart standing as stable inner identity quality — shapes who the person is before God. Automated Identity/Selfhood maps to Moral Character."},
+      "description": "908-003 holiness/qadosh: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4622},
+      "set": {"dimension": "Transformation", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner transformation toward sharing divine character — person disciplined to become partaker of God's holiness"},
+      "description": "910-001 holiness/hagiotēs: Transformation / HUMAN"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4703},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Misplaced inner relational stance — allegiance, rejoicing, and worship wrongly directed toward idol. Automated Spiritual/God-ward reassigned."},
+      "description": "5548-001 idolatry/eidōlon: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4704},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Conscience and moral formation as inner-being content — incompatibility of idol and God within the person. Automated Moral/Conscience maps to Moral Character."},
+      "description": "5548-002 idolatry/eidōlon: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4700},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Conscience as inner moral faculty governing behaviour — food sacrificed to idols as conscience crisis. Automated Moral/Conscience maps to Moral Character."},
+      "description": "5549-001 idolatry/eidōlothutos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4702},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Defining inner orientation toward created things rather than God — misdirected allegiance as relational stance"},
+      "description": "5550-001 idolatry/eidōlolatrēs: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4699},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Conscience vulnerability — weak conscience damaged by exposure to idol's temple. Automated Moral/Conscience maps to Moral Character."},
+      "description": "5552-001 idolatry/eidōleion: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4705},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner response disclosing orientation toward God's honour — provocation reveals relational stance"},
+      "description": "5553-001 idolatry/kateidōlos: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 4701},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Ultimate inner allegiance misdirected — heart's displacement of God by created things. Core Relational Disposition group for idolatry. Automated Spiritual/God-ward reassigned."},
+      "description": "913-001 idolatry/eidōlolatreia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5315},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit-given capacity to receive and speak divine disclosure — the gift exercised. Automated Volitional/Capacity maps to Agency/Power."},
+      "description": "1060-001 prophecy/profēteia: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5316},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Faithful inner response required toward divinely authorised word — inner orientation toward Scripture/prophecy"},
+      "description": "1060-002 prophecy/profēteia: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5331},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner disposition moved toward courage/action or manipulated — volitional direction as target of the prophetic word. Automated Character/Disposition reassigned to Volition."},
+      "description": "1061-001 prophecy/nevuah: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5320},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation toward God as defining quality of the prophetic person — shapes their speech. Automated Spiritual/God-ward reassigned."},
+      "description": "6044-001 prophecy/profētēs: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5321},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Endurance under persecution as stable inner quality — what the authentic prophet is, not a momentary feeling"},
+      "description": "6044-002 prophecy/profētēs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5322},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Scripture orienting the inner person toward God's purposes — inner relational direction via the prophetic canon. Automated Spiritual/God-ward reassigned."},
+      "description": "6044-003 prophecy/profētēs: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5317},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Human person exercising Spirit-given capacity in the act of prophesying"},
+      "description": "6045-001 prophecy/profēteuō: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5318},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Communal exercise of Spirit-gift for building up the inner life of congregation. Automated Volitional/Will maps to Agency/Power."},
+      "description": "6045-002 prophecy/profēteuō: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5319},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "QA-THIN: testing authenticity of prophetic speech — moral quality of integrity/authenticity at stake"},
+      "description": "6045-003 prophecy/profēteuō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5325},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Predatory and deceptive inner character masked outwardly — stable negative moral quality of the false prophet"},
+      "description": "6046-001 prophecy/pseudoprofētēs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5326},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "UNSEEN", "dimension_confidence": "CLAUDE_AI", "notes": "Eschatological False Prophet misorienting others' inner allegiance toward the beast. UNSEEN dominant. Automated Spiritual/God-ward reassigned."},
+      "description": "6046-002 prophecy/pseudoprofētēs: Relational Disposition / UNSEEN"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5323},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Prophetic word as inner-being lamp — illuminates inner life until Christ dawns within; inner knowing function"},
+      "description": "6047-001 prophecy/profētikos: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5324},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner calling vs false claim to prophetic authority — moral character of authenticity/integrity"},
+      "description": "6048-001 prophecy/profētis: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5327},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Spirit activating inward responsive capacity — inner capacity exercised in prophesying. Automated Volitional/Capacity maps to Agency/Power."},
+      "description": "6050-001 prophecy/nava: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5328},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "True inner commission and orientation toward God expressed in prophetic speech. Automated Spiritual/God-ward reassigned."},
+      "description": "6050-002 prophecy/nava: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5329},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner disposition of falsehood — false prophets speaking from their own hearts. Stable negative moral character."},
+      "description": "6050-003 prophecy/nava: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5330},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Obedient inner responsiveness to God's word — relational orientation toward God's authority expressed in directed speech. Automated Spiritual/God-ward reassigned."},
+      "description": "6050-004 prophecy/nava: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5333},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Exercise of prophetic/mediating capacity — prophetic guidance, worship leadership. Automated Spiritual/God-ward reassigned."},
+      "description": "6051-001 prophecy/neviah: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5332},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Sustaining inner disposition of hearers toward covenantal action — volitional direction as target. Automated Character/Disposition maps to Volition."},
+      "description": "6052-001 prophecy/nevuah: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5514},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Stable inner orientation of rebellion — seeking supernatural power outside God; work of flesh / spiritual apostasy"},
+      "description": "1136-001 sorcery/farmakeia: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5515},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation of rejection toward God — engaging occult power as the directional act of turning from God's sole authority"},
+      "description": "1137-001 sorcery/kashaph: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5516},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Sorcery as relational substitute — occult means substituted for God = misdirected relational stance. Automated Moral/Conscience reassigned."},
+      "description": "6275-001 sorcery/kesheph: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5517},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Sorcerer as character type — inner-spiritual orientation defined by occult practice; who the person is"},
+      "description": "6276-001 sorcery/kashshaph: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5591},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner heart-orientation toward divine testimony — how person faces/relates to God's word: inclined, kept, ground of renewal"},
+      "description": "1163-001 testimony/edut: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5594},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Spiritual condition (having or lacking dawn) as criterion for reception — inner quality determining receptivity"},
+      "description": "1167-001 testimony/teudah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5588},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Belief/unbelief as inner volitional response to signs — the act of choosing to believe or refuse when confronted with miraculous evidence"},
+      "description": "1169-001 testimony/ot: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5587},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Conscience as inner moral faculty addressed by word dwelling within. Automated Moral/Conscience maps to Moral Character."},
+      "description": "1171-001 testimony/logos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5589},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner integrity in the act of witnessing — moral quality at stake in true vs false witness. Automated Moral/Conscience maps to Moral Character."},
+      "description": "6545-001 testimony/ed: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5593},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation called toward repentance and receptivity — divine warning directing the inner person toward God"},
+      "description": "6546-001 testimony/ud: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5590},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Joy, delight, and steadfast love as positively valenced inner states evoked by the testimonies — primary inner-being content is affective"},
+      "description": "6547-001 testimony/edah: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5592},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner faithfulness and steadfastness as stable qualities — not forgetting the law despite external constraint"},
+      "description": "6548-001 testimony/ud-return: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5647},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "QA-VAGUE: unbelief as inner volitional state — refusal or failure to believe; the heart described, rebuked, or wrestled with"},
+      "description": "1198-001 unbelief/apistia: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5648},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "QA-VAGUE: unbelief as persistent inner volitional state with decisive consequences at communal scale"},
+      "description": "1198-002 unbelief/apistia: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5645},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Wilful inner refusal — paradigmatic volitional act of disobedience toward God, his Son, or his word. Automated Spiritual/God-ward reassigned."},
+      "description": "1199-001 unbelief/apeitheō: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5646},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Hardness of mind as stable negative inner quality — persistent state producing communal consequences. Automated Relational/Social reassigned."},
+      "description": "1199-002 unbelief/apeitheō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 5649},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "QA-THIN: dē intensifying divine command — Agency/Power of God exercising authority. Automated Volitional/Will reassigned; command originates in GOD."},
+      "description": "6602-001 unbelief/dē: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6199},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner act of judging and distinguishing — moral discernment as knowing/perceiving function. Automated Moral/Conscience reassigned; the act of distinguishing is Cognition."},
+      "description": "1285-001 doubt/diakrinō: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6200},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner volitional division — heart split between faith and hesitation, driven and tossed; core doubt group"},
+      "description": "1285-002 doubt/diakrinō: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6211},
+      "set": {"dimension": "Emotion — Negative", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Violent inner states (wrath, predatory character, destructive anger) as negatively valenced. HUMAN is dominant experiential subject. GOD-dimension (divine wrath/resolve) present — see Session B pointer DIM-191-001. Automated Theological/Divine-Human reassigned."},
+      "description": "1286-001 doubt/taraph: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6210},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner conviction and truthfulness — the 'truly' anchoring moral assertion and confession about God's character. Automated Moral/Conscience maps to Moral Character."},
+      "description": "1287-001 doubt/omnam: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6202},
+      "set": {"dimension": "Volition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Wavering as volitional instability — faith faltering between trust and hesitation, addressed directly by Jesus"},
+      "description": "1288-001 doubt/distazō: Volition / HUMAN"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6209},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Certainty, conviction, and resolve as stable inner qualities — character of apostolic conviction and wholehearted commitment"},
+      "description": "1289-001 doubt/pantōs: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6201},
+      "set": {"dimension": "Cognition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner spiritual capacity to distinguish good from evil and spirits — knowing/discerning function. Automated Cognitive/Mind maps to Cognition."},
+      "description": "7160-001 doubt/diakrisis: Cognition / HUMAN"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6198},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Impartiality as stable inner character quality of wisdom from above — absence of wavering or prejudice. Automated Cognitive/Mind reassigned; this is a character quality, not an act of knowing."},
+      "description": "7161-001 doubt/adiakritos: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6212},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Predatory inner character of unjust leaders as primary content — moral character in negative register; God's resolve also present but human leaders' character is dominant"},
+      "description": "7162-001 doubt/tereph: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6214},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner integrity under test — person refusing defilement, bearing losses rather than shifting blame"},
+      "description": "7163-001 doubt/teraphah: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6213},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner recognition of grace and new beginning — positively valenced inner state of hope renewed by the olive leaf sign"},
+      "description": "7164-001 doubt/taraph-fresh: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6208},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Constant inner orientation toward God — always praying, giving thanks, rejoicing, abounding; mark of life wholly directed toward God"},
+      "description": "7181-001 doubt/pantote: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6207},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God as Almighty — absolute power as object of worship and ground of covenant; divine sovereignty over history. GOD dominant."},
+      "description": "7182-001 doubt/pantokratōr: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6204},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "Universal divine mandate — gospel preached everywhere; inner-being mandate with no geographic boundary. GOD dominant as source of the commission."},
+      "description": "7183-001 doubt/pantachou: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6205},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "Complete sufficiency of Christ's saving power as Agency/Power — the human's complete inability is the contrast. GOD (Christ) dominant."},
+      "description": "7184-001 doubt/pantelēs: Agency / Power / GOD"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6206},
+      "set": {"dimension": "Emotion — Negative", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner experience of complete encirclement and inescapable judgment — negatively valenced felt inner state"},
+      "description": "7185-001 doubt/pantothen: Emotion — Negative / HUMAN"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6203},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner orientation of seeking directed toward Jesus from every quarter — relational orientation of universal drawing"},
+      "description": "7186-001 doubt/pantachothen: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6225},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inner act of consecration and thankfulness directed toward God — how person faces God in pronouncing blessing"},
+      "description": "1298-001 blessing/eulogeō: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6226},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Exercise of prophetic/covenantal capacity in pronouncing blessing over persons and communities"},
+      "description": "1298-002 blessing/eulogeō: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6227},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Counterintuitive orientation of blessing persecutors — stable inner quality of grace and non-retaliation in the face of curse"},
+      "description": "1298-003 blessing/eulogeō: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6230},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "GOD", "dimension_confidence": "CLAUDE_AI", "notes": "God's inner disposition of love as source of sovereign covenantal blessing — Relational Disposition with GOD dominant"},
+      "description": "1299-001 blessing/barakh-God: Relational Disposition / GOD"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6231},
+      "set": {"dimension": "Relational Disposition", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Human inner-being orientation of worship, doxology, and praise toward God — how person faces God in blessing"},
+      "description": "1299-002 blessing/barakh-human-God: Relational Disposition / HUMAN"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6232},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Exercise of covenantal/prophetic capacity — declaring favour, invoking God's goodness over persons and communities"},
+      "description": "1299-003 blessing/barakh-human-human: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6233},
+      "set": {"dimension": "Moral Character", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Inverted inner orientation — moral hypocrisy of blessing used against its proper object; self-blessing of the sinful heart"},
+      "description": "1299-004 blessing/barakh-ironic: Moral Character / HUMAN"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6228},
+      "set": {"dimension": "Emotion — Positive", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "Blessedness as positively valenced felt inner state — receiving God's grace. Automated Affective/Emotional maps to Emotion — Positive."},
+      "description": "1300-001 blessing/makarismos: Emotion — Positive / HUMAN"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {"id": 6229},
+      "set": {"dimension": "Agency / Power", "dominant_subject": "HUMAN", "dimension_confidence": "CLAUDE_AI", "notes": "God-given capacity exercised for building up the community — charisma as Spirit-gift exercised. Automated Volitional/Capacity maps to Agency/Power."},
+      "description": "1301-001 blessing/charisma: Agency / Power / HUMAN"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-6-001",
+        "registry_id": 6,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 6 (anointing) spans 7 dimensions across 38 groups — the widest dimensional range in C16. Session B should examine whether this breadth coheres around a unifying theme (Spirit-mediated transformation and divine endowment) or represents genuinely distinct inner-being phenomena requiring separate analytical threads.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — anointing: dimensional diversity warrants unifying theme examination"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-6-002",
+        "registry_id": 6,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Multiple Transformation groups in Reg 6 have GOD as dominant subject (167-001, 179-002, 4697-001, 4701-001, 4701-002). Session B should explore the full theology of God-initiated inner transformation in the anointing vocabulary — spanning Spirit-impartation, forgiveness, restoration, eschatological renewal, and judicial dulling/hardening as distinct expressions of the same divine transforming agency.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — anointing: GOD-initiated transformation distribution across group types"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-191-001",
+        "registry_id": 191,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 1286-001 (H2963 ta.raph, tearing) was assigned Emotion — Negative / HUMAN to capture the human experience of violent inner states: wrath, predatory character, destructive anger, and the suffering of being torn. The same group contains significant GOD-dimension content — divine wrath and fierce resolve to fight for his people. Session B should study both dimensions: (1) the human inner-being experience of violent states and of being torn under judgment or hostile power; and (2) the divine inner-being reality of wrath and fierce protective resolve, exploring whether these are the same phenomenon viewed from different subjects or whether they name distinct inner-being realities.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — doubt/taraph: dual-subject violent inner states — human experience and divine wrath both require Session B study"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-124-001",
+        "registry_id": 124,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Registry 124 (prophecy) shows a consistent pattern of Agency/Power (Spirit-enabled capacity exercised) alongside Relational Disposition (inner orientation toward God or his word). Session B should examine the relationship between inner capacity and inner orientation in the prophetic person: is prophetic capacity a dimension in its own right, or is it always constituted by and in service of a prior relational orientation toward God?",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — prophecy: relationship between Agency/Power and Relational Disposition in prophetic identity"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-194-001",
+        "registry_id": 194,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The blessing vocabulary reveals a mirror structure in Relational Disposition: group 1299-001 names God's inner disposition of love as the source of his blessing toward persons (GOD dominant); group 1299-002 names the human inner orientation of worship and praise as the act of blessing God (HUMAN dominant). Session B should examine this mutual relational structure — whether the blessing vocabulary discloses a covenantal reciprocity in inner-being orientation between God and persons, and what this reveals about the inner being as the site of covenant relationship.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-08",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.4-2026-04-08"
+      },
+      "description": "Session B pointer — blessing: mirror Relational Disposition structure — God toward persons, persons toward God"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 6,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-6-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C16 contains a substantial concentration of GOD-dominant Agency/Power and Transformation groups across anointing, consecration, and blessing — God appointing, transforming, restoring, forgiving, and blessing as inner-being acts directed toward the human person. Session D should synthesise how God's inner-being activity toward persons is distributed across the full programme and whether C16 represents a distinct domain of divine inner-being engagement (endowment/consecration) distinguishable from other clusters.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — GOD-dominant inner-being activity in C16 across anointing, consecration, blessing"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 76,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-76-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Group 910-001 (hagiotēs, holiness) names holiness as a divine character quality that the human person is disciplined to share — inner transformation making the person a partaker of God's own holiness. This group is a potential locus for Session D exploration of the imago dei as inner-being reality: the human inner being shaped toward the character of God. Session D should trace connections to clusters carrying righteousness, faithfulness, and love to assess whether a coherent imago dei dimension-pattern emerges across the programme.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.4-2026-04-08",
+        "raised_date": "2026-04-08",
+        "resolved": 0
+      },
+      "description": "Session D pointer — holiness/hagiotēs: imago dei as inner-being reality — partaking of God's character across clusters"
+    }
+  ]
+}

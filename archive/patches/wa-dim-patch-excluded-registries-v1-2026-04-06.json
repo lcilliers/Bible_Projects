@@ -1,0 +1,251 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-EXCLUDED-V1",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Excluded registry audit 2026-04-06 — analytical reasoning notes added to all 24 excluded registries. Covers COVERED (10), REPLACED (11), SPECIAL HANDLING (2), and data error (1). Blamelessness notes inconsistency corrected. No status field changes."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 9 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Assent has no standalone lexical entry in Hebrew or Greek. The concept is structurally inseparable from faith (pistis/emunah), trust (bitachon), and obedience (shama/hypakoē) — to believe is already to assent, to trust is already to yield inner agreement. Scripture does not separate intellectual assent from relational commitment: agreeing is giving yourself, not merely your opinion. The absence of a discrete term is itself a biblical-theological finding. Covered by faith (#59), trust (#163), obedience (#114). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Assent (9) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 14 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Blamelessness is a derived moral state, not a primary inner-being capacity. H8535 (tam, blameless/whole) is confirmed within integrity (#92). The inner-being work of blamelessness — the person whose inner life and outer life match, who lives consistently without duplicity — is already addressed by integrity, innocence, and uprightness. No distinct lexical separation exists between blamelessness and these registries. Note: uprightness (#168) is the third covering registry (not righteousness #139 as originally cited — correction applied 2026-04-06). Covered by innocence (#90), integrity (#92), uprightness (#168). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Blamelessness (14) — analytical reasoning added; covering registry corrected from righteousness to uprightness"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 21 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Commitment as a psychological state — the deliberate binding of the will to a person, cause, or covenant — has no single Hebrew or Greek lexical anchor. The inner act of committing is expressed through the covenant (berith), faithfulness (emunah/chesed), and loyalty vocabulary. Commitment is the interior dimension of covenant: what makes a promise more than a statement of current intent. The absence of a discrete term reflects the biblical integration of volitional, relational, and covenantal categories rather than a programme gap. Covered by faithfulness (#60), loyalty (#104), covenant (#34). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Commitment (21) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 30 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Contrition is the inner precondition for genuine repentance rather than a distinct inner-being state: without deep sorrow for wrong done, repentance is merely a change of strategy. H1792 (daka, to be crushed/contrite) is distributed across repentance and grief registries. No lexical separation between contrition and brokenness exists in the Hebrew text — the crushed spirit (Ps 51:17) is simultaneously contrite and broken. The inner-being reality is fully addressed within its covering registries. Covered by repentance (#135), brokenness (#18), grief (#71). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Contrition (30) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 79 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Hopelessness does not have its own biblical vocabulary as a distinct inner state — it is the void left when hope collapses, named through the failure and cessation vocabulary. H3615 (kalah, to fail/cease) and H2976 (ya'ash, to despair) carry the semantic range of hope's absence within the hope registry. The lament psalm tradition models the movement from hopelessness back toward trust without giving hopelessness a standalone term. Despair (#44) also addresses the acute collapse of inner orientation. The antonym pole of hope and the standalone despair registry together provide full coverage. Covered by hope (#78, antonym range) and despair (#44). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Hopelessness (79) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 88 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Ingratitude has no distinct Hebrew or Greek term — it is expressed as the absence of praise and thanksgiving (H3034 yadah; G2168 eucharisteō). Paul places ingratitude at the beginning of the downward spiral of moral decline in Romans 1 (neither glorified him nor gave thanks) — making it spiritually diagnostic: it reveals a distorted perception of one's own position and dependence. This negative pole is inseparable from the gratitude vocabulary and is addressed within the gratitude registry as the absence dimension. No distinct lexical entry is possible or necessary. Covered by gratitude (#69, negative dimension). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Ingratitude (88) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 95 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Intuition as a distinct faculty of direct inner knowing without reasoning has no Hebrew or Greek lexical equivalent — it is a modern psychological category. Biblical epistemology is more relational than intuitive: knowing comes through attentiveness to God and reality, through the trained inner capacity of discernment, and through the Spirit's illumination rather than through a separate quick-knowing faculty. The inner knowing described in Scripture is carried by the wisdom, discernment, and understanding cluster. Observation: the inference note flags that the concept appears under the functions of the human spirit and conscience — if Session B on spirit (#184) or conscience (#26) surfaces a distinct pattern of immediate inner knowing, this should be captured as a Session D pointer at that time. Covered by discernment (#49), wisdom (#174), insight (#91). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Intuition (95) — analytical reasoning added; spirit/conscience observation noted for Session B"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 118 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Personality as a modern psychological construct — the distinctive pattern of traits that makes each person uniquely themselves — has no single biblical lexical anchor. Scripture addresses the formed character of the inner person through the anthropological core vocabulary: the soul (nephesh/psychē) as the living person in totality, the heart (lev/kardia) as the centre of thought, will, and emotion, the spirit (ruach/pneuma) as the person's God-ward dimension, and the conscience as the moral self-awareness before God. The totality of inner being expressed through these entries encompasses what personality means in the biblical framework, and the biblical account treats personhood as given and known by God before it is described by the person themselves. Covered by soul (#182), heart (#183), spirit (#184), conscience (#26). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Personality (118) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 133 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Reliability is faithfulness made concrete in repeated action — the quality of being trustworthy over time. H0529 (emun, faithfulness/reliability) and H0571 (emet, truth/reliability/steadfastness) are both confirmed within the faithfulness registry. No distinct lexical separation exists between reliability and faithfulness in the Hebrew emet/emunah family: reliability is not a distinct inner capacity but the observable behavioural expression of the inner quality of faithfulness. Covered by faithfulness (#60). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Reliability (133) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 141 },
+      "set": {
+        "notes": "COVERED — Exclusion validated 2026-04-06. Self-awareness as a modern psychological category — the capacity to see one's own inner states, motivations, and blindspots accurately — has no single biblical lexical anchor. The reflexive use of H3045 (yada, to know) covers self-knowledge in the Hebrew text, and Greek syneidēsis (conscience) is precisely the faculty of self-awareness before God: knowing one's own inner moral condition and standing. The examined life is not the final goal in Scripture, but Scripture does address the person who knows themselves — their guilt, their capacity, their position before God — through the conscience and knowledge vocabulary. Covered by conscience (#26), knowledge (#100). No further action required. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Self-awareness (141) — analytical reasoning added to exclusion note"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 12 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Betrayal as an English label was replaced by treachery (#203) as the more lexically precise term. The Greek prodotēs (traitor/betrayer) and related vocabulary carry the specific inner dynamic of hidden deliberate working against someone who trusts you — a more precise inner-being characterisation than the broader English word betrayal. Replacement registry #203 is active and Complete (1 group confirmed). The inner-being reality of betrayal is fully addressed by its replacement. No further action required."
+      },
+      "description": "Betrayal (12) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 25 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Conformity as an English label (carrying sociological connotations of external social pressure) was replaced by likeness (#209) as the biblically precise term. The Greek homoiōsis (resemblance, being conformed to a likeness) captures the inner transformation dynamic that Scripture addresses — being conformed to the image of Christ (Rom 8:29; 2 Cor 3:18) — which is an active inner-being process, not merely social compliance. The replacement is an analytical improvement. Replacement registry #209 is active and Complete (2 groups confirmed). No further action required."
+      },
+      "description": "Conformity (25) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 37 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Darkening as an English label was replaced by blindness spiritual (#207) as the more lexically grounded term. Spiritual blindness is a well-defined biblical inner-being state — the impairment of the inner person's capacity to perceive moral and spiritual reality — with specific Hebrew and Greek vocabulary. The replacement is more analytically precise and substantially covered. Replacement registry #207 is active and Complete (12 groups confirmed). No further action required."
+      },
+      "description": "Darkening (37) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 38 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Deadness as an English label was retained but re-registered under #210 with a more precise lexical anchor. The inner-being state of deadness — the absence of responsiveness, vitality, and capacity for relationship, and its reversal through divine quickening — is one of the most substantive inner-being categories in the New Testament (Eph 2:1-5; Col 2:13; Rom 6). Replacement registry #210 is active, Complete, and substantive (22 groups confirmed — the most of any replacement registry). No further action required."
+      },
+      "description": "Deadness (38) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 82 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Identity as a modern psychological concept (self-concept, personal identity) was replaced by name (#204) as the biblically precise term. In the biblical world, the name (shem/onoma) carries what we mean by identity: it expresses essence, character, history, and destiny. To know someone's name is to know who they are. God's naming and renaming of persons (Abram/Abraham, Jacob/Israel, Simon/Peter) are acts of identity-conferral. The replacement is a genuine analytical improvement that grounds the concept in Scripture's own framework. Replacement registry #204 is active and Complete (14 groups confirmed). No further action required."
+      },
+      "description": "Identity (82) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 84 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Image of God as a compound theological label was replaced by image (#201) as the lexically anchored term. Tselem (Hebrew, image/likeness) and eikōn (Greek, image/representation) carry the full range — including the imago Dei — and are present across a wider verse set than the theological phrase alone would suggest. The replacement is more lexically grounded and covers both the creation-anthropology dimension and the Christological dimension (Christ as the eikōn of God; humanity renewed in his image). Replacement registry #201 is active and Complete (12 groups confirmed). No further action required."
+      },
+      "description": "Image of God (84) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 101 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Laziness as a colloquial English label was replaced by sloth (#208) as the more precise moral category. Sloth in the biblical tradition is the failure to invest the effort that responsibility and love require — the habitual preference for comfort over the demands of one's calling. The Hebrew wisdom vocabulary (the sluggard, the ant as counter-example) addresses this as a specific character disposition with moral consequence. The replacement is analytically sharper. Replacement registry #208 is active and Complete (11 groups confirmed). No further action required."
+      },
+      "description": "Laziness (101) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 119 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Personhood as a philosophical concept was replaced by being (#211) as the most fundamental biblical category. Being — the bare fact of existing, of having reality — underlies everything else in the corpus. The biblical vocabulary distributes this across soul (nephesh, the living being), spirit (ruach, the animated being), and the basic ontological vocabulary. The replacement moves from a philosophical construct to the programme's deepest anthropological category. Replacement registry #211 is active and Complete (15 groups confirmed). No further action required."
+      },
+      "description": "Personhood (119) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 136 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Resentment was re-registered under #205 with a more precise lexical anchor targeting the slow-burning, grievance-holding dimension of anger. The inner-being reality of resentment — the refusal to release anger, the nursing of wrongs, the keeping of account — is distinct from acute anger or wrath and warranted its own entry. Replacement registry #205 is active and Complete as a pure XREF registry (all terms cross-reference to anger and related vocabulary owned in other registries, vc_groups=0 is correct). The dimension index will be populated through the OWNER registries during Session B. No further action required."
+      },
+      "description": "Resentment (136) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 161 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Transformation as an English label was re-registered under #202 with more precise lexical anchoring. The inner-being reality of transformation — genuine metamorphosis of the inner person, becoming different rather than merely behaving differently — is one of the most theologically significant inner-being categories in the New Testament (metamorphoō, Rom 12:2; 2 Cor 3:18; anakainōsis, renewal of the mind). The replacement grounds the concept in its specific biblical vocabulary. Replacement registry #202 is active and Complete (7 groups confirmed). No further action required."
+      },
+      "description": "Transformation (161) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 169 },
+      "set": {
+        "notes": "REPLACED — Exclusion validated 2026-04-06. Vulnerability was originally listed as PARTIAL/GAP with no existing partial coverage identified. The gap was subsequently addressed by new registry #206 (vulnerability) anchored in H6168 (arah, to lay bare/expose), H6174 (arom, naked/exposed), and G1131 (gymnos, naked/vulnerable — including Heb 4:13 naked and laid bare before God). The inner-being dimension of vulnerability — genuine openness and exposure, the capacity to be wounded or known at depth, the person stripped of self-protection before God and others — is substantive and now fully represented. Replacement registry #206 is active, Complete, and the most substantive of all replacement registries (34 groups confirmed). No further action required."
+      },
+      "description": "Vulnerability (169) — analytical reasoning added to replacement note"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 54 },
+      "set": {
+        "notes": "SPECIAL HANDLING — Exclusion validated 2026-04-06. Emotion as a category does not exist in Hebrew or Greek thought — ancient languages name specific emotional states rather than abstracting them into a general class. The programme correctly treats this as a meta-category label useful for programme documentation but not as a lexical entry. The full range of specific emotional states is addressed across the active registries. Session D verification point: confirm that the programme's active registries collectively address the full spectrum of inner emotional experience — positive (joy, gratitude, delight, contentment, gladness, wonder) and negative (fear, grief, anger, despair, shame, guilt, bitterness) — and surface any gaps as Session D synthesis questions. No Session A run required. Marked automation_eligible=0. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Emotion (54) — analytical reasoning added; Session D coverage verification point noted"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 195 },
+      "set": {
+        "notes": "SPECIAL HANDLING — Exclusion validated 2026-04-06. Spiritual powers is a cross-registry synthesis placeholder — the non-human spiritual beings (angels, demons, principalities, powers) that populate the biblical world and affect the inner life of the human person. No single Hebrew or Greek term covers this category: it emerges from the synthesis of the power/authority/might/dominion/energy cluster (C20, registries #196–200) through Session D analysis. Understanding the inner life of the human person requires understanding the spiritual environment within which that person exists, including the beings that can affect, inhabit, or oppose them. Session D will address this synthesis question once C20 cluster Session B work is complete. No Session A run required. Strongs_list correctly empty. Source: Session-A-v9-Empty-Words-Analysis-20260318."
+      },
+      "description": "Spiritual powers (195) — analytical reasoning added; Session D trigger condition noted"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 154 },
+      "set": {
+        "notes": "DATA ENTRY ERROR — redundant row. Originally mislabelled as stupor. Data files were sorrow (WA-154-sorrow-data-part1/2-2026-03-10.json). All data re-linked to word_registry.id=151 (sorrow) on 2026-03-19. Status fields (verse_context_status=NULL, session_b_status=NULL) are correct. This row is inert and carries no active data. Validated 2026-04-06: live_owner_count=0, live_xref_count=0, vc_groups=0 — confirmed no active downstream data attached. No action required."
+      },
+      "description": "Stupor (154) — data error status confirmed; validation note added"
+    }
+  ]
+}

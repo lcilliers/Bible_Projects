@@ -1,0 +1,3228 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-C06-V1",
+    "cluster": "C06",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "description": "Dimension review patch \u2014 C06: 192 dimension updates across 7 registries; 6 Session B findings; 2 Session D pointers"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3629
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed. Core feature is suspension of will between incompatible orientations.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2708-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3622
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Anxious preoccupation as felt state is primary inner-being engagement.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2709-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3623
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Anticipatory anxiety under threat. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2709-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3624
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Primary feature is directional orientation of inner care (toward God vs. worldly). Volitional/attentional.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2709-003: Volitional/Will"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3625
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Pre-emptive affective anxiety. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2710-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3626
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Directed affective state of expectation (hope, longing, anxiety). Note: thin dataset (PH2-007-002).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2711-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3627
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Whole inner life shaped by divine promise. Eschatological orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "2711-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3632
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Heart as site of anxious accumulation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "349-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3620
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Competitive displacement of spiritual orientation by worldly anxiety \u2014 volitional/attentional dynamic.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "350-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3621
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner burden of care for others. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "350-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3628
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Affective weight of expectation (dread, foreboding). Note: thin dataset (PH2-007-001).",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "351-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3630
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Ease as fruit of trust or divine promise.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "352-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3631
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Moral inversion: rest become spiritual stagnation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "352-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3619
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner state of being untroubled as desirable orientation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "353-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3618
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Affective relief from anxiety through another's wellbeing.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "354-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4080
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God's truth as theological ground on which inner trust is anchored.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3747-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4081
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Truth-speaking as moral character quality. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3747-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4082
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Factual certainty as basis for inner discernment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3747-003: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4077
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Whole-person volitional assent \u2014 inner act of committing self to what is true and binding.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3748-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4083
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine certainty/reliability as ground enabling inner rest and trust.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3749-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4079
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Moral/Conscience. Inner cognitive-epistemic orientation pressing toward truth.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3751-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4076
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner trust in God expressed in faithfulness. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3752-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4078
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine attribute of faithfulness as theological ground. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "3758-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4090
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Exclusive inner devotion through sustained refusal to serve foreign gods. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5004-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4091
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Blamelessness as moral character of inner life. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5004-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4092
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Heart withholding humility and honour toward God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5004-003: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4093
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Creaturely nothingness before divine sovereignty. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5004-004: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4094
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner disturbance through absence of rest/composure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5004-005: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4095
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Covenantal negation of belonging \u2014 identity as God's people withdrawn. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "5006-001: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4084
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Failure of inner faith-act toward God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4085
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Core affective despair \u2014 Job's negations of inner peace, rest, confidence. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4086
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Character/Disposition. Divine inner states in the divine-human relationship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-003: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4087
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Failure to return to God, perceive God, cry to God \u2014 God-ward failure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-004: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4088
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Spiritual/God-ward. Primary: the person who does not sin \u2014 moral characterisation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-005: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4089
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner grief/distress; relational rupture, covenantal estrangement. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "803-006: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4073
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner trust directed toward God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "804-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4074
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Faithfulness as inner character quality \u2014 reliability, steadfastness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "804-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4075
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Affective/Emotional. Trust that collapses is toward God \u2014 God-ward relationship failing is primary.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "804-003: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4096
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner collapse under reproach \u2014 heart broken, no pity, no comfort.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "805-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4097
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Gap between external ruin and inner recognition \u2014 failure of emotional/perceptual reception.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "807-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4072
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Complete collapse of inner expectation and hope.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "808-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4242
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Ruthlessness as inner moral character. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1775-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4243
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner experience of oppression and longing for deliverance.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1775-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4244
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dread of God \u2014 felt terror and trembling. Primary dimension is felt terror.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "829-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4245
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Anticipatory inner terror before disaster. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "829-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4246
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror of nations \u2014 inner affective state of those experiencing it. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "829-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4247
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Presence/absence of dread as moral condition. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "829-004: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4239
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Boasting in human might \u2014 moral failure of self-reliance and pride. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "830-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4240
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner confidence grounded in divine presence.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "830-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4241
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner terror and collapse of warriors under God's judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "830-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4394
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverence for God as inner disposition. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1697-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4440
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Disheartened \u2014 faint, broken, discouraged under pressure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1700-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4384
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Timid fearful inner state displacing trust.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1701-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4385
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cowardice as moral inner condition. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1701-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4461
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential trembling/deference before authority \u2014 affective response.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1713-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4409
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Quality producing inner awe/wonder-fear.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1722-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4410
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Quality producing inner dread.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1722-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4428
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divinely-imposed terror on creatures \u2014 divine agency acting on inner being.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1723-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4429
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner dismay \u2014 broken and shattered in spirit.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1724-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4430
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Overwhelming inner fears; especially before mortality. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1729-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4431
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner alarm producing withdrawal \u2014 affective recoil response.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1730-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4466
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine judgment dissolving rational orientation. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1732-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4464
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Startled astonishment/shock at divine intervention.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1733-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4420
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dread-filled trembling specifically before God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1734-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4462
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shuddering horror \u2014 somatic expression of inner terror. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1744-001: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4463
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Horror of bystanders at catastrophic divine judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1746-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4459
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner-somatic response to overwhelming fear. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1792-001: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4458
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling before divine holiness or weight of sin before God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1793-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4387
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Overwhelming felt terror before divine presence. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "257-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4388
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Fear triggered by moral-judicial reality and divine judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "257-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4416
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Anxious worried inner state before threatening circumstances.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "259-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4417
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner sorrow/grief over sin \u2014 felt affective state. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "259-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4397
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverent devotion as inner orientation of the God-fearer. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "260-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4398
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner act of worship \u2014 genuine or misdirected. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "260-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4383
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Fearful disturbed inner state displaced by Christ's peace.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "261-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4393
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Devout person \u2014 inner godly reverence as moral character quality. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "262-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4454
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear toward God forfeited through apostasy. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "263-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4406
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Awe at divine action leading to worship. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "266-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4407
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential awe shaping conduct, holiness, ministry. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "266-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4408
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Practical fear before threatening powers, death, or judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "266-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4396
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Intimidated inner state displaced by godly courage.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "267-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4437
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Fear of Lord as ground of wisdom \u2014 explicitly framed as cognitive foundation. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "269-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4438
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Fear of Lord as orientation of worship and covenant obedience. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "269-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4439
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror as divine instrument or existential dread. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "269-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4444
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Volitional/Will. Divine imposition of terror on peoples.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "270-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4445
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear God is owed as master and father. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "270-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4446
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Volitional/Will. Same divine-imposition pattern as 270-001.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "271-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4447
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Same pattern as 270-002. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "271-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4443
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Affective/Emotional. Divine judgment turning person's fears against them.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "272-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4442
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Sin & Vice. Names inner dread state, not a sin category.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "273-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4401
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine judgment/presence as terror-inducing. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "274-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4405
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror-producing end-of-age events. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "275-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4432
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner fear before a powerful enemy.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "276-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4380
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Affective/Emotional. Fearless freedom defined by divine source.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "277-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4381
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Absence of godly fear as moral failure. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "277-002: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4395
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God-fearer whose reverence opens divine attentiveness.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "278-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4457
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Panic immobilising composure and overthrowing resolve. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "279-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4390
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverence as inner posture before God making prayer heard. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "281-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4455
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shuddering horror under overwhelming dread or catastrophe.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "282-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4386
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Total inner overturn before the holy. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "283-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4411
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God sending terror as instrument of divine power on enemies.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "284-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4412
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Individual's inner dread before divine presence or judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "284-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4413
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dread generated by overwhelming power.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "284-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4441
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Comprehensive inner terror \u2014 surrounded, no escape. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "286-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4382
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Spirit of timidity as character disposition \u2014 contrasted with power, love, self-control.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "288-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4465
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner astonishment/wonder before extraordinary acts of God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "289-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4414
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential awe before divine power \u2014 inner posture before God specifically.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "290-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4415
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Practical fear of persons/nations that can harm.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "290-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4451
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dread under threat \u2014 destabilising, paralysing fear.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "291-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4452
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear toward God \u2014 proper response to divine majesty. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "291-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4453
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner security replacing dread through trust in God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "291-003: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4402
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theophanic fear \u2014 response to divine presence leading to worship. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "292-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4403
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear of God shaping worship and ethics. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "292-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4404
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Practical self-interested fear before humans or consequences. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "292-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4418
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Commanded reverence before God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "294-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4419
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner terror from visions/powers/threatening presences. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "294-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4433
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Apprehensive inner state before feared outcomes.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "296-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4456
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Character/Disposition. Inner state of fear commanded against \u2014 not a character quality.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "297-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4434
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Divine 'Fear not' speech-act granting inner peace \u2014 Theological/Divine-Human interface.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "298-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4435
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear of God vs. humans \u2014 covenant loyalty. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "298-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4436
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Practical fear before threatening powers. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "298-003: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4448
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner dissolution \u2014 collapse of resolve and courage. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "301-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4391
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reverential fear producing faithful obedience \u2014 dispositional quality. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "302-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4392
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Practical fear for physical safety. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "302-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4421
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling before divine theophanic presence \u2014 God-ward response.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "305-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4422
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling in fear before threatening powers.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "305-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4423
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Eschatological rest from fear as divine gift \u2014 promised security.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "305-003: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4449
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dread collapsing resolve \u2014 opposite of courage. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "306-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4450
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Holy reverence before God \u2014 proper response to divine majesty. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "306-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4389
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling fear as inner state expressing in the body. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "307-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4399
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Awe-filled trembling at boundary of the sacred.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "308-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4400
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling reverential fear in godly service \u2014 dispositional quality. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "308-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4426
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Overwhelming trembling before the sacred/divine.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "309-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4427
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Acute panic and terror before circumstances, battle, judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "309-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4424
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Trembling at the word of God \u2014 reverential, responsive. God favours this inner posture.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "310-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4425
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Fearful trembling before threatening circumstances or the sacred.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "310-002: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 4460
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner-somatic trembling before God's presence/power. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "311-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5447
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Choosing not to be ashamed as inner identity act. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "312-001: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5458
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame from moral failure/social reversal. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "313-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5459
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Promised absence of shame through trust in God. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "313-002: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5460
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God bringing shame on enemies as divine judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "313-003: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5466
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Felt shame from failure, defeat, or exposure.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "314-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5471
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Spiritual/God-ward. Primary: felt experience of shame.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "315-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5472
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Socially imposed disgrace. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "315-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5473
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Theological reversal \u2014 God confounding opponents; assurance against shame.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "315-003: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5457
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Contempt as inner attitude of disregard in relational context. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "316-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5478
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Derision from community's moral-spiritual failure. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "317-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5476
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Total disgrace as antithesis of glory; divine judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "318-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5477
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dishonour from foolish, wicked conduct. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "319-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5451
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dishonour as moral disgrace. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "320-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5449
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Indecency from disordered inner desires \u2014 moral disorder. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "321-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5469
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Reproach \u2014 felt shame of being despised before others. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "322-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5470
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Corporate reproach as divine judgment on community. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "322-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5453
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as moral corrective aimed at repentance. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "323-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5446
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as inner disgrace \u2014 social reversal, suffering. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "324-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5463
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as inward mortification before God \u2014 covenant breach. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "325-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5464
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as social marker of defeat or rejection. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "325-002: Relational/Social"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5462
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as consequence of idolatry \u2014 misdirected inner devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "326-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5461
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame covering the face \u2014 felt experience of disgrace and judgment.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "327-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5475
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Perpetual enduring disgrace without restoration. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "328-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5474
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame covering person before God and community \u2014 God-ward primary. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "329-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5445
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shameful conduct and motivation \u2014 moral standard governing deeds. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "330-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5448
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Inner callousness \u2014 loss of moral sensitivity. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "332-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5452
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Shame as moral corrective; respect as moral deference. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "333-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5455
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Public disgrace expressing inner moral state of apostasy. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "334-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5450
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dishonouring as contempt violating relational worth. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "335-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5454
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Being put to shame or vindicated \u2014 inner relational standing. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "336-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5456
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Mistreatment violating relational dignity. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "337-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5465
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Imposing social-inner disgrace as consequence of wrongdoing. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "338-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5467
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Taunting from inner orientation of contempt \u2014 relational impact.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "339-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5468
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Taunting/defying God \u2014 contempt and arrogance toward divine. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "339-002: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5584
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror imposed on subject populations \u2014 inner condition of the dominated.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1151-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5585
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Correction from Spiritual/God-ward. Primary: affective experience of dread.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1152-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5579
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Sudden panic, dismay, anguish as inner affliction.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1153-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5581
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror as bitter reversal of inner expectation.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1154-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5583
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "God-sent terror producing inner condition preventing hostile action.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1155-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5580
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Plural terrors assaulting, overtaking the inner being.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1156-001: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5582
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Terror as response to comprehension of divine judgment. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1158-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 5586
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Confirmed with limitation note: label refers to cognitive/qualificatory function in inner-being contexts, not inherent semantic content of the particle.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1159-001: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6193
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Cursing as inner-being act with moral and covenantal weight.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1276-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6194
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Contempt as evaluative disposition \u2014 regarding as worthless. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1276-002: Character/Disposition"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6195
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Lightening of burden \u2014 evaluative/perspective dimension of the inner being.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1276-003: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6196
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Nations' contempt toward Israel + divine judgment reversing it \u2014 divine-human pattern.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1277-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6186
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Contempt evaluating another as worthless \u2014 directed at believers, weak, Christ. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1279-001: Character/Disposition"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6187
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Despising as inner act with moral/covenantal consequence. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1280-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6188
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Contempt as social contagion spreading through society. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1281-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6192
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Dishonour inverting proper relational honour. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1282-001: Relational/Social"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6189
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Everlasting contempt as final eschatological-spiritual condition of rebels against God.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1283-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6185
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Contempt directed at Son of Man \u2014 Christological/divine-human relationship.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "1284-001: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6197
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Swerving toward the proud/lie \u2014 directional act of will misdirected.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7151-001: Volitional/Will"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6190
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Folly as inner moral disposition committing outrageous acts. Confirmed.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7156-001: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6191
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 0,
+        "notes": "Lewdness as inner condition of spiritual adultery \u2014 God-ward failure of devotion.",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "7158-001: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-7-001",
+        "registry_id": 7,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "merimna\u014d (G3309) operates in two distinct inner-being registers: anxious affective worry (2709-001, 2709-002) and volitional-attentional directed care (2709-003, 350-001). Session B should map how the same word spans these two registers and what this reveals about anxiety as both an affective state and a directional inner-being act.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 merimna\u014d: dual register (affective worry vs. volitional directed care)"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-44-001",
+        "registry_id": 44,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "The la/lo negation terms (H3809, H3808) build inner-being content through naming what is absent, refused, or withheld. The word does not carry inner-being content directly \u2014 it reveals inner states by negating them. Session B should examine this structural inversion as a distinctive biblical rhetoric for naming despair, faith-failure, and inner collapse.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 la/lo negation terms: inner-being content through negation"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-61-001",
+        "registry_id": 61,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "fobe\u014d (G5399) shows a tripartite inner-being structure: (1) theophanic/miraculous fear leading to worship (Spiritual/God-ward), (2) reverential life-shaping fear of God (Spiritual/God-ward), (3) practical self-interested fear before humans or consequences (Affective/Emotional). This tripartite structure is the most analytically important pattern in Registry 61 and should be the organising frame for Session B analysis.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 fobe\u014d: tripartite inner-being structure"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-61-002",
+        "registry_id": 61,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "ya.re (H3372G) groups add the divine 'Fear not' command (298-001) as a structuring element \u2014 showing the divine address to inner fear as a distinct inner-being category. The reassurance pattern (divine declaration of presence + commanded displacement of fear) is significant for understanding how the inner-being state of fear is meant to be transformed.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 ya.re: divine Fear not as structuring element"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-146-001",
+        "registry_id": 146,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Shame vocabulary in Registry 146 operates on two consistent axes: (a) inner shame as felt condition (affective, moral, spiritual) and (b) shame as socially-imposed or relationally-enacted condition (relational, theological). The same Hebrew/Greek words move between these axes. Session B should map how Scripture relates the inner experience of shame to its social construction and how these axes intersect in the biblical theology of honour/shame.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 shame: dual-axis structure (inner felt / socially enacted)"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-190-001",
+        "registry_id": 190,
+        "file_id": null,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Contempt vocabulary in Registry 190 operates at three levels: (a) the inner disposition of contempt as evaluative stance (Character/Disposition), (b) contempt as social-relational dynamic (Relational/Social), (c) contempt with theological weight directed at God, his word, or his servant (Moral/Conscience, Theological/Divine-Human). Session B should map how these three registers of contempt relate in the inner being.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-07",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.3-2026-04-07"
+      },
+      "description": "Session B pointer \u2014 contempt: three-level inner-being structure"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 61,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-61-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C06 fear cluster shows a tripartite dimension pattern: fear-as-God-ward-orientation (Spiritual/God-ward ~18 groups), fear-as-inner-affect (Affective/Emotional ~37 groups), fear-as-volitional-collapse (Volitional/Will 5 groups). This tripartite structure \u2014 orientation, affect, will-collapse \u2014 may be a cross-registry finding about how negative inner states operate in biblical anthropology. Session D should examine whether the same pattern appears in other C06 registries and beyond.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 C06 tripartite fear structure: orientation/affect/will-collapse"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 146,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-146-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": 190,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Registry 146 (shame) and Registry 190 (contempt) are relational inverses in C06: contempt is the inner disposition that assigns worthlessness; shame is the inner experience of being assigned worthlessness. The honour/shame axis linking these two registries is a cross-cluster synthesis question for Session D. Both registries share Relational/Social and Theological/Divine-Human as significant dimensions.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.3",
+        "raised_date": "2026-04-07",
+        "resolved": 0
+      },
+      "description": "Session D pointer \u2014 shame/contempt as relational inverses: honour/shame axis"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 200,
+    "dimension_updates": 192,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 6,
+    "session_d_pointers_inserted": 2,
+    "group_description_corrections": 0,
+    "wa_dimension_index_syncs": 0
+  }
+}

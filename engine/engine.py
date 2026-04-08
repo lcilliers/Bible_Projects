@@ -260,7 +260,7 @@ def main() -> int:
             return 1
         word     = data["_export"]["word"]
         date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
-        out_dir  = os.path.join(_ROOT, "data", "exports")
+        out_dir  = os.path.join(_ROOT, "data", "exports", "STEP Extracts")
         os.makedirs(out_dir, exist_ok=True)
 
         # Determine scope: "final" only if v5.2 extraction cycle is complete

@@ -1,0 +1,4712 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260406-DIMREVIEW-C01-ANCHOR-V1",
+    "cluster": "C01",
+    "produced_date": "2026-04-06",
+    "produced_by": "WA-DimensionReview-Instruction-v1.2-2026-04-06",
+    "session_b_status": null,
+    "description": "Dimension anchor patch \u2014 C01 (mind, Soul, heart, spirit, flesh, being): sets manual_override = 1 for 293 groups whose dimension assignment is analytically unambiguous. 4 groups left open: 1081-001 (dialogismos evil thoughts \u2014 Cognitive/Mind vs Moral/Conscience), 1174-001 (cha.shav design \u2014 Volitional/Capacity vs Cognitive/Mind), 3338-001 (chish.sha.von schemes \u2014 Moral/Conscience vs Cognitive/Mind), 4331-001 (ha.lal madness \u2014 Moral/Conscience vs Cognitive/Mind). These remain at manual_override = 0 pending researcher decision."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1688
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1000-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1675
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1001-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1676
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1001-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1689
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1006-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1753
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1073-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1680
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1081-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1677
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1184-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1678
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1184-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1748
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1179-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1746
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3336-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1747
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3336-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1763
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3578-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1710
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4185-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1720
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4291-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1719
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4292-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1728
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4337-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1701
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4411-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1695
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4413-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1665
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4424-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1727
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "586-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1712
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "454-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1702
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1010-001 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1705
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1188-001 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1739
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3498-003 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1699
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4412-001 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1735
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "979-001 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1708
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "994-003 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1683
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "995-003 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1673
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "509-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1668
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2109-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1669
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2109-002 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1745
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3334-002 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1685
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3372-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1750
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3602-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1691
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "448-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1672
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "499-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1670
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "752-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1690
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2662-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1759
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "446-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1756
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3058-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1755
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3059-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1764
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4379-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2712
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1386-005 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1737
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3498-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1738
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3498-002 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1726
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3499-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1693
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "441-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1698
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4416-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1692
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "447-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1681
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "995-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1723
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "996-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1733
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1180-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1700
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4411-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1666
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4426-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1754
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1073-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1760
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "446-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1734
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1180-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1696
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4413-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1697
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4413-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1671
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "752-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1752
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "936-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1758
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "445-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1674
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "509-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1765
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4380-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1717
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1108-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1686
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3370-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1732
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4335-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1729
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4339-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1766
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4380-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1767
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4381-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1694
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4417-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1667
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4426-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1751
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "936-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1736
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "979-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1706
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "994-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1707
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "994-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1682
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "995-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1713
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "999-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1714
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "999-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1741
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1174-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1684
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1398-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1744
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3334-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1742
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3335-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1711
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4187-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1762
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4198-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1731
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4331-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1722
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2493-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1718
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4188-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1704
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4192-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1703
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4315-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1768
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4382-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1725
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "997-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1715
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4190-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1716
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4191-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1721
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1009-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1709
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1008-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1724
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "996-002 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1743
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3335-002 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1687
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1402-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1761
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2707-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1757
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "445-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2706
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1385-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2658
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2677
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1396-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2678
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1396-002 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2655
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1400-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2680
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2688
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-009 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2661
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-004 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2674
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1393-002 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2700
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-003 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2679
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1390-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2710
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1386-003 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2685
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-006 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2690
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-011 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2683
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2698
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2703
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-006 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2705
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1384-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2666
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-009 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2675
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1393-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2656
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1397-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2684
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-005 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2687
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-008 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2691
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-012 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2693
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2697
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-006 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2668
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2707
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1385-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2664
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-007 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2692
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2686
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-007 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2701
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-004 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2709
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1386-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2663
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-006 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2665
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-008 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2672
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-006 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2676
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1394-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2696
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-005 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2704
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-007 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2673
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1393-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2654
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1399-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2681
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2695
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-004 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2711
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1386-004 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2657
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1403-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2714
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1388-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2708
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1386-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2671
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-005 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2659
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2682
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-003 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2689
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1381-010 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2660
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-003 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2662
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1391-005 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2702
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-005 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2694
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1382-003 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2699
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1383-002 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2667
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-001 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2669
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-003 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2670
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1392-004 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2713
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1387-001 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2742
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2724
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-006 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2720
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-002 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2726
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-008 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2751
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-010 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2729
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "597-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2719
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2743
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2760
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "577-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2745
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-004 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2747
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-006 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2723
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-005 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2762
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "577-004 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2733
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "576-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2763
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "577-005 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2758
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "588-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2831
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3012-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2761
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "577-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2744
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2750
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-009 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2722
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2759
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "577-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2715
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "602-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2727
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-009 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2728
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "599-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2754
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1801-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2755
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1801-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2753
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "578-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2749
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-008 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2746
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-005 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2731
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "590-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2730
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "590-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2725
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-007 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2735
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "575-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2718
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "601-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2739
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "574-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2741
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "587-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2757
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "588-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2716
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "603-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2736
+      },
+      "set": {
+        "dimension": "Volitional/Capacity",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "585-001 \u2014 anchored: Volitional/Capacity"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2721
+      },
+      "set": {
+        "dimension": "Volitional/Will",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "598-003 \u2014 anchored: Volitional/Will"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2748
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "579-007 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2756
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "1801-003 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2764
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "583-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2738
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "584-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2752
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "580-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2740
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "582-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2717
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "593-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2732
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "590-003 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2737
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "585-002 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2734
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "575-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2795
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2230-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2797
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2230-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2779
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2307-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2780
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2307-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2781
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2307-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2765
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "609-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2768
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "609-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2769
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "609-005 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2799
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "612-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2801
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "612-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2770
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2773
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2775
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-006 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2776
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-007 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2777
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "614-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2792
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "615-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2793
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "615-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2798
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2230-004 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2783
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "606-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2778
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2307-001 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2791
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "605-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2788
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "611-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2774
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-005 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2766
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "609-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2767
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "609-003 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2786
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "610-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2790
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "611-003 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2800
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "612-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2772
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-003 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2785
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "607-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2789
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "611-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2787
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "610-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2771
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "613-002 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2794
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "615-003 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2784
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "608-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2796
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2230-002 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2782
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "2307-005 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2819
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2820
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-002 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2821
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-003 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2822
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2823
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-005 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2824
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "617-006 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2813
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2814
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-002 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2815
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-003 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2816
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2817
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-005 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2818
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "618-006 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2829
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "619-001 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2830
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "619-002 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2802
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "623-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2809
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "625-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2810
+      },
+      "set": {
+        "dimension": "Somatic/Embodied",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "625-002 \u2014 anchored: Somatic/Embodied"
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2811
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "625-003 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2812
+      },
+      "set": {
+        "dimension": "Relational/Social",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "625-004 \u2014 anchored: Relational/Social"
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2805
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "626-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2806
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "626-002 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2804
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "627-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2803
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "628-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2807
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3008-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2826
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "621-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2828
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "621-004 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2808
+      },
+      "set": {
+        "dimension": "Identity/Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "3008-002 \u2014 anchored: Identity/Selfhood"
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2825
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "621-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2827
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "621-003 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3389
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4439-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3388
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4440-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3391
+      },
+      "set": {
+        "dimension": "Cognitive/Mind",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4450-001 \u2014 anchored: Cognitive/Mind"
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3390
+      },
+      "set": {
+        "dimension": "Character/Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4451-001 \u2014 anchored: Character/Disposition"
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3387
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4473-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3393
+      },
+      "set": {
+        "dimension": "Spiritual/God-ward",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4475-001 \u2014 anchored: Spiritual/God-ward"
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3394
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4475-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3392
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4478-001 \u2014 anchored: Moral/Conscience"
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3397
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4479-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3398
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4479-002 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3399
+      },
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4480-001 \u2014 anchored: Theological/Divine-Human"
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3386
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4481-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-291",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3385
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4482-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-292",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3396
+      },
+      "set": {
+        "dimension": "Affective/Emotional",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4483-001 \u2014 anchored: Affective/Emotional"
+    },
+    {
+      "op_id": "OP-293",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 3395
+      },
+      "set": {
+        "dimension": "Moral/Conscience",
+        "dimension_confidence": "CLAUDE_AI",
+        "manual_override": 1,
+        "notes": "Anchored \u2014 dimension analytically unambiguous. C01 anchor session 2026-04-06.",
+        "last_modified": "2026-04-06"
+      },
+      "description": "4485-001 \u2014 anchored: Moral/Conscience"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 293,
+    "dimensions_anchored": 293,
+    "groups_left_open": 4,
+    "open_group_codes": [
+      "1081-001",
+      "1174-001",
+      "3338-001",
+      "4331-001"
+    ],
+    "open_reason": "Competing dimension claims \u2014 requires researcher decision"
+  }
+}

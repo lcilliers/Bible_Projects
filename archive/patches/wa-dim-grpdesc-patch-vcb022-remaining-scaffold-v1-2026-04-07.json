@@ -1,0 +1,4017 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260407-DIMREVIEW-GRPDESC-VCB022-REMAINING-V1",
+    "produced_date": "2026-04-07",
+    "produced_by": "WA-DimensionReview-Instruction-v1.3-2026-04-07",
+    "session_b_status": null,
+    "description": "Group description correction \u2014 VCB-022 remaining 148 groups (Reg 187-191,193,194,196): restore context_descriptions truncated at 80 chars. Full descriptions from wa-vcb-022-term-observations-v2.8-20260404.md. IDs to be resolved by Claude Code from wa-dim-grpdesc-idresolution-vcb022-v1-2026-04-07.json before application.",
+    "STATUS": "SCAFFOLD \u2014 placeholder IDs must be replaced with resolved values before application"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_643_001"
+      },
+      "set": {
+        "context_description": "Term names God's sovereign, active power \u2014 expressed through the outstretched arm \u2014 by which he delivers, redeems, judges, and rules in history",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 643-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_643_001"
+      },
+      "set": {
+        "context_description": "Term names God's sovereign, active power \u2014 expressed through the outstretched arm \u2014 by which he delivers, redeems, judges, and rules in history",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 643-001"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_643_002"
+      },
+      "set": {
+        "context_description": "Term names the arm as the measure of human or national power and capacity \u2014 including its moral dimension: the wicked person's power to harm, and the powerless person's helplessness",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 643-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_643_002"
+      },
+      "set": {
+        "context_description": "Term names the arm as the measure of human or national power and capacity \u2014 including its moral dimension: the wicked person's power to harm, and the powerless person's helplessness",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 643-002"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_643_003"
+      },
+      "set": {
+        "context_description": "Term expresses the inner orientation of trust \u2014 where the arm of flesh names the object of misplaced human confidence, contrasted with the arm of God as the right object of trust",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 643-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_643_003"
+      },
+      "set": {
+        "context_description": "Term expresses the inner orientation of trust \u2014 where the arm of flesh names the object of misplaced human confidence, contrasted with the arm of God as the right object of trust",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 643-003"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_643_004"
+      },
+      "set": {
+        "context_description": "Term expresses God's tender, nurturing arm \u2014 gathering, carrying, and sustaining the vulnerable; the arm as the posture of compassionate holding and refuge",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 643-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_643_004"
+      },
+      "set": {
+        "context_description": "Term expresses God's tender, nurturing arm \u2014 gathering, carrying, and sustaining the vulnerable; the arm as the posture of compassionate holding and refuge",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 643-004"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_670_001"
+      },
+      "set": {
+        "context_description": "Term names God as the strength and sufficiency of the inner person, the object of love and relational orientation",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 670-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_670_001"
+      },
+      "set": {
+        "context_description": "Term names God as the strength and sufficiency of the inner person, the object of love and relational orientation",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 670-001"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_669_001"
+      },
+      "set": {
+        "context_description": "Term names God's redemptive power \u2014 the strong hand by which he delivered Israel from Egypt \u2014 as the basis for covenantal memory and obligation",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 669-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_669_001"
+      },
+      "set": {
+        "context_description": "Term names God's redemptive power \u2014 the strong hand by which he delivered Israel from Egypt \u2014 as the basis for covenantal memory and obligation",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 669-001"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_669_002"
+      },
+      "set": {
+        "context_description": "Term names the inner disposition of self-reliant pride in one's own strength, set against dependence on God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 669-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_669_002"
+      },
+      "set": {
+        "context_description": "Term names the inner disposition of self-reliant pride in one's own strength, set against dependence on God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 669-002"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_668_001"
+      },
+      "set": {
+        "context_description": "Term names the inner dynamic where personal strength becomes the condition for pride and spiritual unfaithfulness \u2014 strength that displaces dependence on God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 668-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_668_001"
+      },
+      "set": {
+        "context_description": "Term names the inner dynamic where personal strength becomes the condition for pride and spiritual unfaithfulness \u2014 strength that displaces dependence on God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 668-001"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_668_002"
+      },
+      "set": {
+        "context_description": "Term names the divine hand/strength that comes upon the prophet, orienting and commissioning his inner being",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 668-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_668_002"
+      },
+      "set": {
+        "context_description": "Term names the divine hand/strength that comes upon the prophet, orienting and commissioning his inner being",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 668-002"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7035_001"
+      },
+      "set": {
+        "context_description": "Term names the sovereign's arbitrary power over life \u2014 whose will decides whether another lives or dies \u2014 expressing the inner disposition of absolute dominion",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7035-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7035_001"
+      },
+      "set": {
+        "context_description": "Term names the sovereign's arbitrary power over life \u2014 whose will decides whether another lives or dies \u2014 expressing the inner disposition of absolute dominion",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7035-001"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7032_001"
+      },
+      "set": {
+        "context_description": "Term names the beast-state as a spiritual and cognitive debasement of the human person \u2014 the removal of the human mind and its replacement with the animal orientation \u2014 as divine discipline toward acknowledgment of God's sovereignty",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7032-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7032_001"
+      },
+      "set": {
+        "context_description": "Term names the beast-state as a spiritual and cognitive debasement of the human person \u2014 the removal of the human mind and its replacement with the animal orientation \u2014 as divine discipline toward acknowledgment of God's sovereignty",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7032-001"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7032_002"
+      },
+      "set": {
+        "context_description": "Term names the beast form as the inner character of God-defying kingdoms \u2014 predatory, domineering, and opposed to God's reign \u2014 expressed through apocalyptic vision",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7032-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7032_002"
+      },
+      "set": {
+        "context_description": "Term names the beast form as the inner character of God-defying kingdoms \u2014 predatory, domineering, and opposed to God's reign \u2014 expressed through apocalyptic vision",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7032-002"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7029_001"
+      },
+      "set": {
+        "context_description": "Term names military force as the object of misplaced inner trust \u2014 where reliance on armies and warriors displaces trust in God \u2014 and the inner consequences of that displacement",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7029-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7029_001"
+      },
+      "set": {
+        "context_description": "Term names military force as the object of misplaced inner trust \u2014 where reliance on armies and warriors displaces trust in God \u2014 and the inner consequences of that displacement",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7029-001"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7029_002"
+      },
+      "set": {
+        "context_description": "Term names God's army as the instrument of his sovereign power \u2014 in judgment, in deliverance, and as the eschatological force of divine victory",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7029-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7029_002"
+      },
+      "set": {
+        "context_description": "Term names God's army as the instrument of his sovereign power \u2014 in judgment, in deliverance, and as the eschatological force of divine victory",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7029-002"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7030_001"
+      },
+      "set": {
+        "context_description": "Term names moral-character strength as a quality of the inner person \u2014 encompassing the capable woman of Pro 31, the faithful person of integrity, and the virtuous life",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7030-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7030_001"
+      },
+      "set": {
+        "context_description": "Term names moral-character strength as a quality of the inner person \u2014 encompassing the capable woman of Pro 31, the faithful person of integrity, and the virtuous life",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7030-001"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7030_002"
+      },
+      "set": {
+        "context_description": "Term names strength as a God-given inner endowment \u2014 the capacity for valour, action, and faithfulness that God gives and calls forth in his people",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7030-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7030_002"
+      },
+      "set": {
+        "context_description": "Term names strength as a God-given inner endowment \u2014 the capacity for valour, action, and faithfulness that God gives and calls forth in his people",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7030-002"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7030_003"
+      },
+      "set": {
+        "context_description": "Term names strength as a false object of inner trust \u2014 where military, personal, or national might becomes the basis of confidence in place of God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7030-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7030_003"
+      },
+      "set": {
+        "context_description": "Term names strength as a false object of inner trust \u2014 where military, personal, or national might becomes the basis of confidence in place of God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7030-003"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7030_004"
+      },
+      "set": {
+        "context_description": "Term names acts of valour and worthy conduct as expressions of the inner person's moral and spiritual character",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7030-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7030_004"
+      },
+      "set": {
+        "context_description": "Term names acts of valour and worthy conduct as expressions of the inner person's moral and spiritual character",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7030-004"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7031_001"
+      },
+      "set": {
+        "context_description": "Term names wealth as an object of inner trust, pride, or misplaced confidence \u2014 and its judgment as the ground of trust collapses",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7031-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7031_001"
+      },
+      "set": {
+        "context_description": "Term names wealth as an object of inner trust, pride, or misplaced confidence \u2014 and its judgment as the ground of trust collapses",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7031-001"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7031_002"
+      },
+      "set": {
+        "context_description": "Term names wealth as the occasion for the heart's prideful self-inflation or joyful thanksgiving \u2014 wealth as moral revealer",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7031-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7031_002"
+      },
+      "set": {
+        "context_description": "Term names wealth as the occasion for the heart's prideful self-inflation or joyful thanksgiving \u2014 wealth as moral revealer",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7031-002"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7034_001"
+      },
+      "set": {
+        "context_description": "Term names moral-character excellence as a quality of the inner person \u2014 the competence and capability that flows from integrity and wisdom",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7034-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7034_001"
+      },
+      "set": {
+        "context_description": "Term names moral-character excellence as a quality of the inner person \u2014 the competence and capability that flows from integrity and wisdom",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7034-001"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7108_001"
+      },
+      "set": {
+        "context_description": "Term names God's incomparable might as the ground of the worshipper's awe and dependence \u2014 the power that transcends all human strength",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7108-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7108_001"
+      },
+      "set": {
+        "context_description": "Term names God's incomparable might as the ground of the worshipper's awe and dependence \u2014 the power that transcends all human strength",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7108-001"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7109_001"
+      },
+      "set": {
+        "context_description": "Term (negated) names the inner disposition of consecration over self-accumulation \u2014 the leader who does not multiply horses, wives, or wealth, but trusts in God alone",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7109-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7109_001"
+      },
+      "set": {
+        "context_description": "Term (negated) names the inner disposition of consecration over self-accumulation \u2014 the leader who does not multiply horses, wives, or wealth, but trusts in God alone",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7109-001"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_681_001"
+      },
+      "set": {
+        "context_description": "Term names wealth/treasure as a moral category \u2014 where the inner character of the person determines whether wealth becomes blessing or snare",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 681-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_681_001"
+      },
+      "set": {
+        "context_description": "Term names wealth/treasure as a moral category \u2014 where the inner character of the person determines whether wealth becomes blessing or snare",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 681-001"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7107_001"
+      },
+      "set": {
+        "context_description": "Term names the strength of the morally corrupt person as the very substance that will be consumed in judgment \u2014 power turned to dust",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7107-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7107_001"
+      },
+      "set": {
+        "context_description": "Term names the strength of the morally corrupt person as the very substance that will be consumed in judgment \u2014 power turned to dust",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7107-001"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6973_001"
+      },
+      "set": {
+        "context_description": "Term names the mountain as the image of God's ultimate, all-filling kingdom \u2014 the inner-being orientation toward the consummation in which God's sovereign rule displaces all earthly powers",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6973-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6973_001"
+      },
+      "set": {
+        "context_description": "Term names the mountain as the image of God's ultimate, all-filling kingdom \u2014 the inner-being orientation toward the consummation in which God's sovereign rule displaces all earthly powers",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6973-001"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6948_001"
+      },
+      "set": {
+        "context_description": "Term names the fainting/exhaustion of human strength as the condition of those who wait without God \u2014 and the divine renewal that restores what is depleted",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6948-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6948_001"
+      },
+      "set": {
+        "context_description": "Term names the fainting/exhaustion of human strength as the condition of those who wait without God \u2014 and the divine renewal that restores what is depleted",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6948-001"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6948_002"
+      },
+      "set": {
+        "context_description": "Term names exhaustion/wearying as the consequence and expression of misdirected inner effort \u2014 the labour that leads to collapse when God is not the source",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6948-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6948_002"
+      },
+      "set": {
+        "context_description": "Term names exhaustion/wearying as the consequence and expression of misdirected inner effort \u2014 the labour that leads to collapse when God is not the source",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6948-002"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6996_001"
+      },
+      "set": {
+        "context_description": "Term names the scope of existence brought under divine judgment \u2014 every living thing, every breath \u2014 as the universal horizon of God's sovereign claim",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6996-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6996_001"
+      },
+      "set": {
+        "context_description": "Term names the scope of existence brought under divine judgment \u2014 every living thing, every breath \u2014 as the universal horizon of God's sovereign claim",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6996-001"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6965_001"
+      },
+      "set": {
+        "context_description": "Term names God's sovereign strength expressed in creation, redemption, judgment, and sustaining power \u2014 the incomparable might by which he acts in history and on behalf of his people",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6965-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6965_001"
+      },
+      "set": {
+        "context_description": "Term names God's sovereign strength expressed in creation, redemption, judgment, and sustaining power \u2014 the incomparable might by which he acts in history and on behalf of his people",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6965-001"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6965_002"
+      },
+      "set": {
+        "context_description": "Term names the failure and depletion of human strength \u2014 in grief, crisis, spiritual exhaustion, and confrontation with divine holiness \u2014 as the disclosure of human limitation",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6965-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6965_002"
+      },
+      "set": {
+        "context_description": "Term names the failure and depletion of human strength \u2014 in grief, crisis, spiritual exhaustion, and confrontation with divine holiness \u2014 as the disclosure of human limitation",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6965-002"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6965_003"
+      },
+      "set": {
+        "context_description": "Term names human strength as a false object of inner trust or idolatrous self-reliance \u2014 the confidence in one's own power that displaces dependence on God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6965-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6965_003"
+      },
+      "set": {
+        "context_description": "Term names human strength as a false object of inner trust or idolatrous self-reliance \u2014 the confidence in one's own power that displaces dependence on God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6965-003"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6965_004"
+      },
+      "set": {
+        "context_description": "Term names God as the giver of renewed strength to the depleted \u2014 the inner gift of capacity for those who wait on God, trust him, or receive his provision",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6965-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6965_004"
+      },
+      "set": {
+        "context_description": "Term names God as the giver of renewed strength to the depleted \u2014 the inner gift of capacity for those who wait on God, trust him, or receive his provision",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6965-004"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6965_005"
+      },
+      "set": {
+        "context_description": "Term names strength as a quality of the inner person \u2014 encompassing wisdom-linked capacity, character revealed under adversity, spiritual competence, and the vitality of one's personal life",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6965-005: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6965_005"
+      },
+      "set": {
+        "context_description": "Term names strength as a quality of the inner person \u2014 encompassing wisdom-linked capacity, character revealed under adversity, spiritual competence, and the vitality of one's personal life",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6965-005"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_638_001"
+      },
+      "set": {
+        "context_description": "Term names the drying of inner vitality \u2014 the draining of the person's life-sap under the weight of divine conviction and unconfessed sin",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 638-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_638_001"
+      },
+      "set": {
+        "context_description": "Term names the drying of inner vitality \u2014 the draining of the person's life-sap under the weight of divine conviction and unconfessed sin",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 638-001"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_001"
+      },
+      "set": {
+        "context_description": "Term intensifies the love, devotion, and careful inner orientation of the person toward God and his word \u2014 including the scope of love commanded (\"with all your me.od\") and the inner availability of God's word",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_001"
+      },
+      "set": {
+        "context_description": "Term intensifies the love, devotion, and careful inner orientation of the person toward God and his word \u2014 including the scope of love commanded (\"with all your me.od\") and the inner availability of God's word",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-001"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_002"
+      },
+      "set": {
+        "context_description": "Term intensifies fear and dread \u2014 the inner response of terror before God, his judgments, the Day of the Lord, or human threat",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_002"
+      },
+      "set": {
+        "context_description": "Term intensifies fear and dread \u2014 the inner response of terror before God, his judgments, the Day of the Lord, or human threat",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-002"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_003"
+      },
+      "set": {
+        "context_description": "Term intensifies anger \u2014 the inner heat of righteous indignation, jealous rage, and divine wrath",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_003"
+      },
+      "set": {
+        "context_description": "Term intensifies anger \u2014 the inner heat of righteous indignation, jealous rage, and divine wrath",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-003"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_004"
+      },
+      "set": {
+        "context_description": "Term intensifies grief, distress, and bitter inner suffering \u2014 the intensity of inner pain, mourning, and anguish",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_004"
+      },
+      "set": {
+        "context_description": "Term intensifies grief, distress, and bitter inner suffering \u2014 the intensity of inner pain, mourning, and anguish",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-004"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_005"
+      },
+      "set": {
+        "context_description": "Term intensifies praise, joy, and exultation \u2014 the inner expression of gladness, worship, and delight in God and his works",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-005: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_005"
+      },
+      "set": {
+        "context_description": "Term intensifies praise, joy, and exultation \u2014 the inner expression of gladness, worship, and delight in God and his works",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-005"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_654_006"
+      },
+      "set": {
+        "context_description": "Term intensifies moral gravity \u2014 the weight of wickedness, pride, guilt, shame, and moral failure in the inner person and community",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 654-006: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_654_006"
+      },
+      "set": {
+        "context_description": "Term intensifies moral gravity \u2014 the weight of wickedness, pride, guilt, shame, and moral failure in the inner person and community",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 654-006"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6908_001"
+      },
+      "set": {
+        "context_description": "Term names the greatness of God's salvation and covenant love shown to his anointed \u2014 the towering scope of divine faithfulness",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6908-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6908_001"
+      },
+      "set": {
+        "context_description": "Term names the greatness of God's salvation and covenant love shown to his anointed \u2014 the towering scope of divine faithfulness",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6908-001"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6900_001"
+      },
+      "set": {
+        "context_description": "Term names the tower as the expression of human inner pride and collective self-assertion \u2014 the Babel impulse to make a name for oneself",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6900-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6900_001"
+      },
+      "set": {
+        "context_description": "Term names the tower as the expression of human inner pride and collective self-assertion \u2014 the Babel impulse to make a name for oneself",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6900-001"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6900_002"
+      },
+      "set": {
+        "context_description": "Term names God as the strong tower of refuge \u2014 the inner security that the righteous run to and find safety in",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6900-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6900_002"
+      },
+      "set": {
+        "context_description": "Term names God as the strong tower of refuge \u2014 the inner security that the righteous run to and find safety in",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6900-002"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6900_003"
+      },
+      "set": {
+        "context_description": "Term names the tower as the site of spiritual seeking and watchfulness \u2014 the built place from which the inner person looks out for God's answer",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6900-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6900_003"
+      },
+      "set": {
+        "context_description": "Term names the tower as the site of spiritual seeking and watchfulness \u2014 the built place from which the inner person looks out for God's answer",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6900-003"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6907_001"
+      },
+      "set": {
+        "context_description": "Term names the eschatological restoration of Zion's kingship \u2014 the return of God's sovereign rule as the inner hope of the people",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6907-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6907_001"
+      },
+      "set": {
+        "context_description": "Term names the eschatological restoration of Zion's kingship \u2014 the return of God's sovereign rule as the inner hope of the people",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6907-001"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_646_001"
+      },
+      "set": {
+        "context_description": "Term names the inescapable clinging of guilt and shame \u2014 like a belt worn daily \u2014 as the moral burden the oppressor bears",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 646-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_646_001"
+      },
+      "set": {
+        "context_description": "Term names the inescapable clinging of guilt and shame \u2014 like a belt worn daily \u2014 as the moral burden the oppressor bears",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 646-001"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6888_001"
+      },
+      "set": {
+        "context_description": "Term names the constellations as objects of idolatrous worship \u2014 the astronomical host to which the inner person directs devotion in place of God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6888-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6888_001"
+      },
+      "set": {
+        "context_description": "Term names the constellations as objects of idolatrous worship \u2014 the astronomical host to which the inner person directs devotion in place of God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6888-001"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7052_001"
+      },
+      "set": {
+        "context_description": "Term names the pure vestments as the symbol of cleansed iniquity \u2014 the outer sign of the inner-being transformation from guilt to restored standing before God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7052-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7052_001"
+      },
+      "set": {
+        "context_description": "Term names the pure vestments as the symbol of cleansed iniquity \u2014 the outer sign of the inner-being transformation from guilt to restored standing before God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7052-001"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_659_001"
+      },
+      "set": {
+        "context_description": "Term names God as the inner refuge and stronghold of the person \u2014 the secure centre of the self, the source of strength and salvation, to whom the inner person turns in trust",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 659-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_659_001"
+      },
+      "set": {
+        "context_description": "Term names God as the inner refuge and stronghold of the person \u2014 the secure centre of the self, the source of strength and salvation, to whom the inner person turns in trust",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 659-001"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_659_002"
+      },
+      "set": {
+        "context_description": "Term names the false refuge \u2014 the misplaced trust in human or material security in place of God \u2014 and its exposure as shame",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 659-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_659_002"
+      },
+      "set": {
+        "context_description": "Term names the false refuge \u2014 the misplaced trust in human or material security in place of God \u2014 and its exposure as shame",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 659-002"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6989_001"
+      },
+      "set": {
+        "context_description": "Term names the chosen place where God causes his name to dwell \u2014 the destination of inner pilgrimage and covenantal worship that orients the life of the people",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6989-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6989_001"
+      },
+      "set": {
+        "context_description": "Term names the chosen place where God causes his name to dwell \u2014 the destination of inner pilgrimage and covenantal worship that orients the life of the people",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6989-001"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6989_002"
+      },
+      "set": {
+        "context_description": "Term names a theophanic place \u2014 the location where God reveals his presence, making it holy and establishing it as the ground of inner awe and encounter",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6989-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6989_002"
+      },
+      "set": {
+        "context_description": "Term names a theophanic place \u2014 the location where God reveals his presence, making it holy and establishing it as the ground of inner awe and encounter",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6989-002"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6989_003"
+      },
+      "set": {
+        "context_description": "Term names the place as the site of covenantal moral conditions \u2014 where dwelling in the land depends on inner obedience, justice, and faithfulness to God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6989-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6989_003"
+      },
+      "set": {
+        "context_description": "Term names the place as the site of covenantal moral conditions \u2014 where dwelling in the land depends on inner obedience, justice, and faithfulness to God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6989-003"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6989_004"
+      },
+      "set": {
+        "context_description": "Term names the place in contexts of eschatological joy, restoration, and universal gathering \u2014 the future space of God's final act",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6989-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6989_004"
+      },
+      "set": {
+        "context_description": "Term names the place in contexts of eschatological joy, restoration, and universal gathering \u2014 the future space of God's final act",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6989-004"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6896_001"
+      },
+      "set": {
+        "context_description": "Term names the coming out / issuance that expresses divine power \u2014 whether as military sortie, divine self-disclosure, or the going forth of God's word and judgment",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6896-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6896_001"
+      },
+      "set": {
+        "context_description": "Term names the coming out / issuance that expresses divine power \u2014 whether as military sortie, divine self-disclosure, or the going forth of God's word and judgment",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6896-001"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6895_001"
+      },
+      "set": {
+        "context_description": "Term names the posture of standing before God \u2014 in theophanic encounter, covenant service, and the vocation of the person who waits upon God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6895-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6895_001"
+      },
+      "set": {
+        "context_description": "Term names the posture of standing before God \u2014 in theophanic encounter, covenant service, and the vocation of the person who waits upon God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6895-001"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6895_002"
+      },
+      "set": {
+        "context_description": "Term names the standing of self-assertion, pride-display, or moral failure \u2014 the inner posture of those who position themselves against God or in defiance of his will",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6895-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6895_002"
+      },
+      "set": {
+        "context_description": "Term names the standing of self-assertion, pride-display, or moral failure \u2014 the inner posture of those who position themselves against God or in defiance of his will",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6895-002"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6895_003"
+      },
+      "set": {
+        "context_description": "Term names Wisdom's or God's standing \u2014 the posture of authoritative address, appeal, and presence that calls the inner person to attend",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6895-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6895_003"
+      },
+      "set": {
+        "context_description": "Term names Wisdom's or God's standing \u2014 the posture of authoritative address, appeal, and presence that calls the inner person to attend",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6895-003"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_648_001"
+      },
+      "set": {
+        "context_description": "Term names the inner structural quality of firmness \u2014 the hardness of iron within the person as the expression of moral resolve, stubborn resistance, or unbending character",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 648-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_648_001"
+      },
+      "set": {
+        "context_description": "Term names the inner structural quality of firmness \u2014 the hardness of iron within the person as the expression of moral resolve, stubborn resistance, or unbending character",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 648-001"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_674_001"
+      },
+      "set": {
+        "context_description": "Term names strength as the intensity of inner character \u2014 fierce anger, passionate love, or the vigour of committed action \u2014 and as the quality of personal moral force",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 674-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_674_001"
+      },
+      "set": {
+        "context_description": "Term names strength as the intensity of inner character \u2014 fierce anger, passionate love, or the vigour of committed action \u2014 and as the quality of personal moral force",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 674-001"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_675_001"
+      },
+      "set": {
+        "context_description": "Term names God as the strength and song of the worshipper \u2014 the inner source of praise who is himself the ground of confidence and celebration",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 675-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_675_001"
+      },
+      "set": {
+        "context_description": "Term names God as the strength and song of the worshipper \u2014 the inner source of praise who is himself the ground of confidence and celebration",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 675-001"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_675_002"
+      },
+      "set": {
+        "context_description": "Term names God's strength as the object of communal worship \u2014 the strength ascribed to God in the sanctuary as the expression of corporate inner orientation",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 675-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_675_002"
+      },
+      "set": {
+        "context_description": "Term names God's strength as the object of communal worship \u2014 the strength ascribed to God in the sanctuary as the expression of corporate inner orientation",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 675-002"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_675_003"
+      },
+      "set": {
+        "context_description": "Term names God's strength as the inner refuge and security of those who trust him \u2014 the safe place to which the person returns in times of threat",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 675-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_675_003"
+      },
+      "set": {
+        "context_description": "Term names God's strength as the inner refuge and security of those who trust him \u2014 the safe place to which the person returns in times of threat",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 675-003"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_675_004"
+      },
+      "set": {
+        "context_description": "Term names strength as the attribute tied to moral character \u2014 wisdom-linked strength that exceeds raw force, and the ethical quality of the strong person",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 675-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_675_004"
+      },
+      "set": {
+        "context_description": "Term names strength as the attribute tied to moral character \u2014 wisdom-linked strength that exceeds raw force, and the ethical quality of the strong person",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 675-004"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_675_005"
+      },
+      "set": {
+        "context_description": "Term names human strength as the object of God's judgment \u2014 the pride of power brought low, the collapse of the strong under divine claim",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 675-005: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_675_005"
+      },
+      "set": {
+        "context_description": "Term names human strength as the object of God's judgment \u2014 the pride of power brought low, the collapse of the strong under divine claim",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 675-005"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_644_001"
+      },
+      "set": {
+        "context_description": "Term names the act of being strong or prevailing \u2014 in its inner-being dimension: the Spirit-given strength that prevails, the brazen boldness of the wicked, the misplaced strengthening in riches, and the wisdom-given strength that surpasses raw power",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 644-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_644_001"
+      },
+      "set": {
+        "context_description": "Term names the act of being strong or prevailing \u2014 in its inner-being dimension: the Spirit-given strength that prevails, the brazen boldness of the wicked, the misplaced strengthening in riches, and the wisdom-given strength that surpasses raw power",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 644-001"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7092_001"
+      },
+      "set": {
+        "context_description": "Term names the yoke as the symbol of oppressive servitude \u2014 political, military, or judicial \u2014 imposed on the inner person or community, and God's liberation from it",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7092-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7092_001"
+      },
+      "set": {
+        "context_description": "Term names the yoke as the symbol of oppressive servitude \u2014 political, military, or judicial \u2014 imposed on the inner person or community, and God's liberation from it",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7092-001"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7092_002"
+      },
+      "set": {
+        "context_description": "Term names Israel's inner rebellion against God's covenant \u2014 breaking the yoke of God's law and turning to spiritual prostitution or self-will",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7092-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7092_002"
+      },
+      "set": {
+        "context_description": "Term names Israel's inner rebellion against God's covenant \u2014 breaking the yoke of God's law and turning to spiritual prostitution or self-will",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7092-002"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7092_003"
+      },
+      "set": {
+        "context_description": "Term names the yoke as an instrument of divine discipline or covenant formation \u2014 the burden borne for God's purposes, or the prophetic dispute about God's sovereignty in appointing it",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7092-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7092_003"
+      },
+      "set": {
+        "context_description": "Term names the yoke as an instrument of divine discipline or covenant formation \u2014 the burden borne for God's purposes, or the prophetic dispute about God's sovereignty in appointing it",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7092-003"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_642_001"
+      },
+      "set": {
+        "context_description": "Term names the inner vitality of youth and its passage \u2014 the vigor that fades to dust \u2014 and the inner shame associated with a past youthful life that God's grace removes",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 642-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_642_001"
+      },
+      "set": {
+        "context_description": "Term names the inner vitality of youth and its passage \u2014 the vigor that fades to dust \u2014 and the inner shame associated with a past youthful life that God's grace removes",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 642-001"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7096_001"
+      },
+      "set": {
+        "context_description": "Term names the refining furnace as the image of God's word's absolute moral purity \u2014 purified beyond all dross",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7096-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7096_001"
+      },
+      "set": {
+        "context_description": "Term names the refining furnace as the image of God's word's absolute moral purity \u2014 purified beyond all dross",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7096-001"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7093_001"
+      },
+      "set": {
+        "context_description": "Term names the act of going in to prayer \u2014 Daniel entering his house to kneel and give thanks before God despite royal prohibition",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7093-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7093_001"
+      },
+      "set": {
+        "context_description": "Term names the act of going in to prayer \u2014 Daniel entering his house to kneel and give thanks before God despite royal prohibition",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7093-001"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7112_001"
+      },
+      "set": {
+        "context_description": "Term names the hiddenness of sin from the inner person or community \u2014 and the moment of moral awakening when hidden guilt becomes known to the self",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7112-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7112_001"
+      },
+      "set": {
+        "context_description": "Term names the hiddenness of sin from the inner person or community \u2014 and the moment of moral awakening when hidden guilt becomes known to the self",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7112-001"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7112_002"
+      },
+      "set": {
+        "context_description": "Term names God's hiddenness from the person who cries to him \u2014 the inner anguish of divine withdrawal in trouble \u2014 and prayer for God to unhide himself",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7112-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7112_002"
+      },
+      "set": {
+        "context_description": "Term names God's hiddenness from the person who cries to him \u2014 the inner anguish of divine withdrawal in trouble \u2014 and prayer for God to unhide himself",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7112-002"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7112_003"
+      },
+      "set": {
+        "context_description": "Term names the moral act of hiding oneself from responsibility \u2014 deliberate inner blindness to obligation \u2014 and its condemnation",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7112-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7112_003"
+      },
+      "set": {
+        "context_description": "Term names the moral act of hiding oneself from responsibility \u2014 deliberate inner blindness to obligation \u2014 and its condemnation",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7112-003"
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7113_001"
+      },
+      "set": {
+        "context_description": "Term names the maiden as a participant in and witness to the inner life of love, worship, and divine mystery \u2014 from the liturgical procession to the mystery of human love to the virgin who bears the Immanuel sign",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7113-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7113_001"
+      },
+      "set": {
+        "context_description": "Term names the maiden as a participant in and witness to the inner life of love, worship, and divine mystery \u2014 from the liturgical procession to the mystery of human love to the virgin who bears the Immanuel sign",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7113-001"
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_653_001"
+      },
+      "set": {
+        "context_description": "Term names the inner dimensions of might \u2014 where vastness of power produces inner dread, misplaced trust, unjust oppression, or eschatological worship",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 653-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_653_001"
+      },
+      "set": {
+        "context_description": "Term names the inner dimensions of might \u2014 where vastness of power produces inner dread, misplaced trust, unjust oppression, or eschatological worship",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 653-001"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6889_001"
+      },
+      "set": {
+        "context_description": "Term names bone as the expression of relational identity \u2014 \"bone of my bones and flesh of my flesh\" \u2014 the inner recognition of kinship and the covenantal bond it establishes",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6889-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6889_001"
+      },
+      "set": {
+        "context_description": "Term names bone as the expression of relational identity \u2014 \"bone of my bones and flesh of my flesh\" \u2014 the inner recognition of kinship and the covenantal bond it establishes",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6889-001"
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6889_002"
+      },
+      "set": {
+        "context_description": "Term names bone as the somatic expression of inner suffering, guilt, and spiritual depletion \u2014 the bones that ache, waste, and are troubled as the body registers the state of the soul",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6889-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6889_002"
+      },
+      "set": {
+        "context_description": "Term names bone as the somatic expression of inner suffering, guilt, and spiritual depletion \u2014 the bones that ache, waste, and are troubled as the body registers the state of the soul",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6889-002"
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6889_003"
+      },
+      "set": {
+        "context_description": "Term names the dry bones as the image of communal hopelessness and death \u2014 and the divine act of breath and resurrection that restores inner and national life",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6889-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6889_003"
+      },
+      "set": {
+        "context_description": "Term names the dry bones as the image of communal hopelessness and death \u2014 and the divine act of breath and resurrection that restores inner and national life",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6889-003"
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6889_004"
+      },
+      "set": {
+        "context_description": "Term names bone as the locus of wisdom-produced renewal and wholeness \u2014 where good news strengthens the bones and envy rots them",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6889-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6889_004"
+      },
+      "set": {
+        "context_description": "Term names bone as the locus of wisdom-produced renewal and wholeness \u2014 where good news strengthens the bones and envy rots them",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6889-004"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6890_001"
+      },
+      "set": {
+        "context_description": "Term names the decisive \"very day\" of divine encounter, covenant, or judgment \u2014 the inner-being significance of a specific moment that changes everything",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6890-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6890_001"
+      },
+      "set": {
+        "context_description": "Term names the decisive \"very day\" of divine encounter, covenant, or judgment \u2014 the inner-being significance of a specific moment that changes everything",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6890-001"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6891_001"
+      },
+      "set": {
+        "context_description": "Term names the body as the recipient of grace-produced renewal \u2014 the whole person reconstituted and clothed with what God alone can supply",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6891-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6891_001"
+      },
+      "set": {
+        "context_description": "Term names the body as the recipient of grace-produced renewal \u2014 the whole person reconstituted and clothed with what God alone can supply",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6891-001"
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_673_001"
+      },
+      "set": {
+        "context_description": "Term names the inner substance/might of the person \u2014 in its self-attributed pride or genuine divine endowment \u2014 as the disclosure of what the self is grounded in",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 673-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_673_001"
+      },
+      "set": {
+        "context_description": "Term names the inner substance/might of the person \u2014 in its self-attributed pride or genuine divine endowment \u2014 as the disclosure of what the self is grounded in",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 673-001"
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_672_001"
+      },
+      "set": {
+        "context_description": "Term names strength as either God's gift to the depleted or the power of occult practice that competes with divine authority",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 672-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_672_001"
+      },
+      "set": {
+        "context_description": "Term names strength as either God's gift to the depleted or the power of occult practice that competes with divine authority",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 672-001"
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6992_001"
+      },
+      "set": {
+        "context_description": "Term names height as the expression of inner pride \u2014 the towering of self that God brings low \u2014 and the exaltation that comes only from him",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6992-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6992_001"
+      },
+      "set": {
+        "context_description": "Term names height as the expression of inner pride \u2014 the towering of self that God brings low \u2014 and the exaltation that comes only from him",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6992-001"
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7000_001"
+      },
+      "set": {
+        "context_description": "Term names the upright posture as the visible expression of inner dignity restored \u2014 the person who had been bent or bowed and is raised up by divine act",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7000-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7000_001"
+      },
+      "set": {
+        "context_description": "Term names the upright posture as the visible expression of inner dignity restored \u2014 the person who had been bent or bowed and is raised up by divine act",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7000-001"
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7001_001"
+      },
+      "set": {
+        "context_description": "Term names the adversary as the object of God's righteous judgment \u2014 and the inner response of the person whose enemy is dealt with by God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7001-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7001_001"
+      },
+      "set": {
+        "context_description": "Term names the adversary as the object of God's righteous judgment \u2014 and the inner response of the person whose enemy is dealt with by God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7001-001"
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7002_001"
+      },
+      "set": {
+        "context_description": "Term names the rising of enemies as the constant occasion of the inner person's prayer and God's answering intervention",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7002-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7002_001"
+      },
+      "set": {
+        "context_description": "Term names the rising of enemies as the constant occasion of the inner person's prayer and God's answering intervention",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7002-001"
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_655_001"
+      },
+      "set": {
+        "context_description": "Term names God's incomparable supremacy \u2014 in strength, in wealth, and in cosmic sovereignty \u2014 as the ground of inner awe and exclusive worship",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 655-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_655_001"
+      },
+      "set": {
+        "context_description": "Term names God's incomparable supremacy \u2014 in strength, in wealth, and in cosmic sovereignty \u2014 as the ground of inner awe and exclusive worship",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 655-001"
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_660_001"
+      },
+      "set": {
+        "context_description": "Term names the collapse of the inner capacity to stand \u2014 the inability to hold ground before God's holiness, under suffering, or in moral failure",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 660-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_660_001"
+      },
+      "set": {
+        "context_description": "Term names the collapse of the inner capacity to stand \u2014 the inability to hold ground before God's holiness, under suffering, or in moral failure",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 660-001"
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7003_001"
+      },
+      "set": {
+        "context_description": "Term names the rising up against God as the object of the psalmist's inner moral resistance and appeal to divine justice",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7003-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7003_001"
+      },
+      "set": {
+        "context_description": "Term names the rising up against God as the object of the psalmist's inner moral resistance and appeal to divine justice",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7003-001"
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6943_001"
+      },
+      "set": {
+        "context_description": "Term names the overpowering strength of kingdoms \u2014 as iron ruthlessness or inner political domination \u2014 and its ultimate subjection to God's sovereign reign",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6943-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6943_001"
+      },
+      "set": {
+        "context_description": "Term names the overpowering strength of kingdoms \u2014 as iron ruthlessness or inner political domination \u2014 and its ultimate subjection to God's sovereign reign",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6943-001"
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_6944_001"
+      },
+      "set": {
+        "context_description": "Term names the growth of inner pride into visible strength \u2014 the tree that reaches the sky as the image of self-exalting ambition brought under divine judgment",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 6944-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_6944_001"
+      },
+      "set": {
+        "context_description": "Term names the growth of inner pride into visible strength \u2014 the tree that reaches the sky as the image of self-exalting ambition brought under divine judgment",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 6944-001"
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1271_001"
+      },
+      "set": {
+        "context_description": "Term names the weeping of eschatological lament \u2014 the outcry of those under divine judgment \u2014 and the divine promise that such weeping will finally cease",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1271-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1271_001"
+      },
+      "set": {
+        "context_description": "Term names the weeping of eschatological lament \u2014 the outcry of those under divine judgment \u2014 and the divine promise that such weeping will finally cease",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1271-001"
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1270_001"
+      },
+      "set": {
+        "context_description": "Term names weeping as the expression of intense grief over loss \u2014 death, exile, and the suffering of the inner person in its most acute form",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1270-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1270_001"
+      },
+      "set": {
+        "context_description": "Term names weeping as the expression of intense grief over loss \u2014 death, exile, and the suffering of the inner person in its most acute form",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1270-001"
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1270_002"
+      },
+      "set": {
+        "context_description": "Term names weeping before God \u2014 in penitence, prayer, and covenant distress \u2014 the inner-being act of bringing grief to God and seeking his response",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1270-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1270_002"
+      },
+      "set": {
+        "context_description": "Term names weeping before God \u2014 in penitence, prayer, and covenant distress \u2014 the inner-being act of bringing grief to God and seeking his response",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1270-002"
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1270_003"
+      },
+      "set": {
+        "context_description": "Term names weeping as the expression of love and compassionate identification \u2014 tears shed in solidarity with suffering others or in joy at restored relationship",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1270-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1270_003"
+      },
+      "set": {
+        "context_description": "Term names weeping as the expression of love and compassionate identification \u2014 tears shed in solidarity with suffering others or in joy at restored relationship",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1270-003"
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1270_004"
+      },
+      "set": {
+        "context_description": "Term names prophetic weeping \u2014 the prophet's tears for God's people, for judgment, and for the suffering of nations \u2014 the inner grief of one who sees and feels what God feels",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1270-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1270_004"
+      },
+      "set": {
+        "context_description": "Term names prophetic weeping \u2014 the prophet's tears for God's people, for judgment, and for the suffering of nations \u2014 the inner grief of one who sees and feels what God feels",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1270-004"
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1269_001"
+      },
+      "set": {
+        "context_description": "Term names weeping as a noun \u2014 the state and act of weeping \u2014 across grief, penitence, prophetic sorrow, and eschatological resolution",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1269-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1269_001"
+      },
+      "set": {
+        "context_description": "Term names weeping as a noun \u2014 the state and act of weeping \u2014 across grief, penitence, prophetic sorrow, and eschatological resolution",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1269-001"
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1273_001"
+      },
+      "set": {
+        "context_description": "Term names the concluded period of mourning \u2014 the weeping that has its season and passes",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1273-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1273_001"
+      },
+      "set": {
+        "context_description": "Term names the concluded period of mourning \u2014 the weeping that has its season and passes",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1273-001"
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7117_001"
+      },
+      "set": {
+        "context_description": "Term names the prophet's secret soul-weeping \u2014 the inner grief hidden from the people but present before God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7117-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7117_001"
+      },
+      "set": {
+        "context_description": "Term names the prophet's secret soul-weeping \u2014 the inner grief hidden from the people but present before God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7117-001"
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1272_001"
+      },
+      "set": {
+        "context_description": "Term names tears as the visible expression of the inner person's grief, prayer, and lament \u2014 and God's attentive response to them",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1272-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1272_001"
+      },
+      "set": {
+        "context_description": "Term names tears as the visible expression of the inner person's grief, prayer, and lament \u2014 and God's attentive response to them",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1272-001"
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1275_001"
+      },
+      "set": {
+        "context_description": "Term names malice as an inner disposition of the soul \u2014 the soul's rejoicing in another's destruction, driven by deep-seated enmity and contempt",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1275-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1275_001"
+      },
+      "set": {
+        "context_description": "Term names malice as an inner disposition of the soul \u2014 the soul's rejoicing in another's destruction, driven by deep-seated enmity and contempt",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1275-001"
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1284_001"
+      },
+      "set": {
+        "context_description": "Term names the contempt directed at the Son of Man \u2014 the inner-being experience of rejection and disgrace borne as the path of the suffering servant",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1284-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1284_001"
+      },
+      "set": {
+        "context_description": "Term names the contempt directed at the Son of Man \u2014 the inner-being experience of rejection and disgrace borne as the path of the suffering servant",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1284-001"
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1279_001"
+      },
+      "set": {
+        "context_description": "Term names contempt as the inner disposition that evaluates another as worthless \u2014 directed at fellow believers, the weak, or at Christ himself \u2014 and its reversal in God's economy",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1279-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1279_001"
+      },
+      "set": {
+        "context_description": "Term names contempt as the inner disposition that evaluates another as worthless \u2014 directed at fellow believers, the weak, or at Christ himself \u2014 and its reversal in God's economy",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1279-001"
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1280_001"
+      },
+      "set": {
+        "context_description": "Term names despising as an inner act with moral and covenantal consequence \u2014 directed at birthright, God's word, God's name, or God's servant \u2014 and the divine response of honor or shame",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1280-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1280_001"
+      },
+      "set": {
+        "context_description": "Term names despising as an inner act with moral and covenantal consequence \u2014 directed at birthright, God's word, God's name, or God's servant \u2014 and the divine response of honor or shame",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1280-001"
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1281_001"
+      },
+      "set": {
+        "context_description": "Term names contempt as a social-inner contagion \u2014 one act of defiance spreading the inner disposition of contempt through a whole society",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1281-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1281_001"
+      },
+      "set": {
+        "context_description": "Term names contempt as a social-inner contagion \u2014 one act of defiance spreading the inner disposition of contempt through a whole society",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1281-001"
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1283_001"
+      },
+      "set": {
+        "context_description": "Term names abhorrence and everlasting contempt as the ultimate inner-being condition of those who rebel against God \u2014 the final state of the unrighteous",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1283-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1283_001"
+      },
+      "set": {
+        "context_description": "Term names abhorrence and everlasting contempt as the ultimate inner-being condition of those who rebel against God \u2014 the final state of the unrighteous",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1283-001"
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7156_001"
+      },
+      "set": {
+        "context_description": "Term names folly as the inner moral disposition that commits outrageous acts against covenant, personhood, and God \u2014 the \"disgraceful thing done in Israel\"",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7156-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7156_001"
+      },
+      "set": {
+        "context_description": "Term names folly as the inner moral disposition that commits outrageous acts against covenant, personhood, and God \u2014 the \"disgraceful thing done in Israel\"",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7156-001"
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7158_001"
+      },
+      "set": {
+        "context_description": "Term names lewdness as the inner condition of spiritual adultery \u2014 exposed by God before the lovers it sought",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7158-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7158_001"
+      },
+      "set": {
+        "context_description": "Term names lewdness as the inner condition of spiritual adultery \u2014 exposed by God before the lovers it sought",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7158-001"
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1282_001"
+      },
+      "set": {
+        "context_description": "Term names dishonour as the inner-social condition where contempt inverts proper relational honour \u2014 and divine judgment as its agent",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1282-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1282_001"
+      },
+      "set": {
+        "context_description": "Term names dishonour as the inner-social condition where contempt inverts proper relational honour \u2014 and divine judgment as its agent",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1282-001"
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1276_001"
+      },
+      "set": {
+        "context_description": "Term names cursing as an inner-being act \u2014 directed against parents, God, rulers, or God's anointed \u2014 with moral and covenantal weight",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1276-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1276_001"
+      },
+      "set": {
+        "context_description": "Term names cursing as an inner-being act \u2014 directed against parents, God, rulers, or God's anointed \u2014 with moral and covenantal weight",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1276-001"
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1276_002"
+      },
+      "set": {
+        "context_description": "Term names contempt as the inner disposition that evaluates another as light/worthless \u2014 looking down on persons, treating things as trivial, or despising God's commands",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1276-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1276_002"
+      },
+      "set": {
+        "context_description": "Term names contempt as the inner disposition that evaluates another as light/worthless \u2014 looking down on persons, treating things as trivial, or despising God's commands",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1276-002"
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1276_003"
+      },
+      "set": {
+        "context_description": "Term names the lightening of burden or minimising of difficulty \u2014 in its inner-being dimension: divine perspective on difficulty, false minimising of spiritual wounds, or the expansion of divine commission",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1276-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1276_003"
+      },
+      "set": {
+        "context_description": "Term names the lightening of burden or minimising of difficulty \u2014 in its inner-being dimension: divine perspective on difficulty, false minimising of spiritual wounds, or the expansion of divine commission",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1276-003"
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1277_001"
+      },
+      "set": {
+        "context_description": "Term names the contempt of surrounding nations toward Israel \u2014 and God's judgment that removes and avenges that contempt",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1277-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1277_001"
+      },
+      "set": {
+        "context_description": "Term names the contempt of surrounding nations toward Israel \u2014 and God's judgment that removes and avenges that contempt",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1277-001"
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7151_001"
+      },
+      "set": {
+        "context_description": "Term names the inner act of swerving toward the proud and the lie \u2014 the misdirection of trust that the blessed person avoids",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7151-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7151_001"
+      },
+      "set": {
+        "context_description": "Term names the inner act of swerving toward the proud and the lie \u2014 the misdirection of trust that the blessed person avoids",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7151-001"
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7161_001"
+      },
+      "set": {
+        "context_description": "Term names impartiality as a defining inner character quality of wisdom from above \u2014 the absence of inner wavering or prejudice in the person of wisdom",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7161-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7161_001"
+      },
+      "set": {
+        "context_description": "Term names impartiality as a defining inner character quality of wisdom from above \u2014 the absence of inner wavering or prejudice in the person of wisdom",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7161-001"
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1285_001"
+      },
+      "set": {
+        "context_description": "Term names the inner act of judging and distinguishing \u2014 morally discerning between persons or things, including wrongful discrimination",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1285-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1285_001"
+      },
+      "set": {
+        "context_description": "Term names the inner act of judging and distinguishing \u2014 morally discerning between persons or things, including wrongful discrimination",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1285-001"
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1285_002"
+      },
+      "set": {
+        "context_description": "Term names doubting as the inner division of the self \u2014 the heart split between faith and hesitation, driven and tossed like a wave",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1285-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1285_002"
+      },
+      "set": {
+        "context_description": "Term names doubting as the inner division of the self \u2014 the heart split between faith and hesitation, driven and tossed like a wave",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1285-002"
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7160_001"
+      },
+      "set": {
+        "context_description": "Term names discernment as an inner spiritual capacity \u2014 trained by practice to distinguish good from evil, or exercised as a gift to distinguish spirits",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7160-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7160_001"
+      },
+      "set": {
+        "context_description": "Term names discernment as an inner spiritual capacity \u2014 trained by practice to distinguish good from evil, or exercised as a gift to distinguish spirits",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7160-001"
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1288_001"
+      },
+      "set": {
+        "context_description": "Term names doubt as the inner experience of wavering \u2014 faith faltering between trust and hesitation \u2014 addressed directly by Jesus",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1288-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1288_001"
+      },
+      "set": {
+        "context_description": "Term names doubt as the inner experience of wavering \u2014 faith faltering between trust and hesitation \u2014 addressed directly by Jesus",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1288-001"
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7186_001"
+      },
+      "set": {
+        "context_description": "Term names the universal drawing of people toward Jesus from every quarter \u2014 the inner orientation of seeking that comes from all sides",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7186-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7186_001"
+      },
+      "set": {
+        "context_description": "Term names the universal drawing of people toward Jesus from every quarter \u2014 the inner orientation of seeking that comes from all sides",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7186-001"
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7183_001"
+      },
+      "set": {
+        "context_description": "Term names the universal scope of the gospel's reach \u2014 preached, commanded, and received everywhere \u2014 disclosing the inner-being mandate that has no geographic boundary",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7183-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7183_001"
+      },
+      "set": {
+        "context_description": "Term names the universal scope of the gospel's reach \u2014 preached, commanded, and received everywhere \u2014 disclosing the inner-being mandate that has no geographic boundary",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7183-001"
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7184_001"
+      },
+      "set": {
+        "context_description": "Term names completeness in its inner-being dimension \u2014 the complete inability of the bound, and the complete sufficiency of Christ's saving power",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7184-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7184_001"
+      },
+      "set": {
+        "context_description": "Term names completeness in its inner-being dimension \u2014 the complete inability of the bound, and the complete sufficiency of Christ's saving power",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7184-001"
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7185_001"
+      },
+      "set": {
+        "context_description": "Term names the complete encirclement \u2014 being hemmed in on every side \u2014 as the inner-being experience of inescapable judgment",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7185-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7185_001"
+      },
+      "set": {
+        "context_description": "Term names the complete encirclement \u2014 being hemmed in on every side \u2014 as the inner-being experience of inescapable judgment",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7185-001"
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7182_001"
+      },
+      "set": {
+        "context_description": "Term names God as the Almighty \u2014 the All-Sovereign whose absolute power is the object of worship, the ground of covenant relationship, and the authority over all history and judgment",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7182-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7182_001"
+      },
+      "set": {
+        "context_description": "Term names God as the Almighty \u2014 the All-Sovereign whose absolute power is the object of worship, the ground of covenant relationship, and the authority over all history and judgment",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7182-001"
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7181_001"
+      },
+      "set": {
+        "context_description": "Term names the constancy of the inner-being orientation \u2014 always praying, always giving thanks, always rejoicing, always abounding \u2014 as the mark of a life wholly directed toward God",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7181-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7181_001"
+      },
+      "set": {
+        "context_description": "Term names the constancy of the inner-being orientation \u2014 always praying, always giving thanks, always rejoicing, always abounding \u2014 as the mark of a life wholly directed toward God",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7181-001"
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1289_001"
+      },
+      "set": {
+        "context_description": "Term intensifies inner-being certainty, conviction, and commitment \u2014 the surely/certainly that names the firmness of moral judgment, apostolic conviction, and wholehearted resolve",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1289-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1289_001"
+      },
+      "set": {
+        "context_description": "Term intensifies inner-being certainty, conviction, and commitment \u2014 the surely/certainly that names the firmness of moral judgment, apostolic conviction, and wholehearted resolve",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1289-001"
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1287_001"
+      },
+      "set": {
+        "context_description": "Term names the inner affirmation of truth \u2014 the \"truly\" that anchors a moral assertion, a confession, or a conviction about God's character",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1287-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1287_001"
+      },
+      "set": {
+        "context_description": "Term names the inner affirmation of truth \u2014 the \"truly\" that anchors a moral assertion, a confession, or a conviction about God's character",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1287-001"
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1286_001"
+      },
+      "set": {
+        "context_description": "Term names tearing as the expression of violent inner states \u2014 divine wrath, human predatory character, destructive anger \u2014 and the experience of being torn as what the inner person suffers under judgment or hostile power",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1286-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1286_001"
+      },
+      "set": {
+        "context_description": "Term names tearing as the expression of violent inner states \u2014 divine wrath, human predatory character, destructive anger \u2014 and the experience of being torn as what the inner person suffers under judgment or hostile power",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1286-001"
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7162_001"
+      },
+      "set": {
+        "context_description": "Term names prey in its inner-being dimension \u2014 the predatory inner character of unjust leaders and oppressors, God's fierce resolve to fight for his people, and his covenantal provision for those who fear him",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7162-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7162_001"
+      },
+      "set": {
+        "context_description": "Term names prey in its inner-being dimension \u2014 the predatory inner character of unjust leaders and oppressors, God's fierce resolve to fight for his people, and his covenantal provision for those who fear him",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7162-001"
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7164_001"
+      },
+      "set": {
+        "context_description": "Term names the fresh-plucked olive leaf as the sign of renewed hope \u2014 the communicative act that produces inner recognition of grace and new beginning",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7164-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7164_001"
+      },
+      "set": {
+        "context_description": "Term names the fresh-plucked olive leaf as the sign of renewed hope \u2014 the communicative act that produces inner recognition of grace and new beginning",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7164-001"
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7163_001"
+      },
+      "set": {
+        "context_description": "Term names the torn animal as the boundary that tests inner integrity \u2014 the person who refuses defilement, bears losses rather than shifting blame, or whose predatory character fills its dens with what it has seized",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7163-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7163_001"
+      },
+      "set": {
+        "context_description": "Term names the torn animal as the boundary that tests inner integrity \u2014 the person who refuses defilement, bears losses rather than shifting blame, or whose predatory character fills its dens with what it has seized",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7163-001"
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1295_001"
+      },
+      "set": {
+        "context_description": "Term names the sick/morbid craving of the inner person \u2014 the unhealthy inner obsession with controversy that produces envy, dissension, and evil suspicions",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1295-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1295_001"
+      },
+      "set": {
+        "context_description": "Term names the sick/morbid craving of the inner person \u2014 the unhealthy inner obsession with controversy that produces envy, dissension, and evil suspicions",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1295-001"
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_7222_001"
+      },
+      "set": {
+        "context_description": "Term names illness as the condition that Jesus heals \u2014 the embodied suffering that he takes upon himself and from which he liberates, fulfilling the Servant's vicarious identification with human weakness",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 7222-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_7222_001"
+      },
+      "set": {
+        "context_description": "Term names illness as the condition that Jesus heals \u2014 the embodied suffering that he takes upon himself and from which he liberates, fulfilling the Servant's vicarious identification with human weakness",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 7222-001"
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1296_001"
+      },
+      "set": {
+        "context_description": "Term names the inner aspiration toward the heavenly \u2014 the deep desire that orients the inner person beyond the earthly toward what God has prepared",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1296-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1296_001"
+      },
+      "set": {
+        "context_description": "Term names the inner aspiration toward the heavenly \u2014 the deep desire that orients the inner person beyond the earthly toward what God has prepared",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1296-001"
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1298_001"
+      },
+      "set": {
+        "context_description": "Term names the blessing of God \u2014 pronouncing his name over creation, persons, bread \u2014 as the inner act of consecration and thankfulness",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1298-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1298_001"
+      },
+      "set": {
+        "context_description": "Term names the blessing of God \u2014 pronouncing his name over creation, persons, bread \u2014 as the inner act of consecration and thankfulness",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1298-001"
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1298_002"
+      },
+      "set": {
+        "context_description": "Term names the blessing declared over persons \u2014 the prophetic and covenantal words of blessing spoken over individuals, communities, and Christ at his coming",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1298-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1298_002"
+      },
+      "set": {
+        "context_description": "Term names the blessing declared over persons \u2014 the prophetic and covenantal words of blessing spoken over individuals, communities, and Christ at his coming",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1298-002"
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1298_003"
+      },
+      "set": {
+        "context_description": "Term names blessing as the inner act of responding to curse with blessing \u2014 the counterintuitive orientation of the inner person that blesses persecutors",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1298-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1298_003"
+      },
+      "set": {
+        "context_description": "Term names blessing as the inner act of responding to curse with blessing \u2014 the counterintuitive orientation of the inner person that blesses persecutors",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1298-003"
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1300_001"
+      },
+      "set": {
+        "context_description": "Term names blessedness as the inner state of the person who receives God's freely given righteousness \u2014 and the loss of that blessedness when the inner person turns back to works",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1300-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1300_001"
+      },
+      "set": {
+        "context_description": "Term names blessedness as the inner state of the person who receives God's freely given righteousness \u2014 and the loss of that blessedness when the inner person turns back to works",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1300-001"
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1301_001"
+      },
+      "set": {
+        "context_description": "Term names the charisma as God's free gift of grace \u2014 the spiritual capacity given to each person for the building up of the community, and supremely the gift of eternal life",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1301-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1301_001"
+      },
+      "set": {
+        "context_description": "Term names the charisma as God's free gift of grace \u2014 the spiritual capacity given to each person for the building up of the community, and supremely the gift of eternal life",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1301-001"
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1299_001"
+      },
+      "set": {
+        "context_description": "Term names God's act of blessing \u2014 the sovereign covenantal gift of favour, fruitfulness, and life that flows from God's inner disposition of love toward his creation and people",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1299-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1299_001"
+      },
+      "set": {
+        "context_description": "Term names God's act of blessing \u2014 the sovereign covenantal gift of favour, fruitfulness, and life that flows from God's inner disposition of love toward his creation and people",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1299-001"
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1299_002"
+      },
+      "set": {
+        "context_description": "Term names the human act of blessing God \u2014 the inner-being orientation of worship, doxology, and praise that declares God worthy and exalts his name",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1299-002: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1299_002"
+      },
+      "set": {
+        "context_description": "Term names the human act of blessing God \u2014 the inner-being orientation of worship, doxology, and praise that declares God worthy and exalts his name",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1299-002"
+    },
+    {
+      "op_id": "OP-291",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1299_003"
+      },
+      "set": {
+        "context_description": "Term names the human act of blessing other humans \u2014 the covenantal declaration of favour, the prophetic word of blessing, and the communal invocation of God's goodness over persons and communities",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1299-003: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-292",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1299_003"
+      },
+      "set": {
+        "context_description": "Term names the human act of blessing other humans \u2014 the covenantal declaration of favour, the prophetic word of blessing, and the communal invocation of God's goodness over persons and communities",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1299-003"
+    },
+    {
+      "op_id": "OP-293",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1299_004"
+      },
+      "set": {
+        "context_description": "Term names the ironic/euphemistic use of blessing \u2014 cursing God under the name of \"blessing\" (the Job passages), or blessing idols \u2014 and the self-blessing of the sinful heart",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1299-004: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-294",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1299_004"
+      },
+      "set": {
+        "context_description": "Term names the ironic/euphemistic use of blessing \u2014 cursing God under the name of \"blessing\" (the Job passages), or blessing idols \u2014 and the self-blessing of the sinful heart",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1299-004"
+    },
+    {
+      "op_id": "OP-295",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": "RESOLVE_VCG_1316_001"
+      },
+      "set": {
+        "context_description": "Term names God's active energeia \u2014 the working power that raised Christ from the dead, enables Paul's ministry, builds up the body in love, and works within the believer",
+        "notes": "Revised during Dimension Review Phase B: VCB-022 patch truncated context_description at 80 characters. Full description restored from wa-vcb-022-term-observations-v2.8-20260404.md"
+      },
+      "description": "Group 1316-001: restore full description (truncated at 80 chars in VCB-022 patch)"
+    },
+    {
+      "op_id": "OP-296",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": "RESOLVE_DIM_1316_001"
+      },
+      "set": {
+        "context_description": "Term names God's active energeia \u2014 the working power that raised Christ from the dead, enables Paul's ministry, builds up the body in love, and works within the believer",
+        "notes": "Description updated to match verse_context_group correction \u2014 VCB-022 80-char truncation restored",
+        "last_modified": "2026-04-07T00:00:00"
+      },
+      "description": "wa_dimension_index sync \u2014 group 1316-001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 296,
+    "dimension_updates": 0,
+    "dimensions_anchored": 0,
+    "session_b_findings_inserted": 0,
+    "session_d_pointers_inserted": 0,
+    "group_description_corrections": 148,
+    "wa_dimension_index_syncs": 148
+  }
+}
