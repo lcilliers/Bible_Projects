@@ -1,0 +1,279 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260409-068-SESSIONB-V1",
+    "registry_id": 68,
+    "word": "grace",
+    "produced_date": "2026-04-09",
+    "produced_by": "Session-B-Instruction-v3.1-2026-04-09",
+    "patch_type": "SESSIONB",
+    "session_b_status": "Analysis Complete",
+    "description": "Session B analytical write-backs for grace (reg 068): god_as_subject corrections, somatic_link updates, sb_classification, H2603B deletion, research flags"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "G5485",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "G5485 charis \u2014 god_as_subject corrected to 1: God is named agent in majority of anchor verses (Eph 2:8, 2Cor 12:9, Rom 3:24, Gal 1:15, 1Cor 15:10 etc). Data gap confirmed in Session B Pass 2."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "G5483",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "G5483 chariz\u014d \u2014 god_as_subject corrected to 1: Rom 8:32, 1Cor 2:12, Act 27:24, Gal 3:18 \u2014 God explicit subject of the grace-giving act."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "G5487",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "G5487 charito\u014d \u2014 god_as_subject corrected to 1: Both NT occurrences (Luk 1:28, Eph 1:6) have God as agent. Term specifically names the act of being constituted as an object of divine grace."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H2580",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "H2580 chen \u2014 god_as_subject corrected to 1: 27 verses with divine reference; 'find favour in the eyes of the Lord' formula pervasive (Gen 6:8, Exo 33:17 etc)."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H2587",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "H2587 channun \u2014 god_as_subject corrected to 1: All 13 occurrences in registry are divine character descriptions ('The Lord is gracious and merciful' \u2014 Exo 34:6 formula and parallels)."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H2603A",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "god_as_subject": 1
+      },
+      "description": "H2603A chanan \u2014 god_as_subject corrected to 1: 43 verses with divine reference; 'Be gracious to me, O Lord' is the dominant prayer form (Psa 6:2, 51:1, 67:1 etc)."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H2580",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "somatic_link": 1
+      },
+      "description": "H2580 chen \u2014 somatic_link set to 1: eyes/sight idiom ('find favour in the eyes of') pervasive across 28 somatic verses; face prominent (Exo 33:16, Num 6:25, Rut 2:10)."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H2603A",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "somatic_link": 1
+      },
+      "description": "H2603A chanan \u2014 somatic_link set to 1: 24 somatic verses \u2014 prostration and kneeling (2Ki 1:13, Est 8:3), face (Num 6:25, Psa 67:1), heart (1Ki 8:47, Psa 119:58), eyes, bones (Psa 6:2), soul (Psa 31:9)."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H8469",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "somatic_link": 1
+      },
+      "description": "H8469 tachanum \u2014 somatic_link set to 1: 7 somatic verses \u2014 fasting, sackcloth, ashes, face (Dan 9:3), weeping (Jer 3:21, 31:9), raised hands (Psa 28:2), spirit (Zec 12:10)."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "mti_terms",
+      "match": {
+        "strongs_number": "H8467",
+        "owning_registry_fk": 68
+      },
+      "set": {
+        "somatic_link": 1
+      },
+      "description": "H8467 techinnah \u2014 somatic_link set to 1: 8 somatic verses \u2014 hands stretched out (1Ki 8:38, 54; 2Ch 6:29), eyes (1Ki 8:52, 9:3), heart (1Ki 8:38, 9:3), knees (1Ki 8:54)."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update_mti_status",
+      "strongs_number": "H2603B",
+      "set": {
+        "status": "delete",
+        "status_note": "Phantom entry \u2014 no genuine verse occurrences. STEP data confirms all 72 verses fetched under H2603B resolve at span level to H2603A (span_code_found = H2603A in all 72 cases). H2603B is a theoretical lexicographical distinction with no recoverable textual presence in the STEP-tagged corpus. Deleted Session B 2026-04-09.",
+        "exclusion_reason": "No corpus evidence \u2014 all span matches resolve to H2603A"
+      },
+      "description": "H2603B chanan (be loathsome) \u2014 status \u2192 delete. STEP analysis confirms zero genuine H2603B span hits across 72 verses; all resolve to H2603A. Data error in initial extraction now resolved."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "id": 68
+      },
+      "set": {
+        "sb_classification": "Spirit-soul interface",
+        "sb_classification_reasoning": "Grace originates at the spirit level \u2014 it is the freely given disposition of God toward humanity, received by the human person as a gift from above, not self-generated. It cannot arise from within the natural human capacity; its structure as gift requires an outside source. At the soul level, grace is thoroughly expressed: the desire for it, the fear of being without it, the experience of finding it, and the transformed inner disposition of the one who has lived under it are all soulish states \u2014 personally felt, emotionally coloured, relationally constituted. The somatic evidence (prostration, weeping, raised hands, fasting, gracious speech) confirms that grace is enacted through the body without originating there. The body enacts and externalises what is happening at the spirit-soul level. Confidence: high \u2014 pattern consistent across full verse set of 194 active verses and all nine owner terms.",
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Registry 068 grace \u2014 sb_classification set to Spirit-soul interface; session_b_status advanced to Analysis Complete."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 68,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-068-001",
+        "strongs_reference": "G5485",
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Grace-Forgiveness formal connection: G5483 chariz\u014d carries both 'give grace' and 'forgive/cancel debt' as primary senses. Eph 4:32 makes forgiveness the named expression of grace received. The grace-forgiveness relationship is formally embedded in the Greek term itself. Requires cross-registry analysis when forgiveness registry is complete.",
+        "session_raised": "Session B v3.1 2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "Research flag PH2-068-001: Grace-Forgiveness formal connection via G5483 chariz\u014d"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 68,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-068-002",
+        "strongs_reference": "H2580",
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Grace-Chesed boundary question: H2580 chen and chesed (steadfast love) travel together in OT formulas and verse pairs. Key structural question for Session D: does chen name the inner disposition of which chesed is the sustained relational expression? Cannot be resolved within this registry \u2014 requires chesed registry to be complete.",
+        "session_raised": "Session B v3.1 2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "Research flag PH2-068-002: Grace-Chesed boundary question \u2014 chen vs chesed structural relationship"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 68,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-068-003",
+        "strongs_reference": "H8469",
+        "cross_registry_id": null,
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Grace-Repentance sequence: Zec 12:10 (H8469 tachanum anchor) and Joel 2:13 (H2587 channun) together establish that grace precedes and enables the turn toward God \u2014 the capacity to repent is itself given as grace. This directional sequence (grace \u2192 repentance, not repentance \u2192 grace) requires confirmation against repentance registry data.",
+        "session_raised": "Session B v3.1 2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "Research flag PH2-068-003: Grace-Repentance sequence \u2014 grace as precondition for the turn"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 68,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-068-004",
+        "strongs_reference": "G5485",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Grace-Identity formation signal: 1Cor 15:10 \u2014 'by the grace of God I am what I am' \u2014 is the strongest statement in the corpus of grace as identity-constituting: not merely a gift received but the ground of being. Connects to identity-formation vocabulary. Flag for cross-registry investigation when identity vocabulary is processed.",
+        "session_raised": "Session B v3.1 2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "Research flag PH2-068-004: Grace-Identity formation \u2014 1Cor 15:10 as identity-constituting signal"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 68,
+        "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+        "flag_label": "PH2-068-005",
+        "strongs_reference": "H8469",
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Grace-Lament connection: the weeping-supplication complex (tachanum + weeping in Jer 3:21, 31:9; Zec 12:10; Est 8:3; Dan 9:3) connects the grace-seeking posture to the lament tradition. Not currently in Section 5 connections list. Warrants investigation when lament vocabulary is processed.",
+        "session_raised": "Session B v3.1 2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "Research flag PH2-068-005: Grace-Lament connection via weeping-supplication complex"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "registry_note",
+      "description": "Session B analytical brief: wa-068-grace-session-b-brief-2026-04-09.md. Session C document updates required: Section 3 (13 verse annotations) and Section 4 (5 language annotations) \u2192 Session C v2 pending."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 18,
+    "god_as_subject_updates": 6,
+    "somatic_link_updates": 4,
+    "mti_status_updates": 1,
+    "registry_updates": 1,
+    "research_flag_inserts": 5,
+    "registry_notes": 1,
+    "notes": "H8469 and H8467 god_as_subject retained at 0 \u2014 supplication terms, God is addressee not agent. H2603B deleted \u2014 zero genuine corpus span hits, all 72 verses resolve to H2603A."
+  }
+}

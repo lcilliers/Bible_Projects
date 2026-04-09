@@ -144,4 +144,108 @@
 
 ---
 
-*End of session — 2026-04-09*
+---
+
+# Session 2 — 2026-04-09 (afternoon/evening)
+
+**Session type:** Claude Code operational session (continued)
+**Governing instructions:** WA-DimensionReview-Instruction-v1.9, Session-B-Instruction-v3, patch_specification-v1.5
+
+---
+
+## 11. Dimension Review Patches Applied
+
+### C20 — PATCH-20260409-DIMREVIEW-C20-V1 (produced under v1.7)
+- 395 wa_dimension_index updates (all CLAUDE_AI, 370 dominant_subject)
+- 25 verse_context_group rewrites (Phase B.5)
+- 5 Session D pointers (DIM-187-SD002/3/4, DIM-199-SD001/2)
+- 5 registry stamps: Reg 187, 196, 197, 198, 199
+- 1 cluster stamp (C20)
+- Note: Reg 195 (spiritual powers) vc=NULL, Reg 200 (energy) not stamped
+
+### C21 — PATCH-20260409-DIMREVIEW-C21-V1 (produced under v1.8)
+- **First attempt rejected** — incorrect wa_dimension_index IDs (sequential assumption). Would have corrupted C06, C08, C10, C13, C15. Database restored from backup, C20 re-applied.
+- **Corrected patch applied:** 46 updates, 1 group rewrite (1372-002), 5 Session B findings, 1 Session D pointer, 4 registry stamps (Reg 134, 202, 207, 210), 1 cluster stamp
+- Anchor verse correction: group 6134-001 Judg 16:13 → 16:19 (CC directive)
+
+### C22 — PATCH-20260409-DIMREVIEW-C22-V1 (produced under v1.9)
+- 85 updates, 4 Session B findings, 4 Session D pointers, 7 registry stamps (Reg 3, 20, 27, 58, 63, 129, 206), 1 cluster stamp
+
+### Post-patch state: 16 registries dim_review Complete, 820/3,469 CLAUDE_AI (23.6%)
+
+---
+
+## 12. Session B — Grace (Reg 68)
+
+### PATCH-20260409-068-SESSIONB-V2
+- V1 rejected: targeted mti_terms instead of wa_term_inventory
+- V2 applied: 6 god_as_subject, 4 somatic_link, H2603B → delete, sb_classification → "Spirit-soul interface", 5 PH2 research flags
+- session_b_status → Analysis Complete
+- Note: Did NOT touch wa_dimension_index — C17 not yet reviewed
+
+---
+
+## 13. New Tooling
+
+### build_complete_extract.py
+- Comprehensive per-word extract (28+ tables, 10 layers)
+- Two modes: --owner-only / --complete-only (default: both)
+- Output: data/exports/Session C/
+
+### build_correlation_extract.py
+- Automated inter-word correlation from 5 signals (XREF sharing, verse co-occurrence, dimension overlap, root family, shared anchors)
+- Composite scoring, 4,349 total pairs, 141 multi-signal pairs
+- Output: data/exports/session_d/wa-correlations-{date}.json
+
+### Session D pointers analysis extract
+- 84 SD_POINTER + 167 findings + 90 other flags
+- Output: data/exports/session_d/wa-session-d-pointers-analysis-2026-04-09.json
+
+### Pooling comparison report
+- outputs/reports/programme/wa-pooling-dimensions-comparison-2026-04-09.md
+- Consolidates pool design (v5.5/v5.6), Dimension Review state, Session B v3 per-word model
+
+---
+
+## 14. Apply Script Improvements
+- wa_dim_review_cluster_log insert handler
+- session_raised/raised_date defaults from patch meta
+- wa_session_b_findings field mapping (DIMREVIEW format tolerance)
+- wa_session_research_flags field mapping (registry_no, flag_code defaults)
+- wa_term_inventory generic update handler
+- meta parameter threaded to _apply_operation
+
+---
+
+## 15. Instruction Tracking
+- DimensionReview: v1.7 → v1.8 → v1.9 (build_dimension_extract.py updated each time)
+- Session-B-Instruction-v3 read and applied (grace pilot)
+- docs/file-organisation-rules.md updated (Session C folder)
+- Memory updated to v1.9
+
+---
+
+## 16. Claude AI Patch Errors This Session
+1. C21 v1: Wrong wa_dimension_index IDs
+2. C21 v1.1: wa_session_b_findings wrong field names
+3. C22 v1: Same findings/flags field name errors
+4. Grace V1: god_as_subject/somatic_link targeted wrong table
+
+---
+
+## 17. Extracts Produced (Session 2)
+
+| File | Location |
+|---|---|
+| C21 cluster/rootfamily/pointers extracts | data/exports/dimension_review/ |
+| C22 cluster/rootfamily/pointers extracts | data/exports/dimension_review/ |
+| Grace complete + owner_only | data/exports/Session C/ |
+| Mercy complete + owner_only | data/exports/Session C/ |
+| H2603B STEP extract | data/discovery/ |
+| Session D pointers analysis | data/exports/session_d/ |
+| Correlations analysis | data/exports/session_d/ |
+| Pooling comparison report | outputs/reports/programme/ |
+
+---
+
+*End of session 2 — 2026-04-09*

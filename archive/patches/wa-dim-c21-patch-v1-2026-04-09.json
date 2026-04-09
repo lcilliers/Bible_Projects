@@ -1,0 +1,975 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260409-DIMREVIEW-C21-V1",
+    "cluster": "C21",
+    "produced_date": "2026-04-09",
+    "produced_by": "WA-DimensionReview-Instruction-v1.8-2026-04-09",
+    "observations_log": "wa-dim-c21-observations-v1.0-2026-04-09.md",
+    "session_b_status": null,
+    "description": "Dimension review patch — C21: transformation / renewal / blindness (spiritual) / deadness. 46 dimension updates; 1 group description correction (1372-002 AV-verified); 5 Session B findings; 1 Session D pointer; 4 registry stamps; 1 cluster stamp. Note: anchor verse record correction for 6134-001 (Judg 16:13 → 16:19) via separate CC directive — verse_context record ids not available in extract."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8171
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "anakainōsis — renewal of the mind by the Spirit as ground for discerning God's will (Rom 12:2). AV fully grounds description. KEYWORD_WEAK confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1097-001 — renewal: Transformation"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8173
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "cha.li.phah — change as inner transformation; hoped-for renewal or persistent hardness (Job 14:14). AV grounds positive pole; negative pole drawn from wider group. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1098-001 — renewal: Transformation"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8170
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "anakainoō — progressive inner renewal toward God's image (2Cor 4:16). AV grounds daily inner renewal; 'toward God's image' drawn from Col 3:10 parallel. Automated Cognition label incorrect; renewal process is the primary characteristic. Corrected to Transformation.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "6132-001 — renewal: Transformation"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8174
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ma.cha.la.phah — Nazirite locks as expression of inner covenantal empowerment; cutting = loss of divine-given capacity. AV is Judg 16:13 (misdirection verse); correct anchor should be Judg 16:19 (cutting and departure of strength). Description and dimension correct; anchor verse record requires update — CC directive issued. Agency/Power confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "6134-001 — renewal: Agency / Power"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8172
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "OTHER_HUMAN",
+        "manual_override": 0,
+        "notes": "cha.loph — the perishing call forth the conscience and advocacy-will of others (Prov 31:8). AV fully grounds description. Moral Character confirmed. Cluster assignment retained per researcher guidance.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "6136-001 — renewal: Moral Character"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9180
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "metamorfoō — inner transformation toward conformity with God; renewal of mind (Rom 12:2). AV grounds core characteristic; 'conformity to divine glory' drawn from 2Cor 3:18. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1362-001 — transformation: Transformation"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9181
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "metamorfoō — Christ's Transfiguration mediates human inner encounter with divine reality (Mk 9:2). AV is entry point to the passage; inner encounter content in Mk 9:3-8. Subject of transformation is Christ. Transformation confirmed; dominant subject GOD.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1362-002 — transformation: Transformation"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9183
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "cha.laph — inner renewal of strength through waiting on God (Isa 40:31). AV fully grounds description. Automated Vitality/Existence label corrected to Transformation.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1364-001 — transformation: Transformation"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9184
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "cha.laph — transience of human life; rapid passing of creaturely existence (Psa 90:5). AV grounds transience; 'renewed in morning' is ironic — passing, not genuine renewal. Vitality/Existence confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1364-002 — transformation: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9185
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "cha.laph — wilful overriding of divine covenant; inner act of defiance (Isa 24:5). AV fully grounds volitional act. Automated Divine-Human Correspondence label incorrect. Corrected to Volition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1364-003 — transformation: Volition"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9186
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "cha.laph — God passing near; person fails to perceive (Job 9:11). AV shows perceptual failure explicitly ('I see him not, I do not perceive him'). 'Inner dread' in original description is contextual (Job 9:3-10), not in the anchor verse itself. AV-verification correction: Emotion — Negative → Cognition. The anchor verse grounds perceptual incapacity, not affective dread.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1364-004 — transformation: Cognition"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9182
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "morfoō — interior formation of Christ within the person (Gal 4:19). AV grounds inner formation; Paul's own anguish present in verse but secondary. Transformation confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7377-001 — transformation: Transformation"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9244
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotoō — divine judgment plunging domain into darkness; human inner anguish produced (Rev 16:10). AV fully grounds both the divine act and inner anguish. Automated Divine-Human Correspondence corrected to Emotion — Negative.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1371-001 — blindness (spiritual): Emotion — Negative"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9245
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "tuflos — spiritual blindness as inner condition of self-deception and inability to perceive (John 9:41). AV fully grounds description — self-claim 'we see' and resulting guilt explicitly named. UNCLASSIFIED corrected to Cognition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1372-001 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9246
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "tuflos — proclamation of recovery of sight as part of Messianic mission (Luke 4:18). AV-verification correction: description revised — 'faith called forth' and 'witness' not grounded in anchor verse. Revised to: proclamation of restored perceptual capacity as Messianic mission pointing to recovery of spiritual sight. Cognition confirmed. UNCLASSIFIED corrected.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1372-002 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9240
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotos — 'you were darkness, now you are light in the Lord' (Eph 5:8). AV fully grounds identity-level claim. Automated Cognition corrected to Identity/Selfhood.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7432-001 — blindness (spiritual): Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9241
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotos — works of darkness to be cast off (Rom 13:12). AV fully grounds moral domain content. Moral Character confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7432-002 — blindness (spiritual): Moral Character"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9242
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotos — things hidden in darkness; purposes of the heart to be disclosed (1Cor 4:5). AV grounds hidden inner purposes; 'corrupted inner light' and 'self-deception' not in anchor verse. Cognition confirmed for hidden-inner-knowing characteristic. Automated Volition corrected.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7432-003 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9243
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotos — outer darkness of eschatological judgment; weeping and gnashing of teeth (Matt 22:13). AV fully grounds eschatological existence-condition. UNCLASSIFIED corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7432-004 — blindness (spiritual): Vitality / Existence"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9237
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotia — hating, walking in darkness, not knowing direction, eyes blinded (1 John 2:11). AV fully grounds constitutive inner condition of alienation. UNCLASSIFIED corrected to Identity/Selfhood.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7433-001 — blindness (spiritual): Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9238
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotia — inner life hidden in dark to be disclosed in light (Luke 12:3). AV fully grounds concealment/disclosure pattern. Automated Vitality/Existence corrected to Cognition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7433-002 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9239
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skotizō — darkened understanding, alienated from life of God, hardness of heart (Eph 4:18). AV grounds understanding-darkening; 'eyes' in description not in this anchor verse (from other group verses). Cognition confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7434-001 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9236
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "skoteinos — whole inner life filled with darkness when eye is bad (Matt 6:23). AV fully grounds whole-person darkening as existence-condition. Vitality/Existence confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7435-001 — blindness (spiritual): Vitality / Existence"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9247
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "tufloō — god of this world blinding the minds of unbelievers (2Cor 4:4). AV grounds mind-blinding by adversarial agency; 'eyes' and 'hatred' as agents not in this anchor verse. Cognition confirmed. Automated Divine-Human Correspondence corrected.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7438-001 — blindness (spiritual): Cognition"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9268
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekros — dead in trespasses and sins (Eph 2:1); whitewashed tombs (Matt 23:27). AV2 directly grounds spiritual deadness as condition. 'Dead to God' not in either anchor verse — minor overreach in description. ROOT_INFERRED Vitality/Existence confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1378-001 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9269
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekros — dead to sin / dead to the law through Christ (Rom 6:11; 7:4). Both AVs fully ground dying-to as transformative inner reorientation. ROOT_INFERRED Vitality/Existence corrected to Transformation.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1378-002 — deadness: Transformation"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9270
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekros — dead works; conscience purified from them (Heb 6:1; 9:14). Both AVs fully ground description. Moral Character confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1378-003 — deadness: Moral Character"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9271
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekros — faith without works is dead (Jas 2:17). AV fully grounds faith's vitality/deadness as inner capacity. Automated Agency/Power corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1378-004 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9272
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekros — resurrection as ground of living hope and aspiration (Phil 3:11; 1 Pet 1:3). Both AVs ground hope/aspiration oriented toward resurrection. Vitality/Existence confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1378-005 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9275
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "mut — death as consequence of moral failure (Gen 2:17; Job 5:2). Both AVs fully ground moral causation of death. Moral Character confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1379-001 — deadness: Moral Character"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9276
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "mut — death as object of inner orientation: bitterness, longing for death (Job 21:25; Jon 4:8). AVs ground bitterness and longing; 'fear, resolve, wisdom' not in anchor verses — drawn from wider group. Emotion — Negative confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1379-002 — deadness: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9277
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "mut — God's sovereignty over death as ground of trust/confidence (1 Sam 2:6; Hab 1:12). Hab 1:12 explicitly grounds inner confidence ('we shall not die'). Automated Agency/Power corrected to Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1379-003 — deadness: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9278
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "mut — cut off from God's hand; loss of praise capacity (Psa 88:5, 10). Both AVs ground relational severance and incapacity. Automated Agency/Power corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1379-004 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9266
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thnēskō — dead while living through self-indulgence (1 Tim 5:6). AV fully grounds inner deadness in living person. UNCLASSIFIED corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "1380-001 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9273
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "nekroō — deliberate mortification of earthly inner drives (Col 3:5). AV fully grounds volitional imperative. Automated Vitality/Existence corrected to Volition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7422-001 — deadness: Volition"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9279
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ma.vet — death as end of moral path; choose life vs death (Deu 30:19; Pro 8:36). Both AVs ground volitional orientation toward life/death. Volition confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7423-001 — deadness: Volition"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9280
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ma.vet — death as threat; heart in anguish, terrors of death (1 Sam 20:3; Psa 55:4). Both AVs ground affective inner state. Emotion — Negative confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7423-002 — deadness: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9281
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ma.vet — God's sovereignty over death as ground of redemption and hope (Isa 25:8; Hos 13:14). Isa 25:8 fully grounds hope. Hos 13:14b ('compassion hidden') contains interpretive tension — hopeful reading taken; Session B finding DIM-210-004 raised. Automated Agency/Power corrected to Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7423-003 — deadness: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9282
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ma.vet — incapacity of the dead: no praise, no remembrance (Psa 6:5; Psa 116:15). Psa 6:5 grounds incapacity of dead; Psa 116:15 (God's valuation of the death of saints) not addressed in description — grouping tension flagged in Session B finding DIM-210-001. UNCLASSIFIED corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7423-004 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9261
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thanatos — death as spiritual condition: mind on flesh = death (Rom 8:6); abiding in death through not-loving (1 John 3:14). AV2's specific marker (love-failure) not fully captured in description ('consequence of sin' more abstract). Vitality/Existence confirmed. Automated Moral Character corrected.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7427-001 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9262
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thanatos — fear of death producing lifelong slavery (Heb 2:15). AV fully grounds inner enslavement through fear. Emotion — Negative confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7427-002 — deadness: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9263
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thanatos — believer's inner identification with Christ's death (Phil 3:10); Christ's obedience to death (Phil 2:8). AV2 (Phil 3:10) grounds believer's transformative identification. AV1 (Phil 2:8) names Christ's own humility/obedience — not captured in description. Session B finding DIM-210-003 raised. Transformation confirmed for AV2 content. Automated Vitality/Existence corrected.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7427-003 — deadness: Transformation"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9264
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thanatos — faithfulness unto death; defiance of death's power (Rev 2:10; 1 Cor 15:55). Both AVs fully ground volitional posture of perseverance and defiance. Automated Vitality/Existence corrected to Volition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7427-004 — deadness: Volition"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9265
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "thanatos — soul sorrowful even to death (Mark 14:34, Gethsemane). AV fully grounds extreme inner anguish. Subject is Christ (GOD). Emotion — Negative confirmed.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7427-005 — deadness: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9267
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "thnētos — mortal body as site of moral struggle and existential longing (Rom 6:12; 2 Cor 5:4). Both AVs ground mortal embodiment as constitutive condition. Automated Volition corrected to Vitality/Existence.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7429-001 — deadness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9274
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "sunapothnēskō — dying together as covenantal loyalty; 'in our hearts to die together and live together' (2 Cor 7:3; 2 Tim 2:11). AV1 places commitment explicitly 'in our hearts.' Both AVs fully ground relational inner orientation. Automated Vitality/Existence corrected to Relational Disposition.",
+        "last_modified": "2026-04-09T10:40:00"
+      },
+      "description": "7430-001 — deadness: Relational Disposition"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 3378
+      },
+      "set": {
+        "context_description": "Term names physical blindness as the condition the Messiah proclaims he will heal — the restoration of perceptual capacity as part of Messianic mission, pointing to the recovery of spiritual sight",
+        "notes": "Revised during Dimension Review AV verification: description tightened to match anchor verse (Luke 4:18 — Messianic proclamation). Previous description overstated inner-being content not grounded in anchor verse. Old: 'Term names physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality'"
+      },
+      "description": "Group 1372-002: AV-verified description correction — tightened to match Luke 4:18 anchor"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-210-001",
+        "registry_id": 210,
+        "file_id": null,
+        "finding_type": "GROUP_INTEGRITY",
+        "finding": "Group 7423-004 (H4194 ma.vet) contains two anchor verses in potential tension: Psa 6:5 (in death there is no remembrance of you; in Sheol who will give you praise — incapacity of the dead) and Psa 116:15 (Precious in the sight of the Lord is the death of his saints — God's relational valuation of the dying). The group description addresses the incapacity reading only. Session B should assess whether these two verses represent a coherent group or whether 7423-004 should be subdivided: one group naming the incapacity of the dead, one naming God's regard for the death of the faithful.",
+        "anchor_verses": "Psa 6:5; Psa 116:15",
+        "raised_date": "2026-04-09",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "DIM-210-001: Session B finding — registry 210"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-210-002",
+        "registry_id": 210,
+        "file_id": null,
+        "finding_type": "DIMENSION_PATTERN",
+        "finding": "The deadness vocabulary (nekros, thanatos, ma.vet, mut) generates a consistent dual-register pattern: death as condition (Vitality/Existence) and death as moral/relational reality (Moral Character, Transformation, Relational Disposition). The same root terms name both the physical/existential fact of death and the spiritual/moral state it represents. Session B should map this dual-register explicitly — particularly the distinction between dead as condition you are in (nekros 1378-001, 1378-005; thanatos 7427-001) versus dead as act you perform or participate in (nekros 1378-002; nekroō 7422-001; thanatos 7427-003).",
+        "anchor_verses": null,
+        "raised_date": "2026-04-09",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "DIM-210-002: Session B finding — registry 210"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-207-001",
+        "registry_id": 207,
+        "file_id": null,
+        "finding_type": "DIMENSION_PATTERN",
+        "finding": "The darkness vocabulary (skotos, skotia, skoteinos, skotizō, skotoō) generates multiple distinct inner-being characteristics across its groups: identity condition (7432-001, 7433-001), moral domain (7432-002), concealment/cognition (7432-003, 7433-002), eschatological consequence (7432-004), whole-person darkening (7435-001), and active darkening of faculties (7434-001). This is a term family with unusually wide inner-being range. Session B should assess whether these groups reflect a coherent single inner-being phenomenon (darkness as multi-dimensional spiritual reality) or whether the groupings require further subdivision.",
+        "anchor_verses": null,
+        "raised_date": "2026-04-09",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "DIM-207-001: Session B finding — registry 207"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-210-003",
+        "registry_id": 210,
+        "file_id": null,
+        "finding_type": "GROUP_INTEGRITY",
+        "finding": "Group 7427-003 (G2288 thanatos) contains two anchor verses with different inner-being subjects: Phil 2:8 describes Christ's own inner humility and obedience-unto-death; Phil 3:10 describes the believer's inner identification with Christ's death. These are structurally different — one is divine inner-being, one is human participatory inner-being. The group description addresses Phil 3:10 only. Session B should assess whether Phil 2:8 belongs in this group or should be separately grouped under a divine-subject thanatos group.",
+        "anchor_verses": "Phil 2:8; Phil 3:10",
+        "raised_date": "2026-04-09",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "DIM-210-003: Session B finding — registry 210"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-210-004",
+        "registry_id": 210,
+        "file_id": null,
+        "finding_type": "GROUP_INTEGRITY",
+        "finding": "Group 7423-003 (H4194 ma.vet): Hos 13:14 contains a textual and interpretive tension. The verse is cited in the positive register (ransom from Sheol, redemption from Death) but the final clause 'Compassion is hidden from my eyes' reads as divine determination to judge rather than redeem — a known crux. Paul cites Hos 13:14 in 1 Cor 15:55 in the positive/hope register; the OT context is more ambiguous. Session B should assess which register the verse is functioning in within the group's verse corpus, and whether the description's hopeful reading is warranted by the broader group evidence.",
+        "anchor_verses": "Hos 13:14",
+        "raised_date": "2026-04-09",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "DIM-210-004: Session B finding — registry 210"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 207,
+        "file_id": null,
+        "flag_code": "THEMATIC_LINK",
+        "flag_label": "DIM-207-SD001",
+        "strongs_reference": null,
+        "cross_registry_id": null,
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "C21 contains a structural pairing: blindness/darkness vocabulary (Reg 207) and transformation/renewal vocabulary (Regs 134, 202) describe opposite inner-being poles — the darkened/blinded/dead person vs. the renewed/transformed/living person. The same dimension (Transformation) appears in Regs 134, 202 and also in Reg 210 (1378-002 dead to sin; 7427-003 dying with Christ). Session D should examine whether transformation vocabulary and death-and-resurrection vocabulary in C21 describe the same underlying inner-being phenomenon (inner renewal as death-and-new-life) or distinct phenomena.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.8-2026-04-09",
+        "raised_date": "2026-04-09",
+        "resolved": 0
+      },
+      "description": "DIM-207-SD001: Session D pointer — C21 structural pairing blindness/darkness vs transformation/renewal"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 134
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "Registry 134 (renewal): Dimension Review complete under v1.8"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 202
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "Registry 202 (transformation): Dimension Review complete under v1.8"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 207
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "Registry 207 (blindness (spiritual)): Dimension Review complete under v1.8"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 210
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.8-2026-04-09"
+      },
+      "description": "Registry 210 (deadness): Dimension Review complete under v1.8"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "wa_dim_review_cluster_log",
+      "record": {
+        "cluster": "C21",
+        "completed_date": "2026-04-09",
+        "instruction_version": "WA-DimensionReview-Instruction-v1.8-2026-04-09",
+        "registry_count": 4,
+        "group_count": 46,
+        "anchored_count": 0,
+        "notes": "Transformation/renewal pole (Regs 134, 202) and deadness/blindness pole (Regs 207, 210). Dual-register pattern in death vocabulary flagged for Session B. AV verification complete — 1 anchor verse record correction required via CC directive (6134-001: Judg 16:13 → 16:19); 1 description correction applied (1372-002); 1 dimension correction from AV verification (1364-004: Emotion — Negative → Cognition); 2 additional Session B findings raised."
+      },
+      "description": "Cluster C21 Dimension Review complete — stamp set"
+    }
+  ]
+}

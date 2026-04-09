@@ -28,6 +28,7 @@ Programme data exported from the database for consumption by Claude AI or the re
 | `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{date}.json` |
 | `data/exports/vertical_pass/directives/` | Pending CC directives. Processed directives move to `directives/archive/`. | `WA-VerticalPass-{scope}-v{n}-{date}.md` |
 | `data/exports/vertical_pass/directives/archive/` | Processed directives (moved after execution) | |
+| `data/exports/Session C/` | Comprehensive word extracts (complete and owner-only) | `wa-{nnn}-{word}-complete-{date}.json`, `wa-{nnn}-{word}-owner_only-{date}.json` |
 | `data/exports/session_d/` | Session D pointers files | `wa-{nnn}-{word}-sdpointers-{date}.json` |
 | `data/exports/pool_analysis/` | Pool analysis datasets | `wa-pool-{pool_id}-analysis-{date}.json` |
 

@@ -1,0 +1,1232 @@
+# WA Dimension Review Observations Log — C21
+Filename: wa-dim-c21-observations-v1.0-2026-04-09.md
+Governing instruction: WA-DimensionReview-Instruction-v1.8-2026-04-09
+Cluster extract: wa-dim-C21-extract-2026-04-09.json (46 groups)
+Root family extract: wa-dim-C21-rootfamily-2026-04-09.json (9 roots)
+Existing pointers extract: wa-dim-C21-existing-pointers-2026-04-09.json (0 pointers)
+Session date: 2026-04-09
+
+---
+
+[PHASE-A] C21 | 2026-04-09
+
+## Phase A — Cluster Review: C21 | transformation / renewal / blindness (spiritual) / deadness
+
+### Active registries
+- Reg 134 (renewal): 5 groups
+- Reg 202 (transformation): 7 groups
+- Reg 207 (blindness (spiritual)): 12 groups
+- Reg 210 (deadness): 22 groups
+Total: 46 groups
+
+### Coherence assessment
+C21 holds together around a shared inner-being concern: the state of the inner person as either alive/renewed/seeing or dead/blind/hardened — and the movement between those states. The cluster names both the transformation vocabulary (renewal, transformation) and the negative-state vocabulary (blindness, deadness). All four registries engage the question of what the inner person is, or becomes, in relation to God.
+
+- Reg 134 (renewal) and Reg 202 (transformation) form a positive pole — inner change toward life, conformity, new creation.
+- Reg 207 (blindness/spiritual) and Reg 210 (deadness) form a negative pole — inner incapacity, spiritual death, perceptual failure.
+- The two poles are analytically complementary: the vocabulary of deadness and blindness names what transformation reverses; the vocabulary of renewal names what deadness and blindness are not.
+
+This is a strong and coherent cluster. The inner-being affinity is the condition and movement of the person's spiritual being — its vitality, perceptual capacity, and orientational integrity.
+
+### Boundary observations
+Several groups within this cluster show dimension assignments that sit outside the core transformation/vitality axis — e.g. Cognition, Moral Character, Agency/Power, Emotion — Negative. These are plausible but require Phase C verification. The KEYWORD assignments are mostly WEAK, indicating limited automated confidence. These deserve fresh assessment.
+
+One group stands out structurally:
+- 6136-001 (H2475 cha.loph / "the perishing") — the context description describes advocacy on behalf of the destitute, calling forth the inner conscience of others. This group's fit within C21 (transformation/renewal) is not obvious. The term apparently entered the renewal registry via root family connection to cha.laph / cha.li.phah, but the group content is not renewal vocabulary. Flag for Phase B review.
+
+### Cross-registry root families
+9 roots identified in root family extract. 0 cross-registry root families. All roots are cluster-internal (all members within C21). No cross-cluster root family pattern to note here.
+
+Root families of internal interest:
+- CHALOPH (Hebrew): spans cha.loph (6136-001), cha.li.phah (1098-001) in Reg 134 — renewal/change/perishing
+- CHALAPH (Hebrew): cha.laph (1364-001 to 1364-004) in Reg 202 — pass/renew/change
+- ANAKAIN (Greek): anakainoō (6132-001), anakainōsis (1097-001) in Reg 134 — verbal and nominal renewal pair
+- MORF (Greek): metamorfoō (1362-001, 1362-002), morfoō (7377-001) in Reg 202 — transformation family
+- SKOT (Greek): 5 terms, 9 groups in Reg 207 — the darkness word group
+- TUFL (Greek): tuflos (1372-001, 1372-002), tufloō (7438-001) in Reg 207 — blind/blinding
+- NEKR (Greek): nekros (5 groups), nekroō (1 group) in Reg 210 — dead/deadness
+- MUT (Hebrew): mut (4 groups) in Reg 210 — death/dying
+- THNĒSKŌ (Greek): thnēskō (1380-001), thnētos (7429-001), sunapothnēskō (7430-001) in Reg 210 — dying family
+
+### Recommendation
+[x] Confirm as-is — with one Phase B flag:
+  - 6136-001 (H2475 cha.loph): cluster fit to be assessed in Phase B. The group content (advocacy for the destitute) may not be renewal vocabulary; root family connection alone does not guarantee analytical coherence.
+
+RECOMMENDATION: CONFIRM AS-IS (with Phase B flag on 6136-001)
+
+
+---
+## PHASE B — Reg 134 (renewal)
+
+[PHASE-B] 1097-001 | G0342 anakainōsis | Reg 134 (renewal)
+QA-FLAG: QA-CLEAR
+Note: Description names the renewal of the inner person (the mind) through the Spirit, oriented toward discerning God's will. Characteristic-perspective format present: the term names the renewal itself. The anchor verse (Rom 12:2) grounds this directly. Clear and adequate.
+
+[PHASE-B] 1098-001 | H2487 cha.li.phah | Reg 134 (renewal)
+QA-FLAG: QA-CLEAR
+Note: Description names change as inner transformation — the hoped-for renewal through patient waiting, or failure to change as evidence of inner hardness. Dual orientation (positive hope / negative persistence) is captured. Anchor verse (Job 14:14) supports. Adequate.
+
+[PHASE-B] 6132-001 | G0341 anakainoō | Reg 134 (renewal)
+QA-FLAG: QA-CLEAR
+Note: Description names progressive inner renewal of the self — ongoing transformation of the inner person toward God's image, daily renewal of the inner self, growth in knowledge. Anchor verse (2Cor 4:16) grounds this. Clear and well-scoped.
+
+[PHASE-B] 6134-001 | H4253 ma.cha.la.phah | Reg 134 (renewal)
+QA-FLAG: QA-REVIEW
+Issue: The description focuses on the Nazirite hair locks as a physical sign of consecration, and their removal as the departure of inner strength and divine empowerment (Samson narrative). The description is currently written as "physical expression of an inner covenantal reality." This is a property-term group — the physical object (locks) serves as the external correlate of inner consecration and strength. The description is not term-centric in the strict sense, but it reads as primarily physical/external. The inner-being characteristic (divine empowerment / covenantal strength) is named but subordinated to the physical sign. The description is adequate for Phase C but should be noted as border-case: the term names a physical phenomenon that functions as the seat/expression of inner covenantal empowerment. No rewrite required at this stage; the characteristic is discernible. Proceed to Phase C.
+Note: Anchor verse (Judg 16:13) shows Samson narrative — physical cutting of locks as the removal of inner strength. The inner-being content (strength, divine empowerment tied to consecration) is present via the physical sign. Adequate for Phase C.
+
+[PHASE-B] 6136-001 | H2475 cha.loph | Reg 134 (renewal)
+QA-FLAG: QA-REVIEW
+Issue: This is the flagged group from Phase A. The context description reads: "Term names the perishing as those whose vulnerable condition calls forth advocacy from the inner conscience of others — the destitute whose cause requires the advocate's will." The anchor verse is Prov 31:8 ("Open your mouth for the mute, for the rights of all who are destitute").
+
+The inner-being content present in the description is not the renewal of the inner person. It is the moral conscience/will of the advocate called to act on behalf of the vulnerable. The term itself (cha.loph) means "perishing/destruction" — those who are perishing. The description correctly identifies that the term's presence in the verse calls forth inner-being content (conscience, advocacy will) in others, but this is the inner-being content of the responsive advocate, not of the perishing persons named by the term.
+
+This group is plausibly in C21 only via root family connection (CHALOPH root) — not via its actual content. The content is not renewal, transformation, blindness, or deadness vocabulary. It is advocacy/justice vocabulary, possibly closer to C08 (moral character, goodness/conscience) or C10 (moral integrity).
+
+Assessment: The cluster assignment for this group is analytically doubtful. However, per analytical principles, the cluster reassignment decision rests with the researcher (DR-2). Flag for researcher decision. The group has inner-being content (the conscience and will of the advocate) and can proceed to Phase C under its current assignment pending researcher decision. The description is adequate as written, though the cluster fit is weak.
+
+
+---
+## PHASE B — Reg 202 (transformation)
+
+[PHASE-B] 1362-001 | G3339 metamorfoō | Reg 202 (transformation)
+QA-FLAG: QA-CLEAR
+Note: Description names inner transformation toward conformity with God — renewal of mind and progressive conformity to divine glory. Anchor verse (Rom 12:2) grounds this directly. Clear and precise.
+
+[PHASE-B] 1362-002 | G3339 metamorfoō | Reg 202 (transformation)
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Term describes Christ's visible transformation, which mediates an inner encounter between the disciples and divine reality." The anchor verse is Mark 9:2 — the Transfiguration. The inner-being content is the disciples' inner encounter with divine reality mediated by Christ's transformation. This is not the transformation of the inner person per se — it is Christ's transformation as the occasion for the disciples' encounter/perception. The description correctly identifies the inner-being content (encounter, perception of divine reality) but the subject of the transformation is Christ, not the human person. This is a legitimate edge case. The group may belong more naturally under a Theological/Divine-Human or Spiritual/God-ward dimension rather than the human Transformation dimension. The description is not term-centric; the characteristic is identifiable. Proceed to Phase C; dimension assessment needed.
+
+[PHASE-B] 1364-001 | H2498 cha.laph | Reg 202 (transformation)
+QA-FLAG: QA-CLEAR
+Note: Description names inner renewal of strength and vitality through waiting on or turning to God. Anchor verse (Isa 40:31) grounds this clearly. The characteristic (inner renewal of strength/vitality) is well-named. Clear.
+
+[PHASE-B] 1364-002 | H2498 cha.laph | Reg 202 (transformation)
+QA-FLAG: QA-CLEAR
+Note: Description names the transience of human life — the rapid passing that characterises human existence. Anchor verse (Psa 90:5). This describes Vitality/Existence content (the fragility and rapid passing of life). The description is not renewal-focused but it is a legitimate semantic range of cha.laph (passing/passing away) applied to the inner person's creaturely condition. Clear and adequate.
+
+[PHASE-B] 1364-003 | H2498 cha.laph | Reg 202 (transformation)
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Term describes the wilful overriding of divine covenant — an inner act of defiance against binding obligation." Anchor verse: Isa 24:5 (transgressing laws, violating statutes, breaking the everlasting covenant). The inner-being content is a volitional act of defiance/covenant-breaking. The current dimension is Divine-Human Correspondence (KEYWORD_WEAK). This description does not describe a correspondence between divine and human characteristics — it describes a human volitional act directed against a divine covenant. The dimension hypothesis appears incorrect. The characteristic (inner will acting in defiance of covenantal obligation) points more naturally to Volition or Moral Character. Note for Phase C reassignment. The description itself is adequate.
+
+[PHASE-B] 1364-004 | H2498 cha.laph | Reg 202 (transformation)
+QA-FLAG: QA-CLEAR
+Note: Description names God/divine spirit passing near the person — engaging the person's inner capacity for perception or producing inner dread. Anchor verse (Job 9:11). The inner-being content is dual: the person's perceptual capacity (not perceiving God passing) and the inner dread produced. The description captures this. Adequate.
+
+[PHASE-B] 7377-001 | G3445 morfoō | Reg 202 (transformation)
+QA-FLAG: QA-CLEAR
+Note: Description names interior formation of Christ within the person — inner shaping toward Christ-likeness. Anchor verse (Gal 4:19). The characteristic (interior Christ-formation) is clearly named. The term morfoō functions as the mechanism; the inner-being characteristic is the progressive formation. Clear.
+
+
+---
+## PHASE B — Reg 207 (blindness (spiritual))
+
+[PHASE-B] 1371-001 | G4656 skotoō | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Term describes the plunging of the person/domain into darkness as divine judgment, producing inner anguish." Anchor verse: Rev 16:10 — the fifth bowl judgment plunging the beast's kingdom into darkness; people gnaw tongues in anguish. The subject of the darkening is a domain (the beast's kingdom), not the inner person. The inner-being content is the anguish produced. The current dimension is Divine-Human Correspondence (KEYWORD_STRONG). The description identifies a divine judicial act producing human inner experience (anguish). This is a plausible Divine-Human Correspondence reading — God's act / human inner consequence. However the primary subject is the kingdom, and the anguish is the human response. The dimension assignment may be correct but the description focuses on the outer domain rather than the inner characteristic. Adequate for Phase C with dimension verification needed.
+
+[PHASE-B] 1372-001 | G5185 tuflos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names spiritual blindness as the inner condition of self-deception, hardness, and inability to perceive spiritual reality — the person who claims to see but does not. Anchor verse (John 9:41). Well-scoped and characteristic-perspective adequate.
+
+[PHASE-B] 1372-002 | G5185 tuflos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Term names physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality." Anchor verse: Luke 4:18 (Isaiah citation — proclaiming recovery of sight to the blind). The description correctly names the inner-being content (faith called forth, spiritual reality witnessed) but the primary characteristic named by the group is physical blindness as the condition of need, not a primary inner-being characteristic. The inner-being content is secondary (faith evoked). Per the term-level filter (VC instruction principle): the inner-being content must be carried by the target term. The term (tuflos = physical blindness) names the physical condition; the inner-being faith is a response to the sign. This group may have been retained correctly under the inclusion principle, but the description implies the group is about faith rather than blindness. The description is not false but the framing is ambiguous. Adequate for Phase C; the dimension assignment (currently UNCLASSIFIED) needs careful assessment.
+
+[PHASE-B] 7432-001 | G4655 skotos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names darkness as the inner-spiritual domain the person inhabits, is rescued from, or identifies with — fundamental spiritual condition and identity. Anchor verse (Eph 5:8: "you were darkness, but now you are light in the Lord"). Strong identity/condition content. The characteristic is the person's fundamental spiritual condition. Clear and precise.
+
+[PHASE-B] 7432-002 | G4655 skotos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names darkness as the moral domain of works and powers — participation in or renunciation of. Anchor verse (Rom 13:12). Moral content (works of darkness) clearly named. Adequate.
+
+[PHASE-B] 7432-003 | G4655 skotos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names the darkness of the inner life — hidden purposes, corrupted inner light, self-deception about inner state. Anchor verse (1Cor 4:5: Lord brings to light things hidden in darkness, discloses purposes of the heart). Well-scoped. The characteristic (inner hidden purposes, self-deception) is clearly named.
+
+[PHASE-B] 7432-004 | G4655 skotos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names outer darkness of eschatological judgment — the ultimate inner-being consequence of exclusion from God. Anchor verse (Matt 22:13: cast into outer darkness, weeping and gnashing of teeth). The inner-being consequence (exclusion, final anguish) is named. Clear and adequate.
+
+[PHASE-B] 7433-001 | G4653 skotia | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names darkness as the inner condition of spiritual alienation — hating, not knowing where one is going, eyes blinded. Anchor verse (1 John 2:11). The characteristic (inner spiritual alienation, directional blindness of the person) is well-named. Clear.
+
+[PHASE-B] 7433-002 | G4653 skotia | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Term names the darkness of concealment — the inner life hidden in secret, which will be brought to light." Anchor verse: Luke 12:3 (what said in the dark shall be heard in the light). The verse refers to speech uttered in concealment being made public. The inner-being content here is the hidden inner life and its eventual disclosure. Current dimension is Vitality/Existence (KEYWORD_WEAK) — this seems misassigned. The content is more naturally Cognition (concealment, self-knowledge, what the inner person hides) or possibly Moral Character. The description is adequate for Phase C but dimension reassignment likely needed.
+
+[PHASE-B] 7434-001 | G4654 skotizō | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names the darkening of inner capacities — understanding, heart, and eyes — as the consequence of wilful rejection of God or divine judicial act. Anchor verse (Eph 4:18: darkened in their understanding, alienated from the life of God due to hardness of heart). The characteristic (darkened understanding/inner capacity) is clearly named. The dual causation (human wilfulness / divine judgment) is captured. Clear and precise.
+
+[PHASE-B] 7435-001 | G4652 skoteinos | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names the inner darkness that fills the person when inner orientation is corrupted — the whole inner life darkened by a bad eye. Anchor verse (Matt 6:23: if the eye is bad, the whole body full of darkness). The characteristic (inner life filled with darkness due to corrupted orientation) is well-named. Clear.
+
+[PHASE-B] 7438-001 | G5186 tufloō | Reg 207 (blindness (spiritual))
+QA-FLAG: QA-CLEAR
+Note: Description names the act of blinding inner capacities — eyes and mind — through hatred, spiritual adversary, or divine judicial action. Anchor verse (2Cor 4:4: god of this world has blinded the minds of unbelievers). Three agents named (hatred, adversary, God). The act of blinding inner capacities is the characteristic. The description is clear and characteristic-perspective adequate.
+
+
+---
+## PHASE B — Reg 210 (deadness)
+
+[PHASE-B] 1378-001 | G3498 nekros | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names spiritual deadness as the person's condition — dead in sin, dead to God. Anchor verses: Matt 23:27 (whitewashed tombs, dead inside) and Eph 2:1 (dead in trespasses and sins). The characteristic (spiritual deadness as condition) is clearly named. Clear.
+
+[PHASE-B] 1378-002 | G3498 nekros | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names dead to sin / dead to the law — inner-being reorientation through Christ. Anchor verses: Rom 6:11 (consider yourselves dead to sin and alive to God) and Rom 7:4 (died to the law through the body of Christ). The characteristic (reorientation through death/dying) is clearly named. This group represents a paradoxical use of "dead" — dying as liberation/renewal. Clear.
+
+[PHASE-B] 1378-003 | G3498 nekros | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names dead works — works from spiritual deadness; conscience purified from them. Anchor verses: Heb 6:1 (repentance from dead works) and Heb 9:14 (conscience purified from dead works to serve the living God). The characteristic (moral quality of works arising from deadness; conscience's purification) is named. Clear.
+
+[PHASE-B] 1378-004 | G3498 nekros | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names dead faith — faith as a dead inner-being capacity without works. Anchor verse: Jas 2:17 (faith by itself, without works, is dead). The characteristic (faith as inner capacity that can be alive or dead) is named. Clear.
+
+[PHASE-B] 1378-005 | G3498 nekros | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names resurrection of the dead as the ground for inner-being hope, faith, and aspiration. Anchor verses: Phil 3:11 (attaining resurrection from the dead) and 1 Pet 1:3 (born again to a living hope through resurrection). The characteristic (hope/faith oriented toward resurrection) is clear. Clear.
+
+[PHASE-B] 1379-001 | H4191 mut | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as consequence of inner moral failure — dying as outcome of folly, wickedness, sin. Anchor verses: Gen 2:17 (eat and surely die) and Job 5:2 (vexation kills the fool). The characteristic (moral causation of death; the inner-outer nexus of sin and its consequence) is named. Clear.
+
+[PHASE-B] 1379-002 | H4191 mut | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as the object of inner-being orientation — fear, longing, resolve, wisdom on mortality. Anchor verses: Job 21:25 (dies in bitterness of soul) and Jon 4:8 (Jonah asks to die). The characteristic (the inner person's orientation toward death — in fear, bitterness, or longing) is well-named. Clear.
+
+[PHASE-B] 1379-003 | H4191 mut | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names God's sovereignty over death as the ground of inner-being trust and confidence. Anchor verses: 1 Sam 2:6 (The Lord kills and brings to life) and Hab 1:12 (we shall not die). The characteristic (inner trust/confidence grounded in God's sovereignty over death) is named. Clear.
+
+[PHASE-B] 1379-004 | H4191 mut | Reg 210 (deadness)
+QA-FLAG: QA-REVIEW
+Issue: Description reads "The dead in relation to God — cut off from his hand; loss of praise capacity." Anchor verses: Psa 88:5 (set loose among the dead, cut off from God's hand) and Psa 88:10 (Do the departed rise to praise you?). The content describes the condition of the dead — relational severance (cut off from God's hand) and incapacity (no longer able to praise). Current dimension: Agency/Power (KEYWORD_WEAK). This seems misassigned — the content is not about the exercise of inner capacity but about the relational consequence of death: severance from God and loss of capacity for God-directed activity (praise). The description is adequate but dimension reassignment likely needed in Phase C. The content points toward Vitality/Existence or possibly Theological/Divine-Human. Note: the "praise" incapacity is an inner-being point — the dead cannot praise — which is a striking negative theological observation. Proceed to Phase C.
+
+[PHASE-B] 1380-001 | G2348 thnēskō | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names spiritual deadness in a living person — physically alive but inwardly dead through self-indulgence. Anchor verse: 1 Tim 5:6 (she who is self-indulgent is dead even while she lives). The characteristic (inner deadness coexisting with physical life, produced by self-indulgence) is precisely named. Clear.
+
+[PHASE-B] 7422-001 | G3499 nekroō | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names deliberate mortification of inner-being capacities — putting to death what is earthly. Anchor verse: Col 3:5 (Put to death therefore what is earthly in you: sexual immorality, impurity, passion, evil desire, covetousness). The characteristic (wilful inner mortification of earthly drives) is precisely named. Clear.
+
+[PHASE-B] 7423-001 | H4194 ma.vet | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as the end/consequence of a moral path — wickedness leads to death; choosing life vs death. Anchor verses: Deu 30:19 (I set before you life and death, blessing and curse; choose life) and Pro 8:36 (he who fails to find me loves death). The characteristic (volitional orientation toward death or life; moral consequence of path-choice) is clearly named. Current dimension: Volition (KEYWORD_WEAK). The content is consistent with Volition — the act of choosing, the orienting of the will toward life or death. Clear.
+
+[PHASE-B] 7423-002 | H4194 ma.vet | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as the power/threat/reality the person faces, fears, chooses, or is delivered from. Anchor verses: 1 Sam 20:3 (a step between me and death) and Psa 55:4 (terrors of death have fallen upon me). The characteristic (the inner person's emotional/existential orientation toward death as threat) is clearly named. Clear.
+
+[PHASE-B] 7423-003 | H4194 ma.vet | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names God's sovereignty over death as the ground of redemption and inner-being hope. Anchor verses: Isa 25:8 (He will swallow up death forever) and Hos 13:14 (I shall ransom them from the power of Sheol). The characteristic (inner hope grounded in God's victory over death) is named. Current dimension: Agency/Power (KEYWORD_STRONG). The content is divine agency over death producing inner hope. Clear.
+
+[PHASE-B] 7423-004 | H4194 ma.vet | Reg 210 (deadness)
+QA-FLAG: QA-REVIEW
+Issue: Description reads "The dead and inner-being capacities — those who no longer praise, remember, or are remembered." Anchor verses: Psa 6:5 (in death there is no remembrance of you; in Sheol who will give you praise?) and Psa 116:15 (Precious in the sight of the Lord is the death of his saints). The two anchor verses do not form a tight group: Psa 6:5 describes the incapacity of the dead (no praise, no memory); Psa 116:15 describes God's valuation of the death of his saints — a strikingly different inner-being orientation (God's relational regard for the dying). The description (focusing on incapacity) fits Psa 6:5 but not Psa 116:15. The grouping may be problematic — these two verses may not belong in the same group. However, this is a Phase C observation; the description as written addresses the primary content. Current dimension: UNCLASSIFIED. Flag for dimension assessment in Phase C. The grouping tension is noted.
+
+[PHASE-B] 7427-001 | G2288 thanatos | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as spiritual/moral condition — separation from God, consequence of sin. Anchor verses: Rom 8:6 (to set the mind on the flesh is death) and 1 John 3:14 (whoever does not love abides in death). The characteristic (death as inner moral/spiritual condition of separation) is precisely named. Clear.
+
+[PHASE-B] 7427-002 | G2288 thanatos | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as the power/threat that dominates or enslaves through fear. Anchor verse: Heb 2:15 (those who through fear of death were subject to lifelong slavery). The characteristic (inner enslavement through fear of death) is precisely named. Clear.
+
+[PHASE-B] 7427-003 | G2288 thanatos | Reg 210 (deadness)
+QA-FLAG: QA-REVIEW
+Issue: Description reads "Believer's inner identification with Christ's death as transformative reality." Anchor verses: Phil 2:8 (Christ became obedient to the point of death) and Phil 3:10 (share his sufferings, becoming like him in his death). The description names the believer's inner identification, but the primary anchor verse (Phil 2:8) describes Christ's own action (obedience to death), not the believer's identification. Phil 3:10 is the identification verse. There may be a mismatch between the two anchor verses — one is about Christ's death, one about the believer's sharing in it. The description reflects Phil 3:10 but Phil 2:8 is not obviously about the inner identification pattern described. The group description is not inaccurate, but the verse selection is potentially uneven. Adequate for Phase C; dimension assessment needed.
+
+[PHASE-B] 7427-004 | G2288 thanatos | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names faithful inner-being orientation toward death — perseverance, defiance, hope. Anchor verses: 1 Cor 15:55 (O death, where is your sting?) and Rev 2:10 (be faithful unto death). The characteristic (inner orientation of perseverance and defiant hope in the face of death) is clearly named. Clear.
+
+[PHASE-B] 7427-005 | G2288 thanatos | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names death as the measure of extreme inner suffering — soul sorrowful even to death. Anchor verse: Mark 14:34 (My soul is very sorrowful, even to death — Gethsemane). The characteristic (extreme inner anguish at the threshold of death) is precisely named. The subject is Christ. Clear.
+
+[PHASE-B] 7429-001 | G2349 thnētos | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names the mortal body as the site of inner-being orientation, longing, and moral struggle. Anchor verses: Rom 6:12 (let not sin reign in your mortal body) and 2 Cor 5:4 (groaning, burdened, longing to be clothed). The characteristic (inner orientation, longing, and moral struggle situated within mortal embodiment) is named. The current dimension (Volition) reflects the "let not sin reign" dimension of Rom 6:12 but 2 Cor 5:4 is more existential longing (Emotion — Positive or Vitality/Existence). This is a near-miss case that needs Phase C assessment. Adequate for Phase C.
+
+[PHASE-B] 7430-001 | G4880 sunapothnēskō | Reg 210 (deadness)
+QA-FLAG: QA-CLEAR
+Note: Description names the inner-being commitment of dying together — loyalty and union through shared death including Christ. Anchor verses: 2 Cor 7:3 (in our hearts, to die together and to live together) and 2 Tim 2:11 (if we have died with him, we will also live with him). The characteristic (inner commitment of covenantal loyalty expressed through shared dying) is clearly named. Clear.
+
+
+---
+[COVERAGE-VERIFY] C21
+Groups in extract: 46
+Groups with Phase B entry in observations log: 46
+  Reg 134: 5 (1097-001, 1098-001, 6132-001, 6134-001, 6136-001)
+  Reg 202: 7 (1362-001, 1362-002, 1364-001, 1364-002, 1364-003, 1364-004, 7377-001)
+  Reg 207: 12 (1371-001, 1372-001, 1372-002, 7432-001, 7432-002, 7432-003, 7432-004, 7433-001, 7433-002, 7434-001, 7435-001, 7438-001)
+  Reg 210: 22 (1378-001, 1378-002, 1378-003, 1378-004, 1378-005, 1379-001, 1379-002, 1379-003, 1379-004, 1380-001, 7422-001, 7423-001, 7423-002, 7423-003, 7423-004, 7427-001, 7427-002, 7427-003, 7427-004, 7427-005, 7429-001, 7430-001)
+Result: CONFIRMED — all 46 groups have Phase B entries. Phase C may proceed.
+
+
+---
+## PHASE C — Reg 134 (renewal)
+
+[PHASE-C] 1097-001 | G0342 anakainōsis | Reg 134 (renewal)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: The mind's renewal by the Spirit as the foundation for discerning God's will. The term names the renewal event/state itself. The characteristic (inner transformation of the person toward God-conformed discernment) is directly named. KEYWORD_WEAK automated label is correct. Confirm as Transformation.
+PATCH-TARGET: wa_dimension_index.id = 8171
+
+[PHASE-C] 1098-001 | H2487 cha.li.phah | Reg 134 (renewal)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Change as inner transformation — hoped-for renewal through patient waiting; or failure to change as evidence of persistent inner hardness. The characteristic is the inner condition of changeability or its absence. Transformation is correct. The dual orientation (renewal hoped for / hardness persisting) reinforces C21 placement. KEYWORD_STRONG label confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8172
+
+[PHASE-C] 6132-001 | G0341 anakainoō | Reg 134 (renewal)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Progressive inner renewal of the self, daily renewal of the inner person toward God's image, growth in knowledge (Col 3 context). The automated label (Cognition, KEYWORD_WEAK) was triggered by "knowledge" but the primary characteristic is the renewal process itself — Transformation is the correct dimension. Correction from Cognition → Transformation.
+PATCH-TARGET: wa_dimension_index.id = 8173
+
+[PHASE-C] 6134-001 | H4253 ma.cha.la.phah | Reg 134 (renewal)
+DIMENSION: Agency / Power
+DOMINANT-SUBJECT: HUMAN
+NOTES: Nazirite locks as the physical expression of inner covenantal consecration; their cutting = departure of divine empowerment/inner strength. The characteristic the group actually names is divine empowerment operating through and withdrawn with the vow-sign. The current automated label (Agency/Power, KEYWORD_WEAK) captures this correctly — the inner-being characteristic is the exercise and loss of divinely-given capacity. Confirm Agency/Power.
+PATCH-TARGET: wa_dimension_index.id = 8174
+
+[PHASE-C] 6136-001 | H2475 cha.loph | Reg 134 (renewal)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: OTHER_HUMAN
+NOTES: The perishing as those whose vulnerable condition calls forth advocacy from the conscience of others. The inner-being characteristic named is the moral conscience and volitional will of the advocate — not renewal vocabulary. The dominant subject is the responding advocate (OTHER_HUMAN — the destitute/perishing are the occasion, not the inner-being subject). Automated label (Moral Character, KEYWORD_WEAK) is correct for the inner-being content present. Cluster assignment is weak (flagged in Phase A and B) — this group reached C21 via root family, not via content affinity. Flagging for researcher decision on cluster reassignment (see Session D pointer below). Proceeding with Moral Character as the dimension under current assignment.
+PATCH-TARGET: wa_dimension_index.id = 8175
+
+[SESSION-D] DIM-134-SD001
+REGISTRY: 134 (renewal)
+SESSION-TARGET: D
+DESCRIPTION: Group 6136-001 (H2475 cha.loph — "the perishing") was assigned to C21 via root family connection (CHALOPH root). The group content is not renewal vocabulary. The verse evidence (Prov 31:8 — advocacy for the destitute) names the moral conscience and volitional will of the advocate responding to the vulnerable. The inner-being characteristic is Moral Character, not transformation or renewal. Consider reassignment from C21 to a cluster that holds advocacy, conscience, or justice vocabulary (potentially C08 or C10). Researcher decision required.
+PATCH-TARGET: wa_session_research_flags insert
+
+
+---
+## PHASE C — Reg 202 (transformation)
+
+[PHASE-C] 1362-001 | G3339 metamorfoō | Reg 202 (transformation)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Inner transformation of the person toward conformity with God — renewal of mind, progressive conformity to divine glory (Rom 12:2 anchor). This is the core transformation group. KEYWORD_STRONG confirmed. Transformation is correct.
+PATCH-TARGET: wa_dimension_index.id = 8176
+
+[PHASE-C] 1362-002 | G3339 metamorfoō | Reg 202 (transformation)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: GOD
+NOTES: Christ's visible transformation (Transfiguration, Mk 9:2) mediates an inner encounter between disciples and divine reality. The subject of the transformation is Christ (GOD). The group names the disciples' inner encounter with divine reality mediated through Christ's transformation. This is not transformation of the human person per se but a divine transformation event that produces human inner encounter. The characteristic is nonetheless transformation — the divine transformation that opens human encounter with the glory of God. Transformation is the best fitting dimension; dominant subject is GOD. The KEYWORD_WEAK automated label is directionally correct.
+PATCH-TARGET: wa_dimension_index.id = 8177
+
+[PHASE-C] 1364-001 | H2498 cha.laph | Reg 202 (transformation)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Inner renewal of strength and vitality through waiting on or turning to God (Isa 40:31). The characteristic is the renewal of inner strength — the person who waits on God is renewed/transformed in inner capacity. Vitality/Existence (KEYWORD_WEAK) captures part of this but Transformation is more accurate — the characteristic is not merely vitality as given condition, but the renewal and change in that vitality. Correction from Vitality/Existence → Transformation.
+PATCH-TARGET: wa_dimension_index.id = 8178
+
+[PHASE-C] 1364-002 | H2498 cha.laph | Reg 202 (transformation)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Transience of human life — the rapid passing that characterises creaturely existence (Psa 90:5). The characteristic is the fragility and passing quality of human life as given condition. Vitality/Existence is correct. This group describes what the human person is by nature (mortal, transient) rather than any process of change. KEYWORD_WEAK label confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8179
+
+[PHASE-C] 1364-003 | H2498 cha.laph | Reg 202 (transformation)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Wilful overriding of divine covenant — an inner act of defiance against binding obligation (Isa 24:5). The automated label Divine-Human Correspondence (KEYWORD_WEAK) is incorrect. The characteristic is a volitional act: the inner will directed against the covenantal obligation. This is not a correspondence pattern between divine and human characteristics — it is a human volitional act of rebellion/defiance. Correction from Divine-Human Correspondence → Volition.
+PATCH-TARGET: wa_dimension_index.id = 8180
+
+[PHASE-C] 1364-004 | H2498 cha.laph | Reg 202 (transformation)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: God or divine spirit passing near the person, engaging their inner capacity for perception or producing inner dread (Job 9:11). The characteristic is the inner state produced: dread/non-perception in the face of divine passage. Emotion — Negative (KEYWORD_STRONG) is correct — the dominant inner-being characteristic is the dread and perceptual failure produced by the divine encounter.
+PATCH-TARGET: wa_dimension_index.id = 8181
+
+[PHASE-C] 7377-001 | G3445 morfoō | Reg 202 (transformation)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Interior formation of Christ within the person — inner shaping toward Christ-likeness (Gal 4:19). The characteristic is progressive inner formation. Transformation is correct. The KEYWORD_WEAK automated label is confirmed. The agent of transformation is Christ; the subject of the formation is the human inner person.
+PATCH-TARGET: wa_dimension_index.id = 8182
+
+
+---
+## PHASE C — Reg 207 (blindness (spiritual))
+
+[PHASE-C] 1371-001 | G4656 skotoō | Reg 207 (blindness (spiritual))
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Divine judgment plunging a domain into darkness, producing inner anguish (gnawing tongues, Rev 16:10). The automated label Divine-Human Correspondence (KEYWORD_STRONG) names the divine act → human consequence pattern, which is present. However, the primary inner-being characteristic named in the group is the human inner state produced: anguish. The divine act is the occasion; the inner-being characteristic is the suffering of anguish. Emotion — Negative is the more precise dimension here. The Divine-Human Correspondence label would apply if the group were naming a structural correspondence between God's characteristic and the human characteristic — but this group names the human response to divine action. Correction from Divine-Human Correspondence → Emotion — Negative. Note: this group belongs to a sin/vice figure (the beast's kingdom), which complicates the subject — dominant subject is HUMAN (those subject to the judgment experience the anguish).
+PATCH-TARGET: wa_dimension_index.id = 8183
+
+[PHASE-C] 1372-001 | G5185 tuflos | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Spiritual blindness as the inner condition of self-deception, hardness, and inability to perceive spiritual reality — the person who claims to see but does not (John 9:41). The characteristic is perceptual incapacity: the inability to perceive spiritual reality. This is Cognition — specifically the failure of inner knowing/perceiving. UNCLASSIFIED automated label corrected → Cognition.
+PATCH-TARGET: wa_dimension_index.id = 8184
+
+[PHASE-C] 1372-002 | G5185 tuflos | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality (Luke 4:18). As noted in Phase B, the inner-being content is secondary (faith called forth by the sign) while the term names the physical condition. However the group was retained under the inclusion principle. The characteristic the group ultimately names is the inner encounter with divine healing and faith it occasions. Cognition is the closest dimension — the perceptual restoration (recovery of sight) as a sign of spiritual perception. UNCLASSIFIED → Cognition. Note: this group is a borderline case; the inner-being content is carried by the context of the term's use, not the term directly. Retained per inclusion principle.
+PATCH-TARGET: wa_dimension_index.id = 8185
+
+[PHASE-C] 7432-001 | G4655 skotos | Reg 207 (blindness (spiritual))
+DIMENSION: Identity / Selfhood
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkness as the inner-spiritual domain the person inhabits, is rescued from, or identifies with — fundamental spiritual condition and identity (Eph 5:8: "you were darkness, but now you are light in the Lord"). The characteristic is the person's fundamental spiritual identity and condition. Cognition (KEYWORD_WEAK) automated label misses this — the group is not about knowing but about being. Identity/Selfhood captures "you were darkness / now you are light" — the person's constitutive identity. Correction from Cognition → Identity/Selfhood.
+PATCH-TARGET: wa_dimension_index.id = 8186
+
+[PHASE-C] 7432-002 | G4655 skotos | Reg 207 (blindness (spiritual))
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkness as the moral domain of works and powers — participation in or renunciation of (Rom 13:12: cast off works of darkness). The characteristic is the moral quality of acts arising from darkness; the person's moral participation in a domain of evil works. Moral Character (KEYWORD_WEAK) is confirmed. The automated label is correct.
+PATCH-TARGET: wa_dimension_index.id = 8187
+
+[PHASE-C] 7432-003 | G4655 skotos | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkness of the inner life — hidden purposes, corrupted inner light, self-deception about inner state (1Cor 4:5: things hidden in darkness, purposes of the heart). The characteristic is the concealed and self-deceived inner knowing — the hidden inner purposes that will be disclosed. Volition (KEYWORD_WEAK) automated label captures the "purposes" aspect but Cognition is more precise: what is at stake is the inner capacity for self-knowledge and the Lord's disclosure of what the person does not know about themselves. Correction from Volition → Cognition.
+PATCH-TARGET: wa_dimension_index.id = 8188
+
+[PHASE-C] 7432-004 | G4655 skotos | Reg 207 (blindness (spiritual))
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Outer darkness of eschatological judgment — the ultimate inner-being consequence of exclusion from God (Matt 22:13: cast into outer darkness, weeping and gnashing of teeth). The characteristic is the condition of final exclusion — an existence-condition, not merely an emotional state. Vitality/Existence captures "outer darkness" as the final state of inner-being being — the annihilation of the relationship with God that constituted life. UNCLASSIFIED automated label corrected → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8189
+
+[PHASE-C] 7433-001 | G4653 skotia | Reg 207 (blindness (spiritual))
+DIMENSION: Identity / Selfhood
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkness as the inner condition of spiritual alienation — hating, not knowing where one is going, eyes blinded (1 John 2:11). The characteristic is the person's constitutive spiritual condition of alienation: they hate, they do not know where they are going, they are blinded. This is an identity/condition pattern — the person characterised by darkness as their inner state. UNCLASSIFIED automated label corrected → Identity/Selfhood. Close to Cognition but the "not knowing where one is going" is a directional incapacity rooted in the person's whole inner condition, not merely a cognitive act.
+PATCH-TARGET: wa_dimension_index.id = 8190
+
+[PHASE-C] 7433-002 | G4653 skotia | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkness of concealment — the inner life hidden in secret, which will be brought to light (Luke 12:3). The characteristic is the concealment of the inner life — what is spoken/thought in darkness as hidden inner content. Cognition is the best dimension — the knowing/not-knowing dynamic, the concealment and disclosure of inner content. Vitality/Existence (KEYWORD_WEAK) automated label is incorrect. Correction from Vitality/Existence → Cognition.
+PATCH-TARGET: wa_dimension_index.id = 8191
+
+[PHASE-C] 7434-001 | G4654 skotizō | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Darkening of inner capacities — understanding, heart, and eyes — as consequence of wilful rejection of God or divine judicial act (Eph 4:18: darkened in understanding, alienated from life of God due to hardness of heart). The characteristic is the darkening/degradation of the inner cognitive and perceptual faculty. Cognition (KEYWORD_WEAK) automated label is confirmed. The darkening affects understanding, heart-capacity, and perception — all cognitive.
+PATCH-TARGET: wa_dimension_index.id = 8192
+
+[PHASE-C] 7435-001 | G4652 skoteinos | Reg 207 (blindness (spiritual))
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Inner darkness that fills the person when their inner orientation is corrupted — the whole inner life darkened by a bad eye (Matt 6:23: if the eye is bad, the whole body full of darkness). The characteristic is the whole-person condition of inner darkness resulting from corrupted orientation. "How great is the darkness" — this is an existential fullness statement about the person's inner condition. Vitality/Existence (KEYWORD_WEAK) captures this better than Cognition — the darkness fills the whole inner person as a condition of being, not merely a cognitive act. Confirm Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8193
+
+[PHASE-C] 7438-001 | G5186 tufloō | Reg 207 (blindness (spiritual))
+DIMENSION: Cognition
+DOMINANT-SUBJECT: HUMAN
+NOTES: The act of blinding inner capacities — eyes and mind — through hatred, spiritual adversary, or divine judicial action (2Cor 4:4: god of this world blinded the minds of unbelievers). The characteristic is the blinding of the inner capacity for knowing/perceiving — the mind's perceptual faculty. The agents are multiple (hatred, adversary, God) but the inner-being characteristic affected is cognitive: the blinding of the mind/eyes. Correction from Divine-Human Correspondence (KEYWORD_WEAK) → Cognition. The divine judicial element is present but the primary characteristic named is the cognitive incapacity produced. Dominant subject is HUMAN (the one blinded).
+PATCH-TARGET: wa_dimension_index.id = 8194
+
+
+---
+## PHASE C — Reg 210 (deadness)
+
+[PHASE-C] 1378-001 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Spiritual deadness as the person's condition — dead in sin, dead to God (Matt 23:27; Eph 2:1). The characteristic is the inner-being condition of death as the person's constitutive state. Vitality/Existence (ROOT_INFERRED) confirmed — this is the core group naming deadness as existential condition.
+PATCH-TARGET: wa_dimension_index.id = 8195
+
+[PHASE-C] 1378-002 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead to sin / dead to the law — inner-being reorientation through Christ (Rom 6:11; Rom 7:4). The characteristic is the paradoxical use of "dead" as the mechanism of transformation and liberation: dying to sin/law as the inner act that enables new life. This is transformation vocabulary — the death that produces reorientation. Vitality/Existence (ROOT_INFERRED) automated label is too static. Correction → Transformation. The movement from one orientation to another through dying is the Transformation dimension's core.
+PATCH-TARGET: wa_dimension_index.id = 8196
+
+[PHASE-C] 1378-003 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead works — works arising from spiritual deadness; conscience purified from them (Heb 6:1; Heb 9:14). The characteristic is the moral quality of works produced by the deadness state, and the purification of the conscience from them. Moral Character (KEYWORD_WEAK) confirmed — the group names the moral texture of what the dead inner person produces and the conscience's relation to it.
+PATCH-TARGET: wa_dimension_index.id = 8197
+
+[PHASE-C] 1378-004 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead faith — faith as a dead inner-being capacity without works (Jas 2:17). The characteristic is the inner capacity of faith as either alive or dead — its condition of vitality or lifelessness. Agency/Power (KEYWORD_WEAK) automated label misses this: the group is not about the exercise of capacity but about whether the inner capacity has life. Correction → Vitality/Existence. Faith that is dead is faith that has lost its animating life — a vitality/condition observation.
+PATCH-TARGET: wa_dimension_index.id = 8198
+
+[PHASE-C] 1378-005 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Resurrection of the dead as the ground for inner-being hope, faith, and aspiration (Phil 3:11; 1 Pet 1:3). The characteristic is hope/faith/aspiration oriented toward resurrection — the eschatological condition of new life as the object of inner longing. Vitality/Existence (KEYWORD_WEAK) confirmed — the resurrection horizon defines the person's existential hope.
+PATCH-TARGET: wa_dimension_index.id = 8199
+
+[PHASE-C] 1379-001 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as consequence of inner moral failure — folly, wickedness, sin lead to death (Gen 2:17; Job 5:2). The characteristic is the moral causation of death: the inner state of folly/wickedness as the path that ends in death. Moral Character (KEYWORD_WEAK) confirmed — the group names the moral quality of the inner person's path and its fatal consequence.
+PATCH-TARGET: wa_dimension_index.id = 8200
+
+[PHASE-C] 1379-002 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the object of inner-being orientation — fear, longing, resolve, wisdom on mortality (Job 21:25; Jon 4:8). The characteristic is the inner emotional and existential orientation toward death: bitterness, longing to die, the soul's posture before mortality. Emotion — Negative (KEYWORD_WEAK) confirmed — the group names inner states (bitterness, longing, dread) oriented toward death.
+PATCH-TARGET: wa_dimension_index.id = 8201
+
+[PHASE-C] 1379-003 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Dependence / Creatureliness
+DOMINANT-SUBJECT: GOD
+NOTES: God's sovereignty over death as the ground of inner-being trust and confidence (1 Sam 2:6; Hab 1:12). The characteristic in the human is the inner posture of trust and confidence grounded in God's sovereign power over death. Agency/Power (KEYWORD_STRONG) automated label names God's action but the inner-being characteristic being described is the human posture of dependence and trust that God's sovereignty over death produces. Correction → Dependence/Creatureliness. The dominant subject is GOD (it is God's sovereignty over death that is the generating reality) — dominant_subject = GOD since it is God's characteristic that grounds the group.
+PATCH-TARGET: wa_dimension_index.id = 8202
+
+[PHASE-C] 1379-004 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: The dead in relation to God — cut off from his hand; loss of praise capacity (Psa 88:5; Psa 88:10). The characteristic is the condition of the dead: relational severance from God and incapacity for God-directed activity (praise). Agency/Power (KEYWORD_WEAK) automated label is incorrect — the group does not name the exercise of inner capacity but its loss. The condition named (cut off, unable to praise) is a Vitality/Existence observation: the dead person's state of non-being in relation to God. Correction → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8203
+
+[PHASE-C] 1380-001 | G2348 thnēskō | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Spiritual deadness in a living person — physically alive but inwardly dead through self-indulgence (1 Tim 5:6). The characteristic is the inner condition of deadness coexisting with physical life — a constitutive vitality-state. UNCLASSIFIED automated label corrected → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8204
+
+[PHASE-C] 7422-001 | G3499 nekroō | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Deliberate mortification of inner-being capacities — putting to death what is earthly (Col 3:5: sexual immorality, impurity, passion, evil desire, covetousness). The characteristic is the volitional act of the inner person: the will directed against the earthly drives. This is an act of willing, not merely a vitality state. Vitality/Existence (KEYWORD_WEAK) automated label misses the volitional character of the act. Correction → Volition.
+PATCH-TARGET: wa_dimension_index.id = 8205
+
+[PHASE-C] 7423-001 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the end/consequence of a moral path — choosing life vs death (Deu 30:19; Pro 8:36: all who hate me love death). The characteristic is the volitional orientation: the will directed toward death or life as a fundamental life-choice. Volition (KEYWORD_WEAK) confirmed — the group names the act of choosing, the orientation of the will toward death as path and consequence.
+PATCH-TARGET: wa_dimension_index.id = 8206
+
+[PHASE-C] 7423-002 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as power/threat the person faces, fears, or is delivered from (1 Sam 20:3; Psa 55:4: terrors of death have fallen upon me). The characteristic is the inner emotional state: terror, anguish, the existential weight of death's nearness. Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8207
+
+[PHASE-C] 7423-003 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Dependence / Creatureliness
+DOMINANT-SUBJECT: GOD
+NOTES: God's sovereignty over death as the ground of redemption and inner-being hope (Isa 25:8; Hos 13:14). Parallel to 1379-003: the divine sovereignty over death produces inner hope and trust. Agency/Power (KEYWORD_STRONG) names God's action but the inner-being characteristic produced in the human is dependence/hope grounded in God's power. Correction → Dependence/Creatureliness. Dominant subject GOD — God's sovereign redemptive act is the generating reality.
+PATCH-TARGET: wa_dimension_index.id = 8208
+
+[PHASE-C] 7423-004 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: The dead and inner-being capacities — those who no longer praise, remember, or are remembered (Psa 6:5; Psa 116:15). As noted in Phase B, the two anchor verses are not a tight group: Psa 6:5 (incapacity of the dead — no praise, no memory) and Psa 116:15 (precious in the Lord's sight is the death of his saints — God's valuation of dying). The description focuses on incapacity, which fits Psa 6:5 and maps to Vitality/Existence. Psa 116:15 introduces a different register (God's regard for the dying saint) that the description does not fully capture. UNCLASSIFIED → Vitality/Existence based on the primary descriptive content. Session B pointer raised for the grouping question.
+PATCH-TARGET: wa_dimension_index.id = 8209
+
+[SESSION-B] DIM-210-001
+REGISTRY: 210 (deadness)
+DESCRIPTION: Group 7423-004 (H4194 ma.vet) contains two anchor verses with analytically distinct content: Psa 6:5 (the dead cannot praise or remember God — incapacity) and Psa 116:15 (precious in the Lord's sight is the death of his saints — divine valuation of the dying). These may belong to separate groups. Session B should examine whether the grouping is correct or whether a re-grouping into (a) incapacity of the dead and (b) divine regard for dying saints is warranted.
+PATCH-TARGET: wa_session_b_findings insert
+
+[PHASE-C] 7427-001 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as spiritual/moral condition — separation from God, consequence of sin (Rom 8:6; 1 John 3:14: whoever does not love abides in death). The characteristic is the moral-spiritual condition of the inner person: death as the state of the person who sets the mind on the flesh, or who does not love. Moral Character (KEYWORD_WEAK) confirmed — the group names the moral condition that constitutes spiritual death.
+PATCH-TARGET: wa_dimension_index.id = 8210
+
+[PHASE-C] 7427-002 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as power/threat that dominates or enslaves through fear (Heb 2:15: those subject to lifelong slavery through fear of death). The characteristic is the inner state of fear that death produces — specifically fear as the mechanism of enslavement. Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8211
+
+[PHASE-C] 7427-003 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Believer's inner identification with Christ's death as transformative reality (Phil 2:8; Phil 3:10: share his sufferings, becoming like him in his death). As noted in Phase B, Phil 2:8 describes Christ's own death; Phil 3:10 describes the believer's sharing in it. The description ("inner identification with Christ's death as transformative reality") reflects Phil 3:10 as the primary content. The characteristic is the inner act of identifying with Christ's death as the path of transformation — this is Transformation. Vitality/Existence (KEYWORD_WEAK) automated label is too static. Correction → Transformation. Dominant subject HUMAN (the believer's inner identification).
+PATCH-TARGET: wa_dimension_index.id = 8212
+
+[PHASE-C] 7427-004 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Faithful inner-being orientation toward death — perseverance, defiance, hope (1 Cor 15:55; Rev 2:10: be faithful unto death). The characteristic is the volitional orientation of the inner person in the face of death: the will's perseverance and defiance. Vitality/Existence (KEYWORD_WEAK) automated label misses the volitional character. Correction → Volition. The inner act is choosing faithfulness in the face of death — an act of will.
+PATCH-TARGET: wa_dimension_index.id = 8213
+
+[PHASE-C] 7427-005 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: GOD
+NOTES: Death as the measure of extreme inner suffering — soul sorrowful even to death (Mark 14:34: Gethsemane). The characteristic is extreme inner anguish at the threshold of death. The subject is Christ (GOD) — this is Christ's soul-anguish in Gethsemane. Emotion — Negative (KEYWORD_WEAK) confirmed. Dominant subject GOD.
+PATCH-TARGET: wa_dimension_index.id = 8214
+
+[PHASE-C] 7429-001 | G2349 thnētos | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Mortal body as the site of inner-being orientation, longing, and moral struggle (Rom 6:12: let not sin reign in your mortal body; 2 Cor 5:4: groaning, burdened, longing). As noted in Phase B, Rom 6:12 is volitional (let not sin reign — moral command to the will); 2 Cor 5:4 is existential longing (Emotion). The description names "orientation, longing, and moral struggle" — the volitional dimension (moral struggle, the will's exercise in the mortal body) is dominant. Volition (KEYWORD_WEAK) confirmed as the primary dimension. The longing dimension (2 Cor 5:4) is secondary.
+PATCH-TARGET: wa_dimension_index.id = 8215
+
+[PHASE-C] 7430-001 | G4880 sunapothnēskō | Reg 210 (deadness)
+DIMENSION: Relational Disposition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Inner-being commitment of dying together — loyalty and union through shared death including Christ (2 Cor 7:3: in our hearts to die together and live together; 2 Tim 2:11: if we have died with him we will also live with him). The characteristic is the inner relational commitment expressed through shared dying — covenantal loyalty that extends to and through death. Vitality/Existence (KEYWORD_WEAK) automated label misses the relational character. Correction → Relational Disposition. The inner act is the orientation of loyalty and union toward another (and toward Christ) — the relational disposition of dying-together as the expression of love.
+PATCH-TARGET: wa_dimension_index.id = 8216
+
+
+---
+## CROSS-GROUP PATTERNS — C21
+
+### Convergence observations
+
+**Transformation pole (Regs 134, 202):**
+- Six groups across Regs 134/202 assign Transformation dimension — the cluster's positive pole is strongly represented.
+- The transformation vocabulary spans: renewal of mind (anakainōsis), verbal renewal (anakainoō), Hebrew change (cha.li.phah), strength-renewal (cha.laph-001), interior Christ-formation (morfoō), dying-to-reorientation (nekros-002, thanatos-003). This is a substantive and coherent transformation vocabulary.
+
+**Death as multidimensional (Reg 210):**
+- The death vocabulary does not resolve to a single dimension. Across 22 groups it distributes: Vitality/Existence (7), Emotion — Negative (4), Volition (3), Moral Character (3), Transformation (2), Dependence/Creatureliness (2), Relational Disposition (1). This is a finding: death in Scripture is not a single inner-being phenomenon — it engages the full range of inner-being life.
+
+**Darkness vocabulary (Reg 207):**
+- The darkness groups split between Cognition (5 groups) and Identity/Selfhood (2 groups), with Vitality/Existence (2), Emotion — Negative (1), and Moral Character (1). The Cognition cluster is notable: darkness consistently engages the perceptual/knowing faculty — blindness, hidden purposes, darkened understanding, concealment.
+
+**Dependence/Creatureliness — GOD subject pattern:**
+- Groups 1379-003 (mut) and 7423-003 (ma.vet) both assign Dependence/Creatureliness with dominant_subject = GOD. The pattern: God's sovereignty over death → human inner posture of trust. This is a structurally significant finding — the creaturely posture of dependence is grounded in divine sovereignty over the ultimate limit (death). Session D pointer raised.
+
+### Divergence observation
+- 1364-002 (cha.laph — transience of human life) and 1364-001 (cha.laph — strength renewal) show the same term operating in opposite registers: one names diminishment (transience), one names renewal. Same root, opposite inner-being content. This confirms the directionally-determined inner faculty pattern at the level of the transformation vocabulary.
+
+### Vocabulary gap
+- No new dimension name required. All 46 groups fit within the existing vocabulary of 11 dimensions. No gap found.
+
+[SESSION-D] DIM-210-SD001
+REGISTRY: 210 (deadness)
+SESSION-TARGET: D
+DESCRIPTION: The Dependence/Creatureliness dimension with dominant_subject = GOD appears twice in Reg 210 (groups 1379-003 and 7423-003 — mut and ma.vet respectively), both grounding the human inner posture of trust in God's sovereignty over death. This pattern may be programme-wide: divine sovereignty over the limit-condition (death, suffering, judgment) as the generative ground of human creaturely dependence. Session D synthesis should examine whether this GOD-subject Dependence/Creatureliness pattern is consistent across clusters, particularly where the divine act over a limit-condition produces the human posture.
+PATCH-TARGET: wa_session_research_flags insert
+
+---
+## STAMP DECISIONS
+
+[STAMP] Registry 134 (renewal)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 134
+
+[STAMP] Registry 202 (transformation)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 202
+
+[STAMP] Registry 207 (blindness (spiritual))
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 207
+
+[STAMP] Registry 210 (deadness)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 210
+
+
+---
+## PHASE C — Reg 210 (deadness)
+
+[PHASE-C] 1378-001 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Spiritual deadness as the person's condition — dead in sin, dead to God (Matt 23:27; Eph 2:1). The characteristic is the inner-being condition of spiritual deadness — the person constitutively defined by death/sin. ROOT_INFERRED confidence; Vitality/Existence is correct and confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8195
+
+[PHASE-C] 1378-002 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead to sin / dead to the law — inner-being reorientation through Christ (Rom 6:11; Rom 7:4). This group names the paradox: dying as the mechanism of inner-being liberation and reorientation. The characteristic is not the condition of deadness but the transformative act of dying-to — a change in the person's inner orientation and identity through participation in Christ's death. Transformation (the inner change of reorientation) is more precise than Vitality/Existence. ROOT_INFERRED automated label was Vitality/Existence; correction to Transformation.
+PATCH-TARGET: wa_dimension_index.id = 8196
+
+[PHASE-C] 1378-003 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead works — works arising from spiritual deadness; conscience purified from them (Heb 6:1; Heb 9:14). The characteristic is the moral quality of works proceeding from a spiritually dead state, and the conscience's purification from them. Moral Character (KEYWORD_WEAK) confirmed — the inner-being characteristic is the moral quality (deadness) of the works and the moral transformation of conscience.
+PATCH-TARGET: wa_dimension_index.id = 8197
+
+[PHASE-C] 1378-004 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Dead faith — faith as a dead inner-being capacity without works (Jas 2:17). The characteristic is the vitality or deadness of faith as an inner capacity — whether faith is alive (operative, expressing itself) or dead (inert). Agency/Power (KEYWORD_WEAK) automated label misses this — the group is not about the exercise of power but about whether faith itself is alive or dead as a capacity. Correction from Agency/Power → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8198
+
+[PHASE-C] 1378-005 | G3498 nekros | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Resurrection of the dead as the ground for inner-being hope, faith, and aspiration (Phil 3:11; 1 Pet 1:3). The characteristic is the orientation of the inner person toward resurrection as ground of hope. The resurrection is the Vitality/Existence event that grounds the person's inner orientation. Vitality/Existence (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8199
+
+[PHASE-C] 1379-001 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Moral Character
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as consequence of inner moral failure — dying as outcome of folly, wickedness, sin (Gen 2:17; Job 5:2). The characteristic is the moral causation of death — the inner moral condition (wickedness, folly) that leads to death. Moral Character (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8200
+
+[PHASE-C] 1379-002 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the object of inner-being orientation — fear, longing, resolve, and the bitterness of dying (Job 21:25; Jon 4:8). The characteristic is the person's inner affective orientation toward death: bitterness, despair, the desire for death. Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8201
+
+[PHASE-C] 1379-003 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Dependence / Creatureliness
+DOMINANT-SUBJECT: HUMAN
+NOTES: God's sovereignty over death as the ground of inner-being trust and confidence (1 Sam 2:6; Hab 1:12: "we shall not die"). The characteristic is the inner posture of trust and security grounded in God's sovereignty over life and death. Agency/Power (KEYWORD_STRONG) automated label names God's action but the inner-being characteristic of the human person is trust/confidence/security — which is Dependence/Creatureliness. The dominant subject is HUMAN — the person resting in that sovereignty. Correction from Agency/Power → Dependence/Creatureliness.
+PATCH-TARGET: wa_dimension_index.id = 8202
+
+[PHASE-C] 1379-004 | H4191 mut | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: The dead in relation to God — cut off from his hand; loss of praise capacity (Psa 88:5; Psa 88:10). The characteristic is the relational and existential consequence of death: severance from God's hand, incapacity for praise. This is Vitality/Existence — the condition of the dead as an existence-state characterised by relational severance and incapacity. Agency/Power (KEYWORD_WEAK) automated label is incorrect (this is not the exercise of capacity but its total absence). Correction from Agency/Power → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8203
+
+[PHASE-C] 1380-001 | G2348 thnēskō | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Spiritual deadness in a living person — physically alive but inwardly dead through self-indulgence (1 Tim 5:6). The characteristic is the inner condition of deadness coexisting with physical life. UNCLASSIFIED automated label corrected → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8204
+
+[PHASE-C] 7422-001 | G3499 nekroō | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Deliberate mortification of inner-being capacities — wilfully putting to death what is earthly (Col 3:5: put to death sexual immorality, impurity, passion, evil desire, covetousness). The characteristic is the volitional act of inner mortification — the will directed against earthly drives within the self. Vitality/Existence (KEYWORD_WEAK) automated label captures the death-language but Volition is more precise: this is an act of the will, not a condition of being. Correction from Vitality/Existence → Volition.
+PATCH-TARGET: wa_dimension_index.id = 8205
+
+[PHASE-C] 7423-001 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the end/consequence of a moral path — choosing life vs death (Deu 30:19; Pro 8:36: those who hate wisdom love death). The characteristic is the volitional orientation of the inner person toward life or death as a path-choice. Volition (KEYWORD_WEAK) confirmed — the covenantal call to choose, and the inner orientation that constitutes that choice, is the core characteristic.
+PATCH-TARGET: wa_dimension_index.id = 8206
+
+[PHASE-C] 7423-002 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the power/threat/reality the person faces, fears, or is delivered from — inner anguish, the terrors of death (1 Sam 20:3; Psa 55:4: terrors of death have fallen upon me). The characteristic is the affective inner state produced by proximity to death as threat. Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8207
+
+[PHASE-C] 7423-003 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Dependence / Creatureliness
+DOMINANT-SUBJECT: HUMAN
+NOTES: God's sovereignty over death as the ground of inner redemption and hope (Isa 25:8 — He will swallow up death; Hos 13:14 — ransomed from Sheol). Parallel to 1379-003 (mut): the inner-being characteristic is not God's power per se but the human inner posture of hope and trust grounded in that power. Agency/Power (KEYWORD_STRONG) automated label names God's action; the human inner-being characteristic is Dependence/Creatureliness. Dominant subject HUMAN. Correction from Agency/Power → Dependence/Creatureliness.
+PATCH-TARGET: wa_dimension_index.id = 8208
+
+[PHASE-C] 7423-004 | H4194 ma.vet | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: The dead and inner-being capacities — those who no longer praise, remember, or are remembered (Psa 6:5; Psa 116:15). As flagged in Phase B, the two anchor verses are in tension: Psa 6:5 describes incapacity of the dead; Psa 116:15 describes God's valuation of the death of his saints. The description reflects the incapacity reading. The primary characteristic named is the existential condition of the dead — loss of capacity for praise, memory, and being-remembered. Vitality/Existence is the most fitting dimension. The verse grouping tension is noted as an observation. UNCLASSIFIED corrected → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8209
+
+[SESSION-B] DIM-210-001
+REGISTRY: 210 (deadness)
+DESCRIPTION: Group 7423-004 (ma.vet) contains two anchor verses in potential tension: Psa 6:5 (in death there is no remembrance, no praise in Sheol — incapacity of the dead) and Psa 116:15 (Precious in the sight of the Lord is the death of his saints — God's relational valuation of the dying). The group description addresses the incapacity reading only. Session B should assess whether these two verses represent a coherent group or whether 7423-004 should be subdivided: one group naming the incapacity of the dead, one naming God's regard for the death of the faithful.
+PATCH-TARGET: wa_session_b_findings insert
+
+[PHASE-C] 7427-001 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as spiritual/moral condition — separation from God, consequence of sin (Rom 8:6: to set the mind on the flesh is death; 1 John 3:14: whoever does not love abides in death). The characteristic is the inner condition of being-in-death as a spiritual state. Moral Character (KEYWORD_WEAK) automated label partially captures the moral causation dimension but the primary characteristic is the existential condition of death-as-state. Correction from Moral Character → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8210
+
+[PHASE-C] 7427-002 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: HUMAN
+NOTES: Death as the power/threat that dominates or enslaves through fear (Heb 2:15: those subject to lifelong slavery through fear of death). The characteristic is the inner state of fear-of-death and the enslavement it produces. Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8211
+
+[PHASE-C] 7427-003 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Transformation
+DOMINANT-SUBJECT: HUMAN
+NOTES: The believer's inner identification with Christ's death as transformative reality — sharing his sufferings, becoming like him in his death (Phil 3:10). As noted in Phase B, Phil 2:8 (Christ's own obedience to death) sits less neatly with the identification theme; Phil 3:10 is the identification verse. The primary characteristic as described is the believer's inner participation in Christ's death as transformative — the inner conformity to his dying. Transformation is the most fitting dimension: this is inner change through participatory dying. Vitality/Existence (KEYWORD_WEAK) automated label is less precise. Correction from Vitality/Existence → Transformation. Dominant subject HUMAN (the believer's inner identification).
+PATCH-TARGET: wa_dimension_index.id = 8212
+
+[PHASE-C] 7427-004 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Volition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Faithful inner-being orientation toward death — perseverance, defiance, hope (1 Cor 15:55: O death where is your sting?; Rev 2:10: be faithful unto death). The characteristic is the inner volitional orientation of faithfulness and defiance in the face of death — the act of willing to remain faithful even to the point of death. Vitality/Existence (KEYWORD_WEAK) automated label misses this; the group is not about the condition of death but about the volitional posture of the living person toward it. Correction from Vitality/Existence → Volition.
+PATCH-TARGET: wa_dimension_index.id = 8213
+
+[PHASE-C] 7427-005 | G2288 thanatos | Reg 210 (deadness)
+DIMENSION: Emotion — Negative
+DOMINANT-SUBJECT: GOD
+NOTES: Death as the measure of extreme inner suffering — soul sorrowful even to death (Mark 14:34: My soul is very sorrowful, even to death — Gethsemane). The characteristic is extreme inner anguish at the threshold of death. The subject is Christ in Gethsemane (GOD). Emotion — Negative (KEYWORD_WEAK) confirmed.
+PATCH-TARGET: wa_dimension_index.id = 8214
+
+[PHASE-C] 7429-001 | G2349 thnētos | Reg 210 (deadness)
+DIMENSION: Vitality / Existence
+DOMINANT-SUBJECT: HUMAN
+NOTES: Mortal body as the site of inner-being orientation, longing, and moral struggle (Rom 6:12: let not sin reign in your mortal body; 2 Cor 5:4: groaning, longing to be further clothed so that mortal may be swallowed up by life). As noted in Phase B, Rom 6:12 points toward Volition; 2 Cor 5:4 toward existential longing in mortal embodiment. The primary characteristic across both verses is the mortal body as the condition within which inner-being life is lived — the creaturely frame of existence. Vitality/Existence is the most accurate dimension for the group as a whole, capturing the mortal embodiment as the constitutive condition rather than any single volitional act within it. Correction from Volition → Vitality/Existence.
+PATCH-TARGET: wa_dimension_index.id = 8215
+
+[PHASE-C] 7430-001 | G4880 sunapothnēskō | Reg 210 (deadness)
+DIMENSION: Relational Disposition
+DOMINANT-SUBJECT: HUMAN
+NOTES: Inner-being commitment of dying together — loyalty and union through shared death including Christ (2 Cor 7:3: in our hearts to die together and to live together; 2 Tim 2:11: if we have died with him, we will also live with him). The characteristic is the inner disposition of covenantal loyalty expressed through commitment to shared dying/living. This is relational at its core — the orientation of the inner person toward another in total commitment. Vitality/Existence (KEYWORD_WEAK) automated label misses this relational orientation. Relational Disposition captures the inner attachment and loyalty expressed through shared dying. Correction from Vitality/Existence → Relational Disposition.
+PATCH-TARGET: wa_dimension_index.id = 8216
+
+
+---
+## Cross-Cluster Pattern Observations
+
+[SESSION-B] DIM-210-002
+REGISTRY: 210 (deadness)
+DESCRIPTION: The deadness vocabulary (nekros, thanatos, ma.vet, mut) generates a consistent dual-register pattern: death as condition (Vitality/Existence) and death as moral/relational reality (Moral Character, Transformation, Relational Disposition). The same root terms name both the physical/existential fact of death and the spiritual/moral state it represents. Session B should map this dual-register explicitly — particularly the distinction between "dead as condition you are in" (nekros groups 1378-001, 1378-005; thanatos 7427-001) versus "dead as act you perform or participate in" (nekros 1378-002; nekroō 7422-001; thanatos 7427-003).
+PATCH-TARGET: wa_session_b_findings insert
+
+[SESSION-B] DIM-207-001
+REGISTRY: 207 (blindness (spiritual))
+DESCRIPTION: The darkness vocabulary (skotos, skotia, skoteinos, skotizō, skotoō) generates multiple distinct inner-being characteristics across its groups — identity condition (7432-001, 7433-001), moral domain (7432-002), concealment/cognition (7432-003, 7433-002), eschatological consequence (7432-004), whole-person darkening (7435-001), and active darkening of faculties (7434-001). This is a term family with unusually wide inner-being range. Session B should assess whether these groups reflect a coherent single inner-being phenomenon (darkness as multi-dimensional spiritual reality) or whether the groupings require further subdivision.
+PATCH-TARGET: wa_session_b_findings insert
+
+[SESSION-D] DIM-207-SD001
+REGISTRY: 207 (blindness (spiritual))
+SESSION-TARGET: D
+DESCRIPTION: C21 contains a structural pairing: blindness/darkness vocabulary (Reg 207) and transformation/renewal vocabulary (Regs 134, 202) describe opposite inner-being poles — the darkened/blinded/dead person vs. the renewed/transformed/living person. The same dimension (Transformation) appears in Reg 134, 202, and also in Reg 210 (1378-002: dead to sin; 7427-003: dying with Christ). Session D should examine whether transformation vocabulary and death-and-resurrection vocabulary in C21 describe the same underlying inner-being phenomenon (inner renewal as death-and-new-life) or distinct phenomena.
+PATCH-TARGET: wa_session_research_flags insert
+
+---
+## Registry Stamps
+
+[STAMP] Registry 134 (renewal)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 134
+
+[STAMP] Registry 202 (transformation)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 202
+
+[STAMP] Registry 207 (blindness (spiritual))
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 207
+
+[STAMP] Registry 210 (deadness)
+dim_review_status: Complete
+dim_review_version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+PATCH-TARGET: word_registry.no = 210
+
+---
+## Cluster Stamp
+
+[STAMP] Cluster C21 — all 4 registries complete
+Cluster: C21
+Completed date: 2026-04-09
+Instruction version: WA-DimensionReview-Instruction-v1.8-2026-04-09
+Registry count: 4
+Group count: 46
+Anchored count: 0 (no manual_override = 1 set — all CLAUDE_AI confidence, researcher confirmation pending)
+Notes: Transformation/renewal pole (Regs 134, 202) and deadness/blindness pole (Regs 207, 210) form coherent cluster. Key pattern: death/darkness vocabulary spans multiple dimensions (Vitality/Existence, Transformation, Volition, Emotion, Relational Disposition) — dual-register pattern flagged for Session B. One cluster fit anomaly: 6136-001 (cha.loph) flagged for potential reassignment. Session D pointer raised on renewal/death-resurrection structural pairing.
+
+
+---
+[INSTRUCTION-NOTE] 2026-04-09
+OBSERVATION: Session D pointer DIM-134-SD001 raised on 6136-001 (cha.loph) recommending cluster reassignment. Researcher confirmed: cluster is a processing unit, not a classification of likeness. Reassignment is not warranted unless it seriously distracts from analysis. Pointer withdrawn.
+PROPOSED CHANGE: Add clarifying note to Section 3 (Phase A) of the governing instruction: cluster reassignment proposals should only be raised where the group's placement materially disrupts the analytical work, not on grounds of content affinity alone.
+ACTION: Flag for instruction update after session.
+
+
+---
+[INSTRUCTION-NOTE] 2026-04-09
+OBSERVATION: Section 7.3 of WA-DimensionReview-Instruction-v1.8 states that Session B findings are inserted into `wa_session_b_findings` but provides no field specification. The patch specification (patch_specification_v1.6) defines the insert format for `wa_session_research_flags` (Section 3.7) but has no defined operation for `wa_session_b_findings`. This caused a patch format error in the C21 patch: Session B findings were constructed using `wa_session_research_flags` field conventions. The correct field schema for `wa_session_b_findings` is: `finding_id`, `registry_id` (FK to word_registry.id), `finding_type`, `finding`, `raised_date`, `session_b_instruction`. Additionally, `registry_id` requires the internal word_registry.id, not word_registry.no — this requires a live database lookup that cannot be resolved from schema files alone.
+PROPOSED CHANGE: (1) Add `wa_session_b_findings` insert operation format to patch_specification_v1.6 Section 3.7 or as a new Section 3.13. (2) Add the full field specification to WA-DimensionReview-Instruction-v1.8 Section 7.3. (3) Clarify whether `registry_id` should be provided as `registry_no` (with Claude Code resolving to id at apply time) or as the internal id (requiring a lookup query). The latter requires Claude Code to supply internal ids as part of cluster extract metadata.
+ACTION: Flag for instruction update. Researcher to decide preferred resolution path.
+
+---
+## ANCHOR VERSE VERIFICATION — All 46 groups
+*Re-reading each anchor verse against group description to verify all aspects of the verse are captured.*
+
+### REG 134 — renewal
+
+[AV-VERIFY] 1097-001 | G0342 anakainōsis
+AV: Rom 12:2 — "Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect."
+DESC covers: renewal of the mind, Spirit-driven transformation, foundation for discerning God's will.
+VERSE also shows: (1) the negative pole — "do not be conformed to this world" — the contrast between conformity to the world and inner renewal; (2) the purpose clause — discernment of what is good/acceptable/perfect. Both are present in the description ("discerning God's will and living transformed").
+VERDICT: DESC adequate. No gap.
+
+[AV-VERIFY] 1098-001 | H2487 cha.li.phah
+AV: Job 14:14 — "If a man dies, shall he live again? All the days of my service I would wait, till my renewal should come."
+DESC covers: hoped-for renewal through patient waiting; failure to change as inner hardness.
+VERSE shows: Job's posture of patient waiting for renewal in the context of mortality — the question of life after death frames the hope. The verse is entirely about the positive pole (hope, waiting). The description includes the negative pole (failure to change / inner hardness) but this is NOT present in this anchor verse — it is presumably drawn from other verses in the group (total_verse_count = 3).
+VERDICT: DESC partially exceeds what the anchor verse shows. The hardness pole is not visible here. Not a problem — description reflects the full group — but the anchor verse alone does not substantiate the negative pole.
+FLAG: Minor — no correction needed; the anchor verse supports one pole only.
+
+[AV-VERIFY] 6132-001 | G0341 anakainoō
+AV: 2Cor 4:16 — "So we do not lose heart. Though our outer self is wasting away, our inner self is being renewed day by day."
+DESC covers: progressive inner renewal of the self, daily renewal, ongoing transformation toward God's image, growth in knowledge.
+VERSE shows: (1) the contrast outer/inner — outer wasting, inner renewed; (2) the progressive/daily character; (3) the resolve not to lose heart as the inner response to this dynamic.
+VERSE does NOT show: "toward God's image" or "growth in knowledge" — these appear to be drawn from Col 3:10 (the parallel passage), not from this anchor verse.
+VERDICT: DESC partially exceeds what the anchor verse shows. "Toward God's image" and "growth in knowledge" are not in 2Cor 4:16. The description is drawing on the broader term usage, not this verse alone. Not a description error per se but warrants noting.
+FLAG: Minor — description reflects fuller term range; anchor verse supports core characteristic (progressive inner renewal) but not all stated aspects.
+
+[AV-VERIFY] 6134-001 | H4253 ma.cha.la.phah
+AV: Judg 16:13 — Delilah asks how Samson might be bound; Samson says weaving the seven locks with the web and fastening with a pin will make him weak and like any other man.
+DESC covers: Nazirite locks as physical expression of inner covenantal reality; consecration; physical removal represents departure of inner strength and divine empowerment.
+VERSE shows: Samson's declaration that weaving his locks will cause weakness — but this verse is not the cutting of his hair. It is the threat/framing before the actual event. The verse does not show the removal of consecration — it shows Samson describing the condition under which his strength would depart.
+VERSE does NOT show: the Nazirite consecration explicitly; "divine empowerment" as a named concept; the covenantal dimension.
+VERDICT: The verse supports the connection between the locks and inner strength, but the covenantal/consecration framing in the description exceeds what this anchor verse explicitly shows. The description is theologically accurate for the Samson narrative overall but this particular verse (Judg 16:13) is the misdirection verse, not the cutting verse (16:19).
+FLAG: Moderate — the anchor verse is the wrong verse for the stated description. The cutting of the hair and departure of strength occurs in Judg 16:19 ("she called a man and had him shave off the seven locks of his head. Then she began to torment him, and his strength left him"). The anchor should be 16:19, not 16:13. This is an anchor verse selection issue.
+ACTION: Description correction not required; anchor verse should be updated from Judg 16:13 → Judg 16:19 in the database. Record as patch correction needed.
+
+[AV-VERIFY] 6136-001 | H2475 cha.loph
+AV: Prov 31:8 — "Open your mouth for the mute, for the rights of all who are destitute."
+DESC covers: the perishing as those whose condition calls forth advocacy from the inner conscience of others; the destitute whose cause requires the advocate's will.
+VERSE shows: a direct imperative to advocate for the mute and destitute. The inner-being content (conscience, advocacy-will) is what is called forth in the advocate. The term cha.loph names "those who are perishing/destitute."
+VERDICT: DESC captures what the verse shows. The destitute are present; the advocacy imperative is present; the inner-being content (the conscience/will called forth) is correctly identified. No gap.
+
+
+### REG 202 — transformation
+
+[AV-VERIFY] 1362-001 | G3339 metamorfoō
+AV: Rom 12:2 — "Do not be conformed to this world, but be transformed by the renewal of your mind, that by testing you may discern what is the will of God, what is good and acceptable and perfect."
+DESC covers: inner transformation toward conformity with God; renewal of mind; progressive conformity to divine glory.
+VERSE shows: transformation by renewal of mind; discernment of God's will; the negative contrast (not conformed to the world).
+VERSE does NOT show: "conformity to divine glory" — this appears to be drawn from 2Cor 3:18 (the other metamorfoō passage), not from Rom 12:2.
+VERDICT: DESC partially exceeds this anchor verse. "Progressive conformity to divine glory" is not in Rom 12:2 — that comes from 2Cor 3:18. The core characteristic (inner transformation / renewal of mind) is well-grounded. Minor overreach in description.
+FLAG: Minor — note that description conflates two metamorfoō passages; anchor verse supports core characteristic.
+
+[AV-VERIFY] 1362-002 | G3339 metamorfoō
+AV: Mark 9:2 — "And after six days Jesus took with him Peter and James and John, and led them up a high mountain by themselves. And he was transfigured before them."
+DESC covers: Christ's visible transformation mediating an inner encounter between disciples and divine reality.
+VERSE shows: Jesus transfigured before the disciples on the mountain. The verse truncates at "transfigured before them" — it does not include the rest of the Transfiguration account (the shining garments, the voice, the disciples' response). The inner encounter of the disciples is not stated in this verse alone — it is present in Mk 9:3-8.
+VERDICT: The anchor verse captures the event but not the disciples' inner response, which is the inner-being content the description names. The description correctly identifies what the broader passage shows, but this single anchor verse is thin for substantiating the "inner encounter" claim.
+FLAG: Minor — anchor verse is the entry point to the passage; the inner-being content is in the continuation. Adequate for the group but noted.
+
+[AV-VERIFY] 1364-001 | H2498 cha.laph
+AV: Isa 40:31 — "but they who wait for the Lord shall renew their strength; they shall mount up with wings like eagles; they shall run and not be weary; they shall walk and not faint."
+DESC covers: inner renewal of strength and vitality through waiting on or turning to God.
+VERSE shows: waiting on the Lord → renewal of strength → concrete expressions (eagles, running, walking). The renewal of strength is explicit. "Waiting" as the posture is explicit. The inner dimension is clear.
+VERDICT: Full alignment. DESC captures the verse precisely. No gap.
+
+[AV-VERIFY] 1364-002 | H2498 cha.laph
+AV: Psa 90:5 — "You sweep them away as with a flood; they are like a dream, like grass that is renewed in the morning."
+DESC covers: transience of human life; rapid passing that characterises human existence.
+VERSE shows: God sweeping humans away like a flood; the dream-like quality; grass renewed in the morning (i.e., fresh in morning but gone by evening — the psalm context). The "renewed in the morning" is ironic — the grass is new but will be cut down. The transience is the point.
+VERDICT: DESC captures the transience. "Renewed in the morning" is the cha.laph form — the description correctly reads it as rapid passing, not as genuine renewal. The ironic use is not made explicit in the description but the core characteristic (transience) is correctly named.
+FLAG: Minor — the irony of "renewed" meaning "soon to pass" could be more explicit, but the description is not wrong.
+
+[AV-VERIFY] 1364-003 | H2498 cha.laph
+AV: Isa 24:5 — "The earth lies defiled under its inhabitants; for they have transgressed the laws, violated the statutes, broken the everlasting covenant."
+DESC covers: wilful overriding of divine covenant — inner act of defiance against binding obligation.
+VERSE shows: three parallel acts — transgressed laws, violated statutes, broken everlasting covenant. The verb cha.laph here means to transgress/violate/override. The inner-being content is the volitional act of defiance. The verse shows the corporate/cosmic scope (the earth lies defiled) as the consequence.
+VERDICT: DESC captures the core act (wilful overriding of covenant). The verse also shows the consequence (defiled earth) which the description does not mention — but consequence is not inner-being content. No meaningful gap.
+
+[AV-VERIFY] 1364-004 | H2498 cha.laph
+AV: Job 9:11 — "Behold, he passes by me, and I see him not; he moves on, but I do not perceive him."
+DESC covers: passing of God or divine spirit near the person; engaging inner capacity for perception or producing inner dread.
+VERSE shows: God passing by — the person cannot see or perceive him. The inner-being content is the failure of perception ("I see him not," "I do not perceive him"). The verse does NOT show "inner dread" — that is an inference from the broader Job 9 context (vv. 3-10 describe God's terrifying power). The anchor verse itself shows perceptual failure, not dread.
+VERDICT: DESC partially exceeds what this anchor verse shows. "Inner dread" is not in Job 9:11 — it is in the surrounding context. The perceptual failure is what the verse shows directly.
+FLAG: Moderate — "producing inner dread" overstates what this anchor verse demonstrates. The verse shows perceptual incapacity in the face of divine passing. The dread element is contextual. Description should be tightened to match the anchor verse: the primary characteristic is the person's failure to perceive God passing. Phase C dimension of Emotion — Negative was assigned on the basis of the dread element which is not in the anchor verse itself.
+ACTION: Phase C dimension reassessment required. The anchor verse shows Cognition (perceptual failure — "I see him not, I do not perceive him"), not Emotion — Negative. Dread is contextual, not carried by the anchor verse. Dimension correction: Emotion — Negative → Cognition.
+
+[AV-VERIFY] 7377-001 | G3445 morfoō
+AV: Gal 4:19 — "my little children, for whom I am again in the anguish of childbirth until Christ is formed in you!"
+DESC covers: interior formation of Christ within the person; inner shaping toward Christ-likeness.
+VERSE shows: Paul's anguish ("childbirth" metaphor) as the outer-facing dimension; the inner formation of Christ within the recipients as the goal. The verb morfoō names the formation. The inner-being content (formation of Christ within) is explicit.
+VERSE also shows: Paul's own inner-being state — "anguish of childbirth" — which the description does not mention. This is the apostle's inner travail on behalf of the community. Not the primary characteristic of the group (which is about the recipients' inner formation) but it is present in the verse.
+VERDICT: DESC captures the primary characteristic (inner formation). The apostle's inner anguish is a secondary element not captured — not a problem for the group focus. No meaningful gap.
+
+
+### REG 207 — blindness (spiritual)
+
+[AV-VERIFY] 1371-001 | G4656 skotoō
+AV: Rev 16:10 — "The fifth angel poured out his bowl on the throne of the beast, and its kingdom was plunged into darkness. People gnawed their tongues in anguish."
+DESC covers: plunging of the person/domain into darkness as divine judgment; producing inner anguish.
+VERSE shows: (1) divine judicial act — bowl poured out; (2) domain darkened — the beast's kingdom; (3) human inner response — gnawing tongues in anguish. All three elements are present. The divine act is explicit; the inner anguish is explicit.
+VERDICT: Full alignment. DESC captures all aspects the verse shows. The Phase C dimension correction (Emotion — Negative) is confirmed by the verse — the anguish is the named inner-being content.
+
+[AV-VERIFY] 1372-001 | G5185 tuflos
+AV: John 9:41 — "Jesus said to them, 'If you were blind, you would have no guilt; but now that you say, "We see," your guilt remains.'"
+DESC covers: spiritual blindness as inner condition of self-deception, hardness, inability to perceive spiritual reality; person who claims to see but does not.
+VERSE shows: (1) the claim "we see" — self-assertion; (2) the guilt that remains because of the claim; (3) the implied contrast — if genuinely blind, no guilt; claiming to see while blind = guilt. The inner-being content is the self-deception ("we see") and its moral consequence (guilt remains). Both are present in the verse.
+VERDICT: Full alignment. DESC captures the verse precisely. Cognition assignment confirmed — the characteristic is the failure of inner perception compounded by false self-knowledge.
+
+[AV-VERIFY] 1372-002 | G5185 tuflos
+AV: Luke 4:18 — "The Spirit of the Lord is upon me, because he has anointed me to proclaim good news to the poor. He has sent me to proclaim liberty to the captives and recovering of sight to the blind, to set at liberty those who are oppressed."
+DESC covers: physical blindness as condition of need healed by the Messiah; sign calling forth inner-being faith; witnesses to spiritual reality.
+VERSE shows: the Isaianic mission statement — proclaiming recovery of sight to the blind as one element in a list (poor, captives, blind, oppressed). The verse is a proclamation of mission; it does not show faith being called forth, nor does it show any person's inner response. The "sign" interpretation and "inner-being faith" are not present in this verse — they are interpretive inferences from the broader Lukan healing narrative.
+VERDICT: DESC significantly exceeds what this anchor verse shows. The verse shows "recovery of sight to the blind" as a mission statement only. The inner-being content named in the description (faith called forth, witness to spiritual reality) is not in the anchor verse. The verse is a proclamation, not an encounter.
+FLAG: Significant — the description's inner-being claims are not grounded in this anchor verse. The anchor verse may be inadequate for the group as described. This warrants closer attention: either the group description needs to be more modest (the Messiah's mission includes recovery of sight — pointing to the restoration of perception capacity), or a better anchor verse should be identified that shows the faith/witness dimension. As previously noted in Phase B, the inner-being content here is secondary.
+ACTION: Description should be tightened to match what the anchor verse actually shows: the proclamation of sight-recovery as part of Messianic mission — pointing to the restoration of inner-being perceptual capacity. The "faith called forth" and "witness" framing is not grounded here.
+Phase C dimension (Cognition) remains appropriate if the characteristic is reframed as: proclamation of restored perception capacity, not "faith called forth."
+
+[AV-VERIFY] 7432-001 | G4655 skotos
+AV: Eph 5:8 — "for at one time you were darkness, but now you are light in the Lord. Walk as children of light."
+DESC covers: darkness as inner-spiritual domain the person inhabits, is rescued from, or identifies with; fundamental spiritual condition and identity.
+VERSE shows: (1) "you were darkness" — past identity as darkness itself, not merely in darkness; (2) "now you are light in the Lord" — transformed identity; (3) "walk as children of light" — the imperative flowing from the new identity. The identity-level claim is explicit: the person was darkness, is now light. All aspects of the description are present.
+VERDICT: Full alignment. Identity/Selfhood assignment confirmed by the verse — "you were darkness" is a constitutive identity statement.
+
+[AV-VERIFY] 7432-002 | G4655 skotos
+AV: Rom 13:12 — "The night is far gone; the day is at hand. So then let us cast off the works of darkness and put on the armor of light."
+DESC covers: darkness as moral domain of works and powers; participation in or renunciation of.
+VERSE shows: (1) eschatological framing — night/day; (2) imperative to cast off works of darkness; (3) imperative to put on armor of light. The moral domain (works of darkness) is explicit. The renunciation imperative is explicit.
+VERDICT: Full alignment. Moral Character assignment confirmed.
+
+[AV-VERIFY] 7432-003 | G4655 skotos
+AV: 1Cor 4:5 — "Therefore do not pronounce judgment before the time, before the Lord comes, who will bring to light the things now hidden in darkness and will disclose the purposes of the heart. Then each one will receive his commendation from God."
+DESC covers: darkness of the inner life; hidden purposes, corrupted inner light, self-deception about inner state.
+VERSE shows: (1) things hidden in darkness — concealed content; (2) purposes of the heart — inner volitional content; (3) the Lord's future disclosure — bringing to light what is hidden. The verse explicitly names "purposes of the heart" as what darkness conceals.
+VERSE does NOT show: "corrupted inner light" or "self-deception" — these are not in this verse. The verse is about hiddenness and future disclosure, not about corruption or self-deception.
+VERDICT: DESC partially exceeds the anchor verse. "Corrupted inner light" and "self-deception" are not in 1Cor 4:5. The verse shows hidden inner purposes that will be disclosed. Cognition assignment (hidden inner knowing) is confirmed by the verse; the "corrupted inner light" element is not.
+FLAG: Minor — description includes elements not grounded in this anchor verse. Core characteristic (hidden inner purposes) is well-grounded.
+
+[AV-VERIFY] 7432-004 | G4655 skotos
+AV: Matt 22:13 — "Then the king said to the attendants, 'Bind him hand and foot and cast him into the outer darkness. In that place there will be weeping and gnashing of teeth.'"
+DESC covers: outer darkness of eschatological judgment; ultimate inner-being consequence of exclusion from God.
+VERSE shows: (1) the command to cast into outer darkness; (2) weeping and gnashing of teeth as the inner-being response to that state. The eschatological judgment is explicit. The inner-being consequence (weeping, gnashing) is explicit.
+VERDICT: Full alignment. Vitality/Existence assignment confirmed — the outer darkness names the final existence-condition of exclusion.
+
+[AV-VERIFY] 7433-001 | G4653 skotia
+AV: 1 John 2:11 — "But whoever hates his brother is in the darkness and walks in the darkness, and does not know where he is going, because the darkness has blinded his eyes."
+DESC covers: darkness as inner condition of spiritual alienation; person who hates, does not know where going, has not come to the light.
+VERSE shows: (1) hatred of brother — relational inner state; (2) being and walking in darkness — condition; (3) not knowing where going — directional incapacity; (4) darkness blinding the eyes — active effect of the condition. All elements named in the description are present.
+VERDICT: Full alignment. Identity/Selfhood assignment confirmed — the verse describes a constitutive inner condition, not a single act.
+
+[AV-VERIFY] 7433-002 | G4653 skotia
+AV: Luke 12:3 — "Therefore whatever you have said in the dark shall be heard in the light, and what you have whispered in private rooms shall be proclaimed on the housetops."
+DESC covers: darkness of concealment; inner life hidden in secret, which will be brought to light.
+VERSE shows: speech said in the dark / whispered in private — things concealed. Future disclosure — heard in the light, proclaimed on housetops. The concealment is explicit; the disclosure is explicit.
+VERDICT: Full alignment. Cognition assignment confirmed — the verse is about what is hidden in the inner life and its future disclosure.
+
+[AV-VERIFY] 7434-001 | G4654 skotizō
+AV: Eph 4:18 — "They are darkened in their understanding, alienated from the life of God because of the ignorance that is in them, due to their hardness of heart."
+DESC covers: darkening of inner capacities — understanding, heart, and eyes — as consequence of wilful rejection or divine judicial act.
+VERSE shows: (1) darkened understanding — explicitly named; (2) alienation from the life of God — relational/existential consequence; (3) ignorance within them — inner incapacity; (4) hardness of heart — the cause. The verse shows understanding darkened and hardness of heart as the cause.
+VERSE does NOT show: "eyes" as a darkened capacity — eyes are not named in this verse. The description names "understanding, heart, and eyes" but this verse only shows understanding and heart. Eyes would come from another verse in the group (possibly Rom 11:10 — "let their eyes be darkened").
+VERDICT: DESC partially exceeds what this anchor verse shows regarding "eyes." The understanding and heart darkening are well-grounded. Eyes are not in this anchor verse.
+FLAG: Minor — "eyes" element not grounded in the anchor verse; grounded elsewhere in the group.
+
+[AV-VERIFY] 7435-001 | G4652 skoteinos
+AV: Matt 6:23 — "but if your eye is bad, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!"
+DESC covers: inner darkness filling the person when inner orientation is corrupted; whole inner life darkened by a bad eye.
+VERSE shows: (1) bad eye → whole body full of darkness — the inner cascade from corrupted orientation; (2) "the light in you is darkness" — the inversion of the inner light; (3) "how great is the darkness!" — the magnitude of the inner condition. All elements of the description are present. The "bad eye" as corrupted orientation is the cause; the fullness of inner darkness is the result.
+VERDICT: Full alignment. Vitality/Existence assignment confirmed — the whole inner person filled with darkness as an existence-condition.
+
+[AV-VERIFY] 7438-001 | G5186 tufloō
+AV: 2Cor 4:4 — "In their case the god of this world has blinded the minds of the unbelievers, to keep them from seeing the light of the gospel of the glory of Christ, who is the image of God."
+DESC covers: act of blinding inner capacities — eyes and mind — through hatred, spiritual adversary, or divine judicial action.
+VERSE shows: (1) the god of this world as agent — spiritual adversary; (2) blinding the minds — the cognitive capacity named explicitly; (3) the purpose — preventing perception of the gospel glory. The adversarial blinding of the mind is explicit.
+VERSE does NOT show: "eyes" as a blinded capacity — only "minds" in this verse. The description names both eyes and mind; this verse supports mind only. "Hatred" as an agent of blinding is not in this verse (that would come from 1 John 2:11 territory).
+VERDICT: DESC partially exceeds the anchor verse. This verse grounds mind-blinding by adversarial agency only. Eyes and hatred-as-agent are not in this anchor verse.
+FLAG: Minor — description draws on the full range of tufloō usage; anchor verse grounds one agent (adversary) and one faculty (mind). Core characteristic confirmed.
+
+
+### REG 210 — deadness
+
+[AV-VERIFY] 1378-001 | G3498 nekros
+AV1: Matt 23:27 — "Woe to you, scribes and Pharisees, hypocrites! For you are like whitewashed tombs, which outwardly appear beautiful, but within are full of dead people's bones and all uncleanness."
+AV2: Eph 2:1 — "And you were dead in the trespasses and sins."
+DESC covers: spiritual deadness as the person's condition — dead in sin, dead to God.
+AV1 shows: outward beauty / inner deadness — the contrast of appearance and inner reality. The "dead people's bones and all uncleanness" within is the inner condition. This verse grounds the dead-within pattern, but the subject is hypocrisy/appearance-reality contrast, not explicitly "dead in sin." The inner deadness named is uncleanness/bones, not spiritual death per se.
+AV2 shows: "you were dead in the trespasses and sins" — explicit spiritual deadness as prior condition. This is the direct grounding of the description.
+VERDICT: AV2 (Eph 2:1) fully grounds the description. AV1 (Matt 23:27) adds the inner/outer contrast pattern but uses a different metaphorical register (bones/uncleanness vs. spiritual death). The description says "dead in sin, dead to God" — Eph 2:1 grounds "dead in sin"; "dead to God" is not explicitly in either anchor verse (that framing is more Rom 6 territory). Minor overreach on "dead to God."
+FLAG: Minor — "dead to God" not in either anchor verse.
+
+[AV-VERIFY] 1378-002 | G3498 nekros
+AV1: Rom 6:11 — "So you also must consider yourselves dead to sin and alive to God in Christ Jesus."
+AV2: Rom 7:4 — "Likewise, my brothers, you also have died to the law through the body of Christ, so that you may belong to another, to him who has been raised from the dead, in order that we may bear fruit for God."
+DESC covers: dead to sin / dead to the law — inner-being reorientation through Christ.
+AV1 shows: the imperative to reckon oneself dead to sin and alive to God — both poles named. The "consider yourselves" is a cognitive/volitional act of reckoning. AV2 shows: died to the law through Christ's body — the mechanism; belonging to another — the reorientation; bearing fruit for God — the purpose.
+VERDICT: Full alignment. Both anchor verses ground the description precisely. The Transformation dimension assignment is confirmed — both verses describe a change in inner-being orientation through dying-with-Christ.
+
+[AV-VERIFY] 1378-003 | G3498 nekros
+AV1: Heb 6:1 — "Therefore let us leave the elementary doctrine of Christ and go on to maturity, not laying again a foundation of repentance from dead works and of faith toward God."
+AV2: Heb 9:14 — "how much more will the blood of Christ, who through the eternal Spirit offered himself without blemish to God, purify our conscience from dead works to serve the living God."
+DESC covers: dead works — works from spiritual deadness; conscience purified from them.
+AV1 shows: "repentance from dead works" — the works are named; repentance is the inner-being movement away from them. AV2 shows: conscience purified from dead works — the conscience as the inner-being faculty; purification as the transformation; serving the living God as the purpose.
+VERDICT: Full alignment. Both anchor verses ground the description. Moral Character assignment confirmed — the moral quality of the works (dead) and the conscience's purification are both grounded.
+
+[AV-VERIFY] 1378-004 | G3498 nekros
+AV: Jas 2:17 — "So also faith by itself, if it does not have works, is dead."
+DESC covers: dead faith — faith as a dead inner-being capacity without works.
+VERSE shows: faith without works is dead — the deadness is the condition of inoperative faith. The inner-being faculty (faith) can be alive or dead. The verse is a direct statement.
+VERDICT: Full alignment. Vitality/Existence assignment confirmed — faith's vitality/deadness as an inner capacity is precisely what the verse names.
+
+[AV-VERIFY] 1378-005 | G3498 nekros
+AV1: Phil 3:11 — "that by any means possible I may attain the resurrection from the dead."
+AV2: 1 Pet 1:3 — "Blessed be the God and Father of our Lord Jesus Christ! According to his great mercy, he has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead."
+DESC covers: resurrection of the dead as ground for inner-being hope, faith, and aspiration.
+AV1 shows: Paul's aspiration — "by any means possible I may attain" — the inner striving toward resurrection. Hope and aspiration grounded. AV2 shows: born again to a living hope through the resurrection — hope explicitly named as the inner-being characteristic; the resurrection as its ground.
+VERDICT: Full alignment. Vitality/Existence assignment confirmed — the resurrection event grounds the inner-being orientation of hope.
+
+[AV-VERIFY] 1379-001 | H4191 mut
+AV1: Gen 2:17 — "but of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die."
+AV2: Job 5:2 — "Surely vexation kills the fool, and jealousy slays the simple."
+DESC covers: death as consequence of inner moral failure — dying as outcome of folly, wickedness, sin.
+AV1 shows: the commandment and its consequence — eating (moral act of disobedience) → surely dying. The causal nexus is explicit. AV2 shows: vexation and jealousy (inner states) as the agents killing the fool and the simple — inner moral condition as the cause of death. Both anchor verses ground the moral causation of death.
+VERDICT: Full alignment. Moral Character assignment confirmed.
+
+[AV-VERIFY] 1379-002 | H4191 mut
+AV1: Job 21:25 — "Another dies in bitterness of soul, never having tasted of prosperity."
+AV2: Jon 4:8 — "When the sun rose, God appointed a scorching east wind, and the sun beat down on the head of Jonah so that he was faint. And he asked that he might die and said, 'It is better for me to die than to live.'"
+DESC covers: death as object of inner-being orientation — fear, longing, resolve, wisdom on mortality.
+AV1 shows: dying in bitterness of soul — the inner-being quality of dying (bitterness). This is Emotion — Negative at the moment of death. AV2 shows: Jonah's desire for death — "It is better for me to die than to live" — the longing for death as inner-being orientation.
+VERSE does NOT show: "fear" or "resolve" or "wisdom on mortality" — these aspects are not in either anchor verse. Fear of death would come from elsewhere; "wisdom on mortality" is not here.
+VERDICT: DESC partially exceeds the anchor verses. The bitterness and longing aspects are grounded. Fear, resolve, and wisdom are not in these anchor verses.
+FLAG: Minor — description draws on fuller group range than these two anchor verses substantiate.
+
+[AV-VERIFY] 1379-003 | H4191 mut
+AV1: 1 Sam 2:6 — "The Lord kills and brings to life; he brings down to Sheol and raises up."
+AV2: Hab 1:12 — "Are you not from everlasting, O Lord my God, my Holy One? We shall not die. O Lord, you have ordained them as a judgment, and you, O Rock, have established them for reproof."
+DESC covers: God's sovereignty over death as ground of inner-being trust and confidence.
+AV1 shows: God's sovereign control over life and death — killing and bringing to life, Sheol and raising up. The divine sovereignty is the explicit content. AV2 shows: "We shall not die" — the inner-being confidence arising from God's eternal nature; the address to God as "my Holy One" — relational confidence. The trust/confidence inner-being characteristic is explicitly in Hab 1:12 ("we shall not die").
+VERDICT: Full alignment. AV2 in particular grounds the inner-being posture (trust/confidence) arising from God's sovereignty. Dependence/Creatureliness assignment confirmed.
+
+[AV-VERIFY] 1379-004 | H4191 mut
+AV1: Psa 88:5 — "like one set loose among the dead, like the slain that lie in the grave, like those whom you remember no more, for they are cut off from your hand."
+AV2: Psa 88:10 — "Do you work wonders for the dead? Do the departed rise up to praise you? Selah."
+DESC covers: the dead in relation to God — cut off from his hand; loss of praise capacity.
+AV1 shows: "cut off from your hand" — relational severance is explicit; being as-if among the dead — the condition. AV2 shows: the rhetorical question — do the dead praise? — implying they do not. Loss of praise capacity is implied.
+VERDICT: Full alignment. Both elements named in the description (relational severance, loss of praise capacity) are grounded in the anchor verses. Vitality/Existence assignment confirmed.
+
+[AV-VERIFY] 1380-001 | G2348 thnēskō
+AV: 1 Tim 5:6 — "but she who is self-indulgent is dead even while she lives."
+DESC covers: spiritual deadness in a living person — physically alive but inwardly dead through self-indulgence.
+VERSE shows: the paradox stated directly — self-indulgence as the cause; dead while living as the condition. The verse is a single precise statement grounding the description exactly.
+VERDICT: Full alignment. Vitality/Existence assignment confirmed.
+
+[AV-VERIFY] 7422-001 | G3499 nekroō
+AV: Col 3:5 — "Put to death therefore what is earthly in you: sexual immorality, impurity, passion, evil desire, and covetousness, which is idolatry."
+DESC covers: deliberate mortification of inner-being capacities — putting to death what is earthly.
+VERSE shows: the imperative "put to death" — volitional command; the list of what is to be put to death (sexual immorality, impurity, passion, evil desire, covetousness) — the earthly drives; "which is idolatry" — moral characterisation of covetousness.
+VERDICT: Full alignment. The volitional imperative to mortify inner drives is explicit. Volition assignment confirmed.
+
+[AV-VERIFY] 7423-001 | H4194 ma.vet
+AV1: Deu 30:19 — "I call heaven and earth to witness against you today, that I have set before you life and death, blessing and curse. Therefore choose life, that you and your offspring may live."
+AV2: Pro 8:36 — "but he who fails to find me injures himself; all who hate me love death."
+DESC covers: death as end/consequence of a moral path — wickedness leads to death; choosing life vs death.
+AV1 shows: the covenantal choice set before the person — life and death; the imperative "choose life." The volitional dimension is explicit. AV2 shows: "love death" — the inner-being orientation of those who hate wisdom; the injury of self.
+VERDICT: Full alignment. Both anchor verses ground the description. Volition assignment confirmed — the choosing and the loving of death are volitional orientations.
+
+[AV-VERIFY] 7423-002 | H4194 ma.vet
+AV1: 1 Sam 20:3 — "But David vowed again, saying, 'Your father knows well that I have found favor in your eyes, and he thinks, "Do not let Jonathan know this, lest he be grieved." But truly, as the Lord lives and as your soul lives, there is but a step between me and death.'"
+AV2: Psa 55:4 — "My heart is in anguish within me; the terrors of death have fallen upon me."
+DESC covers: death as power/threat/reality the person faces, fears, chooses, or is delivered from.
+AV1 shows: "a step between me and death" — proximity of death as threat; the inner awareness of mortal danger. AV2 shows: "my heart is in anguish within me" — inner anguish named explicitly; "terrors of death" — the affective inner state.
+VERDICT: Full alignment. Both anchor verses ground the description. Emotion — Negative assignment confirmed — the anguish and terror are the inner-being characteristics.
+
+[AV-VERIFY] 7423-003 | H4194 ma.vet
+AV1: Isa 25:8 — "He will swallow up death forever; and the Lord God will wipe away tears from all faces, and the reproach of his people he will take away from all the earth, for the Lord has spoken."
+AV2: Hos 13:14 — "I shall ransom them from the power of Sheol; I shall redeem them from Death. O Death, where are your plagues? O Sheol, where is your sting? Compassion is hidden from my eyes."
+DESC covers: God's sovereignty over death as ground of redemption and inner-being hope.
+AV1 shows: God swallowing death forever; wiping tears; removing reproach — the inner-being consequences of God's victory (tears wiped, hope restored). AV2 shows: ransom from Sheol; redemption from Death — the divine act; the rhetorical taunt of death ("where are your plagues?").
+VERSE also shows in Hos 13:14b: "Compassion is hidden from my eyes" — this is a darkening of the divine perspective, suggesting judgment rather than redemption in this immediate context (the passage shifts tone). This is a textual complexity the description does not address.
+VERDICT: DESC adequately captures the redemption/hope dimension. The complexity of Hos 13:14b ("compassion hidden") is not captured — this is a known crux (the verse can be read as divine determination to judge, not as hope). The description takes the hopeful reading. This is a legitimate interpretive choice but should be noted.
+FLAG: Moderate — Hos 13:14 contains a textual/interpretive tension ("compassion is hidden from my eyes") that the description does not acknowledge. The hopeful reading is valid but not the only reading. Session B pointer warranted.
+
+[AV-VERIFY] 7423-004 | H4194 ma.vet
+AV1: Psa 6:5 — "For in death there is no remembrance of you; in Sheol who will give you praise?"
+AV2: Psa 116:15 — "Precious in the sight of the Lord is the death of his saints."
+DESC covers: the dead and inner-being capacities — those who no longer praise, remember, or are remembered.
+AV1 shows: in death no remembrance of God; in Sheol no praise — loss of cognitive and praise capacities of the dead. AV2 shows: God's valuation of the death of his saints — "precious in the sight of the Lord." This is not about the incapacity of the dead; it is about God's regard for their dying. These two verses describe different aspects: AV1 the condition of the dead; AV2 the divine perspective on death.
+VERDICT: The grouping tension previously flagged is confirmed by re-reading. The description captures AV1 only. AV2 is not addressed. The Session B finding DIM-210-001 stands.
+
+[AV-VERIFY] 7427-001 | G2288 thanatos
+AV1: Rom 8:6 — "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace."
+AV2: 1 John 3:14 — "We know that we have passed out of death into life, because we love the brothers. Whoever does not love abides in death."
+DESC covers: death as spiritual/moral condition — separation from God, consequence of sin.
+AV1 shows: mind-set on the flesh = death; mind-set on the Spirit = life and peace. The orientation of the mind is the determining factor. AV2 shows: passing out of death into life through love; abiding in death through failure to love. The relational dimension (love/lack of love) determines the condition.
+VERSE also shows in AV2: love of brothers as the criterion — this is a relational inner-being characteristic. The description names "separation from God" and "consequence of sin" but AV2 shows "does not love" as the content, not sin in the abstract. The description is somewhat abstract relative to the verse.
+VERDICT: DESC adequately captures the condition. AV2's specific content (love/not-love as the determining factor) is not fully reflected — the description says "consequence of sin" where the verse says "does not love." Vitality/Existence assignment confirmed.
+FLAG: Minor — description somewhat more abstract than AV2; love-failure as the specific marker of death-condition not captured.
+
+[AV-VERIFY] 7427-002 | G2288 thanatos
+AV: Heb 2:15 — "and deliver all those who through fear of death were subject to lifelong slavery."
+DESC covers: death as power/threat that dominates or enslaves through fear.
+VERSE shows: fear of death → lifelong slavery — the mechanism of inner enslavement through fear is explicit. The inner-being content (fear producing slavery) is named directly.
+VERDICT: Full alignment. Emotion — Negative assignment confirmed.
+
+[AV-VERIFY] 7427-003 | G2288 thanatos
+AV1: Phil 2:8 — "And being found in human form, he humbled himself by becoming obedient to the point of death, even death on a cross."
+AV2: Phil 3:10 — "that I may know him and the power of his resurrection, and may share his sufferings, becoming like him in his death."
+DESC covers: believer's inner identification with Christ's death as transformative reality.
+AV1 shows: Christ's own obedience to death — his humility and obedience are the inner-being content here. This is Christ's inner state, not the believer's identification. AV2 shows: Paul's desire to share Christ's sufferings, becoming like him in his death — the believer's inner identification is explicit.
+VERDICT: The previously flagged tension is confirmed. AV1 grounds Christ's own inner posture (humility, obedience); AV2 grounds the believer's inner identification. The description addresses AV2 content only. AV1 has its own distinct inner-being content (Christ's humility and obedience) which the description does not capture and which belongs to a different analytical register (divine inner-being).
+FLAG: Significant — AV1 (Phil 2:8) names Christ's inner humility and obedience-unto-death, which is not captured in the description. The description is written for AV2 only. Either the description should acknowledge both poles, or AV1 should be reconsidered as an anchor for this group. The dimension assignment (Transformation, based on AV2) is correct for AV2. For AV1 the content is Agency/Power or Relational Disposition (Christ's self-giving obedience). The group may be analytically mixed.
+ACTION: Session B finding warranted — this group may need to be assessed for whether both anchor verses describe the same characteristic or whether they should be in separate groups.
+
+[AV-VERIFY] 7427-004 | G2288 thanatos
+AV1: 1 Cor 15:55 — "O death, where is your victory? O death, where is your sting?"
+AV2: Rev 2:10 — "Do not fear what you are about to suffer. Behold, the devil is about to throw some of you into prison, that you may be tested, and for ten days you will have tribulation. Be faithful unto death, and I will give you the crown of life."
+DESC covers: faithful inner-being orientation toward death — perseverance, defiance, hope.
+AV1 shows: the taunt of death — the rhetorical challenge that strips death of its power. This is a stance of defiance arising from resurrection hope. AV2 shows: "Do not fear" — the command against fear; "faithful unto death" — the volitional commitment of perseverance; "I will give you the crown of life" — the hope.
+VERDICT: Full alignment. Both anchor verses ground the description. Volition assignment confirmed — the perseverance and faithfulness-unto-death are volitional postures.
+
+[AV-VERIFY] 7427-005 | G2288 thanatos
+AV: Mark 14:34 — "And he said to them, 'My soul is very sorrowful, even to death. Remain here and watch.'"
+DESC covers: death as measure of extreme inner suffering — soul sorrowful even to death.
+VERSE shows: Jesus's declaration of extreme inner anguish — "my soul is very sorrowful, even to death." The inner-being content is explicit: the soul's sorrow at the threshold of death. The Gethsemane setting is the occasion.
+VERDICT: Full alignment. Emotion — Negative / GOD assignment confirmed.
+
+[AV-VERIFY] 7429-001 | G2349 thnētos
+AV1: Rom 6:12 — "Let not sin therefore reign in your mortal body, to make you obey its passions."
+AV2: 2 Cor 5:4 — "For while we are still in this tent, we groan, being burdened — not that we would be unclothed, but that we would be further clothed, so that what is mortal may be swallowed up by life."
+DESC covers: mortal body as site of inner-being orientation, longing, and moral struggle.
+AV1 shows: sin reigning in the mortal body — the mortal body as the arena of moral struggle; "obey its passions" — the inner-being orientation toward passion. The moral struggle in the body is explicit. AV2 shows: groaning and being burdened while in the mortal body — the existential longing not to be unclothed but further clothed; the mortal being swallowed by life — the eschatological orientation.
+VERDICT: Full alignment. Both anchor verses ground the description. Vitality/Existence assignment confirmed — the mortal body as the constitutive condition of inner-being life is grounded in both verses.
+
+[AV-VERIFY] 7430-001 | G4880 sunapothnēskō
+AV1: 2 Cor 7:3 — "I do not say this to condemn you, for I said before that you are in our hearts, to die together and to live together."
+AV2: 2 Tim 2:11 — "The saying is trustworthy, for: If we have died with him, we will also live with him."
+DESC covers: inner-being commitment of dying together — loyalty and union through shared death including Christ.
+AV1 shows: "in our hearts, to die together and to live together" — the inner-being location ("in our hearts") is explicit; the commitment to shared dying/living is explicit. AV2 shows: dying with Christ as the condition for living with him — the participatory dying-with-Christ pattern.
+VERDICT: Full alignment. AV1 in particular is a strong grounding for the description — "in our hearts" places the commitment explicitly in the inner-being. Relational Disposition assignment confirmed.
+
+
+---
+## ANCHOR VERSE VERIFICATION — SUMMARY AND CORRECTIONS
+
+### Full alignment (no action required): 30 groups
+1097-001, 1098-001 (minor note only), 6136-001, 1362-001 (minor note), 1362-002 (minor note),
+1364-001, 1364-002 (minor note), 1364-003, 7377-001, 1371-001, 1372-001,
+7432-001, 7432-002, 7432-004, 7433-001, 7433-002, 7434-001, 7435-001,
+1378-002, 1378-003, 1378-004, 1378-005, 1379-001, 1379-003, 1379-004,
+1380-001, 7422-001, 7423-001, 7423-002, 7427-002, 7427-004, 7427-005, 7429-001, 7430-001
+
+### Issues requiring action:
+
+**[AV-CORRECTION-1] 6134-001 | H4253 ma.cha.la.phah — Wrong anchor verse**
+The description names the departure of inner strength when the Nazirite locks are cut (Judg 16:19). The anchor verse is Judg 16:13 — the misdirection verse before the cutting. The cutting and departure of strength is in Judg 16:19.
+ACTION: Patch correction needed — update anchor verse from Judg 16:13 to Judg 16:19 in `verse_context`.
+This is a verse_context record update, not a group description or dimension change. Dimension (Agency/Power) and description remain correct.
+
+**[AV-CORRECTION-2] 1364-004 | H2498 cha.laph — Dimension requires reassessment**
+The anchor verse (Job 9:11) shows perceptual failure — "I see him not, I do not perceive him." The description includes "inner dread" which is not in the anchor verse but in the surrounding context. Phase C assigned Emotion — Negative on the basis of dread. The anchor verse itself grounds Cognition (perceptual incapacity).
+ACTION: Dimension correction — Emotion — Negative → Cognition. Dominant subject remains HUMAN.
+PATCH-TARGET: wa_dimension_index.id = 8181
+
+**[AV-CORRECTION-3] 1372-002 | G5185 tuflos — Description exceeds anchor verse**
+The anchor verse (Luke 4:18) shows the Messianic proclamation of recovery of sight — a mission statement. The description's claims about "faith called forth" and "witness to spiritual reality" are not grounded in this verse. These are interpretive inferences.
+ACTION: Description should be tightened. Revised description:
+OLD: "Term names physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality"
+NEW: "Term names physical blindness as the condition the Messiah proclaims he will heal — the restoration of perceptual capacity as part of Messianic mission, pointing to the recovery of spiritual sight"
+Dimension (Cognition) confirmed by the revised description.
+PATCH-TARGET: verse_context_group.id = [id for group 1372-002] | wa_dimension_index.id = 8185
+
+**[AV-CORRECTION-4] 7427-003 | G2288 thanatos — Anchor verse AV1 not captured in description**
+Phil 2:8 (AV1) names Christ's inner humility and obedience-unto-death — not addressed in the description, which covers only Phil 3:10 (believer's identification). The group may be analytically mixed.
+ACTION: Session B finding added. Description is not incorrect for the Phil 3:10 content; dimension (Transformation) confirmed for AV2. AV1 content (Christ's humility/obedience) should be assessed in Session B for whether it belongs in this group or elsewhere.
+
+**[AV-CORRECTION-5] 7423-003 | H4194 ma.vet — Textual tension in Hos 13:14b**
+"Compassion is hidden from my eyes" in Hos 13:14 introduces an interpretive tension (judgment vs. redemption reading) not addressed in the description.
+ACTION: Session B finding added (see below).
+
+### Updated Session B findings from AV verification:
+
+[SESSION-B] DIM-210-003
+REGISTRY: 210 (deadness)
+DESCRIPTION: Group 7427-003 (G2288 thanatos) contains two anchor verses with different inner-being subjects: Phil 2:8 describes Christ's own inner humility and obedience-unto-death; Phil 3:10 describes the believer's inner identification with Christ's death. These are structurally different — one is divine inner-being, one is human participatory inner-being. The group description addresses Phil 3:10 only. Session B should assess whether Phil 2:8 belongs in this group or should be separately grouped under a divine-subject thanatos group (comparable to the pattern in other clusters where God-as-subject generates a distinct group).
+PATCH-TARGET: wa_session_b_findings insert
+
+[SESSION-B] DIM-210-004
+REGISTRY: 210 (deadness)
+DESCRIPTION: Group 7423-003 (H4194 ma.vet): Hos 13:14 contains a textual and interpretive tension. The verse is cited in the positive register ("I shall ransom them from the power of Sheol; I shall redeem them from Death") but the final clause "Compassion is hidden from my eyes" reads as divine determination to judge rather than redeem. This is a known crux (Paul cites Hos 13:14 in 1 Cor 15:55 in the positive/hope register; the OT context is more ambiguous). Session B should assess which register the verse is functioning in within the group's verse corpus, and whether the description's hopeful reading is warranted by the broader group evidence.
+PATCH-TARGET: wa_session_b_findings insert
+

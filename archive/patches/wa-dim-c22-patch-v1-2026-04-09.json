@@ -1,0 +1,1688 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260409-DIMREVIEW-C22-V1",
+    "cluster": "C22",
+    "produced_date": "2026-04-09",
+    "produced_by": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "observations_log": "wa-dim-c22-observations-v1.1-2026-04-09.md",
+    "session_b_status": null,
+    "description": "Dimension review patch — C22: 85 groups across 7 registries (Reg 3 ambition, Reg 20 character, Reg 27 consciousness, Reg 58 experience, Reg 63 foolishness, Reg 129 recognition, Reg 206 vulnerability). 85 dimension updates, 4 Session B findings, 4 Session D pointers, 7 registry stamps, 1 cluster stamp. Total operations: 101"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6245
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Hospitality as leadership character qualification — stable inner orientation of welcome. Previously UNCLASSIFIED.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1582-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6246
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Emotion — Positive. Primary content is relational orientation of willing welcome. AV note: description infers joy; verse names only absence of grumbling.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1582-002 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6244
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG Relational Disposition confirmed. Love for strangers as inner orientation expressed in conduct.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1585-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6242
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Relational Disposition confirmed. Benevolent inner orientation toward others.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1586-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6243
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Relational Disposition confirmed. Self-love as inverted relational orientation — disposition turned self-ward.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1587-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6249
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Relational Disposition confirmed. Inner orientation of kindly consideration toward others.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1589-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6241
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Self-seeking rivalry as inner disposition — heart oriented toward self-promotion. In-heart location confirmed by James 3:14.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "19-001 — ambition: Relational Disposition"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6239
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Positive inner stimulation of motivation — provoking another to greater volitional response. Property term; characteristic served is motivational activation.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4556-001 — ambition: Volition"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6240
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Agency / Power. Characteristic served is the child inner state of discouragement (athumeō). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4556-002 — ambition: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6247
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Inner aspiration toward pleasing God — will purposively directed toward divine approval. The God-ward direction is the content of the volition, not a dual-subject characteristic.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "63-001 — ambition: Volition"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6248
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Vitality / Existence. Inner aspiration toward quality of personal life — the person purposing a specific mode of existence. Not Vitality/Existence.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "63-002 — ambition: Volition"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6513
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Moral and spiritual discernment — inner act of distinguishing what is good and pleasing to God. Both AVs confirm cognitive-moral act.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4841-001 — character: Cognition"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6514
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Process by which character is tested and proven — trial disclosing genuine inner quality. Testing discloses; does not create. Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4841-002 — character: Moral Character"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6517
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Person whose inner character has been proved genuine through testing — approved by God. Both AVs confirm proved inner character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4842-001 — character: Moral Character"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6516
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG Transformation confirmed. Testing-process as instrument producing inner transformation (faith tested → steadfastness produced).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4843-001 — character: Transformation"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6515
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Volition. Proven character emerging from testing — demonstrable inner quality revealed through trial. Both AVs confirm. Not Volition.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "728-001 — character: Moral Character"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7104
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Vitality / Existence. Quality of faith as genuinely operative — actively working, producing inner fruit. Agency/Power.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4517-001 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7105
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Vitality / Existence. Word of God as actively operative in the inner being — penetrating and discerning (Heb 4:12). Agency/Power. Dominant subject GOD. One of the most comprehensive inner-being texts in the NT.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4517-002 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7103
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Agency / Power confirmed. Divinely produced inner-operative activities — expressions of God's power active through persons.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4518-001 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7106
+      },
+      "set": {
+        "dimension": "Theological / Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Theophanic appearing of God — divine self-disclosure constituting the encounter. Theological/Divine-Human. AV note: Gen 18:1 alone is a thin anchor; inner-being impact confirmed by Gen 12:7 and wider Mamre narrative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-001 — experience: Theological / Divine-Human"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7107
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed with revised dominant subject GOD. Divine seeing of inner moral life — God's perception penetrating to thoughts, intentions, heart. Gen 6:5 grounds accountability; Gen 7:1 grounds compassion.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-002 — experience: Cognition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7108
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Emotion — Positive. Anchor evidence: Gen 3:6 (desire leading to Fall) and Job 32:5 (burning anger). Emotion — Negative on anchor basis. Note: group description covers full range of activations; dimension assigned on anchor verse evidence.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-003 — experience: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7109
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG Cognition confirmed. Spiritual blindness — seeing without inner perception; divinely-imposed failure of inner comprehension. Both AVs (Isa 6:9-10) confirm comprehensive faculty blindness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-004 — experience: Cognition"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7110
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Emotion — Negative. Moral discipline of deliberate not-seeing — act of holiness, honour, or inner purity. Gen 9:23 grounds honour; Isa 33:15 grounds holiness/purity. Both AVs together fully confirm description.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-005 — experience: Moral Character"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7111
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Moral Character. Seeing God or divine glory as transforming inner-being encounter. Job 42:5 = transformation pivot; Isa 6:1 = constitutive prophetic call-encounter. Both AVs confirm Transformation.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-006 — experience: Transformation"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7112
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Dependence / Creatureliness confirmed. Seeing as act of faith — looking in trust, receiving divine provision through seeing. Gen 22:14 (Yhwh-Yireh) and Num 21:8 (bronze serpent) together ground description.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-007 — experience: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7113
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Prophetic or Spirit-enabled seeing — divinely-given perceptual capacity for what is not physically present. Both AVs confirm.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-008 — experience: Cognition"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7114
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Moral Character confirmed. Seeing as moral witness and inner obligation — conscience activated by perception of need or failure. Isa 58:7 grounds act-obligation; Hab 1:3 grounds moral witness-anguish.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-009 — experience: Moral Character"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7115
+      },
+      "set": {
+        "dimension": "Theological / Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Relational Disposition. SIGNIFICANT anchor verse mismatch: neither AV grounds the description. Gen 1:31 = divine evaluative seeing of creation; Gen 9:22 = morally charged human seeing. Description content drawn entirely from other group verses. LOW CONFIDENCE. Session B finding DIM-58-002 raised for full verse list review.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "858-010 — experience: Theological / Divine-Human"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7100
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Vitality / Existence. Divine power operative within persons — God working in inner life. Phil 2:13 confirms God works to will and to work. Agency/Power dominant subject GOD.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "859-001 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7101
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "UNSEEN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Vitality / Existence. Corrupting or hostile power operative in persons — sinful passion (Rom 7:5) and hostile spirit (Eph 2:2). Dominant subject UNSEEN.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "859-002 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7102
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Relational Disposition. Faith, love, prayer as operative inner-being forces. Gal 5:6 and Jam 5:16 both confirm. Agency/Power dominant subject HUMAN.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "859-003 — experience: Agency / Power"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7251
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG Transformation confirmed. Inner transformation into folly — becoming foolish through suppression of truth (Rom 1:22).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4469-001 — foolishness: Transformation"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7252
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Loss of distinctive inner character — becoming flat/flavourless (Matt 5:13: salt losing taste). Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "4469-002 — foolishness: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7266
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Folly as observed inner-opposite of wisdom — condition the searching mind investigates.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5368-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7264
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Fool's inner condition of lacking sense and understanding — pervasive inner blindness (Jer 5:21: without heart).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5369-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7263
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Folly as inner cognitive condition of leaders lacking wisdom.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5370-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7249
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "ROOT_INFERRED Cognition confirmed. Foolishness as failure to perceive and attend to spiritual realities.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5371-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7250
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Self-boasting folly — mode of self-presentation outside God's wisdom. Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5371-002 — foolishness: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7257
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Fool's inner disposition of rejecting wisdom — orientation of contempt toward wisdom and instruction (Prov 1:7). Relational Disposition.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5372-001 — foolishness: Relational Disposition"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7258
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Cognition. Fool's inner volatility — quickly venting vexation (Prov 12:16). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5372-002 — foolishness: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7259
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Vitality / Existence confirmed. Consequences of the fool's inner condition — mortality resulting from foolishness (Job 5:2).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5372-003 — foolishness: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7260
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Cognition. Foolishness of abandoning responsibility — inner disposition of negligence and self-interest over covenantal duty. Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5373-001 — foolishness: Moral Character"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7253
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Inner epistemic verdict of foolishness — how unrenewed inner being assesses spiritual truth (1 Cor 2:14).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "5374-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7265
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Cognition confirmed. Folly as object of the searching inner mind — heart applied to investigate (Ecc 1:17).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "874-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7248
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Foolishness as characterological disposition from within out of the heart (Mk 7:22 context). Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "875-001 — foolishness: Moral Character"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7261
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Folly as characteristic heart-condition — bound up in the heart (Prov 22:15). Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "877-001 — foolishness: Moral Character"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7262
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Moral Character confirmed. Folly as inner root of moral failure — confessed before God as sin (Ps 69:5).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "877-002 — foolishness: Moral Character"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7254
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Inner condition of unpreparedness and failure to think ahead — practical wisdom failure (Matt 25:3).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "878-001 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7255
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Inner-epistemic reversal — becoming a fool to become wise (1 Cor 3:18). The becoming names the transformative process.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "878-002 — foolishness: Transformation"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7256
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Moral Character. Blindness to what is sacred — failure of inner discernment of sacred value (Matt 23:17).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "878-003 — foolishness: Cognition"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9218
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Vitality / Existence confirmed. Soul poured to death — animating inner life at point of total giving (Isa 53:12). Dominant subject GOD.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1368-001 — vulnerability: Vitality / Existence"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9219
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Emotion — Negative confirmed. Divine uncovering bringing shame and humiliation (Isa 3:17).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1368-002 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9220
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Moral Character confirmed. Violation of intimate covering carrying moral consequence (Lev 20:18).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1368-003 — vulnerability: Moral Character"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9221
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Inner vulnerability expressed in prayer for refuge — person seeking God as refuge in defenselessness (Ps 141:8). Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1368-004 — vulnerability: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9226
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Emotion — Negative. Pre-fall state of nakedness without shame — original constitutive condition of the person before God (Gen 2:25). Emotion — Negative assignment explicitly wrong: verse names absence of shame. Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1369-001 — vulnerability: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9227
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Emotion — Negative. Radical existential nakedness — coming and returning with nothing, utterly dependent (Job 1:21). Resolves in blessing not negative emotion. Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1369-002 — vulnerability: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9228
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Emotion — Negative. Nakedness as prophetic expression — body and inner being made visible sign (Isa 20:2). Prophetic identity constituted through sign-act. Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1369-003 — vulnerability: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9229
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Emotion — Negative. Nakedness of the vulnerable calling for inner-being response of compassion (Isa 58:7). Relational Disposition.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1369-004 — vulnerability: Relational Disposition"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9230
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_STRONG Divine-Human Correspondence. Nakedness of divine judgment — shame and exposure of stripped confidence (Amos 2:16). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1369-005 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9205
+      },
+      "set": {
+        "dimension": "Theological / Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Total exposure before God — person fully seen with no inner reality concealed (Heb 4:13). Condition constitutively defined by divine-human relationship. Theological/Divine-Human.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1370-001 — vulnerability: Theological / Divine-Human"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9206
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Person's inner state of spiritual nakedness — self-unawareness about own inner condition (Rev 3:17: not realizing they are naked). Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1370-002 — vulnerability: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9207
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Moral Character. Physical nakedness calling for compassionate inner response (Matt 25:36). Relational Disposition.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1370-003 — vulnerability: Relational Disposition"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9208
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Nakedness as exposure and shaming in judgment (Rev 17:16). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "1370-004 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9222
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Moral Character confirmed. Intimate dignity of the person protected by law (Lev 18:6). Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7407-001 — vulnerability: Moral Character"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9223
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Volition. God covering naked vulnerability of his people in covenantal love (Ezek 16:8). Relational Disposition dominant subject GOD.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7407-002 — vulnerability: Relational Disposition"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9224
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Emotion — Negative confirmed. Nakedness as shame and exposure in judgment (Isa 47:3).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7407-003 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9225
+      },
+      "set": {
+        "dimension": "Theological / Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Covering required for dignity in divine presence (Exo 20:26). Theological/Divine-Human.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7407-004 — vulnerability: Theological / Divine-Human"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9233
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Razor as instrument of divine shaming — stripping honour and dignity (Isa 7:20). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7408-001 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9234
+      },
+      "set": {
+        "dimension": "Theological / Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Consecrated person's avoidance of razor marking inner dedication to God (Num 6:5). Theological/Divine-Human.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7408-002 — vulnerability: Theological / Divine-Human"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9235
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Inner disposition of deceit expressed through destructive speech (Ps 52:2: worker of deceit). Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7408-003 — vulnerability: Moral Character"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9231
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Divine-Human Correspondence. Originary nakedness and bareness — utter vulnerability before God's care (Ezek 16:7). Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7409-001 — vulnerability: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9232
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Emotion — Negative confirmed. Nakedness as shame and exposure in judgment (Mic 1:11).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7409-002 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9212
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_STRONG Divine-Human Correspondence. Nakedness exposed in divine judgment — public shame and disgrace (Nah 3:5). Emotion — Negative.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7410-001 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9214
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Emotion — Negative confirmed. Inner experience of shame, fear, and self-concealment — paradigmatic response to moral failure (Gen 3:10).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7414-001 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9215
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Emotion — Negative. Originary naked vulnerability before God acts in care (Ezek 16:7). Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7414-002 — vulnerability: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9216
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Relational Disposition confirmed. Nakedness of person in need calling for compassionate covering (Ezek 18:7).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7414-003 — vulnerability: Relational Disposition"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9217
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Emotion — Negative confirmed. Nakedness as covenant judgment and shame (Deut 28:48).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7414-004 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9211
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting ROOT_INFERRED Emotion — Negative. Deliberate exploitation to expose another's nakedness — predatory inner intent (Hab 2:15). Moral Character.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7416-001 — vulnerability: Moral Character"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9213
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_WEAK Relational Disposition confirmed. Physical nakedness of vulnerable other calling for inner compassion (2 Chr 28:15).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7417-001 — vulnerability: Relational Disposition"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9202
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Cognition. Inner training toward spiritual maturity — habituating discernment through constant practice (Heb 5:14). Transformation.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7419-001 — vulnerability: Transformation"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9203
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Inner habituation of heart toward vice — trained disposition toward greed (2 Pet 2:14). Transformation (degradative).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7419-002 — vulnerability: Transformation"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9209
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "KEYWORD_STRONG Emotion — Negative confirmed. Spiritual nakedness as state of inner shame (Rev 3:18).",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7420-001 — vulnerability: Emotion — Negative"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9210
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Correcting KEYWORD_WEAK Relational Disposition. Physical nakedness as that which cannot separate from God's love — inner security in trust (Rom 8:35). Dependence/Creatureliness.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7420-002 — vulnerability: Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9204
+      },
+      "set": {
+        "dimension": "Identity / Selfhood",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Previously UNCLASSIFIED. Physical nakedness/deprivation as condition of apostolic vulnerability — apostolic identity constituted through pattern of weakness and suffering for Christ (1 Cor 4:11). Identity/Selfhood.",
+        "last_modified": "2026-04-09T00:00:00"
+      },
+      "description": "7421-001 — vulnerability: Identity / Selfhood"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "flag_label": "DIM-20-001",
+        "registry_no": 20,
+        "registry_word": "character",
+        "cluster": "C22",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "The dokimos root family (dokimazō / dokimos / dokimion / dokimē) encodes a coherent inner-being formation arc across four groups: dokimion (testing instrument = Transformation) → dokimazō in testing sense (character disclosed = Moral Character) → dokimē (proved character = Moral Character) → dokimos (the proved person = Moral Character); with dokimazō in its discernment sense (= Cognition) showing the same root serving both formation and ongoing moral discernment. Session B should examine whether this root family constitutes a unique formation arc in NT vocabulary — from testing instrument, through proved character, to the characterised person — and how it maps onto the programme's understanding of moral formation under trial.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session B finding DIM-20-001 — Reg 20 (character)"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "flag_label": "DIM-58-001",
+        "registry_no": 58,
+        "registry_word": "experience",
+        "cluster": "C22",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Group 858-003 (ra.ah — seeing triggering inner response) captures a structural principle: the visual/perceptual act as a trigger mechanism for inner emotional and volitional activation. The group names a spectrum from desire to anger. Session B should examine whether ra.ah's role as inner-state activator is a consistent structural function across the Scripture corpus — specifically whether sight as inner trigger constitutes a distinct inner-being mechanism worth tracking in the programme vocabulary. The Gen 3:6 anchor (the Fall) and Job 32:5 (Elihu's anger) show this mechanism operating in both moral failure and righteous indignation contexts.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session B finding DIM-58-001 — Reg 58 (experience)"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "flag_label": "DIM-58-002",
+        "registry_no": 58,
+        "registry_word": "experience",
+        "cluster": "C22",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Group 858-010 has a SIGNIFICANT anchor verse mismatch confirmed on per-verse assessment. AV-1 (Gen 1:31 — God saw creation as very good) does not ground the description's claims about divine seeing of affliction/pride producing compassion/judgement. AV-2 (Gen 9:22 — Ham seeing Noah's nakedness) is a morally charged human seeing, not divine. The description's content appears entirely drawn from other verses in the group not represented in the anchor set. The current dimension assignment (Theological/Divine-Human, dominant subject NONE) has low confidence. Session B must: (a) review the full verse list for this group to verify whether the description is valid for the wider group; (b) assess whether Gen 1:31 and Gen 9:22 are correctly classified in this group or should be reclassified; (c) consider whether the anchor verse should be re-designated to a verse that actually grounds the description.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session B finding DIM-58-002 — Reg 58 (experience)"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "flag_label": "DIM-206-001",
+        "registry_no": 206,
+        "registry_word": "vulnerability",
+        "cluster": "C22",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Genesis 3:10 (group 7414-001 — e.rom) is the foundational inner-being text for the vulnerability cluster: 'I was afraid, because I was naked, and I hid myself.' This encodes the primary inner-being sequence of moral failure: nakedness-awareness → fear → self-concealment. Session B should examine how this three-stage sequence (exposure of inner condition → negative emotional response → volitional self-concealment from God) structures the anthropology of inner vulnerability across the OT and NT. The contrast with Gen 2:25 (naked and not ashamed) establishes the pre-fall / post-fall inner-being contrast as a structural framework for the vulnerability cluster.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session B finding DIM-206-001 — Reg 206 (vulnerability)"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-58-SD001",
+        "registry_no": 58,
+        "registry_word": "experience",
+        "cluster": "C22",
+        "session_target": "D",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Reg 58 (experience) is dominated by property terms (ra.ah = to see/appear; energeō/energēma/energēs = to work/operative). The ten ra.ah groups serve eight distinct inner-being dimensions — Cognition, Emotion — Negative, Moral Character, Transformation, Dependence/Creatureliness, Theological/Divine-Human, and Agency/Power — demonstrating that a single property term can serve the full range of inner-being characteristics depending on context. The energeō family covers Agency/Power in three registers: divine, hostile, and inner-being forces. Session D should assess: (a) whether ra.ah and energeō belong in the same registry; (b) whether experience is a valid inner-being category or an English-word artefact; (c) how the variety of inner-being registers accessed by a single property term should be handled in cross-registry synthesis.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session D pointer DIM-58-SD001 — Reg 58 (experience)"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-3-SD001",
+        "registry_no": 3,
+        "registry_word": "ambition",
+        "cluster": "C22",
+        "session_target": "D",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Reg 3 (ambition) contains a majority of terms from the philoxenos/philoxenia/philantropōs/filautos/filofronōs cluster (all Relational Disposition) alongside the core ambition terms (eritheia, filotimeomai = Volition; erethizō = Volition / Emotion — Negative). The registry title does not reflect the actual inner-being content, which is primarily a hospitality-love cluster. Session D should assess: (a) whether the philos-family terms constitute a distinct inner-being cluster from the ambition terms; (b) whether self-directed aspiration (filotimeomai) and other-directed love (filoxenia, filantropōs) are structurally opposite poles of a single self/other orientation axis; (c) whether eritheia (selfish rivalry) and filautos (self-love) together name the inverse of the hospitality cluster.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session D pointer DIM-3-SD001 — Reg 3 (ambition)"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-206-SD001",
+        "registry_no": 206,
+        "registry_word": "vulnerability",
+        "cluster": "C22",
+        "session_target": "D",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "Reg 206 (vulnerability) contains the most comprehensive nakedness vocabulary in the programme — twelve Hebrew and Greek terms across 34 groups, distributing across seven dimensions: Emotion — Negative (12 groups), Dependence/Creatureliness (5), Relational Disposition (5), Identity/Selfhood (4), Theological/Divine-Human (4), Moral Character (4), Transformation (2), Vitality/Existence (1). The dimension distribution reveals that nakedness in Scripture is not primarily an emotional concept but a multi-dimensional inner-being condition. Key structural findings: (1) the pre-fall / post-fall contrast (Gen 2:25 vs. Gen 3:10) as a structural framework; (2) nakedness serving both divine judgment (shame-exposure) and divine love (covenantal covering); (3) the apostolic identity-through-vulnerability pattern (1 Cor 4:11). Session D should examine whether vulnerability constitutes a coherent inner-being theological category or is an English-word artefact grouping distinct Hebrew/Greek inner-being phenomena.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session D pointer DIM-206-SD001 — Reg 206 (vulnerability)"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-20-SD001",
+        "registry_no": 20,
+        "registry_word": "character",
+        "cluster": "C22",
+        "session_target": "D",
+        "source_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "description": "The dokimos root family (dokimazō / dokimos / dokimion / dokimē) encodes a coherent inner-being formation arc: dokimion (testing instrument = Transformation) → dokimazō (testing/discernment act = Moral Character / Cognition) → dokimē (proved character = Moral Character) → dokimos (the proved person = Moral Character). This is one of the most complete inner-being formation arcs in the NT vocabulary. Session D should assess whether this root family maps onto the programme's broader theme of character formation under trial (cf. C09 virtue vocabulary), and whether the proved/approved terminology constitutes a distinct inner-being semantic field of formation-through-testing.",
+        "created_date": "2026-04-09"
+      },
+      "description": "Session D pointer DIM-20-SD001 — Reg 20 (character)"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 3
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 3 (ambition): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 20
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 20 (character): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 27
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 27 (consciousness): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 58
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 58 (experience): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 63
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 63 (foolishness): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 129
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 129 (recognition): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 206
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 206 (vulnerability): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "wa_dim_review_cluster_log",
+      "record": {
+        "cluster": "C22",
+        "completed_date": "2026-04-09",
+        "instruction_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "registry_count": 7,
+        "group_count": 85,
+        "anchored_count": 0,
+        "notes": "C22 complete. Heterogeneous cluster — moral-dispositional triad (ambition/character/foolishness) + vulnerability and experience. 37/85 dimension assignments corrected from automated labels. Key findings: vulnerability vocabulary distributes across 7 dimensions; foolishness primarily Cognition with significant Moral Character secondary cluster; ra.ah serves 8 distinct dimensions confirming property-term breadth. Significant AV mismatch on 858-010 flagged via DIM-58-002. 4 Session B findings and 4 Session D pointers raised."
+      },
+      "description": "Cluster C22 Dimension Review complete — stamp set"
+    }
+  ]
+}

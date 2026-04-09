@@ -232,7 +232,7 @@ def _resolve_group_id(raw_id: str, counts: dict, conn, op_id: str):
     return None
 
 
-def _apply_operation(conn, op: dict, counts: dict) -> None:
+def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> None:
     """Apply a single operation."""
     op_id     = op.get("op_id", "?")
     table     = op.get("table", "") or op.get("target_table", "")
@@ -560,27 +560,37 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
 
     elif table == "wa_session_b_findings" and operation == "insert":
         rec = op["record"]
+        # Map DIMREVIEW field names to table schema (fallback to correct names)
+        finding_id = rec.get("finding_id") or rec.get("flag_label")
+        registry_id_val = rec.get("registry_id") or rec.get("registry_no")
+        finding_type = rec.get("finding_type") or rec.get("cluster") or "DIMENSION_REVIEW"
+        finding = rec.get("finding") or rec.get("description")
+        raised_date = rec.get("raised_date") or rec.get("created_date") or (meta or {}).get("produced_date", _now()[:10])
+        instruction = rec.get("session_b_instruction") or rec.get("source_instruction") or (meta or {}).get("produced_by", "unknown")
         conn.execute(
             """INSERT INTO wa_session_b_findings
                (finding_id, registry_id, file_id, finding_type, finding,
                 anchor_verses, raised_date, session_b_instruction)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
             (
-                rec.get("finding_id"),
-                rec.get("registry_id"),
+                finding_id,
+                registry_id_val,
                 rec.get("file_id"),
-                rec.get("finding_type"),
-                rec.get("finding"),
+                finding_type,
+                finding,
                 rec.get("anchor_verses"),
-                rec.get("raised_date", _now()[:10]),
-                rec.get("session_b_instruction", "WA-SessionB-Extraction-Instruction-v5"),
+                raised_date,
+                instruction,
             ),
         )
         counts["findings_inserted"] = counts.get("findings_inserted", 0) + 1
-        print(f"  {op_id}: wa_session_b_findings INSERT {rec.get('finding_id')}")
+        print(f"  {op_id}: wa_session_b_findings INSERT {finding_id}")
 
     elif table in ("wa_phase2_flags", "wa_session_research_flags") and operation == "insert":
         rec = op["record"]
+        # Map DIMREVIEW field names to table schema (fallback to correct names)
+        registry_id_val = rec.get("registry_id") or rec.get("registry_no")
+        flag_code = rec.get("flag_code") or ("SD_POINTER" if rec.get("session_target") == "D" else "SB_FINDING")
         conn.execute(
             """INSERT INTO wa_session_research_flags
                (registry_id, file_id, flag_code, flag_label, strongs_reference,
@@ -588,17 +598,17 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
                 description, session_raised, raised_date, resolved)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (
-                rec.get("registry_id"),
+                registry_id_val,
                 rec.get("file_id"),
-                rec.get("flag_code"),
+                flag_code,
                 rec.get("flag_label"),
                 rec.get("strongs_reference"),
                 rec.get("cross_registry_id"),
                 rec.get("priority", "MEDIUM"),
                 rec.get("session_target", "D"),
                 rec.get("description"),
-                rec.get("session_raised"),
-                rec.get("raised_date"),
+                rec.get("session_raised", (meta or {}).get("produced_by", "unknown")),
+                rec.get("raised_date", (meta or {}).get("produced_date", _now()[:10])),
                 rec.get("resolved", 0),
             ),
         )
@@ -700,6 +710,30 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
         counts["vc_updated"] = counts.get("vc_updated", 0) + 1
         print(f"  {op_id}: verse_context UPDATE id={match.get('id', '?')}")
 
+    elif table == "wa_term_inventory" and operation == "update":
+        match    = op["match"]
+        set_vals = dict(op["set"])
+        valid_cols = {
+            r[1] for r in conn.execute("PRAGMA table_info(wa_term_inventory)").fetchall()
+        }
+        dropped = [k for k in set_vals if k not in valid_cols]
+        for k in dropped:
+            del set_vals[k]
+        if dropped:
+            print(f"  {op_id}: [NOTE] Dropped non-existent columns: {dropped}")
+        if not set_vals:
+            counts["skipped"] = counts.get("skipped", 0) + 1
+            return
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        where_clauses = " AND ".join(f"{k} = ?" for k in match)
+        params = list(set_vals.values()) + list(match.values())
+        conn.execute(
+            f"UPDATE wa_term_inventory SET {set_clauses} WHERE {where_clauses}",
+            params,
+        )
+        counts["term_inv_updated"] = counts.get("term_inv_updated", 0) + 1
+        print(f"  {op_id}: wa_term_inventory UPDATE id={match.get('id', '?')} {list(set_vals.keys())}")
+
     elif table == "word_registry" and operation == "update":
         match    = op["match"]
         set_vals = dict(op["set"])
@@ -769,6 +803,26 @@ def _apply_operation(conn, op: dict, counts: dict) -> None:
             counts["dominant_subject_assigned"] = counts.get("dominant_subject_assigned", 0) + 1
         gc = op.get("description", "")[:60]
         print(f"  {op_id}: wa_dimension_index UPDATE id={di_id} -> {set_vals.get('dimension', '?')} {gc}")
+
+    elif table == "wa_dim_review_cluster_log" and operation == "insert":
+        rec = op["record"]
+        conn.execute(
+            """INSERT INTO wa_dim_review_cluster_log
+               (cluster, completed_date, instruction_version,
+                registry_count, group_count, anchored_count, notes)
+               VALUES (?, ?, ?, ?, ?, ?, ?)""",
+            (
+                rec.get("cluster"),
+                rec.get("completed_date"),
+                rec.get("instruction_version"),
+                rec.get("registry_count", 0),
+                rec.get("group_count", 0),
+                rec.get("anchored_count", 0),
+                rec.get("notes"),
+            ),
+        )
+        counts["cluster_stamps_inserted"] = counts.get("cluster_stamps_inserted", 0) + 1
+        print(f"  {op_id}: wa_dim_review_cluster_log INSERT cluster={rec.get('cluster')}")
 
     else:
         print(f"  {op_id}: [SKIP] Unsupported operation: {operation} on {table}")
@@ -881,7 +935,7 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
     counts: dict = {}
     try:
         for op in ops:
-            _apply_operation(conn, op, counts)
+            _apply_operation(conn, op, counts, meta)
         _log_patch(conn, patch_id, meta, counts)
         # Update session_b_status on the registry (skip for exempt types)
         patch_reg_id = meta.get("registry_id")
