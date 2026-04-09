@@ -1,0 +1,18 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C12",
+    "produced_date": "2026-04-07"
+  },
+  "session_b_findings": [
+    {
+      "finding_id": "DIM-039-001",
+      "registry_id": 39,
+      "finding_type": "DIMENSION_REVIEW",
+      "finding": "Group 4986-001 in debauchery (#39, C12) contains 57 verses of salvation vocabulary (sōzō/sōtēria), anchored at Eph 2:8 ('by grace you have been saved through faith'). Related verses span the NT salvation corpus: Mat 10:22, 19:25, 24:13, Mar 16:16, Luk 8:12, Joh 3:17, Act 2:21, 4:12, and more. This group is structurally unexpected in the debauchery registry but was placed there on the basis of the verse evidence — salvation vocabulary appears in debauchery-adjacent contexts. Session B analyst should assess the connection: is salvation specifically named as the remedy for debauchery/licentiousness in these contexts, does the term appear because the debauchery file included a broad NT lexical sweep, or is there a distinct theological pattern linking salvation and debauchery vocabulary in Scripture? The answer has implications for how the inner-being dimension of salvation is characterised within this registry. This is also a Session D synthesis candidate — the relationship between salvation and debauchery vocabulary across the programme.",
+      "raised_date": "2026-04-06",
+      "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+    }
+  ],
+  "session_d_pointers": []
+}

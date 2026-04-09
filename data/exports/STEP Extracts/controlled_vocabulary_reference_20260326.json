@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "title": "Framework B — Controlled Vocabulary Reference",
+    "description": "Complete extract of all controlled-vocabulary lookup columns used in patch operations",
+    "exported_at": "2026-03-26T06:38:24Z",
+    "source": "bible_research.db (schema v3.6.0)"
+  },
+  "vocabularies": {
+    "session_research_flag_codes": {
+      "description": "Valid flag_code values for wa_session_research_flags (open vocabulary — new codes can be added)",
+      "values": [
+        "CANDIDATE_REGISTRY_WORD",
+        "PH2_BOUNDARY_QUESTION",
+        "PH2_CROSS_REF_ENRICHMENT",
+        "PH2_CROSS_REGISTRY_REQUIRED",
+        "PH2_DATA_ERROR",
+        "PH2_DATA_QUALITY",
+        "PH2_DATA_SPLIT_REQUIRED",
+        "PH2_ESCHATOLOGICAL_STUDY_REQUIRED",
+        "PH2_EXEGETICAL_STUDY_REQUIRED",
+        "PH2_THEOLOGICAL_DEPTH_REQUIRED",
+        "PH2_VOLUME_LIMITATION",
+        "VOLUME_LIMITATION"
+      ]
+    },
+    "session_research_priority": {
+      "description": "Valid priority values for wa_session_research_flags",
+      "values": [
+        "HIGH",
+        "MEDIUM",
+        "LOW"
+      ],
+      "default": "MEDIUM"
+    },
+    "session_research_session_target": {
+      "description": "Valid session_target values for wa_session_research_flags",
+      "values": [
+        "B",
+        "C",
+        "D"
+      ],
+      "default": "D"
+    },
+    "quality_flag_codes": {
+      "description": "Valid flag_code values for wa_data_quality_flags (engine-derived, DATA_COVERAGE group)",
+      "values": {
+        "HIGH_FREQUENCY_ANCHOR": "DATA_COVERAGE",
+        "NO_VERSES": "DATA_COVERAGE",
+        "NO_WORD_ANALYSIS": "DATA_COVERAGE",
+        "PROSE_ONLY_MEANING": "DATA_COVERAGE",
+        "SMALL_VERSE_SAMPLE": "DATA_COVERAGE",
+        "SPAN_FILTER_APPLIED": "DATA_COVERAGE",
+        "SPAN_RESOLUTION_CONFLICT": "DATA_COVERAGE",
+        "THIN_DATA": "DATA_COVERAGE"
+      }
+    },
+    "phase2_flag_codes": {
+      "description": "Valid flag_code values for wa_term_phase2_flags (researcher-owned)",
+      "values": [
+        "GOD_AS_SUBJECT",
+        "CAUSATIVE_OF_INNER_STATE",
+        "SOMATIC_INNER_LINK",
+        "BODY_INNER_EXPRESSION",
+        "NT_FACULTY_NAMING",
+        "GENERATION_RESOLUTION_PAIR",
+        "CROSS_PART_ROOT",
+        "THIN_DATA",
+        "SMALL_VERSE_SAMPLE",
+        "DUPLICATE_RESOLVED",
+        "NO_WORD_ANALYSIS",
+        "CONSOLIDATION_CANDIDATE",
+        "THEOLOGICAL_ANCHOR",
+        "SOMATIC_EXPRESSION",
+        "HIGH_FREQUENCY_ANCHOR",
+        "SEMANTIC_RANGE_BREADTH",
+        "MULTI_REGISTRY_ANCHOR",
+        "DIVINE_HUMAN_PARALLEL",
+        "ESCHATOLOGICAL_USAGE",
+        "WISDOM_LITERATURE_CONCENTRATION",
+        "METAPHOR_ROOT",
+        "RELATIONAL_DIRECTION",
+        "VOLITIONAL_COMPONENT",
+        "CROSS_TESTAMENT_SHIFT",
+        "ARAMAIC_FORM"
+      ]
+    },
+    "crosslink_type_codes": {
+      "description": "Valid type_code values for wa_cross_registry_links",
+      "values": [
+        "SHARED_TERM",
+        "SEMANTIC_OVERLAP",
+        "SHARED_ROOT",
+        "SHARED_VERSE",
+        "THEOLOGICAL",
+        "CO_OCCURRENCE",
+        "SEMANTIC_OPPOSITION",
+        "SISTER_REGISTRY",
+        "OVERLAPPING_DOMAIN",
+        "CAUSATIVE_CHAIN",
+        "THEMATIC_LINK"
+      ]
+    },
+    "mti_status_values": {
+      "description": "Valid mti_terms.status values (from DB — includes all values currently in use)",
+      "values": [
+        "candidate_delete",
+        "delete",
+        "excluded",
+        "extracted",
+        "extracted_theological_anchor",
+        "extracted_thin",
+        "xref_anger",
+        "xref_desire",
+        "xref_distress",
+        "xref_sorrow"
+      ],
+      "note": "NULL means unclassified. xref_* prefix indicates cross-registry (e.g. xref_anger, xref_distress)."
+    },
+    "session_b_status_values": {
+      "description": "Valid word_registry.session_b_status values",
+      "values": [
+        "Analysis Complete",
+        "Ready for Analysis",
+        "Session B Complete"
+      ],
+      "note": "NULL means not yet extracted/audited."
+    },
+    "phase1_status_values": {
+      "description": "Valid word_registry.phase1_status values",
+      "values": [
+        "Complete",
+        "Excluded",
+        "In Progress"
+      ]
+    },
+    "source_list_values": {
+      "description": "Valid word_registry.source_list values",
+      "values": [
+        "High Confidence",
+        "Low Confidence / Inferred",
+        "Missing Inner Being Words",
+        "Programme Addition"
+      ]
+    },
+    "source_category_values": {
+      "description": "Valid word_registry.source_category values",
+      "values": [
+        "Affective/Emotional",
+        "Anthropological/Structural",
+        "Anthropology",
+        "Character/Disposition",
+        "Cognitive/Mind",
+        "Identity/Selfhood",
+        "Inner Life",
+        "Moral/Conscience",
+        "Relational/Social",
+        "Sin & Vice",
+        "Spiritual/God-ward",
+        "Volitional/Capacity",
+        "Volitional/Will"
+      ]
+    },
+    "origin_values": {
+      "description": "Valid word_registry.origin values",
+      "values": [
+        "original_list",
+        "programme_addition"
+      ]
+    },
+    "language_values": {
+      "description": "Valid wa_term_inventory.language values",
+      "values": [
+        "Hebrew",
+        "Greek"
+      ]
+    },
+    "testament_values": {
+      "description": "Valid wa_term_inventory/wa_verse_records.testament values",
+      "values": [
+        "OT",
+        "NT"
+      ]
+    }
+  }
+}

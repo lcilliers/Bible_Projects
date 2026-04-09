@@ -1,0 +1,18 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C09",
+    "produced_date": "2026-04-07"
+  },
+  "session_b_findings": [
+    {
+      "finding_id": "DIM-128-001",
+      "registry_id": 128,
+      "finding_type": "DIMENSION_REVIEW",
+      "finding": "H5493H (sur, to turn aside/depart) in rebellion (#128) has 2 healthy active groups: 6077-001 (departure of God's Spirit, 5 verses) and 6077-003 (departure of inner strength, 3 verses). A third group (6077-002, departure from God) had 4 verse_context records that were all subsequently delete_flagged for unknown reasons. The 4 orphaned verses are: Deu 4:9 (warning not to turn aside from what was seen), Deu 7:4 (intermarriage turning sons from following God), 2Ki 3:3 (not departing from the sin of Jeroboam), Num 16:26 (command to depart from tents of Korah). The group shell has been delete_flagged. Session B analyst should review whether any of these 4 verses meet the inner-being filter for rebellion and should be reassigned to 6077-001 or 6077-003, or whether a distinct apostasy group is warranted.",
+      "raised_date": "2026-04-06",
+      "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+    }
+  ],
+  "session_d_pointers": []
+}

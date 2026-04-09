@@ -1,0 +1,5999 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260409-VCB032-VERSECONTEXT-V1",
+    "batch_id": "VCB-032",
+    "produced_date": "2026-04-09",
+    "session_b_status": null,
+    "description": "Verse context classification — VCB-032, Registry 183 (heart), H3820A lev repair. 331 verses, 8 groups."
+  },
+  "_patch_summary": {
+    "total_operations": 375,
+    "group_inserts": 8,
+    "group_updates": 0,
+    "verse_context_inserts": 367,
+    "verse_context_updates": 0,
+    "relevant_verses": 325,
+    "set_aside_verses": 6,
+    "anchor_verses": 16,
+    "dual_context_verses": 36,
+    "revisions_to_prior": 0
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-001",
+        "context_description": "lev names the faculty of inward reasoning, deliberation, and planning — the seat where thought forms, internal speech occurs, and intentions are conceived",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-001: lev names the faculty of inward reasoning, deliberation, and..."
+    },
+    {
+      "op_id": "OP-0002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-002",
+        "context_description": "lev names the seat of moral character — the inner disposition that determines whether a person is upright, blameless, stubborn, evil, or false",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-002: lev names the seat of moral character — the inner dispositio..."
+    },
+    {
+      "op_id": "OP-0003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-003",
+        "context_description": "lev names the cognitive faculty — the inner capacity for wisdom, understanding, discernment, and skill (including God-given craft ability and its absence)",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-003: lev names the cognitive faculty — the inner capacity for wis..."
+    },
+    {
+      "op_id": "OP-0004",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-004",
+        "context_description": "lev names the seat of emotional/affective experience — the inner place where joy, grief, fear, desire, courage, longing, and all emotional states arise and are felt",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-004: lev names the seat of emotional/affective experience — the i..."
+    },
+    {
+      "op_id": "OP-0005",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-005",
+        "context_description": "lev names the centre of the will — the inner organ of volitional direction, commitment, willing, and resistance",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-005: lev names the centre of the will — the inner organ of voliti..."
+    },
+    {
+      "op_id": "OP-0006",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-006",
+        "context_description": "lev names the organ of God-ward orientation — the inner faculty through which a person prays, seeks God, turns toward or away from God, and is known and shaped by God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-006: lev names the organ of God-ward orientation — the inner facu..."
+    },
+    {
+      "op_id": "OP-0007",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-007",
+        "context_description": "lev names the locus of conscience — the inner moral witness that reacts to one's own conduct, accuses or vindicates, and knows the self before God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-007: lev names the locus of conscience — the inner moral witness ..."
+    },
+    {
+      "op_id": "OP-0008",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 581,
+        "group_code": "581-008",
+        "context_description": "lev names the organ of relational address and concern — the heart as the subject and object of intimate relational speech, disclosure, and regard",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Group 581-008: lev names the organ of relational address and concern — the ..."
+    },
+    {
+      "op_id": "OP-0009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66589,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66589 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66601,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66601 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66613,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66613 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66617,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66617 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66642,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66642 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66664,
+        "mti_term_id": 581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66664 — set aside, no inner-being engagement for H3820A"
+    },
+    {
+      "op_id": "OP-0015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66556,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66556 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66558,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66558 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66576,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66576 — anchor, group 581-001"
+    },
+    {
+      "op_id": "OP-0018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66581,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66581 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66604,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66604 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66649,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66649 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66651,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66651 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66652,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66652 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66660,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66660 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66674,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66674 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66678,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66678 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66679,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66679 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66684,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66684 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66685,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66685 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66686,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66686 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66688,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66688 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66689,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66689 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66696,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66696 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66698,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66698 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66700,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66700 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66702,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66702 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66708,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66708 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66712,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66712 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66713,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66713 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66717,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66717 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66719,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66719 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66726,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66726 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66730,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66730 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66733,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66733 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66735,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66735 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66742,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66742 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66748,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66748 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66768,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66768 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66771,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66771 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66773,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66773 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66801,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66801 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66805,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66805 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66809,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66809 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66817,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66817 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66839,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66839 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66840,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66840 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66842,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66842 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66846,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66846 — anchor, group 581-001"
+    },
+    {
+      "op_id": "OP-0058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66849,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66849 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66860,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66860 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66872,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66872 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66874,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66874 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66882,
+        "mti_term_id": 581,
+        "group_id": "581-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66882 — related, group 581-001"
+    },
+    {
+      "op_id": "OP-0063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66599,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66599 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66658,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66658 — anchor, group 581-002"
+    },
+    {
+      "op_id": "OP-0065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66661,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66661 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66673,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66673 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66683,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66683 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66691,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66691 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66692,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66692 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66695,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66695 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66701,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66701 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66704,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66704 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66706,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66706 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66707,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66707 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66709,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66709 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66710,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66710 — anchor, group 581-002"
+    },
+    {
+      "op_id": "OP-0077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66711,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66711 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66715,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66715 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66718,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66718 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66723,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66723 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66724,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66724 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66725,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66725 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66728,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66728 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66729,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66729 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66739,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66739 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66741,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-007",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66741 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66743,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66743 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66747,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66747 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66780,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66780 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66784,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66784 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66787,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66787 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66788,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66788 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66794,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66794 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66808,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66808 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66812,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66812 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66814,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66814 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66818,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66818 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66820,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66820 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66821,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66821 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66822,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66822 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66823,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66823 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66825,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66825 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66826,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66826 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66827,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66827 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66828,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66828 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66829,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66829 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66830,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66830 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66832,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66832 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66833,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66833 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66834,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66834 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66843,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66843 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66844,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66844 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66848,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-007",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66848 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66859,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66859 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66865,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66865 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66866,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66866 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66867,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66867 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66868,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66868 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66876,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-007",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66876 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66877,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66877 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66883,
+        "mti_term_id": 581,
+        "group_id": "581-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66883 — related, group 581-002"
+    },
+    {
+      "op_id": "OP-0122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66554,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66554 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66559,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66559 — anchor, group 581-003"
+    },
+    {
+      "op_id": "OP-0124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66560,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66560 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66561,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66561 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66600,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66600 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66616,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66616 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66618,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66618 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66619,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66619 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66622,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66622 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66625,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66625 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66626,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66626 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66628,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66628 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66629,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66629 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66630,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66630 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66666,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66666 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66667,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66667 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66680,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66680 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66681,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66681 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66682,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66682 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66705,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66705 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66732,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66732 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66734,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66734 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66744,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66744 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66746,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66746 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66749,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66749 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66772,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66772 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66779,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66779 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66781,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66781 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66782,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66782 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66783,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66783 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66785,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66785 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66786,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66786 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66790,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66790 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66796,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66796 — anchor, group 581-003"
+    },
+    {
+      "op_id": "OP-0156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66798,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66798 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66800,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66800 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66803,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66803 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66804,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66804 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66806,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66806 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0161",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66807,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66807 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66810,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66810 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66811,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66811 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0164",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66815,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66815 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0165",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66816,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66816 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0166",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66819,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66819 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0167",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66831,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66831 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0168",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66835,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66835 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0169",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66836,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66836 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0170",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66837,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66837 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0171",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66838,
+        "mti_term_id": 581,
+        "group_id": "581-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66838 — related, group 581-003"
+    },
+    {
+      "op_id": "OP-0172",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66564,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66564 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0173",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66570,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66570 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0174",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66574,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66574 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0175",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66575,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66575 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0176",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66577,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66577 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0177",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66578,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66578 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0178",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66583,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66583 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0179",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66588,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66588 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0180",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66594,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66594 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0181",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66596,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66596 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0182",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66597,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66597 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0183",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66598,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66598 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0184",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66602,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66602 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0185",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66603,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66603 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0186",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66631,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66631 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0187",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66647,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66647 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0188",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66650,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66650 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0189",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66655,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66655 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0190",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66656,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66656 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0191",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66659,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66659 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0192",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66662,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66662 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0193",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66663,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66663 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0194",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66668,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66668 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0195",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66669,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66669 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0196",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66670,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66670 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0197",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66671,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66671 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0198",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66675,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66675 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0199",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66690,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66690 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0200",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66693,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66693 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0201",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66694,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66694 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0202",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66697,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66697 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0203",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66699,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66699 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0204",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66714,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66714 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0205",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66720,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66720 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0206",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66721,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66721 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0207",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66722,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66722 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0208",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66727,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66727 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0209",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66736,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66736 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0210",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66737,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66737 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0211",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66738,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66738 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0212",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66740,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66740 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0213",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66745,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66745 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0214",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66751,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66751 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0215",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66755,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66755 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0216",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66756,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66756 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0217",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66757,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66757 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0218",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66759,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66759 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0219",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66760,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66760 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0220",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66763,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66763 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0221",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66764,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66764 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0222",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66767,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66767 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0223",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66769,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66769 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0224",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66776,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66776 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0225",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66777,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66777 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0226",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66789,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66789 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0227",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66791,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66791 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0228",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66792,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66792 — anchor, group 581-004"
+    },
+    {
+      "op_id": "OP-0229",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66793,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66793 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0230",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66795,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66795 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0231",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66797,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66797 — anchor, group 581-004"
+    },
+    {
+      "op_id": "OP-0232",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66799,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66799 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0233",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66802,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66802 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0234",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66813,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66813 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0235",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66841,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66841 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0236",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66845,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66845 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0237",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66847,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66847 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0238",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66850,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66850 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0239",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66851,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66851 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0240",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66852,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66852 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0241",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66854,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66854 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0242",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66855,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66855 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0243",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66857,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66857 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0244",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66858,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66858 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0245",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66862,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66862 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0246",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66863,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66863 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0247",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66864,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66864 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0248",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66869,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66869 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0249",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66870,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66870 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0250",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66871,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66871 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0251",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66872,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66872 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0252",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66873,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66873 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0253",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66875,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66875 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0254",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66878,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66878 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0255",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66880,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66880 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0256",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66881,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66881 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0257",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66884,
+        "mti_term_id": 581,
+        "group_id": "581-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66884 — related, group 581-004"
+    },
+    {
+      "op_id": "OP-0258",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66555,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66555 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0259",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66557,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66557 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0260",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66562,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66562 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0261",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66563,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66563 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0262",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66565,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66565 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0263",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66566,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66566 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0264",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66567,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66567 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0265",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66568,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66568 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0266",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66569,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66569 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0267",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66572,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-008",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66572 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0268",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66579,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-008",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66579 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0269",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66580,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66580 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0270",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66582,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66582 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0271",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66584,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66584 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0272",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66585,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66585 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0273",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66586,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66586 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0274",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66587,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66587 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0275",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66590,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-008",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66590 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0276",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66591,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66591 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0277",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66605,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66605 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0278",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66606,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66606 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0279",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66607,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66607 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0280",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66608,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66608 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0281",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66609,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66609 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0282",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66610,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66610 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0283",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66611,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66611 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0284",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66612,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66612 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0285",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66614,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66614 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0286",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66620,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66620 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0287",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66621,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66621 — anchor, group 581-005"
+    },
+    {
+      "op_id": "OP-0288",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66623,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66623 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0289",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66624,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66624 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0290",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66627,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66627 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0291",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66632,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66632 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0292",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66633,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66633 — anchor, group 581-005"
+    },
+    {
+      "op_id": "OP-0293",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66634,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66634 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0294",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66635,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66635 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0295",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66636,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66636 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0296",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66637,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66637 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0297",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66638,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66638 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0298",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66639,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66639 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0299",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66640,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66640 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0300",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66641,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66641 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0301",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66643,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66643 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0302",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66644,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66644 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0303",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66645,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66645 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0304",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66646,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66646 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0305",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66647,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66647 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0306",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66648,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66648 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0307",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66695,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66695 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0308",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66750,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66750 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0309",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66761,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66761 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0310",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66762,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66762 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0311",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66764,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66764 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0312",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66765,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66765 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0313",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66766,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66766 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0314",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66770,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66770 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0315",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66774,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66774 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0316",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66775,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66775 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0317",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66778,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66778 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0318",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66883,
+        "mti_term_id": 581,
+        "group_id": "581-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66883 — related, group 581-005"
+    },
+    {
+      "op_id": "OP-0319",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66562,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66562 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0320",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66563,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66563 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0321",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66566,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66566 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0322",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66595,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66595 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0323",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66596,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66596 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0324",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66615,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66615 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0325",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66648,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66648 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0326",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66668,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66668 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0327",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66672,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66672 — anchor, group 581-006"
+    },
+    {
+      "op_id": "OP-0328",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66676,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66676 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0329",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66687,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66687 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0330",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66690,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66690 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0331",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66700,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66700 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0332",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66703,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-007",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66703 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0333",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66708,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66708 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0334",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66709,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66709 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0335",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66713,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66713 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0336",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66715,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66715 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0337",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66716,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66716 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0338",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66718,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66718 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0339",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66731,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66731 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0340",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66765,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66765 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0341",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66768,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66768 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0342",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66773,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66773 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0343",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66822,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66822 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0344",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66824,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66824 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0345",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66849,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66849 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0346",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66856,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66856 — anchor, group 581-006"
+    },
+    {
+      "op_id": "OP-0347",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66857,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66857 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0348",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66860,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-001",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66860 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0349",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66861,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66861 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0350",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66862,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66862 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0351",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66863,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66863 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0352",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66868,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66868 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0353",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66878,
+        "mti_term_id": 581,
+        "group_id": "581-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-004",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66878 — related, group 581-006"
+    },
+    {
+      "op_id": "OP-0354",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66571,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66571 — anchor, group 581-007"
+    },
+    {
+      "op_id": "OP-0355",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66573,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66573 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0356",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66593,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66593 — anchor, group 581-007"
+    },
+    {
+      "op_id": "OP-0357",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66703,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-006",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66703 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0358",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66741,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66741 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0359",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66848,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66848 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0360",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66853,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66853 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0361",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66876,
+        "mti_term_id": 581,
+        "group_id": "581-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-002",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66876 — related, group 581-007"
+    },
+    {
+      "op_id": "OP-0362",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66572,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66572 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0363",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66579,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66579 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0364",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66590,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Dual-context: also in group(s) 581-005",
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66590 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0365",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66592,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66592 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0366",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66653,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66653 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0367",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66654,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66654 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0368",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66657,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66657 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0369",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66665,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66665 — anchor, group 581-008"
+    },
+    {
+      "op_id": "OP-0370",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66677,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66677 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0371",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66752,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66752 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0372",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66753,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66753 — anchor, group 581-008"
+    },
+    {
+      "op_id": "OP-0373",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66754,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66754 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0374",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66758,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66758 — related, group 581-008"
+    },
+    {
+      "op_id": "OP-0375",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 66879,
+        "mti_term_id": 581,
+        "group_id": "581-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "verse_record_id 66879 — related, group 581-008"
+    }
+  ]
+}

@@ -106,6 +106,17 @@ def build_cluster_extract(conn, cluster: str, today: str) -> str:
         gd["anchor_verses"] = [dict(r) for r in anchors]
         gd["related_verses"] = [dict(r) for r in related]
 
+        # Root family data
+        root = conn.execute("""
+            SELECT rf.root_code, rf.root_language, rf.root_gloss
+            FROM wa_term_root_family rf
+            JOIN wa_term_inventory ti ON ti.id = rf.term_inv_id AND ti.delete_flagged = 0
+            WHERE ti.strongs_number = ? LIMIT 1
+        """, (g["strongs_number"],)).fetchone()
+        gd["root_code"] = root["root_code"] if root else None
+        gd["root_language"] = root["root_language"] if root else None
+        gd["root_gloss"] = root["root_gloss"] if root else None
+
         if not anchors:
             empty_anchor_groups.append(g["group_code"])
 
@@ -116,8 +127,8 @@ def build_cluster_extract(conn, cluster: str, today: str) -> str:
             "extract_type": "dimension_review_cluster",
             "cluster": cluster,
             "produced_date": today,
-            "produced_by": "Claude Code \u2014 WA-DimensionReview-Instruction-v1.6",
-            "governing_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+            "produced_by": "Claude Code \u2014 WA-DimensionReview-Instruction-v1.7",
+            "governing_instruction": "WA-DimensionReview-Instruction-v1.7-2026-04-09",
             "row_count": len(groups),
         },
         "cluster_registries": cluster_registries,
@@ -125,7 +136,7 @@ def build_cluster_extract(conn, cluster: str, today: str) -> str:
     }
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    filename = f"wa-dim-extract-{cluster}-{today}.json"
+    filename = f"wa-dim-{cluster}-extract-{today}.json"
     out_path = os.path.join(OUT_DIR, filename)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
@@ -207,7 +218,7 @@ def build_group_verify_extract(conn, group_code: str, today: str) -> str:
     }
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    filename = f"wa-dim-grpverify-{group_code}-{today}.json"
+    filename = f"wa-dim-{group_code}-grpverify-{today}.json"
     out_path = os.path.join(OUT_DIR, filename)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
@@ -260,7 +271,7 @@ def build_existing_pointers_extract(conn, cluster: str, today: str) -> str:
     }
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    filename = f"wa-dim-existing-pointers-{cluster}-{today}.json"
+    filename = f"wa-dim-{cluster}-existing-pointers-{today}.json"
     out_path = os.path.join(OUT_DIR, filename)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, ensure_ascii=False)
@@ -272,14 +283,159 @@ def build_existing_pointers_extract(conn, cluster: str, today: str) -> str:
     return out_path
 
 
+def build_rootfamily_extract(conn, cluster: str, today: str) -> str:
+    """Build the root family cluster extract per Section 9.4."""
+
+    # Step 1: Find root codes with at least one term in this cluster
+    root_codes = [r[0] for r in conn.execute("""
+        SELECT DISTINCT rf.root_code
+        FROM wa_term_root_family rf
+        JOIN wa_term_inventory ti ON ti.id = rf.term_inv_id AND ti.delete_flagged = 0
+        JOIN wa_file_index fi ON fi.id = ti.file_id
+        JOIN word_registry wr ON wr.id = fi.word_registry_fk
+        WHERE wr.cluster_assignment = ?
+    """, (cluster,)).fetchall()]
+
+    if not root_codes:
+        print(f"No root families for cluster {cluster}")
+        return ""
+
+    roots_out = []
+    total_groups = 0
+    cross_count = 0
+
+    for rc in root_codes:
+        # All terms in this root (including other clusters)
+        terms = conn.execute("""
+            SELECT DISTINCT ti.strongs_number, mt.transliteration, mt.gloss, mt.language,
+                wr.no as reg_no, wr.word as reg_word, wr.cluster_assignment
+            FROM wa_term_root_family rf
+            JOIN wa_term_inventory ti ON ti.id = rf.term_inv_id AND ti.delete_flagged = 0
+            JOIN mti_terms mt ON mt.strongs_number = ti.strongs_number
+              AND mt.status IN ('extracted', 'extracted_thin') AND mt.delete_flagged = 0
+            JOIN wa_file_index fi ON fi.id = ti.file_id
+            JOIN word_registry wr ON wr.id = fi.word_registry_fk
+            WHERE rf.root_code = ?
+            ORDER BY wr.no, ti.strongs_number
+        """, (rc,)).fetchall()
+
+        if not terms:
+            continue
+
+        root_meta = conn.execute(
+            "SELECT root_language, root_gloss FROM wa_term_root_family WHERE root_code = ? LIMIT 1",
+            (rc,),
+        ).fetchone()
+
+        in_cluster_regs = sorted(set(t["reg_no"] for t in terms if t["cluster_assignment"] == cluster))
+        all_clusters = set(t["cluster_assignment"] for t in terms if t["cluster_assignment"])
+        is_cross = len(all_clusters) > 1
+
+        # Groups + anchor verses for all terms in root
+        groups = []
+        for t in terms:
+            grp_rows = conn.execute("""
+                SELECT di.group_code, di.context_description, di.dimension,
+                    di.dimension_confidence, di.dominant_subject, di.manual_override,
+                    di.owning_registry_no, di.owning_registry_word, di.cluster_assignment,
+                    di.verse_context_group_id,
+                    mt2.strongs_number, mt2.transliteration, mt2.gloss
+                FROM wa_dimension_index di
+                JOIN mti_terms mt2 ON mt2.id = di.mti_term_id
+                WHERE di.strongs_number = ? AND di.delete_flagged = 0
+                ORDER BY di.group_code
+            """, (t["strongs_number"],)).fetchall()
+
+            for g in grp_rows:
+                anchors = conn.execute("""
+                    SELECT vc.verse_record_id, b.name as book, vr.chapter,
+                           vr.verse_num as verse, vr.reference, vr.verse_text
+                    FROM verse_context vc
+                    JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
+                    LEFT JOIN books b ON b.id = vr.book_id
+                    WHERE vc.group_id = ? AND vc.is_anchor = 1 AND vc.delete_flagged = 0
+                    ORDER BY b.book_order, vr.chapter, vr.verse_num
+                """, (g["verse_context_group_id"],)).fetchall()
+
+                groups.append({
+                    "group_code": g["group_code"],
+                    "context_description": g["context_description"],
+                    "strongs_number": g["strongs_number"],
+                    "transliteration": g["transliteration"],
+                    "gloss": g["gloss"],
+                    "registry_no": g["owning_registry_no"],
+                    "registry_word": g["owning_registry_word"],
+                    "cluster_assignment": g["cluster_assignment"],
+                    "dimension": g["dimension"],
+                    "dimension_confidence": g["dimension_confidence"],
+                    "dominant_subject": g["dominant_subject"],
+                    "manual_override": g["manual_override"],
+                    "anchor_verses": [dict(a) for a in anchors],
+                })
+
+        if is_cross:
+            cross_count += 1
+        total_groups += len(groups)
+
+        roots_out.append({
+            "root_code": rc,
+            "root_language": root_meta["root_language"] if root_meta else None,
+            "root_gloss": root_meta["root_gloss"] if root_meta else None,
+            "in_cluster_registries": in_cluster_regs,
+            "cross_registry": is_cross,
+            "term_count": len(terms),
+            "group_count": len(groups),
+            "terms": [{
+                "strongs_number": t["strongs_number"],
+                "transliteration": t["transliteration"],
+                "gloss": t["gloss"],
+                "language": t["language"],
+                "reg_no": t["reg_no"],
+                "reg_word": t["reg_word"],
+                "cluster_assignment": t["cluster_assignment"],
+                "in_current_cluster": t["cluster_assignment"] == cluster,
+            } for t in terms],
+            "groups": groups,
+        })
+
+    result = {
+        "extract_meta": {
+            "extract_type": "dimension_review_rootfamily",
+            "cluster": cluster,
+            "produced_date": today,
+            "produced_by": "Claude Code \u2014 WA-DimensionReview-Instruction-v1.7",
+            "governing_instruction": "WA-DimensionReview-Instruction-v1.7-2026-04-09",
+            "root_count": len(roots_out),
+            "group_count": total_groups,
+            "cross_registry_root_count": cross_count,
+        },
+        "roots": roots_out,
+    }
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    filename = f"wa-dim-{cluster}-rootfamily-{today}.json"
+    out_path = os.path.join(OUT_DIR, filename)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=2, ensure_ascii=False)
+
+    fsize = os.path.getsize(out_path)
+    print(f"Written: {out_path}")
+    print(f"Cluster: {cluster}")
+    print(f"Roots: {len(roots_out)} ({cross_count} cross-registry)")
+    print(f"Groups: {total_groups}")
+    print(f"Size: {fsize / 1024:.0f} KB")
+    return out_path
+
+
 def main():
     parser = argparse.ArgumentParser(description="Build Dimension Review extracts")
     parser.add_argument("--cluster", help="Build cluster extract for given cluster (e.g. C01)")
+    parser.add_argument("--rootfamily", help="Build root family extract for given cluster")
     parser.add_argument("--group-verify", help="Build group verification extract for given group_code")
     parser.add_argument("--pointers", help="Build existing pointers extract for given cluster")
     args = parser.parse_args()
 
-    if not any([args.cluster, args.group_verify, args.pointers]):
+    if not any([args.cluster, args.group_verify, args.pointers, args.rootfamily]):
         parser.print_help()
         return
 
@@ -289,6 +445,8 @@ def main():
 
     if args.cluster:
         build_cluster_extract(conn, args.cluster, today)
+    if args.rootfamily:
+        build_rootfamily_extract(conn, args.rootfamily, today)
     if args.group_verify:
         build_group_verify_extract(conn, args.group_verify, today)
     if args.pointers:

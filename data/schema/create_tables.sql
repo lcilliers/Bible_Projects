@@ -122,7 +122,10 @@ CREATE TABLE IF NOT EXISTS word_registry (
     shared_term_count   INTEGER DEFAULT 0,          -- count of terms shared with other registries
     term_sharing_ratio  REAL    DEFAULT 0.0,         -- shared / (unique + shared)
     -- M18: Verse Context
-    verse_context_status TEXT   DEFAULT NULL          -- NULL | 'In Progress' | 'Complete'
+    verse_context_status TEXT   DEFAULT NULL,         -- NULL | 'In Progress' | 'Complete'
+    -- Dimension Review stamps (v1.7)
+    dim_review_status   TEXT    DEFAULT NULL,          -- NULL | 'Complete'
+    dim_review_version  TEXT    DEFAULT NULL            -- instruction version used for review
 );
 
 CREATE INDEX IF NOT EXISTS idx_wr_no         ON word_registry (no);
@@ -861,5 +864,24 @@ CREATE TABLE IF NOT EXISTS wa_dimension_index (
 
 CREATE INDEX IF NOT EXISTS idx_wdi_vcg ON wa_dimension_index (verse_context_group_id);
 CREATE INDEX IF NOT EXISTS idx_wdi_dim ON wa_dimension_index (dimension);
+
+-- ═════════════════════════════════════════════════════════════════════════════
+-- SECTION 18 — DIMENSION REVIEW CLUSTER LOG  (v1.7)
+-- ═════════════════════════════════════════════════════════════════════════════
+
+-- ── 18.1  wa_dim_review_cluster_log ──────────────────────────────────────────
+-- One row per cluster when Dimension Review is complete.
+-- Session B gates on this table containing a record for the cluster.
+CREATE TABLE IF NOT EXISTS wa_dim_review_cluster_log (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    cluster             TEXT    NOT NULL UNIQUE,
+    completed_date      TEXT    NOT NULL,
+    instruction_version TEXT    NOT NULL,
+    registry_count      INTEGER NOT NULL DEFAULT 0,
+    group_count         INTEGER NOT NULL DEFAULT 0,
+    anchored_count      INTEGER NOT NULL DEFAULT 0,
+    notes               TEXT,
+    last_modified       TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now'))
+);
 
 

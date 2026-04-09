@@ -22,8 +22,8 @@ Programme data exported from the database for consumption by Claude AI or the re
 | `data/exports/` (root) | Only subfolders — no files in root |  |
 | `data/exports/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_full_{date}_v{n}.json` |
 | `data/exports/verse_context/` | Verse Context batch extracts | `wa-vcb-{nnn}-extract-{date}.json` |
-| `data/exports/dimension_review/` | Dimension Review extracts (cluster, group verification, existing pointers) | `wa-dim-extract-{cluster}-{date}.json`, `wa-dim-grpverify-{group_code}-{date}.json`, `wa-dim-existing-pointers-{cluster}-{date}.json` |
-| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-cc-directive-{scope}-v{n}-{date}.md` |
+| `data/exports/dimension_review/` | Dimension Review extracts (cluster, root family, group verification, existing pointers) | `wa-dim-{cluster}-extract-{date}.json`, `wa-dim-{cluster}-rootfamily-{date}.json`, `wa-dim-{cluster}-existing-pointers-{date}.json`, `wa-dim-{group_code}-grpverify-{date}.json`, `wa-dim-{ref}-inv-{scope}-v{n}-{date}.md` |
+| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-{ref}-cc-directive-{scope}-v{n}-{date}.md` |
 | `data/exports/dimension_review/directives/archive/` | Processed directives (moved after execution) | |
 | `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{date}.json` |
 | `data/exports/vertical_pass/directives/` | Pending CC directives. Processed directives move to `directives/archive/`. | `WA-VerticalPass-{scope}-v{n}-{date}.md` |
@@ -39,7 +39,7 @@ All patch files received from Claude AI. Applied patches are moved to `archive/p
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Pending patches | `wa-{nnn}-{word}-patch-{date}.json`, `wa-vcb-{nnn}-patch-{date}.json`, `wa-dim-patch-{cluster}-v{n}-{date}.json`, `wa-dim-grpdesc-patch-{reg}-v{n}-{date}.json` |
+| Pending patches | `wa-{nnn}-{word}-patch-{date}.json`, `wa-vcb-{nnn}-patch-{date}.json`, `wa-dim-{cluster}-patch-v{n}-{date}.json`, `wa-dim-{ref}-grpdesc-patch-v{n}-{date}.json` |
 
 ### `data/imports/WA/Session_B_Dimension_Review/`
 

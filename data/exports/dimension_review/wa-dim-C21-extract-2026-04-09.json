@@ -1,0 +1,3953 @@
+{
+  "extract_meta": {
+    "extract_type": "dimension_review_cluster",
+    "cluster": "C21",
+    "produced_date": "2026-04-09",
+    "produced_by": "Claude Code — WA-DimensionReview-Instruction-v1.6",
+    "governing_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08",
+    "row_count": 46
+  },
+  "cluster_registries": [
+    {
+      "registry_no": 134,
+      "word": "renewal",
+      "cluster_assignment": "C21",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "source_list": "High Confidence",
+      "total_groups": 5,
+      "classified_groups": 5,
+      "unclassified_groups": 0
+    },
+    {
+      "registry_no": 202,
+      "word": "transformation",
+      "cluster_assignment": "C21",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "source_list": "Low Confidence / Inferred",
+      "total_groups": 7,
+      "classified_groups": 7,
+      "unclassified_groups": 0
+    },
+    {
+      "registry_no": 207,
+      "word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "source_list": "Programme Addition",
+      "total_groups": 12,
+      "classified_groups": 8,
+      "unclassified_groups": 4
+    },
+    {
+      "registry_no": 210,
+      "word": "deadness",
+      "cluster_assignment": "C21",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "source_list": "Low Confidence / Inferred",
+      "total_groups": 22,
+      "classified_groups": 20,
+      "unclassified_groups": 2
+    }
+  ],
+  "groups": [
+    {
+      "id": 8171,
+      "verse_context_group_id": 2072,
+      "group_code": "1097-001",
+      "owning_registry_no": 134,
+      "owning_registry_word": "renewal",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1097,
+      "strongs_number": "G0342",
+      "transliteration": "anakainōsis",
+      "gloss": "renewal",
+      "language": "Greek",
+      "context_description": "Term names the renewal of the inner person — the mind transformed by the Spirit as the foundation for discerning God's will and living transformed",
+      "dimension": "Transformation",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 0,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 36895,
+          "book": "Romans",
+          "chapter": 12,
+          "verse": 2,
+          "verse_text": "Rom 12:2 Do not be conformed to this world , but be transformed by the renewal of your mind , that by testing you may discern what is the will of God , what is good and acceptable and perfect ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 189438,
+          "book": "Titus",
+          "chapter": 3,
+          "verse": 5,
+          "verse_text": "Tit 3:5 he saved us , not because of works done by us in righteousness , but according to his own mercy , by the washing of regeneration and renewal of the Holy Spirit ,"
+        }
+      ],
+      "root_code": "ANAKAIN",
+      "root_language": "Greek",
+      "root_gloss": "renewal"
+    },
+    {
+      "id": 8173,
+      "verse_context_group_id": 2073,
+      "group_code": "1098-001",
+      "owning_registry_no": 134,
+      "owning_registry_word": "renewal",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1098,
+      "strongs_number": "H2487",
+      "transliteration": "cha.li.phah",
+      "gloss": "change",
+      "language": "Hebrew",
+      "context_description": "Term names change as inner transformation — the hoped-for renewal of one's condition through patient waiting, or the failure to change as evidence of persistent inner hardness toward God",
+      "dimension": "Transformation",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 8,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 36898,
+          "book": "Job",
+          "chapter": 14,
+          "verse": 14,
+          "verse_text": "Job 14:14 If a man dies , shall he live again? All the days of my service I would wait , till my renewal should come ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 36897,
+          "book": "Job",
+          "chapter": 10,
+          "verse": 17,
+          "verse_text": "Job 10:17 You renew your witnesses against me and increase your vexation toward me; you bring fresh troops against me ."
+        },
+        {
+          "verse_record_id": 189494,
+          "book": "Psalms",
+          "chapter": 55,
+          "verse": 19,
+          "verse_text": "Psa 55:19 God will give ear and humble them, he who is enthroned from of old , Selah because they do not change and do not fear God ."
+        }
+      ],
+      "root_code": "CHALOPH",
+      "root_language": "Hebrew",
+      "root_gloss": "for"
+    },
+    {
+      "id": 8170,
+      "verse_context_group_id": 2142,
+      "group_code": "6132-001",
+      "owning_registry_no": 134,
+      "owning_registry_word": "renewal",
+      "cluster_assignment": "C21",
+      "mti_term_id": 6132,
+      "strongs_number": "G0341",
+      "transliteration": "anakainoō",
+      "gloss": "to renew",
+      "language": "Greek",
+      "context_description": "Term names the progressive inner renewal of the self — the ongoing transformation of the inner person toward God's image, expressed as daily renewal of the inner self and growth in knowledge",
+      "dimension": "Cognition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 0,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 189488,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 16,
+          "verse_text": "2Cor 4:16 So we do not lose heart . Though our outer self is wasting away , our inner self is being renewed day by day ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 189489,
+          "book": "Colossians",
+          "chapter": 3,
+          "verse": 10,
+          "verse_text": "Col 3:10 and have put on the new self, which is being renewed in knowledge after the image of its creator ."
+        }
+      ],
+      "root_code": "ANAKAIN",
+      "root_language": "Greek",
+      "root_gloss": "renewal"
+    },
+    {
+      "id": 8174,
+      "verse_context_group_id": 2143,
+      "group_code": "6134-001",
+      "owning_registry_no": 134,
+      "owning_registry_word": "renewal",
+      "cluster_assignment": "C21",
+      "mti_term_id": 6134,
+      "strongs_number": "H4253",
+      "transliteration": "ma.cha.la.phah",
+      "gloss": "lock",
+      "language": "Hebrew",
+      "context_description": "Term names the Nazirite locks of hair as the physical expression of an inner covenantal reality — the consecration whose physical removal represents the departure of inner strength and divine empowerment",
+      "dimension": "Agency / Power",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 0,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 189522,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 13,
+          "verse_text": "Judg 16:13 Then Delilah said to Samson , “ Until now you have mocked me and told me lies . Tell me how you might be bound .” And he said to her, “ If you weave the seven locks of my head with the web and fasten it tight with the pin ^ , then I shall become weak and be like any other man .”"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 189523,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 14,
+          "verse_text": "Judg 16:14 So while he slept , Delilah took the seven locks of his head and wove them into the web . And she made them tight with the pin and said to him, “The Philistines are upon you, Samson !” But he awoke from his sleep and pulled away the pin , the loom , and the web ."
+        },
+        {
+          "verse_record_id": 189524,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 19,
+          "verse_text": "Judg 16:19 She made him sleep on her knees . And she called a man and had him shave off the seven locks of his head . Then she began to torment him, and his strength left him ."
+        }
+      ],
+      "root_code": "CHALOPH",
+      "root_language": "Hebrew",
+      "root_gloss": "for"
+    },
+    {
+      "id": 8172,
+      "verse_context_group_id": 2144,
+      "group_code": "6136-001",
+      "owning_registry_no": 134,
+      "owning_registry_word": "renewal",
+      "cluster_assignment": "C21",
+      "mti_term_id": 6136,
+      "strongs_number": "H2475",
+      "transliteration": "cha.loph",
+      "gloss": "destruction",
+      "language": "Hebrew",
+      "context_description": "Term names the perishing as those whose vulnerable condition calls forth advocacy from the inner conscience of others — the destitute whose cause requires the advocate's will",
+      "dimension": "Moral Character",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 0,
+      "set_aside_count": 0,
+      "total_verse_count": 1,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 189527,
+          "book": "Proverbs",
+          "chapter": 31,
+          "verse": 8,
+          "verse_text": "Pro 31:8 Open your mouth for the mute , for the rights of all who are destitute ."
+        }
+      ],
+      "related_verses": [],
+      "root_code": "CHALOPH",
+      "root_language": "Hebrew",
+      "root_gloss": "for"
+    },
+    {
+      "id": 9180,
+      "verse_context_group_id": 3326,
+      "group_code": "1362-001",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1362,
+      "strongs_number": "G3339",
+      "transliteration": "metamorfoō",
+      "gloss": "to transform",
+      "language": "Greek",
+      "context_description": "Term describes the inner transformation of the person toward conformity with God — renewal of mind and progressive conformity to divine glory",
+      "dimension": "Transformation",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 0,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54735,
+          "book": "Romans",
+          "chapter": 12,
+          "verse": 2,
+          "verse_text": "Rom 12:2 Do not be conformed to this world , but be transformed by the renewal of your mind , that by testing you may discern what is the will of God , what is good and acceptable and perfect ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 54732,
+          "book": "2 Corinthians",
+          "chapter": 3,
+          "verse": 18,
+          "verse_text": "2Cor 3:18 And we all , with unveiled face , beholding the glory of the Lord , are being transformed into the same image from one degree of glory to another . For this comes from the Lord who is the Spirit ."
+        }
+      ],
+      "root_code": "MORF",
+      "root_language": "Greek",
+      "root_gloss": "to form"
+    },
+    {
+      "id": 9181,
+      "verse_context_group_id": 3327,
+      "group_code": "1362-002",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1362,
+      "strongs_number": "G3339",
+      "transliteration": "metamorfoō",
+      "gloss": "to transform",
+      "language": "Greek",
+      "context_description": "Term describes Christ's visible transformation, which mediates an inner encounter between the disciples and divine reality",
+      "dimension": "Transformation",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 0,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54733,
+          "book": "Mark",
+          "chapter": 9,
+          "verse": 2,
+          "verse_text": "Mar 9:2 And after six days Jesus took with him Peter and James and John , and led them up a high mountain by themselves . And he was transfigured before them ,"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 54734,
+          "book": "Matthew",
+          "chapter": 17,
+          "verse": 2,
+          "verse_text": "Mat 17:2 And he was transfigured before them , and his face shone like the sun , and his clothes became white as light ."
+        }
+      ],
+      "root_code": "MORF",
+      "root_language": "Greek",
+      "root_gloss": "to form"
+    },
+    {
+      "id": 9183,
+      "verse_context_group_id": 3330,
+      "group_code": "1364-001",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1364,
+      "strongs_number": "H2498",
+      "transliteration": "cha.laph",
+      "gloss": "to pass",
+      "language": "Hebrew",
+      "context_description": "Term describes the inner renewal of strength and vitality that comes through waiting on or turning to God",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 17,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54751,
+          "book": "Isaiah",
+          "chapter": 40,
+          "verse": 31,
+          "verse_text": "Isa 40:31 but they who wait for the Lord shall renew their strength ; they shall mount up with wings like eagles ; they shall run and not be weary ; they shall walk and not faint ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 54758,
+          "book": "Job",
+          "chapter": 29,
+          "verse": 20,
+          "verse_text": "Job 29:20 my glory fresh with me, and my bow ever new in my hand .’"
+        },
+        {
+          "verse_record_id": 54752,
+          "book": "Isaiah",
+          "chapter": 41,
+          "verse": 1,
+          "verse_text": "Isa 41:1 Listen to me in silence , O coastlands ; let the peoples renew their strength ; let them approach , then let them speak ; let us together draw near for judgment ."
+        }
+      ],
+      "root_code": "CHALAPH",
+      "root_language": "Hebrew",
+      "root_gloss": "to pass"
+    },
+    {
+      "id": 9184,
+      "verse_context_group_id": 3332,
+      "group_code": "1364-002",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1364,
+      "strongs_number": "H2498",
+      "transliteration": "cha.laph",
+      "gloss": "to pass",
+      "language": "Hebrew",
+      "context_description": "Term expresses the transience of human life and creation — the rapid passing that characterises human existence",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 3,
+      "set_aside_count": 17,
+      "total_verse_count": 4,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54765,
+          "book": "Psalms",
+          "chapter": 90,
+          "verse": 5,
+          "verse_text": "Psa 90:5 You sweep them away as with a flood ; they are like a dream , like grass that is renewed in the morning :"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 54761,
+          "book": "Job",
+          "chapter": 9,
+          "verse": 26,
+          "verse_text": "Job 9:26 They go by like skiffs of reed , like an eagle swooping on the prey ."
+        },
+        {
+          "verse_record_id": 54766,
+          "book": "Psalms",
+          "chapter": 90,
+          "verse": 6,
+          "verse_text": "Psa 90:6 in the morning it flourishes and is renewed ; in the evening it fades and withers ."
+        },
+        {
+          "verse_record_id": 54764,
+          "book": "Psalms",
+          "chapter": 102,
+          "verse": 26,
+          "verse_text": "Psa 102:26 They will perish , but you will remain ; they will all wear out like a garment . You will change them like a robe , and they will pass away ,"
+        }
+      ],
+      "root_code": "CHALAPH",
+      "root_language": "Hebrew",
+      "root_gloss": "to pass"
+    },
+    {
+      "id": 9185,
+      "verse_context_group_id": 3329,
+      "group_code": "1364-003",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1364,
+      "strongs_number": "H2498",
+      "transliteration": "cha.laph",
+      "gloss": "to pass",
+      "language": "Hebrew",
+      "context_description": "Term describes the wilful overriding of divine covenant — an inner act of defiance against binding obligation",
+      "dimension": "Divine-Human Correspondence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 0,
+      "set_aside_count": 17,
+      "total_verse_count": 1,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54750,
+          "book": "Isaiah",
+          "chapter": 24,
+          "verse": 5,
+          "verse_text": "Isa 24:5 The earth lies defiled under its inhabitants ; for they have transgressed the laws , violated the statutes , broken the everlasting covenant ."
+        }
+      ],
+      "related_verses": [],
+      "root_code": "CHALAPH",
+      "root_language": "Hebrew",
+      "root_gloss": "to pass"
+    },
+    {
+      "id": 9186,
+      "verse_context_group_id": 3331,
+      "group_code": "1364-004",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1364,
+      "strongs_number": "H2498",
+      "transliteration": "cha.laph",
+      "gloss": "to pass",
+      "language": "Hebrew",
+      "context_description": "Term describes the passing of God or divine spirit near the person, engaging the person's inner capacity for perception or producing inner dread",
+      "dimension": "Emotion — Negative",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 17,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 54760,
+          "book": "Job",
+          "chapter": 9,
+          "verse": 11,
+          "verse_text": "Job 9:11 Behold, he passes by me, and I see him not; he moves on , but I do not perceive him ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 54759,
+          "book": "Job",
+          "chapter": 4,
+          "verse": 15,
+          "verse_text": "Job 4:15 A spirit glided past my face ; the hair of my flesh stood up ."
+        }
+      ],
+      "root_code": "CHALAPH",
+      "root_language": "Hebrew",
+      "root_gloss": "to pass"
+    },
+    {
+      "id": 9182,
+      "verse_context_group_id": 3328,
+      "group_code": "7377-001",
+      "owning_registry_no": 202,
+      "owning_registry_word": "transformation",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7377,
+      "strongs_number": "G3445",
+      "transliteration": "morfoō",
+      "gloss": "to form",
+      "language": "Greek",
+      "context_description": "Term describes the interior formation of Christ within the person — a process of inner shaping toward Christ-likeness",
+      "dimension": "Transformation",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 0,
+      "set_aside_count": 0,
+      "total_verse_count": 1,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231403,
+          "book": "Galatians",
+          "chapter": 4,
+          "verse": 19,
+          "verse_text": "Gal 4:19 my little children , for whom I am again in the anguish of childbirth until Christ is formed in you !"
+        }
+      ],
+      "related_verses": [],
+      "root_code": "MORF",
+      "root_language": "Greek",
+      "root_gloss": "to form"
+    },
+    {
+      "id": 9244,
+      "verse_context_group_id": 3376,
+      "group_code": "1371-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1371,
+      "strongs_number": "G4656",
+      "transliteration": "skotoō",
+      "gloss": "to darken",
+      "language": "Greek",
+      "context_description": "Term describes the plunging of the person/domain into darkness as divine judgment, producing inner anguish",
+      "dimension": "Divine-Human Correspondence",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 0,
+      "set_aside_count": 0,
+      "total_verse_count": 1,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55299,
+          "book": "Revelation",
+          "chapter": 16,
+          "verse": 10,
+          "verse_text": "Rev 16:10 The fifth angel poured out his bowl on the throne of the beast , and its kingdom was plunged into darkness . People gnawed their tongues in anguish"
+        }
+      ],
+      "related_verses": [],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9245,
+      "verse_context_group_id": 3377,
+      "group_code": "1372-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1372,
+      "strongs_number": "G5185",
+      "transliteration": "tuflos",
+      "gloss": "blind",
+      "language": "Greek",
+      "context_description": "Term names spiritual blindness as the inner condition of the person who claims to see but does not — self-deception, hardness, and inability to perceive spiritual reality",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 15,
+      "set_aside_count": 8,
+      "total_verse_count": 16,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55317,
+          "book": "John",
+          "chapter": 9,
+          "verse": 41,
+          "verse_text": "Joh 9:41 Jesus said to them , “ If you were blind , you would have no guilt ; but now that you say , ‘We see ,’ your guilt remains ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55332,
+          "book": "Matthew",
+          "chapter": 15,
+          "verse": 14,
+          "verse_text": "Mat 15:14 Let them alone ; they are blind guides . And if the blind lead the blind , both will fall into a pit .”"
+        },
+        {
+          "verse_record_id": 55337,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 16,
+          "verse_text": "Mat 23:16 “ Woe to you , blind guides , who say , ‘ If anyone swears by the temple , it is nothing , but if anyone swears by the gold of the temple , he is bound by his oath .’"
+        },
+        {
+          "verse_record_id": 55338,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 17,
+          "verse_text": "Mat 23:17 You blind fools ! For which is greater , the gold or the temple that has made the gold sacred ?"
+        },
+        {
+          "verse_record_id": 55339,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 19,
+          "verse_text": "Mat 23:19 You blind men! For which is greater , the gift or the altar that makes the gift sacred ?"
+        },
+        {
+          "verse_record_id": 55340,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 24,
+          "verse_text": "Mat 23:24 You blind guides , straining out a gnat and swallowing a camel !"
+        },
+        {
+          "verse_record_id": 55341,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 26,
+          "verse_text": "Mat 23:26 You blind Pharisee ! First clean the inside of the cup and the plate , that the outside also may be clean ."
+        },
+        {
+          "verse_record_id": 55322,
+          "book": "Luke",
+          "chapter": 6,
+          "verse": 39,
+          "verse_text": "Luk 6:39 He also told them a parable : “ Can a blind man lead a blind man? Will they not both fall into a pit ?"
+        },
+        {
+          "verse_record_id": 55310,
+          "book": "John",
+          "chapter": 9,
+          "verse": 2,
+          "verse_text": "Joh 9:2 And his disciples asked him , “ Rabbi , who sinned , this man or his parents , that he was born blind ?”"
+        },
+        {
+          "verse_record_id": 55312,
+          "book": "John",
+          "chapter": 9,
+          "verse": 24,
+          "verse_text": "Joh 9:24 So for the second time they called the man who had been blind and said to him , “ Give glory to God . We know that this man is a sinner .”"
+        },
+        {
+          "verse_record_id": 55315,
+          "book": "John",
+          "chapter": 9,
+          "verse": 39,
+          "verse_text": "Joh 9:39 Jesus said , “ For judgment I came into this world , that those who do not see may see , and those who see may become blind .”"
+        },
+        {
+          "verse_record_id": 55316,
+          "book": "John",
+          "chapter": 9,
+          "verse": 40,
+          "verse_text": "Joh 9:40 Some of the Pharisees near him heard these things , and said to him , “ Are we also blind ?”"
+        },
+        {
+          "verse_record_id": 55301,
+          "book": "Acts",
+          "chapter": 13,
+          "verse": 11,
+          "verse_text": "Act 13:11 And now , behold , the hand of the Lord is upon you , and you will be blind and unable to see the sun for a time .” Immediately mist and darkness fell upon him , and he went about seeking people to lead him by the hand ."
+        },
+        {
+          "verse_record_id": 55345,
+          "book": "Romans",
+          "chapter": 2,
+          "verse": 19,
+          "verse_text": "Rom 2:19 and if you are sure that you yourself are a guide to the blind , a light to those who are in darkness ,"
+        },
+        {
+          "verse_record_id": 55300,
+          "book": "2 Peter",
+          "chapter": 1,
+          "verse": 9,
+          "verse_text": "2Pe 1:9 For whoever lacks these qualities is so nearsighted that he is blind , having forgotten that he was cleansed from his former sins ."
+        },
+        {
+          "verse_record_id": 55344,
+          "book": "Revelation",
+          "chapter": 3,
+          "verse": 17,
+          "verse_text": "Rev 3:17 For you say , “I am rich , I have prospered , and I need nothing ,” not realizing that you are wretched , pitiable , poor , blind , and naked ."
+        }
+      ],
+      "root_code": "TUFL",
+      "root_language": "Greek",
+      "root_gloss": "blind"
+    },
+    {
+      "id": 9246,
+      "verse_context_group_id": 3378,
+      "group_code": "1372-002",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1372,
+      "strongs_number": "G5185",
+      "transliteration": "tuflos",
+      "gloss": "blind",
+      "language": "Greek",
+      "context_description": "Term names physical blindness as the condition of need healed by the Messiah — a sign that calls forth inner-being faith and witnesses to spiritual reality",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 21,
+      "set_aside_count": 8,
+      "total_verse_count": 22,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55321,
+          "book": "Luke",
+          "chapter": 4,
+          "verse": 18,
+          "verse_text": "Luk 4:18 “The Spirit of the Lord is upon me , because he has anointed me to proclaim good news to the poor . He has sent me to proclaim liberty to the captives and recovering of sight to the blind , to set at liberty those who are oppressed ,"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55342,
+          "book": "Matthew",
+          "chapter": 9,
+          "verse": 27,
+          "verse_text": "Mat 9:27 And as Jesus passed on from there , two blind men followed him , crying aloud , “Have mercy on us , Son of David .”"
+        },
+        {
+          "verse_record_id": 55343,
+          "book": "Matthew",
+          "chapter": 9,
+          "verse": 28,
+          "verse_text": "Mat 9:28 When he entered the house , the blind men came to him , and Jesus said to them , “Do you believe that I am able to do this ?” They said to him , “ Yes , Lord .”"
+        },
+        {
+          "verse_record_id": 55330,
+          "book": "Matthew",
+          "chapter": 11,
+          "verse": 5,
+          "verse_text": "Mat 11:5 the blind receive their sight and the lame walk , lepers are cleansed and the deaf hear , and the dead are raised up , and the poor have good news preached to them."
+        },
+        {
+          "verse_record_id": 55331,
+          "book": "Matthew",
+          "chapter": 12,
+          "verse": 22,
+          "verse_text": "Mat 12:22 Then a demon-oppressed man who was blind and mute was brought to him , and he healed him , so that the man spoke and saw ."
+        },
+        {
+          "verse_record_id": 55335,
+          "book": "Matthew",
+          "chapter": 20,
+          "verse": 30,
+          "verse_text": "Mat 20:30 And behold , there were two blind men sitting by the roadside , and when they heard that Jesus was passing by , they cried out , “ Lord , have mercy on us , Son of David !”"
+        },
+        {
+          "verse_record_id": 55325,
+          "book": "Mark",
+          "chapter": 10,
+          "verse": 46,
+          "verse_text": "Mar 10:46 And they came to Jericho . And as he was leaving Jericho with his disciples and a great crowd , Bartimaeus , a blind beggar , the son of Timaeus , was sitting by the roadside ."
+        },
+        {
+          "verse_record_id": 55326,
+          "book": "Mark",
+          "chapter": 10,
+          "verse": 49,
+          "verse_text": "Mar 10:49 And Jesus stopped and said , “ Call him .” And they called the blind man , saying to him , “Take heart . Get up ; he is calling you .”"
+        },
+        {
+          "verse_record_id": 55327,
+          "book": "Mark",
+          "chapter": 10,
+          "verse": 51,
+          "verse_text": "Mar 10:51 And Jesus said to him , “ What do you want me to do for you ?” And the blind man said to him , “ Rabbi , let me recover my sight .”"
+        },
+        {
+          "verse_record_id": 55323,
+          "book": "Luke",
+          "chapter": 7,
+          "verse": 21,
+          "verse_text": "Luk 7:21 In that hour he healed many people of diseases and plagues and evil spirits , and on many who were blind he bestowed sight ."
+        },
+        {
+          "verse_record_id": 55324,
+          "book": "Luke",
+          "chapter": 7,
+          "verse": 22,
+          "verse_text": "Luk 7:22 And he answered them , “ Go and tell John what you have seen and heard : the blind receive their sight , the lame walk , lepers are cleansed , and the deaf hear , the dead are raised up, the poor have good news preached to them."
+        },
+        {
+          "verse_record_id": 55320,
+          "book": "Luke",
+          "chapter": 18,
+          "verse": 35,
+          "verse_text": "Luk 18:35 As he drew near to Jericho , a blind man was sitting by the roadside begging ."
+        },
+        {
+          "verse_record_id": 55305,
+          "book": "John",
+          "chapter": 9,
+          "verse": 1,
+          "verse_text": "Joh 9:1 As he passed by , he saw a man blind from birth ."
+        },
+        {
+          "verse_record_id": 55306,
+          "book": "John",
+          "chapter": 9,
+          "verse": 13,
+          "verse_text": "Joh 9:13 They brought to the Pharisees the man who had formerly been blind ."
+        },
+        {
+          "verse_record_id": 55307,
+          "book": "John",
+          "chapter": 9,
+          "verse": 17,
+          "verse_text": "Joh 9:17 So they said again to the blind man , “ What do you say about him , since he has opened your eyes ?” He said , “He is a prophet .”"
+        },
+        {
+          "verse_record_id": 55308,
+          "book": "John",
+          "chapter": 9,
+          "verse": 18,
+          "verse_text": "Joh 9:18 The Jews did not believe that he had been blind and had received his sight , until they called the parents of the man who had received his sight"
+        },
+        {
+          "verse_record_id": 55309,
+          "book": "John",
+          "chapter": 9,
+          "verse": 19,
+          "verse_text": "Joh 9:19 and asked them , “ Is this your son , who you say was born blind ? How then does he now see ?”"
+        },
+        {
+          "verse_record_id": 55311,
+          "book": "John",
+          "chapter": 9,
+          "verse": 20,
+          "verse_text": "Joh 9:20 His parents answered , “We know that this is our son and that he was born blind ."
+        },
+        {
+          "verse_record_id": 55313,
+          "book": "John",
+          "chapter": 9,
+          "verse": 25,
+          "verse_text": "Joh 9:25 He answered , “ Whether he is a sinner I do not know . One thing I do know , that though I was blind , now I see .”"
+        },
+        {
+          "verse_record_id": 55314,
+          "book": "John",
+          "chapter": 9,
+          "verse": 32,
+          "verse_text": "Joh 9:32 Never since the world began has it been heard that anyone opened the eyes of a man born blind ."
+        },
+        {
+          "verse_record_id": 55302,
+          "book": "John",
+          "chapter": 10,
+          "verse": 21,
+          "verse_text": "Joh 10:21 Others said , “ These are not the words of one who is oppressed by a demon . Can a demon open the eyes of the blind ?”"
+        },
+        {
+          "verse_record_id": 55303,
+          "book": "John",
+          "chapter": 11,
+          "verse": 37,
+          "verse_text": "Joh 11:37 But some of them said , “ Could not he who opened the eyes of the blind man also have kept this man from dying ?”"
+        }
+      ],
+      "root_code": "TUFL",
+      "root_language": "Greek",
+      "root_gloss": "blind"
+    },
+    {
+      "id": 9240,
+      "verse_context_group_id": 3373,
+      "group_code": "7432-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7432,
+      "strongs_number": "G4655",
+      "transliteration": "skotos",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names darkness as the inner-spiritual domain the person inhabits, is rescued from, or identifies with — their fundamental spiritual condition and identity",
+      "dimension": "Cognition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 12,
+      "set_aside_count": 4,
+      "total_verse_count": 13,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231945,
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 8,
+          "verse_text": "Eph 5:8 for at one time you were darkness , but now you are light in the Lord . Walk as children of light"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231957,
+          "book": "Matthew",
+          "chapter": 4,
+          "verse": 16,
+          "verse_text": "Mat 4:16 the people dwelling in darkness have seen a great light , and for those dwelling in the region and shadow of death , on them a light has dawned .”"
+        },
+        {
+          "verse_record_id": 231949,
+          "book": "Luke",
+          "chapter": 1,
+          "verse": 79,
+          "verse_text": "Luk 1:79 to give light to those who sit in darkness and in the shadow of death , to guide our feet into the way of peace .”"
+        },
+        {
+          "verse_record_id": 231947,
+          "book": "John",
+          "chapter": 3,
+          "verse": 19,
+          "verse_text": "Joh 3:19 And this is the judgment : the light has come into the world , and people loved the darkness rather than the light because their works were evil ."
+        },
+        {
+          "verse_record_id": 231940,
+          "book": "Acts",
+          "chapter": 13,
+          "verse": 11,
+          "verse_text": "Act 13:11 And now , behold , the hand of the Lord is upon you , and you will be blind and unable to see the sun for a time .” Immediately mist and darkness fell upon him , and he went about seeking people to lead him by the hand ."
+        },
+        {
+          "verse_record_id": 231942,
+          "book": "Acts",
+          "chapter": 26,
+          "verse": 18,
+          "verse_text": "Act 26:18 to open their eyes , so that they may turn from darkness to light and from the power of Satan to God , that they may receive forgiveness of sins and a place among those who are sanctified by faith in me .’"
+        },
+        {
+          "verse_record_id": 231961,
+          "book": "Romans",
+          "chapter": 2,
+          "verse": 19,
+          "verse_text": "Rom 2:19 and if you are sure that you yourself are a guide to the blind , a light to those who are in darkness ,"
+        },
+        {
+          "verse_record_id": 231937,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 6,
+          "verse_text": "2Cor 4:6 For God , who said , “Let light shine out of darkness ,” has shone in our hearts to give the light of the knowledge of the glory of God in the face of Jesus Christ ."
+        },
+        {
+          "verse_record_id": 231943,
+          "book": "Colossians",
+          "chapter": 1,
+          "verse": 13,
+          "verse_text": "Col 1:13 He has delivered us from the domain of darkness and transferred us to the kingdom of his beloved Son ,"
+        },
+        {
+          "verse_record_id": 231935,
+          "book": "1 Thessalonians",
+          "chapter": 5,
+          "verse": 4,
+          "verse_text": "1Th 5:4 But you are not in darkness , brothers , for that day to surprise you like a thief ."
+        },
+        {
+          "verse_record_id": 231936,
+          "book": "1 Thessalonians",
+          "chapter": 5,
+          "verse": 5,
+          "verse_text": "1Th 5:5 For you are all children of light , children of the day . We are not of the night or of the darkness ."
+        },
+        {
+          "verse_record_id": 231934,
+          "book": "1 Peter",
+          "chapter": 2,
+          "verse": 9,
+          "verse_text": "1Pe 2:9 But you are a chosen race , a royal priesthood , a holy nation , a people for his own possession , that you may proclaim the excellencies of him who called you out of darkness into his marvelous light ."
+        },
+        {
+          "verse_record_id": 231933,
+          "book": "1 John",
+          "chapter": 1,
+          "verse": 6,
+          "verse_text": "1Jo 1:6 If we say we have fellowship with him while we walk in darkness , we lie and do not practice the truth ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9241,
+      "verse_context_group_id": 3374,
+      "group_code": "7432-002",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7432,
+      "strongs_number": "G4655",
+      "transliteration": "skotos",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names darkness as the moral domain of works and powers the person either participates in or is called to renounce",
+      "dimension": "Moral Character",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 4,
+      "set_aside_count": 4,
+      "total_verse_count": 5,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231960,
+          "book": "Romans",
+          "chapter": 13,
+          "verse": 12,
+          "verse_text": "Rom 13:12 The night is far gone ; the day is at hand . So then let us cast off the works of darkness and put on the armor of light ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231951,
+          "book": "Luke",
+          "chapter": 22,
+          "verse": 53,
+          "verse_text": "Luk 22:53 When I was with you day after day in the temple , you did not lay hands on me . But this is your hour , and the power of darkness .”"
+        },
+        {
+          "verse_record_id": 231938,
+          "book": "2 Corinthians",
+          "chapter": 6,
+          "verse": 14,
+          "verse_text": "2Cor 6:14 Do not be unequally yoked with unbelievers . For what partnership has righteousness with lawlessness ? Or what fellowship has light with darkness ?"
+        },
+        {
+          "verse_record_id": 231944,
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 11,
+          "verse_text": "Eph 5:11 Take no part in the unfruitful works of darkness , but instead expose them."
+        },
+        {
+          "verse_record_id": 231946,
+          "book": "Ephesians",
+          "chapter": 6,
+          "verse": 12,
+          "verse_text": "Eph 6:12 For we do not wrestle against flesh and blood , but against the rulers , against the authorities , against the cosmic powers over this present darkness , against the spiritual forces of evil in the heavenly places ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9242,
+      "verse_context_group_id": 3372,
+      "group_code": "7432-003",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7432,
+      "strongs_number": "G4655",
+      "transliteration": "skotos",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names the darkness of the inner life — hidden purposes, corrupted inner light, self-deception about one's inner state",
+      "dimension": "Volition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 4,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231932,
+          "book": "1 Corinthians",
+          "chapter": 4,
+          "verse": 5,
+          "verse_text": "1Cor 4:5 Therefore do not pronounce judgment before the time , before the Lord comes , who will bring to light the things now hidden in darkness and will disclose the purposes of the heart . Then each one will receive his commendation from God ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231958,
+          "book": "Matthew",
+          "chapter": 6,
+          "verse": 23,
+          "verse_text": "Mat 6:23 but if your eye is bad , your whole body will be full of darkness . If then the light in you is darkness , how great is the darkness !"
+        },
+        {
+          "verse_record_id": 231950,
+          "book": "Luke",
+          "chapter": 11,
+          "verse": 35,
+          "verse_text": "Luk 11:35 Therefore be careful lest the light in you be darkness ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9243,
+      "verse_context_group_id": 3375,
+      "group_code": "7432-004",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7432,
+      "strongs_number": "G4655",
+      "transliteration": "skotos",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names the outer darkness of eschatological judgment — the ultimate inner-being consequence of exclusion from God",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 4,
+      "set_aside_count": 4,
+      "total_verse_count": 5,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231954,
+          "book": "Matthew",
+          "chapter": 22,
+          "verse": 13,
+          "verse_text": "Mat 22:13 Then the king said to the attendants , ‘ Bind him hand and foot and cast him into the outer darkness . In that place there will be weeping and gnashing of teeth .’"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231959,
+          "book": "Matthew",
+          "chapter": 8,
+          "verse": 12,
+          "verse_text": "Mat 8:12 while the sons of the kingdom will be thrown into the outer darkness . In that place there will be weeping and gnashing of teeth .”"
+        },
+        {
+          "verse_record_id": 231955,
+          "book": "Matthew",
+          "chapter": 25,
+          "verse": 30,
+          "verse_text": "Mat 25:30 And cast the worthless servant into the outer darkness . In that place there will be weeping and gnashing of teeth .’"
+        },
+        {
+          "verse_record_id": 231939,
+          "book": "2 Peter",
+          "chapter": 2,
+          "verse": 17,
+          "verse_text": "2Pe 2:17 These are waterless springs and mists driven by a storm . For them the gloom of utter darkness has been reserved ."
+        },
+        {
+          "verse_record_id": 231948,
+          "book": "Jude",
+          "chapter": 1,
+          "verse": 13,
+          "verse_text": "Jude 13 wild waves of the sea , casting up the foam of their own shame ; wandering stars , for whom the gloom of utter darkness has been reserved forever ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9237,
+      "verse_context_group_id": 3369,
+      "group_code": "7433-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7433,
+      "strongs_number": "G4653",
+      "transliteration": "skotia",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names darkness as the inner condition of spiritual alienation — the state of the person who hates, does not know where they are going, and has not come to the light",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 7,
+      "set_aside_count": 2,
+      "total_verse_count": 8,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231963,
+          "book": "1 John",
+          "chapter": 2,
+          "verse": 11,
+          "verse_text": "1Jo 2:11 But whoever hates his brother is in the darkness and walks in the darkness , and does not know where he is going , because the darkness has blinded his eyes ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231966,
+          "book": "John",
+          "chapter": 1,
+          "verse": 5,
+          "verse_text": "Joh 1:5 The light shines in the darkness , and the darkness has not overcome it ."
+        },
+        {
+          "verse_record_id": 231971,
+          "book": "John",
+          "chapter": 8,
+          "verse": 12,
+          "verse_text": "Joh 8:12 Again Jesus spoke to them , saying , “ I am the light of the world . Whoever follows me will not walk in darkness , but will have the light of life .”"
+        },
+        {
+          "verse_record_id": 231967,
+          "book": "John",
+          "chapter": 12,
+          "verse": 35,
+          "verse_text": "Joh 12:35 So Jesus said to them , “The light is among you for a little while longer . Walk while you have the light , lest darkness overtake you . The one who walks in the darkness does not know where he is going ."
+        },
+        {
+          "verse_record_id": 231968,
+          "book": "John",
+          "chapter": 12,
+          "verse": 46,
+          "verse_text": "Joh 12:46 I have come into the world as light , so that whoever believes in me may not remain in darkness ."
+        },
+        {
+          "verse_record_id": 231962,
+          "book": "1 John",
+          "chapter": 1,
+          "verse": 5,
+          "verse_text": "1Jo 1:5 This is the message we have heard from him and proclaim to you , that God is light , and in him is no darkness at all ."
+        },
+        {
+          "verse_record_id": 231964,
+          "book": "1 John",
+          "chapter": 2,
+          "verse": 8,
+          "verse_text": "1Jo 2:8 At the same time , it is a new commandment that I am writing to you , which is true in him and in you , because the darkness is passing away and the true light is already shining ."
+        },
+        {
+          "verse_record_id": 231965,
+          "book": "1 John",
+          "chapter": 2,
+          "verse": 9,
+          "verse_text": "1Jo 2:9 Whoever says he is in the light and hates his brother is still in darkness ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9238,
+      "verse_context_group_id": 3370,
+      "group_code": "7433-002",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7433,
+      "strongs_number": "G4653",
+      "transliteration": "skotia",
+      "gloss": "darkness",
+      "language": "Greek",
+      "context_description": "Term names the darkness of concealment — the inner life hidden in secret, which will be brought to light",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 2,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231972,
+          "book": "Luke",
+          "chapter": 12,
+          "verse": 3,
+          "verse_text": "Luk 12:3 Therefore whatever you have said in the dark shall be heard in the light , and what you have whispered in private rooms shall be proclaimed on the housetops ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231973,
+          "book": "Matthew",
+          "chapter": 10,
+          "verse": 27,
+          "verse_text": "Mat 10:27 What I tell you in the dark , say in the light , and what you hear whispered , proclaim on the housetops ."
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9239,
+      "verse_context_group_id": 3371,
+      "group_code": "7434-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7434,
+      "strongs_number": "G4654",
+      "transliteration": "skotizō",
+      "gloss": "to darken",
+      "language": "Greek",
+      "context_description": "Term describes the darkening of inner capacities — understanding, heart, and eyes — as the consequence of wilful rejection of God or as divine judicial act",
+      "dimension": "Cognition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 5,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231974,
+          "book": "Ephesians",
+          "chapter": 4,
+          "verse": 18,
+          "verse_text": "Eph 4:18 They are darkened in their understanding , alienated from the life of God because of the ignorance that is in them , due to their hardness of heart ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231980,
+          "book": "Romans",
+          "chapter": 1,
+          "verse": 21,
+          "verse_text": "Rom 1:21 For although they knew God , they did not honor him as God or give thanks to him, but they became futile in their thinking , and their foolish hearts were darkened ."
+        },
+        {
+          "verse_record_id": 231981,
+          "book": "Romans",
+          "chapter": 11,
+          "verse": 10,
+          "verse_text": "Rom 11:10 let their eyes be darkened so that they cannot see , and bend their backs forever .”"
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9236,
+      "verse_context_group_id": 3368,
+      "group_code": "7435-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7435,
+      "strongs_number": "G4652",
+      "transliteration": "skoteinos",
+      "gloss": "dark",
+      "language": "Greek",
+      "context_description": "Term names the inner darkness that fills the person when their inner orientation is corrupted — the whole inner life darkened by a bad eye",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 0,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231984,
+          "book": "Matthew",
+          "chapter": 6,
+          "verse": 23,
+          "verse_text": "Mat 6:23 but if your eye is bad , your whole body will be full of darkness . If then the light in you is darkness , how great is the darkness !"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231982,
+          "book": "Luke",
+          "chapter": 11,
+          "verse": 34,
+          "verse_text": "Luk 11:34 Your eye is the lamp of your body . When your eye is healthy , your whole body is full of light , but when it is bad , your body is full of darkness ."
+        },
+        {
+          "verse_record_id": 231983,
+          "book": "Luke",
+          "chapter": 11,
+          "verse": 36,
+          "verse_text": "Luk 11:36 If then your whole body is full of light , having no part dark , it will be wholly bright , as when a lamp with its rays gives you light .”"
+        }
+      ],
+      "root_code": "SKOT",
+      "root_language": "Greek",
+      "root_gloss": "dark"
+    },
+    {
+      "id": 9247,
+      "verse_context_group_id": 3379,
+      "group_code": "7438-001",
+      "owning_registry_no": 207,
+      "owning_registry_word": "blindness (spiritual)",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7438,
+      "strongs_number": "G5186",
+      "transliteration": "tufloō",
+      "gloss": "to blind",
+      "language": "Greek",
+      "context_description": "Term describes the act of blinding the inner capacities — eyes and mind — whether through hatred, spiritual adversary, or divine judicial action",
+      "dimension": "Divine-Human Correspondence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 2,
+      "set_aside_count": 0,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231994,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 4,
+          "verse_text": "2Cor 4:4 In their case the god of this world has blinded the minds of the unbelievers , to keep them from seeing the light of the gospel of the glory of Christ , who is the image of God ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231995,
+          "book": "John",
+          "chapter": 12,
+          "verse": 40,
+          "verse_text": "Joh 12:40 “He has blinded their eyes and hardened their heart , lest they see with their eyes , and understand with their heart , and turn , and I would heal them .”"
+        },
+        {
+          "verse_record_id": 231993,
+          "book": "1 John",
+          "chapter": 2,
+          "verse": 11,
+          "verse_text": "1Jo 2:11 But whoever hates his brother is in the darkness and walks in the darkness , and does not know where he is going , because the darkness has blinded his eyes ."
+        }
+      ],
+      "root_code": "TUFL",
+      "root_language": "Greek",
+      "root_gloss": "blind"
+    },
+    {
+      "id": 9268,
+      "verse_context_group_id": 3235,
+      "group_code": "1378-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1378,
+      "strongs_number": "G3498",
+      "transliteration": "nekros",
+      "gloss": "dead",
+      "language": "Greek",
+      "context_description": "Spiritual deadness as the person's condition — dead in sin, dead to God",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "ROOT_INFERRED",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 13,
+      "set_aside_count": 77,
+      "total_verse_count": 15,
+      "delete_flagged": 0,
+      "notes": "ROOT_INFERRED from root NEKR: 2/4 (50%)",
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55499,
+          "book": "Matthew",
+          "chapter": 23,
+          "verse": 27,
+          "verse_text": "Mat 23:27 “ Woe to you , scribes and Pharisees , hypocrites ! For you are like whitewashed tombs , which outwardly appear beautiful , but within are full of dead people’s bones and all uncleanness ."
+        },
+        {
+          "verse_record_id": 55452,
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 1,
+          "verse_text": "Eph 2:1 And you were dead in the trespasses and sins"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55503,
+          "book": "Matthew",
+          "chapter": 8,
+          "verse": 22,
+          "verse_text": "Mat 8:22 And Jesus said to him , “ Follow me , and leave the dead to bury their own dead .”"
+        },
+        {
+          "verse_record_id": 55484,
+          "book": "Luke",
+          "chapter": 9,
+          "verse": 60,
+          "verse_text": "Luk 9:60 And Jesus said to him , “ Leave the dead to bury their own dead . But as for you , go and proclaim the kingdom of God .”"
+        },
+        {
+          "verse_record_id": 55473,
+          "book": "Luke",
+          "chapter": 15,
+          "verse": 24,
+          "verse_text": "Luk 15:24 For this my son was dead , and is alive again ; he was lost , and is found .’ And they began to celebrate ."
+        },
+        {
+          "verse_record_id": 55474,
+          "book": "Luke",
+          "chapter": 15,
+          "verse": 32,
+          "verse_text": "Luk 15:32 It was fitting to celebrate and be glad , for this your brother was dead , and is alive ; he was lost , and is found .’”"
+        },
+        {
+          "verse_record_id": 55472,
+          "book": "John",
+          "chapter": 5,
+          "verse": 25,
+          "verse_text": "Joh 5:25 “ Truly , truly , I say to you , an hour is coming , and is now here, when the dead will hear the voice of the Son of God , and those who hear will live ."
+        },
+        {
+          "verse_record_id": 55524,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 8,
+          "verse_text": "Rom 7:8 But sin , seizing an opportunity through the commandment , produced in me all kinds of covetousness . For apart from the law , sin lies dead ."
+        },
+        {
+          "verse_record_id": 55525,
+          "book": "Romans",
+          "chapter": 8,
+          "verse": 10,
+          "verse_text": "Rom 8:10 But if Christ is in you , although the body is dead because of sin , the Spirit is life because of righteousness ."
+        },
+        {
+          "verse_record_id": 55515,
+          "book": "Romans",
+          "chapter": 11,
+          "verse": 15,
+          "verse_text": "Rom 11:15 For if their rejection means the reconciliation of the world , what will their acceptance mean but life from the dead ?"
+        },
+        {
+          "verse_record_id": 55453,
+          "book": "Ephesians",
+          "chapter": 2,
+          "verse": 5,
+          "verse_text": "Eph 2:5 even when we were dead in our trespasses , made us alive together with Christ — by grace you have been saved —"
+        },
+        {
+          "verse_record_id": 55454,
+          "book": "Ephesians",
+          "chapter": 5,
+          "verse": 14,
+          "verse_text": "Eph 5:14 for anything that becomes visible is light . Therefore it says , “ Awake , O sleeper , and arise from the dead , and Christ will shine on you .”"
+        },
+        {
+          "verse_record_id": 55449,
+          "book": "Colossians",
+          "chapter": 2,
+          "verse": 12,
+          "verse_text": "Col 2:12 having been buried with him in baptism , in which you were also raised with him through faith in the powerful working of God , who raised him from the dead ."
+        },
+        {
+          "verse_record_id": 55450,
+          "book": "Colossians",
+          "chapter": 2,
+          "verse": 13,
+          "verse_text": "Col 2:13 And you , who were dead in your trespasses and the uncircumcision of your flesh , God made alive together with him , having forgiven us all our trespasses ,"
+        },
+        {
+          "verse_record_id": 55511,
+          "book": "Revelation",
+          "chapter": 3,
+          "verse": 1,
+          "verse_text": "Rev 3:1 “ And to the angel of the church in Sardis write : ‘ The words of him who has the seven spirits of God and the seven stars . “‘I know your works . You have the reputation of being alive , but you are dead ."
+        }
+      ],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9269,
+      "verse_context_group_id": 3236,
+      "group_code": "1378-002",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1378,
+      "strongs_number": "G3498",
+      "transliteration": "nekros",
+      "gloss": "dead",
+      "language": "Greek",
+      "context_description": "Dead to sin / dead to the law — inner-being reorientation through Christ",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "ROOT_INFERRED",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 2,
+      "set_aside_count": 77,
+      "total_verse_count": 4,
+      "delete_flagged": 0,
+      "notes": "ROOT_INFERRED from root NEKR: 3/5 (60%)",
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55519,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 11,
+          "verse_text": "Rom 6:11 So you also must consider yourselves dead to sin and alive to God in Christ Jesus ."
+        },
+        {
+          "verse_record_id": 55523,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 4,
+          "verse_text": "Rom 7:4 Likewise , my brothers , you also have died to the law through the body of Christ , so that you may belong to another , to him who has been raised from the dead , in order that we may bear fruit for God ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55521,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 4,
+          "verse_text": "Rom 6:4 We were buried therefore with him by baptism into death , in order that , just as Christ was raised from the dead by the glory of the Father , we too might walk in newness of life ."
+        },
+        {
+          "verse_record_id": 55520,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 13,
+          "verse_text": "Rom 6:13 Do not present your members to sin as instruments for unrighteousness , but present yourselves to God as those who have been brought from death to life , and your members to God as instruments for righteousness ."
+        }
+      ],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9270,
+      "verse_context_group_id": 3237,
+      "group_code": "1378-003",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1378,
+      "strongs_number": "G3498",
+      "transliteration": "nekros",
+      "gloss": "dead",
+      "language": "Greek",
+      "context_description": "Dead works — works from spiritual deadness; conscience purified from them",
+      "dimension": "Moral Character",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 0,
+      "set_aside_count": 77,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55459,
+          "book": "Hebrews",
+          "chapter": 6,
+          "verse": 1,
+          "verse_text": "Heb 6:1 Therefore let us leave the elementary doctrine of Christ and go on to maturity , not laying again a foundation of repentance from dead works and of faith toward God ,"
+        },
+        {
+          "verse_record_id": 55461,
+          "book": "Hebrews",
+          "chapter": 9,
+          "verse": 14,
+          "verse_text": "Heb 9:14 how much more will the blood of Christ , who through the eternal Spirit offered himself without blemish to God , purify our conscience from dead works to serve the living God ."
+        }
+      ],
+      "related_verses": [],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9271,
+      "verse_context_group_id": 3238,
+      "group_code": "1378-004",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1378,
+      "strongs_number": "G3498",
+      "transliteration": "nekros",
+      "gloss": "dead",
+      "language": "Greek",
+      "context_description": "Dead faith — faith as a dead inner-being capacity without works",
+      "dimension": "Agency / Power",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 77,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55463,
+          "book": "James",
+          "chapter": 2,
+          "verse": 17,
+          "verse_text": "Jam 2:17 So also faith by itself , if it does not have works , is dead ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55464,
+          "book": "James",
+          "chapter": 2,
+          "verse": 26,
+          "verse_text": "Jam 2:26 For as the body apart from the spirit is dead , so also faith apart from works is dead ."
+        }
+      ],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9272,
+      "verse_context_group_id": 3239,
+      "group_code": "1378-005",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1378,
+      "strongs_number": "G3498",
+      "transliteration": "nekros",
+      "gloss": "dead",
+      "language": "Greek",
+      "context_description": "Resurrection of the dead as ground for inner-being hope, faith, and aspiration",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 14,
+      "set_aside_count": 77,
+      "total_verse_count": 16,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55504,
+          "book": "Philippians",
+          "chapter": 3,
+          "verse": 11,
+          "verse_text": "Phili 3:11 that by any means possible I may attain the resurrection from the dead ."
+        },
+        {
+          "verse_record_id": 55423,
+          "book": "1 Peter",
+          "chapter": 1,
+          "verse": 3,
+          "verse_text": "1Pe 1:3 Blessed be the God and Father of our Lord Jesus Christ ! According to his great mercy , he has caused us to be born again to a living hope through the resurrection of Jesus Christ from the dead ,"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55490,
+          "book": "Mark",
+          "chapter": 9,
+          "verse": 10,
+          "verse_text": "Mar 9:10 So they kept the matter to themselves , questioning what this rising from the dead might mean ."
+        },
+        {
+          "verse_record_id": 55475,
+          "book": "Luke",
+          "chapter": 16,
+          "verse": 30,
+          "verse_text": "Luk 16:30 And he said , ‘ No , father Abraham , but if someone goes to them from the dead , they will repent .’"
+        },
+        {
+          "verse_record_id": 55476,
+          "book": "Luke",
+          "chapter": 16,
+          "verse": 31,
+          "verse_text": "Luk 16:31 He said to him , ‘ If they do not hear Moses and the Prophets , neither will they be convinced if someone should rise from the dead .’”"
+        },
+        {
+          "verse_record_id": 55468,
+          "book": "John",
+          "chapter": 2,
+          "verse": 22,
+          "verse_text": "Joh 2:22 When therefore he was raised from the dead , his disciples remembered that he had said this , and they believed the Scripture and the word that Jesus had spoken ."
+        },
+        {
+          "verse_record_id": 55517,
+          "book": "Romans",
+          "chapter": 4,
+          "verse": 17,
+          "verse_text": "Rom 4:17 as it is written , “I have made you the father of many nations ”—in the presence of the God in whom he believed , who gives life to the dead and calls into existence the things that do not exist ."
+        },
+        {
+          "verse_record_id": 55518,
+          "book": "Romans",
+          "chapter": 4,
+          "verse": 24,
+          "verse_text": "Rom 4:24 but for ours also . It will be counted to us who believe in him who raised from the dead Jesus our Lord ,"
+        },
+        {
+          "verse_record_id": 55514,
+          "book": "Romans",
+          "chapter": 10,
+          "verse": 9,
+          "verse_text": "Rom 10:9 because , if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead , you will be saved ."
+        },
+        {
+          "verse_record_id": 55418,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 32,
+          "verse_text": "1Cor 15:32 What do I gain if , humanly speaking , I fought with beasts at Ephesus ? If the dead are not raised , “Let us eat and drink , for tomorrow we die .”"
+        },
+        {
+          "verse_record_id": 55428,
+          "book": "2 Corinthians",
+          "chapter": 1,
+          "verse": 9,
+          "verse_text": "2Cor 1:9 Indeed , we felt that we had received the sentence of death . But that was to make us rely not on ourselves but on God who raises the dead ."
+        },
+        {
+          "verse_record_id": 55456,
+          "book": "Hebrews",
+          "chapter": 11,
+          "verse": 19,
+          "verse_text": "Heb 11:19 He considered that God was able even to raise him from the dead , from which , figuratively speaking , he did receive him back."
+        },
+        {
+          "verse_record_id": 55457,
+          "book": "Hebrews",
+          "chapter": 11,
+          "verse": 35,
+          "verse_text": "Heb 11:35 Women received back their dead by resurrection . Some were tortured , refusing to accept release , so that they might rise again to a better life."
+        },
+        {
+          "verse_record_id": 55422,
+          "book": "1 Peter",
+          "chapter": 1,
+          "verse": 21,
+          "verse_text": "1Pe 1:21 who through him are believers in God , who raised him from the dead and gave him glory , so that your faith and hope are in God ."
+        },
+        {
+          "verse_record_id": 55425,
+          "book": "1 Peter",
+          "chapter": 4,
+          "verse": 6,
+          "verse_text": "1Pe 4:6 For this is why the gospel was preached even to those who are dead , that though judged in the flesh the way people are, they might live in the spirit the way God does."
+        },
+        {
+          "verse_record_id": 55509,
+          "book": "Revelation",
+          "chapter": 14,
+          "verse": 13,
+          "verse_text": "Rev 14:13 And I heard a voice from heaven saying , “ Write this: Blessed are the dead who die in the Lord from now on.” “Blessed indeed ,” says the Spirit , “ that they may rest from their labors , for their deeds follow them !”"
+        }
+      ],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9275,
+      "verse_context_group_id": 3242,
+      "group_code": "1379-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1379,
+      "strongs_number": "H4191",
+      "transliteration": "mut",
+      "gloss": "to die",
+      "language": "Hebrew",
+      "context_description": "Death as consequence of inner moral failure — dying as outcome of folly, wickedness, sin",
+      "dimension": "Moral Character",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 16,
+      "set_aside_count": 237,
+      "total_verse_count": 18,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55555,
+          "book": "Genesis",
+          "chapter": 2,
+          "verse": 17,
+          "verse_text": "Gen 2:17 but of the tree of the knowledge of good and evil you shall not eat , for in the day that you eat of it you shall surely die .”"
+        },
+        {
+          "verse_record_id": 55689,
+          "book": "Job",
+          "chapter": 5,
+          "verse": 2,
+          "verse_text": "Job 5:2 Surely vexation kills the fool , and jealousy slays the simple ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55572,
+          "book": "Genesis",
+          "chapter": 3,
+          "verse": 3,
+          "verse_text": "Gen 3:3 but God said , ‘You shall not eat of the fruit of the tree that is in the midst of the garden , neither shall you touch it, lest you die .’”"
+        },
+        {
+          "verse_record_id": 55573,
+          "book": "Genesis",
+          "chapter": 3,
+          "verse": 4,
+          "verse_text": "Gen 3:4 But the serpent said to the woman , “You will not surely die ."
+        },
+        {
+          "verse_record_id": 55553,
+          "book": "Genesis",
+          "chapter": 18,
+          "verse": 25,
+          "verse_text": "Gen 18:25 Far be it from you to do such a thing , to put the righteous to death with the wicked , so that the righteous fare as the wicked ! Far be that from you! Shall not the Judge of all the earth do what is just ?”"
+        },
+        {
+          "verse_record_id": 55589,
+          "book": "Genesis",
+          "chapter": 38,
+          "verse": 11,
+          "verse_text": "Gen 38:11 Then Judah said to Tamar his daughter-in-law , “ Remain a widow in your father’s house , till Shelah my son grows up ”—for he feared that he would die , like his brothers . So Tamar went and remained in her father’s house ."
+        },
+        {
+          "verse_record_id": 55527,
+          "book": "1 Samuel",
+          "chapter": 2,
+          "verse": 25,
+          "verse_text": "1Sa 2:25 If someone sins against a man , God will mediate for him, but if someone sins against the Lord , who can intercede for him?” But they would not listen to the voice of their father , for it was the will of the Lord to put them to death ."
+        },
+        {
+          "verse_record_id": 55801,
+          "book": "Proverbs",
+          "chapter": 5,
+          "verse": 23,
+          "verse_text": "Pro 5:23 He dies for lack of discipline , and because of his great folly he is led astray ."
+        },
+        {
+          "verse_record_id": 55794,
+          "book": "Proverbs",
+          "chapter": 10,
+          "verse": 21,
+          "verse_text": "Pro 10:21 The lips of the righteous feed many , but fools die for lack of sense ."
+        },
+        {
+          "verse_record_id": 55795,
+          "book": "Proverbs",
+          "chapter": 15,
+          "verse": 10,
+          "verse_text": "Pro 15:10 There is severe discipline for him who forsakes the way ; whoever hates reproof will die ."
+        },
+        {
+          "verse_record_id": 55796,
+          "book": "Proverbs",
+          "chapter": 19,
+          "verse": 16,
+          "verse_text": "Pro 19:16 Whoever keeps the commandment keeps his life ; he who despises his ways will die ."
+        },
+        {
+          "verse_record_id": 55798,
+          "book": "Proverbs",
+          "chapter": 21,
+          "verse": 25,
+          "verse_text": "Pro 21:25 The desire of the sluggard kills him, for his hands refuse to labor ."
+        },
+        {
+          "verse_record_id": 55543,
+          "book": "Ecclesiastes",
+          "chapter": 2,
+          "verse": 16,
+          "verse_text": "Ecc 2:16 For of the wise as of the fool there is no enduring remembrance , seeing that in the days to come all will have been long forgotten . How the wise dies just like the fool !"
+        },
+        {
+          "verse_record_id": 55546,
+          "book": "Ecclesiastes",
+          "chapter": 7,
+          "verse": 17,
+          "verse_text": "Ecc 7:17 Be not overly wicked , neither be a fool . Why should you die before your time ?"
+        },
+        {
+          "verse_record_id": 55547,
+          "book": "Ecclesiastes",
+          "chapter": 9,
+          "verse": 3,
+          "verse_text": "Ecc 9:3 This is an evil in all that is done under the sun , that the same event happens to all . Also , the hearts of the children of man are full of evil , and madness is in their hearts while they live , and after that they go to the dead ."
+        },
+        {
+          "verse_record_id": 55618,
+          "book": "Isaiah",
+          "chapter": 22,
+          "verse": 14,
+          "verse_text": "Isa 22:14 The Lord of hosts has revealed himself in my ears : “Surely this iniquity will not be atoned for you until you die ,” says the Lord God of hosts ."
+        },
+        {
+          "verse_record_id": 55655,
+          "book": "Jeremiah",
+          "chapter": 31,
+          "verse": 30,
+          "verse_text": "Jer 31:30 But everyone shall die for his own iniquity . Each man who eats sour grapes , his teeth shall be set on edge ."
+        },
+        {
+          "verse_record_id": 55612,
+          "book": "Hosea",
+          "chapter": 13,
+          "verse": 1,
+          "verse_text": "Hos 13:1 When Ephraim spoke , there was trembling ; he was exalted in Israel , but he incurred guilt through Baal and died ."
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9276,
+      "verse_context_group_id": 3243,
+      "group_code": "1379-002",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1379,
+      "strongs_number": "H4191",
+      "transliteration": "mut",
+      "gloss": "to die",
+      "language": "Hebrew",
+      "context_description": "Death as object of inner-being orientation — fear, longing, resolve, wisdom on mortality",
+      "dimension": "Emotion — Negative",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 28,
+      "set_aside_count": 237,
+      "total_verse_count": 30,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55682,
+          "book": "Job",
+          "chapter": 21,
+          "verse": 25,
+          "verse_text": "Job 21:25 Another dies in bitterness of soul , never having tasted of prosperity ."
+        },
+        {
+          "verse_record_id": 55691,
+          "book": "Jonah",
+          "chapter": 4,
+          "verse": 8,
+          "verse_text": "Jon 4:8 When the sun rose , God appointed a scorching east wind , and the sun beat down on the head of Jonah so that he was faint . And he asked that he might die and said , “It is better for me to die than to live .”"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55554,
+          "book": "Genesis",
+          "chapter": 19,
+          "verse": 19,
+          "verse_text": "Gen 19:19 Behold , your servant has found favor in your sight , and you have shown me great kindness in saving my life . But I cannot escape to the hills , lest the disaster overtake me and I die ."
+        },
+        {
+          "verse_record_id": 55567,
+          "book": "Genesis",
+          "chapter": 25,
+          "verse": 32,
+          "verse_text": "Gen 25:32 Esau said , “ I am about to die ; of what use is a birthright to me?”"
+        },
+        {
+          "verse_record_id": 55570,
+          "book": "Genesis",
+          "chapter": 26,
+          "verse": 9,
+          "verse_text": "Gen 26:9 So Abimelech called Isaac and said , “ Behold , she is your wife . How then could you say , ‘She is my sister ’?” Isaac said to him, “ Because I thought , ‘ Lest I die because of her .’”"
+        },
+        {
+          "verse_record_id": 55571,
+          "book": "Genesis",
+          "chapter": 27,
+          "verse": 4,
+          "verse_text": "Gen 27:4 and prepare for me delicious food , such as I love , and bring it to me so that I may eat , that my soul may bless you before I die .”"
+        },
+        {
+          "verse_record_id": 55574,
+          "book": "Genesis",
+          "chapter": 30,
+          "verse": 1,
+          "verse_text": "Gen 30:1 When Rachel saw that she bore Jacob no children, she envied her sister . She said to Jacob , “ Give me children , or I shall die !”"
+        },
+        {
+          "verse_record_id": 55598,
+          "book": "Genesis",
+          "chapter": 44,
+          "verse": 22,
+          "verse_text": "Gen 44:22 We said to my lord , ‘The boy cannot leave his father , for if he should leave his father, his father would die .’"
+        },
+        {
+          "verse_record_id": 55599,
+          "book": "Genesis",
+          "chapter": 44,
+          "verse": 31,
+          "verse_text": "Gen 44:31 as soon as he sees that the boy is not with us, he will die , and your servants will bring down the gray hairs of your servant our father with sorrow to Sheol ."
+        },
+        {
+          "verse_record_id": 55738,
+          "book": "Numbers",
+          "chapter": 14,
+          "verse": 2,
+          "verse_text": "Num 14:2 And all the people of Israel grumbled against Moses and Aaron . The whole congregation said to them, “ Would that we had died in the land of Egypt ! Or would that we had died in this wilderness !"
+        },
+        {
+          "verse_record_id": 55765,
+          "book": "Numbers",
+          "chapter": 23,
+          "verse": 10,
+          "verse_text": "Num 23:10 Who can count the dust of Jacob or number the fourth part of Israel ? Let me die the death of the upright , and let my end be like his !”"
+        },
+        {
+          "verse_record_id": 55697,
+          "book": "Joshua",
+          "chapter": 2,
+          "verse": 14,
+          "verse_text": "Jos 2:14 And the men said to her, “Our life for yours even to death ! If you do not tell this business of ours, then when the Lord gives us the land we will deal kindly and faithfully with you.”"
+        },
+        {
+          "verse_record_id": 55726,
+          "book": "Judges",
+          "chapter": 5,
+          "verse": 18,
+          "verse_text": "Judg 5:18 Zebulun is a people who risked their lives to the death ; Naphtali , too, on the heights of the field ."
+        },
+        {
+          "verse_record_id": 55712,
+          "book": "Judges",
+          "chapter": 15,
+          "verse": 18,
+          "verse_text": "Judg 15:18 And he was very thirsty , and he called upon the Lord and said , “ You have granted this great salvation by the hand of your servant , and shall I now die of thirst and fall into the hands of the uncircumcised ?”"
+        },
+        {
+          "verse_record_id": 55713,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 16,
+          "verse_text": "Judg 16:16 And when she pressed him hard with her words day after day , and urged him, his soul was vexed to death ."
+        },
+        {
+          "verse_record_id": 55714,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 30,
+          "verse_text": "Judg 16:30 And Samson said , “Let me die with the Philistines .” Then he bowed with all his strength , and the house fell upon the lords and upon all the people who were in it. So the dead whom he killed at his death were more than those whom he had killed during his life ."
+        },
+        {
+          "verse_record_id": 55818,
+          "book": "Ruth",
+          "chapter": 1,
+          "verse": 17,
+          "verse_text": "Rut 1:17 Where you die I will die , and there will I be buried . May the Lord do so to me and more also if anything but death parts me from you .”"
+        },
+        {
+          "verse_record_id": 55550,
+          "book": "Esther",
+          "chapter": 4,
+          "verse": 11,
+          "verse_text": "Est 4:11 “ All the king’s servants and the people of the king’s provinces know that if any man or woman goes to the king inside the inner court without being called , there is but one law —to be put to death , except the one to whom the king holds out the golden scepter so that he may live . But as for me, I have not been called to come in to the king these thirty days .”"
+        },
+        {
+          "verse_record_id": 55680,
+          "book": "Job",
+          "chapter": 2,
+          "verse": 9,
+          "verse_text": "Job 2:9 Then his wife said to him, “Do you still hold fast your integrity ? Curse God and die .”"
+        },
+        {
+          "verse_record_id": 55683,
+          "book": "Job",
+          "chapter": 3,
+          "verse": 11,
+          "verse_text": "Job 3:11 “ Why did I not die at birth , come out from the womb and expire ?"
+        },
+        {
+          "verse_record_id": 55677,
+          "book": "Job",
+          "chapter": 14,
+          "verse": 10,
+          "verse_text": "Job 14:10 But a man dies and is laid low ; man breathes his last , and where is he ?"
+        },
+        {
+          "verse_record_id": 55678,
+          "book": "Job",
+          "chapter": 14,
+          "verse": 14,
+          "verse_text": "Job 14:14 If a man dies , shall he live again? All the days of my service I would wait , till my renewal should come ."
+        },
+        {
+          "verse_record_id": 55681,
+          "book": "Job",
+          "chapter": 21,
+          "verse": 23,
+          "verse_text": "Job 21:23 One dies in his full vigor , being wholly at ease and secure ,"
+        },
+        {
+          "verse_record_id": 55808,
+          "book": "Psalms",
+          "chapter": 31,
+          "verse": 12,
+          "verse_text": "Psa 31:12 I have been forgotten like one who is dead ; I have become like a broken vessel ."
+        },
+        {
+          "verse_record_id": 55811,
+          "book": "Psalms",
+          "chapter": 41,
+          "verse": 5,
+          "verse_text": "Psa 41:5 My enemies say of me in malice , “ When will he die , and his name perish ?”"
+        },
+        {
+          "verse_record_id": 55806,
+          "book": "Psalms",
+          "chapter": 118,
+          "verse": 17,
+          "verse_text": "Psa 118:17 I shall not die , but I shall live , and recount the deeds of the Lord ."
+        },
+        {
+          "verse_record_id": 55800,
+          "book": "Proverbs",
+          "chapter": 30,
+          "verse": 7,
+          "verse_text": "Pro 30:7 Two things I ask of you; deny them not to me before I die :"
+        },
+        {
+          "verse_record_id": 55544,
+          "book": "Ecclesiastes",
+          "chapter": 3,
+          "verse": 2,
+          "verse_text": "Ecc 3:2 a time to be born , and a time to die ; a time to plant , and a time to pluck up what is planted ;"
+        },
+        {
+          "verse_record_id": 55545,
+          "book": "Ecclesiastes",
+          "chapter": 4,
+          "verse": 2,
+          "verse_text": "Ecc 4:2 And I thought the dead who are already dead more fortunate than the living who are still alive ."
+        },
+        {
+          "verse_record_id": 55626,
+          "book": "Isaiah",
+          "chapter": 51,
+          "verse": 12,
+          "verse_text": "Isa 51:12 “ I , I am he who comforts you; who are you that you are afraid of man who dies , of the son of man who is made like grass ,"
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9277,
+      "verse_context_group_id": 3244,
+      "group_code": "1379-003",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1379,
+      "strongs_number": "H4191",
+      "transliteration": "mut",
+      "gloss": "to die",
+      "language": "Hebrew",
+      "context_description": "God's sovereignty over death as ground of inner-being trust and confidence",
+      "dimension": "Agency / Power",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 3,
+      "set_aside_count": 237,
+      "total_verse_count": 5,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55530,
+          "book": "1 Samuel",
+          "chapter": 2,
+          "verse": 6,
+          "verse_text": "1Sa 2:6 The Lord kills and brings to life ; he brings down to Sheol and raises up ."
+        },
+        {
+          "verse_record_id": 55611,
+          "book": "Habakkuk",
+          "chapter": 1,
+          "verse": 12,
+          "verse_text": "Hab 1:12 Are you not from everlasting , O Lord my God , my Holy One? We shall not die . O Lord , you have ordained them as a judgment , and you, O Rock , have established them for reproof ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55709,
+          "book": "Judges",
+          "chapter": 13,
+          "verse": 22,
+          "verse_text": "Judg 13:22 And Manoah said to his wife , “We shall surely die , for we have seen God .”"
+        },
+        {
+          "verse_record_id": 55710,
+          "book": "Judges",
+          "chapter": 13,
+          "verse": 23,
+          "verse_text": "Judg 13:23 But his wife said to him, “ If the Lord had meant to kill us, he would not have accepted a burnt offering and a grain offering at our hands , or shown us all these things, or now announced to us such things as these .”"
+        },
+        {
+          "verse_record_id": 55805,
+          "book": "Psalms",
+          "chapter": 115,
+          "verse": 17,
+          "verse_text": "Psa 115:17 The dead do not praise the Lord , nor do any who go down into silence ."
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9278,
+      "verse_context_group_id": 3245,
+      "group_code": "1379-004",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1379,
+      "strongs_number": "H4191",
+      "transliteration": "mut",
+      "gloss": "to die",
+      "language": "Hebrew",
+      "context_description": "The dead in relation to God — cut off from his hand; loss of praise capacity",
+      "dimension": "Agency / Power",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 7,
+      "set_aside_count": 237,
+      "total_verse_count": 9,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55817,
+          "book": "Psalms",
+          "chapter": 88,
+          "verse": 5,
+          "verse_text": "Psa 88:5 like one set loose among the dead , like the slain that lie in the grave , like those whom you remember no more , for they are cut off from your hand ."
+        },
+        {
+          "verse_record_id": 55816,
+          "book": "Psalms",
+          "chapter": 88,
+          "verse": 10,
+          "verse_text": "Psa 88:10 Do you work wonders for the dead ? Do the departed rise up to praise you? Selah"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 55803,
+          "book": "Psalms",
+          "chapter": 106,
+          "verse": 28,
+          "verse_text": "Psa 106:28 Then they yoked themselves to the Baal of Peor , and ate sacrifices offered to the dead ;"
+        },
+        {
+          "verse_record_id": 55807,
+          "book": "Psalms",
+          "chapter": 143,
+          "verse": 3,
+          "verse_text": "Psa 143:3 For the enemy has pursued my soul ; he has crushed my life to the ground ; he has made me sit in darkness like those long dead ."
+        },
+        {
+          "verse_record_id": 55548,
+          "book": "Ecclesiastes",
+          "chapter": 9,
+          "verse": 4,
+          "verse_text": "Ecc 9:4 But he who is joined with all the living has hope , for a living dog is better than a dead lion ."
+        },
+        {
+          "verse_record_id": 55549,
+          "book": "Ecclesiastes",
+          "chapter": 9,
+          "verse": 5,
+          "verse_text": "Ecc 9:5 For the living know that they will die , but the dead know nothing , and they have no more reward , for the memory of them is forgotten ."
+        },
+        {
+          "verse_record_id": 55634,
+          "book": "Isaiah",
+          "chapter": 8,
+          "verse": 19,
+          "verse_text": "Isa 8:19 And when they say to you, “ Inquire of the mediums and the necromancers who chirp and mutter ,” should not a people inquire of their God ? Should they inquire of the dead on behalf of the living ?"
+        },
+        {
+          "verse_record_id": 55622,
+          "book": "Isaiah",
+          "chapter": 26,
+          "verse": 19,
+          "verse_text": "Isa 26:19 Your dead shall live ; their bodies shall rise . You who dwell in the dust , awake and sing for joy ! For your dew is a dew of light , and the earth will give birth to the dead ."
+        },
+        {
+          "verse_record_id": 55629,
+          "book": "Isaiah",
+          "chapter": 59,
+          "verse": 10,
+          "verse_text": "Isa 59:10 We grope for the wall like the blind ; we grope like those who have no eyes ; we stumble at noon as in the twilight , among those in full vigor we are like dead men."
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9266,
+      "verse_context_group_id": 3233,
+      "group_code": "1380-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 1380,
+      "strongs_number": "G2348",
+      "transliteration": "thnēskō",
+      "gloss": "to die/be dead",
+      "language": "Greek",
+      "context_description": "Spiritual deadness in a living person — physically alive but inwardly dead through self-indulgence",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 0,
+      "set_aside_count": 9,
+      "total_verse_count": 1,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 55826,
+          "book": "1 Timothy",
+          "chapter": 5,
+          "verse": 6,
+          "verse_text": "1Ti 5:6 but she who is self-indulgent is dead even while she lives ."
+        }
+      ],
+      "related_verses": [],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9273,
+      "verse_context_group_id": 3240,
+      "group_code": "7422-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7422,
+      "strongs_number": "G3499",
+      "transliteration": "nekroō",
+      "gloss": "to put to death",
+      "language": "Greek",
+      "context_description": "Deliberate mortification of inner-being capacities — putting to death what is earthly",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 1,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231568,
+          "book": "Colossians",
+          "chapter": 3,
+          "verse": 5,
+          "verse_text": "Col 3:5 Put to death therefore what is earthly in you: sexual immorality , impurity , passion , evil desire , and covetousness , which is idolatry ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231570,
+          "book": "Romans",
+          "chapter": 4,
+          "verse": 19,
+          "verse_text": "Rom 4:19 He did not weaken in faith when he considered his own body , which was as good as dead ( since he was about a hundred years old ), or when he considered the barrenness of Sarah’s womb ."
+        }
+      ],
+      "root_code": "NEKR",
+      "root_language": "Greek",
+      "root_gloss": "dead"
+    },
+    {
+      "id": 9279,
+      "verse_context_group_id": 3246,
+      "group_code": "7423-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7423,
+      "strongs_number": "H4194",
+      "transliteration": "ma.vet",
+      "gloss": "death",
+      "language": "Hebrew",
+      "context_description": "Death as end/consequence of a moral path — wickedness leads to death; choosing life vs death",
+      "dimension": "Volition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 22,
+      "set_aside_count": 76,
+      "total_verse_count": 24,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231607,
+          "book": "Deuteronomy",
+          "chapter": 30,
+          "verse": 19,
+          "verse_text": "Deu 30:19 I call heaven and earth to witness against you today , that I have set before you life and death , blessing and curse . Therefore choose life , that you and your offspring may live ,"
+        },
+        {
+          "verse_record_id": 231696,
+          "book": "Proverbs",
+          "chapter": 8,
+          "verse": 36,
+          "verse_text": "Pro 8:36 but he who fails to find me injures himself ; all who hate me love death .”"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231606,
+          "book": "Deuteronomy",
+          "chapter": 30,
+          "verse": 15,
+          "verse_text": "Deu 30:15 “ See , I have set before you today life and good , death and evil ."
+        },
+        {
+          "verse_record_id": 231601,
+          "book": "2 Samuel",
+          "chapter": 3,
+          "verse": 33,
+          "verse_text": "2Sa 3:33 And the king lamented for Abner , saying , “Should Abner die as a fool dies ?"
+        },
+        {
+          "verse_record_id": 231709,
+          "book": "Psalms",
+          "chapter": 55,
+          "verse": 15,
+          "verse_text": "Psa 55:15 Let death steal over them; let them go down to Sheol alive ; for evil is in their dwelling place and in their heart ."
+        },
+        {
+          "verse_record_id": 231690,
+          "book": "Proverbs",
+          "chapter": 2,
+          "verse": 18,
+          "verse_text": "Pro 2:18 for her house sinks down to death , and her paths to the departed ;"
+        },
+        {
+          "verse_record_id": 231694,
+          "book": "Proverbs",
+          "chapter": 5,
+          "verse": 5,
+          "verse_text": "Pro 5:5 Her feet go down to death ; her steps follow the path to Sheol ;"
+        },
+        {
+          "verse_record_id": 231695,
+          "book": "Proverbs",
+          "chapter": 7,
+          "verse": 27,
+          "verse_text": "Pro 7:27 Her house is the way to Sheol , going down to the chambers of death ."
+        },
+        {
+          "verse_record_id": 231678,
+          "book": "Proverbs",
+          "chapter": 10,
+          "verse": 2,
+          "verse_text": "Pro 10:2 Treasures gained by wickedness do not profit , but righteousness delivers from death ."
+        },
+        {
+          "verse_record_id": 231680,
+          "book": "Proverbs",
+          "chapter": 11,
+          "verse": 4,
+          "verse_text": "Pro 11:4 Riches do not profit in the day of wrath , but righteousness delivers from death ."
+        },
+        {
+          "verse_record_id": 231681,
+          "book": "Proverbs",
+          "chapter": 11,
+          "verse": 7,
+          "verse_text": "Pro 11:7 When the wicked dies , his hope will perish , and the expectation of wealth perishes too."
+        },
+        {
+          "verse_record_id": 231679,
+          "book": "Proverbs",
+          "chapter": 11,
+          "verse": 19,
+          "verse_text": "Pro 11:19 Whoever is steadfast in righteousness will live , but he who pursues evil will die ."
+        },
+        {
+          "verse_record_id": 231682,
+          "book": "Proverbs",
+          "chapter": 12,
+          "verse": 28,
+          "verse_text": "Pro 12:28 In the path of righteousness is life , and in its pathway there is no death ."
+        },
+        {
+          "verse_record_id": 231683,
+          "book": "Proverbs",
+          "chapter": 13,
+          "verse": 14,
+          "verse_text": "Pro 13:14 The teaching of the wise is a fountain of life , that one may turn away from the snares of death ."
+        },
+        {
+          "verse_record_id": 231684,
+          "book": "Proverbs",
+          "chapter": 14,
+          "verse": 12,
+          "verse_text": "Pro 14:12 There is a way that seems right to a man , but its end is the way to death ."
+        },
+        {
+          "verse_record_id": 231685,
+          "book": "Proverbs",
+          "chapter": 14,
+          "verse": 27,
+          "verse_text": "Pro 14:27 The fear of the Lord is a fountain of life , that one may turn away from the snares of death ."
+        },
+        {
+          "verse_record_id": 231686,
+          "book": "Proverbs",
+          "chapter": 14,
+          "verse": 32,
+          "verse_text": "Pro 14:32 The wicked is overthrown through his evildoing , but the righteous finds refuge in his death ."
+        },
+        {
+          "verse_record_id": 231687,
+          "book": "Proverbs",
+          "chapter": 16,
+          "verse": 14,
+          "verse_text": "Pro 16:14 A king’s wrath is a messenger of death , and a wise man will appease it ."
+        },
+        {
+          "verse_record_id": 231688,
+          "book": "Proverbs",
+          "chapter": 16,
+          "verse": 25,
+          "verse_text": "Pro 16:25 There is a way that seems right to a man , but its end is the way to death ."
+        },
+        {
+          "verse_record_id": 231689,
+          "book": "Proverbs",
+          "chapter": 18,
+          "verse": 21,
+          "verse_text": "Pro 18:21 Death and life are in the power of the tongue , and those who love it will eat its fruits ."
+        },
+        {
+          "verse_record_id": 231691,
+          "book": "Proverbs",
+          "chapter": 21,
+          "verse": 6,
+          "verse_text": "Pro 21:6 The getting of treasures by a lying tongue is a fleeting vapor and a snare of death ."
+        },
+        {
+          "verse_record_id": 231618,
+          "book": "Ezekiel",
+          "chapter": 18,
+          "verse": 23,
+          "verse_text": "Eze 18:23 Have I any pleasure in the death of the wicked , declares the Lord God , and not rather that he should turn from his way and live ?"
+        },
+        {
+          "verse_record_id": 231619,
+          "book": "Ezekiel",
+          "chapter": 18,
+          "verse": 32,
+          "verse_text": "Eze 18:32 For I have no pleasure in the death of anyone , declares the Lord God ; so turn , and live .”"
+        },
+        {
+          "verse_record_id": 231622,
+          "book": "Ezekiel",
+          "chapter": 33,
+          "verse": 11,
+          "verse_text": "Eze 33:11 Say to them, As I live , declares the Lord God , I have no pleasure in the death of the wicked , but that the wicked turn from his way and live ; turn back , turn back from your evil ways , for why will you die , O house of Israel ?"
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9280,
+      "verse_context_group_id": 3247,
+      "group_code": "7423-002",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7423,
+      "strongs_number": "H4194",
+      "transliteration": "ma.vet",
+      "gloss": "death",
+      "language": "Hebrew",
+      "context_description": "Death as power/threat/reality the person faces, fears, chooses, or is delivered from",
+      "dimension": "Emotion — Negative",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 41,
+      "set_aside_count": 76,
+      "total_verse_count": 43,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231578,
+          "book": "1 Samuel",
+          "chapter": 20,
+          "verse": 3,
+          "verse_text": "1Sa 20:3 But David vowed again , saying , “Your father knows well that I have found favor in your eyes , and he thinks , ‘Do not let Jonathan know this , lest he be grieved .’ But truly , as the Lord lives and as your soul lives , there is but a step between me and death .”"
+        },
+        {
+          "verse_record_id": 231710,
+          "book": "Psalms",
+          "chapter": 55,
+          "verse": 4,
+          "verse_text": "Psa 55:4 My heart is in anguish within me; the terrors of death have fallen upon me ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231623,
+          "book": "Genesis",
+          "chapter": 21,
+          "verse": 16,
+          "verse_text": "Gen 21:16 Then she went and sat down opposite him a good way off , about the distance of a bowshot , for she said , “Let me not look on the death of the child .” And as she sat opposite him, she lifted up her voice and wept ."
+        },
+        {
+          "verse_record_id": 231663,
+          "book": "Joshua",
+          "chapter": 2,
+          "verse": 13,
+          "verse_text": "Jos 2:13 that you will save alive my father and mother , my brothers and sisters , and all who belong to them, and deliver our lives from death .”"
+        },
+        {
+          "verse_record_id": 231667,
+          "book": "Judges",
+          "chapter": 16,
+          "verse": 30,
+          "verse_text": "Judg 16:30 And Samson said , “Let me die with the Philistines .” Then he bowed with all his strength , and the house fell upon the lords and upon all the people who were in it. So the dead whom he killed at his death were more than those whom he had killed during his life ."
+        },
+        {
+          "verse_record_id": 231719,
+          "book": "Ruth",
+          "chapter": 1,
+          "verse": 17,
+          "verse_text": "Rut 1:17 Where you die I will die , and there will I be buried . May the Lord do so to me and more also if anything but death parts me from you .”"
+        },
+        {
+          "verse_record_id": 231581,
+          "book": "1 Samuel",
+          "chapter": 5,
+          "verse": 11,
+          "verse_text": "1Sa 5:11 They sent therefore and gathered together all the lords of the Philistines and said , “Send away the ark of the God of Israel , and let it return to its own place , that it may not kill us and our people .” For there was a deathly panic throughout the whole city . The hand of God was very heavy there ."
+        },
+        {
+          "verse_record_id": 231576,
+          "book": "1 Samuel",
+          "chapter": 15,
+          "verse": 32,
+          "verse_text": "1Sa 15:32 Then Samuel said , “Bring here to me Agag the king of the Amalekites .” And Agag came to him cheerfully . Agag said , “ Surely the bitterness of death is past .”"
+        },
+        {
+          "verse_record_id": 231595,
+          "book": "2 Samuel",
+          "chapter": 1,
+          "verse": 23,
+          "verse_text": "2Sa 1:23 “ Saul and Jonathan , beloved and lovely ! In life and in death they were not divided ; they were swifter than eagles ; they were stronger than lions ."
+        },
+        {
+          "verse_record_id": 231597,
+          "book": "2 Samuel",
+          "chapter": 15,
+          "verse": 21,
+          "verse_text": "2Sa 15:21 But Ittai answered the king , “As the Lord lives , and as my lord the king lives , wherever my lord the king shall be , whether for death or for life , there also will your servant be.”"
+        },
+        {
+          "verse_record_id": 231599,
+          "book": "2 Samuel",
+          "chapter": 22,
+          "verse": 5,
+          "verse_text": "2Sa 22:5 “For the waves of death encompassed me, the torrents of destruction assailed me;"
+        },
+        {
+          "verse_record_id": 231600,
+          "book": "2 Samuel",
+          "chapter": 22,
+          "verse": 6,
+          "verse_text": "2Sa 22:6 the cords of Sheol entangled me; the snares of death confronted me."
+        },
+        {
+          "verse_record_id": 231654,
+          "book": "Job",
+          "chapter": 3,
+          "verse": 21,
+          "verse_text": "Job 3:21 who long for death , but it comes not , and dig for it more than for hidden treasures ,"
+        },
+        {
+          "verse_record_id": 231657,
+          "book": "Job",
+          "chapter": 5,
+          "verse": 20,
+          "verse_text": "Job 5:20 In famine he will redeem you from death , and in war from the power of the sword ."
+        },
+        {
+          "verse_record_id": 231658,
+          "book": "Job",
+          "chapter": 7,
+          "verse": 15,
+          "verse_text": "Job 7:15 so that I would choose strangling and death rather than my bones ."
+        },
+        {
+          "verse_record_id": 231655,
+          "book": "Job",
+          "chapter": 30,
+          "verse": 23,
+          "verse_text": "Job 30:23 For I know that you will bring me to death and to the house appointed for all living ."
+        },
+        {
+          "verse_record_id": 231718,
+          "book": "Psalms",
+          "chapter": 9,
+          "verse": 13,
+          "verse_text": "Psa 9:13 Be gracious to me, O Lord ! See my affliction from those who hate me, O you who lift me up from the gates of death ,"
+        },
+        {
+          "verse_record_id": 231702,
+          "book": "Psalms",
+          "chapter": 13,
+          "verse": 3,
+          "verse_text": "Psa 13:3 Consider and answer me, O Lord my God ; light up my eyes , lest I sleep the sleep of death ,"
+        },
+        {
+          "verse_record_id": 231703,
+          "book": "Psalms",
+          "chapter": 18,
+          "verse": 4,
+          "verse_text": "Psa 18:4 The cords of death encompassed me; the torrents of destruction assailed me;"
+        },
+        {
+          "verse_record_id": 231704,
+          "book": "Psalms",
+          "chapter": 18,
+          "verse": 5,
+          "verse_text": "Psa 18:5 the cords of Sheol entangled me; the snares of death confronted me."
+        },
+        {
+          "verse_record_id": 231705,
+          "book": "Psalms",
+          "chapter": 22,
+          "verse": 15,
+          "verse_text": "Psa 22:15 my strength is dried up like a potsherd , and my tongue sticks to my jaws ; you lay me in the dust of death ."
+        },
+        {
+          "verse_record_id": 231706,
+          "book": "Psalms",
+          "chapter": 33,
+          "verse": 19,
+          "verse_text": "Psa 33:19 that he may deliver their soul from death and keep them alive in famine ."
+        },
+        {
+          "verse_record_id": 231707,
+          "book": "Psalms",
+          "chapter": 49,
+          "verse": 14,
+          "verse_text": "Psa 49:14 Like sheep they are appointed for Sheol ; death shall be their shepherd , and the upright shall rule over them in the morning . Their form shall be consumed in Sheol , with no place to dwell ."
+        },
+        {
+          "verse_record_id": 231708,
+          "book": "Psalms",
+          "chapter": 49,
+          "verse": 17,
+          "verse_text": "Psa 49:17 For when he dies he will carry nothing away; his glory will not go down after him."
+        },
+        {
+          "verse_record_id": 231711,
+          "book": "Psalms",
+          "chapter": 56,
+          "verse": 13,
+          "verse_text": "Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life ."
+        },
+        {
+          "verse_record_id": 231713,
+          "book": "Psalms",
+          "chapter": 68,
+          "verse": 20,
+          "verse_text": "Psa 68:20 Our God is a God of salvation , and to God , the Lord , belong deliverances from death ."
+        },
+        {
+          "verse_record_id": 231715,
+          "book": "Psalms",
+          "chapter": 73,
+          "verse": 4,
+          "verse_text": "Psa 73:4 For they have no pangs until death ; their bodies are fat and sleek ."
+        },
+        {
+          "verse_record_id": 231717,
+          "book": "Psalms",
+          "chapter": 89,
+          "verse": 48,
+          "verse_text": "Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah"
+        },
+        {
+          "verse_record_id": 231697,
+          "book": "Psalms",
+          "chapter": 107,
+          "verse": 18,
+          "verse_text": "Psa 107:18 they loathed any kind of food , and they drew near to the gates of death ."
+        },
+        {
+          "verse_record_id": 231699,
+          "book": "Psalms",
+          "chapter": 116,
+          "verse": 3,
+          "verse_text": "Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish ."
+        },
+        {
+          "verse_record_id": 231700,
+          "book": "Psalms",
+          "chapter": 116,
+          "verse": 8,
+          "verse_text": "Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ;"
+        },
+        {
+          "verse_record_id": 231701,
+          "book": "Psalms",
+          "chapter": 118,
+          "verse": 18,
+          "verse_text": "Psa 118:18 The Lord has disciplined me severely , but he has not given me over to death ."
+        },
+        {
+          "verse_record_id": 231613,
+          "book": "Ecclesiastes",
+          "chapter": 7,
+          "verse": 1,
+          "verse_text": "Ecc 7:1 A good name is better than precious ointment , and the day of death than the day of birth ."
+        },
+        {
+          "verse_record_id": 231614,
+          "book": "Ecclesiastes",
+          "chapter": 7,
+          "verse": 26,
+          "verse_text": "Ecc 7:26 And I find something more bitter than death : the woman whose heart is snares and nets , and whose hands are fetters . He who pleases God escapes her, but the sinner is taken by her ."
+        },
+        {
+          "verse_record_id": 231615,
+          "book": "Ecclesiastes",
+          "chapter": 8,
+          "verse": 8,
+          "verse_text": "Ecc 8:8 No man has power to retain the spirit , or power over the day of death . There is no discharge from war , nor will wickedness deliver those who are given to it."
+        },
+        {
+          "verse_record_id": 231721,
+          "book": "Song of Solomon",
+          "chapter": 8,
+          "verse": 6,
+          "verse_text": "Song 8:6 Set me as a seal upon your heart , as a seal upon your arm , for love is strong as death , jealousy is fierce as the grave . Its flashes are flashes of fire , the very flame of the Lord ."
+        },
+        {
+          "verse_record_id": 231649,
+          "book": "Jeremiah",
+          "chapter": 8,
+          "verse": 3,
+          "verse_text": "Jer 8:3 Death shall be preferred to life by all the remnant that remains of this evil family in all the places where I have driven them, declares the Lord of hosts ."
+        },
+        {
+          "verse_record_id": 231650,
+          "book": "Jeremiah",
+          "chapter": 9,
+          "verse": 21,
+          "verse_text": "Jer 9:21 For death has come up into our windows ; it has entered our palaces , cutting off the children from the streets and the young men from the squares ."
+        },
+        {
+          "verse_record_id": 231668,
+          "book": "Lamentations",
+          "chapter": 1,
+          "verse": 20,
+          "verse_text": "Lam 1:20 “ Look , O Lord , for I am in distress; my stomach churns ; my heart is wrung within me, because I have been very rebellious . In the street the sword bereaves ; in the house it is like death ."
+        },
+        {
+          "verse_record_id": 231659,
+          "book": "Jonah",
+          "chapter": 4,
+          "verse": 3,
+          "verse_text": "Jon 4:3 Therefore now , O Lord , please take my life from me, for it is better for me to die than to live .”"
+        },
+        {
+          "verse_record_id": 231660,
+          "book": "Jonah",
+          "chapter": 4,
+          "verse": 8,
+          "verse_text": "Jon 4:8 When the sun rose , God appointed a scorching east wind , and the sun beat down on the head of Jonah so that he was faint . And he asked that he might die and said , “It is better for me to die than to live .”"
+        },
+        {
+          "verse_record_id": 231661,
+          "book": "Jonah",
+          "chapter": 4,
+          "verse": 9,
+          "verse_text": "Jon 4:9 But God said to Jonah , “Do you do well to be angry for the plant ?” And he said , “Yes, I do well to be angry , angry enough to die .”"
+        },
+        {
+          "verse_record_id": 231630,
+          "book": "Habakkuk",
+          "chapter": 2,
+          "verse": 5,
+          "verse_text": "Hab 2:5 “ Moreover , wine is a traitor , an arrogant man who is never at rest . His greed is as wide as Sheol ; like death he has never enough . He gathers for himself all nations and collects as his own all peoples .”"
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9281,
+      "verse_context_group_id": 3248,
+      "group_code": "7423-003",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7423,
+      "strongs_number": "H4194",
+      "transliteration": "ma.vet",
+      "gloss": "death",
+      "language": "Hebrew",
+      "context_description": "God's sovereignty over death as ground of redemption and inner-being hope",
+      "dimension": "Agency / Power",
+      "dimension_confidence": "KEYWORD_STRONG",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 3,
+      "set_aside_count": 76,
+      "total_verse_count": 5,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231633,
+          "book": "Isaiah",
+          "chapter": 25,
+          "verse": 8,
+          "verse_text": "Isa 25:8 He will swallow up death forever ; and the Lord God will wipe away tears from all faces , and the reproach of his people he will take away from all the earth , for the Lord has spoken ."
+        },
+        {
+          "verse_record_id": 231631,
+          "book": "Hosea",
+          "chapter": 13,
+          "verse": 14,
+          "verse_text": "Hos 13:14 I shall ransom them from the power of Sheol ; I shall redeem them from Death . O Death , where are your plagues ? O Sheol , where is your sting ? Compassion is hidden from my eyes ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231692,
+          "book": "Proverbs",
+          "chapter": 24,
+          "verse": 11,
+          "verse_text": "Pro 24:11 Rescue those who are being taken away to death ; hold back those who are stumbling to the slaughter ."
+        },
+        {
+          "verse_record_id": 231638,
+          "book": "Isaiah",
+          "chapter": 53,
+          "verse": 9,
+          "verse_text": "Isa 53:9 And they made his grave with the wicked and with a rich man in his death , although he had done no violence , and there was no deceit in his mouth ."
+        },
+        {
+          "verse_record_id": 231637,
+          "book": "Isaiah",
+          "chapter": 53,
+          "verse": 12,
+          "verse_text": "Isa 53:12 Therefore I will divide him a portion with the many , and he shall divide the spoil with the strong , because he poured out his soul to death and was numbered with the transgressors ; yet he bore the sin of many , and makes intercession for the transgressors ."
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9282,
+      "verse_context_group_id": 3249,
+      "group_code": "7423-004",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7423,
+      "strongs_number": "H4194",
+      "transliteration": "ma.vet",
+      "gloss": "death",
+      "language": "Hebrew",
+      "context_description": "The dead and inner-being capacities — those who no longer praise, remember, or are remembered",
+      "dimension": null,
+      "dimension_confidence": "UNCLASSIFIED",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 1,
+      "set_aside_count": 76,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231712,
+          "book": "Psalms",
+          "chapter": 6,
+          "verse": 5,
+          "verse_text": "Psa 6:5 For in death there is no remembrance of you; in Sheol who will give you praise ?"
+        },
+        {
+          "verse_record_id": 231698,
+          "book": "Psalms",
+          "chapter": 116,
+          "verse": 15,
+          "verse_text": "Psa 116:15 Precious in the sight of the Lord is the death of his saints ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231636,
+          "book": "Isaiah",
+          "chapter": 38,
+          "verse": 18,
+          "verse_text": "Isa 38:18 For Sheol does not thank you; death does not praise you; those who go down to the pit do not hope for your faithfulness ."
+        }
+      ],
+      "root_code": "MUT",
+      "root_language": "Hebrew",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9261,
+      "verse_context_group_id": 3228,
+      "group_code": "7427-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7427,
+      "strongs_number": "G2288",
+      "transliteration": "thanatos",
+      "gloss": "death",
+      "language": "Greek",
+      "context_description": "Death as spiritual/moral condition — separation from God, consequence of sin",
+      "dimension": "Moral Character",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 26,
+      "set_aside_count": 46,
+      "total_verse_count": 28,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231822,
+          "book": "Romans",
+          "chapter": 8,
+          "verse": 6,
+          "verse_text": "Rom 8:6 For to set the mind on the flesh is death , but to set the mind on the Spirit is life and peace ."
+        },
+        {
+          "verse_record_id": 231734,
+          "book": "1 John",
+          "chapter": 3,
+          "verse": 14,
+          "verse_text": "1Jo 3:14 We know that we have passed out of death into life , because we love the brothers . Whoever does not love abides in death ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231792,
+          "book": "Matthew",
+          "chapter": 4,
+          "verse": 16,
+          "verse_text": "Mat 4:16 the people dwelling in darkness have seen a great light , and for those dwelling in the region and shadow of death , on them a light has dawned .”"
+        },
+        {
+          "verse_record_id": 231773,
+          "book": "Luke",
+          "chapter": 1,
+          "verse": 79,
+          "verse_text": "Luk 1:79 to give light to those who sit in darkness and in the shadow of death , to guide our feet into the way of peace .”"
+        },
+        {
+          "verse_record_id": 231770,
+          "book": "John",
+          "chapter": 5,
+          "verse": 24,
+          "verse_text": "Joh 5:24 Truly , truly , I say to you , whoever hears my word and believes him who sent me has eternal life . He does not come into judgment , but has passed from death to life ."
+        },
+        {
+          "verse_record_id": 231771,
+          "book": "John",
+          "chapter": 8,
+          "verse": 51,
+          "verse_text": "Joh 8:51 Truly , truly , I say to you , if anyone keeps my word , he will never see death .”"
+        },
+        {
+          "verse_record_id": 231772,
+          "book": "John",
+          "chapter": 8,
+          "verse": 52,
+          "verse_text": "Joh 8:52 The Jews said to him , “ Now we know that you have a demon ! Abraham died , as did the prophets , yet you say , ‘ If anyone keeps my word , he will never taste death .’"
+        },
+        {
+          "verse_record_id": 231805,
+          "book": "Romans",
+          "chapter": 5,
+          "verse": 12,
+          "verse_text": "Rom 5:12 Therefore , just as sin came into the world through one man , and death through sin , and so death spread to all men because all sinned —"
+        },
+        {
+          "verse_record_id": 231806,
+          "book": "Romans",
+          "chapter": 5,
+          "verse": 14,
+          "verse_text": "Rom 5:14 Yet death reigned from Adam to Moses , even over those whose sinning was not like the transgression of Adam , who was a type of the one who was to come ."
+        },
+        {
+          "verse_record_id": 231807,
+          "book": "Romans",
+          "chapter": 5,
+          "verse": 17,
+          "verse_text": "Rom 5:17 For if , because of one man’s trespass , death reigned through that one man, much more will those who receive the abundance of grace and the free gift of righteousness reign in life through the one man Jesus Christ ."
+        },
+        {
+          "verse_record_id": 231808,
+          "book": "Romans",
+          "chapter": 5,
+          "verse": 21,
+          "verse_text": "Rom 5:21 so that , as sin reigned in death , grace also might reign through righteousness leading to eternal life through Jesus Christ our Lord ."
+        },
+        {
+          "verse_record_id": 231809,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 16,
+          "verse_text": "Rom 6:16 Do you not know that if you present yourselves to anyone as obedient slaves , you are slaves of the one whom you obey , either of sin , which leads to death , or of obedience , which leads to righteousness ?"
+        },
+        {
+          "verse_record_id": 231810,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 21,
+          "verse_text": "Rom 6:21 But what fruit were you getting at that time from the things of which you are now ashamed ? For the end of those things is death ."
+        },
+        {
+          "verse_record_id": 231811,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 23,
+          "verse_text": "Rom 6:23 For the wages of sin is death , but the free gift of God is eternal life in Christ Jesus our Lord ."
+        },
+        {
+          "verse_record_id": 231819,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 5,
+          "verse_text": "Rom 7:5 For while we were living in the flesh , our sinful passions , aroused by the law , were at work in our members to bear fruit for death ."
+        },
+        {
+          "verse_record_id": 231816,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 10,
+          "verse_text": "Rom 7:10 The very commandment that promised life proved to be death to me ."
+        },
+        {
+          "verse_record_id": 231817,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 13,
+          "verse_text": "Rom 7:13 Did that which is good , then, bring death to me ? By no means ! It was sin , producing death in me through what is good , in order that sin might be shown to be sin , and through the commandment might become sinful beyond measure ."
+        },
+        {
+          "verse_record_id": 231818,
+          "book": "Romans",
+          "chapter": 7,
+          "verse": 24,
+          "verse_text": "Rom 7:24 Wretched man that I am! Who will deliver me from this body of death ?"
+        },
+        {
+          "verse_record_id": 231820,
+          "book": "Romans",
+          "chapter": 8,
+          "verse": 2,
+          "verse_text": "Rom 8:2 For the law of the Spirit of life has set you free in Christ Jesus from the law of sin and death ."
+        },
+        {
+          "verse_record_id": 231732,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 56,
+          "verse_text": "1Cor 15:56 The sting of death is sin , and the power of sin is the law ."
+        },
+        {
+          "verse_record_id": 231740,
+          "book": "2 Corinthians",
+          "chapter": 2,
+          "verse": 16,
+          "verse_text": "2Cor 2:16 to one a fragrance from death to death , to the other a fragrance from life to life . Who is sufficient for these things ?"
+        },
+        {
+          "verse_record_id": 231741,
+          "book": "2 Corinthians",
+          "chapter": 3,
+          "verse": 7,
+          "verse_text": "2Cor 3:7 Now if the ministry of death , carved in letters on stone , came with such glory that the Israelites could not gaze at Moses ’ face because of its glory , which was being brought to an end ,"
+        },
+        {
+          "verse_record_id": 231743,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 12,
+          "verse_text": "2Cor 4:12 So death is at work in us , but life in you ."
+        },
+        {
+          "verse_record_id": 231744,
+          "book": "2 Corinthians",
+          "chapter": 7,
+          "verse": 10,
+          "verse_text": "2Cor 7:10 For godly grief produces a repentance that leads to salvation without regret , whereas worldly grief produces death ."
+        },
+        {
+          "verse_record_id": 231763,
+          "book": "James",
+          "chapter": 1,
+          "verse": 15,
+          "verse_text": "Jam 1:15 Then desire when it has conceived gives birth to sin , and sin when it is fully grown brings forth death ."
+        },
+        {
+          "verse_record_id": 231764,
+          "book": "James",
+          "chapter": 5,
+          "verse": 20,
+          "verse_text": "Jam 5:20 let him know that whoever brings back a sinner from his wandering will save his soul from death and will cover a multitude of sins ."
+        },
+        {
+          "verse_record_id": 231735,
+          "book": "1 John",
+          "chapter": 5,
+          "verse": 16,
+          "verse_text": "1Jo 5:16 If anyone sees his brother committing a sin not leading to death , he shall ask , and God will give him life —to those who commit sins that do not lead to death . There is sin that leads to death ; I do not say that one should pray for that ."
+        },
+        {
+          "verse_record_id": 231736,
+          "book": "1 John",
+          "chapter": 5,
+          "verse": 17,
+          "verse_text": "1Jo 5:17 All wrongdoing is sin , but there is sin that does not lead to death ."
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9262,
+      "verse_context_group_id": 3229,
+      "group_code": "7427-002",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7427,
+      "strongs_number": "G2288",
+      "transliteration": "thanatos",
+      "gloss": "death",
+      "language": "Greek",
+      "context_description": "Death as power/threat that dominates or enslaves through fear",
+      "dimension": "Emotion — Negative",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 8,
+      "set_aside_count": 46,
+      "total_verse_count": 9,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231757,
+          "book": "Hebrews",
+          "chapter": 2,
+          "verse": 15,
+          "verse_text": "Heb 2:15 and deliver all those who through fear of death were subject to lifelong slavery ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231821,
+          "book": "Romans",
+          "chapter": 8,
+          "verse": 38,
+          "verse_text": "Rom 8:38 For I am sure that neither death nor life , nor angels nor rulers , nor things present nor things to come , nor powers ,"
+        },
+        {
+          "verse_record_id": 231733,
+          "book": "1 Corinthians",
+          "chapter": 3,
+          "verse": 22,
+          "verse_text": "1Cor 3:22 whether Paul or Apollos or Cephas or the world or life or death or the present or the future — all are yours ,"
+        },
+        {
+          "verse_record_id": 231729,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 26,
+          "verse_text": "1Cor 15:26 The last enemy to be destroyed is death ."
+        },
+        {
+          "verse_record_id": 231730,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 54,
+          "verse_text": "1Cor 15:54 When the perishable puts on the imperishable , and the mortal puts on immortality , then shall come to pass the saying that is written : “ Death is swallowed up in victory .”"
+        },
+        {
+          "verse_record_id": 231732,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 56,
+          "verse_text": "1Cor 15:56 The sting of death is sin , and the power of sin is the law ."
+        },
+        {
+          "verse_record_id": 231738,
+          "book": "2 Corinthians",
+          "chapter": 1,
+          "verse": 9,
+          "verse_text": "2Cor 1:9 Indeed , we felt that we had received the sentence of death . But that was to make us rely not on ourselves but on God who raises the dead ."
+        },
+        {
+          "verse_record_id": 231745,
+          "book": "2 Timothy",
+          "chapter": 1,
+          "verse": 10,
+          "verse_text": "2Ti 1:10 and which now has been manifested through the appearing of our Savior Christ Jesus , who abolished death and brought life and immortality to light through the gospel ,"
+        },
+        {
+          "verse_record_id": 231759,
+          "book": "Hebrews",
+          "chapter": 5,
+          "verse": 7,
+          "verse_text": "Heb 5:7 In the days of his flesh , Jesus offered up prayers and supplications , with loud cries and tears , to him who was able to save him from death , and he was heard because of his reverence ."
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9263,
+      "verse_context_group_id": 3230,
+      "group_code": "7427-003",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7427,
+      "strongs_number": "G2288",
+      "transliteration": "thanatos",
+      "gloss": "death",
+      "language": "Greek",
+      "context_description": "Believer's inner identification with Christ's death as transformative reality",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 5,
+      "set_aside_count": 46,
+      "total_verse_count": 7,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231796,
+          "book": "Philippians",
+          "chapter": 2,
+          "verse": 8,
+          "verse_text": "Phili 2:8 And being found in human form , he humbled himself by becoming obedient to the point of death , even death on a cross ."
+        },
+        {
+          "verse_record_id": 231797,
+          "book": "Philippians",
+          "chapter": 3,
+          "verse": 10,
+          "verse_text": "Phili 3:10 that I may know him and the power of his resurrection , and may share his sufferings , becoming like him in his death ,"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231812,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 3,
+          "verse_text": "Rom 6:3 Do you not know that all of us who have been baptized into Christ Jesus were baptized into his death ?"
+        },
+        {
+          "verse_record_id": 231813,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 4,
+          "verse_text": "Rom 6:4 We were buried therefore with him by baptism into death , in order that , just as Christ was raised from the dead by the glory of the Father , we too might walk in newness of life ."
+        },
+        {
+          "verse_record_id": 231814,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 5,
+          "verse_text": "Rom 6:5 For if we have been united with him in a death like his , we shall certainly be united with him in a resurrection like his."
+        },
+        {
+          "verse_record_id": 231815,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 9,
+          "verse_text": "Rom 6:9 We know that Christ , being raised from the dead , will never die again; death no longer has dominion over him ."
+        },
+        {
+          "verse_record_id": 231793,
+          "book": "Philippians",
+          "chapter": 1,
+          "verse": 20,
+          "verse_text": "Phili 1:20 as it is my eager expectation and hope that I will not be at all ashamed , but that with full courage now as always Christ will be honored in my body , whether by life or by death ."
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9264,
+      "verse_context_group_id": 3231,
+      "group_code": "7427-004",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7427,
+      "strongs_number": "G2288",
+      "transliteration": "thanatos",
+      "gloss": "death",
+      "language": "Greek",
+      "context_description": "Faithful inner-being orientation toward death — perseverance, defiance, hope",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 3,
+      "set_aside_count": 46,
+      "total_verse_count": 5,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231731,
+          "book": "1 Corinthians",
+          "chapter": 15,
+          "verse": 55,
+          "verse_text": "1Cor 15:55 “O death , where is your victory ? O death , where is your sting ?”"
+        },
+        {
+          "verse_record_id": 231799,
+          "book": "Revelation",
+          "chapter": 2,
+          "verse": 10,
+          "verse_text": "Rev 2:10 Do not fear what you are about to suffer . Behold , the devil is about to throw some of you into prison , that you may be tested , and for ten days you will have tribulation . Be faithful unto death , and I will give you the crown of life ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231775,
+          "book": "Luke",
+          "chapter": 22,
+          "verse": 33,
+          "verse_text": "Luk 22:33 Peter said to him , “ Lord , I am ready to go with you both to prison and to death .”"
+        },
+        {
+          "verse_record_id": 231742,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 11,
+          "verse_text": "2Cor 4:11 For we who live are always being given over to death for Jesus ’ sake , so that the life of Jesus also may be manifested in our mortal flesh ."
+        },
+        {
+          "verse_record_id": 231800,
+          "book": "Revelation",
+          "chapter": 2,
+          "verse": 11,
+          "verse_text": "Rev 2:11 He who has an ear , let him hear what the Spirit says to the churches . The one who conquers will not be hurt by the second death .’"
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9265,
+      "verse_context_group_id": 3232,
+      "group_code": "7427-005",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7427,
+      "strongs_number": "G2288",
+      "transliteration": "thanatos",
+      "gloss": "death",
+      "language": "Greek",
+      "context_description": "Death as measure of extreme inner suffering — soul sorrowful even to death",
+      "dimension": "Emotion — Negative",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 1,
+      "related_count": 1,
+      "set_aside_count": 46,
+      "total_verse_count": 2,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231782,
+          "book": "Mark",
+          "chapter": 14,
+          "verse": 34,
+          "verse_text": "Mar 14:34 And he said to them , “ My soul is very sorrowful , even to death . Remain here and watch .”"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231790,
+          "book": "Matthew",
+          "chapter": 26,
+          "verse": 38,
+          "verse_text": "Mat 26:38 Then he said to them , “ My soul is very sorrowful , even to death ; remain here , and watch with me .”"
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9267,
+      "verse_context_group_id": 3234,
+      "group_code": "7429-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7429,
+      "strongs_number": "G2349",
+      "transliteration": "thnētos",
+      "gloss": "mortal",
+      "language": "Greek",
+      "context_description": "Mortal body as site of inner-being orientation, longing, and moral struggle",
+      "dimension": "Volition",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 2,
+      "set_aside_count": 2,
+      "total_verse_count": 4,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231926,
+          "book": "Romans",
+          "chapter": 6,
+          "verse": 12,
+          "verse_text": "Rom 6:12 Let not sin therefore reign in your mortal body , to make you obey its passions ."
+        },
+        {
+          "verse_record_id": 231925,
+          "book": "2 Corinthians",
+          "chapter": 5,
+          "verse": 4,
+          "verse_text": "2Cor 5:4 For while we are still in this tent , we groan , being burdened — not that we would be unclothed , but that we would be further clothed , so that what is mortal may be swallowed up by life ."
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231927,
+          "book": "Romans",
+          "chapter": 8,
+          "verse": 11,
+          "verse_text": "Rom 8:11 If the Spirit of him who raised Jesus from the dead dwells in you , he who raised Christ Jesus from the dead will also give life to your mortal bodies through his Spirit who dwells in you ."
+        },
+        {
+          "verse_record_id": 231924,
+          "book": "2 Corinthians",
+          "chapter": 4,
+          "verse": 11,
+          "verse_text": "2Cor 4:11 For we who live are always being given over to death for Jesus ’ sake , so that the life of Jesus also may be manifested in our mortal flesh ."
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    },
+    {
+      "id": 9274,
+      "verse_context_group_id": 3241,
+      "group_code": "7430-001",
+      "owning_registry_no": 210,
+      "owning_registry_word": "deadness",
+      "cluster_assignment": "C21",
+      "mti_term_id": 7430,
+      "strongs_number": "G4880",
+      "transliteration": "sunapothnēskō",
+      "gloss": "to die with",
+      "language": "Greek",
+      "context_description": "Inner-being commitment of dying together — loyalty and union through shared death including Christ",
+      "dimension": "Vitality / Existence",
+      "dimension_confidence": "KEYWORD_WEAK",
+      "manual_override": 0,
+      "anchor_count": 2,
+      "related_count": 1,
+      "set_aside_count": 0,
+      "total_verse_count": 3,
+      "delete_flagged": 0,
+      "notes": null,
+      "last_modified": "2026-04-09",
+      "dominant_subject": null,
+      "anchor_verses": [
+        {
+          "verse_record_id": 231928,
+          "book": "2 Corinthians",
+          "chapter": 7,
+          "verse": 3,
+          "verse_text": "2Cor 7:3 I do not say this to condemn you, for I said before that you are in our hearts , to die together and to live together ."
+        },
+        {
+          "verse_record_id": 231929,
+          "book": "2 Timothy",
+          "chapter": 2,
+          "verse": 11,
+          "verse_text": "2Ti 2:11 The saying is trustworthy , for : If we have died with him, we will also live with him;"
+        }
+      ],
+      "related_verses": [
+        {
+          "verse_record_id": 231930,
+          "book": "Mark",
+          "chapter": 14,
+          "verse": 31,
+          "verse_text": "Mar 14:31 But he said emphatically , “ If I must die with you , I will not deny you .” And they all said the same ."
+        }
+      ],
+      "root_code": "THNĒSKŌ",
+      "root_language": "Greek",
+      "root_gloss": "death"
+    }
+  ]
+}

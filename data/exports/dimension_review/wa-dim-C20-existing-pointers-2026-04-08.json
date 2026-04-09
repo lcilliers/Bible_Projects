@@ -1,0 +1,74 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C20",
+    "produced_date": "2026-04-08"
+  },
+  "session_b_findings": [],
+  "session_d_pointers": [
+    {
+      "flag_label": "PH2-197-001",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "yad - hand (general). 742 occ. Verse sample of 375 represents approximately 51% of occurrences. Authority and instrumental uses co-present; analysis cannot assume all occurrences are authority-register.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-002",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "yad - hand: power. 585 occ. Verse sample of 278 represents approximately 48% of occurrences. Core authority idiom but sample is partial.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-003",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "archōn - ruler/prince. 617 occ. Verse sample of 36 represents approximately 6% of occurrences. HIGH_FREQUENCY_ANCHOR: sample is highly partial. Full analysis requires Phase 2 independent research on unsampled occurrences.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-004",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "dunamis - power. 579 occ. HIGH_FREQUENCY_ANCHOR. Verse sample of 107 represents approximately 18% of occurrences. Power-as-authority dimension requires full corpus coverage for synthesis conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-005",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "archomai - to rule/begin. 55 occ. ZERO verses in export. No verse data available for analysis. Phase 2 research required before synthesis conclusions can be drawn on this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-006",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "dunamai - to be able. 444 occ. Verse sample of 120 represents approximately 27% of occurrences. Capacity-authority dimension is present but sample partial.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-199-001",
+      "registry_id": 199,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "H3027G (yad) has 742 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-199-002",
+      "registry_id": 199,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "H3027H (yad) has 585 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    }
+  ]
+}

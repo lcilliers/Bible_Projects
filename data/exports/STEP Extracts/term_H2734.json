@@ -1,0 +1,3539 @@
+{
+  "strongs_number": "H2734",
+  "extracted_date": "2026-04-03",
+  "include_deleted": false,
+  "term": {
+    "id": 139,
+    "strongs_number": "H2734",
+    "transliteration": "cha.rah",
+    "gloss": "to be incensed",
+    "language": "Hebrew",
+    "owning_registry": "4",
+    "owning_registry_fk": 4,
+    "owning_word": "anger",
+    "owning_part": null,
+    "word_data_reference": "4",
+    "word_data_ref_fk": 4,
+    "status": "extracted",
+    "status_note": null,
+    "exclusion_reason": null,
+    "extraction_date": "2026-03-28",
+    "strongs_reconciled": 0,
+    "anchor_note": null,
+    "last_changed": "2026-03-16 10:34:12",
+    "delete_flagged": 0,
+    "owning_registry_no": 4,
+    "owning_registry_word": "anger",
+    "mti_flags": [],
+    "mti_cross_refs": [
+      {
+        "id": 30,
+        "mti_term_id": 139,
+        "registry": "51",
+        "registry_fk": 51,
+        "word": "distress",
+        "part": "3",
+        "word_data_reference": "47"
+      },
+      {
+        "id": 31,
+        "mti_term_id": 139,
+        "registry": "178",
+        "registry_fk": 178,
+        "word": "wrath",
+        "part": null,
+        "word_data_reference": null
+      }
+    ]
+  },
+  "verse_context": {
+    "groups": [
+      {
+        "id": 62,
+        "mti_term_id": 139,
+        "group_code": "139-001",
+        "context_description": "Term names the kindling of inner anger as the first act of moral rebellion — Cain's anger at divine rejection as the origin-point of the anger characteristic in Scripture",
+        "notes": null,
+        "delete_flagged": 0,
+        "anchors": [
+          {
+            "reference": "Gen 4:5",
+            "verse_text": "Gen 4:5 but for Cain and his offering he had no regard . So Cain was very angry , and his face fell .",
+            "target_word": "angry"
+          }
+        ],
+        "related_count": 8
+      },
+      {
+        "id": 63,
+        "mti_term_id": 139,
+        "group_code": "139-002",
+        "context_description": "Term names divine anger as the inner response to Israel's repeated covenant violation — the burning of God's wrath in the moment of particular transgression",
+        "notes": null,
+        "delete_flagged": 0,
+        "anchors": [
+          {
+            "reference": "Exo 32:10",
+            "verse_text": "Exo 32:10 Now therefore let me alone , that my wrath may burn hot against them and I may consume them, in order that I may make a great nation of you.”",
+            "target_word": "burn hot"
+          }
+        ],
+        "related_count": 8
+      },
+      {
+        "id": 64,
+        "mti_term_id": 139,
+        "group_code": "139-003",
+        "context_description": "Term names the inner injunction against anger as spiritual counsel — do not let anger kindle; cease from it; it leads only to harm",
+        "notes": null,
+        "delete_flagged": 0,
+        "anchors": [
+          {
+            "reference": "Psa 37:8",
+            "verse_text": "Psa 37:8 Refrain from anger , and forsake wrath ! Fret not yourself; it tends only to evil .",
+            "target_word": "Fret"
+          }
+        ],
+        "related_count": 2
+      }
+    ],
+    "set_aside_count": 67
+  },
+  "registries": [
+    {
+      "registry_no": 4,
+      "registry_word": "anger",
+      "term_owner_type": "OWNER",
+      "cluster": "C07",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "occurrence_count": 91,
+      "evidential_status": null,
+      "active_verses_for_this_term": 88,
+      "meaning_senses": [
+        {
+          "code": "1",
+          "text": "to be hot, furious, burn, becomeangry, be kindled",
+          "stem": null
+        },
+        {
+          "code": "1a",
+          "text": "(Qal) to burn, kindle (anger)",
+          "stem": null
+        },
+        {
+          "code": "1b",
+          "text": "(Niphal) to be angry with, be incensed",
+          "stem": null
+        },
+        {
+          "code": "1c",
+          "text": "(Hiphil) to burn, kindle",
+          "stem": null
+        },
+        {
+          "code": "1d",
+          "text": "(Hithpael) to heat oneself in vexation",
+          "stem": null
+        }
+      ],
+      "registry_terms": [
+        {
+          "strongs_number": "H2194",
+          "gloss": "be indignant",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 12,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine indignation as sustained moral disposition — the ongoing inner displeasure of God toward wickedness, felt daily",
+            "Term names human indignation as responsive inner emotion — the emotional-moral reaction of moral displeasure arising from provocation or perceived injustice"
+          ]
+        },
+        {
+          "strongs_number": "H3179",
+          "gloss": "to conceive",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3708A",
+          "gloss": "vexation",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 22,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5668",
+          "gloss": "for the sake of",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 49,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7306",
+          "gloss": "to smell",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 11,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7307G",
+          "gloss": "spirit",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 216,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G2371",
+          "gloss": "to quarrel",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names inner fury driving political and power conflicts — fierce anger in an authority figure expressed through hostile action"
+          ]
+        },
+        {
+          "strongs_number": "G2373",
+          "gloss": "to anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 63,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names inner fury triggered by perceived betrayal — the rage that erupts when deception is discovered, driving violent disproportionate response"
+          ]
+        },
+        {
+          "strongs_number": "G3691",
+          "gloss": "sharp/swift",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 20,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G3709",
+          "gloss": "wrath",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 272,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names divine wrath as the revealed inner response to human unrighteousness and ungodliness — anger as the consistent inner orientation of God toward sin",
+            "Term names human anger as requiring governance — the inner state that must be put away, not nursed, as incompatible with righteous living",
+            "Term names righteous anger co-existing with grief — the simultaneous presence of anger and sorrow as the inner response to hardness of heart"
+          ]
+        },
+        {
+          "strongs_number": "G3710",
+          "gloss": "to anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 68,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names morally accountable anger — the inner state of anger that exists under divine command and requires governance before it becomes sin",
+            "Term names anger as an inner action-driver — the fury that compels the person to respond, act, or enforce consequences",
+            "Term names anger as cosmic inner rebellion against God — the hostility of nations and powers in ultimate opposition to divine rule"
+          ]
+        },
+        {
+          "strongs_number": "G3711",
+          "gloss": "quick-tempered",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 5,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names quick-temperedness as a disqualifying character trait — habitual anger as evidence of inner instability incompatible with leadership"
+          ]
+        },
+        {
+          "strongs_number": "G3844",
+          "gloss": "from/with/beside",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 867,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G3947",
+          "gloss": "to provoke",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 47,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names righteous inner spirit-provocation — the spirit of the person stirred to righteous indignation by idolatry and the honour of God",
+            "Term names love's non-irritability — the inner disposition of love that displaces reactive anger and refuses to be provoked"
+          ]
+        },
+        {
+          "strongs_number": "G3948",
+          "gloss": "stirring up",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the sharp inner conflict of disagreement — the cutting edge of contention between persons of conviction",
+            "Term names the deliberate inner-stimulation toward love and good works — the intentional provoking of others' inner life toward what is good"
+          ]
+        },
+        {
+          "strongs_number": "G3949",
+          "gloss": "to anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 53,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names anger as a provoked inner response to injustice or disobedience — the arousal of wrath in another as consequence of conduct"
+          ]
+        },
+        {
+          "strongs_number": "G3950",
+          "gloss": "anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the anger that hardens into danger without resolution — the sunset-bounded inner state that must be addressed before becoming settled resentment"
+          ]
+        },
+        {
+          "strongs_number": "G7026",
+          "gloss": "an object of anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G8318",
+          "gloss": "vehement anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0599",
+          "gloss": "be angry",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 14,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names divine relational anger — God's inner anger toward specific persons in response to covenant violation, expressed personally and resolved personally"
+          ]
+        },
+        {
+          "strongs_number": "H0600",
+          "gloss": "face",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0601",
+          "gloss": "heron",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0639G",
+          "gloss": "face: anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 225,
+          "vc_group_count": 5,
+          "context_descriptions": [
+            "Term names divine anger as the response to idolatry — the kindling of God's wrath at Israel's most direct covenant violation",
+            "Term names divine anger as tempered by steadfast love — the characterisation of God whose anger is slow and bounded by covenant faithfulness",
+            "Term names human anger as the inner response to relational conflict — the kindling of personal wrath in the face of provocation, rejection, or perceived injustice",
+            "Term names the mastery of anger as the measure of inner greatness — governing anger as exceeding military conquest in demonstration of inner strength",
+            "Term names divine anger as the experience of hiddenness — the face turned away as the form of wrath, producing inner desolation"
+          ]
+        },
+        {
+          "strongs_number": "H0644",
+          "gloss": "to bake",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 25,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner heat of anger as a smoldering thermal process — the self-sustaining build of inner fury toward eruption, using the oven-and-fire metaphor"
+          ]
+        },
+        {
+          "strongs_number": "H0712",
+          "gloss": "box",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2195",
+          "gloss": "indignation",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 22,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine indignation as purposive instrument of judgment — God's inner wrath deployed purposively against wickedness and idolatry",
+            "Term names the prophet's inner state as divinely imparted indignation — God's own indignation placed within the person called to speak for him"
+          ]
+        },
+        {
+          "strongs_number": "H2525",
+          "gloss": "hot",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2527",
+          "gloss": "heat",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 13,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2528",
+          "gloss": "rage",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names rage as inner fury producing visible physical transformation and extreme action — the Aramaic term for anger at its most intense somatic expression"
+          ]
+        },
+        {
+          "strongs_number": "H2529A",
+          "gloss": "curd",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 9,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2529B",
+          "gloss": "heat",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2534",
+          "gloss": "rage",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 125,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names divine wrath as consuming inner fire — the heat of God's anger poured out in judgment, spending itself completely",
+            "Term names anger as the inner state that transforms countenance and drives extreme action — human fury at its most visible and disruptive",
+            "Term names the inner heat of habitual anger — the fury characteristic as a settled disposition that requires management and produces destruction when uncontrolled"
+          ]
+        },
+        {
+          "strongs_number": "H2535",
+          "gloss": "heat",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2552",
+          "gloss": "to warm",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 21,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner warming process of developing intensity — anger or passionate feeling as a thermal process building from within through meditation"
+          ]
+        },
+        {
+          "strongs_number": "H2553",
+          "gloss": "pillar",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2740",
+          "gloss": "burning anger",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 41,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the burning intensity of divine wrath at its maximum — fierce anger as the pinnacle of God's response to covenant violation, carrying cosmic consequences",
+            "Term names human burning anger as the inner response to perceived injustice or affront — the fierce heat of personal wrath that drives consequential action"
+          ]
+        },
+        {
+          "strongs_number": "H2750",
+          "gloss": "burning",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names fierce inner anger co-existing with grief and loyalty — the intensity qualifier that characterises anger at its most burning while accompanying care"
+          ]
+        },
+        {
+          "strongs_number": "H3707",
+          "gloss": "to provoke",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 56,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the provoking of divine vexation — Israel's conduct as the trigger of God's inner anger, creating a recurring covenantal pattern of provocation and response",
+            "Term names the inner vexation of relational cruelty — the distress produced in a person's inner life by another's deliberately provocative conduct",
+            "Term names the inner lodging of vexation as a marker of folly — anger that settles and remains as a characteristic of the unwise person"
+          ]
+        },
+        {
+          "strongs_number": "H3708B",
+          "gloss": "vexation",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the vexation of inner grief and provocation — the broad register of inner distress from existential burden, rivalry, and sorrow expressed before God in prayer",
+            "Term names the anger that lodges in the fool's heart — inner vexation as the resident condition of one who lacks inner governance",
+            "Term names the conduct that provokes divine inner anger — Israel's actions causing God's vexation, with covenantal consequences"
+          ]
+        },
+        {
+          "strongs_number": "H3710",
+          "gloss": "rock",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3989",
+          "gloss": "baked [food]",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4307G",
+          "gloss": "[Gate of the] Guard",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4307H",
+          "gloss": "guardhouse",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 15,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4569A",
+          "gloss": "ford",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4569B",
+          "gloss": "ford",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4651",
+          "gloss": "refuse",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4654A",
+          "gloss": "ruin",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4654B",
+          "gloss": "ruin",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4658",
+          "gloss": "carcass",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5006",
+          "gloss": "to spurn",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 25,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names contempt as the inner disposition of treating what is sacred as beneath regard — the spurning of God, his word, and his servants",
+            "Term names contempt directed at reproof — the inner rejection of correction that closes the person to growth and repentance",
+            "Term names the inner speech of contempt — what the wicked person says in his heart as the location of his dismissal of God"
+          ]
+        },
+        {
+          "strongs_number": "H5007A",
+          "gloss": "contempt",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names disgrace as an inner condition in extremity — the shame-experience accompanying crisis that overwhelms all capacity for response"
+          ]
+        },
+        {
+          "strongs_number": "H5007B",
+          "gloss": "contempt",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names blasphemous contempt as the inner disposition of rebellion — the speech-act of reviling that reveals the heart's rejection of what is holy"
+          ]
+        },
+        {
+          "strongs_number": "H5132A",
+          "gloss": "to flee",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5132B",
+          "gloss": "to bud",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5201",
+          "gloss": "to keep",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 9,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the inner bearing of grudge — sustained anger retained in the heart against another, named as the interior counterpart to the outer act of vengeance",
+            "Term names the duration of divine anger — how long God holds wrath and whether it resolves into mercy, with the answer consistently favouring mercy"
+          ]
+        },
+        {
+          "strongs_number": "H5202",
+          "gloss": "to keep",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307G",
+          "gloss": "to fall: fall",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 280,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307H",
+          "gloss": "to fall: deserting",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 17,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307I",
+          "gloss": "to fall: allot",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 26,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307J",
+          "gloss": "to fall: kill",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 98,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307K",
+          "gloss": "to fall: angry",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the fall of the face as the first bodily expression of inner anger — countenance as the mirror of the inner emotional state"
+          ]
+        },
+        {
+          "strongs_number": "H5307L",
+          "gloss": "to fall: fail",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 5,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307M",
+          "gloss": "to fall: fell [trees]",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5307N",
+          "gloss": "to fall: presenting",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5308",
+          "gloss": "to fall",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 14,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5309",
+          "gloss": "miscarriage",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5669",
+          "gloss": "produce",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674A",
+          "gloss": "to pass",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 513,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674C",
+          "gloss": "to pass: bring",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 30,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674D",
+          "gloss": "to pass: trespass",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 22,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674G",
+          "gloss": "[Valley of] the Travelers",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674H",
+          "gloss": "be arrogant",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676G",
+          "gloss": "side: beside",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 35,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676H",
+          "gloss": "side: beyond",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 59,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676I",
+          "gloss": "side: west",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5679",
+          "gloss": "ford",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5842",
+          "gloss": "stylus",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5860A",
+          "gloss": "to scream",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names verbal aggression as the outer expression of inner hostility — railing and abuse as manifestations of the contemptuous inner character"
+          ]
+        },
+        {
+          "strongs_number": "H5860B",
+          "gloss": "to pounce",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5861",
+          "gloss": "bird of prey",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5868B",
+          "gloss": "heat",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6437G",
+          "gloss": "to turn",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 134,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6437H",
+          "gloss": "Corner [Gate]",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440H",
+          "gloss": "face",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 417,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440I",
+          "gloss": "face: because",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 104,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440J",
+          "gloss": "face: surface",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 96,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440K",
+          "gloss": "face: east",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 11,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440L",
+          "gloss": "face of",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 102,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440M",
+          "gloss": "face: angry",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6440N",
+          "gloss": "face: kindness",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 16,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6441",
+          "gloss": "within",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 13,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6442",
+          "gloss": "inner",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 32,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7107",
+          "gloss": "be angry",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 34,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine anger as the inner response to persistent covenant violation — God's wrath kindled by Israel's rebellion against his ways",
+            "Term names human anger as the inner response to subordinate failure or betrayal — the superior's wrath provoked by those under his authority"
+          ]
+        },
+        {
+          "strongs_number": "H7108",
+          "gloss": "be angry",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7110A",
+          "gloss": "wrath",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 28,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine anger as momentary against the backdrop of everlasting love — the transient quality of God's wrath contrasted with the permanence of his compassion",
+            "Term names the communal consequences of anger — how one person's anger destabilises the whole community around them"
+          ]
+        },
+        {
+          "strongs_number": "H7111",
+          "gloss": "splinter",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7264",
+          "gloss": "to tremble",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 41,
+          "vc_group_count": 4,
+          "context_descriptions": [
+            "Term names the trembling restraint of anger — being agitated without sin, holding inner fury still before God in the privacy of the heart",
+            "Term names the somatic terror produced by divine power — the body overwhelmed by the experience of God's glory and judgment",
+            "Term names grief-disturbance — the agitation of inner pain expressing itself as trembling and mourning in response to devastating loss",
+            "Term names the provocation of divine agitation — conduct that disturbs God's inner relational rest, stirring him to respond"
+          ]
+        },
+        {
+          "strongs_number": "H7265",
+          "gloss": "to enrage",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the act of provoking divine inner anger — the causal triggering of God's wrath through covenant violation, with historical consequence"
+          ]
+        },
+        {
+          "strongs_number": "H7266",
+          "gloss": "rage",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7267",
+          "gloss": "turmoil",
+          "term_owner_type": "OWNER",
+          "mti_status": "xref_anger",
+          "occurrence_count": 7,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7268",
+          "gloss": "quivering",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the trembling heart as divinely imposed inner instability — inner anxiety and restlessness given by God as a consequence of covenantal displacement"
+          ]
+        },
+        {
+          "strongs_number": "H7269",
+          "gloss": "quivering",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the prophetically embodied inner state of trembling anxiety — the prophet enacting the inner condition of those under judgment as a sign"
+          ]
+        },
+        {
+          "strongs_number": "H7271",
+          "gloss": "foot",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 10,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7307H",
+          "gloss": "spirit: breath",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 145,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7307I",
+          "gloss": "spirit: side",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 7,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7308",
+          "gloss": "spirit",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 11,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the excellent spirit as the seat of extraordinary inner character — wisdom, understanding, and moral quality concentrated in the inner spirit as divine endowment",
+            "Term names the hardened spirit as the inner seat of pride — the spirit that stiffens against God, producing arrogant conduct and consequent judgment",
+            "Term names the anxious spirit as the inner reception of divine vision — the spirit overwhelmed and troubled by apocalyptic revelation"
+          ]
+        },
+        {
+          "strongs_number": "H7381",
+          "gloss": "aroma",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 59,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H8474",
+          "gloss": "to contend",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the inner capacity for endurance under increasing pressure — the ability of the inner person to sustain more difficult circumstances without collapsing",
+            "Term names competition as an exposure of inner character — striving for display reveals the poverty of the inner life compared with the practice of justice"
+          ]
+        },
+        {
+          "strongs_number": "H8601",
+          "gloss": "baked",
+          "term_owner_type": "OWNER",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        }
+      ],
+      "registry_term_count": 109,
+      "registry_owner_count": 103,
+      "registry_xref_count": 6
+    },
+    {
+      "registry_no": 51,
+      "registry_word": "distress",
+      "term_owner_type": "XREF",
+      "cluster": "C05",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "occurrence_count": 91,
+      "evidential_status": null,
+      "active_verses_for_this_term": 0,
+      "meaning_senses": [
+        {
+          "code": "1",
+          "text": "to be hot, furious, burn, becomeangry, be kindled",
+          "stem": null
+        },
+        {
+          "code": "1a",
+          "text": "(Qal) to burn, kindle (anger)",
+          "stem": null
+        },
+        {
+          "code": "1b",
+          "text": "(Niphal) to be angry with, be incensed",
+          "stem": null
+        },
+        {
+          "code": "1c",
+          "text": "(Hiphil) to burn, kindle",
+          "stem": null
+        },
+        {
+          "code": "1d",
+          "text": "(Hithpael) to heat oneself in vexation",
+          "stem": null
+        }
+      ],
+      "registry_terms": [
+        {
+          "strongs_number": "G0598",
+          "gloss": "to crowd up to",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G2285",
+          "gloss": "amazement",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 11,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G2347",
+          "gloss": "pressure",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 145,
+          "vc_group_count": 4,
+          "context_descriptions": [
+            "Term names the affliction overcome in Christ — anguish as the condition the world inflicts but Christ has conquered, giving inner peace amid tribulation",
+            "Term names affliction as the ground of inner character formation — anguish producing endurance, character, and hope through divine working",
+            "Term names the anguish of shared suffering and consolation — the inner participation in Christ's afflictions as the ground of mutual comfort",
+            "Term names the anguish of the great tribulation — the maximum suffering of the end times as the context of final purification and divine salvation"
+          ]
+        },
+        {
+          "strongs_number": "G3077",
+          "gloss": "grief",
+          "term_owner_type": "XREF",
+          "mti_status": "xref_sorrow",
+          "occurrence_count": 36,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G3600",
+          "gloss": "be anguished",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 12,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the anguish of post-mortem torment — intense inner suffering in the afterlife state, in full consciousness of memory and relationship",
+            "Term names the anguish of deep relational distress — inner suffering produced by anticipated permanent separation from those deeply loved"
+          ]
+        },
+        {
+          "strongs_number": "G3601",
+          "gloss": "anguish",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 60,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names unceasing anguish of heart over the spiritual condition of others — sustained inner suffering grounded in love and grief",
+            "Term names inner pangs produced by disordered desire — the self-inflicted suffering of those who love money, piercing themselves with their own craving"
+          ]
+        },
+        {
+          "strongs_number": "G4192",
+          "gloss": "travail",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 58,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names inner anguish under eschatological judgment — intense inner-physical suffering that drives hardening rather than repentance",
+            "Term names the eschatological abolition of inner pain — the promised end of all anguish in the renewed creation"
+          ]
+        },
+        {
+          "strongs_number": "G4728",
+          "gloss": "narrow",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 20,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G4918",
+          "gloss": "to push against",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G4928",
+          "gloss": "anguish",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the anguish of heart that accompanies deep pastoral care — inner compression of spirit expressed in tears and written in love",
+            "Term names the collective anguish of peoples at cosmic upheaval — inner perplexity and distress as the familiar order dissolves"
+          ]
+        },
+        {
+          "strongs_number": "G5561",
+          "gloss": "country",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 158,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0202",
+          "gloss": "strength",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 13,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0205G",
+          "gloss": "evil: wickedness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 66,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0873",
+          "gloss": "bad",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0887",
+          "gloss": "to stink",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 20,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the odium-quality of inner moral failure — the stench-metaphor expressing how wickedness and folly produce corruption visible to others"
+          ]
+        },
+        {
+          "strongs_number": "H0928",
+          "gloss": "dismay",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342A",
+          "gloss": "to twist: tremble",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 12,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342B",
+          "gloss": "be firm",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342H",
+          "gloss": "to twist: give birth",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 9,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342I",
+          "gloss": "to twist: writh in pain",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 25,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342J",
+          "gloss": "to twist: dance",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 10,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2342K",
+          "gloss": "to twist: anticipate",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2344",
+          "gloss": "sand",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 23,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2426",
+          "gloss": "rampart",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 9,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2427A",
+          "gloss": "agony",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2427B",
+          "gloss": "agony",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2430",
+          "gloss": "bulwark",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2479",
+          "gloss": "anguish",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2740",
+          "gloss": "burning anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 41,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the burning intensity of divine wrath at its maximum — fierce anger as the pinnacle of God's response to covenant violation, carrying cosmic consequences",
+            "Term names human burning anger as the inner response to perceived injustice or affront — the fierce heat of personal wrath that drives consequential action"
+          ]
+        },
+        {
+          "strongs_number": "H2750",
+          "gloss": "burning",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names fierce inner anger co-existing with grief and loyalty — the intensity qualifier that characterises anger at its most burning while accompanying care"
+          ]
+        },
+        {
+          "strongs_number": "H3335I",
+          "gloss": "to form: plan",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names purposive formation — the inner act of planning or forming a purpose, whether divine sovereign intention or human scheme"
+          ]
+        },
+        {
+          "strongs_number": "H3510",
+          "gloss": "to pain",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the aching pain of the inner being — the heart that aches beneath laughter, the affliction brought to God, the pain God inflicts and heals"
+          ]
+        },
+        {
+          "strongs_number": "H4164",
+          "gloss": "constraint",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the constraining quality of anguish and its resolution — inner experience of being hemmed in, cramped, and the divine deliverance to spaciousness"
+          ]
+        },
+        {
+          "strongs_number": "H4234",
+          "gloss": "dance",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4246",
+          "gloss": "dance",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4341",
+          "gloss": "pain",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 16,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner-being pain and sorrow of the person — the anguish that God sees and hears, that fills the days under the sun, and that the Servant of the Lord bears vicariously"
+          ]
+        },
+        {
+          "strongs_number": "H4470",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Bitterness as inner state caused by grief — specific pain of a parent whose child has brought shame; inner sorrow carrying quality of bitterness"
+          ]
+        },
+        {
+          "strongs_number": "H4472",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "State of being filled with bitterness — inner person pervaded by bitter anguish, here in context of divine affliction that allows no relief"
+          ]
+        },
+        {
+          "strongs_number": "H4620",
+          "gloss": "torment",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4689",
+          "gloss": "distress",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the extreme distress of covenantal curse — the crushing inner and circumstantial compression of siege and covenant abandonment",
+            "Term names personal inner distress met with delight in God's commandments — anguish that does not extinguish inner faith"
+          ]
+        },
+        {
+          "strongs_number": "H4691",
+          "gloss": "distress",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 7,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names distress as the condition from which people cry to God — inner compression that produces prayer and from which God delivers",
+            "Term names the anguish of eschatological judgment — the inner terror of the day of distress"
+          ]
+        },
+        {
+          "strongs_number": "H4712",
+          "gloss": "terror",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the narrow straits of extreme inner distress — the pressing constraint from which prayer rises and God responds with spaciousness"
+          ]
+        },
+        {
+          "strongs_number": "H4751",
+          "gloss": "bitter",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 39,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the bitterness of soul in deep distress — the inner taste-quality of grief, anguish, and sorrow experienced inwardly",
+            "Term names the bitter intensity of anger — the fierce, biting quality of wrath in action and in character",
+            "Term names the bitterness of the human condition — the taste of life as toil, futility, and moral poison under the sun"
+          ]
+        },
+        {
+          "strongs_number": "H4753",
+          "gloss": "myrrh",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 12,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4786",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the bitterness of inner experience caused by another — the grief inflicted on the inner being through relational or domestic conflict"
+          ]
+        },
+        {
+          "strongs_number": "H4787",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Private interior quality of bitterness — heart's own bitter knowledge of itself, known to the inner person alone and incommunicable to any other"
+          ]
+        },
+        {
+          "strongs_number": "H4808",
+          "gloss": "provocation",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4814",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4815",
+          "gloss": "bitter",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4827",
+          "gloss": "mischief",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4843",
+          "gloss": "to provoke",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 14,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the inner-being experience of bitterness — the grief that makes life bitter, provoked by loss and divine action, and that the person names and brings before God",
+            "Term names bitter fury as an inner-being state — the rage-bitterness that drives violent action, the inner temperature of a person consumed by enraged opposition"
+          ]
+        },
+        {
+          "strongs_number": "H4844",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Inner condition of being saturated with bitterness — inner person overwhelmed with bitter suffering inflicted by divine judgment"
+          ]
+        },
+        {
+          "strongs_number": "H4845",
+          "gloss": "gall",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4846",
+          "gloss": "gall",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6087B",
+          "gloss": "to shape",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6088",
+          "gloss": "to pain",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the anguish of concern for another in spiritual peril — the inner distress of love that cannot rest when those it cares for are at risk"
+          ]
+        },
+        {
+          "strongs_number": "H6089A",
+          "gloss": "toil",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6089B",
+          "gloss": "vessel",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6090A",
+          "gloss": "pain",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6090B",
+          "gloss": "idol",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6092",
+          "gloss": "worker",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6093",
+          "gloss": "toil",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6094",
+          "gloss": "injury",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 5,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner-being sorrow and injury that afflicts the person — sorrows that multiply for those who follow other gods, the crushed spirit, and the wounds that God heals"
+          ]
+        },
+        {
+          "strongs_number": "H6681",
+          "gloss": "to cry aloud",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the communal cry of joy and praise — the expressive inner jubilation voiced by peoples and places in response to divine acts"
+          ]
+        },
+        {
+          "strongs_number": "H6696C",
+          "gloss": "to form",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6735A",
+          "gloss": "envoy",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6735B",
+          "gloss": "hinge",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6735C",
+          "gloss": "pang",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 5,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6862B",
+          "gloss": "distress",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 29,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the narrow distress from which the person cries to God and receives divine response with spaciousness",
+            "Term names distress as the divinely appointed condition that produces return to God — anguish as the instrument of covenantal restoration"
+          ]
+        },
+        {
+          "strongs_number": "H6862C",
+          "gloss": "enemy",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 74,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the anguish of being given over to enemies — distress as the covenantal consequence of rebellion, with deliverance as its resolution"
+          ]
+        },
+        {
+          "strongs_number": "H6869B",
+          "gloss": "distress",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 70,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names anguish as a reliable divine refuge — the God who is found present precisely in times of distress",
+            "Term names the distress of the righteous as the condition from which God delivers — anguish as the ground of divine rescue",
+            "Term names the anguish of crisis as the place of prayer and divine hearing — distress driving the person to call upon God with the expectation of response"
+          ]
+        },
+        {
+          "strongs_number": "H6872A",
+          "gloss": "bundle",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6872B",
+          "gloss": "pebble",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7190",
+          "gloss": "stubbornness",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7451B",
+          "gloss": "bad: evil",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 116,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7451C",
+          "gloss": "distress: harm",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 157,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names evil as the circumstantial expression of anguish — the distress and calamity that befalls the person as the condition from which God hides and delivers",
+            "Term names the inner recognition of one's own evil conduct — the naming of wrongdoing by the person who has done it as a moral self-assessment"
+          ]
+        },
+        {
+          "strongs_number": "H7451H",
+          "gloss": "bad: evil",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 182,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7455",
+          "gloss": "evil",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 19,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7489B",
+          "gloss": "to shatter",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7808",
+          "gloss": "thought",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7879",
+          "gloss": "complaint",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 14,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner complaint or meditation poured out before God — the sustained outpouring of anguish, petition, and reflective address that constitutes the deepest inner communication with God"
+          ]
+        },
+        {
+          "strongs_number": "H7881",
+          "gloss": "meditation",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names meditation as the sustained inner engagement with God's law and presence — the all-day practice of the devoted heart that produces understanding"
+          ]
+        },
+        {
+          "strongs_number": "H8474",
+          "gloss": "to contend",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the inner capacity for endurance under increasing pressure — the ability of the inner person to sustain more difficult circumstances without collapsing",
+            "Term names competition as an exposure of inner character — striving for display reveals the poverty of the inner life compared with the practice of justice"
+          ]
+        },
+        {
+          "strongs_number": "H8563",
+          "gloss": "bitterness",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G0043",
+          "gloss": "arm",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the physical act of embrace as the expression of an inner state of fulfilment and devotion — the arms receiving what the inner person has waited for; the body as the outward form of inward reception"
+          ]
+        },
+        {
+          "strongs_number": "G0085",
+          "gloss": "be distressed",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the acute inner distress of the person facing suffering and death — the troubled, anguished state of the inner being at the limit of what it can bear",
+            "Term names the inner distress arising from relational concern — the person troubled in themselves because of the impact of their condition on those they love"
+          ]
+        },
+        {
+          "strongs_number": "G0303",
+          "gloss": "each",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 356,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G0315",
+          "gloss": "to compel",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 10,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names compulsion on inner religious identity and practice — external pressure forcing conformity in the domain of faith, circumcision, and covenantal belonging; the inner-being orientation of the person as the object of constraint",
+            "Term names compulsion that overrides or presses on the inner will and disposition — the person constrained to act against or beyond their own inclination; inner orientation overridden by external force"
+          ]
+        },
+        {
+          "strongs_number": "G0316",
+          "gloss": "necessary",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G0317",
+          "gloss": "necessarily",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Voluntary vs compelled inner orientation in service"
+          ]
+        },
+        {
+          "strongs_number": "G0318",
+          "gloss": "necessity",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 37,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Existential distress and hardship as experienced inner pressure",
+            "Compulsion vs willing inner orientation — freedom of will"
+          ]
+        },
+        {
+          "strongs_number": "G1568",
+          "gloss": "be awe-struck",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Overwhelming inner alarm and awe-struck response"
+          ]
+        },
+        {
+          "strongs_number": "G1569",
+          "gloss": "astonished",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Utter astonishment as inner affective response"
+          ]
+        },
+        {
+          "strongs_number": "G1876",
+          "gloss": "necessarily",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G2284",
+          "gloss": "to astonish",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 9,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Amazement as inner affective response to unexpected authority or teaching"
+          ]
+        },
+        {
+          "strongs_number": "G2346",
+          "gloss": "to press on",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 88,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Affliction and being pressed as inner-bearing experience of suffering"
+          ]
+        },
+        {
+          "strongs_number": "G2669",
+          "gloss": "to oppress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress and oppression as inner and social suffering"
+          ]
+        },
+        {
+          "strongs_number": "G3076",
+          "gloss": "to grieve",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 56,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Grief and sorrow as spontaneous inner affective response",
+            "Grief caused by another — interpersonal pain",
+            "Godly grief producing inner transformation and repentance"
+          ]
+        },
+        {
+          "strongs_number": "G4660",
+          "gloss": "to trouble",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Being troubled/harassed as inner state of distress and helplessness"
+          ]
+        },
+        {
+          "strongs_number": "G4661",
+          "gloss": "plunder",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 73,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G4729",
+          "gloss": "to press upon",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Constrained/pressed in inner being — restriction of soul and affections"
+          ]
+        },
+        {
+          "strongs_number": "G4730",
+          "gloss": "hardship",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 11,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress as existential suffering condition"
+          ]
+        },
+        {
+          "strongs_number": "G4912",
+          "gloss": "to hold/oppress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 58,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Inner compulsion, constraint, and distress as motivating or anguishing force",
+            "Being seized with fear as inner affective state"
+          ]
+        },
+        {
+          "strongs_number": "G8214",
+          "gloss": "distressing",
+          "term_owner_type": "OWNER",
+          "mti_status": "candidate_delete",
+          "occurrence_count": 5,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0205H",
+          "gloss": "evil: trouble",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 12,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Iniquity and wickedness as inner moral quality — conceived, spoken, enacted",
+            "Trouble and toil as an experienced inner condition of life"
+          ]
+        },
+        {
+          "strongs_number": "H0206G",
+          "gloss": "[Valley of] Aven",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0888",
+          "gloss": "be displeased",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress and displeasure as inner affective state"
+          ]
+        },
+        {
+          "strongs_number": "H0924",
+          "gloss": "hastely",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Urgent haste as expression of inner urgency or determination"
+          ]
+        },
+        {
+          "strongs_number": "H0926",
+          "gloss": "to dismay",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 39,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Dismay and terror as overwhelming inner affective state",
+            "Rashness and hasty inner disposition"
+          ]
+        },
+        {
+          "strongs_number": "H0927",
+          "gloss": "to dismay",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 11,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Alarm, anxiety and troubled thoughts as inner affective state",
+            "Urgent haste as expression of inner alarm or urgency"
+          ]
+        },
+        {
+          "strongs_number": "H1089",
+          "gloss": "to trouble",
+          "term_owner_type": "OWNER",
+          "mti_status": "candidate_delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2199",
+          "gloss": "to cry out",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 76,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Cry of distress and plea to God as expression of inner anguish or urgency",
+            "Cry of grief, anguish or mourning as outward expression of inner pain",
+            "Cry of outcry against injustice, reproach or moral outrage"
+          ]
+        },
+        {
+          "strongs_number": "H2201",
+          "gloss": "outcry",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 18,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Outcry as expression of suffering, affliction and plea for help",
+            "Outcry as communal lamentation — grief and mourning expressed publicly"
+          ]
+        },
+        {
+          "strongs_number": "H2787",
+          "gloss": "to scorch",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 10,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3334",
+          "gloss": "be distressed",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 10,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress and anguish as experienced inner condition — fear, torment, suffering"
+          ]
+        },
+        {
+          "strongs_number": "H3335G",
+          "gloss": "to form: formed",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 41,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "God's forming of the inner person — heart and spirit"
+          ]
+        },
+        {
+          "strongs_number": "H3335H",
+          "gloss": "to form: potter",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 18,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Potter-clay metaphor as inner-being orientation — human dependence, formation, and moral shaping before God"
+          ]
+        },
+        {
+          "strongs_number": "H3377",
+          "gloss": "`great`",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3401",
+          "gloss": "opponent",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "The adversary relationship as context of inner appeal and conflict"
+          ]
+        },
+        {
+          "strongs_number": "H3511",
+          "gloss": "pain",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Pain as experienced inner suffering — unassuaged, incurable, of the heart"
+          ]
+        },
+        {
+          "strongs_number": "H3735",
+          "gloss": "be distressed",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Anxiety of spirit as inner affective state"
+          ]
+        },
+        {
+          "strongs_number": "H3737",
+          "gloss": "helmet",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3738A",
+          "gloss": "to dig",
+          "term_owner_type": "OWNER",
+          "mti_status": "candidate_delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3738B",
+          "gloss": "to pierce",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 16,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Digging/plotting as expression of inner malice and scheming",
+            "Opened ear as inner receptivity to God"
+          ]
+        },
+        {
+          "strongs_number": "H3744",
+          "gloss": "proclaimer",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3745",
+          "gloss": "to proclaim",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4157",
+          "gloss": "distress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Crushing burden as inner-bearing experience of oppression"
+          ]
+        },
+        {
+          "strongs_number": "H4692",
+          "gloss": "siege",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 25,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Siege as context engaging inner trust and watchful orientation"
+          ]
+        },
+        {
+          "strongs_number": "H4748",
+          "gloss": "hairstyle",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5065",
+          "gloss": "to oppress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 23,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Oppression as force bearing down on the inner person — the experience of being driven, pressed, afflicted"
+          ]
+        },
+        {
+          "strongs_number": "H5781",
+          "gloss": "to totter",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6087A",
+          "gloss": "to hurt",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 15,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Grief and inner pain — being grieved, distressed, or pained at heart"
+          ]
+        },
+        {
+          "strongs_number": "H6091",
+          "gloss": "idol",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 17,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Idol as object of inner attachment, devotion and spiritual bondage"
+          ]
+        },
+        {
+          "strongs_number": "H6125",
+          "gloss": "pressure",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Oppressive pressure as experienced inner-bearing condition"
+          ]
+        },
+        {
+          "strongs_number": "H6365",
+          "gloss": "disaster",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Disaster as context engaging inner moral response — contempt, rejoicing at another's ruin, or desperate cry"
+          ]
+        },
+        {
+          "strongs_number": "H6682",
+          "gloss": "outcry",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Outcry as expression of inner pain, anguish and distress — from heart to voice"
+          ]
+        },
+        {
+          "strongs_number": "H6693",
+          "gloss": "to press",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 11,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Inner constraint and compulsion — the spirit pressed from within",
+            "Oppressive pressing from without — distress experienced under siege and oppression"
+          ]
+        },
+        {
+          "strongs_number": "H6695A",
+          "gloss": "distress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress as experienced condition of troubled time"
+          ]
+        },
+        {
+          "strongs_number": "H6695B",
+          "gloss": "anguish",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Anguish as experienced inner condition of distress and darkness"
+          ]
+        },
+        {
+          "strongs_number": "H6696A",
+          "gloss": "to confine",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 33,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Being hemmed in, distressed and confined — the experience of inner constraint before God or suffering"
+          ]
+        },
+        {
+          "strongs_number": "H6696B",
+          "gloss": "to provoke",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Provocation and harassment as hostile inner-driven action — stirring up enmity and opposition"
+          ]
+        },
+        {
+          "strongs_number": "H6697G",
+          "gloss": "Rocks [of Goats]",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6697H",
+          "gloss": "rock",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 77,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Rock as divine epithet — God as the object of inner trust, refuge and security",
+            "Rock forgotten or abandoned — inner apostasy and unfaithfulness to God"
+          ]
+        },
+        {
+          "strongs_number": "H6862A",
+          "gloss": "narrow",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Narrowness and constraint as inner-bearing experience of distress and limitation"
+          ]
+        },
+        {
+          "strongs_number": "H6862D",
+          "gloss": "hard",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Hardness of constraint as inner-bearing experience — adversity and envious limitation"
+          ]
+        },
+        {
+          "strongs_number": "H6869A",
+          "gloss": "dearth",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Times of distress as context of inner appeal and trust in God"
+          ]
+        },
+        {
+          "strongs_number": "H6869C",
+          "gloss": "vexer",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "The vexer as source of inner distress — provocation grieving the spirit"
+          ]
+        },
+        {
+          "strongs_number": "H6887B",
+          "gloss": "to constrain",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 24,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Being in distress, constrained and afflicted — inner experience of pressure and suffering",
+            "Iniquity bound up — stored guilt as inner moral condition"
+          ]
+        },
+        {
+          "strongs_number": "H6887C",
+          "gloss": "to distress",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Distress as acute inner condition — the moment of extremity, terror, and desperate appeal to God"
+          ]
+        },
+        {
+          "strongs_number": "H6887D",
+          "gloss": "to vex",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 25,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "The adversary/foe as source of inner distress — enmity, reproach, and the experience of being vexed"
+          ]
+        },
+        {
+          "strongs_number": "H6887E",
+          "gloss": "to rival",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Rivalry as relational dynamic producing inner jealousy and distress"
+          ]
+        },
+        {
+          "strongs_number": "H6962",
+          "gloss": "to loath",
+          "term_owner_type": "OWNER",
+          "mti_status": "xref_distress",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H6973",
+          "gloss": "to loathe",
+          "term_owner_type": "OWNER",
+          "mti_status": "xref_distress",
+          "occurrence_count": 9,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7185",
+          "gloss": "to harden",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 28,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Hardening of heart and stubborn will — inner moral resistance to God",
+            "Inner character of harshness and severity — expressed in speech and conduct"
+          ]
+        },
+        {
+          "strongs_number": "H7186",
+          "gloss": "severe",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 36,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Stubbornness and stiff-necked resistance — inner moral obstinacy",
+            "Harshness and rough treatment as inner character quality expressed outward",
+            "Broken spirit under harsh oppression — inner bearing of suffering"
+          ]
+        },
+        {
+          "strongs_number": "H7378",
+          "gloss": "to contend",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 76,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Contending with God — inner existential struggle and appeal for divine response",
+            "Pleading one's cause — inner appeal to God or human authority for justice and vindication",
+            "Quarrelling and contention as inner conflict — grievance, frustration, and dispute between persons"
+          ]
+        },
+        {
+          "strongs_number": "H7379",
+          "gloss": "strife",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 64,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Strife and contention as inner conflict — quarrelling, dispute, and the experience of ongoing enmity",
+            "Pleading one's cause — inner appeal for justice and divine advocacy",
+            "Indictment and controversy — God's case against his people as relational-moral accusation"
+          ]
+        },
+        {
+          "strongs_number": "H7451A",
+          "gloss": "bad: harmful",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 68,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Bad news and evil report as occasion of inner fear, grief or sadness",
+            "Bad/harmful spirit as inner torment — the harmful spirit afflicting Saul",
+            "Evil experienced as inner-bearing suffering condition — unhappy business, grievous evil"
+          ]
+        },
+        {
+          "strongs_number": "H7451I",
+          "gloss": "distress: evil",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 150,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Evil as inner moral disposition — wickedness conceived in the heart, intended, and enacted",
+            "Evil as experienced suffering — distress, harm, and calamity borne by persons",
+            "Evil repaid and returned — the moral economy of wrong done and consequences borne"
+          ]
+        },
+        {
+          "strongs_number": "H7489A",
+          "gloss": "be evil",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 100,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Being evil and doing wickedly — inner moral disposition enacted",
+            "Displeasure and anger as inner affective response — being displeased, grieved, or made sad",
+            "Harm and calamity as inner-bearing experience — being treated harshly, brought low, or suffering hurt"
+          ]
+        },
+        {
+          "strongs_number": "H7878",
+          "gloss": "to muse",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 20,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Meditation and inner pondering — reflective contemplation of God's works and word",
+            "Complaint and lament as inner expression of distress"
+          ]
+        },
+        {
+          "strongs_number": "H8383",
+          "gloss": "toil",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Exhausting toil as inner-bearing weariness"
+          ]
+        }
+      ],
+      "registry_term_count": 162,
+      "registry_owner_count": 78,
+      "registry_xref_count": 84
+    },
+    {
+      "registry_no": 178,
+      "registry_word": "wrath",
+      "term_owner_type": "XREF",
+      "cluster": "C07",
+      "verse_context_status": "In Progress",
+      "session_b_status": "Verse Context Reset",
+      "occurrence_count": 91,
+      "evidential_status": null,
+      "active_verses_for_this_term": 0,
+      "meaning_senses": [
+        {
+          "code": "1",
+          "text": "to be hot, furious, burn, becomeangry, be kindled",
+          "stem": null
+        },
+        {
+          "code": "1a",
+          "text": "(Qal) to burn, kindle (anger)",
+          "stem": null
+        },
+        {
+          "code": "1b",
+          "text": "(Niphal) to be angry with, be incensed",
+          "stem": null
+        },
+        {
+          "code": "1c",
+          "text": "(Hiphil) to burn, kindle",
+          "stem": null
+        },
+        {
+          "code": "1d",
+          "text": "(Hithpael) to heat oneself in vexation",
+          "stem": null
+        }
+      ],
+      "registry_terms": [
+        {
+          "strongs_number": "G2371",
+          "gloss": "to quarrel",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted_thin",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names inner fury driving political and power conflicts — fierce anger in an authority figure expressed through hostile action"
+          ]
+        },
+        {
+          "strongs_number": "G2372",
+          "gloss": "wrath",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 270,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "G2373",
+          "gloss": "to anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 63,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names inner fury triggered by perceived betrayal — the rage that erupts when deception is discovered, driving violent disproportionate response"
+          ]
+        },
+        {
+          "strongs_number": "G3116",
+          "gloss": "patiently",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the inner posture of patient attentiveness — the disposition of measured, unhurried receptiveness toward another's speech"
+          ]
+        },
+        {
+          "strongs_number": "G3709",
+          "gloss": "wrath",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 272,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names divine wrath as the revealed inner response to human unrighteousness and ungodliness — anger as the consistent inner orientation of God toward sin",
+            "Term names human anger as requiring governance — the inner state that must be put away, not nursed, as incompatible with righteous living",
+            "Term names righteous anger co-existing with grief — the simultaneous presence of anger and sorrow as the inner response to hardness of heart"
+          ]
+        },
+        {
+          "strongs_number": "G3710",
+          "gloss": "to anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 68,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names morally accountable anger — the inner state of anger that exists under divine command and requires governance before it becomes sin",
+            "Term names anger as an inner action-driver — the fury that compels the person to respond, act, or enforce consequences",
+            "Term names anger as cosmic inner rebellion against God — the hostility of nations and powers in ultimate opposition to divine rule"
+          ]
+        },
+        {
+          "strongs_number": "G3711",
+          "gloss": "quick-tempered",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 5,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names quick-temperedness as a disqualifying character trait — habitual anger as evidence of inner instability incompatible with leadership"
+          ]
+        },
+        {
+          "strongs_number": "G3949",
+          "gloss": "to anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 53,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names anger as a provoked inner response to injustice or disobedience — the arousal of wrath in another as consequence of conduct"
+          ]
+        },
+        {
+          "strongs_number": "G3950",
+          "gloss": "anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 8,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the anger that hardens into danger without resolution — the sunset-bounded inner state that must be addressed before becoming settled resentment"
+          ]
+        },
+        {
+          "strongs_number": "H0599",
+          "gloss": "be angry",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 14,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names divine relational anger — God's inner anger toward specific persons in response to covenant violation, expressed personally and resolved personally"
+          ]
+        },
+        {
+          "strongs_number": "H0600",
+          "gloss": "face",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0601",
+          "gloss": "heron",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0639G",
+          "gloss": "face: anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 225,
+          "vc_group_count": 5,
+          "context_descriptions": [
+            "Term names divine anger as the response to idolatry — the kindling of God's wrath at Israel's most direct covenant violation",
+            "Term names divine anger as tempered by steadfast love — the characterisation of God whose anger is slow and bounded by covenant faithfulness",
+            "Term names human anger as the inner response to relational conflict — the kindling of personal wrath in the face of provocation, rejection, or perceived injustice",
+            "Term names the mastery of anger as the measure of inner greatness — governing anger as exceeding military conquest in demonstration of inner strength",
+            "Term names divine anger as the experience of hiddenness — the face turned away as the form of wrath, producing inner desolation"
+          ]
+        },
+        {
+          "strongs_number": "H0639H",
+          "gloss": "face: nose",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 27,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0639I",
+          "gloss": "face",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 24,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H0712",
+          "gloss": "box",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2194",
+          "gloss": "be indignant",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 12,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine indignation as sustained moral disposition — the ongoing inner displeasure of God toward wickedness, felt daily",
+            "Term names human indignation as responsive inner emotion — the emotional-moral reaction of moral displeasure arising from provocation or perceived injustice"
+          ]
+        },
+        {
+          "strongs_number": "H2195",
+          "gloss": "indignation",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 22,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine indignation as purposive instrument of judgment — God's inner wrath deployed purposively against wickedness and idolatry",
+            "Term names the prophet's inner state as divinely imparted indignation — God's own indignation placed within the person called to speak for him"
+          ]
+        },
+        {
+          "strongs_number": "H2528",
+          "gloss": "rage",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names rage as inner fury producing visible physical transformation and extreme action — the Aramaic term for anger at its most intense somatic expression"
+          ]
+        },
+        {
+          "strongs_number": "H2529A",
+          "gloss": "curd",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 9,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2529B",
+          "gloss": "heat",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2534",
+          "gloss": "rage",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 125,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names divine wrath as consuming inner fire — the heat of God's anger poured out in judgment, spending itself completely",
+            "Term names anger as the inner state that transforms countenance and drives extreme action — human fury at its most visible and disruptive",
+            "Term names the inner heat of habitual anger — the fury characteristic as a settled disposition that requires management and produces destruction when uncontrolled"
+          ]
+        },
+        {
+          "strongs_number": "H2740",
+          "gloss": "burning anger",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 41,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the burning intensity of divine wrath at its maximum — fierce anger as the pinnacle of God's response to covenant violation, carrying cosmic consequences",
+            "Term names human burning anger as the inner response to perceived injustice or affront — the fierce heat of personal wrath that drives consequential action"
+          ]
+        },
+        {
+          "strongs_number": "H2750",
+          "gloss": "burning",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names fierce inner anger co-existing with grief and loyalty — the intensity qualifier that characterises anger at its most burning while accompanying care"
+          ]
+        },
+        {
+          "strongs_number": "H3179",
+          "gloss": "to conceive",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3707",
+          "gloss": "to provoke",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 56,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the provoking of divine vexation — Israel's conduct as the trigger of God's inner anger, creating a recurring covenantal pattern of provocation and response",
+            "Term names the inner vexation of relational cruelty — the distress produced in a person's inner life by another's deliberately provocative conduct",
+            "Term names the inner lodging of vexation as a marker of folly — anger that settles and remains as a characteristic of the unwise person"
+          ]
+        },
+        {
+          "strongs_number": "H3708A",
+          "gloss": "vexation",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 22,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H3708B",
+          "gloss": "vexation",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 4,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the vexation of inner grief and provocation — the broad register of inner distress from existential burden, rivalry, and sorrow expressed before God in prayer",
+            "Term names the anger that lodges in the fool's heart — inner vexation as the resident condition of one who lacks inner governance",
+            "Term names the conduct that provokes divine inner anger — Israel's actions causing God's vexation, with covenantal consequences"
+          ]
+        },
+        {
+          "strongs_number": "H3710",
+          "gloss": "rock",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4569A",
+          "gloss": "ford",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H4569B",
+          "gloss": "ford",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 8,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5668",
+          "gloss": "for the sake of",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 49,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5669",
+          "gloss": "produce",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674A",
+          "gloss": "to pass",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 513,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674B",
+          "gloss": "be angry",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 7,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674C",
+          "gloss": "to pass: bring",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 30,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674D",
+          "gloss": "to pass: trespass",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 22,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674G",
+          "gloss": "[Valley of] the Travelers",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5674H",
+          "gloss": "be arrogant",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676G",
+          "gloss": "side: beside",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 35,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676H",
+          "gloss": "side: beyond",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 59,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5676I",
+          "gloss": "side: west",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5678",
+          "gloss": "fury",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 34,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5679",
+          "gloss": "ford",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 4,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5782",
+          "gloss": "to rouse",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 80,
+          "vc_group_count": 3,
+          "context_descriptions": [
+            "Term names the divine rousing of the human spirit to action — God stirring the inner person to a specific volitional response",
+            "Term names the restraint of inner love-arousal — the guarding of love against premature or disordered awakening",
+            "Term names the inner moral stirring of the person toward righteousness or God — self-rousing of the inner life in response to moral wrong or spiritual need"
+          ]
+        },
+        {
+          "strongs_number": "H5892A",
+          "gloss": "excitement",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H5892G",
+          "gloss": "City [of On]",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7107",
+          "gloss": "be angry",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 34,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine anger as the inner response to persistent covenant violation — God's wrath kindled by Israel's rebellion against his ways",
+            "Term names human anger as the inner response to subordinate failure or betrayal — the superior's wrath provoked by those under his authority"
+          ]
+        },
+        {
+          "strongs_number": "H7108",
+          "gloss": "be angry",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7110A",
+          "gloss": "wrath",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 28,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names divine anger as momentary against the backdrop of everlasting love — the transient quality of God's wrath contrasted with the permanence of his compassion",
+            "Term names the communal consequences of anger — how one person's anger destabilises the whole community around them"
+          ]
+        },
+        {
+          "strongs_number": "H7110B",
+          "gloss": "splinter",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7111",
+          "gloss": "splinter",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7264",
+          "gloss": "to tremble",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 41,
+          "vc_group_count": 4,
+          "context_descriptions": [
+            "Term names the trembling restraint of anger — being agitated without sin, holding inner fury still before God in the privacy of the heart",
+            "Term names the somatic terror produced by divine power — the body overwhelmed by the experience of God's glory and judgment",
+            "Term names grief-disturbance — the agitation of inner pain expressing itself as trembling and mourning in response to devastating loss",
+            "Term names the provocation of divine agitation — conduct that disturbs God's inner relational rest, stirring him to respond"
+          ]
+        },
+        {
+          "strongs_number": "H7265",
+          "gloss": "to enrage",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the act of provoking divine inner anger — the causal triggering of God's wrath through covenant violation, with historical consequence"
+          ]
+        },
+        {
+          "strongs_number": "H7266",
+          "gloss": "rage",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7267",
+          "gloss": "turmoil",
+          "term_owner_type": "XREF",
+          "mti_status": "xref_anger",
+          "occurrence_count": 7,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7268",
+          "gloss": "quivering",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the trembling heart as divinely imposed inner instability — inner anxiety and restlessness given by God as a consequence of covenantal displacement"
+          ]
+        },
+        {
+          "strongs_number": "H7269",
+          "gloss": "quivering",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 1,
+          "context_descriptions": [
+            "Term names the prophetically embodied inner state of trembling anxiety — the prophet enacting the inner condition of those under judgment as a sign"
+          ]
+        },
+        {
+          "strongs_number": "H7271",
+          "gloss": "foot",
+          "term_owner_type": "XREF",
+          "mti_status": "delete",
+          "occurrence_count": 10,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H8474",
+          "gloss": "to contend",
+          "term_owner_type": "XREF",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 2,
+          "context_descriptions": [
+            "Term names the inner capacity for endurance under increasing pressure — the ability of the inner person to sustain more difficult circumstances without collapsing",
+            "Term names competition as an exposure of inner character — striving for display reveals the poverty of the inner life compared with the practice of justice"
+          ]
+        },
+        {
+          "strongs_number": "H2196",
+          "gloss": "to enrage",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 5,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2197",
+          "gloss": "rage",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 6,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2198",
+          "gloss": "vexed",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2346G",
+          "gloss": "wall",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 130,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2346H",
+          "gloss": "[Broad] Wall",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2573",
+          "gloss": "bottle",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 3,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2574H",
+          "gloss": "[Zobah]-Hamath",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H2579",
+          "gloss": "Hamath the great",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 2,
+          "vc_group_count": 0
+        },
+        {
+          "strongs_number": "H7109",
+          "gloss": "wrath",
+          "term_owner_type": "OWNER",
+          "mti_status": "extracted",
+          "occurrence_count": 1,
+          "vc_group_count": 0
+        }
+      ],
+      "registry_term_count": 69,
+      "registry_owner_count": 9,
+      "registry_xref_count": 60
+    }
+  ],
+  "cross_registry_links": [],
+  "research_flags": [],
+  "summary": {
+    "registries_connected": 3,
+    "owner_in": [
+      {
+        "no": 4,
+        "word": "anger"
+      }
+    ],
+    "xref_in": [
+      {
+        "no": 51,
+        "word": "distress"
+      },
+      {
+        "no": 178,
+        "word": "wrath"
+      }
+    ],
+    "verse_context_groups": 3,
+    "set_aside_count": 67,
+    "total_sibling_terms": 340
+  }
+}

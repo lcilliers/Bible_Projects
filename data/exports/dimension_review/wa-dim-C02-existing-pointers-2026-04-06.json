@@ -1,0 +1,42 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C02",
+    "produced_date": "2026-04-06"
+  },
+  "session_b_findings": [],
+  "session_d_pointers": [
+    {
+      "flag_label": "PH2-126-001",
+      "registry_id": 126,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G1011 (to plan) — 60 occ, 7 verses (12%). Full verse set required before synthesis conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-126-002",
+      "registry_id": 126,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G1012 (plan) — 138 occ, 12 verses (9%). Full verse set required before synthesis conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-160-002",
+      "registry_id": 160,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G5428 (understanding) — 39 occurrences, 2 verses in export (5% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-160-003",
+      "registry_id": 160,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G3053 (thought) — 26 occurrences, 2 verses in export (8% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    }
+  ]
+}

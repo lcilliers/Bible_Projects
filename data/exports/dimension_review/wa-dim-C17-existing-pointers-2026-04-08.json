@@ -1,0 +1,131 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C17",
+    "produced_date": "2026-04-08"
+  },
+  "session_b_findings": [
+    {
+      "finding_id": "DIM-117-001",
+      "registry_id": 117,
+      "finding_type": "DIMENSION_REVIEW",
+      "finding": "Peace (#117) carries 15 terms with status=extracted_theological_anchor (818 active verses). These are divine names, titles, and eternal/hosts vocabulary — YHWH-Shalom, LORD of Hosts (H6635A/B, 292 verses), El Shaddai (H7706, 48 verses), Adonai (H0136, 187 verses), El Olam (H5769G/H, 273 verses), El Elyon (H5943/H5946, 14 verses), YHWH-Nissi, YHWH-Tsidkenu, YHWH-Tsidkenu (H6664H, 2 verses), sabaoth (G4519, 2 verses). Deliberately excluded from VCB — no verse_context records exist for these terms. Their active verses remain unflagged by design. Session B DataPrep must include these terms as theological frame context for the peace word analysis. Verse records are accessible via wa_verse_records joined through wa_term_inventory. See word_registry.notes for full term list.",
+      "raised_date": "2026-04-06",
+      "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+    }
+  ],
+  "session_d_pointers": [
+    {
+      "flag_label": "DIM-117-SD001",
+      "registry_id": 117,
+      "flag_code": "SD_POINTER",
+      "description": "H3070 (YHWH-Yireh, YHWH-Jireh) registration anomaly: owner_registry field points to experience (#58) but this term is registered as extracted_theological_anchor in peace (#117). Requires CC investigation to confirm correct owner registry assignment before Session B begins on peace. If owner should be peace, update mti_terms.owning_registry accordingly.",
+      "session_target": "D",
+      "raised_date": "2026-04-06"
+    },
+    {
+      "flag_label": "DIM-117-SD002",
+      "registry_id": 117,
+      "flag_code": "SD_POINTER",
+      "description": "H3068G (YHWH/Yahweh) registration anomaly: owner_registry = NULL, active_verse_count = 0. This is the primary divine name; its absence of an owner registry and zero active verses is structurally unusual. May be a registration placeholder. Requires CC investigation before Session B begins on peace to confirm whether this is intentional (placeholder, handled via H3068 variants elsewhere) or an incomplete registration.",
+      "session_target": "D",
+      "raised_date": "2026-04-06"
+    },
+    {
+      "flag_label": "PH2-023-001",
+      "registry_id": 23,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G1656 (mercy) — 240 occ, 26 verses (11%).",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-023-002",
+      "registry_id": 23,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G3628 (compassion) — 36 occ, 5 verses (14%).",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-103-001",
+      "registry_id": 103,
+      "flag_code": "PH2_CROSS_REGISTRY_REQUIRED",
+      "description": "H0157G a.hev (to love, 207 occurrences) is a XREF term — primary analysis held in desire registry (reg 43). Before Session D love-vocabulary synthesis, review the desire-registry a.hev analysis to confirm it is adequate for love-context conclusions. If not, supplementary analysis is required within this registry.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-103-002",
+      "registry_id": 103,
+      "flag_code": "PH2_DATA_QUALITY",
+      "description": "H7356B rachamim has 69 exported verses but a significant portion are womb-usage verses (rechem: H7358 — physical womb in birth/fertility contexts) that entered via the racham root family bleed. Love-specific compassion verses number approximately 35-40. Before synthesis conclusions are drawn about the scale of the compassion vocabulary, the verse set should be cleaned to isolate compassion-specific occurrences.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-103-003",
+      "registry_id": 103,
+      "flag_code": "PH2_CROSS_REGISTRY_REQUIRED",
+      "description": "1 Jo 4:18 — there is no fear in love, but perfect love casts out fear — is the most analytically precise cross-registry claim in the programme. Requires dedicated cross-registry analysis with the fear registry (reg 61): what kind of fear is displaced by perfect love? Does the OT vocabulary support this structural opposition? This is a Session D priority and potentially one of the most significant structural findings available from the dataset.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-103-004",
+      "registry_id": 103,
+      "flag_code": "PH2_THEOLOGICAL_DEPTH_REQUIRED",
+      "description": "1 Jo 4:8, 16 — God is love (ho theos agapē estin) — is the most radical ontological claim made about the divine nature in the NT. It requires dedicated Session D treatment: how does this claim relate to all other inner-being attributes attributed to God (anger, grief, compassion)? Does this claim govern all other divine emotional attributions? This is the theological summit of the entire programme.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-103-005",
+      "registry_id": 103,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G0025 agapaō has 344 occurrences but only 130 verses in the export. Priority additional coverage: full Pauline love-ethics (Eph 5; 1 Thes 4; Col 3; Gal 5); full Johannine love discourse (Joh 13-17 beyond export); Synoptic love-commandment traditions. Synthesis conclusions about NT love theology should be held provisional pending more complete verse coverage.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-103-006",
+      "registry_id": 103,
+      "flag_code": "PH2_THEOLOGICAL_DEPTH_REQUIRED",
+      "description": "Song 8:6 — love is strong as death... the very flame of the LORD — is the OT's nearest approach to a theology of love's ultimate nature. A Phase 2 study of the Song as a whole is needed: its erotic vocabulary within the love architecture, its allegorical tradition (divine-human love as referent), and its canonical significance as the inclusion of embodied desire within the sacred literature. Required before Session D synthesis of the love-eros-agape relationship.",
+      "session_target": "D",
+      "raised_date": "2026-03-24"
+    },
+    {
+      "flag_label": "PH2-34-001",
+      "registry_id": 34,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G1242 (covenant) — 340 occurrences, only 30 verses in export (9% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions on this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-34-002",
+      "registry_id": 34,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G1303 (to make a covenant) — 92 occurrences, only 6 verses in export (7% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions on this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-34-003",
+      "registry_id": 34,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G2787G (ark: covenant) — 230 occurrences, only 3 verses in export (1% coverage). Analysis draws on available sample. Full verse set required before synthesis-level conclusions on this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-34-004",
+      "registry_id": 34,
+      "flag_code": "PH2_CROSS_REGISTRY_REQUIRED",
+      "description": "Ten shalom-family terms classified xref_peace (registry 117): H7965G (shalom, peace, 164 occ), H7965H (shalom, Peace [God], 1 occ), H7965I (shalom, well-being, 54 occ), H7965J (shalom, friendship, 5 occ), H7965K (shalom, greeting, 12 occ), H7965L (shalom, completely, 1 occ), H7999A (shalem, to complete/repay, 103 occ), H7999B (shalam, to ally, 13 occ), H8002 (shelem, peace offering, 87 occ), H8003 (shalem, complete, 28 occ). Peace is extensively covered in registry 117. However, the covenant-peace nexus (berit shalom — covenant of peace, Num 25:12; Isa 54:10; Eze 34:25; 37:26) is a specific OT theological category where the two registries intersect directly. Session D must assess whether the peace registry analysis captures this covenant dimension, and if not, initiate a cross-registry pass for the berit-shalom passages.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    }
+  ]
+}
