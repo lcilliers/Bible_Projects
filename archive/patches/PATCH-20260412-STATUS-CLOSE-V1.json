@@ -1,0 +1,38 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-STATUS-CLOSE-V1",
+    "registry_no": null,
+    "produced_date": "2026-04-12",
+    "produced_by": "Claude AI \u2014 closing status patch for Reg 23 and Reg 111",
+    "session_b_status": "Analysis Complete",
+    "description": "Closing status patch for Registry 023 (compassion) and Registry 111 (mercy). Session B analytical work for both registries is complete \u2014 word studies, analytical briefs, CC directives, and all data patches applied. The session_b_status was not advanced in any of the analytical patches because those patches targeted specific tables (mti_term_flags, wa_dimension_index, etc.) and did not carry session_b_status in _patch_meta. This patch corrects that. Note: Reg 68 grace is already at Analysis Complete \u2014 not touched here. Note: Reg 68 verse_context_status = In Progress is a separate anomaly requiring investigation."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "registry_no": 23,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Advance Reg 23 compassion session_b_status from Verse Context Reset to Analysis Complete"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_registry",
+      "registry_no": 111,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      },
+      "description": "Advance Reg 111 mercy session_b_status from Verse Context Reset to Analysis Complete"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "registry_status_updates": 2,
+    "registries_affected": [
+      23,
+      111
+    ]
+  }
+}

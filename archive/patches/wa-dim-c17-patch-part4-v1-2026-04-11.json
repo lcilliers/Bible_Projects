@@ -1,0 +1,2035 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260411-DIMREVIEW-C17-PART4-V1",
+    "cluster": "C17",
+    "produced_date": "2026-04-11",
+    "produced_by": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "observations_log": "wa-dim-c17-observations-v1.0-2026-04-10.md",
+    "session_b_status": null,
+    "description": "C17 Dimension Review \u2014 Part 4 (FINAL): Reg 111 (mercy, 36) + Reg 117 (peace, 69) + Reg 130 (reconciliation, 2) + Phase B.5 rewrite (1) + Session D pointers (2) + all 9 registry stamps + cluster stamp"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1724
+      },
+      "set": {
+        "context_description": "Wellbeing expressed in greeting \u2014 the inner orientation of goodwill and wholeness directed toward another through formal invocation of peace",
+        "notes": "Revised during Dimension Review Phase B.5: characteristic-perspective rewrite. Old: Term names the formal salutation of peace \u2014 the invocation of wholeness and wellbeing at the opening of official correspondence"
+      },
+      "description": "Group 415-001: characteristic-perspective rewrite"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7894
+      },
+      "set": {
+        "context_description": "Wellbeing expressed in greeting \u2014 the inner orientation of goodwill and wholeness directed toward another through formal invocation of peace",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "Group 415-001: sync context_description after Phase B.5 rewrite"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7832
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Compassion as the defining inner character quality \u2014 in God (Jam 5:11) and as the standard for the human person (Luk 6:36). The automated label Relational Disposition captures the toward-another quality but the dominant characteristic in both anchors is the inner character of the person (what God IS, what the human is called to BE). Correcting to Moral Character. DOMINANT-SUBJECT: NONE \u2014 both divi",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3158-001 (Reg 111): Moral Character [NONE]"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7824
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Mercifulness as a stable inner character quality \u2014 in the human person (Mat 5:7 beatitude) and in Christ as high priest (Heb 2:17). Automated label Relational Disposition corrected to Moral Character \u2014 eleemon names what the person IS (merciful), not primarily their orientation toward another. DOMINANT-SUBJECT: NONE \u2014 both human (beatitude) and Christ (high priest) subjects.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3164-001 (Reg 111): Moral Character [NONE]"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7818
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mercilessness as a stable inner character failure \u2014 one mark of total inner moral collapse. Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3165-001 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7830
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The propitious divine disposition of forgiveness and non-remembrance \u2014 God's relational orientation of mercy expressed covenantally. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3166-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7836
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The priestly atoning act that addresses human guilt before God \u2014 the creature's condition of moral accountability before the Creator addressed through the atonement mechanism. Automated label Moral Character is partial (it names the moral condition addressed) but misses the constitutive dimension: the atonement system reveals and addresses the creature's fundamental condition of guilt-before-God, ",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3169-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7837
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods direct act of covering iniquity \u2014 the divine inner disposition of compassion expressed as atoning grace. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3169-002 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7838
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Interpersonal and communal appeasement \u2014 the inner act of seeking to restore a broken relational bond through covering the offence. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3169-003 (Reg 111): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7842
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The ransom as the mechanism addressing the creature's moral accountability for life \u2014 the human person absolutely dependent on a divinely found price. Automated label Moral Character captures the moral accountability dimension but misses the primary inner-being characteristic: the creature's absolute dependence on a provision beyond human capacity. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3170-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7843
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Illicit payment corrupting the inner moral faculty \u2014 the bribe that blinds justice. Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3170-002 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7844
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The atonement institution as the sacred structure for addressing the community's collective moral condition before God \u2014 the annual formal acknowledgment of creaturely guilt and dependence on divine provision. Automated label Moral Character names the condition addressed but the primary inner-being characteristic is the structured expression of creaturely dependence: Israel as a whole, annually, p",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3171-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7839
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Identical to 3169-001. The priestly atoning act addressing the creature's condition of guilt before God. UNCLASSIFIED label corrected to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3173-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7840
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Identical to 3169-002. Gods direct act of covering iniquity \u2014 the divine inner disposition of compassion expressed as atoning grace. Automated label Divine-Human Correspondence corrected \u2014 neither anchor shows a mirroring structure; both show unilateral divine compassionate action. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3173-002 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7841
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Identical to 3169-003. Interpersonal and communal appeasement \u2014 the inner act of covering relational offence. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3173-003 (Reg 111): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7827
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The propitiatory cry and act \u2014 both expressing and resolving the creature's condition of guilt and dependence before God. The tax collector's cry (Luk 18:13) is the paradigm of creaturely dependence: total self-abasement, refusal of self-justification, appeal to divine mercy alone. Automated label Relational Disposition is partially accurate but misses the constitutive creaturely-dependence dimens",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3176-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7828
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The propitiation as the objective ground of restored relationship \u2014 the act through which God's relational orientation of love addresses sin. Automated label Relational Disposition (ROOT_INFERRED) confirmed. GOD is dominant \u2014 1Jo 4:10 makes the divine love and initiative the primary subject.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3177-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7820
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Unholiness as a stable inner character disposition \u2014 the absence of the set-apartness that constitutes holiness. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3179-001 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7833
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Devout holiness as a stable inner character quality expressed in conduct. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3181-001 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7821
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods sovereign, unconditioned mercy toward those he wills \u2014 the divine inner disposition expressed as saving grace. Automated label Divine-Human Correspondence is not appropriate \u2014 neither anchor shows a mirroring structure; both show unilateral divine mercy determining the recipient's standing. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "981-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7822
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The urgent cry for mercy from one in acute need \u2014 the inner posture of total dependence on the one who can help. Automated label Emotion \u2014 Negative (KEYWORD_STRONG) captures the anguish dimension but misses the primary inner-being characteristic: the cry is not merely an expression of negative emotion but the constitutive act of creaturely dependence \u2014 total reliance on the mercy of another with n",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "981-002 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7823
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The human act of mercy as the inner disposition directed toward another \u2014 the relational orientation of the merciful toward the one who needs mercy, grounded in received mercy. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "981-003 (Reg 111): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7845
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The mercy seat as the structural locus of divine-human encounter \u2014 the physical embodiment of the divine-human meeting point in mercy. The automated label Divine-Human Correspondence (KEYWORD_STRONG) is confirmed: the kap.po.ret names the structural point at which the divine-human relationship is constitutively defined by mercy. Both poles \u2014 God speaking and the human representative presenting blo",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "982-001 (Reg 111): Divine-Human Correspondence [NONE]"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7825
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods mercy as his defining inner attribute \u2014 the relational disposition that grounds salvation. Automated label Moral Character is partially accurate (mercy as divine character) but misses the relational-disposition quality: eleos is always directed toward someone; it is the divine orientation of mercy toward the human person in need. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "983-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7826
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mercy as the inner-being virtue that defines the character of those aligned with God's values \u2014 a stable moral disposition. Automated label Volition is misassigned \u2014 the description does not name mercy as a choice but as a character virtue and judicial reality. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "983-002 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7834
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Gods inner disposition of grace expressed in the Aaronic blessing (divine pole) and the human cry of penitent petition appealing to that grace (human pole). The group spans both poles \u2014 divine graciousness and human appeal \u2014 making it NONE for dominant-subject. Automated label Divine-Human Correspondence (KEYWORD_STRONG) is close: there is a correspondence structure (God's grace as the ground of t",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "984-001 (Reg 111): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7852
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Supplication to God as the inner act of pleading for mercy \u2014 the creature acknowledging its need and turning toward God. Automated label Cognition misses the primary inner-being characteristic: te.chin.nah is not primarily a cognitive act of knowing one's need but the active expression of creaturely dependence \u2014 the plea itself as the inner-being posture. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "985-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7853
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The humble inner posture of plea before one with power over the supplicant's life \u2014 creaturely dependence expressed toward human authority. Automated label Vitality/Existence captures the life-threat dimension but misses the primary inner characteristic: the posture of humble dependence that constitutes the te.chin.nah. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "985-002 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7846
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods withheld mercy as his inner-being relational stance toward covenant-breaking Israel \u2014 the absence of the relational disposition of compassion. Automated label Divine-Human Correspondence (KEYWORD_STRONG) is not appropriate \u2014 there is no mirroring structure; the name embodies God's unilateral inner decision to withhold mercy. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "986-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7849
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Intercessory prayer as the act of creaturely dependence \u2014 pleading with God on behalf of another's need. The UNCLASSIFIED label corrected to Dependence/Creatureliness: the a.tar prayer is the expression of the creature's position before God as the one who can remove burdens and answer need. The inner posture is one of petition from a position of dependence.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "987-001 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7850
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Personal prayer as the inner act of bringing one's need to God \u2014 the creature's posture of dependent petition. Automated label Volition captures the act of praying but misses the creaturely-dependence dimension that is primary: a.tar prayer is specifically the cry from need directed toward God. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "987-002 (Reg 111): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7851
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine compassion as the inner disposition of God toward persons in extremity \u2014 the relational orientation of mercy that constitutes the ground of appeal. Automated label Divine-Human Correspondence (KEYWORD_STRONG) corrected \u2014 the verse shows the human appealing to the divine compassion, not a mirroring structure. God's ra.cha.min is the unilateral inner disposition appealed to. Correcting to Rel",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "988-001 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7835
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mercy shown toward the oppressed and the inner posture of petition \u2014 the relational orientation of mercy directed outward (toward the oppressed) and upward (toward God). Automated label Moral Character captures the practice-of-mercy dimension but the group spans both the outward expression of mercy and the inward posture of petition, making Relational Disposition more precise. Correcting to Relati",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "989-001 (Reg 111): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7847
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The persistence or cessation of inner moral dispositions \u2014 the particle od amplifying the ongoing or ending character of an inner-being state. Across both anchors the content is moral character: Job's integrity persisting (Job 2:3) and the evil-heart orientation ceasing (Jer 3:17). The UNCLASSIFIED label corrected to Moral Character \u2014 the inner-being content framed by od is the moral character of ",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "990-001 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7848
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods sustained relational stance toward a people \u2014 the ongoing character of divine inner disposition (judgment in Isa 5:25; reliable purpose in Hab 2:3). Automated label Relational Disposition (KEYWORD_STRONG) confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "990-002 (Reg 111): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7829
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The mercy seat fulfilled in Christ \u2014 the structural locus of divine-human encounter in mercy, now a person rather than a place, received by faith rather than blood-sprinkling. Divine-Human Correspondence is confirmed: the hilasterios is the constitutive point at which the divine and human meet in the mercy that defines the relationship. Automated label Relational Disposition corrected to Divine-Hu",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "991-001 (Reg 111): Divine-Human Correspondence [NONE]"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7831
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Gods compassions as defining inner character (2Cor 1:3) and the human putting on of compassionate hearts (Col 3:12) \u2014 both anchors present a relational disposition oriented toward others. The group spans divine (Father of mercies) and human (put on compassionate hearts) subjects. Automated label Relational Disposition confirmed. DOMINANT-SUBJECT: NONE \u2014 dual across the corpus.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "992-001 (Reg 111): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7819
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mercilessness as the inner moral orientation that forfeits mercy \u2014 a stable character disposition and its judicial consequence. Automated label Relational Disposition misses the character-quality dimension: anileos names what the person IS (merciless), with the judicial consequence flowing from that inner character. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "993-001 (Reg 111): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7932
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The banner/signal as the object toward which inner hope and trust are oriented \u2014 a relational inner disposition directed toward the source of safety. Automated label Emotion-Negative misses the orientational/relational quality. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2521-001 (Reg 117): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7891
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner-being transformation of how Israel relates to God \u2014 from servile distance to intimate relationship. Automated label Relational Disposition captures the relational quality but misses the transformation that is the primary content: the shift from one mode of relationship to another. Correcting to Transformation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2535-001 (Reg 117): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7885
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The settled inner disposition of quiet \u2014 enabling learning, work, or worship. Automated label Cognition misses the character-disposition quality; the hesuchia is what the person IS (settled and quiet), enabling the cognitive act. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2558-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7886
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "A gentle and quiet spirit as a stable inner character quality \u2014 precious in God's sight. Automated label Divine-Human Correspondence misses the character-quality dimension; the verse names what the inner person IS. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2559-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7888
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The inner-being atmosphere of hushed awe and reverent dread before a significant divine moment. The silence is not primarily a negative emotion in its felt quality but represents the suspension of all activity in the face of the divine \u2014 a form of reverential fear. Emotion-Negative captures the awe/dread dimension. UNCLASSIFIED label corrected. DOMINANT-SUBJECT: NONE \u2014 heavenly beings are the subj",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2560-001 (Reg 117): Emotion \u2014 Negative [NONE]"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7939
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner experience of total ease and security \u2014 the felt condition of undisturbed wellbeing. Automated label Dependence/Creatureliness is misassigned \u2014 this group is not about creaturely dependence but about the inner condition of ease (in Job's case, undeservedly). Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2577-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7944
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of quiet peace bestowed by God \u2014 the felt state of undisturbed rest. Automated label Divine-Human Correspondence is not supported; the verse shows unilateral divine giving, not a mirroring. Correcting to Emotion-Positive, HUMAN (the people receive and experience the quiet).",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2583-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7929
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The pleasing aroma as the expression of the worshipper's inner orientation toward God and God's reception of that act \u2014 a relational act with an inner-being dimension on both sides. Automated label Emotion-Positive captures the positive reception dimension but misses the relational quality: worship is directed toward God, who receives it. Correcting to Relational Disposition. GOD is the primary re",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2584-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7930
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods inner response of acceptance \u2014 the heart orientation of God expressed through the reception of the aroma. Automated label Divine-Human Correspondence (KEYWORD_STRONG) is close but Gen 8:21 does not show a mirroring structure \u2014 it shows unilateral divine inner decision. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2584-002 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7931
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner disposition of unfaithful worship directed toward wrong objects \u2014 a stable moral character orientation of idolatrous devotion. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2584-003 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7915
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of the soul's rest \u2014 the felt state of peace and security after distress. Automated label Dependence/Creatureliness captures the reliance on God dimension but the primary inner-being characteristic here is the emotional state of the soul at rest. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2585-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7916
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The covenantal rest-condition \u2014 the positive inner state of settled security, peace, and inheritance. Automated label Dependence/Creatureliness captures the divine-giving dimension but the inner-being characteristic experienced by the people is the positive condition of rest. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2585-002 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7917
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods own will and delight oriented toward the chosen resting-place \u2014 a divine inner disposition of desire and choice. Automated label Emotion-Positive is partially accurate but the primary characteristic is the divine relational orientation of desire toward the dwelling-place. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2585-003 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7914
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Existential restlessness as the inner condition of exile \u2014 the absence of the resting-place producing trembling heart, languishing soul. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2586-001 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7928
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Quietness as a stable inner disposition of peace, receptivity, and trust-grounded strength. Automated label Cognition is misassigned \u2014 na.chat names an inner character disposition, not a cognitive act. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2587-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7900
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner experience of relief and ease when burden is lifted \u2014 the positive inner-being condition of rest. UNCLASSIFIED corrected to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2589-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7934
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods sovereign inner capacity expressed as creative/controlling power \u2014 the divine orientation of mastery over creation. Automated label Agency/Power (KEYWORD_STRONG) is not a valid dimension in the programme. Correcting to Relational Disposition, GOD: the group describes God's inner disposition of sovereign power expressed relationally toward his creation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2591-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7918
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Rest for the soul as the inner-being condition attained through faithful obedience \u2014 the positive emotional state of peace. Automated label Volition captures the choice-to-walk dimension but the primary inner-being characteristic is the rest that results, not the choice. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2593-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7919
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of repose offered by God \u2014 the positive state of rest available to the weary. Automated label Divine-Human Correspondence is not supported; the verse shows divine offering without mirroring. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2594-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7936
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Quietness/peaceableness as a stable inner character orientation of the person. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2595-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7898
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner act of stilling and quieting the self \u2014 a cultivated inner disposition of silence before God. Automated label Emotion-Negative misses the character-disposition quality; da.mam here is the active, intentional stilling of the inner person. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2596-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7897
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner posture of stillness or its absence \u2014 the character orientation of patient waiting before God vs. inner turmoil. Automated label Emotion-Negative is partially accurate for the turmoil dimension but misses the commanded-character-posture quality of Psa 37:7. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2597-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7896
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The collapse/ruin of the inner person before divine holiness \u2014 the overwhelming negative inner experience of undoing. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2601-001 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7895
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Hushed stillness as the inner disposition of patient hope before God. Automated label Divine-Human Correspondence is clearly misassigned \u2014 the verse shows a human inner posture, not a mirroring structure. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2602-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7899
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner stillness that attends divine self-disclosure \u2014 the creature in the posture of reception before the speaking God. Automated label Divine-Human Correspondence is close but misses the creaturely posture dimension; the primary inner-being characteristic is the creature's receptive stillness before God's speech. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2603-001 (Reg 117): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7904
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The act of holding silence under pressure \u2014 a volitional inner act of restraint. Automated label Volition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-001 (Reg 117): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7905
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The receptive inner posture of silence \u2014 the creature stilling itself to receive divine action or instruction. Automated label UNCLASSIFIED corrected to Dependence/Creatureliness: the inner posture is the creature's submission and receptivity before God.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-002 (Reg 117): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7906
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Silence as the expression of inner discernment and understanding \u2014 a cognitive-character disposition. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-003 (Reg 117): Cognition [HUMAN]"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7907
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The existential need for divine responsiveness \u2014 the creature's total dependence on God's voice for spiritual life. Automated label Divine-Human Correspondence misses the creaturely-dependence dimension. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-004 (Reg 117): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7908
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's own inner posture of silence \u2014 deliberate restraint expressing the divine inner orientation toward his people. Automated label Divine-Human Correspondence corrected \u2014 neither anchor shows mirroring; both show unilateral divine inner posture. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-005 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7909
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The moral weight of silence or speech at an ethical crisis point \u2014 a character-disposition decision. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "408-006 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7910
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The suppression of speech under pressure producing inner deterioration \u2014 the negative inner experience of enforced silence. Automated label Volition (ROOT_INFERRED) misses the emotional register; the verse shows the consequence (distress grew worse). Correcting to Emotion-Negative.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "409-001 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7911
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The moral dimension of silence \u2014 the character decision about when silence is right or wrong. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "409-002 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7912
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's inner posture of patient silence and its potential breaking \u2014 the divine inner orientation expressed as deliberate restraint. Automated label Volition captures the resolution/choice dimension but the primary characteristic is God's relational inner posture. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "409-003 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7913
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The prophetic inner resolve to refuse silence \u2014 a volitional inner act of determination for God's purposes. Automated label Volition (KEYWORD_STRONG) confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "409-004 (Reg 117): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7892
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine blessing as the overflow of God's favour toward persons \u2014 the divine relational orientation of generosity and favour. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "410-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7893
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner act of bestowing blessing as a relational act of love and covenant \u2014 the orientation of the blesser toward the blessed. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "410-002 (Reg 117): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7937
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Complacent ease as a stable inner character disposition producing contempt and moral blindness. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "413-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7938
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The positive inner condition of secure quietness as the eschatological shalom \u2014 the felt state of undisturbed peace. Automated label Divine-Human Correspondence is not supported; the verse shows a divine gift received by the people. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "413-002 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7894
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The formal invocation of wellbeing as a relational act \u2014 the orientation of the speaker toward the recipient expressed as blessing. UNCLASSIFIED corrected to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "415-001 (Reg 117): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7902
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner disposition of evil-devising \u2014 a stable character orientation of the perverted heart. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "417-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7903
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin etched as a permanent inner moral pattern. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "417-002 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7940
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Quietness, rest, and trust as the spiritual posture \u2014 a stable inner character disposition. Automated label Agency/Power (KEYWORD_WEAK) is misassigned. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "418-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7941
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner restlessness of the troubled or wicked person \u2014 the felt negative experience of inability to be quiet. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "418-002 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7942
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's own inner posture of watchful stillness or calm \u2014 the divine inner orientation expressed as quiet. Automated label Volition captures the resolve/choice dimension but the primary characteristic is the divine relational inner posture. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "418-003 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7943
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of quiet and ease as covenant blessing \u2014 the positive felt state of undisturbed rest. Automated label Emotion-Negative is clearly misassigned. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "418-004 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7920
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The Spirit resting upon a person, transforming their inner capacities \u2014 a constitutive inner-being transformation. Automated label Divine-Human Correspondence misses the transformative dimension; the Spirit's resting produces a changed inner person. Correcting to Transformation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-001 (Reg 117): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7921
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "God's gift of rest \u2014 the inner condition of security and peace received by the people. Automated label Dependence/Creatureliness captures the divine-giving dimension but the primary inner characteristic experienced by the people is the positive condition of rest. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-002 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7922
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of restlessness or its absence \u2014 primarily the negative experience of having no rest. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-003 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7923
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Wisdom or anger dwelling in the inner person \u2014 the lodging of inner qualities in the heart. Automated label Emotion-Negative misses the cognitive (wisdom) dimension and is too narrow for the anger dimension. Cognition is more appropriate: both groups describe the residence of inner-being qualities (wisdom as cognitive; anger as emotional), where the cognitive pole is dominant in the description. C",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-004 (Reg 117): Cognition [HUMAN]"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7924
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's own inner rest and calm \u2014 the divine inner orientation of settled rest. Automated label Emotion-Positive captures the positive register but misses the relational-orientation quality of the divine inner posture. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-005 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7925
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The appeal not to be abandoned \u2014 the creature's total dependence on divine presence expressed as a desperate cry. Automated label Emotion-Negative captures the distress dimension but misses the creaturely-dependence quality: the primary inner characteristic is the creature's dependence on God's continued presence. Correcting to Dependence/Creatureliness.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "419-006 (Reg 117): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7935
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The condition of rest denied or sought \u2014 primarily the negative inner experience of restlessness in exile. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "420-001 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7901
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The commanded silence before God \u2014 the creature's posture of reverence and awe before the divine presence. UNCLASSIFIED corrected to Dependence/Creatureliness: the hush is the creaturely response to divine holiness and coming.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "421-001 (Reg 117): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7877
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner disposition directed toward relational peace \u2014 the toward-another orientation of the peacemaker. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "422-001 (Reg 117): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7889
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The inner posture of silence \u2014 held in the presence of power, shame, or commanded authority. Across both anchors the character of the silence is the primary content: Jesus's dignified silence (moral character) and the sea's compelled stillness. Automated label Emotion-Negative is too narrow. Correcting to Moral Character. DOMINANT-SUBJECT: NONE \u2014 spans both human (Jesus) and cosmic (sea) subjects.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "423-001 (Reg 117): Moral Character [NONE]"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7884
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner disposition of settling into quiet \u2014 a cultivated character orientation. Automated label Divine-Human Correspondence (ROOT_INFERRED) is clearly misassigned. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "424-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7887
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner discipline of silence as ordered restraint \u2014 a cultivated character disposition. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "425-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7878
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The interior experience of divine peace guarding the heart and mind \u2014 the felt inner condition of reconciled peace. Automated label Divine-Human Correspondence captures the divine-source dimension but the primary inner characteristic is the felt interior state of peace. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "426-001 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7879
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Peace invoked as the divine blessing \u2014 the relational orientation of God's grace and peace toward the community. Automated label Divine-Human Correspondence corrected \u2014 the apostolic greeting is unilateral divine blessing, not a mirroring. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "426-002 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7880
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Peace as the fruit of the Spirit and the eschatological achievement of Christ \u2014 a relational condition produced by the Spirit and embodied in Christ. Automated label confirmed. DOMINANT-SUBJECT: NONE \u2014 both divine (Spirit, Christ) and human (the community receiving and pursuing peace) are constitutive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "426-003 (Reg 117): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7881
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Peaceableness as a stable inner character quality. Automated label Cognition misses the character-quality dimension. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "427-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7883
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Peaceful quietude as a stable inner-being quality of life. Automated label Vitality/Existence misses the character-disposition quality. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "428-001 (Reg 117): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7876
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner-being experience of rest's absence under pressure \u2014 the felt negative state. UNCLASSIFIED corrected to Emotion-Negative.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "429-001 (Reg 117): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7882
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Christ's reconciling work as the expression of divine relational orientation \u2014 making peace as the act of divine love directed toward the restoration of the broken relationship. UNCLASSIFIED corrected to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "430-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7890
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The silencing of voice or argument \u2014 through shame, authority, or righteous action. Across both anchors the moral dimension is primary: the speechlessness of shame (Mat 22) and the silencing through righteous action (1Pe 2). Automated label Emotion-Negative captures only the shame dimension. Correcting to Moral Character. DOMINANT-SUBJECT: NONE \u2014 both human (guest silenced) and communal (fools sil",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "431-001 (Reg 117): Moral Character [NONE]"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7933
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's jealousy as his defining inner relational disposition \u2014 exclusive passionate claim on the worship and loyalty of his people. Automated label Divine-Human Correspondence is not accurate \u2014 there is no mirroring structure; this is God's unilateral inner character directed toward his people. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "439-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7926
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The divine resting-place as the locus of God's presence \u2014 God's inner orientation expressed as dwelling among his people for their salvation and joy. Automated label Emotion-Positive captures the positive register but the primary characteristic is the divine relational orientation of presence. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "5118-001 (Reg 117): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7927
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner condition of relief when freed from threat \u2014 the positive felt state of rest from danger. Automated label Vitality/Existence is misassigned. Correcting to Emotion-Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "5118-002 (Reg 117): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8165
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Reconciliation as the constitutive restoration of the divine-human relationship \u2014 the ending of enmity and establishment of peace at the relational core of personhood. The katallag\u0113 is precisely Divine-Human Correspondence: it names the structural reality of the restored relationship between God and humanity, not merely God's unilateral act toward a passive recipient, but the reconstitution of the",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1093-001 (Reg 130): Divine-Human Correspondence [GOD]"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8166
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The act of reconciling broken inner-relational standing \u2014 the restoration of the divine-human relationship from enmity to peace. Automated label Divine-Human Correspondence (KEYWORD_STRONG) confirmed. GOD is dominant \u2014 the reconciling is from God's side; humanity receives the reconciliation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "6114-001 (Reg 130): Divine-Human Correspondence [GOD]"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 111,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-111-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 111 (mercy) contains a structural polarity that parallels but differs from the forgiveness polarity in Reg 64. Here the polarity is: the mercy seat (982-001 \u2014 the physical locus of divine-human meeting in mercy) at one end, and No Mercy (986-001 \u2014 the prophetic name embodying withdrawn mercy) at the other. Between these poles, the registry maps the full range of the mercy-atonement complex: divine compassion, priestly atonement, propitiatory cries, supplication, and human mercy. Session D should examine whether this polarity \u2014 the mercy seat as the locus of mercy granted, and No Mercy as the embodiment of mercy withdrawn \u2014 encodes the fundamental structure of the divine-human relationship as mercy-constituted: the human person stands before God at the mercy seat or faces the No Mercy verdict. No neutral ground exists. This may connect to the forgiveness polarity in Reg 64 (absolute forgiveness vs. permanent non-forgiveness) as a structural feature of C17 more broadly.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-111-SD001 \u2014 Reg 111 (mercy)"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 130,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-130-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 130 (reconciliation) contains only two groups (katallag\u0113 and katallass\u014d), both anchored in the NT and both carrying Divine-Human Correspondence. Their small corpus (4 and 5 verses respectively) is concentrated in key Pauline reconciliation texts (2Cor 5, Rom 5, Col 1). Session D should examine whether the reconciliation vocabulary of Reg 130 functions as the structural summary of the entire C17 cluster: if C17 is about the relational-covenantal affections of the inner person, reconciliation (Reg 130) names the foundational inner-being state that makes all other C17 relational dispositions possible. The hypothesis: reconciliation is to C17 what covenant (Reg 34) is to its institutional structure \u2014 the inner-relational ground that constitutes the human person before God as a relational subject capable of love, mercy, forgiveness, peace, and fellowship. This would place Reg 130 at the apex of the C17 cluster despite being its smallest registry.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-130-SD001 \u2014 Reg 130 (reconciliation)"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 23
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 23 (compassion): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 34
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 34 (covenant): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 62
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 62 (fellowship): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 64
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 64 (forgiveness): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 99
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 99 (kindness): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 103
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 103 (love): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 111
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 111 (mercy): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 117
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 117 (peace): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 130
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 130 (reconciliation): Dimension Review complete under v1.9"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "wa_dim_review_cluster_log",
+      "record": {
+        "cluster": "C17",
+        "completed_date": "2026-04-11",
+        "instruction_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "registry_count": 9,
+        "group_count": 273,
+        "anchored_count": 0,
+        "notes": "C17 (relational/covenantal affection) Dimension Review complete. Active registries: 23 (compassion), 34 (covenant), 62 (fellowship), 64 (forgiveness), 99 (kindness), 103 (love), 111 (mercy), 117 (peace), 130 (reconciliation). Reg 68 (grace) excluded \u2014 session_b_status = Analysis Complete. 273 groups dimensioned across 4 patch files. 7 Phase B.5 rewrites. 3 Session B findings. 9 Session D pointers. Dominant patterns: D-HC systematically corrected to RD(GOD) for unilateral divine acts; Moral Character corrected from RD for stable character qualities; Dependence/Creatureliness dominant in Reg 111 mercy/atonement vocabulary."
+      },
+      "description": "Cluster C17 Dimension Review complete \u2014 stamp set"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 121,
+    "dimension_updates": 107,
+    "vcg_description_corrections": 1,
+    "dimension_index_context_syncs": 1,
+    "session_d_pointers_inserted": 2,
+    "registry_stamps": 9,
+    "cluster_stamps": 1,
+    "registries": "111, 117, 130",
+    "note": "Apply after Parts 1, 2, 3. Cluster stamp gates Session B DataPrep for C17."
+  }
+}

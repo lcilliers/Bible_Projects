@@ -1,0 +1,1043 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260411-DIMREVIEW-C17-PART1-V1",
+    "cluster": "C17",
+    "produced_date": "2026-04-11",
+    "produced_by": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "observations_log": "wa-dim-c17-observations-v1.0-2026-04-10.md",
+    "session_b_status": null,
+    "description": "C17 Dimension Review \u2014 Part 1: Reg 23 (compassion, 22 groups) + Reg 34 (covenant, 32 groups) + Phase B.5 rewrites (4 groups)"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 464
+      },
+      "set": {
+        "context_description": "Reverential awe before the holy \u2014 the ark as the mediating sign that orients the inner person toward the presence and faithfulness of God",
+        "notes": "Revised during Dimension Review Phase B.5: characteristic-perspective rewrite. Old: The ark as the visible sign of God's covenant presence and faithfulness"
+      },
+      "description": "Group 3270-001: characteristic-perspective rewrite"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6654
+      },
+      "set": {
+        "context_description": "Reverential awe before the holy \u2014 the ark as the mediating sign that orients the inner person toward the presence and faithfulness of God",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "Group 3270-001: sync context_description after Phase B.5 rewrite"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 465
+      },
+      "set": {
+        "context_description": "Obedience under judgment \u2014 the ark as the instrument that separates the inner orientation of faithful response from heedless disregard",
+        "notes": "Revised during Dimension Review Phase B.5: characteristic-perspective rewrite. Old: The ark as means of preservation amid judgment \u2014 framing inner-being contrast of obedience and heedlessness"
+      },
+      "description": "Group 3271-001: characteristic-perspective rewrite"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6655
+      },
+      "set": {
+        "context_description": "Obedience under judgment \u2014 the ark as the instrument that separates the inner orientation of faithful response from heedless disregard",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "Group 3271-001: sync context_description after Phase B.5 rewrite"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 482
+      },
+      "set": {
+        "context_description": "Divine covenantal faithfulness \u2014 God's unbroken inner commitment expressed through the promise of dynastic continuity",
+        "notes": "Revised during Dimension Review Phase B.5: characteristic-perspective rewrite. Old: Covenant promise of unbroken continuation \u2014 no lack of faithful persons in God's covenantal line"
+      },
+      "description": "Group 3303-001: characteristic-perspective rewrite"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6672
+      },
+      "set": {
+        "context_description": "Divine covenantal faithfulness \u2014 God's unbroken inner commitment expressed through the promise of dynastic continuity",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "Group 3303-001: sync context_description after Phase B.5 rewrite"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 476
+      },
+      "set": {
+        "context_description": "Inner commitment under solemn self-curse \u2014 the cutting ritual as the enactment of the will's binding to covenant terms, with transgression named as the inner failure it judges",
+        "notes": "Revised during Dimension Review Phase B.5: characteristic-perspective rewrite. Old: The covenantal cutting ritual \u2014 self-imprecatory act underlying oath"
+      },
+      "description": "Group 767-001: characteristic-perspective rewrite"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6666
+      },
+      "set": {
+        "context_description": "Inner commitment under solemn self-curse \u2014 the cutting ritual as the enactment of the will's binding to covenant terms, with transgression named as the inner failure it judges",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "Group 767-001: sync context_description after Phase B.5 rewrite"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6539
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Compassion here is a stable inner character quality of the human person \u2014 the disposition of tender regard toward vulnerable others. The verse reveals the quality by its negation under catastrophe. Automated label Relational Disposition is correct. Toward-another orientation confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1616-001 (Reg 23): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6534
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Chesed as divine steadfast love is the paradigmatic Relational Disposition \u2014 God's settled, enduring inner orientation of covenantal love toward his people. Dominant subject is GOD \u2014 these verses are about divine character. The 16-verse corpus confirms the pattern. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1633-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6535
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "This group captures the human quality of chesed \u2014 the settled inner character of covenantal loyalty. It is both Moral Character (a quality of stable character) and Relational Disposition (oriented toward another). The distinction: this group emphasises chesed as something God requires and desires as a character quality of the person, not primarily as an emotive orientation in a specific relational",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1633-002 (Reg 23): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6536
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "This group is not primarily about chesed as a quality but about the human posture of appeal and meditation toward God's chesed. The inner characteristic is the trusting, dependent orientation of the human person who rests their hope in God's steadfast love. Automated label Relational Disposition is close but misses the directionality \u2014 this is not chesed as an outward disposition toward others, bu",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1633-003 (Reg 23): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6533
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The verse and description both describe a mirroring principle: the inner character of the human (merciful, blameless) draws out the corresponding inner character of God toward them. Neither pole dominates \u2014 the dynamic is genuinely correspondent. The automated label Moral Character named only one pole; Divine-Human Correspondence more precisely captures what the verse shows: a structural relations",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1635-001 (Reg 23): Divine-Human Correspondence [NONE]"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6529
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine compassion as the inner movement of mercy toward the needy \u2014 this is God's relational orientation of mercy actively expressed. The group has only 2 verses with 1 anchor, so the corpus is small. The description is grounded. Automated label Divine-Human Correspondence is present but the verse does not show the human-divine mirroring structure \u2014 it is purely God's compassion toward Lot. Correc",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2192-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6531
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's freely given grace as his inner disposition of favour toward the undeserving. Automated label Divine-Human Correspondence is present but these verses are about divine disposition without a corresponding human mirror structure. Correcting to Relational Disposition, GOD. Note: this term (H2603B cha.nan) is also present in Reg 23 as the term for the human act of seeking grace (2325-002); the tw",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2325-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6532
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The human act of seeking grace is fundamentally the posture of creaturely dependence \u2014 the inner orientation of humble plea directed upward. Automated label Relational Disposition captures the toward-another quality but misses the direction and asymmetry. The characteristic is the human creature's posture of reliance and appeal toward God from a condition of need \u2014 this is Dependence/Creaturelines",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2325-002 (Reg 23): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6530
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The settled disposition of graciousness \u2014 a stable inner character orientation of favour freely extended. The description correctly notes it applies \"primarily [to] God.\" The 13-verse corpus and anchor verses confirm this. Relational Disposition correctly names the toward-another quality; Divine-Human Correspondence is not appropriate here since no human mirroring is described. Automated label Rel",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "2330-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6519
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner orientation of mercy and generosity directed toward those in need \u2014 this is a toward-another relational disposition expressed in action. Luk 11:41 grounds this directly in \"what is within.\" Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3167-001 (Reg 23): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6518
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The pitiable inner condition \u2014 wretchedness, spiritual destitution, blind self-satisfaction. This is closest to Emotion \u2014 Negative as the inner state of a person in a condition of deprivation and unawareness. The UNCLASSIFIED automated label is being corrected to Emotion \u2014 Negative. However this sits at the boundary with Vitality/Existence (the person's inner constitution is deficient) \u2014 Emotion \u2014",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3168-001 (Reg 23): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6527
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Both anchors show pity as an inner disposition \u2014 Psa 72:13 (human king) and Jon 4:11 (God). The group encompasses both human and divine pity. With 8 verses the corpus likely spans both. Dominant-subject: NONE \u2014 the group is genuinely dual-subject. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3182-001 (Reg 23): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6528
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The withholding of pity is itself an inner disposition \u2014 the deliberate suppression of the compassionate impulse in the service of justice. Both human (Deu 19) and divine (Eze 7) subjects are anchored. Dominant-subject: NONE \u2014 dual. Automated label Relational Disposition confirmed; the negative form of the disposition (its suppression) is still a relational orientation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3182-002 (Reg 23): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6525
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sympathy as the settled character quality of being responsive to others' suffering \u2014 this is a Relational Disposition, not Agency/Power. The automated label ROOT_INFERRED was a weak association that missed the character-virtue context. Correcting from Agency/Power to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3980-001 (Reg 23): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6526
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shared suffering as an expression of relational union \u2014 the inner disposition to genuinely participate in another's pain. This is Relational Disposition: toward-another orientation expressed as inner solidarity. Automated Agency/Power label corrected.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3986-001 (Reg 23): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6520
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Controlled, empathetic gentleness arising from shared vulnerability \u2014 the capacity is in service of a relational orientation toward the weak and wayward. While the term has a \"capacity\" dimension (metriopathe\u014d = to have measured/moderate feeling), the description and verse ground it in relational empathy, not in the exercise of power or authority. Relational Disposition is the better fit. Correcti",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3988-001 (Reg 23): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6522
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Deep, intensely felt divine compassion as a character attribute \u2014 God's inner quality of being profoundly moved toward those who suffer. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "4011-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6538
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The womb metaphor grounds divine compassion in bodily intimacy \u2014 God as the one who carries from the womb. The existing automated label Divine-Human Correspondence requires assessment: is there a human counterpart here? The verse is pure divine speech; the human-divine parallel is implicit in the womb image (human mothers carry children from the womb; God carries Israel the same way). The correspo",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "729-001 (Reg 23): Divine-Human Correspondence [GOD]"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6523
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The visceral movement of compassion in response to suffering \u2014 with 12 verses this corpus spans both divine (Jesus as God incarnate) and human subjects. The anchor verses both show Jesus, but splanchniz\u014d in parables (e.g. the father in Luke 15, the Good Samaritan) shows human subjects too. Dominant-subject NONE \u2014 genuinely dual across the full corpus. Automated label Relational Disposition confirm",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "730-001 (Reg 23): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6521
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine compassion as sovereign inner disposition \u2014 God's free inclination toward the objects of his mercy. This is pure divine relational orientation; no human mirroring structure is present. Automated label Divine-Human Correspondence is not appropriate; the verse is about the sovereignty of divine compassion, not a correspondence between human and divine. Correcting to Relational Disposition, GO",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "731-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6537
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The compassionate inner movement of comfort \u2014 divine tenderness arising from within, described viscerally in Hos 11:8. Automated label Relational Disposition confirmed. Note: Hos 11:8 is analytically exceptional \u2014 it names the divine inner life with a specificity rare in Scripture. The session B pointer below captures this.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "733-001 (Reg 23): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6524
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The inner capacity for fellow-feeling \u2014 the disposition to share another's suffering. Heb 4:15 grounds this in Christ's genuine solidarity with human weakness across the divine-human boundary. This group has only 2 verses. Dominant-subject NONE \u2014 Christ is the anchor subject, who is both divine and human. Automated label Agency/Power corrected to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "734-001 (Reg 23): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6654
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner orientation evoked by the ark's disclosure in a theophanic context is reverential awe before the holy \u2014 the creature's posture before overwhelming divine presence and faithfulness. This is Dependence/Creatureliness (the inner posture of the creature before God's holy majesty), not Moral Character (the automated label) and not Divine-Human Correspondence (though the divine presence is wha",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3270-001 (Reg 34): Dependence / Creatureliness [HUMAN]"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6655
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner orientation of obedience versus heedlessness \u2014 the decision made during the time of warning. Volition captures the inner act of willing/choosing/refusing that the verse foregrounds. The automated label Volition is correct and the B.5 description aligns with it.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3271-001 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6647
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Faithlessness as a stable inner character quality \u2014 the disposition that cannot hold to covenant commitments. Moral Character is correct: this is a character disposition, not a relational orientation in the specific-encounter sense. The UNCLASSIFIED label is being corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3284-001 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6672
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine covenantal faithfulness as the stable inner commitment of God toward his covenant partner \u2014 this is God's sustained relational orientation of loyalty expressed through promise. The automated label Divine-Human Correspondence is present but Jer 33:17 does not show a mirroring or correspondence structure; it shows unilateral divine commitment. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3303-001 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6668
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The act of covenant-making as the expression of God's relational commitment \u2014 the formal initiation of the bond. Automated label Relational Disposition confirmed. GOD is dominant \u2014 it is God who initiates and makes the covenant.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3304-001 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6669
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner act of willing total commitment before God \u2014 \"with all his heart and all his soul.\" This is the exercise of the will in binding commitment. Volition is more precise than Relational Disposition here: the description foregrounds the inner act of choosing/committing rather than the orientation-toward-another. The UNCLASSIFIED label is being corrected to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3304-002 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6670
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner act of binding the will to false objects \u2014 the disordered commitment that chooses deception and death as refuge. This is Volition (the act of choosing/binding) directed toward disordered ends. The UNCLASSIFIED label is corrected to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3304-003 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6671
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Intimate personal loyalty formalised in covenant \u2014 the inner-being orientation of love and commitment between persons expressed as a covenant bond. Relational Disposition is correct: the covenant here is the formalisation of an inner relational orientation. The UNCLASSIFIED label corrected to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3304-004 (Reg 34): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6664
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The formal severance of the relational bond \u2014 the legal expression of a failed inner relational orientation. Relational Disposition confirmed (specifically its severance/rupture form). Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3306-001 (Reg 34): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6665
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner-being severity of apostasy expressed through the divorce metaphor \u2014 Israel's transgressions as the inner failure that ruptured the covenant. The dominant subject is the human inner failure (apostasy) that caused the rupture. Automated label Divine-Human Correspondence is present but the verse focuses on the human side of the rupture; correcting to Relational Disposition, HUMAN.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3306-002 (Reg 34): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6675
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The divine oath as the expression of God's unbreakable inner commitment \u2014 the binding of the divine will to covenant promise. The automated label Divine-Human Correspondence is present but Deu 7:8 does not describe a mirroring structure; it describes God's inner commitment enacted in redemption. Correcting to Relational Disposition, GOD. Note: 30 verses is a large corpus; the anchor is well-chosen",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3308-001 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6676
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The binding of inner will and loyalty through oath \u2014 the moral quality of keeping commitments under cost. Psa 15:4 describes this as a character quality of the person who may dwell with God. This is Moral Character (stable inner quality of integrity) more precisely than Divine-Human Correspondence (which would require a mirroring structure). The ROOT_INFERRED label is corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3308-002 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6677
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The oath as the expression of inner allegiance \u2014 its moral quality determined by whether it arises from truth, justice, and righteousness. This is Moral Character: the inner quality of the person determines the character of their oath. The automated label Divine-Human Correspondence is not appropriate (no mirroring structure); correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3308-003 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6678
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Intense longing and love expressed through the adjuration \u2014 the inner state of love-sickness is the controlling characteristic. The automated label Volition (choosing, binding) misses the emotional register entirely. The inner state described (\"sick with love\") is Emotion \u2014 Positive (intense, consuming delight-longing). Correcting from Volition to Emotion \u2014 Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3308-004 (Reg 34): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6673
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The divinely appointed programme for the inner-being completion of the person and community \u2014 sin ended, iniquity atoned, everlasting righteousness arrived. This is Transformation (the movement from sin/iniquity toward righteousness as the inner-being trajectory). The automated label Divine-Human Correspondence is not appropriate (the weeks are a programme, not a mirroring structure). Correcting t",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3314-001 (Reg 34): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6674
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The weeks as the temporal measure of sustained inner mourning and self-denial. The inner characteristic is the sustained grief/mourning state. Emotion \u2014 Negative is the appropriate dimension. The ROOT_INFERRED label (Divine-Human Correspondence) is clearly misassigned; correcting to Emotion \u2014 Negative.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "3314-002 (Reg 34): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6659
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's unconditional inner commitment sustained by divine memory and will \u2014 a settled relational orientation of faithfulness toward creation and the patriarchs. The automated label Divine-Human Correspondence is present but Gen 9:15 shows no mirroring; it shows unilateral divine commitment. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "765-001 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6660
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The bilateral covenant structure requires inner decisions on both sides \u2014 God's faithful commitment and the human's obedient response. The inner characteristic is the volitional commitment on both sides: love, obedience, commandment-keeping as acts of will. Volition is more precise than the automated label Relational Disposition, which misses the enacted-commitment dimension. Dominant-subject NONE",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "765-002 (Reg 34): Volition [NONE]"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6661
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner transformation through the inscribing of God's law on the heart \u2014 the paradigm of inner renewal in the Hebrew Bible. Automated label Transformation (KEYWORD_STRONG) confirmed. The transformation is enacted on the human person (DOMINANT-SUBJECT: HUMAN), though it is entirely God's act (\"I will write\").",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "765-003 (Reg 34): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6662
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's everlasting covenant of steadfast love \u2014 a sustained divine relational orientation expressed as permanent commitment. Automated label Relational Disposition confirmed. GOD is dominant \u2014 it is God who makes and sustains the covenant.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "765-004 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6663
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Covenant as the instrument of inner moral integrity \u2014 binding the self to a standard of purity. The anchor verse is Job's moral self-covenant. Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "765-005 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6648
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's covenant-bond with humanity established through Christ's blood \u2014 a divine relational commitment expressed at ultimate cost. Automated label Relational Disposition confirmed. GOD is dominant \u2014 the covenant is God's initiative, established through Christ.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "766-001 (Reg 34): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6649
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner transformation through the writing of God's law on the mind and heart \u2014 the NT fulfilment of Jeremiah's new covenant promise. Automated label Transformation (KEYWORD_STRONG) confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "766-002 (Reg 34): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6650
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner-being condition of covenantal exclusion \u2014 hopelessness, alienation, separation from God. The description captures an inner state (the condition of being outside the covenant), and the verse names its inner-being texture: hopelessness and godlessness are the experiential markers of covenantal alienation. Emotion \u2014 Negative is more precise than the automated label Transformation (ROOT_INFE",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "766-003 (Reg 34): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6666
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The solemn binding of the will through the self-curse of the cutting ritual \u2014 the enacted commitment. The UNCLASSIFIED label is corrected to Volition: the characteristic is the inner act of the will binding itself under solemn terms, with the moral failure of transgression as its counterpart.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "767-001 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6667
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral consequence \u2014 the cutting off of wickedness as the judicial outcome of inner moral failure. Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "767-002 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6656
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The solemn binding of the inner will through oath \u2014 the communal act of covenantal commitment. The UNCLASSIFIED label corrected to Volition: the inner act is fundamentally the will binding itself to covenant terms.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "772-001 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6657
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The covenant curse as the consequence of inner moral failure \u2014 transgression and disobedience activating the covenant's judicial dimension. Moral Character confirmed: the inner moral failures named are character dispositions (willful disobedience, turning aside). Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "772-002 (Reg 34): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6658
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The firm covenant as the inner act of solemn communal commitment \u2014 the will directed toward binding covenant obligation in response to grace received. UNCLASSIFIED label corrected to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "774-001 (Reg 34): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6651
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner transformation through the Spirit as the defining character of the new covenant. Automated label Transformation (KEYWORD_STRONG) confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "777-001 (Reg 34): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6652
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner-being renewal through the new self in Christ \u2014 the putting on of the person recreated in God's likeness. Automated label Transformation confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "777-002 (Reg 34): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6653
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The eschatological identity of the person \u2014 the hidden new name that constitutes the person's ultimate inner-being identity before God. This is Vitality/Existence: the constitution of the inner person at the eschatological level, the person's truest and most intimate self-before-God. The automated label Transformation (ROOT_INFERRED) is close but misses the identity/constitution dimension \u2014 the ne",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "777-003 (Reg 34): Vitality / Existence [HUMAN]"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 62,
+    "dimension_updates": 54,
+    "vcg_description_corrections": 4,
+    "dimension_index_context_syncs": 4,
+    "registries": "23, 34",
+    "note": "No registry stamps in Part 1 \u2014 stamps applied in Part 4"
+  }
+}

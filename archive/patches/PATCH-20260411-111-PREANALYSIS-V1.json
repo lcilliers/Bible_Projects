@@ -1,0 +1,77 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260411-111-PREANALYSIS-V1",
+    "registry_id": 111,
+    "word": "mercy",
+    "produced_date": "2026-04-11",
+    "produced_by": "Session B v4.7 Stage 1 \u2014 Data Audit and Remediation",
+    "session_b_status": "Verse Context Reset",
+    "description": "Stage 1 field-level corrections: (1) G8849 confirmed delete with exclusion_reason; (2) H3724B/C/D null exclusion_reason corrected; (3) G8849 added to strongs_list with count=0."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G8849",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "LXX-only term. All 8 occurrences are in Greek OT (LXX): Neh 9:17, 9:31; Psa 86:5, 103:8; Joel 2:13; Jon 4:2. Programme corpus is ESV-based; these verses are covered by active Hebrew terms H7349 and H2617A. Zero NT occurrences. Corpus scope exclusion.",
+        "status_note": "Confirmed delete in Session B Stage 1. Candidate_delete promoted to delete on corpus scope grounds."
+      },
+      "description": "G8849 polueleos \u2014 confirm delete. LXX-only term; zero ESV corpus occurrences; corpus scope exclusion."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H3724B",
+      "set": {
+        "exclusion_reason": "Homonymous with H3724A (ransom) via kap.har root. Sense: asphalt/pitch as physical covering material (Gen 6:14). No inner-being content. The covering concept is analytically present in H3722A (kip.per/atone). Corpus scope exclusion."
+      },
+      "description": "H3724B ko.pher (pitch) \u2014 document null exclusion_reason. Deletion confirmed."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H3724C",
+      "set": {
+        "exclusion_reason": "Homonymous with H3724A (ransom) via kap.har root. Sense: henna plant (Song 1:14, 4:13). No inner-being content. Corpus scope exclusion."
+      },
+      "description": "H3724C ko.pher (henna) \u2014 document null exclusion_reason. Deletion confirmed."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update_mti_status",
+      "strongs_number": "H3724D",
+      "set": {
+        "exclusion_reason": "Homonymous with H3724A (ransom) via kap.har root. Sense: village/settlement (topographic). No inner-being content. Corpus scope exclusion."
+      },
+      "description": "H3724D ko.pher (village) \u2014 document null exclusion_reason. Deletion confirmed."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update_registry",
+      "registry_no": 111,
+      "set": {
+        "strongs_list": "[{\"strong\":\"H5921A\",\"count\":295},{\"strong\":\"H4480A\",\"count\":284},{\"strong\":\"H0834A\",\"count\":282},{\"strong\":\"H5750\",\"count\":170},{\"strong\":\"H2617A\",\"count\":169},{\"strong\":\"H2617B\",\"count\":169},{\"strong\":\"H3722A\",\"count\":93},{\"strong\":\"H3722B\",\"count\":93},{\"strong\":\"H2603A\",\"count\":72},{\"strong\":\"H2603B\",\"count\":72},{\"strong\":\"H2580\",\"count\":67},{\"strong\":\"H7355\",\"count\":43},{\"strong\":\"H2550\",\"count\":40},{\"strong\":\"H7356B\",\"count\":39},{\"strong\":\"H2623\",\"count\":33},{\"strong\":\"H2600\",\"count\":31},{\"strong\":\"G1653\",\"count\":28},{\"strong\":\"G1656\",\"count\":26},{\"strong\":\"H7358\",\"count\":25},{\"strong\":\"H2347\",\"count\":24},{\"strong\":\"H8467\",\"count\":24},{\"strong\":\"H3727\",\"count\":22},{\"strong\":\"H6279\",\"count\":19},{\"strong\":\"H8469\",\"count\":18},{\"strong\":\"G1654\",\"count\":13},{\"strong\":\"H2587\",\"count\":13},{\"strong\":\"H3724A\",\"count\":13},{\"strong\":\"H3724B\",\"count\":13},{\"strong\":\"H3724C\",\"count\":13},{\"strong\":\"H3724D\",\"count\":13},{\"strong\":\"H7349\",\"count\":13},{\"strong\":\"G3741\",\"count\":8},{\"strong\":\"H3725\",\"count\":8},{\"strong\":\"H7328\",\"count\":8},{\"strong\":\"H2624\",\"count\":6},{\"strong\":\"G3628\",\"count\":5},{\"strong\":\"H7314\",\"count\":5},{\"strong\":\"H7356A\",\"count\":5},{\"strong\":\"H2345\",\"count\":4},{\"strong\":\"H2606\",\"count\":4},{\"strong\":\"H7313\",\"count\":4},{\"strong\":\"G0462\",\"count\":2},{\"strong\":\"G1652\",\"count\":2},{\"strong\":\"G1655\",\"count\":2},{\"strong\":\"G2433\",\"count\":2},{\"strong\":\"G2434\",\"count\":2},{\"strong\":\"G2435\",\"count\":2},{\"strong\":\"G2436\",\"count\":2},{\"strong\":\"G3629\",\"count\":2},{\"strong\":\"G3742\",\"count\":2},{\"strong\":\"H2551\",\"count\":2},{\"strong\":\"H2604\",\"count\":2},{\"strong\":\"H2616A\",\"count\":2},{\"strong\":\"H2616B\",\"count\":2},{\"strong\":\"H3819\",\"count\":2},{\"strong\":\"G0415\",\"count\":1},{\"strong\":\"G0448\",\"count\":1},{\"strong\":\"G3627\",\"count\":1},{\"strong\":\"G3743\",\"count\":1},{\"strong\":\"H2433\",\"count\":1},{\"strong\":\"H2594\",\"count\":1},{\"strong\":\"H4263\",\"count\":1},{\"strong\":\"H6282A\",\"count\":1},{\"strong\":\"H6282B\",\"count\":1},{\"strong\":\"H7359\",\"count\":1},{\"strong\":\"H7362\",\"count\":1},{\"strong\":\"G8849\",\"count\":0}]"
+      },
+      "description": "Add G8849 to strongs_list with count=0. Term is confirmed delete but must appear in strongs_list per CC design (all terms in registry represented)."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "registry_note",
+      "description": "verse_context_record_count (1748) confirmed correct. Field counts all verse_context table records for this registry (assigned + set-aside). Value is 1748 = 1051 assigned contexts + 697 set-aside records. No correction required. Confirmed by researcher 2026-04-11."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "schema_investigation_note",
+      "description": "session_b_findings export schema inconsistency: top-level session_b_findings array is empty; the single finding (DIM-111-001) lives in session_b.findings block. The statistics field session_b_finding_count=1 correctly reflects the actual finding. CC to confirm whether the export schema should populate the top-level array or whether this is by design."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 7,
+    "mti_updates": 4,
+    "registry_updates": 1,
+    "registry_notes": 1,
+    "schema_investigation_notes": 1
+  }
+}

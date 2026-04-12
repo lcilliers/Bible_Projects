@@ -1,0 +1,53 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-023-DIMASSIGN-V1",
+    "registry_no": 23,
+    "registry_word": "compassion",
+    "produced_date": "2026-04-12",
+    "produced_by": "Claude AI — post-VCREPAIR dimension assignment under WA-DimensionReview-Instruction-v1.9",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension assignment for two new verse_context_groups created in VCREPAIR: 1613-001 and 1613-002 (H7358 re.chem). Both receive CLAUDE_AI confidence assignments."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_dimension_index",
+      "record": {
+        "group_code": "1613-001",
+        "owning_registry_no": 23,
+        "owning_registry_word": "compassion",
+        "cluster_assignment": "C17",
+        "context_description": "Term names the womb as the threshold of human existence over which God exercises sovereign care — the space where divine compassion, calling, and consecration originate before birth",
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "New group from VCREPAIR 2026-04-12. God opens, closes, consecrates the womb in all 15 verses. Divine sovereign care at the threshold of creaturely existence. Anchor: Psa 22:10."
+      },
+      "description": "Insert dimension_index entry for group 1613-001 (H7358 re.chem — divine sovereignty over the womb)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_dimension_index",
+      "record": {
+        "group_code": "1613-002",
+        "owning_registry_no": 23,
+        "owning_registry_word": "compassion",
+        "cluster_assignment": "C17",
+        "context_description": "Term names the womb as the origin of human existence — its use in lament and ethical reflection grounds the human person's creaturely condition (suffering, moral nature, shared creatureliness) in the body's most foundational threshold",
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "New group from VCREPAIR 2026-04-12. Womb used in lament and ethical reflection. Human creaturely condition grounded in shared womb-origin. Anchor: Job 31:15."
+      },
+      "description": "Insert dimension_index entry for group 1613-002 (H7358 re.chem — womb as origin of human creaturely condition)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "dimension_index_inserts": 2
+  }
+}

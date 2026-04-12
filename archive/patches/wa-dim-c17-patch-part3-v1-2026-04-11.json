@@ -1,0 +1,1313 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260411-DIMREVIEW-C17-PART3-V1",
+    "cluster": "C17",
+    "produced_date": "2026-04-11",
+    "produced_by": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "observations_log": "wa-dim-c17-observations-v1.0-2026-04-10.md",
+    "session_b_status": null,
+    "description": "C17 Dimension Review \u2014 Part 3: Reg 103 (love, 66 groups) + Session B/D pointers for Reg 23, 34, 62, 64, 99, 103"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7765
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Friendship as the inner-relational bond grounded in knowledge and trust. Automated label Agency/Power (KEYWORD_STRONG) misassigned \u2014 the keyword match triggered on power in verse context. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1579-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7759
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Both divine and human subjects span the 7-verse corpus. Automated label Relational Disposition confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1580-001 (Reg 103): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7744
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Intense inner emotional states expressed through the kiss \u2014 love, grief, contrition, joyful reunion. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1581-001 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7760
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Disordered inner orientation of affection toward the world \u2014 relational disposition toward wrong object. UNCLASSIFIED label corrected to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1588-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7769
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Loyal friendship as inner character quality \u2014 faithfulness that holds even when costly. Automated label Moral Character confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1600-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7774
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The beloved as the object of consuming inner longing and delight. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1602-001 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7740
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sister as relational identity defined by spiritual orientation and moral care. Automated label Volition corrected \u2014 the result (relational bond) is the focus, not the act of choosing. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1609-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7741
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The brotherhood as the object of love and context of shared suffering. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1610-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7768
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Concealed deception masquerading as fellowship \u2014 a stable inner moral character disposition. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1611-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7787
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine compassion as defining relational disposition. Automated label Divine-Human Correspondence corrected \u2014 neither anchor shows mirroring structure. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1614-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7790
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The neighbour as the moral category defining inner obligations. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1617-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7783
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Loyalty shown or withheld within the companion bond. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1619-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7791
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Trusted loyalty as the ground of courageous action. Automated label Dependence/Creatureliness is clearly misassigned \u2014 this is relational loyalty between humans, not creaturely dependence before God. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1623-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7792
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Companion in communal grief \u2014 shared inner lamentation. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1624-001 (Reg 103): Emotion \u2014 Negative [HUMAN]"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7743
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The peacemaker as a stable inner character orientation. UNCLASSIFIED corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1651-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7795
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Hatred as a relational disposition \u2014 directed toward another. UNCLASSIFIED corrected to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1663-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7747
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Identity formation through conformity to the firstborn Son \u2014 inner-being process of being shaped into Christs image. Automated label Volition corrected to Transformation.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1671-001 (Reg 103): Transformation [HUMAN]"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7746
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner contempt for sacred inheritance \u2014 moral character failure of despising the holy. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "1679-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7775
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The love-relationship in its full range spanning divine and human subjects. Automated label Emotion-Positive corrected \u2014 dod names the relational bond (beloved), not merely an inner feeling. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "533-001 (Reg 103): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7782
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods deepest attachment to the beloved \u2014 election-love expressed as gift and grief. Automated label Emotion-Positive misses the relational-disposition quality \u2014 ya.did names a relational bond (the beloved), not an inner feeling. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "534-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7781
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods most intimate attachment \u2014 the beloved of my soul. Automated label Emotion-Negative corrected \u2014 the grief is the consequence; the characteristic is the relational bond. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "535-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7776
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods steadfast love as his defining relational disposition. Automated label Moral Character corrected \u2014 chesed is directional/relational, always toward someone. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "536-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7777
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human chesed as inner character quality of covenantal faithfulness. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "536-002 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7778
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Absence/withdrawal of chesed as inner moral failure; chesed as the priority God requires. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "536-003 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7771
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods everlasting love as covenantal inner disposition. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "537-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7772
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The intense inner experience of mutual love \u2014 longing, delight, exclusive attachment in its most burning form. Automated label Relational Disposition corrected \u2014 the emotional intensity and felt quality dominate here over the relational orientation. Correcting to Emotion \u2014 Positive.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "537-002 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7773
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love as moral loyalty \u2014 inner character orientation of faithfulness. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "537-003 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7770
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner experience of love-delight in its ordered and disordered forms. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "539-001 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7779
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The godly person defined by covenantal faithfulness \u2014 stable inner character. Automated label Volition corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "540-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7780
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "The inner act of assessing, judging, or recognising something as good \u2014 whether divine approval or personal evaluative recognition. Automated label Emotion-Positive corrected \u2014 the evaluative/cognitive act is primary across both anchors. Correcting to Cognition. NONE \u2014 both divine and human subjects anchored.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "542-001 (Reg 103): Cognition [NONE]"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7789
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods deep inner movement of compassion \u2014 the ra.cha.mim as divine relational disposition. Automated label Divine-Human Correspondence corrected \u2014 description and both anchors primarily name Gods own disposition rather than a structural mirroring. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "544-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7793
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner experience of love in its idealising, delighting form. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "545-001 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7784
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner recognition of fittingness and beauty \u2014 the cognitive-aesthetic act of discerning what is na.eh. Automated label Emotion-Positive corrected \u2014 na.eh names what is recognised as fitting or beautiful (a cognitive act of discernment). Correcting to Cognition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "547-001 (Reg 103): Cognition [HUMAN]"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7786
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The inner disposition of lust \u2014 corrupted desire orienting the will toward disordered objects. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "548-001 (Reg 103): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7785
+      },
+      "set": {
+        "dimension": "Emotion \u2014 Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner experience of pleasantness and delight. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "549-001 (Reg 103): Emotion \u2014 Positive [HUMAN]"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7794
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Hatred as inner moral disposition \u2014 righteous and disordered forms. Automated label (KEYWORD_STRONG) confirmed. NONE \u2014 134-verse corpus spans both divine and human subjects.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "550-001 (Reg 103): Moral Character [NONE]"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7788
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods visceral inner movement of compassion. Automated label Divine-Human Correspondence corrected \u2014 both anchors show Gods own experience of compassion toward Israel, not a mirroring structure. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "551-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7761
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner orientation of love directed toward God. Automated label Emotion-Positive corrected \u2014 filotheos names a directional relational orientation (toward God), not a positive feeling. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "553-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7766
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Tender family-like inner affection toward fellow believers. Automated label (ROOT_INFERRED) confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "554-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7738
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The Fathers love for the Son as the paradigmatic inner-love relationship \u2014 constitutively divine and the pattern for all other love relationships. Automated label Relational Disposition corrected \u2014 the divine beloved relationship is the source from which the believers agapetos status flows (555-002), creating a correspondence structure. Correcting to Divine-Human Correspondence, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "555-001 (Reg 103): Divine-Human Correspondence [GOD]"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7739
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "The believer as the cherished object of Gods love \u2014 the relational identity of belovedness. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "555-002 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7752
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods benevolent inner disposition toward humanity. Automated label Divine-Human Correspondence corrected \u2014 unilateral divine disposition, not a correspondence. Correcting to Relational Disposition, GOD.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "556-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7749
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Brotherly love as the inner-relational disposition binding the community. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "558-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7767
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of children as a cultivated inner relational orientation. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "559-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7763
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The contentious inner inclination \u2014 stable character disposition toward argument. Automated label Relational Disposition (ROOT_INFERRED) corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "560-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7751
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of husband as cultivated inner relational orientation. Automated label Transformation (KEYWORD_STRONG) is clearly misassigned. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "561-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7735
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods love as the inner source and ground of all love. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "562-001 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7736
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love as the defining inner virtue \u2014 stable character quality produced by the Spirit. Automated label Relational Disposition corrected \u2014 1 Cor 13 presents love as a character portrait, not a relational act. Correcting to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "562-002 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7737
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mutual love as the communal inner orientation. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "562-003 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7762
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of dispute as inner character disposition of rivalry. Automated label Relational Disposition (KEYWORD_STRONG) corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "563-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7753
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of money as a disordered inner craving \u2014 the driving desire that corrupts the will. Automated label Relational Disposition corrected \u2014 filarguria is not about a relationship with money but about the inner craving. Correcting to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "564-001 (Reg 103): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7745
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Loveliness as quality directing inner cognitive act of moral reflection. Automated label Moral Character corrected \u2014 Phili 4:8 is a directive to a cognitive act. Correcting to Cognition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "565-001 (Reg 103): Cognition [HUMAN]"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7748
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of good as inner character quality required of leaders. Automated label Relational Disposition corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "566-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7750
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of brothers as relational inner disposition. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "567-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7754
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of money as stable inner character disposition. Automated label Relational Disposition corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "568-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7742
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Freedom from love of money as inner character quality \u2014 positive moral disposition of contentment. Automated label Relational Disposition corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "569-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7758
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of pleasure as a disordered inner craving \u2014 the driving desire displacing God-orientation. Automated label Emotion-Positive corrected \u2014 filedonos names the craving/orientation not the experience. Correcting to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "570-001 (Reg 103): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7730
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of God as the total inner orientation of the person. Automated label Cognition clearly misassigned \u2014 triggered by mind in the Shema-expansion. The commandment is the total-person relational orientation. Correcting to Relational Disposition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "571-001 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7731
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Gods/Christs love as the preceding, enabling divine act. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "571-002 (Reg 103): Relational Disposition [GOD]"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7732
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Love of neighbour and enemy as outward inner orientation. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "571-003 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7733
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Mutual love as the inner relational orientation of the community. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "571-004 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7734
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Disordered love as inner relational orientation toward wrong objects. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "571-005 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7755
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Natural affection and friendship-love. Automated label confirmed. NONE \u2014 spans Christ (divine/human) and the world (human).",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "572-001 (Reg 103): Relational Disposition [NONE]"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7756
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The ranking and ordering of inner loves \u2014 the volitional act of prioritising which love holds primacy. Automated label Relational Disposition corrected \u2014 the volitional ordering dimension is primary in both anchors. Correcting to Volition.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "572-002 (Reg 103): Volition [HUMAN]"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7757
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The natural warm inner affection of Peters love for Christ. Automated label confirmed.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "572-003 (Reg 103): Relational Disposition [HUMAN]"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7764
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The drive for primacy as stable inner character disposition. Automated label Cognition corrected to Moral Character.",
+        "last_modified": "2026-04-11T00:00:00"
+      },
+      "description": "573-001 (Reg 103): Moral Character [HUMAN]"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 23,
+        "flag_code": "DIMREVIEW_SESSION_B",
+        "flag_label": "DIM-23-001",
+        "priority": "MEDIUM",
+        "session_target": "B",
+        "description": "Group 733-001 (ni.chum \u2014 compassionate comfort, Reg 23) is anchored by Hos 11:8: \"my heart recoils within me; my compassion grows warm and tender.\" This verse names the divine inner life with visceral specificity \u2014 the heart recoiling, compassion warming. Session B for Reg 23 should examine whether this visceral inner-movement language for God represents a unique category within the compassion vocabulary: divine inner-being experience described through embodied sensation. The question for Session B is whether the compassion vocabulary of Reg 23 contains a sub-pattern of \"visceral inner movement\" terms (splanchniz\u014d, ni.chum, ra.cha.mim) that share a somatic/embodied description of the inner compassion movement, and whether this sub-pattern spans the divine-human boundary (both God and humans described as \"moved within\" by compassion).",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session B finding: DIM-23-001 \u2014 Reg 23 (compassion)"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 64,
+        "flag_code": "DIMREVIEW_SESSION_B",
+        "flag_label": "DIM-64-001",
+        "priority": "MEDIUM",
+        "session_target": "B",
+        "description": "Luk 7:47 (anchor for group 5377-001) establishes an explicit inner-being grammar of forgiveness: the quantity of forgiveness received determines the intensity of the inner orientation of love produced \u2014 \"she loved much because she was forgiven much; he who is forgiven little loves little.\" This is not merely a motivational claim but an inner-being causal chain: divine forgiveness (vertical release) \u2192 inner love-orientation (relational disposition). Session B for Reg 64 should examine whether this causal chain \u2014 forgiveness received \u2192 love orientation produced \u2014 is a recurring inner-being pattern across the forgiveness corpus, and how it relates to the grace-supplication chain already identified in Reg 68 (grace given \u2192 supplication produced, from DIM-068 Session C data). The hypothesis: forgiveness and grace both operate as inner-being generators that produce specific downstream inner orientations (love and supplication respectively).",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session B finding: DIM-64-001 \u2014 Reg 64 (forgiveness)"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 103,
+        "flag_code": "DIMREVIEW_SESSION_B",
+        "flag_label": "DIM-103-002",
+        "priority": "MEDIUM",
+        "session_target": "B",
+        "description": "Group 535-001 (ye.di.dut \u2014 beloved of Gods soul, Reg 103) is anchored by Jer 12:7: I have given the beloved of my soul into the hands of her enemies. The phrase ye.di.dut nap.shi (beloved of my soul/nephesh) attributes an intimate inner-being category to God \u2014 God has a nephesh, and the beloved relationship is located there. This raises a significant inner-being question for Session B of Reg 103: does the love vocabulary of Reg 103 contain a sub-pattern of terms that attribute inner-being states to God with the same vocabulary used for human inner-being states? The terms ye.di.dut (beloved of my soul), ra.cha.mim (my heart yearns \u2014 Jer 31:20 in group 551-001), and the dod vocabulary (God as lover/beloved in Song and prophets) may all encode a divine inner-being reality using the same vocabulary as the human inner person. Session B should investigate whether Reg 103 contains a theological claim about divine inner-being experience, and how this connects to the programmes governing question about the inner characteristics of the human person.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session B finding: DIM-103-002 \u2014 Reg 103 (love)"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 23,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-23-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The Hebrew root CHASAD (Reg 23) crosses into Reg 146 (shame): H2616A cha.sad (be kind) and H2617B che.sed (steadfast love) are in Reg 23; H2616B cha.sad (to shame) is in Reg 146. The same root family spans the two poles of relational experience: covenantal love/mercy (chus, chesed) and shame/exposure. This is not incidental \u2014 the same etymological root covers both the relational bond at its most loyal and the relational wound at its most exposed. Session D should examine whether this root-family crossing reveals a structural relationship between mercy and shame in the inner-being vocabulary of Scripture: whether the depth of mercy presupposes the depth of shame, or whether the vocabulary itself encodes the relational restoration movement (from shame/exposure to mercy/covering). Relevant registries: C17 (compassion/love/kindness/mercy) and C06 or equivalent shame cluster.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-23-SD001 \u2014 Reg 23 (compassion)"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 23,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-23-SD002",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Group 734-001 (sumpathe\u014d \u2014 sympathy, Reg 23) is anchored by Heb 4:15: Christ's capacity to sympathize with human weaknesses, grounded in his own temptation. This is a case of genuine divine-human solidarity \u2014 the same inner capacity for fellow-feeling is attributed to the incarnate Son in his priestly role. Session D should examine whether the sympathy/compassion vocabulary of Reg 23 contains a sub-pattern of terms that describe the capacity for trans-boundary solidarity (God/human, Christ/human): splanchniz\u014d (divine-human compassion in the Synoptics), oikteir\u014d (sovereign divine compassion), sumpathe\u014d (priestly solidarity through shared humanity), ra.cham (mother-womb metaphor). This sub-pattern may map onto a unique dimension of the C17 cluster: compassion as the inner quality that crosses boundaries of power, vulnerability, and status.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-23-SD002 \u2014 Reg 23 (compassion)"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 34,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-34-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The covenant vocabulary of Reg 34 spans at least four distinct dimension categories across the be.rit and ka.rat groups: Relational Disposition (unconditional divine commitment, relational bond), Transformation (new covenant, heart-writing), Volition (bilateral obligation, obedience-commitment), and Moral Character (oath-keeping, integrity). This multi-dimensional structure is not a grouping failure \u2014 it reflects the genuine inner-being complexity of covenant as a category that encompasses relational bond, inner transformation, volitional commitment, and moral integrity simultaneously. Session D should examine whether the covenant vocabulary of Reg 34 serves as a structural backbone for the other C17 registries: whether love (Reg 103), mercy (Reg 111), compassion (Reg 23) and peace (Reg 117) can be understood as facets of the single inner-being architecture that covenant names. The hypothesis is that covenant in Reg 34 is not merely one registry among equals in C17 but the structural container within which the other relational-disposition registries operate.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-34-SD001 \u2014 Reg 34 (covenant)"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-62-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Reg 62 (fellowship) has four groups that together trace three axes of koin\u014dnia: (1) the divine-human correspondence axis (5367-001 \u2014 partaking of divine nature; 873-001 \u2014 communion with Father and Son), (2) the moral-character axis (5367-002 \u2014 solidarity/complicity), and (3) the horizontal-relational axis (873-002 \u2014 mutual belonging among believers). These three axes are not independent \u2014 the horizontal fellowship among believers (873-002) is explicitly grounded in the vertical fellowship with God (1Jo 1:3). Session D should examine whether the fellowship vocabulary of Reg 62 encodes a structural relationship: that genuine human inner-relational community (C17's relational-disposition cluster) is grounded in and derives from participation in the divine community (Father-Son-Spirit). This would make Reg 62 (fellowship) functionally analogous to Reg 34 (covenant) as a structural container: covenant names the bond, fellowship names the participatory inner reality of that bond.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-62-SD001 \u2014 Reg 62 (fellowship)"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 64,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-64-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Group 879-002 (afesis \u2014 the unforgivable sin, Mar 3:29) defines the absolute limit of forgiveness. Session D should examine whether the forgiveness vocabulary of Reg 64 encodes a structural polarity: at one end, God's unconditional new-covenant forgiveness that remembers sin no more (5379-003, Jer 31:34); at the other end, the permanent condition of unforgiven guilt (879-002, Mar 3:29). Between these poles, the registry maps the full spectrum of forgiveness experience \u2014 cultic atonement, divine mercy, human horizontal forgiveness, intercessory plea. This polarity \u2014 absolute forgiveness / absolute non-forgiveness \u2014 may be a unique structural feature of the forgiveness vocabulary compared to the other C17 relational registries (compassion, mercy, love) which do not have an analogous absolute limit.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-64-SD001 \u2014 Reg 64 (forgiveness)"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 99,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-99-SD001",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The am-variant groups in Reg 99 (H5971H/I/L, each with three sub-groups) produce a large corpus (427 verses each for the -001 groups) where Moses's inner orientation of solidarity and advocacy appears as the primary inner-being content of the anchor verses. This raises a structural question: why are \"people/am\" terms placed in Reg 99 (kindness)? The intercessory solidarity of Moses (Num 14:19 \u2014 appealing to God's steadfast love on behalf of the people) may be the inner-being connection \u2014 Moses's advocacy for the people is itself an expression of kindness/solidarity as an inner orientation. Session D should examine whether the community-solidarity vocabulary of Reg 99 (the am-terms, the im.ma.di terms, the im-terms) encodes a dimension of kindness that is specifically communal and intercessory, rather than individual. The hypothesis: Reg 99 may contain a communal or social-solidarity sub-pattern that is distinct from the dyadic relational orientation of the love/compassion/mercy registries.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-99-SD001 \u2014 Reg 99 (kindness)"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 103,
+        "flag_code": "DIMREVIEW_SESSION_D",
+        "flag_label": "DIM-103-SD003",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "The dod groups in Reg 103 (533-001, 1602-001, 545-001) together span the full range of the beloved-love vocabulary: from the Songs human mutual delight to covenantal God-Israel love to intimate address. Session D should examine whether the dod/beloved vocabulary encodes a structural homology: the same inner-being quality of intense, exclusive, covenantal devotion manifests at both the divine-human covenantal level and the human interpersonal level. If confirmed across the full corpus, this would show that the love vocabulary of Scripture treats both divine and human love as expressions of the same inner-being characteristic \u2014 not mere analogy.",
+        "session_raised": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+        "raised_date": "2026-04-11",
+        "resolved": 0
+      },
+      "description": "Session D pointer: DIM-103-SD003 \u2014 Reg 103 (love)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 76,
+    "dimension_updates": 66,
+    "session_b_findings_inserted": 3,
+    "session_d_pointers_inserted": 7,
+    "registries_with_pointers": "23, 34, 62, 64, 99, 103",
+    "note": "No registry stamps \u2014 applied in Part 4"
+  }
+}

@@ -1,0 +1,2834 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-023-VCREPAIR-V1",
+    "registry_no": 23,
+    "registry_word": "compassion",
+    "produced_date": "2026-04-12",
+    "produced_by": "Claude AI \u2014 Session B Stage 1 VC re-run under WA-VerseContext-Instruction-v2.5",
+    "session_b_status": null,
+    "description": "Targeted VC re-run for 4 terms with unclassified verses identified during Session B Stage 1 audit. G1654 (5 verses \u2192 3167-001), H2617B (127 verses \u2192 1633-001/002/003/SET_ASIDE), H7356A (4 verses \u2192 729-001/SET_ASIDE), H7358 (25 verses \u2192 2 new groups). H2603B delete-status groups (2325-001/002) and their dimension_index entries delete_flagged. CC must resolve group_id for H7358 verse_context inserts using group_code after group insert.",
+    "note_for_cc": "H7358 verse_context inserts carry group_id = 'RESOLVE:{group_code}'. Claude Code must look up the newly inserted group id by group_code (1613-001 and 1613-002) and substitute the correct integer id before inserting verse_context records for H7358."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1613,
+        "group_code": "1613-001",
+        "context_description": "Term names the womb as the threshold of human existence over which God exercises sovereign care \u2014 the space where divine compassion, calling, and consecration originate before birth",
+        "notes": "Session B VC re-run 2026-04-12 \u2014 H7358 re.chem had no context groups; group A covers divine sovereignty over the womb",
+        "delete_flagged": 0
+      },
+      "description": "Insert new verse_context_group 1613-001 for H7358 re.chem \u2014 divine sovereignty over the womb"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1613,
+        "group_code": "1613-002",
+        "context_description": "Term names the womb as the origin of human existence \u2014 its use in lament and ethical reflection grounds the human person's creaturely condition (suffering, moral nature, shared creatureliness) in the body's most foundational threshold",
+        "notes": "Session B VC re-run 2026-04-12 \u2014 group B covers womb as origin of human creaturely condition",
+        "delete_flagged": 0
+      },
+      "description": "Insert new verse_context_group 1613-002 for H7358 re.chem \u2014 womb as origin of human existence and creaturely condition"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121717,
+        "mti_term_id": 3167,
+        "group_id": 329,
+        "group_code": "3167-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "G1654 eleemosune \u2014 Act 3:2 \u2192 3167-001"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121718,
+        "mti_term_id": 3167,
+        "group_id": 329,
+        "group_code": "3167-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "G1654 eleemosune \u2014 Act 3:3 \u2192 3167-001"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121716,
+        "mti_term_id": 3167,
+        "group_id": 329,
+        "group_code": "3167-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "G1654 eleemosune \u2014 Act 3:10 \u2192 3167-001"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121713,
+        "mti_term_id": 3167,
+        "group_id": 329,
+        "group_code": "3167-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "G1654 eleemosune \u2014 Act 10:31 \u2192 3167-001"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121715,
+        "mti_term_id": 3167,
+        "group_id": 329,
+        "group_code": "3167-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "G1654 eleemosune \u2014 Act 24:17 \u2192 3167-001"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 14428,
+        "mti_term_id": 729,
+        "group_id": 348,
+        "group_code": "729-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7356A ra.cham \u2014 Gen 49:25 \u2192 729-001"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 14430,
+        "mti_term_id": 729,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H7356A ra.cham \u2014 Judg 5:30 \u2192 SET_ASIDE (physical_only)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121187,
+        "mti_term_id": 729,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "delete_flagged": 0
+      },
+      "description": "H7356A ra.cham \u2014 Pro 30:16 \u2192 SET_ASIDE (wrong_face)"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121186,
+        "mti_term_id": 729,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "delete_flagged": 0
+      },
+      "description": "H7356A ra.cham \u2014 Eze 20:26 \u2192 SET_ASIDE (wrong_face)"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121490,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 19:19 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121491,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 20:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121492,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 21:23 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121493,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 24:12 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121494,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 24:14 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121495,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 24:27 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121496,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 24:49 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121497,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 32:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121498,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 39:21 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121499,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 40:14 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121500,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Gen 47:29 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121541,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Num 14:19 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121478,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Deu 5:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121479,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Deu 7:12 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121528,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Judg 1:24 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121529,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Judg 8:35 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121451,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Sa 15:6 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121453,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Sa 20:15 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121468,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 2:5 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121469,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 2:6 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121471,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 3:8 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121472,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 7:15 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121473,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 9:1 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121474,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 9:3 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121475,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 9:7 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121465,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 10:2 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121466,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 15:20 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121467,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 16:17 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121470,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Sa 22:51 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121447,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ki 2:7 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121449,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ki 3:6 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121450,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ki 8:23 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121448,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ki 20:31 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121443,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ch 16:34 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121444,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ch 16:41 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121445,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ch 17:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121446,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 1Ch 19:2 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121455,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 1:8 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121460,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 5:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121461,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 6:14 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121462,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 6:42 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121463,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 7:3 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121464,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 7:6 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121456,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 20:21 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121457,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 24:22 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121458,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 32:32 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121459,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 2Ch 35:26 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121487,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Ezr 3:11 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121488,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Ezr 7:28 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121489,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Ezr 9:9 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121535,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Neh 1:5 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121538,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Neh 9:17 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121539,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Neh 9:32 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121536,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Neh 13:14 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121537,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Neh 13:22 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121482,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Est 2:9 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121481,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Est 2:17 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121522,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Job 6:14 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121520,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Job 10:12 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121521,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Job 37:13 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121575,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 5:7 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121584,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 6:4 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121551,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 13:5 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121552,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 17:7 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121553,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 18:50 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121554,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 21:7 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121555,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 23:6 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121556,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 25:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121561,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 31:21 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121570,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 40:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121577,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 52:1 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121578,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 52:8 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121580,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 57:3 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121579,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 57:10 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121581,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 59:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121582,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 59:16 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121583,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 59:17 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121585,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 61:7 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121586,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 62:12 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121587,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 63:3 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121588,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 66:20 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121589,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 69:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121590,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 69:16 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121591,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 77:8 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121593,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 85:7 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121592,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 85:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121596,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 86:5 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121594,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 86:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121595,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 86:15 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121597,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 88:11 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121598,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:1 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121600,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:2 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121599,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:14 \u2192 1633-001 ANCHOR"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121601,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:24 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121602,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:28 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121603,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:33 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121604,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 89:49 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121605,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 90:14 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121606,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 92:2 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121607,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Psa 94:18 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121549,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 3:3 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121542,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 11:17 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121543,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 14:22 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121544,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 16:6 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121545,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 19:22 \u2192 1633-002 ANCHOR"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121547,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 20:6 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121546,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 20:28 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121548,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 21:21 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121550,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Pro 31:26 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121507,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 16:5 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121508,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 40:6 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121510,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 54:8 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121509,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 54:10 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121511,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 55:3 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121512,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 57:1 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121513,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Isa 63:7 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121515,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 2:2 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121519,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 9:24 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121514,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 16:5 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121516,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 31:3 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121517,
+        "mti_term_id": 1633,
+        "group_id": 345,
+        "group_code": "1633-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 32:18 \u2192 1633-002 "
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121518,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Jer 33:11 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121531,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Lam 3:32 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121476,
+        "mti_term_id": 1633,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Dan 1:9 \u2192 SET_ASIDE"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121505,
+        "mti_term_id": 1633,
+        "group_id": 346,
+        "group_code": "1633-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Hos 6:4 \u2192 1633-003 "
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121523,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Joe 2:13 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121534,
+        "mti_term_id": 1633,
+        "group_id": 344,
+        "group_code": "1633-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H2617B che.sed \u2014 Mic 7:20 \u2192 1633-001 "
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121254,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Gen 20:18 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121255,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Gen 29:31 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121256,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Gen 30:22 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121252,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Exo 13:2 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121250,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Exo 13:12 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121251,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Exo 13:15 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121253,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Exo 34:19 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121268,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Num 3:12 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121269,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Num 8:16 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121266,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Num 12:12 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121267,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Num 18:15 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121248,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 1Sa 1:5 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121249,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 1Sa 1:6 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121263,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Job 3:11 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121261,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Job 10:18 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121262,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Job 24:20 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121264,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Job 31:15 \u2192 1613-002 ANCHOR"
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121265,
+        "mti_term_id": 1613,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Job 38:8 \u2192 SET_ASIDE (wrong_face)"
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121271,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Psa 22:10 \u2192 1613-001 ANCHOR"
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121272,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Psa 58:3 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121270,
+        "mti_term_id": 1613,
+        "group_id": null,
+        "group_code": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Psa 110:3 \u2192 SET_ASIDE (wrong_face)"
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121258,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Jer 1:5 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121259,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Jer 20:17 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121260,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-002",
+        "group_code": "1613-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Jer 20:18 \u2192 1613-002 "
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 121257,
+        "mti_term_id": 1613,
+        "group_id": "RESOLVE:1613-001",
+        "group_code": "1613-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "delete_flagged": 0
+      },
+      "description": "H7358 re.chem \u2014 Hos 9:14 \u2192 1613-001 "
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 341
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "H2603B mti=delete \u2014 group invalid; delete_flagged 2026-04-12 Session B VC re-run"
+      },
+      "description": "Delete-flag verse_context_group 2325-001 (H2603B delete-status term)"
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 342
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "H2603B mti=delete \u2014 group invalid; delete_flagged 2026-04-12 Session B VC re-run"
+      },
+      "description": "Delete-flag verse_context_group 2325-002 (H2603B delete-status term)"
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "group_code": "2325-001"
+      },
+      "set": {
+        "delete_flagged": 1
+      },
+      "description": "Delete-flag wa_dimension_index entry for group 2325-001 (H2603B delete-status term)"
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "group_code": "2325-002"
+      },
+      "set": {
+        "delete_flagged": 1
+      },
+      "description": "Delete-flag wa_dimension_index entry for group 2325-002 (H2603B delete-status term)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 167,
+    "verse_context_group_inserts": 2,
+    "verse_context_inserts": 161,
+    "verse_context_group_deletes": 2,
+    "dimension_index_deletes": 2
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260410-068-SESSIONB-FLAGS-V1",
+    "registry_id": 68,
+    "word": "grace",
+    "produced_date": "2026-04-10",
+    "produced_by": "WA-SessionB-Instruction-v4.4-2026-04-10",
+    "observations_log": "wa-dim-C17-observations-v1.0-2026-04-10.md",
+    "session_b_status": "Analysis Complete",
+    "description": "Session D pointer flags for Reg 068 (grace) — 16 new SD_POINTER flags raised from full correlation signal audit across all 5 signal layers. These are the programme's only entry point for Session D cross-registry synthesis on grace. No existing flags modified."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD002",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Seeking (Reg 140) cooccurrence: 40 verses — the strongest cooccurrence signal in the grace registry. Grace and seeking co-occur at a structural level: seeking is the inner-being posture of the creature oriented toward what is outside itself; grace is the disposition of the greater moving toward the lesser. Session D should examine whether seeking is the necessary inner posture through which grace is received, and whether the 40-verse overlap encodes a programmatic inner-being sequence — Dependence/Creatureliness orientation (seeking) meeting divine Relational Disposition (grace).",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD002: seeking-grace structural cooccurrence (40 verses)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD003",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "C20 power cluster dimension overlap: strength (187), power (196), authority (197), might (198), dominion (199) — all share all 3 grace dimensions (Relational Disposition 9 groups, Moral Character 1, Dependence/Creatureliness 1). 2Cor 12:9 makes the structural connection explicit: power made perfect in weakness, grace as its modality. Session D should examine whether grace consistently names the relational mode through which divine power reaches the creature precisely where human power fails, and whether Dependence/Creatureliness is the inner condition that opens the person to both grace and power.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD003: C20 power cluster dimension overlap — grace-power axis"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD004",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Pride (Reg 123) shared anchor 2Cor 12:9 (grace group 888-001 ↔ pride group 26-001): 'my grace is sufficient for you, for my power is made perfect in weakness.' Grace-in-weakness is the structural antithesis of pride. Session D should examine the grace-pride relationship as inner-being opposites: whether the grace corpus consistently appears where human self-sufficiency or pride is the counter-condition, and whether receiving grace requires or produces the inner undoing of the self-elevating orientation.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD004: pride shared anchor 2Cor 12:9 — grace-pride structural opposition"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD005",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Hope (Reg 78) shared anchor Rom 5:2 (grace group 888-002 ↔ hope group 401-001) and cooccurrence 4 verses: 'we have obtained access by faith into this grace in which we stand, and we rejoice in hope of the glory of God.' Grace and hope co-constitute the same inner standing — the condition of the person who stands in grace and lives forward toward what grace promises. Session D should examine whether grace and hope are structurally linked as co-features of a single inner-being condition, and how the standing-in-grace (present) and rejoicing-in-hope (future-oriented) relate within that condition.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD005: hope shared anchor Rom 5:2 — grace-hope co-constituted standing"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD006",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Faith (Reg 59) cooccurrence 10 verses. Eph 2:8 is programmatic: 'by grace you have been saved through faith' — grace as sphere, faith as channel. Session D should examine the inner-being architecture of the grace-faith relationship: whether grace and faith are distinguishable inner-being states operating in a structural sequence (grace precedes as divine disposition; faith responds as human orientation), and whether that sequence is consistently encoded across the 10 co-occurring verses. Also: PH2-068-004 raises the identity-formation question from 1Cor 15:10 which implicates faith alongside grace.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD006: faith cooccurrence 10 verses — grace-faith inner-being sequence"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD007",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "C11 moral failure cluster cooccurrence: evil (57, 12 verses), sin (147, 6 verses), transgression (162, 6 verses), deceit (40, 5 verses). Also xref_sharing with guilt (73, 9 shared terms) and guilt cooccurrence (10 verses). Grace appears most fully where the creature's moral condition is most exposed. Session D should examine whether grace consistently operates in proximity to moral failure vocabulary, whether the recognition and naming of sin is a structural prerequisite for receiving grace, and what the inner-being sequence looks like — guilt named → grace extended → standing restored.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD007: C11 moral failure cluster + guilt — grace in context of moral condition"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD008",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Vulnerability (Reg 206, C22) and deadness (Reg 210, C21) both share all 3 grace dimensions and cooccur at 4 and 7 verses respectively. The Eph 2:1-5 pattern: 'you were dead in trespasses... but God, rich in mercy... even when we were dead, made us alive.' Grace addresses not merely the guilty person but the incapacitated person — the one without inner resource, dead, vulnerable. Session D should examine whether grace specifically constitutes the inner-being reconstitution of the person in conditions of deadness and vulnerability, and whether this represents the deepest inner-being claim of the grace registry: not favour toward the undeserving, but life toward the dead.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD008: vulnerability + deadness dimension overlap — grace toward the incapacitated inner person"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD009",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Pray (Reg 212) xref_sharing: 10 shared Hebrew terms (entire CHEN root family plus H2600 and deleted terms). The pray-grace xref relationship reflects terms classified under both registries because they carry prayer/petition vocabulary that is simultaneously grace vocabulary. Session D should examine the structural relationship between prayer and grace as inner-being realities: whether prayer presupposes grace (grace makes the creature's approach possible), whether the CHEN root family terms show prayer and grace as two faces of the same inner-being orientation (the creature's receptivity before the greater), and how this relates to DIM-068-SD001 (Zec 12:10 grace producing supplication).",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD009: pray xref_sharing 10 terms — prayer-grace structural relationship"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD010",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Will (Reg 173, C14) cooccurrence: 11 verses. Grace and will co-occurring across 11 verses raises the foundational inner-being question of how grace and human volition relate. Grace is unearned and uncompelled; the will is the faculty by which a person receives or refuses it. Session D should examine what the 11 co-occurring verses show: whether grace operates with the will (enabling the will to turn), upon the will (overriding or replacing volitional resistance), or alongside the will (grace as the condition within which the will operates). This may be the most theologically contested question the grace registry raises.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD010: will cooccurrence 11 verses — grace-volition inner-being relationship"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD011",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Calling (Reg 19, C19) cooccurrence: 11 verses. Grace and calling consistently paired in the Pauline corpus: 'called according to his own purpose and grace' (2Tim 1:9); 'not because of works but because of him who calls' (Rom 9:11). Session D should examine whether calling and grace are co-features of the same divine initiating act — grace as the character of the act, calling as the human inner experience of it as personal address — and whether the calling vocabulary adds specificity to how grace is received as directed toward a particular person.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD011: calling cooccurrence 11 verses — grace as ground of vocation/calling"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD012",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Listen (Reg 213, C02) cooccurrence: 11 verses. Receptivity of hearing is the inner-being posture through which grace is received; the hardened heart refusing to hear is the condition that closes off grace. Registry 213 was recently added to the programme (adding sha.ma — hear/listen). Session D should examine the listen-grace pairing: whether receptivity of hearing is the human inner-being correlate of divine grace-giving, how the obedience-hearing vocabulary relates to the grace-receiving vocabulary, and whether the listen corpus encodes the inner conditions under which grace is either received or refused. Cross-reference: DIM-187-SD001 (sha.ma broader validation gap).",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD012: listen cooccurrence 11 verses — receptivity as inner posture of grace-receiving"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD013",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Love (Reg 103, C17) cooccurrence: 14 verses — strongest within-cluster cooccurrence signal. Both grace and love are Relational Disposition registries centred on divine-to-human disposition with GOD as dominant subject in most groups. Session D should examine the boundary and relationship between love and grace: whether they name the same inner-being characteristic from different angles (love as the disposition; grace as its character of being freely given to the undeserving), whether love is broader and grace is a specific quality of love, or whether they are genuinely distinguishable inner-being realities. The 14 co-occurring verses are the primary data for this question.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD013: love cooccurrence 14 verses — grace-love boundary question within C17"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD014",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "C17 cluster synthesis question: all C17 sibling registries appear in grace's cooccurrence signal — peace (117, 10), kindness (99, 7), compassion (23, 4), mercy (111) via xref, forgiveness (64, 3), fellowship (62, 3), plus love (103, 14 — covered separately). The combined cooccurrence pattern within C17 raises the primary Session D synthesis question for this cluster: what is the inner-being architecture of the relational cluster as a whole? Are grace, mercy, compassion, kindness, peace, love, forgiveness, fellowship, and reconciliation sequential (grace as ground, then the others as expressions), hierarchical (grace as the generative source), or parallel (each naming a distinct face of the same divine-human relational reality)? This question cannot be answered from any single registry — it is Session D's work.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD014: C17 cluster synthesis — inner-being architecture of the full relational cluster"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD015",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Goodness (Reg 67, C10) cooccurrence: 9 verses. Goodness is paired with grace in the OT divine character formula (Exo 34:6: 'abounding in steadfast love and faithfulness'; Psa 25:7: 'according to your steadfast love remember me, for the sake of your goodness'). Session D should examine whether grace and goodness name adjacent or overlapping divine character attributes, whether the inner-being experience of goodness received is distinguishable from grace received, and how the goodness of God functions as a category distinct from grace in the structure of divine inner-being disposition toward the creature.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD015: goodness cooccurrence 9 verses — grace-goodness as adjacent divine attributes"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD016",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Anointing (Reg 6, C16) and blessing (Reg 194, C16) cooccurrence: 7 verses each. Grace co-occurs with both C16 registries at the same level, suggesting a possible C16-C17 connection zone. Anointing, blessing, and grace may constitute a semantic network of divine bestowal — each naming a distinct modality through which the divine disposition of favour is concretely extended to the creature. Session D should examine whether grace, anointing, and blessing share a common inner-being ground (the creature as recipient of divine favour) and what distinguishes them: grace as relational disposition freely given; blessing as the concrete content of what is given; anointing as the specific act of set-apart conferral.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD016: anointing + blessing cooccurrence 7 each — C16 divine bestowal network"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD017",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Mourning (Reg 113, C05) shared anchor Zec 12:10 in both grace groups 889-001 (chen — divine favour) and 890-001 (ta.cha.nun — supplication), and cooccurrence 3 verses. Extends DIM-068-SD001: the Spirit of grace poured out produces mourning (Zec 12:10: 'they shall mourn for him as one mourns for an only child'). The inner-being sequence encoded in this verse is: grace outpoured → mourning → supplication → restoration. Mourning is not the opposite of grace but its first inner response — the deep grief that arises when the one who has been pierced is finally seen. Session D should examine the grace-mourning-supplication chain as a programmatic inner-being sequence and whether it appears more broadly across the C05 (grief/lament) cluster.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD017: mourning shared anchor Zec 12:10 — grace-mourning-supplication sequence"
+    }
+  ]
+}

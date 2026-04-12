@@ -1,0 +1,25 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260411-001-SESSIONB-V1",
+    "registry_id": 23,
+    "word": "compassion",
+    "produced_date": "2026-04-11",
+    "produced_by": "Claude AI",
+    "session_b_status": "Verse Context Reset",
+    "description": "Field-level patch: G7451 episplanchnizomai added to strongs_list. Term was present in terms array (mti status=delete, 0 verses in STEP) but absent from strongs_list. Deletion confirmed; inventory completeness requires its presence as a delete-status entry."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "table": "word_registry",
+      "match": {
+        "no": 23
+      },
+      "set": {
+        "strongs_list": "[{\"strong\": \"H0854\", \"count\": 226}, {\"strong\": \"H5439G\", \"count\": 203}, {\"strong\": \"H2617A\", \"count\": 169}, {\"strong\": \"H2617B\", \"count\": 169}, {\"strong\": \"G4012\", \"count\": 120}, {\"strong\": \"G4183\", \"count\": 120}, {\"strong\": \"H5437G\", \"count\": 73}, {\"strong\": \"H2603A\", \"count\": 72}, {\"strong\": \"H2603B\", \"count\": 72}, {\"strong\": \"H5437H\", \"count\": 71}, {\"strong\": \"H2580\", \"count\": 67}, {\"strong\": \"G0071\", \"count\": 66}, {\"strong\": \"H5162G\", \"count\": 66}, {\"strong\": \"H7355\", \"count\": 43}, {\"strong\": \"H5439H\", \"count\": 41}, {\"strong\": \"H2550\", \"count\": 40}, {\"strong\": \"H7356B\", \"count\": 39}, {\"strong\": \"H5162H\", \"count\": 34}, {\"strong\": \"H2623\", \"count\": 33}, {\"strong\": \"H2600\", \"count\": 31}, {\"strong\": \"G1653\", \"count\": 28}, {\"strong\": \"G1656\", \"count\": 26}, {\"strong\": \"H7358\", \"count\": 25}, {\"strong\": \"H2347\", \"count\": 24}, {\"strong\": \"H8467\", \"count\": 24}, {\"strong\": \"H5850\", \"count\": 23}, {\"strong\": \"H8469\", \"count\": 18}, {\"strong\": \"H5362B\", \"count\": 17}, {\"strong\": \"G3804\", \"count\": 16}, {\"strong\": \"G1654\", \"count\": 13}, {\"strong\": \"H2587\", \"count\": 13}, {\"strong\": \"H7349\", \"count\": 13}, {\"strong\": \"G4697\", \"count\": 12}, {\"strong\": \"H3805\", \"count\": 12}, {\"strong\": \"G4698\", \"count\": 11}, {\"strong\": \"H7328\", \"count\": 8}, {\"strong\": \"G4013\", \"count\": 6}, {\"strong\": \"H2624\", \"count\": 6}, {\"strong\": \"H3803\", \"count\": 6}, {\"strong\": \"H5439I\", \"count\": 6}, {\"strong\": \"G2944\", \"count\": 5}, {\"strong\": \"G3628\", \"count\": 5}, {\"strong\": \"H0661\", \"count\": 5}, {\"strong\": \"H4524\", \"count\": 5}, {\"strong\": \"H5849B\", \"count\": 5}, {\"strong\": \"H7314\", \"count\": 5}, {\"strong\": \"H7356A\", \"count\": 5}, {\"strong\": \"H8575\", \"count\": 5}, {\"strong\": \"G4022\", \"count\": 4}, {\"strong\": \"H2345\", \"count\": 4}, {\"strong\": \"H2606\", \"count\": 4}, {\"strong\": \"H5437K\", \"count\": 4}, {\"strong\": \"H7313\", \"count\": 4}, {\"strong\": \"G2553\", \"count\": 3}, {\"strong\": \"G3806\", \"count\": 3}, {\"strong\": \"H2329\", \"count\": 3}, {\"strong\": \"H3804\", \"count\": 3}, {\"strong\": \"H5150\", \"count\": 3}, {\"strong\": \"H5437J\", \"count\": 3}, {\"strong\": \"H5439J\", \"count\": 3}, {\"strong\": \"G1652\", \"count\": 2}, {\"strong\": \"G3663\", \"count\": 2}, {\"strong\": \"G4777\", \"count\": 2}, {\"strong\": \"G4834\", \"count\": 2}, {\"strong\": \"G4841\", \"count\": 2}, {\"strong\": \"H2551\", \"count\": 2}, {\"strong\": \"H2604\", \"count\": 2}, {\"strong\": \"H2616A\", \"count\": 2}, {\"strong\": \"H2616B\", \"count\": 2}, {\"strong\": \"H3749\", \"count\": 2}, {\"strong\": \"H5165\", \"count\": 2}, {\"strong\": \"H5362A\", \"count\": 2}, {\"strong\": \"H5363\", \"count\": 2}, {\"strong\": \"H5437I\", \"count\": 2}, {\"strong\": \"H5849A\", \"count\": 2}, {\"strong\": \"G2552\", \"count\": 1}, {\"strong\": \"G3356\", \"count\": 1}, {\"strong\": \"G3627\", \"count\": 1}, {\"strong\": \"G3805\", \"count\": 1}, {\"strong\": \"G4033\", \"count\": 1}, {\"strong\": \"G4184\", \"count\": 1}, {\"strong\": \"G4835\", \"count\": 1}, {\"strong\": \"H2328\", \"count\": 1}, {\"strong\": \"H2433\", \"count\": 1}, {\"strong\": \"H2594\", \"count\": 1}, {\"strong\": \"H3750\", \"count\": 1}, {\"strong\": \"H4036\", \"count\": 1}, {\"strong\": \"H4141\", \"count\": 1}, {\"strong\": \"H4230\", \"count\": 1}, {\"strong\": \"H4263\", \"count\": 1}, {\"strong\": \"H5164\", \"count\": 1}, {\"strong\": \"H5252\", \"count\": 1}, {\"strong\": \"H5364\", \"count\": 1}, {\"strong\": \"H5368\", \"count\": 1}, {\"strong\": \"H5438\", \"count\": 1}, {\"strong\": \"H7359\", \"count\": 1}, {\"strong\": \"H7362\", \"count\": 1}, {\"strong\": \"G7451\", \"count\": 1}]"
+      },
+      "rationale": "G7451 episplanchnizomai (to show compassion, occ=1, mti=delete, 0 verses in STEP) present in terms array but absent from strongs_list. Per Session B Instruction v4.2: deleted terms are present in the export by CC design and their presence in strongs_list is expected and correct. Adding as delete-status entry for inventory completeness. Deletion confirmed on extraction failure grounds."
+    }
+  ]
+}

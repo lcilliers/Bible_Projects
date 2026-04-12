@@ -20,7 +20,7 @@ from datetime import date, datetime, timezone
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "exports", "Session C")
 
-SCRIPT_VERSION = "1.0"
+SCRIPT_VERSION = "1.1"
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
@@ -51,6 +51,171 @@ def _chunked_query(conn, sql_template: str, ids: list, extra_params: list | None
         params = chunk + (extra_params or [])
         results.extend(conn.execute(sql, params).fetchall())
     return results
+
+
+# ── correlation queries (per-registry) ───────────────────────────────────────
+
+def _build_correlations(conn, registry_no: int, registry_id: int,
+                        file_ids: list, ti_strongs: list, mti_ids: list) -> dict:
+    """Build the 5 correlation signals filtered to a single registry."""
+
+    # Signal 1: XREF term sharing — other registries sharing Strong's numbers
+    xref_pairs = _rows(conn.execute("""
+        SELECT w2.no AS reg, w2.word, w2.cluster_assignment AS cluster,
+               COUNT(DISTINCT a.strongs_number) AS shared_term_count,
+               GROUP_CONCAT(DISTINCT a.strongs_number) AS shared_strongs
+        FROM wa_term_inventory a
+        JOIN wa_term_inventory b ON a.strongs_number = b.strongs_number
+            AND a.file_id != b.file_id
+            AND a.delete_flagged = 0 AND b.delete_flagged = 0
+        JOIN wa_file_index fi1 ON fi1.id = a.file_id AND fi1.word_registry_fk = ?
+        JOIN wa_file_index fi2 ON fi2.id = b.file_id
+        JOIN word_registry w2 ON w2.id = fi2.word_registry_fk AND w2.no != ?
+        GROUP BY w2.no
+        HAVING shared_term_count >= 1
+        ORDER BY shared_term_count DESC
+    """, (registry_id, registry_no)).fetchall())
+    for p in xref_pairs:
+        if p.get("shared_strongs"):
+            p["shared_strongs"] = p["shared_strongs"].split(",")
+
+    # Signal 2: Verse co-occurrence (OWNER terms in same verse reference)
+    cooccur_pairs = _rows(conn.execute("""
+        SELECT w2.no AS reg, w2.word, w2.cluster_assignment AS cluster,
+               COUNT(DISTINCT vr1.reference) AS shared_verse_count
+        FROM wa_verse_records vr1
+        JOIN wa_term_inventory ti1 ON ti1.id = vr1.term_inv_id
+            AND ti1.delete_flagged = 0 AND ti1.term_owner_type = 'OWNER'
+        JOIN wa_file_index fi1 ON fi1.id = ti1.file_id AND fi1.word_registry_fk = ?
+        JOIN wa_verse_records vr2 ON vr1.reference = vr2.reference
+            AND vr1.id != vr2.id AND vr2.delete_flagged = 0
+        JOIN wa_term_inventory ti2 ON ti2.id = vr2.term_inv_id
+            AND ti2.delete_flagged = 0 AND ti2.term_owner_type = 'OWNER'
+        JOIN wa_file_index fi2 ON fi2.id = ti2.file_id
+        JOIN word_registry w2 ON w2.id = fi2.word_registry_fk AND w2.no != ?
+        WHERE vr1.delete_flagged = 0
+        GROUP BY w2.no
+        HAVING shared_verse_count >= 3
+        ORDER BY shared_verse_count DESC
+    """, (registry_id, registry_no)).fetchall())
+
+    # Signal 3: Dimension profile similarity (CLAUDE_AI reviewed only)
+    # Build target registry's dimension profile
+    target_dims = {}
+    for r in conn.execute("""
+        SELECT dimension, COUNT(*) AS cnt
+        FROM wa_dimension_index
+        WHERE owning_registry_no = ? AND dimension_confidence = 'CLAUDE_AI'
+            AND delete_flagged = 0 AND dimension IS NOT NULL
+        GROUP BY dimension
+    """, (registry_no,)):
+        target_dims[r["dimension"]] = r["cnt"]
+
+    dim_pairs = []
+    if target_dims:
+        # Find other registries with overlapping CLAUDE_AI dimensions
+        other_profiles: dict[int, dict] = {}
+        for r in conn.execute("""
+            SELECT owning_registry_no, dimension, COUNT(*) AS cnt
+            FROM wa_dimension_index
+            WHERE dimension_confidence = 'CLAUDE_AI' AND delete_flagged = 0
+                AND dimension IS NOT NULL AND owning_registry_no != ?
+            GROUP BY owning_registry_no, dimension
+        """, (registry_no,)):
+            other_profiles.setdefault(r["owning_registry_no"], {})[r["dimension"]] = r["cnt"]
+
+        reg_lookup = {}
+        for r in conn.execute("SELECT no, word, cluster_assignment FROM word_registry"):
+            reg_lookup[r["no"]] = {"word": r["word"], "cluster": r["cluster_assignment"]}
+
+        for other_reg, other_dims in other_profiles.items():
+            shared = set(target_dims.keys()) & set(other_dims.keys())
+            if len(shared) >= 2:
+                overlap = [{"dimension": d,
+                            "count_target": target_dims[d],
+                            "count_other": other_dims[d]} for d in sorted(shared)]
+                info = reg_lookup.get(other_reg, {})
+                dim_pairs.append({
+                    "reg": other_reg, "word": info.get("word", "?"),
+                    "cluster": info.get("cluster", "?"),
+                    "shared_dimension_count": len(shared),
+                    "overlap": overlap,
+                })
+        dim_pairs.sort(key=lambda x: x["shared_dimension_count"], reverse=True)
+
+    # Signal 4: Root family connections — shared etymological roots
+    root_codes = set()
+    if file_ids:
+        for r in _chunked_query(
+            conn,
+            "SELECT DISTINCT root_code FROM wa_term_root_family WHERE term_inv_id IN "
+            "(SELECT id FROM wa_term_inventory WHERE file_id IN {} AND delete_flagged = 0)",
+            file_ids,
+        ):
+            root_codes.add(r["root_code"])
+
+    root_families = []
+    if root_codes:
+        placeholders = ",".join("?" * len(root_codes))
+        for r in conn.execute(f"""
+            SELECT rf.root_code, rf.root_gloss,
+                   COUNT(DISTINCT wr.no) AS reg_count,
+                   GROUP_CONCAT(DISTINCT wr.no) AS reg_nos,
+                   GROUP_CONCAT(DISTINCT wr.word) AS words,
+                   GROUP_CONCAT(DISTINCT wr.cluster_assignment) AS clusters
+            FROM wa_term_root_family rf
+            JOIN wa_term_inventory ti ON ti.id = rf.term_inv_id AND ti.delete_flagged = 0
+            JOIN wa_file_index fi ON fi.id = ti.file_id
+            JOIN word_registry wr ON wr.id = fi.word_registry_fk
+            WHERE rf.root_code IN ({placeholders})
+            GROUP BY rf.root_code
+            HAVING reg_count >= 2
+            ORDER BY reg_count DESC
+        """, list(root_codes)):
+            clusters = r["clusters"].split(",") if r["clusters"] else []
+            root_families.append({
+                "root_code": r["root_code"],
+                "root_gloss": r["root_gloss"],
+                "registry_count": r["reg_count"],
+                "registry_nos": [int(x) for x in r["reg_nos"].split(",")] if r["reg_nos"] else [],
+                "words": r["words"].split(",") if r["words"] else [],
+                "cross_cluster": len(set(clusters)) > 1,
+            })
+
+    # Signal 5: Shared anchor verses — other words also anchoring on same verse
+    shared_anchors = []
+    if mti_ids:
+        shared_anchors = _rows(conn.execute("""
+            SELECT vr1.reference,
+                   w2.no AS reg, w2.word, w2.cluster_assignment AS cluster,
+                   vcg1.group_code AS target_group, vcg2.group_code AS other_group
+            FROM verse_context vc1
+            JOIN wa_verse_records vr1 ON vr1.id = vc1.verse_record_id
+            JOIN wa_term_inventory ti1 ON ti1.id = vr1.term_inv_id
+                AND ti1.term_owner_type = 'OWNER'
+            JOIN wa_file_index fi1 ON fi1.id = ti1.file_id
+                AND fi1.word_registry_fk = ?
+            JOIN verse_context_group vcg1 ON vcg1.id = vc1.group_id
+            JOIN verse_context vc2 ON vc1.verse_record_id != vc2.verse_record_id
+            JOIN wa_verse_records vr2 ON vr2.id = vc2.verse_record_id
+                AND vr2.reference = vr1.reference AND vr2.id != vr1.id
+            JOIN wa_term_inventory ti2 ON ti2.id = vr2.term_inv_id
+                AND ti2.term_owner_type = 'OWNER'
+            JOIN wa_file_index fi2 ON fi2.id = ti2.file_id
+            JOIN word_registry w2 ON w2.id = fi2.word_registry_fk AND w2.no != ?
+            JOIN verse_context_group vcg2 ON vcg2.id = vc2.group_id
+            WHERE vc1.is_anchor = 1 AND vc2.is_anchor = 1
+                AND vc1.delete_flagged = 0 AND vc2.delete_flagged = 0
+            ORDER BY vr1.reference
+        """, (registry_id, registry_no)).fetchall())
+
+    return {
+        "xref_sharing": xref_pairs,
+        "verse_cooccurrence": cooccur_pairs,
+        "dimension_overlap": dim_pairs,
+        "root_families": root_families,
+        "shared_anchor_verses": shared_anchors,
+    }
 
 
 # ── main extract function ────────────────────────────────────────────────────
@@ -416,6 +581,11 @@ def build_complete_extract(conn, registry_no: int, owner_only: bool = False) -> 
         file_ids,
     )) if file_ids else []
 
+    # ── LAYER 9: Correlations (per-registry) ───────────────────────────────
+
+    correlations = _build_correlations(conn, registry_no, registry_id, file_ids,
+                                       ti_strongs, mti_ids)
+
     # ── Assemble Terms ───────────────────────────────────────────────────────
 
     terms_out = []
@@ -521,6 +691,11 @@ def build_complete_extract(conn, registry_no: int, owner_only: bool = False) -> 
         "session_b_finding_count": len(sb_findings),
         "session_d_pointer_count": len(sd_pointers),
         "session_d_run_count": len(sd_runs_out),
+        "correlation_xref_pair_count": len(correlations.get("xref_sharing", [])),
+        "correlation_cooccurrence_pair_count": len(correlations.get("verse_cooccurrence", [])),
+        "correlation_dimension_pair_count": len(correlations.get("dimension_overlap", [])),
+        "correlation_root_family_count": len(correlations.get("root_families", [])),
+        "correlation_shared_anchor_count": len(correlations.get("shared_anchor_verses", [])),
     }
 
     # ── Final document ───────────────────────────────────────────────────────
@@ -555,6 +730,7 @@ def build_complete_extract(conn, registry_no: int, owner_only: bool = False) -> 
             "sd_pointer_flags": sd_pointers,
             "runs": sd_runs_out,
         },
+        "correlations": correlations,
         "cross_registry_links": cross_links,
         "session_research_flags": research_flags,
         "statistics": statistics,
@@ -591,6 +767,11 @@ def _write_extract(data: dict, registry_no: int, out_dir: str) -> None:
     print(f"Session D pointers: {stats['session_d_pointer_count']}")
     print(f"Research flags: {stats['research_flag_count']}")
     print(f"Cross-registry links: {stats['cross_registry_link_count']}")
+    print(f"Correlations: XREF={stats['correlation_xref_pair_count']}, "
+          f"co-occur={stats['correlation_cooccurrence_pair_count']}, "
+          f"dim={stats['correlation_dimension_pair_count']}, "
+          f"root={stats['correlation_root_family_count']}, "
+          f"anchors={stats['correlation_shared_anchor_count']}")
 
 
 def main():
