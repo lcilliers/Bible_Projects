@@ -1,0 +1,184 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG026-V1",
+    "cluster": "C13",
+    "registry_no": 26,
+    "registry_word": "conscience",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.2-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 26 (conscience): 8 groups assigned. 2 dimension changes (2739-001 Moral Character→Cognition; 454-001 Cognitive/Mind→Cognition). 1 Session B finding (DIM-26-001 — kil.yah group split question). Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6550
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Culpable spiritual ignorance as inner condition — not knowing God's ways becomes basis of moral failure and self-deception. AVs Rom 10:3 and 1Ti 1:13 confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "1838-001 agnoeō — conscience: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6551
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Divine foreknowing as ground of human election and inner identity — genuinely dual subject. The divine act directly constitutes the human person's standing. Automated label confirmed. NONE as dominant subject because the two poles are inseparable.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "1842-001 proginōskō — conscience: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6552
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine foreknowledge as sovereign inner cognitive act — the prior knowing grounding redemptive purpose. AV Act 2:23 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "1847-001 prognōsis — conscience: Cognition, GOD"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6553
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Prophetic foreseeing as inner cognitive capacity — David foreseeing the resurrection. AV Act 2:31 confirms. Subject is David as human prophetic seer. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "1848-001 proeidon — conscience: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6554
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner self-awareness of moral state — cognitive act of consciousness directed at own condition. Changed from automated Moral Character to Cognition — the act described is self-knowing, not a moral quality of character. AV 1Cor 4:4 names the act of awareness directly.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2739-001 sunoida — conscience: Cognition, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1712
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Conscious inner awareness — moral complicity or cognitive recognition informing volitional response. Non-standard Cognitive/Mind corrected to Cognition. AVs Act 5:2 and Act 12:12 confirm.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "454-001 suneidō — conscience: Cognition, HUMAN (corrected from non-standard Cognitive/Mind)"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6555
+      },
+      "set": {
+        "dimension": "Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inward parts as seat and constitution of the innermost self — deepest layer God formed and searches. AVs Psa 139:13 and Jer 17:10 confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "455-001 kil.yah — conscience: Vitality / Existence, HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6556
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inward parts as seat of felt inner experience. Anchor verses evidence primarily positive register — exultation (Pro 23:16) and inner instruction producing blessing (Psa 16:7). Automated label confirmed for AV evidence. Session B finding DIM-26-001 raised: group range may extend to negative experience; Session B to assess whether group should be split.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "455-002 kil.yah — conscience: Emotion — Positive, HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 26
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 26 (conscience): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 10,
+    "dimension_index_updates": 8,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "session_b_findings": 1,
+    "session_d_pointers": 0,
+    "dimension_changes_from_automated": 2,
+    "descriptions_corrected": 0,
+    "groups_in_patch": [
+      "1838-001",
+      "1842-001",
+      "1847-001",
+      "1848-001",
+      "2739-001",
+      "454-001",
+      "455-001",
+      "455-002"
+    ]
+  }
+}

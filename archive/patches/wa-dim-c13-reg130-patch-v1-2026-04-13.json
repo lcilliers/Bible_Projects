@@ -1,0 +1,131 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG130-V1",
+    "cluster": "C13",
+    "registry_no": 130,
+    "registry_word": "reconciliation",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.6-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "cluster_stamp_deferred": true,
+    "cluster_stamp_note": "Reg 30 (contrition) reinstatement pending. Cluster stamp deferred.",
+    "description": "Dimension Review C13 Reg 130 (reconciliation): 5 groups assigned. All from VCB-035 (2026-04-13). Registry stamp set. Cluster stamp NOT included."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9336
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Relational reorientation of the self through volitional exchange — worshipping self exchanging God for idols. AV Rom 1:23 direct.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7542-001 allassō — reconciliation: Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9337
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Eschatological transformation of the person's constitution — resurrection change. AV 1Cor 15:51 direct.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7542-002 allassō — reconciliation: Transformation, HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9338
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine reconciliation transforming relational enmity and moral standing — divine act directly addressing human inner condition. HUMAN dominant — enmity transformed is the human's inner state.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7543-001 apokatallassō — reconciliation: Divine-Human Correspondence, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9339
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Broken relational state as inner obstacle to authentic worship. AV Mat 5:24 direct.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7544-001 diallassō — reconciliation: Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9340
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Interpersonal conflict and appeal to restore relational wholeness through shared identity. AV Act 7:26 direct.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7545-001 sunelaunō — reconciliation: Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 130
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 130 (reconciliation): Dimension Review complete under v2.2. Cluster stamp deferred."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "dimension_index_updates": 5,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "session_b_findings": 0,
+    "session_d_pointers": 0,
+    "dimension_changes_from_automated": 0,
+    "groups_in_patch": [
+      "7542-001",
+      "7542-002",
+      "7543-001",
+      "7544-001",
+      "7545-001"
+    ]
+  }
+}

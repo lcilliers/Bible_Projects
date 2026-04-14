@@ -20,7 +20,7 @@ from datetime import date, datetime, timezone
 DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "exports", "Session C")
 
-SCRIPT_VERSION = "1.1"
+SCRIPT_VERSION = "1.2"
 
 
 # ── helpers ──────────────────────────────────────────────────────────────────
@@ -739,13 +739,35 @@ def build_complete_extract(conn, registry_no: int, owner_only: bool = False) -> 
 
 # ── CLI ──────────────────────────────────────────────────────────────────────
 
+def _next_version(out_dir: str, prefix: str) -> int:
+    """Find the next version number for files matching prefix in out_dir."""
+    if not os.path.isdir(out_dir):
+        return 1
+    existing = [f for f in os.listdir(out_dir) if f.startswith(prefix) and f.endswith(".json")]
+    if not existing:
+        return 1
+    versions = []
+    for f in existing:
+        # Extract vN from filename like wa-062-fellowship-complete-2026-04-13-v2.json
+        stem = f.rsplit(".json", 1)[0]
+        parts = stem.rsplit("-v", 1)
+        if len(parts) == 2 and parts[1].isdigit():
+            versions.append(int(parts[1]))
+        else:
+            versions.append(1)  # unversioned file counts as v1
+    return max(versions) + 1
+
+
 def _write_extract(data: dict, registry_no: int, out_dir: str) -> None:
-    """Write extract to JSON and print summary."""
+    """Write extract to JSON and print summary. Auto-versions per registry per day."""
     word = data["_export"]["word"]
     scope = data["_export"]["scope"]
     today = date.today().isoformat()
-    filename = f"wa-{registry_no:03d}-{word}-{scope}-{today}.json"
+    prefix = f"wa-{registry_no:03d}-{word}-{scope}-{today}"
     os.makedirs(out_dir, exist_ok=True)
+    version = _next_version(out_dir, prefix)
+    filename = f"{prefix}-v{version}.json"
+    data["_export"]["version"] = version
     out_path = os.path.join(out_dir, filename)
 
     with open(out_path, "w", encoding="utf-8") as f:

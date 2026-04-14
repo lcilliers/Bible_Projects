@@ -1,0 +1,244 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-111-SDENRICH-V1",
+    "registry_no": 111,
+    "registry_word": "mercy",
+    "produced_date": "2026-04-12",
+    "produced_by": "Claude AI — SD pointer enrichment to match compassion standard",
+    "session_b_status": "Analysis Complete",
+    "description": "Enrichment patch for 15 existing SD_POINTER records for Reg 111 (mercy). Updates: flag_label renamed from PH2-111-NNN to DIM-111-SDNNN format; priority differentiated (HIGH/MEDIUM/LOW); cross_registry_id populated. No content changes — descriptions unchanged."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-001",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD001",
+        "priority": "HIGH",
+        "cross_registry_id": 187
+      },
+      "description": "Rename PH2-111-001 → DIM-111-SD001, set priority=HIGH, cross_registry_id=187"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-002",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD002",
+        "priority": "HIGH",
+        "cross_registry_id": 73
+      },
+      "description": "Rename PH2-111-002 → DIM-111-SD002, set priority=HIGH, cross_registry_id=73"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-003",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD003",
+        "priority": "HIGH",
+        "cross_registry_id": 98
+      },
+      "description": "Rename PH2-111-003 → DIM-111-SD003, set priority=HIGH, cross_registry_id=98"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-004",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD004",
+        "priority": "HIGH",
+        "cross_registry_id": 103
+      },
+      "description": "Rename PH2-111-004 → DIM-111-SD004, set priority=HIGH, cross_registry_id=103"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-005",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD005",
+        "priority": "MEDIUM",
+        "cross_registry_id": 4
+      },
+      "description": "Rename PH2-111-005 → DIM-111-SD005, set priority=MEDIUM, cross_registry_id=4"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-006",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD006",
+        "priority": "MEDIUM",
+        "cross_registry_id": 146
+      },
+      "description": "Rename PH2-111-006 → DIM-111-SD006, set priority=MEDIUM, cross_registry_id=146"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-007",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD007",
+        "priority": "MEDIUM",
+        "cross_registry_id": 212
+      },
+      "description": "Rename PH2-111-007 → DIM-111-SD007, set priority=MEDIUM, cross_registry_id=212"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-008",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD008",
+        "priority": "MEDIUM",
+        "cross_registry_id": 192
+      },
+      "description": "Rename PH2-111-008 → DIM-111-SD008, set priority=MEDIUM, cross_registry_id=192"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-009",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD009",
+        "priority": "MEDIUM",
+        "cross_registry_id": 185
+      },
+      "description": "Rename PH2-111-009 → DIM-111-SD009, set priority=MEDIUM, cross_registry_id=185"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-010",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD010",
+        "priority": "MEDIUM",
+        "cross_registry_id": null
+      },
+      "description": "Rename PH2-111-010 → DIM-111-SD010, set priority=MEDIUM, cross_registry_id=None"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-011",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD011",
+        "priority": "MEDIUM",
+        "cross_registry_id": 68
+      },
+      "description": "Rename PH2-111-011 → DIM-111-SD011, set priority=MEDIUM, cross_registry_id=68"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-012",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD012",
+        "priority": "MEDIUM",
+        "cross_registry_id": 59
+      },
+      "description": "Rename PH2-111-012 → DIM-111-SD012, set priority=MEDIUM, cross_registry_id=59"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-013",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD013",
+        "priority": "MEDIUM",
+        "cross_registry_id": 117
+      },
+      "description": "Rename PH2-111-013 → DIM-111-SD013, set priority=MEDIUM, cross_registry_id=117"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-014",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD014",
+        "priority": "LOW",
+        "cross_registry_id": null
+      },
+      "description": "Rename PH2-111-014 → DIM-111-SD014, set priority=LOW, cross_registry_id=None"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_session_research_flags",
+      "match": {
+        "flag_label": "PH2-111-015",
+        "registry_id": 111
+      },
+      "set": {
+        "flag_label": "DIM-111-SD015",
+        "priority": "LOW",
+        "cross_registry_id": 179
+      },
+      "description": "Rename PH2-111-015 → DIM-111-SD015, set priority=LOW, cross_registry_id=179"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 15,
+    "flag_label_renames": 15,
+    "priority_updates": 15,
+    "cross_registry_id_updates": 15
+  }
+}

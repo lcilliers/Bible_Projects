@@ -1,0 +1,54 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-103-PREANALYSIS-V1",
+    "registry_id": 103,
+    "word": "love",
+    "produced_date": "2026-04-12",
+    "produced_by": "WA-SessionB-Instruction-v4.7 — Stage 1 Remediation Step A",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Stage 1 remediation for Registry 103 (love). Three mti_terms corrections: G7493 (eraō) confirmed delete — no STEP verse coverage; H2245 (chavav) exclusion_reason corrected — deletion confirmed; H2898 (tuv) reinstated to extracted — verse-level inspection confirmed inner-being content across 14 of 31 verses. Root family gap corrections (7 terms) and H2898 inventory reinstatement are in the accompanying CC directive (PATCH-20260412-103-PREANALYSIS-V1-CCDIRECTIVE.md). H2898 Verse Context sub-process required after CC directive is applied."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_mti_status",
+      "strongs_number": "G7493",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "eraō to love passionately — no STEP verse coverage in this registry. Classical Greek erotic love vocabulary; absent from NT/LXX in STEP extraction."
+      },
+      "description": "G7493 (eraō) — confirmed delete. Extracted status was incorrect: 0 verses, absent from strongs_list, no STEP coverage. Researcher confirmed."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update_mti_status",
+      "strongs_number": "H2245",
+      "set": {
+        "status": "delete",
+        "exclusion_reason": "chavav to love fervently — single verse (Deu 33:3, God as subject). Adequately covered by H0160 (ahavah) which covers divine love with larger corpus. Deletion confirmed."
+      },
+      "description": "H2245 (chavav) — deletion confirmed; exclusion_reason corrected. Prior exclusion_reason text contradicted delete status. Single-verse, adequacy-of-coverage deletion is appropriate."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update_mti_status",
+      "strongs_number": "H2898",
+      "set": {
+        "status": "extracted",
+        "exclusion_reason": null
+      },
+      "description": "H2898 (tuv, goodness) — reinstated from delete to extracted. Verse-level inspection of 31 verses identified 14 with inner-being content (divine goodness as character attribute and object of inner orientation/satisfaction) and 17 as material goods/property (set aside). Deletion was undocumented and analytically unjustified. Owner_type and inventory reinstatement handled in CC directive."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "registry_note",
+      "description": "Root family gap corrections (G5370, G5373, G5384, G2705, G5382 missing FILOS; H0157H missing AHAV; H1730G missing DOD) require wa_term_root_family inserts — handled in CC directive. H2898 inventory reinstatement (restore_delete_flagged, owner_type update, strongs_list addition for G7493) also in CC directive. H2898 Verse Context sub-process required after CC directive confirmed."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 4,
+    "mti_status_updates": 2,
+    "mti_reinstatements": 1,
+    "registry_notes": 1
+  }
+}

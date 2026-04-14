@@ -1,0 +1,29 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-103-ANALYSIS-V1",
+    "registry_id": 103,
+    "word": "love",
+    "produced_date": "2026-04-12",
+    "produced_by": "WA-SessionB-Instruction-v4.7 — Stage 4",
+    "session_b_status": "Analysis Complete",
+    "description": "Session B complete for registry 103 (love). All stages done. Confirming session_b_status = Analysis Complete. Note: status was already set to Analysis Complete by the PREANALYSIS patch applicator. This patch confirms and records session closure."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "registry_no": 103,
+      "set": {
+        "session_b_status": "Analysis Complete",
+        "sb_classification": "Spirit-Soul Interface",
+        "sb_classification_reasoning": "Love at its fullest is received from outside the human person — poured into hearts by the Spirit (Rom 5:5), preceded by God's prior love (1Jo 4:19). This is spirit-primary in origin. As experienced and exercised, love operates characteristically at the soul level — the settled disposition of the inner life, the affective-volitional orientation of the heart. Love's bodily expression (kiss, embrace, tears, running) is regular and genuine but secondary — it manifests love rather than constituting it. Classification: Spirit-Soul Interface. Confidence: High."
+      },
+      "description": "Session B Analysis Complete — registry 103 love. Spirit-Soul Interface classification recorded."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "registry_status_updates": 1,
+    "note": "sb_classification and sb_classification_reasoning written alongside status confirmation. These fields were null at Stage 2 Pass 4 close and are now formally recorded."
+  }
+}

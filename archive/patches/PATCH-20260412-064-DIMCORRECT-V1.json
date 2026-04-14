@@ -1,0 +1,29 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-064-DIMCORRECT-V1",
+    "registry_no": 64,
+    "registry_word": "forgiveness",
+    "produced_date": "2026-04-12",
+    "produced_by": "WA-SessionB-Instruction-v4.7 — Stage 2 Pass 1 analytical finding",
+    "session_b_status": "Analysis Complete",
+    "description": "Dimension correction for group 879-002 (forgiveness registry 064). Current dimension: Emotion — Negative. Correct dimension: Theological/Divine-Human. Analytical basis: The group describes the absolute limit of forgiveness — the unforgivable sin (Mar 3:29), the blood requirement (Heb 9:22), and the finality of complete forgiveness (Heb 10:18). These are theological propositions about divine covenantal and moral conditions governing forgiveness access — not emotional states. No emotional content is described in the anchor verse (Mar 3:29) or the supporting verses. The correct dimension is Theological/Divine-Human, which names phenomena constitutively defined by the divine-human relationship — here, the divine determination of the conditions under which forgiveness is or is not extended."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_dimension_index",
+      "registry_no": 64,
+      "group_code": "879-002",
+      "set": {
+        "dimension": "Theological/Divine-Human",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD"
+      },
+      "description": "Correct dimension for group 879-002 from 'Emotion — Negative' to 'Theological/Divine-Human'; update dominant_subject from HUMAN to GOD (the divine determination of forgiveness limits is the subject matter)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "dimension_index_updates": 1
+  }
+}

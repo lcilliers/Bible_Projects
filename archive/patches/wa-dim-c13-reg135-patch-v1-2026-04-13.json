@@ -1,0 +1,295 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG135-V1",
+    "cluster": "C13",
+    "registry_no": 135,
+    "registry_word": "repentance",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.6-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "cluster_stamp_deferred": true,
+    "cluster_stamp_note": "Reg 30 (contrition) reinstatement pending. Cluster stamp deferred.",
+    "description": "Dimension Review C13 Reg 135 (repentance): 14 groups assigned. 9 dimension corrections — 7 non-standard labels from prior sessions corrected to standard vocabulary. 1 Session D pointer (DIM-135-SD001). Registry stamp set. Cluster stamp NOT included."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8177
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Spiritual departure/reorientation — inner change of turning away from truth. Changed from Relational Disposition to Transformation.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2654-001 metatithēmi — repentance: Transformation, HUMAN (changed from Relational Disposition)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8175
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine immutability as ground of inner assurance/hope. Changed from Volition to Dependence / Creatureliness.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2658-001 ametathetos — repentance: Dependence / Creatureliness, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8176
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Irrevocable genuine repentance without regret. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "440-001 ametameletos — repentance: Transformation, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1693
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Repentance as comprehensive inner transformation — godly grief leading to reorientation toward God. Corrected from non-standard Spiritual/God-ward.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "441-001 metanoia — repentance: Transformation, HUMAN (corrected from Spiritual/God-ward)"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8178
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Withholding of divine compassion — God's inner-relational disposition toward people under judgment. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "443-001 no.cham — repentance: Relational Disposition, GOD"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1757
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human comforting — relational care directed toward another's grief. Corrected from non-standard Affective/Emotional.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "445-001 na.cham — repentance: Relational Disposition, HUMAN (corrected from Affective/Emotional)"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1758
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine comfort — God's inner-relational act of bringing relief to people's grief. Corrected from non-standard Theological/Divine-Human.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "445-002 na.cham — repentance: Relational Disposition, GOD (corrected from Theological/Divine-Human)"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1759
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human relenting — inner change of heart before God. Corrected from non-standard Volitional/Will.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "446-001 na.cham — repentance: Transformation, HUMAN (corrected from Volitional/Will)"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1760
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine relenting as direct inner-relational response to human repentance — double na.cham pattern. Corrected from non-standard Theological/Divine-Human.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "446-002 na.cham — repentance: Divine-Human Correspondence, GOD (corrected from Theological/Divine-Human)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1692
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Repentance as inner act of turning — complete reorientation from sin toward God. Corrected from non-standard Spiritual/God-ward.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "447-001 metanoeo — repentance: Transformation, HUMAN (corrected from Spiritual/God-ward)"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1691
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner reversal of previous decision — change of mind/regret. Corrected from non-standard Volitional/Will to standard Volition.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "448-001 metamellomai — repentance: Volition, HUMAN (corrected from Volitional/Will)"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8179
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Deliberate inner act of recalling leading to hope. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "450-001 shuv — repentance: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8180
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Repentance as whole-person inner turning toward God. Changed from Moral Character to Transformation.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "451-001 shuv — repentance: Transformation, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8181
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's relenting as direct response to human turning — double shuv pattern. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "451-002 shuv — repentance: Divine-Human Correspondence, GOD"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 135
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 135 (repentance): Dimension Review complete under v2.2. Cluster stamp deferred."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 16,
+    "dimension_index_updates": 14,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "cluster_stamp_note": "Deferred — Reg 30 (contrition) reinstatement pending",
+    "session_b_findings": 0,
+    "session_d_pointers": 1,
+    "dimension_changes_from_automated": 9,
+    "non_standard_labels_corrected": 7,
+    "groups_in_patch": [
+      "2654-001",
+      "2658-001",
+      "440-001",
+      "441-001",
+      "443-001",
+      "445-001",
+      "445-002",
+      "446-001",
+      "446-002",
+      "447-001",
+      "448-001",
+      "450-001",
+      "451-001",
+      "451-002"
+    ]
+  }
+}

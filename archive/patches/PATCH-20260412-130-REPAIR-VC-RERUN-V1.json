@@ -1,0 +1,108 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-130-REPAIR-VC-RERUN-V1",
+    "registry_no": 130,
+    "word": "reconciliation",
+    "patch_type": "REPAIR",
+    "session_b_status": "Verse Context Reset",
+    "produced_date": "2026-04-12",
+    "produced_by": "WA-VerseContext-Instruction-v2.5-20260409 | WA-SessionB-ClaudeCode-Instructions-v3.2",
+    "description": "Full Verse Context re-run reset for Registry 130 (reconciliation). Registry has been substantially reconstituted with new terms. All prior verse_context, verse_context_group, and analytical records must be delete-flagged. Registry treated as fresh start for VCB-035 classification. XREF re-evaluation required — any registry carrying these 13 terms as XREF must have its XREF coverage status rechecked after VCB-035 classification completes.",
+    "scope_note": "All 13 OWNER terms for Registry 130: mti_ids 7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175. mti_ids 3172, 3174, 3175 (H3724B/C/D) are legacy terms with lower mti_ids — included in full reset scope.",
+    "xref_note": "After VCB-035 patch is applied, Claude Code must run the XREF coverage check (VCB Instruction Section 0.2) across all registries that carry any of these 13 Strong's numbers as XREF terms. XREF coverage for those registries was derived from prior (now invalidated) OWNER classification. Coverage status must be re-evaluated against the new VCB-035 classification output.",
+    "manual_application_required": true,
+    "manual_application_note": "Operations OP-002 through OP-007 require direct SQL execution by Claude Code. The applicator does not support bulk delete_flag on verse_context, verse_context_group, wa_session_b_dimensions, wa_session_b_findings, or wa_session_research_flags. SQL statements are provided per operation."
+  },
+
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "registry_no": 130,
+      "set": {
+        "session_b_status": "Verse Context Reset",
+        "verse_context_status": "In Progress",
+        "sb_classification": null,
+        "sb_classification_reasoning": null,
+        "carry_forward": null,
+        "dimensions": null,
+        "description": null
+      },
+      "description": "Reset word_registry fields for Registry 130 (reconciliation) to pre-analysis state. verse_context_status → In Progress; all analytical outputs nulled."
+    },
+
+    {
+      "op_id": "OP-002",
+      "operation": "manual_sql",
+      "description": "Delete-flag all verse_context records for Registry 130 OWNER terms (mti_ids: 7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175)",
+      "sql": "UPDATE verse_context SET delete_flagged = 1 WHERE mti_term_id IN (7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175) AND delete_flagged = 0;",
+      "expected_behaviour": "Sets delete_flagged = 1 on all active verse_context rows for these mti_term_ids. May return 0 rows affected if no prior classification exists — this is acceptable and not an error."
+    },
+
+    {
+      "op_id": "OP-003",
+      "operation": "manual_sql",
+      "description": "Delete-flag all verse_context_group records for Registry 130 OWNER terms (mti_ids: 7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175)",
+      "sql": "UPDATE verse_context_group SET delete_flagged = 1 WHERE mti_term_id IN (7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175) AND delete_flagged = 0;",
+      "expected_behaviour": "Sets delete_flagged = 1 on all active verse_context_group rows for these mti_term_ids. May return 0 rows affected — acceptable."
+    },
+
+    {
+      "op_id": "OP-004",
+      "operation": "manual_sql",
+      "description": "Delete-flag all wa_session_b_dimensions records for Registry 130",
+      "sql": "UPDATE wa_session_b_dimensions SET delete_flagged = 1 WHERE registry_id = (SELECT id FROM word_registry WHERE no = 130) AND delete_flagged = 0;",
+      "expected_behaviour": "Clears any Session B dimension assignments for Registry 130. May return 0 rows — acceptable."
+    },
+
+    {
+      "op_id": "OP-005",
+      "operation": "manual_sql",
+      "description": "Delete-flag all wa_session_b_findings records for Registry 130",
+      "sql": "UPDATE wa_session_b_findings SET delete_flagged = 1 WHERE registry_id = (SELECT id FROM word_registry WHERE no = 130) AND delete_flagged = 0;",
+      "expected_behaviour": "Clears any Session B findings for Registry 130. May return 0 rows — acceptable."
+    },
+
+    {
+      "op_id": "OP-006",
+      "operation": "manual_sql",
+      "description": "Delete-flag all wa_session_research_flags (SD_POINTER) records for Registry 130",
+      "sql": "UPDATE wa_session_research_flags SET delete_flagged = 1 WHERE registry_id = (SELECT id FROM word_registry WHERE no = 130) AND delete_flagged = 0;",
+      "expected_behaviour": "Clears any SD_POINTER and PH2 research flags for Registry 130. May return 0 rows — acceptable."
+    },
+
+    {
+      "op_id": "OP-007",
+      "operation": "manual_sql",
+      "description": "Reset evidential_status and retention_note to NULL on wa_term_inventory for all OWNER terms of Registry 130",
+      "sql": "UPDATE wa_term_inventory SET evidential_status = NULL, retention_note = NULL WHERE file_id IN (SELECT id FROM wa_file_index WHERE word_registry_fk = (SELECT id FROM word_registry WHERE no = 130)) AND term_owner_type = 'OWNER' AND delete_flagged = 0;",
+      "expected_behaviour": "Resets evidential and retention fields on all active OWNER term inventory records for Registry 130. May return 0 rows — acceptable."
+    },
+
+    {
+      "op_id": "OP-008",
+      "operation": "registry_note",
+      "registry_no": 130,
+      "note": "REPAIR-VC-RERUN applied 2026-04-12. Registry substantially reconstituted with new terms (13 total, up from prior incomplete set). Full Verse Context re-run required. All prior verse_context, verse_context_group, and Session B analytical records delete-flagged. VCB-035 batch extract already produced — ready for Claude AI classification. XREF re-evaluation required post-VCB-035: Claude Code must check all registries carrying any of Strong's G0236, G0604, G1259, G1643, G4900, H3713A, H3713B, H3715A, H3715M, H3723H, H3724B, H3724C, H3724D as XREF terms and re-confirm their XREF coverage status against the new classification.",
+      "description": "Audit trail note for Registry 130 REPAIR-VC-RERUN reset."
+    }
+
+  ],
+
+  "_patch_summary": {
+    "total_operations": 8,
+    "applicator_handled": 2,
+    "manual_sql_required": 6,
+    "registry_updates": 1,
+    "registry_notes": 1,
+    "registries_affected": [130],
+    "mti_term_ids_in_scope": [7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 3172, 3174, 3175],
+    "post_application_checks": [
+      "Verify verse_context: SELECT COUNT(*) FROM verse_context WHERE mti_term_id IN (7542,7543,7544,7545,7546,7547,7548,7549,7550,7551,3172,3174,3175) AND delete_flagged = 0; -- Expected: 0",
+      "Verify verse_context_group: SELECT COUNT(*) FROM verse_context_group WHERE mti_term_id IN (7542,7543,7544,7545,7546,7547,7548,7549,7550,7551,3172,3174,3175) AND delete_flagged = 0; -- Expected: 0",
+      "Verify word_registry: SELECT session_b_status, verse_context_status FROM word_registry WHERE no = 130; -- Expected: Verse Context Reset | In Progress",
+      "XREF coverage check: Run Section 0.2 query for all registries sharing Strong's numbers in this batch"
+    ]
+  }
+}

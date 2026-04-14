@@ -1,0 +1,1391 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-VCB037-VERSECONTEXT-V1",
+    "batch_id": "VCB-037",
+    "registry_no": 62,
+    "registry_word": "fellowship",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-VerseContext-Instruction-v2.5-20260409",
+    "session_b_status": null,
+    "description": "Verse context classification \u2014 batch VCB-037, registry 62 (fellowship), 12 terms, 68 verses. Groups inserted: 18 across 8 terms. 4 terms all-verses-fail (H2271, H2279, H4225, H4226). Observations file: wa-vcb-037-term-observations-v1.3-20260413.md. sessionB-flags file: wa-vcb-037-sessionB-flags-v1-20260413.md."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7568,
+        "group_code": "7568-001",
+        "context_description": "disciplinary wound as instrument of inner moral purification",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7568-001: disciplinary wound as instrument of inner moral purification"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7568,
+        "group_code": "7568-002",
+        "context_description": "redemptive wound producing inner healing and restoration",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7568-002: redemptive wound producing inner healing and restoration"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237773,
+        "mti_term_id": 7568,
+        "group_id": "7568-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 20:30 \u2014 anchor, group 7568-001"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237774,
+        "mti_term_id": 7568,
+        "group_id": "7568-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 38:5 \u2014 related, group 7568-001"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237772,
+        "mti_term_id": 7568,
+        "group_id": "7568-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 53:5 \u2014 anchor, group 7568-002"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237771,
+        "mti_term_id": 7568,
+        "group_id": "7568-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 1:6 \u2014 related, group 7568-002"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237769,
+        "mti_term_id": 7568,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 21:25 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237770,
+        "mti_term_id": 7568,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 4:23 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7565,
+        "group_code": "7565-001",
+        "context_description": "idolatrous or wrongful relational alliance as volitional inner joining",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7565-001: idolatrous or wrongful relational alliance as volitional inner joining"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7565,
+        "group_code": "7565-002",
+        "context_description": "occult charming as forbidden inner-spiritual practice",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7565-002: occult charming as forbidden inner-spiritual practice"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7565,
+        "group_code": "7565-003",
+        "context_description": "joining words as inner rhetorical expression",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7565-003: joining words as inner rhetorical expression"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7565,
+        "group_code": "7565-004",
+        "context_description": "communal participation as ground of inner hope",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7565-004: communal participation as ground of inner hope"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237746,
+        "mti_term_id": 7565,
+        "group_id": "7565-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 4:17 \u2014 anchor, group 7565-001"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237726,
+        "mti_term_id": 7565,
+        "group_id": "7565-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 20:35 \u2014 related, group 7565-001"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237727,
+        "mti_term_id": 7565,
+        "group_id": "7565-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 20:36 \u2014 related, group 7565-001"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237728,
+        "mti_term_id": 7565,
+        "group_id": "7565-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 20:37 \u2014 related, group 7565-001"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237750,
+        "mti_term_id": 7565,
+        "group_id": "7565-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 94:20 \u2014 related, group 7565-001"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237749,
+        "mti_term_id": 7565,
+        "group_id": "7565-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 58:5 \u2014 anchor, group 7565-002"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237731,
+        "mti_term_id": 7565,
+        "group_id": "7565-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 18:11 \u2014 related, group 7565-002"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237747,
+        "mti_term_id": 7565,
+        "group_id": "7565-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 16:4 \u2014 anchor, group 7565-003"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237732,
+        "mti_term_id": 7565,
+        "group_id": "7565-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ecc 9:4 \u2014 anchor, group 7565-004"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237734,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:3 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237735,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:6 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237736,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:9 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237733,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:11 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237737,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 28:7 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237738,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:10 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237739,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:13 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237740,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:16 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237741,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:18 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237742,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 39:4 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237745,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 14:3 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237744,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Eze 1:9 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237743,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Eze 1:11 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237748,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 122:3 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237730,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:6 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237729,
+        "mti_term_id": 7565,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 11:23 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7569,
+        "group_code": "7569-001",
+        "context_description": "occult charming as forbidden spiritual practice",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7569-001: occult charming as forbidden spiritual practice"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7569,
+        "group_code": "7569-002",
+        "context_description": "reliance on occult power as spiritual misdirection and arrogance",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7569-002: reliance on occult power as spiritual misdirection and arrogance"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237784,
+        "mti_term_id": 7569,
+        "group_id": "7569-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 58:5 \u2014 anchor, group 7569-001"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237781,
+        "mti_term_id": 7569,
+        "group_id": "7569-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 18:11 \u2014 related, group 7569-001"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237783,
+        "mti_term_id": 7569,
+        "group_id": "7569-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 47:9 \u2014 anchor, group 7569-002"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237782,
+        "mti_term_id": 7569,
+        "group_id": "7569-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 47:12 \u2014 related, group 7569-002"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2689,
+        "group_code": "2689-001",
+        "context_description": "companions united in shared crisis and corporate seeking of God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 2689-001: companions united in shared crisis and corporate seeking of God"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2689,
+        "group_code": "2689-002",
+        "context_description": "wrongful association for collective moral evil",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 2689-002: wrongful association for collective moral evil"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237777,
+        "mti_term_id": 2689,
+        "group_id": "2689-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:18 \u2014 anchor, group 2689-001"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237776,
+        "mti_term_id": 2689,
+        "group_id": "2689-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:17 \u2014 related, group 2689-001"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237775,
+        "mti_term_id": 2689,
+        "group_id": "2689-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Dan 2:13 \u2014 related, group 2689-001"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237778,
+        "mti_term_id": 2689,
+        "group_id": "2689-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Hos 6:9 \u2014 anchor, group 2689-002"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237779,
+        "mti_term_id": 2689,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 21:9 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237780,
+        "mti_term_id": 2689,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 25:24 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7566,
+        "group_code": "7566-001",
+        "context_description": "companionship as chosen moral and spiritual alignment",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7566-001: companionship as chosen moral and spiritual alignment"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7566,
+        "group_code": "7566-002",
+        "context_description": "companionship as moral alignment with wickedness",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7566-002: companionship as moral alignment with wickedness"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7566,
+        "group_code": "7566-003",
+        "context_description": "companionship as mutual relational support",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7566-003: companionship as mutual relational support"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7566,
+        "group_code": "7566-004",
+        "context_description": "divinely-willed communal restoration as inner-being oneness",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7566-004: divinely-willed communal restoration as inner-being oneness"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237758,
+        "mti_term_id": 7566,
+        "group_id": "7566-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:63 \u2014 anchor, group 7566-001"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237756,
+        "mti_term_id": 7566,
+        "group_id": "7566-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 20:11 \u2014 related, group 7566-001"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237754,
+        "mti_term_id": 7566,
+        "group_id": "7566-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 1:23 \u2014 anchor, group 7566-002"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237757,
+        "mti_term_id": 7566,
+        "group_id": "7566-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Pro 28:24 \u2014 related, group 7566-002"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237755,
+        "mti_term_id": 7566,
+        "group_id": "7566-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 44:11 \u2014 related, group 7566-002"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237751,
+        "mti_term_id": 7566,
+        "group_id": "7566-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ecc 4:10 \u2014 anchor, group 7566-003"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237753,
+        "mti_term_id": 7566,
+        "group_id": "7566-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Eze 37:19 \u2014 anchor, group 7566-004"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237759,
+        "mti_term_id": 7566,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 45:7 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237760,
+        "mti_term_id": 7566,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Song 1:7 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237761,
+        "mti_term_id": 7566,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Song 8:13 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237752,
+        "mti_term_id": 7566,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Eze 37:16 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237790,
+        "mti_term_id": 7572,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 41:6 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7573,
+        "group_code": "7573-001",
+        "context_description": "indelibly formed inner moral character depicted as fixed marking",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7573-001: indelibly formed inner moral character depicted as fixed marking"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237791,
+        "mti_term_id": 7573,
+        "group_id": "7573-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 13:23 \u2014 anchor, group 7573-001"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7574,
+        "group_code": "7574-001",
+        "context_description": "keeping company with evildoers as moral alignment",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7574-001: keeping company with evildoers as moral alignment"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237792,
+        "mti_term_id": 7574,
+        "group_id": "7574-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 34:8 \u2014 anchor, group 7574-001"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7576,
+        "group_code": "7576-001",
+        "context_description": "covenantal companionship as the relational bond that faithlessness violates",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group 7576-001: covenantal companionship as the relational bond that faithlessness violates"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237850,
+        "mti_term_id": 7576,
+        "group_id": "7576-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mal 2:14 \u2014 anchor, group 7576-001"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237786,
+        "mti_term_id": 7570,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:4 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237785,
+        "mti_term_id": 7570,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:10 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237787,
+        "mti_term_id": 7570,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:17 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237762,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:4 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237763,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 26:5 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237764,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 28:27 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237765,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:11 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237766,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:12 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237767,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 36:17 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237768,
+        "mti_term_id": 7567,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 39:20 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237788,
+        "mti_term_id": 7571,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 22:3 \u2014 set aside"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237789,
+        "mti_term_id": 7571,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 34:11 \u2014 set aside"
+    }
+  ]
+}

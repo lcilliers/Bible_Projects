@@ -1,0 +1,599 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG073-V1",
+    "cluster": "C13",
+    "registry_no": 73,
+    "registry_word": "guilt",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.4-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 73 (guilt): 30 groups assigned. 8 dimension changes from automated labels. 2 Session D pointers (DIM-73-SD001, DIM-73-SD002). Anchor verse anomaly noted for 127-001 (Psalm heading). Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7377
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Personal confession — inner act of naming and owning sin before God. Cognitive act of recognition/acknowledgement is primary. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "125-001 cha.ta — guilt: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7378
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sustained inner orientation away from God — pattern of covenantal unfaithfulness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "125-002 cha.ta — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7379
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral wisdom about sin — cognitive understanding of universal sinfulness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "125-003 cha.ta — guilt: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7380
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin as offence and burden carried before God — moral condition of sin-bearing. Changed from Relational Disposition to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "126-001 chet — guilt: Moral Character, HUMAN (changed from Relational Disposition)"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7382
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin as named offence confessed before God — inner act of acknowledgement/petition. ANCHOR VERSE ANOMALY: AV reference is Psalm heading — correction needed. Dimension assigned from description.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "127-001 cha.ta.ah — guilt: Cognition, HUMAN (AV anchor verse correction needed)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7387
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Accumulated iniquity as inner moral debt — perversion of the heart. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "182-001 a.von — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7366
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Guiltlessness as inner moral condition of innocence. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2426-001 anaitios — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7388
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Guilt as inner weight/stain of iniquity — moral condition removable only by God. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2437-001 a.von — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7389
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Experienced weight of punishment felt from within — inner anguish. Gen 4:13 Cain's unbearable burden is paradigmatic. Changed from UNCLASSIFIED to Emotion — Negative.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2438-001 a.von — guilt: Emotion — Negative, HUMAN (changed from UNCLASSIFIED)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7386
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inward act of moral perversion — distortion confessed and turned from. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2439-001 a.vah — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7365
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sinner as moral-character type whose condition is the ground of divine mercy. HUMAN dominant — the sinner's condition is primary, divine mercy the response. Automated KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2441-001 hamartōlos — guilt: Divine-Human Correspondence, HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7367
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Prior unrepented sin as persisting inner moral condition. Changed from UNCLASSIFIED to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2444-001 proamartanō — guilt: Moral Character, HUMAN (changed from UNCLASSIFIED)"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7383
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin as inner-being condition — known, confessed, addressed through divine cleansing. Human moral condition is primary. Changed from Divine-Human Correspondence to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2446-001 chat.tat — guilt: Moral Character, HUMAN (changed from Divine-Human Correspondence)"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7384
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Sin offering as divinely instituted atoning mechanism — exercise of God's authority to address guilt. The group names the mechanism (offering), not the guilt (condition). Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2447-001 chat.tat — guilt: Agency / Power, GOD"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7381
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sinner as moral-character type — persistent inner orientation of transgression. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2448-001 chat.ta — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7385
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Punishment corresponding to sin — divine consequence in direct correspondence with inner moral condition. Genuinely dual subject. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2449-001 chat.tat — guilt: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7360
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral ground of standing — basis for guilt or innocence. Changed from Emotion — Negative (clear error) to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "4-001 aitia — guilt: Moral Character, HUMAN (changed from Emotion — Negative)"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7361
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Causal ground of salvation — Christ as source of eternal salvation. Exercise of saving capacity. Changed from UNCLASSIFIED to Agency / Power.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "5-001 aitios — guilt: Agency / Power, GOD (changed from UNCLASSIFIED)"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7368
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Conscience as inner moral witness — testimony, accusation, excuse. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "53-001 suneidesis — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7369
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Conscience as morally vulnerable — defilement, weakening, cauterisation. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "53-002 suneidesis — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7370
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Conscience as interior moral foundation of godly living. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "53-003 suneidesis — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7371
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Conscience as object of Christ's redemptive purification. Automated Transformation KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "53-004 suneidesis — guilt: Transformation, HUMAN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7372
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner event of incurring and realising guilt — recognition preceding confession. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "86-001 a.sham — guilt: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7373
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Bearing of guilt and inner acknowledgement as condition of restoration. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "86-002 a.sham — guilt: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7374
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Guilt offering as divine provision addressing human guilt — supremely in the Servant's soul. Genuinely dual subject — the Servant is both human and divine. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "87-001 a.sham — guilt: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7375
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "State of being guilty — inner recognition named by the person themselves. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "88-001 a.shem — guilt: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7376
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Accumulated guiltiness as inner-spiritual condition. Changed from ROOT_INFERRED to CLAUDE_AI with Moral Character confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "89-001 ash.mah — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7362
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin as objective moral condition requiring forgiveness — guilt and offence. Changed from Relational Disposition to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "9-001 hamartia — guilt: Moral Character, HUMAN (changed from Relational Disposition)"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7363
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "UNSEEN",
+        "manual_override": 0,
+        "notes": "Sin as indwelling power reigning, enslaving, waging war. Changed from Vitality / Existence to Agency / Power. UNSEEN — sin operates as an agency distinct from the person (Rom 7:17 'it is no longer I who do it, but sin that dwells within me').",
+        "last_modified": "2026-04-13"
+      },
+      "description": "9-002 hamartia — guilt: Agency / Power, UNSEEN (changed from Vitality / Existence)"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7364
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Sin as universal human condition — defines, condemns, overcome only by God's righteousness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "9-003 hamartia — guilt: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 73,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-73-SD002",
+        "session_target": "D",
+        "priority": "HIGH",
+        "description": "G0266 hamartia produces three dimension-distinct groups: 9-001 (sin as moral condition — Moral Character/HUMAN), 9-002 (sin as indwelling power — Agency/Power/UNSEEN), 9-003 (sin as universal condition — Moral Character/HUMAN). The shift from HUMAN to UNSEEN subject within a single lexeme is analytically significant — the same word names both the person's moral condition and an agency distinct from the person. This is unusual dimension-splitting within a single term and warrants cross-registry Session D analysis. Compare with other terms functioning as both condition and agent (death, flesh, law in Pauline literature).",
+        "session_raised": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+        "raised_date": "2026-04-13",
+        "resolved": 0
+      },
+      "description": "Session D pointer DIM-73-SD002: G0266 hamartia dimension split — condition vs indwelling agency"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 73
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 73 (guilt): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 33,
+    "dimension_index_updates": 30,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "session_b_findings": 0,
+    "session_d_pointers": 2,
+    "dimension_changes_from_automated": 8,
+    "anchor_verse_anomaly_noted": [
+      "127-001"
+    ],
+    "groups_in_patch": [
+      "125-001",
+      "125-002",
+      "125-003",
+      "126-001",
+      "127-001",
+      "182-001",
+      "2426-001",
+      "2437-001",
+      "2438-001",
+      "2439-001",
+      "2441-001",
+      "2444-001",
+      "2446-001",
+      "2447-001",
+      "2448-001",
+      "2449-001",
+      "4-001",
+      "5-001",
+      "53-001",
+      "53-002",
+      "53-003",
+      "53-004",
+      "86-001",
+      "86-002",
+      "87-001",
+      "88-001",
+      "89-001",
+      "9-001",
+      "9-002",
+      "9-003"
+    ]
+  }
+}

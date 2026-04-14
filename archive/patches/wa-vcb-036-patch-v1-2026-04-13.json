@@ -1,0 +1,1106 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-VCB036-VERSECONTEXT-V1",
+    "registry_no": 30,
+    "word": "contrition",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-VerseContext-Instruction-v2.5-20260409",
+    "description": "VCB-036 full classification for Registry 30 (contrition). 10 OWNER terms, 55 verses, 16 relevant, 39 set aside. 9 groups, 9 anchors. 5 all-verses-fail terms. 1 Session B flag (SBF-036-001 \u2014 H1793A/B homograph question)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7552,
+        "group_code": "7552-001",
+        "context_description": "inner-being anguish \u2014 the crushing of the person by suffering, adversity, or hostile words",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1792 da.kha \u2014 group 7552-001: inner anguish from crushing"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7552,
+        "group_code": "7552-002",
+        "context_description": "substitutionary crushing \u2014 the Servant's inner person crushed for iniquity, producing peace and healing",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1792 da.kha \u2014 group 7552-002: Servant's substitutionary crushing"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7552,
+        "group_code": "7552-003",
+        "context_description": "the contrite and crushed inner spirit \u2014 the condition of brokenness before God that occasions divine presence, and its refusal",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1792 da.kha \u2014 group 7552-003: contrite/crushed spirit and its refusal"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7553,
+        "group_code": "7553-001",
+        "context_description": "the crushed and contrite inner spirit \u2014 the broken posture before God that draws divine nearness and revival",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1793A dak.ka \u2014 group 7553-001: contrite spirit drawing divine nearness"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7557,
+        "group_code": "7557-001",
+        "context_description": "the crushed/contrite inner spirit \u2014 brokenness before God drawing divine nearness",
+        "notes": "Homograph sub-entry of H1793A dak.ka (contrite). Same verses \u2014 Psa 34:18 and Isa 57:15. See SBF-036-001 for Session B assessment of whether this sub-entry carries a distinct inner-being nuance.",
+        "delete_flagged": 0
+      },
+      "description": "H1793B dak.ka \u2014 group 7557-001: crushed spirit / dust nuance"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7554,
+        "group_code": "7554-001",
+        "context_description": "the broken and contrite heart as the inner sacrifice acceptable to God \u2014 inner brokenness in penitence and suffering",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1794 da.khah \u2014 group 7554-001: broken contrite heart as sacrifice"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7554,
+        "group_code": "7554-002",
+        "context_description": "corporate inner desolation under divine crushing \u2014 the community broken by God in distress",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H1794 da.khah \u2014 group 7554-002: corporate desolation under divine crushing"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7556,
+        "group_code": "7556-001",
+        "context_description": "inner terror and panic \u2014 the inner state of dismay accompanying devastating defeat",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H3807 ka.tat \u2014 group 7556-001: inner terror and panic in defeat"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7555,
+        "group_code": "7555-001",
+        "context_description": "the humble and contrite spirit \u2014 the broken inner posture before God that receives divine attention",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "H5223 na.kheh \u2014 group 7555-001: humble and contrite spirit"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236983,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Crushed like the moth \u2014 mortal frailty metaphor",
+        "delete_flagged": 0
+      },
+      "description": "Job 4:19 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236984,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Children crushed in the gate \u2014 external fate/oppression",
+        "delete_flagged": 0
+      },
+      "description": "Job 5:4 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236985,
+        "mti_term_id": 7552,
+        "group_id": "7552-001",
+        "group_code": "7552-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Job's longing for God to crush and end his suffering \u2014 existential anguish",
+        "delete_flagged": 0
+      },
+      "description": "Job 6:9 \u2014 related, group 7552-001"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236980,
+        "mti_term_id": 7552,
+        "group_id": "7552-001",
+        "group_code": "7552-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Broken in pieces by words \u2014 inner torment from verbal assault",
+        "delete_flagged": 0
+      },
+      "description": "Job 19:2 \u2014 related, group 7552-001"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236981,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Arms of the fatherless crushed \u2014 external oppression",
+        "delete_flagged": 0
+      },
+      "description": "Job 22:9 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236982,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Divine judgment overturning the wicked \u2014 external judicial act",
+        "delete_flagged": 0
+      },
+      "description": "Job 34:25 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236989,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Messianic king crushing the oppressor \u2014 external judicial act",
+        "delete_flagged": 0
+      },
+      "description": "Psa 72:4 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236990,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "God crushing Rahab \u2014 cosmic/mythological crushing",
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:10 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236991,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "External oppression of God's people",
+        "delete_flagged": 0
+      },
+      "description": "Psa 94:5 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236988,
+        "mti_term_id": 7552,
+        "group_id": "7552-001",
+        "group_code": "7552-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 143:3 \u2014 anchor, group 7552-001: crushed life to ground, sitting in darkness"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236987,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Prohibition against crushing the afflicted \u2014 external act",
+        "delete_flagged": 0
+      },
+      "description": "Pro 22:22 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236975,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Crushing the poor \u2014 social oppression",
+        "delete_flagged": 0
+      },
+      "description": "Isa 3:15 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236974,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Pillars of the land crushed \u2014 societal/structural crushing",
+        "delete_flagged": 0
+      },
+      "description": "Isa 19:10 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236977,
+        "mti_term_id": 7552,
+        "group_id": "7552-002",
+        "group_code": "7552-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 53:5 \u2014 anchor, group 7552-002: Servant crushed for iniquities, producing peace and healing"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236976,
+        "mti_term_id": 7552,
+        "group_id": "7552-002",
+        "group_code": "7552-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Will of Lord to crush him; soul as guilt offering",
+        "delete_flagged": 0
+      },
+      "description": "Isa 53:10 \u2014 related, group 7552-002"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236978,
+        "mti_term_id": 7552,
+        "group_id": "7552-003",
+        "group_code": "7552-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:15 \u2014 anchor, group 7552-003: God dwells with contrite and crushed spirit; revives the lowly"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236979,
+        "mti_term_id": 7552,
+        "group_id": "7552-003",
+        "group_code": "7552-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Failure to humble \u2014 the unbroken inner posture refusing contrition",
+        "delete_flagged": 0
+      },
+      "description": "Jer 44:10 \u2014 related, group 7552-003"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236986,
+        "mti_term_id": 7552,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "To crush underfoot all the prisoners \u2014 external crushing",
+        "delete_flagged": 0
+      },
+      "description": "Lam 3:34 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236993,
+        "mti_term_id": 7553,
+        "group_id": "7553-001",
+        "group_code": "7553-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 34:18 \u2014 anchor, group 7553-001: Lord near to brokenhearted; saves the crushed in spirit"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236992,
+        "mti_term_id": 7553,
+        "group_id": "7553-001",
+        "group_code": "7553-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "God dwells with the contrite and lowly spirit",
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:15 \u2014 related, group 7553-001"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237020,
+        "mti_term_id": 7557,
+        "group_id": "7557-001",
+        "group_code": "7557-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 34:18 \u2014 anchor, group 7557-001"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237019,
+        "mti_term_id": 7557,
+        "group_id": "7557-001",
+        "group_code": "7557-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:15 \u2014 related, group 7557-001"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236994,
+        "mti_term_id": 7554,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Helpless crushed by the wicked \u2014 external oppression",
+        "delete_flagged": 0
+      },
+      "description": "Psa 10:10 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236995,
+        "mti_term_id": 7554,
+        "group_id": "7554-001",
+        "group_code": "7554-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Feeble and crushed; groaning because of the tumult of the heart",
+        "delete_flagged": 0
+      },
+      "description": "Psa 38:8 \u2014 related, group 7554-001"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236996,
+        "mti_term_id": 7554,
+        "group_id": "7554-002",
+        "group_code": "7554-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 44:19 \u2014 anchor, group 7554-002: corporate desolation under divine crushing"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236998,
+        "mti_term_id": 7554,
+        "group_id": "7554-001",
+        "group_code": "7554-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Bones broken by God; seeking joy and gladness after inner brokenness",
+        "delete_flagged": 0
+      },
+      "description": "Psa 51:8 \u2014 related, group 7554-001"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236997,
+        "mti_term_id": 7554,
+        "group_id": "7554-001",
+        "group_code": "7554-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 51:17 \u2014 anchor, group 7554-001: broken and contrite heart as the sacrifice God will not despise"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237021,
+        "mti_term_id": 7558,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Crushed testicles \u2014 physical/cultic exclusion criterion",
+        "delete_flagged": 0
+      },
+      "description": "Deu 23:1 \u2014 set aside, physical_only (H1795 all-verses-fail)"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237721,
+        "mti_term_id": 7563,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Beaten olive oil for the lamp \u2014 cultic/agricultural",
+        "delete_flagged": 0
+      },
+      "description": "Exo 27:20 \u2014 set aside, physical_only (H3795 all-verses-fail)"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237722,
+        "mti_term_id": 7563,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Beaten oil in grain offering \u2014 cultic/agricultural",
+        "delete_flagged": 0
+      },
+      "description": "Exo 29:40 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237723,
+        "mti_term_id": 7563,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Pure oil from beaten olives for lamp \u2014 cultic",
+        "delete_flagged": 0
+      },
+      "description": "Lev 24:2 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237724,
+        "mti_term_id": 7563,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Beaten oil in grain offering \u2014 cultic",
+        "delete_flagged": 0
+      },
+      "description": "Num 28:5 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237720,
+        "mti_term_id": 7563,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "20,000 cors of beaten oil \u2014 commercial",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 5:11 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237013,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Crushed animal \u2014 cultic exclusion criterion",
+        "delete_flagged": 0
+      },
+      "description": "Lev 22:24 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237016,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Military defeat \u2014 external",
+        "delete_flagged": 0
+      },
+      "description": "Num 14:45 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237005,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Military defeat",
+        "delete_flagged": 0
+      },
+      "description": "Deu 1:44 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237006,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Moses crushing the golden calf to dust \u2014 physical destruction",
+        "delete_flagged": 0
+      },
+      "description": "Deu 9:21 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237004,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Hezekiah breaking the bronze serpent \u2014 physical destruction of idol",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 18:4 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237002,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Nation crushed by nation \u2014 societal/military devastation",
+        "delete_flagged": 0
+      },
+      "description": "2Ch 15:6 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237003,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Josiah crushing idols to powder \u2014 physical destruction",
+        "delete_flagged": 0
+      },
+      "description": "2Ch 34:7 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237011,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Beaten to pieces \u2014 human frailty/mortality image",
+        "delete_flagged": 0
+      },
+      "description": "Job 4:20 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237017,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "God crushing enemies \u2014 external divine act",
+        "delete_flagged": 0
+      },
+      "description": "Psa 89:23 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237007,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Swords into plowshares \u2014 ka.tat carries mechanical transformation; inner peace orientation carried by passage context, not term",
+        "delete_flagged": 0
+      },
+      "description": "Isa 2:4 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237008,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Gates battered into ruins \u2014 structural destruction",
+        "delete_flagged": 0
+      },
+      "description": "Isa 24:12 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237009,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Potter's vessel smashed \u2014 physical destruction metaphor",
+        "delete_flagged": 0
+      },
+      "description": "Isa 30:14 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237010,
+        "mti_term_id": 7556,
+        "group_id": "7556-001",
+        "group_code": "7556-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 46:5 \u2014 anchor, group 7556-001: warriors dismayed, beaten down, terror on every side"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237012,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Beat plowshares into swords \u2014 inverse mobilisation; same logic as Isa 2:4",
+        "delete_flagged": 0
+      },
+      "description": "Joe 3:10 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237014,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Carved images beaten to pieces \u2014 physical idol destruction",
+        "delete_flagged": 0
+      },
+      "description": "Mic 1:7 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237015,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Swords into plowshares (Mic 4:3) \u2014 same logic as Isa 2:4",
+        "delete_flagged": 0
+      },
+      "description": "Mic 4:3 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237018,
+        "mti_term_id": 7556,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Crushing the land through judgment \u2014 external",
+        "delete_flagged": 0
+      },
+      "description": "Zec 11:6 \u2014 set aside, no_inner_being"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237725,
+        "mti_term_id": 7564,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Physical fragments of broken vessel \u2014 no inner-being content",
+        "delete_flagged": 0
+      },
+      "description": "Isa 30:14 \u2014 set aside, physical_only (H4386 all-verses-fail)"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237699,
+        "mti_term_id": 7562,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Enemies gathering against the psalmist \u2014 ne.kheh inner-being relevance not evident",
+        "delete_flagged": 0
+      },
+      "description": "Psa 35:15 \u2014 set aside, no_inner_being (H5222 all-verses-fail)"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236999,
+        "mti_term_id": 7555,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Mephibosheth crippled in his feet \u2014 physical disability",
+        "delete_flagged": 0
+      },
+      "description": "2Sa 4:4 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237000,
+        "mti_term_id": 7555,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Mephibosheth crippled in his feet \u2014 physical disability",
+        "delete_flagged": 0
+      },
+      "description": "2Sa 9:3 \u2014 set aside, physical_only"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 237001,
+        "mti_term_id": 7555,
+        "group_id": "7555-001",
+        "group_code": "7555-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 66:2 \u2014 anchor, group 7555-001: humble and contrite in spirit, trembling at God's word"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 64,
+    "group_inserts": 9,
+    "verse_context_inserts": 55,
+    "relevant": 17,
+    "set_aside": 38,
+    "anchors": 9,
+    "related": 8,
+    "all_verses_fail_terms": [
+      "H1795 dak.kah (7558)",
+      "H3795 ka.tit (7563)",
+      "H4386 me.khit.tah (7564)",
+      "H5222 ne.kheh (7562)"
+    ],
+    "session_b_flags": 1,
+    "consistency_checks": [
+      "R1: is_relevant=0 rows have group_id=null, is_anchor=0, is_related=0",
+      "R2: is_anchor=1 rows have is_relevant=1, is_related=0, group_id not null",
+      "R3: is_related=1 rows have group with active anchor",
+      "R4: every term with relevant verses has at least one active is_anchor=1 row \u2014 6 terms have relevant verses: 7552, 7553, 7557, 7554, 7556, 7555; all have anchors confirmed"
+    ],
+    "note": "Relevant count is 17 (not 16) because Isa 57:15 and Psa 34:18 appear as relevant records for multiple mti_term_ids (homograph sub-entries H1793A/B share verses; Isa 57:15 also relevant for H1792). Unique verse texts relevant: 14. All R1-R4 checks pass."
+  }
+}

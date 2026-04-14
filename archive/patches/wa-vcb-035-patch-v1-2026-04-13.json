@@ -1,0 +1,312 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-VCB035-VERSECONTEXT-V1",
+    "registry_no": 130,
+    "word": "reconciliation",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-VerseContext-Instruction-v2.5-20260409",
+    "description": "VCB-035 full classification for Registry 130 (reconciliation). 4 OWNER terms, 11 verses, 9 relevant, 2 set aside. 5 groups, 5 anchors. No deferred flags. 1 Session B flag raised (SBF-035-001 — allassō property term character)."
+  },
+
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7542,
+        "group_code": "7542-001",
+        "context_description": "relational reorientation of the self through volitional exchange or affective realignment",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "G0236 allassō — group 7542-001: relational reorientation through volitional exchange or affective realignment (Rom 1:23; Gal 4:20)"
+    },
+
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7542,
+        "group_code": "7542-002",
+        "context_description": "eschatological transformation of the person's constitution",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "G0236 allassō — group 7542-002: eschatological transformation of the person's constitution (1Cor 15:51–52)"
+    },
+
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7543,
+        "group_code": "7543-001",
+        "context_description": "divine reconciliation transforming relational enmity and moral standing before God",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "G0604 apokatallassō — group 7543-001: divine reconciliation transforming relational enmity and moral standing (Eph 2:16; Col 1:20; Col 1:22)"
+    },
+
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7544,
+        "group_code": "7544-001",
+        "context_description": "broken relational state as inner obstacle to authentic worship — reconciliation required",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "G1259 diallassō — group 7544-001: broken relational state as inner obstacle to authentic worship (Mat 5:24)"
+    },
+
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 7545,
+        "group_code": "7545-001",
+        "context_description": "interpersonal conflict and the attempt to restore relational wholeness through appeal to shared identity",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "G4900 sunelaunō — group 7545-001: interpersonal conflict and attempt to restore relational wholeness (Act 7:26)"
+    },
+
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236405,
+        "mti_term_id": 7542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "allassō applied to religious customs/law — external cultural-legal change, not inner state",
+        "delete_flagged": 0
+      },
+      "description": "Act 6:14 — set aside, no_inner_being"
+    },
+
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236408,
+        "mti_term_id": 7542,
+        "group_id": "7542-001",
+        "group_code": "7542-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Rom 1:23 — anchor, group 7542-001: volitional exchange of worship-object — relational reorientation of the self"
+    },
+
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236403,
+        "mti_term_id": 7542,
+        "group_id": "7542-002",
+        "group_code": "7542-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Cor 15:51 — anchor, group 7542-002: eschatological transformation of the person's constitution"
+    },
+
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236404,
+        "mti_term_id": 7542,
+        "group_id": "7542-002",
+        "group_code": "7542-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "elaboration of 1Cor 15:51",
+        "delete_flagged": 0
+      },
+      "description": "1Cor 15:52 — related, group 7542-002"
+    },
+
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236406,
+        "mti_term_id": 7542,
+        "group_id": "7542-001",
+        "group_code": "7542-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "inner pastoral concern expressed through desired change of communicative register",
+        "delete_flagged": 0
+      },
+      "description": "Gal 4:20 — related, group 7542-001"
+    },
+
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236407,
+        "mti_term_id": 7542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "allassō applied to created cosmos — divine immutability contrast, no human inner-being engagement",
+        "delete_flagged": 0
+      },
+      "description": "Heb 1:12 — set aside, no_inner_being"
+    },
+
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236411,
+        "mti_term_id": 7543,
+        "group_id": "7543-001",
+        "group_code": "7543-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Eph 2:16 — anchor, group 7543-001: reconciliation killing hostility — relational enmity transformed"
+    },
+
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236409,
+        "mti_term_id": 7543,
+        "group_id": "7543-001",
+        "group_code": "7543-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "cosmic reconciliation making peace — alienation to peace",
+        "delete_flagged": 0
+      },
+      "description": "Col 1:20 — related, group 7543-001"
+    },
+
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236410,
+        "mti_term_id": 7543,
+        "group_id": "7543-001",
+        "group_code": "7543-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "reconciliation presenting the person holy and blameless — transformation of moral standing",
+        "delete_flagged": 0
+      },
+      "description": "Col 1:22 — related, group 7543-001"
+    },
+
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236412,
+        "mti_term_id": 7544,
+        "group_id": "7544-001",
+        "group_code": "7544-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Mat 5:24 — anchor, group 7544-001: broken relational state as inner obstacle to worship"
+    },
+
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 236413,
+        "mti_term_id": 7545,
+        "group_id": "7545-001",
+        "group_code": "7545-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Act 7:26 — anchor, group 7545-001: interpersonal conflict and attempt to restore relational wholeness"
+    }
+
+  ],
+
+  "_patch_summary": {
+    "total_operations": 16,
+    "group_inserts": 5,
+    "verse_context_inserts": 11,
+    "relevant": 9,
+    "set_aside": 2,
+    "anchors": 5,
+    "related": 4,
+    "deferred_flags": 0,
+    "session_b_flags": 1,
+    "registries_affected": [130],
+    "consistency_checks": [
+      "R1: is_relevant=0 rows have group_id=null, is_anchor=0, is_related=0 — verify OP-006, OP-011",
+      "R2: is_anchor=1 rows have is_relevant=1, is_related=0, group_id not null — verify OP-007, OP-008, OP-012, OP-015, OP-016",
+      "R3: is_related=1 rows have group with active anchor — verify OP-009, OP-010, OP-013, OP-014",
+      "R4: every term has at least one active is_anchor=1 row — 5 anchors across 4 terms, confirmed"
+    ]
+  }
+}

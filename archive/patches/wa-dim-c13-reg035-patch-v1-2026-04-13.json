@@ -1,0 +1,219 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG035-V1",
+    "cluster": "C13",
+    "registry_no": 35,
+    "registry_word": "covetousness",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.3-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 35 (covetousness): 10 groups assigned. 5 dimension changes: 2075-001/002 and 2077-001 Volition→Emotion-Positive; 2078-001 Volition→Emotion-Negative; 778-002 UNCLASSIFIED→Relational Disposition. Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6685
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Eagerness as inner dispositional orientation of forward-leaning readiness toward God and good. AV Act 17:11 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2074-001 prothumia — covetousness: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6680
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner courage/cheerfulness grounded in faith amid crisis. Positive affective state. Changed from Volition to Emotion — Positive.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2075-001 euthumeō — covetousness: Emotion — Positive, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6681
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Cheerfulness as inner-being ground of praise. Positive affective state. Changed from Volition to Emotion — Positive.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2075-002 euthumeō — covetousness: Emotion — Positive, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6686
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The willing spirit — inner eagerness toward God in tension with fleshly weakness. AV Mat 26:41 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2076-001 prothumos — covetousness: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6687
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Eagerness as inner motivation for mission. AV Rom 1:15 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2076-002 prothumos — covetousness: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6682
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Cheerful inner composure in adversarial contexts. Positive affective state. Changed from Volition to Emotion — Positive.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2077-001 euthumos — covetousness: Emotion — Positive, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6679
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner state of discouragement — loss of heart produced by provocation. Negative affective state. Changed from Volition to Emotion — Negative.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2078-001 athumeō — covetousness: Emotion — Negative, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6688
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Eager willing service — inner orientation of freedom and genuine care vs compulsion and greed. AV 1Pe 5:2 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "2079-001 prothumōs — covetousness: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6683
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Covetousness as insatiable inner orientation toward possessing more. Stable directional orientation toward an object. AV 2Pe 2:14 confirms. Automated KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "778-001 pleonexia — covetousness: Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6684
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Covetousness as idolatry — fundamental reorientation of the worshipping self toward the wrong ultimate object. Changed from UNCLASSIFIED to Relational Disposition.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "778-002 pleonexia — covetousness: Relational Disposition, HUMAN (changed from UNCLASSIFIED)"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 35
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 35 (covetousness): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 11,
+    "dimension_index_updates": 10,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "dimension_changes_from_automated": 5,
+    "session_b_findings": 0,
+    "session_d_pointers": 0,
+    "groups_in_patch": [
+      "2074-001",
+      "2075-001",
+      "2075-002",
+      "2076-001",
+      "2076-002",
+      "2077-001",
+      "2078-001",
+      "2079-001",
+      "778-001",
+      "778-002"
+    ]
+  }
+}

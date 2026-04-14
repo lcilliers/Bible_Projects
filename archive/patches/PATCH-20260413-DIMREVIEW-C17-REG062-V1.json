@@ -1,0 +1,364 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C17-REG062-V1",
+    "cluster": "C17",
+    "registry_no": 62,
+    "registry_word": "fellowship",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review — C17, Registry Mode, Reg 62 (fellowship). 19 groups: 15 dimension assignments (UNCLASSIFIED → CLAUDE_AI), 4 existing CLAUDE_AI confirmed. 4 Phase B.5 description rewrites (873-001, 873-002, 5367-001, 5367-002). Registry stamp applied. Cluster stamp NOT set (Registry Mode). Anomaly flag: Reg 130 (reconciliation) metadata assignment to C17 unconfirmed — Claude Code to verify. Observations log: wa-dim-C17-observations-v1.2-20260413.md"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7244
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Vertical fellowship with God — participation in divine nature, the Son, and the Spirit across the divine-human boundary. Existing CLAUDE_AI confirmed."
+      },
+      "description": "873-001 — dim=Divine-Human Correspondence | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "group_code": "873-001"
+      },
+      "set": {
+        "context_description": "Vertical fellowship with God — the inner-relational participation in divine nature, the Son, and the Spirit that constitutes the believer's communion with God",
+        "notes": "Phase B.5 characteristic-perspective rewrite — WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "873-001 — Phase B.5 description rewrite"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7245
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Horizontal fellowship among believers — inner bond of mutual belonging. Existing CLAUDE_AI confirmed."
+      },
+      "description": "873-002 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "group_code": "873-002"
+      },
+      "set": {
+        "context_description": "Horizontal fellowship among believers — the inner-relational bond of mutual belonging, shared commitment, and generous participation arising from shared life in Christ",
+        "notes": "Phase B.5 characteristic-perspective rewrite — WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "873-002 — Phase B.5 description rewrite"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7246
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Inner-spiritual participation spanning divine nature, suffering, comfort, cultic alignment. Description rewritten Phase B.5."
+      },
+      "description": "5367-001 — dim=Divine-Human Correspondence | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "group_code": "5367-001"
+      },
+      "set": {
+        "context_description": "Inner-spiritual participation — the disposition of the person as sharer in divine nature, suffering, comfort, or cultic alignment through inner orientation",
+        "notes": "Phase B.5 characteristic-perspective rewrite — WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "5367-001 — Phase B.5 description rewrite"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7247
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Moral alignment through participation — solidarity with righteousness or complicity with wickedness. Description rewritten Phase B.5."
+      },
+      "description": "5367-002 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "group_code": "5367-002"
+      },
+      "set": {
+        "context_description": "Moral alignment through participation — the inner orientation that places a person in solidarity with righteousness or complicity with wickedness",
+        "notes": "Phase B.5 characteristic-perspective rewrite — WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "5367-002 — Phase B.5 description rewrite"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9350
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Idolatrous attachment — settled inner orientation toward false object. Hos 4:17 anchor."
+      },
+      "description": "7565-001 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9351
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Occult charming — inner disposition toward forbidden spiritual power."
+      },
+      "description": "7565-002 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9352
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Joining words — inner act of marshalling thought into rhetorical expression. Single verse Job 16:4."
+      },
+      "description": "7565-003 — dim=Cognition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9353
+      },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Communal participation as ground of hope — the inner state of hope. Ecc 9:4."
+      },
+      "description": "7565-004 — dim=Emotion — Positive | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9354
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Chosen companionship based on shared fear of God — stable inner alignment. Psa 119:63."
+      },
+      "description": "7566-001 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9355
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Companionship with wickedness — inner orientation of solidarity with evil."
+      },
+      "description": "7566-002 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9356
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Mutual support — inner orientation of care within relational bond. Ecc 4:10."
+      },
+      "description": "7566-003 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9357
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Divinely-willed communal restoration — inner transformation produced by God's restoring act. Eze 37:19."
+      },
+      "description": "7566-004 — dim=Transformation | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9358
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Disciplinary wound as instrument of inner moral purification. Pro 20:30."
+      },
+      "description": "7568-001 — dim=Transformation | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9359
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Redemptive wound producing inner healing. Isa 53:5. Session B note: divine-human correspondence present as secondary signal — Servant's wound as ground of human healing."
+      },
+      "description": "7568-002 — dim=Transformation | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9360
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Occult spell — disposition toward forbidden spiritual practice."
+      },
+      "description": "7569-001 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9361
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Reliance on occult power — spiritual arrogance and misdirection as character quality."
+      },
+      "description": "7569-002 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9362
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Fixed inner moral character depicted as indelible marking. Jer 13:23."
+      },
+      "description": "7573-001 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9363
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Company with evildoers evidences inner moral character. Job 34:8."
+      },
+      "description": "7574-001 — dim=Moral Character | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9364
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "notes": "Covenantal companionship — inner bond of loyalty violated by faithlessness. Mal 2:14."
+      },
+      "description": "7576-001 — dim=Relational Disposition | dom=HUMAN"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 62
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Reg 62 (fellowship) — dim_review_status = Complete"
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG050-V1",
+    "cluster": "C13",
+    "registry_no": 50,
+    "registry_word": "disobedience",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.3-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 50 (disobedience): 4 groups assigned. 1 dimension change: 819-001 Emotion-Negative→Moral Character. Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6901
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Wilful refusal to hear — inner orientation of closed attention/contempt directed against community/other. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "5111-001 parakouō — disobedience: Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6898
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Disobedience as stable inner condition and defining orientation before God — active resistance as moral character type. Changed from Emotion — Negative to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "819-001 apeitheia — disobedience: Moral Character, HUMAN (changed from Emotion — Negative)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6899
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Disobedience as self-excluding inner disposition — heart's failure/refusal to enter what God offers. Volitional self-exclusion. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "819-002 apeitheia — disobedience: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6900
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Disobedience as defining inner act with covenantal consequence — primal refusal constituting the human condition. AV Rom 5:19 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "820-001 parakoē — disobedience: Volition, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 50
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 50 (disobedience): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "dimension_index_updates": 4,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "dimension_changes_from_automated": 1,
+    "groups_in_patch": [
+      "5111-001",
+      "819-001",
+      "819-002",
+      "820-001"
+    ]
+  }
+}

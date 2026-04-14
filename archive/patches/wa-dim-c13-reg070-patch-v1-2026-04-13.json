@@ -1,0 +1,109 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG070-V1",
+    "cluster": "C13",
+    "registry_no": 70,
+    "registry_word": "greed",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.3-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 70 (greed): 4 groups assigned. 2 dimension changes: 892-001 Emotion-Positive→Emotion-Negative; 893-001 Volition→Moral Character. Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7323
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner vulnerability to snatching alongside divine security of being held by God. Security pole (Joh 10:29) is the stronger inner characteristic. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "5493-001 harpazō — greed: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7324
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Divine catching away of the person — eschatological/protective. God's act directly takes person into divine presence. Genuinely dual subject. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "5493-002 harpazō — greed: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7322
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Greed as inner condition of rapacious desire. AV Mat 23:25 names inner fullness of greed directly. Changed from Emotion — Positive (clear error) to Emotion — Negative.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "892-001 harpagē — greed: Emotion — Negative, HUMAN (changed from Emotion — Positive)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7325
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Greedy person as moral-character type — stable inner disposition constituting idolatry. Changed from Volition to Moral Character — names a character type, not a volitional act.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "893-001 pleonektēs — greed: Moral Character, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 70
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 70 (greed): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "dimension_index_updates": 4,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "dimension_changes_from_automated": 2,
+    "groups_in_patch": [
+      "5493-001",
+      "5493-002",
+      "892-001",
+      "893-001"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260412-064-SESSIONB-V1",
+    "registry_no": 64,
+    "registry_word": "forgiveness",
+    "produced_date": "2026-04-12",
+    "produced_by": "WA-SessionB-Instruction-v4.7 — Stage 1 Field-level remediation",
+    "session_b_status": "Verse Context Reset",
+    "description": "Stage 1 field-level corrections for registry 064 (forgiveness). Patches dim_review_status and dim_review_version on word_registry — Dimension Review was completed (all 14 groups at CLAUDE_AI confidence) but registry-level status fields were not updated.",
+    "registry_id": 64,
+    "word": "forgiveness"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update_registry",
+      "registry_no": 64,
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Set dim_review_status=Complete and dim_review_version — Dimension Review confirmed complete from group-level CLAUDE_AI confidence; registry status fields not previously updated"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "registry_status_updates": 1
+  }
+}

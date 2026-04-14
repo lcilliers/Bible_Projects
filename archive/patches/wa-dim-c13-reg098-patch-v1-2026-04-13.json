@@ -1,0 +1,945 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG098-V1",
+    "cluster": "C13",
+    "registry_no": 98,
+    "registry_word": "justice",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.5-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "cluster_stamp_deferred": true,
+    "cluster_stamp_note": "Reg 30 (contrition) reinstatement in progress. Cluster stamp deferred to Reg 30 patch.",
+    "description": "Dimension Review C13 Reg 98 (justice): 50 groups assigned. 11 dimension changes from automated labels. 1 Session D pointer (DIM-98-SD001). Anchor verse anomaly on 942-002. Registry stamp set. Cluster stamp NOT included — deferred pending Reg 30 reinstatement."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7632
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Hall of Justice — architectural term; inner commitment to justice in institutional form is inferential (QA-EXTERNALISED). Assigning Moral Character as most defensible fit.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3186-001 u.lam — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7633
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Hall of royal authority — exercise of sovereign power. Agency / Power more precise for throne-hall sub-entry than Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3188-001 u.lam — justice: Agency / Power, HUMAN (changed from Relational Disposition)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7615
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Person as morally righteous — inner quality of justice and uprightness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3193-001 dikaios — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7616
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God/Christ as just — divine inner attribute of perfect moral justice. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3193-002 dikaios — justice: Moral Character, GOD"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7620
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine justification transforming person's inner moral standing before God. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3194-001 dikaioō — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7611
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner condition of unrighteousness opposed to God. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3197-001 adikos — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7621
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner moral alignment expressed in conduct. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3199-001 dikaiōs — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7613
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Adversary calling forth persistent dependent appeal to higher authority. Primary inner characteristic is dependent appeal (Luk 18:3 anchor). Changed from Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3200-001 antidikos — justice: Dependence / Creatureliness, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7630
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner act of moral condemnation. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3201-001 katadikazō — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7610
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Act of moral wrongdoing as inner moral deficit. Changed from Divine-Human Correspondence to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3202-001 adikēma — justice: Moral Character, HUMAN (changed from Divine-Human Correspondence)"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7622
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Justification restoring right standing — inner transformation of moral status. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3203-001 dikaiōsis — justice: Transformation, HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7623
+      },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner act of rejecting divinely appointed authority. Changed from Agency / Power to Volition — the inner act is the refusal/rejection.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3204-001 dikastēs — justice: Volition, HUMAN (changed from Agency / Power)"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7629
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner moral logic of appropriate retribution. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3205-001 endikos — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7612
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Patient endurance of unjust suffering mindful of God. Inner posture of dependent trust. Changed from Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3206-001 adikōs — justice: Dependence / Creatureliness, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7614
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Righteous judgment of God confronting hard-hearted inner condition. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3207-001 dikaiokrisia — justice: Divine-Human Correspondence, GOD"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7631
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Condition of moral accountability before God. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3208-001 hupodikos — justice: Divine-Human Correspondence, HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7640
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Law as framework testing inner moral/religious commitment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3220-001 dat — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7634
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine act of judging — God's determination to vindicate. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3233-001 din — justice: Divine-Human Correspondence, GOD"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7635
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human act of judging on behalf of the poor — inner moral obligation. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3233-002 din — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7638
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Judgment determining outcomes — authoritative exercise of divine judicial power. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3236-001 din — justice: Agency / Power, GOD"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7639
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God as the divine judge — inner justice and attentiveness defining true judgment. Changed from Cognition to Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3237-001 day.yan — justice: Moral Character, GOD (changed from Cognition)"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7641
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner act of perceiving/approving what is right — moral assessment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3241-001 ya.shar — justice: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7642
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Quality of moral uprightness — straight inner path. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3241-002 ya.shar — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7643
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral and spiritual uprightness — inner straightness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3244-001 ya.shar — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7628
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Avenging character of divine authority — exercise of divine avenging power. Changed from Moral Character to Agency / Power.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3250-001 ekdikos — justice: Agency / Power, GOD (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7644
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Perversion of justice — inner moral distortion. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3262-001 mut.teh — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7645
+      },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Soul's orientation toward God's justice — range of affective states (longing, delight, fear, praise, hope). AV Psa 119:120 shows fear/trembling alongside longing. Unifying characteristic is directional orientation toward God. Changed from Emotion — Positive to Relational Disposition.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "940-001 mish.pat — justice: Relational Disposition, HUMAN (changed from Emotion — Positive)"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7646
+      },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Moral-spiritual orientation of the heart — Spirit-enabled transformation as the distinctive feature (Eze 36:27). Changed from Moral Character to Transformation.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "940-002 mish.pat — justice: Transformation, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7647
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner moral standard for human judgment — impartiality, God-accountability. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "940-003 mish.pat — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7648
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Humility, complaint, vindication-hope before divine justice — creature's posture of dependent appeal. Changed from Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "940-004 mish.pat — justice: Dependence / Creatureliness, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7649
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Justice as spirit-given capacity for inner discernment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "940-005 mish.pat — justice: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7656
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Judging requiring inner moral discernment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "941-001 sha.phat — justice: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7657
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner appeal to God as judge — dependent appeal for divine vindication. Changed from Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "941-002 sha.phat — justice: Dependence / Creatureliness, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7658
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine judgment engaging human inner moral condition. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "941-003 sha.phat — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7659
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God as righteous judge — inner character expressed through just acts. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "941-004 sha.phat — justice: Moral Character, GOD"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7652
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Righteousness as defining inner quality of the person. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "942-001 tse.deq — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7653
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Righteousness as attribute of God. First AV anomalous (Psalm heading); second AV Psa 89:14 confirms. Anchor verse correction needed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "942-002 tse.deq — justice: Moral Character, GOD (AV correction needed)"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7654
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Righteousness as inner orientation pursued and cultivated. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "942-003 tse.deq — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7655
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Righteousness as moral basis for just governance.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "942-004 tse.deq — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7636
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Just claim calling for inner moral commitment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "943-001 din — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7637
+      },
+      "set": {
+        "dimension": "Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Authoritative divine verdict determining guilt/innocence. Changed from Volition to Agency / Power.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "943-002 din — justice: Agency / Power, GOD (changed from Volition)"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7625
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner cry and petition for divine justice — persistent dependent appeal. Changed from Moral Character.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "944-001 ekdikeō — justice: Dependence / Creatureliness, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7626
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Execution of divine vengeance — direct counterpart to human restraint and wronged cry. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "944-002 ekdikeō — justice: Divine-Human Correspondence, GOD"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7627
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Divine vengeance and human cry — both poles named. KEYWORD_STRONG confirmed. NONE — genuinely dual.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "945-001 ekdikēsis — justice: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7650
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner moral standing before God. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "947-001 tsa.deq — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7651
+      },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Judicial act requiring inner moral discernment. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "947-002 tsa.deq — justice: Cognition, HUMAN"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7624
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Just punishment as consequence of inner wickedness. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "949-001 dikē — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7617
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine righteousness imputed — ground of person's standing. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "950-001 dikaiosunē — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7618
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human righteousness as inner quality and lived conduct. KEYWORD_STRONG confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "950-002 dikaiosunē — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7619
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Righteousness by faith — inner orientation of trust. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "950-003 dikaiosunē — justice: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 98
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 98 (justice): Dimension Review complete under v2.2. Cluster stamp deferred — Reg 30 reinstatement pending."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 52,
+    "dimension_index_updates": 50,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "cluster_stamp_note": "Deferred — Reg 30 (contrition) reinstatement in progress",
+    "session_b_findings": 0,
+    "session_d_pointers": 1,
+    "dimension_changes_from_automated": 11,
+    "anchor_verse_anomalies_noted": [
+      "942-002"
+    ],
+    "groups_in_patch": [
+      "3186-001",
+      "3188-001",
+      "3193-001",
+      "3193-002",
+      "3194-001",
+      "3197-001",
+      "3199-001",
+      "3200-001",
+      "3201-001",
+      "3202-001",
+      "3203-001",
+      "3204-001",
+      "3205-001",
+      "3206-001",
+      "3207-001",
+      "3208-001",
+      "3220-001",
+      "3233-001",
+      "3233-002",
+      "3236-001",
+      "3237-001",
+      "3241-001",
+      "3241-002",
+      "3244-001",
+      "3250-001",
+      "3262-001",
+      "940-001",
+      "940-002",
+      "940-003",
+      "940-004",
+      "940-005",
+      "941-001",
+      "941-002",
+      "941-003",
+      "941-004",
+      "942-001",
+      "942-002",
+      "942-003",
+      "942-004",
+      "943-001",
+      "943-002",
+      "944-001",
+      "944-002",
+      "945-001",
+      "947-001",
+      "947-002",
+      "949-001",
+      "950-001",
+      "950-002",
+      "950-003"
+    ]
+  }
+}

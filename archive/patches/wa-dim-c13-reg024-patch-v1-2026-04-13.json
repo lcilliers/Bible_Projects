@@ -1,0 +1,220 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG024-V1",
+    "cluster": "C13",
+    "registry_no": 24,
+    "registry_word": "condemnation",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.2-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 24 (condemnation): 10 groups assigned. 2 dimension changes from automated labels (3189-003 Volition→Emotion-Negative; 3252-001 Divine-Human Correspondence→Dependence/Creatureliness; 738-001 Moral Character→Emotion-Negative). Registry stamp set."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6545
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Justice as God's defining inner character — stable disposition of right dealing flowing from divine nature. AVs Deu 32:4 and Isa 5:16 both confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3189-001 mish.pat — condemnation: Moral Character, GOD"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6546
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Justice as human inner moral orientation — disposition to seek, do, love right. AVs Job 29:14 and Mic 6:8 confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3189-002 mish.pat — condemnation: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6547
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner cry for justice — anguish and longing of person denied right. AVs Job 19:7 and Hab 1:4 show primarily affective states (grief, anguish) not volitional acts. Changed from automated Volition to Emotion — Negative.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3189-003 mish.pat — condemnation: Emotion — Negative, HUMAN (changed from Volition)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6548
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner posture of appeal before divine judgment — standing before God, crying out in affliction, trusting in divine hearing and saving. AV 2Ch 20:9 is precise. Changed from automated Divine-Human Correspondence to Dependence / Creatureliness.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "3252-001 she.phot — condemnation: Dependence / Creatureliness, HUMAN (changed from Divine-Human Correspondence)"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6541
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The moral/spiritual condition (unbelief, doubt, moral failure) as grounds of condemnation. Inner state is what the person is/has. AVs Mar 16:16 and Rom 14:23 confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "4846-001 katakrinō — condemnation: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6542
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Freedom from condemnation — inner security of person whose condemnation is withheld/overcome by Christ. Characteristic is security and trust grounded in Christ's intercession. AVs Joh 8:11 and Rom 8:34 confirm. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "4846-002 katakrinō — condemnation: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6540
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Self-condemned — inner moral condition (warped, sinful) that turns conscience against the self. AV Tit 3:11 names warped/sinful as the self-condemning condition. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "4848-001 autokatakritos — condemnation: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6549
+      },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Divine judgment flows from inner moral condition of those judged (scoffer, fool). Primary inner-being content is the moral character that draws judgment. AV Pro 19:29 confirms. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "736-001 she.phet — condemnation: Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6543
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Condemnation as inner weight/burden falling on the conscience — felt experiential state. Contrast with freedom of righteousness reinforces emotional register. Changed from automated Moral Character to Emotion — Negative.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "738-001 katakrisis — condemnation: Emotion — Negative, HUMAN (changed from Moral Character)"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 6544
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Fearful expectation of divine verdict — inner state of dread orienting the inner life toward moral accountability. Heb 10:27 directly names fearful expectation. Automated label confirmed.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "739-001 krisis — condemnation: Emotion — Negative, HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 24
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 24 (condemnation): Dimension Review complete under v2.2"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 11,
+    "dimension_index_updates": 10,
+    "registry_stamps": 1,
+    "cluster_stamp": false,
+    "dimension_changes_from_automated": 3,
+    "descriptions_corrected": 0,
+    "session_b_findings": 0,
+    "session_d_pointers": 0,
+    "groups_in_patch": [
+      "3189-001",
+      "3189-002",
+      "3189-003",
+      "3252-001",
+      "4846-001",
+      "4846-002",
+      "4848-001",
+      "736-001",
+      "738-001",
+      "739-001"
+    ]
+  }
+}

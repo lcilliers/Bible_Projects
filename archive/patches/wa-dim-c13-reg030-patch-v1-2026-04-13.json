@@ -1,0 +1,238 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260413-DIMREVIEW-C13-REG030-V1",
+    "cluster": "C13",
+    "registry_no": 30,
+    "registry_word": "contrition",
+    "produced_date": "2026-04-13",
+    "produced_by": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+    "observations_log": "wa-dim-c13-observations-v1.7-2026-04-13.md",
+    "session_b_status": "Verse Context Reset",
+    "description": "Dimension Review C13 Reg 30 (contrition): 9 groups assigned. Dominant dimension: Dependence / Creatureliness (5 groups). 1 Session D pointer (DIM-30-SD001). Registry stamp set. CLUSTER STAMP INCLUDED — this is the final C13 registry. All 10 registries now complete."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9341
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner-being anguish from crushing — soul crushed to ground, sitting in darkness. AV Psa 143:3 names the inner desolation directly.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7552-001 da.kha — contrition: Emotion — Negative, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9342
+      },
+      "set": {
+        "dimension": "Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Substitutionary crushing of the Servant for iniquity — producing peace and healing. Genuinely dual subject — Servant's inner person and beneficiaries' transformation are inseparable. AV Isa 53:5 is precise.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7552-002 da.kha — contrition: Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9343
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The contrite and crushed inner spirit as condition of divine indwelling and revival. God dwelling with the lowly/contrite. AV Isa 57:15 is the defining verse for Registry 30.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7552-003 da.kha — contrition: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9344
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Crushed and contrite inner spirit drawing divine nearness and salvation. AV Psa 34:18: Lord near to the brokenhearted, saves the crushed in spirit.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7553-001 dak.ka — contrition: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9345
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "The broken and contrite heart as the inner sacrifice acceptable to God. AV Psa 51:17 — the sacrifices of God are a broken spirit; a broken and contrite heart he will not despise.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7554-001 da.khah — contrition: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9346
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Corporate inner desolation under divine crushing — community broken by God, covered with shadow of death. AV Psa 44:19 confirms.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7554-002 da.khah — contrition: Emotion — Negative, HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9347
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Humble and contrite spirit trembling at God's word — three inner postures (humble, contrite, trembling) receiving divine attention. AV Isa 66:2 is the fullest description of contrition in the registry.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7555-001 na.kheh — contrition: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9348
+      },
+      "set": {
+        "dimension": "Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Inner terror and panic in devastating defeat. Most peripheral group to contrition characteristic — broken inner state via defeat/terror rather than penitential brokenness. AV Jer 46:5 names dismay and terror explicitly.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7556-001 ka.tat — contrition: Emotion — Negative, HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9349
+      },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Crushed/contrite inner spirit drawing divine nearness — homograph sub-entry of H1793A dak.ka. Same anchor verse (Psa 34:18). Same characteristic. See SBF-036-001 for Session B assessment.",
+        "last_modified": "2026-04-13"
+      },
+      "description": "7557-001 dak.ka — contrition: Dependence / Creatureliness, HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 30,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-30-SD001",
+        "session_target": "D",
+        "priority": "MEDIUM",
+        "description": "Registry 30 (contrition) produces strong convergence: 5 of 9 groups assign Dependence / Creatureliness (7552-003, 7553-001, 7554-001, 7555-001, 7557-001). This convergence suggests contrition is the penitential sub-form of Dependence / Creatureliness — brokenness before God arising from moral self-awareness and recognition of unworthiness. Session D should examine whether the programme vocabulary needs a finer distinction between general dependence/trust and specifically penitential dependence (contrition). Connect with Reg 10 (dependence/trust) and Reg 80 (trust) in the programme.",
+        "session_raised": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+        "raised_date": "2026-04-13",
+        "resolved": 0
+      },
+      "description": "Session D pointer DIM-30-SD001: contrition as penitential sub-form of Dependence / Creatureliness"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 30
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11"
+      },
+      "description": "Registry 30 (contrition): Dimension Review complete under v2.2"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_dim_review_cluster_log",
+      "record": {
+        "cluster": "C13",
+        "completed_date": "2026-04-13",
+        "instruction_version": "WA-DimensionReview-Instruction-v2.2-2026-04-11",
+        "registry_count": 10,
+        "group_count": 144,
+        "anchored_count": 0,
+        "notes": "C13 cluster complete. 10 registries: condemnation (24), conscience (26), contrition (30), covetousness (35), disobedience (50), greed (70), guilt (73), justice (98), reconciliation (130), repentance (135). 144 groups total. Contrition reinstated from phase1_status=Excluded following researcher decision 2026-04-13. Cluster stamp deferred from initial session pending Reg 30 reinstatement — now set with this patch."
+      },
+      "description": "C13 cluster stamp — Dimension Review complete for all 10 registries"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 12,
+    "dimension_index_updates": 9,
+    "registry_stamps": 1,
+    "cluster_stamp": true,
+    "session_b_findings": 0,
+    "session_d_pointers": 1,
+    "dimension_changes_from_automated": 0,
+    "dimension_distribution": {
+      "Dependence / Creatureliness": 5,
+      "Emotion — Negative": 3,
+      "Divine-Human Correspondence": 1
+    },
+    "groups_in_patch": [
+      "7552-001",
+      "7552-002",
+      "7552-003",
+      "7553-001",
+      "7554-001",
+      "7554-002",
+      "7555-001",
+      "7556-001",
+      "7557-001"
+    ]
+  }
+}

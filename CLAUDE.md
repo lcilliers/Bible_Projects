@@ -1,13 +1,13 @@
 # CLAUDE.md — Claude Code Project Reference
 
-> Auto-generated 2026-03-24; updated 2026-03-30 for v5.5/v5.6 document architecture + Verse Context stage.
+> Auto-generated 2026-03-24; updated 2026-04-12 for v4.7/v5.8/v1.10 instruction refresh + Session B progress.
 > This file is read by Claude Code at the start of every conversation.
 
 ---
 
 ## 1. What This Project Is
 
-A structured academic Bible research platform centred on **~212 English words** (anger, love, soul, peace, etc.) describing the **inner life of mankind**. Each word maps to Hebrew (OT) and Greek (NT) terms via Strong's numbers. The system captures occurrence data, verse records, parse analysis, semantic flags, and cross-registry links — all in a relational SQLite database processed by a custom Python automation engine.
+A structured academic Bible research platform centred on **~214 English words** (anger, love, soul, peace, etc.) describing the **inner life of mankind**. Each word maps to Hebrew (OT) and Greek (NT) terms via Strong's numbers. The system captures occurrence data, verse records, parse analysis, semantic flags, and cross-registry links — all in a relational SQLite database processed by a custom Python automation engine.
 
 **Owner:** le Roux Cilliers (leRoux) — sole researcher, ultimate authority on scope and methodology.
 
@@ -15,7 +15,7 @@ A structured academic Bible research platform centred on **~212 English words** 
 - **Claude Code** — database engine: patch application, JSON export, schema migrations, validation queries, programme state reporting, Verse Context batch construction, pool analysis dataset assembly
 - **Claude AI** — analytical engine: term classification, verse analysis, scope judgements, narrative production, JSON extraction, Verse Context classification
 
-**Governing documents (v5.5/v5.6, March 2026):** Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/` supersede all prior versions. Claude Code's consolidated responsibilities are in `WA-SessionB-ClaudeCode-Instructions-v3.2`. Key versions: WA-Reference-v5.5, WA-SessionB-Extraction-Instruction-v5.6, WA-Registry-Management-Guide-v5.6, WA-VerseContext-Instruction-v1.7, patch_specification-v1.5.
+**Governing documents (April 2026):** Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/` supersede all prior versions. Claude Code's consolidated responsibilities are in `WA-SessionB-ClaudeCode-Instructions-v3.2`. Key versions: WA-SessionB-Instruction-v4.7, WA-Registry-Management-Guide-v5.8, patch_specification-v1.10, WA-DimensionReview-Instruction-v2.2, WA-VerseContext-Instruction-v2.5, WA-Reference-v5.5.
 
 ---
 
@@ -299,6 +299,10 @@ STEP API caps results at 60. The client uses two-layer canonical section splits 
 | `_produce_final_extract.py` | Final registry extract from database | Yes (read-only) |
 | `_generate_programme_report.py` | Comprehensive programme status report | Yes (read-only) |
 | `_update_reference_doc.py` | Reference document update utility | Varies |
+| `build_complete_extract.py` | Comprehensive per-word extract (9 layers incl. correlations) | Yes (read-only) |
+| `build_correlation_extract.py` | Programme-wide inter-word correlation (5 signals) | Yes (read-only) |
+| `build_dimension_extract.py` | Dimension review cluster/group/rootfamily extracts | Yes (read-only) |
+| `generate_registry_overview.py` | Full registry overview JSON (all 214 registries) | Yes (read-only) |
 
 ---
 
@@ -375,8 +379,14 @@ Claude.ai produces JSON patch → wa-{nnn}-{word}-patch-{date}.json
 
 ### Database → Claude.ai
 ```
+# Engine export (STEP format)
 python -m engine.engine --export-word --registry=N
-    → data/exports/{word}_{registry}_{scope}_{YYYYMMDD}_v{N}.json
+    → data/exports/STEP Extracts/{word}_{registry}_{scope}_{YYYYMMDD}_v{N}.json
+
+# Complete extract (Session B format — preferred for Claude AI)
+python scripts/build_complete_extract.py --registry=N [--complete-only|--owner-only]
+    → data/exports/Session C/wa-{NNN}-{word}-{scope}-{YYYYMMDD}.json
+    (9 layers: registry, terms, verses, verse_context, dimensions, Session B/D, cross-links, correlations, statistics)
 ```
 Scope is `full` (pre-analysis) or `final` (Analysis Complete / Session B Complete).
 Version auto-increments: v1, v2, v3 per day.
@@ -429,16 +439,14 @@ Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/`:
 | -------- | ------- | ------- | ---------------- |
 | WA-Implementation-Instruction | v5 | Schema changes, new tables, programme operations (Tasks 1-8) | Claude Code |
 | WA-Reference | **v5.5** | Controlled vocabulary, naming conventions, schema reference (v3.8.0), document validation standard | Both systems |
-| WA-Registry-Management-Guide | **v5.6** | Registry structure, dual status lifecycle, cluster assignments (C01-C22), pool IDs, periodic reviews | Both systems |
-| WA-SessionB-DataPrep-Instruction | **v5.6** | Term classification, data preparation, pre-analysis patches, pool assembly monitoring | Claude AI + Claude Code |
-| WA-SessionB-Analysis-Instruction | **v5.6** | Pool-based analysis, narrative production, mid-pool interruption handling | Claude AI + Claude Code |
-| WA-SessionB-Extraction-Instruction | **v5.6** | JSON extraction, analysis patches, four outputs per registry, SESSIONB-COMPLETE | Claude AI + Claude Code |
+| WA-Registry-Management-Guide | **v5.8** | Registry structure, dual status lifecycle, cluster assignments (C01-C22), pool IDs, periodic reviews | Both systems |
+| **WA-SessionB-Instruction** | **v4.7** | **Unified Session B instruction: 6-pass analytical process, directive delivery (D1/D2), CC coordination** | **Both systems** |
 | **WA-SessionB-ClaudeCode-Instructions** | **v3.2** | **Consolidated Claude Code responsibilities, REPAIR catalogue, failure patches** | **Claude Code** |
-| **WA-VerseContext-Instruction** | **v1.5** | **Verse Context stage — batch construction, classification, patch application** | **Both systems** |
-| WA-VerseContext-SetupInstruction | v1.1 | Verse Context setup — M17/M18 migrations, status resets (completed) | Claude Code |
-| **patch_specification** | **v1.5** | **Authoritative patch applicator rules, all operation types, status workflow** | **Claude Code** |
+| **WA-DimensionReview-Instruction** | **v2.2** | **Dimension review stage — cluster-level review, group classification, dominant_subject** | **Both systems** |
+| **WA-VerseContext-Instruction** | **v2.5** | **Verse Context stage — batch construction, classification, patch application** | **Both systems** |
+| **patch_specification** | **v1.10** | **Authoritative patch applicator rules, all operation types, status workflow** | **Claude Code** |
 
-### v5.5/v5.6 Key Changes (from v5.1/v5.2)
+### Key Changes (v5.8/v4.7/v1.10 from earlier versions)
 
 - **Verse Context stage added**: New pipeline stage between Phase 1 and DataPrep — classifies all 133,353 active verses by inner-being relevance, groups by contextual meaning, designates anchor verses
 - **Dual status tracks**: `session_b_status` + `verse_context_status` on word_registry
@@ -454,44 +462,47 @@ Documents in `data/imports/WA/Workflow/Frameword_B/Session_B/`:
 - **source_category → dimensions** (M17): Comma-delimited multi-value field. anchor_verses field removed.
 - **Cluster assignments complete**: All 212 words assigned to C01-C22.
 
-### v5.6 Session B Workflow (pool-based)
+### Session B Workflow (v4.7 — per-registry, 6-pass)
 
 ```
 Verse Context (Stage 1):
     Claude Code batch → Claude AI classifies → VERSECONTEXT patch → verse_context_status = Complete
     │
     ▼
-DataPrep (per registry):
-    Claude AI classifies terms → PREANALYSIS patch → Claude Code applies → Pre-Analysis Complete
-    → Claude Code monitors pool readiness
+Session B (Stage 2 — per registry, 6 passes):
+    Claude Code produces complete extract (build_complete_extract.py)
+    │
+    Pass 1: Data audit + remediation → PREANALYSIS patch (D1 delivery)
+    Pass 2: GOD_AS_SUBJECT, somatic flags, FRAMEWORK_SIGNAL
+    Pass 3: Root family, correlation analysis → D1 delivery to CC
+    │  CC applies D1 directives → fresh extract R2
+    │
+    Pass 4: Somatic scan (SOMATIC_INNER_LINK, BODY_INNER_EXPRESSION)
+    Pass 5: sb_classification determination
+    Pass 6: Session D pointers (SD_POINTER flags) → D2 delivery to CC
+    │  CC applies D2 directives → fresh extract R3
     │
     ▼
-Pool Assembly (Claude Code):
-    All pool words at Pre-Analysis Complete → assemble pool analysis dataset
+Session C (Stage 3): Word study production + Session C notes
     │
     ▼
-Analysis (per pool):
-    Claude AI reads pool dataset → narrative per word → ANALYSIS patch → Analysis Complete
-    │
-    ▼
-Extraction (per pool):
-    1. Session B JSON per word
-    2. SESSIONB patch → Claude Code applies → Analysis Complete
-    3. Final registry extract (post-patch) → wa-{nnn}-{word}-final-{date}.json
-    4. Session D pointers file (post-patch) → wa-{nnn}-{word}-sdpointers-{date}.json
-    5. SESSIONB-COMPLETE patch → Session B Complete
+Status close: session_b_status → Analysis Complete
 ```
 
 ### Implementation Tasks Status
 
 Tasks 1-8 from WA-Implementation-Instruction-v5: **all complete** (schema v3.8.0, migrations M01–M18). Clustering (Task 4) applied. Zero-term investigation (Task 5) resolved.
 
-### Current Programme State (2026-03-30)
+### Current Programme State (2026-04-12)
 
-- 181 active registries: `session_b_status = Verse Context Reset`, `verse_context_status = In Progress`
-- 31 excluded registries: Phase 1 Excluded, zero terms, outside Verse Context scope
-- Stage 1 (Verse Context sweep) is the **current priority**
-- Stage 2 (pool-based Session B) begins after Verse Context completion per pool
+- 214 total registries (213 listen + 214 suffering added since March)
+- 182 registries VC Complete, 1 In Progress (grace — pending XREF VC from regs 23/73), 31 NULL (excluded)
+- C17 Dimension Review complete (cluster stamp set), C01-C16/C18-C22 previously completed
+- 3 registries at Session B Analysis Complete: grace (68), mercy (111), compassion (23)
+- SD pointers enriched across all three: grace=50, mercy=16, compassion=31
+- Love (103) Session B extract prepared, pending analytical work
+- Suffering (214): C05, 72 terms, 907 verses, VCB-034 batch prepared, VC/dim review pending
+- Session B uses unified 6-pass instruction (v4.7) with D1/D2 directive delivery points
 
 ---
 
@@ -533,6 +544,20 @@ python scripts/word_study_extract.py --word anger --anchors H2734
 
 # Programme status report
 python scripts/_generate_programme_report.py
+
+# Registry overview JSON (all registries, for Claude AI)
+python scripts/generate_registry_overview.py
+
+# Complete word extract (Session B format, 9 layers incl. correlations)
+python scripts/build_complete_extract.py --registry=N --complete-only
+
+# Dimension review batch (3 files per cluster)
+python scripts/build_dimension_extract.py --cluster C17
+python scripts/build_dimension_extract.py --pointers C17
+python scripts/build_dimension_extract.py --rootfamily C17
+
+# Programme-wide correlations
+python scripts/build_correlation_extract.py
 
 # DB connection pattern (ad-hoc scripts)
 import sqlite3, os
@@ -685,7 +710,7 @@ After any `audit_word` re-run, detect new verses missing verse_context:
 
 ## 15. Patch System — Comprehensive Reference
 
-**Authoritative document:** `patch_specification_v1.5-20260330.md`
+**Authoritative document:** `patch_specification_v1_10-20260412.md`
 **Applicator:** `scripts/apply_session_patch.py`
 
 ### 15.1 Patch Types
