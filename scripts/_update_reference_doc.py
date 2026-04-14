@@ -3,7 +3,7 @@ import os
 
 PATH = os.path.join(
     os.path.dirname(__file__), "..",
-    "data", "imports", "WA", "Workflow", "Frameword_B", "Session_B",
+    "data", "imports", "WA", "Workflow", "Framework_B", "Session_B",
     "WA-Reference-v5.1-20260328.md"
 )
 

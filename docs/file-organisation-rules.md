@@ -1,7 +1,8 @@
 # File Organisation Rules — Framework B
 
 > Governs where Claude Code and the researcher place files.
-> Created 2026-03-30. Read by Claude Code at session start via CLAUDE.md reference.
+> Created 2026-03-30. Updated 2026-04-14: naming conventions (Section 2), manifest system (Section 6), stale doc policy (Section 3.2).
+> Read by Claude Code at session start via CLAUDE.md reference.
 
 ---
 
@@ -11,90 +12,308 @@ Every file has one correct location determined by its **type** and **lifecycle s
 
 ---
 
-## 2. Folder Rules
+## 2. Naming Conventions
 
-### `data/exports/`
+### 2.1 Core Rules
+
+All non-code files produced by or for the programme follow these rules:
+
+| Rule | Standard | Example |
+|------|----------|---------|
+| **Case** | All lowercase | `wa-068-grace-sessionb-observations-v5-20260410.md` |
+| **Separators** | Hyphens (`-`) between tokens | `wa-dim-c17-session-log-v1-20260413.md` |
+| **Date format** | Compact `YYYYMMDD` | `20260414` (not `2026-04-14`) |
+| **Version** | `-v{n}` suffix before date, integer, no leading zero | `-v1-`, `-v12-` |
+| **Registry number** | Zero-padded to 3 digits | `023`, `068`, `214` |
+| **No spaces** | Never in filenames | Use hyphens |
+
+### 2.2 Standard Naming Patterns
+
+Files are named to sort naturally by registry number within a folder, making it easy to find all files for a given word.
+
+#### Session B Analysis
+
+```
+wa-{NNN}-{word}-sessionb-{type}-v{n}-{YYYYMMDD}.{ext}
+
+Types: observations, brief, log, cc-directive
+Examples:
+  wa-068-grace-sessionb-observations-v5-20260410.md
+  wa-068-grace-sessionb-log-v2-20260410.md
+  wa-068-grace-sessionb-cc-directive-v1-20260410.md
+  wa-068-grace-sessionb-brief-v1-20260410.md
+```
+
+#### Session C Word Studies
+
+```
+wa-{NNN}-{word}-sessionc-{type}-v{n}-{YYYYMMDD}.{ext}
+
+Types: word-study, log, note, analysis-report
+Examples:
+  wa-064-forgiveness-sessionc-word-study-v3-20260412.md
+  wa-103-love-sessionc-log-v1-20260412.md
+```
+
+#### Session D Synthesis
+
+```
+wa-{NNN}-{word}-sessiond-{type}-v{n}-{YYYYMMDD}.{ext}
+
+Types: pointers, synthesis, note
+```
+
+#### Verse Context
+
+```
+wa-vcb-{NNN}-{type}-v{n}-{YYYYMMDD}.{ext}
+
+Types: term-observations, session-log, sessionb-flags, patch-log
+Examples:
+  wa-vcb-034-term-observations-v1-20260412.md
+  wa-vcb-034-session-log-v1-20260412.md
+```
+
+#### Dimension Review
+
+```
+wa-dim-{cluster}-{type}-v{n}-{YYYYMMDD}.{ext}
+wa-dim-{cluster}-{scope}-{type}-v{n}-{YYYYMMDD}.{ext}
+
+Types: observations, session-log, patch (for JSON)
+Scope (optional): reg{NNN} for registry-specific files
+Examples:
+  wa-dim-c17-observations-v1-20260413.md
+  wa-dim-c17-session-log-v1-20260413.md
+  wa-dim-c17-reg068-patch-v1-20260410.json
+```
+
+#### Patches (JSON)
+
+```
+patch-{YYYYMMDD}-{NNN}-{type}-v{n}.json
+
+Types: preanalysis, analysis, sessionb, sessionb-complete, versecontext,
+       vcgroup, vcverse, repair-{scenario}, sessiond, clustering,
+       sdenrich, sdpointers, dimcorrect, dimreview
+Examples:
+  patch-20260412-068-sdenrich-v1.json
+  patch-20260412-103-analysis-v1.json
+  patch-20260413-vcb037-versecontext-v1.json
+  patch-20260413-dimreview-c17-reg062-v1.json
+```
+
+#### Directives (Markdown — unstructured AI instructions)
+
+```
+cc-directive-{NNN}-{seq}-{YYYYMMDD}.md
+
+Examples:
+  cc-directive-062-001-20260413.md
+  cc-directive-062-002-20260413.md
+```
+
+#### Exports
+
+```
+# STEP Extracts (engine export)
+{word}_{reg}_{scope}_{YYYYMMDD}_v{n}.json
+  contrition_30_full_20260413_v1.json
+
+# Session C complete extracts
+wa-{NNN}-{word}-{scope}-{YYYYMMDD}-v{n}.json
+  wa-068-grace-complete-20260413-v1.json
+  wa-068-grace-owner_only-20260413-v1.json
+
+# Verse Context batch extracts
+wa-vcb-{NNN}-extract-{YYYYMMDD}.json
+
+# Dimension review extracts
+wa-dim-{cluster}-{type}-{YYYYMMDD}.json
+  wa-dim-c17-extract-20260413.json
+  wa-dim-c17-rootfamily-20260413.json
+  wa-dim-c17-existing-pointers-20260413.json
+
+# Session D pointers
+wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json
+
+# Pool analysis
+wa-pool-{pool_id}-analysis-{YYYYMMDD}.json
+```
+
+#### Discovery
+
+```
+{NNN}_{word}_step_data_{YYYYMMDD}.{json|md}
+  030_contrition_step_data_20260413.json
+```
+
+#### Programme Reports
+
+```
+wa-programme-{type}-{YYYYMMDD}.{ext}
+  wa-programme-status-report-20260414.md
+  wa-programme-registry-overview-20260414.json
+
+database-schema-{YYYYMMDD}.json
+```
+
+#### Workflow / Governing Documents
+
+```
+WA-{DocumentName}-v{major}_{minor}-{YYYYMMDD}.md
+
+Current versions live in the Session_B/ folder. Superseded versions go to Session_B/archive/.
+Examples:
+  WA-SessionB-Instruction-v4_7-20260412.md
+  WA-Registry-Management-Guide-v5_8-20260412.md
+```
+
+> **Note:** Governing documents retain their established `WA-` uppercase prefix for continuity. All other files use lowercase `wa-`.
+
+#### Session Logs (Workflow)
+
+```
+wa-session-log-{YYYYMMDD}-{topic}.md
+  wa-session-log-20260412-programme-docs-update.md
+```
+
+### 2.3 Version Control via Filename
+
+Date-stamping and version numbering serve as the version control mechanism for non-code files:
+
+- **Same-day revisions:** Increment the version number: `v1`, `v2`, `v3`
+- **New-day revision:** New date, version resets to `v1`
+- **Archiving:** Only the **latest version** of a file remains in its active folder. All prior versions (whether by date or version number) move to the `archive/` subfolder within that directory. Git history preserves the full lineage.
+- **No duplicates:** Two files that differ only by date or version number are the same logical document. Treat them identically for archiving purposes.
+
+### 2.4 Sort-Friendly Design
+
+The naming patterns above are designed so that `ls` or file explorer sorting groups related files together:
+
+- **By registry:** `wa-023-*`, `wa-064-*`, `wa-068-*` — zero-padded 3-digit registry sorts numerically
+- **By batch:** `wa-vcb-034-*`, `wa-vcb-035-*` — sequential batch numbers
+- **By cluster:** `wa-dim-c13-*`, `wa-dim-c17-*` — cluster codes sort together
+- **By type within a word:** `wa-068-grace-sessionb-brief-*`, `wa-068-grace-sessionb-log-*`, `wa-068-grace-sessionb-observations-*`
+
+---
+
+## 3. Folder Rules
+
+### 3.1 `data/exports/`
 
 Programme data exported from the database for consumption by Claude AI or the researcher.
 
 | Subfolder | What goes here | Naming pattern |
 |-----------|---------------|----------------|
 | `data/exports/` (root) | Only subfolders — no files in root |  |
-| `data/exports/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_full_{date}_v{n}.json` |
-| `data/exports/verse_context/` | Verse Context batch extracts | `wa-vcb-{nnn}-extract-{date}.json` |
-| `data/exports/dimension_review/` | Dimension Review extracts (cluster, root family, group verification, existing pointers) | `wa-dim-{cluster}-extract-{date}.json`, `wa-dim-{cluster}-rootfamily-{date}.json`, `wa-dim-{cluster}-existing-pointers-{date}.json`, `wa-dim-{group_code}-grpverify-{date}.json`, `wa-dim-{ref}-inv-{scope}-v{n}-{date}.md` |
-| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-{ref}-cc-directive-{scope}-v{n}-{date}.md` |
+| `data/exports/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_{scope}_{YYYYMMDD}_v{n}.json` |
+| `data/exports/verse_context/` | Verse Context batch extracts | `wa-vcb-{NNN}-extract-{YYYYMMDD}.json` |
+| `data/exports/dimension_review/` | Dimension Review extracts (cluster, root family, group verification, existing pointers) | `wa-dim-{cluster}-{type}-{YYYYMMDD}.json` |
+| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-{ref}-cc-directive-{scope}-v{n}-{YYYYMMDD}.md` |
 | `data/exports/dimension_review/directives/archive/` | Processed directives (moved after execution) | |
-| `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{date}.json` |
-| `data/exports/vertical_pass/directives/` | Pending CC directives. Processed directives move to `directives/archive/`. | `WA-VerticalPass-{scope}-v{n}-{date}.md` |
-| `data/exports/vertical_pass/directives/archive/` | Processed directives (moved after execution) | |
-| `data/exports/Session C/` | Comprehensive word extracts (complete and owner-only) | `wa-{nnn}-{word}-complete-{date}.json`, `wa-{nnn}-{word}-owner_only-{date}.json` |
-| `data/exports/session_d/` | Session D pointers files | `wa-{nnn}-{word}-sdpointers-{date}.json` |
-| `data/exports/pool_analysis/` | Pool analysis datasets | `wa-pool-{pool_id}-analysis-{date}.json` |
+| `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{YYYYMMDD}.json` |
+| `data/exports/Session C/` | Comprehensive word extracts (complete and owner-only) | `wa-{NNN}-{word}-{scope}-{YYYYMMDD}-v{n}.json` |
+| `data/exports/session_d/` | Session D pointers files | `wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json` |
+| `data/exports/pool_analysis/` | Pool analysis datasets | `wa-pool-{pool_id}-analysis-{YYYYMMDD}.json` |
 
 **Archiving:** When a new version of an export is produced on the same day (v2, v3), prior versions are retained (auto-versioned). When a new day's export supersedes a prior day's, the prior day's file is moved to `data/exports/archive/`.
 
-### `data/imports/WA/Patches/`
+### 3.2 `data/imports/WA/Patches/`
 
-All patch files received from Claude AI. Applied patches are moved to `archive/patches/` by the applicator.
+All patch files received from Claude AI. Two categories:
+
+| Type | Description | Format |
+|------|-------------|--------|
+| **Patches** | Structured JSON instructions for the applicator | `patch-{YYYYMMDD}-{NNN}-{type}-v{n}.json` |
+| **Directives** | Unstructured markdown instructions for Claude Code | `cc-directive-{NNN}-{seq}-{YYYYMMDD}.md` |
+
+Applied patches and executed directives are moved to `archive/patches/` by the applicator or Claude Code.
+
+### 3.3 `data/imports/WA/Session_B_Analysis/`
+
+Claude AI session outputs from Session B analytical work.
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Pending patches | `wa-{nnn}-{word}-patch-{date}.json`, `wa-vcb-{nnn}-patch-{date}.json`, `wa-dim-{cluster}-patch-v{n}-{date}.json`, `wa-dim-{ref}-grpdesc-patch-v{n}-{date}.json` |
+| Observations | `wa-{NNN}-{word}-sessionb-observations-v{n}-{YYYYMMDD}.md` |
+| Session briefs | `wa-{NNN}-{word}-sessionb-brief-v{n}-{YYYYMMDD}.md` |
+| Session logs | `wa-{NNN}-{word}-sessionb-log-v{n}-{YYYYMMDD}.md` |
+| CC directives | `wa-{NNN}-{word}-sessionb-cc-directive-v{n}-{YYYYMMDD}.md` |
 
-### `data/imports/WA/Session_B_Dimension_Review/`
+**Not here:** Session C notes (→ `Session_C_Words/`), dimension review files (→ `Session_B_Dimension_Review/`).
+
+### 3.4 `data/imports/WA/Session_B_Verse_Context/`
+
+Claude AI session outputs from Verse Context classification work.
+
+| What goes here | Naming pattern |
+|---------------|----------------|
+| Term observations | `wa-vcb-{NNN}-term-observations-v{n}-{YYYYMMDD}.md` |
+| Session logs | `wa-vcb-{NNN}-session-log-v{n}-{YYYYMMDD}.md` |
+| Session B flags | `wa-vcb-{NNN}-sessionb-flags-v{n}-{YYYYMMDD}.md` |
+| Patch logs | `wa-vcb-{NNN}-patch-log-v{n}-{YYYYMMDD}.md` |
+
+**Not here:** Dimension review files (→ `Session_B_Dimension_Review/`).
+
+### 3.5 `data/imports/WA/Session_B_Dimension_Review/`
 
 Claude AI session outputs from Dimension Review work.
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Cluster review assessments | `wa-dim-cluster-review-{cluster}-v{n}-{date}.md` |
-| Dimension refinement logs | `wa-dim-refinement-log-v{n}-{date}.md` |
-| Session logs | `wa-dim-session-log-{scope}-v{n}-{date}.md` |
+| Cluster observations | `wa-dim-{cluster}-observations-v{n}-{YYYYMMDD}.md` |
+| Session logs | `wa-dim-{cluster}-session-log-v{n}-{YYYYMMDD}.md` |
+| Registry-specific patches | `wa-dim-{cluster}-reg{NNN}-patch-v{n}-{YYYYMMDD}.json` |
 
-### `data/imports/WA/vertical_pass/`
+### 3.6 `data/imports/WA/Session_C_Words/`
 
-Claude AI session outputs from Vertical Pass work.
+Claude AI Session C word study outputs.
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Session logs | `wa-verticalpass-session-log-{scope}-v{n}-{date}.md` |
-| Patches | `wa-verticalpass-patch-{scope}-v{n}-{date}.json` |
-| Analysis outputs | `wa-verticalpass-{scope}-v{n}-{date}.md` |
+| Word studies | `wa-{NNN}-{word}-sessionc-word-study-v{n}-{YYYYMMDD}.md` |
+| Session logs | `wa-{NNN}-{word}-sessionc-log-v{n}-{YYYYMMDD}.md` |
+| Session C notes | `wa-{NNN}-{word}-sessionc-note-v{n}-{YYYYMMDD}.md` |
+| Analysis reports | `wa-sessionc-analysis-report-v{n}-{YYYYMMDD}.md` |
 
-### `data/imports/WA/Workflow/Frameword_B/Session_B/`
+### 3.7 `data/imports/WA/Workflow/Framework_B/Session_B/`
 
 Governing instruction documents. Only the **current version** lives here. Superseded versions go to the `archive/` subfolder within Session_B.
 
-### `data/discovery/`
+### 3.8 `data/discovery/`
 
 STEP API discovery output. Paired JSON + markdown files per word. No archiving needed — these are source data.
 
-### `data/schema/`
+### 3.9 `data/schema/`
 
-Authoritative DDL. Only `create_tables.sql` (kept current with schema).
+Authoritative DDL and schema-related reports.
+
+| What goes here | Naming pattern |
+|---------------|----------------|
+| DDL | `create_tables.sql` |
+| Schema snapshots | `database-schema-{YYYYMMDD}.json` |
 
 ---
 
-### `outputs/`
+### 3.10 `outputs/`
 
 All analysis outputs, reports, and investigation artefacts produced by Claude Code or the researcher.
 
 | Subfolder | What goes here | Naming pattern |
 |-----------|---------------|----------------|
-| `outputs/reports/programme/` | Programme status reports, periodic reviews, database schema reports, registry overviews, word registry exports | `wa-programme-status-report-{date}.md`, `database_schema_{date}.json`, `wa-registry-overview-{date}.json`, `word_registry.json` |
-| `outputs/reports/words/` | Per-word reports — Verse Context reports, engine run reports, word extracts | `vc-report-{nnn}-{word}-{date}.docx`, `{word}_{reg}_report_{date}.md` |
-| `outputs/investigations/` | Ad-hoc data investigations, CSV dumps, dedup plans, instruction gap analyses | `{topic}-{date}.csv`, `{topic}-{date}.md` |
-| `outputs/docx/` | Word documents for external consumption | `{WORD}-full-extract-{date}.docx` |
+| `outputs/reports/programme/` | Programme status reports, periodic reviews, registry overviews, word registry exports | `wa-programme-status-report-{YYYYMMDD}.md`, `wa-programme-registry-overview-{YYYYMMDD}.json`, `word_registry.json` |
+| `outputs/reports/words/` | Per-word reports — Verse Context reports, engine run reports, word extracts | `vc-report-{NNN}-{word}-{YYYYMMDD}.docx`, `{word}_{reg}_report_{YYYYMMDD}.md` |
+| `outputs/investigations/` | Ad-hoc data investigations, CSV dumps, dedup plans, instruction gap analyses, assessments | `{topic}-{YYYYMMDD}.{ext}` |
+| `outputs/docx/` | Word documents for external consumption | `{WORD}-full-extract-{YYYYMMDD}.docx` |
 | `outputs/pdf/` | Final publishable products | |
-| `outputs/word_reports/` | Per-word engine reports and run logs | `{word}_{reg}_report_{date}.md` |
-| `outputs/archive/` | Superseded outputs (audit diffs, old reports) | moved here when superseded |
+| `outputs/archive/` | Superseded outputs (audit diffs, old reports) | Moved here when superseded |
 
 **Rule:** Nothing goes in `outputs/` root. Every file goes in the appropriate subfolder.
 
 ---
 
-### `docs/`
+### 3.11 `docs/`
 
 Project documentation — architecture specs, setup guides, design decisions. These are **reference documents**, not session outputs.
 
@@ -107,24 +326,30 @@ Project documentation — architecture specs, setup guides, design decisions. Th
 | Interaction preferences | `interaction-preferences.md` |
 | File organisation rules | This file |
 
-**Not here:** Session logs, status reports, investigation outputs, instruction documents.
+**Not here:** Session logs, status reports, investigation outputs, instruction documents, one-off audit results.
 
 ---
 
-### `Logs/`
+### 3.12 `Logs/`
 
-Session logs — timestamped records of what happened in each working session.
+Session logs — timestamped records of what happened in each working session. Logs are **topic-related** and crucial for maintaining topical information access.
 
 | What goes here | Naming pattern |
 |---------------|----------------|
-| Session logs | `WA-SessionLog-{topic}-v{n}-{date}.md` |
-| Pipeline status reviews | `WA-PipelineStatusReview-v{n}-{date}.md` |
+| Programme session logs | `wa-session-log-{YYYYMMDD}-{topic}.md` |
+| Pipeline status reviews | `wa-pipeline-status-review-v{n}-{YYYYMMDD}.md` |
 
-**Archiving:** Old session logs stay here (they are historical records). Only move to `archive/Logs/` if explicitly superseded.
+**Filing:** Logs should be filed to the appropriate topical folder where possible:
+- VC batch logs → `Session_B_Verse_Context/`
+- Session B analysis logs → `Session_B_Analysis/`
+- Dimension review logs → `Session_B_Dimension_Review/`
+- Programme-level logs → `Logs/` or `Workflow/Sessionlogs/`
+
+**Archiving:** Old session logs stay in their folder (they are historical records). Only move to `archive/Logs/` if explicitly superseded or no longer topically relevant.
 
 ---
 
-### `scripts/`
+### 3.13 `scripts/`
 
 Utility and maintenance scripts. Active scripts only.
 
@@ -135,86 +360,56 @@ Utility and maintenance scripts. Active scripts only.
 | Report generation | `_generate_programme_report.py` |
 | One-off applicators | `apply_session_patch.py` |
 
-**Rule:** `_tmp_*.py` scripts must be deleted or moved to `archive/scripts/` at end of session. They must not accumulate in `scripts/` root.
+**Rule:** `_tmp_*.py` scripts must be deleted or moved to `archive/scripts/` at end of session. One-off investigation scripts (`_check_*`, `_probe_*`) that have served their purpose should be archived promptly.
 
 ---
 
-### `archive/`
+### 3.14 `archive/`
 
-Superseded and retired artefacts. Organised by type.
+Superseded and retired artefacts. Organised by type. **Archive is not dead** — these files remain accessible and indexed in the file manifest.
 
 | Subfolder | What goes here |
 |-----------|---------------|
-| `archive/scripts/` | Retired `_tmp_*` and old utility scripts |
-| `archive/patches/` | Applied patch files (moved by applicator) |
-| `archive/Logs/` | Old session logs if superseded |
-| `archive/docs/` | Old documentation versions |
+| `archive/scripts/` | Retired `_tmp_*`, one-off `_check_*`/`_probe_*`, and old utility scripts |
+| `archive/patches/` | Applied patch files and executed directives (moved after processing) |
+| `archive/Logs/` | Old session logs if superseded or no longer topically relevant |
+| `archive/docs/` | Old documentation versions, superseded reference docs |
 
 ---
 
-### `backups/`
+### 3.15 Other directories
 
-Engine-managed database backups. Not in Git. Rolling retention of 10 pre-run backups (managed by `engine/backup.py`).
-
----
-
-### `engine/`
-
-Core Python automation engine. Only engine module files. No outputs, no data, no reports.
-
-### `analytics/`
-
-Python library: API clients and DB utilities. No outputs.
-
-### `research/`
-
-Research notes and templates. Currently placeholder — available for researcher use.
+| Directory | Purpose | Rules |
+|-----------|---------|-------|
+| `backups/` | Engine-managed database backups. Not in Git. Rolling 10. | Managed by `engine/backup.py` |
+| `engine/` | Core Python automation engine modules only | No outputs, no data |
+| `analytics/` | Python library: API clients and DB utilities | No outputs |
+| `research/` | Research notes and templates (placeholder) | Available for researcher use |
 
 ---
 
-## 3. Archiving Rules
+## 4. Archiving Rules
 
 | Trigger | Action |
 |---------|--------|
-| New version of a report produced | Move prior version to `outputs/archive/` |
+| New version of a file produced (same day) | Move prior version to `archive/` subfolder within the file's directory |
+| New day's version of a file produced | Move prior day's version to `archive/` subfolder (same-day versions already archived) |
 | New version of an instruction document | Move prior version to the `archive/` subfolder within the instruction's directory |
 | Patch applied successfully | Applicator moves patch to `archive/patches/` |
+| Directive executed | Claude Code moves directive to `archive/patches/` |
 | `_tmp_*.py` script no longer needed | Move to `archive/scripts/` or delete |
-| New day's word export produced | Prior day's export to `data/exports/archive/` (same-day versions kept) |
+| One-off `_check_*`/`_probe_*` investigation complete | Move to `archive/scripts/` |
+| New day's word export produced | Prior day's export to `data/exports/archive/` |
+| Document identified as stale | Move to `archive/docs/`. Can be reinstated via manifest lookup. |
 
----
+### 4.1 Stale Document Policy
 
-## 4. Cleanup Actions Required (2026-03-30)
+Documents that are outdated but contain valuable content are archived, not deleted. The file manifest indexes all archived files, making them discoverable. If a stale document needs to be renewed:
 
-The following files need to be moved to comply with these rules:
-
-### From `outputs/` root to `outputs/reports/`:
-- `wa-programme-status-report-20260328.md`
-- `wa-programme-status-report-20260330.md`
-
-### From `outputs/` root to `outputs/investigations/`:
-- `mti_dedup_plan_20260330.csv`
-- `mti_orphans_20260330.csv`
-- `mti_terms_full_20260330.csv`
-- `multi_owner_terms_20260330.csv`
-- `wa_term_inventory_full_20260330.csv`
-- `sense-sampling-walkthrough-20260328.md`
-- `v5-impact-assessment-20260327.md`
-- `task5-zero-term-investigation-20260327.md`
-- `cross_registry_term_analysis_20260328.png`
-- `cross_registry_root_analysis_20260328.png`
-- `term_sharing_network_20260328.png`
-
-### From `outputs/` root to `outputs/markdown/`:
-- `WA-InstructionGaps-v2-20260330_1 researcher comments.md`
-- `WA-InstructionGaps-v2_2-20260330.md`
-
-### From `outputs/markdown/` to `outputs/investigations/`:
-- `mti-dedup-investigation-20260330.md`
-
-### From `scripts/` root — archive or delete:
-- `_tmp_apply_fixes.py` → `archive/scripts/`
-- `_tmp_status_report.py` → `archive/scripts/`
+1. Locate it via the manifest (`python scripts/build_file_manifest.py --search "topic"`)
+2. Move it back to its active location
+3. Update its content and version
+4. Re-run the manifest
 
 ---
 
@@ -225,7 +420,61 @@ The following files need to be moved to comply with these rules:
 3. **After producing a new report version:** move the prior version to `outputs/archive/`.
 4. **Never place files in a folder root** when a subfolder exists for that file type.
 5. **Reference this document** when uncertain about file placement.
+6. **Maintain the file manifest** — run `python scripts/build_file_manifest.py` after processing a session log or when files are created/moved/archived.
+7. **Archive superseded versions** — when producing a new version, move the prior version(s) to the appropriate archive subfolder.
 
 ---
 
-*Created 2026-03-30. Referenced from CLAUDE.md Section 2.*
+## 6. File Manifest
+
+The project maintains a machine-readable file manifest at `data/file_manifest.json`. This indexes every non-code file in the project (including archived files) with structured metadata.
+
+### 6.1 Purpose
+
+- **Programmatic lookup:** Find the latest version of any file by word, registry, or type
+- **Stale file detection:** Identify superseded files that haven't been archived
+- **Cross-reference:** All files related to a registry, cluster, or batch
+- **Archive access:** Archived files are indexed and discoverable, not lost
+
+### 6.2 Generation
+
+```bash
+# Full rebuild (on demand)
+python scripts/build_file_manifest.py
+
+# Search the manifest
+python scripts/build_file_manifest.py --search "grace"
+python scripts/build_file_manifest.py --search "registry:068"
+python scripts/build_file_manifest.py --search "type:observations"
+```
+
+### 6.3 When to Update
+
+- After processing a session log
+- After any batch of file moves or archiving
+- On demand when needed for lookup
+- At session end as part of cleanup
+
+### 6.4 Manifest Structure
+
+Each entry contains:
+
+| Field | Description |
+|-------|-------------|
+| `path` | Relative path from project root |
+| `category` | Top-level category (import, export, patch, directive, report, investigation, log, doc, script, discovery) |
+| `type` | Specific file type (observations, session-log, word-study, patch, extract, etc.) |
+| `registry` | Registry number if applicable (null otherwise) |
+| `word` | Word name if applicable |
+| `cluster` | Cluster code if applicable |
+| `batch` | VCB batch number if applicable |
+| `version` | Version number extracted from filename |
+| `date` | Date extracted from filename (YYYY-MM-DD normalised) |
+| `ext` | File extension |
+| `archived` | Boolean — whether the file is in an archive location |
+| `size_bytes` | File size |
+| `modified` | Last modified timestamp |
+
+---
+
+*Created 2026-03-30. Updated 2026-04-14 with naming conventions, manifest system, stale doc policy.*

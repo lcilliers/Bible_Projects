@@ -1,0 +1,325 @@
+{
+  "document": {
+    "title": "Framework B Soul Word Analysis Programme — General Rules",
+    "filename": "wa-global-general-rules-v1-2026-04-13.json",
+    "version": "1.0",
+    "date": "2026-04-13",
+    "status": "Initial draft — to be extended as new programme-wide rules are identified",
+    "purpose": "Programme-wide conventions loaded as a project asset. Rules in this file govern all processing instructions. Instructions must not repeat these rules inline; they reference this file. When a conflict arises between an instruction and this file, this file is authoritative.",
+    "scope_test": "A rule belongs in this file if it is about the programme's mechanics, conventions, processes, or data artefacts. A rule belongs as a (b) observation in the database if it must be taken into account when writing about the inner being.",
+    "change_note": "Initial version. Populated from rules surfaced during the compassion audit session (2026-04-13)."
+  },
+
+  "rules": [
+
+    {
+      "rule_id": "GR-FILE-001",
+      "category": "file_naming",
+      "subject": "Filename structure",
+      "rule": "All files follow the pattern [prefix]-[reference]-[short description]-[version]-[date]. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier (cluster code, registry number, group code, or 'global' for cross-programme files).",
+      "example": "wa-023-compassion-sessionB-brief-v1-2026-04-11.md",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-FILE-002",
+      "category": "file_naming",
+      "subject": "Short description length",
+      "rule": "The short description in a filename must not exceed 30 characters.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-FILE-003",
+      "category": "file_naming",
+      "subject": "Version numbering",
+      "rule": "Version numbers follow [major].[minor]. Minor increments for updates to an existing document. Major increments when a document is new or has been rewritten from scratch.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-FILE-004",
+      "category": "file_naming",
+      "subject": "No overwrites",
+      "rule": "No file is ever overwritten. Every save produces a new versioned file. Previous versions are preserved for audit.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-FILE-005",
+      "category": "file_format",
+      "subject": "Output format by purpose",
+      "rule": "Internal reusable documents (instructions, analysis, general descriptive output): markdown (.md). Tabled output (database extracts, patches, itemised instructions): JSON. Documents for visualisation and easy reading: docx. Final documents: docx converted to pdf. Docx documents may be converted to markdown to improve working efficiency.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-FILE-006",
+      "category": "file_naming",
+      "subject": "Prefix",
+      "rule": "The prefix for this project is 'wa'. Global files use 'wa-global' as the reference. Registry files use the zero-padded registry number (e.g. 'wa-023'). Cluster files use the cluster code (e.g. 'wa-c17').",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PASS-001",
+      "category": "pass_close",
+      "subject": "Pass-close download",
+      "rule": "All internal outputs produced during a pass must be made available for download at the end of that pass, before the next pass begins. This applies to observations logs, patch specifications, CC directives, session logs, and any other pass-level output.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PASS-002",
+      "category": "pass_close",
+      "subject": "Write-on-discovery to database",
+      "rule": "AI writes all its own workings to the observations log continuously (write-on-discovery, per DR-19/DR-20). At the end of each pass, items that require database persistence are written to the database via a patch or CC directive, and a new JSON extract is pulled. The new extract includes all previously recorded items. Subsequent pass work reads from the updated extract. The markdown observations log remains as a session narrative and working journal; the database is the authoritative analytical store.",
+      "applies_to": "Session B instruction, to be added as a named pass-close procedure",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-001",
+      "category": "observation_discipline",
+      "subject": "Write-on-discovery",
+      "rule": "Observations are written to disk continuously on discovery. Nothing is accumulated in memory. Per DR-19/DR-20. This is non-waivable.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-002",
+      "category": "observation_discipline",
+      "subject": "Three-category model for analytical output",
+      "rule": "Every analytical comment decomposes into exactly one of: (a) drop — superlatives and impression-making statements that have no analytical value and no database home; (b) entity-linked observation — recorded in observation_description with a key to one or more entities (verse, term, registry, group, dimension, xref, root); or (c) forward-looking pointer — Session B pointer (resolvable within Session B) or Session D pointer (cross-registry synthesis). Material that does not fit is a session action and must be resolved or summarised before the session closes.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-003",
+      "category": "observation_discipline",
+      "subject": "Session actions must resolve at session close",
+      "rule": "Session actions (data-quality findings, methodology notes, sequencing decisions, self-corrections, verification records) must be resolved before the session closes. Unresolved session actions must be clearly summarised in the final session log. A session cannot close silently leaving work in an unresolved state.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-004",
+      "category": "observation_discipline",
+      "subject": "Observations on deleted inventory items are permitted",
+      "rule": "Terms in status = delete are a valid subject for analytical observations. The observation_description table must accept observations keyed to delete-status term records. Session D reads these observations as part of conflict detection and cross-registry synthesis.",
+      "applies_to": "Session B, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-005",
+      "category": "observation_discipline",
+      "subject": "Obsolete marker, not deletion",
+      "rule": "Observations that become stale, wrong, or superseded are marked obsolete (delete = 1) with a reason and date. They are never destroyed. The audit trail remains visible. Superseding observations reference the obsoleted record via related_obser_id.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-OBS-006",
+      "category": "observation_discipline",
+      "subject": "Session C prose must derive from observations",
+      "rule": "Session C reader-facing prose interprets and renders (b) observations from the database. It must not introduce new analytical claims at the writing stage. If the writer identifies a missing observation while writing, the correct action is to pause writing, produce a patch or directive to add the observation, apply the patch, pull a fresh extract, and resume writing against the updated database. Linking between prose and observations is declared at the section level via the observation's study_segment field. Writers may surface insights that lie outside declared boundaries — such insights become new observations, not new prose.",
+      "applies_to": "Session C instruction",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-001",
+      "category": "database_pattern",
+      "subject": "Status filter on mti_terms queries",
+      "rule": "All SQL state queries against mti_terms must include AND mt.status IN ('extracted', 'extracted_thin'). Omitting this filter causes delete-status terms to appear as false positives. Established by the VCB-009 incident (2026-04-02).",
+      "applies_to": "all processing instructions and all database queries",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-002",
+      "category": "database_pattern",
+      "subject": "Term ownership",
+      "rule": "Every term has exactly one OWNER registry. The OWNER carries the term's root, meaning, verses, and classifications. XREF entries in the inventory exist solely to show the distribution of terms across registries — they do not carry root, meaning, verse, or classification data. Analytical observations about a term's content are always keyed to the OWNER's record, never to XREF copies. Observations about a cross-registry relationship are keyed to the xref entity.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-003",
+      "category": "database_pattern",
+      "subject": "XREF root_family artefact",
+      "rule": "XREF copies of terms do not carry matching root_family records because root is an ownership attribute (see GR-DATA-002). Roots that appear to span multiple registries in a raw check may be single-registry artefacts of the XREF mechanism. Any apparent gap in correlations.root_families for a root that has XREF presence in other registries must be investigated with this rule in mind before being flagged as a data defect.",
+      "applies_to": "Session B instruction (Stage 1 audit), correlation audit procedures",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-004",
+      "category": "database_pattern",
+      "subject": "Deprecated meaning fields",
+      "rule": "The following fields on wa_term_inventory are deprecated and should not be flagged as gaps or missing data. They are Phase 1 working fields, sparse by design, and superseded: `meaning` (sparse ~1%, superseded by wa_meaning_parsed); `meaning_numbered` (sparse ~1%, superseded by wa_meaning_parsed); `also_spelled` (sparse ~0.2%, rare by nature); `lsj_entry` (sparse ~29%, Greek terms only). The authoritative meaning data lives in wa_meaning_parsed.",
+      "applies_to": "Session B Stage 1 audit, Pass 5 language accuracy audit",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-005",
+      "category": "database_pattern",
+      "subject": "mti_term_flags authority",
+      "rule": "mti_term_flags is the authoritative flag mechanism for term-level flags. The wa_term_inventory.somatic_link field is redundant and should not be used as a source of truth.",
+      "applies_to": "Session B instruction, Pass 4 somatic evidence audit",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-006",
+      "category": "database_pattern",
+      "subject": "verse_context_record_count semantics",
+      "rule": "The verse_context_record_count field counts database rows in verse_context, not analytical groupings or unique verses. When reasoning about analytical coverage, use group-level counts. When reasoning about data integrity, use verse_context_record_count.",
+      "applies_to": "Session B Stage 1 audit",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DATA-007",
+      "category": "database_pattern",
+      "subject": "Research flag descriptions are historical",
+      "rule": "Research flag descriptions (e.g., PH2_DATA_ERROR flag text) are historical notes from the session in which they were raised. They are not current programme-state assertions. Any claim about programme-wide state must be verified against live data before being asserted as current fact. Established by the H0854 self-correction (2026-04-11).",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-001",
+      "category": "programme_orientation",
+      "subject": "Human-being study",
+      "rule": "The programme is a human-being study, not a theological study. Divine attributes and actions are in scope as reference material for Session B and Session D analysis, not as primary classification categories. The governing question characterises the inner life of the human person as described in Scripture.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-002",
+      "category": "programme_orientation",
+      "subject": "Dimensions are data-derived",
+      "rule": "The 11-dimension vocabulary is data-derived, not imposed. The vocabulary emerged from verse evidence during the Dimension Review process. Dimension 11 is Divine-Human Correspondence. The vocabulary is extended only when verse evidence demands a new dimension; new dimensions require researcher decision.",
+      "applies_to": "Dimension Review instruction, Session B instruction",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-003",
+      "category": "programme_orientation",
+      "subject": "Cluster assignment is a processing unit",
+      "rule": "Cluster assignment is a processing unit, not a semantic classification. Cluster reassignment proposals are raised only when placement materially disrupts analytical work. Semantic relationships across clusters are captured by correlation signals and Session D synthesis, not by cluster reassignment.",
+      "applies_to": "Registry Management, Session B, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-004",
+      "category": "programme_orientation",
+      "subject": "Borderline verses retained",
+      "rule": "Borderline verses are retained by default (RD-PC-001). Inner-being content may only become apparent in cross-registry Session D context. Verse deletion at Stage 1 requires explicit semantic non-fit, not mere borderline status.",
+      "applies_to": "Verse Context instruction, Session B Stage 1",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-005",
+      "category": "programme_orientation",
+      "subject": "No sampling",
+      "rule": "Every verse must be individually inspected. No sampling. No bulk assumptions. Regardless of corpus size. This is non-waivable.",
+      "applies_to": "Session B, Verse Context instruction",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-PROG-006",
+      "category": "programme_orientation",
+      "subject": "No superlatives without source",
+      "rule": "Superlative and comparative claims (e.g., 'largest in the programme', 'highest co-occurrence', 'more than any other') are only permissible if supported by programme-wide data that has been verified at the time the claim is made. Registry-local maxima are not programme-wide superlatives. Unsupported superlatives are category (a) — drop.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    },
+
+    {
+      "rule_id": "GR-DIR-001",
+      "category": "claude_code_directive",
+      "subject": "Plain-language directives",
+      "rule": "Directives to Claude Code are written in plain language, not as JSON patches. Each directive specifies motivation, exact operations, and expected outcomes. Claude Code executes; Claude AI determines what should be done.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "2026-04-13",
+      "obsolete": false
+    }
+
+  ]
+}

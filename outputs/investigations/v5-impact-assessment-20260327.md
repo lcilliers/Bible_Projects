@@ -123,7 +123,7 @@
 
 | File/Location | Reason |
 |---------------|--------|
-| Frameword_B/Session_B/archive/ (existing) | Already contains v4.x docs — correct location |
+| Framework_B/Session_B/archive/ (existing) | Already contains v4.x docs — correct location |
 | docs/interaction-preferences.md | Title references Copilot — update content |
 | Framework_A/ | Empty directory — no action needed |
 
