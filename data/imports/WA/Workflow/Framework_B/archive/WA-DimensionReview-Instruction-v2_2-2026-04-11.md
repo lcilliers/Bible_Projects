@@ -6,15 +6,27 @@
 
 | **Document** | **Value** |
 |---|---|
-| Filename | WA-DimensionReview-Instruction-v2.2-2026-04-11.md |
-| Supersedes | WA-DimensionReview-Instruction-v2.1-2026-04-10.md |
-| Change note | v2.2 — Two structural changes to patch production and observations log management. **(1) Per-registry patch production** (Sections 6.1, 6.5, 6.6, 7.3, 8.5, 10.2, 13, DR-20): The patch is no longer produced in a separate end-of-cluster patch session. Instead, a per-registry patch is produced immediately after each registry's Phase C is confirmed complete — while the data is still in working memory — and delivered to the researcher for Claude Code application before the next registry begins. This reduces memory load, eliminates end-of-cluster patch accumulation, and allows errors to be caught registry by registry. Section 6.5 (Startup Protocol — Patch Session) is replaced by Section 6.5 (Per-Registry Patch Protocol). Section 6.6 hard limit "Produce a patch in the same session as analytical work — the patch session is always separate" is removed; it is replaced by the requirement to produce the patch immediately after each registry's Phase C, before advancing. Section 6.6 recommended session sizes table updated. Patch ID format now includes registry number: `PATCH-{YYYYMMDD}-DIMREVIEW-{cluster}-REG{nnn}-V{n}`. The cluster stamp travels with the final registry's patch. DR-20 updated. Section 8.5 patch type content column updated. Section 13 patch naming updated. **(2) Observations log versioning — no overwrite** (Sections 6.2, 13): The observations log filename must never be reused. Every write increments the version by 0.1: `v1.0`, `v1.1`, `v1.2`, … The previous version remains on disk. The current version is always the highest-numbered file. This replaces the previous rule (Section 6.2) that version-incremented only on new write sessions; the new rule increments on every write within a session as well. Section 6.6 append rule (Step 5) retained — the no-overwrite rule extends it to filenames. No analytical or process changes to Phases A, B, or C. All instruction version strings updated to v2.2. |
-| Companion documents | WA-VerseContext-Instruction-v2.5-20260409 │ WA-SessionB-Analysis-Instruction-v4.6 │ WA-Reference-v5.5 │ WA-Registry-Management-Guide-v5.7 │ patch_specification-v1.7 │ WA-SessionD-Orientation-v2.1 │ WA-dim-session-log-methodology-v2.1-2026-04-08.md |
+| Filename | WA-DimensionReview-Instruction-v1.10-20260414.md |
+| Supersedes | WA-DimensionReview-Instruction-v1.9-20260409.md |
+| Change note | v1.10 (20260414): Global rules integration. (1) Governing Rules header added — mandatory load of wa-global-general-rules-v2-20260414.json before session start. (2) Section 0 write-on-discovery paragraph removed — replaced with reference to GR-OBS-001. (3) Sections 1.1 and 1.3 "no pre-formed categories" text removed — replaced with reference to GR-PROG-002. (4) Section 1.6 "all changes through patches" paragraph removed — replaced with reference to GR-PROC-003. (5) Section 6.2 file writing versioning rule corrected: version-increment occurs when resuming work in a new session, not on every file save (resolves conflict between DR instruction and programme memory). (6) Companion documents table: WA-SessionB-Analysis-Instruction-v5.7 corrected to WA-SessionB-Instruction-v4.8; all dates updated to compact format. (7) All filename examples updated to compact date format per GR-FILE-009, lowercase per GR-FILE-007. |
+| Companion documents | WA-VerseContext-Instruction-v2.5-20260409 │ WA-SessionB-Instruction-v4.8-20260414 │ WA-Reference-v5.5-20260330 │ WA-Registry-Management-Guide-v5.8-20260412 │ patch_specification-v1.10-20260412 │ WA-SessionD-Orientation-v3.0-20260412 │ WA-dim-session-log-methodology-v2.1-20260408.md |
+
+---
+
+## Governing Rules
+
+This instruction is governed by **wa-global-general-rules-v2-20260414.json**.
+
+Claude AI must confirm the global rules file has been loaded before beginning any work in this session. State aloud: *"Global rules wa-global-general-rules-v2-20260414.json loaded."*
+
+Rules stated in the global file are not repeated here. Where a section references a global rule, the rule ID is cited.
+
+---
 | Inputs | wa-dimension-report-{date}.md │ wa-registry-overview-{date}.json │ database_schema_{date}.json │ Dimension Review cluster extract — wa-dim-{cluster}-extract-{date}.json (Claude Code → Claude AI) │ Root family cluster extract — wa-dim-{cluster}-rootfamily-{date}.json (Claude Code → Claude AI) │ Pre-existing pointers extract — wa-dim-{cluster}-existing-pointers-{date}.json (Claude Code → Claude AI) │ Anchor verse vertical pass extract — wa-dim-{cluster}-vpass-{group_code}-{date}.json (Claude Code → Claude AI, on demand) │ wa-vcb-{batch_id}-term-observations files (where group description correction is required) |
-| Outputs | Observations log — wa-dim-{cluster}-observations-v{n}-{date}.md (Claude AI, written continuously; version number increments by 0.1 on every write — never overwritten) │ Per-registry dimension patch — wa-dim-{cluster}-reg{nnn}-patch-v{n}-{date}.json (Claude AI → Claude Code, produced immediately after each registry's Phase C is confirmed complete) │ Group description correction patch — wa-dim-{cluster}-grpdesc-patch-v{n}-{date}.json (Claude AI → Claude Code, when triggered) │ Return instruction — wa-dim-{cluster}-{registry_no}-return-v{n}-{date}.md (Claude AI → researcher, when upstream re-run required) │ Session log — wa-dim-{cluster}-session-log-v{n}-{date}.md (Claude AI, at breakpoints) |
-| Claude AI role | Cluster assignment review, group quality assessment, characteristic-perspective correction, dimension discernment, dominant subject identification, anchor verse verification, progressive refinement, Session B/D pointer capture, observations log maintenance, per-registry patch production, return instruction production |
+| Outputs | Observations log — wa-dim-{cluster}-observations-v{n}-{date}.md (Claude AI, written continuously during session) │ Dimension patch — wa-dim-{cluster}-patch-v{n}-{date}.json (Claude AI → Claude Code, produced in separate patch session from observations log) │ Group description correction patch — wa-dim-{cluster}-grpdesc-patch-v{n}-{date}.json (Claude AI → Claude Code, when triggered) │ Return instruction — wa-dim-{cluster}-{registry_no}-return-v{n}-{date}.md (Claude AI → researcher, when upstream re-run required) │ Session log — wa-dim-{cluster}-session-log-v{n}-{date}.md (Claude AI, at breakpoints) |
+| Claude AI role | Cluster assignment review, group quality assessment, characteristic-perspective correction, dimension discernment, dominant subject identification, anchor verse verification, progressive refinement, Session B/D pointer capture, observations log maintenance, patch production (separate patch session), return instruction production |
 | Claude Code role | Cluster extract construction, root family extract construction, existing pointers extract construction, anchor verse vertical pass extract construction (on demand), patch application to `wa_dimension_index`, `verse_context_group`, `wa_session_b_findings`, `wa_session_research_flags`, manual_override locking, dimension confidence field updates, dominant_subject field updates, VC batch re-run triggering where required, registry and cluster stamp updates, post-application integrity checks, dimension report regeneration |
-| Interaction model | Claude Code constructs cluster extract + root family extract + existing pointers extract → Claude AI runs analytical session (Phases A–C), writing observations log continuously → for each registry: Claude AI completes Phase C → Claude AI constructs and delivers per-registry patch → researcher reviews → Claude Code applies → Claude AI continues to next registry → loop until cluster complete → cluster stamp applied in final registry patch → Session B DataPrep gate open |
+| Interaction model | Claude Code constructs cluster extract + root family extract + existing pointers extract → Claude AI runs analytical session (Phases A–C), writing observations log continuously → Claude AI runs patch session reading observations log → researcher reviews patch → Claude Code applies → loop until cluster anchored → advance to next cluster |
 
 ---
 
@@ -50,9 +62,9 @@ This document governs the Dimension Review stage — the analytical phase betwee
 
 > The Dimension Review does not flag and pass. When a quality problem is identified, the Dimension Review follows whatever sub-process is necessary to fix it. If a fix cannot be completed within the Dimension Review session, the session stops and issues a formal return instruction to the appropriate upstream process. A group with an unresolved quality problem does not advance to Phase C.
 
-**The write-on-discovery principle:**
+**The write-on-discovery principle (per GR-OBS-001 — non-waivable):**
 
-> Every analytical decision — dimension assignment, description rewrite, Session B/D pointer, field update, QA flag and resolution, instruction amendment note — is written to the observations log immediately on discovery. Nothing is accumulated in memory for later transcription. The observations log is the complete and authoritative record of the analytical session.
+Every analytical decision is written to the observations log immediately on discovery. Nothing is accumulated in memory. The observations log is the complete and authoritative record of the analytical session.
 
 **Stage sequence:**
 ```
@@ -178,7 +190,7 @@ These gates are independent. A registry may proceed to Stage 2 under the Registr
 
 ### 1.1 Data-First
 
-No dimension category is assumed to be correct before the group content has been read. The automated labels are a starting map — useful as orientation, not as conclusion. The confirmed dimension vocabulary (Section 5.7) is a working starting point derived from data, not an authoritative final system.
+Per GR-PROG-002: no dimension category is assumed correct before the group content has been read. The automated labels are a starting hypothesis — useful as orientation, not as conclusion. The confirmed dimension vocabulary (Section 5.7) is a working starting point derived from data, not an authoritative final system.
 
 ### 1.2 Progressive Refinement
 
@@ -195,7 +207,7 @@ A dimension reaches anchor status only when the researcher is confident it refle
 
 ### 1.3 The Dimension Vocabulary Is Iterative
 
-The vocabulary in Section 5.7 was derived from data and represents the current best understanding. It will be revised as more data is reviewed. When a group does not fit any existing dimension, that is a finding, not a failure.
+Per GR-PROG-002: the vocabulary in Section 5.7 was derived from data and represents the current best understanding. It will be revised as more data is reviewed. When a group does not fit any existing dimension, that is a finding, not a failure.
 
 *Current vocabulary: 11 dimensions (updated v1.6 — dimension 11 Divine-Human Correspondence added from C18 data).*
 
@@ -209,7 +221,7 @@ When the Dimension Review is done well — clusters validated, groups quality-ch
 
 ### 1.6 All Changes Go Through the Patch Process
 
-No corrections to group descriptions, dimension assignments, or any database field are made by direct database manipulation. Every change is encoded in a patch file, reviewed by the researcher, and applied by Claude Code.
+Per GR-PROC-003 (non-waivable). No corrections to group descriptions, dimension assignments, or any database field are made by direct manipulation. Every change is encoded in a patch file, reviewed by the researcher, and applied by Claude Code.
 
 ### 1.7 The Scope Signal — Dominant Subject
 
@@ -558,7 +570,7 @@ The mandatory anchor verse reading in Step 3 is performed for every group using 
 
 ### 5.7 The Dimension Vocabulary
 
-*Derived from data. Working vocabulary as of v2.2. Will be revised as additional data is reviewed.*
+*Derived from data. Working vocabulary as of v1.9. Will be revised as additional data is reviewed.*
 
 **01 — Emotion — Positive**
 *Inner states of pleasure, joy, delight, or satisfaction*
