@@ -109,10 +109,41 @@ Current `schema_version.version_code` is `3.8.0`. The 2026-04-15 changes arguabl
 
 ---
 
-## 5. Recommended Next Actions
+## 5. Open Loops to Close
+
+Two tracking items that must not be forgotten:
+
+### 5.1 apply_session_patch.py — BLOCKING for next Session B patch
+
+The patch applicator cannot write the 9 new `wa_session_b_findings` lifecycle fields
+(pass_ref, study_segment, delete_flag, obsolete_reason, obsolete_date, superseded_by_id,
+related_finding_id, resolution_note, thin_evidence). It also hard-codes a fallback
+to deprecated `flag_code='SB_FINDING'` and has no handler for `wa_finding_entity_links`
+inserts.
+
+**Any Session B patch applied before this is fixed will silently omit the new fields.**
+New finding records will be incomplete. This gap must be closed before the next
+Session B patch is applied.
+
+### 5.2 Session B instruction flush-through to Claude Code instructions
+
+Session B instruction updates (v4.8 / v5.0 / etc. produced 2026-04-14) have not
+yet been flushed through to `WA-SessionB-CC-Instructions-v3.3` / the patch spec /
+CLAUDE.md. When Session B v5.0 lands formally, CC-side instructions must be
+reconciled — especially the patch applicator contract for the new finding lifecycle
+fields and entity-link inserts.
+
+This is tracked in `wa-global-general-rules-v2_2-20260415.json` (flags FLAG-007,
+FLAG-008 — pending instruction updates). Closing the loop means: when Session B
+v5.0 instruction is finalised, confirm that CC Instructions v3.3 and the patch spec
+are updated to match, and that this report's P1/P2 items are reflected there.
+
+---
+
+## 6. Recommended Next Actions
 
 **Priority 1 (before next Session B run):**
-1. Fix `scripts/apply_session_patch.py` to write the 9 new finding columns and use valid flag codes in fallback
+1. Fix `scripts/apply_session_patch.py` to write the 9 new finding columns and use valid flag codes in fallback (see §5.1)
 2. Archive `scripts/_apply_phase2_flags_patch.py`
 
 **Priority 2 (before schema reproducibility is needed):**
