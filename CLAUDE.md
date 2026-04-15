@@ -136,7 +136,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 | 3 | WA File Index | `wa_file_index` | One row per imported Session A JSON; parent for all WA tables |
 | 4 | WA Term Data | `wa_term_inventory`, `wa_term_related_words`, `wa_term_root_family` | Per-term metadata: glosses, meaning, occurrences, flags. `term_owner_type` (OWNER/XREF) classifies each term. |
 | 5 | Phase 2 Flags | `phase2_flag_types`, `wa_term_phase2_flags` | Semantic/analytical flags (set by Claude) |
-| 6 | Quality Flags | `wa_quality_flag_types`, `wa_data_quality_flags` | DATA_COVERAGE flags (engine-derived). Includes CONCRETE_PHYSICAL. |
+| 6 | Quality Flags | `wa_quality_flag_types`, `wa_data_quality_flags` | DATA_COVERAGE flags (engine-derived). Includes CONCRETE_PHYSICAL. Reference table extended 2026-04-15 (+3 fields: deprecated, deprecation_note, category; +15 rows). |
 | 7 | Cross-Registry | `wa_crosslink_type`, `wa_cross_registry_links` | Semantic links between word registries |
 | 7b | Session Research | `wa_session_research_flags` | Session B/C/D research findings (PH2, SB_FINDING, SB_DIMENSION, SD_POINTER flags) |
 | 8 | Verse Records | `wa_verse_records`, `wa_verse_term_links` | **Core research table**: one row per term-in-verse occurrence. `mti_term_id` FK for direct term lookup. |
@@ -144,7 +144,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 | 10 | Engine Control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Full audit trail for every engine run |
 | 11 | Meaning Parse | `wa_meaning_parsed`, `wa_meaning_sense`, `wa_meaning_stem`, `wa_lsj_parsed` | Structured parse of meaning text |
 | 12 | Metadata | `schema_version` | Current schema version and migration history |
-| 13 | Session B Structured | `wa_session_b_dimensions`, `wa_session_b_findings` | Dimensional profiles and key findings per registry |
+| 13 | Session B Structured | `wa_session_b_dimensions`, `wa_session_b_findings`, `wa_finding_entity_links` | Dimensional profiles and key findings per registry. 2026-04-15: findings table +9 lifecycle fields (pass_ref, study_segment, delete_flag, obsolete_*, superseded_by_id, related_finding_id, resolution_note, thin_evidence); `finding_type` normalised to UPPER_SNAKE_CASE. New junction table `wa_finding_entity_links` links findings to entities. |
 | 14 | Session D | `session_d_runs`, `session_d_verse_links`, `session_d_term_links`, `session_d_observations` | Cross-registry synthesis capture |
 | 15 | Verse Context | `verse_context_group`, `verse_context` | Contextual meaning groups and per-verse classification (v3.8.0, M18) |
 

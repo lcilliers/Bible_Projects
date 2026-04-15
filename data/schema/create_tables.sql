@@ -23,7 +23,7 @@
 --   Section 11 — Meaning parsing:        wa_meaning_parsed, wa_meaning_sense, wa_meaning_stem, wa_lsj_parsed
 --   Section 12 — Schema metadata:        schema_version
 --   Section 13 — Session research:       wa_session_research_flags (M13)
---   Section 14 — Session B structured:   wa_session_b_dimensions, wa_session_b_findings (M16)
+--   Section 14 — Session B structured:   wa_session_b_dimensions, wa_session_b_findings, wa_finding_entity_links (M16 + 20260415)
 --   Section 15 — Session D:              session_d_runs, session_d_verse_links, session_d_term_links, session_d_observations (M16)
 --   Section 16 — Verse Context:          verse_context_group, verse_context (M18)
 --   Section 17 — Dimension Index:        wa_dimension_index
@@ -273,22 +273,29 @@ CREATE TABLE IF NOT EXISTS wa_term_phase2_flags (
 -- ═════════════════════════════════════════════════════════════════════════════
 
 -- ── 6.1  wa_quality_flag_types ───────────────────────────────────────────────
--- Two-level lookup: flag_group / flag_code.
--- Created 2026-03-16.  25 codes across 4 groups (22 original + 3 added by M02):
---   DATA_COVERAGE (8): NO_VERSES, THIN_DATA, SMALL_VERSE_SAMPLE, NO_WORD_ANALYSIS,
---                      UNCERTAIN_MEANING, ARAMAIC_EQUIVALENT,
---                      SPAN_RESOLUTION_CONFLICT, SPAN_FILTER_APPLIED
---   IMPORT_STATUS (8): STRONGS_RECONCILED, OCCURRENCE_COUNT_MISMATCH,
---                      FORMAT_ERROR_IN_SOURCE, FORMAT_ISSUE_RESOLVED, PARSE_ERROR,
---                      TERMS_IN_HEADER_NOT_IN_STEP, DUPLICATE_IN_SOURCE, DUPLICATE_RESOLVED
---   TERM_ANALYSIS (5): CONSOLIDATION_CANDIDATE, MULTI_SENSE_ENTRY, CROSS_REGISTRY,
---                      CROSS_PART_ROOT, PERIPHERAL_TERM
---   NOTE (4):          NOTE, NOTE_ON_ROOT_FAMILY, ANOMALY_NOTE, SPAN_BACK_POPULATED
+-- Two-level lookup: flag_group / flag_code, plus category classifier (added 2026-04-15).
+-- Created 2026-03-16. Extended 2026-04-15 (DIR-20260415-001, DIR-20260415-002):
+--   - Added fields: deprecated, deprecation_note, category
+--   - 15 new rows added for flag codes used in wa_session_research_flags
+--   - 3 rows deprecated (SB_FINDING/SB_DIMENSION/SB_INNER_BEING) — superseded by
+--     dedicated Session B output tables (wa_session_b_findings, wa_session_b_dimensions,
+--     word_registry.sb_classification)
+-- Current: 29 rows (14 original + 15 new).
+-- Categories (new field, for the 15 added rows):
+--   DATA_QUALITY       (6): PH2_VOLUME_LIMITATION, PH2_DATA_ERROR, PH2_CROSS_REGISTRY_REQUIRED,
+--                            PH2_DATA_QUALITY, PH2_DATA_SPLIT_REQUIRED, DATA_INTEGRITY
+--   SESSION_D_POINTER  (3): PH2_CROSS_REF_ENRICHMENT, DIMREVIEW_SESSION_D, THEMATIC_LINK
+--   STUDY_REQUIRED     (3): PH2_THEOLOGICAL_DEPTH_REQUIRED, PH2_EXEGETICAL_STUDY_REQUIRED,
+--                            PH2_ESCHATOLOGICAL_STUDY_REQUIRED
+--   RESEARCHER_DECISION(3): PH2_BOUNDARY_QUESTION, CANDIDATE_REGISTRY_WORD, RESEARCHER_DECISION
 CREATE TABLE IF NOT EXISTS wa_quality_flag_types (
-    id          INTEGER PRIMARY KEY AUTOINCREMENT,
-    flag_group  TEXT    NOT NULL,                  -- "DATA_COVERAGE", "IMPORT_STATUS", "TERM_ANALYSIS", "NOTE"
-    flag_code   TEXT    NOT NULL UNIQUE,
-    description TEXT
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    flag_group       TEXT    NOT NULL,             -- legacy: DATA_COVERAGE / SESSION_B / SESSION_D
+    flag_code        TEXT    NOT NULL UNIQUE,
+    description      TEXT,
+    deprecated       INTEGER DEFAULT 0,            -- 1 = deprecated, 0 = active (added 2026-04-15)
+    deprecation_note TEXT,                         -- reason/context for deprecation (added 2026-04-15)
+    category         TEXT                          -- DATA_QUALITY / SESSION_D_POINTER / STUDY_REQUIRED / RESEARCHER_DECISION (added 2026-04-15)
 );
 
 -- ── 6.2  wa_data_quality_flags ────────────────────────────────────────────────
@@ -704,17 +711,52 @@ CREATE TABLE IF NOT EXISTS wa_session_b_dimensions (
 
 -- ── 14.2  wa_session_b_findings ──────────────────────────────────────────────
 -- Key findings per registry — populated during Session B extraction.
+-- Extended 2026-04-15 (DIR-20260415-004, DIR-20260415-006):
+--   - Added 9 lifecycle fields (pass_ref, study_segment, delete_flag, obsolete_reason,
+--     obsolete_date, superseded_by_id, related_finding_id, resolution_note, thin_evidence)
+--   - finding_type normalised to UPPER_SNAKE_CASE controlled vocabulary:
+--     DIMENSION_REVIEW, DIMENSION_PATTERN, GROUP_INTEGRITY, CROSS_REGISTRY,
+--     THEOLOGICAL_NOTE, VERSE_PATTERN, VERSE_ANNOTATION, TERM_BEHAVIOUR, ETYMOLOGY,
+--     MEANING_OBSERVATION, SOMATIC_EVIDENCE, SPIRIT_SOUL_BODY, ROOT_FINDING,
+--     SESSION_C_CORRECTION, OPEN_ITEM
 CREATE TABLE IF NOT EXISTS wa_session_b_findings (
     id                    INTEGER PRIMARY KEY AUTOINCREMENT,
     finding_id            TEXT    NOT NULL UNIQUE,
     registry_id           INTEGER NOT NULL REFERENCES word_registry(id),
     file_id               INTEGER REFERENCES wa_file_index(id),
-    finding_type          TEXT    NOT NULL,         -- finding category
+    finding_type          TEXT    NOT NULL,         -- UPPER_SNAKE_CASE (controlled vocab above)
     finding               TEXT    NOT NULL,         -- full finding text
     anchor_verses         TEXT,                     -- supporting verse references
     raised_date           TEXT    NOT NULL,         -- ISO-8601
-    session_b_instruction TEXT    NOT NULL          -- instruction version used
+    session_b_instruction TEXT    NOT NULL,         -- instruction version used
+    -- Lifecycle fields (added 2026-04-15)
+    pass_ref              TEXT,                     -- 'Session B Pass 3', 'Dimension Review Phase C C17', 'Session C'
+    study_segment         TEXT,                     -- Rendering target (controlled vocab — obs schema §14)
+    delete_flag           INTEGER DEFAULT 0,        -- 0 = active; 1 = set aside or superseded
+    obsolete_reason       TEXT,                     -- required when delete_flag = 1
+    obsolete_date         TEXT,
+    superseded_by_id      INTEGER REFERENCES wa_session_b_findings(id),  -- self-ref FK
+    related_finding_id    INTEGER,                  -- link to pointer resolved, prior finding, or related
+    resolution_note       TEXT,                     -- for confirmed/deepened findings
+    thin_evidence         INTEGER DEFAULT 0         -- 1 = thin evidence; must resolve before session close
 );
+
+-- ── 14.3  wa_finding_entity_links ────────────────────────────────────────────
+-- Junction table — links analytical findings to the specific entities they describe.
+-- Created 2026-04-15 (DIR-20260415-005). Enables querying findings by entity type/id.
+-- entity_id is polymorphic — refers to different tables based on entity_type.
+-- FK integrity on entity_id is enforced by Claude Code at write time, not by SQL.
+CREATE TABLE IF NOT EXISTS wa_finding_entity_links (
+    id             INTEGER PRIMARY KEY AUTOINCREMENT,
+    finding_id     INTEGER NOT NULL REFERENCES wa_session_b_findings(id),
+    entity_type    TEXT    NOT NULL,                 -- term / verse / group / dimension / registry / root_family / cross_registry
+    entity_id      INTEGER,                          -- id in the entity's table (polymorphic)
+    entity_strongs TEXT,                             -- denormalised Strong's number for term links
+    raised_date    TEXT    NOT NULL                  -- ISO-8601
+);
+
+CREATE INDEX IF NOT EXISTS idx_wfel_finding_id ON wa_finding_entity_links (finding_id);
+CREATE INDEX IF NOT EXISTS idx_wfel_entity    ON wa_finding_entity_links (entity_type, entity_id);
 
 -- ═════════════════════════════════════════════════════════════════════════════
 -- SECTION 15 — SESSION D  (M16)

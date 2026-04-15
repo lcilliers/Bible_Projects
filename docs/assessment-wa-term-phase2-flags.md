@@ -2,6 +2,8 @@
 
 > Analysis date: 2026-04-13
 > Table row count: 1,580 flags across 891 terms (of 7,165 active)
+>
+> **2026-04-15 update:** This table was NOT modified by the flag remediation directives. The related reference table `wa_quality_flag_types` was extended (see `assessment-wa-session-research-flags.md` for context). The 99% unverifiable-flag problem identified in this assessment remains unresolved — cleanup is a separate decision pending researcher direction.
 
 ---
 

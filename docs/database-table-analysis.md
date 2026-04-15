@@ -1,9 +1,16 @@
 # Database Table Analysis
 
 > Framework B — Soul Word Analysis Programme
-> Schema v3.8.0 | 42 tables | Analysis date: 2026-04-13
+> Schema v3.8.0 | 43 tables | Analysis date: 2026-04-13 | Updated 2026-04-15
 
 This document analyses every table in `bible_research.db`: purpose, field inventory with source and status, relationships, and readiness assessment.
+
+> **2026-04-15 schema changes** (directives DIR-20260415-001 through 006):
+> - `wa_quality_flag_types`: +3 fields (deprecated, deprecation_note, category); +15 rows; 3 rows deprecated
+> - `wa_session_b_findings`: +9 lifecycle fields; finding_type normalised to UPPER_SNAKE_CASE
+> - `wa_session_research_flags`: 19 VOLUME_LIMITATION rows consolidated to PH2_VOLUME_LIMITATION
+> - New table: `wa_finding_entity_links` (table count: 42 → 43)
+> See `Logs/wa-session-log-20260415-flag-remediation.md` for full details.
 
 **Readiness key:**
 - **Complete** — field is fully populated and actively used
@@ -527,20 +534,23 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 
 ---
 
-### wa_quality_flag_types (14 rows)
+### wa_quality_flag_types (29 rows) — extended 2026-04-15
 
-**Purpose:** Reference table defining engine-derived quality flag codes (DATA_COVERAGE group) and any additional quality flag groups.
+**Purpose:** Reference table defining engine-derived quality flag codes (DATA_COVERAGE group) and session-scoped flag codes used across `wa_data_quality_flags` and `wa_session_research_flags`.
 
 | Field | Type | Purpose | Source | Readiness |
 |-------|------|---------|--------|-----------|
-| id | INTEGER PK | Internal primary key | Migration seed | Complete |
-| flag_group | TEXT | Group classification (DATA_COVERAGE) | Migration seed | Complete |
-| flag_code | TEXT | Machine-readable code | Migration seed | Complete (7 DATA_COVERAGE + 7 others) |
-| description | TEXT | Human-readable description | Migration seed | Complete |
+| id | INTEGER PK | Internal primary key | Migration seed / DIR-20260415-002 | Complete |
+| flag_group | TEXT | Legacy group classification (DATA_COVERAGE / SESSION_B / SESSION_D) | Migration seed | Complete |
+| flag_code | TEXT | Machine-readable code | Migration seed / DIR-20260415-002 | Complete (29 unique) |
+| description | TEXT | Human-readable description | Migration seed / DIR-20260415-002 | Complete |
+| deprecated | INTEGER | 1 = deprecated, 0 = active (added 2026-04-15 via DIR-20260415-001) | DIR-20260415-001 | Complete (3 deprecated) |
+| deprecation_note | TEXT | Reason for deprecation (added 2026-04-15) | DIR-20260415-001 | Functional (populated on deprecated rows only) |
+| category | TEXT | Classifier: DATA_QUALITY / SESSION_D_POINTER / STUDY_REQUIRED / RESEARCHER_DECISION (added 2026-04-15) | DIR-20260415-002 | Sparse (15/29) — populated on new rows only |
 
-**Relations:** Referenced by `wa_data_quality_flags.flag_id`.
+**Relations:** Referenced by `wa_data_quality_flags.flag_id` and (via string match) `wa_session_research_flags.flag_code`.
 
-**Assessment:** Complete reference table.
+**Assessment:** Extended 2026-04-15. 14 pre-existing rows (category NULL) + 15 new rows (category populated) + 3 deprecated rows. The 15 new rows provide reference entries for the flag codes used in `wa_session_research_flags` (previously orphaned). The loose string match between `wa_session_research_flags.flag_code` and `wa_quality_flag_types.flag_code` remains — no FK constraint was added.
 
 ---
 
@@ -736,9 +746,9 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 
 ---
 
-### wa_session_b_findings (171 rows)
+### wa_session_b_findings (171 rows) — extended 2026-04-15
 
-**Purpose:** Key analytical findings from Session B analysis and Dimension Review, captured as structured records.
+**Purpose:** Key analytical findings from Session B analysis and Dimension Review, captured as structured records. Extended 2026-04-15 with lifecycle fields supporting confirm/correct/deepen/set-aside/supersede workflows.
 
 | Field | Type | Purpose | Source | Readiness |
 |-------|------|---------|--------|-----------|
@@ -746,23 +756,60 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 | finding_id | TEXT | Unique finding identifier | Claude AI (patch) | Complete (171 unique) |
 | registry_id | INTEGER FK | Links to word_registry.id | Claude AI (patch) | Complete (109 registries covered) |
 | file_id | INTEGER FK | Links to wa_file_index.id | Claude AI (patch) | Sparse (12%) — not always linked |
-| finding_type | TEXT | Classification: dominant_dimension, secondary_dimension, etc. | Claude AI (patch) | Complete (8 types) |
+| finding_type | TEXT | UPPER_SNAKE_CASE classification (controlled vocab — see below) | Claude AI (patch) | Complete (7 types in use post-normalisation) |
 | finding | TEXT | The finding text | Claude AI (patch) | Complete |
 | anchor_verses | TEXT | Supporting verse references | Claude AI (patch) | Sparse (35%) — not all findings need verse anchors |
 | raised_date | TEXT | Date raised | Claude AI (patch) | Complete |
 | session_b_instruction | TEXT | Instruction version | Claude AI (patch) | Complete (9 versions) |
+| pass_ref | TEXT | Phase/pass attribution (e.g. 'Session B Pass 3', 'Dimension Review Phase C C17') | Claude AI (patch) | Unused (all NULL — pending use) |
+| study_segment | TEXT | Rendering target (controlled vocab from obs schema §14) | Claude AI (patch) | Unused |
+| delete_flag | INTEGER | 0 = active; 1 = set aside/superseded | Claude AI / Claude Code | Complete (all 0) |
+| obsolete_reason | TEXT | Required when delete_flag = 1 | Claude AI / Claude Code | Unused |
+| obsolete_date | TEXT | Date marked obsolete | Claude AI / Claude Code | Unused |
+| superseded_by_id | INTEGER FK | Self-ref FK — points to replacement finding | Claude AI / Claude Code | Unused |
+| related_finding_id | INTEGER | Link to pointer resolved, prior finding superseded, or related | Claude AI / Claude Code | Unused |
+| resolution_note | TEXT | Review outcome note for confirmed/deepened findings | Claude AI | Unused |
+| thin_evidence | INTEGER | 1 = supported by thin evidence; must resolve before session close | Claude AI | Complete (all 0) |
 
-**Relations:** FK to `word_registry.id`.
+**Controlled vocabulary for `finding_type`** (post 2026-04-15 normalisation):
+MEANING_OBSERVATION, VERSE_PATTERN, VERSE_ANNOTATION, THEOLOGICAL_NOTE, SOMATIC_EVIDENCE, SPIRIT_SOUL_BODY, ETYMOLOGY, ROOT_FINDING, DIMENSION_REVIEW, DIMENSION_PATTERN, GROUP_INTEGRITY, CROSS_REGISTRY, TERM_BEHAVIOUR, SESSION_C_CORRECTION, OPEN_ITEM.
 
-**Assessment:** Functional. 171 findings across 109 registries primarily from Dimension Review. The `file_id` sparseness is because many findings are raised at registry level, not file level. Will grow significantly as more Session B work completes.
+**Current distribution:** DIMENSION_REVIEW (146), THEOLOGICAL_NOTE (8), VERSE_PATTERN (6), TERM_BEHAVIOUR (4), GROUP_INTEGRITY (3), ETYMOLOGY (2), DIMENSION_PATTERN (2).
+
+**Relations:** FK to `word_registry.id`. Self-ref FK on `superseded_by_id`. Parent to `wa_finding_entity_links.finding_id`.
+
+**Assessment:** Structurally ready for the finding lifecycle workflow. All 9 new fields are at initial state — they will populate as Session B v5.0 and subsequent passes exercise the confirm/correct/deepen/set-aside workflow. 171 existing findings have been preserved intact; only `finding_type` was normalised.
+
+---
+
+### wa_finding_entity_links (0 rows) — created 2026-04-15
+
+**Purpose:** Junction table linking analytical findings to the specific entities they describe (terms, verses, groups, dimensions, root families, cross-registry connections). Created 2026-04-15 via DIR-20260415-005 to enable querying findings by entity type/id — a capability that did not exist before.
+
+| Field | Type | Purpose | Source | Readiness |
+|-------|------|---------|--------|-----------|
+| id | INTEGER PK | Internal primary key | Auto-generated | Complete |
+| finding_id | INTEGER FK | Links to wa_session_b_findings.id | Claude AI / Claude Code | New — empty |
+| entity_type | TEXT | Controlled: term / verse / group / dimension / registry / root_family / cross_registry | Claude AI | New — empty |
+| entity_id | INTEGER | Polymorphic id in the entity's own table; FK integrity enforced by CC at write time | Claude AI / Claude Code | New — empty |
+| entity_strongs | TEXT | Denormalised Strong's number for term links | Claude AI | New — empty |
+| raised_date | TEXT | Date the link was created | Claude AI / Claude Code | New — empty |
+
+**Indexes:**
+- `idx_wfel_finding_id` on `(finding_id)` — for lookups from a finding to its entities
+- `idx_wfel_entity` on `(entity_type, entity_id)` — for reverse lookup from an entity to its findings
+
+**Relations:** FK to `wa_session_b_findings.id` (SQL-enforced). `entity_id` is polymorphic — no SQL FK; Claude Code must validate at write time.
+
+**Assessment:** **Empty — schema ready, workflow pending.** Will be populated as Session B v5.0 writes findings that reference specific entities. Enables: "find all findings about term X", "find all findings referencing verse Y", "find all findings in dimension Z".
 
 ---
 
 ## 13. Session Research Flags
 
-### wa_session_research_flags (327 rows)
+### wa_session_research_flags (327 rows) — updated 2026-04-15
 
-**Purpose:** Research flags raised during Session B, Dimension Review, and Verse Context work. Includes SD_POINTER (Session D pointers), SB_FINDING, SB_DIMENSION, PH2 flags, and others.
+**Purpose:** Research flags raised during Session B, Dimension Review, and Verse Context work. Includes SD_POINTER (Session D pointers), PH2_* flags, and others. **Updated 2026-04-15** (DIR-20260415-003): 19 rows with `flag_code = 'VOLUME_LIMITATION'` consolidated to canonical `'PH2_VOLUME_LIMITATION'` (count now 52). Total distinct flag codes: 15 (was 16).
 
 | Field | Type | Purpose | Source | Readiness |
 |-------|------|---------|--------|-----------|
@@ -998,14 +1045,15 @@ This document analyses every table in `bible_research.db`: purpose, field invent
 | wa_term_related_words | 101,970 | Lexical relatives |
 | wa_meaning_parsed | 7,449 | Structured meaning parse |
 | wa_meaning_sense | 15,981 | Sense-level parse |
-| wa_session_research_flags | 327 | Research flags (growing) |
-| wa_session_b_findings | 171 | Analytical findings (growing) |
+| wa_session_research_flags | 327 | Research flags (growing). 2026-04-15: 19 VOLUME_LIMITATION → PH2_VOLUME_LIMITATION |
+| wa_session_b_findings | 171 | Analytical findings (growing). 2026-04-15: +9 lifecycle fields; finding_type normalised |
 
 ### Functional but Sparse
 | Table | Rows | Reason |
 |-------|------|--------|
 | wa_term_root_family | 2,861 | 22% gap from pre-backfill era |
 | wa_term_phase2_flags | 1,580 | Growing as Session B progresses |
+| wa_finding_entity_links | 0 | Created 2026-04-15; will populate as Session B v5.0 writes linked findings |
 | wa_cross_registry_links | 158 | Session A era; will grow |
 | mti_term_cross_refs | 464 | Functional for sharing analysis |
 | mti_term_flags | 54 | Early — growing with Session B |

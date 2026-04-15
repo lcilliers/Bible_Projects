@@ -3,6 +3,13 @@
 > Analysis date: 2026-04-14
 > Table row count: 327 flags across 72 registries
 > Zero flags resolved
+>
+> **2026-04-15 updates:**
+> - DIR-20260415-003: 19 rows with `flag_code='VOLUME_LIMITATION'` consolidated to `'PH2_VOLUME_LIMITATION'`. Distinct codes now 15 (was 16). The "naming duplication" issue from Section 4.1 of this assessment is resolved.
+> - DIR-20260415-002: 15 missing reference rows added to `wa_quality_flag_types`. Every in-use code now has a reference entry with `category` classification. The "codes without reference entry" problem (Section 4 verdict point 4) is resolved — but note the relationship remains a loose string match, no FK constraint was added.
+> - DIR-20260415-001: Three deprecated Session B codes in `wa_quality_flag_types` (SB_FINDING/SB_DIMENSION/SB_INNER_BEING) were not used in this table; no impact.
+>
+> The table's 327 rows, 229 SD_POINTERs, and all analytical content are preserved. `session_raised` format inconsistency (Section 4.2) was not addressed.
 
 ---
 

@@ -3,6 +3,8 @@
 > Analysis date: 2026-04-14
 > Table row count: 158 links across 29 source registries
 > Related reference table: wa_crosslink_type (11 rows)
+>
+> **2026-04-15 update:** This table was NOT modified by the flag remediation directives. The assessment's core finding remains — the `connecting_term` format mismatch (transliterations vs Strong's numbers) was not addressed. Recommendation to treat as historical reference while SD_POINTER system supersedes stands.
 
 ---
 

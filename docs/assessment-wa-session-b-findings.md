@@ -2,6 +2,13 @@
 
 > Analysis date: 2026-04-14
 > Table row count: 171 findings across 109 registries
+>
+> **2026-04-15 update — structural changes applied:**
+> - DIR-20260415-004: Added 9 lifecycle fields (pass_ref, study_segment, delete_flag, obsolete_reason, obsolete_date, superseded_by_id, related_finding_id, resolution_note, thin_evidence). Table now 18 fields.
+> - DIR-20260415-006: `finding_type` normalised to UPPER_SNAKE_CASE controlled vocabulary. 24 rows updated. 7 distinct values post-normalisation (DIMENSION_REVIEW=146, THEOLOGICAL_NOTE=8, VERSE_PATTERN=6, TERM_BEHAVIOUR=4, GROUP_INTEGRITY=3, ETYMOLOGY=2, DIMENSION_PATTERN=2).
+> - DIR-20260415-005: New companion junction table `wa_finding_entity_links` created for linking findings to entities.
+>
+> Row content (171 rows) preserved intact. The "naming inconsistency" issue from Section 4.1 of this assessment is resolved.
 
 ---
 
