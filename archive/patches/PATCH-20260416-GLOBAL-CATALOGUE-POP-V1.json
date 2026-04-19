@@ -1,0 +1,3706 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260416-GLOBAL-CATALOGUE-POP-V1",
+    "registry_id": null,
+    "word": "global",
+    "produced_date": "20260416",
+    "produced_by": "wa-global-sessionb-instruction-v5_1 T-POP-A",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Initial population of wa_obs_question_catalogue with 194 questions from master catalogue v2.0 (20260415). All questions are universal scope. source_registry_no is NULL — CC to populate via follow-up lookup once word registry IDs are confirmed for Grace (068), Forgiveness (064), Love (103), Mercy (111), Compassion (023)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q001",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the structural disposition of the word — where does it originate?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q002",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What determines whether the word is extended or withheld?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q003",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What are the distinct modes of operation of the word in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q004",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word produce in the inner being of the recipient?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q005",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word produce in the relational position of the recipient toward another?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q006",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word reveal about the disposition of God toward the human being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q007",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word reveal about the basis on which God's disposition toward a person is established?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q008",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Where, somatically or relationally, does the word locate the reality of its operation in the giver and in the recipient?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q009",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the word describe a one-time act or an ongoing condition — and how are these distinguished?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q010",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What spatial or directional language is used to describe the ongoing condition the word produces?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q011",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the word produce enabling capacity in the inner being — and if so, what kind?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q012",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What character quality does the word produce in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q013",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How does the word express itself in relation to others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q014",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner condition or orientation is identified as the ground of genuine expression of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q015",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Is there a discernible sequence or movement in the way the word operates through the inner person?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q016",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What direction of movement does the word follow within and through the inner person?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q017",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word identify as its originating source?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q018",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word reveal about the origin of the human capacity to seek it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q019",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the word share an etymological root with another inner-being characteristic — and if so, what is that characteristic?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q020",
+          "section": "Section 1 — Word Characteristic Summary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word produce as a natural inner response in the one who receives it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q021",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being logic or orientation functions as the structural opposite of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q022",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What effect does the logic of merit have on the inner being's capacity to receive the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q023",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What effect does the logic of merit have on the inner being's capacity to extend the word to others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q024",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the inner-being condition of the person who has received the word but failed to recognise it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q025",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being experience cultivates the capacity to extend the word to others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q026",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being posture does the act of earnest appeal express?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q027",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What somatic forms does the inner act of seeking the word take?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q028",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being orientation closes off the reception of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q029",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What relational orientation toward others diminishes the operation of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q030",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between the word and conditions of weakness in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q031",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What kind of inner-being transformation does the word produce — does it change the condition or the person's orientation to the condition?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q032",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the first inner-being response to receiving the word unexpectedly?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q033",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the sequence of inner-being states as the word takes hold in the person?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q034",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "In the eschatological context, what is the first inner-being response to the full outpouring of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q035",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between mourning and the full reception of the word in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q036",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What quality of inner-being stability does the word produce?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q037",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What orientation does the stability produced by the word carry?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q038",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What capacity toward others does the word produce in the inner being of the one who has received it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q039",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the inner-being source of the capacity to extend the word to others — is it discipline or transformation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q040",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How does the word relate to genuine human effort — does it displace it, supplement it, or reconstitute it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q041",
+          "section": "Section 2 — Word Impact Description",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word reveal about the inner-being condition of the person who does not receive it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q042",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the word's primary verse reveal about its essential character?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q043",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the primary verse identify as the relationship between the human version and the divine version of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q044",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the primary verse identify as the primary subject of the word — who exercises it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q045",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the primary verse name more than one function or dimension of the word — and if so, what is the relationship between them?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q046",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the primary verse reveal about the breadth of those toward whom the word operates?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q047",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the verse evidence reveal about the direction of the word's operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q048",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the verse evidence reveal about the word's relationship to suffering or affliction?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q049",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the verse evidence reveal about the word's relationship to moral failure or guilt?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q050",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the verse evidence reveal about the word's relationship to covenantal relationship?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q051",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What reason does a key verse give for the extension of the word — in the recipient's actions, or in the character of the one who gives it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q052",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Where does a key verse locate the reality of the word — in a specific faculty, organ, or location of the giver?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q053",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What practical outcome does a key verse show the word producing for the recipient?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q054",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner state does a key verse identify as the first response to receiving the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q055",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What comes first in a key verse — the establishment of the relationship or standing the word confers, or the commission or responsibility that follows from it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q056",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a key verse identify as the concrete content of what the word gives?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q057",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What spatial or directional language does a key verse use for the reality of the word's operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q058",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse distinguish between the means of entry into the word and the condition the word produces?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q059",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse describe the present condition produced by the word as carrying a forward orientation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q060",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a key verse identify as the ground of the speaker's or recipient's identity — achievement, reception, or something else?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q061",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How does a key verse handle the co-presence of genuine human effort and prior divine initiative?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q062",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "In what form does a key verse present the word — and what does that form enable?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q063",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What effect does the word in communicative form produce in those who receive it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q064",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does a key verse describe the word's work as directed toward the present only, or toward a future state?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q065",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse distinguish between a performed version and a genuine version of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q066",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner orientation does a key verse identify as the source of the genuine quality?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q067",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the sequence of somatic and verbal response in a key verse — which comes first?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q068",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a recipient's response in a key verse reveal about their inner experience of receiving the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q069",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What structural condition in a key verse establishes the recipient as having no basis for the word they receive?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q070",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "In a key verse, does the word operate within or across existing relational, covenantal, or social boundaries?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q071",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the logical structure of a key argument about the word — and what is its premise and conclusion?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q072",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being state does the argument structure in a key verse produce in the recipient?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q073",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between the divine act and the human act in a key verse — illustrative or causal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q074",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Where does a key verse locate the inner quality from which the word's outward act flows?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q075",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the withdrawal or absence of the word reveal about the word's role?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q076",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in extremity reveal about its depth of operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q077",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the judicial or accountability context reveal about its function?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q078",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the supplication context reveal about what the inner person knows about itself?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q079",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the worship or liturgical context reveal about the word's function in ordered relationship with God?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q080",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word at the level of covenantal promise reveal about its scope and duration?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q081",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the context of moral collapse reveal about the word's place in the structure of the inner life?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q082",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the context of formation or sanctification reveal about how the word shapes the person over time?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q083",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the context of community or fellowship reveal about the word's social dimension?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q084",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word in the context of eschatology or final things reveal about the word's ultimate trajectory?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q085",
+          "section": "Section 3 — Annotated Verse Evidence",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does a verse about the word's physical or somatic expression reveal about the inner-outer relationship in the word's operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q086",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the total number of terms in this registry, and how are they distributed between Hebrew and Greek?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q087",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the sharing ratio — what proportion of terms are shared with adjacent word studies?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q088",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the primary Hebrew term, and what does its root meaning reveal about the word's essential character?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q089",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the primary Greek term, and what does its range of use reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q090",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary distinguish between the word as an inner disposition and the word as an outward act — and how?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q091",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term for the word as a settled character quality?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q092",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term for the one who habitually exercises the word — a person-type term?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q093",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term for the word's absence or structural opposite?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q094",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the relationship between the root meaning and the primary sense reveal about the word's conceptual origin?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q095",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include terms that name the word as something received passively and terms that name it as something actively exercised?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q096",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any term in the vocabulary carry both the sense of the word in its human expression and its divine expression?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q097",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the LXX use of the vocabulary reveal about the continuity or development of the word across the Testaments?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q098",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Is there a named failure-mode term in the vocabulary — a term for the person who has received the word but withholds it from others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q099",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term newly coined in the NT period for this word — and if so, what does the coinage reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q100",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the verbal form of the primary term reveal about the word's mode of operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q101",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a spatial or architectural term — a place or structure associated with the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q102",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the semantic range of the primary term reveal about the breadth of the word's operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q103",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any term carry a somatic or physiological dimension — naming an inner organ or physical site as the word's location?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q104",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the grammatical range of the primary term (noun, verb, adjective) reveal about how the word is conceptualised — as object, action, or quality?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q105",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a supplication term — a term for the act of seeking the word from another?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q106",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the supplication term reveal about the inner posture required to seek the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q107",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term for the mechanism by which the word is administered or conveyed?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q108",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the atonement or propitiation vocabulary (if present) reveal about the structural conditions under which the word operates?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q109",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any term reveal a classical-to-NT directional reversal — a term whose direction of operation changes between its classical use and its NT use?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q110",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the vocabulary reveal about whether the word operates primarily within or across relational boundaries?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q111",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the vocabulary reveal about the word's relationship to covenant — is it bounded by covenant or can it extend beyond?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q112",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any term in the vocabulary name the word as a divine possession — something that belongs to God and is located with him?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q113",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the root architecture of the vocabulary reveal about the word's conceptual relationship to adjacent characteristics?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q114",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include compound terms — and if so, what do the compounds reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q115",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the vocabulary reveal about the word's temporal character — is it punctiliar, durative, or both?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q116",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary reveal whether the word operates as a judicial category, a relational one, or both?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q117",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the most intensive or plural form of the vocabulary term reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q118",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include terms that name the word's expression in speech?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q119",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include terms whose etymology connects to the body — and if so, to which part?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q120",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What does the full vocabulary arc reveal about the word's complete semantic range — from its most intimate to its most structural expression?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q121",
+          "section": "Section 4 — Original Language Vocabulary",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary include a term that names the word's operation at the intersection of the human and divine — a term that holds both simultaneously?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q122",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the strongest co-occurrence connection for this word — which adjacent characteristic appears most frequently in the same verses — and what does the co-occurrence pattern reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q123",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse indicate that this word and its most closely connected adjacent characteristic operate simultaneously in the same inner-being moment — and what would that simultaneity imply?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q124",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What are the three highest vocabulary-sharing registries for this word — and what does the pattern of sharing reveal about the word's structural position in the programme?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q125",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary overlap with any adjacent characteristic extend to root-level architecture — a shared root rather than only shared individual terms?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q126",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How many of this word's confirmed analytical dimensions are shared with another cluster or characteristic — and is there any cluster that shares all confirmed dimensions?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q127",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any single verse make an explicit structural relationship between this word and an adjacent characteristic — naming the connection rather than merely exemplifying it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q128",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the co-occurrence count between this word and the characteristic with which it shares the most anchor verses — and what does that shared anchoring reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q129",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Where this word and an adjacent characteristic share a dominant directionality (such as both being primarily divine-to-human), what does the shared directionality reveal about their structural relationship?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q130",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between this word and human will in the verse evidence — does the word displace, bypass, or reconstitute the will?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q131",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How does the study describe the relationship between this word and calling — is calling a consequence, an expression, or a distinct phenomenon?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q132",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What inner-being posture connects this word and listening — and is that posture described as a precondition or an expression of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q133",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "How does the study distinguish this word from faith — and what is their structural relationship?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q134",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the described sequence from the word to peace — and what comes between them?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q135",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the vocabulary overlap and co-occurrence count between this word and guilt?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q136",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between this word and mourning — does mourning precede, follow, or accompany the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q137",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the study present this word and hope as two separate phenomena or as aspects of a single inner-being posture?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q138",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse function as a primary anchor in both this word's study and another word's study — and what does that dual membership reveal about their relationship?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q139",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse anchor both this word and another word — and what shared inner-being posture does that dual anchoring reveal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q140",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does any verse present adjacent qualities as aspects of a unified inner-being posture — and if so, what is their common source?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q141",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What functional overlap does the verse evidence suggest between this word and wisdom?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q142",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the word operate only in relation to moral conditions (guilt) or also in relation to conditions of incapacity — and what is the evidence?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q143",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the co-occurrence count between this word and goodness — and in what literary context does the pairing appear?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q144",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "What is the co-occurrence count between this word and anointing, and between this word and blessing?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q145",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Is the connection between this word and forgiveness established through contextual inference or through the lexical form of the term itself?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q146",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does the verse evidence in this study point toward a connection with repentance — and is that connection sufficiently examined or deferred?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "Q147",
+          "section": "Section 5 — Connections and Research Pointers",
+          "source_word": "Grace",
+          "source_registry_no": null,
+          "question_text": "Does a recurring posture appear across the word-seeking scenes in the study — and is its relationship to an adjacent characteristic examined or deferred?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-001",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Does the word have an outer limit — a condition or state in which it is explicitly withheld or cannot operate — and what does that outer limit reveal about the word's nature?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-002",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Can the structure of the word's action be misused or inverted — can the same act-structure produce a wrong result — and what is the evidence?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-003",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Is there a vertical-horizontal structural interdependence in the word's operation — does reception from God structurally enable extension toward others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-004",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Is the word's primary grammatical subject restricted — is it used exclusively or primarily with one type of subject (divine, human, or other)?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-005",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "What is the mechanism through which the word is administered or conveyed — and what is the relationship between the outward mechanism and the inner reality it produces?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-006",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Does the word operate unconditionally — or does it have stated conditions under which it is granted or withheld?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-007",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Is the word a single act or a compound of distinct component acts — and if compound, what are the components and are they always simultaneous?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-008",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "What does the word make possible in a relationship that would otherwise be closed or broken — and what relational cycle does it break?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-009",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Does the word function as a prerequisite or enabling condition for another spiritual act or practice — and if so, which one and why?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-010",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Are the downstream inner-being effects of the word proportional to the degree or magnitude of the word received — does more of the word produce more of the effect?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-011",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Does the word share vocabulary with adjacent characteristics — or does it occupy an isolated lexical space? What does the degree of sharing or isolation suggest about the word's relationship to adjacent characteristics?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-012",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Is the word named in Scripture as a divine possession or attribute — something that belongs to God — distinct from an act God performs? What does that naming imply about access to the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-013",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "What practices, disciplines, or ongoing inner acts feed or sustain the human capacity to extend the word to others?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "F-014",
+          "section": "Forgiveness Extensions",
+          "source_word": "Forgiveness",
+          "source_registry_no": null,
+          "question_text": "Is the word a terminal inner-being state — one in which the person rests — or a transitional one that characteristically produces movement to a further state? What is the evidence either way?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-001",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word hold a foundational position relative to other inner-being characteristics — does it govern, generate, or organise them?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-002",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Where the word has distinct modes of operation, are those modes held simultaneously or do they operate sequentially?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-003",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word have an inherent directionality — is it always oriented toward an object — and what does the choice of object determine about the word's moral character?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-004",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Can the word function as an identity diagnostic — does what a person does with this word reveal what kind of person they are?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-005",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word operate at a level below conscious attention or deliberate will — and if so, what does this imply about its depth in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-006",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the vocabulary of the word include a systematic taxonomy of its own misdirected forms — and if so, what structural logic organises that taxonomy?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-007",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Can the word increase or grow in the inner being — and if so, by what means?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-008",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word have a definitional outward expression — a form that constitutes what the word is rather than merely evidencing it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-009",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Is the word named in Scripture as constitutive of the divine essence — what God is — rather than merely as a divine attribute or act?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-010",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word's structural opposite operate under the same moral logic as the word itself — can the contrary also be either rightly or wrongly directed?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-011",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "What is the relationship between the word as an inner disposition and the word as an outward act — are they competitors, co-expressions, or in a different structural relationship?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-012",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word carry an epistemic dimension — is knowing and being known a structural component of the word's operation?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-013",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word function as a publicly legible signal — a means by which something about the inner community or person is read by those outside?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "L-014",
+          "section": "Love Extensions",
+          "source_word": "Love",
+          "source_registry_no": null,
+          "question_text": "Does the word produce a reorganisation of social dynamics — and if so, in what direction does it reorganise them?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-001",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "How does the word distinguish itself from its nearest near-synonym — what is the threshold or constitutive difference between them?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-002",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Does the word require a structural asymmetry between giver and receiver — is the positional difference (greater-to-lesser, strong-to-weak) a precondition of the word's operation, or can it operate between equals?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-003",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "At what level of the inner being is the word received, and at what level is it expressed — does the word follow a named pathway through the spirit-soul-body structure?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-004",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Is the absence of the word described as a diminishment of what it means to be human — is the word presented as constitutive of humanness rather than merely as a virtue the human person may or may not possess?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-005",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Does the word produce a pastoral capacity in the one who has received it — a specific capacity to minister to others in the condition in which the person themselves was once ministered to?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-006",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Has the word been given an architectural or material realisation in Israel's worship — a physical structure in which the word is spatially located — and if so, what does that materialisation reveal about the word's character and the nature of access to it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-007",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Does the word share its structural logic (such as gratuitousness or disproportionality) with an apparently contrary reality — does the same principle that governs the word also appear in something that seems to contradict it?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-008",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Does the word's operation involve the face — as the site of favour, judgment, recognition, or relational access — and what does that face-language reveal about the inner-outer structure of the word?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-009",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "What is the causal relationship between the word as an inner disposition and the structural mechanism through which it operates — does the disposition produce the mechanism, or does the mechanism produce the disposition?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-010",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "What does a documented directional reversal in a key vocabulary term reveal about the word's theological significance — what claim about the nature of the divine-human relationship is encoded in the reversal?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "M-011",
+          "section": "Mercy Extensions",
+          "source_word": "Mercy",
+          "source_registry_no": null,
+          "question_text": "Does the word's operation traverse all three levels of the inner being — spirit, soul, and body — and if so, what is the function at each level?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-001",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does the evidence for the word include a significant cluster of prohibition contexts — and if so, what does the frequency of the word's prohibition reveal about its default status in the inner being?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-002",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does any verse depict the word winning an inner contest with a competing disposition — and if so, what does this reveal about the word's relationship to other inner-being characteristics that it must overcome?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-003",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does the evidence assign the word an explicitly everlasting or permanent temporal character — in direct contrast to the momentary character of a competing or opposing disposition?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-004",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Is the word's abstract meaning etymologically derived from a concrete somatic reality — and if so, what does this unusual etymological direction reveal about the relationship between the inner experience and its bodily ground?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-005",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does the word have a participatory dimension — does it operate as genuine entry into another's experience rather than response from a safe distance — and if so, does this participation carry an eschatological trajectory?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-006",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does any verse name the violation of the word by the very person who most characteristically bears it — and if so, what does this reveal about the word's resilience or fragility under external pressure?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-007",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Has the word acquired a standardised or institutionalised social form — a normative outward expression that names what the characteristic looks like when it is embodied in social practice?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "insert",
+      "table": "wa_obs_question_catalogue",
+      "rows": [
+        {
+          "question_code": "C-008",
+          "section": "Compassion Extensions",
+          "source_word": "Compassion",
+          "source_registry_no": null,
+          "question_text": "Does the word identify a specific category of person who needs it but cannot perceive their own need — and what conditions produce the failure of need-recognition?",
+          "scope": "universal",
+          "status": "active",
+          "deleted": 0,
+          "date_added": "20260416",
+          "catalogue_version": "v2.0"
+        }
+      ]
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 194,
+    "table": "wa_obs_question_catalogue",
+    "rows_to_insert": 194,
+    "note": "source_registry_no NULL for all rows pending CC lookup. Verify count = 194 after application."
+  }
+}

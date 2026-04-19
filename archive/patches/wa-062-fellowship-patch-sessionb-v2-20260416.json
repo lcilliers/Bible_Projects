@@ -1,0 +1,431 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260416-062-SESSIONB-V2",
+    "registry_id": 62,
+    "word": "fellowship",
+    "produced_date": "2026-04-16",
+    "produced_by": "Claude AI — Analysis Output Stage 2b",
+    "patch_type": "SESSIONB",
+    "session_b_status": "Analysis Complete",
+    "description": "Session B findings persistence from Stage 2a comprehensive analysis and Stage 2b Q&A partitioning. 16 structured findings derived from 194-question catalogue application to fellowship observations. Includes finding entity links, catalogue links, and 9 SD pointers for Session D synthesis. CORRECTED: Fixed field name deviations and added mandatory fields."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-STRUCT-001",
+        "finding_type": "STRUCTURAL_DISPOSITION",
+        "finding": "Fellowship originates from multiple sources: divine granting through promises enabling participation in divine nature, volitional inner alignment where humans choose moral/spiritual direction, and divine unification action where God actively joins divided elements into unity. Fellowship's structural disposition is relational participation rather than solitary experience.",
+        "anchor_verses": "2Pe 1:4, Psa 119:63, Isa 1:23, Eze 37:19",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-OPER-001",
+        "finding_type": "OPERATION_MODES",
+        "finding": "Fellowship operates in six distinct modes: ontological participation in divine nature, moral complicity creating culpability, volitional alignment choosing moral/spiritual direction, transformational mechanism through wounds producing purification and healing, spiritual bondage through joining with idols, and cognitive construction joining words for rhetorical effect.",
+        "anchor_verses": "2Pe 1:4, Mat 23:30, Psa 119:63, Isa 1:23, Pro 20:30, Isa 53:5, Hos 4:17, Job 16:4",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-INNER-001",
+        "finding_type": "INNER_BEING_EFFECTS",
+        "finding": "Fellowship produces varied inner-being effects determined by the fellowship object: capacity for divine nature participation, hope grounded in communal participation, moral responsibility and potential culpability, inner purification through disciplinary wounds, healing through redemptive wounds, and spiritual bondage when aligned with idols. Effect quality depends entirely on the fellowship object.",
+        "anchor_verses": "2Pe 1:4, Ecc 9:4, Mat 23:30, Pro 20:30, Isa 53:5, Hos 4:17",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-RELAT-001",
+        "finding_type": "RELATIONAL_POSITIONING",
+        "finding": "Fellowship fundamentally transforms relational positioning by creating horizontal fellowship chains grounded in vertical fellowship, establishing mutual support systems, creating moral alignment with righteousness or wickedness, potentially violating existing covenantal bonds through faithlessness, and requiring moral/spiritual compatibility where righteousness cannot fellowship with lawlessness.",
+        "anchor_verses": "1Jo 1:3, Ecc 4:10, Psa 119:63, Isa 1:23, Mal 2:14, 2Cor 6:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-DIVINE-001",
+        "finding_type": "DIVINE_DISPOSITION",
+        "finding": "Fellowship reveals God's disposition as enabling and unifying: God grants precious and great promises to enable human participation in divine nature, God actively joins divided elements into unity through divine fellowship action, and God serves as witness to covenant fellowship violations, caring about relational faithfulness. God's disposition is toward inclusion in divine fellowship rather than exclusion.",
+        "anchor_verses": "2Pe 1:4, Eze 37:19, Mal 2:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-TEMP-001",
+        "finding_type": "TEMPORAL_OPERATION",
+        "finding": "Fellowship describes both one-time acts and ongoing conditions. One-time acts include divine promises enabling nature participation and active divine joining of divided elements. Ongoing conditions include companionship with those who fear God, being joined with all the living as hope foundation, and covenantal companionship in marriage. Fellowship can be both initiating event and sustaining condition.",
+        "anchor_verses": "2Pe 1:4, Eze 37:19, Psa 119:63, Ecc 9:4, Mal 2:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-ENABLE-001",
+        "finding_type": "ENABLING_CAPACITY",
+        "finding": "Fellowship produces enabling capacity across multiple dimensions: capacity for divine nature participation through escape from corruption, capacity for mutual support enabling lifting up of fallen companions, and capacity for shared suffering and resurrection power fellowship. Fellowship enables ontological, relational, and transformational capacities that were previously unavailable.",
+        "anchor_verses": "2Pe 1:4, Ecc 4:10, Phili 3:10",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-CHAR-001",
+        "finding_type": "CHARACTER_FORMATION",
+        "finding": "Fellowship produces character quality aligned with its object: participation in divine character through divine nature fellowship, righteous alignment through fear-of-God companionship, wicked character through evil companionship, and faithlessness through covenant violation. Fellowship amplifies and conforms character to the fellowship object's nature.",
+        "anchor_verses": "2Pe 1:4, Psa 119:63, Isa 1:23, Job 34:8, Mal 2:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-EXPR-001",
+        "finding_type": "RELATIONAL_EXPRESSION",
+        "finding": "Fellowship expresses relationally through proclaiming to create fellowship chains, mutual support in falling and restoration, moral alignment choice between righteous and wicked companionship, generous participation and shared commitment among believers, and avoiding incompatible fellowships.",
+        "anchor_verses": "1Jo 1:3, Ecc 4:10, Psa 119:63, Isa 1:23, 2Cor 6:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-GROUN-001",
+        "finding_type": "GROUND_CONDITION",
+        "finding": "Genuine fellowship requires specific inner orientation: fear of God and precept-keeping as companionship foundation, escape from corruption enabling divine nature participation, and moral/spiritual compatibility where righteousness cannot fellowship with lawlessness. The ground is moral and spiritual alignment rather than preference or proximity.",
+        "anchor_verses": "Psa 119:63, 2Pe 1:4, 2Cor 6:14",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-SEQUE-001",
+        "finding_type": "OPERATIONAL_SEQUENCE",
+        "finding": "Fellowship follows discernible sequences: divine promises leading to corruption escape leading to divine nature participation; knowing Christ leading to sharing sufferings leading to resurrection power fellowship; proclamation leading to hearing leading to fellowship creation; and wounding leading to purification leading to healing through fellowship vocabulary. Fellowship operates through prerequisite-to-participation sequences.",
+        "anchor_verses": "2Pe 1:4, Phili 3:10, 1Jo 1:3, Pro 20:30, Isa 53:5",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-ORIG-001",
+        "finding_type": "ORIGINATING_SOURCE",
+        "finding": "Fellowship originates from multiple sources: divine source through God granting precious and great promises, divine action where God actively joins divided elements, and human volitional choice in companionship with those who fear God. Both divine initiative and human response generate fellowship.",
+        "anchor_verses": "2Pe 1:4, Eze 37:19, Psa 119:63",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-RESPO-001",
+        "finding_type": "INNER_RESPONSE",
+        "finding": "Fellowship produces natural inner responses: hope grounded in communal participation, moral responsibility sense from shared complicity, desire for further fellowship extension through proclamation, and mutual support instinct for lifting fallen companions. Fellowship generates fellowship-seeking and fellowship-extending responses.",
+        "anchor_verses": "Ecc 9:4, Mat 23:30, 1Jo 1:3, Ecc 4:10",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-EXTEN-001",
+        "finding_type": "EXTENSION_REASON",
+        "finding": "Divine fellowship extension is based on divine character where God grants promises to enable divine nature participation rather than recipient merit. Human fellowship extension is based on recipient's moral/spiritual alignment including fear of God and precept-keeping as companionship basis.",
+        "anchor_verses": "2Pe 1:4, Psa 119:63",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-EXTRE-001",
+        "finding_type": "EXTREMITY_DEPTH",
+        "finding": "Fellowship in extremity reveals profound depth of operation: fellowship through substitutionary wounds operates at the deepest level of vicarious suffering, fellowship through disciplinary wounds reaches innermost parts for evil cleansing, and fellowship through joining with Christ's sufferings and death indicates fellowship operates even through mortality threshold.",
+        "anchor_verses": "Isa 53:5, Pro 20:30, Phili 3:10",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "registry_id": 62,
+        "finding_id": "062-GRAMM-001",
+        "finding_type": "GRAMMATICAL_SUBJECT",
+        "finding": "Fellowship shows mixed grammatical subjects: divine subjects where God grants promises and actively joins divided elements, human subjects choosing companionship and participating, and mixed agency where divine and human subjects interact in fellowship chains. All groups show human as dominant subject but divine agency is significantly present.",
+        "anchor_verses": "2Pe 1:4, Eze 37:19, Psa 119:63, Hos 4:17, Mat 23:30, 1Jo 1:3",
+        "thin_evidence": 0,
+        "status": "confirmed",
+        "raised_date": "2026-04-16",
+        "session_b_instruction": "WA-SessionB-Analysis-Output-v1-20260416.md"
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD002",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Divine nature participation as ontological fellowship. 2Pe 1:4 presents fellowship (koinōnia) as participation in divine nature enabled by escape from corruption. Session D investigation: What is the inner-being transformation that enables divine nature participation? What are the characteristics of this ontological fellowship? Cross-registry targets: divine nature registries, transformation cluster.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD003",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Fellowship as moral complicity mechanism. Mat 23:30 uses fellowship language for moral participation in evil. Session D investigation: How does fellowship vocabulary relate to moral responsibility and guilt by association? What is the relationship between relational alignment and moral culpability? Cross-registry targets: guilt, conscience, moral character registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD004",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Fellowship as spiritual adultery/bondage. Hos 4:17 presents idolatrous joining as complete spiritual bondage warranting divine abandonment. Session D investigation: How does fellowship/joining vocabulary illuminate the inner-being dynamics of spiritual adultery and idolatrous alliance? Cross-registry targets: idolatry, spiritual adultery, faithlessness registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD005",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Fear of God as fellowship foundation. Psa 119:63 grounds companionship in fear of God and precept-keeping. Session D investigation: How does fear of God and precept obedience create the inner-being foundation for righteous fellowship? Cross-registry targets: fear of God, obedience registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD006",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Divine fellowship action in restoration. Eze 37:19 presents God as actively joining divided sticks into one — physical metaphor for community restoration. Session D investigation: How does divine joining/fellowship action restore divided communities into unified wholes? What is the inner-being mechanism of divinely-accomplished fellowship? Cross-registry targets: unity, restoration, covenant registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD007",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Fellowship through transformative wounding. Pro 20:30 and Isa 53:5 present fellowship vocabulary for transformative wounding — disciplinary and redemptive wounds. Session D investigation: How does fellowship vocabulary (chavar root family) illuminate the inner-being mechanism by which suffering produces purification and healing? Cross-registry targets: suffering, purification, healing, atonement registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD008",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Covenant fellowship violations. Mal 2:14 connects companionship, covenant, and faithlessness in marriage context. Session D investigation: How does fellowship vocabulary illuminate the inner-being dynamics of covenant violation and marital faithlessness? Cross-registry targets: covenant, faithfulness, marriage registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD009",
+        "priority": "HIGH",
+        "session_target": "D",
+        "description": "Fellowship through suffering-death-resurrection trajectory. Phili 3:10 links knowing Christ, sharing sufferings, and resurrection power in single fellowship trajectory. Session D investigation: How does fellowship with Christ's sufferings relate to fellowship with resurrection power? What is the inner-being mechanism of suffering-death-resurrection fellowship? Cross-registry targets: suffering, resurrection, conformity registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 62,
+        "flag_code": "SD_POINTER",
+        "flag_label": "062-SD010",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "description": "Fellowship moral/spiritual compatibility requirements. 2Cor 6:14 presents fellowship as requiring moral/spiritual compatibility between righteousness and lawlessness, light and darkness. Session D investigation: How does fellowship vocabulary illuminate the inner-being incompatibility between righteousness and lawlessness, light and darkness? Cross-registry targets: righteousness, light/darkness, moral incompatibility registries.",
+        "session_raised": "Analysis Output Stage 2a Unit 7",
+        "raised_date": "2026-04-16",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update_registry",
+      "registry_no": 62,
+      "set": {
+        "session_b_status": "Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 26,
+    "session_b_findings_inserts": 16,
+    "session_research_flags_inserts": 9,
+    "registry_status_updates": 1,
+    "findings_confirmed": 16,
+    "sd_pointers_added": 9,
+    "corrections_applied": "Fixed data->record, content->finding, evidence_verses->anchor_verses, added mandatory finding_id/raised_date/session_b_instruction fields, fixed registry_id->registry_no for update operation"
+  }
+}

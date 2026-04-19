@@ -1,0 +1,112 @@
+{
+  "directive_id": "DIR-20260415-002",
+  "produced_date": "2026-04-15",
+  "produced_by": "Claude AI",
+  "status": "PENDING — awaiting researcher approval before execution",
+  "database": "bible_research.db",
+  "schema_version_current": "3.8.0",
+  "schema_version_target": "3.9.0",
+
+  "summary": "Three schema changes to integrate the observation-question master catalogue with the session B findings table. (1) Create wa_obs_question_catalogue — the master catalogue as a database table. (2) Create wa_finding_catalogue_links — many-to-many junction table between findings and catalogue questions. (3) Add term_id and status columns to wa_session_b_findings. Note: delete_flag already exists on wa_session_b_findings from the 2026-04-15 lifecycle update — no duplicate column needed.",
+
+  "motivation": "The observation-question master catalogue (194 questions, v2.0) has been developed as the analytical instrument for Session B. The 171 session B findings have been classified against the catalogue: 77 findings have been mapped to catalogue questions, 22 are word-specific data flags, and 3 have no current catalogue coverage (gap candidates). To make this mapping operational — queryable by question, by word, by status, and by coverage — the catalogue must exist in the database and the findings must be linkable to it. The junction table enables programme-level analysis: which questions have been asked of which words, which are unresolved, which findings have no question mapped. The term_id column on findings enables direct linkage to specific terms where the finding is triggered by term-level data rather than word-level observation. The status column on findings tracks the lifecycle: suggested (mapped by catalogue analysis, not yet verified against live data), validated (Session B has confirmed the mapping), pending (finding exists, no catalogue question mapped yet).",
+
+  "operations": [
+
+    {
+      "operation": 1,
+      "action": "CREATE TABLE wa_obs_question_catalogue",
+      "sql": "CREATE TABLE wa_obs_question_catalogue (\n    id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n    question_code       TEXT    NOT NULL UNIQUE,\n    section             TEXT    NOT NULL,\n    source_word         TEXT    NOT NULL,\n    source_registry_no  INTEGER,\n    question_text       TEXT    NOT NULL,\n    pattern_type        TEXT,\n    date_added          TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')),\n    catalogue_version   TEXT    NOT NULL DEFAULT '2.0',\n    active              INTEGER NOT NULL DEFAULT 1\n);",
+      "column_notes": {
+        "question_code": "Unique question identifier — Q001 through Q147, F-001 through F-014, L-001 through L-014, M-001 through M-011, C-001 through C-008. Future extensions use initial letter of source word.",
+        "section": "Section label from the catalogue: 'S1-Characteristic', 'S2-Impact', 'S3-Verse', 'S4-Vocabulary', 'S5-Connections', 'EXT-Forgiveness', 'EXT-Love', 'EXT-Mercy', 'EXT-Compassion'",
+        "source_word": "The word analysis from which this question was derived — 'grace', 'forgiveness', 'love', 'mercy', 'compassion'",
+        "source_registry_no": "Registry number of the source word — nullable for Q001-Q147 (grace, registry 68)",
+        "question_text": "Full word-neutral question text as in the master catalogue",
+        "pattern_type": "Generic pattern code this question addresses — P01 through P18 where known, NULL otherwise",
+        "active": "1 = active standard question; 0 = deprecated or superseded"
+      },
+      "indexes": [
+        "CREATE INDEX idx_oqc_section ON wa_obs_question_catalogue(section);",
+        "CREATE INDEX idx_oqc_source ON wa_obs_question_catalogue(source_word);",
+        "CREATE INDEX idx_oqc_active ON wa_obs_question_catalogue(active);"
+      ],
+      "expected_rows_after_population": 194
+    },
+
+    {
+      "operation": 2,
+      "action": "CREATE TABLE wa_finding_catalogue_links",
+      "sql": "CREATE TABLE wa_finding_catalogue_links (\n    id                  INTEGER PRIMARY KEY AUTOINCREMENT,\n    finding_id          INTEGER NOT NULL REFERENCES wa_session_b_findings(id),\n    question_id         INTEGER NOT NULL REFERENCES wa_obs_question_catalogue(id),\n    coverage            TEXT    NOT NULL DEFAULT 'PARTIAL'\n                        CHECK (coverage IN ('FULL', 'PARTIAL')),\n    status              TEXT    NOT NULL DEFAULT 'suggested'\n                        CHECK (status IN ('suggested', 'validated', 'rejected')),\n    pattern_type        TEXT,\n    mapped_date         TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%S','now')),\n    validated_date      TEXT,\n    validated_by        TEXT,\n    session_b_note      TEXT,\n    delete_flag         INTEGER NOT NULL DEFAULT 0\n);",
+      "column_notes": {
+        "finding_id": "FK to wa_session_b_findings.id",
+        "question_id": "FK to wa_obs_question_catalogue.id",
+        "coverage": "FULL = catalogue question addresses the finding squarely; PARTIAL = opens the right direction but finding requires further analytical work beyond the question",
+        "status": "suggested = mapped by catalogue analysis, not yet verified against live data; validated = Session B has reviewed and confirmed the mapping; rejected = Session B has determined the mapping is incorrect or not applicable",
+        "pattern_type": "Generic pattern code (P01-P18) — may differ from the question's pattern_type where a finding instantiates a pattern that multiple questions touch",
+        "session_b_note": "Free text note added by Session B analyst when validating or rejecting — records the specific outcome for this finding-question pair"
+      },
+      "indexes": [
+        "CREATE INDEX idx_fcl_finding ON wa_finding_catalogue_links(finding_id);",
+        "CREATE INDEX idx_fcl_question ON wa_finding_catalogue_links(question_id);",
+        "CREATE INDEX idx_fcl_status ON wa_finding_catalogue_links(status);",
+        "CREATE INDEX idx_fcl_coverage ON wa_finding_catalogue_links(coverage);",
+        "CREATE UNIQUE INDEX uq_fcl_finding_question ON wa_finding_catalogue_links(finding_id, question_id);"
+      ],
+      "note": "The unique index on (finding_id, question_id) prevents duplicate mappings. A finding can link to multiple questions (one row per question). A question can link to multiple findings across the corpus."
+    },
+
+    {
+      "operation": 3,
+      "action": "ALTER TABLE wa_session_b_findings — add term_id and status columns",
+      "columns_to_add": [
+        {
+          "column": "term_id",
+          "sql": "ALTER TABLE wa_session_b_findings ADD COLUMN term_id INTEGER REFERENCES mti_terms(id);",
+          "note": "FK to mti_terms — nullable. Populated where the finding is triggered by a specific term's data rather than a word-level observation. Most Dimension Review findings are word-level (term_id NULL). Term-behaviour and etymology findings typically have a specific term."
+        },
+        {
+          "column": "status",
+          "sql": "ALTER TABLE wa_session_b_findings ADD COLUMN status TEXT NOT NULL DEFAULT 'pending' CHECK (status IN ('pending', 'in_review', 'complete'));",
+          "note": "Tracks the finding's lifecycle in Session B. pending = finding exists, not yet addressed in Session B; in_review = Session B is actively working this word; complete = finding has been resolved (either absorbed into catalogue question with answer, or closed as obsolete). Note: delete_flag already exists from the 2026-04-15 lifecycle update and covers the deleted/obsolete state — status tracks the review lifecycle separately."
+        }
+      ],
+      "indexes_to_add": [
+        "CREATE INDEX idx_sbf_term_id ON wa_session_b_findings(term_id);",
+        "CREATE INDEX idx_sbf_status ON wa_session_b_findings(status);"
+      ]
+    }
+
+  ],
+
+  "population_plan": {
+    "wa_obs_question_catalogue": "Populate from wa-global-obs-question-master-catalogue-v2_0-20260415.md. 194 rows. One row per question code. Section mapping: Q001-020 = S1-Characteristic, Q021-041 = S2-Impact, Q042-085 = S3-Verse, Q086-121 = S4-Vocabulary, Q122-147 = S5-Connections, F-001-014 = EXT-Forgiveness, L-001-014 = EXT-Love, M-001-011 = EXT-Mercy, C-001-008 = EXT-Compassion. Population to be done by Claude AI in a separate session once the table exists.",
+    "wa_finding_catalogue_links": "Populate from wa-global-sessionb-catalogue-mapped-extract-v1-20260415.json. 77 records with finding_id, question codes, coverage ratings and pattern types. Status = 'suggested' for all initial rows. Population requires question_id lookup against wa_obs_question_catalogue by question_code — Claude AI to produce the insert statements once both tables exist.",
+    "wa_session_b_findings_status": "Set status = 'pending' for all existing rows (this is the DEFAULT so no explicit update needed). term_id remains NULL for all existing rows pending term-level review."
+  },
+
+  "verification_queries": [
+    "SELECT COUNT(*) FROM wa_obs_question_catalogue WHERE active = 1; -- expect 194",
+    "SELECT COUNT(*) FROM wa_finding_catalogue_links; -- expect 77 after initial population",
+    "SELECT COUNT(*) FROM wa_finding_catalogue_links WHERE status = 'suggested'; -- expect 77",
+    "SELECT COUNT(*) FROM wa_finding_catalogue_links WHERE coverage = 'FULL'; -- expect 38",
+    "SELECT COUNT(*) FROM wa_finding_catalogue_links WHERE coverage = 'PARTIAL'; -- expect 36",
+    "SELECT COUNT(DISTINCT question_id) FROM wa_finding_catalogue_links; -- number of distinct questions that have at least one finding mapped",
+    "SELECT q.question_code, COUNT(l.id) as finding_count FROM wa_obs_question_catalogue q LEFT JOIN wa_finding_catalogue_links l ON q.id = l.question_id GROUP BY q.id ORDER BY finding_count DESC LIMIT 10; -- most-referenced questions",
+    "SELECT f.finding_id, f.word FROM wa_session_b_findings f LEFT JOIN wa_finding_catalogue_links l ON f.id = l.finding_id WHERE l.id IS NULL AND f.delete_flag = 0; -- findings with no catalogue question mapped"
+  ],
+
+  "key_analytical_queries_enabled": {
+    "findings_without_question": "SELECT f.* FROM wa_session_b_findings f LEFT JOIN wa_finding_catalogue_links l ON f.id = l.finding_id WHERE l.id IS NULL AND f.delete_flag = 0",
+    "question_coverage_by_word": "SELECT f.word, q.question_code, l.coverage, l.status FROM wa_finding_catalogue_links l JOIN wa_session_b_findings f ON f.id = l.finding_id JOIN wa_obs_question_catalogue q ON q.id = l.question_id ORDER BY f.word, q.question_code",
+    "unresolved_findings_for_word": "SELECT f.* FROM wa_session_b_findings f WHERE f.registry_id = :registry_id AND f.status != 'complete' AND f.delete_flag = 0",
+    "questions_not_yet_triggered": "SELECT q.question_code, q.question_text FROM wa_obs_question_catalogue q LEFT JOIN wa_finding_catalogue_links l ON q.id = l.question_id WHERE l.id IS NULL AND q.active = 1",
+    "programme_coverage_heatmap": "SELECT q.section, q.question_code, COUNT(l.id) as finding_count, SUM(CASE WHEN l.status='validated' THEN 1 ELSE 0 END) as validated FROM wa_obs_question_catalogue q LEFT JOIN wa_finding_catalogue_links l ON q.id = l.question_id GROUP BY q.id ORDER BY q.section, q.question_code"
+  },
+
+  "schema_version_note": "Increment schema version to 3.9.0 in schema documentation after execution. Update wa-global-general-rules to note the new tables in the programme data architecture.",
+
+  "execution_order": "Operations must be executed in order: (1) wa_obs_question_catalogue, (2) wa_finding_catalogue_links, (3) ALTER wa_session_b_findings. The junction table references both parent tables so both must exist before it is created.",
+
+  "rollback_note": "SQLite does not support DROP COLUMN. If term_id or status columns need to be removed, a table rebuild is required. Confirm the column definitions are correct before executing operation 3."
+}

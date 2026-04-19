@@ -1,0 +1,595 @@
+{
+  "document": {
+    "title": "Framework B Soul Word Analysis Programme \u2014 General Rules",
+    "filename": "wa-global-general-rules-v2.3-20260416.json",
+    "version": "2.3",
+    "date": "20260416",
+    "status": "Active \u2014 supersedes v2.2-20260415",
+    "purpose": "Programme-wide conventions loaded as a project asset. Rules in this file govern all processing instructions. Instructions must not repeat these rules inline \u2014 they reference this file by rule ID. When a conflict arises between an instruction and this file, this file is authoritative.",
+    "scope_test": "A rule belongs in this file if it governs the programme's mechanics, conventions, processes, or data artefacts across more than one instruction or phase. A rule that only affects a single instruction and has no impact on any other phase remains in that instruction.",
+    "load_requirement": "Claude AI MUST read this file in full at the start of every session before reading any instruction or data. Failure to load this file is a programme compliance failure subject to negative feedback. This requirement cannot be waived.",
+    "change_note": "v2.3 (20260416): One new rule added. GR-DIR-006 \u2014 patch format self-check before submission. Requires Claude AI to verify all six structural compliance points against the patch specification before presenting any patch for researcher approval. CC rejection for format non-compliance is a programme compliance failure. Added in response to patch format errors in PATCH-20260416-062-PREANALYSIS-V1 (original version) where Claude AI produced a structurally invalid patch that would have been rejected by the applicator."
+  },
+  "rules": [
+    {
+      "rule_id": "GR-LOAD-001",
+      "category": "load_requirement",
+      "subject": "Mandatory global rules load at every session start",
+      "rule": "Claude AI must read this file in full at the start of every session before reading any instruction document, extract, or data file. The load is confirmed by stating aloud: 'Global rules [filename] loaded \u2014 [n] rules across [n] categories.' No analytical work, classification, patch construction, document production, or database operation may begin until this confirmation has been made. This is non-waivable. Claude AI forgets between sessions; this gate exists precisely because of that constraint. Non-compliance is a programme compliance failure.",
+      "applies_to": "all sessions, all instructions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-001",
+      "category": "file_naming",
+      "subject": "Filename structure",
+      "rule": "All files follow the pattern [prefix]-[reference]-[short description]-[version]-[date]. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier (cluster code, registry number, group code, or 'global' for cross-programme files). Dates in filenames use compact format per GR-FILE-009.",
+      "example": "wa-023-compassion-sessionb-brief-v1-20260411.md",
+      "applies_to": "all processing instructions",
+      "version": "2.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-002",
+      "category": "file_naming",
+      "subject": "Short description length",
+      "rule": "The short description in a filename must not exceed 30 characters.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-003",
+      "category": "file_naming",
+      "subject": "Version numbering",
+      "rule": "Version numbers follow [major].[minor]. Minor increments for updates to an existing document. Major increments when a document is new or has been rewritten from scratch. Applied to all files, documents, instructions, observations logs, and patches.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-004",
+      "category": "file_naming",
+      "subject": "No overwrites \u2014 every save is a new versioned file",
+      "rule": "No file is ever overwritten. Every save produces a new versioned file using GR-FILE-003 versioning. Previous versions are preserved for audit. This applies to all output files including observations logs, session logs, patches, and instruction documents.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-005",
+      "category": "file_format",
+      "subject": "Output format by purpose",
+      "rule": "Internal reusable documents (instructions, analysis, general descriptive output): markdown (.md). Tabled output (database extracts, patches, itemised instructions): JSON. Documents for visualisation and easy reading: docx. Final documents: docx converted to pdf. Docx documents may be converted to markdown to improve working efficiency.",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-006",
+      "category": "file_naming",
+      "subject": "Prefix and reference conventions",
+      "rule": "The prefix for this project is 'wa'. Global files use 'wa-global' as the reference segment. Registry files use the zero-padded registry number (e.g. 'wa-023'). Cluster files use the cluster code (e.g. 'wa-c17'). Session D synthesis files use 'wa-sd'. Batch files use the batch identifier (e.g. 'wa-vcb-001').",
+      "applies_to": "all processing instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-007",
+      "category": "file_naming",
+      "subject": "Lowercase filenames",
+      "rule": "All filenames produced by Claude AI are fully lowercase \u2014 no uppercase characters anywhere in the filename or extension. This applies without exception to all output files.",
+      "example": "WRONG: wa-023-compassion-SessionB-log-v1-20260414.md \u2014 CORRECT: wa-023-compassion-sessionb-log-v1-20260414.md",
+      "applies_to": "all processing instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-008",
+      "category": "file_output",
+      "subject": "Dual-write discipline",
+      "rule": "All output files are written to both the working directory (/home/claude or equivalent) and /mnt/user-data/outputs/ simultaneously. An output that exists only in memory or only in one location has not been written. This applies without exception to all output types \u2014 observations logs, session logs, patches, instruction documents, and analytical briefs.",
+      "applies_to": "all processing instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-FILE-009",
+      "category": "file_naming",
+      "subject": "Compact date format in filenames",
+      "rule": "Dates appearing in filenames use compact format YYYYMMDD with no separators. Example: 20260414 not 2026-04-14. Dates within prose, table cells, change notes, or analytical observations may use ISO 8601 (YYYY-MM-DD) for readability. The compact format is required in: filenames, patch IDs, document header date fields, and anywhere a date forms part of a structured identifier.",
+      "example": "WRONG: wa-023-compassion-sessionb-brief-v1-2026-04-14.md \u2014 CORRECT: wa-023-compassion-sessionb-brief-v1-20260414.md",
+      "applies_to": "all processing instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PASS-001",
+      "category": "pass_close",
+      "subject": "Pass-close download before next pass begins",
+      "rule": "All internal outputs produced during a pass must be made available for download at the end of that pass, before the next pass begins. This applies to observations logs, patch specifications, CC directives, session logs, and any other pass-level output. A pass that closes without presenting outputs for download has not closed cleanly.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PASS-002",
+      "category": "pass_close",
+      "subject": "Write-on-discovery to database at pass close",
+      "rule": "Claude AI writes all analytical workings to the observations log continuously within a pass (per GR-OBS-001). At the end of each pass, items requiring database persistence are written via a patch or CC directive, and a new JSON extract is pulled confirming the write. The updated extract is the working source for the next pass. The markdown observations log is the session narrative; the database is the authoritative analytical store.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "1.0",
+      "added_date": "20260413",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-001",
+      "category": "observation_discipline",
+      "subject": "Write-on-discovery \u2014 non-waivable",
+      "rule": "Every finding, decision, gap, patch consequence, flag, and open question is written to the observations log at the moment it is determined. Nothing is accumulated in memory for later transcription. This is non-waivable. An analytical decision that exists only in memory is not recorded.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-002",
+      "category": "observation_discipline",
+      "subject": "Observations log classification categories",
+      "rule": "Every entry in the observations log is classified into exactly one of four categories at the pass-close review: (a) Drop \u2014 no analytical value, no database home; (b) Entity-linked observation \u2014 analytical comment keyed to one or more entities, queued for database write; (c) Forward pointer \u2014 Session B pointer or Session D pointer, queued for pointer table write; (d) Session action \u2014 data quality finding, methodology note, sequencing decision, self-correction, verification record. An entry that does not fit one of these four categories is flagged for researcher review using the RESEARCHER_DECISION format (GR-RD-001).",
+      "applies_to": "Session B, Dimension Review, Verse Context instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-003",
+      "category": "observation_discipline",
+      "subject": "Session log vs observations log distinction",
+      "rule": "The observations log is the working paper \u2014 all notes, patch material, preliminary findings, and the full analytical trail for a session. The session log is the handoff record \u2014 what was accomplished, what is confirmed, where the next session picks up. The session log is produced at natural breakpoints or session end. The observations log is written continuously throughout the session. Both are separate files with separate version sequences.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-004",
+      "category": "observation_discipline",
+      "subject": "Observations log version increment at named boundaries",
+      "rule": "The observations log filename is version-incremented when resuming work on the same registry or cluster in a new session \u2014 not on every file save within the same session. A named boundary is a new session start, not a mid-session write.",
+      "applies_to": "Session B, Dimension Review, Verse Context instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-005",
+      "category": "observation_discipline",
+      "subject": "No physical deletion \u2014 flag and mark only",
+      "rule": "No database record is ever physically deleted. Records that are superseded, incorrect, or out of scope are marked with delete_flagged = 1, obsolete_reason, and obsolete_date. The original record is retained for audit. This applies to all tables across all phases. CC must never execute DELETE statements against analytical records.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-OBS-006",
+      "category": "observation_discipline",
+      "subject": "All observations return to the database",
+      "rule": "Every analytical observation produced during any phase must be persisted to the database before the session closes. Session C and Session D read from the database only \u2014 they do not read observations logs or session logs as source material. An observation that exists only in a markdown file has not been recorded for the programme.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-001",
+      "category": "process_discipline",
+      "subject": "Step-by-step \u2014 complete each step before proceeding",
+      "rule": "Each step must be fully complete before the next begins. No step is skipped, abbreviated, or deferred unless explicitly permitted by the governing instruction. A step that produces a required output is not complete until that output exists and has been confirmed.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-002",
+      "category": "process_discipline",
+      "subject": "Data is authoritative \u2014 all findings traceable to source",
+      "rule": "Every analytical finding must be traceable to a specific verse record, term entry, lexical source, correlation signal, or extract field in the current working data. Findings not traceable to a data source are not findings \u2014 they are hypotheses and must be labelled as such or discarded.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-003",
+      "category": "process_discipline",
+      "subject": "All database changes go through patches or directives",
+      "rule": "No database change is made except through a formally produced patch (JSON format, per patch specification) or a CC directive (plain language, per GR-DIR-002). Claude AI never instructs Claude Code to change the database through conversational text. Every change is a documented operation with a confirmation requirement.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-004",
+      "category": "process_discipline",
+      "subject": "No patch or directive applied without researcher review",
+      "rule": "Every patch and every CC directive is reviewed by the researcher before Claude Code applies it. Claude AI produces the patch or directive, states what it will do and what the confirmation output will be, and waits for explicit researcher approval before Claude Code proceeds. This applies without exception.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-005",
+      "category": "process_discipline",
+      "subject": "Observations log governs \u2014 not memory",
+      "rule": "The observations log is the authoritative record of what has been done in a session. If something is not in the observations log, it has not been done. Claude AI does not rely on memory for the current state of work \u2014 it reads the observations log. When resuming, the observations log is the first file read after the global rules and instruction.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROC-006",
+      "category": "process_discipline",
+      "subject": "Session logs at every natural breakpoint",
+      "rule": "A session log is produced at every natural breakpoint and at every session end. A session log records: what was accomplished, what is confirmed, what is deferred, and exactly where the next session picks up including which files to attach. A session that ends without a session log has not closed cleanly.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DATA-001",
+      "category": "data_discipline",
+      "subject": "Active terms filter \u2014 mandatory for all mti_terms queries",
+      "rule": "All SQL queries against mti_terms that are intended to return active terms must include: AND mt.status IN ('extracted', 'extracted_thin'). Queries that omit this filter will return deleted terms and produce incorrect counts. This filter is non-waivable for any query where 'active terms' is the intent.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DATA-002",
+      "category": "data_discipline",
+      "subject": "Extract is authoritative for Session B \u2014 not prior session outputs",
+      "rule": "The current versioned extract produced by Claude Code is the authoritative data source for Session B analysis. Prior session outputs (observations logs, word studies, analytical briefs) are reference material only \u2014 they do not override extract data. Where a prior output conflicts with the extract, the extract is correct and the prior output requires correction.",
+      "applies_to": "Session B instruction",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DATA-003",
+      "category": "data_discipline",
+      "subject": "mti_term_flags authoritative field for somatic classification",
+      "rule": "The authoritative field for somatic classification is mti_term_flags (not the redundant wa_term_inventory.somatic_link field). When a conflict exists between these two sources, mti_term_flags is correct.",
+      "applies_to": "Session B instruction, all somatic classification work",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DATA-004",
+      "category": "data_discipline",
+      "subject": "Complete word data export carries a version number \u2014 confirm before proceeding",
+      "rule": "The complete word data export is a versioned file managed by Claude Code. Claude AI must confirm the version number of the export at session start before any analytical work begins. If the version is not confirmed, Claude AI requests it from Claude Code. Claude AI does not proceed on an extract whose version has not been confirmed in the current session.",
+      "applies_to": "Session B instruction",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DATA-005",
+      "category": "data_discipline",
+      "subject": "god_as_subject and somatic_link fields \u2014 verify before setting",
+      "rule": "The fields god_as_subject and somatic_link on wa_term_inventory carry a high error rate from bulk operations. Before setting or relying on these fields in Session B, Claude AI must verify the values against the actual verse evidence for each term. A field value not verified against verse evidence is not confirmed.",
+      "applies_to": "Session B instruction",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-001",
+      "category": "claude_code_directive",
+      "subject": "When to use a directive vs a patch \u2014 rule and distinction",
+      "rule": "There are two and only two mechanisms for instructing Claude Code to make database changes: patches (JSON format) and directives (plain language). A patch is used when Claude AI is certain of the field names, FK keys, table structure, and exact operations required \u2014 the patch specification defines the exact JSON format and Claude Code applies it via the applicator script. A directive is used when Claude AI knows the outcome required but is not certain of the exact execution path \u2014 Claude AI describes in plain language what needs to happen and why, and Claude Code inspects the database, determines the correct operations, and executes. Both require researcher approval before Claude Code acts (GR-PROC-004). Both require a stated completion confirmation (GR-DIR-005). Neither is optional \u2014 conversational instructions to Claude Code without either format are not valid database change requests.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.2",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-002",
+      "category": "claude_code_directive",
+      "subject": "Directive format \u2014 required elements",
+      "rule": "Every CC directive must contain: (1) DIRECTIVE ID \u2014 unique identifier in format DIR-YYYYMMDD-NNN; (2) MOTIVATION \u2014 why this change is needed, what problem it solves; (3) SCOPE \u2014 which tables, records, or fields are affected; (4) OUTCOME REQUIRED \u2014 what the database state must look like after execution, stated precisely enough that CC can verify it; (5) COMPLETION CONFIRMATION \u2014 the exact query or check CC must run and return to Claude AI and the researcher to confirm the directive was applied correctly. Claude AI must not send a directive without all five elements present.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-003",
+      "category": "claude_code_directive",
+      "subject": "Patch format \u2014 governed by patch specification",
+      "rule": "Patches follow the JSON format defined in wa-patch-specification (current version). The patch specification is the authoritative governing document for patch structure, supported operations, field requirements, and applicator rules. This file does not duplicate patch format rules \u2014 it references the patch specification. Where a patch operation is not yet supported by the applicator, Claude AI must flag it for manual application and note this in the patch _patch_meta.description field.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-004",
+      "category": "claude_code_directive",
+      "subject": "CC executes \u2014 Claude AI decides what should be done",
+      "rule": "The division of responsibility is strict and non-negotiable: Claude AI determines what should be done and why \u2014 the analytical or governance rationale. Claude Code determines how to execute it and executes it. Claude AI never instructs Claude Code on SQL syntax or internal implementation details. Claude Code never makes analytical judgements about whether a change is correct. Directives that blur this boundary \u2014 asking CC to make analytical decisions, or Claude AI specifying raw SQL \u2014 are non-compliant.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-005",
+      "category": "claude_code_directive",
+      "subject": "Completion confirmation \u2014 mandatory for every patch and directive",
+      "rule": "Every patch and every directive must specify the completion confirmation that Claude Code must return to close the operation. The confirmation is a specific query result, row count, or field state check \u2014 not a general acknowledgement. Claude Code returns the confirmation output to Claude AI and the researcher. Claude AI reviews the confirmation against the expected outcome before the operation is considered complete. An operation without a returned confirmation is not complete.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DIR-006",
+      "category": "claude_code_directive",
+      "subject": "Patch format self-check \u2014 mandatory before submission",
+      "rule": "Before presenting any patch for researcher approval, Claude AI must verify all six structural compliance points against the current patch specification (wa-patch-specification, current version). The six points are: (1) Top-level structure \u2014 patch has exactly three top-level keys: _patch_meta, operations, _patch_summary. (2) _patch_meta completeness \u2014 contains patch_id, registry_id, word, produced_date, produced_by, patch_type, session_b_status (non-null for PREANALYSIS, SESSIONB, and REPAIR types), and description. (3) patch_type value \u2014 is one of the controlled vocabulary values defined in the patch specification Appendix A.6: PREANALYSIS, SESSIONB, REPAIR, VERSECONTEXT, VCGROUP, VCVERSE, SESSIOND, CLUSTERING. (4) session_b_status value \u2014 matches the valid value for the patch_type per Appendix A.6. PREANALYSIS carries Pre-Analysis Complete. SESSIONB carries Analysis Complete or Session B Complete. VERSECONTEXT, VCGROUP, and VCVERSE carry null. REPAIR carries the current status value. (5) Operations format \u2014 each operation has op_id in OP-NNN format; operation is a valid lowercase named type from patch specification Section 3 (e.g. update, update_mti_status, update_registry, insert \u2014 never uppercase strings or free-form field names); match dict and set dict present where required by the operation type. (6) _patch_summary \u2014 present with total_operations count matching the length of the operations array. A patch that fails any of these six checks must not be submitted. Claude AI corrects the format and re-checks all six points before submission. If CC rejects a patch for format non-compliance after researcher approval and submission, this is a programme compliance failure. Claude AI must produce the corrected patch, record the deviation and correction in the observations log, and resubmit for researcher approval before CC proceeds.",
+      "applies_to": "all sessions, all phases \u2014 any patch produced by Claude AI",
+      "version": "1.0",
+      "added_date": "20260416",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-DB-001",
+      "category": "database_discipline",
+      "subject": "No DB state assumptions \u2014 always verify",
+      "rule": "Claude AI never assumes the current state of the database. This applies to: row counts, field values, flag states, resolution status, schema structure, and the existence or absence of records. Before any operation that depends on DB state: (1) check the current chat for data already provided \u2014 do not request what is already present; (2) if the required data is not in the chat, request it explicitly from Claude Code via a query; (3) if data was provided earlier in the chat but may be stale \u2014 ask for a refresh. Claude AI that proceeds on assumed DB state is in violation of this rule regardless of how recent or reliable the assumption appears.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-001",
+      "category": "researcher_decision",
+      "subject": "Researcher decision items \u2014 when they may be raised",
+      "rule": "A RESEARCHER_DECISION item may only be raised when Claude AI has genuinely exhausted its own analytical resources and cannot proceed. Before raising an item, Claude AI must have: (1) read the relevant instruction section in full; (2) checked the governing rules file (this document); (3) checked the obs schema, reference document, or patch specification for any relevant specification; (4) checked the current chat for data already provided; (5) where DB state is needed, requested it from CC and received a response; (6) attempted a resolution using all available information and found it genuinely blocked. If an item is raised without evidence that steps 1\u20136 were completed, the researcher will reject it and return Claude AI to complete the work first. A question that could be answered by reading the instruction is not a researcher decision item.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-002",
+      "category": "researcher_decision",
+      "subject": "Researcher decision item format \u2014 required elements",
+      "rule": "Every RESEARCHER_DECISION item must contain exactly these elements: (1) RD-ID \u2014 unique identifier in format RD-YYYYMMDD-NNN, sequential within the session; (2) WHAT WAS CHECKED \u2014 which instruction sections, rules, documents, and DB queries were consulted, with specific references; (3) WHY RESOLUTION WAS NOT POSSIBLE \u2014 the specific gap or conflict that blocked resolution, not vague uncertainty; (4) THE QUESTION \u2014 stated plainly in one sentence; (5) OPTIONS \u2014 each option with its consequence stated; (6) CLAUDE AI RECOMMENDATION \u2014 a specific option recommended with reasoning. An item missing any of these elements is malformed and must be rejected.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-003",
+      "category": "researcher_decision",
+      "subject": "Researcher decision items must not be embedded in analysis",
+      "rule": "RESEARCHER_DECISION items are raised as standalone, numbered items \u2014 never embedded in analytical prose, observation logs, or session chat as a parenthetical question. They are collected and presented as a discrete block, separate from the analytical work that generated them. In a batch session, all decision items are accumulated and presented together at a defined decision point \u2014 not interspersed through the work. The researcher responds by RD-ID number. Claude AI proceeds only after receiving explicit confirmation for each item.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-004",
+      "category": "researcher_decision",
+      "subject": "Resolution must produce a concrete outcome",
+      "rule": "The answer to a RESEARCHER_DECISION item must result in a concrete outcome before the item is closed: a patch applied, an instruction updated, a flag marked resolved, a record written, or a rule added. A conversation exchange is not a resolution. The item is closed only when the outcome has been executed and confirmed. The outcome is stated in the item at the time it is raised (what will change when you confirm option X).",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-005",
+      "category": "researcher_decision",
+      "subject": "Same question may not be raised twice",
+      "rule": "Before raising a RESEARCHER_DECISION item, Claude AI must check: (a) the current chat for a prior answer to the same or equivalent question; (b) the session log for prior sessions for any recorded decision on this topic; (c) the governing instruction and global rules for any rule that already settles the question. If a prior answer exists in any of these sources, Claude AI applies it \u2014 the question is not raised again. Raising the same question twice is a compliance failure.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-RD-006",
+      "category": "researcher_decision",
+      "subject": "Decision items do not accumulate across sessions",
+      "rule": "RESEARCHER_DECISION items raised in a session that are not resolved in that session must be carried forward in the session log with their full text intact \u2014 not summarised or paraphrased. At the start of the next session, Claude AI presents all open items for resolution before new work begins. An item that has been open across more than one session without resolution is escalated \u2014 Claude AI must state why it remains unresolved and what additional information is needed.",
+      "applies_to": "all sessions, all phases",
+      "version": "1.0",
+      "added_date": "20260415",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-001",
+      "category": "programme_orientation",
+      "subject": "Verse always leads",
+      "rule": "The verse is the primary unit of evidence. All analytical work begins with what the verse says, not what a category, tradition, or prior interpretation says. Dimensions, classifications, and findings emerge from the verse evidence. The verse is never bent to fit a pre-existing category.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-002",
+      "category": "programme_orientation",
+      "subject": "The governing question",
+      "rule": "The programme's governing question is: what does Scripture reveal about the characteristics, operations, and interrelationships of the human inner being (spirit, soul, body)? All analytical work is oriented toward this question. Divine characteristics are retained as reference material for Session B/D work but are not the programme's primary subject.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-003",
+      "category": "programme_orientation",
+      "subject": "Dimensions are data-derived",
+      "rule": "Dimension assignments are discovered from verse evidence, not imposed from prior categories. A dimension that cannot be grounded in at least one verse in the registry's corpus is not a dimension for that registry.",
+      "applies_to": "Dimension Review, Session B instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-004",
+      "category": "programme_orientation",
+      "subject": "Session C is primary \u2014 Session B deepens it",
+      "rule": "The Session C word study is the primary reader-facing document. It stands on its own feet. Session B deepens and corrects it from within \u2014 it does not replace it. An accurate Session C document that has been corrected by Session B is more valuable than an accessible document that contains errors.",
+      "applies_to": "Session B, Session C instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-005",
+      "category": "programme_orientation",
+      "subject": "Two-AI pipeline \u2014 strict role separation",
+      "rule": "Claude AI handles all analysis, interpretation, and document production. Claude Code handles all database operations \u2014 patches, queries, exports, schema changes. These roles are strictly separated. Claude AI never executes database operations directly. Claude Code never makes analytical judgements. Requests that cross this boundary in either direction are non-compliant.",
+      "applies_to": "all sessions, all phases",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-006",
+      "category": "programme_orientation",
+      "subject": "Characteristic-perspective grouping model",
+      "rule": "The characteristic-perspective grouping model governs how verse context groups are formed: groups describe what a verse is about (the inner-being characteristic it engages), not what a term does. The same property term can serve different characteristics across its corpus. Groups are characteristic-centric, not term-centric.",
+      "applies_to": "Verse Context, Session B instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-007",
+      "category": "programme_orientation",
+      "subject": "Filter at term level \u2014 direct engagement or implication in an inner-being characteristic",
+      "rule": "The inner-being relevance filter is applied to the specific term's use in the verse, not to the verse's general theme or content. A term passes the filter if it does either of the following in this verse: (a) directly engages the inner being \u2014 names, expresses, or presupposes an internal state, capacity, orientation, or quality of a person; or (b) qualifies, operates on, or clarifies an inner-being characteristic \u2014 the term is implicated in a characteristic even if the characteristic is not named explicitly in the verse, provided it can be inferred from the term's specific use. The characteristic does not need to be stated; it needs to be genuinely implied by how the term functions here. A term that is present in a verse but plays no role in any inner-being dynamic \u2014 purely syntactic, purely locational, purely administrative \u2014 does not pass. The question is always: is this specific term, in its specific use in this verse, implicated in an inner-being characteristic?",
+      "correction_note": "v2.1 (20260414): Rule corrected following researcher review. The v2.0 formulation ('does this term engage the inner being?') was too narrow and was the cause of classification errors. The corrected rule adds the second pass condition \u2014 implication in a characteristic even where the characteristic is not named. This broadens the filter correctly to capture terms that serve as qualifiers, operators, or clarifiers of inner-being characteristics.",
+      "applies_to": "Verse Context instruction, Session B Stage 1, all relevance filtering decisions",
+      "version": "2.1",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-008",
+      "category": "programme_orientation",
+      "subject": "Emergence \u2014 all classifications arise from evidence",
+      "rule": "All analytical outputs must emerge from the verse evidence. This applies to: dimension assignments, spirit-soul-body classifications, somatic signatures, semantic pictures, connection characterisations, and all other analytical findings. No classification is assigned in advance and evidence then selected to support it. The evidence determines the finding; the finding does not determine what evidence is read.",
+      "applies_to": "Session B, Session C, Session D, Dimension Review instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    },
+    {
+      "rule_id": "GR-PROG-009",
+      "category": "programme_orientation",
+      "subject": "Inferential is not confirmed \u2014 label accurately",
+      "rule": "Where a connection, claim, or classification is theologically plausible or analytically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential connections may not be presented or upgraded as confirmed without supporting correlation signal or verse evidence. An inferential label in a published document is accurate description of the evidence state, not a failure.",
+      "applies_to": "Session B, Session C, Session D instructions",
+      "version": "2.0",
+      "added_date": "20260414",
+      "obsolete": false
+    }
+  ],
+  "flags": [
+    {
+      "flag_id": "FLAG-001",
+      "subject": "Session C instruction \u2014 full document missing from project files",
+      "description": "Session-C-Instruction-v1_3-2026-04-11.md is referenced in userMemories as an active governing instruction but is not present in the project files. The project contains only the prose rule (wa-global-sessionC-prose-rule-v1-2026-04-13.md) and the word study template (wa-word-study-template-v2-2026-04-13.md). It is unclear whether: (a) the instruction exists but was not uploaded to the project, (b) the Session C instruction was intentionally replaced by the prose rule plus template, or (c) the instruction needs to be created. All GR rules apply to Session C via GR-LOAD-001 but the specific Session C workflow cannot be audited or updated without the full instruction.",
+      "action_needed": "Confirm whether Session-C-Instruction-v1_3 exists and should be added to project files, or whether the prose rule + template constitute the current Session C governing documents.",
+      "raised_date": "20260414",
+      "resolved": false
+    },
+    {
+      "flag_id": "FLAG-002",
+      "subject": "Observations log versioning \u2014 named boundaries vs every write session",
+      "description": "Dimension Review instruction v1.9 Section 6.2 states 'version-increment on every new write session for the same cluster.' Researcher confirmed D-01A: named boundaries is correct \u2014 version-increment when resuming a cluster in a new session, not on every file save. The DR instruction text requires correction to match this confirmed rule. Decision has been confirmed; this flag tracks the pending instruction update.",
+      "action_needed": "Update Dimension Review v1.9 Section 6.2 file writing discipline to state: 'Version-increment the observations log filename when resuming work on the same cluster in a new session \u2014 not on every file save within the same session.'",
+      "raised_date": "20260414",
+      "resolved": false
+    },
+    {
+      "flag_id": "FLAG-003",
+      "subject": "Session B pass count inconsistency \u2014 five vs six passes",
+      "description": "Session B instruction v4.7 contains inconsistent references to pass count. Several overview sections and section headers reference 'five passes' but the instruction body defines six passes (Pass 1\u20135 analytical, Pass 6 Correlation Audit). The session close confirmation template and integrity rules correctly reference six passes. Researcher confirmed D-03: the document defines 6 passes and Session B instruction must be updated to state six passes consistently throughout.",
+      "action_needed": "Update Session B v4.7: replace all references to 'five passes' and 'five-pass analysis' with 'six passes' and 'six-pass analysis'. Confirm that the change note for v4.8 documents this correction.",
+      "raised_date": "20260414",
+      "resolved": false
+    },
+    {
+      "flag_id": "FLAG-004",
+      "subject": "GR-PROG-007 (filter at term level) \u2014 rule corrected",
+      "description": "Rule was too narrow in v2.0. Researcher correction (20260414): corrected to two-condition formulation. GR-PROG-007 updated to v2.1.",
+      "action_needed": "None \u2014 resolved.",
+      "raised_date": "20260414",
+      "resolved": true
+    },
+    {
+      "flag_id": "FLAG-005",
+      "subject": "CC Instructions document version currency and audit scope",
+      "description": "WA-SessionB-ClaudeCode-Instructions-v3_2-20260330.md had stale references. Updated as wa-sessionb-cc-instructions-v3.3-20260414.md.",
+      "action_needed": "None \u2014 resolved.",
+      "raised_date": "20260414",
+      "resolved": true
+    },
+    {
+      "flag_id": "FLAG-006",
+      "subject": "Session D \u2014 synthesis output format and naming not yet in global rules",
+      "description": "Session D Orientation v3.0 Section 10.5 specifies a filename pattern using a hyphenated date which conflicts with GR-FILE-009 (compact date). Session D naming convention not fully audited against GR-FILE rules.",
+      "action_needed": "When updating Session D Orientation: (1) correct filename example to compact date format; (2) confirm whether a full Session D instruction needs to be drafted before Session D work begins at scale.",
+      "raised_date": "20260414",
+      "resolved": false
+    },
+    {
+      "flag_id": "FLAG-007",
+      "subject": "SB_FINDING, SB_DIMENSION, SB_INNER_BEING codes \u2014 deprecated",
+      "description": "These three codes in wa_quality_flag_types (ids 145, 146, 147) were placeholder designs from before the dedicated tables existed. The correct destinations for Session B analytical outputs are: wa_session_b_findings (key findings), wa_session_b_dimensions (dimensional profile), and word_registry.sb_classification fields (inner being standing). A CC directive has been produced to mark these three codes as deprecated in wa_quality_flag_types. Researcher confirmed obsolete 2026-04-15.",
+      "action_needed": "Apply CC directive DIR-20260415-001 to mark the three codes deprecated. Confirm via query that no rows in wa_data_quality_flags use these codes.",
+      "raised_date": "20260415",
+      "resolved": false
+    },
+    {
+      "flag_id": "FLAG-008",
+      "subject": "Researcher decision discipline \u2014 programme-wide rules added",
+      "description": "GR-RD-001 through GR-RD-006 added in v2.2 governing the format, gate conditions, presentation, and resolution requirements for researcher decision items. GR-DB-001 added prohibiting DB state assumptions. GR-DIR-001 expanded; GR-DIR-002 through GR-DIR-005 added governing directive and patch distinction, format, and confirmation requirements. All instruction documents that reference the former GR-DIR-001 single-sentence rule should be updated to reference the expanded GR-DIR-001 through GR-DIR-005 set.",
+      "action_needed": "Update Session B v5.0 (when drafted), CC Instructions v3.3, and any other instruction referencing GR-DIR-001 to reflect the expanded directive/patch governance and researcher decision rules.",
+      "raised_date": "20260415",
+      "resolved": false
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # CLAUDE.md — Claude Code Project Reference
 
-> Auto-generated 2026-03-24; updated 2026-04-12 for v4.7/v5.8/v1.10 instruction refresh + Session B progress.
+> Auto-generated 2026-03-24; updated 2026-04-18 for major instruction restructure (13 documents refreshed/new), schema v3.9.0.
 > This file is read by Claude Code at the start of every conversation.
 
 ---
@@ -15,7 +15,7 @@ A structured academic Bible research platform centred on **~214 English words** 
 - **Claude Code** — database engine: patch application, JSON export, schema migrations, validation queries, programme state reporting, Verse Context batch construction, pool analysis dataset assembly
 - **Claude AI** — analytical engine: term classification, verse analysis, scope judgements, narrative production, JSON extraction, Verse Context classification
 
-**Governing documents (April 2026):** Documents in `data/imports/WA/Workflow/Framework_B/Session_B/` supersede all prior versions. Claude Code's consolidated responsibilities are in `WA-SessionB-ClaudeCode-Instructions-v3.2`. Key versions: WA-SessionB-Instruction-v4.7, WA-Registry-Management-Guide-v5.8, patch_specification-v1.10, WA-DimensionReview-Instruction-v2.2, WA-VerseContext-Instruction-v2.5, WA-Reference-v5.5.
+**Governing documents (April 2026):** Documents in `data/imports/WA/Workflow/Framework_B/Session_B/` supersede all prior versions. All cross-references use the `[current]` token (GR-REF-002) — resolve to highest-numbered version at read time. Claude Code's consolidated responsibilities are in `wa-claudecode-instruction [current]` (v4.1). Key versions listed in Section 10.
 
 ---
 
@@ -30,9 +30,9 @@ Bible_study_projects/              ← Google Drive root = working directory
 │
 ├── engine/                        ← Python automation engine (the core application)
 │   ├── engine.py                  ← CLI entry point (python -m engine.engine)
-│   ├── constants.py               ← Schema version (3.8.0), thresholds, sentinels
+│   ├── constants.py               ← Schema version (3.9.0), thresholds, sentinels
 │   ├── db.py                      ← Connection factory (WAL mode), query helpers
-│   ├── migrate.py                 ← Schema migrations M01–M18 (v2.2 → v3.8.0)
+│   ├── migrate.py                 ← Schema migrations M01–M18 (v2.2 → v3.8.0; v3.9.0 via SC-01–SC-05)
 │   ├── backup.py                  ← Pre/post-run + manual backups (rolling 10)
 │   ├── register.py                ← REGISTER mode + lock management
 │   ├── new_word.py                ← NEW_WORD mode (N1–N19): first-time STEP fetch
@@ -123,7 +123,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 
 ---
 
-## 3. The Database — Schema v3.8.0
+## 3. The Database — Schema v3.9.0
 
 **File:** `data/bible_research.db` (SQLite, ~40 MB, excluded from Git)
 
@@ -144,9 +144,10 @@ Bible_study_projects/              ← Google Drive root = working directory
 | 10 | Engine Control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Full audit trail for every engine run |
 | 11 | Meaning Parse | `wa_meaning_parsed`, `wa_meaning_sense`, `wa_meaning_stem`, `wa_lsj_parsed` | Structured parse of meaning text |
 | 12 | Metadata | `schema_version` | Current schema version and migration history |
-| 13 | Session B Structured | `wa_session_b_dimensions`, `wa_session_b_findings`, `wa_finding_entity_links` | Dimensional profiles and key findings per registry. 2026-04-15: findings table +9 lifecycle fields (pass_ref, study_segment, delete_flag, obsolete_*, superseded_by_id, related_finding_id, resolution_note, thin_evidence); `finding_type` normalised to UPPER_SNAKE_CASE. New junction table `wa_finding_entity_links` links findings to entities. |
+| 13 | Session B Structured | `wa_session_b_dimensions`, `wa_session_b_findings`, `wa_finding_entity_links` | Dimensional profiles and key findings per registry. Findings: 20 fields (9 original + 9 lifecycle + status + term_id). `wa_finding_entity_links` links findings to entities (with delete_flagged). |
 | 14 | Session D | `session_d_runs`, `session_d_verse_links`, `session_d_term_links`, `session_d_observations` | Cross-registry synthesis capture |
 | 15 | Verse Context | `verse_context_group`, `verse_context` | Contextual meaning groups and per-verse classification (v3.8.0, M18) |
+| 16 | Observation Catalogue | `wa_obs_question_catalogue`, `wa_finding_catalogue_links` | Master question catalogue (194 questions) and finding-to-question junction (v3.9.0, SC-03/SC-04) |
 
 ### Key Relationships
 
@@ -232,14 +233,14 @@ engine.py (CLI dispatcher)
 ├── migrate.py (M01–M18 migrations)
 ├── backup.py (pre/post-run backups)
 ├── db.py (connection + helpers)
-└── constants.py (schema version 3.8.0, thresholds)
+└── constants.py (schema version 3.9.0, thresholds)
 ```
 
 ### Key Constants
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| EXPECTED_SCHEMA_VERSION | `"3.8.0"` | Engine refuses mismatched schema |
+| EXPECTED_SCHEMA_VERSION | `"3.9.0"` | Engine refuses mismatched schema |
 | LOCK_SENTINEL | `"IN_PROGRESS"` | Prevents concurrent runs |
 | AUDITED_SENTINEL | `"AUDITED"` | Marks successful audit completion |
 | HIGH_FREQ_THRESHOLD | 500 | Above → HIGH_FREQUENCY_ANCHOR flag |
@@ -304,6 +305,8 @@ STEP API caps results at 60. The client uses two-layer canonical section splits 
 | `build_dimension_extract.py` | Dimension review cluster/group/rootfamily extracts | Yes (read-only) |
 | `generate_registry_overview.py` | Full registry overview JSON (all 214 registries) | Yes (read-only) |
 | `build_file_manifest.py` | Project file manifest (indexes all files incl. archive) | Yes (read-only) |
+| `export_database_schema.py` | Database schema JSON report (AI project reference) | Yes (read-only) |
+| `_exploratory_sessionb_export_v1_20260415.py` | Session B full word extract (spec v1.1, 15 sections incl. catalogue) | Yes (read-only) |
 
 ---
 
@@ -434,78 +437,108 @@ python -m engine.engine --mode=audit_word --registry=N
 
 ---
 
-## 10. v5.5/v5.6 Document Architecture (March 2026)
+## 10. Document Architecture (April 2026)
 
-Documents in `data/imports/WA/Workflow/Framework_B/Session_B/`:
+Documents in `data/imports/WA/Workflow/Framework_B/Session_B/`. All cross-references use `[current]` token (GR-REF-002) — resolves to highest-numbered version at read time.
 
-| Document | Version | Purpose | Primary Audience |
-| -------- | ------- | ------- | ---------------- |
-| WA-Implementation-Instruction | v5 | Schema changes, new tables, programme operations (Tasks 1-8) | Claude Code |
-| WA-Reference | **v5.5** | Controlled vocabulary, naming conventions, schema reference (v3.8.0), document validation standard | Both systems |
-| WA-Registry-Management-Guide | **v5.8** | Registry structure, dual status lifecycle, cluster assignments (C01-C22), pool IDs, periodic reviews | Both systems |
-| **WA-SessionB-Instruction** | **v4.7** | **Unified Session B instruction: 6-pass analytical process, directive delivery (D1/D2), CC coordination** | **Both systems** |
-| **WA-SessionB-ClaudeCode-Instructions** | **v3.2** | **Consolidated Claude Code responsibilities, REPAIR catalogue, failure patches** | **Claude Code** |
-| **WA-DimensionReview-Instruction** | **v2.2** | **Dimension review stage — cluster-level review, group classification, dominant_subject** | **Both systems** |
-| **WA-VerseContext-Instruction** | **v2.5** | **Verse Context stage — batch construction, classification, patch application** | **Both systems** |
-| **patch_specification** | **v1.10** | **Authoritative patch applicator rules, all operation types, status workflow** | **Claude Code** |
+| Document | Version | Date | Purpose | Primary Audience |
+| -------- | ------- | ---- | ------- | ---------------- |
+| wa-claudecode-instruction | **v4.1** | 2026-04-18 | CC responsibilities: patch/directive execution, VC batch ops, extract production. REPAIR/failure → wa-patch-instruction | **Claude Code** |
+| wa-patch-instruction | **v2.1** | 2026-04-18 | Consolidated patch preparation + execution: operation types, REPAIR catalogue, failure patches, validation rules | **Claude Code** |
+| wa-directive-instruction | **v1.1** | 2026-04-18 | **NEW** — Directive specification: 5 required elements, production workflow, CC receipt/validation/execution rules | **Both systems** |
+| wa-global-general-rules | **v2.11** | 2026-04-18 | Programme governance. GR-REF-002 (`[current]` token). 25 rules migrated to addenda pending relocation. | **Both systems** |
+| wa-global-flags | **v1.5** | 2026-04-18 | **NEW** — Standalone flag tracking (7 open, 6 resolved). FLAG-010 = blocking gate on new word analysis | **Both systems** |
+| wa-reference | **v5.6** | 2026-04-18 | Controlled vocabulary (8 sets), schema reference (v3.9.0), file naming, document validation standard | **Both systems** |
+| wa-registry-management-guide | **v5.10** | 2026-04-18 | Registry structure, OWNER/XREF rules (§3a), dual status, clusters, pools. Document scope added | **Both systems** |
+| wa-sessionb-analysis-readiness | **v1.6** | 2026-04-18 | Session B Stage 1: 6-step data audit + remediation. Hard gates: VC/DimReview/B-target | **Both systems** |
+| wa-sessionb-analysis-output | **v1.1** | 2026-04-18 | **NEW** — Session B Stage 2: 2a (analysis), 2b (Q&A + Type b patch), 2c (analytic word output) | **Both systems** |
+| wa-sessionc-instruction | **v1.5** | 2026-04-18 | **NEW** — Session C: reader-facing word study (6 chapters), 3 lifecycle versions (v1/v2/v3) | **Claude AI** |
+| wa-sessiond-orientation | **v3.2** | 2026-04-18 | Session D cross-registry synthesis: pointer clustering (CC), question formulation, evidence retrieval (CC), analysis | **Both systems** |
+| wa-dimensionreview-instruction | **v3.3** | 2026-04-18 | Dimension review — GR-REF-002 sweep, `[current]` tokens throughout | **Both systems** |
+| wa-versecontext-instruction | **v2.8** | 2026-04-18 | Verse Context — GR-REF-002 sweep, pipeline: Phase 1 → VC → DimReview | **Both systems** |
+| wa-word-study-template | v2 | 2026-04-13 | Word study output template | Claude AI |
 
-### Key Changes (v5.8/v4.7/v1.10 from earlier versions)
+### Key Changes (2026-04-18 restructure)
 
-- **Verse Context stage added**: New pipeline stage between Phase 1 and DataPrep — classifies all 133,353 active verses by inner-being relevance, groups by contextual meaning, designates anchor verses
-- **Dual status tracks**: `session_b_status` + `verse_context_status` on word_registry
-- **Pool-based Session B**: Analysis runs per pool (not per individual word). Pool analysis datasets assembled by Claude Code.
-- **Verse Context Reset**: New session_b_status value — prior Session B work superseded
-- **Ready for Analysis**: Now legacy — only set by audit_word COALESCE on NULL status (new words only)
-- **REPAIR patch catalogue**: Four cascade reset types (STEP re-run, audit_word re-run, VC re-run, Analysis re-run)
-- **Failure patch protocol**: Mandatory on any patch rejection — record failure before retry
-- **Schema v3.8.0**: M17 (dimensions rename, anchor_verses removal) + M18 (verse_context tables, verse_context_status field)
-- **XREF architecture**: OWNER/XREF term ownership, shared verse_context via mti_term_id
-- **Mid-pool interruption**: System failure detection — mixed pool states trigger recovery patches
-- **Four outputs per registry** (unchanged): Session B JSON, analysis patch, final registry extract, Session D pointers file
-- **source_category → dimensions** (M17): Comma-delimited multi-value field. anchor_verses field removed.
-- **Cluster assignments complete**: All 212 words assigned to C01-C22.
+**Structural:**
 
-### Session B Workflow (v4.7 — per-registry, 6-pass)
+- **Major document restructure**: 13 documents refreshed or new. CC instruction renamed (`wa-sessionb-cc-instructions` → `wa-claudecode-instruction`). Patch spec renamed (`wa-patch-specification` → `wa-patch-instruction`) and absorbed REPAIR/failure content from CC instruction
+- **New documents**: wa-directive-instruction (directive spec), wa-global-flags (standalone tracking), wa-sessionb-analysis-output (Stage 2), wa-sessionc-instruction, wa-sessiond-orientation
+- **GR-REF-002 `[current]` token**: All operational cross-references resolve to highest version at read time. Specific versions retained only for provenance (Supersedes fields, patch metadata)
+- **Global rules v2.11**: 25 rules migrated to addenda. GR-DIR rules pending relocation to wa-directive-instruction
+- **FLAG-010**: Blocking gate — no new word analysis until all instructions audited against GR v2.8+
+
+**Session B — now fully specified (Readiness v1.6 + Output v1.1):**
+
+- Stage 1 (Readiness): 6-step audit → Type (a) PREANALYSIS patch → sub-processes → Completion Record
+- Stage 2a: Free-form analysis (9 units) with continuous SD pointer raising (GR-OBS-001)
+- Stage 2b: Q&A partitioning → Type (b) SESSIONB patch (findings + SD pointers mandatory)
+- Stage 2c: 6-chapter Analytic Word Output — draws only from 2b Q&A, no new analysis
+- Integrity rules SB-25/26/27: fixed observations post-2a; 2b draws from 2a only; 2c from 2b only
+- Hard gate: SD pointer count verified before 2c begins
+
+**Patch instruction (v2.1):**
+
+- Consolidated from patch spec v1.14 + CC instruction sections
+- Same operation types, no new additions
+- Three applicator gaps remain: `update` on wa_session_research_flags, `insert` on wa_dimension_index, SDPOINTERS exempt type
+- Patch ID (uppercase PATCH-...) vs filename (lowercase wa-...) distinction formalised
+
+**CC instruction (v4.1):**
+
+- Scope narrowed: REPAIR/failure content moved to wa-patch-instruction
+- Vocabulary duplication moved to wa-reference
+- VC batch operations (§6), programme state queries (§6.6) retained
+- Three scripts to maintain: _batch_extract.py, _produce_final_extract.py, _generate_programme_report.py
+
+### Session B Workflow (Readiness v1.6 + Output v1.1)
 
 ```
-Verse Context (Stage 1):
-    Claude Code batch → Claude AI classifies → VERSECONTEXT patch → verse_context_status = Complete
+Verse Context:
+    CC batch → Claude AI classifies → VERSECONTEXT patch → verse_context_status = Complete
     │
     ▼
-Session B (Stage 2 — per registry, 6 passes):
-    Claude Code produces complete extract (build_complete_extract.py)
-    │
-    Pass 1: Data audit + remediation → PREANALYSIS patch (D1 delivery)
-    Pass 2: GOD_AS_SUBJECT, somatic flags, FRAMEWORK_SIGNAL
-    Pass 3: Root family, correlation analysis → D1 delivery to CC
-    │  CC applies D1 directives → fresh extract R2
-    │
-    Pass 4: Somatic scan (SOMATIC_INNER_LINK, BODY_INNER_EXPRESSION)
-    Pass 5: sb_classification determination
-    Pass 6: Session D pointers (SD_POINTER flags) → D2 delivery to CC
-    │  CC applies D2 directives → fresh extract R3
+Dimension Review:
+    CC extract → Claude AI reviews → DIMREVIEW patch → cluster stamp set
     │
     ▼
-Session C (Stage 3): Word study production + Session C notes
+Stage 1 — Analysis Readiness (v1.6):
+    1.1 Confirm extract → 1.2 Data audit (9 sections) → 1.3 Prepare records
+    1.4 Type (a) PREANALYSIS patch → CC applies
+    1.5 Sub-processes (VC/DimReview gap-fill) → fresh extract
+    1.6 Completion verify → Stage 1 Completion Record
+    │  Hard gates: VC Complete, DimReview Complete, 0 B-target flags
     │
     ▼
-Status close: session_b_status → Analysis Complete
+Stage 2 — Analysis Output (v1.1):
+    2a: Comprehensive analysis (9 units, SD pointers raised continuously)
+    2b: Q&A partitioning → Type (b) SESSIONB patch (findings + SD pointers)
+       │  Hard gate: SD pointer count verified
+    2c: 6-chapter Analytic Word Output (draws from 2b only)
+    │
+    ▼
+Session C (v1.5): Word study production (6 chapters, 3 lifecycle versions)
+    │
+    ▼
+Session D (v3.2): Cross-registry synthesis (pointer clustering → analysis)
+    │
+    ▼
+Status close: session_b_status → Session B Complete
 ```
 
 ### Implementation Tasks Status
 
-Tasks 1-8 from WA-Implementation-Instruction-v5: **all complete** (schema v3.8.0, migrations M01–M18). Clustering (Task 4) applied. Zero-term investigation (Task 5) resolved.
+Tasks 1-8 from WA-Implementation-Instruction-v5: **all complete** (schema v3.9.0, migrations M01–M18 + SC-01–SC-05). Clustering (Task 4) applied. Zero-term investigation (Task 5) resolved.
 
-### Current Programme State (2026-04-12)
+### Current Programme State (2026-04-18)
 
-- 214 total registries (213 listen + 214 suffering added since March)
-- 182 registries VC Complete, 1 In Progress (grace — pending XREF VC from regs 23/73), 31 NULL (excluded)
-- C17 Dimension Review complete (cluster stamp set), C01-C16/C18-C22 previously completed
-- 3 registries at Session B Analysis Complete: grace (68), mercy (111), compassion (23)
-- SD pointers enriched across all three: grace=50, mercy=16, compassion=31
-- Love (103) Session B extract prepared, pending analytical work
-- Suffering (214): C05, 72 terms, 907 verses, VCB-034 batch prepared, VC/dim review pending
-- Session B uses unified 6-pass instruction (v4.7) with D1/D2 directive delivery points
+- 214 total registries
+- 182 registries VC Complete, 2 In Progress (grace 68, suffering 214), 30 NULL (excluded)
+- C17 Dimension Review complete, C01-C16/C18-C22 previously completed
+- 6 registries at Analysis Complete: compassion (23), fellowship (62), forgiveness (64), grace (68), love (103), mercy (111)
+- Suffering (214): C05, 72 terms, 907 verses, VC/dim review pending
+- Observation Question Catalogue: 194 questions populated
+- FLAG-010: Blocking gate on new word analysis — all instructions must audit against GR v2.8+
 
 ---
 
@@ -569,6 +602,12 @@ python scripts/build_file_manifest.py
 python scripts/build_file_manifest.py --search "grace"
 python scripts/build_file_manifest.py --search "registry:068"
 python scripts/build_file_manifest.py --search "type:observations"
+
+# Database schema JSON report (AI project reference)
+python scripts/export_database_schema.py
+
+# Session B full word extract (spec v1.1, 15 sections incl. catalogue)
+python scripts/_exploratory_sessionb_export_v1_20260415.py --registry=62
 
 # DB connection pattern (ad-hoc scripts)
 import sqlite3, os

@@ -1,0 +1,33 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260415-DIR008TEST-V2",
+    "patch_type": "SESSIONB_FINDINGS",
+    "produced_date": "2026-04-15",
+    "produced_by": "DIR-20260415-008 test harness — supersede test",
+    "registry_id": 23,
+    "session_b_status": null,
+    "description": "Supersede test row A with new row B"
+  },
+  "operations": [
+    {
+      "op_id": "TEST-002",
+      "operation": "supersede_finding",
+      "record": {
+        "original_finding_id": 172,
+        "obsolete_reason": "DIR-008 test — supersession verification",
+        "obsolete_date": "2026-04-15",
+        "new_finding": {
+          "finding_id": "TEST-DIR008-20260415093437-B",
+          "registry_id": 23,
+          "finding_type": "OPEN_ITEM",
+          "finding": "DIR-008 test finding B — supersedes A. Created via supersede_finding op.",
+          "raised_date": "2026-04-15",
+          "session_b_instruction": "DIR-20260415-008-test",
+          "pass_ref": "TEST Pass 2",
+          "thin_evidence": 0,
+          "delete_flag": 0
+        }
+      }
+    }
+  ]
+}

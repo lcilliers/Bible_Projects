@@ -12,25 +12,33 @@ Handles operation types:
   - restore_delete_flagged → Restore incorrectly delete-flagged terms
   - insert (wa_session_research_flags) → Research flag inserts
   - insert (wa_session_b_dimensions)   → Session B dimensional profile
-  - insert (wa_session_b_findings)     → Session B key findings
+  - insert (wa_session_b_findings)     → Session B key findings (all 20 fields, DIR-008 + SC-01)
+  - update (wa_session_b_findings)     → Update finding lifecycle fields (DIR-008 + SC-01)
+  - supersede_finding                  → Atomic insert new + mark old superseded (DIR-008)
+  - insert_finding_entity_link         → Insert into wa_finding_entity_links (DIR-008)
+  - insert (wa_obs_question_catalogue) → Catalogue question inserts (single or rows-array)
+  - insert (wa_finding_catalogue_links) → Finding-to-question links (single or rows-array)
   - update (wa_dimension_index)        → Dimension review updates
   - update (verse_context_group)       → Group description corrections
   - registry_note / schema_investigation_note → Documentation only
   - bulk_update           → Generic bulk update on any table
 
 Supported patch types (in _patch_meta.patch_type):
-  - PREANALYSIS     → Pre-analysis classification patch
-  - SESSIONB        → Analysis completion patch
-  - SESSIOND        → Session D discovery JSON patch
-  - CLUSTERING      → Cluster assignment patch
-  - DIMREVIEW       → Dimension review patch (wa_dimension_index updates + B/D pointers)
-  - DIMREVIEW-GRPDESC → Group description correction (verse_context_group + dimension_index sync)
+  - PREANALYSIS        → Pre-analysis classification patch
+  - SESSIONB           → Analysis completion patch
+  - SESSIONB_FINDINGS  → Session B Stage 2 pass-close patch (findings + entity links only). Carries session_b_status: null. (DIR-008)
+  - SESSIOND           → Session D discovery JSON patch
+  - CLUSTERING         → Cluster assignment patch
+  - DIMREVIEW          → Dimension review patch (wa_dimension_index updates + B/D pointers)
+  - DIMREVIEW-GRPDESC  → Group description correction (verse_context_group + dimension_index sync)
+  - CATALOGUE_POPULATION → Catalogue question population (wa_obs_question_catalogue inserts)
 
 Supported tables:
   - mti_terms              → MTI status, reconciled flag, status_note
   - wa_session_research_flags → Phase 2 research flag inserts
   - wa_session_b_dimensions → Session B dimensional profiles
-  - wa_session_b_findings  → Session B key findings
+  - wa_session_b_findings  → Session B key findings (20 fields incl. status, term_id)
+  - wa_finding_entity_links → Junction table — finding-to-entity links (DIR-008)
   - wa_dimension_index     → Dimension review updates
   - verse_context_group    → Group description corrections
   - word_registry          → registry notes, anchor_verses, last_changed
@@ -40,10 +48,13 @@ Safety:
   - Idempotency: refuses patches already applied (by patch_id in engine_run_log)
   - Validates registry_id, strongs_numbers, flag_label uniqueness before applying
   - Dimension review: protects manual_override=1 rows from unintended modification
+  - Entity links: validates finding_id exists or is resolvable from prior op in same patch
 
 Usage:
   python scripts/apply_session_patch.py <patch_file> [--dry-run]
 """
+
+__version__ = "20260416"
 
 import argparse
 import json
@@ -59,6 +70,86 @@ ARCHIVE_DIR  = os.path.join(os.path.dirname(__file__), "..", "archive", "patches
 
 def _now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Same-patch resolution registry (DIR-008)
+# ─────────────────────────────────────────────────────────────────────────────
+# Maps finding_id (TEXT label, e.g. "023-F006") → wa_session_b_findings.id (INT)
+# for findings inserted earlier in the current patch. Allows
+# insert_finding_entity_link operations to reference findings created in the
+# same patch via finding_id_ref. Cleared per-patch in apply_patch().
+_inserted_findings_by_label: dict[str, int] = {}
+
+
+def _record_inserted_finding(op: dict, new_id: int) -> None:
+    """Stash the new id so later ops in this patch can resolve by label."""
+    label = op.get("record", {}).get("finding_id") or op.get("record", {}).get("flag_label")
+    # supersede_finding nests the new finding under "new_finding"
+    if not label and "record" in op and "new_finding" in op["record"]:
+        nf = op["record"]["new_finding"]
+        label = nf.get("finding_id") or nf.get("flag_label")
+    if label:
+        _inserted_findings_by_label[label] = new_id
+
+
+def _resolve_inserted_finding(label: str) -> int | None:
+    """Resolve a finding label to its inserted id within the current patch."""
+    return _inserted_findings_by_label.get(label)
+
+
+def _insert_finding(conn: sqlite3.Connection, rec: dict, meta: dict | None) -> int:
+    """Insert a wa_session_b_findings row supporting all 18 fields. Returns new id.
+
+    Mandatory: finding_id, registry_id, finding_type, finding, raised_date,
+    session_b_instruction. Lifecycle fields default sensibly:
+      - delete_flag → 0
+      - thin_evidence → 0
+      - everything else → NULL.
+    """
+    finding_id = rec.get("finding_id") or rec.get("flag_label")
+    registry_id_val = rec.get("registry_id") or rec.get("registry_no")
+    finding_type = rec.get("finding_type") or rec.get("cluster") or "DIMENSION_REVIEW"
+    finding = rec.get("finding") or rec.get("description")
+    raised_date = (
+        rec.get("raised_date") or rec.get("created_date")
+        or (meta or {}).get("produced_date", _now()[:10])
+    )
+    instruction = (
+        rec.get("session_b_instruction") or rec.get("source_instruction")
+        or (meta or {}).get("produced_by", "unknown")
+    )
+    cur = conn.execute(
+        """INSERT INTO wa_session_b_findings
+           (finding_id, registry_id, file_id, finding_type, finding,
+            anchor_verses, raised_date, session_b_instruction,
+            pass_ref, study_segment, delete_flag, obsolete_reason, obsolete_date,
+            superseded_by_id, related_finding_id, resolution_note, thin_evidence,
+            status, term_id)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+        (
+            finding_id,
+            registry_id_val,
+            rec.get("file_id"),
+            finding_type,
+            finding,
+            rec.get("anchor_verses"),
+            raised_date,
+            instruction,
+            rec.get("pass_ref"),
+            rec.get("study_segment"),
+            rec.get("delete_flag", 0),
+            rec.get("obsolete_reason"),
+            rec.get("obsolete_date"),
+            rec.get("superseded_by_id"),
+            rec.get("related_finding_id"),
+            rec.get("resolution_note"),
+            rec.get("thin_evidence", 0),
+            rec.get("status", "pending"),
+            rec.get("term_id"),
+        ),
+    )
+    return cur.lastrowid
 
 
 def _validate(conn, patch: dict) -> list[str]:
@@ -86,7 +177,7 @@ def _validate(conn, patch: dict) -> list[str]:
     patch_type = meta.get("patch_type", "")
     pid = meta.get("patch_id", "")
     # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
-    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC")
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE")
     is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
     if not is_exempt:
         for token in sb_exempt_types:
@@ -559,32 +650,119 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         print(f"  {op_id}: wa_session_b_dimensions INSERT reg={rec.get('registry_id')}")
 
     elif table == "wa_session_b_findings" and operation == "insert":
-        rec = op["record"]
-        # Map DIMREVIEW field names to table schema (fallback to correct names)
-        finding_id = rec.get("finding_id") or rec.get("flag_label")
-        registry_id_val = rec.get("registry_id") or rec.get("registry_no")
-        finding_type = rec.get("finding_type") or rec.get("cluster") or "DIMENSION_REVIEW"
-        finding = rec.get("finding") or rec.get("description")
-        raised_date = rec.get("raised_date") or rec.get("created_date") or (meta or {}).get("produced_date", _now()[:10])
-        instruction = rec.get("session_b_instruction") or rec.get("source_instruction") or (meta or {}).get("produced_by", "unknown")
-        conn.execute(
-            """INSERT INTO wa_session_b_findings
-               (finding_id, registry_id, file_id, finding_type, finding,
-                anchor_verses, raised_date, session_b_instruction)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
-            (
-                finding_id,
-                registry_id_val,
-                rec.get("file_id"),
-                finding_type,
-                finding,
-                rec.get("anchor_verses"),
-                raised_date,
-                instruction,
-            ),
-        )
+        new_id = _insert_finding(conn, op["record"], meta)
         counts["findings_inserted"] = counts.get("findings_inserted", 0) + 1
-        print(f"  {op_id}: wa_session_b_findings INSERT {finding_id}")
+        # Stash the inserted id so subsequent ops in the same patch can resolve
+        # finding_id references (e.g. insert_finding_entity_link).
+        _record_inserted_finding(op, new_id)
+        finding_id = op["record"].get("finding_id") or op["record"].get("flag_label")
+        print(f"  {op_id}: wa_session_b_findings INSERT {finding_id} (id={new_id})")
+
+    elif table == "wa_session_b_findings" and operation == "update":
+        rec = op["record"]
+        # Identify target row by finding_id (TEXT, unique) or by id (INTEGER PK)
+        target_id = rec.get("id")
+        finding_id = rec.get("finding_id")
+        if not target_id and not finding_id:
+            raise ValueError(f"{op_id}: wa_session_b_findings update requires id or finding_id")
+        if target_id:
+            where_sql = "id = ?"
+            where_params = [target_id]
+        else:
+            where_sql = "finding_id = ?"
+            where_params = [finding_id]
+        # Allowed update fields (everything except id, finding_id, registry_id, raised_date)
+        allowed = {
+            "file_id", "finding_type", "finding", "anchor_verses", "session_b_instruction",
+            "pass_ref", "study_segment", "delete_flag", "obsolete_reason", "obsolete_date",
+            "superseded_by_id", "related_finding_id", "resolution_note", "thin_evidence",
+            "status", "term_id",
+        }
+        set_parts = []
+        set_vals = []
+        for k, v in rec.items():
+            if k in allowed:
+                set_parts.append(f"{k} = ?")
+                set_vals.append(v)
+        if not set_parts:
+            raise ValueError(f"{op_id}: wa_session_b_findings update has no updatable fields")
+        sql = f"UPDATE wa_session_b_findings SET {', '.join(set_parts)} WHERE {where_sql}"
+        cur = conn.execute(sql, set_vals + where_params)
+        if cur.rowcount == 0:
+            raise ValueError(f"{op_id}: no wa_session_b_findings row matched {where_sql}={where_params}")
+        counts["findings_updated"] = counts.get("findings_updated", 0) + 1
+        print(f"  {op_id}: wa_session_b_findings UPDATE rows={cur.rowcount}")
+
+    elif operation == "supersede_finding":
+        # Atomic: insert new finding, then mark original as superseded.
+        rec = op["record"]
+        original_id = rec.get("original_finding_id")
+        obsolete_reason = rec.get("obsolete_reason")
+        obsolete_date = rec.get("obsolete_date") or _now()[:10]
+        new_finding = rec.get("new_finding")
+        if not (original_id and obsolete_reason and new_finding):
+            raise ValueError(
+                f"{op_id}: supersede_finding requires original_finding_id, obsolete_reason, new_finding"
+            )
+        # Verify original exists
+        orig = conn.execute(
+            "SELECT id FROM wa_session_b_findings WHERE id = ?", (original_id,)
+        ).fetchone()
+        if not orig:
+            raise ValueError(f"{op_id}: supersede_finding original_finding_id={original_id} not found")
+        # Insert new finding
+        new_id = _insert_finding(conn, new_finding, meta)
+        # Update original
+        conn.execute(
+            """UPDATE wa_session_b_findings
+               SET delete_flag = 1, superseded_by_id = ?, obsolete_reason = ?, obsolete_date = ?
+               WHERE id = ?""",
+            (new_id, obsolete_reason, obsolete_date, original_id),
+        )
+        counts["findings_superseded"] = counts.get("findings_superseded", 0) + 1
+        counts["findings_inserted"] = counts.get("findings_inserted", 0) + 1
+        _record_inserted_finding(op, new_id)
+        print(f"  {op_id}: supersede_finding original={original_id} new_id={new_id}")
+
+    elif operation == "insert_finding_entity_link" or (
+        table == "wa_finding_entity_links" and operation == "insert"
+    ):
+        rec = op["record"]
+        # Resolve finding_id: either explicit integer OR a finding_id_ref pointing
+        # to a finding inserted earlier in the same patch (similar to group_code resolution
+        # in VERSECONTEXT patches per patch spec §3.1).
+        finding_id_int = rec.get("finding_id")
+        ref_label = rec.get("finding_id_ref") or rec.get("finding_label_ref")
+        if not finding_id_int and ref_label:
+            finding_id_int = _resolve_inserted_finding(ref_label)
+        if not finding_id_int:
+            raise ValueError(
+                f"{op_id}: insert_finding_entity_link requires finding_id (integer) "
+                "or finding_id_ref (label of finding inserted in same patch)"
+            )
+        # Verify finding exists
+        exists = conn.execute(
+            "SELECT 1 FROM wa_session_b_findings WHERE id = ?", (finding_id_int,)
+        ).fetchone()
+        if not exists:
+            raise ValueError(
+                f"{op_id}: insert_finding_entity_link finding_id={finding_id_int} not found"
+            )
+        entity_type = rec.get("entity_type")
+        entity_id = rec.get("entity_id")
+        entity_strongs = rec.get("entity_strongs")
+        raised_date = rec.get("raised_date") or _now()[:10]
+        if not entity_type:
+            raise ValueError(f"{op_id}: insert_finding_entity_link requires entity_type")
+        delete_flagged = rec.get("delete_flagged", 0)
+        conn.execute(
+            """INSERT INTO wa_finding_entity_links
+               (finding_id, entity_type, entity_id, entity_strongs, raised_date, delete_flagged)
+               VALUES (?, ?, ?, ?, ?, ?)""",
+            (finding_id_int, entity_type, entity_id, entity_strongs, raised_date, delete_flagged),
+        )
+        counts["entity_links_inserted"] = counts.get("entity_links_inserted", 0) + 1
+        print(f"  {op_id}: wa_finding_entity_links INSERT finding={finding_id_int} type={entity_type}")
 
     elif table in ("wa_phase2_flags", "wa_session_research_flags") and operation == "insert":
         rec = op["record"]
@@ -734,6 +912,32 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         counts["term_inv_updated"] = counts.get("term_inv_updated", 0) + 1
         print(f"  {op_id}: wa_term_inventory UPDATE id={match.get('id', '?')} {list(set_vals.keys())}")
 
+    elif table == "wa_term_phase2_flags" and operation == "update":
+        match    = op["match"]
+        set_vals = dict(op["set"])
+        valid_cols = {
+            r[1] for r in conn.execute("PRAGMA table_info(wa_term_phase2_flags)").fetchall()
+        }
+        dropped = [k for k in set_vals if k not in valid_cols]
+        for k in dropped:
+            del set_vals[k]
+        if dropped:
+            print(f"  {op_id}: [NOTE] Dropped non-existent columns: {dropped}")
+        if not set_vals:
+            counts["skipped"] = counts.get("skipped", 0) + 1
+            return
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        where_clauses = " AND ".join(f"{k} = ?" for k in match)
+        params = list(set_vals.values()) + list(match.values())
+        cur = conn.execute(
+            f"UPDATE wa_term_phase2_flags SET {set_clauses} WHERE {where_clauses}",
+            params,
+        )
+        if cur.rowcount == 0:
+            raise ValueError(f"{op_id}: no wa_term_phase2_flags row matched {match}")
+        counts["phase2_flags_updated"] = counts.get("phase2_flags_updated", 0) + 1
+        print(f"  {op_id}: wa_term_phase2_flags UPDATE {match} {list(set_vals.keys())}")
+
     elif table == "word_registry" and operation == "update":
         match    = op["match"]
         set_vals = dict(op["set"])
@@ -823,6 +1027,76 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         )
         counts["cluster_stamps_inserted"] = counts.get("cluster_stamps_inserted", 0) + 1
         print(f"  {op_id}: wa_dim_review_cluster_log INSERT cluster={rec.get('cluster')}")
+
+    elif table == "wa_obs_question_catalogue" and operation == "insert":
+        # Supports both single-record and rows-array format
+        rows_list = op.get("rows", [])
+        if not rows_list and op.get("record"):
+            rows_list = [op["record"]]
+        inserted = 0
+        for rec in rows_list:
+            conn.execute(
+                """INSERT INTO wa_obs_question_catalogue
+                   (question_code, section, source_word, source_registry_no,
+                    question_text, pattern_type, scope, status, deleted,
+                    date_added, catalogue_version)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    rec.get("question_code"),
+                    rec.get("section"),
+                    rec.get("source_word"),
+                    rec.get("source_registry_no"),
+                    rec.get("question_text"),
+                    rec.get("pattern_type"),
+                    rec.get("scope", "universal"),
+                    rec.get("status", "active"),
+                    rec.get("deleted", 0),
+                    rec.get("date_added"),
+                    rec.get("catalogue_version"),
+                ),
+            )
+            inserted += 1
+        counts["catalogue_inserted"] = counts.get("catalogue_inserted", 0) + inserted
+        first_code = rows_list[0].get("question_code", "?") if rows_list else "?"
+        print(f"  {op_id}: wa_obs_question_catalogue INSERT {inserted} row(s) ({first_code})")
+
+    elif table == "wa_finding_catalogue_links" and operation == "insert":
+        # Supports both single-record and rows-array format
+        rows_list = op.get("rows", [])
+        if not rows_list and op.get("record"):
+            rows_list = [op["record"]]
+        inserted = 0
+        for rec in rows_list:
+            finding_id_int = rec.get("finding_id")
+            # Allow finding_id_ref resolution (same pattern as entity links)
+            ref_label = rec.get("finding_id_ref") or rec.get("finding_label_ref")
+            if not finding_id_int and ref_label:
+                finding_id_int = _resolve_inserted_finding(ref_label)
+            if not finding_id_int:
+                raise ValueError(
+                    f"{op_id}: wa_finding_catalogue_links insert requires finding_id"
+                )
+            conn.execute(
+                """INSERT INTO wa_finding_catalogue_links
+                   (finding_id, question_id, coverage, status, pattern_type,
+                    mapped_date, validated_date, validated_by, session_b_note, delete_flagged)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+                (
+                    finding_id_int,
+                    rec.get("question_id"),
+                    rec.get("coverage"),
+                    rec.get("status", "suggested"),
+                    rec.get("pattern_type"),
+                    rec.get("mapped_date"),
+                    rec.get("validated_date"),
+                    rec.get("validated_by"),
+                    rec.get("session_b_note"),
+                    rec.get("delete_flagged", 0),
+                ),
+            )
+            inserted += 1
+        counts["catalogue_links_inserted"] = counts.get("catalogue_links_inserted", 0) + inserted
+        print(f"  {op_id}: wa_finding_catalogue_links INSERT {inserted} row(s)")
 
     else:
         print(f"  {op_id}: [SKIP] Unsupported operation: {operation} on {table}")
@@ -933,6 +1207,8 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
 
     # Apply all operations in a single transaction
     counts: dict = {}
+    # Clear the per-patch finding-id resolution registry (DIR-008)
+    _inserted_findings_by_label.clear()
     try:
         for op in ops:
             _apply_operation(conn, op, counts, meta)
@@ -940,7 +1216,7 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         # Update session_b_status on the registry (skip for exempt types)
         patch_reg_id = meta.get("registry_id")
         patch_type = meta.get("patch_type", "")
-        sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "DIMREVIEW")
+        sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "DIMREVIEW", "SESSIONB_FINDINGS", "CATALOGUE")
         if patch_reg_id and sb_status and patch_type not in sb_skip_types:
             conn.execute(
                 "UPDATE word_registry SET session_b_status = ? WHERE no = ?",

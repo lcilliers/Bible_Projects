@@ -1,0 +1,59 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260415-DIR008TEST-V1",
+    "patch_type": "SESSIONB_FINDINGS",
+    "produced_date": "2026-04-15",
+    "produced_by": "DIR-20260415-008 test harness",
+    "registry_id": 23,
+    "session_b_status": null,
+    "description": "DIR-008 test patch — exercises all 4 new capabilities. Test rows will be DELETED after verification."
+  },
+  "operations": [
+    {
+      "op_id": "TEST-001",
+      "table": "wa_session_b_findings",
+      "operation": "insert",
+      "record": {
+        "finding_id": "TEST-DIR008-20260415093412-A",
+        "registry_id": 23,
+        "file_id": null,
+        "finding_type": "OPEN_ITEM",
+        "finding": "DIR-008 test finding A — exercises all 18 fields including lifecycle.",
+        "anchor_verses": "TEST 1:1",
+        "raised_date": "2026-04-15",
+        "session_b_instruction": "DIR-20260415-008-test",
+        "pass_ref": "TEST Pass 1",
+        "study_segment": "TEST_SEGMENT",
+        "delete_flag": 0,
+        "obsolete_reason": null,
+        "obsolete_date": null,
+        "superseded_by_id": null,
+        "related_finding_id": null,
+        "resolution_note": "Initial test record — to be superseded by record B",
+        "thin_evidence": 0
+      }
+    },
+    {
+      "op_id": "TEST-003",
+      "table": "wa_finding_entity_links",
+      "operation": "insert_finding_entity_link",
+      "record": {
+        "finding_id_ref": "TEST-DIR008-20260415093412-A",
+        "entity_type": "term",
+        "entity_id": 4099,
+        "entity_strongs": "H2617B",
+        "raised_date": "2026-04-15"
+      }
+    },
+    {
+      "op_id": "TEST-004",
+      "table": "wa_session_b_findings",
+      "operation": "update",
+      "record": {
+        "finding_id": "TEST-DIR008-20260415093412-A",
+        "resolution_note": "UPDATED via test-004 — confirms update operation works",
+        "thin_evidence": 1
+      }
+    }
+  ]
+}

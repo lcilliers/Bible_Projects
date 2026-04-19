@@ -1,0 +1,124 @@
+{
+  "query_1_unclassified_verses": {
+    "total": 0,
+    "by_strongs": [],
+    "gate_decision": "May proceed without VC sub-process"
+  },
+  "query_2_open_b_flag": [
+    {
+      "id": 76,
+      "flag_label": "PH2-023-003",
+      "flag_code": "PH2_DATA_ERROR",
+      "category": "DATA_QUALITY",
+      "priority": "HIGH",
+      "strongs_reference": "H0854",
+      "cross_registry_id": null,
+      "cross_registry_word": null,
+      "description": "EXTRACTION ANOMALY — seventh consecutive registry. H0854 et (with, 932 occ HFA preposition) incorrectly extracted. Reclassified to delete. See PH2-034-005.",
+      "session_raised": "Session B v4.4",
+      "raised_date": "2026-03-26",
+      "resolved": 0,
+      "resolved_date": null,
+      "resolved_note": null,
+      "file_id": 70
+    }
+  ],
+  "query_3_god_as_subject_consistency": [
+    {
+      "mti_term_id": 731,
+      "strongs_number": "G3627",
+      "transliteration": "oikteirō",
+      "gloss": "to have compassion",
+      "wa_term_inventory_id": 748,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 4011,
+      "strongs_number": "G4184",
+      "transliteration": "polusplanchnos",
+      "gloss": "very compassionate",
+      "wa_term_inventory_id": 4141,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 730,
+      "strongs_number": "G4697",
+      "transliteration": "splanchnizō",
+      "gloss": "to pity",
+      "wa_term_inventory_id": 746,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 2192,
+      "strongs_number": "H2551",
+      "transliteration": "chem.lah",
+      "gloss": "compassion",
+      "wa_term_inventory_id": 4086,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 2330,
+      "strongs_number": "H2587",
+      "transliteration": "chan.nun",
+      "gloss": "gracious",
+      "wa_term_inventory_id": 4073,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 2334,
+      "strongs_number": "H2594",
+      "transliteration": "cha.ni.nah",
+      "gloss": "favor",
+      "wa_term_inventory_id": 4077,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 1633,
+      "strongs_number": "H2617B",
+      "transliteration": "che.sed",
+      "gloss": "shame",
+      "wa_term_inventory_id": 4099,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 733,
+      "strongs_number": "H5150",
+      "transliteration": "ni.chum",
+      "gloss": "comfort",
+      "wa_term_inventory_id": 750,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    },
+    {
+      "mti_term_id": 1613,
+      "strongs_number": "H7358",
+      "transliteration": "re.chem",
+      "gloss": "womb",
+      "wa_term_inventory_id": 4096,
+      "inventory_god_as_subject": 0,
+      "inventory_delete_flagged": 0,
+      "term_owner_type": "OWNER"
+    }
+  ],
+  "meta": {
+    "directive": "DIR-20260415-007",
+    "executed_at": "2026-04-15T09:23:59Z",
+    "registry": 23,
+    "word": "compassion"
+  }
+}
