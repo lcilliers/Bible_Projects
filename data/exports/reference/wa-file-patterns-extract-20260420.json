@@ -1,0 +1,543 @@
+{
+  "meta": {
+    "generated_at": "2026-04-20T16:45:01Z",
+    "schema_version": "3.13.0",
+    "extractor_version": "1.0",
+    "source": "wa_file_name_pattern (M35 live, 2026-04-20)",
+    "canonical_note": "DB is source of truth post-M35 for file-naming pattern catalogue.",
+    "filter": "all active"
+  },
+  "file_patterns": {
+    "by_code": {
+      "patch_id": {
+        "pattern_code": "patch_id",
+        "pattern": "PATCH-{YYYYMMDD}-{NNN}-{TYPE}-V{n}",
+        "scope": "patch-id",
+        "description": "Patch identifier (uppercase, inside _patch_meta.patch_id)",
+        "governing_instruction": "wa-reference [current] §1.5",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "vcb_file": {
+        "pattern_code": "vcb_file",
+        "pattern": "wa-vcb-{NNN}-{type}-v{n}-{YYYYMMDD}.{ext}",
+        "scope": "per-batch",
+        "description": "Verse Context Batch files",
+        "governing_instruction": "wa-reference [current] §1.2",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_cc_directive": {
+        "pattern_code": "dim_cc_directive",
+        "pattern": "wa-dim-{cluster}-cc-directive-{YYYYMMDD}.md",
+        "scope": "per-cluster",
+        "description": "CC directive document (DimReview)",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_cluster_extract": {
+        "pattern_code": "dim_cluster_extract",
+        "pattern": "wa-dim-{cluster}-extract-{YYYYMMDD}.json",
+        "scope": "per-cluster",
+        "description": "Dimension Review cluster extract",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_existing_pointers": {
+        "pattern_code": "dim_existing_pointers",
+        "pattern": "wa-dim-{cluster}-existing-pointers-{YYYYMMDD}.json",
+        "scope": "per-cluster",
+        "description": "Existing SB findings + SD pointers",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_grpdesc_patch": {
+        "pattern_code": "dim_grpdesc_patch",
+        "pattern": "wa-dim-{cluster}-grpdesc-patch-v{n}-{YYYYMMDD}.json",
+        "scope": "per-cluster",
+        "description": "DimReview group-description correction patch",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_handoff_kickoff": {
+        "pattern_code": "dim_handoff_kickoff",
+        "pattern": "wa-dim-{cluster}-handoff-kickoff-v{n}-{YYYYMMDD}.md",
+        "scope": "per-cluster",
+        "description": "DimReview handoff kickoff (build_dimension_extract --bundle)",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15; build_dimension_extract.py",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_observations": {
+        "pattern_code": "dim_observations",
+        "pattern": "wa-dim-{cluster}-observations-v{n}-{YYYYMMDD}.md",
+        "scope": "per-cluster",
+        "description": "DimReview observations log",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_rootfamily": {
+        "pattern_code": "dim_rootfamily",
+        "pattern": "wa-dim-{cluster}-rootfamily-{YYYYMMDD}.json",
+        "scope": "per-cluster",
+        "description": "Dimension Review root-family",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_session_log": {
+        "pattern_code": "dim_session_log",
+        "pattern": "wa-dim-{cluster}-session-log-v{n}-{YYYYMMDD}.md",
+        "scope": "per-cluster",
+        "description": "DimReview session log",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_grpverify": {
+        "pattern_code": "dim_grpverify",
+        "pattern": "wa-dim-{cluster}-grpverify-{group_code}-{YYYYMMDD}.json",
+        "scope": "per-group",
+        "description": "Group verification extract",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_vpass": {
+        "pattern_code": "dim_vpass",
+        "pattern": "wa-dim-{cluster}-vpass-{group_code}-{YYYYMMDD}.json",
+        "scope": "per-group",
+        "description": "Verification pass extract",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_reg_patch": {
+        "pattern_code": "dim_reg_patch",
+        "pattern": "wa-dim-{cluster}-reg{nnn}-patch-v{n}-{YYYYMMDD}.json",
+        "scope": "per-registry",
+        "description": "DimReview per-registry patch",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_return": {
+        "pattern_code": "dim_return",
+        "pattern": "wa-dim-{cluster}-{registry_no}-return-v{n}-{YYYYMMDD}.md",
+        "scope": "per-registry",
+        "description": "DimReview return document",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "final_registry_extract": {
+        "pattern_code": "final_registry_extract",
+        "pattern": "wa-{NNN}-{word}-final-v{n}-{YYYYMMDD}.json",
+        "scope": "per-registry",
+        "description": "Final registry extract",
+        "governing_instruction": "wa-reference [current] §14.1",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "patch_filename": {
+        "pattern_code": "patch_filename",
+        "pattern": "wa-{NNN}-{word}-{type}-patch-v{n}-{YYYYMMDD}.json",
+        "scope": "per-registry",
+        "description": "Patch file on disk (lowercase wa- prefix)",
+        "governing_instruction": "wa-reference [current] §1.5",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "sdpointers_file": {
+        "pattern_code": "sdpointers_file",
+        "pattern": "wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json",
+        "scope": "per-registry",
+        "description": "Session D pointers export",
+        "governing_instruction": "wa-reference [current] §14.2",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "sessiona_md": {
+        "pattern_code": "sessiona_md",
+        "pattern": "wa-{NNN}-{word}-sessiona-{YYYYMMDD}.md",
+        "scope": "per-registry",
+        "description": "Session A extract markdown",
+        "governing_instruction": "Session A advice v1",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "sessiona_patch": {
+        "pattern_code": "sessiona_patch",
+        "pattern": "wa-{NNN}-{word}-sessiona-patch-{YYYYMMDD}.json",
+        "scope": "per-registry",
+        "description": "Session A PROSE patch",
+        "governing_instruction": "Session A advice v1",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "word_level": {
+        "pattern_code": "word_level",
+        "pattern": "wa-{NNN}-{word}-{type}-v{n}-{YYYYMMDD}.{ext}",
+        "scope": "per-registry",
+        "description": "Word-level Session B/C/D outputs",
+        "governing_instruction": "wa-reference [current] §1.1",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "instruction_doc": {
+        "pattern_code": "instruction_doc",
+        "pattern": "wa-{instruction-name}-v{n}-{YYYYMMDD}.{ext}",
+        "scope": "programme",
+        "description": "Instruction documents",
+        "governing_instruction": "wa-reference [current] §1.4",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "programme_level": {
+        "pattern_code": "programme_level",
+        "pattern": "wa-global-{type}-v{n}-{YYYYMMDD}.{ext}",
+        "scope": "programme",
+        "description": "Programme-level files",
+        "governing_instruction": "wa-reference [current] §1.3",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "reference_snapshot": {
+        "pattern_code": "reference_snapshot",
+        "pattern": "wa-reference-snapshot-{YYYYMMDD}.json",
+        "scope": "programme",
+        "description": "Reference-as-DB session-start snapshot (M32+)",
+        "governing_instruction": "reference-as-database-design-20260420",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      }
+    },
+    "by_scope": {
+      "patch-id": [
+        {
+          "pattern_code": "patch_id",
+          "pattern": "PATCH-{YYYYMMDD}-{NNN}-{TYPE}-V{n}",
+          "scope": "patch-id",
+          "description": "Patch identifier (uppercase, inside _patch_meta.patch_id)",
+          "governing_instruction": "wa-reference [current] §1.5",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ],
+      "per-batch": [
+        {
+          "pattern_code": "vcb_file",
+          "pattern": "wa-vcb-{NNN}-{type}-v{n}-{YYYYMMDD}.{ext}",
+          "scope": "per-batch",
+          "description": "Verse Context Batch files",
+          "governing_instruction": "wa-reference [current] §1.2",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ],
+      "per-cluster": [
+        {
+          "pattern_code": "dim_cc_directive",
+          "pattern": "wa-dim-{cluster}-cc-directive-{YYYYMMDD}.md",
+          "scope": "per-cluster",
+          "description": "CC directive document (DimReview)",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_cluster_extract",
+          "pattern": "wa-dim-{cluster}-extract-{YYYYMMDD}.json",
+          "scope": "per-cluster",
+          "description": "Dimension Review cluster extract",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_existing_pointers",
+          "pattern": "wa-dim-{cluster}-existing-pointers-{YYYYMMDD}.json",
+          "scope": "per-cluster",
+          "description": "Existing SB findings + SD pointers",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_grpdesc_patch",
+          "pattern": "wa-dim-{cluster}-grpdesc-patch-v{n}-{YYYYMMDD}.json",
+          "scope": "per-cluster",
+          "description": "DimReview group-description correction patch",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_handoff_kickoff",
+          "pattern": "wa-dim-{cluster}-handoff-kickoff-v{n}-{YYYYMMDD}.md",
+          "scope": "per-cluster",
+          "description": "DimReview handoff kickoff (build_dimension_extract --bundle)",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15; build_dimension_extract.py",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_observations",
+          "pattern": "wa-dim-{cluster}-observations-v{n}-{YYYYMMDD}.md",
+          "scope": "per-cluster",
+          "description": "DimReview observations log",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_rootfamily",
+          "pattern": "wa-dim-{cluster}-rootfamily-{YYYYMMDD}.json",
+          "scope": "per-cluster",
+          "description": "Dimension Review root-family",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_session_log",
+          "pattern": "wa-dim-{cluster}-session-log-v{n}-{YYYYMMDD}.md",
+          "scope": "per-cluster",
+          "description": "DimReview session log",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ],
+      "per-group": [
+        {
+          "pattern_code": "dim_grpverify",
+          "pattern": "wa-dim-{cluster}-grpverify-{group_code}-{YYYYMMDD}.json",
+          "scope": "per-group",
+          "description": "Group verification extract",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_vpass",
+          "pattern": "wa-dim-{cluster}-vpass-{group_code}-{YYYYMMDD}.json",
+          "scope": "per-group",
+          "description": "Verification pass extract",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ],
+      "per-registry": [
+        {
+          "pattern_code": "dim_reg_patch",
+          "pattern": "wa-dim-{cluster}-reg{nnn}-patch-v{n}-{YYYYMMDD}.json",
+          "scope": "per-registry",
+          "description": "DimReview per-registry patch",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "dim_return",
+          "pattern": "wa-dim-{cluster}-{registry_no}-return-v{n}-{YYYYMMDD}.md",
+          "scope": "per-registry",
+          "description": "DimReview return document",
+          "governing_instruction": "wa-dimensionreview-instruction [current] §15",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "final_registry_extract",
+          "pattern": "wa-{NNN}-{word}-final-v{n}-{YYYYMMDD}.json",
+          "scope": "per-registry",
+          "description": "Final registry extract",
+          "governing_instruction": "wa-reference [current] §14.1",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "patch_filename",
+          "pattern": "wa-{NNN}-{word}-{type}-patch-v{n}-{YYYYMMDD}.json",
+          "scope": "per-registry",
+          "description": "Patch file on disk (lowercase wa- prefix)",
+          "governing_instruction": "wa-reference [current] §1.5",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "sdpointers_file",
+          "pattern": "wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json",
+          "scope": "per-registry",
+          "description": "Session D pointers export",
+          "governing_instruction": "wa-reference [current] §14.2",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "sessiona_md",
+          "pattern": "wa-{NNN}-{word}-sessiona-{YYYYMMDD}.md",
+          "scope": "per-registry",
+          "description": "Session A extract markdown",
+          "governing_instruction": "Session A advice v1",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "sessiona_patch",
+          "pattern": "wa-{NNN}-{word}-sessiona-patch-{YYYYMMDD}.json",
+          "scope": "per-registry",
+          "description": "Session A PROSE patch",
+          "governing_instruction": "Session A advice v1",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "word_level",
+          "pattern": "wa-{NNN}-{word}-{type}-v{n}-{YYYYMMDD}.{ext}",
+          "scope": "per-registry",
+          "description": "Word-level Session B/C/D outputs",
+          "governing_instruction": "wa-reference [current] §1.1",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ],
+      "programme": [
+        {
+          "pattern_code": "instruction_doc",
+          "pattern": "wa-{instruction-name}-v{n}-{YYYYMMDD}.{ext}",
+          "scope": "programme",
+          "description": "Instruction documents",
+          "governing_instruction": "wa-reference [current] §1.4",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "programme_level",
+          "pattern": "wa-global-{type}-v{n}-{YYYYMMDD}.{ext}",
+          "scope": "programme",
+          "description": "Programme-level files",
+          "governing_instruction": "wa-reference [current] §1.3",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        },
+        {
+          "pattern_code": "reference_snapshot",
+          "pattern": "wa-reference-snapshot-{YYYYMMDD}.json",
+          "scope": "programme",
+          "description": "Reference-as-DB session-start snapshot (M32+)",
+          "governing_instruction": "reference-as-database-design-20260420",
+          "deprecated": 0,
+          "deprecation_note": null,
+          "created_at": "2026-04-20T15:55:54",
+          "last_modified": null
+        }
+      ]
+    },
+    "scope_summary": {
+      "patch-id": 1,
+      "per-batch": 1,
+      "per-cluster": 8,
+      "per-group": 2,
+      "per-registry": 8,
+      "programme": 3
+    },
+    "count": 23
+  }
+}

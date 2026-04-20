@@ -1,0 +1,135 @@
+{
+  "meta": {
+    "generated_at": "2026-04-20T16:45:02Z",
+    "schema_version": "3.13.0",
+    "extractor_version": "1.0",
+    "source": "wa_label_pattern (M35 live, 2026-04-20)",
+    "canonical_note": "DB is source of truth post-M35 for label patterns (DIM-, PH2-, SD, FLAG, group_code, VCB, Q-COV, directive, patch ID)."
+  },
+  "label_patterns": {
+    "by_code": {
+      "dim_finding": {
+        "pattern_code": "dim_finding",
+        "pattern": "DIM-{registry_no}-{3-digit-sequence}",
+        "entity": "wa_session_b_findings.finding_id",
+        "description": "Dimension Review Session B finding — e.g. DIM-112-004",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §7.5",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "dim_sd_pointer": {
+        "pattern_code": "dim_sd_pointer",
+        "pattern": "DIM-{registry_no}-SD{3-digit-sequence}",
+        "entity": "wa_session_research_flags.flag_label",
+        "description": "Dimension Review Session D pointer — e.g. DIM-112-SD003",
+        "governing_instruction": "wa-dimensionreview-instruction [current] §7.5",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "directive_id": {
+        "pattern_code": "directive_id",
+        "pattern": "DIR-{YYYYMMDD}-{3-digit-sequence}",
+        "entity": "directive identifier",
+        "description": "Directive ID — e.g. DIR-20260420-001",
+        "governing_instruction": "wa-directive-instruction [current]",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "flag_id_legacy": {
+        "pattern_code": "flag_id_legacy",
+        "pattern": "FLAG-{3-digit-sequence}",
+        "entity": "wa-global-flags flag identifier",
+        "description": "Programme-wide flag — e.g. FLAG-010 / FLAG-016",
+        "governing_instruction": "wa-global-flags [current]",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "group_code": {
+        "pattern_code": "group_code",
+        "pattern": "{mti_term_id}-{3-digit-serial}",
+        "entity": "verse_context_group.group_code",
+        "description": "Verse context group code — e.g. 730-001",
+        "governing_instruction": "wa-reference [current] §13.11",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "patch_id": {
+        "pattern_code": "patch_id",
+        "pattern": "PATCH-{YYYYMMDD}-{NNN}-{TYPE}-V{n}",
+        "entity": "patch identifier",
+        "description": "Patch ID (uppercase, in _patch_meta.patch_id)",
+        "governing_instruction": "wa-reference [current] §1.5",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "ph2_finding": {
+        "pattern_code": "ph2_finding",
+        "pattern": "PH2-{registry_no}-{3-digit-sequence}",
+        "entity": "wa_session_research_flags.flag_label",
+        "description": "Phase 2 research flag — e.g. PH2-112-001",
+        "governing_instruction": "wa-reference [current] §5.4",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "q_cov_catalogue": {
+        "pattern_code": "q_cov_catalogue",
+        "pattern": "Q-COV-{2-digit-sequence}",
+        "entity": "wa_obs_question_catalogue.question_code",
+        "description": "Evidence-flag-routing catalogue question — Q-COV-01..12",
+        "governing_instruction": "wa-reference [current] §8b",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "sb_finding_legacy": {
+        "pattern_code": "sb_finding_legacy",
+        "pattern": "{registry_no}-F{3-digit-sequence}",
+        "entity": "wa_session_b_findings.finding_id",
+        "description": "Pre-DIM prefix format (legacy; reconciliation pending)",
+        "governing_instruction": "historical convention",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "sd_pointer_legacy": {
+        "pattern_code": "sd_pointer_legacy",
+        "pattern": "{registry_no}-SD{3-digit-sequence}",
+        "entity": "wa_session_research_flags.flag_label",
+        "description": "Pre-DIM prefix format (legacy; reconciliation pending)",
+        "governing_instruction": "historical convention",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "verse_context_batch": {
+        "pattern_code": "verse_context_batch",
+        "pattern": "VCB-{3-digit-sequence}",
+        "entity": "verse-context batch identifier",
+        "description": "Verse Context Batch id — e.g. VCB-003",
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      }
+    },
+    "count": 11
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "generated_at": "2026-04-20T16:45:01Z",
+    "schema_version": "3.13.0",
+    "extractor_version": "1.0",
+    "source": "wa_patch_type_registry (M35 live, 2026-04-20)",
+    "canonical_note": "DB is source of truth post-M35 for patch type catalogue.",
+    "description": "Patch type registry — single navigation point for patch types. Applicator uses this to validate _patch_meta.patch_type and decide session_b_status requirements."
+  },
+  "patch_types": {
+    "by_code": {
+      "CATALOGUE_POPULATION": {
+        "type_code": "CATALOGUE_POPULATION",
+        "description": "Observation question catalogue population patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-reference / wa-patch-instruction",
+        "schema_affected": "wa_obs_question_catalogue",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "CLUSTERING": {
+        "type_code": "CLUSTERING",
+        "description": "Cluster assignment patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-registry-management-guide [current]",
+        "schema_affected": "word_registry",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "DIMREVIEW": {
+        "type_code": "DIMREVIEW",
+        "description": "Dimension Review per-registry patch — dimension + dominant_subject + optional Phase B revisions + registry stamp",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-dimensionreview-instruction [current]",
+        "schema_affected": "wa_dimension_index, verse_context_group, wa_session_b_findings, wa_session_research_flags, word_registry",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "DIMREVIEW-GRPDESC": {
+        "type_code": "DIMREVIEW-GRPDESC",
+        "description": "Dimension Review group-description correction patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-dimensionreview-instruction [current]",
+        "schema_affected": "verse_context_group, wa_dimension_index",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "PREANALYSIS": {
+        "type_code": "PREANALYSIS",
+        "description": "Session B Stage 1 Pre-Analysis patch — evidential status + dimensions + pre-analysis findings",
+        "session_b_status_exempt": 0,
+        "governing_instruction": "wa-patch-instruction [current]",
+        "schema_affected": "wa_term_inventory, word_registry",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "PROSE": {
+        "type_code": "PROSE",
+        "description": "Prose section insert/supersede/approve (narrative Session A/B/C/D output + programme-stage content)",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-patch-instruction [current]; prose-store-design-v1",
+        "schema_affected": "prose_section, prose_section_dimension_link, prose_section_finding_link",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "READINESSSWEEP": {
+        "type_code": "READINESSSWEEP",
+        "description": "Readiness sweep mechanical remediation patch (Path 1 items)",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-global-readiness-sweep-instruction [current]",
+        "schema_affected": "wa_data_quality_flags, mti_terms",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "REPAIR": {
+        "type_code": "REPAIR",
+        "description": "REPAIR patch — recovery from failed apply or data-state corrections",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-patch-instruction [current]",
+        "schema_affected": "varies (recovery-specific)",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "SDPOINTERS": {
+        "type_code": "SDPOINTERS",
+        "description": "Session D pointer cluster patch — batches of SD pointers",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-sessiond-orientation [current]",
+        "schema_affected": "wa_session_research_flags",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "SESSIONB": {
+        "type_code": "SESSIONB",
+        "description": "Session B Stage 2 analysis-complete patch — findings + dimensions + SD pointers + registry stamps",
+        "session_b_status_exempt": 0,
+        "governing_instruction": "wa-patch-instruction [current]",
+        "schema_affected": "wa_session_b_findings, wa_session_b_dimensions, wa_session_research_flags, word_registry",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "SESSIONB_FINDINGS": {
+        "type_code": "SESSIONB_FINDINGS",
+        "description": "Session B Stage 2b findings-only patch (finer-grained than SESSIONB)",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-patch-instruction [current]",
+        "schema_affected": "wa_session_b_findings, wa_finding_entity_links",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "SESSIOND": {
+        "type_code": "SESSIOND",
+        "description": "Session D cross-registry synthesis patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-sessiond-orientation [current]",
+        "schema_affected": "session_d_observations, session_d_runs, session_d_verse_links, session_d_term_links",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "VCGROUP": {
+        "type_code": "VCGROUP",
+        "description": "Verse Context per-group patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "verse_context_group",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "VCVERSE": {
+        "type_code": "VCVERSE",
+        "description": "Verse Context per-verse patch",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "verse_context",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      },
+      "VERSECONTEXT": {
+        "type_code": "VERSECONTEXT",
+        "description": "Verse Context patch — batch-level classification of verse-context groups",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "verse_context, verse_context_group",
+        "deprecated": 0,
+        "deprecation_note": null,
+        "created_at": "2026-04-20T15:55:54",
+        "last_modified": null
+      }
+    },
+    "count": 15,
+    "session_b_status_exempt": [
+      "CATALOGUE_POPULATION",
+      "CLUSTERING",
+      "DIMREVIEW",
+      "DIMREVIEW-GRPDESC",
+      "PROSE",
+      "READINESSSWEEP",
+      "REPAIR",
+      "SDPOINTERS",
+      "SESSIONB_FINDINGS",
+      "SESSIOND",
+      "VCGROUP",
+      "VCVERSE",
+      "VERSECONTEXT"
+    ],
+    "session_b_status_required": [
+      "PREANALYSIS",
+      "SESSIONB"
+    ]
+  }
+}

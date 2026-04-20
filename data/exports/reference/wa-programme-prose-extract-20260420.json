@@ -1,0 +1,113 @@
+{
+  "meta": {
+    "generated_at": "2026-04-20T16:45:02Z",
+    "schema_version": "3.13.0",
+    "extractor_version": "1.0",
+    "source": "prose_section_type WHERE source_stage='programme' (M34 live, 2026-04-20)",
+    "canonical_note": "DB is source of truth post-M34 for programme-stage narrative (L2 of 3-layer reference).",
+    "include_body": false,
+    "description": "Programme-wide narrative section index — anchor verse definition, XREF architecture, validation standard, etc. Content populated via PROSE patches as researcher + AI draft each narrative."
+  },
+  "programme_prose": {
+    "types": [
+      {
+        "code": "prog_anchor_verse",
+        "label": "Programme — Anchor Verse Definition",
+        "description": "Canonical definition of anchor verses, dual purpose (analytical anchor + verse-context seed), minimum requirements. Authoritative home for the concept (currently mirrored in wa-reference §16 and wa-dimensionreview-instruction §4.2).",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 101,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_xref_architecture",
+        "label": "Programme — XREF Architecture",
+        "description": "OWNER / XREF term semantics, verse_context inheritance, canonical-row rule, cross-registry link pattern (currently scattered across wa-reference §17, wa-registry-management-guide).",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 102,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_validation_standard",
+        "label": "Programme — Document Validation Standard",
+        "description": "Inflection point completeness; gap status discipline; cross-doc consistency; dry-run gate assessment (currently wa-reference §18).",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 103,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_delete_discipline",
+        "label": "Programme — Soft-Delete Discipline",
+        "description": "Delete_flagged semantics; cascade rules; no physical deletes in automated flows; audit-trail retention.",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 104,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_field_authority",
+        "label": "Programme — Field Authority Rules",
+        "description": "mti_term_flags canonical for somatic / god_as_subject; deprecation notes; which field wins on conflict.",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 105,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_backup_discipline",
+        "label": "Programme — Backup Discipline",
+        "description": "Per-migration backup; per-patch backup; retention period; restoration procedure.",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 106,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_patch_failure_protocol",
+        "label": "Programme — Patch Failure / REPAIR Protocol",
+        "description": "What to do when a patch is rejected; failure patches; mid-pool recovery.",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 107,
+        "section_count": 0,
+        "sections_preview": []
+      },
+      {
+        "code": "prog_instruction_override_protocol",
+        "label": "Programme — Instruction Override Protocol",
+        "description": "How instruction overrides are declared, logged in observations, recorded in handoff documents.",
+        "chapter_no": null,
+        "lifecycle_tag": null,
+        "expected_length_min": null,
+        "expected_length_max": null,
+        "sort_order": 108,
+        "section_count": 0,
+        "sections_preview": []
+      }
+    ],
+    "type_count": 8,
+    "section_total": 0
+  }
+}
