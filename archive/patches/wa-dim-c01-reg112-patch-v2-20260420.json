@@ -1,0 +1,1416 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260420-DIMREVIEW-C01-REG112-V2",
+    "patch_type": "DIMREVIEW",
+    "cluster": "C01",
+    "registry_no": 112,
+    "registry_word": "mind",
+    "produced_date": "20260420",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "observations_log": "wa-dim-c01-observations-v1_3-20260420.md",
+    "session_b_status": null,
+    "description": "Dimension review patch — C01 Reg 112 (mind): 73 dimension updates + 1 Phase B description correction (1010-001 nefros) + 1 context_description sync + 4 Session B findings + 5 Session D pointers + registry stamp. Registry Mode: no cluster stamp.",
+    "supersedes": "PATCH-20260420-DIMREVIEW-C01-REG112-V1",
+    "v2_reason": "Removed OP-075 — wa_dimension_index.context_description column was dropped in M25 (2026-04-19). OP-074 already updates canonical verse_context_group.context_description."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1750
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"purposive formation — inner act of planning or forming a purpose, whether divine sovereign intention or human scheme.\" The act-of-willing/purposing characteristic is the clean §7.7 match (04 Volition — \"Inner acts of willing, purposing, choosing, desiring, and deciding\"). Legacy label \"Volitional/Will\" maps to 04 Volition. Dominant subject is NONE because the description explicitly names both divine and human agents without one dominating.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3602-001 — mind (ya.tsar): dimension=04 Volition, subject=NONE"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1763
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"the inner act of setting attention — directing the mind to consider, take to heart, or attend carefully to a matter or person.\" This is an act of attention-directing and consideration — the cognitive act of taking something to mind (§7.7 03 Cognition: \"Inner acts of knowing, perceiving, remembering, understanding, and discerning\"). Legacy label \"Cognitive/Mind\" maps to 03 Cognition. Human subject across the verse corpus (covenant people attending to God's acts, wisdom).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3578-001 — mind (shit): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1702
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Revised description (RD-PHASE-B-112-001 in-session correction) reads *\"Term names the deep inner life — the hidden motives and affections of the person open only to divine searching.\"* The characteristic is the hidden moral reality of the person — what is open only to God's knowledge. This is §7.7 05 Moral Character territory (stable inner qualities of moral nature; the hidden interior is where moral character resides). Could also be read as 11 Divine-Human Correspondence given the divine searcher; but the primary characteristic named is the human's hidden moral interior, with divine knowledge as context. HUMAN is the dominant_subject (the person whose nefros is searched); GOD is the searcher in the verse but not the dominant subject of the characteristic named. Legacy label \"Volitional/Ca",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1010-001 — mind (nefros): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1690
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"reversal of inner judgment — changing one's assessment of a person or situation.\" This is a cognitive reassessment act. Legacy label \"Volitional/Will\" could also apply, but the specific content is re-judging — which is §7.7 03 Cognition. Acts 28:6 is the one verse; the subjects (the Maltese islanders revising their view of Paul) are human persons in the narrative. The characteristic is the general human cognitive act of reassessment, not a special category of \"other human in relationship with the inner-being-person being studied\" — HUMAN is the cleaner assignment.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "2662-001 — mind (metaballō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1756
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"freewill inner disposition — voluntary offering or willingness expressed in dedication to God's house.\" The characteristic is voluntary willing — direct §7.7 04 Volition match. Human subject (the offerer).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3058-001 — mind (ne.dav): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1755
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner disposition of willing, voluntary devotion — heart spontaneously moved to give or serve without compulsion.\" Same characteristic as 3058-001 in a different Strongs within the root — voluntary willing. §7.7 04 Volition. The §7.7 note to the Volition dimension — *\"Stable orientation of the will toward God or others → consider Relational Disposition (06)\"* — merits consideration here, but the characteristic named is the act of willing (volitional-capacity, not stable disposition-toward-God); 04 Volition stands.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3059-001 — mind (na.dav): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1704
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"commanded inner disposition of sober alertness — mind clear and watchful, not given to spiritual or moral drowsiness.\" This is a stable inner disposition of character — §7.7 05 Moral Character (\"Stable inner qualities of moral nature — goodness, justice, integrity, purity, faithfulness\"). The \"commanded\" language is theological context, not the characteristic itself. Legacy label \"Character/Disposition\" maps to 05 Moral Character.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4192-001 — mind (nēfō): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1703
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"sobriety of mind as character quality — inner disposition of measured, clear-headed judgment required for leadership.\" §7.7 05 Moral Character. Paired with 4192-001 (verbal command vs character-quality adjective). Same dimension assignment.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4315-001 — mind (nēfaleos): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1675
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"considered judgment or opinion of a person — an inner resolution or assessment offered with authority.\" Cognition dominates (the inner act of judgment/assessment); Volition is adjacent (resolution as will-act) but the primary content is assessment. §7.7 03 Cognition.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1001-001 — mind (gnōmē): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1676
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"shared inner purpose — collective resolution placed in hearts by God or formed among persons toward a common end.\" Distinct from 1001-001 — this is collective resolution, the volitional-shared-purpose characteristic. §7.7 04 Volition with a relational colour. Dominant subject NONE because the verse evidence shows both divine agency (placing in hearts) and human agency (forming).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1001-002 — mind (gnōmē): dimension=04 Volition, subject=NONE"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1684
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner division of allegiance — person whose loyalty is split between God and world, producing instability.\" The characteristic is the moral condition of divided loyalty — a stable (or rather, unstable) inner moral-character state. §7.7 05 Moral Character. Could also be read as 04 Volition (divided will) but the letter-of-James context (the dipsuchos is unstable in all ways) points to character. Legacy label \"Moral/Conscience\" maps defensibly to 05 Moral Character.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1398-001 — mind (dipsuchos): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1687
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"shared inner disposition — genuine concern and aligned soul-orientation toward others.\" The characteristic is relational alignment/disposition toward others (Paul of Timothy: \"I have no one like-minded who will genuinely care for your welfare\"). §7.7 06 Relational Disposition (\"Inner orientation toward another — love, compassion, favour, attachment, contempt, hatred\"). Distinct dimension from its semantic pair dipsuchos (which is about divided self-orientation, not relational).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1402-001 — mind (isopsuchos): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1761
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"troubled, disquieting thoughts — inner agitation of the mind under pressure or in visionary states.\" The characteristic is inner agitation/disquiet — a negative affective state. §7.7 02 Emotion — Negative (\"Inner states of pain, distress, grief, fear, anger, shame, or anxiety\"). The \"thoughts\" language is medium; the characteristic is the disquiet itself (anxiety-territory).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "2707-001 — mind (se.ip.pim): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1762
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner division — split allegiance of the person who cannot commit fully to God's law.\" Same characteristic as dipsuchos (1398-001) in Hebrew vocabulary — the divided heart of Psalm 119:113. §7.7 05 Moral Character. Cross-root thematic resonance confirmed at Phase B; formalised as Session D pointer below.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4198-001 — mind (se.eph): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1668
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of deliberate decision — mind resolving upon a course of action through weighing and choosing.\" Direct §7.7 04 Volition match. BOUL root family flagged for Session D pointer.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "2109-001 — mind (bouleuō): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1669
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"deliberate planning directed toward harm — inner will forming intention against another.\" §7.7 04 Volition with negative moral valence. The harm-direction does not change the dimension (planning-directed-toward-harm is still a volitional act); the moral valence is a Phase C note, not a dimension split.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "2109-002 — mind (bouleuō): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1737
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"institutional memorial — act/object/day established to keep an event or person before God and the community across generations.\" The inner-being content is divine-human shared memory — God remembering through what the community keeps, the community keeping through what God has instituted. This is §7.7 11 Divine-Human Correspondence territory (inner characteristics operating across the divine-human boundary). Alternatively, if the weight is on the human cognitive act (keeping in mind), 03 Cognition would apply. The reading that better captures the characteristic is 11 — the memorial is not a cognitive act alone but a structure of mutual remembrance. Legacy label \"Spiritual/God-ward\" maps cleanly to 11 here. Session D pattern: all four memorial groups likely share this Dim",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3498-001 — mind (zik.ka.ron): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1738
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"priestly/liturgical keeping of persons before God — act of bearing names or offerings into God's presence for ongoing remembrance.\" Same pattern as 3498-001 — divine-human shared memory, with the priest as mediating agent. §7.7 11 Divine-Human Correspondence.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3498-002 — mind (zik.ka.ron): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1739
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of remembrance — capacity to hold persons and events in living consciousness, and absence of such memory as loss.\" This sense-split is the cognitive-remembrance characteristic specifically, without the institutional/liturgical structure that 3498-001 and 3498-002 carry. §7.7 03 Cognition (\"Inner acts of knowing, perceiving, remembering, understanding, and discerning\"). Distinct from the memorial-institution pattern.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3498-003 — mind (zik.ka.ron): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1726
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"the memorial portion of an offering — part burned before God as act of bringing offerer to divine remembrance.\" The characteristic is the offering as a vehicle for divine-human correspondence of remembrance. §7.7 11 Divine-Human Correspondence. Paired with 3498-001/002 as institutional memorial vocabulary.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3499-001 — mind (az.ka.rah): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1764
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner disposition of covenantal obedience — will, heart, and soul directed toward faithful keeping of God's commands across generations.\" §7.7 04 Volition Note: *\"Stable orientation of the will toward God or others → consider Relational Disposition (06).\"* This is borderline — covenantal obedience is simultaneously an act of willing (keeping God's commands) and a stable relational orientation toward God. The directionally-determined inner-faculty principle (memory finding from earlier programme work) applies: will directed toward God. 04 Volition captures the act-of-keeping characteristic; 06 Relational Disposition would capture it from the relational-orientation side. The cleaner fit for \"inner disposition of covenantal obedience\" as it operates in the 193-verse corpus ",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4379-001 — mind (sha.mar): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1765
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description names \"God's guarding of his people — divine inner disposition of protective care that preserves, shields, and keeps those who belong to him.\" GOD is the subject; the characteristic is God's guarding as direct ground/mirror of what his people are called to in 4380-002 (self-guarding). §7.7 11 Divine-Human Correspondence is the explicit framing for *\"the same quality, act, or state appears in both divine and human subjects within the same group, or where God's inner-being characteristic is the direct ground, mirror, or counterpart of the human characteristic.\"* The sha.mar root shows exactly this pattern: divine guarding (4380-001) and human self-guarding (4380-002) are the same characteristic in divine and human subjects. Strong Dimension 11 candidate. Session D candidate for r",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4380-001 — mind (sha.mar): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1766
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"self-keeping from moral harm — inner discipline of guarding one's ways, mouth, and soul from sin and its consequences.\" Paired with 4380-001 as the human-side of the same characteristic (divine guarding / human self-guarding). §7.7 11 Divine-Human Correspondence with the instruction note on 11 Divine-Human Correspondence explicitly applied: \"Assign `GOD` or `HUMAN` where one pole dominates but the correspondence is analytically significant.\" The correspondence is significant; HUMAN dominates this sense-split.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4380-002 — mind (sha.mar): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1767
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"attentive moral observation — watching over conduct, marking iniquity, or directing inner regard toward a person or object with moral consequence.\" The characteristic is attention/observation — cognitive. §7.7 03 Cognition. Alternatively 11 Divine-Human Correspondence (if the moral-observation is primarily divine), but the description frames this more broadly than the 4380 pair. Marking/observing/regarding is the cognitive act.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4381-001 — mind (sha.mar): dimension=03 Cognition, subject=NONE"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1768
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"careful, attentive inner vigilance — disposition of watchfulness toward one's conduct, duties, or dangers, especially in relation to God's commands.\" This is a stable inner-disposition characteristic (watchfulness, vigilance) — §7.7 05 Moral Character. Contrast with 4379-001 (act of keeping covenant, 04 Volition) and 4380-002 (inner discipline of self-guarding, 11 Divine-Human Correspondence) — each sha.mar sense engages a different dimension. Session D pattern: sha.mar root shows remarkable dimensional breadth across senses (04, 11, 11, 03, 05).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4382-001 — mind (sha.mar): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7854
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"madness or derangement — inner disruption of reason and moral orientation, whether feigned, induced, or corporate.\" Madness sits at an interesting §7.7 boundary — cognitive-disruption on one reading (reason undone → 03 Cognition) and affective-disorder on another (inner disquiet → 02 Emotion — Negative). For this group specifically (\"disruption of reason and moral orientation\"), 03 Cognition is the cleaner fit — reason is named explicitly as the object of disruption. This is one of the 2 open groups (MO=0, KEYWORD_WEAK); legacy \"Moral Character\" label is not a good fit.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4331-001 — mind (ha.lal): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1731
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"boasting arrogance as inner orientation — exaltation of self before God and others.\" Characterological pride / self-exaltation — §7.7 05 Moral Character (integrity / its opposite). Legacy label \"Moral/Conscience\" is acceptable; 05 is cleaner.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4331-002 — mind (ha.lal): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1732
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"raving madness or contemptuous derision — expression of disordered inner intensity, whether in mockery, futility, or frenzied action.\" The characteristic is disordered inner intensity — affective dysregulation with contempt as one outlet. §7.7 02 Emotion — Negative; contempt is explicitly in §7.7 06 Relational Disposition's vocabulary but the characteristic here is the internal disorder producing it, not the relational attitude itself. 02 stands.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4335-001 — mind (ha.lal): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1728
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"madness as inner condition — disordered, futile orientation of the human heart and mind, investigated alongside wisdom.\" Ecclesiastes context. Madness-as-cognitive-disorder, paired with wisdom in the Qohelet investigation. §7.7 03 Cognition (the inner rational-discerning faculty, here in its disorder).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4337-001 — mind (ho.le.lah): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1729
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"madness as culmination of foolishness — final evil expression of a disordered inner life.\" The moral-character framing is explicit (\"final evil expression\"). 05 Moral Character. Contrast with 4337-001 (Cognition — the disordered state investigated) and this group (Moral Character — the moral expression).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4339-001 — mind (ho.le.lut): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1744
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"deliberate devising of harm — inner formation of schemes, plots, or evil plans against another.\" §7.7 04 Volition with negative moral valence. The purposive-act-of-planning characteristic dominates. Cross-registry root family CHASHAV (Phase A Session D candidate) spans mind/purpose/thought — all likely Volition or Cognition territory in their registry neighbours.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3334-001 — mind (cha.shav): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1745
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"purposive planning — inner formation of a deliberate purpose or plan, whether by God or human agents.\" The broader (non-harm-specific) volitional characteristic. §7.7 04 Volition. NONE dominant_subject since the description explicitly spans divine and human.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3334-002 — mind (cha.shav): dimension=04 Volition, subject=NONE"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1742
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description names \"moral crediting or imputing of righteousness/guilt — inner act of reckoning a person's standing before God or human authority.\" This is the Genesis 15:6 imputation term (cha.shav as \"reckoned it to him as righteousness\"). The characteristic is divine reckoning — a theologically weighted act where God's inner assessment determines a person's standing. §7.7 11 Divine-Human Correspondence is the right frame: God's reckoning is the direct ground of the human's righteousness-standing. Alternatively 03 Cognition (act of reckoning) but that loses the theological-structural framing that makes this term one of the most weighty in the OT. GOD is the dominant subject per §7.7 11 note (\"Assign GOD where one pole dominates but the correspondence is analytically significant\"). Strong ",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3335-001 — mind (cha.shav): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1743
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"evaluative regard of persons or things — inner act of assessing worth, status, or character in relational and social contexts.\" Distinct from 3335-001 — this is the human-social act of reckoning, without the theological imputation-structure. §7.7 03 Cognition (evaluative cognition). The legacy label \"Relational/Social\" pointed toward Relational Disposition, but the characteristic is the act of evaluation, not the relational attitude produced — 03 Cognition is cleaner.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3335-002 — mind (cha.shav): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1746
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of thinking and considering — mind forming judgments, reconsidering paths, or holding deliberate thoughts.\" Direct §7.7 03 Cognition match.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3336-001 — mind (cha.shav): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1747
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner evaluative act of counting or regarding — assessing a person's or thing's worth, status, or standing.\" Per RD-PHASE-B-112-002, accepted as-is (distinct Strongs sense H2803J \"think\" from H2803H \"count\" 3335-002 despite descriptive similarity). §7.7 03 Cognition. Functionally similar dimension assignment to 3335-002 — confirms that the descriptive overlap reflects genuine functional overlap between two Strongs senses in the verbs of reckoning/evaluating, not a grouping defect.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3336-002 — mind (cha.shav): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7855
+      },
+      "set": {
+        "dimension": "09 Agency / Power",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"product of human ingenuity — devices or schemes formed by the inner inventive capacity, whether for construction or moral harm.\" The characteristic is inner inventive capacity — §7.7 09 Agency / Power (\"The exercise of inner capacity — sovereignty, authority, strength, restraint, self-giving\"). One of the 2 open groups (MO=0, KEYWORD_WEAK). Legacy label \"Moral Character\" is not a good fit. Alternative 04 Volition (purposive planning); 09 is closer because the content is *capacity to invent* rather than *act of willing*.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3338-001 — mind (chish.sha.von): dimension=09 Agency / Power, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1688
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"disruption or perceived disruption of rational inner faculties — being out of one's mind.\" §7.7 03 Cognition (the rational faculty in its disorder). Paired with mania (1006-001) and parafroneō (4185-001).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1000-001 — mind (mainomai): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1689
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"state of mental derangement — collapse of rational inner faculties attributed to excessive learning.\" §7.7 03 Cognition (rational faculties in collapse). Acts 26:24 — Festus accusing Paul.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1006-001 — mind (mania): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1686
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of forgetting or neglecting — failure to retain in active consciousness what matters morally or relationally.\" §7.7 03 Cognition (remembering/forgetting is within the Cognition dimension). The \"morally or relationally\" language names context, not the characteristic. 03 stands.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3370-001 — mind (epilanthanō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1685
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner thoughts and purposes of the heart — hidden intentional life that only God's word can discern and expose.\" The characteristic is the hidden inner thinking. §7.7 03 Cognition. Could be read as 05 Moral Character (hidden intentional life as character content), but the explicit naming of \"thoughts and purposes\" (cognitive content) makes 03 the cleaner fit.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "3372-001 — mind (ennoia): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1706
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mind as capable of knowing God and serving his law — rational-moral faculty oriented toward truth and divine will.\" The characteristic is the mind as cognitive faculty oriented toward God. §7.7 03 Cognition captures the rational-faculty content. The orientation-toward-God is context (and this is one of the groups touching the Spiritual/God-ward vocabulary gap). Reading: 03 Cognition is the correct primary dimension; the God-ward aspect is Session D material (pattern of Cognition groups oriented toward God).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "994-001 — mind (nous): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1707
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mind as corrupted, debased, or futile — rational faculty given over to moral disorder or darkened by sin.\" Same dimension (03 Cognition) as 994-001, moral-negative pole. The corruption/futility language is moral-character adjacent but the characteristic named is the state of the rational faculty.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "994-002 — mind (nous): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1708
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description names \"mind of the Lord/God — divine inner rational-purposive faculty inaccessible to humans except through revelation.\" 1 Corinthians 2:16 / Romans 11:34 context. §7.7 03 Cognition applied to the divine subject. GOD dominant_subject. Interesting — the dimension 11 framing might apply if there is a direct correspondence between divine mind and transformed human mind (1 Cor 2:16 \"we have the mind of Christ\"), but the primary content of this sense-split is the divine mind as hidden/inaccessible — 03 with GOD as subject is cleaner.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "994-003 — mind (nous): dimension=03 Cognition, subject=GOD"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1681
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mind as seat of love and orientation toward God — whole inner capacity directed Godward in the great commandment.\" Deuteronomy 6:5 / Mark 12:30 context. The characteristic is the whole inner mind directed toward loving God — this is Divine-Human Correspondence on the human side (the commandment names what the human inner-being is to do; the characteristic is the inner orientation reaching across the human-divine boundary). §7.7 11. Could be 04 Volition (loving God is will-act) or 06 Relational Disposition (stable orientation toward God); the Divine-Human Correspondence frame best captures the characteristic. Dominant_subject HUMAN — the human is the bearer of this love-orientation.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "995-001 — mind (dianoia): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1682
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mind as susceptible to darkening, hostility, or moral corruption — understanding alienated from God or carrying out sinful desires.\" Parallel to 994-002 for dianoia. §7.7 03 Cognition — the corrupted state of the rational-understanding faculty.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "995-002 — mind (dianoia): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1683
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"mind as site of divine law-writing and renewal — inner capacity transformed and inscribed by God under the new covenant.\" Hebrews 8:10 / 10:16 context. This is the clearest Dimension 11 case in r112 — God writing on the dianoia, the human dianoia receiving. The divine-human correspondence is the characteristic. Strong Session D candidate for the covenant-renewal cluster (paired with mnaomai 4413-003 non-remembrance, le.vav 579-009 circumcision, qe.rev 577-003 new covenant writing, enkainizō 602-001).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "995-003 — mind (dianoia): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1720
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"act of reminding as pastoral instrument — stirring up inner life by bringing truth back to active consciousness.\" §7.7 03 Cognition. The pastoral-agent framing is context.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4291-001 — mind (hupomnēsis): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1719
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"prompting of inner remembrance — bringing truth or prior words back into active inner awareness through the Spirit, an apostle, or another person.\" §7.7 03 Cognition. Dominant subject NONE — the description spans three distinct agent types.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4292-001 — mind (hupomimnēskō): dimension=03 Cognition, subject=NONE"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1700
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"commanded inner act of remembrance — calling to mind persons, words, or events as basis for present faith and conduct.\" §7.7 03 Cognition. High-density group (18 total verses) — remembrance as a commanded covenantal act. The \"commanded\" and \"faith/conduct\" language touches the Spiritual/God-ward vocabulary gap; 03 Cognition captures the characteristic correctly. Session D observation: commanded-remembrance as a pattern where Cognition has covenantal-ethical weight.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4411-001 — mind (mnēmoneuō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1701
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner orientation of remembrance as motivating force — thinking of, being concerned with, holding in mind as ground of present action.\" Same dimension (03 Cognition) as 4411-001, the motivating-force sense of remembrance.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4411-002 — mind (mnēmoneuō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1699
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"capacity for recall — ability to bring to active consciousness what has been received.\" §7.7 03 Cognition. Direct match. Legacy label \"Volitional/Capacity\" is not a good fit.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4412-001 — mind (mnēmē): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1695
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"human remembrance — inner act of bringing to mind what was said, experienced, or promised.\" §7.7 03 Cognition.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4413-001 — mind (mnaomai): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1696
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description names \"divine remembrance — God holding a person or their deeds in active attentiveness, with grace or judgment as the result.\" The characteristic is God's remembering as ground of effect (grace or judgement). §7.7 11 Divine-Human Correspondence — divine remembrance has direct effect on the human, the structural correspondence is the ground-effect pattern. GOD dominant subject. Paired with 3335-001 (cha.shav imputation) as Dimension 11 patterns where divine inner-act grounds human standing.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4413-002 — mind (mnaomai): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1697
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description names \"God's chosen non-remembrance — new covenant promise to remember sins no more.\" Hebrews 8:12 / 10:17 / Jeremiah 31:34 context. The characteristic is divine non-remembrance as covenant act — structural divine-human correspondence where God's inner act determines the covenant's character. §7.7 11. Core member of the covenant-renewal Session D cluster.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4413-003 — mind (mnaomai): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1698
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"affectionate remembrance of persons — holding them in active prayerful awareness before God.\" The characteristic is relational affection expressed through remembrance — not simply the cognitive act of recall but the affectionate orientation toward another. §7.7 06 Relational Disposition (\"Inner orientation toward another — love, compassion, favour, attachment…\"). The Pauline epistolary \"I remember you in my prayers\" pattern. Distinct from other mnaomai senses by its relational content.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4416-001 — mind (mneia): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1694
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of mindful attentiveness — holding another in active awareness with moral or relational consequence.\" §7.7 03 Cognition. Moral/relational consequence is context.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4417-001 — mind (mimnēskō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1665
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner act of bringing prior knowledge or experience back into active awareness — voluntary recall or prompted remembrance.\" §7.7 03 Cognition.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4424-001 — mind (anamimnēskō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1666
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description names \"eucharistic act of remembrance — inner and communal re-presentation of Christ's self-giving before God and one another.\" The anamnēsis of 1 Cor 11:24-25 / Luke 22:19 — the Lord's Supper. This is the signature Dimension 11 case in the NT for memorial vocabulary: Christ's giving grounds the community's remembering; the two operate across the divine-human boundary. §7.7 11. Paired with the AZKARAH group as Dimension 11 patterns for memorial vocabulary.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4426-001 — mind (anamnēsis): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1667
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"annual reminder of unresolved sin — old covenant's inability to finally cleanse the conscience.\" Hebrews 10:3 context. The characteristic is the conscience's unresolved state — §7.7 05 Moral Character (moral character and conscience are adjacent in the dimension). Distinct from 4426-001 (new covenant memorial as divine-human correspondence) by the old covenant's failure framing. 05 Moral Character captures the conscience-state characteristic; alternatively 03 Cognition (the reminding act) but the semantic weight here is on the inner moral state reminded, not the act of reminding.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4426-002 — mind (anamnēsis): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1709
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"unity of inner orientation — shared disposition of mind and spirit among the community.\" 1 Peter 3:8. §7.7 06 Relational Disposition (shared orientation toward one another).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1008-001 — mind (homofrōn): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1721
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"tender, friendly inner disposition — mind oriented toward others with gentleness and courtesy.\" §7.7 06 Relational Disposition.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "1009-001 — mind (filofrōn): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1722
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"faculty of mature thinking — capacity for moral and rational discernment that marks adult inner life.\" 1 Cor 14:20 context. §7.7 03 Cognition.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "2493-001 — mind (frēn): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1710
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mode of expression that departs from rational restraint — speaking beyond reason, used rhetorically to mark apostolic boasting as a concession.\" §7.7 03 Cognition (the rational faculty in its departure).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4185-001 — mind (parafroneō): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1711
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"madness of disordered inner impulse — prophet's irrational compulsion rebuked by God through a donkey.\" §7.7 03 Cognition (rational faculty in its disorder).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4187-001 — mind (parafronia): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1718
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"self-control as inner character quality — disciplined mind that governs its impulses, required for godly leadership and life.\" §7.7 05 Moral Character — direct match (\"Stable inner qualities of moral nature — goodness, justice, integrity, purity, faithfulness\" — self-control is in this family).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4188-001 — mind (sōfrōn): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1715
+      },
+      "set": {
+        "dimension": "08 Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"formation of inner dispositions through training — shaping the affective and relational life toward godly patterns.\" Titus 2:4 context (older women training younger). The characteristic is formation/transformation of inner disposition. §7.7 08 Transformation (\"Inner change — renewal, healing, purification, formation, or degradation\"). This is a less-used dimension in the cluster but fits the characteristic precisely.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4190-001 — mind (sōfronizō): dimension=08 Transformation, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1716
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"inner disposition of self-controlled living — mind governing conduct with measured restraint.\" §7.7 05 Moral Character — same family as 4188-001.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "4191-001 — mind (sōfronōs): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1723
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"direction of the mind — setting one's inner orientation toward God, the Spirit, or godly patterns of life.\" Romans 8:5-6 / Colossians 3:2 context (\"set your minds on things above\"). The characteristic is the mind's orientation across the human-divine boundary — setting the inner mind toward God. §7.7 11 Divine-Human Correspondence. Alternatively 04 Volition (the act of directing) or 06 Relational Disposition (stable orientation toward God). The cleanest reading for \"setting one's inner orientation toward God\" is Dimension 11 — the mind's engagement across the boundary. HUMAN dominant, with God as the orientation's object.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "996-001 — mind (froneō): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1724
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"mind as seat of communal unity and personal relationship — being of the same mind, sharing concern, pursuing agreement.\" Philippians 2:2 / Romans 12:16 context. §7.7 06 Relational Disposition (inner orientation toward one another).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "996-002 — mind (froneō): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1725
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"settled orientation of the inner mind — deep dispositional set of the person toward flesh or Spirit, with life or death as the outcome.\" Romans 8:6-7 context. The characteristic is the deep dispositional set — §7.7 05 Moral Character (stable inner quality of moral nature). The flesh/Spirit framing is moral; the outcomes (life/death) confirm the character-weight. Alternatively 11 Divine-Human Correspondence if the flesh/Spirit alternative is taken as the divine-human boundary orientation.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "997-001 — mind (fronēma): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1713
+      },
+      "set": {
+        "dimension": "08 Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"restoration of sound mind — inner rational and moral faculties recovered from disruption.\" Mark 5:15 / Luke 8:35 (Gerasene demoniac). The characteristic is restoration/recovery — §7.7 08 Transformation (healing, renewal). Distinct sense from 999-002 by its restoration-event framing.",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "999-001 — mind (sōfroneō): dimension=08 Transformation, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1714
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description names \"sound-mindedness as moral disposition — thinking about oneself and others with measured, humble judgment.\" Romans 12:3 context. §7.7 05 Moral Character (stable inner quality of measured judgement).",
+        "last_modified": "2026-04-20T10:56:00Z"
+      },
+      "description": "999-002 — mind (sōfroneō): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 1807
+      },
+      "set": {
+        "context_description": "Term names the deep inner life — the hidden motives and affections of the person open only to divine searching",
+        "notes": "Revised during Dimension Review Phase B (QA-VAGUE resolution, RD-PHASE-B-112-001): description sharpened to name the inner-being characteristic explicitly. Old: Term names an inner faculty of the person — the deep inner life searched and assessed by Christ"
+      },
+      "description": "Group 1010-001 nefros: Phase B QA-VAGUE description correction"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-112-004",
+        "registry_id": 112,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Covenant-renewal convergence across registries — Dimension 11 cluster. Five groups across r112 and r183 describe God's inner-being covenant act renewing the human person: dianoia law-writing (995-003, Heb 8:10/10:16), mnaomai non-remembrance (4413-003, Heb 8:12/10:17), le.vav circumcision/renewal (179-009, Deut 30:6), qe.rev new covenant writing (577-003, Jer 31:33), enkainizō inaugural renewal (602-001, Heb 10:20). Coordinated Dimension 11 event across multiple inner-being terms and registries.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-112-004"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-112-005",
+        "registry_id": 112,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "sha.mar root family dimensional breadth. Five sense-splits in r112 occupy five different dimensions: 4379-001 (obedience) → 04 Volition; 4380-001 (divine guarding) → 11 D-H Correspondence GOD; 4380-002 (self-guarding) → 11 D-H Correspondence HUMAN; 4381-001 (moral observation) → 03 Cognition; 4382-001 (vigilance) → 05 Moral Character. Illustrates directionally-determined inner-faculty principle.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-112-005"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-112-006",
+        "registry_id": 112,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Divine reckoning and divine remembrance as paired Dimension 11 patterns. cha.shav 3335-001 (imputation, Gen 15:6/Rom 4) and mnaomai 4413-002 (divine remembrance producing effect) both name divine inner acts determining human standing. Both Dimension 11 GOD. Foundational pair for Session B studies of reckoning/imputation vocabulary.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-112-006"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-112-007",
+        "registry_id": 112,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Memorial vocabulary as Dimension 11. Three AZKARAH groups (3498-001 zikkaron institutional, 3498-002 zikkaron priestly, 3499-001 az.ka.rah memorial portion) plus anamnēsis 4426-001 (eucharistic) all engage divine-human correspondence. The memorial is a structure of mutual remembrance between God and community — unifies OT offering vocabulary and NT eucharist vocabulary on the dimension axis.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-112-007"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-112-SD003",
+        "registry_id": 112,
+        "flag_code": "SD_POINTER",
+        "description": "CHASHAV root family cross-registry structural pattern. Hebrew root chashav spans Reg 112 (mind), Reg 126 (purpose), Reg 160 (thought). Functions split: act of devising/thinking/counting (mind), plan as product (purpose), calculation/explanation (thought). r112 groups predominantly 03 Cognition + 04 Volition. Session D synthesis should test dimensional profile of r126 and r160 groups.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-112-SD003"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-112-SD004",
+        "registry_id": 112,
+        "flag_code": "SD_POINTER",
+        "description": "BOUL root family Greek counterpart to CHASHAV. Spans Reg 32 (counsel) and Reg 112 (mind). bouleuō G1011 (mind) vs boulē G1012, epiboulē G1917, sumboulion G4824, sumboulos G4825 (counsel). Same mental-act/product/relational-noun pattern as CHASHAV. Cross-language CHASHAV/BOUL convergence is a possible structural universal for Hebrew-Greek mental-act vocabulary.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-112-SD004"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-112-SD005",
+        "registry_id": 112,
+        "flag_code": "SD_POINTER",
+        "description": "Inner-division theme across Greek and Hebrew vocabularies. dipsuchos G1374 (1398-001), se.eph H5588 (4198-001), dianoia-corrupted (995-002), nous-corrupted (994-002), isopsuchos G2473 (1402-001 — positive counterpart). Multiple terms from different roots/languages naming divided loyalty / split mind / darkened understanding. Distribution across 05 Moral Character, 03 Cognition, 06 Relational Disposition. Session D should trace across C17 and C22.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-112-SD005"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-112-SD006",
+        "registry_id": 112,
+        "flag_code": "SD_POINTER",
+        "description": "Spiritual/God-ward vocabulary gap — potential Dimension 12 (DR-13). Phase A identified 25 C01 groups with legacy 'Spiritual/God-ward' label having no clean current-vocabulary counterpart. r112 Phase C resolved these mostly to Dimension 11 (where divine-human correspondence structure was present) or 03/04/06. No r112 group required new dimension. But the label may indicate distinct 'God-ward Orientation' dimension — human's directedness toward God without correspondence structure. 995-001 dianoia 'love God with all your mind' is clearest candidate. Will be more significant for r183 where 581-006 lev God-ward orientation is UNCLASSIFIED.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-112-SD006"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-112-SD007",
+        "registry_id": 112,
+        "flag_code": "SD_POINTER",
+        "description": "False-positive cross-registry roots — CC rootfamily extract pipeline observation. Three of five 'cross-registry' roots for C01 appear to be string-match false positives: AT (root_code None, personal pronouns vs mutterer); YATSA (offspring vs come-out homonym); TAAM (perceive vs be-double homonym). Researcher may wish to refine tool's matching logic to exclude None-root and zero-semantic-overlap pairs. Pipeline observation, not dimension finding.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-112-SD007"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 112
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry 112 (mind): Dimension Review complete under v3_3"
+    }
+  ]
+}

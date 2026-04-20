@@ -1,6 +1,6 @@
 # CLAUDE.md — Claude Code Project Reference
 
-> Auto-generated 2026-03-24; updated 2026-04-18 for major instruction restructure (13 documents refreshed/new), schema v3.9.0.
+> Auto-generated 2026-03-24; updated 2026-04-18 for major instruction restructure (13 documents refreshed/new); updated 2026-04-19 for DB-wide review migrations M19–M28 (schema v3.10.0, prose store, 6-word reprocess trigger); updated 2026-04-20 for evidence-flag redesign M29–M31 (schema v3.11.0, VERSE_EVIDENCE_* rename, research_actions, term_introduction_source, flag-question junction).
 > This file is read by Claude Code at the start of every conversation.
 
 ---
@@ -30,9 +30,9 @@ Bible_study_projects/              ← Google Drive root = working directory
 │
 ├── engine/                        ← Python automation engine (the core application)
 │   ├── engine.py                  ← CLI entry point (python -m engine.engine)
-│   ├── constants.py               ← Schema version (3.9.0), thresholds, sentinels
-│   ├── db.py                      ← Connection factory (WAL mode), query helpers
-│   ├── migrate.py                 ← Schema migrations M01–M18 (v2.2 → v3.8.0; v3.9.0 via SC-01–SC-05)
+│   ├── constants.py               ← Schema version (3.10.0), thresholds, sentinels
+│   ├── db.py                      ← Connection factory (WAL mode), query helpers (get_schema_version uses MAX(id))
+│   ├── migrate.py                 ← Schema migrations M01–M31 (v2.2 → v3.11.0; evidence-flag redesign 2026-04-20)
 │   ├── backup.py                  ← Pre/post-run + manual backups (rolling 10)
 │   ├── register.py                ← REGISTER mode + lock management
 │   ├── new_word.py                ← NEW_WORD mode (N1–N19): first-time STEP fetch
@@ -123,7 +123,7 @@ Bible_study_projects/              ← Google Drive root = working directory
 
 ---
 
-## 3. The Database — Schema v3.9.0
+## 3. The Database — Schema v3.11.0
 
 **File:** `data/bible_research.db` (SQLite, ~40 MB, excluded from Git)
 
@@ -148,6 +148,8 @@ Bible_study_projects/              ← Google Drive root = working directory
 | 14 | Session D | `session_d_runs`, `session_d_verse_links`, `session_d_term_links`, `session_d_observations` | Cross-registry synthesis capture |
 | 15 | Verse Context | `verse_context_group`, `verse_context` | Contextual meaning groups and per-verse classification (v3.8.0, M18) |
 | 16 | Observation Catalogue | `wa_obs_question_catalogue`, `wa_finding_catalogue_links` | Master question catalogue (194 questions) and finding-to-question junction (v3.9.0, SC-03/SC-04) |
+| 17 | Prose Store | `prose_section_type`, `prose_section`, `prose_section_fts` (FTS5), `prose_section_dimension_link`, `prose_section_finding_link` | DB-canonical prose storage with FTS5 search; round-trip editing via `.md` markers. 26 seeded section types covering Session A/B/C/D chapters (v3.10.0, M_P1–M_P6 via M20) |
+| 18 | Evidence-Flag Routing | `wa_flag_type_question_link` | Junction linking `wa_quality_flag_types.id` → `wa_obs_question_catalogue.obs_id` per researcher methodology: flags carry research routes (`wa_quality_flag_types.research_actions`) + catalogue questions surfaced into prose for AI to answer (v3.11.0, M31) |
 
 ### Key Relationships
 
@@ -240,12 +242,12 @@ engine.py (CLI dispatcher)
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| EXPECTED_SCHEMA_VERSION | `"3.9.0"` | Engine refuses mismatched schema |
-| LOCK_SENTINEL | `"IN_PROGRESS"` | Prevents concurrent runs |
+| EXPECTED_SCHEMA_VERSION | `"3.11.0"` | Engine refuses mismatched schema. Bumped 2026-04-20 for evidence-flag redesign M29–M31. |
+| LOCK_SENTINEL | `"In Progress"` | Matches actual `word_registry.phase1_status` values (title case with space). Corrected 2026-04-19 per RD-DBR-001 — prior value `"IN_PROGRESS"` never matched stored data. |
 | AUDITED_SENTINEL | `"AUDITED"` | Marks successful audit completion |
-| HIGH_FREQ_THRESHOLD | 500 | Above → HIGH_FREQUENCY_ANCHOR flag |
-| THIN_DATA_THRESHOLD | 20 | Below → THIN_DATA flag |
-| SMALL_VERSE_SAMPLE_THRESHOLD | 5 | Below → SMALL_VERSE_SAMPLE flag |
+| HIGH_FREQ_THRESHOLD | 500 | Above → VERSE_EVIDENCE_HIGH flag (annotation only; informational) |
+| THIN_DATA_THRESHOLD | 20 | Below → VERSE_EVIDENCE_CONCENTRATED flag (merged with SMALL threshold in M29 2026-04-20) |
+| SMALL_VERSE_SAMPLE_THRESHOLD | 5 | Deprecated threshold — merged into VERSE_EVIDENCE_CONCENTRATED (M29 2026-04-20) |
 | BACKUP_RETENTION | 10 | Rolling pre-run backup count |
 | STALE_LOCK_SECONDS | 7200 | 2 hours → lock considered stale |
 
@@ -530,15 +532,22 @@ Status close: session_b_status → Session B Complete
 
 Tasks 1-8 from WA-Implementation-Instruction-v5: **all complete** (schema v3.9.0, migrations M01–M18 + SC-01–SC-05). Clustering (Task 4) applied. Zero-term investigation (Task 5) resolved.
 
-### Current Programme State (2026-04-18)
+### Current Programme State (2026-04-20, post evidence-flag redesign)
 
+- Schema **v3.11.0** (post evidence-flag redesign M29–M31 applied 2026-04-20)
 - 214 total registries
 - 182 registries VC Complete, 2 In Progress (grace 68, suffering 214), 30 NULL (excluded)
 - C17 Dimension Review complete, C01-C16/C18-C22 previously completed
-- 6 registries at Analysis Complete: compassion (23), fellowship (62), forgiveness (64), grace (68), love (103), mercy (111)
+- **6 registries reset to `Verse Context Reset` (2026-04-19 per Q12):** compassion (23), fellowship (62), forgiveness (64), grace (68), love (103), mercy (111). Prior Session B narratives retained as historical `.md` in `data/imports/WA/Session_B_Analysis/` and `outputs/markdown/`.
+- 5 registries formally **BANKED** on scorecard v2 (2026-04-20): covetousness (35), fellowship (62), renewal (134), vulnerability (206), blindness spiritual (207). Each has Session A extract generated and ready for M5 pilot.
 - Suffering (214): C05, 72 terms, 907 verses, VC/dim review pending
-- Observation Question Catalogue: 194 questions populated
+- Observation Question Catalogue: **194 + 12 Q-COV** questions (Q-COV-01..12 added 2026-04-20 for evidence-flag routing)
+- Prose store operational: 26 seeded section types; FTS5 search available
+- **Evidence-flag family (v3.11.0):** `VERSE_EVIDENCE_MINIMAL` / `_CONCENTRATED` / `_HIGH` / `_BREADTH_NOTE` — informational flags with `research_actions` routes + `wa_flag_type_question_link` mapping to catalogue questions. Surface into prose (Session A/B) for AI-driven investigation per researcher principle "volume ≠ value; absence of expected evidence is itself a signal".
+- **Term introduction-source tracking** (M30): columns on `wa_term_inventory` (`term_introduction_source`, `_rationale`, `_date`). Population via classifier script (9-code controlled vocabulary per `coverage-flags-redesign-v1-20260420.md`).
 - FLAG-010: Blocking gate on new word analysis — all instructions must audit against GR v2.8+
+- **OT-DBR-001/002 RESOLVED** (2026-04-19) — audit_word + audit.py rewritten for post-DBR schema.
+- **Open HIGH OT:** OT-DBR-009 (mti_terms dedup) — designed (Action R), awaiting approval.
 
 ---
 
@@ -898,7 +907,13 @@ After every DataPrep patch, Claude Code checks if all words in the same pool are
 
 **wa_session_research_flags.flag_code:** PH2_* (various), SB_FINDING, SB_DIMENSION, SB_INNER_BEING, SD_POINTER, SD_CLUSTER, CANDIDATE_REGISTRY_WORD, VOLUME_LIMITATION
 
-**wa_data_quality_flags.flag_code:** HIGH_FREQUENCY_ANCHOR, NO_VERSES, NO_WORD_ANALYSIS, PROSE_ONLY_MEANING, SMALL_VERSE_SAMPLE, SPAN_FILTER_APPLIED, SPAN_RESOLUTION_CONFLICT, THIN_DATA, CONCRETE_PHYSICAL
+**wa_data_quality_flags.flag_code** (post M29 2026-04-20):
+
+- **Evidence family (informational — triggers research_actions routing + Q-COV questions):** `VERSE_EVIDENCE_MINIMAL` (was NO_VERSES) · `VERSE_EVIDENCE_CONCENTRATED` (merges THIN_DATA + SMALL_VERSE_SAMPLE) · `VERSE_EVIDENCE_HIGH` (was HIGH_FREQUENCY_ANCHOR) · `VERSE_EVIDENCE_BREADTH_NOTE` (was PH2_VOLUME_LIMITATION, lives on `wa_session_research_flags`)
+- **Structural diagnostic (unchanged):** NO_WORD_ANALYSIS · PROSE_ONLY_MEANING · SPAN_FILTER_APPLIED · SPAN_RESOLUTION_CONFLICT · CONCRETE_PHYSICAL
+- **Deprecated:** THIN_DATA (id=2) merged into VERSE_EVIDENCE_CONCENTRATED
+
+Per researcher principle 2026-04-20: coverage flags are **informational only**, never gating. Each evidence flag declares `research_actions` routes and links via `wa_flag_type_question_link` to `wa_obs_question_catalogue` Q-COV-01..12 — questions surface into prose for AI-driven investigation (answers land as findings, not as open-question rows).
 
 ### 17.4 Evidential Status (wa_term_inventory.evidential_status)
 
@@ -908,12 +923,21 @@ confirmed | plausible | uncertain | instrumental | relational_only
 
 PRIMARY | SECONDARY | PERIPHERAL — used in final registry extract dimensional_profile
 
-### 17.6 Redundant Fields — Do Not Write
+### 17.6 Dropped and Retained Fields (2026-04-19 post-DBR)
+
+**DROPPED in M22 / M24 / M25 — no longer present on the DB:**
+
+| Field | Table | Dropped by | Successor |
+|-------|-------|------------|-----------|
+| god_as_subject | wa_term_inventory | M24 | `mti_term_flags` with `flag_id = 1` (GOD_AS_SUBJECT); data populated in M23 |
+| somatic_link | wa_term_inventory | M24 | `mti_term_flags` with `flag_id IN (3, 4)`; data populated in M23 |
+| status_note | wa_term_inventory | M22 | Removed entirely (0 active code references; redundant diagnostic) |
+| status_note | mti_terms | M22 | Removed entirely (written by audit_word A10 only, never read) |
+| mti_term_id · group_code · strongs_number · transliteration · gloss · language · owning_registry_word · context_description | wa_dimension_index | M25 | Derivable via JOIN on `verse_context_group` and `mti_terms` |
+
+**RETAINED — do not write from pipeline (researcher-authored content):**
 
 | Field | Table | Note |
 |-------|-------|------|
-| god_as_subject | wa_term_inventory | Superseded by mti_term_flags |
-| somatic_link | wa_term_inventory | Superseded by mti_term_flags |
-| status_note | wa_term_inventory | NULL across all records, no pipeline purpose |
-| inference_note | word_registry | Researcher-set only — pipeline must never overwrite |
-| status_note | mti_terms | Written by audit_word A10 only, not by Session B |
+| inference_note | word_registry | Researcher-set only — pipeline must never overwrite. 24 rows populated with substantive research notes. |
+| word_synopsis | word_registry | **NEW 2026-04-19 (M21).** Researcher-authored 1–2 sentence word synopsis; rendered into Session A Summary section. |

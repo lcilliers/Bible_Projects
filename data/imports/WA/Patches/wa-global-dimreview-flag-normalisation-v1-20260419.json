@@ -1,0 +1,93 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260419-GLOBAL-DIMREVIEW-FLAG-V1",
+    "patch_type": "REPAIR",
+    "patch_scenario": "STATUS_FLAG_NORMALISATION",
+    "registry_scope": "multi-registry",
+    "produced_by": "claude_code",
+    "produced_at": "2026-04-19T16:50:24Z",
+    "applied_at": "2026-04-19T16:50:24Z",
+    "applied_by": "direct UPDATE under researcher approval 'A - the quick win'",
+    "source_instruction": "wa-global-readiness-sweep-instruction-v1_0-20260419.md",
+    "pre_backup": "backups/bible_research_pre_dimreview_flag_20260419_165024.db",
+    "note": "Quick-win bulk normalisation: set dim_review_status='Complete' for 8 registries where all active wa_dimension_index rows have dimension_confidence IN ('CLAUDE_AI','RESEARCHER') AND zero NULL dimension. Status flag had lagged actual review state. Patch file produced post-hoc for audit trail; update applied directly via SQL in a single transaction."
+  },
+  "operations": [
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 18},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "brokenness (C05) — 6 dim rows, all CLAUDE_AI, zero NULL"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 93},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "intention (C02) — 2 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 113},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "mourning (C05) — 11 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 182},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "Soul (C01) — 61 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 184},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "spirit (C01) — 37 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 185},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "flesh (C01) — 30 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 188},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "weeping (C05) — 10 dim rows, all CLAUDE_AI"
+    },
+    {
+      "op": "update_registry",
+      "target": "word_registry",
+      "match": {"no": 211},
+      "set": {"dim_review_status": "Complete"},
+      "rationale": "being (C01) — 15 dim rows, all CLAUDE_AI"
+    }
+  ],
+  "verification": {
+    "pre_complete_count": 34,
+    "post_complete_count": 42,
+    "delta": 8,
+    "update_rowcount": 8,
+    "integrity_anomalies_discovered": [
+      {
+        "registry_no": 27,
+        "word": "consciousness",
+        "issue": "dim_review_status='Complete' AND verse_context_status='Complete' BUT zero active wa_dimension_index rows AND zero active verse_context_group rows",
+        "recommended_action": "Path 4 RD — confirm whether data is genuinely missing or flags are incorrect"
+      },
+      {
+        "registry_no": 129,
+        "word": "recognition",
+        "issue": "same — Complete flags with zero underlying data",
+        "recommended_action": "Path 4 RD"
+      }
+    ]
+  }
+}

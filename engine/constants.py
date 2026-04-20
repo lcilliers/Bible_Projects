@@ -5,7 +5,11 @@ Shared constants for the Session A v9 Automation Engine.
 """
 
 # Schema version this engine build requires.
-EXPECTED_SCHEMA_VERSION = "3.9.0"
+# Bumped 2026-04-19 for DB-wide review migrations M19–M28 (changeplan v1).
+# Bumped 2026-04-20 for evidence-flag redesign M29–M31 (coverage-flags-redesign-v1).
+# Bumped 2026-04-20 evening for reference-as-DB POC M32 (vocab registry).
+# Bumped 2026-04-20 night for reference-as-DB M33-M35 (rules + programme prose + patch types/patterns/labels).
+EXPECTED_SCHEMA_VERSION = "3.13.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
@@ -16,8 +20,10 @@ ENGINE_VERSION = "1.0.0"
 # Meaning parser version (written to wa_meaning_parsed.parse_version).
 PARSER_VERSION = "1.0.0"
 
-# IN_PROGRESS sentinel value written to word_registry.last_automation_run.
-LOCK_SENTINEL = "IN_PROGRESS"
+# In Progress sentinel value for word_registry.phase1_status lock check.
+# Corrected 2026-04-19 per RD-DBR-001: data uses 'In Progress' (title case with
+# space); prior value 'IN_PROGRESS' never matched actual stored values.
+LOCK_SENTINEL = "In Progress"
 
 # Stale lock threshold in seconds (2 hours).
 STALE_LOCK_SECONDS = 7200

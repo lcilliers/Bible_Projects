@@ -269,9 +269,10 @@ def _wr12(conn, file_id: int, registry_id: int) -> dict:
     return _fail_stop("WR-12", f"Invalid language values: {bad}")
 
 
-# Fields excluded from undocumented-null check (judgment-deferred or Phase 2 reserved)
+# Fields excluded from undocumented-null check (judgment-deferred or Phase 2 reserved).
+# Note: god_as_subject and somatic_link were dropped from wa_term_inventory in M24
+# (2026-04-19); their signals now live in mti_term_flags. Removed from this set.
 _WR13_EXCLUDED_FIELDS = {
-    "god_as_subject", "somatic_link",
     "occurrence_count_qualifier", "also_spelled",
     "context_before", "context_after", "note", "claude_output",
 }

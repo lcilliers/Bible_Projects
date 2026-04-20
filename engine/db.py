@@ -26,9 +26,17 @@ def get_connection(db_path: str | None = None):
 
 
 def get_schema_version(conn) -> str | None:
-    """Return the current schema version string, or None if table absent."""
+    """Return the current schema version string, or None if table absent.
+
+    Reads the row with max id, which after M27 rebuild (2026-04-19) reflects the
+    latest applied version chronologically. For older schemas where id=1 held
+    the current version, this still works because max(id) == 1.
+    """
     try:
-        row = conn.execute("SELECT version_code FROM schema_version WHERE id = 1").fetchone()
+        row = conn.execute(
+            "SELECT version_code FROM schema_version "
+            "WHERE id = (SELECT MAX(id) FROM schema_version)"
+        ).fetchone()
         return row["version_code"] if row else None
     except Exception:
         return None

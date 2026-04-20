@@ -28,10 +28,16 @@ DEFAULT_OUTPUT_DIR = os.path.join(ROOT_DIR, "data", "schema")
 
 
 def get_schema_version(conn):
-    """Read the current schema version from the schema_version table."""
+    """Read the current schema version from the schema_version table.
+
+    Uses MAX(id) pattern — after M27 rebuild (2026-04-19) id=1 is the earliest
+    applied version chronologically; the latest is at MAX(id). Back-compatible
+    with pre-M27 schemas where MAX(id) == 1.
+    """
     try:
         row = conn.execute(
-            "SELECT version_code FROM schema_version WHERE id = 1"
+            "SELECT version_code FROM schema_version "
+            "WHERE id = (SELECT MAX(id) FROM schema_version)"
         ).fetchone()
         return row[0] if row else "unknown"
     except Exception:

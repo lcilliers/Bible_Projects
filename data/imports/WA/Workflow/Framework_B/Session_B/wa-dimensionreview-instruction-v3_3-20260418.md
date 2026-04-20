@@ -500,7 +500,9 @@ Record all pattern observations in the observations log as they are identified.
 
 ### 7.7 The dimension vocabulary
 
-*Derived from data. Working vocabulary as of v3.1. Will be revised as additional data is reviewed.*
+**Canonical source (2026-04-20): DB `wa_vocab_set.DIMENSION_LABEL`** (seeded via M32). The authoritative list lives in the DB; consume via reference snapshot `data/exports/reference/wa-reference-snapshot-{YYYYMMDD}.json` regenerated at session start by `scripts/build_reference_snapshot.py`. The inline definitions below describe what each dimension *means* (instructional narrative); the value strings themselves are whatever the DB returns. CC validator `apply_session_patch.py::_canonical_dimensions()` rejects any patch whose dimension label is not in the DB.
+
+*Derived from data. Working vocabulary as of v3.1. Will be revised as additional data is reviewed. Extension requires researcher decision per DR-13 + a migration/patch that inserts into `wa_vocab_member`.*
 
 **01 — Emotion — Positive**
 *Inner states of pleasure, joy, delight, or satisfaction*

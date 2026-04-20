@@ -1,0 +1,31 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260420-CATALOGUE-QCOV-V1",
+    "patch_type": "CATALOGUE_POPULATION",
+    "produced_at": "2026-04-20T10:20:00Z",
+    "produced_by": "claude_code",
+    "motivation": "Insert 12 Q-COV catalogue questions into wa_obs_question_catalogue per coverage-flags-redesign-v1-20260420.md §12.3. Questions surface into prose (Session A/B) when a VERSE_EVIDENCE_* flag is raised, driving AI-authored analytical answers that land as findings.",
+    "session_b_status": null
+  },
+  "operations": [
+    {
+      "op_id": "CATALOGUE-QCOV-BULK-INSERT",
+      "table": "wa_obs_question_catalogue",
+      "operation": "insert",
+      "rows": [
+        {"question_code": "Q-COV-01", "section": "Evidence-Flag Research Questions", "question_text": "Is this term's meaning covered by another term with similar meaning in the inner-being scope?", "pattern_type": "VERSE_EVIDENCE_MINIMAL", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-02", "section": "Evidence-Flag Research Questions", "question_text": "Is this term a modern concept / neologism with no substantive biblical antecedent?", "pattern_type": "VERSE_EVIDENCE_MINIMAL", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-03", "section": "Evidence-Flag Research Questions", "question_text": "Does the absence of biblical evidence itself have analytical significance for the inner-being picture?", "pattern_type": "VERSE_EVIDENCE_MINIMAL", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-04", "section": "Evidence-Flag Research Questions", "question_text": "Is this term simply not relevant to inner-being study? If so, should the term be deprecated from this registry?", "pattern_type": "VERSE_EVIDENCE_MINIMAL", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-05", "section": "Evidence-Flag Research Questions", "question_text": "Was STEP's verse capture exhausted for this term? Was any pagination or filter step incomplete?", "pattern_type": "VERSE_EVIDENCE_CONCENTRATED", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-06", "section": "Evidence-Flag Research Questions", "question_text": "What do the few verses that exist establish about the term's inner-being contribution?", "pattern_type": "VERSE_EVIDENCE_CONCENTRATED", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-07", "section": "Evidence-Flag Research Questions", "question_text": "Does the narrow verse set concentrate in a particular literary genre, historical period, or speaker?", "pattern_type": "VERSE_EVIDENCE_CONCENTRATED", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-08", "section": "Evidence-Flag Research Questions", "question_text": "VERSE_EVIDENCE_HIGH indicates that many verses in the Bible carry the same evidential value. Does the surrounding context of the verse provide any further differential value?", "pattern_type": "VERSE_EVIDENCE_HIGH", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-09", "section": "Evidence-Flag Research Questions", "question_text": "Does the high frequency repeat itself in both Old and New Testament? Is there any analytic value in this finding?", "pattern_type": "VERSE_EVIDENCE_HIGH", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-10", "section": "Evidence-Flag Research Questions", "question_text": "Does the high frequency correlate to the term's importance for understanding the inner being?", "pattern_type": "VERSE_EVIDENCE_HIGH", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-11", "section": "Evidence-Flag Research Questions", "question_text": "The term's usage in the verse has multiple analytic coverages - does the context around the verse impact the meaning so as to let us understand the different nuances better?", "pattern_type": "VERSE_EVIDENCE_BREADTH_NOTE", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"},
+        {"question_code": "Q-COV-12", "section": "Evidence-Flag Research Questions", "question_text": "Has the breadth been captured in the inter-relationships and correlations with other terms and words?", "pattern_type": "VERSE_EVIDENCE_BREADTH_NOTE", "scope": "universal", "status": "active", "deleted": 0, "date_added": "2026-04-20T10:20:00Z", "catalogue_version": "Q-COV-v1-20260420"}
+      ]
+    }
+  ]
+}

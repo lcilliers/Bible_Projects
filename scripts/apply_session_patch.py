@@ -68,6 +68,63 @@ DB_PATH      = os.path.join(os.path.dirname(__file__), "..", "data", "bible_rese
 ARCHIVE_DIR  = os.path.join(os.path.dirname(__file__), "..", "archive", "patches")
 
 
+# Canonical dimension vocabulary — fallback for use when the DB-sourced
+# registry is unavailable. Prefer _load_vocab_set() which queries the live
+# wa_vocab_set/wa_vocab_member tables (M32+). Researcher direction 2026-04-20:
+# reference content lives in the DB; this hardcoded fallback exists only to
+# keep the validator functional on pre-M32 DBs.
+_FALLBACK_CANONICAL_DIMENSIONS = frozenset({
+    "01 — Emotion — Positive",
+    "02 — Emotion — Negative",
+    "03 — Cognition",
+    "04 — Volition",
+    "05 — Moral Character",
+    "06 — Relational Disposition",
+    "07 — Vitality / Existence",
+    "08 — Transformation",
+    "09 — Agency / Power",
+    "10 — Dependence / Creatureliness",
+    "11 — Divine-Human Correspondence",
+})
+
+
+def _load_vocab_set(conn, set_code: str) -> frozenset[str]:
+    """Load active members of a controlled vocabulary from the DB (M32+).
+
+    Returns frozenset of `value` strings. On miss (table absent, empty set,
+    query error), returns an empty frozenset — callers decide whether to use
+    the hardcoded fallback or reject outright.
+    """
+    try:
+        rows = conn.execute(
+            """SELECT m.value
+                 FROM wa_vocab_member m
+                 JOIN wa_vocab_set s ON s.id = m.set_id
+                WHERE s.set_code = ? AND s.deprecated = 0 AND m.deprecated = 0""",
+            (set_code,),
+        ).fetchall()
+        return frozenset(r[0] for r in rows)
+    except Exception:
+        return frozenset()
+
+
+def _canonical_dimensions(conn) -> frozenset[str]:
+    """Current canonical dimension labels — DB-first, fallback to hardcoded."""
+    db_set = _load_vocab_set(conn, "DIMENSION_LABEL")
+    if db_set:
+        return db_set
+    # Pre-M32 DB or empty — fall back to hardcoded list (safe mode)
+    print("  [NOTE] DB wa_vocab_set missing or empty for DIMENSION_LABEL — "
+          "using hardcoded fallback (pre-M32 compat). Run M32 to source from DB.")
+    return _FALLBACK_CANONICAL_DIMENSIONS
+
+
+# Back-compat name — existing code references CANONICAL_DIMENSIONS at module
+# level. Now resolves to the fallback set (hardcoded). Validator code paths
+# that want the live DB-sourced set MUST call _canonical_dimensions(conn).
+CANONICAL_DIMENSIONS = _FALLBACK_CANONICAL_DIMENSIONS
+
+
 def _now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
@@ -177,7 +234,7 @@ def _validate(conn, patch: dict) -> list[str]:
     patch_type = meta.get("patch_type", "")
     pid = meta.get("patch_id", "")
     # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
-    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE")
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE", "SDPOINTERS", "PROSE", "READINESSSWEEP")
     is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
     if not is_exempt:
         for token in sb_exempt_types:
@@ -224,7 +281,7 @@ def _validate(conn, patch: dict) -> list[str]:
 
         # Validate research flag inserts: check label uniqueness
         if table in ("wa_phase2_flags", "wa_session_research_flags") and operation == "insert":
-            rec = op.get("record", {})
+            rec = op.get("record") or op.get("values") or {}
             label = rec.get("flag_label")
             if label:
                 existing = conn.execute(
@@ -250,16 +307,30 @@ def _validate(conn, patch: dict) -> list[str]:
                             f"{op_id}: wa_dimension_index id={di_id} has manual_override=1 — "
                             f"cannot update without explicit manual_override in set fields"
                         )
-            # Validate dominant_subject values (DR-12)
+            # Validate dominant_subject values (DR-12) — DB-sourced (M32+)
             ds = set_vals.get("dominant_subject")
             if ds is not None:
-                valid_ds = {"GOD", "HUMAN", "OTHER_HUMAN", "UNSEEN", "NONE"}
+                valid_ds = _load_vocab_set(conn, "DOMINANT_SUBJECT")
+                if not valid_ds:
+                    # Pre-M32 fallback
+                    valid_ds = frozenset({"GOD", "HUMAN", "OTHER_HUMAN", "UNSEEN", "NONE"})
                 if ds not in valid_ds:
-                    errors.append(f"{op_id}: invalid dominant_subject '{ds}' (valid: {valid_ds})")
+                    errors.append(f"{op_id}: invalid dominant_subject '{ds}' (valid: {sorted(valid_ds)})")
+            # Validate dimension label against canonical set — DB-sourced (M32+).
+            # Mismatch halts the patch; producing agent must redo with canonical labels.
+            dim = set_vals.get("dimension")
+            if dim is not None:
+                canonical = _canonical_dimensions(conn)
+                if dim not in canonical:
+                    errors.append(
+                        f"{op_id}: non-canonical dimension label {dim!r} — "
+                        f"patches must use the DB-registered vocabulary DIMENSION_LABEL "
+                        f"(wa_vocab_set; see reference snapshot). Redo required."
+                    )
 
         # Validate wa_session_b_findings inserts: finding_id uniqueness
         if table == "wa_session_b_findings" and operation == "insert":
-            rec = op.get("record", {})
+            rec = op.get("record") or op.get("values") or {}
             fid = rec.get("finding_id")
             if fid:
                 existing = conn.execute(
@@ -650,12 +721,16 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         print(f"  {op_id}: wa_session_b_dimensions INSERT reg={rec.get('registry_id')}")
 
     elif table == "wa_session_b_findings" and operation == "insert":
-        new_id = _insert_finding(conn, op["record"], meta)
+        # Accept either 'record' or 'values' key (some producers use the latter)
+        rec = op.get("record") or op.get("values") or {}
+        if not rec:
+            raise ValueError(f"{op_id}: wa_session_b_findings insert missing record/values")
+        new_id = _insert_finding(conn, rec, meta)
         counts["findings_inserted"] = counts.get("findings_inserted", 0) + 1
         # Stash the inserted id so subsequent ops in the same patch can resolve
         # finding_id references (e.g. insert_finding_entity_link).
-        _record_inserted_finding(op, new_id)
-        finding_id = op["record"].get("finding_id") or op["record"].get("flag_label")
+        _record_inserted_finding({"record": rec, **{k: v for k, v in op.items() if k != "record"}}, new_id)
+        finding_id = rec.get("finding_id") or rec.get("flag_label")
         print(f"  {op_id}: wa_session_b_findings INSERT {finding_id} (id={new_id})")
 
     elif table == "wa_session_b_findings" and operation == "update":
@@ -765,7 +840,10 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         print(f"  {op_id}: wa_finding_entity_links INSERT finding={finding_id_int} type={entity_type}")
 
     elif table in ("wa_phase2_flags", "wa_session_research_flags") and operation == "insert":
-        rec = op["record"]
+        # Accept either 'record' or 'values' key (some producers use the latter)
+        rec = op.get("record") or op.get("values") or {}
+        if not rec:
+            raise ValueError(f"{op_id}: {table} insert missing record/values")
         # Map DIMREVIEW field names to table schema (fallback to correct names)
         registry_id_val = rec.get("registry_id") or rec.get("registry_no")
         flag_code = rec.get("flag_code") or ("SD_POINTER" if rec.get("session_target") == "D" else "SB_FINDING")
@@ -993,6 +1071,21 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         match = op["match"]
         set_vals = dict(op["set"])
         di_id = match.get("id")
+        # Filter out columns that don't exist on wa_dimension_index (e.g.
+        # legacy patch refs to context_description dropped in M25).
+        valid_cols = {
+            r[1] for r in conn.execute("PRAGMA table_info(wa_dimension_index)").fetchall()
+        }
+        dropped = [k for k in set_vals if k not in valid_cols]
+        for k in dropped:
+            del set_vals[k]
+        if dropped:
+            print(f"  {op_id}: [NOTE] Dropped non-existent columns: {dropped}")
+        if not set_vals:
+            # All columns were dropped — the op is a no-op; skip the UPDATE.
+            print(f"  {op_id}: [NOTE] All set columns dropped — op is no-op, skipping UPDATE")
+            counts["dim_index_noop"] = counts.get("dim_index_noop", 0) + 1
+            return
         # Safety: verify manual_override protection was already validated
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [di_id]
@@ -1097,6 +1190,246 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             inserted += 1
         counts["catalogue_links_inserted"] = counts.get("catalogue_links_inserted", 0) + inserted
         print(f"  {op_id}: wa_finding_catalogue_links INSERT {inserted} row(s)")
+
+    # ── Post-DBR additions (2026-04-19) ───────────────────────────────────────
+    # PROSE store operations per wa-prose-store-design-v1 §7.3 +
+    # 3 pre-existing applicator gaps per CLAUDE.md §3.3.
+
+    elif table == "prose_section" and operation == "insert":
+        # New prose section (v1; supersedes_id NULL).
+        rec = op.get("record") or op.get("values") or {}
+        required = ("registry_id", "section_type_id", "body", "status", "author")
+        missing = [k for k in required if rec.get(k) is None]
+        if missing:
+            raise ValueError(f"{op_id}: prose_section insert missing {missing}")
+        body = rec["body"] or ""
+        word_count = rec.get("word_count") or len(body.split())
+        cur = conn.execute(
+            """INSERT INTO prose_section
+               (registry_id, section_type_id, heading, body, word_count,
+                status, version, supersedes_id, author, created_at,
+                approved_at, approved_by, metadata_json, source_file, delete_flagged)
+               VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, 0)""",
+            (
+                rec["registry_id"], rec["section_type_id"],
+                rec.get("heading"), body, word_count,
+                rec["status"], rec.get("version", 1),
+                rec["author"], rec.get("created_at", _now()),
+                rec.get("approved_at"), rec.get("approved_by"),
+                rec.get("metadata_json"), rec.get("source_file"),
+            ),
+        )
+        counts["prose_section_inserted"] = counts.get("prose_section_inserted", 0) + 1
+        print(f"  {op_id}: prose_section INSERT id={cur.lastrowid}")
+
+    elif table == "prose_section" and operation == "supersede":
+        # Insert new version; update old.superseded_by_id. Used for narrative
+        # prose revisions (not for Session A mechanical extracts — see
+        # session_a_replace operation for those).
+        rec = op.get("record") or op.get("values") or {}
+        old_id = op.get("supersedes_id") or rec.get("supersedes_id")
+        if not old_id:
+            raise ValueError(f"{op_id}: prose_section supersede requires supersedes_id")
+        old = conn.execute(
+            "SELECT version FROM prose_section WHERE id = ?", (old_id,)
+        ).fetchone()
+        if not old:
+            raise ValueError(f"{op_id}: supersedes_id {old_id} not found")
+        new_version = old["version"] + 1
+        body = rec.get("body") or ""
+        word_count = rec.get("word_count") or len(body.split())
+        cur = conn.execute(
+            """INSERT INTO prose_section
+               (registry_id, section_type_id, heading, body, word_count,
+                status, version, supersedes_id, author, created_at,
+                approved_at, approved_by, metadata_json, source_file, delete_flagged)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
+            (
+                rec["registry_id"], rec["section_type_id"],
+                rec.get("heading"), body, word_count,
+                rec.get("status", "draft"), new_version, old_id,
+                rec["author"], rec.get("created_at", _now()),
+                rec.get("approved_at"), rec.get("approved_by"),
+                rec.get("metadata_json"), rec.get("source_file"),
+            ),
+        )
+        new_id = cur.lastrowid
+        conn.execute(
+            "UPDATE prose_section SET superseded_by_id = ? WHERE id = ?",
+            (new_id, old_id),
+        )
+        counts["prose_section_superseded"] = counts.get("prose_section_superseded", 0) + 1
+        print(f"  {op_id}: prose_section SUPERSEDE {old_id} -> new id={new_id} v{new_version}")
+
+    elif table == "prose_section" and operation == "delete":
+        # Soft-delete.
+        target_id = op.get("id") or (op.get("match") or {}).get("id")
+        if not target_id:
+            raise ValueError(f"{op_id}: prose_section delete requires id")
+        conn.execute(
+            "UPDATE prose_section SET delete_flagged = 1 WHERE id = ?",
+            (target_id,),
+        )
+        counts["prose_section_deleted"] = counts.get("prose_section_deleted", 0) + 1
+        print(f"  {op_id}: prose_section DELETE id={target_id} (soft)")
+
+    elif table == "prose_section" and operation == "approve":
+        # Status transition + approval metadata.
+        target_id = op.get("id") or (op.get("match") or {}).get("id")
+        approved_by = op.get("approved_by") or "researcher"
+        if not target_id:
+            raise ValueError(f"{op_id}: prose_section approve requires id")
+        conn.execute(
+            "UPDATE prose_section "
+            "SET status = 'approved', approved_at = ?, approved_by = ? "
+            "WHERE id = ?",
+            (_now(), approved_by, target_id),
+        )
+        counts["prose_section_approved"] = counts.get("prose_section_approved", 0) + 1
+        print(f"  {op_id}: prose_section APPROVE id={target_id}")
+
+    elif table == "prose_section" and operation == "session_a_replace":
+        # In-place UPDATE for Session A mechanical extracts (exception to
+        # supersede immutability, per Session A advice Q5).
+        target_id = op.get("id") or (op.get("match") or {}).get("id")
+        rec = op.get("record") or op.get("values") or {}
+        if not target_id:
+            raise ValueError(f"{op_id}: session_a_replace requires id")
+        body = rec.get("body") or ""
+        word_count = rec.get("word_count") or len(body.split())
+        conn.execute(
+            """UPDATE prose_section
+               SET body = ?, word_count = ?, heading = ?, metadata_json = ?,
+                   source_file = ?, created_at = ?
+               WHERE id = ? AND author = 'claude_code'""",
+            (body, word_count, rec.get("heading"),
+             rec.get("metadata_json"), rec.get("source_file"),
+             _now(), target_id),
+        )
+        counts["prose_section_sa_replaced"] = counts.get("prose_section_sa_replaced", 0) + 1
+        print(f"  {op_id}: prose_section SESSION_A_REPLACE id={target_id}")
+
+    elif table == "prose_section" and operation == "bulk_supersede":
+        # Programme-wide systematic edit. Each target in op['targets'] is
+        # superseded with rec contents; all in a single transaction.
+        targets = op.get("targets") or []
+        rec_template = op.get("rec_template") or {}
+        applied = 0
+        for target_id in targets:
+            old = conn.execute(
+                "SELECT registry_id, section_type_id, version FROM prose_section WHERE id = ?",
+                (target_id,),
+            ).fetchone()
+            if not old:
+                continue
+            new_version = old["version"] + 1
+            body = rec_template.get("body_template", "") or ""
+            word_count = len(body.split())
+            cur = conn.execute(
+                """INSERT INTO prose_section
+                   (registry_id, section_type_id, body, word_count, status,
+                    version, supersedes_id, author, created_at, delete_flagged)
+                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
+                (
+                    old["registry_id"], old["section_type_id"],
+                    body, word_count,
+                    rec_template.get("status", "draft"), new_version, target_id,
+                    rec_template.get("author", "claude_ai"), _now(),
+                ),
+            )
+            conn.execute(
+                "UPDATE prose_section SET superseded_by_id = ? WHERE id = ?",
+                (cur.lastrowid, target_id),
+            )
+            applied += 1
+        counts["prose_section_bulk_superseded"] = counts.get("prose_section_bulk_superseded", 0) + applied
+        print(f"  {op_id}: prose_section BULK_SUPERSEDE {applied} row(s)")
+
+    elif table == "prose_section_type" and operation == "insert":
+        rec = op.get("record") or op.get("values") or {}
+        required = ("code", "label", "source_stage")
+        missing = [k for k in required if rec.get(k) is None]
+        if missing:
+            raise ValueError(f"{op_id}: prose_section_type insert missing {missing}")
+        conn.execute(
+            """INSERT OR IGNORE INTO prose_section_type
+               (code, label, source_stage, lifecycle_tag, chapter_no,
+                description, expected_length_min, expected_length_max, sort_order)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (
+                rec["code"], rec["label"], rec["source_stage"],
+                rec.get("lifecycle_tag"), rec.get("chapter_no"),
+                rec.get("description"),
+                rec.get("expected_length_min"), rec.get("expected_length_max"),
+                rec.get("sort_order", 999),
+            ),
+        )
+        counts["prose_section_type_inserted"] = counts.get("prose_section_type_inserted", 0) + 1
+        print(f"  {op_id}: prose_section_type INSERT code={rec['code']}")
+
+    elif table == "prose_section_dimension_link" and operation == "insert":
+        rec = op.get("record") or op.get("values") or {}
+        conn.execute(
+            "INSERT OR IGNORE INTO prose_section_dimension_link "
+            "(prose_section_id, dimension_id, link_type) VALUES (?, ?, ?)",
+            (rec["prose_section_id"], rec["dimension_id"],
+             rec.get("link_type", "discusses")),
+        )
+        counts["prose_dim_link_inserted"] = counts.get("prose_dim_link_inserted", 0) + 1
+        print(f"  {op_id}: prose_section_dimension_link INSERT")
+
+    elif table == "prose_section_finding_link" and operation == "insert":
+        rec = op.get("record") or op.get("values") or {}
+        conn.execute(
+            "INSERT OR IGNORE INTO prose_section_finding_link "
+            "(prose_section_id, finding_id, link_type) VALUES (?, ?, ?)",
+            (rec["prose_section_id"], rec["finding_id"],
+             rec.get("link_type", "discusses")),
+        )
+        counts["prose_finding_link_inserted"] = counts.get("prose_finding_link_inserted", 0) + 1
+        print(f"  {op_id}: prose_section_finding_link INSERT")
+
+    # ── Pre-existing applicator gaps now closed (per CLAUDE.md §3.3) ──────────
+
+    elif table == "wa_session_research_flags" and operation == "update":
+        # Update existing research flag (e.g. mark resolved).
+        target_id = op.get("id") or (op.get("match") or {}).get("id")
+        set_vals = dict(op.get("set") or {})
+        if not target_id or not set_vals:
+            raise ValueError(f"{op_id}: wa_session_research_flags update requires id + set")
+        valid_cols = {
+            r[1] for r in conn.execute("PRAGMA table_info(wa_session_research_flags)").fetchall()
+        }
+        set_vals = {k: v for k, v in set_vals.items() if k in valid_cols}
+        if not set_vals:
+            counts["skipped"] = counts.get("skipped", 0) + 1
+            return
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        params = list(set_vals.values()) + [target_id]
+        conn.execute(
+            f"UPDATE wa_session_research_flags SET {set_clauses} WHERE id = ?",
+            params,
+        )
+        counts["research_flag_updated"] = counts.get("research_flag_updated", 0) + 1
+        print(f"  {op_id}: wa_session_research_flags UPDATE id={target_id}")
+
+    elif table == "wa_dimension_index" and operation == "insert":
+        # Insert dimension assignment for a new group.
+        rec = op.get("record") or op.get("values") or {}
+        valid_cols = {
+            r[1] for r in conn.execute("PRAGMA table_info(wa_dimension_index)").fetchall()
+        }
+        rec = {k: v for k, v in rec.items() if k in valid_cols}
+        if not rec:
+            raise ValueError(f"{op_id}: wa_dimension_index insert has no valid columns")
+        cols = ", ".join(rec.keys())
+        placeholders = ", ".join("?" * len(rec))
+        conn.execute(
+            f"INSERT INTO wa_dimension_index ({cols}) VALUES ({placeholders})",
+            list(rec.values()),
+        )
+        counts["dimension_index_inserted"] = counts.get("dimension_index_inserted", 0) + 1
+        print(f"  {op_id}: wa_dimension_index INSERT")
 
     else:
         print(f"  {op_id}: [SKIP] Unsupported operation: {operation} on {table}")

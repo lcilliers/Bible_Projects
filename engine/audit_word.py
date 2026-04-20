@@ -63,16 +63,20 @@ Steps
   A6b     Term classification (data-driven, no interpretation)
             Negative filters (NULL-status terms):
             • F1: verse_count=0 AND no analytical signals → candidate_delete
-                  (status_note includes occurrence count for reviewer context)
+                  (diagnostic rationale emitted to run log)
             • F2: HIGH_FREQUENCY_ANCHOR AND no analytical signals → candidate_delete
-                  (status_note includes verse count for reviewer context)
+                  (diagnostic rationale emitted to run log)
             Positive filters (NULL-status terms):
             • F3: has verses AND has analytical signals → extracted (or extracted_thin)
             Correction filters (any status):
             • F4: candidate_delete but has verses + signals → extracted
             • F5: excluded but has confirmed verses → extracted
-            Analytical signals: god_as_subject, somatic_link, causative_form_present,
-            wa_term_phase2_flags count. All from existing DB columns.
+            Analytical signals: GOD_AS_SUBJECT (mti_term_flags.flag_id=1),
+            SOMATIC (mti_term_flags.flag_id IN (3,4)),
+            causative_form_present (wa_term_inventory column),
+            wa_term_phase2_flags count.
+            Post-DBR: gas/som derived via mti_term_flags join (columns dropped from
+            wa_term_inventory in M24, 2026-04-19).
   A7      Meaning handler (parse from JSON; migrate legacy term-field records)
   A8      Quality flag reset — DATA_COVERAGE group only, then re-derive
             • Deletes only DATA_COVERAGE flags (scoped by flag_group)
@@ -574,13 +578,20 @@ def _build_gap_report(snapshot: dict, include_terms: list[dict]) -> dict:
                 })
 
     # ── DB_ONLY_TERM: in DB but not in JSON include_codes ────────────────────
-    # Terms with analytical signals (phase2 flags, god_as_subject, somatic_link,
+    # Terms with analytical signals (phase2 flags, GOD_AS_SUBJECT via
+    # mti_term_flags.flag_id=1, SOMATIC via mti_term_flags.flag_id IN (3,4),
     # causative_form_present) or confirmed verses are protected from deletion.
     # Only signal-free, verse-free terms are flagged for deletion.
+    #
+    # Post-DBR (M24, 2026-04-19): god_as_subject + somatic_link columns were
+    # dropped from wa_term_inventory. Signals now derive from mti_term_flags
+    # via the strongs_number -> mti_terms.id -> flag_id link.
     p2_counts_snap: dict[int, int] = {
         ti_id: len(flags)
         for ti_id, flags in snapshot.get("p2flags_by_ti", {}).items()
     }
+    mti_by_strongs_snap = snapshot.get("mti_by_strongs", {})
+    mti_flags_snap = snapshot.get("mti_flags_by_id", {})
 
     for strongs, ti in snapshot["terms_by_strongs"].items():
         if strongs not in include_codes and not ti.get("delete_flagged"):
@@ -589,8 +600,11 @@ def _build_gap_report(snapshot: dict, include_terms: list[dict]) -> dict:
                 1 for (tid, _), vr in snapshot["vr_by_ti_ref"].items()
                 if tid == ti_id and not vr.get("delete_flagged")
             )
-            gas = ti.get("god_as_subject") or 0
-            som = ti.get("somatic_link") or 0
+            # Derive gas/som from mti_term_flags (post-DBR)
+            mti_row = mti_by_strongs_snap.get(strongs)
+            mti_flags = mti_flags_snap.get(mti_row["id"], []) if mti_row else []
+            gas = 1 if any(f.get("flag_id") == 1 for f in mti_flags) else 0
+            som = 1 if any(f.get("flag_id") in (3, 4) for f in mti_flags) else 0
             caus = ti.get("causative_form_present") or 0
             p2c = p2_counts_snap.get(ti_id, 0)
             has_signals = gas or som or caus or p2c > 0
@@ -1290,10 +1304,26 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     result = {"candidate_delete": 0, "extracted": 0, "extracted_thin": 0, "corrected": 0}
 
-    # Fetch all active terms for this registry
+    # Fetch all active terms for this registry.
+    # Post-DBR (M24 dropped god_as_subject + somatic_link from wa_term_inventory):
+    # derive those signals via mti_term_flags joined on strongs_number.
+    #   flag_id = 1  → GOD_AS_SUBJECT
+    #   flag_id IN (3,4) → SOMATIC_INNER_LINK / BODY_INNER_EXPRESSION
     terms = conn.execute(
-        f"""SELECT ti.id, ti.strongs_number, ti.god_as_subject, ti.somatic_link,
-                   ti.causative_form_present, ti.occurrence_count
+        f"""SELECT ti.id, ti.strongs_number,
+                   ti.causative_form_present, ti.occurrence_count,
+                   EXISTS (
+                     SELECT 1 FROM mti_term_flags mtf
+                     JOIN mti_terms mt2 ON mt2.id = mtf.mti_term_id
+                     WHERE mt2.strongs_number = ti.strongs_number
+                       AND mtf.flag_id = 1
+                   ) AS gas_flag,
+                   EXISTS (
+                     SELECT 1 FROM mti_term_flags mtf
+                     JOIN mti_terms mt2 ON mt2.id = mtf.mti_term_id
+                     WHERE mt2.strongs_number = ti.strongs_number
+                       AND mtf.flag_id IN (3, 4)
+                   ) AS som_flag
             FROM wa_term_inventory ti
             WHERE ti.file_id IN ({fid_ph})
             AND (ti.delete_flagged = 0 OR ti.delete_flagged IS NULL)""",
@@ -1345,8 +1375,8 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
         strongs = ti["strongs_number"]
         vc      = verse_counts.get(ti_id, 0)
         p2c     = p2_counts.get(ti_id, 0)
-        gas     = ti["god_as_subject"] or 0
-        som     = ti["somatic_link"] or 0
+        gas     = ti["gas_flag"] or 0
+        som     = ti["som_flag"] or 0
         caus    = ti["causative_form_present"] or 0
         occ     = ti["occurrence_count"] or 0
 
@@ -1360,16 +1390,20 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
 
         # ── Correction filters (run first, override current status) ──────
 
+        # Note: mti_terms.status_note was dropped in M22 (2026-04-19).
+        # Classification rationale previously written to that column is now
+        # emitted to stdout for the audit run log; the DB row carries status +
+        # last_changed only.
+
         # Filter 5: excluded but has confirmed verses → correct to extracted
         if cur_status == "excluded" and vc > 0:
             new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
             conn.execute(
                 "UPDATE mti_terms SET status = ?, exclusion_reason = NULL, "
-                "status_note = ?, last_changed = ? WHERE id = ?",
-                (new_status,
-                 f"A6b-F5: corrected from excluded — {vc} confirmed verse(s)",
-                 now, mti_id),
+                "last_changed = ? WHERE id = ?",
+                (new_status, now, mti_id),
             )
+            print(f"     A6b-F5 mti_id={mti_id} {strongs}: corrected from excluded — {vc} confirmed verse(s)")
             result["corrected"] += 1
             continue
 
@@ -1377,12 +1411,10 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
         if cur_status == "candidate_delete" and vc > 0 and has_signals:
             new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
             conn.execute(
-                "UPDATE mti_terms SET status = ?, "
-                "status_note = ?, last_changed = ? WHERE id = ?",
-                (new_status,
-                 f"A6b-F4: corrected from candidate_delete — {vc} verse(s), analytical signals present",
-                 now, mti_id),
+                "UPDATE mti_terms SET status = ?, last_changed = ? WHERE id = ?",
+                (new_status, now, mti_id),
             )
+            print(f"     A6b-F4 mti_id={mti_id} {strongs}: corrected from candidate_delete — {vc} verse(s), analytical signals present")
             result["corrected"] += 1
             continue
 
@@ -1394,13 +1426,10 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
         if vc > 0 and has_signals:
             new_status = "extracted_thin" if occ < THIN_DATA_THRESHOLD else "extracted"
             conn.execute(
-                "UPDATE mti_terms SET status = ?, "
-                "status_note = ?, last_changed = ? WHERE id = ?",
-                (new_status,
-                 f"A6b-F3: {vc} verse(s), analytical signals present "
-                 f"(gas={gas} som={som} caus={caus} p2={p2c})",
-                 now, mti_id),
+                "UPDATE mti_terms SET status = ?, last_changed = ? WHERE id = ?",
+                (new_status, now, mti_id),
             )
+            print(f"     A6b-F3 mti_id={mti_id} {strongs}: {vc} verse(s), analytical signals present (gas={gas} som={som} caus={caus} p2={p2c})")
             result[new_status] = result.get(new_status, 0) + 1
             continue
 
@@ -1408,9 +1437,10 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
         if vc == 0 and not has_signals:
             conn.execute(
                 "UPDATE mti_terms SET status = 'candidate_delete', "
-                "status_note = ?, last_changed = ? WHERE id = ?",
-                (f"A6b-F1: zero verses returned by STEP ({occ} occurrence(s)), zero analytical signals", now, mti_id),
+                "last_changed = ? WHERE id = ?",
+                (now, mti_id),
             )
+            print(f"     A6b-F1 mti_id={mti_id} {strongs}: zero verses returned by STEP ({occ} occurrence(s)), zero analytical signals")
             result["candidate_delete"] += 1
             continue
 
@@ -1418,10 +1448,10 @@ def _detect_bleed_candidates(conn, file_ids: list[int], registry_id_int: int) ->
         if occ >= HIGH_FREQ_THRESHOLD and not has_signals:
             conn.execute(
                 "UPDATE mti_terms SET status = 'candidate_delete', "
-                "status_note = ?, last_changed = ? WHERE id = ?",
-                (f"A6b-F2: high-frequency anchor ({occ} occ), {vc} verse(s) returned, zero analytical signals",
-                 now, mti_id),
+                "last_changed = ? WHERE id = ?",
+                (now, mti_id),
             )
+            print(f"     A6b-F2 mti_id={mti_id} {strongs}: high-frequency anchor ({occ} occ), {vc} verse(s) returned, zero analytical signals")
             result["candidate_delete"] += 1
             continue
 

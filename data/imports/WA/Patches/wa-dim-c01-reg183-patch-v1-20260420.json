@@ -1,0 +1,1228 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260420-DIMREVIEW-C01-REG183-V1",
+    "patch_type": "DIMREVIEW",
+    "cluster": "C01",
+    "registry_no": 183,
+    "registry_word": "heart",
+    "produced_date": "20260420",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "observations_log": "wa-dim-c01-observations-v1_5-20260420.md",
+    "session_b_status": null,
+    "description": "Dimension review patch — C01 Reg 183 (heart): 58 Phase C dim updates + 2 Phase B description revisions (580-001, 579-008) + 1 orphan cleanup (577-005 delete_flag with cascade) + 4 Session B findings + 4 Session D pointers + registry stamp. Registry Mode: no cluster stamp.",
+    "directive_refs": [
+      "DIR-20260420-001"
+    ],
+    "flag_refs": [
+      "FLAG-016"
+    ]
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2715
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inaugural renewal of inner-being access to God — Christ's opening of a new and living way for worshipper to enter God's presence with sincere heart.\"* Hebrews 10:20 context. The characteristic is divine act inaugurating human access — structural divine-human correspondence. §7.7 11. Member of the covenant-renewal Session B finding (DIM-112-004).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "602-001 — heart (enkainizō): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2716
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner weakening or loss of heart — the danger of spiritual or moral fainting under pressure, often paired with endurance vocabulary.\"* 2 Cor 4:1, 4:16, Gal 6:9, Eph 3:13, 2 Thess 3:13. The characteristic is loss of moral-spiritual stability — a character condition. §7.7 05 Moral Character (adjacent to integrity/faithfulness — this is their opposite, faltering). Could be 02 Emotion — Negative (faint/discouraged affect), but the pairing with endurance vocabulary points to character-level stability issue.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "603-001 — heart (ekkakeō): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2717
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names tender-hearted disposition toward others — inner compassionate orientation in community life.\"* Ephesians 4:32, 1 Peter 3:8. §7.7 06 Relational Disposition (inner orientation toward another — compassion, tenderness).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "593-001 — heart (eusplanchnos): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2718
+      },
+      "set": {
+        "dimension": "01 Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner courage taken in response to God's provision or another's support — strengthening of spirit in adverse circumstance.\"* Acts 28:15. The characteristic is positive inner state (courage, renewed spirit) — §7.7 01 Emotion — Positive. First use of Dim 01 in C01 Phase C work. Dim 01 is lightly used but this is a clean fit.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "601-001 — heart (tharseō): dimension=01 Emotion — Positive, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2728
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names God as the knower of hearts — divine inner attribute of seeing the human heart's actual state, often in the context of choosing or discerning.\"* Acts 1:24, 15:8. The characteristic is divine knowing of human inner state — structural divine-human correspondence (God's act reaches into human inner-being). §7.7 11. Paired with 579-003 le.vav and 598-004 kardia as \"divine knowledge of the inner person\" Session D cluster (noted Phase B v1_2).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "599-001 — heart (kardiognōstēs): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2729
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names hardness of heart as moral condition — inner obstinacy or resistance to divine instruction, cited as the reason for concessions in Mosaic law and as characteristic of unbelieving generations.\"* Matt 19:8, Mark 10:5, 16:14. The characteristic is a stable negative inner-moral condition — §7.7 05 Moral Character. Legacy label \"Moral/Conscience\" defensibly maps here.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "597-001 — heart (sklērokardia): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 1727
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names mind or heart as seat of mental attention — the faculty that 'sets itself' to consider a matter, retained in Aramaic narrative discourse.\"* Daniel context. The characteristic is mind-setting-attention — §7.7 03 Cognition (attention is the cognitive-faculty act). Alternatively 04 Volition (the act of directing attention) — 03 is cleaner because the content is specifically attending/considering, not willing/deciding.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "586-001 — heart (bal): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2733
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner meditation or murmuring — the heart's articulate pondering on God's works or one's own complaint.\"* Psalm context. §7.7 03 Cognition (meditation is the reflective-pondering act within Cognition).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "576-001 — heart (chov): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2738
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inward parts as the site of divinely-desired truth — the hidden interior of the person where wisdom is to be taught.\"* Psalm 51:6. The characteristic is hidden inner moral/wisdom state, open to divine shaping. §7.7 05 Moral Character (the hidden moral interior where character resides). Could also be 11 Divine-Human Correspondence (divine-desired truth in the human interior), but the weight of the characteristic is on the inner moral state rather than the correspondence structure.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "584-001 — heart (tu.chot): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2739
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner fainting or discouragement — the weakening of resolve and spirit under moral or physical strain, contrasted with being strengthened.\"* Isaiah context. Parallel to ekkakeō (603-001) in semantic register. §7.7 05 Moral Character (loss of the stable inner strength that character provides). Alternative 02 Emotion — Negative (the affective faintness), but the description's \"weakening of resolve\" is character-level.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "574-001 — heart (ka.ah): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2740
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description (accepted as-is per RD-PHASE-B-183-002 accept decision): *\"Term names the heart as the essential inner person — the Aramaic heart designating the seat of thought and moral life.\"* Single verse (Dan 7:28). The verse text is \"As for me, Daniel, my thoughts greatly alarmed me, and my color changed, but I kept the matter in my heart\" — the characteristic in this single verse is cognitive-affective: keeping the matter in mind with emotional alarm. 03 Cognition (the keeping-in-mind is the dominant characteristic). Could alternatively be 02 Emotion — Negative (alarm) but the le.vav is the site of keeping-the-matter, not the alarm itself.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "582-001 — heart (lev): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2741
+      },
+      "set": {
+        "dimension": "01 Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as moved or ravished in love — specifically the inner response of attraction and devotion in the Song of Songs.\"* Song of Songs 4:9 (\"You have captivated my heart\" / \"You have made my heart beat\"). The characteristic is positive affect of ravished love. §7.7 01 Emotion — Positive. Paired with tharsos (601-001) as Dim 01 users in r183.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "587-001 — heart (la.vav): dimension=01 Emotion — Positive, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2752
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description (REVISED per RD-PHASE-B-183-001 based on 6-verse DIR-20260420-001 evidence): *\"Term names the Aramaic heart as the defining inner faculty of the human person — the rational-moral consciousness that distinguishes a man from a beast, seat of proud or humbled self-awareness before God.\"* Verse distribution: 3 divine-act verses (Dan 4:16, 5:21, 7:4 — mind given/taken/restored by divine decree); 2 human-character verses (Dan 5:20 \"heart lifted up\"; 5:22 \"not humbled your heart\"); 1 cognitive-content verse (Dan 2:30). The divine-act majority defines the characteristic: le.vav (Aramaic) is the inner-being faculty that God sovereignly disposes of, marking the human before God. §7.7 11 Divine-Human Correspondence — cross-boundary operation. Dominant_subject NONE because both poles (divi",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "580-001 — heart (le.vav): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2753
+      },
+      "set": {
+        "dimension": "01 Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its capacity for passionate love or strong inner response — a rare poetic form appearing in Ezekiel and Song of Songs.\"* Song of Songs 4:9 (paralleling 587-001), Ezekiel 16:30 (depraved heart passionate in harlotry — negative valence). The form is rare. The positive/negative valence splits by context, but the characteristic is intense inner passion. Borderline 01 Emotion — Positive / 02 Emotion — Negative — the form itself is valence-neutral; context determines. **Dimension 01 for Song of Songs usage and negative intensity for Ezekiel usage both sit in affective territory.** Assigning 01 here reflecting that both verses name \"strong inner response\" (passion) — the Ezekiel usage is still an affective intensity, just morally negative. Alternative: 02 Em",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "578-001 — heart (lib.bah): dimension=01 Emotion — Positive, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2764
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner mind-faculty that God has given to discern — the seat of wisdom and understanding placed within a person.\"* Job 38:36. The characteristic is the cognitive discerning faculty. §7.7 03 Cognition. \"God has given\" is context (all human faculties are divine gift); the characteristic is what the faculty does, which is discern/understand. Could potentially be 09 Agency / Power (inner capacity) or 11 Divine-Human Correspondence (faculty as divine gift) — 03 is the cleaner primary reading.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "583-001 — heart (sekh.vi): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2734
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the bosom or lap as site of intimate inner-relational care — the place where a beloved child, wife, or close one is held.\"* The characteristic is relational intimacy/care — §7.7 06 Relational Disposition (attachment, love, tender orientation). The \"inner\" here is metaphorical-relational (the bosom as site of inner closeness), not a dimensional signal pointing elsewhere.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "575-001 — heart (cheq): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2735
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the bosom as figurative seat of the inner self — where secret moral condition, thought, or gain is held against the person themselves.\"* The characteristic is the hidden inner moral state (often returned upon the person in judgement — \"into their own bosom\"). §7.7 05 Moral Character (hidden interior where moral condition resides).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "575-002 — heart (cheq): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2736
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the loins as seat of inner strength and vital capacity — the place where strength is girded for action or broken in distress.\"* §7.7 07 Vitality/Existence (\"Inner life, existence, or the state of being alive or intact\"). First use of Dim 07 in C01 Phase C work. Legacy label was not captured in extract — this sits in somatic/vitality territory that Phase A noted as a possible vocabulary gap, but 07 Vitality/Existence is sufficient.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "585-001 — heart (cha.lats): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2737
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the loins as inner source of lineage and generative capacity — the site from which descendants come forth.\"* §7.7 07 Vitality/Existence (generative/vital capacity). Distinct sense from 585-001 but same dimensional territory.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "585-002 — heart (cha.lats): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2757
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner withering or fading — the loss of vital strength and life-flourishing, paralleled with grass/leaf wilting imagery.\"* §7.7 07 Vitality/Existence (loss of vital life-state). The characteristic is vitality loss, not emotion (though affective accompaniment may be present in verses).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "588-001 — heart (na.vel): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2758
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names moral disgrace or folly as inner condition — the corrupted state of the fool or disgraced person, contrasted with wisdom and honour.\"* Same root as 588-001 but the moral-folly sense. §7.7 05 Moral Character.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "588-002 — heart (na.vel): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2730
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner seat of tender affection — deep relational feeling expressed in care, compassion, and apostolic love for communities.\"* §7.7 06 Relational Disposition (inner orientation toward another — love, compassion). Pauline usage: \"the affection of Christ Jesus\" (Phil 1:8), \"affections of mercy\" (Col 3:12).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "590-001 — heart (splanchnon): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2731
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names deep inner compassion — inner movement toward another in their need, often divine or Christ-like.\"* Distinct sense-split from 590-001 by specific compassion content. §7.7 06 Relational Disposition. When used of Christ or divine subject (Luke 1:78), the pattern may be Dimension 11 — but the description frames it as the human characteristic primarily; GOD-subject verses are a subset. Keep 06 with HUMAN as dominant; the Christ-usage verses are a Session B finding for the word study.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "590-002 — heart (splanchnon): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2732
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the physical bowels — somatic reference distinct from the affective senses, appearing in the Judas narrative and bodily contexts.\"* Acts 1:18. Somatic/physical sense. §7.7 07 Vitality/Existence (bodily life/existence). Distinct dimension from affective senses (590-001, 590-002).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "590-003 — heart (splanchnon): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2754
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner bowels as site of tender yearning — deep compassionate affection, attributed to God for his people and to humans for their beloved.\"* Hebrew parallel to splagchnon. Divine usage (Jer 31:20, Isa 63:15 — \"yearning of your bowels\") AND human usage (Song of Songs 5:4). §7.7 06 Relational Disposition. Dominant_subject NONE given the description explicitly spans divine and human. Consider: this is a Dim 11 candidate (divine yearning for people mirrored in human yearning) — Session D candidate for \"yearning correspondence\" pattern.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "1801-001 — heart (me.eh): dimension=06 Relational Disposition, subject=NONE"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2755
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names inner anguish or distress — the bowels in turmoil under sorrow, fear, or intense personal suffering.\"* Lam 1:20, 2:11. §7.7 02 Emotion — Negative (distress, anguish, grief).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "1801-002 — heart (me.eh): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2756
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the bowels as physical interior — somatic reference distinct from the affective senses, including generative and digestive contexts.\"* §7.7 07 Vitality/Existence. Parallel to splagchnon 590-003.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "1801-003 — heart (me.eh): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2759
+      },
+      "set": {
+        "dimension": "07 Vitality/Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner parts in their spatial-somatic sense — the midst or interior of the person or community as physical location, especially where life is held or breath is present.\"* §7.7 07 Vitality/Existence. The spatial-somatic sense precedes the figurative-inner-being senses (577-002, 577-003). Basic physical location.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "577-001 — heart (qe.rev): dimension=07 Vitality/Existence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2760
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner parts as the seat of moral character — what lies within the person as the source of their conduct.\"* §7.7 05 Moral Character direct match. Post-Phase-B accept-as-is.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "577-002 — heart (qe.rev): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2761
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner parts as the site of divine covenant-writing — where God inscribes his law in the new covenant, making knowledge and faithfulness interior to the person.\"* Jeremiah 31:33 context. The characteristic is divine act inscribing on human inner-being — Dimension 11 direct match. Core member of the covenant-renewal Session B finding (DIM-112-004).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "577-003 — heart (qe.rev): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2762
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the inner parts as the site of deliberate planning — where schemes, purposes, or intentions are formed, whether for good or harm.\"* §7.7 04 Volition (inner purposive-planning characteristic). Distinct from 577-002 (moral character as stable state) by its focus on the act of planning.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "577-004 — heart (qe.rev): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8732
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of cognitive faculty — understanding, thought, and mental attention in discerning and knowing.\"* §7.7 03 Cognition. Confirms existing current-§7.7 label.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-001 — heart (lev): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8733
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of willing and purposing — the inner ground of decision, intention, and commitment.\"* §7.7 04 Volition. Confirms existing label.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-002 — heart (lev): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8734
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its affective dimension — the register of grief, fear, joy, and other feeling-states.\"* Mixed-valence but the description emphasises the affective-register characteristic generally. §7.7 suggests two options (01 Positive / 02 Negative). Existing label, if \"Affective/Emotion\" generic, maps to either — the specific verse corpus for this sense-split may distribute both ways. **Reading as 02 Emotion — Negative because the description-corpus for \"affective lev\" in MT tends toward negative states (fear, grief, troubled heart dominate); positive states tend to use 1-prefixed stems (rejoice) rather than lev as direct subject.** Confirms existing label if it was the affective/emotion type.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-003 — heart (lev): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8735
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of moral integrity or its opposite — character known to God though concealed from others.\"* §7.7 05 Moral Character. Confirms existing label.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-004 — heart (lev): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8736
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as hidden inner self — the true person as distinct from outward appearance, known fully only to God.\"* §7.7 05 Moral Character (hidden moral interior). Confirms existing label. Borderline 11 Divine-Human Correspondence (known by God) but the characteristic is the hidden interior, with divine knowledge as context.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-005 — heart (lev): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8737
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its God-ward orientation — inner directedness toward seeking, serving, fearing, or loving God.\"* Phase A noted this group as UNCLASSIFIED precisely because current §7.7 did not have a \"God-ward Orientation\" dimension. Phase B raised it as a potential Dim 12 (Session D-006). Applying the same reading as r112 (995-001 dianoia \"love God with all your mind\") — Dimension 11 on the cross-boundary inner-being characteristic clause. **This makes 581-006 the r183 parallel of 995-001** — same dimensional assignment, same analytical structure. Session D pointer DIM-112-SD006 directly applies.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-006 — heart (lev): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8738
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names God's own heart — the inner divine disposition revealed in attitudes, intentions, and decisions toward humanity.\"* §7.7 11 with GOD dominant (divine inner-being as distinct but paralleled to human). The existing label should be verified; description points to Divine-Human Correspondence because God's heart is described in terms that parallel human interior. Compare to 994-003 nous (Reg 112, divine mind, assigned 03 Cognition GOD). There is a precedent question here — I assigned 994-003 as 03 Cognition because the description framed it as \"hidden/inaccessible.\" The description for 581-007 is more about revealed divine disposition. Reading 11 because the characteristic connects to human heart via revelation/correspondence.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-007 — heart (lev): dimension=11 Divine-Human Correspondence, subject=GOD"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8739
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as covenantal — the inner site where covenant relationship is established, maintained, or broken between God and his people.\"* §7.7 11. Connects to covenant-renewal Session B finding. NONE dominant because both parties to covenant are named.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "581-008 — heart (lev): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2742
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as cognitive seat — mind, understanding, and awareness of the person.\"* §7.7 03 Cognition.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-001 — heart (le.vav): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2743
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of inner moral character — what the person truly is inwardly, known to God though hidden from others.\"* §7.7 05 Moral Character.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-002 — heart (le.vav): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2744
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as object of divine knowing — the inner person seen through by God, often in contrast to human superficial perception.\"* 1 Sam 16:7 (\"man looks on the outward appearance, but the Lord looks on the heart\"). §7.7 11 — divine inner-act (knowing) reaches across boundary to human inner-being. Member of \"divine knowledge of the inner person\" Session D cluster (with 598-004 kardia, 599-001 kardiognōstēs).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-003 — heart (le.vav): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2745
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of willing and purposing — the inner formation of decision and commitment.\"* §7.7 04 Volition.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-004 — heart (le.vav): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2746
+      },
+      "set": {
+        "dimension": "06 Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its whole, undivided orientation — serving, loving, or following God with all of one's inner being, in contrast to half-hearted or divided devotion.\"* §7.7 06 Relational Disposition (stable inner orientation toward God — wholeheartedness is the positive counterpart of divided allegiance). Alternative 11 Divine-Human Correspondence given the God-directedness, but the characteristic is the stable orientation itself, not a correspondence structure.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-005 — heart (le.vav): dimension=06 Relational Disposition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2747
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as the essential inner self — the person as center of identity, distinguished from outward attributes.\"* §7.7 05 Moral Character (hidden interior / identity at core). Alternative: this is an Identity/Selfhood characteristic which Phase A flagged as a vocabulary gap. Dim 05 is sufficient for now; the identity-selfhood question remains open as Session D material.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-006 — heart (le.vav): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2748
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its affective intensity — inner emotional state, particularly in moments of pressure, fear, or decision.\"* §7.7 02 Emotion — Negative dominant (fear, pressure). Some positive affective content may appear; if the verse distribution is ~70% negative, 02 stands.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-007 — heart (le.vav): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2749
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description REVISED (per RD-PHASE-B-183-003): *\"Term names the heart in its experiential states — the inner register of grief, gladness, sorrow, longing, and the seat of meditative pondering and inward knowing.\"* Affective core is mixed-valence but skews negative (grief, sorrow, dread dominant; gladness/longing present). The meditative-pondering content (~5 verses) is cognitive-reflective but secondary. §7.7 02 Emotion — Negative as primary dimension; the pondering content does not split the dimension. Alternative: 01 Emotion — Positive (if gladness/longing count is dominant) — not supported by the 25-verse distribution I read. 03 Cognition (for the pondering) — secondary characteristic, not primary.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-008 — heart (le.vav): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2750
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as site of divine circumcision or renewal — the inner transformation where God removes uncircumcision and writes covenant faithfulness.\"* Deut 30:6 context. Core member of covenant-renewal Session B finding (DIM-112-004). §7.7 11 direct match.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-009 — heart (le.vav): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2751
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its directedness toward God — inner posture of fear, love, seeking, and turning to God.\"* Parallel to 581-006 lev \"God-ward orientation\" and r112 995-001 dianoia. Same reading applied — Dimension 11. HUMAN dominant (the human's heart as the subject orienting toward God).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "579-010 — heart (le.vav): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2719
+      },
+      "set": {
+        "dimension": "03 Cognition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as cognitive seat — mind, understanding, and inner rational faculty of the person.\"* §7.7 03 Cognition. NT parallel to le.vav/lev cognitive senses.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-001 — heart (kardia): dimension=03 Cognition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2720
+      },
+      "set": {
+        "dimension": "04 Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of will and purpose — inner decision-making and commitment.\"* §7.7 04 Volition.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-002 — heart (kardia): dimension=04 Volition, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2721
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as seat of moral character — the hidden inner person where purity, integrity, or their opposites reside.\"* §7.7 05 Moral Character.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-003 — heart (kardia): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2722
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as object of divine knowing — the Lord searching hearts, or God who knows what is within.\"* Member of \"divine knowledge of the inner person\" Session D cluster. §7.7 11.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-004 — heart (kardia): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2723
+      },
+      "set": {
+        "dimension": "02 Emotion — Negative",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its affective dimension — inner emotional register, especially in states of grief, fear, joy, or troubling circumstance.\"* Mixed-valence but distribution typically skews negative in NT usage. §7.7 02 Emotion — Negative.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-005 — heart (kardia): dimension=02 Emotion — Negative, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2724
+      },
+      "set": {
+        "dimension": "08 Transformation",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as site of transformation — inner renewal, Spirit's writing, establishment in grace, or purification by faith.\"* §7.7 08 Transformation (renewal, purification — direct match). The content overlaps with 11 Divine-Human Correspondence (God is the agent of transformation), but 08 is the dimension of the *process* (inner change), which is what the description emphasises. This is a design question: is renewal 08 or 11? Dim 08 description in §7.7 includes \"healing, purification, formation\" — renewal is in this family. Going with 08 here.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-006 — heart (kardia): dimension=08 Transformation, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2725
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart as site of divine indwelling — where Christ dwells by faith, the Spirit is poured, or the Father's word abides.\"* §7.7 11 — direct correspondence (divine presence in human interior). Eph 3:17, Rom 5:5. Distinct from 598-006 (transformation-process) by its focus on presence-indwelling.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-007 — heart (kardia): dimension=11 Divine-Human Correspondence, subject=NONE"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2726
+      },
+      "set": {
+        "dimension": "11 Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its orientation toward God — loving, believing, turning, or serving God from the inner person.\"* Parallel to 581-006 lev and 579-010 le.vav \"God-ward orientation\", and r112 995-001 dianoia. Same reading. §7.7 11 HUMAN.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-008 — heart (kardia): dimension=11 Divine-Human Correspondence, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2727
+      },
+      "set": {
+        "dimension": "05 Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Description: *\"Term names the heart in its hardened, unbelieving condition — resistant to divine truth, dulled to moral instruction, or alienated from God.\"* Parallel to 597-001 sklērokardia. §7.7 05 Moral Character (stable negative moral-character condition).",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "598-009 — heart (kardia): dimension=05 Moral Character, subject=HUMAN"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2752
+      },
+      "set": {
+        "context_description": "Term names the Aramaic heart as the defining inner faculty of the human person — the rational-moral consciousness that distinguishes a man from a beast, seat of proud or humbled self-awareness before God",
+        "notes": "Revised during Dimension Review Phase B (RD-PHASE-B-183-001 resolution via DIR-20260420-001 verification): description rewritten to reflect 6-verse Daniel corpus evidence — the Aramaic heart as the defining faculty of humanness, given/taken/restored by divine decree and site of pride/humility before God. Replaces: Term names the heart in its Aramaic form — the seat of thought, will, and moral orientation in the person"
+      },
+      "description": "Group 580-001 Aramaic le.vav: Phase B description revision per verification extract"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "verse_context_group_id": 2752
+      },
+      "set": {
+        "context_description": "Term names the Aramaic heart as the defining inner faculty of the human person — the rational-moral consciousness that distinguishes a man from a beast, seat of proud or humbled self-awareness before God"
+      },
+      "description": "Sync wa_dimension_index.context_description for 580-001"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2749
+      },
+      "set": {
+        "context_description": "Term names the heart in its experiential states — the inner register of grief, gladness, sorrow, longing, and the seat of meditative pondering and inward knowing",
+        "notes": "Revised during Dimension Review Phase B (RD-PHASE-B-183-003 resolution via DIR-20260420-001 verification): 'moral reflection' replaced with 'meditative pondering and inward knowing' to reflect 25-verse corpus evidence. Affective core dominates (~20 verses); ~5 verses show meditative-reflective content (Psa 4:4, Deu 8:2/8:5/30:14, Job 10:13). 'Moral reflection' narrower than the evidence supports and overlaps with 579-002 (seat of moral character). Replaces: Term names the heart in its experiential states — the inner register of grief, gladness, sorrow, longing, and moral reflection"
+      },
+      "description": "Group 579-008 affective le.vav: Phase B description revision per verification extract"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "verse_context_group_id": 2749
+      },
+      "set": {
+        "context_description": "Term names the heart in its experiential states — the inner register of grief, gladness, sorrow, longing, and the seat of meditative pondering and inward knowing"
+      },
+      "description": "Sync wa_dimension_index.context_description for 579-008"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "id": 2763
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Orphan residue: all 44 underlying wa_verse_records are delete_flagged (verified by DIR-20260420-001 query on 2026-04-20). Zero surviving verse evidence for dimension assignment. Researcher decision 2026-04-20: delete_flag as residue rather than restore verses. Programme-wide audit of similar orphan conditions tracked under FLAG-016."
+      },
+      "description": "Group 577-005 qe.rev (hostile): delete_flag as orphan residue per researcher decision (Option b)"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "group_id": 2763,
+        "delete_flagged": 0
+      },
+      "set": {
+        "delete_flagged": 1,
+        "set_aside_reason": "Orphan cascade: group_id=2763 delete_flagged as orphan residue (underlying wa_verse_records all delete_flagged). Cascaded 2026-04-20 per researcher decision; programme-wide audit under FLAG-016."
+      },
+      "description": "Cascade delete_flag on ~44 verse_context rows for orphan group 577-005 (vcg.id=2763)",
+      "expected_rows_affected": 44
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 2763
+      },
+      "set": {
+        "notes": "ORPHAN GROUP: Dimension Review 2026-04-20 determined this group has zero surviving verse evidence — all 44 underlying wa_verse_records are delete_flagged. Group delete_flagged via verse_context_group; verse_context rows cascade delete_flagged. This wa_dimension_index record retained for audit (preserves the history that a dimension classification was set at some earlier point). FLAG-016 tracks programme-wide audit of similar orphan conditions. No Phase C dimension assignment made.",
+        "last_modified": "2026-04-20T12:15:00Z"
+      },
+      "description": "Group 577-005: annotate wa_dimension_index with orphan status; do not delete_flag (preserve audit history)"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-183-002",
+        "registry_id": 183,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Divine knowledge of the inner person — three-group cluster in r183 plus one in r112. 579-003 le.vav (known by God, 1 Sam 16:7), 598-004 kardia (known by God, multiple NT), 599-001 kardiognōstēs (heart-knower, Acts 1:24/15:8). All Dimension 11 with NONE or GOD dominant. Structural pattern: human heart as object of divine cognitive-searching act. Hebrew and Greek vocabulary naming the same structural relationship. Foundational for any word study of inner-knowledge vocabulary.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-183-002"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-183-003",
+        "registry_id": 183,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Covenant-renewal pattern in heart vocabulary — four r183 members of the wider Dimension 11 covenant-renewal cluster. 579-009 le.vav (circumcised/renewed, Deut 30:6), 577-003 qe.rev (new covenant writing in inner parts, Jer 31:33 context), 581-008 lev (covenantal), 602-001 enkainizō (inaugural renewal, Heb 10:20). Together with r112 members 995-003 dianoia and 4413-003 mnaomai, forms an eight-term cluster where divine covenant act operates on the human inner-being. Pattern foundational for any word study of these terms.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-183-003"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-183-004",
+        "registry_id": 183,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Somatic-to-figurative continuum in heart/bowel vocabulary. Six r183 groups (577-001 qe.rev midst, 585-001/002 cha.la.tsa.yim loins, 588-001 na.val withering, 590-003 splagchnon body, 1801-003 meim body) carry the somatic-physical sense of the inner organ/region, distinct from affective-moral-cognitive senses. Same roots engage both registers (e.g., splagchnon 590-001/002 affective vs 590-003 physical; meim 1801-001 yearning vs 1801-003 physical). Confirms biblical Hebrew and Greek retain physical-interior meaning alongside figurative inner-being. Word studies should acknowledge embodied register rather than reading all usage as metaphorical.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-183-004"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "values": {
+        "finding_id": "DIM-183-005",
+        "registry_id": 183,
+        "finding_type": "DIMENSIONAL_PATTERN",
+        "finding": "Heart as site of divine indwelling — pattern distinct from divine knowing or covenant-writing. 598-007 kardia (Christ dwelling by faith Eph 3:17; Spirit poured out Rom 5:5; Father's word abiding) names a Dimension 11 structure where divine *presence* is in the human interior. Related to but distinct from 577-003 (covenant writing — act upon heart) and 579-009 (circumcision renewal — act upon heart). Indwelling is continued presence within, not a transformative act. Important distinction for systematic word study.",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session B finding DIM-183-005"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-183-SD002",
+        "registry_id": 183,
+        "flag_code": "SD_POINTER",
+        "description": "God-ward orientation pattern — four groups across three roots and two registries name the characteristic of human inner-being oriented toward God without divine-act structure. 581-006 lev, 579-010 le.vav, 598-008 kardia (all r183), plus 995-001 dianoia (r112 — 'love God with all your mind'). All assigned Dimension 11 under the 'operates across the boundary' clause. Question for Session D: is this genuinely Dimension 11 (cross-boundary operation), or a distinct 'God-ward Orientation' Dimension 12 that current §7.7 does not name? Linked to DIM-112-SD006. The answer determines how Dimension 11's scope is drawn programme-wide.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-183-SD002"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-183-SD003",
+        "registry_id": 183,
+        "flag_code": "SD_POINTER",
+        "description": "Yearning correspondence — meim 1801-001 names divine yearning (Jer 31:20) and human yearning (Song of Songs 5:4) using the same term. Splagchnon in NT has similar divine-human pattern (Luke 1:78 Christ's tender mercy; Phil 1:8 Paul's affection in Christ). Session D question: is yearning a distinct Dimension 11 pattern (parallel to knowing, remembering, reckoning) or does it sit within 06 Relational Disposition with divine-human examples? Empirical question for cross-testament synthesis.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-183-SD003"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-183-SD004",
+        "registry_id": 183,
+        "flag_code": "SD_POINTER",
+        "description": "Somatic-figurative dimensional split within root families — pattern observed at Phase C r183. Multiple roots show dimensional breadth determined by the somatic/figurative distinction: splagchnon (06, 06, 07); meim (06, 02, 07); qe.rev (05, 04, 07, 11, delete_flagged). Pattern raises question: should dimension-assignment rules explicitly address somatic-senses of inner-being vocabulary as a first-order distinction (not subsidiary to semantic sense-splits)? Session D candidate.",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-183-SD004"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "values": {
+        "flag_label": "DIM-183-SD005",
+        "registry_id": 183,
+        "flag_code": "SD_POINTER",
+        "description": "H3820A lev + H3824 le.vav synthesis candidate. lev cluster: 8 sense-splits covering §7.7 dimensions 02, 03, 04, 05, 05, 11, 11, 11. le.vav cluster: 10 senses covering 03, 05, 11, 04, 06, 05, 02, 02, 11, 11. Widest single-term dimensional spreads in C01. Together the two lemmas cover the heart-vocabulary analytical ground. Session D should consider whether these two lemmas warrant synthesis-level treatment as a single analytical unit with two grammatical forms (vs. separate treatment).",
+        "session_target": "D",
+        "raised_date": "2026-04-20",
+        "source_instruction": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Session D pointer DIM-183-SD005"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 183
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry 183 (heart): Dimension Review complete under v3_3"
+    }
+  ]
+}
