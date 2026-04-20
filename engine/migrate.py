@@ -1608,6 +1608,57 @@ def _m35(conn: sqlite3.Connection) -> None:
     print("     M35: schema_version → 3.13.0")
 
 
+# ── M36 — Mark all addenda obsolete; extracts should exclude them by default ──
+#
+# Researcher direction 2026-04-20: "all the addendum rules must be marked
+# obsolete. The extracts should always exclude obsolete / superseded."
+#
+# Rationale: addenda in wa_addendum_registry are historical migration/absorption
+# observations from a prior rules audit. Their purpose was to flag rules for
+# relocation; all 22 have been actioned (absorbed into other documents, retired,
+# or obsolete by current programme state). They remain in DB for audit trail
+# but should not surface in session-start extracts as if they were live rules.
+
+
+@_register("M36", "Mark all 22 addenda obsolete + add obsolete columns to wa_addendum_registry")
+def _m36(conn: sqlite3.Connection) -> None:
+    # 1. Add obsolete + obsolete_reason + last_modified columns (parallel to wa_rule_registry shape)
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_addendum_registry)")}
+    if "obsolete" not in cols:
+        conn.execute("ALTER TABLE wa_addendum_registry ADD COLUMN obsolete INTEGER NOT NULL DEFAULT 0")
+        print("     M36: added wa_addendum_registry.obsolete")
+    if "obsolete_reason" not in cols:
+        conn.execute("ALTER TABLE wa_addendum_registry ADD COLUMN obsolete_reason TEXT")
+        print("     M36: added wa_addendum_registry.obsolete_reason")
+    if "last_modified" not in cols:
+        conn.execute("ALTER TABLE wa_addendum_registry ADD COLUMN last_modified TEXT")
+        print("     M36: added wa_addendum_registry.last_modified")
+
+    # 2. Mark all 22 rows obsolete=1 with researcher rationale
+    now = _now()
+    reason = (
+        "Historical migration observation — actioned by programme absorption cycles "
+        "(rules retired, relocated, or superseded). Retained for audit trail per "
+        "researcher direction 2026-04-20. Extracts exclude obsolete addenda by default."
+    )
+    updated = conn.execute(
+        """UPDATE wa_addendum_registry
+              SET obsolete = 1, obsolete_reason = ?, last_modified = ?
+            WHERE obsolete = 0""",
+        (reason, now),
+    ).rowcount
+    print(f"     M36: marked {updated} addenda obsolete")
+
+    # 3. Also consolidate: ensure rules extract and reference-snapshot will filter
+    # Schema version bump
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)",
+        ("3.14.0", now),
+    )
+    print("     M36: schema_version → 3.14.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

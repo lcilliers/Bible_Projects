@@ -1,6 +1,6 @@
 # WA Global Rules Extract — 2026-04-20
 
-_Schema 3.13.0 · extractor v1.0_
+_Schema 3.14.0 · extractor v1.0_
 
 _Source: DB `wa_rule_registry` + `wa_addendum_registry`. Regenerate at session start._
 
@@ -13,7 +13,7 @@ _Source: DB `wa_rule_registry` + `wa_addendum_registry`. Regenerate at session s
 | Active rules | 36 |
 | Obsolete / superseded | 0 |
 | Total rules | 36 |
-| Addenda | 22 |
+| Addenda | 0 |
 
 ## Rules by category
 
@@ -424,145 +424,5 @@ The researcher feedback process is interactive and recorded. The observations lo
 
 ## Addenda (rules migration / absorption record)
 
-### addendum_instructions (10 items)
-
-**ADD-INSTR-001** — Pass-close download — all internal outputs made available for download at end of pass
-  Rule: `GR-PASS-001`
-  Observation: Pass-close discipline is pass-level, and not all phases have passes. The rule applies only where the governing instruction defines passes (Session B, Session C, Session D). Better placed in those instructions than in the global rules.
-  Migration target: Session B instruction; Session C instruction; Session D instruction
-  Status: `pending`
-
-**ADD-INSTR-002** — Within-pass write discipline — workings to obs log continuously; pass-close write to database
-  Rule: `GR-PASS-002`
-  Observation: Write-on-discovery within a pass is analytically subsumed by GR-OBS-001 (which remains in the main rules). The pass-close write-to-database point is pass-specific and belongs in the stage instructions that define passes.
-  Migration target: Session B instruction; Session C instruction; Session D instruction
-  Status: `pending`
-
-**ADD-INSTR-004** — Extract is authoritative for Session B analysis
-  Rule: `GR-DATA-002`
-  Observation: Rule declares its own scope as Session B. Single-instruction rule. Fails the file's own scope test (§scope_test): a rule governing a single instruction with no impact on other phases belongs in that instruction.
-  Migration target: Session B instruction
-  Status: `pending`
-
-**ADD-INSTR-005** — Complete word data export — version confirmation at session start
-  Rule: `GR-DATA-004`
-  Observation: Rule declares its own scope as Session B. Single-instruction rule. Version-confirmation mechanic is a Session B session-start checklist item.
-  Migration target: Session B instruction
-  Status: `pending`
-
-**ADD-INSTR-006** — god_as_subject and somatic_link verification against verse evidence
-  Rule: `GR-DATA-005`
-  Observation: Rule declares its own scope as Session B. Single-instruction rule. Specific field-level verification discipline for wa_term_inventory fields that carry a high error rate from bulk operations.
-  Migration target: Session B instruction
-  Status: `pending`
-
-**ADD-INSTR-007** — Dimensions are data-derived — grounded in at least one verse
-  Rule: `GR-PROG-003`
-  Observation: Two-instruction rule (Dimension Review, Session B). Borderline by letter of the scope test — applies across more than one instruction but only two, and specifically where dimension assignment is made. Candidate for relocation; heaviest in Dimension Review.
-  Migration target: Dimension Review instruction; Session B instruction
-  Status: `pending`
-
-**ADD-INSTR-008** — Session C primary; Session B deepens and corrects
-  Rule: `GR-PROG-004`
-  Observation: Two-instruction rule (Session B, Session C). Borderline. States the relationship between the two outputs rather than a programme-wide convention.
-  Migration target: Session B instruction; Session C instruction
-  Status: `pending`
-
-**ADD-INSTR-009** — Characteristic-perspective grouping model — groups describe what a verse is about, not what a term does
-  Rule: `GR-PROG-006`
-  Observation: Two-instruction rule (Verse Context, Session B). Primarily a Verse Context construct — group formation is the work of Verse Context; Session B uses the grouping result. Heaviest where it is used.
-  Migration target: Verse Context instruction (primary); Session B instruction (secondary)
-  Status: `pending`
-
-**ADD-INSTR-010** — Inner-being relevance filter — term-level two-condition formulation (164 words)
-  Rule: `GR-PROG-007`
-  Observation: The relevance filter rule is 164 words, the second longest rule in the file. It is applied in Verse Context processing and carried forward into Session B Stage 1. Belongs primarily in Verse Context instruction where the filter is executed verse by verse. History note: GR-PROG-007 was previously corrected via FLAG-004.
-  Migration target: Verse Context instruction
-  Status: `pending`
-
-**ADD-INSTR-011** — Observations persist to database before session close — Session C/D read from DB only
-  Rule: `GR-OBS-006`
-  Observation: GR-OBS-006 governs the obs-log-to-database transfer step. It is specific to the instruction that defines this transfer (Analysis Output). At the time of migration (2026-04-17), the Analysis Output instruction is reported by the researcher to be under active development and may not yet be present in project files. When the future consolidation session runs, the migration_target should point to the most recent version of that instruction available in project files at that time. Original rule text preserved for reference during the future consolidation session: Every analytical observation produced during any phase must be persisted to the database before the session closes. Session C and Session D read from the database only — they do not read observations logs or session logs as source material. An observation that exists only in a markdown file has not been recorded for the programme.
-  Migration target: Analysis Output instruction (currently under development — reference most recent version available at time of review)
-  Status: `pending`
-
-### addendum_patch_directive (9 items)
-
-**ADD-PATCHDIR-001** — Patch format self-check — six-point mandatory check (269 words)
-  Rule: `GR-DIR-006`
-  Observation: GR-DIR-006 is the longest rule in the file at 269 words. It is an operational checklist rather than a rule of principle. Its natural home is wa-patch-specification §7 (Producing Patches — Guidelines for Claude.ai), which already holds patch production guidance and can absorb the six-point self-check. If relocated, a single pointer sentence would remain in the global rules: 'Before presenting any patch, Claude AI must pass the patch self-check defined in wa-patch-specification §7.'
-  Migration target: wa-patch-specification §7
-  Status: `pending`
-
-**ADD-PATCHDIR-002** — No directive specification document exists — GR-DIR-002, GR-DIR-007, GR-DIR-008 have no natural reference home
-  Observation: Three rules govern directive format, filename, and self-check. They are not patch rules (patches are covered by wa-patch-specification). No peer specification for directives exists. The CC instructions document (wa-sessionb-cc-instructions-v3_6) is Session-B scoped by name; directives apply across all phases. Two options surfaced by the audit: (a) retain GR-DIR-002/007/008 in global rules — audit recommendation; (b) create wa-directive-specification-v1-YYYYMMDD.md as a peer document to the patch specification and move directive rules there. Decision deferred to the patch/directive review session.
-  Migration target: Decision pending — either retain in global rules, or new wa-directive-specification document
-  Status: `pending`
-
-**ADD-PATCHDIR-003** — Directive self-check — five-point check before submission (148 words)
-  Rule: `GR-DIR-008`
-  Observation: GR-DIR-008 was identified in the v2.7 audit as an operational checklist (148 words, second-longest rule of its kind) rather than a rule of principle. Its natural home is a dedicated patch/directive instruction. The audit originally recommended retaining it in global until a directive specification existed, but the researcher has chosen to migrate it to the addendum now (session 2026-04-17) to begin consolidating it alongside ADD-PATCHDIR-001 (GR-DIR-006, patch self-check) and ADD-PATCHDIR-002 (no directive spec). Original rule text preserved for reference during the future consolidation session: Before presenting any directive for researcher approval, Claude AI must verify that all five elements required by GR-DIR-002 are present in the directive. The five elements are: (1) DIRECTIVE ID — present and in format DIR-YYYYMMDD-NNN; (2) MOTIVATION — states why the change is needed and what problem it solves; (3) SCOPE — identifies which tables, records, or fields are affected; (4) OUTCOME REQUIRED — states the required database state precisely enough for CC to verify; (5) COMPLETION CONFIRMATION — specifies the exact query or check CC must run and return. A directive missing any of these five elements must not be submitted. Claude AI corrects the directive and re-checks all five elements before submission. Claude AI must also verify that the directive filename follows GR-DIR-007 before submission. Record the self-check result in the observations log as: Directive self-check [DIR-ID]: [PASS / FAIL — element missing if FAIL].
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-**ADD-PATCHDIR-004** — No physical database deletion — delete_flagged pattern
-  Rule: `GR-OBS-005`
-  Observation: GR-OBS-005 is a database operation rule (no physical DELETE against analytical records; use delete_flagged + obsolete_reason + obsolete_date instead). It was located in the observation_discipline category but governs Claude Code behaviour against the database, which belongs in the patch specification. Original rule text preserved for reference during the future consolidation session: No database record is ever physically deleted. Records that are superseded, incorrect, or out of scope are marked with delete_flagged = 1, obsolete_reason, and obsolete_date. The original record is retained for audit. This applies to all tables across all phases. CC must never execute DELETE statements against analytical records.
-  Migration target: wa-patch-specification §X (deletion discipline section to be confirmed)
-  Status: `pending`
-
-**ADD-PATCHDIR-005** — When to use a patch vs a directive
-  Rule: `GR-DIR-001`
-  Observation: Rule migrated from main array to addendum_patch_directive in v2_9 per researcher direction: all GR-DIR rules consolidated here pending the patch/directive instruction review. Original rule text preserved for reference during the future consolidation session: There are two and only two mechanisms for instructing Claude Code to make database changes: patches (JSON format) and directives (plain language). A patch is used when Claude AI is certain of the field names, FK keys, table structure, and exact operations required — the patch specification defines the exact JSON format and Claude Code applies it via the applicator script. A directive is used when Claude AI knows the outcome required but is not certain of the exact execution path — Claude AI describes in plain language what needs to happen and why, and Claude Code inspects the database, determines the correct operations, and executes. Both require researcher approval before Claude Code acts (GR-PROC-004). Both require a stated completion confirmation (GR-DIR-005). Neither is optional — conversational instructions to Claude Code without either format are not valid database change requests.
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-**ADD-PATCHDIR-006** — Directive format — five required elements
-  Rule: `GR-DIR-002`
-  Observation: Rule migrated from main array to addendum_patch_directive in v2_9 per researcher direction: all GR-DIR rules consolidated here pending the patch/directive instruction review. Original rule text preserved for reference during the future consolidation session: Every CC directive must contain: (1) DIRECTIVE ID — unique identifier in format DIR-YYYYMMDD-NNN; (2) MOTIVATION — why this change is needed, what problem it solves; (3) SCOPE — which tables, records, or fields are affected; (4) OUTCOME REQUIRED — what the database state must look like after execution, stated precisely enough that CC can verify it; (5) COMPLETION CONFIRMATION — the exact query or check CC must run and return to Claude AI and the researcher to confirm the directive was applied correctly. Claude AI must not send a directive without all five elements present.
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-**ADD-PATCHDIR-007** — Patch format per patch specification (pointer rule)
-  Rule: `GR-DIR-003`
-  Observation: Rule migrated from main array to addendum_patch_directive in v2_9 per researcher direction: all GR-DIR rules consolidated here pending the patch/directive instruction review. Original rule text preserved for reference during the future consolidation session: Patches follow the JSON format defined in wa-patch-specification (current version). The patch specification is the authoritative governing document for patch structure, supported operations, field requirements, and applicator rules. This file does not duplicate patch format rules — it references the patch specification. Where a patch operation is not yet supported by the applicator, Claude AI must flag it for manual application and note this in the patch _patch_meta.description field.
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-**ADD-PATCHDIR-008** — Completion confirmation mandatory for every patch and directive
-  Rule: `GR-DIR-005`
-  Observation: Rule migrated from main array to addendum_patch_directive in v2_9 per researcher direction: all GR-DIR rules consolidated here pending the patch/directive instruction review. Original rule text preserved for reference during the future consolidation session: Every patch and every directive must specify the completion confirmation that Claude Code must return to close the operation. The confirmation is a specific query result, row count, or field state check — not a general acknowledgement. Claude Code returns the confirmation output to Claude AI and the researcher. Claude AI reviews the confirmation against the expected outcome before the operation is considered complete. An operation without a returned confirmation is not complete.
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-**ADD-PATCHDIR-009** — Directive filename convention
-  Rule: `GR-DIR-007`
-  Observation: Rule migrated from main array to addendum_patch_directive in v2_9 per researcher direction: all GR-DIR rules consolidated here pending the patch/directive instruction review. Original rule text preserved for reference during the future consolidation session: Directive files follow GR-FILE-001 (prefix-reference-description-version-date), GR-FILE-007 (fully lowercase), and GR-FILE-009 (compact date YYYYMMDD). The required pattern is: wa-{registry_no}-{word}-dir-{seq}-{description}-v{n}-{YYYYMMDD}.md where: {registry_no} is the zero-padded registry number (e.g. 062); {word} is the English word (e.g. fellowship); {seq} is a zero-padded 3-digit sequence number within the session (e.g. 001, 002); {description} is a short lowercase descriptor of the directive's purpose, max 20 characters, no spaces (e.g. vc-subproc, repair-rerun); {n} is the version number starting at 1; {YYYYMMDD} is the date produced. Example: wa-062-fellowship-dir-001-vc-subproc-v1-20260416.md. For programme-level directives not tied to a single registry, use 'global' as the reference segment per GR-FILE-006.
-  Migration target: Consolidated patch/directive instruction (to be produced as part of addendum_patch_directive review)
-  Status: `pending`
-
-### addendum_reference (3 items)
-
-**ADD-REF-001** — Active terms SQL filter — AND mt.status IN ('extracted', 'extracted_thin')
-  Rule: `GR-DATA-001`
-  Observation: Rule is declared to apply across all sessions and all phases, but operationally applies only where mti_terms queries are issued (Session B, Verse Context, Dimension Review analytical work). The filter is a schema-bound query convention for mti_terms — its natural home is WA-Reference §13.2 (mti_terms schema section) where the schema is documented.
-  Migration target: WA-Reference §13.2 (mti_terms schema)
-  Status: `pending`
-
-**ADD-REF-002** — mti_term_flags is authoritative for somatic classification (not wa_term_inventory.somatic_link)
-  Rule: `GR-DATA-003`
-  Observation: Rule declares which of two fields is authoritative for somatic classification. This is a schema field-authority statement. Natural home is WA-Reference §13.2 (mti_terms / mti_term_flags schema) or §15.4 (if a field-authority section exists).
-  Migration target: WA-Reference §13.2 or §15.4 (field authority)
-  Status: `pending`
-
-**ADD-REF-003** — WA-Reference §1 (File Naming Conventions) is stale against current GR-FILE rules
-  Observation: Three specific inconsistencies observed between WA-Reference-v5_5 §1 and current GR-FILE rules:
-  (1) Pattern on §1 line 57: wa-{nnn}-{word}-{scope}-{YYYYMMDD}.{ext} — omits the version component required by GR-FILE-001 and GR-FILE-003.
-  (2) §1.3 instruction document names use capital 'WA-' prefix — GR-FILE-007 requires fully lowercase filenames.
-  (3) §1.4 Patch ID Convention uses 'PATCH-...V{n}' (uppercase, capital V) — current practice is lowercase.
-Consequence for relocation moves: placing GR-DATA-001 or GR-DATA-003 into WA-Reference puts content into a document whose §1 already contradicts the current file-naming rules. Options surfaced by the audit: (a) update WA-Reference §1 in the same review cycle (produce WA-Reference v5.6); (b) add an authority note in the global rules stating GR-FILE-001 through GR-FILE-009 override WA-Reference §1 until the reference is updated; (c) pause all moves into WA-Reference until WA-Reference is updated.
-  Migration target: WA-Reference §1 (File Naming Conventions) — requires update before or alongside any GR-DATA relocation
-  Status: `pending`
-
 ---
-*Generated 2026-04-20T16:39:53Z.*
+*Generated 2026-04-20T16:51:54Z.*

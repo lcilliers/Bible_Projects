@@ -143,17 +143,20 @@ def extract_rules(conn: sqlite3.Connection) -> dict:
     """).fetchall()
     rules = {r["rule_id"]: dict(r) for r in rows}
 
-    # Addenda
+    # Addenda — schema v3.14.0+ has obsolete column (M36); default excludes obsolete
     addenda = {}
     a_exists = conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name='wa_addendum_registry'"
     ).fetchone()
     if a_exists:
-        a_rows = conn.execute("""
+        cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_addendum_registry)")}
+        has_obs = "obsolete" in cols
+        where = " WHERE obsolete = 0" if has_obs else ""
+        a_rows = conn.execute(f"""
             SELECT item_id, addendum_group, rule_id, audit_source, subject,
                    observation, migration_target, migration_status,
                    researcher_comment, source_document
-              FROM wa_addendum_registry
+              FROM wa_addendum_registry{where}
              ORDER BY addendum_group, item_id
         """).fetchall()
         for a in a_rows:

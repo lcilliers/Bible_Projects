@@ -1,6 +1,6 @@
 # WA Reference Snapshot — 2026-04-20
 
-_Schema version: **3.13.0** · extractor: v1.0_
+_Schema version: **3.14.0** · extractor: v1.0_
 
 _Source: live DB (single source of truth). Regenerate at session start._
 
@@ -128,4 +128,4 @@ _(populated — see JSON snapshot for detail)_
 
 ---
 
-*Snapshot generated 2026-04-20T15:59:13Z — regenerate at next session start.*
+*Snapshot generated 2026-04-20T16:51:54Z — regenerate at next session start.*

@@ -95,19 +95,27 @@ def extract_rules(conn: sqlite3.Connection, include_obsolete: bool = False) -> d
     }
 
 
-def extract_addenda(conn: sqlite3.Connection) -> dict:
+def extract_addenda(conn: sqlite3.Connection, include_obsolete: bool = False) -> dict:
     exists = conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name='wa_addendum_registry'"
     ).fetchone()
     if not exists:
         return {"_status": "not-available"}
 
+    # Schema v3.14.0+: wa_addendum_registry has obsolete column (M36).
+    # Default: exclude obsolete (researcher direction 2026-04-20).
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_addendum_registry)")}
+    has_obsolete = "obsolete" in cols
+    select_extra = ", obsolete, obsolete_reason" if has_obsolete else ", 0 AS obsolete, NULL AS obsolete_reason"
+    where = ""
+    if has_obsolete and not include_obsolete:
+        where = " WHERE obsolete = 0"
     rows = conn.execute(
-        """SELECT item_id, addendum_group, rule_id, audit_source, subject,
-                  observation, migration_target, migration_status,
-                  researcher_comment, source_document
-             FROM wa_addendum_registry
-            ORDER BY addendum_group, item_id"""
+        f"""SELECT item_id, addendum_group, rule_id, audit_source, subject,
+                   observation, migration_target, migration_status,
+                   researcher_comment, source_document{select_extra}
+              FROM wa_addendum_registry{where}
+             ORDER BY addendum_group, item_id"""
     ).fetchall()
 
     by_group: dict[str, list[dict]] = defaultdict(list)
@@ -123,7 +131,7 @@ def extract_addenda(conn: sqlite3.Connection) -> dict:
 
 def build_extract(conn: sqlite3.Connection, include_obsolete: bool = False) -> dict:
     rules = extract_rules(conn, include_obsolete=include_obsolete)
-    addenda = extract_addenda(conn)
+    addenda = extract_addenda(conn, include_obsolete=include_obsolete)
     return {
         "meta": {
             "generated_at": now_iso(),
