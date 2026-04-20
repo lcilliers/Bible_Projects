@@ -425,4 +425,4 @@ The researcher feedback process is interactive and recorded. The observations lo
 ## Addenda (rules migration / absorption record)
 
 ---
-*Generated 2026-04-20T17:02:49Z.*
+*Generated 2026-04-20T16:51:54Z.*

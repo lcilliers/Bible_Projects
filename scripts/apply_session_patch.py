@@ -234,7 +234,7 @@ def _validate(conn, patch: dict) -> list[str]:
     patch_type = meta.get("patch_type", "")
     pid = meta.get("patch_id", "")
     # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
-    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE", "SDPOINTERS", "PROSE", "READINESSSWEEP")
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE", "SDPOINTERS", "PROSE", "READINESSSWEEP", "RULES", "ADDENDA", "VOCAB")
     is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
     if not is_exempt:
         for token in sb_exempt_types:
@@ -1037,6 +1037,131 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         )
         counts["registry_updated"] = counts.get("registry_updated", 0) + 1
         print(f"  {op_id}: word_registry UPDATE id={match.get('id', '?')}")
+
+    elif table == "wa_rule_registry" and operation == "insert":
+        # New rule row. Required: rule_id, category, rule_text, source_document.
+        rec = op.get("record") or op.get("values") or {}
+        required = ("rule_id", "category", "rule_text")
+        missing = [k for k in required if not rec.get(k)]
+        if missing:
+            raise ValueError(f"{op_id}: wa_rule_registry insert missing required fields: {missing}")
+        conn.execute(
+            """INSERT INTO wa_rule_registry
+               (rule_id, category, subject, rule_text, example, applies_to,
+                version, added_date, last_modified, obsolete, obsolete_reason,
+                superseded_by, addendum_ref, source_document, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (
+                rec["rule_id"], rec["category"], rec.get("subject"),
+                rec["rule_text"], rec.get("example"), rec.get("applies_to"),
+                rec.get("version"), rec.get("added_date"), rec.get("last_modified"),
+                1 if rec.get("obsolete") else 0, rec.get("obsolete_reason"),
+                rec.get("superseded_by"), rec.get("addendum_ref"),
+                rec.get("source_document", "patch"), _now(),
+            ),
+        )
+        counts["rule_inserted"] = counts.get("rule_inserted", 0) + 1
+        print(f"  {op_id}: wa_rule_registry INSERT {rec['rule_id']}")
+
+    elif table == "wa_rule_registry" and operation == "update":
+        # Match by rule_id (TEXT unique). Set any allowed field.
+        match = op.get("match", {})
+        set_vals = dict(op.get("set", {}))
+        rule_id = match.get("rule_id")
+        if not rule_id:
+            raise ValueError(f"{op_id}: wa_rule_registry update requires match.rule_id")
+        # Prevent accidental PK rewrites
+        for immut in ("id", "rule_id", "created_at"):
+            set_vals.pop(immut, None)
+        # Auto-stamp last_modified
+        set_vals["last_modified"] = _now()
+        valid_cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_rule_registry)")}
+        dropped = [k for k in set_vals if k not in valid_cols]
+        for k in dropped:
+            del set_vals[k]
+        if dropped:
+            print(f"  {op_id}: [NOTE] Dropped non-existent columns: {dropped}")
+        if not set_vals:
+            print(f"  {op_id}: [NOTE] Nothing to update after column filter")
+            return
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        params = list(set_vals.values()) + [rule_id]
+        conn.execute(
+            f"UPDATE wa_rule_registry SET {set_clauses} WHERE rule_id = ?",
+            params,
+        )
+        counts["rule_updated"] = counts.get("rule_updated", 0) + 1
+        summary = ", ".join(f"{k}={str(v)[:40]}" for k, v in set_vals.items() if k != "last_modified")
+        print(f"  {op_id}: wa_rule_registry UPDATE rule_id={rule_id} set={summary}")
+
+    elif table == "wa_rule_registry" and operation == "deprecate":
+        # Shortcut: mark obsolete=1 + record reason + optional superseded_by
+        rec = op.get("record") or op.get("values") or {}
+        rule_id = op.get("match", {}).get("rule_id") or rec.get("rule_id")
+        if not rule_id:
+            raise ValueError(f"{op_id}: wa_rule_registry deprecate requires match.rule_id")
+        reason = rec.get("obsolete_reason") or rec.get("reason")
+        superseded_by = rec.get("superseded_by")
+        conn.execute(
+            """UPDATE wa_rule_registry
+                  SET obsolete = 1, obsolete_reason = ?, superseded_by = ?,
+                      last_modified = ?
+                WHERE rule_id = ?""",
+            (reason, superseded_by, _now(), rule_id),
+        )
+        counts["rule_deprecated"] = counts.get("rule_deprecated", 0) + 1
+        print(f"  {op_id}: wa_rule_registry DEPRECATE {rule_id}")
+
+    elif table == "wa_addendum_registry" and operation == "insert":
+        rec = op.get("record") or op.get("values") or {}
+        required = ("item_id", "addendum_group")
+        missing = [k for k in required if not rec.get(k)]
+        if missing:
+            raise ValueError(f"{op_id}: wa_addendum_registry insert missing: {missing}")
+        conn.execute(
+            """INSERT INTO wa_addendum_registry
+               (item_id, addendum_group, rule_id, audit_source, subject,
+                observation, migration_target, migration_status,
+                researcher_comment, source_document, obsolete, obsolete_reason,
+                last_modified, created_at)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            (
+                rec["item_id"], rec["addendum_group"], rec.get("rule_id"),
+                rec.get("audit_source"), rec.get("subject"), rec.get("observation"),
+                rec.get("migration_target"), rec.get("migration_status"),
+                rec.get("researcher_comment"), rec.get("source_document", "patch"),
+                1 if rec.get("obsolete") else 0, rec.get("obsolete_reason"),
+                rec.get("last_modified"), _now(),
+            ),
+        )
+        counts["addendum_inserted"] = counts.get("addendum_inserted", 0) + 1
+        print(f"  {op_id}: wa_addendum_registry INSERT {rec['item_id']}")
+
+    elif table == "wa_addendum_registry" and operation == "update":
+        match = op.get("match", {})
+        set_vals = dict(op.get("set", {}))
+        item_id = match.get("item_id")
+        if not item_id:
+            raise ValueError(f"{op_id}: wa_addendum_registry update requires match.item_id")
+        for immut in ("id", "item_id", "created_at"):
+            set_vals.pop(immut, None)
+        set_vals["last_modified"] = _now()
+        valid_cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_addendum_registry)")}
+        dropped = [k for k in set_vals if k not in valid_cols]
+        for k in dropped:
+            del set_vals[k]
+        if dropped:
+            print(f"  {op_id}: [NOTE] Dropped non-existent columns: {dropped}")
+        if not set_vals:
+            return
+        set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
+        params = list(set_vals.values()) + [item_id]
+        conn.execute(
+            f"UPDATE wa_addendum_registry SET {set_clauses} WHERE item_id = ?",
+            params,
+        )
+        counts["addendum_updated"] = counts.get("addendum_updated", 0) + 1
+        print(f"  {op_id}: wa_addendum_registry UPDATE item_id={item_id}")
 
     elif operation == "bulk_update":
         records = op.get("records", [])
