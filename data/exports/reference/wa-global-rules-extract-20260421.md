@@ -458,4 +458,4 @@ This process must persist throughout the life of the session. This rule is non-w
 ## Addenda (rules migration / absorption record)
 
 ---
-*Generated 2026-04-21T07:09:04Z.*
+*Generated 2026-04-21T07:12:08Z.*

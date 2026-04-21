@@ -217,7 +217,7 @@
           "unique": true
         }
       ],
-      "row_count": 624
+      "row_count": 625
     },
     "engine_stream_checkpoint": {
       "sql": "CREATE TABLE engine_stream_checkpoint (\n            id               INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id           TEXT    NOT NULL REFERENCES engine_run_log(run_id),\n            stream_name      TEXT    NOT NULL,\n            status           TEXT    NOT NULL DEFAULT 'pending',\n            last_registry_id TEXT,\n            last_strong      TEXT,\n            rows_written     INTEGER DEFAULT 0,\n            rows_filtered    INTEGER DEFAULT 0,\n            error_detail     TEXT,\n            started_at       TEXT,\n            completed_at     TEXT\n        )",
@@ -3072,7 +3072,7 @@
       "row_count": 29
     },
     "wa_rule_registry": {
-      "sql": "CREATE TABLE wa_rule_registry (\n            id              INTEGER PRIMARY KEY,\n            rule_id         TEXT    NOT NULL UNIQUE,\n            category        TEXT    NOT NULL,\n            subject         TEXT,\n            rule_text       TEXT    NOT NULL,\n            example         TEXT,\n            applies_to      TEXT,\n            version         TEXT,\n            added_date      TEXT,\n            last_modified   TEXT,\n            obsolete        INTEGER NOT NULL DEFAULT 0,\n            obsolete_reason TEXT,\n            superseded_by   TEXT,\n            addendum_ref    TEXT,\n            source_document TEXT,\n            created_at      TEXT    NOT NULL\n        )",
+      "sql": "CREATE TABLE wa_rule_registry (\n            id              INTEGER PRIMARY KEY,\n            rule_id         TEXT    NOT NULL UNIQUE,\n            category        TEXT    NOT NULL,\n            subject         TEXT,\n            rule_text       TEXT    NOT NULL,\n            example         TEXT,\n            applies_to      TEXT,\n            version         TEXT,\n            added_date      TEXT,\n            last_modified   TEXT,\n            obsolete        INTEGER NOT NULL DEFAULT 0,\n            obsolete_reason TEXT,\n            superseded_by   TEXT,\n            addendum_ref    TEXT,\n            source_document TEXT,\n            created_at      TEXT    NOT NULL\n        , rationale TEXT, application_notes TEXT, examples TEXT)",
       "columns": [
         {
           "name": "id",
@@ -3168,6 +3168,24 @@
           "name": "created_at",
           "type": "TEXT",
           "notnull": true,
+          "default": null
+        },
+        {
+          "name": "rationale",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "application_notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "examples",
+          "type": "TEXT",
+          "notnull": false,
           "default": null
         }
       ],
