@@ -1,0 +1,105 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260421-RULES-BATCH1-LONG-V1",
+    "produced_date": "20260421",
+    "produced_at": "2026-04-21T00:00:00Z",
+    "produced_by": "wa-patch-instruction-v2_2-20260421",
+    "patch_type": "RULES",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "motivation": "Batch 1 of the full-pass rules restructure (longest first per researcher decision 2026-04-21, obslog §48). Five long rules evaluated for appropriateness and correctness, then restructured into four-field form: concise rule_text plus populated rationale / application_notes / examples where content warrants. GR-PROG-007 and GR-DB-001 also receive dot-to-underscore version-notation normalisation per GR-FILE-003.",
+    "description": "Five UPDATE operations on wa_rule_registry for GR-OBS-001 (v2_0 → v2_1), GR-CAD-001 (v1_0 → v1_1), GR-PROG-007 (v2.1 → v2_2, notation normalised), GR-RD-007 (v1_0 → v1_1), GR-DB-001 (v1.0 → v1_1, notation normalised). See wa-global-rewrites-batch1-long-v1-20260421.md for evaluation judgements."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-OBS-001"
+      },
+      "set": {
+        "rule_text": "The observations log — referred to as the obslog — is the authoritative record of every session's working trail. The obslog is initialised as step 2 of the session-startup sequence (GR-LOAD-001); no substantive work may begin until it exists. While the session is live, every finding, decision, gap, patch consequence, and open question is written to the obslog at the moment it is determined. Every substantive chat output also appears in the obslog. When a researcher message is received, the researcher's feedback is recorded verbatim in the obslog before a response is formulated. At every pass close, items requiring database persistence are written via a patch or directive, and a fresh extract confirming the write becomes the working source for the next pass. This discipline persists for the life of the session. This rule is non-waivable.",
+        "rationale": "Claude AI cannot rely on in-memory accumulation across a session. Sessions crash; context windows truncate; follow-up work depends on what was captured. The obslog exists so that the working trail survives these failure modes. Without continuous capture to disk, findings reach the researcher only through chat output — which is ephemeral and unaudited. Continuous write makes the work externally reviewable at every turn.",
+        "application_notes": "Compliance test. A useful shorthand: if something is not in the observations log, it has not been received or done. This is not literal — the thought existed — but it captures the rule's operational meaning: nothing that is only in chat or in memory counts as work.\n\nCapture scope. The list of content types caught by continuous-write includes: findings, decisions, gaps, patch consequences, flags, open questions, clarification requests, and researcher feedback verbatim. New content types arising in a session are logged on the same discipline.\n\nVerbatim researcher capture. 'Verbatim' means the researcher's message is reproduced exactly, not paraphrased or summarised. If the message is long, the full text is still captured; summaries appear elsewhere in the log if needed.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-CAD-001"
+      },
+      "set": {
+        "rule_text": "Before every substantive response, Claude AI produces a short self-check at the top of the response, naming: (a) what was written to disk in this turn, with filenames; (b) whether present_files was called on those writes; (c) if nothing was written, a one-line statement that the response is discussion-only. After every substantive write to disk, Claude AI calls present_files on the written file(s). This rule is non-waivable.",
+        "rationale": "Claude AI tends to accumulate findings in chat and in-session memory rather than writing them to disk. Chat output is ephemeral; in-session memory is lost when the session ends or the context window truncates. The self-check and the present_files call after writes make the save state externally visible on every turn, so the researcher sees at a glance whether the work has been preserved.",
+        "application_notes": "What counts as a substantive write. A substantive write is any write that produces or updates: a finding, a decision, a patch, an entry in an observations log, an entry in a session log, or a new version of any file. Routine intermediate scratch (temporary working files in /home/claude that are not intended as deliverables) does not count.\n\nSelf-check when nothing was written. The 'discussion-only' statement is not a workaround. It applies when the turn genuinely produced no substantive content — a clarification exchange, a question being asked, a short acknowledgement. If work was done, it is written; the self-check then names the write.",
+        "examples": "Self-check when a file was written: 'Writes this turn: obslog appended — wa-{reference}-obslog-v{n}-{YYYYMMDD}.md. present_files called: yes.'\n\nSelf-check when nothing was written: 'Nothing written this turn — response is discussion-only.'",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-007"
+      },
+      "set": {
+        "rule_text": "The inner-being relevance filter is applied to the specific term's use in the verse, not to the verse's general theme or content. A term passes the filter if it does either of the following in this verse: (a) directly engages the inner being — names, expresses, or presupposes an internal state, capacity, orientation, or quality of a person; or (b) qualifies, operates on, or clarifies an inner-being characteristic — the term is implicated in a characteristic even if the characteristic is not named explicitly in the verse, provided it can be inferred from the term's specific use.",
+        "rationale": "The filter operates at term level because verse-theme filtering produces bleed. A verse may contain terms that relate to its overall subject in ways that have nothing to do with inner-being dynamics (a preposition, a proper noun, a spatial marker), and a verse-level filter cannot separate these from the terms that genuinely engage the inner being. The term-in-its-use is the unit of evidence the programme acts on.",
+        "application_notes": "Branch (b) — implication standard. The characteristic does not need to be stated in the verse; it needs to be genuinely implied by how the term functions. A plausible speculative connection does not pass; a connection that can be read out of the term's specific use in this verse does.\n\nExclusion test. A term present in a verse that plays no role in any inner-being dynamic — purely syntactic, purely locational, purely administrative — does not pass. This is the common failure of verse-theme filtering: the term is there, but it does not do any inner-being work in this verse.\n\nDiagnostic question. When a classification decision is close to the line, the operative question is: is this specific term, in its specific use in this verse, implicated in an inner-being characteristic? If the answer requires reframing the verse, inventing context, or appealing to the verse's general theme, the term does not pass.",
+        "version": "2_2",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-RD-007"
+      },
+      "set": {
+        "rule_text": "The obslog carries the detail of decision items — interpretation, draft, ambiguity, options. A brief message in chat alerts the researcher to items that need review. The researcher's response is captured in the obslog; any follow-up — revisions, validations, close-outs — is recorded in the obslog. Chat is the alerting channel; the obslog is the record. Claude AI does not accumulate unresolved items — they are raised when they arise and resolved in the obslog trail.",
+        "rationale": "Chat is a poor record: it is truncated by context windows, hard to search, and interleaves working text with deliverables. The obslog is the record because it is persistent, searchable, and structured. The separation of alert channel from record channel keeps chat short and keeps the detail where it can be audited.",
+        "application_notes": "No rigid format for decision items. Claude AI does not wrap decision items in a fixed template (the 'six-field format' that emerged at one point). Items are presented in the shape that serves the researcher's review — sometimes a single sentence with a recommendation, sometimes a numbered list of options, sometimes a table of trade-offs. Authorship chooses the shape; the discipline is that the detail lives in the obslog, not that it lives in a template.\n\nRaise-when-arising. Items are not batched up for a later 'review block'. They are written to the obslog when they arise and alerted in chat in the same turn. Accumulating unresolved items defers review and produces the 'review block at the end of the session' failure mode.",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DB-001"
+      },
+      "set": {
+        "rule_text": "Claude AI never assumes the current state of the database. Before any operation that depends on DB state: (1) check the current chat for data already provided — do not re-request what is already present; (2) if the required data is not in the chat, request it explicitly from Claude Code via a query; (3) if data was provided earlier in the chat but may be stale, request a refresh. Proceeding on assumed DB state is a violation regardless of how recent or reliable the assumption appears.",
+        "rationale": "The database changes between turns. Other patches apply; other sessions run; the extract held in chat becomes stale without notice. 'Recent' is not 'current' — an assumption that was true last turn may be wrong this turn. Operations built on stale state produce inconsistencies that compound across a batch of work. The three-step check costs little; the alternative is the class of errors where the fix is harder than the original operation would have been.",
+        "application_notes": "What counts as DB state. Row counts, field values, flag states, resolution status, schema structure, existence or absence of records, referential integrity, and the presence or absence of patches in a log. If an action depends on any of these, the three-step check applies.\n\n'Assumed' includes memory. If Claude AI's memory of a DB fact is from a previous session, it is an assumption, not current state — the three-step check applies, starting from step 2 (request from CC) because the chat will not contain the data.",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "rule_updates": 5,
+    "rules_restructured": 5,
+    "rules_realigned": 0,
+    "version_notation_normalised": 2,
+    "rule_ids_touched": [
+      "GR-OBS-001",
+      "GR-CAD-001",
+      "GR-PROG-007",
+      "GR-RD-007",
+      "GR-DB-001"
+    ]
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260421-RULES-BATCH2-MEDIUM-V1",
+    "produced_date": "20260421",
+    "produced_at": "2026-04-21T00:00:00Z",
+    "produced_by": "wa-patch-instruction-v2_2-20260421",
+    "patch_type": "RULES",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "motivation": "Batch 2 of the full-pass rules restructure (medium-length rules, 300–450 chars) per researcher decision 2026-04-21 (obslog §48 + §58). Ten rules evaluated for appropriateness and correctness, restructured into four-field form where content warrants; NULL where nothing distinctive belongs. 8 of 10 rules receive dot-to-underscore version-notation normalisation per GR-FILE-003. Two rules (GR-FILE-001, GR-FILE-009) migrate content from singular `example` to plural `examples` per §48 decision.",
+    "description": "Ten UPDATE operations on wa_rule_registry covering the medium-length rules. Consistency pass: version notation normalised; vocabulary harmonised (obslog; 'patches' replaces the now-absorbed 'patch specifications' term); scope lists moved to application_notes where they sat in rule_text for convenience. No binding content dropped. See wa-global-rewrites-batch2-medium-v1-20260421.md for per-rule evaluation judgements."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-003"
+      },
+      "set": {
+        "rule_text": "Version numbers use the format `v[major]_[minor]` with both components always present. The first version of any document is `v1_0`. Minor increments cover updates and modifications; major increments apply when a document is rewritten from scratch. This format is used consistently in filenames, JSON version fields, and prose references. It applies to all files, documents, instructions, observations logs, and patches.",
+        "rationale": "Underscored dual-component versions give a uniform, grep-searchable form that sorts predictably in filename listings, and they avoid the SemVer dot convention which carries different meaning in package-ecosystem contexts.",
+        "application_notes": "Minor increments in logical batches. Minor version bumps typically group a logical batch of updates rather than changing on every save. A single edit followed by another edit five minutes later normally shares a minor version. The judgement is what is sensible for the audit trail, not a fixed cadence.",
+        "examples": "Correct: v1_0, v2_7, v3_1.\nWrong (SemVer-style dot): v2.7.\nWrong (missing minor): v2.",
+        "version": "3_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-009"
+      },
+      "set": {
+        "rule_text": "Where a connection, claim, or classification is theologically plausible or analytically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential connections may not be presented or upgraded as confirmed without supporting correlation signal or verse evidence.",
+        "rationale": "An inferential label in a published document is accurate description of the evidence state, not a failure. Suppressing the label to make a finding look more solid than it is would misrepresent the evidence and defeat the purpose of separating findings from hypotheses.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROC-002"
+      },
+      "set": {
+        "rule_text": "Every analytical finding must be rooted in and traceable back to data in the database. A finding that cannot be traced to a specific verse record, term entry, lexical source, correlation signal, or extract field is a hypothesis, not a finding, and must be labelled as such or discarded.",
+        "application_notes": "Hypothesis-to-finding conversion. A finding initially formed on a hypothesis is acceptable only when subsequent evidence supports it on its own terms. The original hypothesis-based statement is replaced with the evidence-grounded one; the earlier wording is not left in place with the evidence tacked on.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-OBS-003"
+      },
+      "set": {
+        "rule_text": "The observations log (obslog) and the session log are separate files with separate purposes. The obslog is the working paper, written continuously per GR-OBS-001. The session log is the handoff record, produced at session close and at any named batch boundary within a session. A session that closes without a session log has not closed cleanly — the session log is always produced before the session ends.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-009"
+      },
+      "set": {
+        "rule_text": "Dates appearing in filenames use compact format `YYYYMMDD` with no separators. Dates within prose, table cells, change notes, or analytical observations may use ISO 8601 (`YYYY-MM-DD`) for readability. The compact format is required in filenames, patch IDs, document header date fields, and anywhere a date forms part of a structured identifier.",
+        "examples": "Wrong: wa-023-compassion-sessionb-brief-v1-2026-04-14.md\nCorrect: wa-023-compassion-sessionb-brief-v1-20260414.md",
+        "example": null,
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DATA-002"
+      },
+      "set": {
+        "rule_text": "The current versioned extract produced by Claude Code is the authoritative data source for Session B analysis. Prior session outputs — observations logs, word studies, analytical briefs — are reference material only and do not override extract data. Where a prior output conflicts with the extract, the extract is correct and the prior output requires correction.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DATA-004"
+      },
+      "set": {
+        "rule_text": "The complete word data export is a versioned file managed by Claude Code. Claude AI confirms the version number of the export at session start, before analytical work begins. If the version is not confirmed, Claude AI requests it from Claude Code. Claude AI does not proceed on an extract whose version has not been confirmed in the current session.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-001"
+      },
+      "set": {
+        "rule_text": "All files follow the pattern `[prefix]-[reference]-[short description]-[version]-[date]`. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier — cluster code, registry number, group code, or `global` for cross-programme files. Dates in filenames use compact format per GR-FILE-009.",
+        "examples": "wa-023-compassion-sessionb-brief-v1-20260411.md",
+        "example": null,
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-008"
+      },
+      "set": {
+        "rule_text": "All output files are written to both the working directory (`/home/claude` or equivalent) and `/mnt/user-data/outputs/` simultaneously. An output that exists only in memory, or only in one location, has not been written. This applies without exception to all output types.",
+        "application_notes": "Scope. The rule applies to observations logs, session logs, patches, directives, instruction documents, analytical briefs, and any other output file produced in a session. No output type is exempt.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PASS-001"
+      },
+      "set": {
+        "rule_text": "All internal outputs produced during a pass are made available for download at the end of that pass, before the next pass begins. This applies to observations logs, patches, directives, session logs, and any other pass-level output. A pass that closes without presenting outputs for download has not closed cleanly.",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 10,
+    "rule_updates": 10,
+    "rules_restructured": 10,
+    "rules_realigned": 0,
+    "version_notation_normalised": 8,
+    "example_to_examples_migrations": 2,
+    "rule_ids_touched": [
+      "GR-FILE-003",
+      "GR-PROG-009",
+      "GR-PROC-002",
+      "GR-OBS-003",
+      "GR-FILE-009",
+      "GR-DATA-002",
+      "GR-DATA-004",
+      "GR-FILE-001",
+      "GR-FILE-008",
+      "GR-PASS-001"
+    ]
+  }
+}

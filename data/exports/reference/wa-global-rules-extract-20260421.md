@@ -43,9 +43,19 @@ _Source: DB `wa_rule_registry` + `wa_addendum_registry`. Regenerate at session s
 
 _Applies to: all sessions, all phases_
 
-_Version: 1_0_
+_Version: 1_1_
 
-Before every substantive response in chat, Claude AI produces a short self-check statement at the top of the response, naming: (a) what was written to disk in this turn including filenames; (b) whether present_files was called on those writes; (c) if nothing was written, a one-line statement that the response is discussion-only. After every substantive write to disk, Claude AI calls present_files on the written file(s) so the current state is immediately available for download. A substantive write is any write that produces a finding, decision, patch, entry in an observations log, entry in a session log, or new version of any file. This rule exists to prevent the recurring failure mode of Claude AI accumulating findings in chat and memory without writing to disk, and to prevent loss of session data when a session crashes or the chat context is lost. The self-check is non-waivable and is externally auditable — the researcher sees on every turn whether the write happened.
+Before every substantive response, Claude AI produces a short self-check at the top of the response, naming: (a) what was written to disk in this turn, with filenames; (b) whether present_files was called on those writes; (c) if nothing was written, a one-line statement that the response is discussion-only. After every substantive write to disk, Claude AI calls present_files on the written file(s). This rule is non-waivable.
+
+**Rationale.** Claude AI tends to accumulate findings in chat and in-session memory rather than writing them to disk. Chat output is ephemeral; in-session memory is lost when the session ends or the context window truncates. The self-check and the present_files call after writes make the save state externally visible on every turn, so the researcher sees at a glance whether the work has been preserved.
+
+**Application notes.** What counts as a substantive write. A substantive write is any write that produces or updates: a finding, a decision, a patch, an entry in an observations log, an entry in a session log, or a new version of any file. Routine intermediate scratch (temporary working files in /home/claude that are not intended as deliverables) does not count.
+
+Self-check when nothing was written. The 'discussion-only' statement is not a workaround. It applies when the turn genuinely produced no substantive content — a clarification exchange, a question being asked, a short acknowledgement. If work was done, it is written; the self-check then names the write.
+
+**Examples.** Self-check when a file was written: 'Writes this turn: obslog appended — wa-{reference}-obslog-v{n}-{YYYYMMDD}.md. present_files called: yes.'
+
+Self-check when nothing was written: 'Nothing written this turn — response is discussion-only.'
 
 ### Category: `data_discipline` (5 active)
 
@@ -53,41 +63,41 @@ Before every substantive response in chat, Claude AI produces a short self-check
 
 _Applies to: all sessions, all phases_
 
-_Version: 2.0_
+_Version: 2_1_
 
-All SQL queries against mti_terms that are intended to return active terms must include: AND mt.status IN ('extracted', 'extracted_thin'). Queries that omit this filter will return deleted terms and produce incorrect counts. This filter is non-waivable for any query where 'active terms' is the intent.
+All SQL queries against `mti_terms` that are intended to return active terms must include: `AND mt.status IN ('extracted', 'extracted_thin')`. Queries that omit this filter return deleted terms and produce incorrect counts. This filter is non-waivable for any query where "active terms" is the intent.
 
 #### GR-DATA-002 — Extract is authoritative for Session B — not prior session outputs
 
 _Applies to: Session B instruction_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The current versioned extract produced by Claude Code is the authoritative data source for Session B analysis. Prior session outputs (observations logs, word studies, analytical briefs) are reference material only — they do not override extract data. Where a prior output conflicts with the extract, the extract is correct and the prior output requires correction.
+The current versioned extract produced by Claude Code is the authoritative data source for Session B analysis. Prior session outputs — observations logs, word studies, analytical briefs — are reference material only and do not override extract data. Where a prior output conflicts with the extract, the extract is correct and the prior output requires correction.
 
 #### GR-DATA-003 — mti_term_flags authoritative field for somatic classification
 
 _Applies to: Session B instruction, all somatic classification work_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The authoritative field for somatic classification is mti_term_flags (not the redundant wa_term_inventory.somatic_link field). When a conflict exists between these two sources, mti_term_flags is correct.
+The authoritative field for somatic classification is `mti_term_flags`, not the redundant `wa_term_inventory.somatic_link` field. Where a conflict exists between these two sources, `mti_term_flags` is correct.
 
 #### GR-DATA-004 — Complete word data export carries a version number — confirm before proceeding
 
 _Applies to: Session B instruction_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The complete word data export is a versioned file managed by Claude Code. Claude AI must confirm the version number of the export at session start before any analytical work begins. If the version is not confirmed, Claude AI requests it from Claude Code. Claude AI does not proceed on an extract whose version has not been confirmed in the current session.
+The complete word data export is a versioned file managed by Claude Code. Claude AI confirms the version number of the export at session start, before analytical work begins. If the version is not confirmed, Claude AI requests it from Claude Code. Claude AI does not proceed on an extract whose version has not been confirmed in the current session.
 
 #### GR-DATA-005 — god_as_subject and somatic_link fields — verify before setting
 
 _Applies to: Session B instruction_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The fields god_as_subject and somatic_link on wa_term_inventory carry a high error rate from bulk operations. Before setting or relying on these fields in Session B, Claude AI must verify the values against the actual verse evidence for each term. A field value not verified against verse evidence is not confirmed.
+The fields `god_as_subject` and `somatic_link` on `wa_term_inventory` carry a high error rate from bulk operations. Before setting or relying on these fields in Session B, Claude AI verifies the values against the actual verse evidence for each term. A field value not verified against verse evidence is not confirmed.
 
 ### Category: `database_discipline` (1 active)
 
@@ -95,9 +105,15 @@ The fields god_as_subject and somatic_link on wa_term_inventory carry a high err
 
 _Applies to: all sessions, all phases_
 
-_Version: 1.0_
+_Version: 1_1_
 
-Claude AI never assumes the current state of the database. This applies to: row counts, field values, flag states, resolution status, schema structure, and the existence or absence of records. Before any operation that depends on DB state: (1) check the current chat for data already provided — do not request what is already present; (2) if the required data is not in the chat, request it explicitly from Claude Code via a query; (3) if data was provided earlier in the chat but may be stale — ask for a refresh. Claude AI that proceeds on assumed DB state is in violation of this rule regardless of how recent or reliable the assumption appears.
+Claude AI never assumes the current state of the database. Before any operation that depends on DB state: (1) check the current chat for data already provided — do not re-request what is already present; (2) if the required data is not in the chat, request it explicitly from Claude Code via a query; (3) if data was provided earlier in the chat but may be stale, request a refresh. Proceeding on assumed DB state is a violation regardless of how recent or reliable the assumption appears.
+
+**Rationale.** The database changes between turns. Other patches apply; other sessions run; the extract held in chat becomes stale without notice. 'Recent' is not 'current' — an assumption that was true last turn may be wrong this turn. Operations built on stale state produce inconsistencies that compound across a batch of work. The three-step check costs little; the alternative is the class of errors where the fix is harder than the original operation would have been.
+
+**Application notes.** What counts as DB state. Row counts, field values, flag states, resolution status, schema structure, existence or absence of records, referential integrity, and the presence or absence of patches in a log. If an action depends on any of these, the three-step check applies.
+
+'Assumed' includes memory. If Claude AI's memory of a DB fact is from a previous session, it is an assumption, not current state — the three-step check applies, starting from step 2 (request from CC) because the chat will not contain the data.
 
 ### Category: `document_discipline` (2 active)
 
@@ -177,17 +193,17 @@ Output format by purpose: JSON for structured, markdown for descriptive, docx an
 
 _Applies to: all processing instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-All files follow the pattern [prefix]-[reference]-[short description]-[version]-[date]. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier (cluster code, registry number, group code, or 'global' for cross-programme files). Dates in filenames use compact format per GR-FILE-009.
+All files follow the pattern `[prefix]-[reference]-[short description]-[version]-[date]`. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier — cluster code, registry number, group code, or `global` for cross-programme files. Dates in filenames use compact format per GR-FILE-009.
 
-**Example (legacy single-illustration field):** `wa-023-compassion-sessionb-brief-v1-20260411.md`
+**Examples.** wa-023-compassion-sessionb-brief-v1-20260411.md
 
 #### GR-FILE-002 — Short description length
 
 _Applies to: all processing instructions_
 
-_Version: 1.0_
+_Version: 1_1_
 
 The short description in a filename must not exceed 30 characters.
 
@@ -195,37 +211,47 @@ The short description in a filename must not exceed 30 characters.
 
 _Applies to: all processing instructions_
 
-_Version: 3_0_
+_Version: 3_1_
 
-Version numbers use the format v[major]_[minor] with both components always present. The first version of any document is v1_0. Minor increments for updates and modifications grouped in logical batches. Major increments when a document is rewritten from scratch. This format applies consistently in filenames, JSON version fields, and prose references. Applied to all files, documents, instructions, observations logs, and patches.
+Version numbers use the format `v[major]_[minor]` with both components always present. The first version of any document is `v1_0`. Minor increments cover updates and modifications; major increments apply when a document is rewritten from scratch. This format is used consistently in filenames, JSON version fields, and prose references. It applies to all files, documents, instructions, observations logs, and patches.
+
+**Rationale.** Underscored dual-component versions give a uniform, grep-searchable form that sorts predictably in filename listings, and they avoid the SemVer dot convention which carries different meaning in package-ecosystem contexts.
+
+**Application notes.** Minor increments in logical batches. Minor version bumps typically group a logical batch of updates rather than changing on every save. A single edit followed by another edit five minutes later normally shares a minor version. The judgement is what is sensible for the audit trail, not a fixed cadence.
+
+**Examples.** Correct: v1_0, v2_7, v3_1.
+Wrong (SemVer-style dot): v2.7.
+Wrong (missing minor): v2.
 
 #### GR-FILE-006 — Prefix and reference conventions
 
 _Applies to: all processing instructions_
 
-_Version: 1.0_
+_Version: 1_1_
 
-The prefix for this project is 'wa'. Global files use 'wa-global' as the reference segment. Registry files use the zero-padded registry number (e.g. 'wa-023'). Cluster files use the cluster code (e.g. 'wa-c17'). Session D synthesis files use 'wa-sd'. Batch files use the batch identifier (e.g. 'wa-vcb-001').
+The prefix for this project is `wa`. Global files use `wa-global` as the reference segment. Registry files use the zero-padded registry number (e.g. `wa-023`). Cluster files use the cluster code (e.g. `wa-c17`). Session D synthesis files use `wa-sd`. Batch files use the batch identifier (e.g. `wa-vcb-001`).
 
 #### GR-FILE-007 — Lowercase filenames
 
 _Applies to: all processing instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
 All filenames produced by Claude AI are fully lowercase — no uppercase characters anywhere in the filename or extension. This applies without exception to all output files.
 
-**Example (legacy single-illustration field):** `WRONG: wa-023-compassion-SessionB-log-v1-20260414.md — CORRECT: wa-023-compassion-sessionb-log-v1-20260414.md`
+**Examples.** Wrong: wa-023-compassion-SessionB-log-v1-20260414.md
+Correct: wa-023-compassion-sessionb-log-v1-20260414.md
 
 #### GR-FILE-009 — Compact date format in filenames
 
 _Applies to: all processing instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-Dates appearing in filenames use compact format YYYYMMDD with no separators. Example: 20260414 not 2026-04-14. Dates within prose, table cells, change notes, or analytical observations may use ISO 8601 (YYYY-MM-DD) for readability. The compact format is required in: filenames, patch IDs, document header date fields, and anywhere a date forms part of a structured identifier.
+Dates appearing in filenames use compact format `YYYYMMDD` with no separators. Dates within prose, table cells, change notes, or analytical observations may use ISO 8601 (`YYYY-MM-DD`) for readability. The compact format is required in filenames, patch IDs, document header date fields, and anywhere a date forms part of a structured identifier.
 
-**Example (legacy single-illustration field):** `WRONG: wa-023-compassion-sessionb-brief-v1-2026-04-14.md — CORRECT: wa-023-compassion-sessionb-brief-v1-20260414.md`
+**Examples.** Wrong: wa-023-compassion-sessionb-brief-v1-2026-04-14.md
+Correct: wa-023-compassion-sessionb-brief-v1-20260414.md
 
 ### Category: `file_output` (1 active)
 
@@ -233,9 +259,11 @@ Dates appearing in filenames use compact format YYYYMMDD with no separators. Exa
 
 _Applies to: all processing instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-All output files are written to both the working directory (/home/claude or equivalent) and /mnt/user-data/outputs/ simultaneously. An output that exists only in memory or only in one location has not been written. This applies without exception to all output types — observations logs, session logs, patches, instruction documents, and analytical briefs.
+All output files are written to both the working directory (`/home/claude` or equivalent) and `/mnt/user-data/outputs/` simultaneously. An output that exists only in memory, or only in one location, has not been written. This applies without exception to all output types.
+
+**Application notes.** Scope. The rule applies to observations logs, session logs, patches, directives, instruction documents, analytical briefs, and any other output file produced in a session. No output type is exempt.
 
 ### Category: `observation_discipline` (2 active)
 
@@ -243,17 +271,17 @@ All output files are written to both the working directory (/home/claude or equi
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
-The observations log and the session log are separate files with separate purposes. The observations log is the working paper, written continuously per GR-OBS-001. The session log is the handoff record, produced at session close and at any named batch boundary within a session. A session that closes without a session log has not closed cleanly. The session log is always produced before the session ends.
+The observations log (obslog) and the session log are separate files with separate purposes. The obslog is the working paper, written continuously per GR-OBS-001. The session log is the handoff record, produced at session close and at any named batch boundary within a session. A session that closes without a session log has not closed cleanly — the session log is always produced before the session ends.
 
 #### GR-OBS-004 — Observations log version increment at named boundaries
 
 _Applies to: Session B, Dimension Review, Verse Context instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The observations log filename is version-incremented when resuming work on the same registry or cluster in a new session — not on every file save within the same session. A named boundary is a new session start, not a mid-session write.
+The observations log (obslog) filename is version-incremented when resuming work on the same registry or cluster in a new session — not on every file save within the same session. A named boundary is a new session start, not a mid-session write.
 
 ### Category: `pass_close` (1 active)
 
@@ -261,9 +289,9 @@ The observations log filename is version-incremented when resuming work on the s
 
 _Applies to: Session B, Session C, Session D instructions_
 
-_Version: 1.0_
+_Version: 1_1_
 
-All internal outputs produced during a pass must be made available for download at the end of that pass, before the next pass begins. This applies to observations logs, patch specifications, CC directives, session logs, and any other pass-level output. A pass that closes without presenting outputs for download has not closed cleanly.
+All internal outputs produced during a pass are made available for download at the end of that pass, before the next pass begins. This applies to observations logs, patches, directives, session logs, and any other pass-level output. A pass that closes without presenting outputs for download has not closed cleanly.
 
 ### Category: `process_discipline` (5 active)
 
@@ -293,7 +321,7 @@ Permitted minimum is not help-forward. Compliance gap statements, contradiction 
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
 A step that produces a required output is not complete until that output exists and has been validated as complete per the instructions.
 
@@ -301,17 +329,19 @@ A step that produces a required output is not complete until that output exists 
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
-Every analytical finding must be rooted in and traceable back to the data in the database. A finding that cannot be traced to a specific verse record, term entry, lexical source, correlation signal, or extract field is a hypothesis, not a finding, and must be labelled as such or discarded. A finding initially formed on a hypothesis is acceptable only when subsequent evidence supports it on its own terms.
+Every analytical finding must be rooted in and traceable back to data in the database. A finding that cannot be traced to a specific verse record, term entry, lexical source, correlation signal, or extract field is a hypothesis, not a finding, and must be labelled as such or discarded.
+
+**Application notes.** Hypothesis-to-finding conversion. A finding initially formed on a hypothesis is acceptable only when subsequent evidence supports it on its own terms. The original hypothesis-based statement is replaced with the evidence-grounded one; the earlier wording is not left in place with the evidence tacked on.
 
 #### GR-PROC-004 — No patch or directive applied without researcher review
 
 _Applies to: all sessions, all phases_
 
-_Version: 2.0_
+_Version: 2_1_
 
-Every patch and every CC directive is reviewed by the researcher before Claude Code applies it. Claude AI produces the patch or directive, states what it will do and what the confirmation output will be, and waits for explicit researcher approval before Claude Code proceeds. This applies without exception.
+Every patch and every directive is reviewed by the researcher before Claude Code applies it. Claude AI produces the patch or directive, states what it will do and what the confirmation output will be, and waits for explicit researcher approval before Claude Code proceeds. This applies without exception.
 
 #### GR-TEMPO-001 — Tempo does not override compliance — obs log writes precede chat responses in accelerated exchanges
 
@@ -337,7 +367,7 @@ Correct response when a rule applies: perform the logged action, then respond.
 
 _Applies to: all sessions, all phases_
 
-_Version: 2.0_
+_Version: 2_1_
 
 The verse is the primary unit of evidence. All analytical work begins with what the verse says, not what a category, tradition, or prior interpretation says. Dimensions, classifications, and findings emerge from the verse evidence. The verse is never bent to fit a pre-existing category.
 
@@ -345,7 +375,7 @@ The verse is the primary unit of evidence. All analytical work begins with what 
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
 The programme's governing question is: what does Scripture reveal about the characteristics, operations, and interrelationships of the human inner being (spirit, soul, body)? All analytical work is oriented toward this question.
 
@@ -353,7 +383,7 @@ The programme's governing question is: what does Scripture reveal about the char
 
 _Applies to: Dimension Review, Session B instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
 Dimension assignments are discovered from verse evidence, not imposed from prior categories. A dimension that cannot be grounded in at least one verse in the registry's corpus is not a dimension for that registry.
 
@@ -361,9 +391,11 @@ Dimension assignments are discovered from verse evidence, not imposed from prior
 
 _Applies to: Session B, Session C instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The Session C word study is the primary reader-facing document. It stands on its own feet. Session B deepens and corrects it from within — it does not replace it. An accurate Session C document that has been corrected by Session B is more valuable than an accessible document that contains errors.
+The Session C word study is the primary reader-facing document. It stands on its own feet. Session B deepens and corrects it from within — it does not replace it.
+
+**Rationale.** An accurate Session C document that has been corrected by Session B is more valuable than an accessible document that contains errors. The value of Session C depends on its being right; Session B exists to make it right.
 
 #### GR-PROG-005 — Two-AI division of responsibility — Claude AI decides, Claude Code executes; patches and directives as sole DB-change mechanisms
 
@@ -377,25 +409,35 @@ The division of responsibility between Claude AI and Claude Code is strict and n
 
 _Applies to: Verse Context, Session B instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-The characteristic-perspective grouping model governs how verse context groups are formed: groups describe what a verse is about (the inner-being characteristic it engages), not what a term does. The same property term can serve different characteristics across its corpus. Groups are characteristic-centric, not term-centric.
+The characteristic-perspective grouping model governs how verse context groups are formed: groups describe what a verse is about — the inner-being characteristic it engages — not what a term does. The same property term can serve different characteristics across its corpus. Groups are characteristic-centric, not term-centric.
 
 #### GR-PROG-007 — Filter at term level — direct engagement or implication in an inner-being characteristic
 
 _Applies to: Verse Context instruction, Session B Stage 1, all relevance filtering decisions_
 
-_Version: 2.1_
+_Version: 2_2_
 
-The inner-being relevance filter is applied to the specific term's use in the verse, not to the verse's general theme or content. A term passes the filter if it does either of the following in this verse: (a) directly engages the inner being — names, expresses, or presupposes an internal state, capacity, orientation, or quality of a person; or (b) qualifies, operates on, or clarifies an inner-being characteristic — the term is implicated in a characteristic even if the characteristic is not named explicitly in the verse, provided it can be inferred from the term's specific use. The characteristic does not need to be stated; it needs to be genuinely implied by how the term functions here. A term that is present in a verse but plays no role in any inner-being dynamic — purely syntactic, purely locational, purely administrative — does not pass. The question is always: is this specific term, in its specific use in this verse, implicated in an inner-being characteristic?
+The inner-being relevance filter is applied to the specific term's use in the verse, not to the verse's general theme or content. A term passes the filter if it does either of the following in this verse: (a) directly engages the inner being — names, expresses, or presupposes an internal state, capacity, orientation, or quality of a person; or (b) qualifies, operates on, or clarifies an inner-being characteristic — the term is implicated in a characteristic even if the characteristic is not named explicitly in the verse, provided it can be inferred from the term's specific use.
+
+**Rationale.** The filter operates at term level because verse-theme filtering produces bleed. A verse may contain terms that relate to its overall subject in ways that have nothing to do with inner-being dynamics (a preposition, a proper noun, a spatial marker), and a verse-level filter cannot separate these from the terms that genuinely engage the inner being. The term-in-its-use is the unit of evidence the programme acts on.
+
+**Application notes.** Branch (b) — implication standard. The characteristic does not need to be stated in the verse; it needs to be genuinely implied by how the term functions. A plausible speculative connection does not pass; a connection that can be read out of the term's specific use in this verse does.
+
+Exclusion test. A term present in a verse that plays no role in any inner-being dynamic — purely syntactic, purely locational, purely administrative — does not pass. This is the common failure of verse-theme filtering: the term is there, but it does not do any inner-being work in this verse.
+
+Diagnostic question. When a classification decision is close to the line, the operative question is: is this specific term, in its specific use in this verse, implicated in an inner-being characteristic? If the answer requires reframing the verse, inventing context, or appealing to the verse's general theme, the term does not pass.
 
 #### GR-PROG-009 — Inferential is not confirmed — label accurately
 
 _Applies to: Session B, Session C, Session D instructions_
 
-_Version: 2.0_
+_Version: 2_1_
 
-Where a connection, claim, or classification is theologically plausible or analytically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential connections may not be presented or upgraded as confirmed without supporting correlation signal or verse evidence. An inferential label in a published document is accurate description of the evidence state, not a failure.
+Where a connection, claim, or classification is theologically plausible or analytically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential connections may not be presented or upgraded as confirmed without supporting correlation signal or verse evidence.
+
+**Rationale.** An inferential label in a published document is accurate description of the evidence state, not a failure. Suppressing the label to make a finding look more solid than it is would misrepresent the evidence and defeat the purpose of separating findings from hypotheses.
 
 ### Category: `researcher_decision` (1 active)
 
@@ -403,9 +445,15 @@ Where a connection, claim, or classification is theologically plausible or analy
 
 _Applies to: all sessions, all phases_
 
-_Version: 1_0_
+_Version: 1_1_
 
-The researcher feedback process is interactive and recorded. The observations log carries the detail — the interpretation, the draft, the ambiguity, the options. A brief message in chat alerts the researcher to items that need review. The researcher's response is captured in the observations log. Any follow-up — revisions, validations, close-outs — is recorded in the observations log. Chat is the alerting channel; the observations log is the record. Claude AI does not wrap decision items in a rigid six-field format; it presents them in the shape that serves the researcher's review. Claude AI does not accumulate unresolved items — they are raised when they arise and resolved in the obs log trail.
+The obslog carries the detail of decision items — interpretation, draft, ambiguity, options. A brief message in chat alerts the researcher to items that need review. The researcher's response is captured in the obslog; any follow-up — revisions, validations, close-outs — is recorded in the obslog. Chat is the alerting channel; the obslog is the record. Claude AI does not accumulate unresolved items — they are raised when they arise and resolved in the obslog trail.
+
+**Rationale.** Chat is a poor record: it is truncated by context windows, hard to search, and interleaves working text with deliverables. The obslog is the record because it is persistent, searchable, and structured. The separation of alert channel from record channel keeps chat short and keeps the detail where it can be audited.
+
+**Application notes.** No rigid format for decision items. Claude AI does not wrap decision items in a fixed template (the 'six-field format' that emerged at one point). Items are presented in the shape that serves the researcher's review — sometimes a single sentence with a recommendation, sometimes a numbered list of options, sometimes a table of trade-offs. Authorship chooses the shape; the discipline is that the detail lives in the obslog, not that it lives in a template.
+
+Raise-when-arising. Items are not batched up for a later 'review block'. They are written to the obslog when they arise and alerted in chat in the same turn. Accumulating unresolved items defers review and produces the 'review block at the end of the session' failure mode.
 
 ### Category: `session_startup` (2 active)
 
@@ -441,21 +489,21 @@ Specific failure mode countered: the trained pull to 'show the work of reading' 
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
-The observations log is the authoritative record of every session's working trail. It is generally referred to as the obslog.
+The observations log — referred to as the obslog — is the authoritative record of every session's working trail. The obslog is initialised as step 2 of the session-startup sequence (GR-LOAD-001); no substantive work may begin until it exists. While the session is live, every finding, decision, gap, patch consequence, and open question is written to the obslog at the moment it is determined. Every substantive chat output also appears in the obslog. When a researcher message is received, the researcher's feedback is recorded verbatim in the obslog before a response is formulated. At every pass close, items requiring database persistence are written via a patch or directive, and a fresh extract confirming the write becomes the working source for the next pass. This discipline persists for the life of the session. This rule is non-waivable.
 
-Initialisation. The obslog is initialised as step (2) of the session-startup sequence governed by GR-LOAD-001: after global rules are loaded (step 1), the obslog is created for this session; cadence discipline is then activated (step 3). Until the obslog is initialised, no substantive work may begin.
+**Rationale.** Claude AI cannot rely on in-memory accumulation across a session. Sessions crash; context windows truncate; follow-up work depends on what was captured. The obslog exists so that the working trail survives these failure modes. Without continuous capture to disk, findings reach the researcher only through chat output — which is ephemeral and unaudited. Continuous write makes the work externally reviewable at every turn.
 
-Capture discipline. Every chat working text, finding, decision, gap, patch consequence, flag, and open question is written to the log at the moment it is determined — nothing is accumulated in memory for later transcription. This includes material that appears in the chat interface: every substantive chat output must also appear in the observations log. When a new researcher chat is digested, the researcher feedback is recorded verbatim into the obslog before a response is formulated. If something is not in the observations log, it has not been received or done.
+**Application notes.** Compliance test. A useful shorthand: if something is not in the observations log, it has not been received or done. This is not literal — the thought existed — but it captures the rule's operational meaning: nothing that is only in chat or in memory counts as work.
 
-Pass-close discipline. At every pass close, items requiring database persistence are written via a patch or CC directive, and a fresh extract is pulled confirming the write; the updated extract becomes the working source for the next pass.
+Capture scope. The list of content types caught by continuous-write includes: findings, decisions, gaps, patch consequences, flags, open questions, clarification requests, and researcher feedback verbatim. New content types arising in a session are logged on the same discipline.
 
-This process must persist throughout the life of the session. This rule is non-waivable.
+Verbatim researcher capture. 'Verbatim' means the researcher's message is reproduced exactly, not paraphrased or summarised. If the message is long, the full text is still captured; summaries appear elsewhere in the log if needed.
 
 ---
 
 ## Addenda (rules migration / absorption record)
 
 ---
-*Generated 2026-04-21T07:12:08Z.*
+*Generated 2026-04-21T08:48:32Z.*

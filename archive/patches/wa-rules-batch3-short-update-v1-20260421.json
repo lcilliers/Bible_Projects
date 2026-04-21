@@ -1,0 +1,227 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260421-RULES-BATCH3-SHORT-V1",
+    "produced_date": "20260421",
+    "produced_at": "2026-04-21T00:00:00Z",
+    "produced_by": "wa-patch-instruction-v2_2-20260421",
+    "patch_type": "RULES",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "motivation": "Batch 3 (final) of the full-pass rules restructure — 14 of the 15 short rules (66–326 chars). Completes the consistency pass: 11 dot-to-underscore version-notation corrections; the final `example` → `examples` migration (GR-FILE-007); vocabulary harmonisation ('obslog' in GR-OBS-004; 'directive' in GR-PROC-004). GR-PROG-004 has concluding-sentence rationale extracted to `rationale` field. One rule (GR-FILE-005) intentionally left untouched per authorship judgement in obslog §64 — already at minimum form, no notation issue, version bump would be pointless churn.",
+    "description": "Fourteen UPDATE operations on wa_rule_registry. After this patch applies: all 36 active rules carry the four-field structure (populated or NULL); all rule versions use underscored form except GR-FILE-005 (already compliant). See wa-global-rewrites-batch3-short-v1-20260421.md for per-rule evaluation judgements."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-006"
+      },
+      "set": {
+        "rule_text": "The characteristic-perspective grouping model governs how verse context groups are formed: groups describe what a verse is about — the inner-being characteristic it engages — not what a term does. The same property term can serve different characteristics across its corpus. Groups are characteristic-centric, not term-centric.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DATA-005"
+      },
+      "set": {
+        "rule_text": "The fields `god_as_subject` and `somatic_link` on `wa_term_inventory` carry a high error rate from bulk operations. Before setting or relying on these fields in Session B, Claude AI verifies the values against the actual verse evidence for each term. A field value not verified against verse evidence is not confirmed.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-006"
+      },
+      "set": {
+        "rule_text": "The prefix for this project is `wa`. Global files use `wa-global` as the reference segment. Registry files use the zero-padded registry number (e.g. `wa-023`). Cluster files use the cluster code (e.g. `wa-c17`). Session D synthesis files use `wa-sd`. Batch files use the batch identifier (e.g. `wa-vcb-001`).",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROC-004"
+      },
+      "set": {
+        "rule_text": "Every patch and every directive is reviewed by the researcher before Claude Code applies it. Claude AI produces the patch or directive, states what it will do and what the confirmation output will be, and waits for explicit researcher approval before Claude Code proceeds. This applies without exception.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DATA-001"
+      },
+      "set": {
+        "rule_text": "All SQL queries against `mti_terms` that are intended to return active terms must include: `AND mt.status IN ('extracted', 'extracted_thin')`. Queries that omit this filter return deleted terms and produce incorrect counts. This filter is non-waivable for any query where \"active terms\" is the intent.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-004"
+      },
+      "set": {
+        "rule_text": "The Session C word study is the primary reader-facing document. It stands on its own feet. Session B deepens and corrects it from within — it does not replace it.",
+        "rationale": "An accurate Session C document that has been corrected by Session B is more valuable than an accessible document that contains errors. The value of Session C depends on its being right; Session B exists to make it right.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-001"
+      },
+      "set": {
+        "rule_text": "The verse is the primary unit of evidence. All analytical work begins with what the verse says, not what a category, tradition, or prior interpretation says. Dimensions, classifications, and findings emerge from the verse evidence. The verse is never bent to fit a pre-existing category.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-OBS-004"
+      },
+      "set": {
+        "rule_text": "The observations log (obslog) filename is version-incremented when resuming work on the same registry or cluster in a new session — not on every file save within the same session. A named boundary is a new session start, not a mid-session write.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-002"
+      },
+      "set": {
+        "rule_text": "The programme's governing question is: what does Scripture reveal about the characteristics, operations, and interrelationships of the human inner being (spirit, soul, body)? All analytical work is oriented toward this question.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROG-003"
+      },
+      "set": {
+        "rule_text": "Dimension assignments are discovered from verse evidence, not imposed from prior categories. A dimension that cannot be grounded in at least one verse in the registry's corpus is not a dimension for that registry.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-DATA-003"
+      },
+      "set": {
+        "rule_text": "The authoritative field for somatic classification is `mti_term_flags`, not the redundant `wa_term_inventory.somatic_link` field. Where a conflict exists between these two sources, `mti_term_flags` is correct.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-007"
+      },
+      "set": {
+        "rule_text": "All filenames produced by Claude AI are fully lowercase — no uppercase characters anywhere in the filename or extension. This applies without exception to all output files.",
+        "examples": "Wrong: wa-023-compassion-SessionB-log-v1-20260414.md\nCorrect: wa-023-compassion-sessionb-log-v1-20260414.md",
+        "example": null,
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-PROC-001"
+      },
+      "set": {
+        "rule_text": "A step that produces a required output is not complete until that output exists and has been validated as complete per the instructions.",
+        "version": "2_1",
+        "last_modified": "20260421"
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": {
+        "rule_id": "GR-FILE-002"
+      },
+      "set": {
+        "rule_text": "The short description in a filename must not exceed 30 characters.",
+        "version": "1_1",
+        "last_modified": "20260421"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 14,
+    "rule_updates": 14,
+    "rules_restructured": 14,
+    "rules_realigned": 0,
+    "version_notation_normalised": 11,
+    "example_to_examples_migrations": 1,
+    "intentionally_untouched": [
+      "GR-FILE-005"
+    ],
+    "rule_ids_touched": [
+      "GR-PROG-006",
+      "GR-DATA-005",
+      "GR-FILE-006",
+      "GR-PROC-004",
+      "GR-DATA-001",
+      "GR-PROG-004",
+      "GR-PROG-001",
+      "GR-OBS-004",
+      "GR-PROG-002",
+      "GR-PROG-003",
+      "GR-DATA-003",
+      "GR-FILE-007",
+      "GR-PROC-001",
+      "GR-FILE-002"
+    ]
+  }
+}

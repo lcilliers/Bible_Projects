@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-21T07:17:56Z",
+  "generated_at": "2026-04-21T08:48:53Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2796,
-  "total_active": 2037,
-  "total_archived": 759,
+  "total_files": 2805,
+  "total_active": 2043,
+  "total_archived": 762,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -4084,6 +4084,51 @@
       "archived": true,
       "size_bytes": 3529,
       "modified": "2026-03-17T09:01:26Z"
+    },
+    {
+      "path": "archive/patches/wa-rules-batch1-long-update-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 11760,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
+      "path": "archive/patches/wa-rules-batch2-medium-update-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 9705,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
+      "path": "archive/patches/wa-rules-batch3-short-update-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 9345,
+      "modified": "2026-04-21T07:40:18Z"
     },
     {
       "path": "archive/patches/wa-rules-gr-load-001-update-v1-20260421.json",
@@ -18467,8 +18512,8 @@
       "date": "2026-04-21",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 114115,
-      "modified": "2026-04-21T07:12:08Z"
+      "size_bytes": 125253,
+      "modified": "2026-04-21T08:48:32Z"
     },
     {
       "path": "data/exports/reference/wa-global-rules-extract-20260421.md",
@@ -18482,8 +18527,8 @@
       "date": "2026-04-21",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 38520,
-      "modified": "2026-04-21T07:12:08Z"
+      "size_bytes": 43945,
+      "modified": "2026-04-21T08:48:32Z"
     },
     {
       "path": "data/exports/reference/wa-label-patterns-extract-20260420.json",
@@ -34686,6 +34731,21 @@
       "modified": "2026-04-18T05:44:00Z"
     },
     {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-dir-001-rule-registry-columns-v1-20260421.md",
+      "category": "import",
+      "type": "import",
+      "registry": 1,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6399,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
       "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-dir-20260416-001-schema-catalogue-v1-20260416.md",
       "category": "import",
       "type": "session-log",
@@ -34986,6 +35046,51 @@
       "modified": "2026-04-18T13:51:22Z"
     },
     {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rewrites-batch1-long-v1-20260421.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 22983,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rewrites-batch2-medium-v1-20260421.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 15421,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rewrites-batch3-short-v1-20260421.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 15251,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
       "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rules-audit-decisions-v1-20260414 updated.md",
       "category": "import",
       "type": "import",
@@ -35164,6 +35269,36 @@
       "archived": false,
       "size_bytes": 22446,
       "modified": "2026-04-17T14:22:06Z"
+    },
+    {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rules-review-obslog-v1_0-20260421.md",
+      "category": "import",
+      "type": "session-log",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 93738,
+      "modified": "2026-04-21T07:40:18Z"
+    },
+    {
+      "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rules-rewrites-draft-v1_0-20260421.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 27235,
+      "modified": "2026-04-21T07:40:18Z"
     },
     {
       "path": "data/imports/WA/Workflow/Sessionlogs/wa-global-rules-status-v1_0-20260417.md",
