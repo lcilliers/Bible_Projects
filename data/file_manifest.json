@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-21T08:48:53Z",
+  "generated_at": "2026-04-21T09:23:02Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2805,
-  "total_active": 2043,
-  "total_archived": 762,
+  "total_files": 2809,
+  "total_active": 2046,
+  "total_archived": 763,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -18621,6 +18621,21 @@
       "modified": "2026-04-20T16:45:02Z"
     },
     {
+      "path": "data/exports/reference/wa-programme-prose-extract-20260421.json",
+      "category": "export",
+      "type": "export",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 4690,
+      "modified": "2026-04-21T08:55:31Z"
+    },
+    {
       "path": "data/exports/reference/wa-reference-snapshot-20260420.json",
       "category": "export",
       "type": "export",
@@ -18649,6 +18664,21 @@
       "archived": false,
       "size_bytes": 5966,
       "modified": "2026-04-20T16:51:54Z"
+    },
+    {
+      "path": "data/exports/reference/wa-reference-snapshot-20260421.json",
+      "category": "export",
+      "type": "export",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 82132,
+      "modified": "2026-04-21T08:55:31Z"
     },
     {
       "path": "data/exports/reference/wa-vocab-extract-20260420.json",
@@ -32046,6 +32076,21 @@
       "modified": "2026-04-16T15:04:00Z"
     },
     {
+      "path": "data/imports/WA/Workflow/Framework_B/Session_B/archive/wa-directive-instruction-v1_1-20260418.md",
+      "category": "import",
+      "type": "instruction",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-18",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 19259,
+      "modified": "2026-04-18T09:26:38Z"
+    },
+    {
       "path": "data/imports/WA/Workflow/Framework_B/Session_B/archive/wa-global-flags-v1_4-20260418.md",
       "category": "import",
       "type": "flags",
@@ -32196,7 +32241,7 @@
       "modified": "2026-04-20T15:49:09Z"
     },
     {
-      "path": "data/imports/WA/Workflow/Framework_B/Session_B/wa-directive-instruction-v1_1-20260418.md",
+      "path": "data/imports/WA/Workflow/Framework_B/Session_B/wa-directive-instruction-v1_2-20260421.md",
       "category": "import",
       "type": "instruction",
       "registry": null,
@@ -32204,11 +32249,11 @@
       "cluster": null,
       "batch": null,
       "version": "1",
-      "date": "2026-04-18",
+      "date": "2026-04-21",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 19259,
-      "modified": "2026-04-18T09:26:38Z"
+      "size_bytes": 28794,
+      "modified": "2026-04-21T09:22:45Z"
     },
     {
       "path": "data/imports/WA/Workflow/Framework_B/Session_B/wa-global-database-review-instruction-v1_0-20260419.md",
@@ -37954,6 +37999,21 @@
       "archived": false,
       "size_bytes": 7325,
       "modified": "2026-03-23T20:17:39Z"
+    },
+    {
+      "path": "outputs/investigations/programme-prose-session-bundle-v1-20260421.md",
+      "category": "investigation",
+      "type": "investigation",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6304,
+      "modified": "2026-04-21T08:56:14Z"
     },
     {
       "path": "outputs/investigations/prose-in-sqlite-advice-v1-20260419.md",
