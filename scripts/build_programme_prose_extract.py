@@ -128,32 +128,85 @@ def render_markdown_view(extract: dict) -> str:
     lines = []
     meta = extract["meta"]
     pp = extract["programme_prose"]
+
     lines.append(f"# WA Programme-Stage Prose — {meta['generated_at'][:10]}\n")
     lines.append(f"_Schema {meta['schema_version']} · source: `prose_section_type` + `prose_section`._\n")
     lines.append("---\n")
-    lines.append(f"## Summary\n")
+    lines.append("## Summary\n")
     lines.append(f"**Section types seeded:** {pp['type_count']}  ·  "
                  f"**Content sections populated:** {pp['section_total']}\n")
-    if pp["section_total"] == 0:
-        lines.append("*No programme-stage content populated yet. Expected — M34 seeded section types only. "
-                     "Content migration via PROSE patches is the follow-on step.*\n")
     lines.append("---\n")
-    lines.append("## Section types\n")
-    lines.append("_`id` is `prose_section_type.id` — use it as `section_type_id` when inserting content via a PROSE patch._\n")
-    for t in pp["types"]:
-        lines.append(f"### `{t['code']}` — {t['label']}\n")
-        lines.append(f"**id:** {t['id']}  ·  **Sections populated:** {t['section_count']}  ·  "
-                     f"**Sort order:** {t['sort_order']}\n")
-        if t["description"]:
-            lines.append(f"_{t['description']}_\n")
-        if t["section_count"] > 0:
-            lines.append("| Section id | Registry | Heading | Status | Version | Author | Words |")
-            lines.append("|---:|---:|---|---|---:|---|---:|")
-            for s in t["sections_preview"]:
-                heading = (s["heading"] or "—").replace("|", "\\|")
-                lines.append(f"| {s['id']} | {s['registry_id'] or '—'} | {heading} | "
-                             f"{s['status']} | {s['version']} | {s['author']} | {s['word_count']} |")
-            lines.append("")
+
+    # Chapter name map. Chapter 0 = Preamble (standalone); 1-6 = the six macro areas
+    # per programme-prose-structure-design-v1. Unknown / NULL groups get a fallback.
+    CHAPTER_NAMES = {
+        0: "Preamble",
+        1: "Programme purpose",
+        2: "Research methodology",
+        3: "Research approach",
+        4: "Data architecture",
+        5: "Data integrity & governance",
+        6: "Instruction corpus",
+    }
+
+    # Partition types into (a) chaptered types that have at least one populated
+    # section, for rendering as readable prose grouped by chapter; (b) all
+    # remaining types (stubs not yet populated, or legacy/unchaptered), rendered
+    # as a flat index at the end.
+    populated = [t for t in pp["types"] if t["section_count"] > 0]
+    stubs = [t for t in pp["types"] if t["section_count"] == 0]
+
+    if populated:
+        lines.append("## Programme\n")
+        # Group populated types by chapter_no (None sorts last)
+        by_chapter: dict = {}
+        for t in populated:
+            ch = t.get("chapter_no")
+            by_chapter.setdefault(ch, []).append(t)
+        chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
+
+        for ch in chapter_keys:
+            chapter_name = CHAPTER_NAMES.get(ch, "Unchaptered") if ch is not None else "Unchaptered"
+            header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
+            lines.append(f"### {header}\n")
+            for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] or 0)):
+                lines.append(f"#### {t['label']}\n")
+                lines.append(f"_`{t['code']}`  ·  type id {t['id']}  ·  sort {t['sort_order']}_\n")
+                if t.get("description"):
+                    lines.append(f"> {t['description']}\n")
+                # Render each populated section's body inline (highest-version first
+                # per the underlying query in extract_programme_prose).
+                bodies = t.get("bodies_by_id") or {}
+                for s in t["sections_preview"]:
+                    body = bodies.get(s["id"])
+                    if body is None:
+                        # No body (either --include-body not set, or row missing). Show metadata.
+                        lines.append(f"*(metadata only — body not included in this extract. "
+                                     f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
+                        lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
+                                     f"v{s['version']} · {s['word_count']} words · author `{s['author']}`\n")
+                    else:
+                        meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
+                                     f"v{s['version']} · {s['word_count']} words · author `{s['author']}`*")
+                        lines.append(meta_line + "\n")
+                        lines.append(body.rstrip())
+                        lines.append("")  # blank line after body
+            lines.append("")  # blank line between chapters
+
+    if stubs:
+        lines.append("---\n")
+        lines.append("## Section types not yet populated\n")
+        lines.append("_Stubs — `prose_section_type` rows with `chapter_no=NULL` or no `prose_section` content. "
+                     "`id` is the value to use as `section_type_id` in a PROSE patch insert._\n")
+        lines.append("| id | code | label | chapter | sort | description |")
+        lines.append("|---:|---|---|---:|---:|---|")
+        for t in sorted(stubs, key=lambda x: (x["chapter_no"] is None, x["chapter_no"] or 0, x["sort_order"] or 0)):
+            desc = (t.get("description") or "").replace("|", "\\|").replace("\n", " ")
+            lines.append(f"| {t['id']} | `{t['code']}` | {t['label']} | "
+                         f"{t['chapter_no'] if t['chapter_no'] is not None else '—'} | "
+                         f"{t['sort_order']} | {desc} |")
+        lines.append("")
+
     lines.append("---")
     lines.append(f"*Generated {meta['generated_at']}.*")
     return "\n".join(lines)
