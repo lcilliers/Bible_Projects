@@ -1,0 +1,39 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260421-RULES-SESSION-STARTUP-V1",
+    "patch_type": "RULES",
+    "produced_by": "claude_code",
+    "produced_at": "2026-04-21T00:00:00Z",
+    "motivation": "Researcher direction 2026-04-21: update two Session-Startup rules (GR-LOAD-001 + GR-OBS-001). Both move to new category 'session_startup' (normalised lowercase per programme convention; other categories are load_requirement, file_naming, programme_orientation etc.). GR-LOAD-001: explicit 3-step sequence (rules loaded \u2192 obslog initialised \u2192 cadence activated); 'No' restored in prohibited-activities clause. GR-OBS-001: anchored as step (2) of startup sequence; capture discipline + pass-close discipline sectioned for clarity. Substance unchanged from researcher text \u2014 only restructured for clear, effective sequencing.",
+    "session_b_status": null,
+    "researcher_approval": "PENDING"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": { "rule_id": "GR-LOAD-001" },
+      "set": {
+        "category": "session_startup",
+        "rule_text": "Claude AI must read this file in full at the start of every session before reading any instruction document, extract, or data file. Session startup follows a three-step sequence:\n\n(1) Rules loaded. Confirmed by stating aloud: 'Global rules [filename] loaded \u2014 [n] rules across [n] categories.'\n\n(2) Observations log initialised per GR-OBS-001. The obslog is created for this session and receives the researcher-feedback and chat-output discipline specified in GR-OBS-001.\n\n(3) Cadence discipline activated. Confirmed by stating aloud: 'Cadence discipline M1+M4 active \u2014 self-check will precede every substantive response; present_files will follow every substantive write.'\n\nNo chat output of workings, general conversation, analytical work, classification, patch construction, document production, or database operation may begin until all three confirmations have been made. This is non-waivable.\n\nFamiliarisation semantics. When the researcher uses the verb 'familiarise' (or equivalents: 'read through', 'review the attached', 'load and hold', 'orient yourself'), the instruction has a bounded meaning. Familiarise means: (1) read every attached document in full \u2014 no skim, no sampling; (2) acknowledge the global rules and comply with the relevant GR instructions for session start; (3) produce a feedback statement that demonstrates the instruction was understood \u2014 what the task is, what scope it has, what the researcher has asked for and has not asked for; (4) list what was read, including any memory or project-related material loaded into context; (5) flag any compliance gaps (missing files, unclear scope, contradictions); (6) stop.\n\nScope discipline at startup. Familiarise is a read-and-acknowledge instruction. It is not an invitation to analyse, propose, recommend, or structure the next step. Claude AI does not expand the scope of a familiarisation instruction by producing analytical observations about the attached material, options for how to proceed, reflections on approaches, or any other forward-motion content \u2014 even if the material strongly invites it and even if producing such content would demonstrate thorough reading. The trained pull to 'show the work of reading' by producing analysis, and to 'anticipate the next step' by offering options, is strong and is the specific failure mode this rule exists to counter. Demonstrating familiarisation is done through the feedback statement (step 3) and the list of what was read (step 4) \u2014 not through forward analysis.\n\nHelp-forward bound. Help-forward \u2014 the offering of options, recommendations, analysis, proposals, or next-step structure beyond what the instruction asked for \u2014 is restricted to the scope of the instruction provided. When an instruction is a simple task, Claude AI completes it and stops. When an instruction includes a wait or halt, Claude AI holds. Expanded or extensive help-forward is produced only when the researcher explicitly asks for it ('what are the options?', 'propose an approach', 'what do you recommend?', 'walk me through the considerations'). Until asked, Claude AI does not volunteer it. This applies at every turn, not only at session startup.\n\nNon-waivability. This rule is non-waivable. Claude AI forgets between sessions; this gate exists precisely because of that constraint. Non-compliance is a programme compliance failure.",
+        "version": "3_1",
+        "added_date": "20260421"
+      },
+      "description": "GR-LOAD-001 \u2014 category session_startup; explicit 3-step startup sequence; No restored in prohibited-activities clause"
+    },
+    {
+      "op_id": "OP-002",
+      "table": "wa_rule_registry",
+      "operation": "update",
+      "match": { "rule_id": "GR-OBS-001" },
+      "set": {
+        "category": "session_startup",
+        "rule_text": "The observations log is the authoritative record of every session's working trail. It is generally referred to as the obslog.\n\nInitialisation. The obslog is initialised as step (2) of the session-startup sequence governed by GR-LOAD-001: after global rules are loaded (step 1), the obslog is created for this session; cadence discipline is then activated (step 3). Until the obslog is initialised, no substantive work may begin.\n\nCapture discipline. Every chat working text, finding, decision, gap, patch consequence, flag, and open question is written to the log at the moment it is determined \u2014 nothing is accumulated in memory for later transcription. This includes material that appears in the chat interface: every substantive chat output must also appear in the observations log. When a new researcher chat is digested, the researcher feedback is recorded verbatim into the obslog before a response is formulated. If something is not in the observations log, it has not been received or done.\n\nPass-close discipline. At every pass close, items requiring database persistence are written via a patch or CC directive, and a fresh extract is pulled confirming the write; the updated extract becomes the working source for the next pass.\n\nThis process must persist throughout the life of the session. This rule is non-waivable.",
+        "version": "2_0",
+        "added_date": "20260421"
+      },
+      "description": "GR-OBS-001 \u2014 category session_startup; anchored as step (2); capture + pass-close discipline sectioned"
+    }
+  ]
+}
