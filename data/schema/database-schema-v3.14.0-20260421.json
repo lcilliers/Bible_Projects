@@ -217,7 +217,7 @@
           "unique": true
         }
       ],
-      "row_count": 625
+      "row_count": 628
     },
     "engine_stream_checkpoint": {
       "sql": "CREATE TABLE engine_stream_checkpoint (\n            id               INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id           TEXT    NOT NULL REFERENCES engine_run_log(run_id),\n            stream_name      TEXT    NOT NULL,\n            status           TEXT    NOT NULL DEFAULT 'pending',\n            last_registry_id TEXT,\n            last_strong      TEXT,\n            rows_written     INTEGER DEFAULT 0,\n            rows_filtered    INTEGER DEFAULT 0,\n            error_detail     TEXT,\n            started_at       TEXT,\n            completed_at     TEXT\n        )",
@@ -557,7 +557,7 @@
       "row_count": 25
     },
     "prose_section": {
-      "sql": "CREATE TABLE prose_section (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER NOT NULL REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
+      "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
       "columns": [
         {
           "name": "id",
@@ -568,7 +568,7 @@
         {
           "name": "registry_id",
           "type": "INTEGER",
-          "notnull": true,
+          "notnull": false,
           "default": null
         },
         {
@@ -676,7 +676,7 @@
           "unique": false
         }
       ],
-      "row_count": 0
+      "row_count": 7
     },
     "prose_section_dimension_link": {
       "sql": "CREATE TABLE prose_section_dimension_link (\n            prose_section_id  INTEGER NOT NULL REFERENCES prose_section(id),\n            dimension_id      INTEGER NOT NULL,\n            link_type         TEXT    NOT NULL DEFAULT 'discusses',\n            created_at        TEXT    NOT NULL DEFAULT (datetime('now')),\n            PRIMARY KEY (prose_section_id, dimension_id, link_type)\n        )",
@@ -785,7 +785,7 @@
         }
       ],
       "indexes": [],
-      "row_count": 0
+      "row_count": 7
     },
     "prose_section_fts_config": {
       "sql": "CREATE TABLE 'prose_section_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID",
@@ -852,7 +852,7 @@
         }
       ],
       "indexes": [],
-      "row_count": 0
+      "row_count": 7
     },
     "prose_section_fts_data": {
       "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
@@ -871,7 +871,7 @@
         }
       ],
       "indexes": [],
-      "row_count": 4
+      "row_count": 11
     },
     "prose_section_fts_docsize": {
       "sql": "CREATE TABLE 'prose_section_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)",
@@ -890,7 +890,7 @@
         }
       ],
       "indexes": [],
-      "row_count": 0
+      "row_count": 7
     },
     "prose_section_fts_idx": {
       "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
@@ -920,7 +920,7 @@
           "unique": true
         }
       ],
-      "row_count": 2
+      "row_count": 9
     },
     "prose_section_type": {
       "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        )",
@@ -1008,7 +1008,7 @@
           "unique": true
         }
       ],
-      "row_count": 34
+      "row_count": 41
     },
     "schema_version": {
       "sql": "CREATE TABLE \"schema_version\" (\n            id                 INTEGER PRIMARY KEY,\n            version_code       TEXT    NOT NULL,\n            applied_at         TEXT    NOT NULL,\n            migration_history  TEXT,\n            engine_min_version TEXT\n        )",

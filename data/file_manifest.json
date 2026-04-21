@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-21T09:23:02Z",
+  "generated_at": "2026-04-21T16:07:14Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2809,
-  "total_active": 2046,
-  "total_archived": 763,
+  "total_files": 2815,
+  "total_active": 2049,
+  "total_archived": 766,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -4041,6 +4041,21 @@
       "modified": "2026-04-20T14:32:13Z"
     },
     {
+      "path": "archive/patches/wa-global-dir-002-submission-v1-20260421.md",
+      "category": "patch",
+      "type": "patch",
+      "registry": 2,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 1934,
+      "modified": "2026-04-21T15:45:51Z"
+    },
+    {
       "path": "archive/patches/wa-global-flag-remediation-directives-v1-20260415.md",
       "category": "directive",
       "type": "cc-directive",
@@ -4084,6 +4099,36 @@
       "archived": true,
       "size_bytes": 3529,
       "modified": "2026-03-17T09:01:26Z"
+    },
+    {
+      "path": "archive/patches/wa-prose-catalogue-chapter0-1-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 5785,
+      "modified": "2026-04-21T15:45:23Z"
+    },
+    {
+      "path": "archive/patches/wa-prose-programme-chapter0-1-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 24453,
+      "modified": "2026-04-21T15:45:36Z"
     },
     {
       "path": "archive/patches/wa-rules-batch1-long-update-v1-20260421.json",
@@ -18632,8 +18677,23 @@
       "date": "2026-04-21",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 4690,
-      "modified": "2026-04-21T08:55:31Z"
+      "size_bytes": 31926,
+      "modified": "2026-04-21T16:06:57Z"
+    },
+    {
+      "path": "data/exports/reference/wa-programme-prose-extract-20260421.md",
+      "category": "export",
+      "type": "export",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6209,
+      "modified": "2026-04-21T16:06:57Z"
     },
     {
       "path": "data/exports/reference/wa-reference-snapshot-20260420.json",
@@ -35886,6 +35946,21 @@
       "modified": "2026-04-09T05:59:08Z"
     },
     {
+      "path": "data/imports/WA/Workflow/methodology_logs/WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1.0",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 17111,
+      "modified": "2026-04-21T10:07:24Z"
+    },
+    {
       "path": "data/imports/WA/Workflow/methodology_logs/WA-dim-session-log-methodology-v2.0-2026-04-07.md",
       "category": "import",
       "type": "session-log",
@@ -36767,8 +36842,8 @@
       "date": "2026-04-21",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 135109,
-      "modified": "2026-04-21T07:12:08Z"
+      "size_bytes": 135106,
+      "modified": "2026-04-21T16:06:59Z"
     },
     {
       "path": "docs/Session-A-v9-Architecture-v4-Final-20260318.docx",
@@ -38014,6 +38089,21 @@
       "archived": false,
       "size_bytes": 6304,
       "modified": "2026-04-21T08:56:14Z"
+    },
+    {
+      "path": "outputs/investigations/programme-prose-structure-design-v1-20260421.md",
+      "category": "investigation",
+      "type": "investigation",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 21373,
+      "modified": "2026-04-21T12:06:40Z"
     },
     {
       "path": "outputs/investigations/prose-in-sqlite-advice-v1-20260419.md",
