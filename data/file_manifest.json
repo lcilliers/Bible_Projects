@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-21T07:03:47Z",
+  "generated_at": "2026-04-21T07:09:37Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2794,
-  "total_active": 2038,
-  "total_archived": 756,
+  "total_files": 2795,
+  "total_active": 2037,
+  "total_archived": 758,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -4011,6 +4011,21 @@
       "modified": "2026-04-19T16:51:10Z"
     },
     {
+      "path": "archive/patches/wa-global-dir-001-rule-registry-columns-v1-20260421.md",
+      "category": "patch",
+      "type": "patch",
+      "registry": 1,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".md",
+      "archived": true,
+      "size_bytes": 6399,
+      "modified": "2026-04-21T07:02:03Z"
+    },
+    {
       "path": "archive/patches/wa-global-dir-002-dim-label-noncanonical-v1-20260420.md",
       "category": "patch",
       "type": "dimension-patch",
@@ -4084,6 +4099,21 @@
       "archived": true,
       "size_bytes": 6547,
       "modified": "2026-04-21T04:26:35Z"
+    },
+    {
+      "path": "archive/patches/wa-rules-wordy-restructure-update-v1-20260421.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-21",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 21845,
+      "modified": "2026-04-21T07:05:30Z"
     },
     {
       "path": "archive/patches/wa-vcb-001-patch-20260330.json",
@@ -18437,8 +18467,8 @@
       "date": "2026-04-21",
       "ext": ".json",
       "archived": false,
-      "size_bytes": 111439,
-      "modified": "2026-04-21T04:31:06Z"
+      "size_bytes": 114115,
+      "modified": "2026-04-21T07:09:04Z"
     },
     {
       "path": "data/exports/reference/wa-global-rules-extract-20260421.md",
@@ -18452,8 +18482,8 @@
       "date": "2026-04-21",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 40199,
-      "modified": "2026-04-21T04:31:06Z"
+      "size_bytes": 38520,
+      "modified": "2026-04-21T07:09:04Z"
     },
     {
       "path": "data/exports/reference/wa-label-patterns-extract-20260420.json",
@@ -20989,21 +21019,6 @@
       "archived": true,
       "size_bytes": 35390,
       "modified": "2026-04-15T07:14:52Z"
-    },
-    {
-      "path": "data/imports/WA/Patches/wa-global-dir-001-rule-registry-columns-v1-20260421.md",
-      "category": "patch",
-      "type": "patch",
-      "registry": 1,
-      "word": null,
-      "cluster": null,
-      "batch": null,
-      "version": "1",
-      "date": "2026-04-21",
-      "ext": ".md",
-      "archived": false,
-      "size_bytes": 6399,
-      "modified": "2026-04-21T07:02:03Z"
     },
     {
       "path": "data/imports/WA/Session_A_Data/WA-001-abomination-data-2026-03-07.json",

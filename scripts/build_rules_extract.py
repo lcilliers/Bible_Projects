@@ -58,10 +58,18 @@ def get_schema_version(conn: sqlite3.Connection) -> str:
 
 def extract_rules(conn: sqlite3.Connection, include_obsolete: bool = False) -> dict:
     where = "" if include_obsolete else " WHERE obsolete = 0"
+    # Schema v3.14.0+: wa_rule_registry may carry rationale / application_notes /
+    # examples (added by DIR-20260421-001). Select conditionally so the extractor
+    # remains back-compat with databases that pre-date the directive.
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_rule_registry)")}
+    extra = []
+    for c in ("rationale", "application_notes", "examples"):
+        extra.append(c if c in cols else f"NULL AS {c}")
+    extra_sql = ", " + ", ".join(extra)
     rows = conn.execute(
         f"""SELECT rule_id, category, subject, rule_text, example, applies_to,
                    version, added_date, last_modified, obsolete, obsolete_reason,
-                   superseded_by, addendum_ref, source_document
+                   superseded_by, addendum_ref, source_document{extra_sql}
               FROM wa_rule_registry{where}
              ORDER BY category, rule_id"""
     ).fetchall()
@@ -197,8 +205,14 @@ def render_markdown_view(extract: dict) -> str:
             if r.get("version"):
                 lines.append(f"_Version: {r['version']}_\n")
             lines.append(r["rule_text"])
+            if r.get("rationale"):
+                lines.append(f"\n**Rationale.** {r['rationale']}")
+            if r.get("application_notes"):
+                lines.append(f"\n**Application notes.** {r['application_notes']}")
+            if r.get("examples"):
+                lines.append(f"\n**Examples.** {r['examples']}")
             if r.get("example"):
-                lines.append(f"\n**Example:** `{r['example']}`")
+                lines.append(f"\n**Example (legacy single-illustration field):** `{r['example']}`")
             lines.append("")
 
     # Obsolete (condensed)

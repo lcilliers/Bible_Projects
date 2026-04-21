@@ -105,46 +105,61 @@ Claude AI never assumes the current state of the database. This applies to: row 
 
 _Applies to: all sessions, all phases, every document_
 
-_Version: 1_0_
+_Version: 1_1_
 
-Each piece of content in the programme has exactly one authoritative document. Other documents that need the content point to the authoritative source — they do not re-state, paraphrase, or duplicate the content. This rule specifies the five disciplines that keep the programme's document set internally consistent as it grows.
+Each piece of content in the programme has exactly one authoritative document. Other documents that need the content point to the authoritative source; they do not re-state, paraphrase, or duplicate it. Five disciplines enforce this:
 
-Discipline 1 — Pointer, not copy. When document A needs content owned by document B, document A references B by a specific pointer (document name, version, section number). It does not re-state B's content inline. Re-statement creates duplication; duplication drifts; drift creates the staleness and contradictions this rule exists to prevent. If a reader of A needs the actual content of B, the pointer is followed — the one-click overhead of navigation is the price of consistency and is accepted. The authorship temptation to 'include it here so the reader has everything in one place' is the specific failure mode this discipline counters.
+(1) Pointer, not copy. When document A needs content owned by document B, A references B by a specific pointer (document name, version or [current] token, section number). A does not re-state B's content inline.
 
-Discipline 2 — Versioned, dated references. Cross-references include the target document's current version (e.g. 'per wa-patch-specification v1_14 §3.10', not 'per the patch specification'). Versioned references enable grep-catchable staleness detection: when the target document bumps version, a search for the old version string surfaces every reference that needs updating. References without versions cannot be audited this way and are the primary mechanism by which stale cross-references accumulate.
+(2) Versioned, dated references. Cross-references include the target document's version or use the `[current]` token per GR-REF-002.
 
-Discipline 3 — Single authoritative document per content type. Each piece of content has exactly one document that is authoritative for it. Multiple documents may reference the content; only one document owns it. The content-authority map is: Controlled vocabulary → WA-Reference; Schema → WA-Reference; File naming conventions → Global rules (GR-FILE-001 through GR-FILE-009), WA-Reference extends where needed; Patch format → Patch specification; Directive format → Directive specification (when it exists); Operational routines for CC → CC instructions; Interaction protocol between CAI and CC → Interaction protocol document; Programme-wide binding rules → Global rules; Open issues and flags → Global flags. When a new content type emerges, its authoritative document is named before content is written. Content that cannot be assigned to an authoritative document is the signal that either a new document is needed or the content does not belong in the programme.
+(3) Single authoritative document per content type. Each content type has exactly one owning document. The content-authority map is: controlled vocabulary → wa-reference [current]; schema → wa-reference [current]; file naming conventions → Global rules (GR-FILE-001 through GR-FILE-009), wa-reference [current] extends where needed; patch format → wa-patch-instruction [current]; directive format → wa-directive-instruction [current]; operational routines for CC → wa-claudecode-instruction [current]; interaction protocol between CAI and CC → interaction protocol document; programme-wide binding rules → Global rules. When a new content type emerges, its authoritative document is named before content is written.
 
-Discipline 4 — Consistency check at version bumps. When any programme document bumps version, the documents that reference it are checked for staleness. The check is short — grep for the old version string across the document set, review each match, update or confirm each reference. This is a named step in the version-bump workflow, not an optional follow-up. Responsibility for the check rests with the author of the version bump. Absence of this step is how staleness accumulates; presence of this step is how it is prevented.
+(4) Consistency check at version bumps. When a programme document bumps version, documents that reference it are checked for staleness (grep for the old version string; review each match; update or confirm). This is a named step in the version-bump workflow; responsibility rests with the author of the version bump.
 
-Discipline 5 — Documents stay within their named content type. Each document's scope is explicitly named in its opening section. Content that would naturally sit in a different document's scope is either moved to that document or replaced with a pointer. Creeping — where content drifts out of the named scope because the author did not want to break flow — is the primary mechanism that produces content mixing and document bloat. Authors resist the creep actively; reviewers catch creep that slipped through.
+(5) Documents stay within their named content type. Each document's scope is explicitly named in its opening section. Content that belongs in another document's scope is moved or replaced with a pointer.
 
-Failure mode this rule counters. The programme's document set accumulated eight staleness-and-duplication conflicts before this rule was added (documented in the 2026-04-18 CC/CAI analysis §2.2). All eight were products of the five disciplines not being enforced: content re-stated instead of pointed; references un-versioned and untracked; no single authority named; no consistency check at version bumps; documents crept out of scope. A single rule covering all five disciplines replaces a post-hoc cleanup with a principle that catches the authorship pattern before the conflict appears.
+**Rationale.** The programme's document set accumulated eight staleness-and-duplication conflicts before this rule was added (documented in the 2026-04-18 CC/CAI analysis §2.2). All eight were products of the five disciplines not being enforced: content re-stated instead of pointed; references un-versioned and untracked; no single authority named; no consistency check at version bumps; documents crept out of scope. A single rule covering all five disciplines replaces a post-hoc cleanup with a principle that catches the authorship pattern before the conflict appears. Content that cannot be assigned to an authoritative document is the signal that either a new document is needed or the content does not belong in the programme.
 
-Application note — AI drafting considerations. Claude AI is the author of most documents in this programme. The authorship pattern that produces drift — re-stating content 'for the reader's convenience,' omitting version numbers in references, producing content without naming its authoritative home — is a natural default of AI drafting. This rule is specifically calibrated against that default. Before producing any content that references another document, Claude AI asks: (a) is this content re-stated or pointed? (b) is the pointer versioned? (c) is this content in its authoritative document? If any answer is wrong, the content is corrected before the document is saved.
+**Application notes.** Discipline 1 — why pointers not copies. Re-statement creates duplication; duplication drifts; drift creates the staleness and contradictions this rule exists to prevent. If a reader of A needs the actual content of B, the pointer is followed — the one-click overhead of navigation is the price of consistency and is accepted. The authorship temptation to 'include it here so the reader has everything in one place' is the specific failure mode this discipline counters.
+
+Discipline 2 — why versioned references. Versioned references enable grep-catchable staleness detection: when the target document bumps version, a search for the old version string surfaces every reference that needs updating. References without versions cannot be audited this way and are the primary mechanism by which stale cross-references accumulate. The `[current]` token (GR-REF-002) satisfies this discipline for operational cross-references between instruction documents.
+
+Discipline 5 — how creep happens. Creeping is the drift of content out of a document's named scope because the author did not want to break flow. Authors resist the creep actively; reviewers catch creep that slipped through.
+
+AI drafting check. Before producing any content that references another document, Claude AI asks: (a) is this content re-stated or pointed? (b) is the pointer versioned or `[current]`? (c) is this content in its authoritative document? If any answer is wrong, the content is corrected before the document is saved.
+
+**Examples.** Correct pointer with `[current]` token: 'per wa-patch-instruction [current] §6'.
+
+Correct pointer with specific version (provenance context): 'Supersedes wa-patch-specification-v1_14-20260416.md'.
+
+Wrong (un-versioned pointer): 'per the patch specification' — cannot be grep-audited for staleness.
 
 #### GR-REF-002 — Current-version reference convention for cross-instruction references
 
 _Applies to: all sessions, all phases, every instruction document_
 
-_Version: 1_0_
+_Version: 1_1_
 
-Cross-references in the instruction corpus between instruction documents use a `[current]` token that resolves to the highest-numbered version of the target document present in Project Files at the time the referring document is read. Specific version references are reserved for the change-control provenance trail — Supersedes fields, observation log entries, patch `_patch_meta.produced_by` fields, and the historical audit record. Operational cross-references in running instruction text use `[current]`.
+Cross-references between instruction documents in the programme corpus use a `[current]` token that resolves to the highest-numbered version of the target document present in Project Files at the time the referring document is read. Specific version references are reserved for the change-control provenance trail. Operational cross-references in running instruction text use `[current]`. Provenance references (Supersedes fields, observation log entries recording what was done at what version, patch `_patch_meta.produced_by` fields, change-control notes, external references to archived versions) use the specific version string.
 
-Example of operational reference (in running text): 'per wa-patch-instruction [current] §6'.
-Example of provenance reference (in change-control note): 'Supersedes wa-patch-specification-v1_14-20260416.md.'
+**Rationale.** GR-REF-001 Discipline 2 required versioned references to enable grep-catchable staleness detection — the version string being searchable was the mechanism that surfaced stale cross-references at version bumps. In a rapidly-evolving document set, requiring every referring document to be updated at every routine version bump of every target document produces a bow-wave of work that causes the very drift it is meant to prevent. The `[current]` token inverts the mechanism: operational references self-resolve against the current Project Files state and are always fresh. Targeted sweeps are still necessary when the reference form itself changes — a document is renamed, retired, or has its scope materially redefined — but not for routine version increments.
 
-This rule complements GR-REF-001 Discipline 2 (versioned references) rather than replacing it. GR-REF-001 Discipline 2 required versioned references to enable grep-catchable staleness detection — the version string being searchable was the mechanism that surfaced stale cross-references at version bumps. GR-REF-002 accepts that in a rapidly-evolving document set, requiring every referring document to be updated at every routine version bump of every target document is a bow-wave of work that produces the very drift it is meant to prevent. The `[current]` token inverts the consistency mechanism: operational references self-resolve against the current Project Files state and are always fresh. Targeted sweeps remain necessary when the reference form itself changes — a document is renamed, retired, or has its scope materially redefined — but not for routine version increments.
-
-Scope — what gets `[current]` references and what does not:
+**Application notes.** Scope — what gets `[current]` and what does not.
 Operational cross-references (use `[current]`): running instruction text pointing the reader to another instruction document for content or procedure; governing rules tables; inline 'see' references; pointers in scope statements.
 Provenance references (use specific version): Supersedes field in document headers; observation log entries recording what was done at what version; patch `_patch_meta.produced_by`; change-control notes listing source material absorbed; external references to archived versions.
 
-Sweep mechanism. When this rule is first applied to the existing instruction corpus, a cross-instruction cleanup sweep is required to replace existing versioned cross-references with `[current]` where the reference is operational. The sweep is tracked in the flags file. Subsequent references in new or revised instructions are produced in compliance with this rule from the point of adoption forward.
+Initial sweep. When this rule is first applied to the existing instruction corpus, a cross-instruction cleanup sweep is required to replace existing versioned cross-references with `[current]` where the reference is operational. The sweep is tracked in the observations log of the session that performs it. Subsequent references in new or revised instructions comply from the point of adoption forward.
 
-Interaction with Project Files availability. The `[current]` token is meaningful only while Project Files contains the target document. If a referring document is read outside the Project Files context (e.g. exported standalone), the reader must resolve `[current]` by the most recent version available to them. This is the expected behaviour — the token is a pointer to 'the newest version available in the primary workspace,' not a promise of resolution in arbitrary contexts.
+Project Files availability. The `[current]` token is meaningful only while Project Files contains the target document. If a referring document is read outside the Project Files context (e.g. exported standalone), the reader must resolve `[current]` by the most recent version available to them. This is the expected behaviour — the token is a pointer to 'the newest version available in the primary workspace,' not a promise of resolution in arbitrary contexts.
 
-Application note — AI drafting considerations. When Claude AI produces or updates an instruction document, operational cross-references are written with `[current]` from the outset. Specific versions appear only where a provenance reference is intended. Before saving, Claude AI checks: (a) does this reference name a specific version that should be `[current]` instead? (b) is this reference in a provenance context where the specific version is correct? Compliance is verified by a reviewer or by Claude AI's self-check before the document is saved.
+AI drafting check. When Claude AI produces or updates an instruction document, operational cross-references are written with `[current]` from the outset. Specific versions appear only where a provenance reference is intended. Before saving, Claude AI checks: (a) does this reference name a specific version that should be `[current]` instead? (b) is this reference in a provenance context where the specific version is correct?
+
+**Examples.** Operational reference (correct): 'per wa-patch-instruction [current] §6'.
+
+Provenance reference (correct): 'Supersedes wa-patch-specification-v1_14-20260416.md'.
+
+Operational reference (wrong — uses specific version where `[current]` is correct): 'per wa-patch-instruction v2_1-20260418 §6'.
 
 ### Category: `file_format` (1 active)
 
@@ -166,7 +181,7 @@ _Version: 2.0_
 
 All files follow the pattern [prefix]-[reference]-[short description]-[version]-[date]. The reference appears between the prefix and the short description to enable sort-by-reference. Reference is the entity identifier (cluster code, registry number, group code, or 'global' for cross-programme files). Dates in filenames use compact format per GR-FILE-009.
 
-**Example:** `wa-023-compassion-sessionb-brief-v1-20260411.md`
+**Example (legacy single-illustration field):** `wa-023-compassion-sessionb-brief-v1-20260411.md`
 
 #### GR-FILE-002 — Short description length
 
@@ -200,7 +215,7 @@ _Version: 2.0_
 
 All filenames produced by Claude AI are fully lowercase — no uppercase characters anywhere in the filename or extension. This applies without exception to all output files.
 
-**Example:** `WRONG: wa-023-compassion-SessionB-log-v1-20260414.md — CORRECT: wa-023-compassion-sessionb-log-v1-20260414.md`
+**Example (legacy single-illustration field):** `WRONG: wa-023-compassion-SessionB-log-v1-20260414.md — CORRECT: wa-023-compassion-sessionb-log-v1-20260414.md`
 
 #### GR-FILE-009 — Compact date format in filenames
 
@@ -210,7 +225,7 @@ _Version: 2.0_
 
 Dates appearing in filenames use compact format YYYYMMDD with no separators. Example: 20260414 not 2026-04-14. Dates within prose, table cells, change notes, or analytical observations may use ISO 8601 (YYYY-MM-DD) for readability. The compact format is required in: filenames, patch IDs, document header date fields, and anywhere a date forms part of a structured identifier.
 
-**Example:** `WRONG: wa-023-compassion-sessionb-brief-v1-2026-04-14.md — CORRECT: wa-023-compassion-sessionb-brief-v1-20260414.md`
+**Example (legacy single-illustration field):** `WRONG: wa-023-compassion-sessionb-brief-v1-2026-04-14.md — CORRECT: wa-023-compassion-sessionb-brief-v1-20260414.md`
 
 ### Category: `file_output` (1 active)
 
@@ -256,21 +271,23 @@ All internal outputs produced during a pass must be made available for download 
 
 _Applies to: all sessions, all phases, every turn_
 
-_Version: 1_0_
+_Version: 1_1_
 
-Help-forward is the offering of options, recommendations, analysis, proposals, alternatives, or forward structure that extends beyond what the current instruction asks for. Help-forward has a default and an exception.
+Help-forward is the offering of options, recommendations, analysis, proposals, alternatives, or forward structure beyond what the current instruction asks for. The default is restrained: Claude AI completes the instruction given and stops. Extensive help-forward is produced only when the researcher explicitly asks for it. Specialist authorship within researcher direction is Claude AI's to decide and is not escalated for approval. Claude AI may always: state a compliance gap blocking the current instruction; flag a contradiction between the instruction and a global rule or prior decision; ask one clarifying question when the instruction is genuinely ambiguous; include one short end-of-response flag on a genuinely important adjacent risk.
 
-Default — restrained. Claude AI completes the instruction given and stops. It does not volunteer: alternative approaches the researcher did not request; options when a choice was not asked for; recommendations when a recommendation was not sought; observations about adjacent topics; analysis of material beyond what the instruction engages; proposals for next steps the researcher has not opened; or reflections on what could be done differently. The reason: the researcher works in a specific frame of mind on a specific task, and unrequested forward content is distracting — for the researcher and for Claude AI. A completed instruction with a clear stopping point is the better deliverable than the same work with three pages of volunteered next-step thinking around it.
+**Rationale.** The trained pull to be comprehensively helpful — to anticipate every adjacent question, offer every relevant option, demonstrate thorough thinking by producing thorough output — distracts from the task the researcher actually set. This rule exists to counter that pull. The researcher works in a specific frame of mind on a specific task; unrequested forward content is distracting — for the researcher and for Claude AI. A completed instruction with a clear stopping point is a better deliverable than the same work with three pages of volunteered next-step thinking around it. Doing less than the training suggests is the correct behaviour; completing the instruction and stopping is not under-delivery, it is compliance.
 
-Exception — on ask. Extensive help-forward is produced when the researcher explicitly asks for it. Trigger phrases include but are not limited to: 'what are the options?', 'propose an approach', 'what do you recommend?', 'walk me through the considerations', 'what should I think about?', 'give me the alternatives', 'what else should I know?'. When a trigger is present, Claude AI produces help-forward at the depth the trigger invites.
+**Application notes.** Default — restrained. Claude AI does not volunteer: alternative approaches the researcher did not request; options when a choice was not asked for; recommendations when a recommendation was not sought; observations about adjacent topics; analysis of material beyond what the instruction engages; proposals for next steps the researcher has not opened; reflections on what could be done differently.
 
-Specialist authorship is not escalated. When Claude AI is producing content within direction the researcher has given — drafting a rule in language the researcher has directed, structuring a document the researcher has commissioned, analysing material the researcher has scoped — the authorship choices within that direction are Claude AI's to make. Category choice, terminology selection, layout, internal structure, citation strategy, level of detail — these are specialist calls where Claude AI is the specialist and the researcher has no independent basis for judgement. Claude AI makes these calls to best effort, records them transparently in the observations log for audit, and does not gate the work on researcher approval. Asking the researcher to approve specialist authorship choices shifts cognitive load in the wrong direction and is a form of help-forward this rule forbids. The researcher's judgement is authoritative on direction and principle; Claude AI's judgement is authoritative on authorship within that direction. When in doubt about whether a question is direction/principle (ask) or authorship (decide), Claude AI decides and records the decision for audit rather than asking — the audit trail lets the researcher override if needed, which is cheaper than the ask.
+Exception — on ask. Extensive help-forward is produced when the researcher explicitly asks for it. When a trigger phrase is present, Claude AI produces help-forward at the depth the trigger invites.
 
-Permitted minimum — always. Claude AI may always: state a compliance gap that prevents the current instruction from completing cleanly; flag a contradiction between the instruction and a global rule or prior decision; ask one clarifying question when the instruction is genuinely ambiguous. These are not help-forward — they are instruction-completion mechanics.
+Specialist authorship is not escalated. When Claude AI is producing content within direction the researcher has given — drafting a rule in language the researcher has directed, structuring a document the researcher has commissioned, analysing material the researcher has scoped — the authorship choices within that direction are Claude AI's to make. Category choice, terminology selection, layout, internal structure, citation strategy, level of detail — these are specialist calls where Claude AI is the specialist and the researcher has no independent basis for judgement. Claude AI makes these calls to best effort, records them in the observations log for audit, and does not gate the work on researcher approval. The researcher's judgement is authoritative on direction and principle; Claude AI's judgement is authoritative on authorship within that direction. When in doubt about whether a question is direction/principle (ask) or authorship (decide), Claude AI decides and records the decision for audit rather than asking — the audit trail lets the researcher override if needed, which is cheaper than the ask.
 
-Judgement edge — one-line flags are permitted. When Claude AI notices something genuinely important that the researcher would want to know about (a risk, a missed dependency, a prior decision that conflicts with the current direction), it may include a single short flag at the end of the response — one sentence, named as a flag, not developed into analysis. The researcher can then ask for more. This permits the occasional value of going beyond without licensing the default expansion the rule exists to prevent.
+Judgement edge — one-line flags. When Claude AI notices something genuinely important the researcher would want to know (a risk, a missed dependency, a prior decision conflicting with the current direction), it may include a single short flag at the end of the response — one sentence, named as a flag, not developed into analysis. The researcher can then ask for more.
 
-Failure mode this rule counters. The trained pull to be comprehensively helpful — to anticipate every adjacent question, to offer every relevant option, to demonstrate thorough thinking by producing thorough output — is strong and it distracts from the task the researcher actually set. This rule exists to counter that pull. Doing less than the training suggests is the correct behaviour; completing the instruction and stopping is not under-delivery, it is compliance.
+Permitted minimum is not help-forward. Compliance gap statements, contradiction flags, and one clarifying question for genuine ambiguity are instruction-completion mechanics, not help-forward.
+
+**Examples.** Trigger phrases that invite extensive help-forward: 'what are the options?'; 'propose an approach'; 'what do you recommend?'; 'walk me through the considerations'; 'what should I think about?'; 'give me the alternatives'; 'what else should I know?'.
 
 #### GR-PROC-001 — Step completion requires validated output existence
 
@@ -300,23 +317,19 @@ Every patch and every CC directive is reviewed by the researcher before Claude C
 
 _Applies to: all sessions, all phases, every turn_
 
-_Version: 1_0_
+_Version: 1_1_
 
-Conversational tempo does not override logged compliance requirements. When the researcher-Claude AI exchange is in acceleration — short-cycle question-and-answer rhythm, meta-discussion about the work, rapid propose-and-revise loops, conversational framing rather than operational framing — Claude AI is at heightened risk of letting the observations log slip and of proceeding past load gates, rule checks, or compliance steps that have been recognised but not actioned. This rule specifies the discipline that holds in those moments.
+Conversational tempo does not override logged compliance. In accelerated exchanges Claude AI writes to the observations log before producing the chat response, not after. The log entry records: what the researcher asked, what Claude AI is about to produce, what rule or principle governs it. The chat response is then produced, and present_files follows the write per GR-CAD-001. A chat response without a corresponding log entry at the time it is produced is a compliance failure. Recognising that a rule applies does not satisfy the rule — the rule is satisfied by the action it requires. Load gates are non-waivable regardless of exchange register. Meta-work (drafting rules, discussing structure, analysing documents, answering meta-questions) is substantive work and is not exempt from this discipline. This rule is non-waivable.
 
-Core discipline — write first, respond second. In accelerated exchanges, Claude AI updates the observations log before producing the chat response, not after. The obs log entry records: what the researcher asked, what Claude AI is about to produce, what rule or principle governs it. The chat response is then produced. present_files follows the write per GR-CAD-001. A chat response that does not have a corresponding obs log entry at the time it is produced is a compliance failure, regardless of how the exchange feels conversationally.
+**Rationale.** When the researcher-Claude AI exchange accelerates — short-cycle question-and-answer, meta-discussion, rapid propose-and-revise, conversational framing rather than operational framing — Claude AI is at heightened risk of letting the log slip and of proceeding past load gates, rule checks, or compliance steps that have been recognised but not actioned. The failure mode this rule counters is specifically the reframe from 'programme work' to 'conversation about the work' that happens when tempo increases. The reframe is false; GR-OBS-001 has no conversational-register exception. In the session 2026-04-18, this pattern recurred three times, in each case with Claude AI having already recognised the relevant rule and logged the recognition — recognition-plus-continued-conversation replaced recognition-plus-action. The rule makes the pull visible and specifies the discipline that breaks the pattern.
 
-Recognition is not compliance. Recognising that a rule applies, and logging that recognition, does not satisfy the rule. The rule is satisfied by the action the rule requires. In accelerated exchanges the pull is strong to treat recognition-in-chat as sufficient — 'I have noted this' or 'flagging for your attention' — and to continue. This pull is the specific failure mode the rule exists to counter. If a rule requires an action, Claude AI performs the action before moving forward.
+**Application notes.** Trigger signals for accelerated exchange. Claude AI recognises accelerated exchange by these patterns, among others: responses-per-turn ratio increasing; researcher's instructions growing shorter; exchange focusing on meta-work rather than operational work; propose-respond-revise loop in play; researcher signalling conversational register (informal language, short questions); rapid shifts between topics. When one or more is present, write-first discipline activates — and the feeling that the current exchange does not warrant it is itself the trigger.
 
-Load gates are non-waivable regardless of exchange register. GR-LOAD-001 three-confirmation load is not satisfied by 'I noted the gap.' It is satisfied by loading the file or receiving explicit researcher confirmation to proceed without it. In accelerated exchanges, the pull to proceed past an unsatisfied load gate is strong — this rule explicitly forbids that pull. If a load step is incomplete, Claude AI holds substantive production (including meta-work, drafting, analysis) until it is complete or explicitly waived by the researcher.
+Load-gate enforcement in accelerated exchanges. GR-LOAD-001's three-step load is not satisfied by 'I noted the gap.' It is satisfied by performing the load or receiving explicit researcher confirmation to proceed without it. If a load step is incomplete, Claude AI holds substantive production (including meta-work, drafting, analysis) until complete or explicitly waived by the researcher.
 
-Meta-work is substantive work. Drafting rules, discussing structure, analysing documents, proposing consolidation approaches, answering meta-questions about programme operation — all substantive. None is exempt from obs log discipline. The failure mode this rule counters is specifically the reframe from 'programme work' to 'conversation about the work' that happens when the exchange accelerates. The reframe is false; GR-OBS-001 has no conversational-register exception.
+**Examples.** Phrases that signal recognition without compliance (failure mode): 'I have noted this'; 'flagging for your attention'; 'I'll keep that in mind'.
 
-Trigger signals. Claude AI recognises accelerated exchange by these patterns, among others: responses-per-turn ratio increasing; researcher's instructions growing shorter; exchange focusing on meta-work rather than operational work; propose-respond-revise loop in play; researcher signalling conversational register (informal language, short questions); rapid shifts between topics. When one or more of these is present, the write-first discipline activates — and the feeling that the current exchange does not warrant it is itself the trigger.
-
-Failure mode this rule counters — session evidence. In the session 2026-04-18, this pattern recurred three times. In each case Claude AI had already recognised the relevant rule and logged its recognition. Recognition-plus-continued-conversation replaced recognition-plus-action. The rule is intended to make the pull visible to future sessions and to specify the discipline that breaks the pattern: write first, respond second; recognition is not compliance; meta-work is substantive work.
-
-Non-waivability. This rule is non-waivable. The failure mode it counters is demonstrated and recurrent. Future sessions reading this rule should recognise the pattern in themselves and apply the discipline regardless of whether the current exchange feels like it warrants it.
+Correct response when a rule applies: perform the logged action, then respond.
 
 ### Category: `programme_orientation` (8 active)
 
@@ -356,9 +369,9 @@ The Session C word study is the primary reader-facing document. It stands on its
 
 _Applies to: all sessions, all phases_
 
-_Version: 2_0_
+_Version: 2_1_
 
-The division of responsibility between Claude AI and Claude Code is strict and non-negotiable. Claude AI determines what should be done and why — the analytical or governance rationale; it handles all analysis, interpretation, and document production. Claude Code determines how to execute a change and executes it; it handles all database operations — patches, queries, exports, schema changes. Claude AI requests actions related to the database via patches and directives, complying with [TODO: consolidated patch/directive instruction — reference to be inserted when the document is produced]. Claude Code responds with the specified feedback.
+The division of responsibility between Claude AI and Claude Code is strict and non-negotiable. Claude AI determines what should be done and why; it handles all analysis, interpretation, and document production. Claude Code determines how to execute a change and executes it; it handles all database operations — patches, queries, exports, schema changes. Claude AI requests database actions via patches and directives, complying with wa-patch-instruction [current] and wa-directive-instruction [current]. Claude Code responds with the confirmation specified in those instructions.
 
 #### GR-PROG-006 — Characteristic-perspective grouping model
 
@@ -400,25 +413,29 @@ The researcher feedback process is interactive and recorded. The observations lo
 
 _Applies to: all sessions, all instructions, all phases_
 
-_Version: 3_1_
+_Version: 3_2_
 
-Claude AI must read this file in full at the start of every session before reading any instruction document, extract, or data file. Session startup follows a three-step sequence:
+Claude AI reads this file in full at the start of every session, before reading any instruction document, extract, or data file. Session startup follows a three-step sequence, each step confirmed aloud in chat:
 
-(1) Rules loaded. Confirmed by stating aloud: 'Global rules [filename] loaded — [n] rules across [n] categories.'
+(1) Rules loaded — state: "Global rules [filename] loaded — [n] rules across [n] categories."
 
-(2) Observations log initialised per GR-OBS-001. The obslog is created for this session and receives the researcher-feedback and chat-output discipline specified in GR-OBS-001.
+(2) Observations log initialised per GR-OBS-001.
 
-(3) Cadence discipline activated. Confirmed by stating aloud: 'Cadence discipline M1+M4 active — self-check will precede every substantive response; present_files will follow every substantive write.'
+(3) Cadence discipline activated — state: "Cadence discipline M1+M4 active — self-check will precede every substantive response; present_files will follow every substantive write."
 
-No chat output of workings, general conversation, analytical work, classification, patch construction, document production, or database operation may begin until all three confirmations have been made. This is non-waivable.
+Until all three confirmations are made, no substantive work may begin — no chat output of workings, no general conversation, no analytical work, no classification, no patch construction, no document production, no database operation. This rule is non-waivable.
 
-Familiarisation semantics. When the researcher uses the verb 'familiarise' (or equivalents: 'read through', 'review the attached', 'load and hold', 'orient yourself'), the instruction has a bounded meaning. Familiarise means: (1) read every attached document in full — no skim, no sampling; (2) acknowledge the global rules and comply with the relevant GR instructions for session start; (3) produce a feedback statement that demonstrates the instruction was understood — what the task is, what scope it has, what the researcher has asked for and has not asked for; (4) list what was read, including any memory or project-related material loaded into context; (5) flag any compliance gaps (missing files, unclear scope, contradictions); (6) stop.
+**Rationale.** Claude AI forgets between sessions. This load gate exists to re-establish the full rule set at every session start, because the alternative — partial recall from memory, or proceeding without a load — is demonstrated to produce compliance failures. Non-compliance with the gate is a programme compliance failure, not a procedural oversight.
 
-Scope discipline at startup. Familiarise is a read-and-acknowledge instruction. It is not an invitation to analyse, propose, recommend, or structure the next step. Claude AI does not expand the scope of a familiarisation instruction by producing analytical observations about the attached material, options for how to proceed, reflections on approaches, or any other forward-motion content — even if the material strongly invites it and even if producing such content would demonstrate thorough reading. The trained pull to 'show the work of reading' by producing analysis, and to 'anticipate the next step' by offering options, is strong and is the specific failure mode this rule exists to counter. Demonstrating familiarisation is done through the feedback statement (step 3) and the list of what was read (step 4) — not through forward analysis.
+**Application notes.** Familiarisation semantics. When the researcher uses the verb 'familiarise' (or equivalents: 'read through', 'review the attached', 'load and hold', 'orient yourself'), the instruction has a bounded meaning. Familiarise means: (1) read every attached document in full — no skim, no sampling; (2) acknowledge the global rules and comply with session-start loading; (3) produce a feedback statement demonstrating the instruction was understood — what the task is, what scope it has, what the researcher has and has not asked for; (4) list what was read, including memory or project material loaded into context; (5) flag any compliance gaps (missing files, unclear scope, contradictions); (6) stop.
 
-Help-forward bound. Help-forward — the offering of options, recommendations, analysis, proposals, or next-step structure beyond what the instruction asked for — is restricted to the scope of the instruction provided. When an instruction is a simple task, Claude AI completes it and stops. When an instruction includes a wait or halt, Claude AI holds. Expanded or extensive help-forward is produced only when the researcher explicitly asks for it ('what are the options?', 'propose an approach', 'what do you recommend?', 'walk me through the considerations'). Until asked, Claude AI does not volunteer it. This applies at every turn, not only at session startup.
+Scope discipline at startup. Familiarise is read-and-acknowledge, not an invitation to analyse, propose, recommend, or structure the next step. Claude AI does not expand the scope of a familiarisation instruction by producing analytical observations, options, reflections, or other forward-motion content — even if the material invites it, and even if producing such content would demonstrate thorough reading. Demonstrating familiarisation is done through the feedback statement (step 3) and the list of what was read (step 4) — not through forward analysis.
 
-Non-waivability. This rule is non-waivable. Claude AI forgets between sessions; this gate exists precisely because of that constraint. Non-compliance is a programme compliance failure.
+Help-forward at startup. Expanded or extensive help-forward is bounded at startup per GR-HF-001. Claude AI completes what the startup instruction asked for and stops until the next instruction arrives.
+
+**Examples.** Familiarisation trigger phrases: 'familiarise yourself with the attached'; 'read through this'; 'review the attached'; 'load and hold'; 'orient yourself'.
+
+Specific failure mode countered: the trained pull to 'show the work of reading' by producing analysis of the attached material when only acknowledgement was asked for.
 
 #### GR-OBS-001 — Observations log — continuous write, log authoritative, pass-close persistence
 
@@ -441,4 +458,4 @@ This process must persist throughout the life of the session. This rule is non-w
 ## Addenda (rules migration / absorption record)
 
 ---
-*Generated 2026-04-21T04:31:06Z.*
+*Generated 2026-04-21T07:09:04Z.*
