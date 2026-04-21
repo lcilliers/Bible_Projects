@@ -14,14 +14,14 @@
 
 | # | Macro area | Sub-sections (proposed) | Count |
 |---|---|---|---:|
-| 1 | Programme purpose | mission, scope, the wider program, this inner-being program, Defining inner being, Science and the bible, the expected outcome | 7 |
+| 1 | Programme purpose | mission, scope, this inner-being programme, Defining inner being, Science and the bible, the expected outcome | 6 |
 | 2 | Research methodology | Research method, Word selection and registry, Program flow: Word data → Verse data → Lexicon data → word analytics → inner being synergies → Reading Chapters, Science in action, Publishing, Key Principles, Key Constraints | 7 |
 | 3 | Research approach | Tool selection, STEP foundation, two-AI division, Data Management, Process Instructions, evidential principles, verse data authority, Analytics and Question catalogue, Memory management, inner-being filter | 10 |
 | 4 | Data architecture | Database, Registry, Terms, Ownership and XREF, verse groups, anchor verse, dimensions, questions, inter word relationships | 9 |
 | 5 | Data integrity & governance | delete-discipline, validation, backup, patch-failure, finding references, STEP data provenance | 6 |
 | 6 | Instruction corpus | global rules, referencing, authority, instruction versioning (`[current]`), update flow, directive vs patch, override protocol | 7 |
 
-**Total:** 6 macro + 46 sub = **52 section types** to seed.
+**Total:** 6 macro + 45 sub = **51 section types** to seed.
 
 > **Researcher:** add / remove / rename any row above. Counts update as sub-section lists change.
 
@@ -39,8 +39,7 @@
 |---|---|---|
 | `prog_purp_mission` | Mission | One-paragraph statement of what this programme is investigating, why, and what outcome would constitute success. |
 | `prog_purp_scope` | Scope | The research boundary — the ~214 English inner-being words and their Hebrew/Greek mappings — and what is outside. Edge-case treatment (proper nouns, particles, lexically distant terms). |
-| `prog_purp_wider_programme` | The wider programme | The broader research initiative this inner-being programme sits within — the researcher's wider body of study, adjacent work, how the pieces fit together. |
-| `prog_purp_this_inner_being_programme` | This inner-being programme | This specific programme's distinct frame: inner-being-of-mankind as research subject; what makes it a separate study; its 214-word scope; relationship to the wider programme. |
+| `prog_purp_this_inner_being_programme` | This inner-being programme | This specific programme's distinct frame: inner-being-of-mankind as research subject; what makes it a separate study; its 214-word scope. Covers the wider-programme context inline where relevant — no separate "wider programme" section is kept. |
 | `prog_purp_defining_inner_being` | Defining inner being | How the programme defines "inner being" in its own terms; the distinctions from soul / spirit / body / material referents; the working definition that drives the filter. |
 | `prog_purp_science_and_bible` | Science and the Bible | How the programme relates scientific method to scriptural text; the empirical / textual / interpretive layers; epistemological stance; what kind of knowledge the programme claims to produce. |
 | `prog_purp_expected_outcome` | Expected outcome | What success looks like: Session C word studies, Session D cross-registry synthesis, publishing, what a reader should take away. |
@@ -195,7 +194,7 @@
    - **Inserts** 40 new sub-section types with appropriate `chapter_no` and `sort_order`.
    - **Updates** 6 existing M34 seeds in place (rename `code`, update `description`, set `chapter_no` and `sort_order`): `prog_anchor_verse`, `prog_xref_architecture`, `prog_validation_standard`, `prog_delete_discipline`, `prog_backup_discipline`, `prog_patch_failure_protocol`, `prog_instruction_override_protocol`.
    - **Defers** `prog_field_authority` (existing M34 seed not in the new structure) pending researcher decision (Area 4 notes).
-3. After the seed patch, the prose extract (`build_programme_prose_extract.py`) shows **52 empty handles** with meaningful descriptions — a structure the AI session can fill rather than invent.
+3. After the seed patch, the prose extract (`build_programme_prose_extract.py`) shows **51 empty handles** with meaningful descriptions — a structure the AI session can fill rather than invent.
 4. The schema enablement directive per wa-directive-instruction v1_2 §10 is then executed (making `prose_section.registry_id` nullable), after which the PROSE patch(es) writing body text can apply.
 5. The AI prose-authoring session writes bodies for the sub-sections. Macro sections may receive a short framing paragraph each (see open question 1 below), typically produced by the researcher or by a follow-up AI pass once the sub-sections exist.
 

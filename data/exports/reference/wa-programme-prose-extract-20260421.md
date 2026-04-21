@@ -46,7 +46,7 @@ _The programme's scope boundary — what it includes, what it excludes, and how 
 
 ### `prog_purp_this_inner_being_programme` — This Inner-Being Programme
 
-**id:** 38  ·  **Sections populated:** 1  ·  **Sort order:** 5
+**id:** 38  ·  **Sections populated:** 1  ·  **Sort order:** 4
 
 _The current research programme — a corpus-level continuation of Framework B's work; the per-word analytical unit; the phased pipeline; the two-agent architecture; and the three orders of programme output._
 
@@ -56,7 +56,7 @@ _The current research programme — a corpus-level continuation of Framework B's
 
 ### `prog_purp_defining_inner_being` — Defining Inner Being
 
-**id:** 39  ·  **Sections populated:** 1  ·  **Sort order:** 6
+**id:** 39  ·  **Sections populated:** 1  ·  **Sort order:** 5
 
 _The programme's working definition of inner-being characteristics — verbatim, with the three boundary decisions embedded in it, the spirit/soul distinction it holds open, and the inclusion rule that governs its application._
 
@@ -66,7 +66,7 @@ _The programme's working definition of inner-being characteristics — verbatim,
 
 ### `prog_purp_science_and_bible` — Science and the Bible
 
-**id:** 40  ·  **Sections populated:** 1  ·  **Sort order:** 7
+**id:** 40  ·  **Sections populated:** 1  ·  **Sort order:** 6
 
 _The programme's two-lens architecture — Scripture as primary lens, science as second lens — what each provides and cannot provide, the convergence and divergence framework, and the governing principles of their interaction._
 
@@ -76,7 +76,7 @@ _The programme's two-lens architecture — Scripture as primary lens, science as
 
 ### `prog_purp_expected_outcome` — Expected Outcome
 
-**id:** 41  ·  **Sections populated:** 1  ·  **Sort order:** 8
+**id:** 41  ·  **Sections populated:** 1  ·  **Sort order:** 7
 
 _What success looks like for the programme — at the level of the individual word study, at the level of the corpus of studies, and at the level of the programme's complete account. The intended audience and the three criteria by which the finished output will be judged._
 
@@ -133,4 +133,4 @@ _What to do when a patch is rejected; failure patches; mid-pool recovery._
 _How instruction overrides are declared, logged in observations, recorded in handoff documents._
 
 ---
-*Generated 2026-04-21T16:06:57Z.*
+*Generated 2026-04-21T16:41:38Z.*
