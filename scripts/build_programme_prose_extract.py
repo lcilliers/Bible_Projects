@@ -77,6 +77,7 @@ def extract_programme_prose(conn, include_body: bool = False) -> dict:
             (t["id"],),
         ).fetchall()
         entry = {
+            "id": t["id"],  # prose_section_type.id — referenced as section_type_id in PROSE patch inserts
             "code": t["code"],
             "label": t["label"],
             "description": t["description"],
@@ -117,6 +118,7 @@ def build_extract(conn, include_body: bool = False) -> dict:
             "canonical_note": "DB is source of truth post-M34 for programme-stage narrative (L2 of 3-layer reference).",
             "include_body": include_body,
             "description": "Programme-wide narrative section index — anchor verse definition, XREF architecture, validation standard, etc. Content populated via PROSE patches as researcher + AI draft each narrative.",
+            "patch_hint": "To insert programme-wide prose via a PROSE patch, use `section_type_id = <id>` from each entry in programme_prose.types. Pair with `registry_id = null` (requires the schema enablement directive per wa-directive-instruction [current] §10 to relax the NOT NULL constraint).",
         },
         "programme_prose": pp,
     }
@@ -137,9 +139,10 @@ def render_markdown_view(extract: dict) -> str:
                      "Content migration via PROSE patches is the follow-on step.*\n")
     lines.append("---\n")
     lines.append("## Section types\n")
+    lines.append("_`id` is `prose_section_type.id` — use it as `section_type_id` when inserting content via a PROSE patch._\n")
     for t in pp["types"]:
         lines.append(f"### `{t['code']}` — {t['label']}\n")
-        lines.append(f"**Sections populated:** {t['section_count']}  ·  "
+        lines.append(f"**id:** {t['id']}  ·  **Sections populated:** {t['section_count']}  ·  "
                      f"**Sort order:** {t['sort_order']}\n")
         if t["description"]:
             lines.append(f"_{t['description']}_\n")

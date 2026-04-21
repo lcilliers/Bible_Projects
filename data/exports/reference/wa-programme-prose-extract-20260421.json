@@ -1,16 +1,18 @@
 {
   "meta": {
-    "generated_at": "2026-04-21T08:55:31Z",
+    "generated_at": "2026-04-21T09:31:26Z",
     "schema_version": "3.14.0",
     "extractor_version": "1.0",
     "source": "prose_section_type WHERE source_stage='programme' (M34 live, 2026-04-20)",
     "canonical_note": "DB is source of truth post-M34 for programme-stage narrative (L2 of 3-layer reference).",
     "include_body": true,
-    "description": "Programme-wide narrative section index — anchor verse definition, XREF architecture, validation standard, etc. Content populated via PROSE patches as researcher + AI draft each narrative."
+    "description": "Programme-wide narrative section index — anchor verse definition, XREF architecture, validation standard, etc. Content populated via PROSE patches as researcher + AI draft each narrative.",
+    "patch_hint": "To insert programme-wide prose via a PROSE patch, use `section_type_id = <id>` from each entry in programme_prose.types. Pair with `registry_id = null` (requires the schema enablement directive per wa-directive-instruction [current] §10 to relax the NOT NULL constraint)."
   },
   "programme_prose": {
     "types": [
       {
+        "id": 27,
         "code": "prog_anchor_verse",
         "label": "Programme — Anchor Verse Definition",
         "description": "Canonical definition of anchor verses, dual purpose (analytical anchor + verse-context seed), minimum requirements. Authoritative home for the concept (currently mirrored in wa-reference §16 and wa-dimensionreview-instruction §4.2).",
@@ -23,6 +25,7 @@
         "sections_preview": []
       },
       {
+        "id": 28,
         "code": "prog_xref_architecture",
         "label": "Programme — XREF Architecture",
         "description": "OWNER / XREF term semantics, verse_context inheritance, canonical-row rule, cross-registry link pattern (currently scattered across wa-reference §17, wa-registry-management-guide).",
@@ -35,6 +38,7 @@
         "sections_preview": []
       },
       {
+        "id": 29,
         "code": "prog_validation_standard",
         "label": "Programme — Document Validation Standard",
         "description": "Inflection point completeness; gap status discipline; cross-doc consistency; dry-run gate assessment (currently wa-reference §18).",
@@ -47,6 +51,7 @@
         "sections_preview": []
       },
       {
+        "id": 30,
         "code": "prog_delete_discipline",
         "label": "Programme — Soft-Delete Discipline",
         "description": "Delete_flagged semantics; cascade rules; no physical deletes in automated flows; audit-trail retention.",
@@ -59,6 +64,7 @@
         "sections_preview": []
       },
       {
+        "id": 31,
         "code": "prog_field_authority",
         "label": "Programme — Field Authority Rules",
         "description": "mti_term_flags canonical for somatic / god_as_subject; deprecation notes; which field wins on conflict.",
@@ -71,6 +77,7 @@
         "sections_preview": []
       },
       {
+        "id": 32,
         "code": "prog_backup_discipline",
         "label": "Programme — Backup Discipline",
         "description": "Per-migration backup; per-patch backup; retention period; restoration procedure.",
@@ -83,6 +90,7 @@
         "sections_preview": []
       },
       {
+        "id": 33,
         "code": "prog_patch_failure_protocol",
         "label": "Programme — Patch Failure / REPAIR Protocol",
         "description": "What to do when a patch is rejected; failure patches; mid-pool recovery.",
@@ -95,6 +103,7 @@
         "sections_preview": []
       },
       {
+        "id": 34,
         "code": "prog_instruction_override_protocol",
         "label": "Programme — Instruction Override Protocol",
         "description": "How instruction overrides are declared, logged in observations, recorded in handoff documents.",
