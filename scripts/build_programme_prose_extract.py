@@ -6,10 +6,14 @@ actual `prose_section` content for each type (where populated).
 Usage:
   python scripts/build_programme_prose_extract.py
   python scripts/build_programme_prose_extract.py --also-markdown
-  python scripts/build_programme_prose_extract.py --include-body   # include full prose body text in JSON
+  python scripts/build_programme_prose_extract.py --also-docx       # readable Word doc in outputs/docx/
+  python scripts/build_programme_prose_extract.py --include-body    # include full prose body text in JSON
+  python scripts/build_programme_prose_extract.py --all-formats     # JSON + MD + DOCX with bodies
 
-Default output:
+Default outputs:
   data/exports/reference/wa-programme-prose-extract-{YYYYMMDD}.json
+  data/exports/reference/wa-programme-prose-extract-{YYYYMMDD}.md   (if --also-markdown)
+  outputs/docx/wa-programme-prose-extract-{YYYYMMDD}.docx            (if --also-docx)
 
 Content is expected to be empty after M34 seed; populated later via PROSE
 patches as researcher + Claude AI draft each programme-stage narrative.
@@ -28,7 +32,19 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 DB_PATH = os.path.join("data", "bible_research.db")
 OUT_DIR = os.path.join("data", "exports", "reference")
-EXTRACTOR_VERSION = "1.0"
+DOCX_OUT_DIR = os.path.join("outputs", "docx")
+EXTRACTOR_VERSION = "1.1"
+
+# Chapter name map (aligned to programme-prose-structure-design-v1)
+CHAPTER_NAMES = {
+    0: "Preamble",
+    1: "Programme purpose",
+    2: "Research methodology",
+    3: "Research approach",
+    4: "Data architecture",
+    5: "Data integrity & governance",
+    6: "Instruction corpus",
+}
 
 
 def open_db(path: str = DB_PATH) -> sqlite3.Connection:
@@ -137,18 +153,6 @@ def render_markdown_view(extract: dict) -> str:
                  f"**Content sections populated:** {pp['section_total']}\n")
     lines.append("---\n")
 
-    # Chapter name map. Chapter 0 = Preamble (standalone); 1-6 = the six macro areas
-    # per programme-prose-structure-design-v1. Unknown / NULL groups get a fallback.
-    CHAPTER_NAMES = {
-        0: "Preamble",
-        1: "Programme purpose",
-        2: "Research methodology",
-        3: "Research approach",
-        4: "Data architecture",
-        5: "Data integrity & governance",
-        6: "Instruction corpus",
-    }
-
     # Partition types into (a) chaptered types that have at least one populated
     # section, for rendering as readable prose grouped by chapter; (b) all
     # remaining types (stubs not yet populated, or legacy/unchaptered), rendered
@@ -212,14 +216,166 @@ def render_markdown_view(extract: dict) -> str:
     return "\n".join(lines)
 
 
+def render_docx(extract: dict, out_path: Path) -> None:
+    """Readable .docx export for reading on a second monitor.
+
+    Structure:
+      Title (Heading 1): "Programme Prose"
+      Subtitle: schema version + generated date
+      ## Programme (Heading 1)
+        ### Chapter N — {chapter name} (Heading 2, per populated chapter)
+          #### {section label} (Heading 3)
+            meta line (italic)
+            stub description (italic)
+            body paragraphs (normal, split on double-newline)
+      ## Section types not yet populated (Heading 1)
+        table of stubs
+    """
+    try:
+        from docx import Document
+        from docx.shared import Pt, RGBColor
+        from docx.enum.text import WD_ALIGN_PARAGRAPH
+    except ImportError:
+        print("[WARN] python-docx not installed; skipping .docx export")
+        return
+
+    meta = extract["meta"]
+    pp = extract["programme_prose"]
+
+    doc = Document()
+
+    # Baseline font tweak — make body readable on a reading monitor
+    style = doc.styles["Normal"]
+    style.font.name = "Calibri"
+    style.font.size = Pt(11)
+
+    # Title
+    title = doc.add_heading("Programme Prose", level=0)
+    title.alignment = WD_ALIGN_PARAGRAPH.LEFT
+
+    subtitle = doc.add_paragraph()
+    r = subtitle.add_run(
+        f"Schema {meta['schema_version']} · extractor v{meta['extractor_version']} · "
+        f"generated {meta['generated_at']}"
+    )
+    r.italic = True
+    r.font.size = Pt(9)
+    r.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    summary = doc.add_paragraph()
+    r = summary.add_run(
+        f"Section types seeded: {pp['type_count']}  ·  "
+        f"Content sections populated: {pp['section_total']}"
+    )
+    r.italic = True
+    r.font.size = Pt(9)
+    r.font.color.rgb = RGBColor(0x66, 0x66, 0x66)
+
+    populated = [t for t in pp["types"] if t["section_count"] > 0]
+    stubs = [t for t in pp["types"] if t["section_count"] == 0]
+
+    if populated:
+        doc.add_heading("Programme", level=1)
+
+        by_chapter: dict = {}
+        for t in populated:
+            ch = t.get("chapter_no")
+            by_chapter.setdefault(ch, []).append(t)
+        chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
+
+        for ch in chapter_keys:
+            chapter_name = CHAPTER_NAMES.get(ch, "Unchaptered") if ch is not None else "Unchaptered"
+            header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
+            doc.add_heading(header, level=2)
+
+            for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] or 0)):
+                doc.add_heading(t["label"], level=3)
+
+                # Code + metadata line (small grey)
+                meta_p = doc.add_paragraph()
+                rr = meta_p.add_run(
+                    f"code: {t['code']}  ·  type id {t['id']}  ·  sort {t['sort_order']}"
+                )
+                rr.italic = True
+                rr.font.size = Pt(9)
+                rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
+
+                # Stub description (blockquote-style — slightly indented, italic)
+                if t.get("description"):
+                    desc_p = doc.add_paragraph(style="Intense Quote")
+                    desc_p.add_run(t["description"])
+
+                bodies = t.get("bodies_by_id") or {}
+                for s in t["sections_preview"]:
+                    sec_meta = doc.add_paragraph()
+                    rr = sec_meta.add_run(
+                        f"Section id {s['id']}  ·  status {s['status']}  ·  v{s['version']}  ·  "
+                        f"{s['word_count']} words  ·  author {s['author']}"
+                    )
+                    rr.italic = True
+                    rr.font.size = Pt(9)
+                    rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
+
+                    body = bodies.get(s["id"])
+                    if body is None:
+                        p = doc.add_paragraph()
+                        rr = p.add_run("(body not included in this extract — re-run with --include-body)")
+                        rr.italic = True
+                        continue
+                    # Split paragraphs on blank lines and render each as its own paragraph
+                    for para in body.split("\n\n"):
+                        para = para.strip()
+                        if not para:
+                            continue
+                        doc.add_paragraph(para)
+
+    if stubs:
+        doc.add_heading("Section types not yet populated", level=1)
+        caption = doc.add_paragraph()
+        rr = caption.add_run(
+            "Stubs — prose_section_type rows with chapter_no=NULL or no prose_section content. "
+            "id is the value to use as section_type_id in a PROSE patch insert."
+        )
+        rr.italic = True
+        rr.font.size = Pt(9)
+        rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
+
+        table = doc.add_table(rows=1, cols=5)
+        table.style = "Light Grid Accent 1"
+        hdr = table.rows[0].cells
+        hdr[0].text = "id"
+        hdr[1].text = "code"
+        hdr[2].text = "label"
+        hdr[3].text = "chapter"
+        hdr[4].text = "description"
+        for t in sorted(stubs, key=lambda x: (x["chapter_no"] is None, x["chapter_no"] or 0, x["sort_order"] or 0)):
+            row = table.add_row().cells
+            row[0].text = str(t["id"])
+            row[1].text = t["code"]
+            row[2].text = t["label"]
+            row[3].text = str(t["chapter_no"]) if t["chapter_no"] is not None else "—"
+            row[4].text = (t.get("description") or "").replace("\n", " ")
+
+    doc.save(out_path)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Build programme-stage prose extract from DB")
     ap.add_argument("--db", type=str, default=DB_PATH)
     ap.add_argument("--out", type=str, default=None)
     ap.add_argument("--also-markdown", action="store_true")
+    ap.add_argument("--also-docx", action="store_true",
+                    help="also emit a readable .docx view (outputs/docx/)")
     ap.add_argument("--include-body", action="store_true",
                     help="include full prose body text in JSON (default: metadata only)")
+    ap.add_argument("--all-formats", action="store_true",
+                    help="shortcut: equivalent to --also-markdown --also-docx --include-body")
     args = ap.parse_args()
+
+    if args.all_formats:
+        args.also_markdown = True
+        args.also_docx = True
+        args.include_body = True
 
     conn = open_db(args.db)
     extract = build_extract(conn, include_body=args.include_body)
@@ -236,6 +392,18 @@ def main() -> int:
         md_path = out_path.with_suffix(".md")
         md_path.write_text(render_markdown_view(extract), encoding="utf-8")
         print(f"Wrote MD:   {md_path}")
+
+    if args.also_docx:
+        docx_out_dir = Path(DOCX_OUT_DIR)
+        docx_out_dir.mkdir(parents=True, exist_ok=True)
+        docx_path = docx_out_dir / f"wa-programme-prose-extract-{stamp}.docx"
+        if not args.include_body:
+            print("[NOTE] --also-docx implies --include-body; rebuilding extract with bodies…")
+            extract_with_bodies = build_extract(conn, include_body=True)
+            render_docx(extract_with_bodies, docx_path)
+        else:
+            render_docx(extract, docx_path)
+        print(f"Wrote DOCX: {docx_path}")
 
     pp = extract["programme_prose"]
     print(f"Section types: {pp['type_count']}  Content sections: {pp['section_total']}")

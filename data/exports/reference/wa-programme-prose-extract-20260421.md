@@ -151,4 +151,4 @@ _Stubs — `prose_section_type` rows with `chapter_no=NULL` or no `prose_section
 | 34 | `prog_instruction_override_protocol` | Programme — Instruction Override Protocol | — | 108 | How instruction overrides are declared, logged in observations, recorded in handoff documents. |
 
 ---
-*Generated 2026-04-21T17:18:18Z.*
+*Generated 2026-04-21T19:02:54Z.*
