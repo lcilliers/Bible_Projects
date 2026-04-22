@@ -1322,8 +1322,24 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
 
     elif table == "prose_section" and operation == "insert":
         # New prose section (v1; supersedes_id NULL).
+        # Post-DIR-20260421-002: registry_id is nullable (NULL = programme-wide).
+        # section_type_id may be supplied either directly (integer) or via
+        # section_type_id_lookup:{code} — parallel to verse_context group_id (§12.2).
         rec = op.get("record") or op.get("values") or {}
-        required = ("registry_id", "section_type_id", "body", "status", "author")
+        # Resolve section_type_id from lookup if needed
+        if rec.get("section_type_id") is None and rec.get("section_type_id_lookup"):
+            lookup = rec["section_type_id_lookup"]
+            code = lookup.get("code") if isinstance(lookup, dict) else None
+            if not code:
+                raise ValueError(f"{op_id}: section_type_id_lookup must be {{'code': '...'}}")
+            row = conn.execute(
+                "SELECT id FROM prose_section_type WHERE code = ?", (code,)
+            ).fetchone()
+            if not row:
+                raise ValueError(f"{op_id}: section_type_id_lookup.code={code!r} not found in prose_section_type")
+            rec = dict(rec)  # don't mutate caller's dict
+            rec["section_type_id"] = row["id"] if isinstance(row, sqlite3.Row) else row[0]
+        required = ("section_type_id", "body", "status", "author")  # registry_id nullable
         missing = [k for k in required if rec.get(k) is None]
         if missing:
             raise ValueError(f"{op_id}: prose_section insert missing {missing}")
@@ -1336,7 +1352,7 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
                 approved_at, approved_by, metadata_json, source_file, delete_flagged)
                VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, 0)""",
             (
-                rec["registry_id"], rec["section_type_id"],
+                rec.get("registry_id"), rec["section_type_id"],
                 rec.get("heading"), body, word_count,
                 rec["status"], rec.get("version", 1),
                 rec["author"], rec.get("created_at", _now()),
@@ -1345,24 +1361,36 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             ),
         )
         counts["prose_section_inserted"] = counts.get("prose_section_inserted", 0) + 1
-        print(f"  {op_id}: prose_section INSERT id={cur.lastrowid}")
+        print(f"  {op_id}: prose_section INSERT id={cur.lastrowid} (registry_id={rec.get('registry_id')!r})")
 
     elif table == "prose_section" and operation == "supersede":
         # Insert new version; update old.superseded_by_id. Used for narrative
         # prose revisions (not for Session A mechanical extracts — see
-        # session_a_replace operation for those).
+        # session_a_replace operation for those). Default: inherit
+        # registry_id + section_type_id from the predecessor row, so the
+        # caller only needs to supply the changed fields (body + author).
         rec = op.get("record") or op.get("values") or {}
         old_id = op.get("supersedes_id") or rec.get("supersedes_id")
         if not old_id:
             raise ValueError(f"{op_id}: prose_section supersede requires supersedes_id")
         old = conn.execute(
-            "SELECT version FROM prose_section WHERE id = ?", (old_id,)
+            "SELECT registry_id, section_type_id, heading, version "
+            "FROM prose_section WHERE id = ?", (old_id,)
         ).fetchone()
         if not old:
             raise ValueError(f"{op_id}: supersedes_id {old_id} not found")
         new_version = old["version"] + 1
         body = rec.get("body") or ""
+        if not body:
+            raise ValueError(f"{op_id}: prose_section supersede requires body")
+        if not rec.get("author"):
+            raise ValueError(f"{op_id}: prose_section supersede requires author")
         word_count = rec.get("word_count") or len(body.split())
+        # Inherit registry_id + section_type_id from predecessor unless caller
+        # explicitly overrides (rare — e.g. relocating prose to a new type).
+        registry_id = rec["registry_id"] if "registry_id" in rec else old["registry_id"]
+        section_type_id = rec.get("section_type_id") or old["section_type_id"]
+        heading = rec.get("heading") if "heading" in rec else old["heading"]
         cur = conn.execute(
             """INSERT INTO prose_section
                (registry_id, section_type_id, heading, body, word_count,
@@ -1370,8 +1398,8 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
                 approved_at, approved_by, metadata_json, source_file, delete_flagged)
                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
             (
-                rec["registry_id"], rec["section_type_id"],
-                rec.get("heading"), body, word_count,
+                registry_id, section_type_id,
+                heading, body, word_count,
                 rec.get("status", "draft"), new_version, old_id,
                 rec["author"], rec.get("created_at", _now()),
                 rec.get("approved_at"), rec.get("approved_by"),
@@ -1384,7 +1412,7 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             (new_id, old_id),
         )
         counts["prose_section_superseded"] = counts.get("prose_section_superseded", 0) + 1
-        print(f"  {op_id}: prose_section SUPERSEDE {old_id} -> new id={new_id} v{new_version}")
+        print(f"  {op_id}: prose_section SUPERSEDE {old_id} -> new id={new_id} v{new_version} (author={rec['author']})")
 
     elif table == "prose_section" and operation == "delete":
         # Soft-delete.
@@ -1399,19 +1427,31 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         print(f"  {op_id}: prose_section DELETE id={target_id} (soft)")
 
     elif table == "prose_section" and operation == "approve":
-        # Status transition + approval metadata.
-        target_id = op.get("id") or (op.get("match") or {}).get("id")
+        # Status transition + approval metadata. Accepts either a single id
+        # (op.id / op.match.id) or a list (op.ids) for batch approval.
         approved_by = op.get("approved_by") or "researcher"
-        if not target_id:
-            raise ValueError(f"{op_id}: prose_section approve requires id")
-        conn.execute(
-            "UPDATE prose_section "
-            "SET status = 'approved', approved_at = ?, approved_by = ? "
-            "WHERE id = ?",
-            (_now(), approved_by, target_id),
-        )
-        counts["prose_section_approved"] = counts.get("prose_section_approved", 0) + 1
-        print(f"  {op_id}: prose_section APPROVE id={target_id}")
+        target_ids = op.get("ids")
+        if not target_ids:
+            single = op.get("id") or (op.get("match") or {}).get("id")
+            if not single:
+                raise ValueError(f"{op_id}: prose_section approve requires id or ids")
+            target_ids = [single]
+        stamp = _now()
+        applied = 0
+        for tid in target_ids:
+            cur = conn.execute(
+                "UPDATE prose_section "
+                "SET status = 'approved', approved_at = ?, approved_by = ? "
+                "WHERE id = ? AND status != 'approved'",
+                (stamp, approved_by, tid),
+            )
+            if cur.rowcount:
+                applied += 1
+        counts["prose_section_approved"] = counts.get("prose_section_approved", 0) + applied
+        if len(target_ids) == 1:
+            print(f"  {op_id}: prose_section APPROVE id={target_ids[0]} (applied={applied})")
+        else:
+            print(f"  {op_id}: prose_section APPROVE batch — {applied} of {len(target_ids)} rows transitioned to 'approved'")
 
     elif table == "prose_section" and operation == "session_a_replace":
         # In-place UPDATE for Session A mechanical extracts (exception to
@@ -1491,6 +1531,41 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         )
         counts["prose_section_type_inserted"] = counts.get("prose_section_type_inserted", 0) + 1
         print(f"  {op_id}: prose_section_type INSERT code={rec['code']}")
+
+    elif table == "prose_section_type" and operation == "update":
+        # Edit metadata on an existing section type: label, description,
+        # chapter_no, sort_order, lifecycle_tag, expected_length_min/max,
+        # source_stage. Match on id or code. `id` and `code` are immutable
+        # via this operation — to rename a code, delete and re-create (or
+        # add a dedicated rename path in future).
+        match = op.get("match") or {}
+        set_clause = op.get("set") or {}
+        if not set_clause:
+            raise ValueError(f"{op_id}: prose_section_type update requires set")
+        # Resolve row identity
+        if "id" in match:
+            where_sql, where_args = "id = ?", (match["id"],)
+        elif "code" in match:
+            where_sql, where_args = "code = ?", (match["code"],)
+        else:
+            raise ValueError(f"{op_id}: prose_section_type update requires match.id or match.code")
+        # Whitelist mutable columns — immutable: id, code
+        MUTABLE = {"label", "description", "chapter_no", "sort_order",
+                   "lifecycle_tag", "expected_length_min",
+                   "expected_length_max", "source_stage"}
+        applied = {k: v for k, v in set_clause.items() if k in MUTABLE}
+        dropped = [k for k in set_clause if k not in MUTABLE]
+        if dropped:
+            print(f"  {op_id}: [NOTE] prose_section_type update — dropping immutable/unknown fields: {dropped}")
+        if not applied:
+            raise ValueError(f"{op_id}: prose_section_type update set had no mutable fields; received {list(set_clause.keys())}")
+        set_sql = ", ".join(f"{k} = ?" for k in applied)
+        args = tuple(applied.values()) + where_args
+        cur = conn.execute(
+            f"UPDATE prose_section_type SET {set_sql} WHERE {where_sql}", args
+        )
+        counts["prose_section_type_updated"] = counts.get("prose_section_type_updated", 0) + cur.rowcount
+        print(f"  {op_id}: prose_section_type UPDATE match={match} set={list(applied.keys())} rows={cur.rowcount}")
 
     elif table == "prose_section_dimension_link" and operation == "insert":
         rec = op.get("record") or op.get("values") or {}
