@@ -1,0 +1,128 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260422-CATALOGUE-PROSE-PROGRAMME-CH2-V2",
+    "produced_date": "20260422",
+    "produced_by": "wa-sessionb-analysis-readiness-v1_6 (prose-population stream, session prose v2)",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Insert seven programme-wide prose handles for Area 2 (Research Methodology), chapter_no=2, sort_order=8..14. V2 widens expected_length_min for three handles (prog_meth_flow, prog_meth_publishing, prog_meth_principles) to accommodate the style-audited shorter bodies. No change to codes, labels, sort_order, or descriptions."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_overview",
+        "label": "Research method",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 8,
+        "description": "The programme's research method at a glance — the three building blocks (registry, collation, analysis), the fourth synthesis arc that closes the work, and the sequencing commitments that hold them in order.",
+        "expected_length_min": 400,
+        "expected_length_max": 700,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_registry",
+        "label": "Word selection and the registry",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 9,
+        "description": "How the inner-being registry was built — direct extraction, inferential extension with explicit flags, systematic gap analysis against primary lexica, and continuous discovery during collation. What every registry entry carries.",
+        "expected_length_min": 500,
+        "expected_length_max": 900,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_flow",
+        "label": "Programme flow",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 10,
+        "description": "The six-phase pipeline — Session A, Verse Context, Dimension Review, Session B, Session C, Session D — with input, output, and inflection point for each, and the role of the database as state carrier between phases.",
+        "expected_length_min": 600,
+        "expected_length_max": 1200,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_science",
+        "label": "Science in action",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 11,
+        "description": "The operational methodology of the second lens — when science enters the work, the three-question structure, the six scientific fields with their corpus positioning, the reference shelf, the no-database decision, and the convergence/divergence framework.",
+        "expected_length_min": 800,
+        "expected_length_max": 1300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_publishing",
+        "label": "Publishing",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 12,
+        "description": "The three orders of programme output — per-word studies, cross-word syntheses, programme-level account — with the intended audience, the register, and the relationship between the analytical record in the database and the curated published view.",
+        "expected_length_min": 300,
+        "expected_length_max": 800,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_principles",
+        "label": "Key methodological principles",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 13,
+        "description": "The nine methodological principles governing how the research operates — registry completeness, data before analysis, inductive categorisation, evidence-first findings, uniform catalogue, database as analytical memory, biblical-first lens, bottom-up synthesis — and the reproducibility property they produce.",
+        "expected_length_min": 500,
+        "expected_length_max": 1400,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_meth_constraints",
+        "label": "Key constraints",
+        "source_stage": "programme",
+        "chapter_no": 2,
+        "sort_order": 14,
+        "description": "The deliberate limits the programme accepts as methodological commitments — registry-bounded scope, second-lens bound on science, no scientific database, synthesis after evidence, corpus-level treatment, no publication before analytical closure, and registry not reopened on interpretive grounds.",
+        "expected_length_min": 300,
+        "expected_length_max": 600,
+        "lifecycle_tag": null
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 7,
+    "prose_section_type_inserts": 7
+  }
+}

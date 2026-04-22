@@ -83,12 +83,18 @@ def extract_programme_prose(conn, include_body: bool = False) -> dict:
     section_total = 0
     for t in type_rows:
         type_count += 1
-        # Count content sections for this type
+        # Current prose section for this type — the "live" row is the one that
+        # has NOT been superseded (superseded_by_id IS NULL). Superseded rows
+        # remain in the DB for audit/history per the supersede discipline
+        # (wa-patch-instruction [current] §14.4) but the extract presents
+        # current-only for readability.
         sections = conn.execute(
             """SELECT id, registry_id, heading, status, version, author,
-                      word_count, created_at, approved_at
+                      word_count, created_at, approved_at, supersedes_id
                  FROM prose_section
-                WHERE section_type_id = ? AND delete_flagged = 0
+                WHERE section_type_id = ?
+                  AND delete_flagged = 0
+                  AND superseded_by_id IS NULL
                 ORDER BY version DESC""",
             (t["id"],),
         ).fetchall()
