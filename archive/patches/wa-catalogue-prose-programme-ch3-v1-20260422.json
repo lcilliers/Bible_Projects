@@ -1,0 +1,112 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260422-CATALOGUE-PROSE-PROGRAMME-CH3-V1",
+    "produced_date": "20260422",
+    "produced_by": "wa-prose-ch3-obslog-v1_0-20260422",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Insert six prose_section_type handles for Chapter 3 (Disciplines, tools, and evidential principles): traceability, two-AI division, session continuity, tools, researcher decision authority, scope integrity."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_traceability",
+        "label": "Traceability and evidential warrant",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 15,
+        "description": "The discipline that distinguishes a finding from a hypothesis and an inferential claim — every claim traceable to a verse, term, lexical source, or extract field; the verse as primary unit of evidence; the extract as authoritative over prior outputs; DB state verified, not assumed.",
+        "expected_length_min": 500,
+        "expected_length_max": 900,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_two_ai",
+        "label": "The two-AI division of responsibility",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 16,
+        "description": "The strict division between Claude AI (analysis, interpretation, authorship; proposes patches and directives) and Claude Code (database operations; applies patches and directives); researcher review at every gate; Claude AI works from versioned extracts without assuming DB state between turns.",
+        "expected_length_min": 500,
+        "expected_length_max": 900,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_session_continuity",
+        "label": "Session continuity and memory discipline",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 17,
+        "description": "The database as the programme's authoritative analytical memory; Claude AI's five memory layers and their limits; the obslog as continuous session record; the session log as handoff; pass-close as the mechanism by which session work reaches the DB; prose written to survive storage across sessions.",
+        "expected_length_min": 700,
+        "expected_length_max": 1200,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_tools",
+        "label": "Tools and their roles",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 18,
+        "description": "The programme's small set of instruments — STEP Bible; VSCode with Claude Code; Claude AI as analytical agent; the SQLite database as corpus; markdown and JSON as working formats; the instruction corpus for process control; programme prose in the DB as a phase-by-phase production chain across Session A extraction, Session B Readiness, Session B Analysis, Session C, Session D; the standing catalogue of questions as analytical instrument.",
+        "expected_length_min": 700,
+        "expected_length_max": 1200,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_research_decisions",
+        "label": "Researcher decision authority",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 19,
+        "description": "The foundation of the programme's authorship framework — all intellectual work originates with and remains the responsibility of the researcher; Claude AI as research assistant, never deciding; what AI did and did not do; integrity of primary sources via STEP Bible and the auditable patch system; alignment with publisher criteria for legitimate AI use in scholarship.",
+        "expected_length_min": 900,
+        "expected_length_max": 1400,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_disc_scope_integrity",
+        "label": "Scope and help-forward discipline",
+        "source_stage": "programme",
+        "chapter_no": 3,
+        "sort_order": 20,
+        "description": "The in-session operating discipline that keeps Claude AI focused on the task the researcher has set — help-forward default bounded by researcher scope; no autonomous extension of scope; observations surfaced, not enlarged into recommendations; escalation to researcher on uncertainty; the positive work of exploration preserved within the discipline.",
+        "expected_length_min": 600,
+        "expected_length_max": 1000,
+        "lifecycle_tag": null
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "prose_section_type_inserts": 6
+  }
+}
