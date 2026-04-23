@@ -1,0 +1,139 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260421-CATALOGUE-PROSE-TYPES-V1",
+    "patch_type": "CATALOGUE_POPULATION",
+    "produced_date": "20260421",
+    "produced_by": "wa-patch-instruction-v2_3-20260421",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Seed 7 new programme-stage prose_section_type rows — preamble (chapter 0) and 6 chapter-1 Programme Purpose sub-sections — to support the programme prose corpus approved in session 'prose' 2026-04-21."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "preamble",
+        "label": "Programme Preamble",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 0,
+        "description": "Opening orientation for the programme prose corpus. Sets the tone for readers, makes the boundary between descriptive prose and procedural instruction explicit for drafters, and maps the six-area structure that follows.",
+        "expected_length_min": 300,
+        "expected_length_max": 500,
+        "sort_order": 1,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_mission",
+        "label": "Mission",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "The programme's originating mission — why the research began, the theological conviction that shaped its scope, and the two Framework documents it produced.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "sort_order": 2,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_scope",
+        "label": "Scope",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "The programme's scope boundary — what it includes, what it excludes, and how the boundary was set. The ~200-word inner-being registry as the operational scope against which all downstream work is defined.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "sort_order": 3,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_this_inner_being_programme",
+        "label": "This Inner-Being Programme",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "The current research programme — a corpus-level continuation of Framework B's work; the per-word analytical unit; the phased pipeline; the two-agent architecture; and the three orders of programme output.",
+        "expected_length_min": 300,
+        "expected_length_max": 500,
+        "sort_order": 5,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_defining_inner_being",
+        "label": "Defining Inner Being",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "The programme's working definition of inner-being characteristics — verbatim, with the three boundary decisions embedded in it, the spirit/soul distinction it holds open, and the inclusion rule that governs its application.",
+        "expected_length_min": 350,
+        "expected_length_max": 600,
+        "sort_order": 6,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_science_and_bible",
+        "label": "Science and the Bible",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "The programme's two-lens architecture — Scripture as primary lens, science as second lens — what each provides and cannot provide, the convergence and divergence framework, and the governing principles of their interaction.",
+        "expected_length_min": 400,
+        "expected_length_max": 650,
+        "sort_order": 7,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "prose_section_type",
+      "operation": "insert",
+      "record": {
+        "code": "prog_purp_expected_outcome",
+        "label": "Expected Outcome",
+        "source_stage": "programme",
+        "lifecycle_tag": null,
+        "chapter_no": 1,
+        "description": "What success looks like for the programme — at the level of the individual word study, at the level of the corpus of studies, and at the level of the programme's complete account. The intended audience and the three criteria by which the finished output will be judged.",
+        "expected_length_min": 400,
+        "expected_length_max": 650,
+        "sort_order": 8,
+        "delete_flagged": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 7,
+    "prose_section_type_inserts": 7,
+    "scope_note": "Seven new prose_section_type rows — one preamble (chapter 0) and six chapter-1 Programme Purpose sub-sections. Sort_order 4 is reserved (was to be prog_purp_wider_programme; dropped per researcher message 13 session 'prose' 2026-04-21). No updates or deletes in this patch.",
+    "depends_on": "none (prose_section_type has no NOT NULL registry_id constraint)",
+    "unblocks": "PATCH-20260421-PROSE-PROGRAMME-CH01-V1 (the body-insert patch)"
+  }
+}
