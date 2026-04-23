@@ -1,4 +1,4 @@
-"""Dry-run auditor for STEP Extracts archiving.
+"""Auditor + applicator for STEP Extracts archiving.
 
 Groups files in data/exports/STEP Extracts/ by {word}_{reg}_{scope},
 keeps the latest-dated file per group (and the highest v{n} within
@@ -6,14 +6,17 @@ that date), and lists older siblings as candidates for archive to
 data/exports/archive/STEP Extracts/.
 
 Usage:
+    # Dry-run (default): writes a markdown plan, moves nothing.
     python scripts/_audit_step_extract_archiving.py
 
-Writes a markdown plan to outputs/investigations/step-extract-archive-
-plan-{YYYYMMDD}.md. Does NOT move any files.
+    # Apply: moves each file listed in the plan to the archive folder.
+    python scripts/_audit_step_extract_archiving.py --apply
 """
 from __future__ import annotations
 
+import argparse
 import re
+import shutil
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -127,7 +130,33 @@ def write_plan(moves: list[dict], summary: dict, unparsed: list[str]) -> None:
     OUT.write_text("\n".join(lines), encoding="utf-8")
 
 
+def apply_moves(moves: list[dict]) -> tuple[int, list[str]]:
+    """Execute the archive moves. Returns (count_moved, errors)."""
+    DST.mkdir(parents=True, exist_ok=True)
+    moved = 0
+    errors: list[str] = []
+    for m in moves:
+        src, tgt = m["source"], m["target"]
+        if not src.exists():
+            errors.append(f"missing: {src}")
+            continue
+        if tgt.exists():
+            errors.append(f"target already exists: {tgt}")
+            continue
+        try:
+            shutil.move(str(src), str(tgt))
+            moved += 1
+        except Exception as e:
+            errors.append(f"{src} -> {tgt}: {e!s}")
+    return moved, errors
+
+
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--apply", action="store_true",
+                        help="execute the archive moves (default: dry-run only)")
+    args = parser.parse_args()
+
     if not SRC.is_dir():
         raise SystemExit(f"Source folder not found: {SRC}")
     files = [f for f in sorted(SRC.iterdir()) if f.is_file() and f.suffix == ".json"]
@@ -139,6 +168,14 @@ def main() -> None:
           f"Keep: {summary['keep']}  "
           f"Unparsed: {len(unparsed)}")
     print(f"Plan written: {OUT}")
+
+    if args.apply:
+        moved, errors = apply_moves(moves)
+        print(f"APPLIED: {moved} files moved to {DST}")
+        if errors:
+            print(f"ERRORS ({len(errors)}):")
+            for e in errors:
+                print(f"  {e}")
 
 
 if __name__ == "__main__":

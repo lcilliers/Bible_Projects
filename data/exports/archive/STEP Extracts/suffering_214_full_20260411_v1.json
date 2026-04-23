@@ -1,0 +1,3388 @@
+{
+  "_export": {
+    "word": "suffering",
+    "registry": 214,
+    "scope": "full",
+    "exported_at": "2026-04-11T16:48:05Z",
+    "schema_version": "3.8.0",
+    "export_version": 1,
+    "export_filename": "suffering_214_full_20260411_v1.json"
+  },
+  "registry": {
+    "id": 214,
+    "no": 214,
+    "word": "suffering",
+    "source_list": "Session B C17 audit — G3804 pathema identified as missing registry",
+    "category_hint": null,
+    "phase1_input_file": "RUN-20260411_164735-NEW_WORD",
+    "phase1_status": "Complete",
+    "phase1_output_file": null,
+    "phase2_datasets": null,
+    "notes": "[AUDIT 2026-04-11] result=REVIEW  terms=10  verses=32  run_id=RUN-20260411_164804-AUDIT_WORD",
+    "automation_eligible": 1,
+    "last_automation_run": "AUDITED",
+    "automation_run_id": "RUN-20260411_164804-AUDIT_WORD",
+    "phase1_term_count": 10,
+    "phase1_verse_count": 32,
+    "strongs_list": "[{\"strong\": \"G3804\", \"count\": 16}, {\"strong\": \"G2553\", \"count\": 3}, {\"strong\": \"G3806\", \"count\": 3}, {\"strong\": \"G3663\", \"count\": 2}, {\"strong\": \"G4777\", \"count\": 2}, {\"strong\": \"G4834\", \"count\": 2}, {\"strong\": \"G2552\", \"count\": 1}, {\"strong\": \"G3356\", \"count\": 1}, {\"strong\": \"G3805\", \"count\": 1}, {\"strong\": \"G4835\", \"count\": 1}]",
+    "description": null,
+    "origin": null,
+    "dimensions": null,
+    "inference_note": null,
+    "session_b_status": "Ready for Analysis",
+    "cluster_assignment": "C05",
+    "sb_classification": null,
+    "sb_classification_reasoning": null,
+    "carry_forward": 1,
+    "unique_term_count": 0,
+    "shared_term_count": 0,
+    "term_sharing_ratio": 0.0,
+    "verse_context_status": null,
+    "dim_review_status": null,
+    "dim_review_version": null
+  },
+  "files": [
+    {
+      "id": 241,
+      "filename": "RUN-20260411_164735-NEW_WORD",
+      "registry_id": "214",
+      "word_registry_fk": 214,
+      "word": "suffering",
+      "part_number": null,
+      "total_parts": null,
+      "is_split": 0,
+      "schema_version": null,
+      "phase": "Phase 1",
+      "produced_date": "2026-04-11",
+      "source_file": null,
+      "translation_used": "ESV",
+      "specification": "Session A v9 Automation",
+      "revision_note": null,
+      "source_list": "Session B C17 audit — G3804 pathema identified as missing registry",
+      "category": null,
+      "testament_coverage": "NT_only",
+      "root_families_in_prior_parts": null,
+      "last_changed": "2026-04-11 16:47:35"
+    }
+  ],
+  "run_history": [
+    {
+      "id": 432,
+      "run_id": "RUN-20260411_164804-AUDIT_WORD",
+      "registry_id": "214",
+      "word": "suffering",
+      "phase_reached": "AUDIT_WORD_A9",
+      "audit_result": "REVIEW",
+      "audit_detail": "{\"WR-01\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-02\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-03\": {\"r\": \"PASS\", \"d\": \"10 terms\"}, \"WR-04\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-05\": {\"r\": \"PASS\", \"d\": \"IDs 7610\\u20137619 contiguous\"}, \"WR-06\": {\"r\": \"PASS\", \"d\": \"32 confirmed verse records\"}, \"WR-07\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-08\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-09\": {\"r\": \"REVIEW\", \"d\": \"wa_file_index.testament_coverage is null\"}, \"WR-10\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-11\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-12\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-13\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-14\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-15\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-16\": {\"r\": \"PASS\", \"d\": \"no obviously flaggable terms \\u2014 flag engine assumed complete\"}, \"WR-17\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-18\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-19\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-20\": {\"r\": \"PASS\", \"d\": \"ok\"}}",
+      "stop_reason": null,
+      "researcher_approved": 0,
+      "approved_by": "PROVISIONAL",
+      "approved_at": null,
+      "run_started": "2026-04-11T16:48:04",
+      "run_completed": "2026-04-11T16:48:05",
+      "run_outcome": "COMPLETE"
+    },
+    {
+      "id": 431,
+      "run_id": "RUN-20260411_164735-NEW_WORD",
+      "registry_id": "214",
+      "word": "suffering",
+      "phase_reached": "AUDIT",
+      "audit_result": "REVIEW",
+      "audit_detail": "{\"WR-01\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-02\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-03\": {\"r\": \"REVIEW\", \"d\": \"Zero wa_term_inventory rows \\u2014 all terms may be XREF\"}, \"WR-04\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-05\": {\"r\": \"PASS\", \"d\": \"no rows \\u2014 skip gap check\"}, \"WR-06\": {\"r\": \"REVIEW\", \"d\": \"Zero confirmed verses for entire word.\"}, \"WR-07\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-08\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-09\": {\"r\": \"REVIEW\", \"d\": \"wa_file_index.testament_coverage is null\"}, \"WR-10\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-11\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-12\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-13\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-14\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-15\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-16\": {\"r\": \"PASS\", \"d\": \"no obviously flaggable terms \\u2014 flag engine assumed complete\"}, \"WR-17\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-18\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-19\": {\"r\": \"PASS\", \"d\": \"ok\"}, \"WR-20\": {\"r\": \"PASS\", \"d\": \"ok\"}}",
+      "stop_reason": null,
+      "researcher_approved": 0,
+      "approved_by": null,
+      "approved_at": null,
+      "run_started": "2026-04-11T16:47:35",
+      "run_completed": "2026-04-11T16:47:36",
+      "run_outcome": "COMPLETE"
+    }
+  ],
+  "cross_registry_links": [],
+  "patch_history": [],
+  "session_research_flags": [],
+  "statistics": {
+    "term_count": 10,
+    "verse_count": 32,
+    "quality_flag_count": 39,
+    "phase2_flag_count": 0,
+    "terms_by_language": {
+      "Greek": 10
+    },
+    "verses_by_testament": {
+      "NT": 32
+    },
+    "span_match_distribution": {
+      "match": 32,
+      "no_match": 0,
+      "no_html": 0
+    },
+    "meaning_parsed_count": 10,
+    "lsj_parsed_count": 0,
+    "root_family_count": 0,
+    "related_word_count": 98,
+    "mti_term_count": 10,
+    "cross_registry_link_count": 0,
+    "verse_term_link_count": 32,
+    "research_flag_count": 0
+  },
+  "terms": [
+    {
+      "id": 7616,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G2552",
+      "strongs_number": "G2552",
+      "transliteration": "kakopatheia",
+      "step_search_gloss": "suffering",
+      "word_analysis_gloss": "suffering",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "κᾰκοπάθ-εια [πᾰ], ἡ, \ndistress, misery, [Refs 5th c.BC+]; of plants or trees, [Refs 4th c.BC+]; strain, stress, on the parts of a machine, [Refs 5th c.BC+] [same place]; ταῖς παρὰ τὴν ἀξίαν νῦν κακοπαθείαις your present unmerited sufferings, [Refs 5th c.BC+]:—later, usually written κᾰκοπαθ-παθία, [NT+3rd c.BC+]; laborious toil, perseverance, [Refs 1st c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "suffering",
+      "parsed_meaning_id": 14288,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14288,
+        "term_inv_id": 7616,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33716,
+            "parsed_meaning_id": 14288,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "a state of suffering, affliction, trouble, in NT endurance in affliction, perseverance, Jas. 5:10*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G2552. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G2552 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for G2552. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104661,
+          "term_inv_id": 7616,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104662,
+          "term_inv_id": 7616,
+          "gloss": "evil/harm: evil",
+          "transliteration": "kakos",
+          "strongs_number": "G2556G",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104663,
+          "term_inv_id": 7616,
+          "gloss": "evil/harm: harm",
+          "transliteration": "kakos",
+          "strongs_number": "G2556H",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104664,
+          "term_inv_id": 7616,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104665,
+          "term_inv_id": 7616,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104666,
+          "term_inv_id": 7616,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104667,
+          "term_inv_id": 7616,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104668,
+          "term_inv_id": 7616,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104669,
+          "term_inv_id": 7616,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104670,
+          "term_inv_id": 7616,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104671,
+          "term_inv_id": 7616,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5938,
+        "strongs_number": "G2552",
+        "transliteration": "kakopatheia",
+        "gloss": "suffering",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "suffering",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235524,
+          "file_id": 241,
+          "term_inv_id": 7616,
+          "term_id": "G2552",
+          "transliteration": "kakopatheia",
+          "testament": "NT",
+          "reference": "Jam 5:10",
+          "verse_text": "Jam 5:10 As an example of suffering and patience , brothers , take the prophets who spoke in the name of the Lord .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 59,
+          "chapter": 5,
+          "verse_num": 10,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "5:10 As an example of",
+          "context_after": "and patience , brothers ,",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7616,
+              "strongs_number": "G2552",
+              "step_subgloss_code": "G2552",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7611,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G2553",
+      "strongs_number": "G2553",
+      "transliteration": "kakopatheō",
+      "step_search_gloss": "to endure",
+      "word_analysis_gloss": "to endure",
+      "occurrence_count": 5,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "κᾰκοπαθ-έω, \nfuture -παθήσομαι[Refs 1st c.AD+]: perfect κεκακοπάθηκα [Refs 4th c.BC+]:—to be in ill plight, be in distress, [Refs 5th c.BC+]; πολλὰ κ. [Refs 3rd c.BC+]; τινι by or from a thing, τοῦ Χωρίου τῇ ἀπορίᾳ [Refs 5th c.BC+]; of sickness, [Refs 5th c.BC+]; κ. σώματι suffer in body, [Refs 5th c.BC+]; of plants or trees, [Refs 4th c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "to suffer trouble, endure hardship",
+      "parsed_meaning_id": 14283,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14283,
+        "term_inv_id": 7611,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33711,
+            "parsed_meaning_id": 14283,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to suffer trouble, endure hardship \nto suffer evil, or afflictions, 2Tim. 2:9; to be afflicted, troubled, dejected, Jas. 5:13; in NT to show endurance in trials and afflictions, ender hardship 2Tim. 4:5*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G2553. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G2553 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 3 confirmed verse records for G2553. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 5. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104612,
+          "term_inv_id": 7611,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104613,
+          "term_inv_id": 7611,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104614,
+          "term_inv_id": 7611,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104615,
+          "term_inv_id": 7611,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104616,
+          "term_inv_id": 7611,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104617,
+          "term_inv_id": 7611,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104618,
+          "term_inv_id": 7611,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104619,
+          "term_inv_id": 7611,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104620,
+          "term_inv_id": 7611,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5934,
+        "strongs_number": "G2553",
+        "transliteration": "kakopatheō",
+        "gloss": "to endure",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "to endure",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235512,
+          "file_id": 241,
+          "term_inv_id": 7611,
+          "term_id": "G2553",
+          "transliteration": "kakopatheō",
+          "testament": "NT",
+          "reference": "2Ti 2:9",
+          "verse_text": "2Ti 2:9 for which I am suffering , bound with chains as a criminal . But the word of God is not bound !",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 55,
+          "chapter": 2,
+          "verse_num": 9,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "2:9 for which I am",
+          "context_after": ", bound with chains as",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7611,
+              "strongs_number": "G2553",
+              "step_subgloss_code": "G2553",
+              "step_subgloss_label": "to endure",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        },
+        {
+          "id": 235513,
+          "file_id": 241,
+          "term_inv_id": 7611,
+          "term_id": "G2553",
+          "transliteration": "kakopatheō",
+          "testament": "NT",
+          "reference": "2Ti 4:5",
+          "verse_text": "2Ti 4:5 But as for you , always be sober-minded , endure suffering , do the work of an evangelist , fulfill your ministry .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 55,
+          "chapter": 4,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "endure suffering",
+          "span_strong_match": 1,
+          "context_before": ", always be sober-minded ,",
+          "context_after": ", do the work of",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7611,
+              "strongs_number": "G2553",
+              "step_subgloss_code": "G2553",
+              "step_subgloss_label": "to endure",
+              "span_strong_match": 1,
+              "target_word": "endure suffering"
+            }
+          ]
+        },
+        {
+          "id": 235514,
+          "file_id": 241,
+          "term_inv_id": 7611,
+          "term_id": "G2553",
+          "transliteration": "kakopatheō",
+          "testament": "NT",
+          "reference": "Jam 5:13",
+          "verse_text": "Jam 5:13 Is anyone among you suffering ? Let him pray . Is anyone cheerful ? Let him sing praise .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 59,
+          "chapter": 5,
+          "verse_num": 13,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "5:13 Is anyone among you",
+          "context_after": "? Let him pray .",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7611,
+              "strongs_number": "G2553",
+              "step_subgloss_code": "G2553",
+              "step_subgloss_label": "to endure",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7617,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G3356",
+      "strongs_number": "G3356",
+      "transliteration": "metriopatheō",
+      "step_search_gloss": "be gentle",
+      "word_analysis_gloss": "be gentle",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "μετριο-πᾰθέω, \nfeel moderately, bear reasonably with, τοῖς ἀγνοοῦσι καὶ πλανωμένοις [NT+1st c.AD+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "to deal gentlybe gentle",
+      "parsed_meaning_id": 14289,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14289,
+        "term_inv_id": 7617,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33717,
+            "parsed_meaning_id": 14289,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to deal gentlybe gentle \nto moderate one's passions, deal gently; to be gentle, compassionate, Heb. 5:2*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G3356. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G3356 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for G3356. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104672,
+          "term_inv_id": 7617,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104673,
+          "term_inv_id": 7617,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104674,
+          "term_inv_id": 7617,
+          "gloss": "moderately",
+          "transliteration": "metriōs",
+          "strongs_number": "G3357",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104675,
+          "term_inv_id": 7617,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104676,
+          "term_inv_id": 7617,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104677,
+          "term_inv_id": 7617,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104678,
+          "term_inv_id": 7617,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104679,
+          "term_inv_id": 7617,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104680,
+          "term_inv_id": 7617,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104681,
+          "term_inv_id": 7617,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5939,
+        "strongs_number": "G3356",
+        "transliteration": "metriopatheō",
+        "gloss": "be gentle",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "be gentle",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235525,
+          "file_id": 241,
+          "term_inv_id": 7617,
+          "term_id": "G3356",
+          "transliteration": "metriopatheō",
+          "testament": "NT",
+          "reference": "Heb 5:2",
+          "verse_text": "Heb 5:2 He can deal gently with the ignorant and wayward , since he himself is beset with weakness .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 5,
+          "verse_num": 2,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "deal gently",
+          "span_strong_match": 1,
+          "context_before": "Heb 5:2 He can",
+          "context_after": "with the ignorant and wayward",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7617,
+              "strongs_number": "G3356",
+              "step_subgloss_code": "G3356",
+              "step_subgloss_label": "be gentle",
+              "span_strong_match": 1,
+              "target_word": "deal gently"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7613,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G3663",
+      "strongs_number": "G3663",
+      "transliteration": "homoiopathēs",
+      "step_search_gloss": "like",
+      "word_analysis_gloss": "like",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "ὁμοιοπαθ-ής, ές, \nhaving like feelings or passions, τινι [NT+5th c.BC+]; affected in the same way, [Refs 5th c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "like, of the same quality or kind of desires",
+      "parsed_meaning_id": 14285,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14285,
+        "term_inv_id": 7613,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33713,
+            "parsed_meaning_id": 14285,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "like, of the same quality or kind of desires \nbeing affected in the same way, as another, subject to the same incidents, of like infirmities, subject to the same frailties and evils, Acts 14:15; Jas. 5:17*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G3663. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G3663 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 2 confirmed verse records for G3663. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104631,
+          "term_inv_id": 7613,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104632,
+          "term_inv_id": 7613,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104633,
+          "term_inv_id": 7613,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104634,
+          "term_inv_id": 7613,
+          "gloss": "like",
+          "transliteration": "homoios",
+          "strongs_number": "G3664",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104635,
+          "term_inv_id": 7613,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104636,
+          "term_inv_id": 7613,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104637,
+          "term_inv_id": 7613,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104638,
+          "term_inv_id": 7613,
+          "gloss": "to suffer",
+          "transliteration": "paschō",
+          "strongs_number": "G3958",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104639,
+          "term_inv_id": 7613,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104640,
+          "term_inv_id": 7613,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104641,
+          "term_inv_id": 7613,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5935,
+        "strongs_number": "G3663",
+        "transliteration": "homoiopathēs",
+        "gloss": "like",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "like",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235518,
+          "file_id": 241,
+          "term_inv_id": 7613,
+          "term_id": "G3663",
+          "transliteration": "homoiopathēs",
+          "testament": "NT",
+          "reference": "Act 14:15",
+          "verse_text": "Act 14:15 “ Men , why are you doing these things ? We also are men , of like nature with you , and we bring you good news , that you should turn from these vain things to a living God , who made the heaven and the earth and the sea and all that is in them .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 44,
+          "chapter": 14,
+          "verse_num": 15,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "nature",
+          "span_strong_match": 1,
+          "context_before": "are men , of like",
+          "context_after": "with you , and we",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7613,
+              "strongs_number": "G3663",
+              "step_subgloss_code": "G3663",
+              "step_subgloss_label": "like",
+              "span_strong_match": 1,
+              "target_word": "nature"
+            }
+          ]
+        },
+        {
+          "id": 235519,
+          "file_id": 241,
+          "term_inv_id": 7613,
+          "term_id": "G3663",
+          "transliteration": "homoiopathēs",
+          "testament": "NT",
+          "reference": "Jam 5:17",
+          "verse_text": "Jam 5:17 Elijah was a man with a nature like ours , and he prayed fervently that it might not rain , and for three years and six months it did not rain on the earth .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 59,
+          "chapter": 5,
+          "verse_num": 17,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "like",
+          "span_strong_match": 1,
+          "context_before": "a man with a nature",
+          "context_after": "ours , and he prayed",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7613,
+              "strongs_number": "G3663",
+              "step_subgloss_code": "G3663",
+              "step_subgloss_label": "like",
+              "span_strong_match": 1,
+              "target_word": "like"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7610,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G3804",
+      "strongs_number": "G3804",
+      "transliteration": "pathēma",
+      "step_search_gloss": "suffering",
+      "word_analysis_gloss": "suffering",
+      "occurrence_count": 16,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "πᾰθ-ημα, ατος, τό, \ndative plural παθημάτοις [Refs]:—that which befalls one, suffering, misfortune, [Refs 5th c.BC+]; τὸ π. τοῦ Χριστοῦ the passion of Christ, [NT]; of good fortune, χαῖρε παθὼν τὸ π. (deification) [Refs 5th c.AD+]: mostly in plural, [Refs 5th c.BC+]; ἀκούσια π., opposed to ἑκούσια καὶ ἐκ προνοίας ἀδικήματα, [Refs 5th c.BC+]; τὰ δέ μοι π. μαθήματα γέγονε my sufferings have been my lessons [Refs 5th c.BC+]\n__II emotion or condition, affection, π. τῆς ψυχῆς εἶναι τὴν σωφροσύνην, οὐ μάθημα [Refs 5th c.BC+]; opposed to ποίημα, [Refs 3rd c.AD+]; but in early writers mostly in plural, affections, feelings, opposed to ποιήματα, [Refs 5th c.BC+]; παθήμασιν ὑπηρετεῖν obey the feelings, [Refs 4th c.BC+]; opposed to ἤθη, ἕξεις, [Refs]\n__II.2 in Medicine texts, plural, troubles, symptoms, [Refs 5th c.BC+]\n__III in plural, incidents, happenings, τὰ ἐν.. Ὀδυσσείᾳ π.[Refs]\n__III.2 incidents or changes of material bodies, τὰ οὐράνια π. [Refs 4th c.BC+]\n__III.3 in Logic, incidents, properties, or accidents, [Refs 5th c.BC+]; τὰ π. τὰ αἰσθητά, of colour, etc., [Refs]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "suffering, misfortune; passion",
+      "parsed_meaning_id": 14282,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14282,
+        "term_inv_id": 7610,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33710,
+            "parsed_meaning_id": 14282,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "suffering, misfortune; passion \nwhat is suffered; suffering, affliction, emotion Rom. 8:18; 2Cor. 1:5, 6, 7; Phil. 3:10; emotion, passion, Rom. 7:5; Gal. 5:24",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G3804. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G3804 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 16. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104603,
+          "term_inv_id": 7610,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104604,
+          "term_inv_id": 7610,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104605,
+          "term_inv_id": 7610,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104606,
+          "term_inv_id": 7610,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104607,
+          "term_inv_id": 7610,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104608,
+          "term_inv_id": 7610,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104609,
+          "term_inv_id": 7610,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104610,
+          "term_inv_id": 7610,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104611,
+          "term_inv_id": 7610,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5933,
+        "strongs_number": "G3804",
+        "transliteration": "pathēma",
+        "gloss": "suffering",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "suffering",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235510,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Rom 7:5",
+          "verse_text": "Rom 7:5 For while we were living in the flesh , our sinful passions , aroused by the law , were at work in our members to bear fruit for death .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 45,
+          "chapter": 7,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "passions",
+          "span_strong_match": 1,
+          "context_before": "the flesh , our sinful",
+          "context_after": ", aroused by the law",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "passions"
+            }
+          ]
+        },
+        {
+          "id": 235511,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Rom 8:18",
+          "verse_text": "Rom 8:18 For I consider that the sufferings of this present time are not worth comparing with the glory that is to be revealed to us .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 45,
+          "chapter": 8,
+          "verse_num": 18,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "For I consider that the",
+          "context_after": "of this present time are",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235500,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "2Cor 1:5",
+          "verse_text": "2Cor 1:5 For as we share abundantly in Christ’s sufferings , so through Christ we share abundantly in comfort too .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 47,
+          "chapter": 1,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "we share abundantly in Christ’s",
+          "context_after": ", so through Christ we",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235501,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "2Cor 1:6",
+          "verse_text": "2Cor 1:6 If we are afflicted , it is for your comfort and salvation ; and if we are comforted , it is for your comfort , which you experience when you patiently endure the same sufferings that we suffer .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 47,
+          "chapter": 1,
+          "verse_num": 6,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "you patiently endure the same",
+          "context_after": "that we suffer .",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235502,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "2Cor 1:7",
+          "verse_text": "2Cor 1:7 Our hope for you is unshaken , for we know that as you share in our sufferings , you will also share in our comfort .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 47,
+          "chapter": 1,
+          "verse_num": 7,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "as you share in our",
+          "context_after": ", you will also share",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235505,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Gal 5:24",
+          "verse_text": "Gal 5:24 And those who belong to Christ Jesus have crucified the flesh with its passions and desires .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 48,
+          "chapter": 5,
+          "verse_num": 24,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "passions",
+          "span_strong_match": 1,
+          "context_before": "crucified the flesh with its",
+          "context_after": "and desires .",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "passions"
+            }
+          ]
+        },
+        {
+          "id": 235509,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Phili 3:10",
+          "verse_text": "Phili 3:10 that I may know him and the power of his resurrection , and may share his sufferings , becoming like him in his death ,",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 50,
+          "chapter": 3,
+          "verse_num": 10,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": ", and may share his",
+          "context_after": ", becoming like him in",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235504,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Col 1:24",
+          "verse_text": "Col 1:24 Now I rejoice in my sufferings for your sake, and in my flesh I am filling up what is lacking in Christ’s afflictions for the sake of his body , that is , the church ,",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 51,
+          "chapter": 1,
+          "verse_num": 24,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "Now I rejoice in my",
+          "context_after": "for your sake, and in",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235503,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "2Ti 3:11",
+          "verse_text": "2Ti 3:11 my persecutions and sufferings that happened to me at Antioch , at Iconium , and at Lystra — which persecutions I endured ; yet from them all the Lord rescued me .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 55,
+          "chapter": 3,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "2Ti 3:11 my persecutions and",
+          "context_after": "that happened to me at",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235508,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Heb 2:9",
+          "verse_text": "Heb 2:9 But we see him who for a little while was made lower than the angels , namely Jesus , crowned with glory and honor because of the suffering of death , so that by the grace of God he might taste death for everyone .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 2,
+          "verse_num": 9,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "and honor because of the",
+          "context_after": "of death , so that",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        },
+        {
+          "id": 235507,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Heb 2:10",
+          "verse_text": "Heb 2:10 For it was fitting that he , for whom and by whom all things exist, in bringing many sons to glory , should make the founder of their salvation perfect through suffering .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 2,
+          "verse_num": 10,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "of their salvation perfect through",
+          "context_after": ".",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        },
+        {
+          "id": 235506,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "Heb 10:32",
+          "verse_text": "Heb 10:32 But recall the former days when , after you were enlightened , you endured a hard struggle with sufferings ,",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 10,
+          "verse_num": 32,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "endured a hard struggle with",
+          "context_after": ",",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235496,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "1Pe 1:11",
+          "verse_text": "1Pe 1:11 inquiring what person or time the Spirit of Christ in them was indicating when he predicted the sufferings of Christ and the subsequent glories .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 60,
+          "chapter": 1,
+          "verse_num": 11,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "indicating when he predicted the",
+          "context_after": "of Christ and the subsequent",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235497,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "1Pe 4:13",
+          "verse_text": "1Pe 4:13 But rejoice insofar as you share Christ’s sufferings , that you may also rejoice and be glad when his glory is revealed .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 60,
+          "chapter": 4,
+          "verse_num": 13,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "insofar as you share Christ’s",
+          "context_after": ", that you may also",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235498,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "1Pe 5:1",
+          "verse_text": "1Pe 5:1 So I exhort the elders among you , as a fellow elder and a witness of the sufferings of Christ , as well as a partaker in the glory that is going to be revealed :",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 60,
+          "chapter": 5,
+          "verse_num": 1,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sufferings",
+          "span_strong_match": 1,
+          "context_before": "and a witness of the",
+          "context_after": "of Christ , as well",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "sufferings"
+            }
+          ]
+        },
+        {
+          "id": 235499,
+          "file_id": 241,
+          "term_inv_id": 7610,
+          "term_id": "G3804",
+          "transliteration": "pathēma",
+          "testament": "NT",
+          "reference": "1Pe 5:9",
+          "verse_text": "1Pe 5:9 Resist him, firm in your faith , knowing that the same kinds of suffering are being experienced by your brotherhood throughout the world .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 60,
+          "chapter": 5,
+          "verse_num": 9,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "that the same kinds of",
+          "context_after": "are being experienced by your",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7610,
+              "strongs_number": "G3804",
+              "step_subgloss_code": "G3804",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7618,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G3805",
+      "strongs_number": "G3805",
+      "transliteration": "pathētos",
+      "step_search_gloss": "suffering",
+      "word_analysis_gloss": "suffering",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "πᾰθ-ητός, ή, όν, \none who has suffered, [Refs 4th c.BC+]\n__II subject to suffering, [NT]; τὸ θνητὸν καὶ π. [Refs 1st c.AD+]\n__II.2 liable to external influence or change, opposed to ἀπαθής, [Refs 4th c.BC+]; passive, opposed to δραστήριος, [Refs 1st c.AD+]; but ὁ νοῦς ἀπαθής, ἡ δὲ γένεσις π. [Refs 1st c.AD+]\n__II.3 in Medicine texts, diseased, affected, στεφάνη [Refs]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "subject to suffering",
+      "parsed_meaning_id": 14290,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14290,
+        "term_inv_id": 7618,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33718,
+            "parsed_meaning_id": 14290,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "passible, capable of suffering, liable to suffer;, in NT destined to suffer, subject to suffering Acts 26:23*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G3805. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G3805 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for G3805. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104682,
+          "term_inv_id": 7618,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104683,
+          "term_inv_id": 7618,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104684,
+          "term_inv_id": 7618,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104685,
+          "term_inv_id": 7618,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104686,
+          "term_inv_id": 7618,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104687,
+          "term_inv_id": 7618,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104688,
+          "term_inv_id": 7618,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104689,
+          "term_inv_id": 7618,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104690,
+          "term_inv_id": 7618,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5940,
+        "strongs_number": "G3805",
+        "transliteration": "pathētos",
+        "gloss": "suffering",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "suffering",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235526,
+          "file_id": 241,
+          "term_inv_id": 7618,
+          "term_id": "G3805",
+          "transliteration": "pathētos",
+          "testament": "NT",
+          "reference": "Act 26:23",
+          "verse_text": "Act 26:23 that the Christ must suffer and that , by being the first to rise from the dead , he would proclaim light both to our people and to the Gentiles .”",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 44,
+          "chapter": 26,
+          "verse_num": 23,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "must suffer",
+          "span_strong_match": 1,
+          "context_before": "Act 26:23 that the Christ",
+          "context_after": "and that , by being",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7618,
+              "strongs_number": "G3805",
+              "step_subgloss_code": "G3805",
+              "step_subgloss_label": "suffering",
+              "span_strong_match": 1,
+              "target_word": "must suffer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7612,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G3806",
+      "strongs_number": "G3806",
+      "transliteration": "pathos",
+      "step_search_gloss": "passion",
+      "word_analysis_gloss": "passion",
+      "occurrence_count": 5,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "πάθος [ᾰ], εος, τό, \n(πάσχω) that which happens to a person or thing, τὰ ἐν τοῖς κατόπτροις τῆς ὄψεως π. [Refs 5th c.BC+]; τὰ ἐν τῷ ἀνθρωπίνῳ βίῳ [τῆς ψυχῆς] π. [Refs]; incident, accident, τὰ ἀνθρωπήϊα π. [Refs 5th c.BC+]; τὸ συντυχὸν π. [Refs 5th c.BC+]; οὗ τόδ᾽ ἦν π. where this incident took place, [Refs]; ἔξωθεν π. [Refs 5th c.BC+]; unfortunate accident, [Refs 5th c.BC+]\n__2 what one has experienced, good or bad, experience, τὸν πάθει μάθος θέντα κυρίως ἔχειν [Refs 4th c.BC+]; τά γ᾽ ἐμὰ π. my experiences, [Refs 5th c.BC+]; opposed to ἔργα, [Refs 5th c.BC+]; opposed to πρᾶξις, [Refs 5th c.BC+]\n__2.b in bad sense, misfortune, calamity, [Refs 5th c.BC+]; τὰ τῆς Νιόβης π. [Refs 5th c.BC+]; ἀνήκεστον π. ἔρδειν to do an act which is an irreparable mischief to one, [Refs 5th c.BC+]; μετὰ τῆς θυγατρὸς τὸ π., i.e. her death, [Refs]; π. μέγα πεπονθέναι, of a great defeat, [Refs]\n__2.c ={πάθημα}[Refs 4th c.BC+]\n__II of the soul, emotion, passion (λέγω δὲ πάθη.. ὅλως οἷς ἕπεται ἡδονὴ ἢ λύπη [Refs 5th c.BC+]; ἐρωτικὸν π. [Refs 5th c.BC+]; π. ποιεῖν to excite passion, [Refs 4th c.BC+]; ἐκτὸς τοῦ π. εἶναι to be exempt from passion, [Refs 3rd c.BC+]; περὶ παθῶν, title of work by Zeno the Stoic, [Refs 4th c.BC+], sensation (including pleasure and pain), ἀκουστικὸν π. [Refs]\n__III state, condition, τὸ τῆς παντοδαπῆς ἀγνοίας π. [Refs 5th c.BC+]; opposed to ἐνέργεια, [Refs 2nd c.AD+]; opposed to ποίημα, [Refs 5th c.BC+]\n__III.2 incidents of things, changes or happenings occurring in them, τὰ οὐράνια π. [Refs 5th c.BC+]; τὰ περὶ τὸν οὐρανὸν π. [Refs 4th c.BC+]\n__III.3 properties, qualities of things, opposed to οὐσία, [Refs 5th c.BC+]; π. λέγεται.. ποιότης καθ᾽ ἣν ἀλλοιοῦσθαι ἐνδέχεται, οἷον τὸ λευκὸν καὶ τὸ μέλαν, καὶ γλυκὺ καὶ πικρόν, καὶ βαρύτης καὶ κουφότης, κτλ. [Refs 4th c.BC+]; ἀριθμοῖς καὶ γραμμαῖς καὶ τοῖς τούτων π. [Refs 4th c.BC+]; τῶν φυτῶν τὰ μέρη καὶ τὰ π. [Refs 4th c.BC+]\n__IV Grammars, modification in form of words (especially dialectal), πάθη τῆς λέξεως [Refs 4th c.BC+]\n__IV.2 in Syntax, modified construction, of omission or redundancy, [Refs]\n__IV.2.b passivity, [Refs 2nd c.BC+]\n__IV.2.c in writing, signs other than accents and breathings (ἀπόστροφος, ὑφέν, ὑποδιαστολή), [Refs 2nd c.BC+]\n__V Rhet., emotional style or treatment, τὸ σφοδρὸν καὶ ἐνθουσιαστικὸν π. [Refs 4th c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "lust, sexual passion",
+      "parsed_meaning_id": 14284,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14284,
+        "term_inv_id": 7612,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33712,
+            "parsed_meaning_id": 14284,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "lust, sexual passion \nsuffering; an affection, passion, lust especially sexual, Rom. 1:26",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G3806. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G3806 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 3 confirmed verse records for G3806. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 5. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104621,
+          "term_inv_id": 7612,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104622,
+          "term_inv_id": 7612,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104623,
+          "term_inv_id": 7612,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104624,
+          "term_inv_id": 7612,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104625,
+          "term_inv_id": 7612,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104626,
+          "term_inv_id": 7612,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104627,
+          "term_inv_id": 7612,
+          "gloss": "to suffer",
+          "transliteration": "paschō",
+          "strongs_number": "G3958",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104628,
+          "term_inv_id": 7612,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104629,
+          "term_inv_id": 7612,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104630,
+          "term_inv_id": 7612,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 1022,
+        "strongs_number": "G3806",
+        "transliteration": "pathos",
+        "gloss": "passion",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": 115,
+        "owning_word": "passion",
+        "owning_part": null,
+        "word_data_reference": "151",
+        "word_data_ref_fk": 151,
+        "status": "delete",
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-18",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-26T14:00:03Z",
+        "delete_flagged": 0,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235517,
+          "file_id": 241,
+          "term_inv_id": 7612,
+          "term_id": "G3806",
+          "transliteration": "pathos",
+          "testament": "NT",
+          "reference": "Rom 1:26",
+          "verse_text": "Rom 1:26 For this reason God gave them up to dishonorable passions . For their women exchanged natural relations for those that are contrary to nature ;",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 45,
+          "chapter": 1,
+          "verse_num": 26,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "passions",
+          "span_strong_match": 1,
+          "context_before": "gave them up to dishonorable",
+          "context_after": ". For their women exchanged",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7612,
+              "strongs_number": "G3806",
+              "step_subgloss_code": "G3806",
+              "step_subgloss_label": "passion",
+              "span_strong_match": 1,
+              "target_word": "passions"
+            }
+          ]
+        },
+        {
+          "id": 235516,
+          "file_id": 241,
+          "term_inv_id": 7612,
+          "term_id": "G3806",
+          "transliteration": "pathos",
+          "testament": "NT",
+          "reference": "Col 3:5",
+          "verse_text": "Col 3:5 Put to death therefore what is earthly in you: sexual immorality , impurity , passion , evil desire , and covetousness , which is idolatry .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 51,
+          "chapter": 3,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "passion",
+          "span_strong_match": 1,
+          "context_before": "sexual immorality , impurity ,",
+          "context_after": ", evil desire , and",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7612,
+              "strongs_number": "G3806",
+              "step_subgloss_code": "G3806",
+              "step_subgloss_label": "passion",
+              "span_strong_match": 1,
+              "target_word": "passion"
+            }
+          ]
+        },
+        {
+          "id": 235515,
+          "file_id": 241,
+          "term_inv_id": 7612,
+          "term_id": "G3806",
+          "transliteration": "pathos",
+          "testament": "NT",
+          "reference": "1Th 4:5",
+          "verse_text": "1Th 4:5 not in the passion of lust like the Gentiles who do not know God ;",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 52,
+          "chapter": 4,
+          "verse_num": 5,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "passion",
+          "span_strong_match": 1,
+          "context_before": "1Th 4:5 not in the",
+          "context_after": "of lust like the Gentiles",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7612,
+              "strongs_number": "G3806",
+              "step_subgloss_code": "G3806",
+              "step_subgloss_label": "passion",
+              "span_strong_match": 1,
+              "target_word": "passion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7614,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G4777",
+      "strongs_number": "G4777",
+      "transliteration": "sunkakopatheō",
+      "step_search_gloss": "to suffer with",
+      "word_analysis_gloss": "to suffer with",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "συγκᾰκοπᾰθέω, \npartake in sufferings, [NT]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "to suffer together with, endure hardship with",
+      "parsed_meaning_id": 14286,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14286,
+        "term_inv_id": 7614,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33714,
+            "parsed_meaning_id": 14286,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to suffer together with, endure hardship with \nto suffer evils along with, someone; to be enduringly adherent, 2Tim. 1:8; 2:3*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G4777. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G4777 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 2 confirmed verse records for G4777. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104642,
+          "term_inv_id": 7614,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104643,
+          "term_inv_id": 7614,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104644,
+          "term_inv_id": 7614,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104645,
+          "term_inv_id": 7614,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104646,
+          "term_inv_id": 7614,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104647,
+          "term_inv_id": 7614,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104648,
+          "term_inv_id": 7614,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104649,
+          "term_inv_id": 7614,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104650,
+          "term_inv_id": 7614,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104651,
+          "term_inv_id": 7614,
+          "gloss": "with",
+          "transliteration": "sun",
+          "strongs_number": "G4862",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5936,
+        "strongs_number": "G4777",
+        "transliteration": "sunkakopatheō",
+        "gloss": "to suffer with",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "to suffer with",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235520,
+          "file_id": 241,
+          "term_inv_id": 7614,
+          "term_id": "G4777",
+          "transliteration": "sunkakopatheō",
+          "testament": "NT",
+          "reference": "2Ti 1:8",
+          "verse_text": "2Ti 1:8 Therefore do not be ashamed of the testimony about our Lord , nor of me his prisoner , but share in suffering for the gospel by the power of God ,",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 55,
+          "chapter": 1,
+          "verse_num": 8,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "share in suffering",
+          "span_strong_match": 1,
+          "context_before": "me his prisoner , but",
+          "context_after": "for the gospel by the",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7614,
+              "strongs_number": "G4777",
+              "step_subgloss_code": "G4777",
+              "step_subgloss_label": "to suffer with",
+              "span_strong_match": 1,
+              "target_word": "share in suffering"
+            }
+          ]
+        },
+        {
+          "id": 235521,
+          "file_id": 241,
+          "term_inv_id": 7614,
+          "term_id": "G4777",
+          "transliteration": "sunkakopatheō",
+          "testament": "NT",
+          "reference": "2Ti 2:3",
+          "verse_text": "2Ti 2:3 Share in suffering as a good soldier of Christ Jesus .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 55,
+          "chapter": 2,
+          "verse_num": 3,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "suffering",
+          "span_strong_match": 1,
+          "context_before": "2Ti 2:3 Share in",
+          "context_after": "as a good soldier of",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7614,
+              "strongs_number": "G4777",
+              "step_subgloss_code": "G4777",
+              "step_subgloss_label": "to suffer with",
+              "span_strong_match": 1,
+              "target_word": "suffering"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7615,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G4834",
+      "strongs_number": "G4834",
+      "transliteration": "sumpatheō",
+      "step_search_gloss": "to sympathize",
+      "word_analysis_gloss": "to sympathize",
+      "occurrence_count": 2,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "συμπαθ-έω, \nto be sympathetically affected, δοκεῖ ἡ ψυχὴ καὶ τὸ σῶμα συμπαθεῖν ἀλλήλοις [Refs 4th c.BC+]:—passive, [Refs 1st c.AD+]\n__2 with dative person, sympathize with, τοῖς φίλοις [Refs 4th c.BC+]\n__3 with dative of things, sympathize in, feel for, ἀτυχίαις [NT+5th c.BC+]\n__4 absolutely, feel sympathy, [Refs 1st c.AD+]; ἐκ τοῦ παθεῖν γίγνωσκε καὶ τὸ συμπαθεῖν· καὶ σοὶ γὰρ ἄλλος συμπαθήσεται παθών (future middle in active sense) [Refs 4th c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "to sympathize with",
+      "parsed_meaning_id": 14287,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14287,
+        "term_inv_id": 7615,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33715,
+            "parsed_meaning_id": 14287,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "to sympathize with, Heb. 4:15; to be compassionate, Heb. 10:34*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G4834. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G4834 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 2 confirmed verse records for G4834. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 2. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104652,
+          "term_inv_id": 7615,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104653,
+          "term_inv_id": 7615,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104654,
+          "term_inv_id": 7615,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104655,
+          "term_inv_id": 7615,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104656,
+          "term_inv_id": 7615,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104657,
+          "term_inv_id": 7615,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104658,
+          "term_inv_id": 7615,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104659,
+          "term_inv_id": 7615,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104660,
+          "term_inv_id": 7615,
+          "gloss": "sympathetic",
+          "transliteration": "sumpathēs",
+          "strongs_number": "G4835",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5937,
+        "strongs_number": "G4834",
+        "transliteration": "sumpatheō",
+        "gloss": "to sympathize",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "to sympathize",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235523,
+          "file_id": 241,
+          "term_inv_id": 7615,
+          "term_id": "G4834",
+          "transliteration": "sumpatheō",
+          "testament": "NT",
+          "reference": "Heb 4:15",
+          "verse_text": "Heb 4:15 For we do not have a high priest who is unable to sympathize with our weaknesses , but one who in every respect has been tempted as we are , yet without sin .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 4,
+          "verse_num": 15,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sympathize",
+          "span_strong_match": 1,
+          "context_before": "priest who is unable to",
+          "context_after": "with our weaknesses , but",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7615,
+              "strongs_number": "G4834",
+              "step_subgloss_code": "G4834",
+              "step_subgloss_label": "to sympathize",
+              "span_strong_match": 1,
+              "target_word": "sympathize"
+            }
+          ]
+        },
+        {
+          "id": 235522,
+          "file_id": 241,
+          "term_inv_id": 7615,
+          "term_id": "G4834",
+          "transliteration": "sumpatheō",
+          "testament": "NT",
+          "reference": "Heb 10:34",
+          "verse_text": "Heb 10:34 For you had compassion on those in prison , and you joyfully accepted the plundering of your property , since you knew that you yourselves had a better possession and an abiding one .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 58,
+          "chapter": 10,
+          "verse_num": 34,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "compassion",
+          "span_strong_match": 1,
+          "context_before": "Heb 10:34 For you had",
+          "context_after": "on those in prison ,",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7615,
+              "strongs_number": "G4834",
+              "step_subgloss_code": "G4834",
+              "step_subgloss_label": "to sympathize",
+              "span_strong_match": 1,
+              "target_word": "compassion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7619,
+      "file_id": 241,
+      "language": "Greek",
+      "term_id": "G4835",
+      "strongs_number": "G4835",
+      "transliteration": "sumpathēs",
+      "step_search_gloss": "sympathetic",
+      "word_analysis_gloss": "sympathetic",
+      "occurrence_count": 1,
+      "occurrence_count_qualifier": null,
+      "meaning": null,
+      "meaning_numbered": null,
+      "also_spelled": null,
+      "lsj_entry": "συμπαθ-ής, ές, \naffected by like feelings, sympathetic, οὐδεὶς ὁμαίμου -έστερος φίλος [Refs 5th c.BC+]; πρὸς τὰ γεννηθέντα συμπαθέστεραι μᾶλλον αἱ μητέρες γίνονται [τῶν τιτθῶν] [Refs 2nd c.AD+]\n__2 exerting mutual influence, interacting, ἡ ψυχὴ καὶ τὸ σῶμα συμπαθῆ [Refs 4th c.BC+]; νεῦρα ἀλλήλοις σ. [Refs 6th c.AD+]; sensitive to influence, τὸ ἐν τῇ καρδίᾳ θερμόν.. -έστατον [Refs 4th c.BC+]; of the members of an organism, [Refs 5th c.BC+]; exciting sympathy, χερῶν σ. ὑπτιασμός [Refs 5th c.BC+]: superlative, [Refs]\n__3 of planets, in concord, [Refs 2nd c.BC+]\n__II adverb -θῶς sympathetically, [Refs 4th c.BC+] -έστατα [Refs 1st c.BC+]",
+      "testament": "NT_only",
+      "god_as_subject": 0,
+      "somatic_link": 0,
+      "causative_form_present": 0,
+      "status_note": null,
+      "last_changed": "2026-04-11T16:48:04",
+      "short_def_mounce": "sympathetic",
+      "parsed_meaning_id": 14291,
+      "delete_flagged": 0,
+      "evidential_status": null,
+      "retention_note": null,
+      "term_owner_type": null,
+      "_meta": {
+        "empty_tables": [
+          "meaning_stems",
+          "lsj_parsed",
+          "phase2_flags",
+          "root_family",
+          "mti_cross_refs",
+          "mti_flags"
+        ]
+      },
+      "meaning_parsed": {
+        "id": 14291,
+        "term_inv_id": 7619,
+        "strongs_number": "",
+        "language": "Hebrew",
+        "top_sense_count": 1,
+        "stem_count": 0,
+        "has_causative_stem": 0,
+        "has_domain_tags": 0,
+        "parsed_at": "2026-04-11T16:48:05",
+        "parse_version": "1.0.0",
+        "parse_warnings": "[\"PROSE_ONLY\"]",
+        "senses": [
+          {
+            "id": 33719,
+            "parsed_meaning_id": 14291,
+            "level_code": "1",
+            "level_depth": 1,
+            "parent_level_code": null,
+            "sense_text": "sympathetic \nsympathizing, compassionate, 1Pet. 3:8*",
+            "is_stem_label": 0,
+            "stem_label": null,
+            "domain_tag": null,
+            "sort_order": 0
+          }
+        ],
+        "stems": []
+      },
+      "lsj_parsed": null,
+      "quality_flags": [
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "flag_group": "DATA_COVERAGE",
+          "description": "No word-level analysis is available for this term",
+          "detail": "meaning field is null for G4835. STEP returned no word analysis block for this term.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "PROSE_ONLY_MEANING",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "detail": "Meaning for G4835 stored as single prose block. STEP medium_def contains no structured sense numbering. No further subdivision available.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Only a partial sample of available verses was captured",
+          "detail": "Only 1 confirmed verse records for G4835. Threshold is 5.",
+          "last_changed": null
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "flag_group": "DATA_COVERAGE",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "detail": "Low occurrence count: 1. Statistical patterns unreliable with fewer than 20 occurrences.",
+          "last_changed": null
+        }
+      ],
+      "phase2_flags": [],
+      "related_words": [
+        {
+          "id": 104691,
+          "term_inv_id": 7619,
+          "gloss": "suffering",
+          "transliteration": "kakopatheia",
+          "strongs_number": "G2552",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104692,
+          "term_inv_id": 7619,
+          "gloss": "to endure",
+          "transliteration": "kakopatheō",
+          "strongs_number": "G2553",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104693,
+          "term_inv_id": 7619,
+          "gloss": "be gentle",
+          "transliteration": "metriopatheō",
+          "strongs_number": "G3356",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104694,
+          "term_inv_id": 7619,
+          "gloss": "like",
+          "transliteration": "homoiopathēs",
+          "strongs_number": "G3663",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104695,
+          "term_inv_id": 7619,
+          "gloss": "suffering",
+          "transliteration": "pathēma",
+          "strongs_number": "G3804",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104696,
+          "term_inv_id": 7619,
+          "gloss": "suffering",
+          "transliteration": "pathētos",
+          "strongs_number": "G3805",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104697,
+          "term_inv_id": 7619,
+          "gloss": "passion",
+          "transliteration": "pathos",
+          "strongs_number": "G3806",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104698,
+          "term_inv_id": 7619,
+          "gloss": "to suffer with",
+          "transliteration": "sunkakopatheō",
+          "strongs_number": "G4777",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104699,
+          "term_inv_id": 7619,
+          "gloss": "to sympathize",
+          "transliteration": "sumpatheō",
+          "strongs_number": "G4834",
+          "relationship_note": null,
+          "delete_flagged": 0
+        },
+        {
+          "id": 104700,
+          "term_inv_id": 7619,
+          "gloss": "to suffer with",
+          "transliteration": "sumpaschō",
+          "strongs_number": "G4841",
+          "relationship_note": null,
+          "delete_flagged": 0
+        }
+      ],
+      "root_family": [],
+      "mti": {
+        "id": 5941,
+        "strongs_number": "G4835",
+        "transliteration": "sumpathēs",
+        "gloss": "sympathetic",
+        "language": "Greek",
+        "owning_registry": "115",
+        "owning_registry_fk": null,
+        "owning_word": "sympathetic",
+        "owning_part": null,
+        "word_data_reference": null,
+        "word_data_ref_fk": null,
+        "status": null,
+        "status_note": null,
+        "exclusion_reason": null,
+        "extraction_date": "2026-03-28",
+        "strongs_reconciled": 0,
+        "anchor_note": null,
+        "last_changed": "2026-03-28 14:10:13",
+        "delete_flagged": 1,
+        "cross_refs": [],
+        "flags": []
+      },
+      "verses": [
+        {
+          "id": 235527,
+          "file_id": 241,
+          "term_inv_id": 7619,
+          "term_id": "G4835",
+          "transliteration": "sumpathēs",
+          "testament": "NT",
+          "reference": "1Pe 3:8",
+          "verse_text": "1Pe 3:8 Finally , all of you, have unity of mind , sympathy , brotherly love , a tender heart , and a humble mind .",
+          "last_changed": "2026-04-11 16:48:05",
+          "book_id": 60,
+          "chapter": 3,
+          "verse_num": 8,
+          "translation": "ESV",
+          "note": null,
+          "claude_output": null,
+          "created_at": "2026-04-11T16:48:04",
+          "updated_at": null,
+          "target_word": "sympathy",
+          "span_strong_match": 1,
+          "context_before": "have unity of mind ,",
+          "context_after": ", brotherly love , a",
+          "delete_flagged": 0,
+          "mti_term_id": null,
+          "term_links": [
+            {
+              "term_inv_id": 7619,
+              "strongs_number": "G4835",
+              "step_subgloss_code": "G4835",
+              "step_subgloss_label": "sympathetic",
+              "span_strong_match": 1,
+              "target_word": "sympathy"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "verse_term_links_count": 32
+}
