@@ -1,0 +1,224 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260423-CATALOGUE-PROSE-CH6-INSERT-V1",
+    "produced_date": "20260423",
+    "produced_by": "wa-patch-instruction-v2_4-20260422",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Chapter 6 slot definitions — 13 inserts into prose_section_type for the instruction corpus chapter (Global rules, Reference, Patches, Directives, Claude Code guide, Registry management guide, Session A, Verse Context, Dimension Review, Session B Readiness, Session B Output, Session C, Session D). Expected outcome: 13 new rows in prose_section_type; total rows increase from 37 to 50."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_global_rules",
+        "label": "Programme — Global rules",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 110,
+        "description": "The global rules document — the single file of programme-wide binding rules held in wa_rule_registry and exported as the session-start rules extract. Its role as the document read in full before any other instruction, extract, or data file at every session start. Short brief-description register; points to GR-LOAD-001 for the load gate and to the rules themselves for governance; does not restate rule content.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_reference",
+        "label": "Programme — Reference",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 111,
+        "description": "The reference document — the programme's dictionary for controlled vocabularies, schema field definitions, and file-naming extensions. Held in wa_vocab_set + wa_vocab_member + schema tables; exported as the reference snapshot. Role as the authoritative lookup that other instructions point to rather than restating vocabulary content.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_patches",
+        "label": "Programme — Patches",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 112,
+        "description": "The patches method instruction — the authoritative reference for the JSON patch format, operation types, filename and patch-id conventions, self-check, and completion confirmation. One of the two DB-change mechanisms (alongside directives); used when the change is fully specified in data terms.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_directives",
+        "label": "Programme — Directives",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 113,
+        "description": "The directives method instruction — the authoritative reference for the plain-language directive format, its five required elements, filename convention, self-check, and completion confirmation. The second of the two DB-change mechanisms; used when the change cannot be captured adequately in a JSON patch (schema enablement, re-run triggers, operations requiring reasoning beyond declarative operations).",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_claudecode",
+        "label": "Programme — Claude Code operating guide",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 114,
+        "description": "The Claude Code method instruction — CC's role as executor, the data-foundation pipeline (STEP extraction, audit_word, JSON export), schema and implementation tasks, CC-side programme-state queries, engine and script status, Verse Context operations from CC's perspective, re-run mechanisms (STALE_TERM), and recurring anomaly resolutions. Governs what CC does with what it receives.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_registry_guide",
+        "label": "Programme — Registry management guide",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 115,
+        "description": "The registry management guide — the programme's reference document for the word registry. Defines every field on word_registry, the status lifecycle values, the OWNER/XREF distinction, cluster assignments and processing sequence, and registry-level audit-integrity rules. Self-described as reference guide, not an operational instruction.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_session_a",
+        "label": "Programme — Session A — extraction",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 116,
+        "description": "The Session A pipeline-stage instruction — mechanical extraction of Hebrew/Greek term data from STEP Bible into the database, audit_word reconciliation, assembly of the complete word data export, and handoff to Verse Context. Entry point of the analytical pipeline. Currently exists in Word document form (v8); migration to markdown pending.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_verse_context",
+        "label": "Programme — Verse Context",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 117,
+        "description": "The Verse Context pipeline-stage instruction — the stage between Session A and Dimension Review. Batch construction, verse reading for active OWNER terms, term-level relevance filter, contextual grouping, anchor designation, and patch production populating verse_context_group and verse_context. Operates in batches; re-exports the full word JSON per registry on completion.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_dimension_review",
+        "label": "Programme — Dimension Review",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 118,
+        "description": "The Dimension Review pipeline-stage instruction — cluster-level analytical stage between Verse Context and Session B. Cluster coherence validation, group description quality, anchor verification, dimension and dominant-subject assignment, confidence progression, manual_override locking, and Session B / Session D pointer capture. First stage where cross-registry reading begins.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_session_b_readiness",
+        "label": "Programme — Session B — Analysis Readiness",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 119,
+        "description": "The Session B Analysis Readiness instruction — Stage 1 of Session B. Data audit, resolution-path assignment, Type (a) patch accumulation, directives for CC re-run, and the Stage 1 Completion Record producing the Stage 2 Readiness Declaration. Does not produce analytical output; produces the readiness state.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_session_b_output",
+        "label": "Programme — Session B — Analysis Output",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 120,
+        "description": "The Session B Analysis Output instruction — Stage 2 of Session B. Stage 2a comprehensive reading with observations log; Stage 2b Q&A partitioning against the observation question catalogue; Stage 2c six-chapter analytic word output. Also produces SD pointers for Session D; closes via closing patch advancing the registry to Analysis Complete.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_session_c",
+        "label": "Programme — Session C",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 121,
+        "description": "The Session C instruction — the word publication layer. A single reader-facing document per word, written in plain accessible language for an intelligent non-specialist reader. Living document updated v1 → v2 → v3 as Session B annotations and Session D findings become available. The primary articulation layer of the programme.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_instr_session_d",
+        "label": "Programme — Session D",
+        "source_stage": "programme",
+        "chapter_no": 6,
+        "sort_order": 122,
+        "description": "The Session D orientation — cross-registry synthesis. Works in the opposite direction from Sessions A/B/C: begins with questions about the inner life, asks what the accumulated data reveals in the aggregate. Starts from SD pointers Session B raises; produces synthesis documents at named runs. Currently a governing document rather than a complete instruction.",
+        "expected_length_min": 150,
+        "expected_length_max": 300,
+        "lifecycle_tag": null
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 13,
+    "prose_section_type_inserts": 13
+  }
+}
