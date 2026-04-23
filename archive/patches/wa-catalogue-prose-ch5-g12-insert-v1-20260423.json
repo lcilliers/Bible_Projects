@@ -1,0 +1,32 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260423-CATALOGUE-PROSE-CH5-G12-INSERT-V1",
+    "produced_date": "20260423",
+    "produced_by": "wa-patch-instruction-v2_4-20260422",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Insert new prose_section_type row for Chapter 5 section G12 \u2014 Documentation-implementation alignment. New handle at sort_order 109, chapter_no 5, source_stage 'programme'. Confirmation: SELECT id, code, label, chapter_no, sort_order FROM prose_section_type WHERE code = 'prog_doc_impl_alignment' \u2014 returns one row with chapter_no=5, sort_order=109."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_doc_impl_alignment",
+        "label": "Programme \u2014 Documentation\u2013implementation alignment",
+        "source_stage": "programme",
+        "chapter_no": 5,
+        "sort_order": 109,
+        "description": "The standing governance principle that the programme's rules, slot descriptions, schema, and documentation are not assumed to be fully synchronised at any point. Where a rule names a field or a concept the implementation or the documentation does not match, the mismatch is named as a governance item and resolved through migration, patch, or documentation revision \u2014 not tolerated silently.",
+        "expected_length_min": 350,
+        "expected_length_max": 600,
+        "lifecycle_tag": null
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_type_inserts": 1
+  }
+}
