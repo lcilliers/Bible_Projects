@@ -1,0 +1,177 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260423-CATALOGUE-PROSE-PROGRAMME-CH4-V1",
+    "produced_date": "20260423",
+    "produced_by": "wa-prose-ch4-session (governing: wa-patch-instruction-v2_4 \u00a714.2)",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Chapter 4 (Data architecture) prose section type seed \u2014 8 new handles inserted; 2 existing stubs (ids 27, 28) updated to Chapter 4 scope. Programme-wide prose, registry_id=NULL."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_database",
+        "label": "The database as the programme's working memory",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 21,
+        "description": "The database as the programme's working memory \u2014 DB-canonical principle, role as the authoritative record of both evidence and interpretation, the controlled-vocabulary scaffolding that keeps shared types consistent, and the boundary with STEP Bible as the primary source that the database draws from rather than replaces.",
+        "expected_length_min": 400,
+        "expected_length_max": 700,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_registry",
+        "label": "The registry",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 22,
+        "description": "The registry as the programme's expression of scope \u2014 word_registry as the 214-row atomic list, what each row carries across the phase-status, analytical, and automation-tracking fields, the registry word as the atomic unit of research, wa_file_index as the per-word file track, and the cluster_assignment field as an administrative run-batch tranching mechanism distinct from the analytical grouping carried by dimensions.",
+        "expected_length_min": 500,
+        "expected_length_max": 800,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_terms",
+        "label": "Terms",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 23,
+        "description": "The Hebrew, Greek, and Aramaic term layer \u2014 mti_terms as the canonical term index, wa_term_inventory as the extraction-time record, STEP Bible as the primary source for all lexical claims, the parsed meaning hierarchy (wa_meaning_parsed + wa_meaning_sense + wa_meaning_stem + wa_lsj_parsed), the associative layers (wa_term_related_words, wa_term_root_family), term flags, and the extraction-provenance log.",
+        "expected_length_min": 700,
+        "expected_length_max": 1100,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "code": "prog_xref_architecture"
+      },
+      "set": {
+        "label": "Ownership and cross-registry references",
+        "chapter_no": 4,
+        "sort_order": 24,
+        "description": "Ownership and cross-registry reference architecture \u2014 one term has one OWNER registry, XREF rows record analytical relevance to other registries without duplicating classification, wa_term_inventory.term_owner_type carries the label, mti_terms.owning_registry_fk carries the canonical pointer, mti_term_cross_refs holds the XREF rows, and the pure XREF registry is a legitimate complete state.",
+        "expected_length_min": 500,
+        "expected_length_max": 800
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_verses",
+        "label": "Verses and the context layer",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 25,
+        "description": "The verse base and the classification layer \u2014 wa_verse_records as the verse occurrences, wa_verse_term_links carrying STEP sub-gloss codes, books and book_code_variants for reference normalisation, verse_context as the classification grid with its three flags and set-aside vocabulary, verse_context_group as the contextual-meaning cluster layer, and the term-level filter as the governing principle.",
+        "expected_length_min": 700,
+        "expected_length_max": 1100,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "code": "prog_anchor_verse"
+      },
+      "set": {
+        "label": "The anchor verse",
+        "chapter_no": 4,
+        "sort_order": 26,
+        "description": "The anchor verse as canonical citation and primary Session B input \u2014 definition, dual purpose (efficiency instrument and citation instrument), selection criteria, the one-anchor-per-term minimum as an absolute gate before Session B, the no-clear-anchor handling, revision mechanics, and the upstream role in dimensional analysis.",
+        "expected_length_min": 400,
+        "expected_length_max": 700
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_dimensions",
+        "label": "Dimensions \u2014 the analytical grouping mechanism",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 27,
+        "description": "Dimensions as the analytical grouping mechanism \u2014 the governing principle that dimensions follow the verse, wa_dimension_index as the per-group dimensional record, the eleven-label working vocabulary derived from the data, dominant_subject and dimension_confidence progression, the manual-override lock, wa_dim_review_cluster_log, the per-word wa_session_b_dimensions profile, and the architectural distinction between dimensions (analytical) and C01-C22 clusters (administrative).",
+        "expected_length_min": 700,
+        "expected_length_max": 1100,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_questions",
+        "label": "The question catalogue and findings",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 28,
+        "description": "The observation question catalogue and findings layer \u2014 wa_obs_question_catalogue as the instrument of inquiry with universal and word-specific scopes, wa_session_b_findings as the analytical output, the three-outcome model for a finding (absorbed, promoted to new word-specific question, or obsoleted), the wa_finding_catalogue_links and wa_finding_entity_links junctions, and the research-flag-to-question bridge.",
+        "expected_length_min": 700,
+        "expected_length_max": 1000,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_synthesis",
+        "label": "The synthesis bridge \u2014 from per-word records to cross-registry work",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 29,
+        "description": "The synthesis bridge from per-word records to cross-registry work \u2014 wa_cross_registry_links with wa_crosslink_type as the explicit relationship layer, SD pointers (wa_session_research_flags where flag_code='SD_POINTER') as the concrete Session B to Session D bridge, the pointer lifecycle, the current cluster-C17 concentration, and the four session_d_* tables as the architected scaffold for synthesis outputs when Session D runs.",
+        "expected_length_min": 500,
+        "expected_length_max": 800,
+        "lifecycle_tag": null
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "prose_section_type",
+      "record": {
+        "code": "prog_data_prose_store",
+        "label": "The prose store \u2014 phase-bridge architecture",
+        "source_stage": "programme",
+        "chapter_no": 4,
+        "sort_order": 30,
+        "description": "The prose store as phase-bridge architecture \u2014 each phase's store holds the authoritative truth at that phase, the five source_stage values (programme, session_a, session_b, session_c, session_d) as separate phase-stores, supersede-only lifecycle with the session_a_replace exception, version chains and row immutability, FTS5 search, link tables bridging back to dimensions and findings, and the governing principle that the database is the programme's analytical memory, not only its evidentiary substrate.",
+        "expected_length_min": 700,
+        "expected_length_max": 1100,
+        "lifecycle_tag": null
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 10,
+    "prose_section_type_inserts": 8,
+    "prose_section_type_updates": 2
+  }
+}
