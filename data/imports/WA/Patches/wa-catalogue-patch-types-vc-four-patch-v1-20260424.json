@@ -1,0 +1,60 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-CATALOGUE-PATCH-TYPES-VC-FOUR-PATCH-V1",
+    "produced_date": "20260424",
+    "produced_by": "claude_code — VC four-patch design brief",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Seed four new patch types in wa_patch_type_registry to support the VC session four-output model per alignment analysis v4 §8 and the four-patch design brief (vc-four-patch-design-v1-20260424.md). Types: VCNEW, VCREVISE, VCSBFLAGS, VCSDPOINTERS. All exempt from session_b_status (null required). Existing VERSECONTEXT row retained for backwards compatibility."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_patch_type_registry",
+      "record": {
+        "type_code": "VCNEW",
+        "description": "VC session new classifications — first-time verse_context_group / verse_context inserts for terms being classified fresh. Carries _patch_meta.terms_covered. Applicator flips mti_terms.vc_status='complete' for terms in terms_covered.",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "verse_context_group (insert), verse_context (insert), mti_terms (vc_status update via applicator)"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_patch_type_registry",
+      "record": {
+        "type_code": "VCREVISE",
+        "description": "VC session revisions to existing classifications — update ops on verse_context_group (including dissolve via delete_flagged=1) and verse_context (reclassification, reassignment, anchor promotion/demotion). Carries _patch_meta.terms_covered.",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "verse_context_group (update), verse_context (update), mti_terms (vc_status_updated_at bump via applicator)"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_patch_type_registry",
+      "record": {
+        "type_code": "VCSBFLAGS",
+        "description": "VC session Session B observation flags — wa_session_research_flags inserts with session_target='Session B', raised while reading verses. Flag codes: SB_FINDING, SB_INNER_BEING, PH2_CROSS_REF_ENRICHMENT, PH2_THEOLOGICAL_DEPTH_REQUIRED, PH2_EXEGETICAL_STUDY_REQUIRED, PH2_BOUNDARY_QUESTION. Replaces the prior .md-only sessionb-flags file; DB rows are authoritative.",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "wa_session_research_flags (insert)"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_patch_type_registry",
+      "record": {
+        "type_code": "VCSDPOINTERS",
+        "description": "VC session Session D cross-registry pointers — wa_session_research_flags inserts with session_target='Session D' and cross_registry_id populated. Flag codes: SD_POINTER, SD_CLUSTER, PH2_CROSS_REGISTRY_REQUIRED, THEMATIC_LINK. Cross-registry observations captured at VC time rather than at Session B.",
+        "session_b_status_exempt": 1,
+        "governing_instruction": "wa-versecontext-instruction [current]",
+        "schema_affected": "wa_session_research_flags (insert)"
+      }
+    }
+  ]
+}

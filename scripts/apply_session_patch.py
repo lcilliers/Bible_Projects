@@ -159,10 +159,18 @@ def _resolve_inserted_finding(label: str) -> int | None:
 
 
 def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
-    """Post-apply step for VERSECONTEXT patches (alignment analysis v4 §8.2).
+    """Post-apply step for VC patches (alignment analysis v4 §8.2; patch
+    instruction v2_5 §15).
+
+    Runs after operations apply for patch_type in (VERSECONTEXT, VCNEW,
+    VCREVISE). VCSBFLAGS and VCSDPOINTERS do not call this helper — they
+    touch only wa_session_research_flags and make no classification
+    state changes.
 
     For every term in `_patch_meta.terms_covered`:
-      1. Verify R4 holds (at least one active anchor) via a DB read.
+      1. Verify R4 holds (at least one active anchor) via a DB read —
+         or the all-verses-fail case where the term has zero active
+         relevant rows (§6.5.5 of VC instruction).
       2. Set `mti_terms.vc_status = 'complete'`, record
          `vc_instruction_version` + `vc_status_updated_at`.
     Then derive the set of affected registries:
@@ -177,10 +185,11 @@ def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
 
     Raises on validation failure — the enclosing transaction then rolls back.
     """
+    patch_type = meta.get("patch_type", "VERSECONTEXT")
     terms_covered = meta.get("terms_covered") or []
     if not terms_covered:
         # Validation upstream should have caught this; double-check.
-        raise ValueError("VERSECONTEXT patch missing _patch_meta.terms_covered")
+        raise ValueError(f"{patch_type} patch missing _patch_meta.terms_covered")
 
     governing = meta.get("governing_instruction") or "unknown"
     now = _now()
@@ -378,7 +387,7 @@ def _validate(conn, patch: dict) -> list[str]:
     patch_type = meta.get("patch_type", "")
     pid = meta.get("patch_id", "")
     # Detect exempt type from patch_id (covers DIFFERENTIAL and other sub-types)
-    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE", "SDPOINTERS", "PROSE", "READINESSSWEEP", "RULES", "ADDENDA", "VOCAB")
+    sb_exempt_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCNEW", "VCREVISE", "VCSBFLAGS", "VCSDPOINTERS", "VCGROUP", "VCVERSE", "REPAIR", "DIMREVIEW", "DIM-", "DIMGRPDESC", "SESSIONB_FINDINGS", "CATALOGUE", "SDPOINTERS", "PROSE", "READINESSSWEEP", "RULES", "ADDENDA", "VOCAB")
     is_exempt = any(patch_type.startswith(t) for t in sb_exempt_types) if patch_type else False
     if not is_exempt:
         for token in sb_exempt_types:
@@ -392,15 +401,18 @@ def _validate(conn, patch: dict) -> list[str]:
     if not sb_status and not is_exempt:
         errors.append("_patch_meta.session_b_status is required (e.g. 'Pre-Analysis Complete', 'Analysis Complete')")
 
-    # VC-3 — VERSECONTEXT patches must declare terms_covered (per alignment
-    # analysis v4 §8.2). Extract the mti_term_ids operated on; cross-check
-    # against terms_covered; fail on mismatch.
-    if patch_type == "VERSECONTEXT":
+    # VC-3 — VERSECONTEXT / VCNEW / VCREVISE patches must declare
+    # terms_covered (per alignment analysis v4 §8.2 and patch instruction
+    # v2_5 §15). Extract the mti_term_ids operated on; cross-check against
+    # terms_covered; fail on mismatch. VCSBFLAGS / VCSDPOINTERS are
+    # flag-only and don't require terms_covered.
+    if patch_type in ("VERSECONTEXT", "VCNEW", "VCREVISE"):
         declared = meta.get("terms_covered")
         if declared is None:
             errors.append(
-                "_patch_meta.terms_covered is required for VERSECONTEXT patches "
-                "(per alignment analysis v4 §8.2). Array of mti_term_ids."
+                f"_patch_meta.terms_covered is required for {patch_type} patches "
+                "(per alignment analysis v4 §8.2 / patch instruction v2_5 §15). "
+                "Array of mti_term_ids."
             )
         elif not isinstance(declared, list) or not all(isinstance(x, int) for x in declared):
             errors.append("_patch_meta.terms_covered must be a list of integer mti_term_ids")
@@ -1927,7 +1939,11 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         # the operations; if either the ops or this post-apply fail, all
         # changes roll back.
         patch_type = meta.get("patch_type", "")
-        if patch_type == "VERSECONTEXT":
+        # VC-2 — per-term vc_status updates + derived registry completion.
+        # Runs for VERSECONTEXT (legacy combined) and the v3_3 four-patch
+        # model's VCNEW and VCREVISE types. VCSBFLAGS and VCSDPOINTERS
+        # touch only wa_session_research_flags; no vc_status changes.
+        if patch_type in ("VERSECONTEXT", "VCNEW", "VCREVISE"):
             _apply_versecontext_term_updates(conn, meta, counts)
         _log_patch(conn, patch_id, meta, counts)
         # Update session_b_status on the registry (skip for exempt types)
