@@ -236,7 +236,9 @@ def _bullet_if(items, none_msg="_None._") -> str:
     return "\n".join(items) + "\n"
 
 
-def render_header(registry, generated_at: str, include_filter: bool) -> str:
+def render_header(registry, generated_at: str, include_filter: bool,
+                  n_active_prior_groups: int, n_dissolved_prior_groups: int,
+                  n_terms_with_prior_records: int, n_total_owner_terms: int) -> str:
     parts = [f"# Session A — Registry {registry['no']:03d} {registry['word']}"]
     parts.append("")
     parts.append(f"**Generated:** {generated_at}  ")
@@ -259,6 +261,29 @@ def render_header(registry, generated_at: str, include_filter: bool) -> str:
         no dimensional placements, no Session C prose, no Session D synthesis) —
         that content is a product of later stages and must not bleed back into VC.
     """))
+    # Prior-state posture (B.14 — added 2026-04-24)
+    parts.append("### Prior-state posture")
+    parts.append("")
+    if n_active_prior_groups == 0 and n_terms_with_prior_records == 0:
+        parts.append(dedent(f"""\
+            This registry has **no** active prior `verse_context` groups across its
+            OWNER terms ({n_dissolved_prior_groups} dissolved). **Approach this as a
+            FRESH classification.** No re-evaluation obligations apply; no orphan-group
+            disposition required at term close.
+        """))
+    else:
+        parts.append(dedent(f"""\
+            This registry has **{n_active_prior_groups} active** prior
+            `verse_context` groups across its OWNER terms
+            ({n_dissolved_prior_groups} dissolved); {n_terms_with_prior_records}
+            of {n_total_owner_terms} OWNER terms carry prior classifications.
+            **Approach this as a RE-EVALUATION** — every prior classification will be
+            reviewed under the current filter and grouping model; every pre-existing
+            active group must be retained (with verses), dissolved, or
+            documented-retained at term close. No silent pass-through. See VC
+            Instruction §6.1 (prior-state posture declaration) and §6.2 Step 6
+            (re-evaluation self-check + orphan-group check).
+        """))
     if include_filter:
         parts.append("### Method reminder")
         parts.append("")
@@ -676,10 +701,29 @@ def build_one(conn, registry_no: int, include_filter: bool, include_prior_vc: bo
     cross_links = get_cross_registry_links(conn, file_ids)
     questions = get_questions(conn, registry_no, all_flag_codes)
 
+    # Prior-state posture counts for header (B.14)
+    n_active_prior_groups = 0
+    n_dissolved_prior_groups = 0
+    n_terms_with_prior_records = 0
+    for td in owner_terms_data:
+        has_prior = False
+        for g in td["prior_groups"]:
+            if g["delete_flagged"]:
+                n_dissolved_prior_groups += 1
+            else:
+                n_active_prior_groups += 1
+                has_prior = True
+        if td["prior_vc"]:
+            has_prior = True
+        if has_prior:
+            n_terms_with_prior_records += 1
+
     generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
 
     parts = [
-        render_header(registry, generated_at, include_filter),
+        render_header(registry, generated_at, include_filter,
+                      n_active_prior_groups, n_dissolved_prior_groups,
+                      n_terms_with_prior_records, len(owner_terms)),
         render_word_summary(registry, len(owner_terms), len(xref_terms),
                             total_owner_verses, flag_summary),
         render_meaning_section(owner_terms_data),
