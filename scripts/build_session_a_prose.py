@@ -34,6 +34,7 @@ from textwrap import dedent
 
 DB_PATH = Path("data/bible_research.db")
 OUTPUT_DIR = Path("data/exports/session_a")
+TERM_OUTPUT_DIR = Path("data/exports/session_a/terms")
 
 BANKED_REGISTRIES = [35, 62, 134, 206, 207]
 
@@ -655,6 +656,221 @@ def render_footer(registry) -> str:
     """)
 
 
+# ─── Per-term build (VC-5 — alignment analysis v4 §8, §7.9 hybrid) ───────────
+
+def _fetch_term_by_mti_id(conn, mti_term_id: int) -> sqlite3.Row:
+    """Fetch a single OWNER term by mti_term_id, joining to its inventory row
+    so the term-bundle shape matches what get_terms() returns."""
+    r = _row(conn, """
+        SELECT ti.*, mt.id AS mti_term_id, mt.status AS mti_status,
+               mt.owning_registry_fk, mt.owning_word, mt.gloss AS mti_gloss,
+               mt.vc_status, mt.vc_instruction_version,
+               mt.vc_status_updated_at, mt.vc_status_note
+        FROM mti_terms mt
+        JOIN wa_term_inventory ti ON ti.strongs_number = mt.strongs_number
+        WHERE mt.id = ?
+          AND ti.term_owner_type = 'OWNER'
+          AND ti.delete_flagged = 0
+          AND ti.file_id IN (
+              SELECT id FROM wa_file_index WHERE word_registry_fk = mt.owning_registry_fk
+          )
+        LIMIT 1
+    """, (mti_term_id,))
+    if not r:
+        raise SystemExit(f"OWNER term with mti_term_id={mti_term_id} not found")
+    return r
+
+
+def render_term_header(registry, term, generated_at: str, include_filter: bool,
+                       has_prior_records: bool, n_active_groups: int,
+                       n_dissolved_groups: int) -> str:
+    strongs = term["strongs_number"]
+    trans = term["transliteration"] or "—"
+    gloss = term["step_search_gloss"] or term["mti_gloss"] or "—"
+    parts = [f"# Session A — Term `{strongs}` *{trans}* — {gloss}"]
+    parts.append("")
+    parts.append(f"**Registry:** {registry['no']:03d} {registry['word']}  ")
+    parts.append(f"**mti_term_id:** {term['mti_term_id']}  ")
+    parts.append(f"**Language:** {term['language']}  ")
+    parts.append(f"**Current vc_status:** `{term['vc_status']}`"
+                 + (f" — {term['vc_status_note']}" if term['vc_status_note'] else "") + "  ")
+    parts.append(f"**Generated:** {generated_at}  ")
+    parts.append(f"**Source:** `data/bible_research.db` (deterministic render, no analytics)  ")
+    parts.append("**Governing instruction:** wa-versecontext-instruction [current]  ")
+    parts.append("**Produced by:** `scripts/build_session_a_prose.py --term`")
+    parts.append("")
+    parts.append("---")
+    parts.append("")
+    parts.append("## About this document")
+    parts.append("")
+    parts.append(dedent(f"""\
+        This document is the Session A input for **Verse Context classification** of
+        a single OWNER term — `{strongs}` *{trans}* ({gloss}) from registry
+        {registry['no']:03d} {registry['word']}. It contains the STEP-sourced data for this one term only.
+        Per alignment analysis v4 §7 and §8, the term is the atomic unit of VC
+        classification; this document presents the term in the scope the method
+        actually operates on.
+
+        Read the VC instruction in full before beginning. This document is the
+        **data**; the instruction is the **method**. The `.md` carries no analytical
+        content from downstream stages (no Session B findings, no dimensional
+        placements, no Session C prose, no Session D synthesis).
+    """))
+    parts.append("### Prior-state posture (this term)")
+    parts.append("")
+    if not has_prior_records and n_active_groups == 0:
+        parts.append(dedent("""\
+            This term has **no** active prior `verse_context` records. Approach this
+            as a **FRESH** classification for this term. No orphan-group disposition
+            required at term close.
+        """))
+    else:
+        parts.append(dedent(f"""\
+            This term has **{n_active_groups} active** prior `verse_context_group`
+            rows ({n_dissolved_groups} dissolved). Approach this as a
+            **RE-EVALUATION** — every prior classification will be reviewed under
+            the current filter and grouping model; every pre-existing active group
+            must be retained (with verses), dissolved, or documented-retained at
+            term close. No silent pass-through. See VC Instruction §6.1
+            (prior-state posture declaration) and §6.2 Step 6 (re-evaluation
+            self-check + orphan-group check).
+        """))
+    if include_filter:
+        parts.append("### Method reminder")
+        parts.append("")
+        parts.append(FILTER_REMINDER)
+    parts.append("---")
+    parts.append("")
+    return "\n".join(parts)
+
+
+def render_term_other_terms(registry_owner_terms: list, registry_xref_terms: list,
+                            current_term_id: int) -> str:
+    """Short pointer table: what other terms exist in this registry. For wrong-face
+    awareness without loading their data."""
+    p = ["## 4. Other terms in this registry"]
+    p.append("")
+    p.append(dedent("""\
+        A pointer-only list of the other terms in this registry, so that
+        wrong-face set-asides can reference them accurately (VC Instruction §3.6).
+        **Do not classify these terms here** — each is handled in its own Session A
+        per-term document.
+    """))
+    p.append("")
+    others_owner = [t for t in registry_owner_terms if t["mti_term_id"] != current_term_id]
+    if others_owner:
+        p.append("### Other OWNER terms")
+        p.append("")
+        p.append("| Strong's | Translit. | Gloss | Language |")
+        p.append("|---|---|---|---|")
+        for t in others_owner:
+            p.append(f"| `{t['strongs_number']}` | {t['transliteration'] or '—'} | "
+                     f"{t['step_search_gloss'] or t['mti_gloss'] or '—'} | {t['language']} |")
+        p.append("")
+    if registry_xref_terms:
+        p.append("### XREF terms (OWNER elsewhere)")
+        p.append("")
+        p.append("| Strong's | Translit. | Gloss | OWNER registry | OWNER word |")
+        p.append("|---|---|---|---:|---|")
+        for t in registry_xref_terms:
+            p.append(f"| `{t['strongs_number']}` | {t['transliteration'] or '—'} | "
+                     f"{t['step_search_gloss'] or t['mti_gloss'] or '—'} | "
+                     f"{t['owning_registry_fk'] or '—'} | {t['owning_word'] or '—'} |")
+        p.append("")
+    if not others_owner and not registry_xref_terms:
+        p.append("_This registry has no other terms besides the one classified here._")
+        p.append("")
+    p.append("---")
+    p.append("")
+    return "\n".join(p)
+
+
+def build_one_term(conn, mti_term_id: int, include_filter: bool,
+                   include_prior_vc: bool) -> tuple[str, str]:
+    """Render a per-term Session A .md for a single OWNER term."""
+    term = _fetch_term_by_mti_id(conn, mti_term_id)
+    registry = _row(conn, "SELECT * FROM word_registry WHERE id = ?",
+                    (term["owning_registry_fk"],))
+    if not registry:
+        raise SystemExit(f"Owning registry not found for mti_term_id={mti_term_id}")
+
+    # Term bundle (same shape as build_one's owner_terms_data entries)
+    verses = get_verses(conn, term["id"], include_deleted=True)
+    parsed, senses, stems = get_meaning(conn, term["id"])
+    lsj = get_lsj(conn, term["id"]) if term["language"].lower().startswith("greek") else None
+    related = get_related_words(conn, term["id"])
+    root = get_root_family(conn, term["id"])
+    qflags = get_quality_flags(conn, term["file_id"], term["strongs_number"])
+
+    prior_groups, prior_vc = ([], {})
+    if include_prior_vc:
+        prior_groups, prior_vc = get_prior_vc(conn, term["mti_term_id"])
+
+    term_data = {
+        "term": term,
+        "verses": verses,
+        "meaning_parsed": parsed,
+        "senses": senses,
+        "stems": stems,
+        "lsj": lsj,
+        "related_words": related,
+        "root_family": root,
+        "quality_flags": qflags,
+        "prior_groups": prior_groups,
+        "prior_vc": prior_vc,
+    }
+
+    # Prior-state counts for this single term
+    n_active_groups = sum(1 for g in prior_groups if not g["delete_flagged"])
+    n_dissolved_groups = sum(1 for g in prior_groups if g["delete_flagged"])
+    has_prior_records = bool(prior_vc) or n_active_groups > 0
+
+    # Registry-wide term listing for the "Other terms" pointer section
+    file_ids = get_file_ids(conn, registry["id"])
+    registry_owner_terms = get_terms(conn, file_ids, "OWNER")
+    registry_xref_terms = get_terms(conn, file_ids, "XREF")
+    questions = get_questions(conn, registry["no"],
+                              {qf["flag_code"] for qf in qflags})
+
+    generated_at = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    parts = [
+        render_term_header(registry, term, generated_at, include_filter,
+                           has_prior_records, n_active_groups, n_dissolved_groups),
+        render_meaning_section([term_data]),
+        render_verses_section([term_data], include_prior_vc),
+        render_term_other_terms(registry_owner_terms, registry_xref_terms,
+                                term["mti_term_id"]),
+        render_pointers_section(
+            get_cross_registry_links(conn, file_ids),
+            [t for t in registry_xref_terms
+             if t["strongs_number"] == term["strongs_number"]],
+        ),
+        render_questions_section(questions),
+        dedent(f"""\
+            ## Footer — what happens next
+
+            A Claude AI Verse Context session produces a `VERSECONTEXT` patch
+            covering this term (and any others classified in the same session).
+            The patch must declare `_patch_meta.terms_covered` including
+            `mti_term_id = {term['mti_term_id']}`. On apply, Claude Code flips
+            this term's `mti_terms.vc_status` to `complete` and re-derives the
+            owning registry's `verse_context_status` from the aggregate of all
+            its OWNER + XREF-via-OWNER term statuses (VC-2 in the applicator;
+            alignment analysis v4 §8.2).
+
+            *End of Session A prose for term {term['strongs_number']}
+            ({registry['no']:03d} {registry['word']}).*
+        """)
+    ]
+    content = "\n".join(parts)
+
+    word_slug = registry["word"].replace(" ", "-").replace("(", "").replace(")", "")
+    filename = (f"wa-{registry['no']:03d}-{word_slug}-{term['strongs_number']}"
+                f"-session_a-{datetime.now().strftime('%Y%m%d')}.md")
+    return filename, content
+
+
 # ─── Per-registry build ───────────────────────────────────────────────────────
 def build_one(conn, registry_no: int, include_filter: bool, include_prior_vc: bool) -> tuple[str, str]:
     registry = get_registry(conn, registry_no)
@@ -744,41 +960,97 @@ def build_one(conn, registry_no: int, include_filter: bool, include_prior_vc: bo
 def main():
     ap = argparse.ArgumentParser()
     g = ap.add_mutually_exclusive_group(required=True)
-    g.add_argument("--registry", type=int, help="Single registry number")
+    g.add_argument("--registry", type=int, help="Single registry number (renders per-registry .md)")
     g.add_argument("--registries", type=str, help="Comma-separated registry numbers")
     g.add_argument("--banked", action="store_true", help="Render the 5 BANKED registries")
+    g.add_argument("--term", type=int, metavar="MTI_TERM_ID",
+                   help="Render a single OWNER term's .md (VC-5 — per-term mode)")
+    g.add_argument("--terms", type=str, metavar="IDS",
+                   help="Comma-separated mti_term_ids (per-term .md each)")
+    g.add_argument("--registry-per-term", type=int, metavar="N",
+                   help="Render one per-term .md for every OWNER term of registry N")
     ap.add_argument("--no-filter-reminder", action="store_true")
     ap.add_argument("--no-prior-vc", action="store_true")
-    ap.add_argument("--output-dir", type=str, default=str(OUTPUT_DIR))
+    ap.add_argument("--output-dir", type=str, default=None,
+                    help="Override output folder (default: data/exports/session_a for "
+                         "registry mode, data/exports/session_a/terms for per-term mode)")
     args = ap.parse_args()
 
-    if args.banked:
-        regs = list(BANKED_REGISTRIES)
-    elif args.registries:
-        regs = [int(x.strip()) for x in args.registries.split(",") if x.strip()]
-    else:
-        regs = [args.registry]
-
-    out_dir = Path(args.output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # Determine mode and output set
+    term_mode = bool(args.term or args.terms or args.registry_per_term)
 
     conn = sqlite3.connect(str(DB_PATH))
     conn.row_factory = sqlite3.Row
 
-    for r_no in regs:
-        try:
-            filename, content = build_one(
-                conn, r_no,
-                include_filter=not args.no_filter_reminder,
-                include_prior_vc=not args.no_prior_vc,
-            )
-            out_path = out_dir / filename
-            out_path.write_text(content, encoding="utf-8")
-            size_kb = out_path.stat().st_size / 1024
-            print(f"  wrote {filename}  ({size_kb:.1f} KB)")
-        except SystemExit as e:
-            print(f"  SKIP registry {r_no}: {e}", file=sys.stderr)
-            continue
+    if term_mode:
+        out_dir = Path(args.output_dir) if args.output_dir else TERM_OUTPUT_DIR
+        out_dir.mkdir(parents=True, exist_ok=True)
+        # Resolve term id list
+        if args.term:
+            term_ids = [args.term]
+        elif args.terms:
+            term_ids = [int(x.strip()) for x in args.terms.split(",") if x.strip()]
+        else:
+            # --registry-per-term: fan out to every OWNER term of the registry
+            reg = _row(conn, "SELECT id FROM word_registry WHERE no = ?",
+                       (args.registry_per_term,))
+            if not reg:
+                raise SystemExit(f"Registry {args.registry_per_term} not found")
+            term_ids = [
+                r[0] for r in conn.execute(
+                    """SELECT mt.id FROM mti_terms mt
+                        JOIN wa_term_inventory ti ON ti.strongs_number = mt.strongs_number
+                       WHERE mt.owning_registry_fk = ?
+                         AND mt.delete_flagged = 0
+                         AND mt.status IN ('extracted', 'extracted_thin')
+                         AND ti.term_owner_type = 'OWNER' AND ti.delete_flagged = 0
+                         AND ti.file_id IN (
+                            SELECT id FROM wa_file_index WHERE word_registry_fk = ?
+                         )
+                       GROUP BY mt.id
+                       ORDER BY mt.strongs_number""",
+                    (reg["id"], reg["id"]),
+                ).fetchall()
+            ]
+            print(f"  [per-term] registry {args.registry_per_term}: {len(term_ids)} OWNER terms")
+        for term_id in term_ids:
+            try:
+                filename, content = build_one_term(
+                    conn, term_id,
+                    include_filter=not args.no_filter_reminder,
+                    include_prior_vc=not args.no_prior_vc,
+                )
+                out_path = out_dir / filename
+                out_path.write_text(content, encoding="utf-8")
+                size_kb = out_path.stat().st_size / 1024
+                print(f"  wrote {filename}  ({size_kb:.1f} KB)")
+            except SystemExit as e:
+                print(f"  SKIP term {term_id}: {e}", file=sys.stderr)
+                continue
+    else:
+        # Per-registry mode (original)
+        out_dir = Path(args.output_dir) if args.output_dir else OUTPUT_DIR
+        out_dir.mkdir(parents=True, exist_ok=True)
+        if args.banked:
+            regs = list(BANKED_REGISTRIES)
+        elif args.registries:
+            regs = [int(x.strip()) for x in args.registries.split(",") if x.strip()]
+        else:
+            regs = [args.registry]
+        for r_no in regs:
+            try:
+                filename, content = build_one(
+                    conn, r_no,
+                    include_filter=not args.no_filter_reminder,
+                    include_prior_vc=not args.no_prior_vc,
+                )
+                out_path = out_dir / filename
+                out_path.write_text(content, encoding="utf-8")
+                size_kb = out_path.stat().st_size / 1024
+                print(f"  wrote {filename}  ({size_kb:.1f} KB)")
+            except SystemExit as e:
+                print(f"  SKIP registry {r_no}: {e}", file=sys.stderr)
+                continue
 
 
 if __name__ == "__main__":
