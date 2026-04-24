@@ -11,10 +11,10 @@ Version 3_4 | 20260424 | Status: Active governing instruction**
 |Change note|v3_4 (20260424): Resolves A-02 / A-03 / A-04 / A-05 per researcher rulings 2026-04-24. **A-02** — `vc_status` vocabulary simplified: `approved` removed; `complete` renamed `vc_completed` (explicit VC-terminal state). Engine M38 migration; applicator writes `vc_completed`; aggregation checks `vc_completed` only. **A-03** — per-term `.md` freshness is now version-gated. Each per-term `.md` carries `md_version: v{n}` in its header (M38 added `mti_terms.md_version`). Patch `_patch_meta.input_versions` map ({mti_term_id → md_version}) required for VCNEW/VCREVISE; applicator rejects any patch whose declared input_version for any term ≠ current DB md_version. On successful apply, applicator bumps `md_version` — any pre-existing `.md` is stale for the next session. Claude AI reads + acknowledges the version at §6.1 startup; Claude Code stamps it into the header; §7.7 pre-submission validation checks it. **A-04** — session identifier (`batch_id`) no longer operationally required. A patch covers one term or many; the per-term version gate is authoritative for input-output correlation. `batch_id` retained as optional convenience field. **A-05** — cross-term duplicate classifications are not a VC-stage concern; `verse_context_group.mti_term_id` scopes groups per term and the same verse can legitimately appear in multiple term-group rows. Any pattern is discovered during Session B. No instruction change required for A-05. Tooling: engine M38 (schema → 3.16.0); `scripts/apply_session_patch.py` VC-2 helper widened with version gate + version bump + vc_completed write; `scripts/build_session_a_prose.py` stamps md_version into header.<br />**v3_3 (20260424):** Four-patch session output model formalised (resolves A-01 from the v3_1 inspection ambiguity doc). A VC session now produces up to four independently-applied patches — VCNEW (new classifications), VCREVISE (revisions to existing), VCSBFLAGS (Session B observations raised while reading), VCSDPOINTERS (cross-registry pointers for Session D). All four carry the same `batch_id` (session id); each is session_b_status-exempt; each is absent when its output class is empty. A-01 resolved: DataPrep gate = DB state (`word_registry.verse_context_status = 'Complete'`); the full-word JSON re-export is an audit artefact, not a required step. Changes: (1) new §7.9 "Session output — the four-patch model" with full per-patch detail, apply order, and self-check reference to patch instruction [current] §15. (2) §6.2 Step 6 extended: SB observations go into VCSBFLAGS; SD pointers go into VCSDPOINTERS; obslog still captures them as the classifier reads. (3) §6.6 restated: `sessionb-flags.md` is now a companion readable summary of the VCSBFLAGS rows, not the authoritative record; the DB rows are authoritative. (4) §7.2 reframed around the new four-patch structure; existing VERSECONTEXT content retained as legacy-combined patch for backwards compatibility. (5) §7.7 pre-submission validation extended: every SB/SD observation in the obslog must have a corresponding operation in the session's VCSBFLAGS/VCSDPOINTERS patch. (6) §7.8 hand-off updated for four patches; applicator calls the VC-2 helper on VCNEW+VCREVISE only. (7) §13.3 re-written: DB state is the DataPrep gate; full-word JSON re-export is an optional audit artefact. Tooling: patch instruction v2_5 §15 documents the patch formats authoritatively; `scripts/apply_session_patch.py` widened (VC-2 handler triggers on VERSECONTEXT+VCNEW+VCREVISE; `terms_covered` validation widened to match; `sb_exempt_types` extended). v3_2 is archived; its 21-item residue cleanup is preserved in v3_3 (no roll-back).<br />**v3_2 (20260424):** Residue cleanup after Claude AI's v3_1 inspection (obslog `wa-global-vc_review-obslog-v1_0-20260424.md` Entry 009). v3_1 changed the instruction's intent to per-OWNER-term but left stale text carried forward from v2_9/v3_0 that contradicted that intent in 21 places, plus 3 broken internal references and 3 editorial issues. v3_2 addresses them all: (1) §0 "What VC does" bullets, §0 stage-sequence diagram, §0 self-standing-document note — rewritten in term-first voice; CC writes `mti_terms.vc_status` per term; registry advancement + re-render are derived consequences. (2) §1 Two-System Model — Claude Code row corrected ("per-registry" → "per-term" as primary). (3) §5 opening paragraph, §5.1 trigger list, §5.2 input selection criteria — all re-scoped to term-first. §5.4 primary output is per-term `.md`; per-registry `.md` is hybrid secondary. (4) §6.4 file-naming breakpoint identifiers reframed to term/session scope; "batches" replaced with "sessions"; 50-term threshold replaced with 1500-verse threshold; fallback batch-JSON references struck. (5) §6.5 Deferred Flag Protocol — "end-of-batch" → "end-of-session" throughout. (6) §7.1 patch-types table — VERSECONTEXT row reworded for session scope. (7) §7.4 operation ordering — "input document" clarified to "session composition". (8) §8.2 VCGROUP patch and Annexure C template — stale `produced_by` v1.8 strings updated to `{governing_instruction}` placeholder. (9) §13.4 completion report — "next batch id" replaced with "future sessions at researcher discretion". (10) §14 Stage 1 completion — 181/31 registry counts corrected to 184/30 per §0.1; "Batches processed" relabelled "Sessions". (11) Annexure A startup template — rewritten for term-scoped v3_2 model. (12) Annexure C VERSECONTEXT template — produced_by updated; deprecation note strengthened. (13) §0.2 cross-references §14.5 (non-existent) and "completed batch" fixed — now cite §13.1/§13.2 and "completed session". (14) §6.4 references §7.6 (Anchor integrity) where §7.7 (Pre-submission validation) was intended — fixed. (15) Editorial: change-note reformatted as bulleted list (was dense prose); pass-through "batch" usages replaced with "session" where not the VCB identifier; prose-type description field amendment for `prog_instr_verse_context` landed as a separate PROSE patch alongside this instruction. **Five substantive ambiguities (A-01 through A-05 in the review) remain unresolved and are tracked in `outputs/investigations/vc-v3_1-ambiguities-needing-researcher-decision-v1-20260424.md` for researcher ruling; v3_3 will address them.** v3_2 is a correction-only release — no semantic shifts beyond v3_1's intent.<br />**v3_1 (20260424):** Per-OWNER-term input is primary (alignment analysis v4 §7 + §8). (1) Classifier's primary input is now the **per-term Session A `.md`** produced by `scripts/build_session_a_prose.py --term` and stored at `data/exports/session_a/terms/`. The per-registry `.md` is retained as a hybrid secondary view for researcher review and Dimension Review hand-off but is no longer the primary classifier input. (2) §0.1 updated to state per-term as default; registry envelope is a CC-side derived aggregation via `mti_terms.vc_status`. (3) §5 Input Preparation re-scoped: selection is per-term; session scope is researcher-discretionary (1..N terms per session); "never split a term" rule unchanged in substance. (4) §6.1 prior-state posture declaration simplified: per-term binary (FRESH or RE-EVALUATION) with no registry aggregation. (5) §6.1 processing order becomes session-assembly order, not registry-ascending (researcher composes a session's term list). (6) §7.2 adds required `_patch_meta.terms_covered` array of `mti_term_id`s; `batch_id` remains required as the session identifier. (7) §7.8 hand-off updated: Claude Code flips `mti_terms.vc_status` to `complete` per term on successful apply, then derives `word_registry.verse_context_status` as the aggregate of all OWNER + XREF-via-OWNER terms at `complete`/`approved` (per `engine` M37 schema + `scripts/apply_session_patch.py` VC-2 extension). (8) §13 registry completion check re-framed as a derived aggregation read from `mti_terms.vc_status`, not a scan of `verse_context` rows. (9) Annexure C legacy batch JSON noted as deprecated (still readable by the applicator but no longer the primary input form). v3_1 is additive — v3_0's re-evaluation discipline, orphan-group check, and validation rules are all preserved unchanged; the shift is from registry to term as the atomic scope.<br />**v3_0 (20260424):** Session A `.md`-primary input; re-evaluation discipline; streamlining. (1) Classifier's primary input is now the per-registry Session A `.md` produced by `scripts/build_session_a_prose.py`; legacy batch JSON retained as a split-registry fallback. Header Inputs row, §0.1 Pipeline Entry Point, and §5 (renamed "Input Preparation") reflect this. (2) §5.3 large batch-JSON schema moved to Annexure C; §5 now points to `docs/prose-store-architecture.md` and the Session A script as the structural reference. (3) §6.1 Startup adds a mandatory **prior-state posture declaration** — classifier states FRESH (no prior records) or RE-EVALUATION (counts stated; obligations acknowledged) before touching any term. (4) §6.2 Step 6 adds per-term **re-evaluation self-check** (arithmetic balance: confirmed + revised + reassigned = active verses) and **orphan-group check at term close** (every pre-existing active group must be retained/dissolved/documented-retained; no silent pass-through). (5) §7.7 Pre-submission validation gains an **orphan-group validation bullet** — programmatically verifiable from the patch operations. (6) File naming consolidated on `wa-vcb-{batch_id}-...` across all VC session outputs; the earlier proposed per-registry alternative is dropped for consistency. (7) `_patch_meta.batch_id` remains required; `registry` added as optional informational field. (8) §5.2 "never split a term" reworded as "never split a term across input documents". (9) §6.4 Session discipline reworded: primary input is the Session A `.md`; discipline rules (dual-write, progressive observations, versioning) unchanged. Full change rationale in `outputs/investigations/vc-instruction-session-a-md-alignment-v2-20260424.md`.<br />**v2_9 (20260424):** Programme-prose-aware start-up. (1) §6.1 Startup step 1 revised — Claude AI must now also read the programme-prose section `prog_instr_session_a` from the most recent programme-prose extract (`data/exports/reference/wa-programme-prose-extract-{YYYYMMDD}.md`) before beginning work. This carries the Session A content boundary (STEP-sourced data only; no downstream-stage content leaks in either direction) directly into the classifier's working context. (2) §6.1 new step 2 — read `prog_instr_verse_context` from the same programme-prose extract; state the role-of-VC framing aloud before opening the classification input. v2_9 is an Ask (a)-only update; the larger alignment landed as v3_0.<br />**v2_8 (20260418):** GR-REF-002 sweep. (1) Filename migrated to current naming convention (underscored version, compact date, lowercase per GR-FILE-003/GR-FILE-007/GR-FILE-009). (2) Companion documents row updated to `[current]` token per GR-REF-002 for operational references. (3) Governing Rules section pointer migrated to `[current]`. (4) Footer supersession line refreshed. Historical change notes (v2_7, v2_6 etc.) retained below for provenance.<br />**v2_7 (20260414):** Manual changes by researcher: (1) Purpose and Scope: change pipeline stage to between Phase 1 completion and Dimension Review.<br />**v2_6 (20260414):** Global rules integration. (1) Governing Rules header added — mandatory load of the global rules file before session start. (2) Section 3.3 borderline retention paragraph replaced with reference to GR-PROG-004. (3) Section 6.2 Step 2 all-verses-fail principle statement ("individual inspection mandatory and non-waivable") replaced with reference to GR-PROG-005; operational deferred-flag procedure retained. (4) Section 6.4 write-on-discovery principle statement replaced with reference to GR-OBS-001; dual-write rule updated to reference GR-FILE-008. (5) Companion documents updated: DataPrep-Instruction removed (retired); patch\_specification updated to v1.10; SessionB updated to v4.8. All filename examples in output table updated to compact date format per GR-FILE-009.|
 |Companion documents|wa-reference [current] │ wa-patch-instruction [current] │ wa-dimensionreview-instruction [current] │ wa-sessionb-analysis-readiness [current] │ wa-sessionb-analysis-output [current]|
 |Inputs|**Primary:** per-term Session A `.md` — `wa-{nnn}-{word}-{strongs}-session_a-{date}.md` produced by `scripts/build_session_a_prose.py --term` or `--registry-per-term` from `data/exports/session_a/terms/`. Self-contained per OWNER term; carries all STEP-sourced data for that term + prior verse_context state + a pointer list of other terms in the registry for wrong-face reference. A session may introduce one term or many — the session is the researcher-composed unit. │ **Hybrid secondary:** per-registry Session A `.md` — `wa-{nnn}-{word}-session_a-{date}.md` in `data/exports/session_a/`. Retained for researcher review, Dimension Review hand-off, and human overview. Not the classifier's primary input. │ **Legacy fallback:** Verse Context batch JSON — `wa-vcb-{batch\_id}-extract-{date}.json` — deprecated; retained for rare split-session compatibility; per-term `.md` handles the split-session case natively. │ **Source material (Claude Code internal):** engine `--export-word` JSONs in `data/exports/STEP Extracts/`; live database.|
-|Outputs|Verse Context patch — `wa-vcb-{batch\_id}-patch-v{n}-{date}.json` (Claude AI → Claude Code) │ Observations file — `wa-vcb-{batch\_id}-term-observations-v{major}.{minor}-{date}.md` (Claude AI, progressive) │ Session log — `wa-vcb-{batch\_id}-session-log-{scope}-v{n}-{date}.md` (Claude AI, at breakpoints) │ Flags register — `wa-vcb-{batch\_id}-flags-register-v{n}-{date}.md` (Claude AI, end-of-batch flag resolution) │ Session B flags — `wa-vcb-{batch\_id}-sessionb-flags-v{n}-{date}.md` (Claude AI, when Session B flags raised) │ Fresh Session A `.md` re-render per registry on completion (Claude Code → next stage)|
-|Claude AI role|Reads programme-prose start-up sections; declares prior-state posture (FRESH or RE-EVALUATION); verse reading; relevance filtering; contextual grouping; anchor designation; per-term re-evaluation self-check + orphan-group check; patch production|
-|Claude Code role|Per-term Session A `.md` rendering from database (primary); per-registry hybrid render on demand; patch application; group_code resolution; XREF status propagation; **per-term `mti_terms.vc_status` update on successful apply**; **derived `word_registry.verse_context_status` aggregation from term states**; orphan-group validation; integrity validation; completion reporting at term and registry scope; Session A `.md` re-render on status change|
-|Interaction model|Per-term Session A `.md` rendered from current DB state → programme-prose + instruction loaded; per-term prior-state posture declared → Claude AI classifies (session scope = 1..N terms at researcher discretion) → per-term self-check + orphan-group check on re-evaluation terms → VERSECONTEXT patch with `_patch_meta.terms_covered` → Claude Code applies, validates per term, flips `mti_terms.vc_status` per term, derives registry-level `verse_context_status` from the aggregate → Dimension Review gate opens when a registry reaches aggregate completeness|
+|Outputs|**Four VC session patches (up to, per §7.9):** VCNEW — `wa-vcb-{batch\_id}-patch-vcnew-v{n}-{date}.json` (new classifications); VCREVISE — `wa-vcb-{batch\_id}-patch-vcrevise-v{n}-{date}.json` (revisions); VCSBFLAGS — `wa-vcb-{batch\_id}-patch-vcsbflags-v{n}-{date}.json` (Session B observations); VCSDPOINTERS — `wa-vcb-{batch\_id}-patch-vcsdpointers-v{n}-{date}.json` (Session D cross-registry pointers). Each is optional — produced only when its operation class is non-empty. VCNEW and VCREVISE require `_patch_meta.input_versions` (A-03 version gate). │ Observations file — `wa-vcb-{batch\_id}-term-observations-v{major}.{minor}-{date}.md` (Claude AI, progressive) │ Session log — `wa-vcb-{batch\_id}-session-log-{scope}-v{n}-{date}.md` (Claude AI, at breakpoints) │ Flags register — `wa-vcb-{batch\_id}-flags-register-v{n}-{date}.md` (Claude AI, end-of-session flag resolution) │ Session B flags companion — `wa-vcb-{batch\_id}-sessionb-flags-v{n}-{date}.md` (Claude AI; readable summary of the VCSBFLAGS patch rows — authoritative record is the DB) │ Fresh Session A `.md` re-render on demand (Claude Code → next stage)|
+|Claude AI role|Reads programme-prose start-up sections; acknowledges per-term `md_version` (A-03 gate); declares prior-state posture (FRESH or RE-EVALUATION); verse reading; relevance filtering; contextual grouping; anchor designation; per-term re-evaluation self-check + orphan-group check; produces up to four patches per §7.9 with per-term `input_versions` map|
+|Claude Code role|Per-term Session A `.md` rendering from database (primary); per-registry hybrid render on demand; applies the four VC session patches (VCNEW, VCREVISE, VCSBFLAGS, VCSDPOINTERS — and legacy VERSECONTEXT); group_code resolution; XREF status propagation; **enforces A-03 version gate** (rejects stale mismatches); **per-term `mti_terms.vc_status = 'vc_completed'` write on successful VCNEW/VCREVISE apply**; **bumps `mti_terms.md_version` on same**; **derived `word_registry.verse_context_status` aggregation from term states**; orphan-group validation; integrity validation; completion reporting at term and registry scope; Session A `.md` re-render on status change|
+|Interaction model|Per-term Session A `.md` rendered from current DB state (with `md_version` stamped) → programme-prose + instruction loaded; classifier acknowledges `md_version` and declares per-term prior-state posture → Claude AI classifies (session scope = 1..N terms at researcher discretion) → per-term self-check + orphan-group check on re-evaluation terms → produces up to four patches (VCNEW / VCREVISE / VCSBFLAGS / VCSDPOINTERS) carrying `_patch_meta.terms_covered` + `input_versions` where applicable → Claude Code applies each in order, enforces the version gate, flips `mti_terms.vc_status` to `vc_completed` per term, bumps `md_version`, derives registry-level `verse_context_status` from the aggregate → DataPrep gate opens when the DB state reaches Complete (§13.3)|
 
 **File-naming note:** All VC session outputs use the `wa-vcb-{batch\_id}-...` pattern. `batch_id` is a session identifier assigned by Claude Code; it does not imply multi-registry scope. A session can hold one term or many — the patch, observations file, session log, flags register, and Session B flags all carry the same session id. Per-term Session A `.md` inputs use the registry+strongs-scoped pattern `wa-{nnn}-{word}-{strongs}-session_a-{date}.md` (the input is scoped to a term; the session outputs are scoped to the session).
 
@@ -41,7 +41,7 @@ This document governs the Verse Context stage — the pipeline stage between Pha
 * Groups relevant verses by the inner-being characteristic they engage (characteristic-perspective)
 * Designates anchor verses — the canonical citation and primary Session B analysis input per group
 * Produces a session patch (`VERSECONTEXT`) covering all terms classified in the session; the patch declares `_patch_meta.terms_covered`
-* On apply, writes `mti_terms.vc_status = 'complete'` per term — the atomic unit of VC progress is the term
+* On apply, writes `mti_terms.vc_status = 'vc_completed'` per term — the atomic unit of VC progress is the term
 
 **What Verse Context does NOT do:**
 
@@ -64,7 +64,7 @@ Verse Context (this document)
   ├── Claude AI: per-term classification session (researcher composes 1..N terms)
   ├── Claude AI: VERSECONTEXT patch with _patch_meta.terms_covered
   ├── Claude Code: patch application + per-term R1–R4 / orphan-group / coverage validation
-  ├── Claude Code: write mti_terms.vc_status = 'complete' per term on successful validation
+  ├── Claude Code: write mti_terms.vc_status = 'vc_completed' per term on successful validation
   ├── Claude Code: derive affected registries (OWNER + XREF-via-OWNER)
   ├── Claude Code: aggregate check → word_registry.verse_context_status = 'Complete' where all qualify
   └── loop until every OWNER + XREF-via-OWNER term of every registry reaches complete
@@ -170,7 +170,7 @@ WHERE wr.no = {registry\_no}
 |**System**|**Role**|
 |-|-|
 |Claude AI|Reads verse text. Applies the relevance filter. Produces contextual meaning descriptions. Groups verses. Designates anchors. Identifies dual-context. Produces the patch file.|
-|Claude Code|Renders the per-term Session A `.md` from the live database (primary input for the classifier). Renders a per-registry hybrid `.md` on demand for researcher review and Dimension Review hand-off. Applies VERSECONTEXT patches. Resolves group_code to integer id. Handles XREF coverage. On successful per-term validation, writes `mti_terms.vc_status = 'complete'` + `vc_instruction_version` + `vc_status_updated_at`. Derives `word_registry.verse_context_status` from the aggregate of OWNER + XREF-via-OWNER term states. Re-renders any affected per-term `.md`s on demand. Validates consistency rules (R1–R4) including orphan-group validation. Runs integrity checks. Reports completion at term and registry scope. Does not assess verse relevance or produce contextual descriptions.|
+|Claude Code|Renders the per-term Session A `.md` from the live database (primary input for the classifier). Renders a per-registry hybrid `.md` on demand for researcher review and Dimension Review hand-off. Applies the four VC session patches (VCNEW, VCREVISE, VCSBFLAGS, VCSDPOINTERS — see §7.9). Resolves group_code to integer id. Handles XREF coverage. On successful per-term validation (VCNEW/VCREVISE only), enforces the A-03 version gate (`input_versions` vs `mti_terms.md_version`), writes `mti_terms.vc_status = 'vc_completed'` + `vc_instruction_version` + `vc_status_updated_at`, and bumps `md_version`. Derives `word_registry.verse_context_status` from the aggregate of OWNER + XREF-via-OWNER term states. Re-renders any affected per-term `.md`s on demand. Validates consistency rules (R1–R4) including orphan-group validation. Runs integrity checks. Reports completion at term and registry scope. Does not assess verse relevance or produce contextual descriptions.|
 
 |**⚠ Claude Code does not assess verse relevance, produce contextual meaning descriptions, or designate anchors. All classification is Claude AI's responsibility.**|
 |-|
@@ -576,7 +576,7 @@ Produce the flags register (Section 6.5) and present it to the researcher for de
 **Step 2 — Session B flags document (mandatory if any Session B flags were raised during flag resolution):**
 Produce the Session B flags document (Section 6.6). This document must be completed before the patch construction session begins, as it forms part of the handoff chain to Session B.
 
-**Step 3 — Produce the VERSECONTEXT patch (Section 7).**
+**Step 3 — Produce the session's patch set per §7.9 (up to four patches: VCNEW, VCREVISE, VCSBFLAGS, VCSDPOINTERS). Any patch class whose operation list would be empty is not produced.**
 
 ### 6.4 Session discipline — file writing, session logs, and memory management
 
@@ -806,11 +806,27 @@ When Session B begins for a registry that has Session B flags, Claude AI must lo
 
 ### 7.1 Patch types
 
+**Four VC session patches (the current output model — §7.9):**
+
 |Type|Purpose|When to use|
 |-|-|-|
-|VERSECONTEXT|Full session — all terms classified in the session|After completing all terms in the session and passing pre-submission validation|
-|VCGROUP|Targeted group update|When revising a single group description or dissolving/reinstating a group outside a full session|
-|VCVERSE|Targeted verse update|When a single verse changes state (new verse added after audit\_word re-run, verse removed, reclassification needed)|
+|**VCNEW**|New classifications — first-time `verse_context_group` and `verse_context` inserts|Any term in the session receives a first-time classification|
+|**VCREVISE**|Revisions — updates on `verse_context_group` and `verse_context` (including `delete_flagged = 1` dissolves, anchor promotions/demotions, verse reassignments)|Any prior classification is revised during re-evaluation|
+|**VCSBFLAGS**|Session B observation flags raised while reading — `wa_session_research_flags` inserts with `session_target = 'Session B'`|The classifier notices an analytical signal for Session B|
+|**VCSDPOINTERS**|Cross-registry / Session D pointers — `wa_session_research_flags` inserts with `session_target = 'Session D'` and `cross_registry_id` populated|The classifier notices a cross-term or cross-registry signal|
+
+**Targeted out-of-session patches (single-record corrections):**
+
+|Type|Purpose|When to use|
+|-|-|-|
+|VCGROUP|Targeted group update|Revising a single group description or dissolving/reinstating a group outside a full session|
+|VCVERSE|Targeted verse update|A single verse changes state (new verse added after `audit_word` re-run, verse removed, reclassification needed)|
+
+**Legacy / backwards-compatible:**
+
+|Type|Purpose|When to use|
+|-|-|-|
+|VERSECONTEXT|Legacy combined VC patch (pre-v3_3)|**Not produced under v3_4+.** Retained in the applicator for reading patches archived before the four-output model was formalised|
 
 ### 7.2 VERSECONTEXT patch — structure
 
@@ -1070,42 +1086,85 @@ Before submitting any patch, verify (per-patch rules that apply to VCNEW + VCREV
 5. **Orphan-group programmatic check** — compute, for each pre-existing active group on every term in the input, the net active-verse count after the proposed patch operations are applied. Flag any group reaching zero with no dissolve operation. This catches §6.2 Step 6 orphan-group discipline failures before the patch leaves the construction session.
 6. **Four-patch set integrity** — if VCNEW, VCREVISE, VCSBFLAGS, or VCSDPOINTERS is missing despite the obslog indicating its output class was produced, raise a validation failure before any patch writes.
 
-### 7.8 Handoff to Claude Code
+### 7.8 Handoff to Claude Code — the four-patch apply sequence
+
+A VC session produces up to four patches (§7.9). Claude Code applies them in the following order; each patch is independently atomic (its own transaction). A failure in one patch does not roll back prior patches of the same session — the researcher corrects and re-submits the failed patch.
 
 ```text
-PATCH SUBMISSION TO CLAUDE CODE
+VC SESSION PATCH SUBMISSION — APPLY ORDER
 
-Patch file: wa-vcb-{batch_id}-patch-{date}.json
-Patch type: VERSECONTEXT
+  1. wa-vcb-{batch_id}-patch-vcnew-v{n}-{date}.json        (if any new data)
+  2. wa-vcb-{batch_id}-patch-vcrevise-v{n}-{date}.json     (if any revisions)
+  3. wa-vcb-{batch_id}-patch-vcsbflags-v{n}-{date}.json    (if any SB flags)
+  4. wa-vcb-{batch_id}-patch-vcsdpointers-v{n}-{date}.json (if any SD pointers)
 
-Action required (per v3_1 per-term model — scripts/apply_session_patch.py VC-2 extension):
-  1. Apply patch — insert/update verse_context_group and verse_context records
-     (all operations run in a single SQLite transaction; failure rolls back).
-  2. Resolve group_code strings to integer ids for new groups in this patch.
-  3. Validate consistency rules R1–R4 after application, per term.
-  4. Run integrity validation including orphan-group validation (§7.7 bullet).
-  5. For each mti_term_id in _patch_meta.terms_covered, where the term's
-     operations passed R1–R4 + orphan-group + coverage checks:
-       UPDATE mti_terms
-          SET vc_status = 'complete',
-              vc_instruction_version = {governing_instruction},
-              vc_status_updated_at = {now()},
-              vc_status_note = NULL
-        WHERE id = {mti_term_id};
-  6. Derive affected registries:
-       - OWNER path: SELECT DISTINCT owning_registry_fk FROM mti_terms
-                     WHERE id IN ({terms_covered}).
-       - XREF path:  registries that reference any covered term's strongs_number
-                     via wa_term_inventory.term_owner_type = 'XREF'.
-  7. For each affected registry, run the derived completion aggregation:
-       - All active OWNER terms (with verses) at vc_status = 'vc_completed'?
-       - All XREF terms' OWNER at vc_status = 'vc_completed'?
-     If both, UPDATE word_registry SET verse_context_status = 'Complete' and trigger
-     the Session A .md re-render (per-term files for any terms whose data changed;
-     per-registry hybrid view on demand).
-  8. Report: terms marked complete, registries advanced to Complete, any term-level
-     validation failures, orphan-group dispositions applied.
+Any patch whose operation class was empty is not produced and is skipped.
 ```
+
+**For VCNEW and VCREVISE** (scripts/apply_session_patch.py, VC-2 extension):
+
+```text
+  VERSION GATE (A-03) — runs BEFORE any state change:
+    For each mti_term_id in _patch_meta.terms_covered:
+      declared = _patch_meta.input_versions[mti_term_id]
+      current  = SELECT md_version FROM mti_terms WHERE id = {mti_term_id}
+      if declared != current:
+        REJECT whole patch as stale. Transaction rolls back.
+        Researcher must re-render the .md and reclassify.
+
+  OPERATION APPLY:
+    Apply all operations in a single SQLite transaction:
+      - VCNEW  → insert on verse_context_group + verse_context
+      - VCREVISE → update on verse_context_group + verse_context
+    Resolve group_code strings to integer ids for new groups.
+
+  PER-TERM VALIDATION (R1–R4 + orphan-group + coverage):
+    For each mti_term_id in terms_covered, verify invariants hold.
+    On failure, raise → transaction rolls back.
+
+  PER-TERM STATE WRITE + md_version BUMP:
+    For each mti_term_id in terms_covered:
+      UPDATE mti_terms
+         SET vc_status             = 'vc_completed',
+             vc_instruction_version = {governing_instruction},
+             vc_status_updated_at   = {now()},
+             vc_status_note         = NULL,
+             md_version             = md_version + 1
+       WHERE id = {mti_term_id};
+
+  REGISTRY AGGREGATION (derived completion):
+    Affected registries = DISTINCT owning_registry_fk of covered terms
+                        ∪ registries that reference any covered term as XREF.
+    For each affected registry, check:
+      - All active OWNER terms (with verses) at vc_status = 'vc_completed'?
+      - All XREF terms' OWNER at vc_status = 'vc_completed'?
+    If both: UPDATE word_registry
+                SET verse_context_status = 'Complete'
+              WHERE no = {registry_no};
+    (The DB state IS the DataPrep gate — see §13.3, A-01 resolution.)
+
+  REPORT:
+    terms marked vc_completed, registries advanced to Complete,
+    any term-level validation failures, orphan-group dispositions applied.
+```
+
+**For VCSBFLAGS and VCSDPOINTERS** (flag-only patches — do not change classification state):
+
+```text
+  NO VERSION GATE (not required — no mti_term_id state is changed).
+  NO terms_covered required.
+
+  OPERATION APPLY:
+    Apply all operations in a single SQLite transaction:
+      - wa_session_research_flags INSERT only.
+
+  NO vc_status WRITE. NO md_version BUMP. NO registry aggregation.
+
+  REPORT:
+    research_flag_inserts (by flag_code); by_session_target distribution.
+```
+
+See §7.9 for the session output model that produces these patches; see patch instruction [current] §15 for full per-patch structural specification.
 
 \---
 
@@ -1157,7 +1216,7 @@ data/imports/WA/Patches/
 
 Per `scripts/apply_session_patch.py`:
 
-- **VCNEW**: applies operations → validates per-term R1–R4 + orphan-group + coverage for every `mti_term_id` in `terms_covered` → writes `mti_terms.vc_status = 'complete'` + `vc_instruction_version` + `vc_status_updated_at` → derives affected registries and runs the aggregate check (§13).
+- **VCNEW**: enforces A-03 version gate (`input_versions` vs `mti_terms.md_version`) → applies operations → validates per-term R1–R4 + orphan-group + coverage for every `mti_term_id` in `terms_covered` → writes `mti_terms.vc_status = 'vc_completed'` + `vc_instruction_version` + `vc_status_updated_at` → **bumps `md_version`** for every term in `terms_covered` (any pre-existing `.md` becomes stale) → derives affected registries and runs the aggregate check (§13).
 - **VCREVISE**: applies operations → validates per-term invariants → bumps `vc_status_updated_at` for every term in `terms_covered`; does not downgrade `vc_status`. The aggregate check re-runs.
 - **VCSBFLAGS**: applies `wa_session_research_flags` inserts → no `vc_status` change → no registry aggregation.
 - **VCSDPOINTERS**: same as VCSBFLAGS.
@@ -1495,12 +1554,12 @@ GROUP BY mt.id;
 
 ## 13\. Claude Code — Registry Completion Check (derived from term states)
 
-Run after every VERSECONTEXT patch, for each registry affected by the patch (OWNER path + XREF-consumer path). Under v3_1 the check reads from `mti_terms.vc_status` — no longer a scan of `verse_context` rows.
+Run after every VCNEW or VCREVISE patch (the VC session patches that change `mti_terms.vc_status`), for each registry affected by the patch (OWNER path + XREF-consumer path). The check reads from `mti_terms.vc_status` — no scan of `verse_context` rows.
 
 ### 13.1 OWNER term completion — aggregated from term states
 
 ```sql
--- Count OWNER terms (with verses) NOT at complete/approved for this registry.
+-- Count OWNER terms (with verses) NOT at vc_completed for this registry.
 SELECT COUNT(DISTINCT mt.id) AS owner_terms_incomplete
 FROM mti_terms mt
 JOIN word_registry wr ON wr.id = mt.owning_registry_fk
@@ -1514,13 +1573,13 @@ WHERE wr.no = {registry_no}
   AND EXISTS (SELECT 1 FROM wa_verse_records vr
                WHERE vr.term_inv_id = ti.id AND vr.delete_flagged = 0)
   AND mt.vc_status != 'vc_completed';
--- If 0: all OWNER terms are at complete or approved.
+-- If 0: every OWNER term with verses is at vc_completed.
 ```
 
 ### 13.2 XREF coverage — aggregated from OWNER term states
 
 ```sql
--- Count XREF terms in this registry whose OWNER is NOT at complete/approved.
+-- Count XREF terms in this registry whose OWNER is NOT at vc_completed.
 SELECT COUNT(DISTINCT mt.id) AS xref_owners_incomplete
 FROM wa_term_inventory ti
 JOIN wa_file_index fi ON fi.id = ti.file_id
@@ -1530,7 +1589,7 @@ WHERE wr.no = {registry_no}
   AND ti.term_owner_type = 'XREF'
   AND ti.delete_flagged = 0
   AND mt.vc_status != 'vc_completed';
--- If 0: every XREF term's OWNER is classified.
+-- If 0: every XREF term's OWNER is at vc_completed.
 ```
 
 Both queries are performed by `scripts/apply_session_patch.py` inside the VERSECONTEXT patch transaction via the VC-2 extension. The applicator derives the registries to check from the patch's `_patch_meta.terms_covered` (OWNER path + XREF-consumer path); operators do not need to loop manually.
