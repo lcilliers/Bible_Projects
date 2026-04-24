@@ -21,6 +21,7 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 ### VC four-output model + A-02..A-05 resolution (2026-04-24)
 
 - [ ] _VC-7 Pilot: one small term on renewal (reg 134) under the per-term model; then full renewal in per-term mode; then programme-wide roll-out to the 180 registries at `Verse Context Reset`. Under v3_4 the patch submitted must declare `_patch_meta.input_versions[mti_term_id] = md_version` matching the per-term .md the session classified against; applicator will reject on stale mismatch._
+- [ ] _VC-Prose-v4 (post-pilot): supersede `prog_instr_verse_context` v3 → v4 after VC-7 pilot confirms the contracts. Minimal addition — one governance-level paragraph elevating the A-03 snapshot-anchoring principle (every classification is anchored to the data snapshot it read; if data has changed, re-read rather than silently apply). Mechanical details (md_version, input_versions, vocab renames) remain at instruction level — they do not enter prose._
 
 ### Other open
 
