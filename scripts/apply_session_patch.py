@@ -155,6 +155,150 @@ def _resolve_inserted_finding(label: str) -> int | None:
     return _inserted_findings_by_label.get(label)
 
 
+# ── VC-2: per-term status + derived registry completion ──────────────────────
+
+
+def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
+    """Post-apply step for VERSECONTEXT patches (alignment analysis v4 §8.2).
+
+    For every term in `_patch_meta.terms_covered`:
+      1. Verify R4 holds (at least one active anchor) via a DB read.
+      2. Set `mti_terms.vc_status = 'complete'`, record
+         `vc_instruction_version` + `vc_status_updated_at`.
+    Then derive the set of affected registries:
+      - Registries that own any of the covered terms.
+      - Registries that reference any of the covered terms as XREF.
+    For each, run the completion check:
+      - All OWNER terms (active, with verses) at vc_status IN ('complete',
+        'approved')?
+      - All XREF terms have their OWNER at vc_status IN ('complete',
+        'approved')?
+    If both, set `word_registry.verse_context_status = 'Complete'`.
+
+    Raises on validation failure — the enclosing transaction then rolls back.
+    """
+    terms_covered = meta.get("terms_covered") or []
+    if not terms_covered:
+        # Validation upstream should have caught this; double-check.
+        raise ValueError("VERSECONTEXT patch missing _patch_meta.terms_covered")
+
+    governing = meta.get("governing_instruction") or "unknown"
+    now = _now()
+    terms_marked_complete = 0
+    terms_skipped_no_anchor = 0
+
+    for term_id in terms_covered:
+        # R4 integrity: term must have at least one active anchor after apply.
+        anchor_count = conn.execute(
+            """SELECT COUNT(*) FROM verse_context
+                WHERE mti_term_id = ? AND is_anchor = 1 AND delete_flagged = 0""",
+            (term_id,),
+        ).fetchone()[0]
+        if anchor_count == 0:
+            # Check: does the term have ANY active verse_context rows? If all are
+            # set-aside (is_relevant=0), this is the all-verses-fail case and is
+            # legitimate — §6.5.5 of the VC instruction allows no-anchor state
+            # in that case. Only raise if relevant rows exist without an anchor.
+            active_relevant = conn.execute(
+                """SELECT COUNT(*) FROM verse_context
+                    WHERE mti_term_id = ? AND is_relevant = 1 AND delete_flagged = 0""",
+                (term_id,),
+            ).fetchone()[0]
+            if active_relevant > 0:
+                raise ValueError(
+                    f"VERSECONTEXT patch leaves mti_term_id={term_id} with "
+                    f"{active_relevant} relevant verse(s) but no active anchor "
+                    "(R4 integrity failure)"
+                )
+            # All-verses-fail case — flag but still mark complete per §6.5.5
+            terms_skipped_no_anchor += 1
+
+        conn.execute(
+            """UPDATE mti_terms
+                  SET vc_status = 'complete',
+                      vc_instruction_version = ?,
+                      vc_status_updated_at = ?,
+                      vc_status_note = NULL
+                WHERE id = ?""",
+            (governing, now, term_id),
+        )
+        terms_marked_complete += 1
+
+    counts["terms_marked_complete"] = terms_marked_complete
+    if terms_skipped_no_anchor:
+        counts["terms_all_verses_fail"] = terms_skipped_no_anchor
+
+    # Derive affected registries — owner path + XREF-consumer path
+    placeholders = ",".join("?" for _ in terms_covered)
+    owner_regs = [
+        r[0] for r in conn.execute(
+            f"""SELECT DISTINCT wr.no
+                  FROM mti_terms mt
+                  JOIN word_registry wr ON wr.id = mt.owning_registry_fk
+                 WHERE mt.id IN ({placeholders})""",
+            tuple(terms_covered),
+        ).fetchall()
+    ]
+    xref_regs = [
+        r[0] for r in conn.execute(
+            f"""SELECT DISTINCT wr.no
+                  FROM mti_terms mt
+                  JOIN wa_term_inventory ti ON ti.strongs_number = mt.strongs_number
+                  JOIN wa_file_index fi ON fi.id = ti.file_id
+                  JOIN word_registry wr ON wr.id = fi.word_registry_fk
+                 WHERE mt.id IN ({placeholders})
+                   AND ti.term_owner_type = 'XREF'
+                   AND ti.delete_flagged = 0""",
+            tuple(terms_covered),
+        ).fetchall()
+    ]
+    affected_regs = sorted(set(owner_regs) | set(xref_regs))
+
+    # Per registry: aggregate check; update verse_context_status if complete
+    regs_advanced = 0
+    for reg_no in affected_regs:
+        # OWNER terms with active verses — count those NOT at complete/approved
+        owner_incomplete = conn.execute(
+            """SELECT COUNT(DISTINCT mt.id)
+                 FROM mti_terms mt
+                 JOIN word_registry wr ON wr.id = mt.owning_registry_fk
+                 JOIN wa_term_inventory ti ON ti.strongs_number = mt.strongs_number
+                      AND ti.term_owner_type = 'OWNER' AND ti.delete_flagged = 0
+                      AND ti.file_id IN (SELECT id FROM wa_file_index WHERE word_registry_fk = wr.id)
+                WHERE wr.no = ?
+                  AND mt.delete_flagged = 0
+                  AND mt.status IN ('extracted', 'extracted_thin')
+                  AND EXISTS (SELECT 1 FROM wa_verse_records vr
+                               WHERE vr.term_inv_id = ti.id AND vr.delete_flagged = 0)
+                  AND mt.vc_status NOT IN ('complete', 'approved')""",
+            (reg_no,),
+        ).fetchone()[0]
+        # XREF terms whose OWNER is incomplete
+        xref_incomplete = conn.execute(
+            """SELECT COUNT(DISTINCT mt.id)
+                 FROM wa_term_inventory ti
+                 JOIN wa_file_index fi ON fi.id = ti.file_id
+                 JOIN word_registry wr ON wr.id = fi.word_registry_fk
+                 JOIN mti_terms mt ON mt.strongs_number = ti.strongs_number
+                WHERE wr.no = ?
+                  AND ti.term_owner_type = 'XREF'
+                  AND ti.delete_flagged = 0
+                  AND mt.vc_status NOT IN ('complete', 'approved')""",
+            (reg_no,),
+        ).fetchone()[0]
+        if owner_incomplete == 0 and xref_incomplete == 0:
+            conn.execute(
+                "UPDATE word_registry SET verse_context_status = 'Complete' WHERE no = ?",
+                (reg_no,),
+            )
+            regs_advanced += 1
+            print(f"  [REG] word_registry {reg_no}: verse_context_status → 'Complete' "
+                  "(all OWNER + XREF-via-OWNER at complete/approved)")
+
+    counts["registries_advanced_to_complete"] = regs_advanced
+    counts["registries_affected"] = len(affected_regs)
+
+
 def _insert_finding(conn: sqlite3.Connection, rec: dict, meta: dict | None) -> int:
     """Insert a wa_session_b_findings row supporting all 18 fields. Returns new id.
 
@@ -247,6 +391,39 @@ def _validate(conn, patch: dict) -> list[str]:
     sb_status = meta.get("session_b_status")
     if not sb_status and not is_exempt:
         errors.append("_patch_meta.session_b_status is required (e.g. 'Pre-Analysis Complete', 'Analysis Complete')")
+
+    # VC-3 — VERSECONTEXT patches must declare terms_covered (per alignment
+    # analysis v4 §8.2). Extract the mti_term_ids operated on; cross-check
+    # against terms_covered; fail on mismatch.
+    if patch_type == "VERSECONTEXT":
+        declared = meta.get("terms_covered")
+        if declared is None:
+            errors.append(
+                "_patch_meta.terms_covered is required for VERSECONTEXT patches "
+                "(per alignment analysis v4 §8.2). Array of mti_term_ids."
+            )
+        elif not isinstance(declared, list) or not all(isinstance(x, int) for x in declared):
+            errors.append("_patch_meta.terms_covered must be a list of integer mti_term_ids")
+        else:
+            observed_term_ids: set[int] = set()
+            for op in patch.get("operations", []):
+                rec = op.get("record") or {}
+                mti_id = rec.get("mti_term_id")
+                if isinstance(mti_id, int):
+                    observed_term_ids.add(mti_id)
+            declared_set = set(declared)
+            missing = observed_term_ids - declared_set
+            extra = declared_set - observed_term_ids
+            if missing:
+                errors.append(
+                    f"_patch_meta.terms_covered is missing mti_term_ids referenced by operations: "
+                    f"{sorted(missing)}"
+                )
+            if extra:
+                # Extra declared terms are allowed — the patch may touch only a subset
+                # of terms_covered via updates, while still claiming all for completion.
+                # So this is informational, not an error.
+                pass
 
     for op in patch.get("operations", []):
         op_id = op.get("op_id", "?")
@@ -1745,10 +1922,16 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
     try:
         for op in ops:
             _apply_operation(conn, op, counts, meta)
+        # VC-2 — per-term VC status updates + derived registry completion
+        # (alignment analysis v4 §8.2). Runs inside the same transaction as
+        # the operations; if either the ops or this post-apply fail, all
+        # changes roll back.
+        patch_type = meta.get("patch_type", "")
+        if patch_type == "VERSECONTEXT":
+            _apply_versecontext_term_updates(conn, meta, counts)
         _log_patch(conn, patch_id, meta, counts)
         # Update session_b_status on the registry (skip for exempt types)
         patch_reg_id = meta.get("registry_id")
-        patch_type = meta.get("patch_type", "")
         sb_skip_types = ("CLUSTERING", "SESSIOND", "VERSECONTEXT", "VCGROUP", "VCVERSE", "DIMREVIEW", "SESSIONB_FINDINGS", "CATALOGUE")
         if patch_reg_id and sb_status and patch_type not in sb_skip_types:
             conn.execute(
