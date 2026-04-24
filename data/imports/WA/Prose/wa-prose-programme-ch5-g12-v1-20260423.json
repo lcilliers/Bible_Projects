@@ -1,0 +1,35 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260423-PROSE-CH5-G12-V1",
+    "produced_date": "20260423",
+    "produced_by": "wa-patch-instruction-v2_4-20260422",
+    "patch_type": "PROSE",
+    "session_b_status": null,
+    "description": "Chapter 5 \u2014 insert prose_section row for G12 Documentation-implementation alignment. Depends on patch b (CATALOGUE-PROSE-CH5-G12-INSERT-V1) having inserted the prose_section_type row with code='prog_doc_impl_alignment'. Uses section_type_id_lookup per \u00a74.16 to resolve against the inserted row. Confirmation: SELECT ps.id, ps.heading, ps.word_count FROM prose_section ps JOIN prose_section_type pst ON ps.section_type_id=pst.id WHERE pst.code='prog_doc_impl_alignment' AND ps.version=1 \u2014 returns 1 row with word_count approximately 636."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "prose_section",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "prog_doc_impl_alignment"
+        },
+        "registry_id": null,
+        "heading": "Documentation\u2013implementation alignment",
+        "body": "The programme's rules, its database schema, its instruction documents, and the prose that describes the work are four surfaces that must stay in alignment for the record to be trustworthy. The alignment is not a state the programme can declare once and rely on thereafter. Rules are added; schema evolves through migrations; instructions are revised; documentation catches up, sometimes after a lag. At any moment, small mismatches between these surfaces are present \u2014 a rule that names a field the schema has since renamed, a slot description that references a concept the instructions have moved past, a schema column whose authority has not been explicitly ruled on. The standing governance principle is that these mismatches are named, not hidden.\n\nTwo kinds of mismatch illustrate the shape.\n\n**Rule-to-schema audit gaps.** The field-authority rules (sub-section on record consistency with sources) name two fields as authoritative against their redundant equivalents: `mti_term_flags` for somatic classification, with `wa_term_inventory.somatic_link` as deprecated; and `god_as_subject` as error-prone and verification-required. The programme's schema carries other overlapping fields whose authority has not been explicitly ruled on. The question \u2014 which field wins when two hold the same information \u2014 is sound in principle; the answer for every overlapping case is not fully documented. The gap is a governance item, not a defect of the rules already in force.\n\n**Documentation-to-documentation drift.** The prose corpus and its governing instruction documents are authored in parallel over sessions spanning months. A prose_section_type description may name a concept (\"dry-run gate assessment\" was one such case at the time this chapter was drafted) that is not grounded in the instruction corpus \u2014 either because the concept was proposed and not documented, or because it was documented in an earlier version and did not survive into current practice. When the drift is noticed, it is resolved by one of three routes: the concept is traced to documentation that exists but had not been read at the time of the observation, and the prose is corrected to cite it; the concept is retired from the referring document because no supporting documentation exists; or the concept is documented forward, so that the referring document becomes grounded.\n\nThe three routes generalise to the standing mechanism. Where a mismatch between surfaces is detected, the question asked is not \"which surface is right?\" but \"which resolution route is warranted here?\" A rule that names a field the schema has renamed resolves by either renaming the field back through a migration or amending the rule to match the schema's current name. A slot description that references an absent concept resolves by editing the description or by documenting the concept. A prose passage that describes an operational mechanism that the instruction corpus does not document resolves by either adding the instruction or revising the prose. The resolution is explicit; it is recorded in the obslog; the surfaces come back into alignment through a traceable change on one side or the other.\n\nThe principle's reverse is what it rules out. The programme does not tolerate silent drift: a rule that is contradicted by the schema is not left unreconciled on the assumption that both sides will correct over time; a slot description whose vocabulary is not grounded is not quietly ignored. The mismatch is the governance surface \u2014 the point at which the programme's self-description meets its actual state \u2014 and keeping the surfaces aligned is the discipline that makes the programme's audit trail mean what it claims to mean.\n\nTwo specific governance items stand open at the time this chapter was drafted: the per-field audit of authority status across the schema, and the review of slot descriptions and rule text for vocabulary not grounded in current documentation. Both are named as follow-up work. The alignment principle is the basis on which they will be resolved when the work is scheduled.",
+        "status": "draft",
+        "version": 1,
+        "author": "claude_ai",
+        "source_file": "wa-prose_ch5-obslog-v1_0-20260423.md"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_inserts": 1,
+    "programme_wide_rows": 1,
+    "body_word_count": 636
+  }
+}

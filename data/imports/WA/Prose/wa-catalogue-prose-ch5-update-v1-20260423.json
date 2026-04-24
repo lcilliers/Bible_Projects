@@ -1,0 +1,94 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260423-CATALOGUE-PROSE-CH5-UPDATE-V1",
+    "produced_date": "20260423",
+    "produced_by": "wa-patch-instruction-v2_4-20260422",
+    "patch_type": "CATALOGUE_POPULATION",
+    "session_b_status": null,
+    "description": "Chapter 5 slot repurposing: update prose_section_type rows for the six existing Chapter-5 slots. Description updates on ids 29, 31, 32, 33, 34 to reflect the expanded scopes (validation+quality-flags; record-consistency-with-sources covering field-authority + finding-references + STEP-provenance; backup+migration; patch-failure; instruction-override+cross-doc-reference). Label updates on 31, 32, 33, 34. chapter_no set to 5 on all six rows (previously NULL). Confirmation: SELECT id, label, chapter_no, substr(description, 1, 80) FROM prose_section_type WHERE id IN (29, 30, 31, 32, 33, 34) ORDER BY sort_order \u2014 all six rows return chapter_no=5 and updated label/description where applicable."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 29
+      },
+      "set": {
+        "description": "Inflection-point completeness; controlled gap-status vocabulary (Pending, In-Progress, Complete, Blocked); cross-document consistency; controlled-vocabulary validators; the anchor-verse gate; and the quality-flag architecture (wa_data_quality_flags, wa_session_research_flags, wa_flag_type_question_link) as the programme's validation-over-time mechanism.",
+        "chapter_no": 5
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 30
+      },
+      "set": {
+        "chapter_no": 5
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 31
+      },
+      "set": {
+        "label": "Programme \u2014 Record consistency with sources",
+        "description": "Record consistency with sources \u2014 field authority (which field wins on conflict; mti_term_flags canonical for somatic, god_as_subject verification-required, deprecation path for superseded fields); finding-reference consistency (how references to a finding behave across supersede chains, obsolete_reason closures, and the prose_section_finding_link bridge); STEP data provenance (the extraction chain from STEP Bible to wa_term_inventory and mti_terms, the term_fetch_log as provenance log, strongs_reconciled and extraction_date as row-level markers, re-extraction as the current-bringing mechanism).",
+        "chapter_no": 5
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 32
+      },
+      "set": {
+        "label": "Programme \u2014 Backup and schema migration discipline",
+        "description": "Backup and schema migration discipline \u2014 backup as the mechanism that makes state-changing operations reversible; schema_version table and M-numbered migration history; migrations authored through the directive channel; the paired discipline that an un-backed migration is un-reversible and an un-migrated change is un-audited. Principle only; operational specifics belong in the instruction corpus.",
+        "chapter_no": 5
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 33
+      },
+      "set": {
+        "label": "Programme \u2014 Patch and directive failure protocol",
+        "description": "Three failure modes \u2014 rejection at constraint check; mid-pool failure with atomic-pool-or-split discipline; post-application error reversed through a failure patch that supersedes the original while preserving history.",
+        "chapter_no": 5
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "prose_section_type",
+      "match": {
+        "id": 34
+      },
+      "set": {
+        "label": "Programme \u2014 Instruction override and cross-document reference discipline",
+        "description": "Instruction override protocol \u2014 researcher direction captured verbatim in obslog, carried in session log, absorbed into wa_rule_registry or wa_addendum_registry via patch/directive, retired from override status on absorption; migration_status on addendum registry as the in-flight marker. Plus cross-document reference discipline \u2014 the five sub-disciplines of GR-REF-001 (pointer not copy, versioned references, single authoritative document per content type, consistency check at version bumps, documents stay within their named content type) and the GR-REF-002 [current] token convention.",
+        "chapter_no": 5
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "prose_section_type_updates": 6,
+    "description_updates": 5,
+    "label_updates": 4,
+    "chapter_no_sets": 6
+  }
+}
