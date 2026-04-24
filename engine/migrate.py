@@ -662,6 +662,13 @@ def _m22(conn: sqlite3.Connection) -> None:
 
 @_register("M23", "Populate mti_term_flags from wa_term_inventory booleans (RD-DBR-003)")
 def _m23(conn: sqlite3.Connection) -> None:
+    # Idempotency: M24 drops wa_term_inventory.somatic_link and .god_as_subject
+    # after this migration has done its work. If the columns are already gone,
+    # M23's reconciliation has already run — nothing to do.
+    wti_cols = {r[1] for r in conn.execute("PRAGMA table_info(wa_term_inventory)")}
+    if "somatic_link" not in wti_cols and "god_as_subject" not in wti_cols:
+        print("     M23: columns already dropped by M24 — reconciliation previously applied, skipping")
+        return
     # DBR-CHG-015: somatic_link → flag_id 3 (SOMATIC_INNER_LINK)
     s_inserted = conn.execute("""
         INSERT OR IGNORE INTO mti_term_flags (mti_term_id, flag_id)
@@ -1332,10 +1339,22 @@ def _m33(conn: sqlite3.Connection) -> None:
     """)
     print("     M33: created wa_rule_registry + wa_addendum_registry + 2 indexes")
 
+    # Idempotency: if rules/addenda already seeded (and source JSON has since been
+    # archived), skip the re-seed. Tables + indexes still get ensured above.
+    existing_rules = conn.execute("SELECT COUNT(*) FROM wa_rule_registry").fetchone()[0]
+    existing_addenda = conn.execute("SELECT COUNT(*) FROM wa_addendum_registry").fetchone()[0]
+    if existing_rules > 0 or existing_addenda > 0:
+        print(f"     M33: seed already present ({existing_rules} rules, "
+              f"{existing_addenda} addenda) — skipping re-seed")
+        return
+
     # 2. Locate source JSON
     now = _now()
     source_candidates = [
         _os.path.join("data", "imports", "WA", "Workflow", "Framework_B", "Session_B",
+                      "wa-global-general-rules-v2_11-20260418.json"),
+        # Also check archive — the 2026-04-23 Tier 3 Stage A cleanup moved the file
+        _os.path.join("data", "imports", "WA", "Workflow", "Framework_B", "archive",
                       "wa-global-general-rules-v2_11-20260418.json"),
     ]
     source_path = None
@@ -1657,6 +1676,88 @@ def _m36(conn: sqlite3.Connection) -> None:
         ("3.14.0", now),
     )
     print("     M36: schema_version → 3.14.0")
+
+
+@_register("M37", "Per-term VC progress tracking: add vc_status, vc_instruction_version, vc_status_updated_at, vc_status_note to mti_terms; backfill reset registries as 'to_revise'")
+def _m37(conn: sqlite3.Connection) -> None:
+    """Per-term VC progress fields on mti_terms.
+
+    Enables the per-term VC model approved 2026-04-24 (alignment analysis
+    v4 §8.1). The term — not the registry — is the atomic unit of
+    classification progress. The applicator flips `vc_status` to 'complete'
+    when a patch's operations for a term pass R1-R4 + orphan-group +
+    coverage validation. Registry-level `verse_context_status` becomes a
+    derived aggregation (all OWNER + XREF-via-OWNER terms at 'complete'
+    or 'approved' → registry is Complete).
+
+    Backfill logic:
+      - Default all rows to 'not_done'.
+      - Flag the 6 explicitly-reset registries' OWNER terms as 'to_revise'
+        per the 2026-04-19 Q12 decision: compassion (23), fellowship (62),
+        forgiveness (64), grace (68), love (103), mercy (111).
+      - Other rows with active verse_context records should probably also
+        be classified once the per-term pilot confirms the model; for now
+        we leave them 'not_done' — the classifier under the new model will
+        see FRESH posture on registries whose terms are 'not_done' and
+        work through them normally.
+    """
+    # 1. Add the four columns (no-op if present — idempotent)
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(mti_terms)")}
+    if "vc_status" not in cols:
+        conn.execute(
+            "ALTER TABLE mti_terms ADD COLUMN vc_status TEXT NOT NULL DEFAULT 'not_done'"
+        )
+        print("     M37: added mti_terms.vc_status")
+    if "vc_instruction_version" not in cols:
+        conn.execute("ALTER TABLE mti_terms ADD COLUMN vc_instruction_version TEXT")
+        print("     M37: added mti_terms.vc_instruction_version")
+    if "vc_status_updated_at" not in cols:
+        conn.execute("ALTER TABLE mti_terms ADD COLUMN vc_status_updated_at TEXT")
+        print("     M37: added mti_terms.vc_status_updated_at")
+    if "vc_status_note" not in cols:
+        conn.execute("ALTER TABLE mti_terms ADD COLUMN vc_status_note TEXT")
+        print("     M37: added mti_terms.vc_status_note")
+
+    # 2. Index for the registry-aggregation query the applicator will run:
+    #    "are all OWNER terms of registry N at 'complete' or 'approved'?"
+    conn.execute(
+        "CREATE INDEX IF NOT EXISTS idx_mti_terms_owning_vc_status "
+        "ON mti_terms(owning_registry_fk, vc_status) WHERE delete_flagged = 0"
+    )
+    print("     M37: created idx_mti_terms_owning_vc_status")
+
+    # 3. Backfill the 2026-04-19 Q12 reset registries. These six were
+    #    explicitly marked for VC re-run; their terms should be 'to_revise'
+    #    so the next VC pass picks them up.
+    reset_registries = [23, 62, 64, 68, 103, 111]  # compassion, fellowship,
+                                                    # forgiveness, grace, love, mercy
+    now = _now()
+    reason = (
+        "Backfill M37 2026-04-24 — registry flagged for VC re-run per "
+        "2026-04-19 Q12 decision (prior Session B work superseded)."
+    )
+    placeholders = ",".join("?" for _ in reset_registries)
+    updated = conn.execute(
+        f"""UPDATE mti_terms
+               SET vc_status = 'to_revise',
+                   vc_status_updated_at = ?,
+                   vc_status_note = ?
+             WHERE owning_registry_fk IN (
+                   SELECT id FROM word_registry WHERE no IN ({placeholders})
+             )
+             AND delete_flagged = 0
+             AND status IN ('extracted', 'extracted_thin')""",
+        (now, reason, *reset_registries),
+    ).rowcount
+    print(f"     M37: flagged {updated} terms as 'to_revise' across 6 reset registries")
+
+    # 4. Schema version bump
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)",
+        ("3.15.0", now),
+    )
+    print("     M37: schema_version → 3.15.0")
 
 
 # ── Runner ────────────────────────────────────────────────────────────────────

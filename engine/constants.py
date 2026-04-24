@@ -10,7 +10,10 @@ Shared constants for the Session A v9 Automation Engine.
 # Bumped 2026-04-20 evening for reference-as-DB POC M32 (vocab registry).
 # Bumped 2026-04-20 night for reference-as-DB M33-M35 (rules + programme prose + patch types/patterns/labels).
 # Bumped 2026-04-20 late for M36 (all addenda marked obsolete; extracts exclude by default).
-EXPECTED_SCHEMA_VERSION = "3.14.0"
+# Bumped 2026-04-24 for M37 (per-term VC progress fields on mti_terms — vc_status,
+# vc_instruction_version, vc_status_updated_at, vc_status_note; per-term model approved
+# in alignment analysis v4 §8.1).
+EXPECTED_SCHEMA_VERSION = "3.15.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
