@@ -1,7 +1,25 @@
 # VC Instruction — Substantive Ambiguities Needing Researcher Decision
 
 **Date:** 2026-04-24
-**Context:** Claude AI's v3_1 inspection (obslog [wa-global-vc_review-obslog-v1_0-20260424.md](../../data/imports/WA/Workflow/methodology_logs/wa-global-vc_review-obslog-v1_0-20260424.md) Entry 009) surfaced five items — A-01 through A-05 — that are not stale-text cleanup but **substantive semantic ambiguities**. v3_2 (the correction release) deliberately does not resolve them. This doc captures each item, shows the conflict, proposes options, and flags my recommendation for researcher ruling. **v3_3** of the VC instruction will incorporate the decisions.
+**Context:** Claude AI's v3_1 inspection (obslog [wa-global-vc_review-obslog-v1_0-20260424.md](../../data/imports/WA/Workflow/methodology_logs/wa-global-vc_review-obslog-v1_0-20260424.md) Entry 009) surfaced five items — A-01 through A-05 — that are not stale-text cleanup but **substantive semantic ambiguities**. v3_2 (the correction release) deliberately does not resolve them. This doc captures each item, shows the conflict, proposes options, and flags my recommendation for researcher ruling.
+
+---
+
+## ✅ RESOLUTION STATUS (as of 2026-04-24)
+
+**All five ambiguities resolved by researcher rulings 2026-04-24.** The rulings and where they landed:
+
+| Item | Ruling | Landed in |
+|---|---|---|
+| **A-01** | Option (a) — DB state is the DataPrep gate; full-word JSON re-export is optional audit artefact. Plus the researcher's four-output-class formalisation (VCNEW / VCREVISE / VCSBFLAGS / VCSDPOINTERS) | VC instruction v3_3 §13.3 + §7.9 (commit `156dcbd`); patch instruction v2_5 §15 (commit `51622d4`); prog_instr_verse_context v3 (commit `f27972c`) |
+| **A-02** | Drop `approved` from `vc_status` vocab; rename `complete` → `vc_completed` (explicit VC-terminal state) | M38 migration; applicator writes `vc_completed`; VC instruction v3_4 change-note + §13 aggregation queries; patch instruction v2_6 §15 (commit `d50061f` + this commit) |
+| **A-03** | Per-term `.md` freshness is version-gated. `mti_terms.md_version` column added; `.md` header carries `md_version`; patch `_patch_meta.input_versions` map required for VCNEW/VCREVISE; applicator rejects stale mismatches and bumps on apply | M38 migration; `scripts/build_session_a_prose.py` stamps version; `scripts/apply_session_patch.py` VC-2 version gate; VC instruction v3_4 §6.1 step 4 + §7.2; patch instruction v2_6 §15 (commit `d50061f` + this commit) |
+| **A-04** | Session identifier (`batch_id`) no longer operationally required. A patch may cover one term or many; the per-term version gate is authoritative for correlation. `batch_id` retained as optional convenience | VC instruction v3_4 §7.2 (`batch_id` optional note); patch instruction v2_6 §15 (commit `d50061f` + this commit) |
+| **A-05** | Cross-term duplicate classifications are not a VC concern. `verse_context_group.mti_term_id` scopes groups per term; the same verse can legitimately appear in multiple term-group rows; patterns are discovered at Session B when related terms are processed together | No instruction change required; documented in VC v3_4 change note |
+
+The pre-resolution analysis below is retained as a provenance record. Sections 1–5 describe the ambiguity, the options, and my recommendations at the time of writing; the ruling column in the table above records what the researcher actually chose.
+
+---
 
 ---
 
