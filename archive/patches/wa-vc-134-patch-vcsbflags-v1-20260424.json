@@ -1,0 +1,41 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-134-VCSBFLAGS-V1",
+    "registry_id": 134,
+    "word": "renewal",
+    "batch_id": "vc-134",
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_4-20260424",
+    "governing_instruction": "wa-versecontext-instruction-v3_4-20260424.md",
+    "patch_type": "VCSBFLAGS",
+    "session_b_status": null,
+    "description": "VC session vc-134 — one Session B observation raised: registry composition (ANAKAIN + CHALOPH under 'renewal') with only 3 of 7 OWNER terms surviving the VC filter. Inner-being content in the registry rests primarily on the Greek pair plus H2487."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 134,
+        "flag_code": "SB_INNER_BEING",
+        "flag_label": "Registry 134 'renewal' heterogeneous: ANAKAIN+CHALOPH; only G0341, G0342, H2487 survive VC filter",
+        "strongs_reference": "G0341; G0342; H2487",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "Registry 134 (renewal) aggregates two distinct root families under the English label 'renewal': the Greek ANAKAIN family (G0341 anakainoō 'to renew', G0342 anakainōsis 'renewal') and the Hebrew CHALOPH family rooted in cha.laph 'to pass / to change' (H2475 destruction, H2487 change, H2500 preposition 'in return for', H4252 knife/censer, H4253 hair-lock). After VC re-evaluation under v3_4, only three terms retain any inner-being classification: G0341 (group 6132-001, anchor 2Cor 4:16), G0342 (group 1097-001, anchor Rom 12:2), and H2487 (group 1098-001, anchor Job 14:14). The remaining four Hebrew terms (H2475, H2500, H4252, H4253) have no active anchor post-VC; H2475 and H4253 dissolved prior active groups as wrong_face revisions. Session B question: does the registry carry coherent inner-being content for the human inner-being programme, or is 'renewal' in this registry primarily served by the Greek ANAKAIN pair, with the Hebrew CHALOPH root family contributing only through H2487 (change/renewal)? Consider whether the registry composition or scope needs re-examination at the programme-orientation level.",
+        "session_raised": "vc-134",
+        "raised_date": "2026-04-24",
+        "resolved": 0
+      },
+      "description": "SB observation: registry 134 composition — only 3 of 7 OWNER terms carry inner-being function post-VC"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "research_flag_inserts": 1,
+    "by_flag_code": {
+      "SB_INNER_BEING": 1
+    }
+  }
+}

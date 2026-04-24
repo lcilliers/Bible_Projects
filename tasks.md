@@ -20,8 +20,16 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 ### VC four-output model + A-02..A-05 resolution (2026-04-24)
 
-- [ ] _VC-7 Pilot: one small term on renewal (reg 134) under the per-term model; then full renewal in per-term mode; then programme-wide roll-out to the 180 registries at `Verse Context Reset`. Under v3_4 the patch submitted must declare `_patch_meta.input_versions[mti_term_id] = md_version` matching the per-term .md the session classified against; applicator will reject on stale mismatch._
+- [x] _VC-7 Pilot (full renewal, reg 134) — VCNEW + VCREVISE + VCSBFLAGS + VCRECOVERY applied 2026-04-24. All 7 OWNER terms at vc_completed, md_version=2/3, registry Complete. R1/R2/R3 clean. Two systemic issues surfaced → v3_5 amendment + applicator hardening (new tasks below)._
+- [ ] _VC-7 Programme roll-out: 180 registries at `Verse Context Reset`. BLOCKED on v3_5 amendment + applicator rowcount fix landing first._
 - [ ] _VC-Prose-v4 (post-pilot): supersede `prog_instr_verse_context` v3 → v4 after VC-7 pilot confirms the contracts. Minimal addition — one governance-level paragraph elevating the A-03 snapshot-anchoring principle (every classification is anchored to the data snapshot it read; if data has changed, re-read rather than silently apply). Mechanical details (md_version, input_versions, vocab renames) remain at instruction level — they do not enter prose._
+
+### VC-7 pilot follow-ups (raised 2026-04-24 from renewal apply)
+
+- [ ] _VC-Instruction-v3_5: per-verse `insert` vs `update` rule; VCREVISE silent 0-row rejection; per-term `.md` header extension to declare existing vc row presence. See [draft](outputs/investigations/vc-v3_5-instruction-amendment-v1-20260424.md)._
+- [ ] _Applicator hardening: UPDATE rowcount=0 must fail loudly across VC + Session B/D paths; REPAIR failure patch on rollback. See [ticket](outputs/investigations/applicator-hardening-rowcount-v1-20260424.md)._
+- [ ] _Normalise out-of-vocab `set_aside_reason` values: "Material goods/property -- set aside" (17 rows) and "avf_homograph" (1 row) → controlled vocab via REPAIR patch._
+- [ ] _Audit preserved-with-notes rows (4,366) for whether notes carry classification intent that should be lifted to `set_aside_reason` + controlled vocab._
 
 ### Other open
 

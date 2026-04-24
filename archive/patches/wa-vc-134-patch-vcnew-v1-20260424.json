@@ -1,0 +1,82 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-134-VCNEW-V1",
+    "registry_id": 134,
+    "word": "renewal",
+    "batch_id": "vc-134",
+    "terms_covered": [
+      6135,
+      6137
+    ],
+    "input_versions": {
+      "6135": 1,
+      "6137": 1
+    },
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_4-20260424",
+    "governing_instruction": "wa-versecontext-instruction-v3_4-20260424.md",
+    "patch_type": "VCNEW",
+    "session_b_status": null,
+    "description": "VC session vc-134 — FRESH classifications for H2500 (che.leph, preposition) and H4252 (ma.cha.laph, knife/censer). Both terms FRESH under §6.1 posture; all verses set aside under §3 filter (H2500: §3.5 grammatical particle, no_inner_being; H4252: physical_only). All-verses-fail per §6.5.5 for both terms. terms_covered declares scope for vc_status flip on apply."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189525,
+        "mti_term_id": 6135,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Administrative preposition 'in return for' linking tithe to Levite service (Num 18:21). Per VC instruction v3_4 §3.5, procedural filler in a legal/administrative text; no inner-being engagement for this term in this verse.",
+        "delete_flagged": 0
+      },
+      "description": "Num 18:21 — set aside (no_inner_being), procedural preposition in Levite-compensation instruction"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189526,
+        "mti_term_id": 6135,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Administrative preposition 'in return for' linking priestly reward to service (Num 18:31). Per VC instruction v3_4 §3.5, procedural filler in a legal/administrative text; no inner-being engagement for this term in this verse.",
+        "delete_flagged": 0
+      },
+      "description": "Num 18:31 — set aside (no_inner_being), procedural preposition in Levite-compensation instruction"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189528,
+        "mti_term_id": 6137,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Temple vessel inventory (Ezr 1:9, '29 censers'). Physical object in an accounting list of vessels returned from Babylon; no inner-being engagement. Note: verse renders target as 'censers' against STEP gloss 'knife' — lexical/translation divergence noted for Session B.",
+        "delete_flagged": 0
+      },
+      "description": "Ezr 1:9 — set aside (physical_only), temple vessel inventory"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "group_inserts": 0,
+    "verse_context_inserts_anchor": 0,
+    "verse_context_inserts_related": 0,
+    "verse_context_inserts_set_aside": 3
+  }
+}

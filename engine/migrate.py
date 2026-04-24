@@ -1809,6 +1809,58 @@ def _m38(conn: sqlite3.Connection) -> None:
     print("     M38: schema_version → 3.16.0")
 
 
+@_register("M39", "Delete NULL-skeleton verse_context rows (pre-M37 legacy seed): zero-signal rows inflated coverage and blocked VCNEW inserts on verse_record_id collision")
+def _m39(conn: sqlite3.Connection) -> None:
+    """Remove zero-signal verse_context rows that were seeded by pre-M37 legacy
+    patches but never classified.
+
+    A row is a "strict NULL skeleton" if all of the following hold:
+      - delete_flagged = 0 (still active)
+      - is_relevant = 0 AND is_anchor = 0 AND is_related = 0
+      - set_aside_reason IS NULL
+      - group_id IS NULL
+      - notes IS NULL OR notes = '' (no researcher / AI commentary)
+
+    Such rows carry zero information: they are neither a classification, nor a
+    set-aside with reason, nor a note. They were false positives for coverage
+    assessment (a verse_record with a skeleton appeared "covered" when no work
+    had been done) and they blocked legitimate VCNEW `insert` operations under
+    v3_4 because of the (mti_term_id, verse_record_id) uniqueness constraint.
+
+    Skeletons with non-empty notes (e.g. legacy "sub-term deferred to primary
+    sense" markers) are preserved — those carry provenance worth keeping.
+
+    Idempotent: subsequent runs find zero rows and are no-ops.
+    """
+    count = conn.execute(
+        "SELECT COUNT(*) FROM verse_context "
+        "WHERE delete_flagged = 0 "
+        "  AND is_relevant = 0 AND is_anchor = 0 AND is_related = 0 "
+        "  AND set_aside_reason IS NULL "
+        "  AND group_id IS NULL "
+        "  AND (notes IS NULL OR notes = '')"
+    ).fetchone()[0]
+
+    deleted = conn.execute(
+        "DELETE FROM verse_context "
+        "WHERE delete_flagged = 0 "
+        "  AND is_relevant = 0 AND is_anchor = 0 AND is_related = 0 "
+        "  AND set_aside_reason IS NULL "
+        "  AND group_id IS NULL "
+        "  AND (notes IS NULL OR notes = '')"
+    ).rowcount
+
+    print(f"     M39: deleted {deleted} strict NULL-skeleton verse_context rows (count pre-delete: {count})")
+
+    now = _now()
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)",
+        ("3.16.1", now),
+    )
+    print("     M39: schema_version → 3.16.1")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

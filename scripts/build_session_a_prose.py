@@ -684,7 +684,10 @@ def _fetch_term_by_mti_id(conn, mti_term_id: int) -> sqlite3.Row:
 
 def render_term_header(registry, term, generated_at: str, include_filter: bool,
                        has_prior_records: bool, n_active_groups: int,
-                       n_dissolved_groups: int) -> str:
+                       n_dissolved_groups: int,
+                       n_active_vc_rows: int = 0,
+                       n_deleted_vc_rows: int = 0,
+                       n_verses_total: int = 0) -> str:
     strongs = term["strongs_number"]
     trans = term["transliteration"] or "—"
     gloss = term["step_search_gloss"] or term["mti_gloss"] or "—"
@@ -700,6 +703,10 @@ def render_term_header(registry, term, generated_at: str, include_filter: bool,
     parts.append(f"**Generated:** {generated_at}  ")
     parts.append(f"**Current vc_status:** `{term['vc_status']}`"
                  + (f" — {term['vc_status_note']}" if term['vc_status_note'] else "") + "  ")
+    parts.append(f"**Existing verse_context rows:** {n_active_vc_rows} active"
+                 + (f", {n_deleted_vc_rows} soft-deleted" if n_deleted_vc_rows else "")
+                 + f" (of {n_verses_total} verses for this term).  "
+                 + "⚠ Per-verse: emit `insert` for verses with no active row; emit `update` for verses with an active row being revised. See v3_5 §2.1–§2.4 and §6.1. The per-verse state is shown in the Verses section below.  ")
     parts.append(f"**Source:** `data/bible_research.db` (deterministic render, no analytics)  ")
     parts.append("**Governing instruction:** wa-versecontext-instruction [current]  ")
     parts.append("**Produced by:** `scripts/build_session_a_prose.py --term`")
@@ -828,6 +835,11 @@ def build_one_term(conn, mti_term_id: int, include_filter: bool,
     # Prior-state counts for this single term
     n_active_groups = sum(1 for g in prior_groups if not g["delete_flagged"])
     n_dissolved_groups = sum(1 for g in prior_groups if g["delete_flagged"])
+    # verse_context row counts — drives per-verse insert vs update decision
+    # (v3_5 §2.1–§2.4).
+    n_active_vc_rows = sum(1 for r in prior_vc.values() if not r["delete_flagged"])
+    n_deleted_vc_rows = sum(1 for r in prior_vc.values() if r["delete_flagged"])
+    n_verses_total = len([v for v in verses if not v["delete_flagged"]])
     has_prior_records = bool(prior_vc) or n_active_groups > 0
 
     # Registry-wide term listing for the "Other terms" pointer section
@@ -841,7 +853,8 @@ def build_one_term(conn, mti_term_id: int, include_filter: bool,
 
     parts = [
         render_term_header(registry, term, generated_at, include_filter,
-                           has_prior_records, n_active_groups, n_dissolved_groups),
+                           has_prior_records, n_active_groups, n_dissolved_groups,
+                           n_active_vc_rows, n_deleted_vc_rows, n_verses_total),
         render_meaning_section([term_data]),
         render_verses_section([term_data], include_prior_vc),
         render_term_other_terms(registry_owner_terms, registry_xref_terms,

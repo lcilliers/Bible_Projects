@@ -630,6 +630,33 @@ def _resolve_group_id(raw_id: str, counts: dict, conn, op_id: str):
     return None
 
 
+class ApplicatorError(Exception):
+    """Raised when an applicator invariant is violated."""
+    pass
+
+
+def _exec_update_strict(conn, sql: str, params, op_id: str, table: str) -> int:
+    """Execute an UPDATE and fail loudly if no rows matched.
+
+    Silent 0-rowcount UPDATEs have caused data loss (VC-7 pilot 2026-04-24:
+    VCREVISE OP-003..OP-010 against mti=1098 NULL-skeletons that M39 had
+    already deleted; applicator reported success; researcher's classifications
+    were dropped). This helper rejects any UPDATE whose WHERE clause resolves
+    to zero rows, raising an error that rolls back the enclosing transaction.
+
+    Returns the rowcount on success.
+    """
+    cur = conn.execute(sql, params)
+    if cur.rowcount == 0:
+        raise ApplicatorError(
+            f"{op_id}: UPDATE {table} matched 0 rows — WHERE clause resolved to nothing. "
+            f"Applicator rejects silent 0-row UPDATEs per VC-7 hardening (2026-04-24). "
+            f"Verify the target row exists; if the classification is new, the patch should "
+            f"declare 'insert' not 'update'."
+        )
+    return cur.rowcount
+
+
 def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> None:
     """Apply a single operation."""
     op_id     = op.get("op_id", "?")
@@ -1133,17 +1160,36 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         print(f"  {op_id}: verse_context_group INSERT {group_code} -> id={new_id}")
 
     elif table == "verse_context_group" and operation == "update":
-        match = op["match"]
+        match = dict(op["match"])
         set_vals = dict(op["set"])
+        # Resolve group_code match to id — applicator never trusts the patch's id
+        # field if group_code is supplied (group_code is the stable semantic handle).
+        if "group_code" in match and "id" not in match:
+            mti_id = match.get("mti_term_id")
+            gc = match["group_code"]
+            existing = conn.execute(
+                "SELECT id FROM verse_context_group WHERE group_code = ? "
+                + ("AND mti_term_id = ?" if mti_id is not None else ""),
+                (gc, mti_id) if mti_id is not None else (gc,),
+            ).fetchone()
+            if not existing:
+                raise ApplicatorError(
+                    f"{op_id}: verse_context_group match group_code='{gc}'"
+                    f"{f' mti_term_id={mti_id}' if mti_id is not None else ''} "
+                    f"resolved to no row."
+                )
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         where_clauses = " AND ".join(f"{k} = ?" for k in match)
         params = list(set_vals.values()) + list(match.values())
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE verse_context_group SET {set_clauses} WHERE {where_clauses}",
             params,
+            op_id,
+            "verse_context_group",
         )
         counts["vc_groups_updated"] = counts.get("vc_groups_updated", 0) + 1
-        print(f"  {op_id}: verse_context_group UPDATE id={match.get('id', '?')}")
+        print(f"  {op_id}: verse_context_group UPDATE match={match} rows={rc}")
 
     elif table == "verse_context" and operation == "insert":
         rec = op["record"]
@@ -1195,12 +1241,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         where_clauses = " AND ".join(f"{k} = ?" for k in match)
         params = list(set_vals.values()) + list(match.values())
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE verse_context SET {set_clauses} WHERE {where_clauses}",
             params,
+            op_id,
+            "verse_context",
         )
         counts["vc_updated"] = counts.get("vc_updated", 0) + 1
-        print(f"  {op_id}: verse_context UPDATE id={match.get('id', '?')}")
+        print(f"  {op_id}: verse_context UPDATE match={match} rows={rc}")
 
     elif table == "wa_term_inventory" and operation == "update":
         match    = op["match"]

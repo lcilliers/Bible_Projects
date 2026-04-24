@@ -1,0 +1,270 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-134-VCREVISE-V1",
+    "registry_id": 134,
+    "word": "renewal",
+    "batch_id": "vc-134",
+    "terms_covered": [
+      6132,
+      1097,
+      6136,
+      1098,
+      6134
+    ],
+    "input_versions": {
+      "6132": 1,
+      "1097": 1,
+      "6136": 1,
+      "1098": 1,
+      "6134": 1
+    },
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_4-20260424",
+    "governing_instruction": "wa-versecontext-instruction-v3_4-20260424.md",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "description": "VC session vc-134 — RE-EVALUATION revisions for five terms. H2475 (6136): group 6136-001 dissolved, Prov 31:8 reassigned wrong_face per DF-001. H2487 (1098): 8 set_aside_reason backfills on prior-set-aside verses per §3.2 (Job 10:17 retained unchanged per DF-004). H4253 (6134): group 6134-001 dissolved, all three Judg 16 verses reassigned wrong_face per DF-002. G0341 (6132) and G0342 (1097) declared in terms_covered with no operations — prior state retained exactly (DF-003 Option A); applicator per §7.8 flips vc_status from terms_covered scope.",
+    "df_references": [
+      "DF-001 (Option B)",
+      "DF-002 (Option B)",
+      "DF-003 (Option A, provisional)",
+      "DF-004 (Option A)"
+    ]
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 6136,
+        "group_code": "6136-001"
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Dissolved on VC v3_4 re-evaluation — sole verse (Prov 31:8) reassigned as wrong_face per researcher DF-001 ruling 2026-04-24. Inner-being content in verse carried by imperative advocacy framing ('open your mouth for the mute'), not by cha.loph which names physical/social vulnerability."
+      },
+      "description": "Dissolve group 6136-001 — sole verse reassigned as wrong_face on re-evaluation (DF-001)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6136,
+        "verse_record_id": 189527
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: re-evaluation DF-001 (researcher ruling 2026-04-24). Inner-being content in Prov 31:8 carried by imperative advocacy framing ('open your mouth for the mute, for the rights of all who are destitute'), not by cha.loph which names the physical/social condition of the perishing. Term does not carry inner-being function in this verse. Previously classified as anchor of group 6136-001; group dissolved in same patch.",
+        "delete_flagged": 0
+      },
+      "description": "Prov 31:8 — revise from anchor to set-aside (wrong_face), per DF-001 Option B"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 36896
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Literal change(s) of clothes given as gifts (Joseph to his brothers). Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "Gen 45:22 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 36899
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Wager item ('thirty changes of clothes') in Samson's riddle. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:12 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 36900
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Same wager item in Samson's riddle conditions. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:13 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 36901
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Garments taken as wager payment. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:19 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 189490
+      },
+      "set": {
+        "set_aside_reason": "no_inner_being",
+        "notes": "Administrative labour rotation ('in shifts'); work cycle with no inner-being engagement. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 5:14 — set_aside_reason backfill (no_inner_being) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 189493
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Ten changes of clothing carried by Naaman as gift. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:5 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 189491
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Two changes of clothing in Gehazi's false request. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:22 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1098,
+        "verse_record_id": 189492
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Two changes of clothing in delivery of Naaman's gift. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:23 — set_aside_reason backfill (physical_only) per §3.2 rule"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 6134,
+        "group_code": "6134-001"
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "Dissolved on VC v3_4 re-evaluation — all three verses (Judg 16:13, 14, 19) reassigned as wrong_face per researcher DF-002 ruling 2026-04-24. Inner-being content in Samson narrative (Nazirite consecration, God-given strength) carried by narrative frame and terms for strength/vow, not by ma.cha.la.phah which names the physical braid as material sign."
+      },
+      "description": "Dissolve group 6134-001 — all verses reassigned as wrong_face on re-evaluation (DF-002)"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6134,
+        "verse_record_id": 189522
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: re-evaluation DF-002 (researcher ruling 2026-04-24). Inner-being content in Samson narrative (Nazirite consecration, God-given strength) carried by narrative frame and terms for strength/vow — not by ma.cha.la.phah which names the physical braid as material sign. Previously classified as related of group 6134-001; group dissolved in same patch.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 16:13 — revise from related to set-aside (wrong_face), per DF-002 Option B"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6134,
+        "verse_record_id": 189523
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: re-evaluation DF-002 (researcher ruling 2026-04-24). Inner-being content in Samson narrative (Nazirite consecration, God-given strength) carried by narrative frame and terms for strength/vow — not by ma.cha.la.phah which names the physical braid as material sign. Previously classified as related of group 6134-001; group dissolved in same patch.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 16:14 — revise from related to set-aside (wrong_face), per DF-002 Option B"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6134,
+        "verse_record_id": 189524
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: re-evaluation DF-002 (researcher ruling 2026-04-24). Inner-being content in Samson narrative (Nazirite consecration, God-given strength) carried by narrative frame and terms for strength/vow — not by ma.cha.la.phah which names the physical braid as material sign. Previously classified as anchor of group 6134-001; group dissolved in same patch.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 16:19 — revise from anchor to set-aside (wrong_face), per DF-002 Option B"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 14,
+    "group_updates_description": 0,
+    "group_dissolves": 2,
+    "verse_context_updates": 12,
+    "anchor_promotions": 0,
+    "anchor_demotions": 2,
+    "set_aside_reason_backfills": 8,
+    "wrong_face_revisions": 4
+  }
+}

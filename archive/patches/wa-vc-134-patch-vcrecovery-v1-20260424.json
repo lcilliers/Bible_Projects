@@ -1,0 +1,165 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-134-VCRECOVERY-V1",
+    "registry_id": 134,
+    "word": "renewal",
+    "batch_id": "vc-134",
+    "terms_covered": [
+      1098
+    ],
+    "input_versions": {
+      "1098": 2
+    },
+    "produced_date": "20260424",
+    "produced_by": "Claude Code (recovery of lost VCREVISE OP-003..OP-010)",
+    "governing_instruction": "wa-versecontext-instruction-v3_4-20260424.md",
+    "patch_type": "VCNEW",
+    "session_b_status": null,
+    "description": "CC-produced recovery patch. The original VCREVISE (PATCH-20260424-134-VCREVISE-V1) declared 8 UPDATE ops targeting mti=1098 NULL-skeleton rows for set_aside_reason backfill. M39 (deleted 22,333 strict NULL-skeleton verse_context rows) ran before VCREVISE and removed those target rows, so the 8 UPDATE ops matched 0 rows silently. This recovery patch re-expresses those 8 classifications as INSERT operations so the researcher's explicit set-aside decisions are recorded. vc_status is already vc_completed for mti=1098 and md_version=2; applicator will re-validate and bump md_version to 3 on apply."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 36896,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Literal change(s) of clothes given as gifts (Joseph to his brothers). Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-003 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "Gen 45:22 — set-aside (physical_only), recovered from VCREVISE OP-003"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 36899,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Wager item ('thirty changes of clothes') in Samson's riddle. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-004 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:12 — set-aside (physical_only), recovered from VCREVISE OP-004"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 36900,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Same wager item in Samson's riddle conditions. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-005 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:13 — set-aside (physical_only), recovered from VCREVISE OP-005"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 36901,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Garments taken as wager payment. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-006 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 14:19 — set-aside (physical_only), recovered from VCREVISE OP-006"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189490,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Administrative labour rotation ('in shifts'); work cycle with no inner-being engagement. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-007 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 5:14 — set-aside (no_inner_being), recovered from VCREVISE OP-007"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189493,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Ten changes of clothing carried by Naaman as gift. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-008 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:5 — set-aside (physical_only), recovered from VCREVISE OP-008"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189491,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Two changes of clothing in Gehazi's false request. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-009 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:22 — set-aside (physical_only), recovered from VCREVISE OP-009"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 189492,
+        "mti_term_id": 1098,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Two changes of clothing in delivery of Naaman's gift. Reason backfilled on VC v3_4 re-evaluation per §3.2 — set_aside_reason was NULL from pre-VCB-032 classification. Verse remains set aside; no change in is_relevant state. Recorded via VCRECOVERY after VCREVISE OP-010 lost on M39 cleanup.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:23 — set-aside (physical_only), recovered from VCREVISE OP-010"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 8,
+    "verse_context_inserts_set_aside": 8,
+    "verse_context_inserts_anchor": 0,
+    "verse_context_inserts_related": 0,
+    "group_inserts": 0
+  }
+}

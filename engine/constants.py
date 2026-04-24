@@ -16,7 +16,9 @@ Shared constants for the Session A v9 Automation Engine.
 # Bumped 2026-04-24 for M38 (vc_status vocabulary cleanup — 'complete' -> 'vc_completed',
 # 'approved' dropped; mti_terms.md_version column added for version-gating patch freshness
 # per A-02 + A-03 resolutions).
-EXPECTED_SCHEMA_VERSION = "3.16.0"
+# Bumped 2026-04-24 for M39 (delete NULL-skeleton verse_context rows — legacy pre-M37 seed
+# cleanup; resolves coverage false-positives and VCNEW insert collisions).
+EXPECTED_SCHEMA_VERSION = "3.16.1"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
