@@ -1,0 +1,25 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-PROSE-PROGRAMME-INSTR-VERSE-CONTEXT-SUPERSEDE-V1",
+    "produced_date": "20260424",
+    "produced_by": "claude_code session 2026-04-24 — Ask (c) of VC alignment analysis v2",
+    "patch_type": "PROSE",
+    "session_b_status": null,
+    "description": "Supersede prog_instr_verse_context v1 (212 words, operational-mixed) with v2 (~480 words, governance-narrative). v2 states what VC is, why it exists, the two disciplines that make it trustworthy (term-level filter + characteristic-perspective grouping), the completion criterion (OWNER + XREF inheritance), and adds a closing sentence on re-runnability now that re-evaluation discipline is formalised in VC instruction v3_0. Drops mechanical details (batch JSON, observations log, flags register, patch format, re-export trigger) which now live only in the VC instruction and stay true across instruction versions. v1 row id=46 retained via supersedes_id linkage."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "supersede",
+      "table": "prose_section",
+      "supersedes_id": 46,
+      "record": {
+        "heading": "Verse Context",
+        "body": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebrew or Greek term the programme investigates — every OWNER term in the registry — a reader passes through all of the verses in which that term occurs in the ESV and asks a single question about each verse: does this verse, through the use of this term, say something about the inner being? The verses that answer yes are grouped by the inner-being characteristic they engage; one or two verses in each group are designated as anchors — verses that make the group's meaning evident without requiring surrounding context. The verses that answer no are set aside with a controlled reason (purely physical, purely spatial, purely narrative, or wrong-face — the verse carries inner-being content but through a different term). Classification is uniform across the programme; every OWNER term is treated identically regardless of its registry.\n\nVerse Context is explicitly not the interpretive stage. It does not analyse the term in depth, does not draw conclusions about the word being studied, does not assign evidential weight, and does not place terms on dimensions or into cross-registry syntheses. All of that is downstream work, and downstream work reads from the classifications Verse Context produces — the groups, the group descriptions, the anchors, the set-asides. What Verse Context produces is the evidential substrate on which Session B, Session C, and Session D all rest.\n\nTwo disciplines make Verse Context trustworthy as evidence. The first is that the filter operates at term level, not at verse level: a verse about covenant renewal may use a given term in a purely legal sense with no inner-being engagement through that specific term — the verse's overall theme does not admit the term to the registry if the term itself does not carry inner-being content there. The second is that groups are formed from the perspective of the inner-being characteristic the verse cluster is primarily about, not from what the term does — so a property term that serves different characteristics across its corpus is grouped by the characteristic it serves in each cluster, not by the term's grammatical or syntactic behaviour. Both disciplines trace directly to the evidence-first principle: the programme's findings are the programme's findings only if the verses, read at term level, under characteristic-perspective grouping, support them.\n\nA registry's Verse Context work is complete when every one of its OWNER terms has been classified and every one of its XREF terms has an OWNER whose classification is complete. At that point the registry's evidential substrate is intact and the programme moves the word into Dimension Review and then into the interpretive stages. Without Verse Context complete, no interpretive claim about a word can be grounded; that is the reason Verse Context precedes everything downstream.\n\nBecause a registry may be reset — when a downstream change obsoletes prior classifications, when the filter and grouping model have evolved, or when new evidence requires a fresh reading — Verse Context runs are re-runnable. The stage's record is the current classification; every prior classification is subject to review when the work is re-opened. A re-evaluation carries a stricter discipline than a fresh run: every pre-existing classification is reviewed against the current method; every pre-existing group is accounted for at close (retained with verses, dissolved, or carried without verses with a documented reason); no prior record is left unexamined by implicit pass-through. The record is always what the current work supports, and what the current work supports is always traceable to the verses.",
+        "status": "draft",
+        "author": "claude_code",
+        "source_file": "outputs/investigations/vc-instruction-session-a-md-alignment-v2-20260424.md"
+      }
+    }
+  ]
+}

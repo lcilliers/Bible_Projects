@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated_at": "2026-04-24T04:09:08Z",
+    "generated_at": "2026-04-24T05:13:55Z",
     "schema_version": "3.14.0",
     "extractor_version": "1.1",
     "source": "prose_section_type WHERE source_stage='programme' (M34 live, 2026-04-20)",
@@ -1300,20 +1300,20 @@
         "section_count": 1,
         "sections_preview": [
           {
-            "id": 46,
+            "id": 53,
             "registry_id": null,
             "heading": "Verse Context",
             "status": "draft",
-            "version": 1,
-            "author": "claude_ai",
-            "word_count": 212,
-            "created_at": "2026-04-23T13:22:28Z",
+            "version": 2,
+            "author": "claude_code",
+            "word_count": 595,
+            "created_at": "2026-04-24T05:13:54Z",
             "approved_at": null,
-            "supersedes_id": null
+            "supersedes_id": 46
           }
         ],
         "bodies_by_id": {
-          "46": "The Verse Context instruction governs the stage between Session A and Dimension Review. It covers the full cycle for a batch of words: the construction of the batch JSON from the Session A exports, the reading of every verse for every active OWNER term in the batch, the term-level relevance filter that decides which verses engage the inner being through the term, the contextual grouping that organises the relevant verses by characteristic, the anchor designation that names the primary verse for each group, and the patch production that populates the `verse_context_group` and `verse_context` tables.\n\nThe instruction distinguishes clearly between what Verse Context does and what it does not. It classifies verses and groups them; it does not analyse the meaning of the terms at depth — that is Session B's work. It produces the anchor citations Session B will use; it does not draw conclusions from them.\n\nThe stage operates in batches — typically tens of registries at a time — with each batch producing its own observations log, flags register, session log, and verse-context patch. At batch completion, Claude Code applies the patch, advances `verse_context_status` to Complete for every registry in the batch, and re-exports the full word JSON for each completed registry. This re-export is the trigger for Dimension Review."
+          "53": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebrew or Greek term the programme investigates — every OWNER term in the registry — a reader passes through all of the verses in which that term occurs in the ESV and asks a single question about each verse: does this verse, through the use of this term, say something about the inner being? The verses that answer yes are grouped by the inner-being characteristic they engage; one or two verses in each group are designated as anchors — verses that make the group's meaning evident without requiring surrounding context. The verses that answer no are set aside with a controlled reason (purely physical, purely spatial, purely narrative, or wrong-face — the verse carries inner-being content but through a different term). Classification is uniform across the programme; every OWNER term is treated identically regardless of its registry.\n\nVerse Context is explicitly not the interpretive stage. It does not analyse the term in depth, does not draw conclusions about the word being studied, does not assign evidential weight, and does not place terms on dimensions or into cross-registry syntheses. All of that is downstream work, and downstream work reads from the classifications Verse Context produces — the groups, the group descriptions, the anchors, the set-asides. What Verse Context produces is the evidential substrate on which Session B, Session C, and Session D all rest.\n\nTwo disciplines make Verse Context trustworthy as evidence. The first is that the filter operates at term level, not at verse level: a verse about covenant renewal may use a given term in a purely legal sense with no inner-being engagement through that specific term — the verse's overall theme does not admit the term to the registry if the term itself does not carry inner-being content there. The second is that groups are formed from the perspective of the inner-being characteristic the verse cluster is primarily about, not from what the term does — so a property term that serves different characteristics across its corpus is grouped by the characteristic it serves in each cluster, not by the term's grammatical or syntactic behaviour. Both disciplines trace directly to the evidence-first principle: the programme's findings are the programme's findings only if the verses, read at term level, under characteristic-perspective grouping, support them.\n\nA registry's Verse Context work is complete when every one of its OWNER terms has been classified and every one of its XREF terms has an OWNER whose classification is complete. At that point the registry's evidential substrate is intact and the programme moves the word into Dimension Review and then into the interpretive stages. Without Verse Context complete, no interpretive claim about a word can be grounded; that is the reason Verse Context precedes everything downstream.\n\nBecause a registry may be reset — when a downstream change obsoletes prior classifications, when the filter and grouping model have evolved, or when new evidence requires a fresh reading — Verse Context runs are re-runnable. The stage's record is the current classification; every prior classification is subject to review when the work is re-opened. A re-evaluation carries a stricter discipline than a fresh run: every pre-existing classification is reviewed against the current method; every pre-existing group is accounted for at close (retained with verses, dissolved, or carried without verses with a documented reason); no prior record is left unexamined by implicit pass-through. The record is always what the current work supports, and what the current work supports is always traceable to the verses."
         }
       },
       {
