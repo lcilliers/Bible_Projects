@@ -1,6 +1,6 @@
 # WA Programme-Stage Prose — 2026-04-24
 
-_Schema 3.14.0 · source: `prose_section_type` + `prose_section`._
+_Schema 3.15.0 · source: `prose_section_type` + `prose_section`._
 
 ---
 
@@ -986,13 +986,15 @@ _`prog_instr_session_a`  ·  type id 70  ·  sort 116_
 
 > The Session A pipeline-stage instruction — mechanical extraction of Hebrew/Greek term data from STEP Bible into the database, audit_word reconciliation, assembly of the complete word data export, and handoff to Verse Context. Entry point of the analytical pipeline. Currently exists in Word document form (v8); migration to markdown pending.
 
-*Section id 52 · status `draft` · v2 · 592 words · author `claude_code`*
+*Section id 54 · status `draft` · v3 · 661 words · author `claude_code`*
 
 Session A is the first analytical stage of the programme pipeline. It governs the mechanical extraction of Hebrew and Greek term data from STEP Bible into the database, the reconciliation of that data through the `audit_word` process, the assembly of the complete per-word record that downstream stages consume, and the handoff to Verse Context. The stage is mechanical in character: it runs primarily through Claude Code operations against STEP data, produces the structured records that populate `wa_term_inventory`, `mti_terms`, `wa_verse_records`, and the supporting tables, and renders the per-word data into a self-contained form that the rest of the pipeline reads. Interpretive judgement does not enter this stage; all analytical work is downstream.
 
 The data this stage produces has a strict content boundary. Session A carries **only what STEP Bible and the engine extract can generate deterministically** — Strong's numbers, glosses, transliterations, lexical entries, verse text, verse references, span confirmation, quality flags derived from counts and structural checks. Session A carries **none** of the products of later stages: no Verse Context classifications, no dimensional placements, no Session B findings, no Session D synthesis, no Session C narrative. This boundary is the foundation of every downstream stage's integrity. A classifier reading Session A data must not see the conclusions that a classifier is expected to reach; an analyst reading Session A data must not see the analytical frames they are expected to build. Session A is the evidence layer, not an interpretation of the evidence.
 
-The programme has held three artefact representations of Session A data at different points in its history. The earliest, surviving as 44 JSON files in `data/imports/WA/Session_A_Data/`, was produced by Claude AI in the programme's first weeks before the extraction engine existed; those files are now legacy and preserved for provenance only. They have been superseded in operational use by the engine's `--export-word` output in `data/exports/STEP Extracts/`, which renders the database's per-word state as JSON and is the form the Verse Context batch builder reads from. The third and current representation — emerging as the database-as-memory principle is carried into Session A — is the per-word `.md` produced by `scripts/build_session_a_prose.py` (when implemented), which renders the same underlying data as a single self-contained markdown document. The `.md` form is the input Verse Context is moving towards: a human- and AI-readable document containing all the data for one word, composed under the six Session A prose handles (Word Summary, Meaning, Verses, Terms, Pointers, Questions), read without requiring the AI to query the database at classification time. The three representations are views onto the same state; the database is the canonical source, and the three forms differ only in audience and moment of use.
+The programme has held three artefact representations of Session A data at different points in its history. The earliest, surviving as 44 JSON files in `data/imports/WA/Session_A_Data/`, was produced by Claude AI in the programme's first weeks before the extraction engine existed; those files are now legacy and preserved for provenance only. They have been superseded in operational use by the engine's `--export-word` output in `data/exports/STEP Extracts/`, which renders the database's per-word state as JSON. The third and current representation — emerging as the database-as-memory principle is carried into Session A — is the `.md` produced by `scripts/build_session_a_prose.py`, which renders the same underlying data as a self-contained markdown document. The three representations are views onto the same state; the database is the canonical source, and the three forms differ only in audience and moment of use.
+
+The Session A `.md` renderer produces two complementary views from the same per-term building blocks. The **per-term view** — one `.md` per OWNER term, under `data/exports/session_a/terms/` — is the primary input to Verse Context classification. The term is the atomic unit of VC (the filter is applied term-by-term, grouping is term-level, anchors are term-level, and classification keys on `mti_term_id`); the per-term `.md` presents the term in the scope the method actually operates on. The **per-registry view** — one `.md` per registry, under `data/exports/session_a/` — is a hybrid secondary view retained for human review, for researcher-driven overviews, and for downstream stages that work at registry scope (Dimension Review, Session B). Both views are faithful to the same underlying database state; both can be regenerated at any time; both carry the strict content boundary described above.
 
 Session A is the entry point of the analytical pipeline. Every word the programme investigates passes through this stage before any interpretive work begins; the data Session A produces is the substrate that Verse Context, Dimension Review, Session B, Session C, and Session D all read from. The discipline of Session A — mechanical, boundary-respecting, reproducible from STEP and the database rather than from session memory — is what allows the downstream stages to be interpretive without being unsourced. Every finding of the programme traces back here.
 
@@ -1094,4 +1096,4 @@ Session D is the interpretive, synthetic, and constructive phase of the programm
 
 
 ---
-*Generated 2026-04-24T05:13:55Z.*
+*Generated 2026-04-24T08:40:11Z.*
