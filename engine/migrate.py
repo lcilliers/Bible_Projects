@@ -1760,6 +1760,55 @@ def _m37(conn: sqlite3.Connection) -> None:
     print("     M37: schema_version → 3.15.0")
 
 
+@_register("M38", "Per-term VC vocabulary cleanup + md_version tracking: rename 'complete' -> 'vc_completed', drop 'approved' from vc_status; add mti_terms.md_version for freshness gating")
+def _m38(conn: sqlite3.Connection) -> None:
+    """Vocabulary and version-gating schema update (alignment analysis A-02 + A-03).
+
+    A-02: remove 'approved' from the vc_status controlled vocabulary; rename
+    'complete' to 'vc_completed' so the state is explicit about what it means
+    (VC-specific completion, not some broader cross-stage 'approved').
+
+    A-03: add mti_terms.md_version — an integer counter that tracks which
+    Session A `.md` version was last produced from this term's DB state. The
+    applicator compares a patch's declared input_version per term against this
+    column; mismatch rejects the patch as stale. Bumped on successful apply
+    (so the old .md is now stale for the next session) and by future data-
+    changing events (audit_word re-runs; directives).
+
+    Backfill: existing rows with vc_status = 'complete' (there are none in
+    production today — every row is 'not_done' or 'to_revise' post M37) would
+    be UPDATEd to 'vc_completed'. Done idempotently.
+    """
+    cols = {r[1] for r in conn.execute("PRAGMA table_info(mti_terms)")}
+
+    # 1. Rename 'complete' -> 'vc_completed'
+    renamed = conn.execute(
+        "UPDATE mti_terms SET vc_status = 'vc_completed' WHERE vc_status = 'complete'"
+    ).rowcount
+    print(f"     M38: renamed {renamed} rows vc_status='complete' -> 'vc_completed'")
+
+    # 2. Drop 'approved' -> fold any such rows back to 'vc_completed' (the
+    # natural terminal state under the simplified vocab). No rows expected.
+    folded = conn.execute(
+        "UPDATE mti_terms SET vc_status = 'vc_completed' WHERE vc_status = 'approved'"
+    ).rowcount
+    print(f"     M38: folded {folded} rows vc_status='approved' -> 'vc_completed' (approved dropped from vocab)")
+
+    # 3. Add md_version column
+    if "md_version" not in cols:
+        conn.execute("ALTER TABLE mti_terms ADD COLUMN md_version INTEGER NOT NULL DEFAULT 1")
+        print("     M38: added mti_terms.md_version INTEGER NOT NULL DEFAULT 1")
+
+    # 4. Schema version bump
+    now = _now()
+    conn.execute(
+        "UPDATE schema_version SET version_code = ?, applied_at = ? "
+        "WHERE id = (SELECT MAX(id) FROM schema_version)",
+        ("3.16.0", now),
+    )
+    print("     M38: schema_version → 3.16.0")
+
+
 # ── Runner ────────────────────────────────────────────────────────────────────
 
 def check_version(conn) -> tuple[str | None, bool]:

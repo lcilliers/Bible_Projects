@@ -3,8 +3,9 @@
 **Registry:** 134 renewal  
 **mti_term_id:** 6136  
 **Language:** Hebrew  
+**md_version:** `v1`  ⚠ the patch's `_patch_meta.input_versions[6136]` must equal `1` at submission time or the applicator will reject it as stale (A-03 version gate).  
+**Generated:** 2026-04-24 11:39  
 **Current vc_status:** `not_done`  
-**Generated:** 2026-04-24 09:38  
 **Source:** `data/bible_research.db` (deterministic render, no analytics)  
 **Governing instruction:** wa-versecontext-instruction [current]  
 **Produced by:** `scripts/build_session_a_prose.py --term`

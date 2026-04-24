@@ -160,36 +160,81 @@ def _resolve_inserted_finding(label: str) -> int | None:
 
 def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
     """Post-apply step for VC patches (alignment analysis v4 §8.2; patch
-    instruction v2_5 §15).
+    instruction [current] §15; A-02 + A-03 resolutions 2026-04-24).
 
     Runs after operations apply for patch_type in (VERSECONTEXT, VCNEW,
     VCREVISE). VCSBFLAGS and VCSDPOINTERS do not call this helper — they
     touch only wa_session_research_flags and make no classification
     state changes.
 
-    For every term in `_patch_meta.terms_covered`:
-      1. Verify R4 holds (at least one active anchor) via a DB read —
-         or the all-verses-fail case where the term has zero active
-         relevant rows (§6.5.5 of VC instruction).
-      2. Set `mti_terms.vc_status = 'complete'`, record
-         `vc_instruction_version` + `vc_status_updated_at`.
-    Then derive the set of affected registries:
-      - Registries that own any of the covered terms.
-      - Registries that reference any of the covered terms as XREF.
-    For each, run the completion check:
-      - All OWNER terms (active, with verses) at vc_status IN ('complete',
-        'approved')?
-      - All XREF terms have their OWNER at vc_status IN ('complete',
-        'approved')?
-    If both, set `word_registry.verse_context_status = 'Complete'`.
+    Two gates run BEFORE any state change:
 
-    Raises on validation failure — the enclosing transaction then rolls back.
+    **Version gate (A-03):** for every term_id in _patch_meta.terms_covered,
+    the patch's declared `input_versions[{term_id}]` must match the current
+    `mti_terms.md_version` in the DB. If any term's input_version does not
+    match, the patch is rejected as stale — the DB state changed since the
+    .md this classification was built against, and the classification may
+    not reflect current reality.
+
+    **Anchor gate (R4):** every term must have at least one active anchor
+    after apply, except the all-verses-fail case where zero active relevant
+    rows is legitimate (§6.5.5).
+
+    On both gates passing, for every term in terms_covered:
+      - Set mti_terms.vc_status = 'vc_completed' (A-02: was 'complete';
+        'approved' no longer in vocab)
+      - Record vc_instruction_version + vc_status_updated_at
+      - **Bump md_version** — the data has changed; any pre-existing .md is
+        now stale and a fresh render is needed before the next session.
+
+    Then derive affected registries (OWNER + XREF-via-OWNER) and run the
+    aggregate completion check: all OWNER terms (active, with verses) at
+    vc_status = 'vc_completed'? all XREF terms' OWNER at vc_completed?
+    If both, set word_registry.verse_context_status = 'Complete'.
+
+    Raises on validation failure — the enclosing transaction rolls back.
     """
     patch_type = meta.get("patch_type", "VERSECONTEXT")
     terms_covered = meta.get("terms_covered") or []
     if not terms_covered:
-        # Validation upstream should have caught this; double-check.
         raise ValueError(f"{patch_type} patch missing _patch_meta.terms_covered")
+
+    # Version gate (A-03)
+    input_versions = meta.get("input_versions") or {}
+    # JSON keys are strings; normalise to int → int map
+    try:
+        input_versions = {int(k): int(v) for k, v in input_versions.items()}
+    except (TypeError, ValueError) as e:
+        raise ValueError(
+            f"{patch_type} patch _patch_meta.input_versions must be a "
+            f"map of {{mti_term_id: int -> md_version: int}}; got: {meta.get('input_versions')!r} ({e})"
+        )
+
+    missing_versions = [tid for tid in terms_covered if tid not in input_versions]
+    if missing_versions:
+        raise ValueError(
+            f"{patch_type} patch _patch_meta.input_versions is missing entries "
+            f"for term(s): {missing_versions}. Every term in terms_covered must "
+            "declare its input md_version (A-03 version gate)."
+        )
+
+    for term_id in terms_covered:
+        current_md_version = conn.execute(
+            "SELECT md_version FROM mti_terms WHERE id = ?", (term_id,)
+        ).fetchone()
+        if not current_md_version:
+            raise ValueError(f"mti_term_id={term_id} not found in mti_terms")
+        current_md_version = current_md_version[0]
+        declared_version = input_versions[term_id]
+        if declared_version != current_md_version:
+            raise ValueError(
+                f"{patch_type} patch for mti_term_id={term_id} declares "
+                f"input_version={declared_version} but current DB md_version="
+                f"{current_md_version}. The Session A .md this classification "
+                "was built against is stale (DB state changed in between). "
+                "Regenerate the .md, reclassify, and resubmit the patch "
+                "(A-03 version gate)."
+            )
 
     governing = meta.get("governing_instruction") or "unknown"
     now = _now()
@@ -215,19 +260,21 @@ def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
             ).fetchone()[0]
             if active_relevant > 0:
                 raise ValueError(
-                    f"VERSECONTEXT patch leaves mti_term_id={term_id} with "
+                    f"{patch_type} patch leaves mti_term_id={term_id} with "
                     f"{active_relevant} relevant verse(s) but no active anchor "
                     "(R4 integrity failure)"
                 )
             # All-verses-fail case — flag but still mark complete per §6.5.5
             terms_skipped_no_anchor += 1
 
+        # Write vc_completed (A-02: renamed from 'complete'); bump md_version.
         conn.execute(
             """UPDATE mti_terms
-                  SET vc_status = 'complete',
+                  SET vc_status = 'vc_completed',
                       vc_instruction_version = ?,
                       vc_status_updated_at = ?,
-                      vc_status_note = NULL
+                      vc_status_note = NULL,
+                      md_version = md_version + 1
                 WHERE id = ?""",
             (governing, now, term_id),
         )
@@ -279,7 +326,7 @@ def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
                   AND mt.status IN ('extracted', 'extracted_thin')
                   AND EXISTS (SELECT 1 FROM wa_verse_records vr
                                WHERE vr.term_inv_id = ti.id AND vr.delete_flagged = 0)
-                  AND mt.vc_status NOT IN ('complete', 'approved')""",
+                  AND mt.vc_status != 'vc_completed'""",
             (reg_no,),
         ).fetchone()[0]
         # XREF terms whose OWNER is incomplete
@@ -292,7 +339,7 @@ def _apply_versecontext_term_updates(conn, meta: dict, counts: dict) -> None:
                 WHERE wr.no = ?
                   AND ti.term_owner_type = 'XREF'
                   AND ti.delete_flagged = 0
-                  AND mt.vc_status NOT IN ('complete', 'approved')""",
+                  AND mt.vc_status != 'vc_completed'""",
             (reg_no,),
         ).fetchone()[0]
         if owner_incomplete == 0 and xref_incomplete == 0:

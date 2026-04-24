@@ -665,7 +665,8 @@ def _fetch_term_by_mti_id(conn, mti_term_id: int) -> sqlite3.Row:
         SELECT ti.*, mt.id AS mti_term_id, mt.status AS mti_status,
                mt.owning_registry_fk, mt.owning_word, mt.gloss AS mti_gloss,
                mt.vc_status, mt.vc_instruction_version,
-               mt.vc_status_updated_at, mt.vc_status_note
+               mt.vc_status_updated_at, mt.vc_status_note,
+               mt.md_version
         FROM mti_terms mt
         JOIN wa_term_inventory ti ON ti.strongs_number = mt.strongs_number
         WHERE mt.id = ?
@@ -687,14 +688,18 @@ def render_term_header(registry, term, generated_at: str, include_filter: bool,
     strongs = term["strongs_number"]
     trans = term["transliteration"] or "—"
     gloss = term["step_search_gloss"] or term["mti_gloss"] or "—"
+    # A-03: md_version must be stamped into the header — the patch's
+    # input_version gate compares this value to mti_terms.md_version at apply.
+    md_version = term["md_version"] if "md_version" in term.keys() else 1
     parts = [f"# Session A — Term `{strongs}` *{trans}* — {gloss}"]
     parts.append("")
     parts.append(f"**Registry:** {registry['no']:03d} {registry['word']}  ")
     parts.append(f"**mti_term_id:** {term['mti_term_id']}  ")
     parts.append(f"**Language:** {term['language']}  ")
+    parts.append(f"**md_version:** `v{md_version}`  ⚠ the patch's `_patch_meta.input_versions[{term['mti_term_id']}]` must equal `{md_version}` at submission time or the applicator will reject it as stale (A-03 version gate).  ")
+    parts.append(f"**Generated:** {generated_at}  ")
     parts.append(f"**Current vc_status:** `{term['vc_status']}`"
                  + (f" — {term['vc_status_note']}" if term['vc_status_note'] else "") + "  ")
-    parts.append(f"**Generated:** {generated_at}  ")
     parts.append(f"**Source:** `data/bible_research.db` (deterministic render, no analytics)  ")
     parts.append("**Governing instruction:** wa-versecontext-instruction [current]  ")
     parts.append("**Produced by:** `scripts/build_session_a_prose.py --term`")

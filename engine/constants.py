@@ -13,7 +13,10 @@ Shared constants for the Session A v9 Automation Engine.
 # Bumped 2026-04-24 for M37 (per-term VC progress fields on mti_terms — vc_status,
 # vc_instruction_version, vc_status_updated_at, vc_status_note; per-term model approved
 # in alignment analysis v4 §8.1).
-EXPECTED_SCHEMA_VERSION = "3.15.0"
+# Bumped 2026-04-24 for M38 (vc_status vocabulary cleanup — 'complete' -> 'vc_completed',
+# 'approved' dropped; mti_terms.md_version column added for version-gating patch freshness
+# per A-02 + A-03 resolutions).
+EXPECTED_SCHEMA_VERSION = "3.16.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
