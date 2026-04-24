@@ -4,7 +4,15 @@
 > Version: v2_7 | Date: 20260424
 > Supersedes: wa-patch-instruction-v2_6-20260424.md
 >
-> **v2_7 (20260424):** Corrects the match-shape examples in §12.4 and §12.5 that previously required the integer `id` of `verse_context_group` or `verse_context` rows. The classifier cannot supply those ids from the per-term Session A `.md` — it only sees `mti_term_id`, `group_code`, and `verse_record_id`. v2_7 documents the correct match shapes: `verse_context_group` UPDATE matches on `{mti_term_id, group_code}`; `verse_context` UPDATE matches on `{mti_term_id, verse_record_id}` — the latter is DB-unique (enforced by `sqlite_autoindex_verse_context_1`). The applicator always accepted both shapes via `_resolve_group_id` and the per-verse uniqueness index; only the doc was wrong, which caused session stoppages before the v3_5 roll-out. Also propagates the A-06 rowcount-gate behaviour from VC instruction v3_5 §7.8: UPDATE ops on `verse_context` and `verse_context_group` that match 0 rows are rejected by `_exec_update_strict`, transaction rolls back, REPAIR-FAILURE patch produced. Editorial-only correction plus rowcount-gate documentation; no semantic change from v2_6.
+> **v2_7 (20260424):** Three additions over v2_6, all landing same-day 2026-04-24.
+>
+> (1) **Match-shape fix in §12.4 and §12.5** — previous examples required the integer `id` of `verse_context_group` or `verse_context` rows. The classifier cannot supply those ids from the per-term Session A `.md`. v2_7 documents the correct shapes: `verse_context_group` UPDATE matches on `{mti_term_id, group_code}`; `verse_context` UPDATE matches on `{mti_term_id, verse_record_id}` — the latter is DB-unique (enforced by `sqlite_autoindex_verse_context_1`). The applicator always accepted these via `_resolve_group_id` and the uniqueness index; only the doc was wrong, which caused session stoppages before the v3_5 roll-out.
+>
+> (2) **A-06 rowcount-gate documentation** — propagates the hardening from VC instruction v3_5 §7.8: UPDATE ops on `verse_context` and `verse_context_group` that match 0 rows are rejected by `_exec_update_strict`, transaction rolls back, REPAIR-FAILURE patch produced. Documented in §15.3.
+>
+> (3) **A-08 empty-ops VCREVISE pattern** — new §15.3a formalises the no-change re-evaluation shape. A VCREVISE with `operations: []` and `terms_covered` populated is the authoritative way to record "term reviewed, no changes needed." The applicator runs the version gate, writes `vc_status = 'vc_completed'` per term, and bumps `md_version` — identical to populated VCREVISE behaviour, verified live 2026-04-24. This replaces the pre-v2_7 cosmetic-notes-stamp workaround. See VC instruction v3_5 §7.9.3b for the methodology rationale.
+>
+> All three are editorial / clarification changes; no semantic change from v2_6 behaviour. The applicator already did what v2_7 describes.
 >
 > **v2_6 (20260424):** Adds the A-03 version-gate support to §15 VCNEW and VCREVISE: `_patch_meta.input_versions` is now a required field — a map of `{mti_term_id: md_version}` declaring the per-term `.md` version the classifier worked from. The applicator rejects any patch whose declared input_version for any term does not match the current DB `mti_terms.md_version`; on successful apply, the version is bumped so any pre-existing `.md` is stale. `_patch_meta.batch_id` is reclassified as optional (A-04). VCSBFLAGS/VCSDPOINTERS do not require input_versions. v2_5 content otherwise unchanged.
 > Governed by: wa-global-general-rules [current]
@@ -1584,18 +1592,20 @@ Each patch is applied in its own transaction. A failure in any one patch does no
 }
 ```
 
-### 15.3 VCREVISE — revisions to existing classifications
+### 15.3 VCREVISE — revisions to existing classifications (or no-change confirmation)
 
-**Purpose:** update existing `verse_context_group` and `verse_context` rows — revise group descriptions, dissolve groups (`delete_flagged = 1`), reclassify verses (move between groups, change relevance, promote/demote anchors).
+**Purpose:** either (a) update existing `verse_context_group` and `verse_context` rows — revise group descriptions, dissolve groups (`delete_flagged = 1`), reclassify verses; or (b) confirm a re-evaluation that concluded no changes are needed — the **empty-ops VCREVISE** pattern (v2_7 formalised 2026-04-24; see §15.3a).
 
 **Required `_patch_meta` fields:**
 
-- `terms_covered` — array of `mti_term_id`s being revised.
+- `terms_covered` — array of `mti_term_id`s covered by the session (revised AND no-change terms).
 - `input_versions` — **required (A-03 version gate)** — map `{mti_term_id: md_version}`. Same contract as VCNEW: applicator rejects on stale mismatch; bumps on apply.
 - `governing_instruction` — filename of the governing VC instruction version.
 - `batch_id` — **optional (A-04)**.
 
-**Supported operations:** `update` on `verse_context_group` (including setting `delete_flagged = 1`), `update` on `verse_context`. No `insert` operations in VCREVISE (those belong in VCNEW).
+**Supported operations:** `update` on `verse_context_group` (including setting `delete_flagged = 1`), `update` on `verse_context`. No `insert` operations in VCREVISE (those belong in VCNEW). **Operations list may be empty** — see §15.3a.
+
+**Match-shape rules (v2_7):** `verse_context_group` UPDATE matches on `{mti_term_id, group_code}`. `verse_context` UPDATE matches on `{mti_term_id, verse_record_id}`. Match on the integer `id` field is not supported for these two tables — those ids are database internals the classifier cannot see from the per-term Session A `.md`. The applicator rejects any UPDATE matching 0 rows (A-06 rowcount gate).
 
 **Applicator behaviour:** same version gate and aggregation logic as VCNEW. Validates per-term R1–R4 + orphan-group + coverage for each term in `terms_covered`. On success: writes `vc_status = 'vc_completed'` (or retains it if already at that state), updates `vc_instruction_version` + `vc_status_updated_at`, and bumps `md_version`. Term-state downgrade (e.g. to `'to_revise'`) is not a VCREVISE effect; that is a separate directive.
 
@@ -1610,6 +1620,56 @@ Each patch is applied in its own transaction. A failure in any one patch does no
     "verse_context_updates": 4,
     "anchor_promotions": 1,
     "anchor_demotions": 1
+  }
+}
+```
+
+### 15.3a Empty-ops VCREVISE — no-change re-evaluation (v2_7)
+
+A VCREVISE patch with an **empty operations list** is a legitimate and preferred pattern when a re-evaluation session concludes that no changes are needed for one or more terms. See VC instruction v3_5 §7.9.3b for the full methodology rationale.
+
+**Semantics:** "I reviewed these terms under v3_5; all classifications, groups, anchors, and set-asides are correct; no database changes are required; advance `vc_status` to `vc_completed` and bump `md_version`."
+
+**Shape:**
+
+```json
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-096-VCREVISE-V1",
+    "registry_id": 96,
+    "word": "jealousy",
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_5-20260424.md",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "terms_covered": [939],
+    "input_versions": {"939": 1},
+    "governing_instruction": "wa-versecontext-instruction-v3_5-20260424.md",
+    "description": "Re-evaluation of jealousy G3863 — no changes recommended. All 4 verses and 2 groups (939-001 human jealousy as redemptive instrument; 939-002 divine jealousy provoked by idolatry) confirmed correct under v3_5."
+  },
+  "operations": []
+}
+```
+
+**Applicator behaviour (unchanged from populated VCREVISE):**
+
+- A-03 version gate runs. Stale `input_versions` → reject.
+- Operations loop is a no-op (zero ops).
+- For every `mti_term_id` in `terms_covered`: write `vc_status = 'vc_completed'`, update `vc_instruction_version` + `vc_status_updated_at`, bump `md_version`.
+- Registry aggregation runs; affected registries advance to Complete when all OWNER + XREF-via-OWNER terms are at vc_completed.
+
+**Mixed session handling:** a session that revises some terms and confirms no-change for others produces a **single** VCREVISE patch. `terms_covered` is the union; `input_versions` carries the version per term; `operations` is the union of `update` ops for the revised terms (empty segment for the no-change terms). The applicator handles per-term state writes for every term in `terms_covered` regardless of whether it had operations.
+
+**Do NOT** produce a cosmetic `notes`-stamp VCREVISE (stamping "Re-evaluated YYYY-MM-DD" into group `notes` fields just to have an operation) — that is a pre-v2_7 workaround. The patch `description` field is the authoritative record of the no-change finding.
+
+**Example `_patch_summary` for empty-ops VCREVISE:**
+
+```json
+{
+  "_patch_summary": {
+    "total_operations": 0,
+    "nature": "no-change re-evaluation confirmation",
+    "terms_confirmed": 1
   }
 }
 ```

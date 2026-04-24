@@ -1,0 +1,56 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-096-VCREVISE-V1",
+    "registry_id": 96,
+    "word": "jealousy",
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_5-20260424",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "terms_covered": [939],
+    "input_versions": {
+      "939": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_5-20260424.md",
+    "description": "Cosmetic re-evaluation confirmation for G3863 parazēloō (mti_term_id 939) under VC instruction v3_5 — all 4 verses and both groups (939-001, 939-002) confirmed unchanged; group notes stamped with re-evaluation record. No verse_context rows touched. Triggers vc_status = vc_completed and md_version bump for term 939."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 939,
+        "group_code": "939-001"
+      },
+      "set": {
+        "notes": "Re-evaluated 2026-04-24 under wa-versecontext-instruction-v3_5-20260424; all prior classifications confirmed unchanged. 3 verses retained: Rom 10:19 (related), Rom 11:11 (anchor), Rom 11:14 (anchor)."
+      },
+      "description": "Group 939-001 (human jealousy as redemptive instrument) — cosmetic notes stamp; context_description and delete_flagged unchanged."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 939,
+        "group_code": "939-002"
+      },
+      "set": {
+        "notes": "Re-evaluated 2026-04-24 under wa-versecontext-instruction-v3_5-20260424; all prior classifications confirmed unchanged. 1 verse retained: 1Cor 10:22 (anchor)."
+      },
+      "description": "Group 939-002 (divine jealousy provoked by idolatry) — cosmetic notes stamp; context_description and delete_flagged unchanged."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "group_updates_notes_only": 2,
+    "group_updates_description": 0,
+    "group_dissolves": 0,
+    "verse_context_updates": 0,
+    "anchor_promotions": 0,
+    "anchor_demotions": 0,
+    "revisions_to_prior_classification": 0,
+    "nature": "cosmetic — re-evaluation record stamp only; no classification state change"
+  }
+}

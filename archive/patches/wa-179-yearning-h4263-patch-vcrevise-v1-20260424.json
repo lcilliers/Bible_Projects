@@ -1,0 +1,16 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-TEST-EMPTY-VCREVISE-V1",
+    "registry_id": 179,
+    "word": "yearning",
+    "produced_date": "20260424",
+    "produced_by": "Claude Code test harness",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "terms_covered": [1264],
+    "input_versions": {"1264": 1},
+    "governing_instruction": "wa-versecontext-instruction-v3_5-20260424.md",
+    "description": "TEST: empty-ops VCREVISE. Expected outcome: vc_status flip + md_version bump for mti=1264 with zero operations. If applicator rejects, we need to add support."
+  },
+  "operations": []
+}

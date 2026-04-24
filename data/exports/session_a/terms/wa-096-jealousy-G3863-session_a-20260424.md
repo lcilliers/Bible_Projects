@@ -3,9 +3,9 @@
 **Registry:** 096 jealousy  
 **mti_term_id:** 939  
 **Language:** Greek  
-**md_version:** `v1`  ⚠ the patch's `_patch_meta.input_versions[939]` must equal `1` at submission time or the applicator will reject it as stale (A-03 version gate).  
-**Generated:** 2026-04-24 19:18  
-**Current vc_status:** `not_done`  
+**md_version:** `v2`  ⚠ the patch's `_patch_meta.input_versions[939]` must equal `2` at submission time or the applicator will reject it as stale (A-03 version gate).  
+**Generated:** 2026-04-24 20:31  
+**Current vc_status:** `vc_completed`  
 **Existing verse_context rows:** 4 active (of 4 verses for this term).  ⚠ Per-verse: emit `insert` for verses with no active row; emit `update` for verses with an active row being revised. See v3_5 §2.1–§2.4 and §6.1. The per-verse state is shown in the Verses section below.  
 **Source:** `data/bible_research.db` (deterministic render, no analytics)  
 **Governing instruction:** wa-versecontext-instruction [current]  
