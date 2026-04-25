@@ -1,0 +1,66 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB11-VCREVISE-V1",
+    "batch_id": "VCB-11",
+    "patch_type": "VCREVISE",
+    "terms_covered": [
+      819,
+      820,
+      917,
+      1023,
+      1295,
+      1296,
+      1362,
+      1432,
+      3392,
+      5948,
+      7222,
+      7377
+    ],
+    "input_versions": {
+      "819": 1,
+      "820": 1,
+      "917": 1,
+      "1023": 1,
+      "1295": 1,
+      "1296": 1,
+      "1362": 1,
+      "1432": 1,
+      "3392": 1,
+      "5948": 1,
+      "7222": 1,
+      "7377": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9",
+    "session_b_status": null,
+    "description": "VCB-11 VCREVISE \u2014 re-evaluation outcomes across 12 terms (11 NO-CHANGE + 1 REVISE-ONLY). The 11 NO-CHANGE terms (G0543, G3876, G1760, G3116, G3392, G3394, G3552, G3554, G3713, G3339, G3445) underwent full re-evaluation under v3_9 with all classifications confirmed; their advancement to vc_completed is the empty-ops segment (terms_covered carries them; no operations target them). The 1 REVISE-ONLY term (G1761) has its group 917-001 description broadened to embrace Acts 17:29's productive direction alongside the receptive direction. DF-002 (G3554 nosos) resolved by researcher Option A \u2014 wider theological lens retained as appropriate inner-being engagement. All re-evaluation self-checks balance; all orphan-group checks pass (no orphans across the 12 terms)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 917,
+        "group_code": "917-001"
+      },
+      "set": {
+        "context_description": "Term names the inner cognitive act of conception \u2014 the thoughts and devisings of the heart, both as the inner content that Christ perceives and God's word discerns, and as the inner faculty by which a person forms conceptions (including, where misdirected, conceptions of God)"
+      },
+      "description": "Revise context_description for group 917-001: Broadened to embrace Acts 17:29 (productive direction \u2014 inner faculty by which idolatrous conceptions are formed) alongside the receptive direction (Mat 9:4, Mat 12:25, Heb 4:12). Verse-level classifications all retained unchanged."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "nature": "re-evaluation; mixed empty-ops + 1 group description revision",
+    "group_updates_description": 1,
+    "group_dissolves": 0,
+    "verse_context_updates": 0,
+    "anchor_promotions": 0,
+    "anchor_demotions": 0,
+    "terms_no_change": 11,
+    "terms_revise_only": 1
+  }
+}

@@ -1,0 +1,1272 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB010-VERSECONTEXT-V1",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_8-20260425.md",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "batch_id": "VCB-010",
+    "terms_covered": [
+      5493,
+      892,
+      6115,
+      1094,
+      1199,
+      1198,
+      6602,
+      4465,
+      4467,
+      1268
+    ],
+    "input_versions": {
+      "5493": 1,
+      "892": 1,
+      "6115": 1,
+      "1094": 1,
+      "1199": 1,
+      "1198": 1,
+      "6602": 1,
+      "4465": 1,
+      "4467": 1,
+      "1268": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_8-20260425.md",
+    "description": "vcb-010 re-evaluation \u2014 MIXED terms (10 of 12). Strict-grouping discipline applied: prior 14 active groups across these 10 terms restructured into 41 characteristic-distinct groups. Routing rationale: legacy VERSECONTEXT bundles inserts and updates atomically under one input_versions check + md_version bump per \u00a76.3 Step 3. NO-CHANGE terms G4123 (893) and H5951 (1096) emit a separate empty-ops VCREVISE patch."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 5493,
+        "group_code": "5493-003",
+        "context_description": "Term names violent assault on inner being \u2014 the snatching-away of the implanted word from the heart, or the wolf-attack on souls under shepherd care",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 5493,
+        "group_code": "5493-004",
+        "context_description": "Term names forceful inner pursuit \u2014 the kingdom-of-heaven seized by force, the inner-being violence that lays hold of God's reign",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 5493,
+        "group_code": "5493-005",
+        "context_description": "Term names redemptive rescue by human agent \u2014 the snatching-out of others from fire-judgement context as an act of mercy with discriminating fear",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 5493,
+        "group_code": "5493-001"
+      },
+      "set": {
+        "context_description": "Term names divine inviolability of those held in the Father's and Son's hand \u2014 the inability of any agent to seize the Christ-given inner-being possession",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 5493-001 bundled threat/security/rescue/pursuit. Restructured: 5493-001 retains divine-inviolability verses (Joh 10:28 related, Joh 10:29 anchor); other prior members redistributed to new 5493-003 (assault on inner being \u2014 Mat 13:19 anchor, Joh 10:12 related), 5493-004 (forceful inner pursuit \u2014 Mat 11:12 anchor sole), 5493-005 (redemptive rescue by human agent \u2014 Jude 23 anchor sole). 5493-002 retained, with Act 8:39 added (Spirit catching Philip away).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 167999,
+        "mti_term_id": 5493,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Crowds intend to seize Jesus to make him king \u2014 physical-political seizure; harpaz\u014d does not carry inner-being content here. The crowd's flawed expectation and Jesus' withdrawal are inner-being matters carried by other lexical material in the verse, not by the target term itself.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 167995,
+        "mti_term_id": 5493,
+        "group_id": "5493-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Spirit of the Lord caught Philip away \u2014 divine snatching-away by the Spirit; same term-role as 1Th 4:17 / 2Cor 12:2 (divine catching-away of a person)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 167994,
+        "mti_term_id": 5493,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Soldiers tearing Paul out of the crowd at the Temple \u2014 physical military extraction; no inner-being engagement carried by the term",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 5493,
+        "verse_record_id": 168001
+      },
+      "set": {
+        "group_id": "5493-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 5493-001 (related) to new 5493-004 (forceful inner pursuit \u2014 kingdom seized by force); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 5493,
+        "verse_record_id": 168002
+      },
+      "set": {
+        "group_id": "5493-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 5493-001 (anchor) to new 5493-003 (assault on inner being \u2014 evil one snatches the implanted word); retained as anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 5493,
+        "verse_record_id": 167996
+      },
+      "set": {
+        "group_id": "5493-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 5493-001 (related) to new 5493-003 (assault on inner being \u2014 wolf snatches the sheep)"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 5493,
+        "verse_record_id": 168000
+      },
+      "set": {
+        "group_id": "5493-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 5493-001 (related) to new 5493-005 (redemptive rescue by human agent); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 892,
+        "group_code": "892-002",
+        "context_description": "Term names the external plundering accepted with inner joy \u2014 the loss occasioned by faith that has secured 'a better possession'",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 892,
+        "group_code": "892-001"
+      },
+      "set": {
+        "context_description": "Term names rapacity as inner moral condition \u2014 the inner fullness of greedy desire that the Pharisees' outward propriety conceals",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 892-001 bundled inner-rapacity (Mat/Lk) and external-plundering-accepted-with-joy (Heb 10:34) as opposites. Restructured: 892-001 retains inner-rapacity verses (Mat 23:25 anchor, Luk 11:39 related); 892-002 NEW with Heb 10:34 (external plundering accepted with inner joy) as sole verse / anchor.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 892,
+        "verse_record_id": 24867
+      },
+      "set": {
+        "group_id": "892-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 892-001 (related) to new 892-002 (external plundering accepted with inner joy); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 6115,
+        "group_code": "6115-002",
+        "context_description": "Term names the casting-off of a physical obstacle as expression of inner urgency toward Christ \u2014 the eager approach disclosed through the discarded impediment",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 6115,
+        "group_code": "6115-001"
+      },
+      "set": {
+        "context_description": "Term names the abandonment of an inner disposition \u2014 confidence as something the inner person can throw away, warned against in pursuit of the promised reward",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 6115-001 bundled physical-obstacle expression and inner-disposition abandonment. Restructured into 6115-001 (Heb 10:35 anchor \u2014 inner disposition abandonment) and 6115-002 (Mar 10:50 anchor \u2014 physical-obstacle expression of inner urgency).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6115,
+        "verse_record_id": 188459
+      },
+      "set": {
+        "group_id": "6115-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 6115-001 (related) to new 6115-002 (physical-obstacle expression of inner urgency); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 188457,
+        "mti_term_id": 1094,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Loss of life / ship in shipwreck context; apobol\u0113 names physical loss with no inner-being engagement here. STEP/Mounce explicitly distinguishes the two senses (loss in Acts 27:22; rejection in Rom 11:15)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1199,
+        "group_code": "1199-003",
+        "context_description": "Term names refusal of moral truth \u2014 inner non-conformity that prefers unrighteousness",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1199,
+        "group_code": "1199-004",
+        "context_description": "Term names corporate covenantal disobedience in salvation-history \u2014 the persistent inner refusal of a people that occasioned judgement or exclusion",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1199,
+        "group_code": "1199-005",
+        "context_description": "Term names covenantal disobedience as relational state in Paul's mercy-logic \u2014 the prior or current state that mercy is shown into",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1199,
+        "group_code": "1199-001"
+      },
+      "set": {
+        "context_description": "Term names refusal of the Son / word / gospel \u2014 inner-being refusal directed at the divine self-revelation in Christ",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1199-001 'Wilful inner refusal \u2014 disobedience as an act of the will toward God, his Son, or his word' was correct in spirit but bundled multiple objects of refusal. Restructured: 1199-001 retains refusal-of-revelation verses (Joh 3:36 anchor, 1Pe 2:8, 1Pe 3:1, 1Pe 4:17); 1199-003 carries refusal of moral truth (Rom 2:8); 1199-004 carries corporate covenantal disobedience (Rom 10:21 anchor, Heb 3:18, Heb 11:31, 1Pe 3:20); 1199-005 carries Pauline mercy-logic disobedience (Rom 11:30 anchor, Rom 11:31).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1199,
+        "group_code": "1199-002"
+      },
+      "set": {
+        "context_description": "Term names active unbelief expressing itself in hostility against gospel-bearers \u2014 the persistent inner refusal that issues in inter-personal aggression",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1199-002 bundled active hostility (Acts 14:2, Acts 19:9, Rom 15:31) with Pauline mercy-logic verses (Rom 11:30, 11:31). The mercy-logic verses moved to new 1199-005; revised 1199-002 holds only active-hostility verses. Anchor reassigned from Rom 11:30 (now in 1199-005) to Acts 19:9.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 204809
+      },
+      "set": {
+        "group_id": "1199-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Promoted to anchor of revised 1199-002 (active unbelief expressing as hostility) \u2014 replaces Rom 11:30 which moved to new 1199-005"
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45017
+      },
+      "set": {
+        "group_id": "1199-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1199-001 (related) to new 1199-003 (refusal of moral truth); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45013
+      },
+      "set": {
+        "group_id": "1199-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1199-001 (related) to new 1199-004 (corporate covenantal disobedience); promoted to anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45012
+      },
+      "set": {
+        "group_id": "1199-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1199-001 (related) to new 1199-004 (corporate covenantal disobedience \u2014 wilderness generation)"
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45011
+      },
+      "set": {
+        "group_id": "1199-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1199-001 (related) to new 1199-004 (corporate covenantal disobedience \u2014 Jericho)"
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 204806
+      },
+      "set": {
+        "group_id": "1199-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1199-001 (related) to new 1199-004 (corporate covenantal disobedience \u2014 Noah-era)"
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45014
+      },
+      "set": {
+        "group_id": "1199-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1199-002 (anchor) to new 1199-005 (covenantal disobedience as state mercy is shown into); retained as anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1199,
+        "verse_record_id": 45015
+      },
+      "set": {
+        "group_id": "1199-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1199-002 (related) to new 1199-005 (covenantal disobedience as state mercy is shown into)"
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-003",
+        "context_description": "Term names disciples' post-resurrection unbelief under apostolic-formation rebuke \u2014 the inner state of the appointed witnesses being corrected",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-004",
+        "context_description": "Term names hypothetical covenantal infidelity as rhetorical foil \u2014 Israelite faithlessness invoked argumentatively against God's unfailing faithfulness",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-005",
+        "context_description": "Term names the inner state in negated role \u2014 the unbelief that did not arise to govern Abraham's response, against which faith grew strong",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-006",
+        "context_description": "Term names continuing-but-not-permanent corporate unbelief \u2014 the inner state as a condition that may be discontinued, holding the door open to restoration",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-007",
+        "context_description": "Term names autobiographical pre-conversion unbelief \u2014 the prior inner state into which mercy was given, ground for the apostolic confession",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1198,
+        "group_code": "1198-008",
+        "context_description": "Term names the heart's susceptibility to an unbelieving condition leading to apostasy \u2014 directive warning to believers about the inner trajectory away from the living God",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1198,
+        "group_code": "1198-001"
+      },
+      "set": {
+        "context_description": "Term names corporate covenantal unbelief \u2014 the inner state of a people that issues in covenantal-historical limitation or exclusion",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1198-001 bundled multiple distinct roles. Revised 1198-001 holds only corporate-with-consequence verses (Mat 13:58, Mar 6:6, Rom 11:20, Heb 3:19); other prior members redistributed to 1198-002 (Mar 9:24 self-acknowledged) and new 1198-003, -004, -006, -007, -008. Anchor reassigned from Heb 3:12 (now in 1198-008) to Heb 3:19.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1198,
+        "group_code": "1198-002"
+      },
+      "set": {
+        "context_description": "Term names individual self-acknowledged unbelief co-existing with faith \u2014 the inner state confessed in personal struggle and brought to Christ for help",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1198-002 'persistent inner state with decisive consequences' was role-imprecise. Revised 1198-002 holds Mar 9:24 only; other prior members redistributed to revised 1198-001 (Rom 11:20, Heb 3:19) and new 1198-005 (Rom 4:20), 1198-006 (Rom 11:23). Anchor reassigned from Rom 4:20 (now in 1198-005) to Mar 9:24.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 204484
+      },
+      "set": {
+        "group_id": "1198-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Promoted to anchor of revised 1198-002 (individual self-acknowledged unbelief co-existing with faith)"
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 204482
+      },
+      "set": {
+        "group_id": "1198-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-001 (related) to new 1198-003 (apostolic-formation rebuke); promoted to anchor as sole member"
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45009
+      },
+      "set": {
+        "group_id": "1198-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-001 (related) to new 1198-004 (rhetorical foil to God's faithfulness); promoted to anchor as sole member"
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45010
+      },
+      "set": {
+        "group_id": "1198-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-002 (anchor) to new 1198-005 (negated role / Abraham); retained as anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45007
+      },
+      "set": {
+        "group_id": "1198-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1198-002 (related) to revised 1198-001 (corporate covenantal unbelief \u2014 Israel broken off)"
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45008
+      },
+      "set": {
+        "group_id": "1198-006",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-002 (related) to new 1198-006 (continuing-but-not-permanent unbelief / grafting condition); promoted to anchor as sole member"
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 204481
+      },
+      "set": {
+        "group_id": "1198-007",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-001 (related) to new 1198-007 (autobiographical pre-conversion unbelief / mercy ground); promoted to anchor as sole member"
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45005
+      },
+      "set": {
+        "group_id": "1198-008",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-001 (anchor) to new 1198-008 (heart-susceptibility / directive-warning); retained as anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1198,
+        "verse_record_id": 45006
+      },
+      "set": {
+        "group_id": "1198-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1198-002 (related) to revised 1198-001 (corporate covenantal unbelief \u2014 wilderness exclusion); promoted to anchor of revised 1198-001 \u2014 replaces Heb 3:12 which moved to 1198-008"
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 6602,
+        "group_code": "6602-002",
+        "context_description": "Term intensifies a cohortative directed at shared action \u2014 particle that discloses the inner urgency in 'let us' speech, framing the volitional response to prior revelation or pastoral concern",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 6602,
+        "group_code": "6602-003",
+        "context_description": "Term intensifies a divine imperative under prophetic-prayer setting \u2014 particle that sharpens the moment-of-decision quality of a Spirit-given command",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 6602,
+        "group_code": "6602-004",
+        "context_description": "Term intensifies an indicative declaration about inner-being reception \u2014 particle that sharpens the contrast between fruit-bearing hearing-with-understanding and the prior failed reception",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 6602,
+        "group_code": "6602-001"
+      },
+      "set": {
+        "context_description": "Term intensifies an inferential link from identity-fact to embodied-volitional response \u2014 particle that grounds the imperative in the indicative ('you were bought with a price; so glorify God in your body')",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 6602-001 'd\u0113 intensifying an inner-being directive or volitional divine command' was role-imprecise. Revised 6602-001 retains 1Cor 6:20 (inferential-grounding) as anchor; other functional roles distinguished into 6602-002 (cohortative-urgency, Luk 2:15 + Act 15:36), 6602-003 (divine-imperative-intensifying, Act 13:2), 6602-004 (indicative-emphasis, Mat 13:23).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 204872,
+        "mti_term_id": 6602,
+        "group_id": "6602-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "d\u0113 intensifies the indicative contrast between good-soil hearer (with-understanding, fruit-bearing) and prior failed soils; particle sharpens the inner-being-reception emphasis",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 204871,
+        "mti_term_id": 6602,
+        "group_id": "6602-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "d\u0113 with cohortative ('let us go over') discloses shepherds' inner urgency to act on the angelic revelation",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 204870,
+        "mti_term_id": 6602,
+        "group_id": "6602-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "d\u0113 with cohortative ('let us return and visit') discloses Paul's pastoral urgency for the churches",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 6602,
+        "verse_record_id": 204869
+      },
+      "set": {
+        "group_id": "6602-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 6602-001 (related) to new 6602-003 (divine-imperative-intensifying); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 4465,
+        "group_code": "4465-002",
+        "context_description": "Term names pastoral-relational urgency expressed in travel imperatives \u2014 the apostolic-prot\u00e9g\u00e9 eagerness for personal presence under separation or extremity (Pauline epistolary 'do your best to come' idiom)",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 4465,
+        "group_code": "4465-001"
+      },
+      "set": {
+        "context_description": "Term names inner-disposition of eager striving toward a spiritual, formative, or eschatological end \u2014 diligence pressing toward inner-being formation, kingdom obedience, ecclesial unity, or eschatological readiness",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 4465-001 was generic. Two characteristic-distinct uses identified \u2014 substantive spiritual/formative eagerness retained in 4465-001 (8 verses); pastoral-travel-urgency idiom split into new 4465-002 (3 verses: 2Ti 4:9, 4:21, Tit 3:12). 2Ti 2:15 retained in 4465-001 because object is presenting-to-God-as-approved (formative), not travel.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 4465,
+        "verse_record_id": 215274
+      },
+      "set": {
+        "group_id": "4465-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 4465-001 (related) to new 4465-002 (pastoral-travel-urgency); promoted to anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 4465,
+        "verse_record_id": 215273
+      },
+      "set": {
+        "group_id": "4465-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 4465-001 (related) to new 4465-002 (pastoral-travel-urgency idiom \u2014 'before winter')"
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 4465,
+        "verse_record_id": 215278
+      },
+      "set": {
+        "group_id": "4465-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 4465-001 (related) to new 4465-002 (pastoral-travel-urgency idiom \u2014 'come to me at Nicopolis')"
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 4467,
+        "group_code": "4467-002",
+        "context_description": "Term names inner earnestness as a tested and intensifying character quality \u2014 diligence proven across many matters and now heightened by confidence in the addressees",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 4467,
+        "group_code": "4467-001"
+      },
+      "set": {
+        "context_description": "Term names inner earnestness as voluntary self-motivation \u2014 the disposition that goes beyond what was asked, expressed in going 'of one's own accord'",
+        "notes": "Description revised in vcb-010 re-evaluation: prior description was tuned to 2Cor 8:22 (tested-character) but materially misrepresented 2Cor 8:17 (anchor \u2014 voluntariness, 'of his own accord'). Two single-verse groups: 4467-001 (voluntariness \u2014 2Cor 8:17) and 4467-002 (tested-ness \u2014 2Cor 8:22).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 4467,
+        "verse_record_id": 215280
+      },
+      "set": {
+        "group_id": "4467-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 4467-001 (related) to new 4467-002 (tested-and-intensifying character quality); promoted to anchor as sole verse of new group"
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-004",
+        "context_description": "Term names inner zeal as the right Christian disposition for body-life \u2014 fervency of spirit appropriate to gift-exercise and contrasted with sloth",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-005",
+        "context_description": "Term names earnestness as the inner-being fruit produced by godly grief \u2014 the disposition that arises in true repentance",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-006",
+        "context_description": "Term names earnestness revealed under apostolic disciplinary writing \u2014 the relational disposition disclosed in the sight of God through corrective letter",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-007",
+        "context_description": "Term names earnestness as one virtue among others in which a church excels \u2014 the inner disposition listed alongside faith, speech, knowledge, and love",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-008",
+        "context_description": "Term names earnestness as the evidence of genuine love \u2014 the inner disposition that proves love by comparison with others",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-009",
+        "context_description": "Term names earnest care as God-given inner disposition \u2014 the heart-implanted same-care of one minister mirroring another",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-010",
+        "context_description": "Term names earnestness oriented toward eschatological assurance \u2014 the inner disposition pursuing full assurance of hope until the end",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 1268,
+        "group_code": "1268-011",
+        "context_description": "Term names inner effort directed at moral-formative supplementation \u2014 making every effort to supplement faith with virtue and virtue with knowledge",
+        "notes": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1268,
+        "group_code": "1268-001"
+      },
+      "set": {
+        "context_description": "Term names physical haste expressing negative-moral inner urgency \u2014 the haste of compliance with a murderous demand",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1268-001 was generic. Restructured: 1268-001 holds Mar 6:25 alone (negative-moral haste); other prior members redistributed to 1268-002 (Luk 1:39 \u2014 positive-obedient haste), new 1268-004 (Rom 12:8, 12:11 \u2014 body-life zeal), new 1268-005 (2Cor 7:11 \u2014 fruit-of-godly-grief).",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1268,
+        "group_code": "1268-002"
+      },
+      "set": {
+        "context_description": "Term names physical haste expressing positive-obedient inner eagerness \u2014 the haste of joyful response after divine revelation",
+        "notes": "Description revised in vcb-010 re-evaluation: prior 1268-002 ('earnestness produced by godly grief') redistributed across new groups. Revised 1268-002 holds Luk 1:39 alone (positive-obedient haste). Prior members redistributed to new 1268-006 through 1268-011. Anchor reassigned from 2Cor 8:8 (now in 1268-008) to Luk 1:39.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1268,
+        "group_code": "1268-003"
+      },
+      "set": {
+        "context_description": "Term names the author's inner-eagerness as urgency-of-writing-desire \u2014 the disposition disclosed in autobiographical address",
+        "notes": "Description revised in vcb-010 re-evaluation: same single member (Jude 3); description re-purposed for clarity to name the autobiographical-authorial inner urgency disclosed in the address.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 215266
+      },
+      "set": {
+        "group_id": "1268-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to revised 1268-002 (positive-obedient haste); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49700
+      },
+      "set": {
+        "group_id": "1268-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to new 1268-004 (body-life zeal \u2014 gift exercise)"
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49699
+      },
+      "set": {
+        "group_id": "1268-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to new 1268-004 (body-life zeal \u2014 corporate fervency); promoted to anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49692
+      },
+      "set": {
+        "group_id": "1268-005",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to new 1268-005 (fruit of godly grief); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49693
+      },
+      "set": {
+        "group_id": "1268-006",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to new 1268-006 (revealed under disciplinary writing); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49695
+      },
+      "set": {
+        "group_id": "1268-007",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-001 (related) to new 1268-007 (catalogue-virtue); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49696
+      },
+      "set": {
+        "group_id": "1268-008",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-002 (anchor) to new 1268-008 (evidence of genuine love); retained as anchor of new group"
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49694
+      },
+      "set": {
+        "group_id": "1268-009",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-002 (related) to new 1268-009 (God-given earnest care); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 49697
+      },
+      "set": {
+        "group_id": "1268-010",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-002 (related) to new 1268-010 (eschatological assurance); promoted to anchor as sole verse"
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1268,
+        "verse_record_id": 215265
+      },
+      "set": {
+        "group_id": "1268-011",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Reassigned in vcb-010 from 1268-002 (related) to new 1268-011 (moral-formative supplementation); promoted to anchor as sole verse"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 85,
+    "group_inserts": 27,
+    "group_updates": 13,
+    "verse_context_inserts_anchor": 2,
+    "verse_context_inserts_related": 2,
+    "verse_context_inserts_set_aside": 3,
+    "verse_context_updates": 38,
+    "anchor_promotions": 24,
+    "anchor_demotions": 0,
+    "terms_covered_count": 10
+  }
+}

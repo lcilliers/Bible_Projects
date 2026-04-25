@@ -1,0 +1,187 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB11-VCSBFLAGS-V1",
+    "batch_id": "VCB-11",
+    "patch_type": "VCSBFLAGS",
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9",
+    "session_b_status": null,
+    "description": "VCB-11 VCSBFLAGS \u2014 9 Session B observation flags raised during classification (DF-001, 003, 004, 005, 006, 007, 008, 009, 011). All concern borderline retentions or mediated inner-being engagements that Session B may wish to re-examine on closer interpretive review. No verse_context state changes; informational only."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 115,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-001",
+        "strongs_reference": "G3392",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G3392 (miaino) Joh 18:28: term names ceremonial-status defilement-avoidance ('they would not be defiled, but could eat the Passover'). Verse contains substantial inner-being content (irony / hypocrisy of ceremonial scrupulousness while plotting unjust execution), but that content is carried by narrative juxtaposition with v.30+, not by miaino itself which here names the ritual-status mechanism. Classifier retained relevance under section 3.3 borderline-retain. Session B may evaluate whether Joh 18:28 contributes substantively to the analytical profile of G3392 or is better treated as wrong_face on closer interpretive review.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-001 \u2014 Session B flag for G3392 (label VCB11-SB-001)"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 50,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-002",
+        "strongs_reference": "G3878",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G3878 (parakouo) Mar 5:36: lemma carries two senses \u2014 refuse to listen (Mat 18:17, classified relevant in 5111-001) and to overhear (Mar 5:36, set aside as wrong_face). The set-aside treats the overhearing-sense as carrying no inner-being content (sensory perception); verse's inner-being content is carried by phobeo (fear) and pisteuo (believe) in Jesus' response. Session B may wish to confirm that the homonym treatment is correct and whether the overhearing-sense warrants distinct registry treatment in any future programme work.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-003 \u2014 Session B flag for G3878 (label VCB11-SB-002)"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 202,
+        "flag_code": "SB_INNER_BEING",
+        "flag_label": "VCB11-SB-003",
+        "strongs_reference": "G3339",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G3339 (metamorfoo) Mat 17:2 and Mar 9:2 (transfiguration narratives): group 1362-002 explicitly acknowledges the inner-being engagement as 'mediated' through the disciples' encounter \u2014 the term names Christ's outward transfiguration while the inner-being content (encounter with divine reality) sits in surrounding narrative (cloud, voice from heaven, fear, awe). The two-group structure of mti=1362 (1362-001 believer-transformation; 1362-002 Christ-transfiguration) makes the asymmetry visible. Session B may want to factor in that the registry's transformation profile draws on Christological events alongside believer-transformation verses.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-004 \u2014 Session B flag for G3339 (label VCB11-SB-003)"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 85,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-004",
+        "strongs_reference": "H4906",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "H4906 (mas.kit) Eze 8:12: term = 'pictures' on the walls of private idolatrous chambers. Classifier read as the externalised form of inner imagination (each elder constructs his own mas.kit-chamber for private idolatry, externalising an inner conception). Distinguishing this case from Lev 26:1 / Num 33:52 (set aside as physical_only, public cult-stones) hangs on the personalised-vs-public dimension. Session B may wish to confirm that the personalised-imagination reading of Eze 8:12 is the right basis for the Session D synthesis on the imagination registry.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-005 \u2014 Session B flag for H4906 (label VCB11-SB-004)"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 202,
+        "flag_code": "SB_INNER_BEING",
+        "flag_label": "VCB11-SB-005",
+        "strongs_reference": "H2498",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "H2498 (cha.laph) Job 4:15: term names the spirit's motion past Eliphaz; the inner-being content (dread/awe) sits in the bodily reaction-noun ('hair of my flesh stood up') rather than in cha.laph itself. Group 1364-004 reads the term as 'engaging the person's inner capacity for perception or producing inner dread' \u2014 a mediated engagement. Session B may evaluate whether the term itself carries the dread or only marks the trigger-event.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-006 \u2014 Session B flag for H2498 (label VCB11-SB-005)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 202,
+        "flag_code": "SB_INNER_BEING",
+        "flag_label": "VCB11-SB-006",
+        "strongs_reference": "H2498",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "H2498 (cha.laph) Job 11:10: newly classified in this session (no prior row); assigned to 1364-004 as related. cha.laph names God's passing-through in juridical-action mode; the inner-being engagement (creaturely-helplessness implied by 'who can turn him back?') is rhetorical / framing-mediated rather than directly term-borne. Fit with 1364-004 stretches the group's 'perception or dread' framing toward 'creaturely-helplessness' \u2014 a slightly different facet of the same characteristic. Session B may wish to assess whether the group description should be widened to embrace this verse explicitly, or whether the verse fits less well than its assignment suggests.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-007 \u2014 Session B flag for H2498 (label VCB11-SB-006)"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 202,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-007",
+        "strongs_reference": "H2498",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "H2498 (cha.laph) Job 29:20: 'my glory fresh with me, and my bow ever new in my hand'. Assigned to group 1364-001 (inner renewal of strength via waiting/turning to God). Job 29:20 is Job's reminiscence of his former dignity and martial vigour \u2014 not a divinely-given inner renewal in the Isa 40:31 mode. Lexical sense (renewal) matches 1364-001 but the theological frame differs (self-referential vs God-given). Session B may evaluate whether Job 29:20 fits the group's characteristic-perspective description or represents a distinct facet (continuity of inner vitality vs God-given renewal).",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-008 \u2014 Session B flag for H2498 (label VCB11-SB-007)"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 85,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-008",
+        "strongs_reference": "G1761",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G1761 (enthumesis) Acts 17:29: uses the term in the productive sense (the inner faculty by which a person devises wrong conceptions of God \u2014 idolatrous mental construction). Other three verses (Mat 9:4, Mat 12:25, Heb 4:12) use enthumesis in the receptive sense (inner content perceived/discerned by Christ / God's word). Classifier broadened the group description (917-001) to embrace both directions under one characteristic. Session B may wish to evaluate whether the productive-direction usage warrants its own analytical treatment, given its specific relevance to idolatry registries and to the broader question of how the inner imagination produces (rather than merely receives) content.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-009 \u2014 Session B flag for G1761 (label VCB11-SB-008)"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 202,
+        "flag_code": "SB_FINDING",
+        "flag_label": "VCB11-SB-009",
+        "strongs_reference": "H2498",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "H2498 (cha.laph) 2Sa 12:20: 'Then David arose from the earth and washed and anointed himself and changed his clothes. And he went into the house of the Lord and worshipped.' Set aside as wrong_face \u2014 the verse is a powerful narrative pivot (David's transition from mourning to worship after the child's death). Inner-being content (David's theological reasoning, return to worship) is carried by the cluster of verbs (qum / rachats / suk / halaph / bo / shachah) and the surrounding narrative (vv.21-23 \u2014 David's articulation of the theological logic). Set-aside stands per second-look review. However, this is a candidate for Session B's wider analytical attention: the cluster of verbs all participate in the pivot, and Session B's analysis of registry 202 transformation may wish to position 2Sa 12:20 as a secondary witness to the term's narrative-pivot role even though it does not enter the registry's 202-transformation analytical pool.",
+        "session_raised": "VCB-11",
+        "raised_date": "2026-04-25T15:00:00",
+        "resolved": 0
+      },
+      "description": "DF-011 \u2014 Session B flag for H2498 (label VCB11-SB-009)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 9,
+    "research_flag_inserts": 9,
+    "by_flag_code": {
+      "SB_FINDING": 6,
+      "SB_INNER_BEING": 3
+    },
+    "by_session_target": {
+      "Session B": 9
+    }
+  }
+}

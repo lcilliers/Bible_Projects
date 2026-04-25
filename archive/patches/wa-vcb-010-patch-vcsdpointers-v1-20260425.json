@@ -1,0 +1,41 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB010-VCSDPOINTERS-V1",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_8-20260425.md",
+    "patch_type": "VCSDPOINTERS",
+    "session_b_status": null,
+    "batch_id": "VCB-010",
+    "governing_instruction": "wa-versecontext-instruction-v3_8-20260425.md",
+    "description": "vcb-010 re-evaluation \u2014 Session D cross-registry pointers. One pointer raised: SD_POINTER for apeithe\u014d (G0544) connecting registry 165 (unbelief) to registry 50 (disobedient) via the cognate XREF G0545 apeith\u0113s. Companion VCSBFLAGS patch carries the within-registry PH2_BOUNDARY_QUESTION for the same term."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 165,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "apeithe\u014d (G0544) connects registry 165 unbelief to registry 50 disobedient",
+        "strongs_reference": "G0544",
+        "priority": "normal",
+        "session_target": "Session D",
+        "cross_registry_id": 50,
+        "description": "Cross-registry pointer raised during vcb-010 verse-context re-evaluation of apeithe\u014d (G0544, mti=1199) in registry 165 (unbelief). The Session A XREF table for this term lists G0545 apeith\u0113s (disobedient) as OWNER in registry 50. STEP/Mounce: the verb does not separate 'disbelieve' and 'disobey' the way English does \u2014 the same verb expresses both. Five characteristic-distinct groups emerged in vcb-010: two clusters around refusal-of-Christ-revelation and active-hostility (1199-001, 1199-002); three around moral-truth-refusal, covenantal-disobedience, and Pauline-mercy-logic-disobedience (1199-003, 1199-004, 1199-005). Session D implication: the synthesis between registry 165 (unbelief) and registry 50 (disobedient) needs an explicit account of how the same Greek verb is distributed across two semantic-domain registries \u2014 and whether the registry-50 OWNER analysis of G0545 apeith\u0113s informs (or is informed by) the registry-165 treatment of G0544 apeithe\u014d. The five-group structure for G0544 in 165 already exposes the two halves of the verb's semantic range \u2014 Session D may consider this when integrating the two registries' findings.",
+        "session_raised": "VCB-010",
+        "raised_date": "2026-04-25T00:00:00Z",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "research_flag_inserts": 1,
+    "by_flag_code": {
+      "SD_POINTER": 1
+    },
+    "distinct_cross_registries": 1
+  }
+}

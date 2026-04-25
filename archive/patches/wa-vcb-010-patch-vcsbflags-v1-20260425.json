@@ -1,0 +1,76 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB010-VCSBFLAGS-V1",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_8-20260425.md",
+    "patch_type": "VCSBFLAGS",
+    "session_b_status": null,
+    "batch_id": "VCB-010",
+    "governing_instruction": "wa-versecontext-instruction-v3_8-20260425.md",
+    "description": "vcb-010 re-evaluation \u2014 Session B observation flags. Three flags raised: (1) SB_FINDING for apistia (G0570) on 8-group inner-being-role fragmentation across 11 verses; (2) SB_FINDING for spoud\u0113 (G4710) on 11-group fragmentation across 12 verses; (3) PH2_BOUNDARY_QUESTION for apeithe\u014d (G0544) on the disbelief/disobedience straddle and the registry-165/registry-50 boundary. Companion VCSDPOINTERS patch carries the cross-registry pointer for G0544 (165 \u2192 50)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 165,
+        "file_id": null,
+        "flag_code": "SB_FINDING",
+        "flag_label": "apistia (G0570) operates across 8 distinct inner-being roles in 11 NT verses",
+        "strongs_reference": "G0570",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "Re-evaluation under wa-versecontext-instruction-v3_8 strict-grouping discipline found that apistia (G0570, mti=1198) fragments into 8 characteristic-distinct groups across 11 active verses (highest verse-to-group ratio in vcb-010). The eight groups capture distinct inner-being roles: (1198-001) corporate covenantal unbelief with covenantal-historical limitation/exclusion [Mat 13:58, Mar 6:6, Rom 11:20, Heb 3:19 anchor]; (1198-002) individual self-acknowledged unbelief co-existing with faith [Mar 9:24 anchor sole]; (1198-003) disciples' post-resurrection unbelief under apostolic-formation rebuke [Mar 16:14 anchor sole]; (1198-004) hypothetical covenantal infidelity as rhetorical foil to God's faithfulness [Rom 3:3 anchor sole]; (1198-005) the inner state in negated role \u2014 what did not arise to govern Abraham [Rom 4:20 anchor sole]; (1198-006) continuing-but-not-permanent corporate unbelief opening to restoration [Rom 11:23 anchor sole]; (1198-007) autobiographical pre-conversion unbelief as ground for received mercy [1Ti 1:13 anchor sole]; (1198-008) heart's susceptibility to an unbelieving condition leading to apostasy [Heb 3:12 anchor sole]. Session B implication: the synthesis of 'unbelief' for this term cannot reduce to a single characterisation \u2014 the analyst must integrate eight materially distinct roles. Pattern note: G4710 spoud\u0113 (mti=1268) shows the same kind of high spread (11 groups for 12 verses) in registry 181 zeal \u2014 see the parallel SB_FINDING flag for that term.",
+        "session_raised": "VCB-010",
+        "raised_date": "2026-04-25T00:00:00Z",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 181,
+        "file_id": null,
+        "flag_code": "SB_FINDING",
+        "flag_label": "spoud\u0113 (G4710) operates across 11 distinct inner-being roles in 12 NT verses",
+        "strongs_reference": "G4710",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "Re-evaluation under wa-versecontext-instruction-v3_8 strict-grouping discipline found that spoud\u0113 (G4710, mti=1268) fragments into 11 characteristic-distinct groups across 12 active verses (highest verse-to-group ratio in vcb-010 alongside apistia). STEP/Mounce already distinguishes two lexical layers: physical haste, and inner earnestness/zeal/diligence; the corpus shows further differentiation. The eleven groups: (1268-001) physical haste expressing negative-moral inner urgency [Mar 6:25 anchor sole]; (1268-002) physical haste expressing positive-obedient inner eagerness [Luk 1:39 anchor sole]; (1268-003) author's inner-eagerness as urgency-of-writing-desire [Jude 3 anchor sole]; (1268-004) inner zeal as right Christian disposition for body-life \u2014 fervency vs sloth [Rom 12:8, 12:11 anchor]; (1268-005) earnestness as inner-being fruit produced by godly grief [2Cor 7:11 anchor sole]; (1268-006) earnestness revealed under apostolic disciplinary writing [2Cor 7:12 anchor sole]; (1268-007) earnestness as one virtue in catalogue of excellence [2Cor 8:7 anchor sole]; (1268-008) earnestness as evidence of genuine love [2Cor 8:8 anchor sole]; (1268-009) earnest care as God-given inner disposition placed in the heart [2Cor 8:16 anchor sole]; (1268-010) earnestness oriented toward eschatological assurance [Heb 6:11 anchor sole]; (1268-011) inner effort directed at moral-formative supplementation [2Pe 1:5 anchor sole]. Session B implication: synthesis of 'zeal' for this term must integrate physical-haste, body-life-zeal, repentance-fruit, virtue-catalogue, evidence-of-love, God-given-care, eschatological-readiness, and supplementation-effort as separable inner-being roles. Pattern note: G0570 apistia shows the same kind of high spread (8 groups for 11 verses) in registry 165 unbelief \u2014 see the parallel SB_FINDING flag.",
+        "session_raised": "VCB-010",
+        "raised_date": "2026-04-25T00:00:00Z",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 165,
+        "file_id": null,
+        "flag_code": "PH2_BOUNDARY_QUESTION",
+        "flag_label": "apeithe\u014d (G0544) straddles disbelief and disobedience \u2014 registry 165 \u2194 50 boundary",
+        "strongs_reference": "G0544",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "Re-evaluation surfaced a registry-boundary question for apeithe\u014d (G0544, mti=1199). STEP/Mounce defines the verb as 'to be uncompliant; to refuse belief, disbelieve (Jn 3:36); to refuse belief and obedience (Rom 10:21; 1Pe 3:20); to refuse conformity (Rom 2:8)'. The Greek term does not separate 'disbelief' and 'disobedience' the way English does \u2014 the same verb expresses both inner orientations across the corpus. Within registry 165 (unbelief) the term has been fitted to 5 characteristic-distinct groups: (1199-001) refusal of the Son/word/gospel \u2014 inner-being refusal directed at Christ-revelation [Joh 3:36 anchor, 1Pe 2:8, 3:1, 4:17]; (1199-002) active unbelief expressing as hostility against gospel-bearers [Act 19:9 anchor, Act 14:2, Rom 15:31]; (1199-003) refusal of moral truth \u2014 inner non-conformity that prefers unrighteousness [Rom 2:8 anchor sole]; (1199-004) corporate covenantal disobedience in salvation-history [Rom 10:21 anchor, Heb 3:18, Heb 11:31, 1Pe 3:20]; (1199-005) covenantal disobedience as relational state in Paul's mercy-logic [Rom 11:30 anchor, Rom 11:31]. The XREF table on G0544 lists G0545 apeith\u0113s (disobedient) as OWNER in registry 50 (disobedient). Session B implication: the registry-165 analytical home for G0544 needs to be reconciled with the registry-50 home of the cognate adjective G0545. The split between groups 1199-001/-002 (refusal-of-Christ-revelation/active-hostility) and 1199-003/-004/-005 (refusal-of-moral-truth/covenantal-disobedience/mercy-logic) suggests the verb's weight in registry 165 may need explicit boundary articulation \u2014 what is in scope as 'unbelief' versus what shades toward 'disobedience' for downstream synthesis. See companion VCSDPOINTERS SD_POINTER flag for the cross-registry connection (165 \u2192 50).",
+        "session_raised": "VCB-010",
+        "raised_date": "2026-04-25T00:00:00Z",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "research_flag_inserts": 3,
+    "by_flag_code": {
+      "SB_FINDING": 2,
+      "PH2_BOUNDARY_QUESTION": 1
+    }
+  }
+}

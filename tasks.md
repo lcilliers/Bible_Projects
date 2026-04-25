@@ -14,7 +14,7 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 - [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions_
 - [ ] _Phase_A_Prose: generate phase A prose_
-- [ ] _Phase_B_Verse_Context: Run through all verse context again — VC-7 pilot done (renewal); VC-8 done (yearning, treachery, jealousy, righteousness — malice carry-over to VC-9); VC-9 staged (5 registries, 9 terms); 11 of ~3,891 mti_terms at vc_completed; 174 legacy-Complete registries still pending under v3_8 contracts._
+- [ ] _Phase_B_Verse_Context: Run through all verse context again — VC-7 pilot done (renewal); VC-8 done (yearning, treachery, jealousy, righteousness — malice carry-over to VC-9); VC-9 done (5 registries, 9 terms); VC-10 done (5 three-term registries, 12 terms); VC-11 done (5 three-term registries, 15 terms incl. 3 partial-completion mti=916/1364/5111); 47 of ~3,891 mti_terms at vc_completed across 16 registries; 169 legacy-Complete registries still pending under v3_9 contracts._
 
 ## Open
 
@@ -25,24 +25,19 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 ### VC-7 pilot follow-ups (raised 2026-04-24 from renewal apply)
 
-- [x] _VC-Instruction-v3_5..v3_8: A-06 (per-verse insert/update rule + applicator rowcount gate), A-07 (no-row = not analysed), A-08 (empty-ops VCREVISE), per-term patch-routing classifier (NEW-ONLY/REVISE-ONLY/MIXED/NO-CHANGE), match-shape fix. Live at `wa-versecontext-instruction-v3_8-20260425.md`. Companion patch instruction at v2_8._
-- [x] _Applicator hardening (VC paths): `_exec_update_strict` on `verse_context` + `verse_context_group` UPDATE — rowcount=0 raises `ApplicatorError`, transaction rolls back. Verified live with deliberate failing test on 2026-04-24._
+
 - [ ] _Applicator hardening (extend to Session B/D paths): mti_terms match-update, wa_term_inventory, wa_term_phase2_flags, word_registry match-update, wa_rule_registry, wa_addendum_registry, wa_dimension_index — same `_exec_update_strict` pattern. Pending._
 - [ ] _Normalise out-of-vocab `set_aside_reason` values: "Material goods/property -- set aside" (17 rows) and "avf_homograph" (1 row) → controlled vocab via REPAIR patch._
 - [ ] _Audit preserved-with-notes verse_context rows (4,366 active rows where `is_relevant=0 AND set_aside_reason IS NULL AND notes IS NOT NULL` survived M39). Sample-and-categorise: how many notes carry classification intent that should be lifted to `set_aside_reason` (controlled vocab) vs. legacy Session-D-deferral markers vs. other content. Output: `outputs/investigations/preserved-with-notes-audit-v1-{date}.md` with proposed REPAIR patch scope. Listed registry distribution earlier showed 271 in listen, 38 contrition, 35 fellowship, 28 grief, etc._
 
 ### GR-FILE-003 incident follow-ups (raised 2026-04-25)
 
-- [x] _Reconstruct missed minor-version chain on VC instruction (v3_5..v3_8) and patch instruction (v2_7..v2_8). Archived intermediate states with corrected headers; live files renamed and own the lapse in their change-notes. Commit `dc2b654`._
+
 - [ ] _Encode GR-FILE-003 enforcement into automation: pre-edit check that any change to an instruction document file triggers a minor-version bump (or explicit "pre-publication" exemption). Ties to "Claude_Code_Rules: all outputs to carry version [major]_[minor] in name and internal meta" below._
 
 ### Other open
 
-- [ ] _Global_Rule: update OBS to set default reference _
-- [ ] _Glbal_Rule: _resolve issue that obslog is not consistently complied with on start of new session.
-- [ ] _Claude_Code_Rules:  _all outputs that is regularly produced or updated to carry version [major].[minor] both in file name and internal meta_
-- [ ] _Global_Rule: list memory and project files on start_up_
-- [ ] _VS_Code: automate commit-push_
+- [ ] _Global_Rule: update OBS to request and allow for changing of a reference if it not supplied on creation of the OBS. The default for the reference segment is "proc-ref-xx" _
 - [ ] _VS_code: reset folder destinations for prose and references_
 - [ ] _Word_data: Archive after Phase A prose is done.
 - [ ] _Phase_B_Dimensions: Revisit all dimensions not yet through second round_
@@ -53,7 +48,7 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 
 ## Done
-
+- [x ] _VS_Code: automate commit-push_
 - [x] _Workflow: create tasks.md at repo root_
 - [x] _Programme_prose: create prose for programme chapters _
 
@@ -86,6 +81,10 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 - [x] _Patch instruction v2_5 → v2_6: §15 VCNEW/VCREVISE/VCSBFLAGS/VCSDPOINTERS updated with input_versions field; batch_id marked optional; self-check extended. This commit._
 - [x] _Ambiguities doc updated with resolution status table. This commit._
 
+- [x] _VC-Instruction-v3_5..v3_8: A-06 (per-verse insert/update rule + applicator rowcount gate), A-07 (no-row = not analysed), A-08 (empty-ops VCREVISE), per-term patch-routing classifier (NEW-ONLY/REVISE-ONLY/MIXED/NO-CHANGE), match-shape fix. Live at `wa-versecontext-instruction-v3_8-20260425.md`. Companion patch instruction at v2_8._
+- [x] _Applicator hardening (VC paths): `_exec_update_strict` on `verse_context` + `verse_context_group` UPDATE — rowcount=0 raises `ApplicatorError`, transaction rolls back. Verified live with deliberate failing test on 2026-04-24._
+
+- [x] _Reconstruct missed minor-version chain on VC instruction (v3_5..v3_8) and patch instruction (v2_7..v2_8). Archived intermediate states with corrected headers; live files renamed and own the lapse in their change-notes. Commit `dc2b654`._
 ---
 
 *Created 2026-04-22.*

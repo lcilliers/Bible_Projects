@@ -1,0 +1,392 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB11-VCNEW-V1",
+    "batch_id": "VCB-11",
+    "patch_type": "VCNEW",
+    "terms_covered": [
+      916,
+      1364,
+      5111
+    ],
+    "input_versions": {
+      "916": 1,
+      "1364": 1,
+      "5111": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9",
+    "session_b_status": null,
+    "description": "VCB-11 VCNEW \u2014 first-time classifications for verses with no prior verse_context row across 3 terms (G3878, H4906, H2498): 21 inserts (1 relevant: 0 anchor + 1 related; 20 set-asides). Per A-06, operation type is per-verse driven by row-presence at (mti_term_id, verse_record_id)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 155905,
+        "mti_term_id": 5111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: inner-being content carried by phobeo (fear) and pisteuo (believe), not by parakouo. parakouo here = sensory overhearing, no inner-being engagement.",
+        "delete_flagged": 0
+      },
+      "description": "Mar 5:36 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 25235,
+        "mti_term_id": 916,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:1 \u2014 set aside (physical_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 25236,
+        "mti_term_id": 916,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 33:52 \u2014 set aside (physical_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169898,
+        "mti_term_id": 916,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: inner-being content (wisdom of speech) carried by davar and the simile structure, not by mas.kit which names the physical silver setting.",
+        "delete_flagged": 0
+      },
+      "description": "Pro 25:11 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54744,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 31:7 \u2014 set aside (no_inner_being), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54743,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 31:41 \u2014 set aside (no_inner_being), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54745,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: consecration content carried by 'purify yourselves' and 'put away foreign gods', not by cha.laph (change garments).",
+        "delete_flagged": 0
+      },
+      "description": "Gen 35:2 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54746,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 41:14 \u2014 set aside (physical_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54763,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Lev 27:10 \u2014 set aside (no_inner_being), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54762,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 5:26 \u2014 set aside (physical_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54741,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 10:3 \u2014 set aside (spatial_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54742,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: David's transition out of mourning is carried by surrounding verbs (arose, washed, anointed, worshipped) and the wider narrative, not by cha.laph (change clothes).",
+        "delete_flagged": 0
+      },
+      "description": "2Sa 12:20 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54755,
+        "mti_term_id": 1364,
+        "group_id": "1364-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "borderline retain (DF-007); divine action context; cha.laph names God's passing-through in juridical sovereignty mode.",
+        "delete_flagged": 0
+      },
+      "description": "Job 11:10 \u2014 related, group 1364-004"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54756,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: inner-being content (mortality reflection in Job 14 broader context) carried by the contrast between tree and human, not by cha.laph applied to the tree.",
+        "delete_flagged": 0
+      },
+      "description": "Job 14:7 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54757,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 20:24 \u2014 set aside (physical_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54767,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: inner-being content (love-call) carried by the lover's voice and imperatives, not by cha.laph (winter passing).",
+        "delete_flagged": 0
+      },
+      "description": "Song 2:11 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54748,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 2:18 \u2014 set aside (no_inner_being), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54753,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 8:8 \u2014 set aside (spatial_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54754,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: defiant pride content carried by the rebuilding-defiance speech, not by cha.laph (cedars in place of sycamores).",
+        "delete_flagged": 0
+      },
+      "description": "Isa 9:10 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54749,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 21:1 \u2014 set aside (spatial_only), no inner-being engagement for term in this verse"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54747,
+        "mti_term_id": 1364,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "wrong_face",
+        "notes": "wrong_face: pride content ('whose own might is their god') carried by surrounding clause, not by cha.laph (military passing).",
+        "delete_flagged": 0
+      },
+      "description": "Hab 1:11 \u2014 set aside (wrong_face), no inner-being engagement for term in this verse"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 21,
+    "verse_context_inserts_anchor": 0,
+    "verse_context_inserts_related": 1,
+    "verse_context_inserts_set_aside": 20,
+    "set_aside_breakdown": {
+      "no_inner_being": 4,
+      "physical_only": 5,
+      "spatial_only": 3,
+      "wrong_face": 8
+    }
+  }
+}
