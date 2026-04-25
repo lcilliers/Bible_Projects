@@ -1,0 +1,114 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-139-VERSECONTEXT-V1",
+    "registry_id": 139,
+    "word": "righteousness",
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_5-20260424",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "terms_covered": [1099],
+    "input_versions": {
+      "1099": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_5-20260424.md",
+    "description": "Combined VC patch for G1345 dikaiōma (mti_term_id 1099) under v3_5 — (a) updates group 1099-001 context_description under the characteristic-perspective model (§6.2 Step 3); (b) inserts 4 first-time verse_context rows for Heb 9:1, Heb 9:10, Rev 15:4, Rev 19:8; (c) promotes Rev 15:4 to anchor. Addresses partial-completion gap (6 of 10 verses were previously classified). Rom 5:16 retained as anchor. Two anchors post-apply (R4 satisfied)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1099,
+        "group_code": "1099-001"
+      },
+      "set": {
+        "context_description": "Term names the dikaiōma — whether decree, standard, righteous act, or verdict — as the external reality that discloses, qualifies, or re-orients inner-being standing, moral orientation, and response (conformity, defiance, reception of verdict, or worship of divine righteousness revealed).",
+        "notes": "Revised 2026-04-24 under wa-versecontext-instruction-v3_5-20260424 characteristic-perspective grouping model (§6.2 Step 3). Prior description covered Romans verses well but was narrow for Hebrews (external-contrast) and Revelation (worship-response, eschatological expression) verses added in this session. Group retained; 6 prior verses confirmed unchanged + 4 first-time inserts. Session B should evaluate whether the characteristic splits into sub-zones (Zones A–F noted in vc-139 obslog Entry 012)."
+      },
+      "description": "Group 1099-001 — revised context_description to characteristic-perspective form covering decree/standard/act/verdict register across the full 10-verse corpus."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 37421,
+        "mti_term_id": 1099,
+        "group_id": "1099-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "External cultic regulations of the first covenant; the term names the standard set up by Hebrews' wider argument as the external-only regulation contrasted with inner reality (9:14 perfecting the conscience). Inner-being engagement via implication (GR-PROG-007 branch b).",
+        "delete_flagged": 0
+      },
+      "description": "Heb 9:1 — related, group 1099-001. First-time classification filling partial-completion gap."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 37422,
+        "mti_term_id": 1099,
+        "group_id": "1099-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Explicit continuation of Heb 9:1 — names the dikaiōmata as 'for the body' and temporally limited, contrasting them with the inner reality of the new covenant. Filter pass via the inner/outer contrast argument.",
+        "delete_flagged": 0
+      },
+      "description": "Heb 9:10 — related, group 1099-001. First-time classification filling partial-completion gap."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 37423,
+        "mti_term_id": 1099,
+        "group_id": "1099-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Anchor for the worship-response / revelation-of-God's-righteous-acts face of the group. God's dikaiōmata revealed → all nations fear, glorify, worship. The verse stands alone; the inner-being worship response is explicit.",
+        "delete_flagged": 0
+      },
+      "description": "Rev 15:4 — anchor, group 1099-001. First-time classification; new anchor designation."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 37424,
+        "mti_term_id": 1099,
+        "group_id": "1099-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Saints' dikaiōmata as the Bride's fine linen — outward expression / visible adornment of inner righteousness at the eschatological consummation. Filter pass via branch b (term qualifies inner-being characteristic by naming its outward expression).",
+        "delete_flagged": 0
+      },
+      "description": "Rev 19:8 — related, group 1099-001. First-time classification filling partial-completion gap."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 5,
+    "group_inserts": 0,
+    "group_updates": 1,
+    "group_updates_description": 1,
+    "verse_context_inserts": 4,
+    "verse_context_inserts_anchor": 1,
+    "verse_context_inserts_related": 3,
+    "verse_context_inserts_set_aside": 0,
+    "verse_context_updates": 0,
+    "relevant_verses_post_apply": 10,
+    "set_aside_verses": 0,
+    "active_anchors_post_apply": 2,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0,
+    "first_time_classifications": 4
+  }
+}

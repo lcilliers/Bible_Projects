@@ -1,0 +1,43 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260424-139-VCSBFLAGS-V1",
+    "registry_id": 139,
+    "word": "righteousness",
+    "produced_date": "20260424",
+    "produced_by": "wa-versecontext-instruction-v3_5-20260424",
+    "patch_type": "VCSBFLAGS",
+    "session_b_status": null,
+    "governing_instruction": "wa-versecontext-instruction-v3_5-20260424.md",
+    "description": "VC session VCSBFLAGS patch for vc-139 (G1345 dikaiōma, Registry 139) — raises 1 Session B observation (SBF-vc139-001) about the breadth of group 1099-001's characteristic span; Session B should evaluate whether the corpus splits into sub-zones."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 139,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-vc139-001",
+        "strongs_reference": "G1345",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "Group 1099-001's revised context_description under v3_5 covers a wide characteristic span across 10 verses: (Zone A) standard disclosed-in inner righteousness — Luk 1:6, Rom 2:26, Rom 8:4; (Zone B) standard known-and-defied — Rom 1:32; (Zone C) verdict received — Rom 5:16, Rom 5:18; (Zone D) obsolete external regulation contrasted with inner reality — Heb 9:1, Heb 9:10; (Zone E) revealed acts eliciting worship — Rev 15:4; (Zone F) eschatological expression of inner righteousness — Rev 19:8. This was retained as a single group at VC per the default reuse rule (§6.2 Step 3) because characteristic-level splitting is Session B's analytical task. Session B should evaluate whether these zones constitute a unified characteristic (the dikaiōma as the outer pole of the inner/outer righteousness relation) or whether material divergence warrants splitting the group via a later VCREVISE. Relevant anchors: Rom 5:16 (verdict face) and Rev 15:4 (worship-response face).",
+        "session_raised": "vc-139",
+        "raised_date": "2026-04-24",
+        "resolved": 0
+      },
+      "description": "SBF-vc139-001 — Session B group-split-evaluation pointer for 1099-001 across 6 characteristic zones."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "research_flag_inserts": 1,
+    "by_flag_code": {
+      "SB_FINDING": 1
+    },
+    "by_session_target": {
+      "Session B": 1
+    }
+  }
+}
