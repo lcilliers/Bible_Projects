@@ -1,0 +1,274 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-GLOBAL-REPAIR-SET-ASIDE-VOCAB-V1_0",
+    "registry_id": null,
+    "produced_date": "20260425",
+    "produced_by": "scripts/_check_doc_versions.py review + manual normalisation",
+    "patch_type": "REPAIR",
+    "session_b_status": null,
+    "governing_instruction": "wa-versecontext-instruction-v3_8-20260425.md",
+    "description": "Normalise 18 verse_context rows whose set_aside_reason value falls outside the controlled vocabulary. 17 rows on mti=546 (H2898) Material goods/property → physical_only; 1 row on mti=7497 (H0240) avf_homograph → no_inner_being. patch_type=REPAIR; applicator does not run VCREVISE post-processing — no vc_status flip, no md_version bump. notes field augmented with provenance."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4328
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "2Ki 8:9 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4326
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Deu 6:11 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4329
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Ezr 9:12 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4321
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Gen 24:10 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4322
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Gen 45:18 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4323
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Gen 45:20 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4324
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Gen 45:23 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4350
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Hos 10:11 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4343
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Isa 1:19 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4345
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Isa 65:14 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4346
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Jer 2:7 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4333
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Job 20:21 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4334
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Job 21:16 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4330
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Neh 9:25 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4332
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Neh 9:36 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4342
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Pro 11:10 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 546,
+        "verse_record_id": 4340
+      },
+      "set": {
+        "set_aside_reason": "physical_only",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"Material goods/property -- set aside\" (pre-VCB-032 vocabulary, predates controlled vocab). Mapped to physical_only per VC instruction v3_8 §3.2: in this verse, H2898 (goodness) refers to material goods/property — physical use, no inner-being engagement."
+      },
+      "description": "Psa 128:5 — normalise set_aside_reason \"Material goods/property -- set aside\" → physical_only."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 7497,
+        "verse_record_id": 232945
+      },
+      "set": {
+        "set_aside_reason": "no_inner_being",
+        "notes": "Normalised 2026-04-25 — original set_aside_reason was free-text \"avf_homograph\" (pre-VCB-032 vocabulary). Mapped to no_inner_being per VC instruction v3_8 §3.2: the homograph form of H0240 in this verse does not engage inner-being content (the verse refers to a physical implement, not the inner-being-relevant root)."
+      },
+      "description": "Deu 23:13 — normalise set_aside_reason \"avf_homograph\" → no_inner_being."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 18,
+    "rows_normalised_to_physical_only": 17,
+    "rows_normalised_to_no_inner_being": 1,
+    "vc_status_changes": 0,
+    "md_version_bumps": 0,
+    "nature": "vocab normalisation REPAIR — controlled-vocab cleanup, no classification state change"
+  }
+}

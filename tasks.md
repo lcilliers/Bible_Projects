@@ -12,24 +12,29 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 ## In Progress
 
-- [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions
+- [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions_
 - [ ] _Phase_A_Prose: generate phase A prose_
-- [ ] _Phase_B_Verse_Context: Run through all verse context again_  
+- [ ] _Phase_B_Verse_Context: Run through all verse context again — VC-7 pilot done (renewal); VC-8 done (yearning, treachery, jealousy, righteousness — malice carry-over to VC-9); VC-9 staged (5 registries, 9 terms); 11 of ~3,891 mti_terms at vc_completed; 174 legacy-Complete registries still pending under v3_8 contracts._
 
 ## Open
 
 ### VC four-output model + A-02..A-05 resolution (2026-04-24)
 
-- [x] _VC-7 Pilot (full renewal, reg 134) — VCNEW + VCREVISE + VCSBFLAGS + VCRECOVERY applied 2026-04-24. All 7 OWNER terms at vc_completed, md_version=2/3, registry Complete. R1/R2/R3 clean. Two systemic issues surfaced → v3_5 amendment + applicator hardening (new tasks below)._
-- [ ] _VC-7 Programme roll-out: 180 registries at `Verse Context Reset`. BLOCKED on v3_5 amendment + applicator rowcount fix landing first._
-- [ ] _VC-Prose-v4 (post-pilot): supersede `prog_instr_verse_context` v3 → v4 after VC-7 pilot confirms the contracts. Minimal addition — one governance-level paragraph elevating the A-03 snapshot-anchoring principle (every classification is anchored to the data snapshot it read; if data has changed, re-read rather than silently apply). Mechanical details (md_version, input_versions, vocab renames) remain at instruction level — they do not enter prose._
+- [ ] _VC programme roll-out: 174 legacy-Complete registries + 6 reset registries (compassion, fellowship, forgiveness, grace, love, mercy) all need processing under v3_8 contracts. VC-7 (renewal) + VC-8 + VC-9 are the rolling pilot/early-batches. Hardening blockers cleared 2026-04-24/25 (v3_8 + applicator A-06 rowcount gate)._
+- [ ] _VC-Prose-v4 (post-pilot): supersede `prog_instr_verse_context` v3 → v4 after VC-9/VC-10 confirms the contracts at scale. Minimal addition — one governance-level paragraph elevating the A-03 snapshot-anchoring principle (every classification is anchored to the data snapshot it read; if data has changed, re-read rather than silently apply). Mechanical details (md_version, input_versions, vocab renames) remain at instruction level — they do not enter prose._
 
 ### VC-7 pilot follow-ups (raised 2026-04-24 from renewal apply)
 
-- [ ] _VC-Instruction-v3_5: per-verse `insert` vs `update` rule; VCREVISE silent 0-row rejection; per-term `.md` header extension to declare existing vc row presence. See [draft](outputs/investigations/vc-v3_5-instruction-amendment-v1-20260424.md)._
-- [ ] _Applicator hardening: UPDATE rowcount=0 must fail loudly across VC + Session B/D paths; REPAIR failure patch on rollback. See [ticket](outputs/investigations/applicator-hardening-rowcount-v1-20260424.md)._
+- [x] _VC-Instruction-v3_5..v3_8: A-06 (per-verse insert/update rule + applicator rowcount gate), A-07 (no-row = not analysed), A-08 (empty-ops VCREVISE), per-term patch-routing classifier (NEW-ONLY/REVISE-ONLY/MIXED/NO-CHANGE), match-shape fix. Live at `wa-versecontext-instruction-v3_8-20260425.md`. Companion patch instruction at v2_8._
+- [x] _Applicator hardening (VC paths): `_exec_update_strict` on `verse_context` + `verse_context_group` UPDATE — rowcount=0 raises `ApplicatorError`, transaction rolls back. Verified live with deliberate failing test on 2026-04-24._
+- [ ] _Applicator hardening (extend to Session B/D paths): mti_terms match-update, wa_term_inventory, wa_term_phase2_flags, word_registry match-update, wa_rule_registry, wa_addendum_registry, wa_dimension_index — same `_exec_update_strict` pattern. Pending._
 - [ ] _Normalise out-of-vocab `set_aside_reason` values: "Material goods/property -- set aside" (17 rows) and "avf_homograph" (1 row) → controlled vocab via REPAIR patch._
-- [ ] _Audit preserved-with-notes rows (4,366) for whether notes carry classification intent that should be lifted to `set_aside_reason` + controlled vocab._
+- [ ] _Audit preserved-with-notes verse_context rows (4,366 active rows where `is_relevant=0 AND set_aside_reason IS NULL AND notes IS NOT NULL` survived M39). Sample-and-categorise: how many notes carry classification intent that should be lifted to `set_aside_reason` (controlled vocab) vs. legacy Session-D-deferral markers vs. other content. Output: `outputs/investigations/preserved-with-notes-audit-v1-{date}.md` with proposed REPAIR patch scope. Listed registry distribution earlier showed 271 in listen, 38 contrition, 35 fellowship, 28 grief, etc._
+
+### GR-FILE-003 incident follow-ups (raised 2026-04-25)
+
+- [x] _Reconstruct missed minor-version chain on VC instruction (v3_5..v3_8) and patch instruction (v2_7..v2_8). Archived intermediate states with corrected headers; live files renamed and own the lapse in their change-notes. Commit `dc2b654`._
+- [ ] _Encode GR-FILE-003 enforcement into automation: pre-edit check that any change to an instruction document file triggers a minor-version bump (or explicit "pre-publication" exemption). Ties to "Claude_Code_Rules: all outputs to carry version [major]_[minor] in name and internal meta" below._
 
 ### Other open
 
@@ -60,6 +65,8 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 - [x] _VC-4 Instruction v3_1: per-OWNER-term primary input; §0.1 / §5 / §6.1 / §7.2 / §13 updated. Commit `e490931`._
 - [x] _VC-5 Renderer: --term mode in build_session_a_prose.py; pilot on renewal. Commit `8cc71f3`._
 - [x] _VC-6 Prose: prog_instr_session_a v2 → v3 supersede. Commit `07b1677`._
+- [x] _VC-7 Pilot (full renewal, reg 134) — VCNEW + VCREVISE + VCSBFLAGS + VCRECOVERY applied 2026-04-24. All 7 OWNER terms at vc_completed, md_version=2/3, registry Complete. R1/R2/R3 clean. Two systemic issues surfaced → v3_5 amendment + applicator hardening (new tasks below)._
+  
 
 ### VC four-patch output model (A-01 resolved, 2026-04-24 — see [four-patch design brief](outputs/investigations/vc-four-patch-design-v1-20260424.md))
 

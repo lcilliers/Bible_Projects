@@ -688,13 +688,16 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         set_vals["last_changed"] = _now()
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [strongs]
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE mti_terms SET {set_clauses} WHERE strongs_number = ?",
             params,
+            op_id,
+            "mti_terms",
         )
         counts["mti_status_updated"] = counts.get("mti_status_updated", 0) + 1
         status = set_vals.get("status", "?")
-        print(f"  {op_id}: mti_terms STATUS {strongs} -> {status}")
+        print(f"  {op_id}: mti_terms STATUS {strongs} -> {status} (rows={rc})")
 
     elif operation == "update_registry":
         # Canonical format: registry_no + set dict
@@ -715,12 +718,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             return
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [reg_no]
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE word_registry SET {set_clauses} WHERE no = ?",
             params,
+            op_id,
+            "word_registry",
         )
         counts["registry_updated"] = counts.get("registry_updated", 0) + 1
-        print(f"  {op_id}: word_registry UPDATE reg {reg_no} ({', '.join(set_vals.keys())})")
+        print(f"  {op_id}: word_registry UPDATE reg {reg_no} ({', '.join(set_vals.keys())}) rows={rc}")
 
     elif operation == "bulk_update_note":
         # Two sub-formats:
@@ -949,13 +955,16 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         if not tid:
             counts["skipped"] = counts.get("skipped", 0) + 1
             return
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             "UPDATE wa_term_inventory SET evidential_status = ?, retention_note = ? WHERE id = ?",
             (ev_status, ret_note, tid),
+            op_id,
+            "wa_term_inventory (evidential_status)",
         )
         counts["evidential_updated"] = counts.get("evidential_updated", 0) + 1
         strongs = op.get("strongs_number", "?")
-        print(f"  {op_id}: wa_term_inventory EVIDENTIAL {strongs} -> {ev_status}")
+        print(f"  {op_id}: wa_term_inventory EVIDENTIAL {strongs} -> {ev_status} rows={rc}")
 
     elif table == "wa_session_b_dimensions" and operation == "insert":
         rec = op["record"]
@@ -1268,12 +1277,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         where_clauses = " AND ".join(f"{k} = ?" for k in match)
         params = list(set_vals.values()) + list(match.values())
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE wa_term_inventory SET {set_clauses} WHERE {where_clauses}",
             params,
+            op_id,
+            "wa_term_inventory",
         )
         counts["term_inv_updated"] = counts.get("term_inv_updated", 0) + 1
-        print(f"  {op_id}: wa_term_inventory UPDATE id={match.get('id', '?')} {list(set_vals.keys())}")
+        print(f"  {op_id}: wa_term_inventory UPDATE match={match} {list(set_vals.keys())} rows={rc}")
 
     elif table == "wa_term_phase2_flags" and operation == "update":
         match    = op["match"]
@@ -1292,14 +1304,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         where_clauses = " AND ".join(f"{k} = ?" for k in match)
         params = list(set_vals.values()) + list(match.values())
-        cur = conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE wa_term_phase2_flags SET {set_clauses} WHERE {where_clauses}",
             params,
+            op_id,
+            "wa_term_phase2_flags",
         )
-        if cur.rowcount == 0:
-            raise ValueError(f"{op_id}: no wa_term_phase2_flags row matched {match}")
         counts["phase2_flags_updated"] = counts.get("phase2_flags_updated", 0) + 1
-        print(f"  {op_id}: wa_term_phase2_flags UPDATE {match} {list(set_vals.keys())}")
+        print(f"  {op_id}: wa_term_phase2_flags UPDATE {match} {list(set_vals.keys())} rows={rc}")
 
     elif table == "word_registry" and operation == "update":
         match    = op["match"]
@@ -1316,12 +1329,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         where_clauses = " AND ".join(f"{k} = ?" for k in match)
         params = list(set_vals.values()) + list(match.values())
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE word_registry SET {set_clauses} WHERE {where_clauses}",
             params,
+            op_id,
+            "word_registry",
         )
         counts["registry_updated"] = counts.get("registry_updated", 0) + 1
-        print(f"  {op_id}: word_registry UPDATE id={match.get('id', '?')}")
+        print(f"  {op_id}: word_registry UPDATE match={match} rows={rc}")
 
     elif table == "wa_rule_registry" and operation == "insert":
         # New rule row. Required: rule_id, category, rule_text, source_document.
@@ -1371,13 +1387,16 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             return
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [rule_id]
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE wa_rule_registry SET {set_clauses} WHERE rule_id = ?",
             params,
+            op_id,
+            "wa_rule_registry",
         )
         counts["rule_updated"] = counts.get("rule_updated", 0) + 1
         summary = ", ".join(f"{k}={str(v)[:40]}" for k, v in set_vals.items() if k != "last_modified")
-        print(f"  {op_id}: wa_rule_registry UPDATE rule_id={rule_id} set={summary}")
+        print(f"  {op_id}: wa_rule_registry UPDATE rule_id={rule_id} set={summary} rows={rc}")
 
     elif table == "wa_rule_registry" and operation == "deprecate":
         # Shortcut: mark obsolete=1 + record reason + optional superseded_by
@@ -1387,12 +1406,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             raise ValueError(f"{op_id}: wa_rule_registry deprecate requires match.rule_id")
         reason = rec.get("obsolete_reason") or rec.get("reason")
         superseded_by = rec.get("superseded_by")
-        conn.execute(
+        _exec_update_strict(
+            conn,
             """UPDATE wa_rule_registry
                   SET obsolete = 1, obsolete_reason = ?, superseded_by = ?,
                       last_modified = ?
                 WHERE rule_id = ?""",
             (reason, superseded_by, _now(), rule_id),
+            op_id,
+            "wa_rule_registry (deprecate)",
         )
         counts["rule_deprecated"] = counts.get("rule_deprecated", 0) + 1
         print(f"  {op_id}: wa_rule_registry DEPRECATE {rule_id}")
@@ -1441,12 +1463,15 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             return
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [item_id]
-        conn.execute(
+        rc = _exec_update_strict(
+            conn,
             f"UPDATE wa_addendum_registry SET {set_clauses} WHERE item_id = ?",
             params,
+            op_id,
+            "wa_addendum_registry",
         )
         counts["addendum_updated"] = counts.get("addendum_updated", 0) + 1
-        print(f"  {op_id}: wa_addendum_registry UPDATE item_id={item_id}")
+        print(f"  {op_id}: wa_addendum_registry UPDATE item_id={item_id} rows={rc}")
 
     elif operation == "bulk_update":
         records = op.get("records", [])
@@ -1499,9 +1524,12 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         # Safety: verify manual_override protection was already validated
         set_clauses = ", ".join(f"{k} = ?" for k in set_vals)
         params = list(set_vals.values()) + [di_id]
-        conn.execute(
+        _exec_update_strict(
+            conn,
             f"UPDATE wa_dimension_index SET {set_clauses} WHERE id = ?",
             params,
+            op_id,
+            "wa_dimension_index",
         )
         counts["dim_index_updated"] = counts.get("dim_index_updated", 0) + 1
         if set_vals.get("manual_override") == 1:
