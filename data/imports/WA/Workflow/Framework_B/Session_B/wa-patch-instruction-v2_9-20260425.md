@@ -1,8 +1,10 @@
-# wa-patch-instruction-v2_8-20260424
+# wa-patch-instruction-v2_9-20260425
 
 > Framework B Soul Word Analysis Programme — Patch Preparation and Execution
-> Version: v2_8 | Date: 20260424
-> Supersedes: wa-patch-instruction-v2_7-20260424.md
+> Version: v2_9 | Date: 20260425
+> Supersedes: wa-patch-instruction-v2_8-20260424.md
+>
+> **v2_9 (20260425) — VERSECONTEXT in scope of A-03 version gate (clarification):** AI's review of v2_8 §15.6 (self-check rule 4) flagged that the rule names only VCNEW and VCREVISE for the input_versions requirement, leaving the legacy combined VERSECONTEXT patch type silent. v2_9 closes the gap: legacy VERSECONTEXT shares the same `_apply_versecontext_term_updates` helper as VCNEW and VCREVISE in `scripts/apply_session_patch.py` and therefore runs the same A-03 version gate. The applicator dispatch is `if patch_type in ("VERSECONTEXT", "VCNEW", "VCREVISE"): _apply_versecontext_term_updates(...)` — all three trigger the gate. v2_9 amends §15 (new explicit §15.6.4-bis), the VERSECONTEXT entry in §3.3, and the patch-type catalogue to state that VERSECONTEXT requires `_patch_meta.terms_covered` + `_patch_meta.input_versions` for every term in `terms_covered`, identical to VCNEW/VCREVISE. This was always the applicator's behaviour from v2_6 onwards (when the gate was added); the doc was silent. AI's righteousness VERSECONTEXT (PATCH-20260424-139-VERSECONTEXT-V1) correctly carried `input_versions={"1099":1}` defensively — the right behaviour, not previously documented. Doc-only clarification; no schema or applicator change.
 >
 > **GR-FILE-003 provenance correction (20260425):** The A-08 empty-ops VCREVISE §15.3a addition on 2026-04-24 was initially added to the v2_7 file in-place without the required minor-version bump — a GR-FILE-003 violation. The file was reconstructed on 2026-04-25: v2_7 (match-shape fix + A-06 rowcount-gate — committed c8579e0) was extracted from git history and archived; v2_8 (A-08 empty-ops VCREVISE §15.3a — committed 0523cbd) is the live file. Change-note entries retained below in provenance-correct form. **VC instruction v3_5 received the same correction → v3_8.**
 >
@@ -218,7 +220,7 @@ Every patch has exactly three top-level keys:
 | PREANALYSIS | no | Session B Stage 1 Pre-Analysis (evidential status + dimensions + pre-analysis prep) |
 | SESSIONB | no | Session B Stage 2 analysis-complete patch (findings + dimensions + SD pointers) |
 | SESSIONB_FINDINGS | yes | Session B Stage 2b findings-only patch (finer-grained than SESSIONB) |
-| VERSECONTEXT | yes | Verse Context — batch-level classification (legacy; retained for backwards compatibility with pre-v3_3 VC sessions) |
+| VERSECONTEXT | yes | Verse Context — combined-output classification (legacy; retained for backwards compatibility with pre-v3_3 VC sessions, but **fully under v2_6+ contracts** when used). **Requires `_patch_meta.terms_covered` + `_patch_meta.input_versions` (A-03 version gate); applicator dispatches it through the same `_apply_versecontext_term_updates` helper as VCNEW/VCREVISE.** Prefer the four-patch split (VCNEW + VCREVISE + VCSBFLAGS + VCSDPOINTERS) for new sessions; VERSECONTEXT remains acceptable for MIXED terms (per VC instruction §6.3 Step 3) where bundling inserts and updates avoids inter-patch md_version churn. See §15. |
 | **VCNEW** | **yes** | **Verse Context session — new classifications (first-time inserts on `verse_context_group` / `verse_context`). Requires `_patch_meta.terms_covered`. See §15.** |
 | **VCREVISE** | **yes** | **Verse Context session — revisions to existing classifications (updates on `verse_context_group` / `verse_context`, including dissolves via `delete_flagged = 1`). Requires `_patch_meta.terms_covered`. See §15.** |
 | **VCSBFLAGS** | **yes** | **Verse Context session — Session B observation flags raised while reading verses (`wa_session_research_flags` inserts with `session_target = 'Session B'`). See §15.** |
@@ -1744,20 +1746,40 @@ A VCREVISE patch with an **empty operations list** is a legitimate and preferred
 }
 ```
 
-### 15.6 Self-check for the four VC session patches
+### 15.6 Self-check for VC patches (four-patch split + legacy combined)
 
 In addition to the standard §7 self-check:
 
-1. `patch_type` is exactly one of `VCNEW`, `VCREVISE`, `VCSBFLAGS`, `VCSDPOINTERS`.
-2. `session_b_status` is `null` (all four are exempt per §3.4).
-3. For `VCNEW` and `VCREVISE`: `terms_covered` is a non-empty array; every `mti_term_id` referenced in operations is present in `terms_covered`.
-4. **For `VCNEW` and `VCREVISE` (A-03 version gate):** `input_versions` is a map covering every term in `terms_covered`; every value is a positive integer. At submission time, each `input_versions[{term}]` must equal the `md_version` in the per-term `.md` the classifier worked from. (The applicator will re-verify against current DB state and reject on mismatch.)
+1. `patch_type` is exactly one of `VCNEW`, `VCREVISE`, `VCSBFLAGS`, `VCSDPOINTERS`, or **`VERSECONTEXT`** (legacy combined; see §15.7 below).
+2. `session_b_status` is `null` (all five are exempt per §3.4).
+3. For `VCNEW`, `VCREVISE`, **and `VERSECONTEXT`**: `terms_covered` is a non-empty array; every `mti_term_id` referenced in operations is present in `terms_covered`.
+4. **For `VCNEW`, `VCREVISE`, and `VERSECONTEXT` (A-03 version gate):** `input_versions` is a map covering every term in `terms_covered`; every value is a positive integer. At submission time, each `input_versions[{term}]` must equal the `md_version` in the per-term `.md` the classifier worked from. (The applicator dispatches all three patch types through the same `_apply_versecontext_term_updates` helper, which re-verifies against current DB state and rejects on mismatch.) **VERSECONTEXT is fully under the gate from v2_6 onwards** — pre-v2_6 documentation that omitted VERSECONTEXT from the gate-required list was incomplete; the applicator has always run the gate for VERSECONTEXT.
 5. For `VCNEW`: every operation is an `insert`. No `update` operations.
 6. For `VCREVISE`: every operation is an `update`. No `insert` operations.
-7. For `VCSBFLAGS`: every operation is `insert` on `wa_session_research_flags`; every record has `session_target = 'Session B'`; `flag_code` from the VCSBFLAGS allowed list (§15.4). `input_versions` not required.
-8. For `VCSDPOINTERS`: same but `session_target = 'Session D'`; `cross_registry_id` present and non-null on every row; `flag_code` from the VCSDPOINTERS allowed list (§15.5). `input_versions` not required.
-9. No mixing — a patch of one of these four types contains only operations appropriate for that type.
-10. `batch_id` is **optional** (A-04). If present, it groups session artefacts for human audit; if absent, no consequence.
+7. For `VERSECONTEXT` (legacy combined): operations may include both `insert` and `update` on `verse_context_group` and `verse_context`, plus the same operation types VCNEW and VCREVISE permit. This is the legacy combined output — see §15.7.
+8. For `VCSBFLAGS`: every operation is `insert` on `wa_session_research_flags`; every record has `session_target = 'Session B'`; `flag_code` from the VCSBFLAGS allowed list (§15.4). `input_versions` not required.
+9. For `VCSDPOINTERS`: same but `session_target = 'Session D'`; `cross_registry_id` present and non-null on every row; `flag_code` from the VCSDPOINTERS allowed list (§15.5). `input_versions` not required.
+10. No mixing across the four-patch types — a patch of `VCNEW` / `VCREVISE` / `VCSBFLAGS` / `VCSDPOINTERS` contains only operations appropriate for that type. `VERSECONTEXT` is the explicit exception, designed to combine the inserts + updates that would otherwise be split across `VCNEW` + `VCREVISE`.
+11. `batch_id` is **optional** (A-04). If present, it groups session artefacts for human audit; if absent, no consequence.
+
+### 15.7 VERSECONTEXT (legacy combined) — when to use, contracts inherited
+
+**When to use:** Prefer the four-patch split (VCNEW + VCREVISE + VCSBFLAGS + VCSDPOINTERS) for new sessions. VERSECONTEXT remains acceptable specifically for **MIXED-pattern terms** per VC instruction [current] §6.3 Step 3 — where a single term has both first-time inserts AND revisions to existing rows, and submitting them as a VCNEW + VCREVISE pair would force two separate `md_version` bumps and a stale-input gate violation between them. VERSECONTEXT lands both classes in one transaction under one input_versions check and one md_version bump.
+
+**Contracts inherited from v2_6+:**
+
+- `_patch_meta.terms_covered` — required (same shape as VCNEW/VCREVISE).
+- `_patch_meta.input_versions` — **required, A-03 version gate runs**. The applicator's `_apply_versecontext_term_updates` helper, dispatched on `patch_type in ("VERSECONTEXT", "VCNEW", "VCREVISE")`, enforces the gate identically across all three.
+- `_patch_meta.session_b_status` — null (exempt per §3.4).
+- `_patch_meta.batch_id` — optional (A-04).
+- Match-shape rules (§12.4 / §12.5) apply identically: `verse_context_group` UPDATE on `{mti_term_id, group_code}`, `verse_context` UPDATE on `{mti_term_id, verse_record_id}`.
+- A-06 rowcount-gate applies identically: `_exec_update_strict` rejects 0-row UPDATEs.
+
+**Operations:** any combination of `verse_context_group` insert+update and `verse_context` insert+update. The applicator routes each op through the same handlers as the four-patch types.
+
+**Applied behaviour:** `mti_terms.vc_status = 'vc_completed'` write + `md_version` bump per term in `terms_covered`, identical to VCNEW / VCREVISE.
+
+**Worked example:** PATCH-20260424-139-VERSECONTEXT-V1 (registry 139 righteousness G1345; 5 ops = 1 group description revision + 4 first-time inserts on partial-coverage verses; declared `terms_covered=[1099]` and `input_versions={"1099":1}`). Applied cleanly under v2_8; archived at `archive/patches/wa-139-righteousness-g1345-patch-versecontext-v1-20260424.json`.
 
 ---
 
