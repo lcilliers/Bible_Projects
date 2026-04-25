@@ -1,18 +1,20 @@
-# wa-patch-instruction-v2_7-20260424
+# wa-patch-instruction-v2_8-20260424
 
 > Framework B Soul Word Analysis Programme — Patch Preparation and Execution
-> Version: v2_7 | Date: 20260424
-> Supersedes: wa-patch-instruction-v2_6-20260424.md
+> Version: v2_8 | Date: 20260424
+> Supersedes: wa-patch-instruction-v2_7-20260424.md
 >
-> **v2_7 (20260424):** Three additions over v2_6, all landing same-day 2026-04-24.
+> **GR-FILE-003 provenance correction (20260425):** The A-08 empty-ops VCREVISE §15.3a addition on 2026-04-24 was initially added to the v2_7 file in-place without the required minor-version bump — a GR-FILE-003 violation. The file was reconstructed on 2026-04-25: v2_7 (match-shape fix + A-06 rowcount-gate — committed c8579e0) was extracted from git history and archived; v2_8 (A-08 empty-ops VCREVISE §15.3a — committed 0523cbd) is the live file. Change-note entries retained below in provenance-correct form. **VC instruction v3_5 received the same correction → v3_8.**
+>
+> **v2_8 (20260424) — A-08 empty-ops VCREVISE pattern:** new §15.3a formalises the no-change re-evaluation shape. A VCREVISE with `operations: []` and `terms_covered` populated is the authoritative way to record "term reviewed, no changes needed." The applicator runs the version gate, writes `vc_status = 'vc_completed'` per term, and bumps `md_version` — identical to populated VCREVISE behaviour, verified live 2026-04-24. This replaces the pre-v2_8 cosmetic-notes-stamp workaround. See VC instruction v3_8 §7.9.3b for the methodology rationale. Editorial / clarification change; no semantic shift from v2_7 behaviour (the applicator already supported empty-ops VCREVISE).
+>
+> **v2_7 (20260424) — two additions over v2_6:**
 >
 > (1) **Match-shape fix in §12.4 and §12.5** — previous examples required the integer `id` of `verse_context_group` or `verse_context` rows. The classifier cannot supply those ids from the per-term Session A `.md`. v2_7 documents the correct shapes: `verse_context_group` UPDATE matches on `{mti_term_id, group_code}`; `verse_context` UPDATE matches on `{mti_term_id, verse_record_id}` — the latter is DB-unique (enforced by `sqlite_autoindex_verse_context_1`). The applicator always accepted these via `_resolve_group_id` and the uniqueness index; only the doc was wrong, which caused session stoppages before the v3_5 roll-out.
 >
 > (2) **A-06 rowcount-gate documentation** — propagates the hardening from VC instruction v3_5 §7.8: UPDATE ops on `verse_context` and `verse_context_group` that match 0 rows are rejected by `_exec_update_strict`, transaction rolls back, REPAIR-FAILURE patch produced. Documented in §15.3.
 >
-> (3) **A-08 empty-ops VCREVISE pattern** — new §15.3a formalises the no-change re-evaluation shape. A VCREVISE with `operations: []` and `terms_covered` populated is the authoritative way to record "term reviewed, no changes needed." The applicator runs the version gate, writes `vc_status = 'vc_completed'` per term, and bumps `md_version` — identical to populated VCREVISE behaviour, verified live 2026-04-24. This replaces the pre-v2_7 cosmetic-notes-stamp workaround. See VC instruction v3_5 §7.9.3b for the methodology rationale.
->
-> All three are editorial / clarification changes; no semantic change from v2_6 behaviour. The applicator already did what v2_7 describes.
+> Both v2_7 and v2_8 are editorial / clarification changes; no semantic change from v2_6 behaviour. The applicator already does what v2_7 and v2_8 describe.
 >
 > **v2_6 (20260424):** Adds the A-03 version-gate support to §15 VCNEW and VCREVISE: `_patch_meta.input_versions` is now a required field — a map of `{mti_term_id: md_version}` declaring the per-term `.md` version the classifier worked from. The applicator rejects any patch whose declared input_version for any term does not match the current DB `mti_terms.md_version`; on successful apply, the version is bumped so any pre-existing `.md` is stale. `_patch_meta.batch_id` is reclassified as optional (A-04). VCSBFLAGS/VCSDPOINTERS do not require input_versions. v2_5 content otherwise unchanged.
 > Governed by: wa-global-general-rules [current]
