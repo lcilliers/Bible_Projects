@@ -1,0 +1,95 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB008-VCREVISE-V1",
+    "batch_id": "VCB-008",
+    "patch_type": "VCREVISE",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_8-20260425.md",
+    "governing_instruction": "wa-versecontext-instruction-v3_8-20260425.md",
+    "session_b_status": null,
+    "terms_covered": [5001, 787, 922, 921, 1126, 6231, 1275, 7360, 1377],
+    "input_versions": {
+      "5001": 1,
+      "787": 1,
+      "922": 1,
+      "921": 1,
+      "1126": 1,
+      "6231": 1,
+      "1275": 1,
+      "7360": 1,
+      "1377": 1
+    },
+    "description": "VCB-008 re-evaluation under v3_8 of 9 terms across 5 registries (041 defilement, 087 indignation, 148 sincerity, 189 malice, 209 likeness). 8 terms NO-CHANGE: G3435 molunō (5001), G3436 molusmos (787), G0024 aganaktēsis (922), G1505 eilikrineia (1126), G1506 eilikrinēs (6231), H7589 she.at (1275), G4832 summorfos (7360), G4833 summorfoomai (1377) — all classifications, groups, anchors confirmed correct under v3_8 §3 filter and §6.2 Step 3 characteristic-perspective grouping. 1 term REVISED: H2152 zal.a.phah (921) — group 921-001 description sharpened to drop 'burning of suffering as an inner experience' clause that did not survive the v3_8 term-level filter (GR-PROG-007); 2 verses (Psa 11:6 vid 170390, Lam 5:10 vid 25322) flipped from is_relevant=1·is_related=1 to is_relevant=0·set_aside_reason='physical_only' because the term in those verses names meteorological/physical referents and does not carry inner-being content at term level. Anchor Psa 119:53 (vid 170391) retained; R4 satisfied. All term classifications advance to vc_completed and md_version bumps."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 921,
+        "group_code": "921-001"
+      },
+      "set": {
+        "context_description": "Term names hot indignation as an inner moral response — the rising of righteous outrage at wickedness that forsakes God's law",
+        "notes": "v3_8 re-evaluation (VCB-008): prior bundled-description 'burning of suffering as an inner experience' did not survive term-level filter (GR-PROG-007); description sharpened to surviving engagement (Psa 119:53). Psa 11:6 and Lam 5:10 reassigned to set_aside/physical_only in this patch.",
+        "delete_flagged": 0
+      },
+      "description": "Revised context description for group 921-001 (H2152 zal.a.phah): drop bundled 'burning of suffering' clause; retain inner moral outrage characteristic only"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 921,
+        "verse_record_id": 170390
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "v3_8 re-evaluation (VCB-008): term names meteorological judgement-element ('scorching wind' as portion of the wicked's cup); no term-level inner-being engagement. Verse-theme reading under prior rules does not survive GR-PROG-007 term-level filter.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 11:6 — reclassified: relevant→set_aside (physical_only), removed from group 921-001"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 921,
+        "verse_record_id": 25322
+      },
+      "set": {
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "v3_8 re-evaluation (VCB-008): term names physical body-condition (skin hot as oven from famine); no term-level inner-being engagement. Inner-being lament in Lam 5 carried by other terms in other verses, not by zal.a.phah here.",
+        "delete_flagged": 0
+      },
+      "description": "Lam 5:10 — reclassified: relevant→set_aside (physical_only), removed from group 921-001"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "group_updates_description": 1,
+    "group_dissolves": 0,
+    "verse_context_updates": 2,
+    "anchor_promotions": 0,
+    "anchor_demotions": 0,
+    "verses_flipped_to_set_aside": 2,
+    "set_aside_reason_distribution": {
+      "physical_only": 2
+    },
+    "terms_in_terms_covered": 9,
+    "terms_with_operations": 1,
+    "terms_no_change": 8,
+    "nature": "v3_8 re-evaluation — 1 term revised, 8 terms confirmed no-change (mixed pattern per VC instruction §7.9.3b)"
+  }
+}
