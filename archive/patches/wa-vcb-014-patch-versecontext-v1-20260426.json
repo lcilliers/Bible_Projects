@@ -1,0 +1,842 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260426-VCB014-VERSECONTEXT-V1",
+    "batch_id": "VCB-014",
+    "patch_type": "VERSECONTEXT",
+    "terms_covered": [937, 979, 932, 5696, 980, 1147, 4841, 728, 4843, 4842, 5662],
+    "input_versions": {
+      "937": 1,
+      "979": 1,
+      "932": 1,
+      "5696": 1,
+      "980": 1,
+      "1147": 1,
+      "4841": 1,
+      "728": 1,
+      "4843": 1,
+      "4842": 1,
+      "5662": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "20260426",
+    "produced_by": "wa-versecontext-instruction-v3_10-20260425.md",
+    "session_b_status": null,
+    "description": "Verse context classification — session VCB-014, 11 terms across registries 094 intercession, 110 memory, 091 insight, 155 submission, 020 character. 3 MIXED terms (H6293, H0995, G1381) with inserts and/or updates. 8 NO-CHANGE terms confirmed unchanged. Total 47 operations: 43 verse_context inserts + 4 verse_context updates."
+  },
+  "operations": [
+
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28155,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 28:11 — set aside (spatial_only): pa.ga names Jacob arriving at a place; no inner-being content"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28156,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 32:1 — set aside (no_inner_being): angels met Jacob; physical/narrative encounter"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175146,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 5:3 — set aside (no_inner_being): God falling on with pestilence; punitive external event"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175145,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 5:20 — set aside (no_inner_being): physical meeting of persons"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175144,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 23:4 — set aside (no_inner_being): meeting enemy's wandering animal; legal-practical"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28171,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:19 — set aside (no_inner_being): avenger of blood meeting murderer; legal-physical event"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28172,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Num 35:21 — set aside (no_inner_being): avenger meeting murderer; legal-physical event"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175154,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 2:16 — set aside (no_inner_being): pursuers will encounter physically; no inner-being in term"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175147,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 16:7 — set aside (spatial_only): boundary touches Jericho"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175148,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 17:10 — set aside (spatial_only): Asher is reached; geographical boundary"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175149,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 19:11 — set aside (spatial_only): boundary touches Dabbesheth"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175150,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 19:22 — set aside (spatial_only): boundary touches Tabor"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175151,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 19:26 — set aside (spatial_only): it touches Carmel"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175152,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 19:27 — set aside (spatial_only): touches Zebulun"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175153,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "spatial_only",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 19:34 — set aside (spatial_only): touching Zebulun at the south"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28170,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 8:21 — set aside (no_inner_being): fall upon us (violent killing); no inner-being in term"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28168,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 15:12 — set aside (no_inner_being): attack me; violent physical act"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28169,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:25 — set aside (no_inner_being): angry fellows fall upon you; threat of violence"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175156,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Rut 2:22 — set aside (no_inner_being): be assaulted; physical danger"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175139,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 10:5 — set aside (no_inner_being): meet a group of prophets; physical encounter"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175140,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 22:17 — set aside (no_inner_being): strike the priests; violent act named by term"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175141,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 22:18 — set aside (no_inner_being): struck down the priests; violent act"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175142,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 1:15 — set aside (no_inner_being): execute him; physical execution order"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175133,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:25 — set aside (no_inner_being): struck him down; execution"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175134,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:29 — set aside (no_inner_being): strike him down; execution order"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175135,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:31 — set aside (no_inner_being): strike him down and bury him; execution"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175136,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:32 — set aside (no_inner_being): attacked and killed; violent historical event"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175137,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:34 — set aside (no_inner_being): struck him down; execution"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175138,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:46 — set aside (no_inner_being): struck him down; execution"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28167,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 36:32 — set aside (no_inner_being): lightning striking the mark; physical/meteorological"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 175143,
+        "mti_term_id": 937,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Amo 5:19 — set aside (no_inner_being): bear met him; animal encounter, physical narrative"
+    },
+
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 937,
+        "verse_record_id": 28161
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "is_related": 0,
+        "group_id": null,
+        "set_aside_reason": "wrong_face",
+        "notes": "Re-evaluation v3_10: wrong_face — inner-being content (joyful righteousness, remembering God) is carried by other terms in the verse; pa.ga names the encounter act only. Prior: relevant/related/937-001.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 64:5 — revised from relevant/related/937-001 to set-aside wrong_face: pa.ga names the meeting act; inner-being content belongs to other terms"
+    },
+
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 932,
+        "verse_record_id": 173352
+      },
+      "set": {
+        "group_id": "932-001",
+        "notes": "Re-evaluation v3_10: revised from 932-003 to 932-001 — subject is the human woman (her scrutiny of the infant), not God; bin names human perceptual discernment, not divine comprehension of humans.",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 3:21 — reclassified from 932-003 (God perceiving humans) to 932-001 (human discernment capacity): woman is the subject"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 932,
+        "verse_record_id": 173360
+      },
+      "set": {
+        "group_id": "932-001",
+        "notes": "Re-evaluation v3_10: revised from 932-003 to 932-001 — David is the subject perceiving the child's death; bin names human inner cognitive act, not God's comprehension.",
+        "delete_flagged": 0
+      },
+      "description": "2Sa 12:19 — reclassified from 932-003 to 932-001: David (human) is subject of understanding"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 932,
+        "verse_record_id": 27761
+      },
+      "set": {
+        "group_id": "932-001",
+        "notes": "Re-evaluation v3_10: revised from 932-003 to 932-001 — Nehemiah is the subject discovering/perceiving the evil; bin names human discernment, not divine comprehension.",
+        "delete_flagged": 0
+      },
+      "description": "Neh 13:7 — reclassified from 932-003 to 932-001: Nehemiah (human) is subject"
+    },
+
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173345,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Musical understanding as a domain of the human cognitive discernment capacity; borderline-retain per §3.3",
+        "delete_flagged": 0
+      },
+      "description": "1Ch 15:22 — relevant/related/932-001: Chenaniah's musical understanding as cognitive capacity"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173346,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Musical skill as domain of human understanding capacity; borderline-retain",
+        "delete_flagged": 0
+      },
+      "description": "1Ch 25:7 — relevant/related/932-001: musical skillfulness as form of discernment capacity"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173347,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 25:8 — relevant/related/932-001: teacher (one who understands) distinguished from pupil"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173358,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Musical skill as domain of cognitive discernment; borderline-retain",
+        "delete_flagged": 0
+      },
+      "description": "2Ch 34:12 — relevant/related/932-001: Levites skillful in music as cognitive capacity"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173367,
+        "mti_term_id": 932,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ezr 8:15 — set aside (no_inner_being): Ezra reviewed/surveyed the assembled people; administrative count"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 173419,
+        "mti_term_id": 932,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 58:9 — set aside (no_inner_being): pots feeling heat of thorns; physical simile, no inner-being"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 27716,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Expert in charms — technical expertise as a domain of cognitive discernment capacity; borderline-retain per §3.3",
+        "delete_flagged": 0
+      },
+      "description": "Isa 3:3 — relevant/related/932-001: expert (discernment/skill in a craft domain); borderline-retain"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 27735,
+        "mti_term_id": 932,
+        "group_id": "932-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 9:17 — relevant/related/932-001: Consider (Hiphil imperative) — call to exercise inner attentive discernment"
+    },
+
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145503,
+        "mti_term_id": 4841,
+        "group_id": "4841-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Luk 12:56 — relevant/related/4841-001: interpret/discern the present time — failure of moral-spiritual discernment"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145504,
+        "mti_term_id": 4841,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Luk 14:19 — set aside (no_inner_being): examine oxen; commercial/physical inspection"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145506,
+        "mti_term_id": 4841,
+        "group_id": "4841-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Rom 1:28 — relevant/related/4841-001: did not see fit to acknowledge God — moral faculty refusing to approve God's reality"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145490,
+        "mti_term_id": 4841,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Cor 16:3 — set aside (no_inner_being): accredit by letter; formal administrative endorsement"
+    }
+
+  ],
+  "_patch_summary": {
+    "total_operations": 47,
+    "group_inserts": 0,
+    "group_updates": 0,
+    "verse_context_inserts": 43,
+    "verse_context_updates": 4,
+    "relevant_verses": 8,
+    "set_aside_verses": 35,
+    "anchor_verses": 0,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 4,
+    "no_change_terms_confirmed": 8
+  }
+}

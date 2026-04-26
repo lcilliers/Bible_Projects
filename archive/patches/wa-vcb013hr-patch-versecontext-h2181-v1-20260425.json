@@ -1,0 +1,235 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB013HR-VERSECONTEXT-H2181-V1",
+    "registry_id": 171,
+    "word": "whoredom",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9-20260425.md",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "batch_id": "VCB-013",
+    "terms_covered": [
+      1221
+    ],
+    "input_versions": {
+      "1221": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "description": "VCB-013 halt-resolution: H2181 za.nah mti=1221 — first-time classification of 12 previously-pending verses (10 set-aside no_inner_being for participle-nominal 'prostitute' uses naming social/legal categories without inner-being engagement carried by the term; 2 relevant — Gen 38:15 Judah's mistaken perception, parallel to already-classified Gen 34:31; Amos 7:17 judicial-degradation facet) plus 1 group description update on 1221-004 (DF-HR-001 Option B) to cover both active-will and passively-imposed states. MIXED routing per VC §6.3 Step 3 — packaged as legacy VERSECONTEXT to avoid VCNEW+VCREVISE md_version churn on a single term."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1221,
+        "group_code": "1221-004"
+      },
+      "set": {
+        "context_description": "Term names whoredom or its state in inner-being-engaged ways — the active will and desire engaged in sexual unfaithfulness, and the passively-imposed state of degradation as covenantal-judicial consequence on the inner-being-faithless household"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 46308,
+        "mti_term_id": 1221,
+        "group_id": "1221-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Judah's mistaken thought-perception that Tamar was a prostitute; tov-perceiving structure parallel to Gen 34:31",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 46343,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Legal-categorical use; priestly marriage prohibition lists prostitute alongside widow/divorced woman",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 46342,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Legal-categorical use; high-priest marriage prohibition",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207123,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Identity-descriptor: Rahab the prostitute",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207124,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Identity-descriptor: Rahab the prostitute",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207125,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Locational reference: the prostitute's house",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207126,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Identity-descriptor: Rahab the prostitute",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 46332,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Biographical-categorical: Jephthah son of a prostitute",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207094,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Narrative identification: two prostitutes in Solomon's judgement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207093,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Narrative incidental: prostitutes washed at the pool of Samaria",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207122,
+        "mti_term_id": 1221,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Categorical commodity reference; trafficking indictment's inner-being weight is in the action verbs not the term",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207097,
+        "mti_term_id": 1221,
+        "group_id": "1221-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Judicial-degradation facet: Amaziah's wife forced into a prostitute-state as covenantal-judicial sentence; new facet for 1221-004 (description amendment per DF-HR-001)",
+        "delete_flagged": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 13,
+    "verse_context_inserts_set_aside": 10,
+    "verse_context_inserts_related": 2,
+    "verse_context_inserts_anchor": 0,
+    "group_updates_description": 1,
+    "group_inserts": 0,
+    "by_set_aside_reason": {
+      "no_inner_being": 10
+    }
+  }
+}

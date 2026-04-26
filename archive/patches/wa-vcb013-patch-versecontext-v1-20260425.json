@@ -1,0 +1,46 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB013-VERSECONTEXT-V1",
+    "registry_id": 127,
+    "word": "reasoning",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9-20260425.md",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "batch_id": "VCB-013",
+    "terms_covered": [6065],
+    "input_versions": {
+      "6065": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "description": "VCB-013 — single-verse correction on G1258 *dialektos* mti=6065 per DF-005 Option B. Acts 1:19 (vid=187509) was unclassified (5 of 6 active verses had verse_context rows; this 1 was missing). Inserts a no_inner_being set-aside row to complete the term's coverage. Existing 5 rows + 1 group (6065-001) unchanged. MIXED-pattern: legacy VERSECONTEXT used per VC §6.3 Step 3 (single insert without VCNEW/VCREVISE pair to avoid stale-input gate violation between two patches on the same term)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 187509,
+        "mti_term_id": 6065,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Term names the local language (Aramaic) in which the field was named Akeldama. Etymological / linguistic-descriptive use without inner-being engagement carried by the term itself.",
+        "delete_flagged": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "nature": "VCB-013 single-verse correction on G1258 (DF-005 Option B); resolves partial-completion anomaly within session",
+    "verse_context_inserts_set_aside": 1,
+    "verse_context_inserts_anchor": 0,
+    "verse_context_inserts_related": 0,
+    "group_inserts": 0,
+    "group_updates": 0,
+    "verse_context_updates": 0
+  }
+}

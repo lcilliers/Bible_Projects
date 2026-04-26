@@ -1,0 +1,42 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-108-SDPOINTERS-V1",
+    "produced_date": "20260425",
+    "produced_by": "Pre-Session D exploratory discussion 2026-04-25",
+    "patch_type": "SDPOINTERS",
+    "session_b_status": null,
+    "registry_no": 108,
+    "registry_word": "meditation",
+    "governing_instruction": "wa-sessiond-orientation-v3_2-20260418.md",
+    "description": "Single SD_POINTER raised for registry 108 (meditation). Question whether the meditation registry adequately captures the inner-word / inner-speech dimension of its core terms — hagah (H1897, currently XREF) and siach verb (H7878, currently XREF) — given convergence across biblical-theological (dabar, lev, logos endiathetos/prophorikos, verbum mentis), philosophical (Plato onward; Stoic-Augustinian inner-word tradition), and psychological/cognitive (Vygotskian inner speech) domains. Raises three Session D investigation questions covering term-inventory coverage, contemplative-vs-inner-speech distinction, and cross-references to thought (160) and counsel (32)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 108,
+        "file_id": null,
+        "flag_code": "SD_POINTER",
+        "flag_label": "Inner-word / inner-speech dimension of meditation — does registry 108 capture the interior/exterior boundary of word and thought (hagah, siach)?",
+        "strongs_reference": "H1897; H7878; H7881; H1900; H1902H",
+        "priority": "MEDIUM",
+        "session_target": "D",
+        "cross_registry_id": null,
+        "description": "Session D Investigation Prompt — Registry 108 (Meditation) — Inner Word / Inner Speech Dimension\n\nDuring a pre-Session D exploratory discussion, the question was raised whether the Framework B programme adequately captures the concept of word / voice / speak / thought as phenomena that are at least partly located in the inner being, rather than being purely physical or communicative acts.\n\nThe discussion identified a convergence across three domains:\n\nBiblical-theological: Hebrew dabar (דָּבָר) carries both word and reality/event, suggesting the spoken word is an extension of the speaker's inner being. Hebrew lev (heart) is the seat of inner speech and thought — \"the heart says...\" is a genuine idiom for interior thought-speech. Greek logos carries the Stoic distinction between logos endiathetos (inner word/reason) and logos prophorikos (uttered word). Augustine's verbum mentis (word of the mind) is his pre-linguistic inner word, located in the soul.\n\nPhilosophical: From Plato onward, thought is treated as inner dialogue — \"the soul talking to itself.\" The logos endiathetos / prophorikos distinction runs from Stoics through Augustine and remains philosophically significant.\n\nPsychological/cognitive: Inner speech is a well-established phenomenon (Vygotsky, modern neuroscience). It activates speech-production brain areas and is partly constitutive of conscious thought, not merely a report of it.\n\nProgramme gap identified: The programme has no dedicated registry for word, voice, speak, or logos. This is probably a principled scope decision — the programme covers inner states and dispositions, not communicative acts. However, the gap raises a specific question for Session D analysis of meditation (108, C02):\n\nDoes the meditation registry adequately capture the inner-speech dimension of its core terms — particularly הָגָה (hagah, to murmur/muse inwardly) and שִׂיחַ (siach, to muse/speak inwardly) — as terms that sit at the interior/exterior boundary of word and thought? Or does the registry treat these primarily as contemplative states, missing the inner-speech signal?\n\nSpecific investigation questions for Session D:\n\n1. Are הָגָה and שִׂיחַ present in the meditation term inventory, and are they glossed in a way that preserves their inner-speech quality?\n2. Does the analysis distinguish meditation-as-inner-speech from meditation-as-quiet-reflection?\n3. Is there any cross-reference to thought (160) or counsel (32) that picks up the inner-word dimension?\n\nNote (registry-state observation, 2026-04-25): In the current registry-108 inventory, H1897 hagah (\"to mutter\") and H7878 siach verb (\"to muse\") are present as XREF terms — owned elsewhere — while the meditation nouns H1900 hagut, H1902H higgayon, and H7881 sichah are OWNER. The inner-speech verbs that most directly carry the interior/exterior-boundary signal are therefore not OWNER in 108. Session D may need to consider whether this ownership pattern is itself part of the gap: the meditation registry holds the noun-form contemplative-state terms while the action-form inner-speech verbs sit in their OWNER registries. Cross-registry ownership of H1897 and H7878 should be confirmed when this pointer is taken up.",
+        "session_raised": "Pre-Session D exploratory discussion 2026-04-25",
+        "raised_date": "2026-04-25T00:00:00Z",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "research_flag_inserts": 1,
+    "by_flag_code": {
+      "SD_POINTER": 1
+    },
+    "registries_touched": [108]
+  }
+}

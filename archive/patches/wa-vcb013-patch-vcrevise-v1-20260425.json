@@ -1,0 +1,80 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB013-VCREVISE-V1",
+    "registry_id": null,
+    "word": null,
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9-20260425.md",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "batch_id": "VCB-013",
+    "terms_covered": [885, 886, 5480, 891, 5481, 935, 933, 1080, 1081, 1220, 1222],
+    "input_versions": {
+      "885": 1,
+      "886": 1,
+      "5480": 1,
+      "891": 1,
+      "5481": 1,
+      "935": 1,
+      "933": 1,
+      "1080": 1,
+      "1081": 1,
+      "1220": 1,
+      "1222": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "description": "VCB-013 re-evaluation: 11 terms across 5 registries (067 goodness, 069 gratitude, 092 integrity, 127 reasoning, 171 whoredom). 8 terms confirmed no-change (885, 891, 5481, 935, 933, 1080, 1081, 1222). 3 terms revise: G5544 (886) verse_context update vid=24752 notes addition (DF-001 Option C); G2168 (5480) group description update on 5480-001 (DF-003 Option B); H2183 (1220) group description update on 1220-001 (DF-007 Option B). Excluded from this patch: 884 H2896A, 934 H8549G, 1221 H2181 (partial-completion anomalies DF-002/DF-004/DF-006); 6065 G1258 (DF-005 Option B — covered in companion legacy VERSECONTEXT patch)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 5480,
+        "group_code": "5480-001"
+      },
+      "set": {
+        "context_description": "Term names the act and habitual inner posture of giving thanks — primarily to God in response to grace received, but extending to relational gratitude rendered in recognition of God's work through others — the reorientation of the inner being toward gratitude, the absence or distortion of which marks the corruption of the inner person, and the presence of which sanctifies all conduct and circumstances"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "verse_context_group",
+      "match": {
+        "mti_term_id": 1220,
+        "group_code": "1220-001"
+      },
+      "set": {
+        "context_description": "Whoredom as a spiritual / inner-being condition — the spirit of whoredom within that orients people away from God toward idolatry, defilement, and alliance with what corrupts; named figuratively of Israel, of individuals, and of foreign nations alike"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 886,
+        "verse_record_id": 24752
+      },
+      "set": {
+        "notes": "Negation register — quotes Ps 14:3 LXX universal-depravity catena. Term names chrēstotēs by absence in the fallen inner being; retained in 886-002 as the human-side characteristic engaged through negation. See VCB-013 obslog DF-001 / Session B flag SBF-VCB013-001."
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "nature": "VCB-013 re-evaluation; 8 terms confirmed no-change (empty-ops segment); 3 terms revise: 2 group_updates (description amendments per DF-003/DF-007 Option B), 1 verse_context_update (notes-only on Rom 3:12 per DF-001 Option C)",
+    "group_description_updates": 2,
+    "verse_context_updates": 1,
+    "verse_context_notes_only_updates": 1,
+    "anchor_promotions": 0,
+    "anchor_demotions": 0,
+    "group_dissolves": 0,
+    "terms_no_change": 8,
+    "terms_revised": 3,
+    "terms_excluded_partial_completion": 3,
+    "terms_excluded_to_legacy_patch": 1
+  }
+}

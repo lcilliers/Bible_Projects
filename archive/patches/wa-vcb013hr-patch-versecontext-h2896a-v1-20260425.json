@@ -1,0 +1,2268 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB013HR-VERSECONTEXT-H2896A-V1",
+    "registry_id": 67,
+    "word": "goodness",
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9-20260425.md",
+    "patch_type": "VERSECONTEXT",
+    "session_b_status": null,
+    "batch_id": "VCB-013",
+    "terms_covered": [
+      884
+    ],
+    "input_versions": {
+      "884": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "description": "VCB-013 halt-resolution: H2896A tov mti=884 — first-time classification of all 141 previously-pending verses (75 set-aside: 59 physical_only descriptors of objects/persons/land/aesthetics + 16 no_inner_being including 'good or bad' merism + 'feast/holiday' idioms + good-old-age formula; 66 relevant: 14 placed in existing groups 884-002/003/004/005/006, 52 placed in 3 new groups proposed). 3 new groups: 884-007 (Gen 1 creation evaluative pronouncement, 7 verses, anchor Gen 1:31), 884-008 (volitional-preference idiom 'as it pleases', 40 verses, anchor Jer 26:14), 884-009 (inner well-being state, 5 verses, anchor Est 5:9). DF-HR-002 documents the new-group decision. MIXED routing per VC §6.3 Step 3."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 884,
+        "group_code": "884-007",
+        "context_description": "Term names God's evaluative pronouncement on his creation — the divine inner-being action of judging-and-declaring-good in Gen 1, where the Creator inspects what he has made and pronounces it good or very good",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 884,
+        "group_code": "884-008",
+        "context_description": "Term names what is good-in-the-eyes-of / pleasing to / preferred-by an actor — the volitional-preference idiom in which the term is the predicate of someone's will or evaluative agreement, naming what they choose, prefer, agree to, or judge fitting",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 884,
+        "group_code": "884-009",
+        "context_description": "Term names a state of inner well-being — the shalom-condition of being-well, prospering, glad-of-heart, or well-disposed — the inner-being state experienced or sought by the human person",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24358,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on created light — God's inner-being action of judging-as-good",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24352,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on dry land/seas",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24353,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on vegetation",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24354,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on luminaries",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24355,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on sea creatures and birds",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24356,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "Divine evaluative pronouncement on land animals",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24357,
+        "mti_term_id": 884,
+        "group_id": "884-007",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "Divine evaluative pronouncement on the whole creation — \"very good\"",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24365,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good for food\" — physical quality of trees in Eden",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24363,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Gold of that land is good\" — physical-quality descriptor of gold",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24384,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Daughters of man were attractive\" (tovat) — physical-aesthetic descriptor",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24359,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Good old age\" — names completed life-quality at death; tov modifies physical-temporal age",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24360,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do to her as you please\" (good in your eyes) — names what is good/preferred to Abram's will; volitional engagement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24361,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Calf, tender and good\" — physical-quality of meat",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24362,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do to them as you please\" — Lot offering daughters; tov as predicate of will",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24366,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Where it pleases you\" — Abimelech's permission; volitional preference",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24367,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Very attractive in appearance\" (Rebekah) — physical beauty",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24368,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Cannot speak to you bad or good\" — Hebrew merism for \"anything at all\"",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24369,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Good old age\" (Abraham's death) — names life-quality completion",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24370,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Attractive in appearance\" (Rebekah) — physical beauty",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24371,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good young goats\" — physical-quality of animals for food",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24372,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better that I give her to you\" — Laban's expressed preference/judgement; volitional-relational",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24374,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good endowment\" — names physical/material gift; Leah's claim about God's gift to her — borderline but tov here qualifies the physical endowment (sons/dowry)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24375,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Either good or bad\" — merism; God's warning to Laban",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24376,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Either good or bad\" — merism; Laban citing God's warning",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24377,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Interpretation was favorable (good)\" — chief baker's evaluative judgement of Joseph's interpretation; inner-being assessment",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24382,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Plump and good ears of grain\" — dream-content; physical quality of grain",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24378,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Dream — physical quality of ears",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24379,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Dream — physical quality of ears",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24380,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "Dream interpretation — physical quality of cows/ears",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24381,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good years that are coming\" — qualifies temporal/physical abundance years",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24383,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Resting place was good, land was pleasant\" — Issachar oracle; tov names physical-quality of place",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164588,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"He was a fine child\" (Moses) — physical-aesthetic of infant",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164589,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good and broad land\" — covenantal-promise but tov names the physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24427,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Good for bad\" merism; legal-substitution",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24428,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Either good or bad\" — priestly valuation merism",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24429,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Either good or bad\" — priestly valuation merism",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24430,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Between good or bad\" — substitution merism",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24444,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Land is good or bad\" — spies' reconnaissance question (merism for evaluation framework)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24446,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Land is exceedingly good land\" — Joshua/Caleb spy report; physical-territorial",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24447,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Marry whom they think best\" — Zelophehad's daughters' preference; volitional",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164535,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Thing you have spoken is good for us to do\" — people's evaluative agreement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164536,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land that the LORD our God is giving us\" — covenantal promise; tov names land",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164537,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land swore to give to your fathers\" — covenant; physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164543,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land beyond Jordan, good hill country\" — physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164545,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land for inheritance\" — covenant; physical",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164546,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Take possession of that good land\" — physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164547,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Great and good cities\" — physical-quality of cities",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164551,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land — brooks of water, fountains\" — physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164550,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good houses\" — physical structures",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164538,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good land that the LORD is giving\" — physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164540,
+        "mti_term_id": 884,
+        "group_id": "884-009",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Well with you\" — names the state of well-being / shalom resulting from purging guilt; relational-covenantal inner-being state",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164541,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Wherever it suits him\" (in good in his eyes) — runaway slave's preference; volitional",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164542,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"His good treasury, the heavens\" — figurative-physical (rain/blessing source)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164544,
+        "mti_term_id": 884,
+        "group_id": "884-009",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Make you abundantly prosperous\" — covenantal-relational well-being; tov names the state of being-prospered",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164610,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Beautiful cloak from Shinar\" — Achan's coveted item; physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164611,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Whatever seems good and right in your sight\" — Gibeonites; volitional submission",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164606,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"This good ground that the LORD has given\" — covenantal land",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24417,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better the gleaning of Ephraim than the harvest of Abiezer\" — Gideon's rhetorical comparative wisdom; fits 884-004 comparative-wisdom-good",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24418,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Gideon died in good old age\" — completed life",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24420,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better seventy or one rule\" — Abimelech's rhetorical comparative for political choice; volitional-evaluative",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24419,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"My sweetness and my good fruit\" — fig tree parable; physical fruit-quality",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24412,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do to us whatever seems good to you\" — Israel's repentant submission to God; volitional",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24413,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Younger sister more beautiful\" — Samson's wife's sister; physical aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24415,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"We have seen the land, behold it is very good\" — Dan's spies; physical territory",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24414,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better priest to one man or to a tribe\" — Danites' rhetorical preference; comparative",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24416,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do with them what seems good to you\" — Levite's host offering daughter/concubine; volitional (a deeply morally fraught instance, but tov's engagement is volitional-preference)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164695,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"It is good, my daughter, that you go out\" — Naomi's evaluative judgement/counsel",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164696,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If he will redeem you, good\" — Boaz's conditional agreement-judgement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164493,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do what seems best to you\" — Elkanah to Hannah; volitional submission",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164516,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Let him do what seems good to him\" — Eli's submission to God's judgement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164517,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Best of fields/vineyards/olives\" — Samuel's warning; physical-quality property",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164518,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Best of young men/donkeys\" — physical-extraction warning",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164520,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Saul handsome young man, more handsome\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164519,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Well said\" — Saul's agreement to servant's suggestion",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164495,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do whatever seems good to you\" — Jabesh-gilead's submission",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164497,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do whatever seems good to you\" — people to Saul",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164498,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do what seems good to you\" — people to Saul",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164501,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Ruddy, beautiful eyes, handsome\" (David) — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164502,
+        "mti_term_id": 884,
+        "group_id": "884-009",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"You will be well\" (relief from harmful spirit) — names inner-being state of relief/well-being",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164507,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If he says 'Good!'\" — Saul's inner approval/agreement (cf. inner-being engagement of agreement)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164506,
+        "mti_term_id": 884,
+        "group_id": "884-009",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Well disposed toward David\" — Saul's relational-emotional disposition; inner-being",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164511,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Feast day\" (yom tov) — idiomatic noun-phrase for festival day",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164513,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Nothing better than escape\" — David's inward judgement spoken in his heart; comparative-wisdom",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164533,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Good; I will make a covenant\" — David's conditional agreement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164522,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Bathsheba very beautiful\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164524,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better for me to be there still\" — Absalom's preference; comparative",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164525,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Your claims are good and right\" — Absalom's flattering evaluation",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164527,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Counsel of Ahithophel is not good\" — Hushai's evaluative judgement on counsel",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164526,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Good counsel of Ahithophel\" — narrator's evaluation; same engagement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164529,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Better that you send help from city\" — Joab's men advising; preferential",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164530,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do his pleasure\" (good in his eyes) — servants of king's preference",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164531,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Do what seems good to you\" — Mephibosheth to David",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164532,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Whatever seems good to you\" — David to Barzillai",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164601,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Two vessels of fine bright bronze\" — physical-quality of metalwork",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24437,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it pleases the king\" — Nehemiah; volitional-relational request",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24438,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it pleases the king\" — Nehemiah; same",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24439,
+        "mti_term_id": 884,
+        "group_id": "884-005",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Good hand of my God was upon me\" — Nehemiah's recognition of God's favorable providential action; covenantal-relational. Fits 884-005 (God's good word/promise/faithfulness)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164567,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Vashti lovely to look at\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164568,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Memucan's counsel",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164569,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Beautiful young virgins\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164570,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Beautiful young virgins\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164571,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Esther beautiful figure, lovely to look at\" — physical-aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164572,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Best place in the harem\" — physical-spatial advantage",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164574,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Haman's decree request",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164573,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"As it seems good to you\" — king's permission to Haman",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164575,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Esther",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164576,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Esther",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164577,
+        "mti_term_id": 884,
+        "group_id": "884-009",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "\"Joyful and glad of heart\" (tov-lev) — Haman's inner emotional state; explicit inner-being engagement",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164578,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Esther",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164579,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Whose word saved the king\" (target rendered \"word\" — likely tov is part of phrase \"good word\" / spoke favorably about the king); narrative description of past action; the inner-being content of Mordecai's loyalty is in the underlying narrative, not in tov here. Borderline — flagging.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164581,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Esther",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164582,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Write as you please\" — king to Esther/Mordecai",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164580,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Holiday\" (yom tov) — idiomatic festival-day",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164583,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it please the king\" — Esther",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164584,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Holiday\" (yom tov) — idiomatic festival-day",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164585,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "\"Holiday\" — idiomatic festival-day",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164653,
+        "mti_term_id": 884,
+        "group_id": "884-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Good success in sight of God and man\" — names the inner-being-relational state of the upright; fits 884-002 (human moral character). Wisdom literature.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164642,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Honey is good\" — physical-quality; introductory metaphor for wisdom in following verses, but tov here qualifies the physical honey",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164654,
+        "mti_term_id": 884,
+        "group_id": "884-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Her merchandise is profitable (good)\" — Pro 31 woman's wisdom-in-action; inner-being-engaged through her industriousness",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164555,
+        "mti_term_id": 884,
+        "group_id": "884-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"What was good for the children of man to do\" — Qoheleth's search; experiential-good for human persons; fits 884-003",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24392,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Beautiful houses desolate\" — physical-aesthetic of buildings",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24389,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Precious oil\" (tov) — Hezekiah's treasure; physical-quality",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24391,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Saying of the soldering, It is good\" — craftsman's evaluative judgement on workmanship; inner-being assessment",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24408,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Sweet (good) cane from distant land\" — physical-quality of incense/cane offering material",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24398,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good figs\" — physical-quality (vision content; symbolism is in the broader narrative)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24399,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good figs very good\" — physical-quality in vision",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24400,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Like these good figs, so I will regard the exiles\" — vehicle of metaphor; tov in vehicle qualifies physical figs (the tenor is the exiles' inner-being-relational status, but tov names the figs)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24401,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "notes": "\"Do with me as seems good and right to you\" — Jeremiah's submission",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24405,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it seems good to you to come\" / \"go wherever you think good and right\" — Nebuzaradan to Jeremiah; volitional preference",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24406,
+        "mti_term_id": 884,
+        "group_id": "884-006",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"We had plenty of food and prospered\" — Jeremiah's opponents recalling their false prosperity in idolatry; fits 884-006 (prophetic verdict on conduct as not-good — here ironic, the people's self-justification is itself the prophetic indictment) — borderline; could also be 884-NEW-WB. Lean: 884-006 since this is reported speech in a prophetic indictment context.",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24425,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Pure gold (tov) is changed\" — physical-quality of gold (figurative for Zion's former glory; tov names the physical metal in the vehicle)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164590,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good soil\" — figurative-vine; tov names physical agricultural quality in the vehicle",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164593,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good pieces of meat\" — Ezekiel's pot allegory; tov names physical-quality of meat in vehicle",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164594,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Choice and best of Lebanon\" (trees) — figurative; tov of physical trees",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164595,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Good pasture, good grazing land\" — Ezekiel's shepherd allegory; the relational tenor (God shepherding faithfully) is in the broader allegory; tov here qualifies physical pasture in the vehicle",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24350,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Better in appearance, fatter in flesh\" — physical-aesthetic comparison",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24386,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Their shade is good\" (trees of high places used in idolatry) — physical-quality of shade; the verse's inner-being weight (idolatry indictment) is in the surrounding sacrificial-action verbs, not in tov",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164602,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Rich (good) treasures\" — physical wealth taken into pagan temples",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164534,
+        "mti_term_id": 884,
+        "group_id": "884-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"Are you better than these kingdoms?\" — Amos' rhetorical comparative; warning to Israel; fits 884-004 (comparative wisdom good as judgement-frame)",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 24435,
+        "mti_term_id": 884,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "physical_only",
+        "notes": "\"Graceful (tov) and of deadly charms\" (prostitute Nineveh) — figurative-physical aesthetic of personification; the inner-being weight is in the figurative-political indictment, not in tov which qualifies the prostitute-figure's aesthetic",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 164699,
+        "mti_term_id": 884,
+        "group_id": "884-008",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "notes": "\"If it seems good to you, give me my wages\" — symbolic shepherd to flock; volitional preference",
+        "delete_flagged": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 144,
+    "group_inserts": 3,
+    "verse_context_inserts_anchor": 3,
+    "verse_context_inserts_related": 63,
+    "verse_context_inserts_set_aside": 75,
+    "by_set_aside_reason": {
+      "physical_only": 59,
+      "no_inner_being": 16
+    },
+    "by_new_group": {
+      "884-007": 7,
+      "884-008": 40,
+      "884-009": 5
+    },
+    "by_existing_group_additions": {
+      "884-002": 2,
+      "884-003": 1,
+      "884-004": 9,
+      "884-005": 1,
+      "884-006": 1
+    }
+  }
+}

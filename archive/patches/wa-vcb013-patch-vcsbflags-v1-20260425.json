@@ -1,0 +1,57 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260425-VCB013-VCSBFLAGS-V1",
+    "registry_id": null,
+    "word": null,
+    "produced_date": "20260425",
+    "produced_by": "wa-versecontext-instruction-v3_9-20260425.md",
+    "patch_type": "VCSBFLAGS",
+    "session_b_status": null,
+    "batch_id": "VCB-013",
+    "governing_instruction": "wa-versecontext-instruction-v3_9-20260425.md",
+    "description": "VCB-013 — Session B observation flags raised during verse reading. Two flags: SBF-VCB013-001 on G5544 chrēstotēs (tripartite presence/absence/distortion pattern across the term's NT corpus); SBF-VCB013-002 on G2168 eucharisteō (same tripartite pattern in the EUCHARIST family)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-VCB013-001 chrēstotēs tripartite engagement",
+        "strongs_reference": "G5544",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G5544 chrēstotēs (kindness) shows a tripartite inner-being engagement pattern across its 7-verse active NT corpus: (1) presence — kindness as Spirit-produced quality of the renewed person (Gal 5:22, Col 3:12, 2 Cor 6:6) and as God's relational disposition toward humanity (Rom 2:4, Rom 11:22, Eph 2:7); (2) absence — Rom 3:12 'no one does kindness, not even one' (universal-depravity quotation from Ps 14:3 LXX), where the term names the moral-spiritual quality whose absence characterises fallen humanity; (3) distortion — not strongly attested in this term but cf. parallel pattern on G2168. Worth examining in Session B whether this presence/absence pole is a structural feature of moral-quality vocabulary in registry 067 (goodness) more broadly. Verse Context retained Rom 3:12 in 886-002 with notes annotation per DF-001 Option C; group description was not amended.",
+        "session_raised": "VCB-013",
+        "raised_date": "2026-04-25T16:30:00Z",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 69,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-VCB013-002 eucharisteō tripartite engagement",
+        "strongs_reference": "G2168",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G2168 eucharisteō (to thank) shows a tripartite inner-being engagement pattern across its 38-verse active NT corpus: (1) presence — habitual posture of thanksgiving to God (the dominant ~36 verses; sanctifies all conduct and circumstances per 1 Th 5:18); (2) absence — Rom 1:21 'they did not honour him as God or give thanks', where the corruption of the inner being is marked by absent thanksgiving; (3) distortion — Lk 18:11 Pharisee 'I thank you that I am not like other men', where the form of thanksgiving is preserved but the inner-being content is corrupted into self-righteousness. The same pattern may apply across the EUCHARIST family (G2168 verb, G2169 noun, G2170 adjective) and possibly across all habitual-disposition vocabulary in the gratitude / praise / faith registries. Verse Context retained both edge cases in 5480-001 per DF-003 Option B (group description amended to acknowledge 'absence or distortion').",
+        "session_raised": "VCB-013",
+        "raised_date": "2026-04-25T16:30:00Z",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "research_flag_inserts": 2,
+    "by_flag_code": {
+      "SB_FINDING": 2
+    }
+  }
+}
