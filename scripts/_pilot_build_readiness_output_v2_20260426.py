@@ -1050,25 +1050,80 @@ def build(conn, registry_no: int) -> str:
     return "\n".join(L)
 
 
+def build_json(conn, registry_no: int) -> dict:
+    """Same data as build() but as a structured dict — for parallel .json output."""
+    reg = get_registry(conn, registry_no)
+    owners = get_owner_terms(conn, reg['id'])
+    xrefs = get_xref_terms(conn, reg['id'])
+    flags = get_open_flags(conn, reg['id'])
+    findings = get_session_b_findings(conn, reg['id'])
+    catalogue = get_catalogue_questions(conn, registry_no)
+    schema = get_schema_version(conn)
+    ts = now_iso()
+
+    states = {t['mti']: get_term_state(conn, t['mti'], t['ti_id']) for t in owners}
+    lexical = {t['mti']: get_term_lexical(conn, t['ti_id'], t['mti']) for t in owners}
+    phase2 = {t['mti']: get_term_phase2_flags(conn, t['ti_id']) for t in owners}
+    verses_by_term = {t['mti']: get_term_verses(conn, t['ti_id'], t['mti']) for t in owners}
+    signals = get_correlation_signals(conn, reg['id'], [t['mti'] for t in owners])
+
+    return {
+        "meta": {
+            "generated_at": ts,
+            "schema_version": schema,
+            "registry_no": registry_no,
+            "registry_word": reg['word'],
+            "generator": "_pilot_build_readiness_output_v2_20260426.py",
+            "strategy": "vc-corrective-strategy-v2-20260426.md",
+            "version": "v4",
+        },
+        "registry": reg,
+        "owner_terms": owners,
+        "xref_terms": xrefs,
+        "term_state": {str(k): v for k, v in states.items()},
+        "term_lexical": {str(k): v for k, v in lexical.items()},
+        "term_phase2_flags": {str(k): v for k, v in phase2.items()},
+        "term_verses": {str(k): v for k, v in verses_by_term.items()},
+        "correlation_signals": signals,
+        "open_flags": flags,
+        "session_b_findings": findings,
+        "catalogue": catalogue,
+    }
+
+
 def main() -> int:
+    import json
     ap = argparse.ArgumentParser()
     ap.add_argument("--registry", type=int, required=True)
     ap.add_argument("--db", default=DB_PATH)
-    ap.add_argument("--out", default=None)
+    ap.add_argument("--out", default=None,
+                    help="Override .md output path. JSON path is derived by .md→.json.")
+    ap.add_argument("--md-only", action="store_true", help="suppress .json output")
+    ap.add_argument("--json-only", action="store_true", help="suppress .md output")
     args = ap.parse_args()
 
     conn = open_db(args.db)
-    md = build(conn, args.registry)
     reg = get_registry(conn, args.registry)
     out_dir = OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
-    fname = (args.out or
-             f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v4-{today_compact()}.md")
-    out_path = os.path.join(out_dir, fname)
-    with open(out_path, "w", encoding="utf-8") as f:
-        f.write(md)
-    sz = os.path.getsize(out_path)
-    print(f"Wrote: {out_path}  ({sz:,} bytes / {sz/1024:.1f} KB)")
+    base = (args.out and os.path.splitext(args.out)[0]) or \
+        f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v4-{today_compact()}"
+
+    if not args.json_only:
+        md_text = build(conn, args.registry)
+        md_path = os.path.join(out_dir, f"{base}.md")
+        with open(md_path, "w", encoding="utf-8") as f:
+            f.write(md_text)
+        sz = os.path.getsize(md_path)
+        print(f"Wrote: {md_path}  ({sz:,} bytes / {sz/1024:.1f} KB)")
+
+    if not args.md_only:
+        data = build_json(conn, args.registry)
+        json_path = os.path.join(out_dir, f"{base}.json")
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False, default=str)
+        sz = os.path.getsize(json_path)
+        print(f"Wrote: {json_path}  ({sz:,} bytes / {sz/1024:.1f} KB)")
     return 0
 
 

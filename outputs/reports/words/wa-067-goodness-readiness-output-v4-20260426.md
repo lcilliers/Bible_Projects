@@ -1,6 +1,6 @@
 # wa-067-goodness — Analysis Readiness Output (v2)
 
-_Pilot v2 generation · 2026-04-26T19:01:58Z · schema 3.16.1_
+_Pilot v2 generation · 2026-04-26T19:04:15Z · schema 3.16.1_
 
 _Strategy: vc-corrective-strategy-v2 §4 · sections aligned with `wa-sessionb-analysis-output-v1_1` reading units 1-9._
 
@@ -52,7 +52,7 @@ _Source of truth: live DB at generation time. Regenerate to refresh._
 
 _The Analysis Output instruction's S2 expects a Stage 1 Completion Record from the Analysis Readiness session. Under the v2 strategy the readiness `.md` IS that record. The synthesised confirmation below derives the seven-domain pass criteria from current DB state at generation time._
 
-- **Generation timestamp:** `2026-04-26T19:01:58Z`
+- **Generation timestamp:** `2026-04-26T19:04:15Z`
 - **Schema version:** `3.16.1`
 - **OWNER term md_versions present:** `[2]`
   (this is the project's audit equivalent of `meta.export_version`)
@@ -2834,7 +2834,7 @@ _None._ No questions in `wa_obs_question_catalogue` are sourced from registry 67
 
 ## M. Readiness Verification
 
-- **Generated at:** `2026-04-26T19:01:58Z`
+- **Generated at:** `2026-04-26T19:04:15Z`
 - **Schema version:** `3.16.1`
 - **OWNER term md_versions present:** `[2]`
 
