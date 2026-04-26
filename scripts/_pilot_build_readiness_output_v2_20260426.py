@@ -348,26 +348,28 @@ def get_correlation_signals(conn, registry_id: int, owner_mti_ids: list) -> dict
 
 
 def get_catalogue_questions(conn, registry_no: int) -> dict:
-    """Return catalogue questions split into universal and registry-specific."""
-    universal = conn.execute("""
-        SELECT obs_id, question_code, section, question_text, scope, status
-          FROM wa_obs_question_catalogue
-         WHERE scope = 'universal'
-           AND (deleted = 0 OR deleted IS NULL)
-         ORDER BY obs_id
-    """).fetchall()
-    specific = conn.execute("""
+    """Return ALL catalogue questions, grouped by section.
+
+    Per researcher direction (2026-04-26): the section grouping IS the Stage 2b
+    chapter structure. All 206 questions are scope='universal' (originated from
+    different registries' work but apply programme-wide). Include the full
+    set as JSON, grouped by section.
+    """
+    rows = conn.execute("""
         SELECT obs_id, question_code, section, source_word, source_registry_no,
-               question_text, scope, status
+               question_text, pattern_type, scope, status
           FROM wa_obs_question_catalogue
-         WHERE source_registry_no = ?
-           AND scope != 'universal'
-           AND (deleted = 0 OR deleted IS NULL)
-         ORDER BY obs_id
-    """, (registry_no,)).fetchall()
+         WHERE (deleted = 0 OR deleted IS NULL)
+         ORDER BY section, obs_id
+    """).fetchall()
+    rows = [dict(r) for r in rows]
+    by_section = defaultdict(list)
+    for r in rows:
+        by_section[r['section'] or '(no section)'].append(r)
     return {
-        "universal": [dict(r) for r in universal],
-        "registry_specific": [dict(r) for r in specific],
+        "all": rows,
+        "by_section": dict(by_section),
+        "section_summary": [(s, len(qs)) for s, qs in by_section.items()],
     }
 
 
@@ -841,35 +843,58 @@ def render_section_k_legacy_vc(owners: list, states: dict) -> list:
 
 
 def render_section_l_catalogue(catalogue: dict) -> list:
+    """Stage 2b foundational input — the full catalogue, grouped by section.
+
+    Per researcher direction (2026-04-26): the questions are foundational, not a
+    reference. The section grouping IS the Stage 2b chapter structure — Stage 2b
+    works through the catalogue section-by-section, producing answers grouped
+    by section. All 206 questions are embedded below as JSON.
+    """
+    import json
     L = []
-    universal = catalogue['universal']
-    specific = catalogue['registry_specific']
-    L.append("## L. Stage 2b Reference — Observation Question Catalogue")
+    all_qs = catalogue['all']
+    by_section = catalogue['by_section']
+    section_summary = catalogue['section_summary']
+    L.append("## L. Stage 2b Foundational Input — Observation Question Catalogue")
     L.append("")
-    L.append(f"**Registry-specific questions:** {len(specific)} · **Universal questions:** {len(universal)}")
+    L.append(f"**Total questions: {len(all_qs)}**, grouped into {len(by_section)} sections. The section grouping is the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.")
     L.append("")
-    if not specific:
-        L.append("> **NOTE:** zero registry-specific questions are indexed for this word in `wa_obs_question_catalogue`. The instruction's Pass A (registry-specific) is empty under current data; Pass B (universal) is fully applicable. This is not an error — programme-wide, all 206 catalogue questions are currently `scope='universal'`.")
-        L.append("")
-    if specific:
-        L.append("### Registry-specific questions (Pass A)")
-        L.append("")
-        L.append("| obs_id | code | section | question |")
-        L.append("|---:|---|---|---|")
-        for q in specific:
-            L.append(f"| {q['obs_id']} | `{q['question_code']}` | {q['section']} | "
-                     f"{q['question_text'][:120]} |")
-        L.append("")
-    L.append("### Universal questions (Pass B) — first 30 of " + str(len(universal)))
+    L.append("### Section summary")
     L.append("")
-    L.append("| obs_id | code | section | question |")
-    L.append("|---:|---|---|---|")
-    for q in universal[:30]:
-        L.append(f"| {q['obs_id']} | `{q['question_code']}` | {q['section']} | "
-                 f"{(q['question_text'] or '')[:120]} |")
-    if len(universal) > 30:
-        L.append("")
-        L.append(f"_… and {len(universal) - 30} more universal questions (full set in `wa_obs_question_catalogue`)._")
+    L.append("| Section | n questions |")
+    L.append("|---|---:|")
+    for s, n in section_summary:
+        L.append(f"| {s} | {n} |")
+    L.append("")
+    L.append("### Full catalogue (JSON, grouped by section)")
+    L.append("")
+    L.append("Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Section grouping provides the chapter structure Stage 2b uses.")
+    L.append("")
+    # Embed full JSON, grouped by section
+    grouped_payload = {
+        "total": len(all_qs),
+        "section_count": len(by_section),
+        "sections": {
+            s: [
+                {
+                    "obs_id": q['obs_id'],
+                    "question_code": q['question_code'],
+                    "section": q['section'],
+                    "source_word": q['source_word'],
+                    "source_registry_no": q['source_registry_no'],
+                    "question_text": q['question_text'],
+                    "pattern_type": q['pattern_type'],
+                    "scope": q['scope'],
+                    "status": q['status'],
+                }
+                for q in qs
+            ]
+            for s, qs in by_section.items()
+        }
+    }
+    L.append("```json")
+    L.append(json.dumps(grouped_payload, indent=2, ensure_ascii=False))
+    L.append("```")
     L.append("")
     L.append("---")
     L.append("")
@@ -987,7 +1012,7 @@ def main() -> int:
     out_dir = OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     fname = (args.out or
-             f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v2-{today_compact()}.md")
+             f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v3-{today_compact()}.md")
     out_path = os.path.join(out_dir, fname)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(md)
