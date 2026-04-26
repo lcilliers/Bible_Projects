@@ -24,6 +24,12 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 - [ ] _VC revision-ledger build (Step 1 of strategy §5) — extract per-term routing outcomes from VCB-7..11 patches + DB; score univariate predictors (group count, term type, set_aside_reason gap, prior flags); record in `outputs/investigations/vc-revision-ledger-v1-{date}.md` + CSV. Threshold for action: predictor must hit ≥90% precision on ≥30-term validation before promotion to triage rule._
 - [ ] _VCCONFIRM patch-type design (Step 5 of strategy) — gated on ≥1 reliable predictor surfacing in the ledger. Will need wa-patch-instruction §15 entry + applicator extension. Pilot scope tbd._
 
+### VC outlier corrective actions (raised 2026-04-26)
+
+- [ ] _**Outlier-1 — Extraction-anomaly residue, 6 terms.** Function-word / pronoun / animal terms lumped into 1 catch-all group across legacy-Complete registries, all `vc_status=not_done`. Same precedent as today's diligence/H4639H/I cleanups. Targets: H2088 "this" (reg 99 kindness, 245v), H0369 "nothing" (142 self-control, 218v), H0595 "I" (140 seeking, 156v), H5704 "till" (173 will, 260v), H0352A "ram" (187 strength, 139v), H4997 "wineskin" (213 listen, 6v). Cleanest action: mark `mti_terms.status='delete'` with documented reason + soft-delete verses._
+- [ ] _**Outlier-2 — Listen (213) registry coherence.** Four terms ≥80% set_aside including the literal "to listen to" verb (G1522, 100% set_aside). Possible registry-scope drift during VC. Read inference_note + SB findings on the 4 terms; decide whether to follow the diligence path (cover-by-other-registry) or Phase 1 re-discovery._
+- [ ] _**Outlier-3 — Integrity (92) H8549G unblemished root-bleed.** 45 of 51 verses set_aside (88%); registry-level set_aside 73%. Likely root-bleed from physical "unblemished" sense, parallel to rachamim/womb root-bleed in 103 love (PH2-103-002). Pinpoint VCVERSE patch or term-status adjustment expected._
+
 ### VC four-output model + A-02..A-05 resolution (2026-04-24)
 
 - [ ] _VC programme roll-out: 174 legacy-Complete registries + 6 reset registries (compassion, fellowship, forgiveness, grace, love, mercy) all need processing under v3_8 contracts. VC-7 (renewal) + VC-8 + VC-9 are the rolling pilot/early-batches. Hardening blockers cleared 2026-04-24/25 (v3_8 + applicator A-06 rowcount gate). **Approach revision (2026-04-25):** strategy now signal-targeted, not bulk — see [vc-corrective-strategy-v1](outputs/investigations/vc-corrective-strategy-v1-20260425.md)._
