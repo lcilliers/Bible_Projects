@@ -1,0 +1,61 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260426-VCBQ01-VCSBFLAGS-V1",
+    "batch_id": "VCB-Q01",
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "20260426",
+    "produced_by": "wa-versecontext-instruction-v3_10-20260425.md",
+    "patch_type": "VCSBFLAGS",
+    "session_b_status": null,
+    "description": "Two Session B observation flags raised during VCB-Q01 re-evaluation: (1) G0570 apistia Registry 165 — 8 groups for 11 verses, 7 single-verse groups, warrants Session B consolidation assessment; (2) G4710 spoudē Registry 181 — 11 groups for 12 verses, 10 single-verse groups, Pauline earnestness groups may over-subdivide contextual variation."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 165,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-VCB-Q01-001",
+        "strongs_reference": "G0570",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G0570 apistia (mti_id=1198) has 8 active verse_context groups across 11 verses, with 7 groups containing only 1 verse each. The fine-grained subdivision from prior re-evaluation (vcb-010) creates many single-verse groups. While each group is analytically defensible at VC stage (1198-001 corporate covenantal; 1198-002 individual co-existing unbelief; 1198-003 apostolic-formation rebuke; 1198-004 rhetorical foil; 1198-005 negated role / Abraham; 1198-006 continuing-but-not-permanent; 1198-007 autobiographical pre-conversion; 1198-008 heart-susceptibility directive warning), Session B should assess whether the distinctions are operationally meaningful for the analytical programme or whether consolidation — e.g. into corporate covenantal / individual faith-struggle / rhetorical-negated / directive-warning groupings — better serves the characteristic-perspective model at analysis depth. The high group-to-verse ratio may create analytical fragmentation without proportionate gain.",
+        "session_raised": "VCB-Q01",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      },
+      "description": "SBF-VCB-Q01-001: G0570 apistia — 8 groups / 11 verses; Session B consolidation assessment warranted"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 181,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-VCB-Q01-002",
+        "strongs_reference": "G4710",
+        "priority": "normal",
+        "session_target": "Session B",
+        "description": "G4710 spoudē (mti_id=1268) has 11 active verse_context groups across 12 verses, with 10 groups containing only 1 verse each. The 2 physical-haste groups (1268-001 negative-moral urgency; 1268-002 positive-obedient eagerness) are clearly distinct. However the 9 earnestness/zeal groups (1268-003 through 1268-011) subdivide what may be a single inner-being characteristic — earnest disposition / zeal — across contextual variations (fruit of repentance, relational earnestness under discipline, listed virtue, evidence of love, God-given care, eschatological assurance, moral-formative effort, epistolary eagerness). Session B should assess whether these contextual variations reflect materially different inner-being characteristics or whether they subdivide the same characteristic by Pauline rhetorical occasion. Possible consolidation: physical haste (2 groups) / earnestness in body-life / earnestness as fruit or evidence of spiritual quality / earnestness as eschatological and formative orientation. The group descriptions are all well-formed at VC stage; the question is whether Session B analysis finds them analytically productive at this resolution.",
+        "session_raised": "VCB-Q01",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      },
+      "description": "SBF-VCB-Q01-002: G4710 spoudē — 11 groups / 12 verses; Pauline earnestness over-subdivision concern for Session B"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "research_flag_inserts": 2,
+    "by_flag_code": {
+      "SB_FINDING": 2
+    },
+    "by_registry": {
+      "165_unbelief": 1,
+      "181_zeal": 1
+    }
+  }
+}

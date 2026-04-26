@@ -3,10 +3,10 @@
 **Registry:** 094 intercession  
 **mti_term_id:** 937  
 **Language:** Hebrew  
-**md_version:** `v1`  ⚠ the patch's `_patch_meta.input_versions[937]` must equal `1` at submission time or the applicator will reject it as stale (A-03 version gate).  
-**Generated:** 2026-04-26 09:03  
-**Current vc_status:** `not_done`  
-**Existing verse_context rows:** 12 active (of 43 verses for this term).  ⚠ Per-verse: emit `insert` for verses with no active row; emit `update` for verses with an active row being revised. See v3_5 §2.1–§2.4 and §6.1. The per-verse state is shown in the Verses section below.  
+**md_version:** `v2`  ⚠ the patch's `_patch_meta.input_versions[937]` must equal `2` at submission time or the applicator will reject it as stale (A-03 version gate).  
+**Generated:** 2026-04-26 13:40  
+**Current vc_status:** `vc_completed`  
+**Existing verse_context rows:** 43 active (of 43 verses for this term).  ⚠ Per-verse: emit `insert` for verses with no active row; emit `update` for verses with an active row being revised. See v3_5 §2.1–§2.4 and §6.1. The per-verse state is shown in the Verses section below.  
 **Source:** `data/bible_research.db` (deterministic render, no analytics)  
 **Governing instruction:** wa-versecontext-instruction [current]  
 **Produced by:** `scripts/build_session_a_prose.py --term`
@@ -154,11 +154,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Gen 28:11 And he came to a certain place and stayed there that night , because the sun had set . Taking one of the stones of the place , he put it under his head and lay down in that place to sleep .
 
+_Prior classification: *set aside — reason: `spatial_only`*_
+
 
 **vid=28156** — `Gen 32:1`
 *target word in verse:* `met`
 
 > Gen 32:1 Jacob went on his way , and the angels of God met him.
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175146** — `Exo 5:3`
@@ -166,11 +170,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Exo 5:3 Then they said , “The God of the Hebrews has met with us. Please let us go a three days ’ journey into the wilderness that we may sacrifice to the Lord our God , lest he fall upon us with pestilence or with the sword .”
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175145** — `Exo 5:20`
 *target word in verse:* `met`
 
 > Exo 5:20 They met Moses and Aaron , who were waiting for them , as they came out from Pharaoh ;
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175144** — `Exo 23:4`
@@ -178,11 +186,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Exo 23:4 “ If you meet your enemy’s ox or his donkey going astray , you shall bring it back to him .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=28171** — `Num 35:19`
 *target word in verse:* `meets`
 
 > Num 35:19 The avenger of blood shall himself put the murderer to death ; when he meets him, he shall put him to death .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=28172** — `Num 35:21`
@@ -190,11 +202,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Num 35:21 or in enmity struck him down with his hand , so that he died , then he who struck the blow shall be put to death . He is a murderer . The avenger of blood shall put the murderer to death when he meets him .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175154** — `Jos 2:16`
 *target word in verse:* `encounter`
 
 > Jos 2:16 And she said to them, “ Go into the hills , or the pursuers will encounter you, and hide there three days until the pursuers have returned . Then afterward you may go your way .”
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175147** — `Jos 16:7`
@@ -202,11 +218,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Jos 16:7 then it goes down from Janoah to Ataroth and to Naarah , and touches Jericho , ending at the Jordan .
 
+_Prior classification: *set aside — reason: `spatial_only`*_
+
 
 **vid=175148** — `Jos 17:10`
 *target word in verse:* `forming`
 
 > Jos 17:10 the land to the south being Ephraim’s and that to the north being Manasseh’s , with the sea forming its boundary . On the north Asher is reached, and on the east Issachar .
+
+_Prior classification: *set aside — reason: `spatial_only`*_
 
 
 **vid=175149** — `Jos 19:11`
@@ -214,11 +234,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Jos 19:11 Then their boundary goes up westward and on to Mareal and touches Dabbesheth , then the brook that is east of Jokneam .
 
+_Prior classification: *set aside — reason: `spatial_only`*_
+
 
 **vid=175150** — `Jos 19:22`
 *target word in verse:* `touches`
 
 > Jos 19:22 The boundary also touches Tabor , Shahazumah , and Beth-shemesh , and its boundary ends at the Jordan — sixteen cities with their villages .
+
+_Prior classification: *set aside — reason: `spatial_only`*_
 
 
 **vid=175151** — `Jos 19:26`
@@ -226,11 +250,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Jos 19:26 Allammelech , Amad , and Mishal . On the west it touches Carmel and Shihor-libnath ,
 
+_Prior classification: *set aside — reason: `spatial_only`*_
+
 
 **vid=175152** — `Jos 19:27`
 *target word in verse:* `touches`
 
 > Jos 19:27 then it turns eastward , it goes to Beth-dagon , and touches Zebulun and the Valley of Iphtahel northward to Beth-emek and Neiel . Then it continues in the north to Cabul ,
+
+_Prior classification: *set aside — reason: `spatial_only`*_
 
 
 **vid=175153** — `Jos 19:34`
@@ -238,11 +266,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Jos 19:34 Then the boundary turns westward to Aznoth-tabor and goes from there to Hukkok , touching Zebulun at the south and Asher on the west and Judah on the east at the Jordan .
 
+_Prior classification: *set aside — reason: `spatial_only`*_
+
 
 **vid=28170** — `Judg 8:21`
 *target word in verse:* `fall`
 
 > Judg 8:21 Then Zebah and Zalmunna said , “ Rise yourself and fall upon us, for as the man is, so is his strength .” And Gideon arose and killed Zebah and Zalmunna , and he took the crescent ornaments that were on the necks of their camels .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=28168** — `Judg 15:12`
@@ -250,11 +282,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Judg 15:12 And they said to him, “We have come down to bind you, that we may give you into the hands of the Philistines .” And Samson said to them, “ Swear to me that you will not attack me yourselves .”
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=28169** — `Judg 18:25`
 *target word in verse:* `fall`
 
 > Judg 18:25 And the people of Dan said to him, “Do not let your voice be heard among us, lest angry fellows fall upon you, and you lose your life with the lives of your household .”
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175155** — `Rut 1:16`
@@ -270,11 +306,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Rut 2:22 And Naomi said to Ruth , her daughter-in-law , “ It is good , my daughter , that you go out with his young women , lest in another field you be assaulted .”
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175139** — `1Sa 10:5`
 *target word in verse:* `meet`
 
 > 1Sa 10:5 After that you shall come to Gibeath-elohim , where there is a garrison of the Philistines . And there , as soon as you come to the city , you will meet a group of prophets coming down from the high place with harp , tambourine , flute , and lyre before them , prophesying .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175140** — `1Sa 22:17`
@@ -282,11 +322,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > 1Sa 22:17 And the king said to the guard who stood about him, “ Turn and kill the priests of the Lord , because their hand also is with David , and they knew that he fled and did not disclose it to me .” But the servants of the king would not put out their hand to strike the priests of the Lord .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175141** — `1Sa 22:18`
 *target word in verse:* `strike`
 
 > 1Sa 22:18 Then the king said to Doeg , “You turn and strike the priests .” And Doeg the Edomite turned and struck down the priests , and he killed on that day eighty-five persons who wore the linen ephod .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175142** — `2Sa 1:15`
@@ -294,11 +338,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > 2Sa 1:15 Then David called one of the young men and said , “ Go , execute him.” And he struck him down so that he died .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175133** — `1Ki 2:25`
 *target word in verse:* `struck`
 
 > 1Ki 2:25 So King Solomon sent Benaiah the son of Jehoiada , and he struck him down, and he died .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175134** — `1Ki 2:29`
@@ -306,11 +354,15 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > 1Ki 2:29 And when it was told King Solomon , “ Joab has fled to the tent of the Lord , and behold , he is beside the altar ,” Solomon sent Benaiah the son of Jehoiada , saying , “ Go , strike him down .”
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175135** — `1Ki 2:31`
 *target word in verse:* `down`
 
 > 1Ki 2:31 The king replied to him, “ Do as he has said , strike him down and bury him, and thus take away from me and from my father’s house the guilt for the blood that Joab shed without cause.
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=175136** — `1Ki 2:32`
@@ -318,17 +370,23 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > 1Ki 2:32 The Lord will bring back his bloody deeds on his own head , because , without the knowledge of my father David , he attacked and killed with the sword two men more righteous and better than himself, Abner the son of Ner , commander of the army of Israel , and Amasa the son of Jether , commander of the army of Judah .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175137** — `1Ki 2:34`
 *target word in verse:* `struck him down`
 
 > 1Ki 2:34 Then Benaiah the son of Jehoiada went up and struck him down and put him to death . And he was buried in his own house in the wilderness .
 
+_Prior classification: *set aside — reason: `no_inner_being`*_
+
 
 **vid=175138** — `1Ki 2:46`
 *target word in verse:* `struck him down`
 
 > 1Ki 2:46 Then the king commanded Benaiah the son of Jehoiada , and he went out and struck him down , and he died . So the kingdom was established in the hand of Solomon .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=28166** — `Job 21:15`
@@ -343,6 +401,8 @@ _Prior classification: **relevant** · related · group=`937-001`_
 *target word in verse:* `mark`
 
 > Job 36:32 He covers his hands with the lightning and commands it to strike the mark .
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 **vid=28157** — `Isa 47:3`
@@ -382,7 +442,8 @@ _Prior classification: **relevant** · related · group=`937-001`_
 
 > Isa 64:5 You meet him who joyfully works righteousness , those who remember you in your ways . Behold , you were angry , and we sinned ; in our sins we have been a long time , and shall we be saved ?
 
-_Prior classification: **relevant** · related · group=`937-001`_
+_Prior classification: *set aside — reason: `wrong_face`*_
+_Notes: Re-evaluation v3_10: wrong_face — inner-being content (joyful righteousness, remembering God) is carried by other terms in the verse; pa.ga names the encounter act only. Prior: relevant/related/937-001._
 
 
 **vid=28165** — `Jer 7:16`
@@ -421,6 +482,8 @@ _Prior classification: **relevant** · related · group=`937-001`_
 *target word in verse:* `met`
 
 > Amo 5:19 as if a man fled from a lion , and a bear met him, or went into the house and leaned his hand against the wall , and a serpent bit him.
+
+_Prior classification: *set aside — reason: `no_inner_being`*_
 
 
 

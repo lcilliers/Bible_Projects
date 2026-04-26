@@ -1,0 +1,35 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260426-VCBQ01-VCREVISE-V1",
+    "batch_id": "VCB-Q01",
+    "terms_covered": [1562, 937, 1199, 1198, 1268, 5111],
+    "input_versions": {
+      "1562": 1,
+      "937": 2,
+      "1199": 2,
+      "1198": 2,
+      "1268": 2,
+      "5111": 2
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "20260426",
+    "produced_by": "wa-versecontext-instruction-v3_10-20260425.md",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "description": "Re-evaluation of 6 terms across registries 004 (anger), 094 (intercession), 165 (unbelief x2), 181 (zeal), 050 (disobedience) — all classifications confirmed correct under v3_10. No changes to groups, anchors, or verse classifications. 84 verses reviewed: 51 relevant, 33 set aside. Note: G3948 mti_id=1562 had vc_status=not_done despite complete classification data; this patch advances it to vc_completed."
+  },
+  "operations": [],
+  "_patch_summary": {
+    "total_operations": 0,
+    "nature": "no-change re-evaluation confirmation",
+    "terms_confirmed": 6,
+    "terms_detail": [
+      {"mti_term_id": 1562, "strongs": "G3948", "gloss": "paroxusmos", "registry": 4, "verses": 2, "relevant": 2, "set_aside": 0, "groups": 2},
+      {"mti_term_id": 937,  "strongs": "H6293", "gloss": "pa.ga",      "registry": 94, "verses": 43, "relevant": 11, "set_aside": 32, "groups": 2},
+      {"mti_term_id": 1199, "strongs": "G0544", "gloss": "apeitheō",   "registry": 165, "verses": 14, "relevant": 14, "set_aside": 0, "groups": 5},
+      {"mti_term_id": 1198, "strongs": "G0570", "gloss": "apistia",    "registry": 165, "verses": 11, "relevant": 11, "set_aside": 0, "groups": 8},
+      {"mti_term_id": 1268, "strongs": "G4710", "gloss": "spoudē",     "registry": 181, "verses": 12, "relevant": 12, "set_aside": 0, "groups": 11},
+      {"mti_term_id": 5111, "strongs": "G3878", "gloss": "parakouō",   "registry": 50,  "verses": 2,  "relevant": 1,  "set_aside": 1, "groups": 1}
+    ]
+  }
+}

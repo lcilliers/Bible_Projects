@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-26T12:24:40Z",
+  "generated_at": "2026-04-26T13:16:45Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 3077,
-  "total_active": 1884,
-  "total_archived": 1193,
+  "total_files": 3086,
+  "total_active": 1891,
+  "total_archived": 1195,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -5389,6 +5389,36 @@
       "archived": true,
       "size_bytes": 66261,
       "modified": "2026-04-25T16:31:06Z"
+    },
+    {
+      "path": "archive/patches/wa-vcbq01-patch-vcrevise-v1-20260426.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-26",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 2035,
+      "modified": "2026-04-26T13:14:57Z"
+    },
+    {
+      "path": "archive/patches/wa-vcbq01-patch-vcsbflags-v1-20260426.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-26",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 4314,
+      "modified": "2026-04-26T13:15:09Z"
     },
     {
       "path": "archive/patches/word-descriptions-patch-20260319-v1.json",
@@ -19536,6 +19566,21 @@
       "modified": "2026-04-24T18:18:43Z"
     },
     {
+      "path": "data/exports/session_a/terms/wa-004-anger-G3948-session_a-20260426.md",
+      "category": "export",
+      "type": "export",
+      "registry": 4,
+      "word": "anger",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 21287,
+      "modified": "2026-04-26T12:40:27Z"
+    },
+    {
       "path": "data/exports/session_a/terms/wa-020-character-G1381-session_a-20260426.md",
       "category": "export",
       "type": "export",
@@ -19669,6 +19714,21 @@
       "archived": false,
       "size_bytes": 9086,
       "modified": "2026-04-25T13:20:39Z"
+    },
+    {
+      "path": "data/exports/session_a/terms/wa-050-disobedience-G3878-session_a-20260426.md",
+      "category": "export",
+      "type": "export",
+      "registry": 50,
+      "word": "disobedience",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9325,
+      "modified": "2026-04-26T12:40:27Z"
     },
     {
       "path": "data/exports/session_a/terms/wa-067-goodness-G0019-session_a-20260425.md",
@@ -20012,8 +20072,8 @@
       "date": "2026-04-26",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 19786,
-      "modified": "2026-04-26T08:03:59Z"
+      "size_bytes": 22091,
+      "modified": "2026-04-26T12:40:27Z"
     },
     {
       "path": "data/exports/session_a/terms/wa-096-jealousy-G3863-session_a-20260424.md",
@@ -20391,6 +20451,21 @@
       "modified": "2026-04-25T04:13:32Z"
     },
     {
+      "path": "data/exports/session_a/terms/wa-165-unbelief-G0544-session_a-20260426.md",
+      "category": "export",
+      "type": "export",
+      "registry": 165,
+      "word": "unbelief",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 15905,
+      "modified": "2026-04-26T12:40:27Z"
+    },
+    {
       "path": "data/exports/session_a/terms/wa-165-unbelief-G0570-session_a-20260425.md",
       "category": "export",
       "type": "export",
@@ -20404,6 +20479,21 @@
       "archived": false,
       "size_bytes": 14195,
       "modified": "2026-04-25T04:13:32Z"
+    },
+    {
+      "path": "data/exports/session_a/terms/wa-165-unbelief-G0570-session_a-20260426.md",
+      "category": "export",
+      "type": "export",
+      "registry": 165,
+      "word": "unbelief",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 16736,
+      "modified": "2026-04-26T12:40:27Z"
     },
     {
       "path": "data/exports/session_a/terms/wa-165-unbelief-G1211-session_a-20260425.md",
@@ -20524,6 +20614,21 @@
       "archived": false,
       "size_bytes": 15001,
       "modified": "2026-04-25T04:13:32Z"
+    },
+    {
+      "path": "data/exports/session_a/terms/wa-181-zeal-G4710-session_a-20260426.md",
+      "category": "export",
+      "type": "export",
+      "registry": 181,
+      "word": "zeal",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 17725,
+      "modified": "2026-04-26T12:40:27Z"
     },
     {
       "path": "data/exports/session_a/terms/wa-189-malice-H7589-session_a-20260425.md",
@@ -32991,6 +33096,21 @@
       "modified": "2026-04-04T06:38:12Z"
     },
     {
+      "path": "data/imports/WA/Session_B_Verse_Context/wa-vcb-q01-session-composition-v1-20260426.md",
+      "category": "import",
+      "type": "import",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6215,
+      "modified": "2026-04-26T12:42:21Z"
+    },
+    {
       "path": "data/imports/WA/Session_C_Words/WA-sessionC-review-session-log-v1-2026-04-11.md",
       "category": "import",
       "type": "session-log",
@@ -42079,6 +42199,21 @@
       "archived": false,
       "size_bytes": 57374,
       "modified": "2026-04-24T05:44:51Z"
+    },
+    {
+      "path": "outputs/investigations/vc-quality-flags-practical-view-v1-20260426.md",
+      "category": "investigation",
+      "type": "investigation",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4663,
+      "modified": "2026-04-26T12:35:59Z"
     },
     {
       "path": "outputs/investigations/vc-revision-ledger-v1-20260425.csv",
