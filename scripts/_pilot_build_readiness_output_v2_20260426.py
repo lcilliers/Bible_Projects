@@ -348,28 +348,44 @@ def get_correlation_signals(conn, registry_id: int, owner_mti_ids: list) -> dict
 
 
 def get_catalogue_questions(conn, registry_no: int) -> dict:
-    """Return ALL catalogue questions, grouped by section.
+    """Return generic (Sections 1-5) + any registry-specific catalogue questions.
 
-    Per researcher direction (2026-04-26): the section grouping IS the Stage 2b
-    chapter structure. All 206 questions are scope='universal' (originated from
-    different registries' work but apply programme-wide). Include the full
-    set as JSON, grouped by section.
+    Per researcher direction (2026-04-26):
+      - Generic = the 147 chapter questions in Sections 1-5 (apply to every word).
+      - Registry-specific = questions where source_registry_no = current registry
+        (these are word-specific Extensions, included only when this is the word
+        being analysed).
+      - Word-specific Extensions for OTHER registries and Evidence-Flag questions
+        are NOT included in the readiness output for this word.
     """
-    rows = conn.execute("""
+    generic = conn.execute("""
         SELECT obs_id, question_code, section, source_word, source_registry_no,
                question_text, pattern_type, scope, status
           FROM wa_obs_question_catalogue
          WHERE (deleted = 0 OR deleted IS NULL)
+           AND section LIKE 'Section %'
          ORDER BY section, obs_id
     """).fetchall()
-    rows = [dict(r) for r in rows]
+    generic = [dict(r) for r in generic]
     by_section = defaultdict(list)
-    for r in rows:
+    for r in generic:
         by_section[r['section'] or '(no section)'].append(r)
+    # Registry-specific: questions whose source_registry_no matches current registry
+    # (word-specific Extensions like 'Compassion Extensions' are sourced from reg 23 etc.)
+    registry_specific = conn.execute("""
+        SELECT obs_id, question_code, section, source_word, source_registry_no,
+               question_text, pattern_type, scope, status
+          FROM wa_obs_question_catalogue
+         WHERE (deleted = 0 OR deleted IS NULL)
+           AND source_registry_no = ?
+           AND section NOT LIKE 'Section %'
+         ORDER BY section, obs_id
+    """, (registry_no,)).fetchall()
     return {
-        "all": rows,
-        "by_section": dict(by_section),
-        "section_summary": [(s, len(qs)) for s, qs in by_section.items()],
+        "generic": generic,
+        "generic_by_section": dict(by_section),
+        "generic_section_summary": [(s, len(qs)) for s, qs in by_section.items()],
+        "registry_specific": [dict(r) for r in registry_specific],
     }
 
 
@@ -842,38 +858,41 @@ def render_section_k_legacy_vc(owners: list, states: dict) -> list:
     return L
 
 
-def render_section_l_catalogue(catalogue: dict) -> list:
-    """Stage 2b foundational input — the full catalogue, grouped by section.
+def render_section_l_catalogue(catalogue: dict, registry_no: int, registry_word: str) -> list:
+    """Stage 2b foundational input — generic catalogue + any registry-specific questions.
 
-    Per researcher direction (2026-04-26): the questions are foundational, not a
-    reference. The section grouping IS the Stage 2b chapter structure — Stage 2b
-    works through the catalogue section-by-section, producing answers grouped
-    by section. All 206 questions are embedded below as JSON.
+    Per researcher direction (2026-04-26):
+      - Generic = the 147 chapter questions in Sections 1-5. Apply to every word.
+        Embedded as JSON; the section grouping IS the Stage 2b chapter structure.
+      - Registry-specific = questions sourced from THIS registry (word-specific
+        Extensions). Included only when this registry has any.
+      - Other word-specific Extensions and Evidence-Flag questions are NOT
+        included here.
     """
     import json
     L = []
-    all_qs = catalogue['all']
-    by_section = catalogue['by_section']
-    section_summary = catalogue['section_summary']
+    generic = catalogue['generic']
+    generic_by_section = catalogue['generic_by_section']
+    section_summary = catalogue['generic_section_summary']
+    registry_specific = catalogue['registry_specific']
     L.append("## L. Stage 2b Foundational Input — Observation Question Catalogue")
     L.append("")
-    L.append(f"**Total questions: {len(all_qs)}**, grouped into {len(by_section)} sections. The section grouping is the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.")
+    L.append(f"**Generic questions: {len(generic)}** across {len(generic_by_section)} sections. The section grouping IS the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.")
     L.append("")
-    L.append("### Section summary")
+    L.append("### Section summary (generic)")
     L.append("")
     L.append("| Section | n questions |")
     L.append("|---|---:|")
     for s, n in section_summary:
         L.append(f"| {s} | {n} |")
     L.append("")
-    L.append("### Full catalogue (JSON, grouped by section)")
+    L.append("### Generic questions (JSON, grouped by section)")
     L.append("")
-    L.append("Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Section grouping provides the chapter structure Stage 2b uses.")
+    L.append("Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every word.")
     L.append("")
-    # Embed full JSON, grouped by section
     grouped_payload = {
-        "total": len(all_qs),
-        "section_count": len(by_section),
+        "total": len(generic),
+        "section_count": len(generic_by_section),
         "sections": {
             s: [
                 {
@@ -889,13 +908,45 @@ def render_section_l_catalogue(catalogue: dict) -> list:
                 }
                 for q in qs
             ]
-            for s, qs in by_section.items()
+            for s, qs in generic_by_section.items()
         }
     }
     L.append("```json")
     L.append(json.dumps(grouped_payload, indent=2, ensure_ascii=False))
     L.append("```")
     L.append("")
+    # Registry-specific
+    L.append(f"### Registry-specific questions for {registry_no:03d} {registry_word}")
+    L.append("")
+    if not registry_specific:
+        L.append(f"_None._ No questions in `wa_obs_question_catalogue` are sourced from registry {registry_no} ({registry_word}).")
+        L.append("")
+    else:
+        L.append(f"**{len(registry_specific)} question(s)** sourced from this registry's prior work. Include in Stage 2b alongside the generic questions.")
+        L.append("")
+        rs_payload = {
+            "registry_no": registry_no,
+            "registry_word": registry_word,
+            "total": len(registry_specific),
+            "questions": [
+                {
+                    "obs_id": q['obs_id'],
+                    "question_code": q['question_code'],
+                    "section": q['section'],
+                    "source_word": q['source_word'],
+                    "source_registry_no": q['source_registry_no'],
+                    "question_text": q['question_text'],
+                    "pattern_type": q['pattern_type'],
+                    "scope": q['scope'],
+                    "status": q['status'],
+                }
+                for q in registry_specific
+            ],
+        }
+        L.append("```json")
+        L.append(json.dumps(rs_payload, indent=2, ensure_ascii=False))
+        L.append("```")
+        L.append("")
     L.append("---")
     L.append("")
     return L
@@ -993,7 +1044,7 @@ def build(conn, registry_no: int) -> str:
     L += render_section_i_phase2(owners, phase2)
     L += render_section_j_verses(owners, verses_by_term)
     L += render_section_k_legacy_vc(owners, states)
-    L += render_section_l_catalogue(catalogue)
+    L += render_section_l_catalogue(catalogue, registry_no, reg['word'])
     L += render_section_m_verification(owners, schema, ts, reg, states)
     L.append(f"*End of readiness output v2 — wa-{registry_no:03d}-{reg['word']}.*")
     return "\n".join(L)
@@ -1012,7 +1063,7 @@ def main() -> int:
     out_dir = OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     fname = (args.out or
-             f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v3-{today_compact()}.md")
+             f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v4-{today_compact()}.md")
     out_path = os.path.join(out_dir, fname)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(md)
