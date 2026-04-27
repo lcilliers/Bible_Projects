@@ -680,3 +680,338 @@ Once approved, Phase 2 spec doc is straightforward. I'll draft once you decide.
 ---
 
 *Updated 2026-04-27 by Claude Code in response to researcher observations. The data model in §10.6 is the proposed Phase 2 target.*
+
+next review researcher observations:
+
+ - schema changes approved, good thinking.
+ - catalogue findings - i think we should record a no finding against each question (except for word specific questions). This will allow us to monitor any questions that is not surfacing, and also backfill questions that emerge later.
+ - I can clearly see that part of the data validation and readiness phase will be to re-align some of the data to land in the correct buckets, especially if AI need to review them.
+ - There should be a section in the .md input for the analytics that highlights all the open session B questions with a priority to reconsider these questions - outcomes could be a) a Q&A answer, b) a follow up research question that triggers base line investigation c) a session D pointer d) marking the open item as no longer relevant.  The outcome must be linked and recorded on the session B item.
+ - We could use the Session B findings open items for you to populate anomalies when you do data validations that need to be considered or resolved by AI.  The Session B findings becomes the key for AI to understand the status of the analytics when a revision of analytics are pushed towards AI.
+ - we need to design the output of the analytics as a separate .md that can be presented to AI in the case of a revision.  In such a case there would be two inputs - the data (current .md extract) and analytic status (the result of previous analytics)
+ - The prose section citations should be included in the work of AI during analysis.
+ - Can you recheck that every data field has a destination and purpose in the input .md.  What we must validate is that the .md prompts AI to deal with it, and that the outcome is that you can 'resolve' it - it either finds a home in the findings, or the data must be resolved by mark it as deleted or changes the flags.
+
+---
+
+## Part 11 — CC Response to Researcher Observations (Round 2)
+
+The eight new observations together complete a **closed-loop analytical system**. Each has a clear schema/process implication.
+
+### 11.1 Schema changes approved
+
+Acknowledged. Phase 2 migration plan:
+
+| Migration | Action |
+|---|---|
+| M40 | `ALTER TABLE verse_context ADD COLUMN analysis_note TEXT` |
+| M41 | `CREATE TABLE wa_prose_section_citations (...)` with FKs to prose_section, wa_session_b_findings, wa_finding_catalogue_links, wa_session_research_flags |
+| M42 | `ALTER TABLE wa_obs_question_catalogue ADD COLUMN review_note TEXT` |
+| M43 | Allow `wa_finding_catalogue_links.finding_id` to be NULL (for NO_FINDING coverage rows) |
+| Vocab | Extend `wa_session_b_findings.status` to {open, resolved_qa, resolved_sd, not_relevant, superseded}; extend `wa_finding_entity_links.entity_type` to {term, verse, group, dimension}; extend `finding_type` to include 'OBSERVATION' and 'DATA_ANOMALY'; extend `coverage` to include 'no_finding' |
+
+These migrations are tracked in `engine/migrations.py` per the existing engine pattern. Sequencing them as M40-M43 keeps the schema_version progression clean.
+
+### 11.2 Catalogue completeness — record no_finding for every universal question
+
+**Researcher direction:** "we should record a no finding against each question (except for word specific questions). This will allow us to monitor any questions that is not surfacing, and also backfill questions that emerge later."
+
+**Implementation.** Phase 2 writer, after processing all Q&As from the obslog:
+
+```text
+For each universal question Q in wa_obs_question_catalogue (147 generic):
+  IF Q was answered/partial in this session:
+    (link already created with coverage='full|partial')
+  ELSE IF Q was explicitly NOT_APPLICABLE in this session:
+    INSERT wa_finding_catalogue_links (finding_id=NULL, question_id=Q.obs_id,
+                                        coverage='not_applicable',
+                                        session_b_note=<rationale from obslog>)
+  ELSE (Q was not addressed in the obslog at all):
+    INSERT wa_finding_catalogue_links (finding_id=NULL, question_id=Q.obs_id,
+                                        coverage='no_finding',
+                                        session_b_note='Question not surfaced during analysis.')
+
+For word-specific questions (source_registry_no = current registry):
+  Only ANSWERED rows recorded (these are intrinsically scoped — coverage by presence).
+```
+
+**Volume.** 147 universal coverage rows per word × ~200 words = ~29,400 rows when programme completes. Plus the actual answered findings on top. Acceptable — enables the monitoring use case.
+
+**Use cases unlocked:**
+
+```sql
+-- Questions consistently not surfacing across the programme
+SELECT q.obs_id, q.question_code, q.question_text,
+       COUNT(*) FILTER (WHERE l.coverage='no_finding') AS not_surfaced,
+       COUNT(*) FILTER (WHERE l.coverage='not_applicable') AS not_applicable,
+       COUNT(*) FILTER (WHERE l.coverage IN ('full','partial')) AS answered
+  FROM wa_obs_question_catalogue q
+  JOIN wa_finding_catalogue_links l ON l.question_id = q.obs_id
+  WHERE q.scope='universal'
+  GROUP BY q.obs_id
+  ORDER BY not_surfaced DESC;
+
+-- Backfill identification — when a new question Q is added later:
+-- find every word's analysis where Q was not yet considered
+SELECT registry_id FROM word_registry
+  WHERE id NOT IN (
+    SELECT DISTINCT f.registry_id FROM wa_finding_catalogue_links l
+    LEFT JOIN wa_session_b_findings f ON f.id = l.finding_id
+    WHERE l.question_id = <new_q_obs_id>
+  );
+```
+
+Each is a single query — no joins-from-hell.
+
+### 11.3 Data validation/realignment phase
+
+**Researcher observation:** "part of the data validation and readiness phase will be to re-align some of the data to land in the correct buckets, especially if AI need to review them."
+
+**Confirmed.** CC's Phase 2 workflow has three distinct sub-phases:
+
+1. **Pre-write validation** — does the parsed manifest reference real entities? Are required fields present?
+2. **Write** — transactional commit per session.
+3. **Post-write validation + realignment** — examine the freshly-written rows for anomalies, consistency issues, schema drift; realign where possible (e.g. moving a record from one bucket to another); raise items AI must address as 'open' findings (see §11.5).
+
+The realignment phase is where CC catches things like:
+- A finding linked to an entity that doesn't exist (orphan detection)
+- A chapter citing an OBS-NNN that wasn't parsed (parser miss → AI investigation)
+- A verse classification with a dimension assignment that contradicts the group's dimension (cross-table inconsistency)
+- A flag raised but never resolved with no path forward
+
+These get either auto-corrected (where deterministic) or raised as open findings for AI review in the next session.
+
+### 11.4 New §N in readiness .md — Open Session B Items
+
+**Researcher direction:** "There should be a section in the .md input for the analytics that highlights all the open session B questions with a priority to reconsider these questions — outcomes could be a) a Q&A answer, b) a follow up research question that triggers base line investigation c) a session D pointer d) marking the open item as no longer relevant. The outcome must be linked and recorded on the session B item."
+
+**Implementation.** Add §N to the readiness output generator. Sourced from `wa_session_b_findings WHERE registry_id = ? AND status = 'open'`.
+
+Each open item rendered in the .md:
+
+```markdown
+### Open finding `F-NNN` — [finding_type]
+- **Raised:** [date] · **By:** [session_raised | data_validation] · **Priority:** [HIGH/MEDIUM/LOW]
+- **Term/entity context:** [term_id / verse_record_id / group_id if applicable]
+- **Item:** [finding text]
+- **Required outcome (one of):**
+  - (a) Resolve via Q&A: link to a catalogue question + record answer
+  - (b) Raise as follow-up research question (new GAP question)
+  - (c) Convert to SD pointer (cross-registry research target)
+  - (d) Mark as no_longer_relevant with reason
+
+**This item must be addressed in this analytical session.** Outcome will be recorded on `wa_session_b_findings.status` and linked accordingly.
+```
+
+The analytical instruction tells AI: §N items are not optional — every one must be resolved (lifecycle forward) before session close. This keeps `wa_session_b_findings` from accumulating stale 'open' rows.
+
+### 11.5 Bidirectional channel — CC raises anomalies via findings
+
+**Researcher direction:** "We could use the Session B findings open items for you to populate anomalies when you do data validations that need to be considered or resolved by AI."
+
+**Implementation.** CC's post-write validation phase produces 'open' findings of type `DATA_ANOMALY` or similar. Examples of what CC might raise:
+
+| CC-detected anomaly | finding_type | What AI must decide |
+|---|---|---|
+| Verse classified as anchor in `verse_context.is_anchor=1` but the anchor isn't cited in any chapter | `DATA_ANOMALY_ANCHOR_UNCITED` | Should the anchor designation be removed, or should it be cited in an upcoming chapter revision? |
+| Group dimension assignment contradicts group description content | `DATA_ANOMALY_DIMENSION_DRIFT` | Reaffirm dimension, or correct via VCGROUP patch + dim review? |
+| Q&A linked to a catalogue question, but the answer doesn't reference any anchor verse from the term | `DATA_ANOMALY_ANSWER_UNGROUNDED` | Re-ground the answer, or flag the question as poorly fitted? |
+| Term has 0 active verses but `mti_terms.status='extracted'` | `DATA_ANOMALY_EMPTY_TERM` | Mark for delete (term-status fix), or investigate verse extraction? |
+| Anchor-verse analysis_note exists but the verse is no longer marked is_anchor | `DATA_ANOMALY_ORPHAN_ANALYSIS` | Restore anchor designation, or move the analysis to a different anchor? |
+
+Each appears in §N of the next readiness output. AI addresses each with one of the four outcome paths. Findings close cleanly.
+
+**This is the closed-loop:** CC observes data state → raises items → AI analyses → resolves to Q&A / SD pointer / not_relevant → CC captures resolution → next loop. Findings table stays accurate as the working register.
+
+### 11.6 Revision input architecture — two .md inputs
+
+**Researcher direction:** "we need to design the output of the analytics as a separate .md that can be presented to AI in the case of a revision. In such a case there would be two inputs — the data (current .md extract) and analytic status (the result of previous analytics)."
+
+**Two-input model:**
+
+| Input | Source | Purpose |
+|---|---|---|
+| **Readiness `.md` (data)** | Generated from current DB state — same as today's pilot | "Here is the data as it stands now." |
+| **Analytic Status `.md` (analysis)** | Generated from prior analytical work in DB — findings, Q&As, chapters, SD pointers, citations | "Here is what we previously concluded, with provenance." |
+
+For an INITIAL analysis: only the readiness .md (analytic status doesn't exist yet).
+
+For a REVISION: both. AI sees current data + prior analysis; identifies what's changed, what needs updating, what new conclusions are warranted.
+
+**Analytic Status .md structure (proposed):**
+
+```markdown
+# wa-{NNN}-{word} — Analytic Status (revision input)
+
+## Section 1 — Lifecycle summary
+- Findings: open (N), resolved_qa (N), resolved_sd (N), not_relevant (N), superseded (N)
+- Q&A coverage: full (N) / partial (N) / not_applicable (N) / no_finding (N) of 147 universal
+- SD pointers: open (N), addressed (N)
+- Chapters: present (yes/no, version)
+- Last analytical session: [date], session_b_status: [...]
+
+## Section 2 — Resolved findings (Q&A pairs)
+For each resolved_qa finding:
+- The original observation
+- The catalogue question it answered
+- The full answer (from session_b_note)
+- Citations (entity links: verses, groups, dimensions)
+- Provenance: which obslog produced it
+
+## Section 3 — Resolved findings (SD pointers)
+For each resolved_sd finding:
+- Original observation
+- The SD pointer it became
+- Cross-registry target
+
+## Section 4 — Not_relevant findings
+With reasons.
+
+## Section 5 — Stage 2c chapter content
+Each chapter with citation manifest (cited findings, Q&As, SD pointers, observations).
+
+## Section 6 — Anchor verse analytical notes
+Per-verse-per-term analysis_note content from verse_context.
+
+## Section 7 — Open items (carried forward from prior session)
+[Same as readiness §N — for revision continuity.]
+```
+
+Generated by a new script `_build_analytic_status_v1_*.py`. Run on demand or before a revision session.
+
+### 11.7 Prose citation discipline in analysis instructions
+
+**Researcher direction:** "The prose section citations should be included in the work of AI during analysis."
+
+**Implementation.** The Stage 2c writing instruction must require explicit citation in chapter prose. Pattern:
+
+> Each substantive claim in a Stage 2c chapter MUST cite at least one of:
+> - An OBS-NNN observation (Stage 2a working note)
+> - A Q&A code (e.g. Q&A-042, Q042) — pointing to the answered Q&A pair
+> - An SD pointer (SP-NNN)
+> - A finding ID (e.g. DIM-67-001)
+>
+> Citations appear in the chapter body inline (e.g. "(OBS-026, Q042)"). The `wa_prose_section_citations` table is populated by parser at Phase 2 capture, indexing every citation.
+>
+> A chapter with substantive claims that lack citations fails the post-write coherence audit (§10.4). The audit query enumerates uncited substantive paragraphs.
+
+This becomes a section in `wa-sessionb-analysis-output v1_2`.
+
+### 11.8 Field-level destination audit — every field has a home and a prompt
+
+**Researcher direction:** "Can you recheck that every data field has a destination and purpose in the input .md. What we must validate is that the .md prompts AI to deal with it, and that the outcome is that you can 'resolve' it — it either finds a home in the findings, or the data must be resolved by mark it as deleted or changes the flags."
+
+**Walkthrough of the readiness `.md` against this requirement.** For each section, what data fields appear, how they prompt AI, and what the resolution path is:
+
+| §  | Data field | Prompts AI to | Resolution path |
+|---|---|---|---|
+| A | `verse_context_status`, `session_b_status`, `dim_review_status`, `cluster_assignment`, `sb_classification` | Confirm status fields are coherent for analysis stage | If incoherent → DATA_ANOMALY finding raised by AI |
+| A | `inference_note`, `word_synopsis`, `description` | Read as researcher framing context | Synthesised into chapter narrative; cited where used |
+| A | `phase1_term_count`, `phase1_verse_count` | Cross-check against current OWNER + XREF counts | If mismatch → flag (anomaly or already-known) |
+| B | Stage 1 Completion Record gates | Confirm each gate before Stage 2a | Any 'partial' gate → AI declares acceptance with caveat or raises blocking finding |
+| C | Per OWNER term: strongs, gloss, vc_status, md_v, verses, groups, vc_rows | Each term must be analysed in Units 2-7 OR explicitly noted as not-on-topic | Each → at minimum, observations register entry; may → finding/Q&A |
+| C | Legacy-VC term (vc_status='not_done') | Apply materiality protocol (ANALYSIS_VC_UNVERIFIED_MATERIAL flag if material) | → flag if material, otherwise note in audit trail |
+| D | meaning_parse, senses, root family, related words, LSJ | Use for Unit 3 lexical foundation | → MEANING_OBSERVATION or ETYMOLOGY findings |
+| E | XREF terms (each) | Consider cross-registry implications in Unit 2 | → SD pointer if cross-registry signal, else observation |
+| F | Each group: code, description, dimension, anchor count | Read in Unit 4 landscape | → observation about characteristic; if dimension contradicts, raises DIM finding |
+| F | NULL dimension | Must be addressed | → DIMREVIEW finding or AI proposes assignment |
+| G | XREF sharing, verse co-occurrence, shared anchors | Use for Unit 5 cross-registry vision | → SD pointers from shared anchors; observations from co-occurrence |
+| H | Existing session_b_findings | Read in Unit 6/9, decide each: confirm / question / supersede | → updated finding status (one of the 5 lifecycle values) |
+| H | Open SD pointers + flags | Same as findings | → resolution path |
+| I | Phase2 thin-evidence flags | Read in Unit 8, dispose each: confirmed / uncertain / inapplicable | → finding with disposition |
+| J | Each verse with classification + target_word + verse_text | Anchor verses get full Unit 7 reading; non-anchors reviewed | → analysis_note on `verse_context` for anchors; observations for patterns |
+| K | Legacy-VC notice | Apply materiality protocol per finding produced | → ANALYSIS_VC_UNVERIFIED_MATERIAL flag where material |
+| L | Generic catalogue (147) | Each must produce a coverage row | → catalogue_link with coverage in {full, partial, not_applicable, no_finding} |
+| L | Registry-specific catalogue questions (if any) | Each must be answered | → catalogue_link with coverage |
+| M | Verification gates | Confirm gates before close | If any fail → AI raises blocker |
+| **N (new)** | **Open Session B items** | **Each must be resolved this session** | **→ Q&A / SD pointer / no_longer_relevant** |
+
+**Conclusion:** every data field in the readiness .md has a destination and a prompt. The §10.8 writer scope, the §11.4 §N section, and the §11.5 anomaly-bidirectional channel together guarantee that nothing the .md presents is silently passed over.
+
+**Two implementation gaps to close in the readiness generator:**
+
+1. **§N "Open Session B Items" section** — needs to be added (queries `wa_session_b_findings WHERE status='open' AND registry_id=...`).
+2. **Field-level "prompt" annotations** — for some fields, the .md should include a brief "AI must:" line so the AI's analytical pass doesn't have to remember the protocol from the instruction. E.g. each Legacy-VC term gets an inline "AI must apply materiality test if any finding cites this term's classification."
+
+Both are small additions to the v5 readiness generator (next iteration).
+
+### 11.9 Closed-loop analytical system — the full picture
+
+```text
+┌─────────────────────────────────────────────────────────────┐
+│                       DATABASE                              │
+│  word_registry · mti_terms · verse_context · groups         │
+│  wa_session_b_findings (lifecycle journal)                  │
+│  wa_finding_catalogue_links (Q&A pairs + no_finding cov)    │
+│  wa_finding_entity_links (term/verse/group/dimension)       │
+│  wa_session_research_flags (SD pointers + flags)            │
+│  wa_obs_question_catalogue (the question framework)         │
+│  prose_section + wa_prose_section_citations (chapters)      │
+│  wa_dimension_index (per-group dimension)                   │
+└─────┬───────────────────────────────────────────────────────┘
+      │
+      │ (1) CC reads + validates
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  READINESS `.md` + `.json` (data input)                     │
+│  §A-§M existing + §N Open Session B Items (new)             │
+│  Every field has a prompt + destination (§11.8)             │
+└─────┬───────────────────────────────────────────────────────┘
+      │
+      │ (2a) for INITIAL analysis: just data input
+      │ (2b) for REVISION: + analytic status .md (§11.6)
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│              CLAUDE AI ANALYTICAL SESSION                   │
+│  Stage 2a observations (Unit 1-9)                           │
+│  Stage 2b Q&A (147 universal + word-specific)               │
+│  Stage 2c chapters (with citation discipline §11.7)         │
+│  Open items resolution (§11.4 — every §N item resolved)     │
+│  ── output: comprehensive obslog .md ──                     │
+└─────┬───────────────────────────────────────────────────────┘
+      │
+      │ (3) CC parses + validates obslog
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│  PARSER → MANIFEST .json + VALIDATION .md (Phase 1, built)  │
+└─────┬───────────────────────────────────────────────────────┘
+      │
+      │ (4) CC writes to DB (Phase 2)
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│   DB UPDATES — per the §10.8 writer scope:                  │
+│   - findings, links, flags, prose, citations,               │
+│     analysis_notes, catalogue entries                       │
+│   - lifecycle states updated                                │
+└─────┬───────────────────────────────────────────────────────┘
+      │
+      │ (5) CC post-write validation + realignment
+      ▼
+┌─────────────────────────────────────────────────────────────┐
+│   CC RAISES ANOMALIES as 'open' findings (§11.5)            │
+│   Carried into next session's §N                            │
+└─────────────────────────────────────────────────────────────┘
+      │
+      │ (6) Cycle continues for revision sessions
+      ▼
+   (back to step 1)
+```
+
+Every artefact has a producer and consumer. Every analytical observation has a lifecycle path. No data hides; nothing is silently passed over.
+
+### 11.10 Updated open decisions for Phase 2
+
+Revised list — consolidated from §10.9 and the new observations:
+
+1. ✅ **Schema migrations M40-M43** — researcher approved.
+2. **Catalogue completeness — record no_finding rows for unanswered universal questions.** Approved direction; CC default coverage values: 'full', 'partial', 'not_applicable', 'no_finding'.
+3. **CC-raised anomaly finding_types** — should they be a controlled list (e.g. `DATA_ANOMALY_*` family) or free-form? CC default: controlled list, growing as patterns emerge.
+4. **§N section in readiness output** — to add to v5 readiness generator. Confirm: source query is `wa_session_b_findings WHERE status='open'` for the registry; rendered with the four resolution paths.
+5. **Analytic status .md generator** — confirm priority. CC recommendation: build alongside Phase 2 writer, since it shares the same DB queries.
+6. **Field-level "AI must:" prompts in readiness .md** — confirm yes for next generator iteration.
+7. **Backfill of historical 195 findings** — out of scope for Phase 2; addressed once the writer is stable.
+8. **Phase 2 spec doc draft** — once items 2-6 are confirmed, ready to write.
+
+---
+
+*Updated 2026-04-27 by Claude Code in response to researcher observations Round 2. The system in §11.9 is the proposed end-state.*
