@@ -18,6 +18,39 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 ## Open
 
+### DB Capture Architecture — Approach (a) (researcher approved 2026-04-27)
+
+Source-of-truth: [db-capture-phase1-results-and-table-architecture-v1-20260427.md](outputs/investigations/db-capture-phase1-results-and-table-architecture-v1-20260427.md). All decisions locked in Part 12.
+
+**Phase 1 (parser) — DONE**
+- [x] Phase 1 parser + validator built (`scripts/_pilot_parse_obslog_to_db_v1_20260427.py`)
+- [x] Pilot run on reg 067 obslog v2: 147 Q&A · 10 SD · 49 obs · 6 chapters · 8+6 questions · 41 review notes · 6 issues — all extracted clean
+- [x] Coverage gap analysis: 119 of 141 answered Q&As + 6 chapters + 49 obs + 14 Qs + 41 notes were lost under Approach (b). Phase 1 captures all.
+
+**Phase 2 (writer) work items — IN PROGRESS**
+- [ ] **A. Schema migrations M40-M43** — `verse_context.analysis_note` column · `wa_prose_section_citations` table · `wa_obs_question_catalogue.review_note` column · `wa_finding_catalogue_links.finding_id` NULL allowed. Plus controlled-vocab extensions (status / finding_type / entity_type / coverage). Pre-migration backups labelled per migration.
+- [ ] **B. Phase 2 writer** (`scripts/_capture_obslog_to_db_v1.py`) — read parser manifest + write DB rows; idempotent; transactional; backup before write; pre-write validation; post-write verification + anomaly raising.
+- [ ] **C. Readiness generator v5** — add §N "Open Session B Items" section + field-level "AI must:" prompts. Source query: `wa_session_b_findings WHERE status='open' AND registry_id=?` rendered with four resolution paths.
+- [ ] **D. Analytic Status `.md` generator** (`scripts/_build_analytic_status_v1.py`) — companion to readiness output for revision sessions. Two-input model: data .md + analytic status .md.
+- [ ] **E. Phase 2 writer pilot** on reg 067 obslog v2 — populate DB, compare against current state, validate idempotency.
+- [ ] **F. Spec revisions (researcher-gated)** — four documents:
+    - [ ] `wa-patch-instruction` (account for the new categories)
+    - [ ] `wa-sessionb-analysis-readiness` (now mostly a CC operation — major shift)
+    - [ ] `wa-sessionb-analysis-output` (citation discipline; §N resolution discipline)
+    - [ ] `wa-claudecode-instruction` (CC's extensive new responsibilities)
+- [ ] **G. Programme prose update (researcher-gated)** — `prog_instr_session_a` / `prog_instr_session_b` / `prog_instr_verse_context` updated to reflect the new architecture.
+- [ ] **H. tasks.md kept current** — this section. Check items off as completed.
+
+**Catalogue completeness scope (decision #2 approved):**
+- [ ] Phase 2 writer must record `coverage='no_finding'` in `wa_finding_catalogue_links` for every universal Q (147) per word that wasn't surfaced. Volume: ~29.4K rows at programme completion. Enables backfill + monitoring.
+
+**CC anomaly-raising (decision #3 approved):**
+- [ ] `DATA_ANOMALY_*` controlled list seeded with: `_ANCHOR_UNCITED`, `_DIMENSION_DRIFT`, `_ANSWER_UNGROUNDED`, `_EMPTY_TERM`, `_ORPHAN_ANALYSIS`. Expandable as patterns emerge.
+
+**Backfill of historical 195 findings (decision #7):** Resolved by attrition — will be addressed naturally as those words are resubmitted for analysis. **No active backfill task.**
+
+---
+
 ### VC corrective action strategy (raised 2026-04-25)
 
 - [ ] _VC corrective action strategy — avoid full re-classification of the 1,800-term legacy-Complete bucket; rely on signal-targeted revision and pinpoint VCGROUP/VCVERSE corrections. Strategy + statistical assumptions captured in [vc-corrective-strategy-v1-20260425.md](outputs/investigations/vc-corrective-strategy-v1-20260425.md). Living document — bump version on each substantive update; pivot on triggers in §6._

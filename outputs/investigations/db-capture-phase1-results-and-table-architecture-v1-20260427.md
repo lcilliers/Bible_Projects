@@ -1015,3 +1015,90 @@ Revised list — consolidated from §10.9 and the new observations:
 ---
 
 *Updated 2026-04-27 by Claude Code in response to researcher observations Round 2. The system in §11.9 is the proposed end-state.*
+
+Research comments
+
+- Approved default path: 2,3,4,5,6
+- 7.  this will wash through if the words that it is associated with gets resubmitted for word analysis
+- 8.  Specs to revise : patch; analysis-readiness (now becoming a CC operation); analysis-output; CC specification to document the new responsibilities of CC that is quite extensive.
+- 9. update programme prose with all the architecture changes
+- 10.update task list to check off against it, many a time in the past I lost track of what is done, and what is still in progress.
+
+---
+
+## Part 12 — Architecture Decisions Locked + Implementation Plan
+
+### 12.1 Decisions captured (researcher approvals 2026-04-27)
+
+All Phase 2 design decisions are now closed. This section is the source of truth for what gets built.
+
+| # | Decision | Status | Notes |
+|---|---|---|---|
+| 1 | Schema migrations M40-M43 | ✅ Approved | `verse_context.analysis_note` · `wa_prose_section_citations` · `wa_obs_question_catalogue.review_note` · `wa_finding_catalogue_links.finding_id` NULL |
+| 2 | Catalogue completeness — `no_finding` rows for unanswered universal Qs | ✅ Approved | ~29.4K rows at programme completion; enables backfill + monitoring |
+| 3 | Controlled list of `DATA_ANOMALY_*` finding_types | ✅ Approved | List grows as patterns emerge — CC manages |
+| 4 | §N "Open Session B Items" in readiness `.md` | ✅ Approved | Source query: `wa_session_b_findings WHERE status='open' AND registry_id=?`; four resolution paths rendered |
+| 5 | Analytic Status `.md` generator | ✅ Approved | Built alongside Phase 2 writer (shares DB queries) |
+| 6 | Field-level "AI must:" prompts in readiness `.md` | ✅ Approved | Next generator iteration |
+| 7 | Backfill of historical 195 findings | **Resolved by attrition** — will be addressed naturally as those words are resubmitted for analysis | No active backfill work |
+| 8 | Specs to revise | **NEW WORK** — see §12.3 | Four documents need updating |
+| 9 | Programme prose update with architecture changes | **NEW WORK** — see §12.3 | Done after instruction docs settled |
+| 10 | tasks.md updated for tracking | **NEW WORK** — see §12.3 | Researcher visibility into progress |
+
+### 12.2 Lifecycle vocabulary (locked)
+
+For reference — these become the controlled vocabularies enforced by Phase 2:
+
+**`wa_session_b_findings.status`:**
+- `open` — observation/anomaly raised, awaiting resolution
+- `resolved_qa` — converted to a Q&A pair (linked via `wa_finding_catalogue_links`)
+- `resolved_sd` — converted to an SD pointer (linked via `wa_session_research_flags.related_finding_id`)
+- `not_relevant` — closed without resolution; reason in `obsolete_reason`
+- `superseded` — replaced by a more precise finding (`superseded_by_id` populated)
+
+**`wa_session_b_findings.finding_type` (additions for v2 architecture):**
+- `OBSERVATION` — Stage 2a working note
+- `DATA_ANOMALY_ANCHOR_UNCITED`, `DATA_ANOMALY_DIMENSION_DRIFT`, `DATA_ANOMALY_ANSWER_UNGROUNDED`, `DATA_ANOMALY_EMPTY_TERM`, `DATA_ANOMALY_ORPHAN_ANALYSIS` — CC-raised anomaly types (initial set; expandable)
+- All existing finding_types retained.
+
+**`wa_finding_catalogue_links.coverage`:**
+- `full` — answered substantively
+- `partial` — partially answered with caveat
+- `not_applicable` — explicitly determined not to apply to this word
+- `no_finding` — question not surfaced during analysis (silent miss; backfill candidate)
+
+**`wa_finding_entity_links.entity_type`:**
+- `term` (mti_term_id) · `verse` (verse_record_id) · `group` (verse_context_group_id) · `dimension` (wa_dimension_index.id)
+
+### 12.3 Implementation plan — work order and ownership
+
+Sequenced by dependency:
+
+| # | Work item | Output | Owner | Status |
+|---|---|---|---|---|
+| A | Schema migrations M40-M43 | DB changes | CC | **In progress this session** |
+| B | Phase 2 writer (`_capture_obslog_to_db_v1.py`) | Script that reads parser manifest + writes DB rows; idempotent; transactional; with backup | CC | **Skeleton this session, full build next** |
+| C | Readiness generator v5 — add §N "Open Session B Items" + field-level prompts | Updated generator script | CC | **This session** |
+| D | Analytic Status `.md` generator (`_build_analytic_status_v1.py`) | Companion script for revision sessions | CC | **Skeleton this session** |
+| E | Phase 2 writer pilot run on reg 067 obslog v2 | DB populated; comparison vs current state | CC | After A+B |
+| F | Specs to revise (researcher direction #8) | 4 instruction docs updated: `wa-patch-instruction`, `wa-sessionb-analysis-readiness` (now mostly a CC operation), `wa-sessionb-analysis-output`, `wa-claudecode-instruction` (CC's new responsibilities) | Researcher (with CC drafts) | **After E — researcher review** |
+| G | Programme prose update | `prog_instr_session_a` / `prog_instr_session_b` / `prog_instr_verse_context` updated to reflect new architecture | Researcher (with CC drafts) | **After F** |
+| H | tasks.md updated | New section "DB Capture Architecture (Approach a)" with all items above | CC | **This session** |
+
+**Researcher-gated steps (F, G):** these are policy/instruction-doc edits. CC will draft when the technical work is stable; researcher reviews before any commit to the canonical Workflow folder.
+
+**This-session targets** (CC unattended): A, B-skeleton, C, D-skeleton, H. These are technical and reversible. Items E-G need researcher in the loop.
+
+### 12.4 Risks managed during unattended work
+
+For the work CC does in researcher's absence:
+
+1. **DB single-point-of-failure (researcher risk #1):** every schema migration takes a labelled backup first; migrations are reversible; verification queries run after each migration. Pre-migration backup at `backups/bible_research_pre_M40_20260427.db` etc.
+2. **Idempotency of writers:** scripts must be safe to re-run. Phase 2 writer skeleton checks for existing rows before insert. Readiness generator outputs are deterministic (same DB state → byte-identical .md/.json modulo timestamp).
+3. **Scope discipline:** CC will NOT touch researcher-gated items (F, G — instruction/prose edits) without researcher review. Technical scaffolding only.
+4. **Test surface:** every new script gets a dry-run mode and a comparison-against-current-state mode. No live writes without dry-run pass.
+5. **Documentation of decisions:** this Part 12 is the source of truth. CC commits reference it. Future researcher returning to this work has the full audit trail.
+
+---
+
+*Updated 2026-04-27 by Claude Code. Decisions locked. Implementation begins this session for items A, B-skeleton, C, D-skeleton, H. Items E-G await researcher's return.*
