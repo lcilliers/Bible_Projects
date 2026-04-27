@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-27T03:29:32Z",
+  "generated_at": "2026-04-27T04:27:30Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 3100,
-  "total_active": 1902,
+  "total_files": 3103,
+  "total_active": 1905,
   "total_archived": 1198,
   "files": [
     {
@@ -41406,6 +41406,21 @@
       "modified": "2026-03-28T14:50:29Z"
     },
     {
+      "path": "outputs/investigations/db-capture-architecture-comparison-v1-20260427.md",
+      "category": "investigation",
+      "type": "investigation",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 12966,
+      "modified": "2026-04-27T04:18:21Z"
+    },
+    {
       "path": "outputs/investigations/db_preflight_findings.md",
       "category": "investigation",
       "type": "investigation",
@@ -46099,6 +46114,36 @@
       "archived": false,
       "size_bytes": 54300,
       "modified": "2026-04-02T15:33:50Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-067-goodness-obslog-parse-manifest-v1-20260427.json",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 226529,
+      "modified": "2026-04-27T04:26:50Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-067-goodness-obslog-validation-v1-20260427.md",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 6427,
+      "modified": "2026-04-27T04:26:50Z"
     },
     {
       "path": "outputs/reports/words/wa-067-goodness-readiness-output-v1-20260426.md",
