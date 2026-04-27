@@ -1,6 +1,6 @@
 # wa-067-goodness — Analytic Status (revision input)
 
-_Generated 2026-04-27T06:33:32Z_
+_Generated 2026-04-27T08:20:36Z_
 
 This document is the second input for **revision sessions** (alongside the readiness `.md`). It captures previously-concluded analytical content with provenance.
 
@@ -9,25 +9,25 @@ This document is the second input for **revision sessions** (alongside the readi
 ## 1. Lifecycle summary
 
 - **Session B status:** `Analysis Complete`
-- **Resolved QA findings:** 21
-- **Resolved SD findings:** 0
-- **Open findings (must address this session):** 28
-- **Not-relevant (closed):** 0
+- **Resolved QA findings:** 40
+- **Resolved SD findings:** 8
+- **Open findings (must address this session):** 0
+- **Not-relevant (closed):** 1
 - **Superseded:** 0
 
 ### Catalogue coverage (universal questions)
 
 - **Universal questions in catalogue:** 155
-- `full`: 48
+- `full`: 65
 - `no_finding`: 8
 - `not_applicable`: 6
-- `partial`: 7
+- `partial`: 18
 
 ---
 
-## 2. Resolved findings — Q&A pairs (55)
+## 2. Resolved findings — Q&A pairs (76)
 
-### Section 1 — Word Characteristic Summary (28)
+### Section 1 — Word Characteristic Summary (33)
 
 #### `Q001` — What is the structural disposition of the word — where does it originate?
 
@@ -93,6 +93,70 @@ This document is the second input for **revision sessions** (alongside the readi
 **Source observation:**
 
 > Gen 1:31: goodness as ontological baseline — creational reference point for all goodness language
+
+#### `Q002` — What determines whether the word is extended or withheld?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-002` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> The tension between the registry-level dimension label (Moral/Conscience) and the group-level dimension spread (Moral Character 05, Cognition 03, Volition 04, Divine-Human Correspondence 11, and three NULL groups) is real and analytically significant. The registry-level label is a coarse aggregate that does not capture the genuine plurality of inner-being phenomena H2896A addresses. This finding supports the answer to Q002 (partial coverage): for goodness, a single registry-level dimension label is inadequate — the word operates across at least four confirmed dimensions. The label 'Moral/Conscience' captures the dominant human register (884-002, 884-006) but leaves the experiential (884-003), comparative-evaluative (884-004), volitional (884-008), and ontological (884-007) registers unnamed. The appropriate action is a dimension review that assigns group-level dimensions to the three NULL groups and re-evaluates 884-003 and 884-005.
+
+**Source observation:**
+
+> Registry-level dimension = Moral/Conscience; groups show wider spread — tension noted
+
+#### `Q003` — What are the distinct modes of operation of the word in the inner being?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-011` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Analytical assessment (per prior anchor verse work):
+> - 884-007 (creation pronouncement, Gen 1:31): Dimension 11 — Divine-Human Correspondence is the closest available fit, but the group is distinctive — it is a divine creative-evaluative act that establishes ontological goodness. If the dimension review introduces a 'Divine Agency' or 'Creation/Ontology' dimension, this group would fit better. Provisional: Dimension 11.
+> - 884-008 (volitional preference idiom, 40 verses, anchor Jer 26:14): Dimension 04 — Volition. The group description explicitly names choosing, preferring, agreeing, judging fitting. This is squarely volitional.
+> - 884-009 (inner well-being state, 5 verses, anchor Est 5:9): Dimension uncertain — neither Moral Character (05), Cognition (03), nor Volition (04) fits cleanly. The group names an affective inner state (tov-lev, glad of heart). Closest: a Vitality/Experiential dimension not currently in the active vocabulary. Flag for dimension review.
+>
+> **GAP QUESTION — GAP-N-001:**
+> > For registries where verse context groups carry affective inner-being states (gladness, well-being, shalom-condition) that do not fit Moral Character, Cognition, or Volition, what dimension should be assigned? The current 10-dimension vocabulary may require an Experiential/Affective category for these groups.
+
+**Source observation:**
+
+> Three H2896A groups have NULL dimension (884-007, 884-008, 884-009)
+
+#### `Q003` — What are the distinct modes of operation of the word in the inner being?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-022` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> DIM-67-001 asked whether the wide dimensional range of tov represents genuinely distinct inner-being phenomena or a unified category. Resolution: the modes are genuinely distinct — each of the nine H2896A groups engages a different inner-being faculty (divine doxological assertion, human moral character, experiential orientation, evaluative cognition, covenantal reception, moral verdict, ontological pronouncement, volitional preference, affective well-being). They are unified not lexically but theologically: goodness originates in God and all modes express, derive from, or respond to the one goodness that is God's own. The Hebrew tov covers this unified-yet-plural field with a single form; English requires multiple words to render the plurality.
+
+**Source observation:**
+
+> DIM-67-001: core analytical question — distinct phenomena vs unified category
+
+#### `Q003` — What are the distinct modes of operation of the word in the inner being?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-023` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> DIM-67-001 used older dimension labels: 'Theological/Divine-Human', 'Moral/Conscience', 'Spiritual/God-ward', 'Character/Disposition'. Against current vocabulary:
+> - 'Theological/Divine-Human' → Dimension 11 — Divine-Human Correspondence
+> - 'Moral/Conscience' → Dimension 05 — Moral Character
+> - 'Spiritual/God-ward' → closest is Dimension 05 (Moral Character) or Dimension 08 (Dependence/Creatureliness) depending on group
+> - 'Character/Disposition' → Dimension 05 (Moral Character) for human; Dimension 11 for divine
+>
+> The re-reading confirms: DIM-67-001's substance is valid and the analytical resolution (genuinely distinct modes unified theologically) holds under current vocabulary. The finding's conclusion is unchanged; only the vocabulary labels require updating in the DB record.
+
+**Source observation:**
+
+> DIM-67-001 uses pre-v1.4 dimension vocabulary; needs re-reading against current labels
 
 #### `Q003` — What are the distinct modes of operation of the word in the inner being?
 
@@ -334,6 +398,19 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Est 5:9: glad-of-heart (Haman) — inner well-being fragile and morally ungrounded
 
+#### `Q009` — Does the word describe a one-time act or an ongoing condition — and how are these distinguished?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-047` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> G0019 (agathōsunē, 4 verses — all relevant) and G5544 (chrēstotēs, 7 verses — all relevant) are thin-corpus terms. Their evidence supports analytically plausible conclusions but the evidential weight is proportionally limited — no single-verse conclusion about these terms can be treated as programme-confirmed without acknowledgment of this limitation. The thin-evidence designation applies to the Greek component of this registry's analysis. All conclusions derived from G0019 and G5544 are held as analytically supported but not definitively confirmed until a larger corpus would validate them. The Hebrew H2896A (306 verses) provides the primary evidential weight for this registry.
+
+**Source observation:**
+
+> G0019 and G5544 thin-evidence confirmed by small corpora; conclusions proportionally limited
+
 #### `Q012` — What character quality does the word produce in the inner being?
 
 - **Coverage:** `full` · **Validated:** 2026-04-27
@@ -492,7 +569,24 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > G5542 (chrēstologia) related word confirms distortion pole etymologically
 
-### Section 2 — Word Impact Description (9)
+### Section 2 — Word Impact Description (11)
+
+#### `Q021` — What inner-being logic or orientation functions as the structural opposite of the word?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-049` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> The presence/absence/distortion structure confirmed across Registry 67:
+> - Presence: Groups 884-001 through 884-005, 884-007 through 884-009 (H2896A positive forms); 885-001, 886-001, 886-002 (Greek positive forms)
+> - Absence/Negation: 884-006 (not-good prophetic/wisdom verdict, 22 verses) for H2896A; 886-002/Rom 3:12 ('no one does good, not even one') for G5544 — the universal absence of chrēstotēs diagnoses the fallen human condition
+> - Distortion: Not present as a distinct verse-context group. Etymologically embedded in G5542 (chrēstologia — smooth talk) as a related word. Behaviourally present in Mal 2:17 (calling evil good) and Jer 44:17 (redefining good as material advantage) within Group 884-006 — but these are in the not-good verdict group, not a separate distortion group.
+> Conclusion: the tripartite model holds structurally for R67; the distortion pole is etymological rather than textual in the active verse corpus.
+
+**Source observation:**
+
+> SBF-VCB013-001 confirmed and extended: presence/absence holds for full registry; distortion etymological not textual
 
 #### `Q024` — What is the inner-being condition of the person who has received the word but failed to recognise it?
 
@@ -556,6 +650,22 @@ This document is the second input for **revision sessions** (alongside the readi
 **Source observation:**
 
 > Eze 36:31: not-good verdict internalised → self-loathing; affective register as significant as cognitive
+
+#### `Q036` — What quality of inner-being stability does the word produce?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-015` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> The inner well-being state of 884-009 (tov-lev, glad of heart, shalom-condition) sits between Emotion — Positive (if the dimension vocabulary includes this) and Vitality/Existence. The group describes an affective inner state that is neither primarily moral, cognitive, nor volitional. The closest current dimension is Emotion — Positive, but if the programme's 10-dimension vocabulary uses 'Vitality / Existence' (as noted in the dimension review instruction), that may be the better fit for well-being states.
+>
+> **GAP QUESTION — GAP-N-002:**
+> > For verse context groups that name inner affective well-being states (glad of heart, shalom-condition, prospering inwardly) that are not primarily moral assessments, cognitive evaluations, or volitional acts, should the dimension be Emotion — Positive or Vitality / Existence? The two dimensions need clearer boundary criteria for these borderline cases.
+
+**Source observation:**
+
+> 884-009 NULL — shalom-condition; no clean dimension fit; may need experiential category
 
 #### `Q036` — What quality of inner-being stability does the word produce?
 
@@ -638,7 +748,7 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Rom 3:12: chrēstotēs by absence = diagnosis of fallen inner being; catena context gives force
 
-### Section 3 — Annotated Verse Evidence (12)
+### Section 3 — Annotated Verse Evidence (18)
 
 #### `Q043` — What does the primary verse identify as the relationship between the human version and the divine version of the word?
 
@@ -652,6 +762,48 @@ This document is the second input for **revision sessions** (alongside the readi
 **Source observation:**
 
 > Registry description names 3 axes: aesthetic/moral/relational; human goodness is derivative
+
+#### `Q043` — What does the primary verse identify as the relationship between the human version and the divine version of the word?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-013` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Group 884-007's Gen 1:31 anchor establishes that goodness is first a divine creative-evaluative act — ontological before moral. The group is distinct from all other divine goodness groups (884-001 doxological, 884-005 covenantal) in that it is pre-relational: it precedes any divine-human relationship. The creation pronouncement has no human correlate — no human analogue for declaring creation 'very good' exists. This uniqueness is why no current dimension label fits. Provisional assignment: Dimension 11 (Divine-Human Correspondence) with a note that the dimension review should consider whether this group requires a distinct sub-category.
+
+**Source observation:**
+
+> 884-007 NULL — creation pronouncement; no existing dimension label fits cleanly
+
+#### `Q043` — What does the primary verse identify as the relationship between the human version and the divine version of the word?
+
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-037` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Gen 1:31 ('God saw everything that he had made, and behold, it was very good') is the anchor for 884-007. The creative pronouncement establishes goodness as an ontological category prior to any human inner-being engagement. The divine evaluative act here is creative-constitutive: God declares creation good and in declaring it so, the goodness is established. This is distinct from God's ongoing disposition toward humanity (884-001 — doxological/relational) and from God's covenantal promise-keeping (884-005). The provisional dimension: Dimension 11 — Divine-Human Correspondence is the closest available label, but the group is distinctive enough to warrant a sub-category or notation in the dimension review.
+>
+> **GAP QUESTION — GAP-N-003:**
+> > For verse context groups where God's inner-being engagement is a creative-constitutive evaluative act (declaring creation good, establishing ontological goodness) rather than a relational disposition toward humanity, should Dimension 11 (Divine-Human Correspondence) apply, or should the dimension review introduce a distinct label for this ontological-creative register?
+
+**Source observation:**
+
+> 884-007 dimension NULL reinforced — needs a divine creative/evaluative agency category
+
+#### `Q045` — Does the primary verse name more than one function or dimension of the word — and if so, what is the relationship between them?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-045` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Both G0019 (agathōsunē, 885-001, Dimension 04 — Volition) and G5544 (chrēstotēs, 886-002, Dimension 05 — Moral Character) anchor at Gal 5:22. Their co-presence in the fruit list as adjacent but distinct items names the programme's analytical distinction: agathōsunē is goodness as virtue and resolve (volitional — the Spirit-enabled resolve for good, 2Th 1:11); chrēstotēs is kindness as relational disposition and character quality (moral character — the Spirit-produced inner quality expressed toward others). The co-anchor confirms that Gal 5:22 is a single verse that simultaneously engages two analytically distinct inner-being dimensions of goodness. The dimensions are not in conflict — they are facets of a unified Spirit-produced character.
+
+**Source observation:**
+
+> Two OWNER terms co-anchor at Gal 5:22 with different dimensions (Volition vs Moral Character)
 
 #### `Q047` — What does the verse evidence reveal about the direction of the word's operation?
 
@@ -731,6 +883,19 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Registry description names 3 axes: aesthetic/moral/relational; human goodness is derivative
 
+#### `Q065` — Does any verse distinguish between a performed version and a genuine version of the word?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-024` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> SBF-VCB013-001 proposed a tripartite model for chrēstotēs: presence (Spirit-produced quality and God's disposition), absence (Rom 3:12), distortion (not strongly attested in verse corpus). This session's analysis extends the model: the distortion pole is etymologically embedded in G5542 (chrēstologia — smooth talk), a related word of G5544. The full registry supports the presence/absence structure: 884-006 (not-good, 22 verses) for H2896A; 886-002/Rom 3:12 for G5544. Distortion: Mal 2:17 (calling evil good), Jer 44:17 (redefining good as material advantage), G5542 (chrēstologia — the etymological distortion form). The tripartite structure is confirmed across the full registry.
+
+**Source observation:**
+
+> SBF-VCB013-001: tripartite model confirmed; OBS-010 extends distortion pole etymologically
+
 #### `Q069` — What structural condition in a key verse establishes the recipient as having no basis for the word they receive?
 
 - **Coverage:** `partial` · **Validated:** 2026-04-27
@@ -743,6 +908,19 @@ This document is the second input for **revision sessions** (alongside the readi
 **Source observation:**
 
 > Rom 11:22: divine kindness as pole of bipolarity with severity; relational-conditional dynamic
+
+#### `Q071` — What is the logical structure of a key argument about the word — and what is its premise and conclusion?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-031` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Group 884-004's comparative wisdom sayings use tov as a ranking operator that makes structural normative claims about the relative value of inner-being characteristics vs external achievements. Pro 15:16 argument: premise — fear of the Lord is an inner orientation; premise — great treasure with trouble is the external alternative; conclusion — the inner orientation (a little with fear of the Lord) surpasses the external condition. Pro 16:32 argument: premise — slow to anger and self-rule are inner mastery qualities; premise — being mighty and taking a city are peak external achievements; conclusion — inner mastery exceeds external achievement. The logical structure is consistent across the wisdom comparatives: inner quality > outer achievement, because goodness is the evaluative framework that ranks them.
+
+**Source observation:**
+
+> 884-004 anchors rank inner qualities above external power — structural normative claim
 
 #### `Q075` — What does a verse about the withdrawal or absence of the word reveal about the word's role?
 
@@ -785,6 +963,19 @@ This document is the second input for **revision sessions** (alongside the readi
 
 #### `Q077` — What does a verse about the word in the judicial or accountability context reveal about its function?
 
+- **Coverage:** `partial` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-013` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Group 884-007's Gen 1:31 anchor establishes that goodness is first a divine creative-evaluative act — ontological before moral. The group is distinct from all other divine goodness groups (884-001 doxological, 884-005 covenantal) in that it is pre-relational: it precedes any divine-human relationship. The creation pronouncement has no human correlate — no human analogue for declaring creation 'very good' exists. This uniqueness is why no current dimension label fits. Provisional assignment: Dimension 11 (Divine-Human Correspondence) with a note that the dimension review should consider whether this group requires a distinct sub-category.
+
+**Source observation:**
+
+> 884-007 NULL — creation pronouncement; no existing dimension label fits cleanly
+
+#### `Q077` — What does a verse about the word in the judicial or accountability context reveal about its function?
+
 - **Coverage:** `full` · **Validated:** 2026-04-27
 - **Source finding:** `OBS-067-OBS-035` (raised 2026-04-27T06:32:13Z)
 
@@ -796,7 +987,20 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Eze 36:31: not-good verdict internalised → self-loathing; affective register as significant as cognitive
 
-### Section 4 — Original Language Vocabulary (4)
+### Section 4 — Original Language Vocabulary (7)
+
+#### `Q088` — What is the primary Hebrew term, and what does its root meaning reveal about the word's essential character?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-006` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> The 10 sub-senses of H2896A (pleasant/agreeable to senses 1a; pleasant to higher nature 1b; good/excellent of kind 1c; good/rich/valuable 1d; good/appropriate/becoming 1e; better comparative 1f; glad/happy/prosperous 1g; good understanding intellectual 1h; good/kind/benign 1i; good/right ethical 1j) map directly onto the nine verse context groups — the lexical breadth is real semantic range, not translational artefact. The conceptual origin of tov is phenomenological: beginning with experienced pleasantness, rising to moral and covenantal categories.
+
+**Source observation:**
+
+> H2896A meaning parse: 10 sub-senses covering the full landscape of the 9 groups
 
 #### `Q089` — What is the primary Greek term, and what does its range of use reveal?
 
@@ -826,6 +1030,32 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > G5544 meaning parse includes Rom 3:12 negation — lexically confirms presence/absence range
 
+#### `Q096` — Does any term in the vocabulary carry both the sense of the word in its human expression and its divine expression?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-017` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> G5544 (chrēstotēs) carries both the divine expression (886-001: God's inner disposition of generous goodwill, Dimension 11 — Divine-Human Correspondence) and the human expression (886-002: Spirit-produced inner quality of the believer, Dimension 05 — Moral Character) with the same lexical term. The bipartite split is structurally coherent and consistent with H2896A's same pattern (884-001 Divine-Human Correspondence; 884-002 Moral Character). The programme applies Dimension 11 to divine-subject goodness groups and Dimension 05 to human-subject goodness groups consistently across both OWNER terms. This is a programme-wide structural principle, not a coincidence of this registry.
+
+**Source observation:**
+
+> G5544 bipartite dimension split: divine = 11, human = 05; structurally coherent
+
+#### `Q096` — Does any term in the vocabulary carry both the sense of the word in its human expression and its divine expression?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-045` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Both G0019 (agathōsunē, 885-001, Dimension 04 — Volition) and G5544 (chrēstotēs, 886-002, Dimension 05 — Moral Character) anchor at Gal 5:22. Their co-presence in the fruit list as adjacent but distinct items names the programme's analytical distinction: agathōsunē is goodness as virtue and resolve (volitional — the Spirit-enabled resolve for good, 2Th 1:11); chrēstotēs is kindness as relational disposition and character quality (moral character — the Spirit-produced inner quality expressed toward others). The co-anchor confirms that Gal 5:22 is a single verse that simultaneously engages two analytically distinct inner-being dimensions of goodness. The dimensions are not in conflict — they are facets of a unified Spirit-produced character.
+
+**Source observation:**
+
+> Two OWNER terms co-anchor at Gal 5:22 with different dimensions (Volition vs Moral Character)
+
 #### `Q097` — What does the LXX use of the vocabulary reveal about the continuity or development of the word across the Testaments?
 
 - **Coverage:** `partial` · **Validated:** 2026-04-27
@@ -854,7 +1084,33 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > G5544 meaning parse includes Rom 3:12 negation — lexically confirms presence/absence range
 
-### Section 5 — Connections and Research Pointers (2)
+### Section 5 — Connections and Research Pointers (7)
+
+#### `Q122` — What is the strongest co-occurrence connection for this word — which adjacent characteristic appears most frequently in the same verses — and what does the co-occurrence pattern reveal?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-019` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> The co-occurrence top three: R103 (love, 23 shared verses) is the dominant connection — confirmed at root level and at the shared anchor Mic 6:8 and Gal 5:22. R43 (desire, 18 shared verses) is the second — the desire vocabulary overlaps with H2896A's volitional-preference and experiential-good groups in the Hebrew wisdom and Psalms literature where what one desires (H183 avah, H2530 chamad) co-appears with what is good (tov). R197 (authority, 17 shared verses) is third but is driven by formulaic co-occurrence in the volitional-preference idiom (884-008) in royal/narrative contexts rather than conceptual connection — the 'do what seems good to you' formula appears in authority contexts, producing structural co-occurrence without semantic connection.
+
+**Source observation:**
+
+> Co-occurrence: R103 (love, 23) > R43 (desire, 18) > R197 (authority, 17) as top 3
+
+#### `Q124` — What are the three highest vocabulary-sharing registries for this word — and what does the pattern of sharing reveal about the word's structural position in the programme?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-018` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> XREF sharing structure: R103 (love) shares both H2896A and G0019 — the deepest structural link (2 shared strongs). R42 (delight) shares H2896A only — Hebrew-side connection, suggesting delight and tov overlap specifically in OT wisdom and Psalms literature. R99 (kindness) shares G5544 — Greek-side connection, the expected overlap between chrēstotēs (kindness) and a kindness registry. The tripartite connection pattern (love deepest, delight Hebrew-only, kindness Greek-only) reflects the programme's semantic distribution: the TOV root connects to love and delight in the Hebrew domain; the chrēsto root connects to kindness in the Greek domain.
+
+**Source observation:**
+
+> R103 (love) deepest structural XREF link; R42 (delight) Hebrew-only; R99 (kindness) Greek
 
 #### `Q126` — How many of this word's confirmed analytical dimensions are shared with another cluster or characteristic — and is there any cluster that shares all confirmed dimensions?
 
@@ -870,6 +1126,32 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Cognition (03) assigned to 884-004 and 884-006 — both evaluative judgment groups
 
+#### `Q130` — What is the relationship between this word and human will in the verse evidence — does the word displace, bypass, or reconstitute the will?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-014` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> 884-008 (40 verses, volitional preference idiom, anchor Jer 26:14) is the largest group and is squarely volitional. The group description names choosing, preferring, agreeing, judging fitting — all volitional operations. Goodness reconstitutes the will: it is both the predicate of volitional choice ('what seems good to you') and the character quality that transforms the will's default orientation. Dimension 04 — Volition is the correct assignment. This is confirmed by: (1) the group description; (2) the anchor verse Jer 26:14 (willed submission); (3) the parallel with 885-001 which also carries Volition (04) for Spirit-produced goodness as resolve. Two groups in this registry carry Volition — both represent genuine volitional engagement with goodness.
+
+**Source observation:**
+
+> 884-008 NULL — volitional preference; likely Volition (04) candidate
+
+#### `Q130` — What is the relationship between this word and human will in the verse evidence — does the word displace, bypass, or reconstitute the will?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-039` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Already resolved in §N Resolution 008 (OBS-067-OBS-014). OBS-067-OBS-039 is the second observation making the same analytical point. The conclusion is confirmed: Dimension 04 — Volition is the correct assignment for Group 884-008. The group description ('what they choose, prefer, agree to, or judge fitting') is unambiguously volitional. Two groups in R67 carry Volition (04): 884-008 (Hebrew volitional-preference idiom) and 885-001 (Greek Spirit-produced goodness as resolve) — both represent genuine volitional dimensions of goodness.
+
+**Source observation:**
+
+> 884-008 NULL likely = Volition (04) — group description explicitly names choosing/preferring
+
 #### `Q133` — How does the study distinguish this word from faith — and what is their structural relationship?
 
 - **Coverage:** `partial` · **Validated:** 2026-04-27
@@ -884,17 +1166,70 @@ This document is the second input for **revision sessions** (alongside the readi
 
 > Psa 34:8: divine goodness as experiential encounter; shared anchor with discernment and hope
 
+#### `Q138` — Does any verse function as a primary anchor in both this word's study and another word's study — and what does that dual membership reveal about their relationship?
+
+- **Coverage:** `full` · **Validated:** 2026-04-27
+- **Source finding:** `OBS-067-OBS-021` (raised 2026-04-27T06:32:13Z)
+
+**Answer:**
+
+> Mic 6:8 co-anchors with: compassion (R23), condemnation (R24), humility (R80), kindness (R99), love (R103), will (R173) — six registries. Gal 5:22 co-anchors with: faith (R59), joy (R97), love (R103), patience (R116), peace (R117) — five registries. Both verses function as programme-defined cross-registry synthesis nodes where multiple inner-being characteristics converge in a single text. Mic 6:8 is the OT node defining human moral goodness as a tri-fold orientation (justice, loving kindness, humble walk). Gal 5:22 is the NT node defining Spirit-produced inner-being character as a nine-quality cluster. Both anchor verses are primary candidates for Session D synthesis work.
+
+**Source observation:**
+
+> Mic 6:8 (6 co-anchors) and Gal 5:22 (5 co-anchors) are the two highest-density cross-registry nodes
+
 ---
 
-## 3. Resolved findings — SD pointers (0)
+## 3. Resolved findings — SD pointers (8)
 
-_None._
+### `SP-067-011`
+
+- **Priority:** HIGH · **Source finding:** `OBS-067-OBS-004`
+> The programme assigns G0018 (agathos — adjective, 90 OWNER verses in R65 generosity) and G0019 (agathōsunē — abstract noun, 4 OWNER verses in R67 goodness) to separate registries on the basis of the adjective/abstract-noun distinction (doing good vs being/virtue of goodness). The verse count differential (90 vs 4) is stark. Session D should test whether this boundary holds under the verse evidence — specifically whether the R65 agathos corpus includes verses that engage goodness as inner disposition (R67 territory) and vice versa. Evidence: XREF structure showing 6/9 XREF terms flowing to R65; G0019 Gal 5:22 glossed as 'generosity' (R65 semantic range). Source: OBS-067-OBS-004.
+
+### `SP-067-012`
+
+- **Priority:** LOW · **Source finding:** `OBS-067-OBS-005`
+> H2898 (tuv — goodness, nominal form) is listed as XREF in R67 with R103 (love) as its OWNER registry, but H2898 has 0 active classified verses in R103. This raises a data quality question: was H2898 extracted but never classified in R103, or was it deliberately left with no classifications? A term with 0 OWNER verses cannot contribute to R103's analytical portrait. Session D should verify H2898's status in R103 before using it as a cross-registry connection. Evidence: XREF table showing OWNER verse count = 0 for H2898. Source: OBS-067-OBS-005.
+
+### `SP-067-013`
+
+- **Priority:** MEDIUM · **Source finding:** `OBS-067-OBS-020`
+> R197 (authority) ranks third in co-occurrence with R67 (goodness) at 17 shared verses, above joy, soul, and wisdom. This is unexpected given goodness vocabulary's semantic range. The likely driver is Group 884-008 (volitional preference idiom, 40 verses): the 'do what seems good to you' / 'if it pleases the king' formula is densely represented in royal and political narrative contexts where authority relationships structure the volitional-preference idiom. Session D should confirm whether this co-occurrence is formulaic (driven by 884-008 social context) rather than conceptual before treating R67-R197 as a substantive inner-being connection. Source: OBS-067-OBS-020.
+
+### `SP-067-014`
+
+- **Priority:** HIGH · **Source finding:** `OBS-067-OBS-030`
+> Group 884-003 ('goodness as inner experiential good — proximity to God, worship, waiting, communal harmony, reorientation of inner life') is currently assigned Dimension 05 — Moral Character. However, the anchor verse Psa 73:28 ('for me it is good to be near God; I have made the Lord God my refuge') engages spiritual orientation and experiential proximity rather than moral character in the primary sense. The group description's language ('what genuinely satisfies', 'proximity to God', 'reorientation of inner life') points toward a spiritual-experiential dimension closer to Dependence/Creatureliness (08) or a spiritual orientation sub-category. Dimension review should reassess this group's assignment. Source: OBS-067-OBS-030.
+
+### `SP-067-015`
+
+- **Priority:** MEDIUM · **Source finding:** `OBS-067-OBS-032`
+> Pro 16:32 ('slow to anger is better than the mighty; rules his spirit than takes a city') is a shared anchor with R4 (anger) and R199 (dominion/self-mastery). The verse is the anchor for Group 884-004 (comparative wisdom) and names anger restraint and self-rule as inner-being characteristics whose goodness (better-than value) exceeds external power. Session D should examine whether Pro 16:32 establishes a programme-wide hierarchy where self-regulation characteristics (anger restraint, self-rule) are structurally superior to external achievement — and whether this hierarchy is consistent across wisdom literature registries. Source: OBS-067-OBS-032.
+
+### `SP-067-016`
+
+- **Priority:** HIGH · **Source finding:** `OBS-067-OBS-034`
+> Group 884-005 ('God's good word and promise — covenantal faithfulness') is currently assigned Dimension 05 — Moral Character. However, the anchor verse Jos 23:14 ('you know in your hearts and souls that not one word has failed of all the good things the Lord your God promised') has God's covenantal faithfulness as the dominant subject, not human moral character. The group describes what God's good word does (it is kept, it does not fail) and how it is received in the human inner being (in hearts and souls). Dimension 11 — Divine-Human Correspondence or a covenantal-relational dimension may be more accurate. Dimension review should reassess. Source: OBS-067-OBS-034.
+
+### `SP-067-017`
+
+- **Priority:** MEDIUM · **Source finding:** `OBS-067-OBS-041`
+> Est 5:9 ('Haman went out that day joyful and glad of heart') is a shared anchor with R97 (joy). The compound tov-lev (glad of heart) locates the inner well-being state of Group 884-009 in the heart — both a joy-state and a well-being state. Session D should examine whether 884-009's inner well-being characteristic is a sub-category of joy (R97) or a distinct experiential state that joy happens to name in this instance. The Est 5:9 instance is diagnostically significant: Haman's tov-lev is immediately destroyed by one sight, demonstrating the fragility of inner well-being not rooted in covenantal goodness — a diagnostic the joy register alone would not capture. Source: OBS-067-OBS-041.
+
+### `SP-067-018`
+
+- **Priority:** MEDIUM · **Source finding:** `OBS-067-OBS-044`
+> Rom 11:22 ('Note then the kindness and the severity of God: severity toward those who have fallen, but God's kindness to you, provided you continue in his kindness') places a conditionality on the experience of divine chrēstotēs: 'provided you continue in his kindness.' This raises a fundamental Session D question: are divine inner dispositions (chrēstotēs, severity, love, faithfulness) unconditional as attributes of God's character, or are they relational as dispositions that are genuinely contingent on the human party's response? This question exceeds the scope of any single registry's analysis and requires cross-registry synthesis in Session D, comparing how conditionality appears across goodness, grace, love, and faithfulness registries. Source: OBS-067-OBS-044.
 
 ---
 
-## 4. Not-relevant findings (0)
+## 4. Not-relevant findings (1)
 
-_None._
+| finding_id | type | reason | closed |
+|---|---|---|---|
+| `OBS-067-OBS-003` | OBSERVATION | Documentation gap only — no analytical consequence. Researcher narrative field to be populated separately. | 2026-04-27T08:19:24Z |
 
 ---
 
@@ -1389,40 +1724,11 @@ _None._
 
 ---
 
-## 7. Open items carried forward (28)
+## 7. Open items carried forward (0)
 
 These must be resolved in the upcoming session — see also §N of the readiness `.md`.
 
-| finding_id | type | raised | item (preview) |
-|---|---|---|---|
-| `OBS-067-OBS-002` | OBSERVATION | 2026-04-27T06:32:13Z | Registry-level dimension = Moral/Conscience; groups show wider spread — tension noted |
-| `OBS-067-OBS-003` | OBSERVATION | 2026-04-27T06:32:13Z | Domain G failure (no researcher narrative) — documentation gap only, not analytical |
-| `OBS-067-OBS-004` | OBSERVATION | 2026-04-27T06:32:13Z | XREF structure: 6/9 terms to R65 (generosity); agathos 90-verse OWNER vs agathōsunē 4-verse |
-| `OBS-067-OBS-005` | OBSERVATION | 2026-04-27T06:32:13Z | H2898 (tuv) has 0 OWNER verses in R103 — possible data quality observation |
-| `OBS-067-OBS-006` | OBSERVATION | 2026-04-27T06:32:13Z | H2896A meaning parse: 10 sub-senses covering the full landscape of the 9 groups |
-| `OBS-067-OBS-011` | OBSERVATION | 2026-04-27T06:32:13Z | Three H2896A groups have NULL dimension (884-007, 884-008, 884-009) |
-| `OBS-067-OBS-013` | OBSERVATION | 2026-04-27T06:32:13Z | 884-007 NULL — creation pronouncement; no existing dimension label fits cleanly |
-| `OBS-067-OBS-014` | OBSERVATION | 2026-04-27T06:32:13Z | 884-008 NULL — volitional preference; likely Volition (04) candidate |
-| `OBS-067-OBS-015` | OBSERVATION | 2026-04-27T06:32:13Z | 884-009 NULL — shalom-condition; no clean dimension fit; may need experiential category |
-| `OBS-067-OBS-017` | OBSERVATION | 2026-04-27T06:32:13Z | G5544 bipartite dimension split: divine = 11, human = 05; structurally coherent |
-| `OBS-067-OBS-018` | OBSERVATION | 2026-04-27T06:32:13Z | R103 (love) deepest structural XREF link; R42 (delight) Hebrew-only; R99 (kindness) Greek |
-| `OBS-067-OBS-019` | OBSERVATION | 2026-04-27T06:32:13Z | Co-occurrence: R103 (love, 23) > R43 (desire, 18) > R197 (authority, 17) as top 3 |
-| `OBS-067-OBS-020` | OBSERVATION | 2026-04-27T06:32:13Z | R197 (authority) unexpectedly high — likely driven by 884-008 volitional-preference idiom |
-| `OBS-067-OBS-021` | OBSERVATION | 2026-04-27T06:32:13Z | Mic 6:8 (6 co-anchors) and Gal 5:22 (5 co-anchors) are the two highest-density cross-registry nodes |
-| `OBS-067-OBS-022` | OBSERVATION | 2026-04-27T06:32:13Z | DIM-67-001: core analytical question — distinct phenomena vs unified category |
-| `OBS-067-OBS-023` | OBSERVATION | 2026-04-27T06:32:13Z | DIM-67-001 uses pre-v1.4 dimension vocabulary; needs re-reading against current labels |
-| `OBS-067-OBS-024` | OBSERVATION | 2026-04-27T06:32:13Z | SBF-VCB013-001: tripartite model confirmed; OBS-010 extends distortion pole etymologically |
-| `OBS-067-OBS-030` | OBSERVATION | 2026-04-27T06:32:13Z | ISSUE-E reinforced: 884-003 anchor (Psa 73:28) is spiritual orientation, not primarily moral |
-| `OBS-067-OBS-031` | OBSERVATION | 2026-04-27T06:32:13Z | 884-004 anchors rank inner qualities above external power — structural normative claim |
-| `OBS-067-OBS-032` | OBSERVATION | 2026-04-27T06:32:13Z | Pro 16:32: shared anchor with anger (R4) and dominion (R199); genuine cross-registry bridge |
-| `OBS-067-OBS-034` | OBSERVATION | 2026-04-27T06:32:13Z | ISSUE-E reinforced: 884-005 dominant subject is God's faithfulness, not human moral character |
-| `OBS-067-OBS-037` | OBSERVATION | 2026-04-27T06:32:13Z | 884-007 dimension NULL reinforced — needs a divine creative/evaluative agency category |
-| `OBS-067-OBS-039` | OBSERVATION | 2026-04-27T06:32:13Z | 884-008 NULL likely = Volition (04) — group description explicitly names choosing/preferring |
-| `OBS-067-OBS-041` | OBSERVATION | 2026-04-27T06:32:13Z | Est 5:9 shared anchor with R97 (joy): tov-lev as joy-state vs distinct well-being state |
-| `OBS-067-OBS-044` | OBSERVATION | 2026-04-27T06:32:13Z | Rom 11:22: raises Session D question — are divine inner dispositions unconditional or relational? |
-| `OBS-067-OBS-045` | OBSERVATION | 2026-04-27T06:32:13Z | Two OWNER terms co-anchor at Gal 5:22 with different dimensions (Volition vs Moral Character) |
-| `OBS-067-OBS-047` | OBSERVATION | 2026-04-27T06:32:13Z | G0019 and G5544 thin-evidence confirmed by small corpora; conclusions proportionally limited |
-| `OBS-067-OBS-049` | OBSERVATION | 2026-04-27T06:32:13Z | SBF-VCB013-001 confirmed and extended: presence/absence holds for full registry; distortion etymological not textual |
+_None._
 
 ---
 
