@@ -41,13 +41,13 @@ Source-of-truth: [db-capture-phase1-results-and-table-architecture-v1-20260427.m
     - 13 verse_context.analysis_note populated from Unit 7 anchor readings
     - 34 review notes appended across catalogue questions
     - 109 Q&As did not cite OBS-NNN refs in their answers — those remained as 'open' observations (28 of the 49 stay open). This is correct behaviour — they're research tasks for next session.
-- [ ] **F. Spec revisions (researcher-gated)** — four documents:
-    - [ ] `wa-patch-instruction` (account for the new categories)
-    - [ ] `wa-sessionb-analysis-readiness` (now mostly a CC operation — major shift)
-    - [ ] `wa-sessionb-analysis-output` (citation discipline; §N resolution discipline)
-    - [ ] `wa-claudecode-instruction` (CC's extensive new responsibilities)
-- [ ] **G. Programme prose update (researcher-gated)** — `prog_instr_session_a` / `prog_instr_session_b` / `prog_instr_verse_context` updated to reflect the new architecture.
-- [ ] **H. tasks.md kept current** — this section. Check items off as completed.
+- [x] **F. Spec revisions** — four documents updated 2026-04-27 with Architecture v2 addendums:
+    - [x] `wa-patch-instruction-v2_9 → v2_10` (Session B leaves patch path; VC + REPAIR + DIMREVIEW retained)
+    - [x] `wa-sessionb-analysis-readiness-v1_6 → v1_7` (now mostly a CC operation; readiness `.md` + `.json` are the outputs)
+    - [x] `wa-sessionb-analysis-output-v1_1 → v1_2` (citation discipline §v2.4; §N resolution discipline §v2.3; obslog-only output)
+    - [x] `wa-claudecode-instruction-v4_1 → v4_2` (8-section v2 addendum: readiness output gen, parser, writer, analytic status gen, anomaly detection, schema migrations, lifecycle vocab, pilot status)
+- [ ] **G. Programme prose update (researcher-gated)** — `prog_instr_session_b` to add a governance paragraph reflecting v2 architecture. Drafted in next session pending researcher review.
+- [x] **H. tasks.md kept current** — this section.
 
 **Catalogue completeness scope (decision #2 approved):**
 - [ ] Phase 2 writer must record `coverage='no_finding'` in `wa_finding_catalogue_links` for every universal Q (147) per word that wasn't surfaced. Volume: ~29.4K rows at programme completion. Enables backfill + monitoring.
