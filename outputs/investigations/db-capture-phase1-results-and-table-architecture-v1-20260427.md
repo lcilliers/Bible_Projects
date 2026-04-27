@@ -381,3 +381,302 @@ Once that pilot is clean, the writer scales to the remaining ~190 words.
 ---
 
 *Drafted 2026-04-27 by Claude Code under researcher direction. Phase 1 (parser/validator) is built. Phase 2 (writer) is gated on the 6 open decisions above.*
+
+Researcher observations:
+
+ - I cannot see where and how AI integrated the anchor verses, verse context groups into the analytic results
+ - I cannot see how the dimensions played a role in the analytic result
+ - the destination of the observations is into the wa_session_b_findings.  Ultimately wa_session_b_findings must be 'resolved' or 'no longer relevant' and cross linked to a Question and answer, or session D pointer.  Session B findings is a log of the open questions that have not yet been converted to a finding, almost a open task list of research tasks.
+ - I am concerned that the process_section and the catalogue Q&A gets out of sync.  not sure how best to audit it.  in essence, there should be no substantial statement in the prose_section (accross all chapters) that is not substantiated by the data, and there should be no Q&A that is not captured in the prose.
+ - I am uncertain of the capturing of the anchor verse analysis - it seems to be only captured in the prose.  perhaps these findings must find its way back into the verse records
+
+---
+
+## Part 10 — CC Response to Researcher Observations
+
+The five observations together reframe the data model significantly. My initial mapping in §2.1 was correct schemas-wise but missed the **integrative discipline** the analytical pipeline demands. Each observation surfaces a specific gap.
+
+### 10.1 Observation 1 — Anchor verses + verse-context groups in analytic results
+
+**Researcher concern:** "I cannot see where and how AI integrated the anchor verses, verse context groups into the analytic results."
+
+**The gap.** Today the AI's anchor-verse readings (Unit 7) and group descriptions are **referenced** in chapters and Q&A answers (e.g. "884-001 doxological group, anchor Psa 34:8 reveals…") but not **linked** at the row level. The chapter prose mentions the group code; nothing in the DB says "finding F is about group 884-001" or "Q&A Q042 cites Mic 6:8 as primary anchor".
+
+**The fix.** `wa_finding_entity_links` is the existing schema home — it carries `entity_type` (term / verse / group), `entity_id`, `entity_strongs`. Phase 2 must populate this for every finding and Q&A:
+
+- Each Q&A's `anchor_verses` field (already parsed: e.g. "Psa 119:68, Gen 1:31, Mic 6:8") → resolves to verse_record_ids → `wa_finding_entity_links` rows with entity_type='verse'
+- Each Q&A's referenced group_codes (parsed from answer text where present) → resolves to verse_context_group.id → entity_type='group' rows
+- Each Q&A's referenced strongs → mti_term_id → entity_type='term' rows
+
+After Phase 2: a query "show me all findings touching Mic 6:8" produces every Q&A and chapter reference.
+
+**Implication.** Phase 2 parser needs to ALSO extract anchor-verse references from chapter bodies, not just Q&A `anchor_verses` fields. Reasonable, the pattern is regex-detectable.
+
+### 10.2 Observation 2 — Dimensions in the analytic result
+
+**Researcher concern:** "I cannot see how the dimensions played a role in the analytic result."
+
+**The gap.** Same shape as 10.1, but for dimensions. `wa_dimension_index` carries the per-group dimension assignment. Findings and chapters reference dimensions ("dimension: Volition 04 — resolved goodness") but no DB row links a finding to the dimension it speaks to.
+
+**The fix.** Add `entity_type='dimension'` to `wa_finding_entity_links`. Then for each finding/Q&A, parse references like "Cognition 03", "Volition 04", "dimension: Moral Character 05" and write the link.
+
+Alternative: a dedicated `wa_finding_dimension_links` table. **Recommend the existing entity link** — simpler, same purpose. The `entity_type` field already supports this extension.
+
+**Specific use case this unlocks:** Session D's cluster synthesis. Today: "show me all findings about dimension Cognition" → no path. After Phase 2: a 3-table join across findings × entity_links × dimension_index returns the answer in one query.
+
+### 10.3 Observation 3 — `wa_session_b_findings` as open-task journal, not finding store
+
+**Researcher reframing:** "Session B findings is a log of the open questions that have not yet been converted to a finding, almost a open task list of research tasks. Ultimately wa_session_b_findings must be 'resolved' or 'no longer relevant' and cross linked to a Question and answer, or session D pointer."
+
+**This is a fundamental shift in my model.** I had `wa_session_b_findings` as the *findings* table — final analytical outputs. Your model is sharper:
+
+- `wa_session_b_findings` = **observations / open tasks** journal. Each row is a Stage 2a observation OR a not-yet-resolved Stage 2b item.
+- Each finding's lifecycle: **open → resolved or not_relevant**.
+- A 'resolved' finding is **cross-linked** to its resolution: either a Q&A pair (via `wa_finding_catalogue_links`) or an SD pointer (via `wa_session_research_flags`).
+- A 'not_relevant' finding is closed without resolution, with reason captured.
+
+**Implication for the data model:**
+
+The existing `wa_session_b_findings` schema already has the fields needed: `status`, `obsolete_reason`, `superseded_by_id`, `related_finding_id`. The lifecycle vocabulary should be:
+
+| status value | Meaning |
+|---|---|
+| `open` | Stage 2a observation, not yet processed in Stage 2b |
+| `resolved_qa` | Resolved via a Q&A pair (catalogue link populated) |
+| `resolved_sd` | Resolved via an SD pointer (flag link populated) |
+| `not_relevant` | Closed without analytical pickup; `obsolete_reason` captures why |
+| `superseded` | Replaced by a more precise finding (`superseded_by_id` populated) |
+
+**The Q&A pair lives in `wa_finding_catalogue_links`.** Looking at that table's columns: `finding_id`, `question_id`, `coverage`, `status`, `session_b_note`, `validated_date`, `validated_by`. The Q&A's *answer* text fits naturally in `session_b_note`. The `coverage` field captures whether the answer is full / partial / not-applicable. The `validated_date` records when the answer was reviewed.
+
+**So the data model becomes:**
+
+```text
+wa_session_b_findings (the journal)
+  ├── status='open'    — Stage 2a observation, raw
+  ├── status='resolved_qa' ─→ wa_finding_catalogue_links ─→ wa_obs_question_catalogue
+  │                            └── session_b_note = answer text
+  ├── status='resolved_sd' ─→ wa_session_research_flags (flag_code='SD_POINTER')
+  │                            └── description = SD pointer text
+  └── status='not_relevant' (closed, with reason)
+```
+
+**A Q&A pair, in this model, is a row in `wa_finding_catalogue_links`.** The Q&A's question is the catalogue question; the Q&A's answer is in `session_b_note`; the Q&A's source observation is the linked finding.
+
+**This is cleaner than my original mapping.** Phase 2 writer becomes:
+
+1. **Parse Stage 2a observations** → INSERT to `wa_session_b_findings` with status='open', finding_type='OBSERVATION'
+2. **Parse Stage 2b Q&As** → for each ANSWERED/PARTIAL Q&A:
+   - Identify the source observation(s) the answer draws on (parser extracts OBS-NNN refs from answer text)
+   - INSERT to `wa_finding_catalogue_links` with finding_id (the source observation's id), question_id, coverage, session_b_note=answer
+   - UPDATE the source observation's status='resolved_qa'
+3. **Parse SD pointers** → for each:
+   - INSERT to `wa_session_research_flags` with flag_code='SD_POINTER'
+   - If the SD pointer was raised from a specific observation (parser detects "OBS-NNN" in evidence_basis), UPDATE that observation's status='resolved_sd' and link via `related_finding_id`
+4. **NOT_APPLICABLE Q&As** → no resolution row, but the catalogue question itself is recorded as 'not applicable' for this registry. Could be a `wa_finding_catalogue_links` row with `status='not_applicable'` and no `finding_id`.
+
+This needs a small schema clarification: can `wa_finding_catalogue_links.finding_id` be NULL? The current FK suggests no — all links must reference a finding. If we want NOT_APPLICABLE rows, we need a NOT_APPLICABLE finding type or to allow NULL finding_id.
+
+### 10.4 Observation 4 — `prose_section` ↔ Q&A drift; how to audit
+
+**Researcher concern:** "There should be no substantial statement in the prose_section (across all chapters) that is not substantiated by the data, and there should be no Q&A that is not captured in the prose."
+
+**This is a bidirectional coherence requirement.** Two specific audits:
+
+**(i) Chapter → finding/Q&A.** Every substantive claim in a chapter must trace to either a finding or a Q&A. Mechanism: chapter prose explicitly cites finding IDs (e.g. "DIM-67-001") and Q&A codes (e.g. "OBS-026 → Q003"). The parser extracts these citations; the audit query checks each cited ID exists.
+
+**(ii) Q&A/finding → chapter.** Every analytically significant Q&A or finding must be referenced somewhere in chapter prose. Mechanism: for each finding/Q&A, search across the chapters for its ID. If any answered Q&A has zero chapter references, that's an audit miss.
+
+**Recommend a new table for this auditability:**
+
+```sql
+CREATE TABLE wa_prose_section_citations (
+  id INTEGER PRIMARY KEY,
+  prose_section_id INTEGER NOT NULL REFERENCES prose_section(id),
+  cited_finding_id INTEGER REFERENCES wa_session_b_findings(id),
+  cited_qa_link_id INTEGER REFERENCES wa_finding_catalogue_links(id),
+  cited_sd_pointer_id INTEGER REFERENCES wa_session_research_flags(id),
+  citation_form TEXT,  -- the literal text in the prose, e.g. "OBS-026", "DIM-67-001", "Q&A-003"
+  delete_flagged INTEGER DEFAULT 0
+);
+```
+
+Phase 2's parser populates this when ingesting chapters. The audit is then a single SQL query:
+
+```sql
+-- Findings cited in no chapter
+SELECT f.id, f.finding_type, f.finding
+  FROM wa_session_b_findings f
+  WHERE f.registry_id = ?
+    AND f.status IN ('resolved_qa', 'resolved_sd')
+    AND NOT EXISTS (SELECT 1 FROM wa_prose_section_citations c WHERE c.cited_finding_id = f.id)
+```
+
+And the reverse:
+
+```sql
+-- Chapter citations that don't resolve to a real finding/Q&A/SD pointer
+SELECT c.* FROM wa_prose_section_citations c
+  WHERE c.cited_finding_id IS NOT NULL
+    AND NOT EXISTS (SELECT 1 FROM wa_session_b_findings f WHERE f.id = c.cited_finding_id);
+```
+
+**Cost: one new table, well-scoped. Benefit: continuous audit of the prose-data coherence.**
+
+### 10.5 Observation 5 — Anchor verse analysis returning to verse records
+
+**Researcher concern:** "I am uncertain of the capturing of the anchor verse analysis — it seems to be only captured in the prose. Perhaps these findings must find its way back into the verse records."
+
+**This is the deepest analytical layer.** Stage 2a Unit 7 produces a structured reading per anchor verse (the cross-registry vision questions, the inner-being observation, the SD pointer triggers). Today this lives only in the obslog narrative.
+
+**Two options:**
+
+**Option (a) — `verse_context.analysis_note` column.** Add a column to the existing `verse_context` table. Per-verse, per-term analytical commentary co-located with the verse classification. When a future researcher reads `verse_context` for Mic 6:8 in registry 67, they see both the classification (group 884-002, anchor=true, is_relevant=1) AND the analytical note ("the verse frames goodness as God-told, not human-derived").
+
+**Option (b) — new `wa_verse_analysis` table.** Per-verse-per-term analytical record. More schema, but separate from VC classification (which is a verse_context concern).
+
+**Recommend (a).** Reuses existing schema, the analytical note is naturally per-verse-per-term (same key as `verse_context`). Migration: ALTER TABLE add column. Phase 2 parser extracts the Unit 7 anchor-verse readings and writes them to the column.
+
+**Implication for chapter content:** Chapter 3 (Annotated Verse Evidence) becomes essentially a generated view of `verse_context.analysis_note` for anchor verses, ordered by group. This solves observation 4 for Chapter 3 specifically — there is no risk of chapter prose drifting from verse data, because the chapter IS the verse data.
+
+For Chapters 1, 2, 4, 5 — the synthesis chapters — the audit-via-citations approach (10.4) applies.
+
+### 10.6 Updated data model summary
+
+```text
+                                wa_session_b_findings
+                                (open / resolved_qa / resolved_sd /
+                                 not_relevant / superseded)
+                                      ▲   ▲
+                ┌─────────────────────┘   └────────────────┐
+                │                                          │
+       wa_finding_catalogue_links                  wa_session_research_flags
+       (the Q&A pairs:                             (SD pointers + flags:
+        question + answer +                        flag_code SD_POINTER, SB_FINDING,
+        coverage + validation)                     PH2_*, evidence flags)
+                │                                          ▲
+                ▼                                          │
+       wa_obs_question_catalogue                    wa_finding_entity_links
+       (the question framework)                     (term / verse / group / dimension)
+                                                          ▲
+                                                          │
+                                                  wa_session_b_findings
+                                                  + wa_finding_catalogue_links
+                                                  (i.e. the findings AND the Q&A
+                                                   links both link to entities)
+
+
+       prose_section (chapters)
+                │
+                ▼
+       wa_prose_section_citations  (NEW)
+                │
+                ▼
+       (cited finding / Q&A link / SD pointer)
+
+
+       verse_context.analysis_note  (NEW column)
+       (per-verse-per-term analytical commentary,
+        feeds Chapter 3 directly)
+
+
+       wa_dimension_index
+                ▲
+                │ (linked from findings/Q&As via entity_links
+                │  with entity_type='dimension' or via
+                │  wa_dimension_index.id)
+                │
+       wa_session_b_findings + wa_finding_catalogue_links
+```
+
+### 10.7 Schema changes summary (revised)
+
+| Change | Purpose | Cost |
+|---|---|---|
+| New column: `verse_context.analysis_note TEXT` | Anchor-verse analytical commentary per-verse-per-term | Migration: 1 ALTER TABLE |
+| New table: `wa_prose_section_citations` | Audit prose ↔ findings coherence | Migration: 1 CREATE TABLE + 3 FKs |
+| New column on `wa_obs_question_catalogue`: `review_note TEXT` (per researcher Option A) | Capture wording/validity notes inline | Migration: 1 ALTER TABLE |
+| Lifecycle vocabulary on `wa_session_b_findings.status` | open / resolved_qa / resolved_sd / not_relevant / superseded | No schema change; controlled vocab only |
+| Possibly: allow `wa_finding_catalogue_links.finding_id` NULL for NOT_APPLICABLE Q&As | Question dispositions without source finding | Schema check |
+| Extend `wa_finding_entity_links.entity_type` vocab to include 'dimension' | Findings linked to dimensions | No schema change; controlled vocab only |
+
+### 10.8 Phase 2 writer scope (revised)
+
+The writer becomes more sophisticated than my §7 list — but each step maps to a clear DB write.
+
+```text
+For each Stage 2a observation:
+  INSERT wa_session_b_findings (status='open', finding_type='OBSERVATION', term_id=...)
+
+For each Stage 2b Q&A (ANSWERED or PARTIALLY):
+  For each source observation OBS-NNN cited in answer:
+    INSERT wa_finding_catalogue_links (finding_id=<source>, question_id=<obs_id>,
+                                        session_b_note=<answer text>,
+                                        coverage='full|partial', status='validated')
+    UPDATE wa_session_b_findings SET status='resolved_qa' WHERE id=<source>
+  For each anchor verse cited:
+    INSERT wa_finding_entity_links (finding_id=<source>, entity_type='verse',
+                                     entity_id=<vr_id>)
+  For each group code cited:
+    INSERT wa_finding_entity_links (finding_id=<source>, entity_type='group',
+                                     entity_id=<group_id>)
+  For each dimension cited:
+    INSERT wa_finding_entity_links (finding_id=<source>, entity_type='dimension',
+                                     entity_id=<dim_index_id>)
+
+For each Stage 2b Q&A (NOT_APPLICABLE):
+  INSERT wa_finding_catalogue_links (finding_id=NULL, question_id=<obs_id>,
+                                      coverage='not_applicable',
+                                      session_b_note='<rationale>')
+
+For each SD pointer:
+  INSERT wa_session_research_flags (flag_code='SD_POINTER', ...)
+  If raised from observation OBS-NNN:
+    UPDATE wa_session_b_findings SET status='resolved_sd', related_finding_id=...
+
+For each Stage 2c chapter:
+  INSERT prose_section (section_type_id=<sb_s2c_chN>, registry_id=..., body=...)
+  Parse chapter body for citation patterns (OBS-NNN, Q&A-NNN, DIM-NN-NNN, SP-NNN)
+  For each citation:
+    INSERT wa_prose_section_citations (...)
+
+For each Unit 7 anchor verse reading:
+  UPDATE verse_context SET analysis_note=<text>
+    WHERE verse_record_id=<...> AND mti_term_id=<...>
+
+For each GAP question:
+  INSERT wa_obs_question_catalogue (scope='universal', source_word=<this word>, ...)
+
+For each WORD-SPECIFIC question:
+  INSERT wa_obs_question_catalogue (scope=?, source_registry_no=<this registry>, ...)
+
+For each review note on existing question:
+  UPDATE wa_obs_question_catalogue SET review_note=<append> WHERE obs_id=<...>
+
+For status update:
+  UPDATE word_registry SET session_b_status=<...> WHERE no=<...>
+```
+
+This is comprehensive. The writer is more complex but produces a properly-integrated DB state where:
+- Findings track their lifecycle (observation → resolution)
+- Every Q&A is linked to its source observation, its catalogue question, and its evidence (verses/groups/dimensions)
+- Chapter prose is audited against the findings/Q&As that ground it
+- Anchor-verse analyses are returned to the verse records
+
+### 10.9 Updated open decisions
+
+Revised list — the schema changes above are now the load-bearing decisions:
+
+1. **Approve `verse_context.analysis_note` column** (anchor-verse analyses return to verse records — observation 5).
+2. **Approve `wa_prose_section_citations` table** (chapter ↔ findings audit — observation 4).
+3. **Approve `wa_obs_question_catalogue.review_note` column** (Option A for review notes).
+4. **Confirm lifecycle vocabulary on `wa_session_b_findings.status`** — open / resolved_qa / resolved_sd / not_relevant / superseded.
+5. **Approve `wa_finding_entity_links.entity_type='dimension'`** vocab extension.
+6. **Decide `wa_finding_catalogue_links.finding_id` nullability** — current FK is NOT NULL; needs check if NOT_APPLICABLE Q&As should still create rows.
+7. **Backfill of historical 195 findings into the new lifecycle / link tables** — out of scope for Phase 2 pilot, addressed separately?
+
+Once approved, Phase 2 spec doc is straightforward. I'll draft once you decide.
+
+---
+
+*Updated 2026-04-27 by Claude Code in response to researcher observations. The data model in §10.6 is the proposed Phase 2 target.*
