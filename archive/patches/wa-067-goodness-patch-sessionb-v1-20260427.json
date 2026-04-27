@@ -1,0 +1,28 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260427-067-SESSIONB-V1",
+    "registry_id": 67,
+    "word": "goodness",
+    "produced_date": "20260427",
+    "produced_by": "wa-patch-instruction-v2_9-20260425",
+    "patch_type": "SESSIONB",
+    "session_b_status": "Analysis Complete",
+    "description": "Set word_registry.session_b_status to 'Analysis Complete' for Registry 067 (goodness) following completion of Stage 2a, 2b, and 2c analysis on 2026-04-26. NOTE: ISSUE-D open — session_b_status was 'Verse Context Reset' which may be stale post-VCB-13. Researcher must verify current status before applying this patch. Do not apply until ISSUE-D is resolved."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "id": 67 },
+      "set": {
+        "session_b_status": "Analysis Complete"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "registry_updates": 1,
+    "notes": "HELD — pending researcher verification of ISSUE-D (session_b_status = 'Verse Context Reset' may be stale). Apply only after ISSUE-D confirmed resolved."
+  }
+}

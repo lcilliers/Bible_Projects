@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-26T19:07:52Z",
+  "generated_at": "2026-04-27T03:29:32Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 3096,
-  "total_active": 1901,
-  "total_archived": 1195,
+  "total_files": 3100,
+  "total_active": 1902,
+  "total_archived": 1198,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -2899,6 +2899,51 @@
       "archived": true,
       "size_bytes": 1215,
       "modified": "2026-04-12T17:32:03Z"
+    },
+    {
+      "path": "archive/patches/wa-067-goodness-patch-sessionb-findings-v1-20260427.json",
+      "category": "patch",
+      "type": "sessionb-patch",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 25265,
+      "modified": "2026-04-27T03:22:08Z"
+    },
+    {
+      "path": "archive/patches/wa-067-goodness-patch-sessionb-v1-20260427.json",
+      "category": "patch",
+      "type": "sessionb-patch",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 1140,
+      "modified": "2026-04-27T03:22:16Z"
+    },
+    {
+      "path": "archive/patches/wa-067-goodness-patch-vcsdpointers-v1-20260427.json",
+      "category": "patch",
+      "type": "sdpointers-patch",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 11682,
+      "modified": "2026-04-27T03:21:47Z"
     },
     {
       "path": "archive/patches/wa-068-grace-sessionB-cc-directives-v1-2026-04-10.md",
@@ -23254,6 +23299,21 @@
       "archived": true,
       "size_bytes": 35390,
       "modified": "2026-04-15T07:14:52Z"
+    },
+    {
+      "path": "data/imports/WA/Patches/wa-obslog-ro-067-goodness-anlys-v2-20260426.md",
+      "category": "patch",
+      "type": "patch",
+      "registry": 67,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "2",
+      "date": "2026-04-26",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 308554,
+      "modified": "2026-04-27T03:22:57Z"
     },
     {
       "path": "data/imports/WA/Prose/archive/wa-prose-corpus-assembly-v1-20260421.md",

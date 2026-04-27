@@ -1,0 +1,375 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260427-067-SESSIONB-FINDINGS-V1",
+    "registry_id": 67,
+    "word": "goodness",
+    "produced_date": "20260427",
+    "produced_by": "wa-patch-instruction-v2_9-20260425",
+    "patch_type": "SESSIONB_FINDINGS",
+    "session_b_status": null,
+    "description": "Stage 2b Q&A findings for Registry 067 (goodness). 147 catalogue questions processed across 5 sections. Findings stored as SB_FINDING flags. Description field carries [Qxxx] prefix to preserve catalogue linkage pending wa_finding_catalogue_links write path documentation. PARTIAL — ANSWERED items only (approx 115); PARTIALLY_ANSWERED items stored with [PARTIAL] marker; NOT_APPLICABLE items stored with [NA] marker. Note: CAT-B-001 gap — wa_finding_catalogue_links write path not documented in v2_9; linkage carried in description prefix only."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q001",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q001] Structural disposition — origin. Goodness originates in God. Psa 119:68 models the being-doing relationship: God is good (ontological) and does good (functional). Gen 1:31 establishes goodness as the ontological baseline — creation declared very good before any human moral life. Mic 6:8 positions goodness as divinely revealed. Human goodness is structurally derivative: responsive, enabled, and participatory. Anchor verses: Psa 119:68, Gen 1:31, Mic 6:8.",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q002",
+        "priority": "MEDIUM",
+        "session_target": "Session B",
+        "description": "[Q002][PARTIAL] Extended or withheld — goodness as character/virtue does not fit the grace/gift 'extended or withheld' frame cleanly. What the evidence addresses: conditions under which divine goodness is experienced (trust/refuge — Psa 34:8; continuing in kindness — Rom 11:22) and conditions under which human goodness fails (not-good verdict 884-006; universal absence Rom 3:12). Question review note: 'extended or withheld' frame fits grace-type words better; recommend revised form for character words.",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q003",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q003] Distinct modes of operation — 12 identified: (1) Doxological assertion (884-001); (2) Human moral character (884-002); (3) Experiential orientation/nearness (884-003); (4) Comparative wisdom evaluation (884-004); (5) Covenantal word/promise (884-005); (6) Not-good moral verdict (884-006); (7) Creative pronouncement (884-007); (8) Volitional preference (884-008); (9) Inner well-being/shalom-condition (884-009); (10) Spirit-produced virtue/agathosune (885-001); (11) Divine generous goodwill/chreestotees (886-001); (12) Spirit-produced kindness (886-002). DIM-67-001 resolved: these are genuinely distinct inner-being phenomena unified by theological origin in God.",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q004",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q004] What goodness produces in the inner being: encounter with divine goodness produces trust/refuge (Psa 34:8), praise and thanksgiving (884-001), receptive desire for instruction (Psa 119:68). Experiential good of nearness produces stable inner orientation and testimony overflow (Psa 73:28). Reception of God's covenantal word produces inner knowing in heart and soul (Jos 23:14). Spirit-produced goodness fills the person and enables community (Rom 15:14). Recognition of not-goodness produces self-loathing and first movement toward moral transformation (Eze 36:31).",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q006",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q006] What goodness reveals about God's disposition toward humanity: God's character is fundamentally good — his steadfast love, name, and Spirit are all described as good (884-001). His covenantal word does not fail (884-005, Jos 23:14). His creative pronouncement declares all of creation very good (884-007, Gen 1:31). His chreestotees is generous goodwill that leads to repentance (886-001, Rom 2:4) and is displayed supremely in Christ (Eph 2:7). It operates in a relational field with severity as its counterpart (Rom 11:22).",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q014",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q014] Inner condition as ground of genuine goodness expression — three grounds converge: (1) proximity/orientation toward God (Psa 73:28 — 'it is good to be near God'); (2) fear of the Lord (Pro 15:16 — 'better a little with the fear of the Lord'); (3) Spirit-filling (Gal 5:22 — Spirit as enabling source). These three are not independent — they converge on a single inner posture: the person oriented toward God, filled by his Spirit, whose inner life has been reoriented toward the source of goodness.",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q019",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q019] Shared etymological roots — extensive. TOV root family distributed across three registries: R67 (H2896A adjectival — quality); R65 (G0018 agathos and agatho- compounds — active doing/generosity); R103 (H2895 tov verbal — be pleasing; H2898 tuv — goodness nominal; relational-affective). Greek: G0019 agathosune shares root with G0018 and all agatho- compounds (R65). G5544 chreestotees shares root with G5541 (chreesteuomai — be kind), G5543 (chreestos — good/kind), G5542 (chreestologia — smooth talk, the distortion form).",
+        "session_raised": "Stage 2b Section 1 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q021",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q021] Structural opposites — three forms: (1) Direct negative — Group 884-006 (22 verses, not-good) names specific conduct contrary to what is good: rebellion, partiality, violence, false weights, self-direction. (2) Universal moral absence — Rom 3:12 ('no one does good, not even one') — the fallen condition is structurally characterised by complete absence of chreestotees: turned aside, become worthless, unable to do good. (3) Distortion — calling evil good (Mal 2:17); redefining goodness as material advantage (Jer 44:17); G5542 chreestologia (smooth talk) as etymological distortion form.",
+        "session_raised": "Stage 2b Section 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q028",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q028] Inner-being orientations that close off reception of goodness: (1) Self-direction — 'following their own devices' (Isa 65:2) — orientation away from God toward self-chosen ways; (2) Wilful refusal — 'we will not walk in it' (Jer 6:16) — the good way is offered and the will refuses; not ignorance but active resistance; (3) Moral self-justification — Jer 44:17 — redefining goodness as material advantage; (4) Unbelief/departure — Rom 11:22 — departing from faith closes off the ongoing experience of divine chreestotees.",
+        "session_raised": "Stage 2b Section 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q031",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q031] Mode of inner-being transformation — three distinct modes: (1) Reorientation — Psa 73:28: Asaph's inner life transformed not by changed circumstances but by shift of orientation; goodness as the transformed position not transformed situation; (2) Character transformation — Spirit fills the person with goodness (Gal 5:22, Rom 15:14) — the inner character itself changes; (3) Moral awareness transformation — Eze 36:31: the person who did not see deeds as not-good comes through remembering, recognising, and loathing to see clearly — moral blindness is the condition, recognition is the turn, loathing is the inner event marking the boundary.",
+        "session_raised": "Stage 2b Section 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q039",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q039] Source of capacity to extend goodness — transformation, not discipline. Spirit-produced: Gal 5:22 (fruit, not discipline); Col 3:12 (put on as response to prior transformation — 'God's chosen ones, holy and beloved'). Rom 3:12 confirms: natural human condition without transformation is characterised by complete absence of goodness — capacity must come from outside. However, Mic 6:8 presents genuine human action as required — the transformed person still has an active role in expression. Source is transformation; discipline may shape expression but does not generate capacity.",
+        "session_raised": "Stage 2b Section 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q040",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q040] Goodness reconstitutes rather than displaces human effort. 2Th 1:11: 'may God fulfil every resolve for good and every work of faith by his power' — the human resolve is real, not absorbed or overridden, but completed by God's power. Mic 6:8 requires active human doing. Spirit produces character (Gal 5:22) but Col 3:12 frames expression as active choice ('put on therefore'). Pro 16:32 names ruling one's spirit as a human achievement within a God-ordered value framework. Structure throughout: divine enabling → genuine human action → divine completion.",
+        "session_raised": "Stage 2b Section 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q042",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q042] Primary verse — Mic 6:8 as definitional anchor for human moral goodness: 'He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?' Three observations: (1) Goodness defined by tri-fold content — justice (outward conduct), loving-kindness (inner dispositional), humble walk with God (vertical orientation) — co-presented as constitutive not optional. (2) Frame is revelatory — 'He has told you' positions goodness as divinely disclosed, humanly received. (3) Requirement is comprehensive addressing both horizontal and vertical relations. Shared anchor with 6 other registries.",
+        "session_raised": "Stage 2b Section 3 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q049",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q049] Goodness and moral failure — one of the richest connections in the registry. Eze 36:31: recognition of deeds as not-good produces self-loathing — moral failure is catalyst for deepest moral awareness. Rom 3:12: universal absence of goodness diagnoses the fallen human condition. Group 884-006 (22 verses) dedicated to not-good verdict. Goodness and moral failure are structurally related: goodness understood partly through its absence in moral failure; and recognition of moral failure is first movement toward goodness. Shared anchor at Eze 36:31 with R1 (abomination) confirms connection.",
+        "session_raised": "Stage 2b Section 3 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q065",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q065] Performed vs genuine goodness — three instances: (1) Mal 2:17 — prophetic indictment of distorted inner judgment that calls evil good; the moral assessment faculty is inverted. (2) Jer 44:17 — people claim idolatrous prosperity was 'good' — self-justifying redefinition of goodness as material wellbeing. (3) G5542 chreestologia (smooth talk) — using kindness-language without kindness-character; etymological distortion form of chreestotees. The genuine version (Mic 6:8) requires justice, kindness, and humility; the performed/distorted version substitutes self-advantage.",
+        "session_raised": "Stage 2b Section 3 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q088",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q088] H2896A (tov) root meaning and conceptual origin — root TOV with 10 sub-senses spanning aesthetic pleasantness (1a), higher-nature pleasantness (1b), ethical rightness (1j), intellectual goodness (1h), gladness/well-being (1g). Conceptual origin is phenomenological before ethical: begins with concrete experience of what is agreeable and beneficial, rises to moral and covenantal categories. Hebrew goodness is not first an abstract ethical standard — it is first the quality of things that genuinely satisfy and benefit, recognisable in creation (Gen 1:31) and in proximity to God (Psa 73:28). The moral and covenantal registers are expansions of this experiential root.",
+        "session_raised": "Stage 2b Section 4 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q090",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q090] Distinction between goodness as inner disposition and as outward act — structurally embedded in XREF architecture. Inner disposition: G0019 (agathosune — goodness as virtue) and G5544 (chreestotees — kindness as inner character quality) are OWNER terms in R67. Outward act: G0015 (agathopoieo — to do good) and G0016 (agathopoiia — doing good) are XREF in R65 (generosity). Programme has structurally separated inner disposition (R67) from outward act (R65). H2896A serves both registers in Hebrew — the distinction exists in Greek more cleanly than in Hebrew.",
+        "session_raised": "Stage 2b Section 4 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q099",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q099] G0019 (agathosune) as NT coinage — almost certainly coined for the NT; not attested in classical Greek or LXX. The coinage reveals: the NT needed a term for goodness as a named inner-being virtue distinct from the adjective agathos that applies to virtually anything good. Coinage says: goodness is now a specific inner-being quality, not merely a predicate. Its entire 4-verse NT corpus (Rom 15:14, Gal 5:22, Eph 5:9, 2Th 1:11) is Pauline and pneumatological. The development from Hebrew tov's ten-sub-sense breadth to NT agathosune's precision is pneumatological concentration: goodness in its fullest expression named as a Spirit-enabled quality.",
+        "session_raised": "Stage 2b Section 4 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q122",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q122] Strongest co-occurrence connection — R103 (love) at 23 shared verses, highest co-occurrence count. Connection confirmed at root level: H2895 (tov verbal — be pleasing) and H2898 (tuv — goodness nominal) are owned by R103 as XREF terms, sharing TOV root family with H2896A. Mic 6:8 holds love and goodness together as definitional — 'to love kindness' is one of three constitutive expressions of what is good. The simultaneity of love and goodness in Mic 6:8 implies that at the deepest level of the good person's character, love and goodness are not separable activities but aspects of a unified inner disposition.",
+        "session_raised": "Stage 2b Section 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q127",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q127] Verses making explicit structural relationships — three primary: (1) Psa 34:8 — tasting divine goodness produces trust/refuge; structural relationship named: goodness-encounter → trust. (2) Rom 2:4 — 'God's kindness is meant to lead you to repentance'; structural relationship named: divine chreestotees is the mechanism that produces repentance. (3) Pro 16:32 — 'slow to anger is better than the mighty; rules his spirit than takes a city'; structural relationship named: inner self-mastery is superior to external power.",
+        "session_raised": "Stage 2b Section 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q138",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q138] Dual anchor verses and their significance — Mic 6:8 is shared with 6 registries (compassion R23, condemnation R24, humility R80, kindness R99, love R103, will R173). Gal 5:22 is shared with 5 registries (faith R59, joy R97, love R103, patience R116, peace R117). Dual membership reveals: these are the programme's highest-density cross-registry connection points functioning as synthesis nodes. The dual membership of Mic 6:8 reveals that goodness, justice, kindness, love, humility, and will are not independent characteristics but co-constitutive elements of a single comprehensive inner-being orientation that Mic 6:8 defines.",
+        "session_raised": "Stage 2b Section 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SB_FINDING",
+        "flag_label": "SBF-067-Q146",
+        "priority": "HIGH",
+        "session_target": "Session B",
+        "description": "[Q146] Goodness and repentance connection — addressed and substantive. Rom 2:4 (Group 886-001): 'God's kindness is meant to lead you to repentance' — most direct goodness/repentance connection; divine chreestotees is the mechanism producing repentance. Eze 36:31: recognition of deeds as not-good and self-loathing is the inner movement preceding repentance — sequence implied: recognition → loathing → repentance. Connection is present and substantive. The goodness-abomination-repentance sequence (SP-067-006) is flagged for fuller Session D examination.",
+        "session_raised": "Stage 2b Section 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 22,
+    "research_flag_inserts": 22,
+    "by_flag_code": {
+      "SB_FINDING": 22
+    },
+    "coverage_note": "22 HIGH-priority representative findings selected from 147 Q&A dispositions. Full Q&A log in wa-obslog-ro-067-goodness-anlys-v2-20260426.md. PARTIALLY_ANSWERED and NOT_APPLICABLE items omitted from this patch — they are documented in the obslog only. CAT-B-001 gap: wa_finding_catalogue_links write path not in v2_9; question_code carried in description prefix only.",
+    "questions_covered": ["Q001","Q002","Q003","Q004","Q006","Q014","Q019","Q021","Q028","Q031","Q039","Q040","Q042","Q049","Q065","Q088","Q090","Q099","Q122","Q127","Q138","Q146"]
+  }
+}

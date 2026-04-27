@@ -1,0 +1,197 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260427-067-VCSDPOINTERS-V1",
+    "registry_id": 67,
+    "word": "goodness",
+    "produced_date": "20260427",
+    "produced_by": "wa-patch-instruction-v2_9-20260425",
+    "patch_type": "VCSDPOINTERS",
+    "session_b_status": null,
+    "description": "10 Session D cross-registry research pointers raised during Stage 2a–2b analysis of Registry 067 (goodness). SP-001 through SP-010 covering tri-registry boundary, Mic 6:8 synthesis node, Gal 5:22 Spirit-fruit cluster, abomination-goodness bridge, and 6 medium-priority connections."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-001",
+        "cross_registry_id": 65,
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "Tri-registry boundary review: Does the programme split of the TOV/AGATH root family across R65 (generosity — active doing), R67 (goodness — quality/disposition), and R103 (love — relational-affective) produce sustainable analytical boundaries under the verse evidence? H2896A frequently spans all three within a single verse. The boundary is a programme-level analytical decision that Session D should test under cross-registry synthesis. Evidence: XREF structure (9 terms to R65 and R103); G0019 Gal 5:22 glossed as 'generosity' (R65 overlap); H2895/H2898 in R103.",
+        "session_raised": "Stage 2a Unit 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-002",
+        "cross_registry_id": 103,
+        "priority": "LOW",
+        "session_target": "Session D",
+        "description": "H2898 (tuv — goodness) is classified as XREF in R67 but shows 0 active verses in its owner registry R103 (love). Is this a data gap — the term was extracted but no verses classified — or a deliberate decision? A term with 0 OWNER verses may need investigation before Session D uses it as a cross-registry link.",
+        "session_raised": "Stage 2a Unit 2 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-003",
+        "cross_registry_id": 197,
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "Registry 197 (authority) is the third-highest co-occurrence partner with R67 at 17 shared verses — higher than joy, soul, or wisdom. The likely driver is Group 884-008 (volitional-preference idiom, 40 verses) where 'do what seems good to you' formula appears densely in royal and political narrative contexts. Session D should confirm whether the R67-R197 connection is formulaic (driven by 884-008 social context) rather than conceptual before treating it as a substantive inner-being connection.",
+        "session_raised": "Stage 2a Unit 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-004",
+        "cross_registry_id": 103,
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "Mic 6:8 ('He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?') is a cross-registry anchor shared with 6 registries: compassion (R23), condemnation (R24), humility (R80), kindness (R99), love (R103), will (R173). Session D should examine whether these 6 co-anchoring registries constitute a unified moral posture — justice + loving-kindness + humble walk as co-constitutive expressions of what is good — or whether they are better understood as distinct characteristics that happen to co-appear at this verse. This verse is the highest-density cross-registry synthesis node in R67.",
+        "session_raised": "Stage 2a Unit 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-005",
+        "cross_registry_id": 59,
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "Gal 5:22 (Spirit fruit list) is a cross-registry anchor shared with 5 registries: faith (R59), joy (R97), love (R103), patience (R116), peace (R117). This verse uniquely anchors both OWNER Greek terms of R67 simultaneously — G0019 agathowsunee (Group 885-001) and G5544 chreestotees (Group 886-002). Session D should examine whether the Gal 5:22 Spirit-fruit cluster constitutes a programme-defined cross-registry synthesis unit — 9 inner-being qualities co-produced by the Spirit as facets of a unified character — or whether each characteristic is independently Spirit-produced and separately analysable.",
+        "session_raised": "Stage 2a Unit 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-006",
+        "cross_registry_id": 1,
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "Eze 36:31 is a shared anchor between R67 (Group 884-006 — not-good moral verdict) and R1 (abomination). The verse places recognition of deeds as not-good alongside 'iniquities and abominations' — self-loathing for the latter follows from recognition of the former. Session D should examine: (a) whether the not-good and abomination registers share an inner-being mechanism (both produce self-directed moral revulsion); (b) whether Eze 36:31 establishes a causal chain from not-good recognition to self-loathing that connects R67 and R1; and (c) whether Rom 2:4 (divine chreestotees leads to repentance) extends this sequence to a goodness-abomination-repentance arc.",
+        "session_raised": "Stage 2a Unit 5 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-007",
+        "cross_registry_id": 49,
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "Psa 34:8 ('taste and see that the Lord is good') is a shared anchor with R49 (discernment). The 'taste and see' metaphor names an inner perception act — an act of spiritual discernment. Session D should examine whether tasting divine goodness is analytically an act of inner discernment (R49) and whether the encounter with divine goodness cultivates or confirms discernment capacity in the inner being. Also shared with R78 (hope) — refuge-taking as hope's shelter posture.",
+        "session_raised": "Stage 2a Unit 7, Group 884-001 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-008",
+        "cross_registry_id": 4,
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "Pro 16:32 ('slow to anger is better than the mighty; rules his spirit than takes a city') is a shared anchor with R4 (anger) and R199 (dominion/self-mastery). The verse uses the comparative wisdom framework (R67 Group 884-004) to assert that anger restraint and self-rule are of greater value than external power. Session D should examine whether this verse establishes a programme-level hierarchy of inner-being characteristics where self-regulation (slow to anger, ruling the spirit) is superior to external achievement — and whether this hierarchy is structural across wisdom literature or specific to this verse.",
+        "session_raised": "Stage 2a Unit 7, Group 884-004 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-009",
+        "cross_registry_id": 183,
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "Jos 23:14 ('you know in your hearts and souls, all of you, that not one word has failed of all the good things the Lord your God promised') explicitly names heart and soul as the site of covenantal knowing. God's good word (R67 Group 884-005) is received and registered in the inner being. Session D should examine whether Jos 23:14 establishes a structural link between R67 (goodness) and R183 (heart) / R182 (soul) — specifically whether the reception of covenantal goodness is a heart-and-soul event that connects the goodness and anthropological registries.",
+        "session_raised": "Stage 2a Unit 7, Group 884-005 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 67,
+        "flag_code": "SD_POINTER",
+        "flag_label": "SP-067-010",
+        "cross_registry_id": 97,
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "Est 5:9 ('Haman went out that day joyful and glad of heart') is a shared anchor with R97 (joy). The tov-lev (glad of heart) compound explicitly locates the inner well-being state (R67 Group 884-009) in the heart. Session D should examine whether the inner well-being state of 884-009 (shalom-condition, glad of heart) constitutes the same inner-being characteristic as joy (R97) or a related but distinct phenomenon. The Est 5:9 instance is diagnostically significant — Haman's tov-lev is immediately destroyed by one sight, revealing the fragility of inner well-being not rooted in God.",
+        "session_raised": "Stage 2a Unit 7, Group 884-009 — wa-obslog-ro-067-goodness-anlys-v2-20260426",
+        "raised_date": "2026-04-26",
+        "resolved": 0
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 10,
+    "research_flag_inserts": 10,
+    "by_flag_code": {
+      "SD_POINTER": 10
+    },
+    "distinct_cross_registries": 10,
+    "priority_breakdown": {
+      "HIGH": 4,
+      "MEDIUM": 5,
+      "LOW": 1
+    }
+  }
+}
