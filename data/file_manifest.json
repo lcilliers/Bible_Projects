@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-27T04:37:40Z",
+  "generated_at": "2026-04-27T06:03:05Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 3104,
-  "total_active": 1906,
+  "total_files": 3108,
+  "total_active": 1910,
   "total_archived": 1198,
   "files": [
     {
@@ -41432,8 +41432,8 @@
       "date": "2026-04-27",
       "ext": ".md",
       "archived": false,
-      "size_bytes": 24376,
-      "modified": "2026-04-27T04:37:17Z"
+      "size_bytes": 74293,
+      "modified": "2026-04-27T05:51:49Z"
     },
     {
       "path": "outputs/investigations/db_preflight_findings.md",
@@ -46131,6 +46131,36 @@
       "modified": "2026-04-02T15:33:50Z"
     },
     {
+      "path": "outputs/reports/words/wa-067-goodness-analytic-status-v1-20260427.json",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 397,
+      "modified": "2026-04-27T06:02:34Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-067-goodness-analytic-status-v1-20260427.md",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1094,
+      "modified": "2026-04-27T06:02:34Z"
+    },
+    {
       "path": "outputs/reports/words/wa-067-goodness-obslog-parse-manifest-v1-20260427.json",
       "category": "report",
       "type": "word-report",
@@ -46234,6 +46264,36 @@
       "archived": false,
       "size_bytes": 163699,
       "modified": "2026-04-26T19:04:16Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-067-goodness-readiness-output-v5-20260427.json",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "5",
+      "date": "2026-04-27",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 390500,
+      "modified": "2026-04-27T05:59:16Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-067-goodness-readiness-output-v5-20260427.md",
+      "category": "report",
+      "type": "word-report",
+      "registry": 67,
+      "word": "goodness",
+      "cluster": null,
+      "batch": null,
+      "version": "5",
+      "date": "2026-04-27",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 185348,
+      "modified": "2026-04-27T05:59:14Z"
     },
     {
       "path": "outputs/reports/words/wa-068-grace-annotated-summaries.md",

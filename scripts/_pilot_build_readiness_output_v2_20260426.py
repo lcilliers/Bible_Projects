@@ -952,6 +952,82 @@ def render_section_l_catalogue(catalogue: dict, registry_no: int, registry_word:
     return L
 
 
+def get_open_session_b_items(conn, registry_id: int) -> list:
+    """Section N source — open Session B findings to be addressed this session.
+
+    Per architecture v1 §11.4: every open finding must be resolved in this
+    analytical session via one of the four resolution paths.
+    """
+    rows = conn.execute("""
+        SELECT id, finding_id, finding_type, finding, anchor_verses,
+               raised_date, status, thin_evidence, term_id,
+               session_b_instruction, pass_ref
+          FROM wa_session_b_findings
+         WHERE registry_id = ?
+           AND status = 'open'
+           AND (delete_flag = 0 OR delete_flag IS NULL)
+         ORDER BY raised_date DESC, id
+    """, (registry_id,)).fetchall()
+    return [dict(r) for r in rows]
+
+
+def render_section_n_open_items(open_items: list, registry_no: int) -> list:
+    """§N — Open Session B Items (must be resolved this session).
+
+    Each item must have an outcome by session close:
+      (a) Q&A answer (via wa_finding_catalogue_links)
+      (b) Follow-up research question (new GAP)
+      (c) SD pointer (cross-registry research target)
+      (d) Marked no_longer_relevant with reason
+    """
+    L = []
+    L.append(f"## N. Open Session B Items — must resolve this session")
+    L.append("")
+    if not open_items:
+        L.append("**No open items.** This is either a first analytical session for the registry, "
+                 "or all prior open items have been resolved.")
+        L.append("")
+        L.append("---")
+        L.append("")
+        return L
+    L.append(f"**{len(open_items)} open item(s) carried forward.** Each must reach one of these outcomes "
+             "by session close — recorded back on the Session B finding row:")
+    L.append("")
+    L.append("- **(a)** Resolve via Q&A: link to a catalogue question + record answer "
+             "→ `wa_finding_catalogue_links` row + `wa_session_b_findings.status='resolved_qa'`")
+    L.append("- **(b)** Raise follow-up research question (new GAP catalogue entry) "
+             "→ inserts a new `wa_obs_question_catalogue` row + `status='resolved_qa'`")
+    L.append("- **(c)** Convert to SD pointer (cross-registry research target) "
+             "→ `wa_session_research_flags` insert + `status='resolved_sd'`")
+    L.append("- **(d)** Mark no_longer_relevant with reason "
+             "→ `wa_session_b_findings.status='not_relevant'` + `obsolete_reason`")
+    L.append("")
+    L.append("**Items below are not optional. Each must be addressed.**")
+    L.append("")
+    for item in open_items:
+        finding_id = item.get('finding_id') or f"id={item['id']}"
+        ftype = item.get('finding_type') or 'OBSERVATION'
+        L.append(f"### `{finding_id}` — {ftype}")
+        L.append("")
+        L.append(f"- **Raised:** {item.get('raised_date') or '-'} · "
+                 f"**Term context:** {item.get('term_id') or '-'} · "
+                 f"**Source instruction:** {item.get('session_b_instruction') or '-'} · "
+                 f"**Thin evidence:** {item.get('thin_evidence') or 0}")
+        L.append("")
+        if item.get('finding'):
+            for line in (item['finding']).split('\n'):
+                L.append(f"> {line}" if line else ">")
+            L.append("")
+        if item.get('anchor_verses'):
+            L.append(f"**Anchor verses cited:** {item['anchor_verses']}")
+            L.append("")
+        L.append("**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**")
+        L.append("")
+    L.append("---")
+    L.append("")
+    return L
+
+
 def render_section_m_verification(owners: list, schema: str, ts: str,
                                   reg: dict, states: dict) -> list:
     L = []
@@ -1028,6 +1104,7 @@ def build(conn, registry_no: int) -> str:
     L.append("- J. Anchor verse material — Unit 7 (full verbatim verse text)")
     L.append("- K. Legacy-VC terms — UNVERIFIED — v2 strategy mandate")
     L.append("- L. Stage 2b reference — observation question catalogue")
+    L.append("- N. Open Session B items (carried forward; must resolve this session)")
     L.append("- M. Readiness verification")
     L.append("")
     L.append("---")
@@ -1045,8 +1122,10 @@ def build(conn, registry_no: int) -> str:
     L += render_section_j_verses(owners, verses_by_term)
     L += render_section_k_legacy_vc(owners, states)
     L += render_section_l_catalogue(catalogue, registry_no, reg['word'])
+    open_items = get_open_session_b_items(conn, reg['id'])
+    L += render_section_n_open_items(open_items, registry_no)
     L += render_section_m_verification(owners, schema, ts, reg, states)
-    L.append(f"*End of readiness output v2 — wa-{registry_no:03d}-{reg['word']}.*")
+    L.append(f"*End of readiness output v3 — wa-{registry_no:03d}-{reg['word']}.*")
     return "\n".join(L)
 
 
@@ -1067,6 +1146,8 @@ def build_json(conn, registry_no: int) -> dict:
     verses_by_term = {t['mti']: get_term_verses(conn, t['ti_id'], t['mti']) for t in owners}
     signals = get_correlation_signals(conn, reg['id'], [t['mti'] for t in owners])
 
+    open_items = get_open_session_b_items(conn, reg['id'])
+
     return {
         "meta": {
             "generated_at": ts,
@@ -1075,7 +1156,7 @@ def build_json(conn, registry_no: int) -> dict:
             "registry_word": reg['word'],
             "generator": "_pilot_build_readiness_output_v2_20260426.py",
             "strategy": "vc-corrective-strategy-v2-20260426.md",
-            "version": "v4",
+            "version": "v5",
         },
         "registry": reg,
         "owner_terms": owners,
@@ -1087,6 +1168,7 @@ def build_json(conn, registry_no: int) -> dict:
         "correlation_signals": signals,
         "open_flags": flags,
         "session_b_findings": findings,
+        "open_session_b_items": open_items,
         "catalogue": catalogue,
     }
 
@@ -1107,7 +1189,7 @@ def main() -> int:
     out_dir = OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     base = (args.out and os.path.splitext(args.out)[0]) or \
-        f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v4-{today_compact()}"
+        f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v5-{today_compact()}"
 
     if not args.json_only:
         md_text = build(conn, args.registry)
