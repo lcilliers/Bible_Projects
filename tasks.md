@@ -27,12 +27,20 @@ Source-of-truth: [db-capture-phase1-results-and-table-architecture-v1-20260427.m
 - [x] Pilot run on reg 067 obslog v2: 147 Q&A · 10 SD · 49 obs · 6 chapters · 8+6 questions · 41 review notes · 6 issues — all extracted clean
 - [x] Coverage gap analysis: 119 of 141 answered Q&As + 6 chapters + 49 obs + 14 Qs + 41 notes were lost under Approach (b). Phase 1 captures all.
 
-**Phase 2 (writer) work items — IN PROGRESS**
-- [ ] **A. Schema migrations M40-M43** — `verse_context.analysis_note` column · `wa_prose_section_citations` table · `wa_obs_question_catalogue.review_note` column · `wa_finding_catalogue_links.finding_id` NULL allowed. Plus controlled-vocab extensions (status / finding_type / entity_type / coverage). Pre-migration backups labelled per migration.
-- [ ] **B. Phase 2 writer** (`scripts/_capture_obslog_to_db_v1.py`) — read parser manifest + write DB rows; idempotent; transactional; backup before write; pre-write validation; post-write verification + anomaly raising.
-- [ ] **C. Readiness generator v5** — add §N "Open Session B Items" section + field-level "AI must:" prompts. Source query: `wa_session_b_findings WHERE status='open' AND registry_id=?` rendered with four resolution paths.
-- [ ] **D. Analytic Status `.md` generator** (`scripts/_build_analytic_status_v1.py`) — companion to readiness output for revision sessions. Two-input model: data .md + analytic status .md.
-- [ ] **E. Phase 2 writer pilot** on reg 067 obslog v2 — populate DB, compare against current state, validate idempotency.
+**Phase 2 (writer) work items**
+- [x] **A. Schema migrations M40-M43** — DB at v3.17.0. `verse_context.analysis_note` · `wa_prose_section_citations` · `wa_obs_question_catalogue.review_note` · `wa_finding_catalogue_links.finding_id` NULL. Pre-migration backups at `bible_research_pre_M40_*`.
+- [x] **B. Phase 2 writer** (`scripts/_pilot_capture_obslog_to_db_v1_20260427.py`) — full implementation: status_update, observations, chapters, sd_pointers, new_questions, qa_findings (with entity links + lifecycle resolution), catalogue_completeness (no_finding rows), review_notes (append), anchor_verse_analyses (Unit 7 extraction). Idempotent, transactional, pre-write backup.
+- [x] **C. Readiness generator v5** — §N "Open Session B Items" rendered with four resolution paths. Output v5 includes `open_session_b_items` in JSON.
+- [x] **D. Analytic Status `.md` generator** (`scripts/_pilot_build_analytic_status_v1_20260427.py`) — 7-section structure: lifecycle / coverage / resolved_qa / resolved_sd / not_relevant / chapters / anchor analyses / open items.
+- [x] **E. Phase 2 writer pilot run on reg 067 obslog v2** — applied 2026-04-27. Backup: `backups/bible_research_pre_capture_writer_20260427.db`. Outcomes:
+    - 49 observations → wa_session_b_findings (status='open' initially; 21 then resolved_qa via Q&A links)
+    - 5 chapters → prose_section (sb_s2c_ch1..ch5; ~42 KB total body)
+    - 14 new catalogue entries (8 generic gap + 6 Goodness Extensions)
+    - 61 Q&A catalogue links (48 full + 7 partial + 6 not_applicable, plus 8 no_finding from catalogue_completeness)
+    - 89 entity links (55 verse + 34 group)
+    - 13 verse_context.analysis_note populated from Unit 7 anchor readings
+    - 34 review notes appended across catalogue questions
+    - 109 Q&As did not cite OBS-NNN refs in their answers — those remained as 'open' observations (28 of the 49 stay open). This is correct behaviour — they're research tasks for next session.
 - [ ] **F. Spec revisions (researcher-gated)** — four documents:
     - [ ] `wa-patch-instruction` (account for the new categories)
     - [ ] `wa-sessionb-analysis-readiness` (now mostly a CC operation — major shift)

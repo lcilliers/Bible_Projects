@@ -1,6 +1,6 @@
 # wa-067-goodness — Analysis Readiness Output (v2)
 
-_Pilot v2 generation · 2026-04-27T05:59:13Z · schema 3.17.0_
+_Pilot v2 generation · 2026-04-27T06:33:29Z · schema 3.17.0_
 
 _Strategy: vc-corrective-strategy-v2 §4 · sections aligned with `wa-sessionb-analysis-output-v1_1` reading units 1-9._
 
@@ -41,7 +41,7 @@ _Source of truth: live DB at generation time. Regenerate to refresh._
 - `phase1_term_count`: 45  (programme-wide aggregate including XREF and historical terms — current OWNER count is 3, XREF 9)
 - `phase1_verse_count`: 2216  (programme-wide aggregate; current registry verse counts shown per term in §C)
 
-**Open flags:** 33 unresolved · **Existing session_b_findings:** 1
+**Open flags:** 33 unresolved · **Existing session_b_findings:** 50
 
 **Description:**
 
@@ -53,7 +53,7 @@ _Source of truth: live DB at generation time. Regenerate to refresh._
 
 _The Analysis Output instruction's S2 expects a Stage 1 Completion Record from the Analysis Readiness session. Under the v2 strategy the readiness `.md` IS that record. The synthesised confirmation below derives the seven-domain pass criteria from current DB state at generation time._
 
-- **Generation timestamp:** `2026-04-27T05:59:13Z`
+- **Generation timestamp:** `2026-04-27T06:33:29Z`
 - **Schema version:** `3.17.0`
 - **OWNER term md_versions present:** `[2]`
   (this is the project's audit equivalent of `meta.export_version`)
@@ -300,7 +300,301 @@ Three signal types computed at generation time from DB state:
 
 ## H. Existing SD Pointers + session_b_findings [Units 6 + 9]
 
-### H.1 Existing session_b_findings (1)
+### H.1 Existing session_b_findings (50)
+
+#### `OBS-067-OBS-001` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Registry description names 3 axes: aesthetic/moral/relational; human goodness is derivative
+
+#### `OBS-067-OBS-002` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Registry-level dimension = Moral/Conscience; groups show wider spread — tension noted
+
+#### `OBS-067-OBS-003` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Domain G failure (no researcher narrative) — documentation gap only, not analytical
+
+#### `OBS-067-OBS-004` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> XREF structure: 6/9 terms to R65 (generosity); agathos 90-verse OWNER vs agathōsunē 4-verse
+
+#### `OBS-067-OBS-005` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> H2898 (tuv) has 0 OWNER verses in R103 — possible data quality observation
+
+#### `OBS-067-OBS-006` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> H2896A meaning parse: 10 sub-senses covering the full landscape of the 9 groups
+
+#### `OBS-067-OBS-007` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> TOV root family distributed across R67 (adjectival), R65 (active doing), R103 (relational-affective)
+
+#### `OBS-067-OBS-008` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> G0019 Gal 5:22 glossed as "generosity" — semantic overlap with R65 noted
+
+#### `OBS-067-OBS-009` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> G5544 meaning parse includes Rom 3:12 negation — lexically confirms presence/absence range
+
+#### `OBS-067-OBS-010` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> G5542 (chrēstologia) related word confirms distortion pole etymologically
+
+#### `OBS-067-OBS-011` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Three H2896A groups have NULL dimension (884-007, 884-008, 884-009)
+
+#### `OBS-067-OBS-012` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Cognition (03) assigned to 884-004 and 884-006 — both evaluative judgment groups
+
+#### `OBS-067-OBS-013` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-007 NULL — creation pronouncement; no existing dimension label fits cleanly
+
+#### `OBS-067-OBS-014` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-008 NULL — volitional preference; likely Volition (04) candidate
+
+#### `OBS-067-OBS-015` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-009 NULL — shalom-condition; no clean dimension fit; may need experiential category
+
+#### `OBS-067-OBS-016` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 885-001 Volition (04) — straddles character and agency; assignment plausible not obvious
+
+#### `OBS-067-OBS-017` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> G5544 bipartite dimension split: divine = 11, human = 05; structurally coherent
+
+#### `OBS-067-OBS-018` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> R103 (love) deepest structural XREF link; R42 (delight) Hebrew-only; R99 (kindness) Greek
+
+#### `OBS-067-OBS-019` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Co-occurrence: R103 (love, 23) > R43 (desire, 18) > R197 (authority, 17) as top 3
+
+#### `OBS-067-OBS-020` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> R197 (authority) unexpectedly high — likely driven by 884-008 volitional-preference idiom
+
+#### `OBS-067-OBS-021` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Mic 6:8 (6 co-anchors) and Gal 5:22 (5 co-anchors) are the two highest-density cross-registry nodes
+
+#### `OBS-067-OBS-022` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> DIM-67-001: core analytical question — distinct phenomena vs unified category
+
+#### `OBS-067-OBS-023` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> DIM-67-001 uses pre-v1.4 dimension vocabulary; needs re-reading against current labels
+
+#### `OBS-067-OBS-024` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> SBF-VCB013-001: tripartite model confirmed; OBS-010 extends distortion pole etymologically
+
+#### `OBS-067-OBS-025` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Psa 34:8: divine goodness as experiential encounter; shared anchor with discernment and hope
+
+#### `OBS-067-OBS-026` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Psa 119:68: being-good → doing-good model; human goodness follows same logic
+
+#### `OBS-067-OBS-027` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Mic 6:8: definitional anchor for human goodness — justice, kindness, humility as three-fold content
+
+#### `OBS-067-OBS-028` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Mic 6:8: "He has told you what is good" — goodness is divinely revealed, humanly received
+
+#### `OBS-067-OBS-029` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Psa 73:28: experiential good = nearness to God as highest inner-being state
+
+#### `OBS-067-OBS-030` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> ISSUE-E reinforced: 884-003 anchor (Psa 73:28) is spiritual orientation, not primarily moral
+
+#### `OBS-067-OBS-031` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-004 anchors rank inner qualities above external power — structural normative claim
+
+#### `OBS-067-OBS-032` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Pro 16:32: shared anchor with anger (R4) and dominion (R199); genuine cross-registry bridge
+
+#### `OBS-067-OBS-033` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Jos 23:14: inner-being reception of covenantal good — heart and soul as site of knowing
+
+#### `OBS-067-OBS-034` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> ISSUE-E reinforced: 884-005 dominant subject is God's faithfulness, not human moral character
+
+#### `OBS-067-OBS-035` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Eze 36:31: not-good verdict internalised → self-loathing; affective register as significant as cognitive
+
+#### `OBS-067-OBS-036` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Gen 1:31: goodness as ontological baseline — creational reference point for all goodness language
+
+#### `OBS-067-OBS-037` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-007 dimension NULL reinforced — needs a divine creative/evaluative agency category
+
+#### `OBS-067-OBS-038` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Jer 26:14: volitional-preference anchor is Jeremiah's willed submission under threat — weighty instance
+
+#### `OBS-067-OBS-039` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> 884-008 NULL likely = Volition (04) — group description explicitly names choosing/preferring
+
+#### `OBS-067-OBS-040` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Est 5:9: glad-of-heart (Haman) — inner well-being fragile and morally ungrounded
+
+#### `OBS-067-OBS-041` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Est 5:9 shared anchor with R97 (joy): tov-lev as joy-state vs distinct well-being state
+
+#### `OBS-067-OBS-042` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Gal 5:22: agathōsunē as Spirit-fruit; Gal 5:22 gloss = generosity; outward-facing dimension
+
+#### `OBS-067-OBS-043` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Rom 11:22: divine kindness as pole of bipolarity with severity; relational-conditional dynamic
+
+#### `OBS-067-OBS-044` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Rom 11:22: raises Session D question — are divine inner dispositions unconditional or relational?
+
+#### `OBS-067-OBS-045` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Two OWNER terms co-anchor at Gal 5:22 with different dimensions (Volition vs Moral Character)
+
+#### `OBS-067-OBS-046` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> Rom 3:12: chrēstotēs by absence = diagnosis of fallen inner being; catena context gives force
+
+#### `OBS-067-OBS-047` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> G0019 and G5544 thin-evidence confirmed by small corpora; conclusions proportionally limited
+
+#### `OBS-067-OBS-048` — `OBSERVATION`
+
+- **status:** `resolved_qa` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> DIM-67-001 resolved: nine H2896A groups represent genuinely distinct inner-being phenomena
+
+#### `OBS-067-OBS-049` — `OBSERVATION`
+
+- **status:** `open` · **thin_evidence:** 0 · **raised:** 2026-04-27T06:32:13Z · **term_id:** -
+
+> SBF-VCB013-001 confirmed and extended: presence/absence holds for full registry; distortion etymological not textual
 
 #### `DIM-67-001` — `DIMENSION_REVIEW`
 
@@ -1335,17 +1629,22 @@ Each verse listed with: group code · `is_relevant` (✓/✗) · `is_anchor` (�
 
 ## L. Stage 2b Foundational Input — Observation Question Catalogue
 
-**Generic questions: 147** across 5 sections. The section grouping IS the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.
+**Generic questions: 155** across 10 sections. The section grouping IS the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.
 
 ### Section summary (generic)
 
 | Section | n questions |
 |---|---:|
+| Section 1 — Generic (gap addition R067) | 2 |
 | Section 1 — Word Characteristic Summary | 20 |
+| Section 2 — Generic (gap addition R067) | 2 |
 | Section 2 — Word Impact Description | 21 |
 | Section 3 — Annotated Verse Evidence | 44 |
+| Section 3 — Generic (gap addition R067) | 2 |
+| Section 4 — Generic (gap addition R067) | 1 |
 | Section 4 — Original Language Vocabulary | 36 |
 | Section 5 — Connections and Research Pointers | 26 |
+| Section 5 — Generic (gap addition R067) | 1 |
 
 ### Generic questions (JSON, grouped by section)
 
@@ -1353,9 +1652,33 @@ Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every 
 
 ```json
 {
-  "total": 147,
-  "section_count": 5,
+  "total": 155,
+  "section_count": 10,
   "sections": {
+    "Section 1 — Generic (gap addition R067)": [
+      {
+        "obs_id": 207,
+        "question_code": "GAP-S1-001",
+        "section": "Section 1 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Where the word has multiple distinct semantic modes, does the verse evidence reveal a unified inner logic that holds the modes together — or are they genuinely independent phenomena?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      },
+      {
+        "obs_id": 208,
+        "question_code": "GAP-S1-002",
+        "section": "Section 1 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Does the word carry a structural negative or absence form — and if so, does the negative form engage the same inner-being faculty as the positive?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      }
+    ],
     "Section 1 — Word Characteristic Summary": [
       {
         "obs_id": 1,
@@ -1573,6 +1896,30 @@ Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every 
         "source_word": "Grace",
         "source_registry_no": 68,
         "question_text": "What does the word produce as a natural inner response in the one who receives it?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      }
+    ],
+    "Section 2 — Generic (gap addition R067)": [
+      {
+        "obs_id": 209,
+        "question_code": "GAP-S2-001",
+        "section": "Section 2 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Where the word has both a positive (presence) and negative (absence/not-word) register, what does the negative register reveal about the inner-being mechanisms of the positive?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      },
+      {
+        "obs_id": 210,
+        "question_code": "GAP-S2-002",
+        "section": "Section 2 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Does the verse evidence distinguish between the inner quality of goodness and the external assessment of conduct as good — and what is the relationship between them?",
         "pattern_type": null,
         "scope": "universal",
         "status": "active"
@@ -2297,6 +2644,43 @@ Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every 
         "status": "active"
       }
     ],
+    "Section 3 — Generic (gap addition R067)": [
+      {
+        "obs_id": 211,
+        "question_code": "GAP-S3-001",
+        "section": "Section 3 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Where a registry contains multiple anchor verses across multiple groups, is there a primary or controlling anchor — and how is it identified?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      },
+      {
+        "obs_id": 212,
+        "question_code": "GAP-S3-002",
+        "section": "Section 3 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Does the comparative or evaluative mode of the word (where the word functions as a ranking operator rather than naming a characteristic) constitute a distinct analytical case requiring separate treatment?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      }
+    ],
+    "Section 4 — Generic (gap addition R067)": [
+      {
+        "obs_id": 213,
+        "question_code": "GAP-S4-001",
+        "section": "Section 4 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Where the programme has distributed a root family across multiple registries, what does that distribution reveal about the programme's analytical framework, and does the distribution reflect genuine semantic distinctions or is it a programme boundary decision requiring Session D review?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      }
+    ],
     "Section 4 — Original Language Vocabulary": [
       {
         "obs_id": 86,
@@ -2982,6 +3366,19 @@ Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every 
         "scope": "universal",
         "status": "active"
       }
+    ],
+    "Section 5 — Generic (gap addition R067)": [
+      {
+        "obs_id": 214,
+        "question_code": "GAP-S5-001",
+        "section": "Section 5 — Generic (gap addition R067)",
+        "source_word": "goodness",
+        "source_registry_no": 67,
+        "question_text": "Where a registry's word functions in more than one dimension (both as a character attribute and as a comparative/evaluative operator), does the co-occurrence and correlation data reveal different connection patterns for different modes of the word?",
+        "pattern_type": null,
+        "scope": "universal",
+        "status": "active"
+      }
     ]
   }
 }
@@ -2989,19 +3386,326 @@ Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every 
 
 ### Registry-specific questions for 067 goodness
 
-_None._ No questions in `wa_obs_question_catalogue` are sourced from registry 67 (goodness).
+**6 question(s)** sourced from this registry's prior work. Include in Stage 2b alongside the generic questions.
+
+```json
+{
+  "registry_no": 67,
+  "registry_word": "goodness",
+  "total": 6,
+  "questions": [
+    {
+      "obs_id": 215,
+      "question_code": "WS-001",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "Does the comparative wisdom idiom (Group 884-004 — better-than sayings) operate as a distinct mode of goodness, or is it a subset of moral character?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    },
+    {
+      "obs_id": 216,
+      "question_code": "WS-002",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "What is the analytical relationship between agathōsunē (G0019 — goodness) and chrēstotēs (G5544 — kindness) as co-OWNER terms of this registry? Are they aspects of a single characteristic or genuinely distinct inner-being phenomena sharing a registry?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    },
+    {
+      "obs_id": 217,
+      "question_code": "WS-003",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "What does the Haman instance (Est 5:9 — tov-lev, glad of heart) reveal about the difference between genuine inner well-being and morally ungrounded inner pleasure?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    },
+    {
+      "obs_id": 218,
+      "question_code": "WS-004",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "What does the liturgical repetition of \"the Lord is good, his steadfast love endures forever\" (appearing as a refrain across Psalms 106, 107, 118, 136) reveal about goodness as a confessional and community-forming declaration?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    },
+    {
+      "obs_id": 219,
+      "question_code": "WS-005",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "Does the NT's coinage of agathōsunē as a new abstract noun signal a shift from tov's broad Hebrew range to a more specialised NT understanding of goodness as Spirit-produced virtue — and does this shift represent development or narrowing?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    },
+    {
+      "obs_id": 220,
+      "question_code": "WS-006",
+      "section": "Goodness Extensions",
+      "source_word": "goodness",
+      "source_registry_no": 67,
+      "question_text": "Does the programme's tri-registry distribution of the TOV root family (goodness as quality in R67, doing good in R65, relational pleasantness in R103) produce a coherent analytical triad for Session D, or does it create artificial boundaries that need to be addressed at synthesis?",
+      "pattern_type": null,
+      "scope": "universal",
+      "status": "active"
+    }
+  ]
+}
+```
 
 ---
 
 ## N. Open Session B Items — must resolve this session
 
-**No open items.** This is either a first analytical session for the registry, or all prior open items have been resolved.
+**28 open item(s) carried forward.** Each must reach one of these outcomes by session close — recorded back on the Session B finding row:
+
+- **(a)** Resolve via Q&A: link to a catalogue question + record answer → `wa_finding_catalogue_links` row + `wa_session_b_findings.status='resolved_qa'`
+- **(b)** Raise follow-up research question (new GAP catalogue entry) → inserts a new `wa_obs_question_catalogue` row + `status='resolved_qa'`
+- **(c)** Convert to SD pointer (cross-registry research target) → `wa_session_research_flags` insert + `status='resolved_sd'`
+- **(d)** Mark no_longer_relevant with reason → `wa_session_b_findings.status='not_relevant'` + `obsolete_reason`
+
+**Items below are not optional. Each must be addressed.**
+
+### `OBS-067-OBS-002` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Registry-level dimension = Moral/Conscience; groups show wider spread — tension noted
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-003` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Domain G failure (no researcher narrative) — documentation gap only, not analytical
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-004` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> XREF structure: 6/9 terms to R65 (generosity); agathos 90-verse OWNER vs agathōsunē 4-verse
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-005` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> H2898 (tuv) has 0 OWNER verses in R103 — possible data quality observation
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-006` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> H2896A meaning parse: 10 sub-senses covering the full landscape of the 9 groups
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-011` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Three H2896A groups have NULL dimension (884-007, 884-008, 884-009)
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-013` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-007 NULL — creation pronouncement; no existing dimension label fits cleanly
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-014` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-008 NULL — volitional preference; likely Volition (04) candidate
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-015` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-009 NULL — shalom-condition; no clean dimension fit; may need experiential category
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-017` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> G5544 bipartite dimension split: divine = 11, human = 05; structurally coherent
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-018` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> R103 (love) deepest structural XREF link; R42 (delight) Hebrew-only; R99 (kindness) Greek
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-019` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Co-occurrence: R103 (love, 23) > R43 (desire, 18) > R197 (authority, 17) as top 3
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-020` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> R197 (authority) unexpectedly high — likely driven by 884-008 volitional-preference idiom
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-021` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Mic 6:8 (6 co-anchors) and Gal 5:22 (5 co-anchors) are the two highest-density cross-registry nodes
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-022` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> DIM-67-001: core analytical question — distinct phenomena vs unified category
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-023` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> DIM-67-001 uses pre-v1.4 dimension vocabulary; needs re-reading against current labels
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-024` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> SBF-VCB013-001: tripartite model confirmed; OBS-010 extends distortion pole etymologically
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-030` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> ISSUE-E reinforced: 884-003 anchor (Psa 73:28) is spiritual orientation, not primarily moral
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-031` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-004 anchors rank inner qualities above external power — structural normative claim
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-032` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Pro 16:32: shared anchor with anger (R4) and dominion (R199); genuine cross-registry bridge
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-034` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> ISSUE-E reinforced: 884-005 dominant subject is God's faithfulness, not human moral character
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-037` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-007 dimension NULL reinforced — needs a divine creative/evaluative agency category
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-039` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> 884-008 NULL likely = Volition (04) — group description explicitly names choosing/preferring
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-041` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Est 5:9 shared anchor with R97 (joy): tov-lev as joy-state vs distinct well-being state
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-044` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Rom 11:22: raises Session D question — are divine inner dispositions unconditional or relational?
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-045` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> Two OWNER terms co-anchor at Gal 5:22 with different dimensions (Volition vs Moral Character)
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-047` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> G0019 and G5544 thin-evidence confirmed by small corpora; conclusions proportionally limited
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
+
+### `OBS-067-OBS-049` — OBSERVATION
+
+- **Raised:** 2026-04-27T06:32:13Z · **Term context:** - · **Source instruction:** wa-sessionb-analysis-output-v1_1 · **Thin evidence:** 0
+
+> SBF-VCB013-001 confirmed and extended: presence/absence holds for full registry; distortion etymological not textual
+
+**Required outcome (one of a/b/c/d above). Record on this finding row at session close.**
 
 ---
 
 ## M. Readiness Verification
 
-- **Generated at:** `2026-04-27T05:59:13Z`
+- **Generated at:** `2026-04-27T06:33:29Z`
 - **Schema version:** `3.17.0`
 - **OWNER term md_versions present:** `[2]`
 
