@@ -16,8 +16,8 @@ import json
 import os
 import sys
 
-DB_PATH   = os.path.join("data", "bible_research.db")
-PATCH_PATH = os.path.join("data", "imports", "WA", "Patches",
+DB_PATH   = os.path.join("database", "bible_research.db")
+PATCH_PATH = os.path.join("Sessions", "Patches",
                           "stem-extraction-patch-20260319-v1.json")
 
 def main():

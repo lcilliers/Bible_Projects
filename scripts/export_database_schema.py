@@ -23,8 +23,8 @@ import sqlite3
 import sys
 
 ROOT_DIR = os.path.join(os.path.dirname(__file__), "..")
-DB_PATH = os.path.join(ROOT_DIR, "data", "bible_research.db")
-DEFAULT_OUTPUT_DIR = os.path.join(ROOT_DIR, "data", "schema")
+DB_PATH = os.path.join(ROOT_DIR, "database", "bible_research.db")
+DEFAULT_OUTPUT_DIR = os.path.join(ROOT_DIR, "Workflow", "schema")
 
 
 def get_schema_version(conn):

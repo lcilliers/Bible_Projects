@@ -1,0 +1,963 @@
+{
+  "metadata": {
+    "generated_at": "2026-04-14T19:13:34Z",
+    "database": "database/bible_research.db",
+    "schema_version": "3.8.0",
+    "description": "Complete flag tables extract: reference definitions and in-use codes across all flag storage tables in the programme."
+  },
+  "storage_tables_summary": {
+    "wa_term_phase2_flags": {
+      "rows": 1580,
+      "reference_table": "phase2_flag_types",
+      "purpose": "Per-inventory analytical flags assigned by Claude AI during Session B"
+    },
+    "mti_term_flags": {
+      "rows": 54,
+      "reference_table": "phase2_flag_types",
+      "purpose": "Per-MTI-term analytical flags (programme-wide, not per-registry)"
+    },
+    "wa_data_quality_flags": {
+      "rows": 22129,
+      "reference_table": "wa_quality_flag_types",
+      "purpose": "Engine-derived per-term quality indicators (reset on every audit_word run for DATA_COVERAGE group)"
+    },
+    "wa_session_research_flags": {
+      "rows": 327,
+      "reference_table": "wa_quality_flag_types (partial — most in-use codes lack reference entries)",
+      "purpose": "Session research observations, SD pointers, PH2 flags"
+    },
+    "wa_cross_registry_links": {
+      "rows": 158,
+      "reference_table": "wa_crosslink_type",
+      "purpose": "Explicit semantic connections between word registries"
+    }
+  },
+  "reference_tables": {
+    "phase2_flag_types": {
+      "description": "Reference table defining Phase 2 / Session B analytical flag codes",
+      "total_codes": 25,
+      "codes": [
+        {
+          "id": 1,
+          "flag_code": "GOD_AS_SUBJECT",
+          "description": "God experiences, enacts, or is the direct subject of this inner state or action in at least one meaning sub-definition or verse",
+          "used_in_phase2_flags": 196,
+          "used_in_mti_term_flags": 39
+        },
+        {
+          "id": 2,
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "description": "Term has an explicit causative grammatical form: Hiphil or Piel (Hebrew) or stated causative sense (Greek); causes the inner state in another",
+          "used_in_phase2_flags": 208,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 3,
+          "flag_code": "SOMATIC_INNER_LINK",
+          "description": "Meaning block or verses connect this inner state to a specific bodily organ or physical process as its seat or origin",
+          "used_in_phase2_flags": 168,
+          "used_in_mti_term_flags": 4
+        },
+        {
+          "id": 4,
+          "flag_code": "BODY_INNER_EXPRESSION",
+          "description": "Inner state manifests through visible outward physical behaviour such as trembling, weeping, prostration, or the face falling",
+          "used_in_phase2_flags": 34,
+          "used_in_mti_term_flags": 2
+        },
+        {
+          "id": 5,
+          "flag_code": "NT_FACULTY_NAMING",
+          "description": "Greek term directly names an inner faculty (kardia, pneuma, psuche, nous); faculty-naming warrants attention in Session B",
+          "used_in_phase2_flags": 11,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 6,
+          "flag_code": "GENERATION_RESOLUTION_PAIR",
+          "description": "Hebrew-Aramaic or Hebrew-Greek pair resolving to the same referent across language or testament boundary",
+          "used_in_phase2_flags": 63,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 7,
+          "flag_code": "CROSS_PART_ROOT",
+          "description": "Term shares a root family with one or more terms in another part of this split registry; root spans the part boundary",
+          "used_in_phase2_flags": 17,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 8,
+          "flag_code": "THIN_DATA",
+          "description": "Fewer than 5 verse records or very low occurrence count; dataset too thin for confident Session B analysis",
+          "used_in_phase2_flags": 47,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 9,
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "description": "Verse count is less than 20 percent of stated occurrence count for terms with 20 or more occurrences; sample is not representative",
+          "used_in_phase2_flags": 6,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 10,
+          "flag_code": "DUPLICATE_RESOLVED",
+          "description": "Term appeared as a duplicate entry in the source data; resolved and recorded as a single term record with a quality note",
+          "used_in_phase2_flags": 1,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 11,
+          "flag_code": "NO_WORD_ANALYSIS",
+          "description": "No STEP word analysis data available for this term; meaning and verse records are absent; extraction deferred",
+          "used_in_phase2_flags": 4,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 12,
+          "flag_code": "CONSOLIDATION_CANDIDATE",
+          "description": "Term is likely to merge with a closely related entry during Session B; warrants review before final dataset construction",
+          "used_in_phase2_flags": 3,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 13,
+          "flag_code": "THEOLOGICAL_ANCHOR",
+          "description": "Framework A/B intersection term  Session B analysis deferred",
+          "used_in_phase2_flags": 6,
+          "used_in_mti_term_flags": 9
+        },
+        {
+          "id": 14,
+          "flag_code": "SOMATIC_EXPRESSION",
+          "description": "Term expresses inner state through somatic or body-language patterns",
+          "used_in_phase2_flags": 19,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 15,
+          "flag_code": "HIGH_FREQUENCY_ANCHOR",
+          "description": "Term occurs 200 or more times; high frequency makes it a primary anchor for its semantic field",
+          "used_in_phase2_flags": 13,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 16,
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "description": "Term covers 4 or more distinct semantic domains; breadth warrants attention in Session B cross-part synthesis",
+          "used_in_phase2_flags": 201,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 17,
+          "flag_code": "MULTI_REGISTRY_ANCHOR",
+          "description": "Term appears as a cross-reference in 3 or more registries; functions as a conceptual anchor across multiple word families",
+          "used_in_phase2_flags": 8,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 18,
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "description": "God and humans appear as subject of this term in structurally parallel contexts within the verse set",
+          "used_in_phase2_flags": 156,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 19,
+          "flag_code": "ESCHATOLOGICAL_USAGE",
+          "description": "Term is predominant in eschatological or apocalyptic passages; eschatological register warrants attention in Session B",
+          "used_in_phase2_flags": 36,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 20,
+          "flag_code": "WISDOM_LITERATURE_CONCENTRATION",
+          "description": "Term is predominant in Proverbs, Job, or Ecclesiastes; wisdom literature concentration warrants attention in Session B",
+          "used_in_phase2_flags": 67,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 21,
+          "flag_code": "METAPHOR_ROOT",
+          "description": "Term meaning is grounded in concrete physical or sensory metaphor rather than direct abstract description",
+          "used_in_phase2_flags": 108,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 22,
+          "flag_code": "RELATIONAL_DIRECTION",
+          "description": "Term is inherently directed toward another person, group, or God; relational orientation is intrinsic to its meaning",
+          "used_in_phase2_flags": 93,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 23,
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "description": "Term carries a dimension of will, choice, or intention alongside or within its inner-state meaning",
+          "used_in_phase2_flags": 105,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 24,
+          "flag_code": "CROSS_TESTAMENT_SHIFT",
+          "description": "Term exhibits a meaningful semantic shift between OT and NT usage; shift warrants attention in Session B",
+          "used_in_phase2_flags": 6,
+          "used_in_mti_term_flags": 0
+        },
+        {
+          "id": 25,
+          "flag_code": "ARAMAIC_FORM",
+          "description": "Term is an Aramaic form of a Hebrew root occurring in Daniel, Ezra, or post-exilic contexts",
+          "used_in_phase2_flags": 4,
+          "used_in_mti_term_flags": 0
+        }
+      ]
+    },
+    "wa_quality_flag_types": {
+      "description": "Reference table defining engine-derived and session-scoped flag codes",
+      "total_codes": 14,
+      "groups": [
+        "DATA_COVERAGE",
+        "SESSION_B",
+        "SESSION_D"
+      ],
+      "codes": [
+        {
+          "id": 1,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "NO_VERSES",
+          "description": "No verse records found for this term in the source data",
+          "used_in_data_quality_flags": 513
+        },
+        {
+          "id": 2,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "THIN_DATA",
+          "description": "Fewer verse occurrences than expected; analysis may be limited",
+          "used_in_data_quality_flags": 4918
+        },
+        {
+          "id": 3,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "description": "Only a partial sample of available verses was captured",
+          "used_in_data_quality_flags": 2973
+        },
+        {
+          "id": 4,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "NO_WORD_ANALYSIS",
+          "description": "No word-level analysis is available for this term",
+          "used_in_data_quality_flags": 7492
+        },
+        {
+          "id": 23,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "SPAN_RESOLUTION_CONFLICT",
+          "description": "Queried Strong's not found in any verse span after suffix resolution. Verse set is empty. Manual STEP UI verification required.",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 24,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "SPAN_FILTER_APPLIED",
+          "description": "One or more verse records were discarded by span filter during fetch or AUDIT back-population. verse_count_filtered in term_fetch_log records the count.",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 36,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "HIGH_FREQUENCY_ANCHOR",
+          "description": null,
+          "used_in_data_quality_flags": 278
+        },
+        {
+          "id": 47,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "PROSE_ONLY_MEANING",
+          "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available.",
+          "used_in_data_quality_flags": 5640
+        },
+        {
+          "id": 310,
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "CONCRETE_PHYSICAL",
+          "description": "Term denotes a concrete physical object, substance, or spatial concept (sand, rampart, hand, stork). Retained for verse analysis but flagged as unlikely inner-being vocabulary without contextual evidence.",
+          "used_in_data_quality_flags": 315
+        },
+        {
+          "id": 145,
+          "flag_group": "SESSION_B",
+          "flag_code": "SB_FINDING",
+          "description": "Session B key finding from key_findings array in Session B JSON",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 146,
+          "flag_group": "SESSION_B",
+          "flag_code": "SB_DIMENSION",
+          "description": "Session B dimensional profile record — one per active dimension",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 147,
+          "flag_group": "SESSION_B",
+          "flag_code": "SB_INNER_BEING",
+          "description": "Session B inner being standing classification",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 148,
+          "flag_group": "SESSION_D",
+          "flag_code": "SD_POINTER",
+          "description": "Session D pointer — cross-registry structural observation from Session B",
+          "used_in_data_quality_flags": 0
+        },
+        {
+          "id": 149,
+          "flag_group": "SESSION_D",
+          "flag_code": "SD_CLUSTER",
+          "description": "Session D cluster maturity flag — researcher-triggered when cluster is ready",
+          "used_in_data_quality_flags": 0
+        }
+      ]
+    },
+    "wa_crosslink_type": {
+      "description": "Reference table defining cross-registry connection types",
+      "total_codes": 11,
+      "codes": [
+        {
+          "id": 1,
+          "type_code": "SHARED_TERM",
+          "description": "The same Hebrew or Greek term appears in both word studies",
+          "used_in_links": 64
+        },
+        {
+          "id": 2,
+          "type_code": "SEMANTIC_OVERLAP",
+          "description": "The two registries share overlapping meaning space",
+          "used_in_links": 45
+        },
+        {
+          "id": 3,
+          "type_code": "SHARED_ROOT",
+          "description": "The registries share a common etymological root",
+          "used_in_links": 21
+        },
+        {
+          "id": 4,
+          "type_code": "SHARED_VERSE",
+          "description": "The same verse references appear in both word studies",
+          "used_in_links": 16
+        },
+        {
+          "id": 5,
+          "type_code": "THEOLOGICAL",
+          "description": "The registries are connected by a theological concept or theme",
+          "used_in_links": 2
+        },
+        {
+          "id": 6,
+          "type_code": "CO_OCCURRENCE",
+          "description": "Terms from the two registries frequently appear together in passages",
+          "used_in_links": 2
+        },
+        {
+          "id": 7,
+          "type_code": "SEMANTIC_OPPOSITION",
+          "description": "The registries represent antonyms or semantic contrasts",
+          "used_in_links": 2
+        },
+        {
+          "id": 8,
+          "type_code": "SISTER_REGISTRY",
+          "description": "Parallel registries covering closely related vocabulary (e.g. power/authority)",
+          "used_in_links": 1
+        },
+        {
+          "id": 9,
+          "type_code": "OVERLAPPING_DOMAIN",
+          "description": "Registries sharing terms with overlapping semantic domains",
+          "used_in_links": 1
+        },
+        {
+          "id": 10,
+          "type_code": "CAUSATIVE_CHAIN",
+          "description": "Causal relationship between inner states across registries",
+          "used_in_links": 1
+        },
+        {
+          "id": 11,
+          "type_code": "THEMATIC_LINK",
+          "description": "Thematic connection identified during Session B analysis",
+          "used_in_links": 3
+        }
+      ]
+    }
+  },
+  "in_use_analysis": {
+    "wa_term_phase2_flags_by_code": {
+      "total_flags": 1580,
+      "distinct_codes_used": 25,
+      "distribution": [
+        {
+          "flag_code": "CAUSATIVE_OF_INNER_STATE",
+          "count": 208,
+          "distinct_terms": 208,
+          "on_active_terms": 189,
+          "on_deleted_terms": 19
+        },
+        {
+          "flag_code": "SEMANTIC_RANGE_BREADTH",
+          "count": 201,
+          "distinct_terms": 201,
+          "on_active_terms": 182,
+          "on_deleted_terms": 17
+        },
+        {
+          "flag_code": "GOD_AS_SUBJECT",
+          "count": 196,
+          "distinct_terms": 196,
+          "on_active_terms": 184,
+          "on_deleted_terms": 12
+        },
+        {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "count": 168,
+          "distinct_terms": 168,
+          "on_active_terms": 155,
+          "on_deleted_terms": 13
+        },
+        {
+          "flag_code": "DIVINE_HUMAN_PARALLEL",
+          "count": 156,
+          "distinct_terms": 156,
+          "on_active_terms": 146,
+          "on_deleted_terms": 10
+        },
+        {
+          "flag_code": "METAPHOR_ROOT",
+          "count": 108,
+          "distinct_terms": 108,
+          "on_active_terms": 90,
+          "on_deleted_terms": 17
+        },
+        {
+          "flag_code": "VOLITIONAL_COMPONENT",
+          "count": 105,
+          "distinct_terms": 105,
+          "on_active_terms": 92,
+          "on_deleted_terms": 10
+        },
+        {
+          "flag_code": "RELATIONAL_DIRECTION",
+          "count": 93,
+          "distinct_terms": 93,
+          "on_active_terms": 67,
+          "on_deleted_terms": 23
+        },
+        {
+          "flag_code": "WISDOM_LITERATURE_CONCENTRATION",
+          "count": 67,
+          "distinct_terms": 67,
+          "on_active_terms": 56,
+          "on_deleted_terms": 11
+        },
+        {
+          "flag_code": "GENERATION_RESOLUTION_PAIR",
+          "count": 63,
+          "distinct_terms": 63,
+          "on_active_terms": 56,
+          "on_deleted_terms": 6
+        },
+        {
+          "flag_code": "THIN_DATA",
+          "count": 47,
+          "distinct_terms": 47,
+          "on_active_terms": 47,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "ESCHATOLOGICAL_USAGE",
+          "count": 36,
+          "distinct_terms": 36,
+          "on_active_terms": 34,
+          "on_deleted_terms": 2
+        },
+        {
+          "flag_code": "BODY_INNER_EXPRESSION",
+          "count": 34,
+          "distinct_terms": 34,
+          "on_active_terms": 29,
+          "on_deleted_terms": 5
+        },
+        {
+          "flag_code": "SOMATIC_EXPRESSION",
+          "count": 19,
+          "distinct_terms": 19,
+          "on_active_terms": 19,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "CROSS_PART_ROOT",
+          "count": 17,
+          "distinct_terms": 17,
+          "on_active_terms": 17,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "HIGH_FREQUENCY_ANCHOR",
+          "count": 13,
+          "distinct_terms": 13,
+          "on_active_terms": 13,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "NT_FACULTY_NAMING",
+          "count": 11,
+          "distinct_terms": 11,
+          "on_active_terms": 9,
+          "on_deleted_terms": 2
+        },
+        {
+          "flag_code": "MULTI_REGISTRY_ANCHOR",
+          "count": 8,
+          "distinct_terms": 8,
+          "on_active_terms": 8,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "THEOLOGICAL_ANCHOR",
+          "count": 6,
+          "distinct_terms": 6,
+          "on_active_terms": 6,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "count": 6,
+          "distinct_terms": 6,
+          "on_active_terms": 6,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "CROSS_TESTAMENT_SHIFT",
+          "count": 6,
+          "distinct_terms": 6,
+          "on_active_terms": 5,
+          "on_deleted_terms": 1
+        },
+        {
+          "flag_code": "NO_WORD_ANALYSIS",
+          "count": 4,
+          "distinct_terms": 4,
+          "on_active_terms": 3,
+          "on_deleted_terms": 1
+        },
+        {
+          "flag_code": "ARAMAIC_FORM",
+          "count": 4,
+          "distinct_terms": 4,
+          "on_active_terms": 4,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "CONSOLIDATION_CANDIDATE",
+          "count": 3,
+          "distinct_terms": 3,
+          "on_active_terms": 3,
+          "on_deleted_terms": 0
+        },
+        {
+          "flag_code": "DUPLICATE_RESOLVED",
+          "count": 1,
+          "distinct_terms": 1,
+          "on_active_terms": 1,
+          "on_deleted_terms": 0
+        }
+      ]
+    },
+    "mti_term_flags_by_code": {
+      "total_flags": 54,
+      "distinct_codes_used": 4,
+      "distribution": [
+        {
+          "flag_code": "GOD_AS_SUBJECT",
+          "count": 39
+        },
+        {
+          "flag_code": "THEOLOGICAL_ANCHOR",
+          "count": 9
+        },
+        {
+          "flag_code": "SOMATIC_INNER_LINK",
+          "count": 4
+        },
+        {
+          "flag_code": "BODY_INNER_EXPRESSION",
+          "count": 2
+        }
+      ]
+    },
+    "wa_data_quality_flags_by_code": {
+      "total_flags": 22129,
+      "distinct_codes_used": 7,
+      "distribution": [
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "NO_WORD_ANALYSIS",
+          "count": 7492
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "PROSE_ONLY_MEANING",
+          "count": 5640
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "THIN_DATA",
+          "count": 4918
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "SMALL_VERSE_SAMPLE",
+          "count": 2973
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "NO_VERSES",
+          "count": 513
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "CONCRETE_PHYSICAL",
+          "count": 315
+        },
+        {
+          "flag_group": "DATA_COVERAGE",
+          "flag_code": "HIGH_FREQUENCY_ANCHOR",
+          "count": 278
+        }
+      ]
+    },
+    "wa_session_research_flags_by_code": {
+      "total_flags": 327,
+      "distinct_codes_used": 16,
+      "codes_with_reference_entry": 1,
+      "codes_without_reference_entry": 15,
+      "note": "Most PH2_* and ad-hoc codes have no entry in wa_quality_flag_types. Only SD_POINTER is properly referenced. This is a reference table completeness gap.",
+      "distribution": [
+        {
+          "flag_code": "SD_POINTER",
+          "count": 229,
+          "distinct_registries": 60,
+          "distinct_targets": 70,
+          "priority_high": 79,
+          "priority_medium": 131,
+          "priority_low": 19,
+          "targets_session_d": 229,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-27",
+          "latest_date": "2026-04-13",
+          "reference_entry": {
+            "id": 148,
+            "flag_group": "SESSION_D"
+          },
+          "has_reference": true
+        },
+        {
+          "flag_code": "PH2_VOLUME_LIMITATION",
+          "count": 33,
+          "distinct_registries": 13,
+          "distinct_targets": 0,
+          "priority_high": 2,
+          "priority_medium": 27,
+          "priority_low": 4,
+          "targets_session_d": 32,
+          "targets_session_b": 1,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-27",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "VOLUME_LIMITATION",
+          "count": 19,
+          "distinct_registries": 6,
+          "distinct_targets": 0,
+          "priority_high": 4,
+          "priority_medium": 12,
+          "priority_low": 3,
+          "targets_session_d": 19,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-25",
+          "latest_date": "2026-03-26",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_DATA_ERROR",
+          "count": 11,
+          "distinct_registries": 9,
+          "distinct_targets": 0,
+          "priority_high": 7,
+          "priority_medium": 1,
+          "priority_low": 3,
+          "targets_session_d": 4,
+          "targets_session_b": 7,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-27",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "DIMREVIEW_SESSION_D",
+          "count": 8,
+          "distinct_registries": 7,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 8,
+          "priority_low": 0,
+          "targets_session_d": 8,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-04-11",
+          "latest_date": "2026-04-11",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_CROSS_REGISTRY_REQUIRED",
+          "count": 7,
+          "distinct_registries": 5,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 7,
+          "priority_low": 0,
+          "targets_session_d": 7,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-26",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_CROSS_REF_ENRICHMENT",
+          "count": 6,
+          "distinct_registries": 2,
+          "distinct_targets": 0,
+          "priority_high": 3,
+          "priority_medium": 3,
+          "priority_low": 0,
+          "targets_session_d": 6,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-04-09",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_THEOLOGICAL_DEPTH_REQUIRED",
+          "count": 4,
+          "distinct_registries": 3,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 4,
+          "priority_low": 0,
+          "targets_session_d": 4,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-24",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_DATA_QUALITY",
+          "count": 3,
+          "distinct_registries": 2,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 3,
+          "priority_low": 0,
+          "targets_session_d": 3,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-26",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "THEMATIC_LINK",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 1,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-04-09",
+          "latest_date": "2026-04-09",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_EXEGETICAL_STUDY_REQUIRED",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 1,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-24",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_ESCHATOLOGICAL_STUDY_REQUIRED",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 1,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-24",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_DATA_SPLIT_REQUIRED",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 1,
+          "priority_medium": 0,
+          "priority_low": 0,
+          "targets_session_d": 0,
+          "targets_session_b": 1,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-25",
+          "latest_date": "2026-03-25",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "PH2_BOUNDARY_QUESTION",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 0,
+          "priority_medium": 1,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-24",
+          "latest_date": "2026-03-24",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "DATA_INTEGRITY",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 1,
+          "priority_medium": 0,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-25",
+          "latest_date": "2026-03-25",
+          "reference_entry": null,
+          "has_reference": false
+        },
+        {
+          "flag_code": "CANDIDATE_REGISTRY_WORD",
+          "count": 1,
+          "distinct_registries": 1,
+          "distinct_targets": 0,
+          "priority_high": 1,
+          "priority_medium": 0,
+          "priority_low": 0,
+          "targets_session_d": 1,
+          "targets_session_b": 0,
+          "resolved_count": 0,
+          "earliest_date": "2026-03-25",
+          "latest_date": "2026-03-25",
+          "reference_entry": null,
+          "has_reference": false
+        }
+      ]
+    },
+    "wa_cross_registry_links_by_type": {
+      "total_links": 158,
+      "distinct_types_used": 11,
+      "distribution": [
+        {
+          "type_code": "SHARED_TERM",
+          "count": 64
+        },
+        {
+          "type_code": "SEMANTIC_OVERLAP",
+          "count": 45
+        },
+        {
+          "type_code": "SHARED_ROOT",
+          "count": 21
+        },
+        {
+          "type_code": "SHARED_VERSE",
+          "count": 16
+        },
+        {
+          "type_code": "THEMATIC_LINK",
+          "count": 3
+        },
+        {
+          "type_code": "THEOLOGICAL",
+          "count": 2
+        },
+        {
+          "type_code": "SEMANTIC_OPPOSITION",
+          "count": 2
+        },
+        {
+          "type_code": "CO_OCCURRENCE",
+          "count": 2
+        },
+        {
+          "type_code": "SISTER_REGISTRY",
+          "count": 1
+        },
+        {
+          "type_code": "OVERLAPPING_DOMAIN",
+          "count": 1
+        },
+        {
+          "type_code": "CAUSATIVE_CHAIN",
+          "count": 1
+        }
+      ]
+    }
+  }
+}

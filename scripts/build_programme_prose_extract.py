@@ -11,8 +11,8 @@ Usage:
   python scripts/build_programme_prose_extract.py --all-formats     # JSON + MD + DOCX with bodies
 
 Default outputs:
-  data/exports/reference/wa-programme-prose-extract-{YYYYMMDD}.json
-  data/exports/reference/wa-programme-prose-extract-{YYYYMMDD}.md   (if --also-markdown)
+  Workflow/reference/wa-programme-prose-extract-{YYYYMMDD}.json
+  Workflow/reference/wa-programme-prose-extract-{YYYYMMDD}.md   (if --also-markdown)
   outputs/docx/wa-programme-prose-extract-{YYYYMMDD}.docx            (if --also-docx)
 
 Content is expected to be empty after M34 seed; populated later via PROSE
@@ -30,8 +30,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("data", "exports", "reference")
+DB_PATH = os.path.join("database", "bible_research.db")
+OUT_DIR = os.path.join("Workflow", "reference")
 DOCX_OUT_DIR = os.path.join("outputs", "docx")
 EXTRACTOR_VERSION = "1.1"
 

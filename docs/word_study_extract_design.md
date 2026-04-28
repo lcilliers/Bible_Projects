@@ -26,7 +26,7 @@ The extract output will not include terms that are already in `wa_term_inventory
 
 Input: English word from `word_registry` (e.g. `--word soul`)
 
-Output: `data/discovery/{word}_step_data_{YYYYMMDD}.json`
+Output: `research/discovery/{word}_step_data_{YYYYMMDD}.json`
 
 ### JSON structure
 
@@ -516,7 +516,7 @@ python scripts/word_study_extract.py --word soul
 python scripts/word_study_extract.py --word soul --anchors H5315G,G5590G
 ```
 
-Output files written to `data/discovery/`:
+Output files written to `research/discovery/`:
 - `182_soul_step_data_20260323.json` — full structured data (machine-readable)
 - `182_soul_step_data_20260323.md` — summary table (human-readable review)
 

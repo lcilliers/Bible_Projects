@@ -9,7 +9,7 @@ import numpy as np
 from collections import defaultdict
 import math
 
-DB = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 OUT = os.path.join(os.path.dirname(__file__), "..", "outputs")
 
 

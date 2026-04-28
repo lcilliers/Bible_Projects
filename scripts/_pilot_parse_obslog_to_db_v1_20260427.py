@@ -9,13 +9,13 @@ This script does NOT write to the DB.
 
 Usage:
   python scripts/_pilot_parse_obslog_to_db_v1_20260427.py \
-      --obslog data/imports/WA/Patches/wa-obslog-ro-067-goodness-anlys-v2-20260426.md \
+      --obslog Sessions/Patches/wa-obslog-ro-067-goodness-anlys-v2-20260426.md \
       --registry 67 \
       --compare-archive 'archive/patches/wa-067-goodness-patch-*-20260427.json'
 
 Outputs:
-  outputs/reports/words/wa-{NNN}-{word}-obslog-parse-manifest-v1-{date}.json
-  outputs/reports/words/wa-{NNN}-{word}-obslog-validation-v1-{date}.md
+  Sessions/Session_B/09_Analysis_output_logs/words/wa-{NNN}-{word}-obslog-parse-manifest-v1-{date}.json
+  Sessions/Session_B/09_Analysis_output_logs/words/wa-{NNN}-{word}-obslog-validation-v1-{date}.md
 """
 from __future__ import annotations
 import argparse
@@ -29,7 +29,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = os.path.join("data", "bible_research.db")
+DB_PATH = os.path.join("database", "bible_research.db")
 OUT_DIR = os.path.join("outputs", "reports", "words")
 
 
@@ -253,6 +253,54 @@ def parse_chapters(text: str) -> list:
     return chapters
 
 
+def parse_prose_supersedes(text: str) -> list:
+    """Extract Stage 2c SUPERSEDE blocks (revision sessions, per v2.7 / v2.CC9).
+
+    Block format:
+      ### SUPERSEDE: sb_s2c_ch{n} — {title}
+
+      **registry_id:** {n}
+      **author:** claude_ai
+      **version:** supersedes prior sb_s2c_ch{n} for registry {n}
+      **source_file:** {filename}
+
+      ---
+
+      {body with inline citations}
+    """
+    blocks = []
+    pat = re.compile(
+        r"^###\s+SUPERSEDE:\s+(sb_s2c_ch\d+)\s+—\s+(.+?)\n"
+        r"((?:.|\n)*?)"
+        r"(?=\n###\s+SUPERSEDE:|\n##\s|\Z)",
+        re.MULTILINE,
+    )
+    for m in pat.finditer(text):
+        section_code = m.group(1).strip()
+        title = m.group(2).strip()
+        block_body = m.group(3)
+
+        reg_m = re.search(r"\*\*registry_id:\*\*\s*(\d+)", block_body)
+        author_m = re.search(r"\*\*author:\*\*\s*(.+?)$", block_body, re.MULTILINE)
+        source_m = re.search(r"\*\*source_file:\*\*\s*(.+?)$", block_body, re.MULTILINE)
+
+        # Body sits after the `---` separator that closes the metadata header.
+        # Split on first standalone `---` line; if absent, treat full block as body.
+        parts = re.split(r"\n---\s*\n", block_body, maxsplit=1)
+        body = parts[1].strip() if len(parts) == 2 else block_body.strip()
+
+        blocks.append({
+            "section_code": section_code,
+            "title": title,
+            "registry_id": int(reg_m.group(1)) if reg_m else None,
+            "author": author_m.group(1).strip() if author_m else "claude_ai",
+            "source_file": source_m.group(1).strip() if source_m else None,
+            "body": body,
+            "char_count": len(body),
+        })
+    return blocks
+
+
 def parse_gap_and_ws_questions(text: str) -> dict:
     """Extract GAP and WORD-SPECIFIC question proposals from Gap Assessment sections."""
     gaps = []
@@ -377,6 +425,7 @@ def validate(manifest: dict, text: str) -> dict:
         "sd_pointers": len(manifest["sd_pointers"]),
         "observations": len(manifest["observations"]),
         "chapters": len(manifest["chapters"]),
+        "prose_supersedes": len(manifest.get("prose_supersedes", [])),
         "gap_questions": len(manifest["gap_questions"]),
         "ws_questions": len(manifest["ws_questions"]),
         "review_notes": len(manifest["review_notes"]),
@@ -537,7 +586,7 @@ def render_validation_md(manifest: dict, validation: dict, comparison: dict, reg
     L.append("")
     L.append("| Category | Declared | Parsed | Match |")
     L.append("|---|---:|---:|---|")
-    for cat in ("qa_findings", "sd_pointers", "observations", "chapters", "gap_questions", "ws_questions", "review_notes", "issues"):
+    for cat in ("qa_findings", "sd_pointers", "observations", "chapters", "prose_supersedes", "gap_questions", "ws_questions", "review_notes", "issues"):
         d = validation["declared_counts"].get(cat, "—")
         p = validation["parsed_counts"][cat]
         match = "—" if d == "—" else ("✓" if d == p else "⚠️ mismatch")
@@ -572,7 +621,7 @@ def render_validation_md(manifest: dict, validation: dict, comparison: dict, reg
     # Sample first few items per category for visual inspection
     L.append("## Parser samples (first 3 per category)")
     L.append("")
-    for cat in ("qa_findings", "sd_pointers", "observations", "chapters", "gap_questions", "ws_questions"):
+    for cat in ("qa_findings", "sd_pointers", "observations", "chapters", "prose_supersedes", "gap_questions", "ws_questions"):
         L.append(f"### {cat}")
         L.append("")
         items = manifest[cat][:3]
@@ -597,6 +646,7 @@ def parse_obslog(obslog_path: str, registry_no: int) -> dict:
     sd_pointers = parse_sd_pointers(text)
     observations = parse_observations(text)
     chapters = parse_chapters(text)
+    prose_supersedes = parse_prose_supersedes(text)
     gap_ws = parse_gap_and_ws_questions(text)
     review_notes = parse_review_notes(text)
     status_update = parse_status_update(text)
@@ -614,6 +664,7 @@ def parse_obslog(obslog_path: str, registry_no: int) -> dict:
         "sd_pointers": sd_pointers,
         "observations": observations,
         "chapters": chapters,
+        "prose_supersedes": prose_supersedes,
         "gap_questions": gap_ws["gap"],
         "ws_questions": gap_ws["ws"],
         "review_notes": review_notes,

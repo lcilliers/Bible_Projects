@@ -15,7 +15,7 @@ Covers:
 import os
 import sqlite3
 
-DB = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 
 def hr(label=""):
     width = 72

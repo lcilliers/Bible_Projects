@@ -22,8 +22,8 @@ A set of questions follows that require your decision before coding begins.
 **Script:** `scripts/_discover_word_terms.py`  
 **Command:** `python scripts/_discover_word_terms.py --english soul`  
 **Outputs:**  
-- `data/discovery/soul_term_map_20260323.json` — full machine-readable term data  
-- `data/discovery/soul_triage_20260323.md` — researcher decision table
+- `research/discovery/soul_term_map_20260323.json` — full machine-readable term data  
+- `research/discovery/soul_triage_20260323.md` — researcher decision table
 
 ### What it does now
 
@@ -56,10 +56,10 @@ The researcher can fill in `include?` and `notes` in the triage.md. But this fil
 ## Stage 2 — Researcher Triage → Decisions
 
 **Script:** `scripts/_apply_term_decisions.py`  
-**Command:** `python scripts/_apply_term_decisions.py --input data/discovery/soul_term_map_20260323.json`  
+**Command:** `python scripts/_apply_term_decisions.py --input research/discovery/soul_term_map_20260323.json`  
 **Outputs:**  
-- `data/discovery/soul_term_decisions_20260323.json` — machine-readable term decisions  
-- `data/discovery/soul_term_decisions_20260323.md` — decisions with assigned groups and reasons
+- `research/discovery/soul_term_decisions_20260323.json` — machine-readable term decisions  
+- `research/discovery/soul_term_decisions_20260323.md` — decisions with assigned groups and reasons
 
 ### What it does now
 
@@ -97,8 +97,8 @@ Once Stage 1 supports `--supplemental-codes`, Stage 2 needs to include those cod
 ## Stage 3 — Audit-Mode Update (Extraction)
 
 **Script:** `scripts/_extract_word_terms.py`  
-**Command:** `python scripts/_extract_word_terms.py --decisions data/discovery/soul_term_decisions_20260323.json`  
-**Outputs:** All writes go directly to `data/bible_research.db`
+**Command:** `python scripts/_extract_word_terms.py --decisions research/discovery/soul_term_decisions_20260323.json`  
+**Outputs:** All writes go directly to `database/bible_research.db`
 
 ### What it does now
 

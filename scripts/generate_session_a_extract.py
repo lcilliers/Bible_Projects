@@ -2,7 +2,7 @@
 
 Produces a Session A extract for a registry: 6 markdown sections rendered
 directly from the live database. Follows the specification in
-outputs/investigations/session-a-extract-section-types-advice-v1-20260419.md.
+research/investigations/session-a-extract-section-types-advice-v1-20260419.md.
 
 Sections (by chapter_no in prose_section_type where source_stage='session_a'):
   1. Summary           — registry orientation + word_synopsis + counts
@@ -16,7 +16,7 @@ Sections (by chapter_no in prose_section_type where source_stage='session_a'):
 
 Usage:
   python scripts/generate_session_a_extract.py --registry=N
-  python scripts/generate_session_a_extract.py --registry=N --out-dir=outputs/session_a
+  python scripts/generate_session_a_extract.py --registry=N --out-dir=Sessions/Session_A/Data_Prose
   python scripts/generate_session_a_extract.py --registry=N --apply          # also write to DB
   python scripts/generate_session_a_extract.py --registry=N --emit-patch=FILE # JSON patch only
 
@@ -50,7 +50,7 @@ from typing import Any
 
 sys.stdout.reconfigure(encoding="utf-8")  # Windows console compatibility
 
-DB_PATH = os.path.join("data", "bible_research.db")
+DB_PATH = os.path.join("database", "bible_research.db")
 SOURCE_STAGE = "session_a"
 AUTHOR = "claude_code"
 STATUS = "approved"
@@ -1152,12 +1152,17 @@ def build_prose_patch(extract: dict) -> dict:
                     source_file=f"wa-{extract['registry_no']:03d}-{extract['word']}-sessiona-{today}.md",
                 ),
             ))
+    # Patch envelope per applicator contract: top-level metadata under
+    # _patch_meta (apply_session_patch.py reads `meta = patch.get("_patch_meta", {})`).
+    # `registry_id` in _patch_meta carries the registry no — see _validate().
     return dict(
-        patch_id=patch_id,
-        patch_type="PROSE",
-        produced_at=extract["generated_at"],
-        registry_no=extract["registry_no"],
-        session_b_status=None,
+        _patch_meta=dict(
+            patch_id=patch_id,
+            patch_type="PROSE",
+            produced_at=extract["generated_at"],
+            registry_id=extract["registry_no"],
+            session_b_status=None,
+        ),
         operations=ops,
     )
 
@@ -1169,7 +1174,7 @@ def build_prose_patch(extract: dict) -> dict:
 def main() -> int:
     ap = argparse.ArgumentParser(description="Generate Session A mechanical extract")
     ap.add_argument("--registry", type=int, required=True, help="registry no")
-    ap.add_argument("--out-dir", type=str, default="outputs/session_a",
+    ap.add_argument("--out-dir", type=str, default="Sessions/Session_A/Data_Prose",
                     help="where to write the .md file")
     ap.add_argument("--emit-patch", type=str, default=None,
                     help="write JSON PROSE patch to this path (no DB write)")
@@ -1200,9 +1205,9 @@ def main() -> int:
 
     if args.apply:
         if not args.emit_patch:
-            # Auto-write patch to data/imports/WA/Patches/
+            # Auto-write patch to Sessions/Patches/
             patch = build_prose_patch(extract)
-            default_patch_path = Path("data/imports/WA/Patches") / \
+            default_patch_path = Path("Sessions/Patches") / \
                 f"wa-{extract['registry_no']:03d}-{word_slug}-sessiona-patch-{today_stamp()}.json"
             default_patch_path.parent.mkdir(parents=True, exist_ok=True)
             default_patch_path.write_text(json.dumps(patch, indent=2, ensure_ascii=False),
@@ -1211,10 +1216,10 @@ def main() -> int:
             print(f"Wrote patch: {patch_path}")
         else:
             patch_path = Path(args.emit_patch)
-        # Apply via subprocess
+        # Apply via subprocess (apply_session_patch.py takes the patch file as
+        # a positional argument, not a --patch-file flag).
         import subprocess
-        cmd = [sys.executable, "scripts/apply_session_patch.py",
-               f"--patch-file={patch_path}"]
+        cmd = [sys.executable, "scripts/apply_session_patch.py", str(patch_path)]
         print(f"Applying: {' '.join(cmd)}")
         res = subprocess.run(cmd, check=False)
         return res.returncode

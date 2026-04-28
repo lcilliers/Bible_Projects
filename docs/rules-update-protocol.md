@@ -23,7 +23,7 @@ This works for one-off changes or small batches.
 
 ### 1.2 Markdown round-trip (for larger/bulk revisions)
 
-Open the current rules extract MD: `data/exports/reference/wa-global-rules-extract-{YYYYMMDD}.md`. Mark up changes directly in the markdown — CC diffs and produces a patch. Pattern matches the prose store round-trip idea — use HTML comments to mark the operation:
+Open the current rules extract MD: `Workflow/reference/wa-global-rules-extract-{YYYYMMDD}.md`. Mark up changes directly in the markdown — CC diffs and produces a patch. Pattern matches the prose store round-trip idea — use HTML comments to mark the operation:
 
 ```markdown
 <!-- RULE_UPDATE rule_id: GR-FILE-003 fields: rule_text -->
@@ -118,7 +118,7 @@ Don't edit the source JSON (`wa-global-general-rules-v2_11-20260418.json`) direc
 Apply with:
 
 ```bash
-python scripts/apply_session_patch.py data/imports/WA/Patches/wa-rules-update-20260421.json
+python scripts/apply_session_patch.py Sessions/Patches/wa-rules-update-20260421.json
 ```
 
 After apply, regenerate the rules extract:

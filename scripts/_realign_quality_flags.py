@@ -40,7 +40,7 @@ sys.path.insert(0, ROOT)
 import sqlite3
 from engine.flag_engine import run_flag_engine
 
-DB = os.path.join(ROOT, "data", "bible_research.db")
+DB = os.path.join(ROOT, "database", "bible_research.db")
 
 
 def hr(label=""):

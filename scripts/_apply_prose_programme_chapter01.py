@@ -7,9 +7,9 @@ One-off routine to apply:
   - PATCH-20260421-PROSE-PROGRAMME-CH01-V1: 7 prose_section inserts
 
 Derived from:
-  data/imports/WA/Patches/wa-global-dir-002-submission-v1-20260421.md
-  data/imports/WA/Patches/wa-prose-catalogue-chapter0-1-v1-20260421.json
-  data/imports/WA/Patches/wa-prose-programme-chapter0-1-v1-20260421.json
+  Sessions/Patches/wa-global-dir-002-submission-v1-20260421.md
+  Sessions/Patches/wa-prose-catalogue-chapter0-1-v1-20260421.json
+  Sessions/Patches/wa-prose-programme-chapter0-1-v1-20260421.json
   wa-directive-instruction-v1_2-20260421.md §10.2 (worked pattern)
 
 Bypasses apply_session_patch.py for three reasons:
@@ -33,9 +33,9 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = Path("data/bible_research.db")
-CATALOGUE_PATCH = Path("data/imports/WA/Patches/wa-prose-catalogue-chapter0-1-v1-20260421.json")
-PROSE_PATCH = Path("data/imports/WA/Patches/wa-prose-programme-chapter0-1-v1-20260421.json")
+DB_PATH = Path("database/bible_research.db")
+CATALOGUE_PATCH = Path("Sessions/Patches/wa-prose-catalogue-chapter0-1-v1-20260421.json")
+PROSE_PATCH = Path("Sessions/Patches/wa-prose-programme-chapter0-1-v1-20260421.json")
 
 
 def now_iso() -> str:

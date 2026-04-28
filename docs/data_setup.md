@@ -20,7 +20,7 @@ After evaluating the options — full SQL (PostgreSQL/MySQL), SQLite, and pure J
 | GUI browser available | ✓ — DB Browser for SQLite | ✓ | ✗ |
 | Suitable for leRoux's scale | ✓ | Overkill | ✗ |
 
-SQLite stores the entire database in a single cross-platform file (`data/bible_research.db`) that travels with the project — on disk, on Google Drive, or in the repository (the `.db` file is excluded from Git by `.gitignore`).
+SQLite stores the entire database in a single cross-platform file (`database/bible_research.db`) that travels with the project — on disk, on Google Drive, or in the repository (the `.db` file is excluded from Git by `.gitignore`).
 
 ---
 
@@ -69,8 +69,8 @@ Or directly in Python:
 ```python
 from db_client import get_connection, init_schema_from_file
 
-conn = get_connection()          # uses DB_PATH from .env, default: data/bible_research.db
-init_schema_from_file(conn)      # executes data/schema/create_tables.sql
+conn = get_connection()          # uses DB_PATH from .env, default: database/bible_research.db
+init_schema_from_file(conn)      # executes Workflow/schema/create_tables.sql
 conn.close()
 ```
 
@@ -85,7 +85,7 @@ The schema follows these conventions:
 - The **main research table** (`verse_notes`) is the high-volume table (~20 000 rows).
 - Foreign keys are enforced with `PRAGMA foreign_keys = ON` (set in `db_client.py`).
 
-The reference schema is in [`data/schema/create_tables.sql`](../data/schema/create_tables.sql).
+The reference schema is in [`Workflow/schema/create_tables.sql`](../Workflow/schema/create_tables.sql).
 
 ### Key Tables
 
@@ -193,7 +193,7 @@ python analytics/bible_analytics.py --test-db
 Expected output:
 
 ```
-SUCCESS: Connected to SQLite database at data/bible_research.db
+SUCCESS: Connected to SQLite database at database/bible_research.db
   Tables: books, verse_notes, themes, verse_theme_map, sources, verse_source_map
   verse_notes row count: 0
 ```
@@ -205,7 +205,7 @@ SUCCESS: Connected to SQLite database at data/bible_research.db
 ```dotenv
 # ── SQLite Database ──────────────────────────────────────────────────────────
 # Path to the SQLite database file (relative to project root)
-DB_PATH=data/bible_research.db
+DB_PATH=database/bible_research.db
 ```
 
 ---

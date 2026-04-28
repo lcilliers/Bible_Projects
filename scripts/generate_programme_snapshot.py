@@ -9,7 +9,7 @@ Produces a markdown snapshot of the inner-being-words research programme:
   5. Alphabetical Index - Registry Words (214 rows)
   6. Alphabetical Index - Strong's Terms (active analytical terms only)
 
-Read-only against `data/bible_research.db`. Output is a self-contained markdown
+Read-only against `database/bible_research.db`. Output is a self-contained markdown
 file - no external assets, no DB writes.
 
 Usage:
@@ -29,7 +29,7 @@ import os
 import sqlite3
 import sys
 
-DB_PATH = os.path.join('data', 'bible_research.db')
+DB_PATH = os.path.join('database', 'bible_research.db')
 DEFAULT_OUT_DIR = os.path.join('outputs', 'markdown')
 
 SB_SHORT = {
@@ -121,7 +121,7 @@ def render(registry_rows, term_counts, verse_counts, strongs_rows,
     L.append('# Programme Snapshot - Inner-Being Words Research')
     L.append('')
     L.append(f'**Snapshot date:** {snapshot_date}  ')
-    L.append(f'**Source:** `data/bible_research.db` (schema v{schema_version})  ')
+    L.append(f'**Source:** `database/bible_research.db` (schema v{schema_version})  ')
     L.append(f'**Total registries:** {len(registry_rows)}')
     L.append('')
 

@@ -2,7 +2,7 @@
 
 **Purpose:** single-page architectural summary of how the programme's prose lives in the database — what tables hold it, how it is scoped, what stages of research it spans, how it is authored, and how it is retrieved.
 
-**Canonical design source:** [wa-prose-store-design-v1-20260419.md](../outputs/investigations/wa-prose-store-design-v1-20260419.md). This doc summarises what was built and what is currently in use; the design doc contains the deeper reasoning, trade-offs, and researcher decisions.
+**Canonical design source:** [wa-prose-store-design-v1-20260419.md](../research/investigations/wa-prose-store-design-v1-20260419.md). This doc summarises what was built and what is currently in use; the design doc contains the deeper reasoning, trade-offs, and researcher decisions.
 
 ---
 
@@ -27,7 +27,7 @@
    prose_extract.py              apply_session_patch.py
            │                           │
            ▼                           │
-  data/exports/reference/        patch files (CATALOGUE_POPULATION + PROSE)
+  Workflow/reference/        patch files (CATALOGUE_POPULATION + PROSE)
   outputs/docx/                        ▲
            │                           │
            ▼                           │
@@ -126,7 +126,7 @@ Prose in the programme is authored at five distinct research stages. Each stage 
 
 **Authored by:** Claude AI, with researcher direction.
 **Scope:** `registry_id = NULL` (programme-wide).
-**Structure:** organised into 6 macro chapters × ~45 sub-sections per the working structure design ([programme-prose-structure-design-v1-20260421.md](../outputs/investigations/programme-prose-structure-design-v1-20260421.md)):
+**Structure:** organised into 6 macro chapters × ~45 sub-sections per the working structure design ([programme-prose-structure-design-v1-20260421.md](../research/investigations/programme-prose-structure-design-v1-20260421.md)):
 
 | Ch | Macro area | Subject |
 |---:|---|---|
@@ -241,7 +241,7 @@ A revision follows the same shape but uses the `supersede` operation on `prose_s
 - **Markdown** — readable view grouped by chapter, bodies inline.
 - **DOCX** — reader-facing Word document (for review in Drive).
 
-Output paths: [data/exports/reference/](../data/exports/reference/) for JSON/MD; [outputs/docx/](../outputs/docx/) for DOCX.
+Output paths: [Workflow/reference/](../Workflow/reference/) for JSON/MD; [outputs/docx/](../outputs/docx/) for DOCX.
 
 ### 8.2 FTS5 search
 
@@ -285,7 +285,7 @@ All 21 populated programme prose rows are at `status = 'draft'`. No rows have be
 
 The prose store establishes the database as the programme's analytical memory, not just its evidentiary substrate. Claude AI does not live inside the database; Claude AI is an analytical instrument applied to snapshots drawn from it. Prose written to the database is prose written to survive a session boundary — self-contained, scoped, grounded in the evidence it rests on.
 
-This principle is recorded in full in [WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md](../data/imports/WA/Workflow/methodology_logs/WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md). The prose store is that principle made operational: the database carries interpretation as well as evidence, and interpretation held in the database survives session boundaries the way evidence does.
+This principle is recorded in full in [WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md](../Workflow/methodology/WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md). The prose store is that principle made operational: the database carries interpretation as well as evidence, and interpretation held in the database survives session boundaries the way evidence does.
 
 ---
 
@@ -293,11 +293,11 @@ This principle is recorded in full in [WA-WorkingMemoryAndSnapshots-v1.0-2026-04
 
 | Doc | Purpose |
 |---|---|
-| [wa-prose-store-design-v1-20260419.md](../outputs/investigations/wa-prose-store-design-v1-20260419.md) | Full design workings, schema rationale, round-trip tooling design. |
-| [prose-in-sqlite-advice-v1-20260419.md](../outputs/investigations/prose-in-sqlite-advice-v1-20260419.md) | Decision record: Option D (DB-canonical) adopted 2026-04-19. |
-| [programme-prose-structure-design-v1-20260421.md](../outputs/investigations/programme-prose-structure-design-v1-20260421.md) | Proposed 6-chapter × 45-sub-section structure for programme prose. |
-| [prose-instructions-compatibility-review-v1-20260421.md](../outputs/investigations/prose-instructions-compatibility-review-v1-20260421.md) | Gap analysis of patch + directive instructions vs prose lifecycle; fix plan that landed in commit `9ebcf7e`. |
-| [WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md](../data/imports/WA/Workflow/methodology_logs/WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md) | Governing principle — database-as-memory, snapshot-as-first-class-research-act. |
+| [wa-prose-store-design-v1-20260419.md](../research/investigations/wa-prose-store-design-v1-20260419.md) | Full design workings, schema rationale, round-trip tooling design. |
+| [prose-in-sqlite-advice-v1-20260419.md](../research/investigations/prose-in-sqlite-advice-v1-20260419.md) | Decision record: Option D (DB-canonical) adopted 2026-04-19. |
+| [programme-prose-structure-design-v1-20260421.md](../research/investigations/programme-prose-structure-design-v1-20260421.md) | Proposed 6-chapter × 45-sub-section structure for programme prose. |
+| [prose-instructions-compatibility-review-v1-20260421.md](../research/investigations/prose-instructions-compatibility-review-v1-20260421.md) | Gap analysis of patch + directive instructions vs prose lifecycle; fix plan that landed in commit `9ebcf7e`. |
+| [WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md](../Workflow/methodology/WA-WorkingMemoryAndSnapshots-v1.0-2026-04-21.md) | Governing principle — database-as-memory, snapshot-as-first-class-research-act. |
 | [CLAUDE.md §3 Table Group 17](../CLAUDE.md) | Schema summary entry in project reference. |
 
 ---

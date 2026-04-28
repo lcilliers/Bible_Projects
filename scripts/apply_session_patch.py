@@ -64,7 +64,7 @@ import sqlite3
 import sys
 from datetime import datetime, timezone
 
-DB_PATH      = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH      = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 ARCHIVE_DIR  = os.path.join(os.path.dirname(__file__), "..", "archive", "patches")
 
 

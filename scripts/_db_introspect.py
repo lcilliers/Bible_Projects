@@ -2,7 +2,7 @@
 import sqlite3
 import json
 
-db = "data/bible_research.db"
+db = "database/bible_research.db"
 conn = sqlite3.connect(db)
 conn.row_factory = sqlite3.Row
 

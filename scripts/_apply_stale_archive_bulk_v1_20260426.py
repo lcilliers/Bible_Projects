@@ -1,6 +1,6 @@
 """_apply_stale_archive_bulk_v1_20260426.py — one-off bulk archive of stale versions.
 
-Implements the scan in outputs/investigations/stale-version-scan-v1-20260426.md.
+Implements the scan in research/investigations/stale-version-scan-v1-20260426.md.
 Skips Word lock files (~$). Uses git mv so file history is preserved.
 
 Run with --dry-run first; commits actual moves only with --live.
@@ -23,22 +23,22 @@ SCAN_DIRS = [
     "data/imports/WA/Session_B_Verse_Context",
     "data/imports/WA/Session_B_Dimension_Review",
     "data/imports/WA/Session_C_Words",
-    "data/imports/WA/Patches",
+    "Sessions/Patches",
     "data/imports/WA/Prose",
     "data/imports/WA/Word_Data",
     "data/exports/session_a",
-    "data/exports/session_a/terms",
+    "Sessions/Session_A/terms",
     "data/exports/verse_context",
     "data/exports/dimension_review",
     "data/exports/Session C",
-    "data/exports/session_d",
-    "data/exports/STEP Extracts",
-    "data/exports/reference",
+    "Sessions/Session_D/session_d",
+    "Sessions/Session_A/STEP Extracts",
+    "Workflow/reference",
     "data/schema",
     "outputs/markdown",
-    "outputs/reports/programme",
-    "outputs/reports/words",
-    "outputs/investigations",
+    "Workflow/Programme/Program_reports",
+    "Sessions/Session_B/09_Analysis_output_logs/words",
+    "research/investigations",
     "outputs/docx",
     "outputs/pdf",
     "outputs/session-logs",

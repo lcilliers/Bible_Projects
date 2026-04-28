@@ -1,7 +1,7 @@
 """Consistency check for mti_terms table."""
 import sqlite3
 
-conn = sqlite3.connect('data/bible_research.db')
+conn = sqlite3.connect('database/bible_research.db')
 conn.row_factory = sqlite3.Row
 
 print('=== mti_terms overview ===')

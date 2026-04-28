@@ -25,7 +25,7 @@ except ImportError:
     HAS_DOCX = False
     print("WARNING: python-docx not installed. Producing markdown instead.")
 
-DB_PATH = os.path.join('data', 'bible_research.db')
+DB_PATH = os.path.join('database', 'bible_research.db')
 
 
 def strip_suffix(strongs):

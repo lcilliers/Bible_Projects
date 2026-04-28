@@ -17,7 +17,7 @@ import os
 import json
 from datetime import date
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "exports", "vertical_pass")
 
 

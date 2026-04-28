@@ -21,7 +21,7 @@ import argparse
 import os
 from datetime import date
 
-DB_PATH = os.path.join('data', 'bible_research.db')
+DB_PATH = os.path.join('database', 'bible_research.db')
 
 
 def extract(conn, strongs, include_deleted=False):

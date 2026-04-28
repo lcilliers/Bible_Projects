@@ -3,7 +3,7 @@ import sqlite3
 import os
 from collections import defaultdict
 
-DB = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 REPORT = os.path.join(os.path.dirname(__file__), "..", "outputs", "wa-programme-status-report-20260328.md")
 
 

@@ -18,7 +18,7 @@ entity-link logic (needs researcher input on cite-extraction patterns).
 
 Usage:
   python scripts/_pilot_capture_obslog_to_db_v1_20260427.py \
-      --manifest outputs/reports/words/wa-067-goodness-obslog-parse-manifest-v1-20260427.json \
+      --manifest Sessions/Session_B/09_Analysis_output_logs/words/wa-067-goodness-obslog-parse-manifest-v1-20260427.json \
       [--live]                # default: dry-run with full validation
       [--registry 67]         # required if not in manifest meta
 """
@@ -32,7 +32,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = os.path.join("data", "bible_research.db")
+DB_PATH = os.path.join("database", "bible_research.db")
 BACKUP_DIR = "backups"
 
 
@@ -59,11 +59,15 @@ CHAPTER_CODE_MAP = {
 # ── Anomaly types (controlled list per §11.5) ──────────────────────────────
 
 ANOMALY_TYPES = {
-    "ANCHOR_UNCITED",       # is_anchor=1 verse with no chapter citation
-    "DIMENSION_DRIFT",      # group dim contradicts description
-    "ANSWER_UNGROUNDED",    # Q&A answer cites no anchor verse from term
-    "EMPTY_TERM",           # status=extracted, 0 verses
-    "ORPHAN_ANALYSIS",      # analysis_note exists but verse no longer is_anchor
+    "ANCHOR_UNCITED",           # is_anchor=1 verse with no chapter citation
+    "DIMENSION_DRIFT",          # group dim contradicts description
+    "ANSWER_UNGROUNDED",        # Q&A answer cites no anchor verse from term
+    "EMPTY_TERM",               # status=extracted, 0 verses
+    "ORPHAN_ANALYSIS",          # analysis_note exists but verse no longer is_anchor
+    # v2.CC9 supersede audit additions
+    "FINDING_UNCITED",          # resolved finding not cited in any current chapter
+    "CHAPTER_NOT_SUPERSEDED",   # current chapter still pre-revision after lifecycle changes
+    "CITATION_GAP",             # >10% citation tokens unresolved per chapter
 }
 
 
@@ -100,6 +104,7 @@ def validate_manifest(manifest: dict, conn: sqlite3.Connection) -> dict:
 
     # Counts present
     expected_keys = ("qa_findings", "sd_pointers", "observations", "chapters",
+                     "prose_supersedes",
                      "gap_questions", "ws_questions", "review_notes",
                      "status_update", "issues")
     missing = [k for k in expected_keys if k not in manifest]
@@ -202,9 +207,13 @@ def write_observations(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
 
 
 def write_chapters(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
+    """Write Stage 2c chapter prose to prose_section + extract inline citations
+    into wa_prose_section_citations on initial write (per analysis-output v1_5 §v2.9).
+    """
     chapters = manifest.get("chapters", [])
     written = skipped = 0
     errors = []
+    citations_total = {"inserted": 0, "unresolved": 0}
     for ch in chapters:
         n = ch.get("chapter_n")
         if n not in CHAPTER_CODE_MAP:
@@ -225,16 +234,129 @@ def write_chapters(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
         if existing:
             skipped += 1
             continue
+        new_ps_id = None
+        body = ch.get("body") or ""
         if not dry:
-            conn.execute("""
+            cur = conn.execute("""
                 INSERT INTO prose_section
                     (registry_id, section_type_id, heading, body, status,
                      version, author, created_at)
                 VALUES (?, ?, ?, ?, 'draft', 1, 'claude_ai', ?)
             """, (ctx["registry_id"], section_type_id, ch.get("title"),
-                  ch.get("body"), ctx["ts"]))
+                  body, ctx["ts"]))
+            new_ps_id = cur.lastrowid
         written += 1
-    return {"written": written, "skipped": skipped, "errors": errors}
+
+        # v1_5 §v2.9: extract inline citations on initial write.
+        # Same logic as the supersede citation extractor — keep the audit
+        # trail populated without requiring a supersede pass.
+        if not dry and new_ps_id is not None:
+            ch_stats = _extract_and_write_chapter_citations(
+                conn, ps_id=new_ps_id, body=body,
+                registry_no=ctx["registry_no"], ts=ctx["ts"],
+            )
+            citations_total["inserted"] += ch_stats["inserted"]
+            citations_total["unresolved"] += ch_stats["unresolved"]
+
+    return {
+        "written": written, "skipped": skipped, "errors": errors,
+        "citations_inserted": citations_total["inserted"],
+        "citations_unresolved": citations_total["unresolved"],
+    }
+
+
+def _extract_and_write_chapter_citations(conn, ps_id: int, body: str,
+                                         registry_no: int, ts: str) -> dict:
+    """Extract inline citations from a chapter body and insert into
+    wa_prose_section_citations. Returns {inserted, unresolved}.
+
+    Token formats supported (per v2.9):
+      OBS-{NNN}-{seq}        (R030 style)
+      OBS-{NNN}-OBS-{seq}    (R067 style)
+      SP-{NNN}-{seq}
+      DIM-{NN}-{seq}         (or DIM-NN-SDNNN)
+      GAP-N-{seq} | GAP-S{n}-{seq}
+      Q&A-{seq} | Q&A {seq}
+      Q{NNN}                 (catalogue question_code form)
+    """
+    # Order matters: try fuller patterns before shorter ones to avoid
+    # overlapping matches (e.g. OBS-NNN-OBS-NNN matched before bare OBS-NNN-NNN).
+    patterns = [
+        ("OBS_FULL",  _re_qa.compile(r"\bOBS-\d{3}-OBS-\d{3}\b")),
+        ("OBS",       _re_qa.compile(r"\bOBS-\d{3}-\d{3}\b")),
+        ("SP",        _re_qa.compile(r"\bSP-\d{3}-\d{3}\b")),
+        ("DIM",       _re_qa.compile(r"\bDIM-\d+-(?:SD)?\d+\b")),
+        ("GAP",       _re_qa.compile(r"\b(?:GAP-N-\d{3}|GAP-S\d-\d{3})\b")),
+        ("QA_HYPHEN", _re_qa.compile(r"\bQ&A-\d{1,3}\b")),
+        ("QA_SPACE",  _re_qa.compile(r"\bQ&A\s+\d{1,3}\b")),
+        ("Q_CODE",    _re_qa.compile(r"\bQ\d{3}\b")),
+    ]
+    found = []
+    seen = set()
+    for ttype, pat in patterns:
+        for m in pat.finditer(body):
+            token = m.group(0)
+            key = (ttype, token)
+            if key in seen:
+                continue
+            seen.add(key)
+            found.append((m.start(), ttype, token))
+    found.sort(key=lambda x: x[0])
+
+    inserted = 0
+    unresolved = 0
+    for _pos, ttype, token in found:
+        cited_finding_id = None
+        cited_sd_pointer_id = None
+        cited_observation_seq = None
+
+        if ttype in ("OBS_FULL", "OBS"):
+            cited_observation_seq = token
+            r = conn.execute(
+                "SELECT id FROM wa_session_b_findings WHERE finding_id = ? AND (delete_flag=0 OR delete_flag IS NULL)",
+                (token,),
+            ).fetchone()
+            if r:
+                cited_finding_id = r[0]
+        elif ttype == "SP":
+            r = conn.execute(
+                "SELECT id FROM wa_session_research_flags WHERE flag_label = ? AND flag_code = 'SD_POINTER'",
+                (token,),
+            ).fetchone()
+            if r:
+                cited_sd_pointer_id = r[0]
+        elif ttype == "DIM":
+            r = conn.execute(
+                "SELECT id FROM wa_session_b_findings WHERE finding_id = ? AND (delete_flag=0 OR delete_flag IS NULL)",
+                (token,),
+            ).fetchone()
+            if r:
+                cited_finding_id = r[0]
+        # GAP, QA_HYPHEN, QA_SPACE, Q_CODE: store as citation_form only
+
+        # Idempotency: skip if (prose_section_id, citation_form) already exists
+        existing = conn.execute("""
+            SELECT id FROM wa_prose_section_citations
+             WHERE prose_section_id = ? AND citation_form = ?
+               AND (delete_flagged = 0 OR delete_flagged IS NULL)
+             LIMIT 1
+        """, (ps_id, token)).fetchone()
+        if existing:
+            continue
+
+        conn.execute("""
+            INSERT INTO wa_prose_section_citations
+                (prose_section_id, citation_form, cited_finding_id,
+                 cited_sd_pointer_id, cited_observation_seq, paragraph_no, created_at)
+            VALUES (?, ?, ?, ?, ?, NULL, ?)
+        """, (ps_id, token, cited_finding_id, cited_sd_pointer_id,
+              cited_observation_seq, ts))
+        inserted += 1
+        if (cited_finding_id is None and cited_sd_pointer_id is None
+                and ttype in ("OBS_FULL", "OBS", "SP", "DIM")):
+            unresolved += 1
+
+    return {"inserted": inserted, "unresolved": unresolved}
 
 
 def write_sd_pointers(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
@@ -259,10 +381,12 @@ def write_sd_pointers(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
             conn.execute("""
                 INSERT INTO wa_session_research_flags
                     (registry_id, flag_code, flag_label, priority,
-                     description, session_target, raised_date, resolved)
-                VALUES (?, 'SD_POINTER', ?, ?, ?, 'Session D', ?, 0)
+                     description, session_target, raised_date, resolved,
+                     session_raised)
+                VALUES (?, 'SD_POINTER', ?, ?, ?, 'Session D', ?, 0, ?)
             """, (ctx["registry_id"], flag_label, priority,
-                  f"{target} (raised in Unit {unit})", ctx["ts"]))
+                  f"{target} (raised in Unit {unit})", ctx["ts"],
+                  "Session B Stage 2 (obslog capture pipeline)"))
         written += 1
     return {"written": written, "skipped": skipped, "errors": errors}
 
@@ -434,14 +558,18 @@ def write_qa_findings(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
         # Determine coverage
         coverage = "partial" if "PARTIAL" in disp else "full"
 
-        # Find source observation(s) referenced in answer
-        obs_refs = _re_qa.findall(r"OBS-(\d+)", answer)
-        # Dedup
-        obs_refs = list({f"OBS-{ctx['registry_no']:03d}-OBS-{n}": None for n in obs_refs})  # using key-only for dedup
-        # Actually: build set of finding_ids
+        # Find source observation(s) referenced in answer.
+        # Two citation formats supported:
+        #   OBS-{registry:03d}-OBS-{seq}     (R067 goodness obslog v3 style)
+        #   OBS-{registry:03d}-{seq}         (R030 contrition obslog v1 style)
+        # Capture only the trailing seq via non-capturing group for the middle.
+        # NB: previous form `OBS-(\d+)` greedy-captured the registry digits and
+        # NEVER got to the seq, leading to all references resolving to the
+        # finding whose seq numerically matched the registry number (bug
+        # discovered on R030 capture, 2026-04-28).
         finding_ids = []
-        for raw in _re_qa.findall(r"OBS-(\d+)", answer):
-            fid = _resolve_obs_to_finding_id(conn, ctx["registry_id"], raw)
+        for seq in _re_qa.findall(r"OBS-\d+(?:-OBS)?-(\d+)\b", answer):
+            fid = _resolve_obs_to_finding_id(conn, ctx["registry_id"], seq)
             if fid and fid not in finding_ids:
                 finding_ids.append(fid)
 
@@ -751,6 +879,381 @@ def write_anchor_verse_analyses(conn, manifest: dict, ctx: dict, dry: bool, obsl
     return {"written": written, "skipped": skipped, "errors": errors}
 
 
+# ── Prose supersedes (v2.7 / v2.CC9) ───────────────────────────────────────
+
+# Regex map for inline citation token extraction. Order matters: `OBS-NNN-OBS-NNN`
+# must be tried before `OBS-NNN` to avoid partial-match collisions.
+_CITATION_PATTERNS = [
+    ("OBS_FULL", _re_qa.compile(r"\b(OBS-\d{3}-OBS-\d{3})\b")),
+    ("SP_FULL", _re_qa.compile(r"\b(SP-\d{3}-\d{3})\b")),
+    ("DIM", _re_qa.compile(r"\b(DIM-\d+-\d+)\b")),
+    ("GAP_N", _re_qa.compile(r"\b(GAP-N-\d+)\b")),
+    ("QA", _re_qa.compile(r"\b(Q&A-\d+)\b")),
+    ("Q_CODE", _re_qa.compile(r"\bQ(\d{3})\b")),
+    ("OBS_SHORT", _re_qa.compile(r"\bOBS-(\d{3})\b")),
+]
+
+
+def current_chapter(conn, registry_id: int, section_type_id: int):
+    """Return (id, version, body) of the current (non-superseded, non-deleted) row for this slot."""
+    return conn.execute("""
+        SELECT id, version, body FROM prose_section
+         WHERE registry_id = ? AND section_type_id = ?
+           AND superseded_by_id IS NULL
+           AND (delete_flagged = 0 OR delete_flagged IS NULL)
+         LIMIT 1
+    """, (registry_id, section_type_id)).fetchone()
+
+
+def write_prose_supersedes(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
+    """Apply Stage 2c SUPERSEDE blocks per v2.CC9.
+
+    For each block:
+      1. Locate the current row for (registry, section_type) — must exist.
+      2. Insert a new row at version=prior+1 with supersedes_id=prior.
+      3. UPDATE prior row: superseded_by_id=new, status='superseded'.
+      4. Idempotent: if body unchanged, skip.
+    """
+    blocks = manifest.get("prose_supersedes", [])
+    written = skipped = 0
+    errors = []
+    new_section_ids = []  # [(section_code, new_id, prior_id, new_version)]
+
+    for blk in blocks:
+        code = blk.get("section_code")
+        st_row = conn.execute(
+            "SELECT id FROM prose_section_type WHERE code = ?", (code,)
+        ).fetchone()
+        if not st_row:
+            errors.append(f"prose_section_type '{code}' not found")
+            continue
+        section_type_id = st_row[0]
+
+        cur = current_chapter(conn, ctx["registry_id"], section_type_id)
+        if not cur:
+            errors.append(f"No predecessor row for {code} (registry {ctx['registry_no']}); supersede requires an existing chapter to retire.")
+            continue
+
+        prior_id, prior_version, prior_body = cur[0], cur[1], cur[2]
+        new_body = blk.get("body", "")
+        if (prior_body or "").strip() == (new_body or "").strip():
+            skipped += 1
+            continue
+
+        new_version = prior_version + 1
+
+        if not dry:
+            cursor = conn.execute("""
+                INSERT INTO prose_section
+                    (registry_id, section_type_id, heading, body, status,
+                     version, supersedes_id, author, source_file, created_at)
+                VALUES (?, ?, ?, ?, 'draft', ?, ?, ?, ?, ?)
+            """, (ctx["registry_id"], section_type_id, blk.get("title"),
+                  new_body, new_version, prior_id,
+                  blk.get("author") or "claude_ai",
+                  blk.get("source_file"), ctx["ts"]))
+            new_id = cursor.lastrowid
+            # status enum allows ('draft','in_review','approved','archived')
+            # — use 'archived' to mark the superseded predecessor; the supersede chain
+            # itself is tracked via superseded_by_id FK.
+            conn.execute("""
+                UPDATE prose_section
+                   SET superseded_by_id = ?, status = 'archived'
+                 WHERE id = ?
+            """, (new_id, prior_id))
+            new_section_ids.append((code, new_id, prior_id, new_version))
+        else:
+            # In dry-run, we still record what *would* be written so downstream
+            # stages can simulate; but we won't have a real new_id.
+            new_section_ids.append((code, None, prior_id, new_version))
+        written += 1
+
+    return {
+        "written": written, "skipped": skipped, "errors": errors,
+        "new_section_ids": new_section_ids,
+    }
+
+
+def write_supersede_citations(conn, manifest: dict, ctx: dict, dry: bool,
+                               supersede_result: dict) -> dict:
+    """Extract inline citations from each newly-written supersede body and
+    write to wa_prose_section_citations. FK resolution where possible; raw
+    citation_form preserved otherwise.
+    """
+    new_section_ids = supersede_result.get("new_section_ids") or []
+    if not new_section_ids:
+        return {"written": 0, "skipped": 0, "errors": [],
+                "note": "no supersede rows — citation extraction skipped"}
+
+    blocks_by_code = {b["section_code"]: b for b in manifest.get("prose_supersedes", [])}
+    written = skipped = 0
+    errors = []
+    unresolved_per_chapter = {}
+
+    for code, ps_id, prior_id, new_version in new_section_ids:
+        body = blocks_by_code[code]["body"]
+        # Collect tokens preserving order of first appearance, dedup within chapter.
+        seen = set()
+        tokens = []
+        for ttype, pat in _CITATION_PATTERNS:
+            for m in pat.finditer(body):
+                full = m.group(0)
+                if full in seen:
+                    continue
+                # Filter: OBS_SHORT must not also be the head of an OBS_FULL token.
+                # (i.e. 'OBS-067' inside 'OBS-067-OBS-005' should not be a separate match.)
+                if ttype == "OBS_SHORT":
+                    # Reject if this 'OBS-NNN' is followed by '-OBS-NNN' in body
+                    pos = m.start()
+                    if _re_qa.match(r"OBS-\d{3}-OBS-\d{3}", body[pos:]):
+                        continue
+                seen.add(full)
+                tokens.append((ttype, full, m.group(1)))
+
+        unresolved_count = 0
+        total_tokens = len(tokens)
+        for ttype, token, captured in tokens:
+            cited_finding_id = None
+            cited_sd_pointer_id = None
+            cited_observation_seq = None
+            citation_form = token
+
+            if ttype == "OBS_FULL":
+                row = conn.execute(
+                    "SELECT id FROM wa_session_b_findings WHERE finding_id = ? AND (delete_flag=0 OR delete_flag IS NULL)",
+                    (token,),
+                ).fetchone()
+                if row:
+                    cited_finding_id = row[0]
+                cited_observation_seq = token
+            elif ttype == "OBS_SHORT":
+                # captured = '005'; normalise to OBS-{registry:03d}-OBS-{captured}
+                full = f"OBS-{ctx['registry_no']:03d}-OBS-{captured}"
+                row = conn.execute(
+                    "SELECT id FROM wa_session_b_findings WHERE finding_id = ? AND (delete_flag=0 OR delete_flag IS NULL)",
+                    (full,),
+                ).fetchone()
+                if row:
+                    cited_finding_id = row[0]
+                cited_observation_seq = full
+                citation_form = full  # normalise form for FK alignment
+            elif ttype == "SP_FULL":
+                row = conn.execute(
+                    "SELECT id FROM wa_session_research_flags WHERE flag_label = ? AND flag_code = 'SD_POINTER'",
+                    (token,),
+                ).fetchone()
+                if row:
+                    cited_sd_pointer_id = row[0]
+            elif ttype == "DIM":
+                row = conn.execute(
+                    "SELECT id FROM wa_session_b_findings WHERE finding_id = ? AND (delete_flag=0 OR delete_flag IS NULL)",
+                    (token,),
+                ).fetchone()
+                if row:
+                    cited_finding_id = row[0]
+            # Q_CODE, QA, GAP_N: no FK lookup; citation_form preserves the raw token
+
+            resolved = (cited_finding_id is not None or cited_sd_pointer_id is not None)
+            if not resolved:
+                unresolved_count += 1
+
+            if not dry and ps_id is not None:
+                conn.execute("""
+                    INSERT INTO wa_prose_section_citations
+                        (prose_section_id, citation_form, cited_finding_id,
+                         cited_sd_pointer_id, cited_observation_seq,
+                         paragraph_no, created_at)
+                    VALUES (?, ?, ?, ?, ?, NULL, ?)
+                """, (ps_id, citation_form, cited_finding_id, cited_sd_pointer_id,
+                      cited_observation_seq, ctx["ts"]))
+            written += 1
+
+        unresolved_per_chapter[code] = (unresolved_count, total_tokens)
+
+    return {
+        "written": written, "skipped": skipped, "errors": errors,
+        "unresolved_per_chapter": unresolved_per_chapter,
+    }
+
+
+def write_supersede_audit(conn, manifest: dict, ctx: dict, dry: bool,
+                           supersede_result: dict, citations_result: dict) -> dict:
+    """Four-audit coherence check per v2.CC9. Writes DATA_ANOMALY_* findings to
+    wa_session_b_findings (status='open') for each detected gap.
+    """
+    new_section_ids = supersede_result.get("new_section_ids") or []
+    if not new_section_ids:
+        return {"written": 0, "skipped": 0, "errors": [],
+                "note": "no supersedes — audit skipped"}
+
+    anomalies = []  # (anomaly_type, description)
+
+    # Build the set of finding_ids cited across all NEW chapter rows.
+    cited_finding_ids = set()
+    if not dry:
+        new_ids = [n[1] for n in new_section_ids if n[1] is not None]
+        if new_ids:
+            placeholders = ",".join("?" * len(new_ids))
+            for r in conn.execute(f"""
+                SELECT DISTINCT f.finding_id
+                  FROM wa_prose_section_citations pc
+                  JOIN wa_session_b_findings f ON f.id = pc.cited_finding_id
+                 WHERE pc.prose_section_id IN ({placeholders})
+                   AND (pc.delete_flagged = 0 OR pc.delete_flagged IS NULL)
+            """, new_ids).fetchall():
+                cited_finding_ids.add(r[0])
+    else:
+        # In dry-run, simulate from the manifest body parsing.
+        blocks_by_code = {b["section_code"]: b for b in manifest.get("prose_supersedes", [])}
+        for code, _, _, _ in new_section_ids:
+            body = blocks_by_code[code]["body"]
+            for ttype, pat in _CITATION_PATTERNS:
+                if ttype not in ("OBS_FULL", "OBS_SHORT", "DIM"):
+                    continue
+                for m in pat.finditer(body):
+                    if ttype == "OBS_SHORT":
+                        cited_finding_ids.add(f"OBS-{ctx['registry_no']:03d}-OBS-{m.group(1)}")
+                    else:
+                        cited_finding_ids.add(m.group(0))
+
+    # Audit 1: FINDING_UNCITED — every revision-session resolved finding cited?
+    resolved_rows = conn.execute("""
+        SELECT finding_id FROM wa_session_b_findings
+         WHERE registry_id = ?
+           AND finding_type = 'OBSERVATION'
+           AND status IN ('resolved_qa','resolved_sd','not_relevant')
+           AND (delete_flag = 0 OR delete_flag IS NULL)
+    """, (ctx["registry_id"],)).fetchall()
+    uncited = [r[0] for r in resolved_rows if r[0] not in cited_finding_ids]
+    if uncited:
+        sample = ", ".join(uncited[:10])
+        more = f" (+{len(uncited) - 10} more)" if len(uncited) > 10 else ""
+        anomalies.append((
+            "DATA_ANOMALY_FINDING_UNCITED",
+            f"{len(uncited)} resolved findings have no citation in any current chapter for registry {ctx['registry_no']:03d}: {sample}{more}",
+        ))
+
+    # Audit 2: CHAPTER_NOT_SUPERSEDED — chapters citing a finding whose lifecycle
+    # changed in the revision but the chapter was not superseded. We approximate
+    # this by: any current chapter row (NOT in new_section_ids) that exists for
+    # this registry and has citations to findings now resolved. Skip in dry-run.
+    if not dry:
+        new_ids_set = {n[1] for n in new_section_ids if n[1] is not None}
+        not_superseded = []
+        for r in conn.execute("""
+            SELECT ps.id, pst.code FROM prose_section ps
+              JOIN prose_section_type pst ON pst.id = ps.section_type_id
+             WHERE ps.registry_id = ?
+               AND ps.superseded_by_id IS NULL
+               AND (ps.delete_flagged = 0 OR ps.delete_flagged IS NULL)
+               AND pst.code LIKE 'sb_s2c_ch%'
+        """, (ctx["registry_id"],)).fetchall():
+            if r[0] not in new_ids_set:
+                not_superseded.append(r[1])
+        if not_superseded:
+            anomalies.append((
+                "DATA_ANOMALY_CHAPTER_NOT_SUPERSEDED",
+                f"Stage 2c chapters not superseded in this revision (current versions remain at pre-revision content): {', '.join(not_superseded)}",
+            ))
+
+    # Audit 3: CITATION_GAP — unresolved tokens > 10% per chapter
+    upc = citations_result.get("unresolved_per_chapter", {}) if citations_result else {}
+    gaps = []
+    for code, (unresolved, total) in upc.items():
+        if total > 0 and (unresolved / total) > 0.10:
+            gaps.append(f"{code}: {unresolved}/{total} unresolved ({unresolved/total*100:.0f}%)")
+    if gaps:
+        anomalies.append((
+            "DATA_ANOMALY_CITATION_GAP",
+            "Citation FK resolution exceeds 10% threshold in: " + "; ".join(gaps),
+        ))
+
+    # Audit 4: ANCHOR_UNCITED — every is_anchor=1 verse for this registry has its
+    # ref appearing in at least one current chapter prose body.
+    # is_anchor lives on verse_context (per-term-in-verse classification), not on
+    # wa_verse_records. Join via verse_record_id.
+    if not dry:
+        anchors = conn.execute("""
+            SELECT DISTINCT vr.reference
+              FROM verse_context vc
+              JOIN wa_verse_records vr ON vr.id = vc.verse_record_id
+              JOIN wa_term_inventory ti ON ti.id = vr.term_inv_id
+              JOIN wa_file_index fi ON fi.id = ti.file_id
+             WHERE fi.word_registry_fk = ?
+               AND ti.term_owner_type = 'OWNER'
+               AND ti.delete_flagged = 0
+               AND vc.is_anchor = 1
+               AND vc.delete_flagged = 0
+               AND vr.delete_flagged = 0
+        """, (ctx["registry_id"],)).fetchall()
+        anchor_refs = [r[0] for r in anchors]
+        # Concatenate current chapter bodies
+        new_ids = [n[1] for n in new_section_ids if n[1] is not None]
+        prose_text = ""
+        if new_ids:
+            placeholders = ",".join("?" * len(new_ids))
+            for r in conn.execute(
+                f"SELECT body FROM prose_section WHERE id IN ({placeholders})",
+                new_ids,
+            ).fetchall():
+                prose_text += "\n" + (r[0] or "")
+        # Also include any non-superseded chapter rows for this registry that
+        # we did NOT supersede this session — they still count toward anchor coverage.
+        for r in conn.execute("""
+            SELECT body FROM prose_section
+             WHERE registry_id = ?
+               AND superseded_by_id IS NULL
+               AND (delete_flagged = 0 OR delete_flagged IS NULL)
+               AND id NOT IN ({})
+        """.format(",".join("?" * len(new_ids)) if new_ids else "NULL"),
+        ([ctx["registry_id"]] + new_ids) if new_ids else (ctx["registry_id"],),
+        ).fetchall():
+            prose_text += "\n" + (r[0] or "")
+        uncited_anchors = [ref for ref in anchor_refs if ref not in prose_text]
+        if uncited_anchors:
+            sample = ", ".join(uncited_anchors[:10])
+            more = f" (+{len(uncited_anchors) - 10} more)" if len(uncited_anchors) > 10 else ""
+            anomalies.append((
+                "DATA_ANOMALY_ANCHOR_UNCITED",
+                f"{len(uncited_anchors)} is_anchor=1 verses not cited in any current chapter: {sample}{more}",
+            ))
+
+    # Write anomalies as 'open' findings
+    written = 0
+    for atype, desc in anomalies:
+        # Idempotency — skip if an open finding of this type and same description prefix exists for this registry today
+        existing = conn.execute("""
+            SELECT id FROM wa_session_b_findings
+             WHERE registry_id = ?
+               AND finding_type = ?
+               AND status = 'open'
+               AND (delete_flag = 0 OR delete_flag IS NULL)
+               AND raised_date >= ?
+        """, (ctx["registry_id"], atype, ctx["ts"][:10])).fetchone()
+        if existing:
+            continue
+        if not dry:
+            # Allocate a finding_id of form 'ANOMALY-{registry:03d}-{seq:03d}'
+            seq = conn.execute("""
+                SELECT COUNT(*) FROM wa_session_b_findings
+                 WHERE registry_id = ? AND finding_type LIKE 'DATA_ANOMALY_%'
+            """, (ctx["registry_id"],)).fetchone()[0] + 1
+            finding_id_text = f"ANOMALY-{ctx['registry_no']:03d}-{seq:03d}"
+            conn.execute("""
+                INSERT INTO wa_session_b_findings
+                    (finding_id, registry_id, finding_type, finding,
+                     raised_date, status, session_b_instruction)
+                VALUES (?, ?, ?, ?, ?, 'open', ?)
+            """, (finding_id_text, ctx["registry_id"], atype, desc, ctx["ts"],
+                  "wa-claudecode-instruction-v4_3"))
+        written += 1
+
+    return {
+        "written": written, "skipped": 0, "errors": [],
+        "anomalies": [a[0] for a in anomalies],
+    }
+
+
 # ── Main runner ────────────────────────────────────────────────────────────
 
 
@@ -778,6 +1281,13 @@ def run(manifest: dict, conn: sqlite3.Connection, dry: bool, obslog_text: str = 
     summary["catalogue_completeness"] = write_catalogue_completeness(conn, manifest, ctx, dry)
     summary["review_notes"] = write_review_notes(conn, manifest, ctx, dry)
     summary["anchor_verse_analyses"] = write_anchor_verse_analyses(conn, manifest, ctx, dry, obslog_text)
+
+    # v2.7 / v2.CC9: prose supersedes (revision sessions only). Order matters —
+    # supersedes must run AFTER qa_findings + sd_pointers so that newly-resolved
+    # findings and new SD pointers exist when the citation extractor resolves FKs.
+    summary["prose_supersedes"] = write_prose_supersedes(conn, manifest, ctx, dry)
+    summary["supersede_citations"] = write_supersede_citations(conn, manifest, ctx, dry, summary["prose_supersedes"])
+    summary["supersede_audit"] = write_supersede_audit(conn, manifest, ctx, dry, summary["prose_supersedes"], summary["supersede_citations"])
 
     return {"validation": validation, "summary": summary, "errors": []}
 

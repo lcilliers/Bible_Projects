@@ -1,6 +1,6 @@
 # CLAUDE.md — Claude Code Project Reference
 
-> Compact reference loaded into every conversation. Authoritative detail lives in `data/imports/WA/Workflow/Framework_B/Session_B/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-26 (cost-aware trim; full pre-trim version at commit ~951 lines).
+> Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 
 ---
 
@@ -15,7 +15,7 @@ A structured academic Bible research platform centred on **~214 English words** 
 - **Claude Code** — DB engine: patch application, JSON export, schema migrations, validation queries, programme state, Verse Context batch construction, pool dataset assembly.
 - **Claude AI** — analytical: term classification, verse analysis, scope judgements, narrative production, JSON extraction, Verse Context classification.
 
-**Governing documents:** `data/imports/WA/Workflow/Framework_B/Session_B/`. All operational cross-refs use `[current]` (GR-REF-002) → resolve to highest-numbered version at read time. Authoritative CC instruction: `wa-claudecode-instruction [current]`.
+**Governing documents:** `Workflow/Instructions/`. All operational cross-refs use `[current]` (GR-REF-002) → resolve to highest-numbered version at read time. Authoritative CC instruction: `wa-claudecode-instruction [current]`.
 
 ---
 
@@ -23,30 +23,45 @@ A structured academic Bible research platform centred on **~214 English words** 
 
 ```text
 Bible_study_projects/             ← working dir (Google Drive root)
-├── CLAUDE.md, README.md, .gitignore
-├── engine/         ← Python automation engine (`python -m engine.engine`)
-├── analytics/      ← STEP/Zotero clients, db_client, word_export
-├── scripts/        ← Utility/maintenance scripts (see §6 for prefix conventions)
-├── data/
-│   ├── bible_research.db          ← SQLite (~40 MB, NOT in Git)
-│   ├── file_manifest.json         ← Machine-readable file index
-│   ├── schema/create_tables.sql
-│   ├── imports/WA/                ← Session_A_Data, Patches, Word_Data, Workflow/...
-│   ├── exports/                   ← JSON exports (incl. verse_context/, session_d/)
-│   └── discovery/
-├── outputs/        ← markdown, docx, pdf, word_reports, session-*.md
-├── docs/           ← file-organisation-rules.md, interaction-preferences.md, *_setup.md
-├── research/       ← notes, projects, templates
-├── Logs/, backups/ (NOT in Git), archive/
+├── CLAUDE.md, README.md, tasks.md, .gitignore, .env
+├── engine/                       ← Python automation engine (`python -m engine.engine`)
+├── scripts/                      ← Utility/maintenance scripts (see §6 for prefix conventions)
+│   └── analytics/                ← STEP/Zotero clients, db_client, word_export
+├── database/
+│   ├── bible_research.db         ← SQLite (~165 MB, NOT in Git)
+│   └── file_manifest.json        ← Machine-readable file index
+├── Sessions/                     ← Session-staged inputs and outputs
+│   ├── Patches/                  ← JSON patches (per-session-stage); applied → archive/patches/
+│   ├── Session_A/                ← STEP Extracts, terms, Word_Data, registry, Data_Prose
+│   ├── Session_B/                ← 12 numbered sub-stages (01_Verse_Context_Process_input … 12_Session_B_Status)
+│   ├── Session_C/                ← Session C and Session_C_Words (word studies)
+│   └── Session_D/                ← Session_D_Synthesis + session_d (cluster outputs)
+├── Workflow/                     ← Programme governance
+│   ├── Instructions/             ← Authoritative instruction docs (wa-*-vN_M-YYYYMMDD.md)
+│   ├── Global_rules/             ← wa-global-rules-all-vN, -startup-vN, extract.json
+│   ├── Catalogue/                ← Observation question catalogue extracts
+│   ├── reference/                ← Reference snapshots, file/label/patch patterns
+│   ├── registry/                 ← Registry-management guide + overview
+│   ├── schema/                   ← create_tables.sql + database-schema-v*.json
+│   ├── Programme/                ← programme_prose, programme_analysis, Program_reports
+│   ├── methodology/              ← Methodology session logs and design notes
+│   ├── Sessionlogs/              ← Cross-stage session logs
+│   └── archive/                  ← Superseded instruction-doc versions
+├── outputs/                      ← Generated artefacts (docx, markdown, pdf, session-logs)
+├── research/                     ← discovery/ (STEP raw output), investigations/, notes/, templates/
+├── docs/                         ← file-organisation-rules.md, interaction-preferences.md, *_setup.md
+├── Logs/                         ← Pre-restructure session logs (historical)
+├── archive/                      ← patches/, scripts/, docs/, Sessions/, References/, Programme_prose/, Logs/
+└── backups/                      ← DB snapshots (NOT in Git)
 ```
 
 For exact file lookup use `python scripts/build_file_manifest.py --search "..."`.
 
 ---
 
-## 3. The Database — Schema v3.11.0
+## 3. The Database — Schema v3.17.0
 
-**File:** `data/bible_research.db` (SQLite, ~40 MB, excluded from Git). Connection pattern: `sqlite3.connect('data/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
+**File:** `database/bible_research.db` (SQLite, ~165 MB, excluded from Git). Connection pattern: `sqlite3.connect('database/bible_research.db')`; set `row_factory = sqlite3.Row` for dict-like access.
 
 ### Table Groups
 
@@ -112,7 +127,7 @@ NEW_WORD and GAP_FILL modes are superseded — AUDIT_WORD handles both paths.
 
 **Common flags:** `--dry-run`, `--force`, `--interactive`, `--skip-span-backpop`, `--extract-file=PATH`.
 
-**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.11.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
+**Constants (`engine/constants.py`):** `EXPECTED_SCHEMA_VERSION = "3.17.0"` · `LOCK_SENTINEL = "In Progress"` (title case, matches stored data) · `HIGH_FREQ_THRESHOLD = 500` · `THIN_DATA_THRESHOLD = 20` · `BACKUP_RETENTION = 10` · `STALE_LOCK_SECONDS = 7200`.
 
 Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Architecture-*.md`.
 
@@ -120,7 +135,7 @@ Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Arc
 
 ## 5. STEP API Client
 
-`analytics/step_client.py` against local STEP server (`http://localhost:8989`). Methods: `get_vocab_info`, `get_verse_records`, `get_verse_records_with_html`, `get_strongs_for_word`, `get_related_term_cluster`, `extract_word_data`. STEP caps results at 60; client uses canonical section splits (Torah/History/Poetry/Prophets/NT, halved if needed) for full coverage. Detail: `docs/step_setup.md`.
+`scripts/analytics/step_client.py` against local STEP server (`http://localhost:8989`). Methods: `get_vocab_info`, `get_verse_records`, `get_verse_records_with_html`, `get_strongs_for_word`, `get_related_term_cluster`, `extract_word_data`. STEP caps results at 60; client uses canonical section splits (Torah/History/Poetry/Prophets/NT, halved if needed) for full coverage. Detail: `docs/step_setup.md`.
 
 ---
 
@@ -155,8 +170,8 @@ All Claude AI output → JSON patch → `python scripts/apply_session_patch.py` 
 
 **Patch types:** PREANALYSIS · SESSIONB · SESSIONB-COMPLETE · ANALYSIS · VERSECONTEXT · VCGROUP · VCVERSE · SDPOINTERS · REPAIR · SESSIOND · CLUSTERING · DIMREVIEW.
 
-**Engine export** (STEP format): `python -m engine.engine --export-word --registry=N` → `data/exports/STEP Extracts/...`.
-**Complete extract** (Session B/C format, 9 layers): `python scripts/build_complete_extract.py --registry=N` → `data/exports/Session C/...`. Scope `full` (pre-analysis) or `final` (post-analysis); version auto-increments per day.
+**Engine export** (STEP format): `python -m engine.engine --export-word --registry=N` → `Sessions/Session_A/STEP Extracts/...`.
+**Complete extract** (Session B/C format, 9 layers): `python scripts/build_complete_extract.py --registry=N` → `Sessions/Session_C/Session C/...`. Scope `full` (pre-analysis) or `final` (post-analysis); version auto-increments per day.
 
 Detail: `wa-patch-instruction [current]` (patch ops, REPAIR catalogue, failure protocol) · `wa-versecontext-instruction [current]` (VC batch construction, R1–R4 validation, status advancement) · `wa-sessionb-analysis-readiness [current]` and `wa-sessionb-analysis-output [current]` (Session B Stage 1/2) · `wa-registry-management-guide [current]` §7a (pool IDs and pool-readiness logic) · `wa-sessiond-orientation [current]`.
 
@@ -175,7 +190,7 @@ Detail: `wa-patch-instruction [current]` (patch ops, REPAIR catalogue, failure p
 
 ## 10. Document Architecture
 
-Documents in `data/imports/WA/Workflow/Framework_B/Session_B/`. **All operational cross-references use the `[current]` token (GR-REF-002)** — resolve to highest-numbered version at read time. Pin specific versions only for provenance (Supersedes fields, patch metadata).
+Documents in `Workflow/Instructions/`. **All operational cross-references use the `[current]` token (GR-REF-002)** — resolve to highest-numbered version at read time. Pin specific versions only for provenance (Supersedes fields, patch metadata).
 
 | Document | Audience | Purpose |
 | --- | --- | --- |
@@ -262,8 +277,8 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 
 ## 12. Git
 
-- Excluded: `data/bible_research.db`, `backups/`.
-- Committed: `data/imports/WA/Patches/*.json`.
+- Excluded: `database/bible_research.db`, `backups/`.
+- Committed: `Sessions/Patches/*.json`.
 - Commit message: `session YYYYMMDD: brief description`. Branch: `main`. Remote: `github.com/lcilliers/Bible_Projects`.
 
 ---

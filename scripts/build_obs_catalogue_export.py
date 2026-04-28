@@ -24,7 +24,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = os.path.join("data", "bible_research.db")
+DB_PATH = os.path.join("database", "bible_research.db")
 OUT_DIR = os.path.join("data", "imports", "WA", "Workflow", "Framework_B", "Session_B")
 
 

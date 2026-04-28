@@ -6,7 +6,7 @@ Unified pipeline for both new words and existing word re-audits.
 Supersedes new_word.py and gap_fill.py (retained for reference only).
 
 Input: Step 1 JSON file produced by scripts/word_study_extract.py
-       data/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
+       research/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
        The latest file for the word is auto-selected unless --extract-file given.
 
 New word workflow:
@@ -105,8 +105,10 @@ from datetime import datetime, timezone
 from typing import Any
 
 _ROOT = os.path.join(os.path.dirname(__file__), "..")
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
+# analytics/ lives under scripts/ since the 2026-04-27 folder restructure.
+_SCRIPTS = os.path.join(_ROOT, "scripts")
+if _SCRIPTS not in sys.path:
+    sys.path.insert(0, _SCRIPTS)
 
 from .constants import EXPECTED_SCHEMA_VERSION, LOCK_SENTINEL, AUDITED_SENTINEL
 from .db import get_schema_version, get_book_id
@@ -125,7 +127,7 @@ try:
 except ImportError:
     _EXPORT_AVAILABLE = False
 
-_DISCOVERY_DIR = os.path.join(_ROOT, "data", "discovery")
+_DISCOVERY_DIR = os.path.join(_ROOT, "research", "discovery")
 _SEP = "═" * 66
 
 
@@ -1661,7 +1663,7 @@ def run_audit_word(
         if stop_reasons:
             # Check if a Step 1 extract JSON is available — if so, treat as first-time
             # population and continue (A3/A4/A6 will ingest the data)
-            _discover_dir = os.path.join(_ROOT, "data", "discovery")
+            _discover_dir = os.path.join(_ROOT, "research", "discovery")
             _has_extract = extract_file or (
                 os.path.isdir(_discover_dir)
                 and any(
@@ -1985,7 +1987,7 @@ def run_audit_word(
         try:
             print("\nA11  Writing full-word JSON export...")
             date_str    = datetime.now(timezone.utc).strftime("%Y%m%d")
-            out_dir     = os.path.join(_ROOT, "data", "exports", "STEP Extracts")
+            out_dir     = os.path.join(_ROOT, "Sessions", "Session_A", "STEP Extracts")
             os.makedirs(out_dir, exist_ok=True)
 
             export_data = _export_word(conn, registry_id)

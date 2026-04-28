@@ -11,7 +11,7 @@ Includes:
   - vc_groups, vc_relevant, vc_set_aside, vc_anchors
   - dimension_profile
 
-Output: outputs/reports/programme/wa-registry-overview-{date}.json
+Output: Workflow/Programme/Program_reports/wa-registry-overview-{date}.json
 
 Usage:
   python scripts/generate_registry_overview.py
@@ -21,8 +21,8 @@ import os
 import json
 from datetime import date
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
-OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "outputs", "reports", "programme")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
+OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "Workflow", "Programme", "Program_reports")
 
 
 def main():
@@ -96,14 +96,13 @@ def main():
             WHERE ti.file_id IN (SELECT id FROM wa_file_index WHERE word_registry_fk = ?)
             AND vc.is_anchor = 1 AND vc.delete_flagged = 0""", (reg_id,)).fetchone()[0]
 
-        # Dimension profile
+        # Dimension profile (wa_dimension_index now uses owning_registry_no, not strongs_number)
         dims = conn.execute("""SELECT di.dimension, COUNT(*) as c
             FROM wa_dimension_index di
-            JOIN wa_term_inventory ti ON ti.strongs_number = di.strongs_number
-              AND ti.term_owner_type = 'OWNER' AND ti.delete_flagged = 0
-            WHERE ti.file_id IN (SELECT id FROM wa_file_index WHERE word_registry_fk = ?)
-            AND di.dimension IS NOT NULL AND di.delete_flagged = 0
-            GROUP BY di.dimension ORDER BY c DESC""", (reg_id,)).fetchall()
+            WHERE di.owning_registry_no = ?
+              AND di.dimension IS NOT NULL
+              AND di.delete_flagged = 0
+            GROUP BY di.dimension ORDER BY c DESC""", (r["no"],)).fetchall()
         dim_profile = {d["dimension"]: d["c"] for d in dims} if dims else None
 
         entry = {k: r[k] for k in r.keys()}

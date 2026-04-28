@@ -1,6 +1,6 @@
 import sqlite3, json
 
-conn = sqlite3.connect("data/bible_research.db")
+conn = sqlite3.connect("database/bible_research.db")
 conn.row_factory = sqlite3.Row
 
 ti = conn.execute(

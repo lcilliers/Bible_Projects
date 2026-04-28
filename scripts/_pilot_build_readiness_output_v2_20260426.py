@@ -27,7 +27,7 @@ Usage:
   python scripts/_pilot_build_readiness_output_v2_20260426.py --registry 67
 
 Output:
-  outputs/reports/words/wa-{NNN}-{word}-readiness-output-v2-{YYYYMMDD}.md
+  Sessions/Session_B/09_Analysis_output_logs/words/wa-{NNN}-{word}-readiness-output-v2-{YYYYMMDD}.md
 """
 from __future__ import annotations
 import argparse
@@ -37,8 +37,10 @@ import sys
 from collections import defaultdict
 from datetime import datetime, timezone
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("outputs", "reports", "words")
+DB_PATH = os.path.join("database", "bible_research.db")
+# Readiness outputs go to Sessions/Session_B/07_Analysis_Readiness_Status/ per
+# the 2026-04-27 folder restructure (not the obslog-output folder 09_*).
+OUT_DIR = os.path.join("Sessions", "Session_B", "07_Analysis_Readiness_Status")
 
 
 def now_iso() -> str:

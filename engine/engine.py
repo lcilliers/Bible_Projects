@@ -39,10 +39,12 @@ import argparse
 import sys
 import os
 
-# Ensure analytics/ is importable when running as a module from project root
 _ROOT = os.path.join(os.path.dirname(__file__), "..")
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
+# analytics/ lives under scripts/ since the 2026-04-27 folder restructure.
+# Add scripts/ to sys.path so `from analytics.* import ...` keeps working.
+_SCRIPTS = os.path.join(_ROOT, "scripts")
+if _SCRIPTS not in sys.path:
+    sys.path.insert(0, _SCRIPTS)
 
 from .constants import ENGINE_VERSION, EXPECTED_SCHEMA_VERSION
 from .db import get_connection, get_schema_version
@@ -260,7 +262,7 @@ def main() -> int:
             return 1
         word     = data["_export"]["word"]
         date_str = datetime.now(timezone.utc).strftime("%Y%m%d")
-        out_dir  = os.path.join(_ROOT, "data", "exports", "STEP Extracts")
+        out_dir  = os.path.join(_ROOT, "Sessions", "Session_A", "STEP Extracts")
         os.makedirs(out_dir, exist_ok=True)
 
         # Determine scope: "final" only if v5.2 extraction cycle is complete

@@ -15,10 +15,11 @@ import sys
 import os
 from datetime import datetime, timezone
 
-# Ensure project root is on path for importing analytics modules
 _ROOT = os.path.join(os.path.dirname(__file__), "..")
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
+# analytics/ lives under scripts/ since the 2026-04-27 folder restructure.
+_SCRIPTS = os.path.join(_ROOT, "scripts")
+if _SCRIPTS not in sys.path:
+    sys.path.insert(0, _SCRIPTS)
 
 from analytics.step_client import StepClient
 

@@ -6,8 +6,8 @@ Phase 1 — Term Discovery (read-only, no DB writes).
 Given an English anchor word, maps every Hebrew and Greek term related to it
 using STEP's vocab and relatedNos data.  Produces:
 
-  data/discovery/{word}_term_map_{YYYYMMDD}.json   — full structured term data
-  data/discovery/{word}_triage_{YYYYMMDD}.md       — researcher decision table
+  research/discovery/{word}_term_map_{YYYYMMDD}.json   — full structured term data
+  research/discovery/{word}_triage_{YYYYMMDD}.md       — researcher decision table
 
 Nothing is written to the database.  No verses are extracted.
 The triage table has blank `include?` and `notes` columns for the researcher
@@ -329,13 +329,13 @@ def main() -> None:
     parser.add_argument("--no-related", action="store_true",
                         help="Skip related terms; fetch sub-glosses only")
     parser.add_argument("--output-dir", default=None,
-                        help="Output directory (default: data/discovery/ in project root)")
+                        help="Output directory (default: research/discovery/ in project root)")
     args = parser.parse_args()
 
     word = args.english.lower().strip()
     today_str = date.today().strftime("%Y%m%d")
 
-    output_dir = args.output_dir or os.path.join(_ROOT, "data", "discovery")
+    output_dir = args.output_dir or os.path.join(_ROOT, "research", "discovery")
     os.makedirs(output_dir, exist_ok=True)
 
     p("=" * 60)

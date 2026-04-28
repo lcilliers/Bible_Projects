@@ -1,6 +1,6 @@
 """Auditor + applicator for STEP Extracts archiving.
 
-Groups files in data/exports/STEP Extracts/ by {word}_{reg}_{scope},
+Groups files in Sessions/Session_A/STEP Extracts/ by {word}_{reg}_{scope},
 keeps the latest-dated file per group (and the highest v{n} within
 that date), and lists older siblings as candidates for archive to
 data/exports/archive/STEP Extracts/.
@@ -21,9 +21,9 @@ from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-SRC = Path("data/exports/STEP Extracts")
+SRC = Path("Sessions/Session_A/STEP Extracts")
 DST = Path("data/exports/archive/STEP Extracts")
-OUT = Path("outputs/investigations") / f"step-extract-archive-plan-{datetime.now().strftime('%Y%m%d')}.md"
+OUT = Path("research/investigations") / f"step-extract-archive-plan-{datetime.now().strftime('%Y%m%d')}.md"
 
 # Expected filename pattern:
 #   {word}_{reg}_{scope}_{YYYYMMDD}[_v{n}].json

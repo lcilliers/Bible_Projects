@@ -912,7 +912,7 @@ def _m28(conn: sqlite3.Connection) -> None:
 # routes and link to catalogue questions.
 #
 # CC applied defensible defaults on open §7 items (recorded in
-# outputs/investigations/coverage-flags-redesign-v1-20260420.md v1.2):
+# research/investigations/coverage-flags-redesign-v1-20260420.md v1.2):
 #   Q3 (evidential_status fate): DEFERRED — column kept for now; pass-2
 #     review can decide; low urgency given sparse population (155 of 7164).
 #   Q4 (THIN_DATA + SMALL_VERSE_SAMPLE merge policy): MERGE — de-dup overlap
@@ -1082,8 +1082,8 @@ def _m31(conn: sqlite3.Connection) -> None:
 # the 11 canonical dimensions + 4 other vocabularies that today are either
 # undocumented (Claude AI gap analysis §4.3) or hardcoded in CC.
 #
-# Design: outputs/investigations/reference-as-database-design-20260420.md §10
-# Framework: outputs/investigations/reference-as-database-framework-execution-20260420.md
+# Design: research/investigations/reference-as-database-design-20260420.md §10
+# Framework: research/investigations/reference-as-database-framework-execution-20260420.md
 # Schedule: M32 vocab → M33 rules → M34 programme prose → M35 remaining taxonomy
 
 

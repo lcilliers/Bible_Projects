@@ -7,8 +7,8 @@ import os
 from datetime import datetime, timezone
 from collections import defaultdict
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
-OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "outputs")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
+OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "Workflow", "Programme")
 
 
 def main():
@@ -322,7 +322,7 @@ def main():
     # ═══════════════════════════════════════════════════════════════════════
     # WRITE
     # ═══════════════════════════════════════════════════════════════════════
-    report_dir = os.path.join(OUT_DIR, "reports", "programme")
+    report_dir = os.path.join(OUT_DIR, "Program_reports")
     os.makedirs(report_dir, exist_ok=True)
     out_path = os.path.join(report_dir, f"wa-programme-status-report-{now.replace('-', '')}.md")
     with open(out_path, "w", encoding="utf-8") as f:

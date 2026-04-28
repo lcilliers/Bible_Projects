@@ -17,8 +17,8 @@ import json
 import os
 from datetime import datetime, timezone
 
-DB_PATH    = os.path.join("data", "bible_research.db")
-PATCH_PATH = os.path.join("data", "imports", "WA", "Patches",
+DB_PATH    = os.path.join("database", "bible_research.db")
+PATCH_PATH = os.path.join("Sessions", "Patches",
                           "phase2-flag-reassessment-20260319-v1.json")
 
 # New flag codes and their groups

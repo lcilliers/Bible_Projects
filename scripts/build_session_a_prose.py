@@ -32,9 +32,9 @@ from datetime import datetime
 from pathlib import Path
 from textwrap import dedent
 
-DB_PATH = Path("data/bible_research.db")
+DB_PATH = Path("database/bible_research.db")
 OUTPUT_DIR = Path("data/exports/session_a")
-TERM_OUTPUT_DIR = Path("data/exports/session_a/terms")
+TERM_OUTPUT_DIR = Path("Sessions/Session_A/terms")
 
 BANKED_REGISTRIES = [35, 62, 134, 206, 207]
 
@@ -243,7 +243,7 @@ def render_header(registry, generated_at: str, include_filter: bool,
     parts = [f"# Session A — Registry {registry['no']:03d} {registry['word']}"]
     parts.append("")
     parts.append(f"**Generated:** {generated_at}  ")
-    parts.append(f"**Source:** `data/bible_research.db` (deterministic render, no analytics)  ")
+    parts.append(f"**Source:** `database/bible_research.db` (deterministic render, no analytics)  ")
     parts.append("**Governing instruction:** wa-versecontext-instruction [current]  ")
     parts.append("**Produced by:** `scripts/build_session_a_prose.py`")
     parts.append("")
@@ -707,7 +707,7 @@ def render_term_header(registry, term, generated_at: str, include_filter: bool,
                  + (f", {n_deleted_vc_rows} soft-deleted" if n_deleted_vc_rows else "")
                  + f" (of {n_verses_total} verses for this term).  "
                  + "⚠ Per-verse: emit `insert` for verses with no active row; emit `update` for verses with an active row being revised. See v3_5 §2.1–§2.4 and §6.1. The per-verse state is shown in the Verses section below.  ")
-    parts.append(f"**Source:** `data/bible_research.db` (deterministic render, no analytics)  ")
+    parts.append(f"**Source:** `database/bible_research.db` (deterministic render, no analytics)  ")
     parts.append("**Governing instruction:** wa-versecontext-instruction [current]  ")
     parts.append("**Produced by:** `scripts/build_session_a_prose.py --term`")
     parts.append("")

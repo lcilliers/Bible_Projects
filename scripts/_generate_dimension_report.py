@@ -3,14 +3,14 @@ Generate a dimension index summary report.
 Covers: dimension distribution, registry mapping, cluster analysis,
 classification status, and refinement priorities.
 
-Output: outputs/reports/programme/wa-dimension-report-{date}.md
+Output: Workflow/Programme/Program_reports/wa-dimension-report-{date}.md
 """
 import sqlite3
 import os
 from datetime import datetime, timezone
 from collections import defaultdict
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "outputs", "reports", "programme")
 
 

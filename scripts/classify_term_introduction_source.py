@@ -44,7 +44,7 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = os.path.join("data", "bible_research.db")
+DB_PATH = os.path.join("database", "bible_research.db")
 
 
 def open_db(path: str = DB_PATH) -> sqlite3.Connection:

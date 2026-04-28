@@ -23,7 +23,7 @@ Usage:
   python scripts/_pilot_build_analytic_status_v1_20260427.py --registry 67
 
 Output:
-  outputs/reports/words/wa-{NNN}-{word}-analytic-status-v1-{date}.md  (+ .json)
+  Sessions/Session_B/09_Analysis_output_logs/words/wa-{NNN}-{word}-analytic-status-v1-{date}.md  (+ .json)
 """
 from __future__ import annotations
 import argparse
@@ -35,8 +35,10 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("outputs", "reports", "words")
+DB_PATH = os.path.join("database", "bible_research.db")
+# Analytic status outputs go to Sessions/Session_B/07_Analysis_Readiness_Status/
+# (paired with the readiness output, both consumed by AI at session start).
+OUT_DIR = os.path.join("Sessions", "Session_B", "07_Analysis_Readiness_Status")
 
 
 def now_iso() -> str:

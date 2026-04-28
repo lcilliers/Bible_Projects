@@ -8,7 +8,7 @@ Usage:
   python scripts/build_patch_types_extract.py --out=PATH
 
 Default output:
-  data/exports/reference/wa-patch-types-extract-{YYYYMMDD}.json
+  Workflow/reference/wa-patch-types-extract-{YYYYMMDD}.json
 """
 from __future__ import annotations
 
@@ -22,8 +22,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("data", "exports", "reference")
+DB_PATH = os.path.join("database", "bible_research.db")
+OUT_DIR = os.path.join("Workflow", "reference")
 EXTRACTOR_VERSION = "1.0"
 
 

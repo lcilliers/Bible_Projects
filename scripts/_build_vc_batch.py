@@ -12,7 +12,7 @@ import os
 import argparse
 from datetime import date
 
-DB_PATH = os.path.join('data', 'bible_research.db')
+DB_PATH = os.path.join('database', 'bible_research.db')
 OUTPUT_DIR = os.path.join('data', 'exports', 'verse_context')
 
 def get_eligible_terms(conn):

@@ -4,8 +4,8 @@ Produces a single JSON file (and optional MD view) containing the canonical
 reference content sourced from the live DB. Intended for AI session-start
 consumption — replaces the document-based `wa-reference` going forward.
 
-Design: outputs/investigations/reference-as-database-design-20260420.md §10
-Framework: outputs/investigations/reference-as-database-framework-execution-20260420.md
+Design: research/investigations/reference-as-database-design-20260420.md §10
+Framework: research/investigations/reference-as-database-framework-execution-20260420.md
 
 Current coverage (M32 POC):
   - vocabularies (wa_vocab_set + wa_vocab_member)
@@ -35,8 +35,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("data", "exports", "reference")
+DB_PATH = os.path.join("database", "bible_research.db")
+OUT_DIR = os.path.join("Workflow", "reference")
 EXTRACTOR_VERSION = "1.0"
 
 
@@ -236,7 +236,7 @@ def build_snapshot(conn: sqlite3.Connection) -> dict:
             "schema_version": get_schema_version(conn),
             "extractor_version": EXTRACTOR_VERSION,
             "description": "Reference-as-Database snapshot. Source of truth for controlled vocabularies, schema, global rules, patch types, file/label patterns. Generated at session start for AI consumption.",
-            "design_doc": "outputs/investigations/reference-as-database-design-20260420.md",
+            "design_doc": "research/investigations/reference-as-database-design-20260420.md",
         },
         "vocabularies": extract_vocabularies(conn),
         "schema": extract_schema(conn),
@@ -313,7 +313,7 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="Build reference snapshot from live DB")
     ap.add_argument("--db", type=str, default=DB_PATH)
     ap.add_argument("--out", type=str, default=None,
-                    help="JSON output path (default: data/exports/reference/wa-reference-snapshot-{YYYYMMDD}.json)")
+                    help="JSON output path (default: Workflow/reference/wa-reference-snapshot-{YYYYMMDD}.json)")
     ap.add_argument("--also-markdown", action="store_true",
                     help="also emit a human-readable .md view alongside the JSON")
     args = ap.parse_args()

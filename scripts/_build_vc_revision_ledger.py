@@ -4,8 +4,8 @@ Build the VC revision ledger from VCB-7..11 patches.
 Reads patch JSONs in archive/patches/, derives per-term routing
 (NO-CHANGE / REVISE-ONLY / NEW-ONLY / MIXED), pairs with current DB
 metadata, and writes:
-  - outputs/investigations/vc-revision-ledger-v1-{date}.md
-  - outputs/investigations/vc-revision-ledger-v1-{date}.csv
+  - research/investigations/vc-revision-ledger-v1-{date}.md
+  - research/investigations/vc-revision-ledger-v1-{date}.csv
 
 Scope: VCB-7 (renewal pilot reg 134), VCB-8 individual term patches
 (yearning H4263, treachery G4273, jealousy G3863, righteousness G1345),
@@ -21,7 +21,7 @@ import csv
 from datetime import date
 from collections import defaultdict, Counter
 
-DB = os.path.join('data', 'bible_research.db')
+DB = os.path.join('database', 'bible_research.db')
 ARCHIVE = os.path.join('archive', 'patches')
 OUT_DIR = os.path.join('outputs', 'investigations')
 

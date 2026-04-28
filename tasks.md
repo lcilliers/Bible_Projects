@@ -13,7 +13,7 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 ## In Progress
 
 - [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions_
-- [ ] _Phase_A_Prose: generate phase A prose_
+- [ ] _Phase_A_Prose: generate phase A prose — instruction filed [Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md](Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md). First application 2026-04-27: R030 contrition (6 prose_section rows captured). Legacy-prose audit pending: 5 registries (035 covetousness, 062 fellowship, 134 renewal, 206 vulnerability, 207 blindness_spiritual) have `.md` files in Sessions/Session_A/Data_Prose/ from 2026-04-20 but DB capture status unverified — see instruction §12._
 - [ ] _Phase_B_Verse_Context: Run through all verse context again — VC-7 pilot done (renewal); VC-8 done (yearning, treachery, jealousy, righteousness — malice carry-over to VC-9); VC-9 done (5 registries, 9 terms); VC-10 done (5 three-term registries, 12 terms); VC-11 done (5 three-term registries, 15 terms incl. 3 partial-completion mti=916/1364/5111); 47 of ~3,891 mti_terms at vc_completed across 16 registries; 169 legacy-Complete registries still pending under v3_9 contracts._
 
 ## Open
@@ -45,15 +45,38 @@ Source-of-truth: [db-capture-phase1-results-and-table-architecture-v1-20260427.m
     - [x] `wa-patch-instruction-v2_9 → v2_10` (Session B leaves patch path; VC + REPAIR + DIMREVIEW retained)
     - [x] `wa-sessionb-analysis-readiness-v1_6 → v1_7` (now mostly a CC operation; readiness `.md` + `.json` are the outputs)
     - [x] `wa-sessionb-analysis-output-v1_1 → v1_2` (citation discipline §v2.4; §N resolution discipline §v2.3; obslog-only output)
+    - [x] `wa-sessionb-analysis-output-v1_2 → v1_3` (added §v2.7 — **prose revision on review**: revision sessions must supersede affected chapters with v2.4 citation-disciplined versions; covers all findings; surfaces new citation tokens for DB)
     - [x] `wa-claudecode-instruction-v4_1 → v4_2` (8-section v2 addendum: readiness output gen, parser, writer, analytic status gen, anomaly detection, schema migrations, lifecycle vocab, pilot status)
-- [ ] **G. Programme prose update (researcher-gated)** — `prog_instr_session_b` to add a governance paragraph reflecting v2 architecture. Drafted in next session pending researcher review.
+    - [x] `wa-claudecode-instruction-v4_2 → v4_3` (added §v2.CC9 — **prose supersede execution + audit**: parser detects `SUPERSEDE: sb_s2c_ch{n}` blocks; `write_prose_supersedes` writes new `prose_section` row + retires prior; four-audit session-close coherence check including `DATA_ANOMALY_FINDING_UNCITED`, `_CHAPTER_NOT_SUPERSEDED`, `_CITATION_GAP`, `_ANCHOR_UNCITED`)
+- [x] **G. Programme prose update** (researcher-approved 2026-04-27, applied via [_apply_programme_prose_v2_supersedes_v1_20260427.py](scripts/archive/_apply_programme_prose_v2_supersedes_v1_20260427.py); backup `bible_research_pre_prose_v2_20260427.db`). Five prose changes per [programme-prose-v2-recommendations-v1-20260427.md](outputs/investigations/programme-prose-v2-recommendations-v1-20260427.md):
+    - `prog_instr_session_b_readiness` v1 (1,250 ch) → v2 (2,984 ch) — CC owns readiness; 14-section structure; §N open-item discipline; bidirectional anomaly channel
+    - `prog_instr_session_b_output` v1 (1,371 ch) → v2 (3,353 ch) — obslog-only output; mandatory citation + §N disciplines; v2.7 prose-revision rule
+    - `prog_disc_two_ai` v1 (3,838 ch) → v2 (3,511 ch) — three-artefact model (patches + directives + obslogs); CC's expanded role
+    - `prog_data_questions` v1 (6,200 ch) → v2 (5,014 ch) — findings as five-state lifecycle; four-value coverage; entity_links; generative catalogue
+    - **NEW** `prog_data_obslog_pipeline` (3,850 ch, prose_section_type id=77, sort_order=31, chapter 4) — three-phase pipeline (parse → write → audit) + supersede discipline + readiness/analytic-status closed loop
+    - Extract refreshed: [data/exports/reference/wa-programme-prose-extract-20260427.md](data/exports/reference/wa-programme-prose-extract-20260427.md) (51 section types, 51 content sections)
 - [x] **H. tasks.md kept current** — this section.
 
+**Open follow-ups from v2.7 / v2.CC9 (added 2026-04-27):**
+
+- [x] **I. Parser/writer extension for SUPERSEDE: blocks** (2026-04-27) — `_pilot_parse_obslog_to_db_v1_20260427.py` and `_pilot_capture_obslog_to_db_v1_20260427.py` extended:
+    - Parser: `parse_prose_supersedes()` detects `### SUPERSEDE: sb_s2c_ch{n} — {title}` blocks; emits `prose_supersedes` manifest category with `{section_type_code, title, registry_id, author, source_file, body, char_count}`.
+    - Writer: `write_prose_supersedes()` — locates current row via `superseded_by_id IS NULL`; inserts new row at `version=prior+1` with `supersedes_id=prior`; UPDATEs prior row `superseded_by_id=new, status='archived'`. Idempotent on body equality.
+    - Citation extractor: `write_supersede_citations()` — seven token patterns (`OBS_FULL`, `OBS_SHORT`, `SP_FULL`, `DIM`, `GAP_N`, `QA`, `Q_CODE`); short-form `OBS-NNN` normalised to `OBS-{registry:03d}-OBS-NNN`; FK resolution against `wa_session_b_findings.finding_id` and `wa_session_research_flags.flag_label`.
+    - Audit: `write_supersede_audit()` — four-check coherence audit emits `DATA_ANOMALY_FINDING_UNCITED`, `_CHAPTER_NOT_SUPERSEDED`, `_CITATION_GAP` (>10% threshold), `_ANCHOR_UNCITED` (re-run; via `verse_context.is_anchor`, not `wa_verse_records`).
+    - Two schema-fact fixes during build: prose_section.status enum is `('draft','in_review','approved','archived')` — used `archived` for retired predecessor; `is_anchor` lives on `verse_context`, not `wa_verse_records`.
+- [x] **J. Reprocess R067 obslog v3 with supersede support** (2026-04-27 — backup `bible_research_pre_capture_writer_20260427.db`). Outcomes:
+    - 5 prose_supersedes written (ids 61-65 at v=2; predecessors 56-60 archived with chain integrity: `superseded_by_id` ↔ `supersedes_id`)
+    - 281 chapter citations extracted across 5 new rows; 241 FK-resolved (86%)
+    - 2 anomalies raised — `ANOMALY-067-001` (FINDING_UNCITED: 2 of 49 resolved findings — OBS-067-OBS-003, OBS-067-OBS-048); `ANOMALY-067-002` (CITATION_GAP in ch2 18%, ch4 26%, ch5 15%)
+    - Anchor-uncited audit passed; chapter-not-superseded audit passed (all 5 superseded)
+    - End-to-end pipeline now demonstrably working under v2.7 / v2.CC9 discipline
+
 **Catalogue completeness scope (decision #2 approved):**
-- [ ] Phase 2 writer must record `coverage='no_finding'` in `wa_finding_catalogue_links` for every universal Q (147) per word that wasn't surfaced. Volume: ~29.4K rows at programme completion. Enables backfill + monitoring.
+- [x] Phase 2 writer's `write_catalogue_completeness` records `coverage='no_finding'` for every universal Q (155) not addressed in the analytical session. Pilot R067: 155/155 universal Qs covered. Programme-wide volume estimate: ~29.4K rows at completion. Backfill + monitoring enabled via SQL: `SELECT question_id, COUNT(*) FROM wa_finding_catalogue_links WHERE coverage='no_finding' GROUP BY question_id` returns under-covered questions.
 
 **CC anomaly-raising (decision #3 approved):**
-- [ ] `DATA_ANOMALY_*` controlled list seeded with: `_ANCHOR_UNCITED`, `_DIMENSION_DRIFT`, `_ANSWER_UNGROUNDED`, `_EMPTY_TERM`, `_ORPHAN_ANALYSIS`. Expandable as patterns emerge.
+- [x] `DATA_ANOMALY_*` controlled list seeded and operational. Eight types now in `ANOMALY_TYPES` set in `_pilot_capture_obslog_to_db_v1_20260427.py`: original five (`_ANCHOR_UNCITED`, `_DIMENSION_DRIFT`, `_ANSWER_UNGROUNDED`, `_EMPTY_TERM`, `_ORPHAN_ANALYSIS`) + three from v2.CC9 (`_FINDING_UNCITED`, `_CHAPTER_NOT_SUPERSEDED`, `_CITATION_GAP`). Pilot R067 raised `ANOMALY-067-001` (FINDING_UNCITED) + `ANOMALY-067-002` (CITATION_GAP) to surface in next session's §N. Set is expandable as patterns emerge.
 
 **Backfill of historical 195 findings (decision #7):** Resolved by attrition — will be addressed naturally as those words are resubmitted for analysis. **No active backfill task.**
 
@@ -91,7 +114,6 @@ Source-of-truth: [db-capture-phase1-results-and-table-architecture-v1-20260427.m
 - [ ] _Phase_B_Analysis_Readiness: Run all words through readiness_
 - [ ] _Phase_B_Prose:  Prepare prose ready for analysis_
 - [ ] _Phase_B_Output:  Prepare output and update database for all words.
-- [ ] 
 
 
 ## Done

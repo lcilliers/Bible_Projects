@@ -18,7 +18,9 @@ Shared constants for the Session A v9 Automation Engine.
 # per A-02 + A-03 resolutions).
 # Bumped 2026-04-24 for M39 (delete NULL-skeleton verse_context rows — legacy pre-M37 seed
 # cleanup; resolves coverage false-positives and VCNEW insert collisions).
-EXPECTED_SCHEMA_VERSION = "3.16.1"
+# Bumped 2026-04-27 for M40-M43 (DB-capture architecture: verse_context.analysis_note,
+# wa_prose_section_citations, wa_obs_question_catalogue.review_note, finding_id NULL).
+EXPECTED_SCHEMA_VERSION = "3.17.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"

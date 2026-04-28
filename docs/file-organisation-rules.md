@@ -207,19 +207,19 @@ Programme data exported from the database for consumption by Claude AI or the re
 | Subfolder | What goes here | Naming pattern |
 |-----------|---------------|----------------|
 | `data/exports/` (root) | Only subfolders — no files in root |  |
-| `data/exports/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_{scope}_{YYYYMMDD}_v{n}.json` |
-| `data/exports/verse_context/` | Verse Context batch extracts | `wa-vcb-{NNN}-extract-{YYYYMMDD}.json` |
-| `data/exports/dimension_review/` | Dimension Review extracts (cluster, root family, group verification, existing pointers) | `wa-dim-{cluster}-{type}-{YYYYMMDD}.json` |
-| `data/exports/dimension_review/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-{ref}-cc-directive-{scope}-v{n}-{YYYYMMDD}.md` |
-| `data/exports/dimension_review/directives/archive/` | Processed directives (moved after execution) | |
+| `Sessions/Session_A/STEP Extracts/` | Full word JSON exports from engine | `{word}_{reg}_{scope}_{YYYYMMDD}_v{n}.json` |
+| `Sessions/Session_B/01_Verse_Context_Process_input/` | Verse Context batch extracts | `wa-vcb-{NNN}-extract-{YYYYMMDD}.json` |
+| `Sessions/Session_B/04_dimension_review_process input/` | Dimension Review extracts (cluster, root family, group verification, existing pointers) | `wa-dim-{cluster}-{type}-{YYYYMMDD}.json` |
+| `Sessions/Session_B/04_dimension_review_process input/directives/` | Pending CC directives from Claude AI. Processed directives move to `directives/archive/`. | `wa-dim-{ref}-cc-directive-{scope}-v{n}-{YYYYMMDD}.md` |
+| `Sessions/Session_B/04_dimension_review_process input/directives/archive/` | Processed directives (moved after execution) | |
 | `data/exports/vertical_pass/` | Vertical Pass experiment and analysis extracts | `wa-verticalpass-{scope}-{YYYYMMDD}.json` |
 | `data/exports/Session C/` | Comprehensive word extracts (complete and owner-only) | `wa-{NNN}-{word}-{scope}-{YYYYMMDD}-v{n}.json` |
-| `data/exports/session_d/` | Session D pointers files | `wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json` |
+| `Sessions/Session_D/session_d/` | Session D pointers files | `wa-{NNN}-{word}-sdpointers-{YYYYMMDD}.json` |
 | `data/exports/pool_analysis/` | Pool analysis datasets | `wa-pool-{pool_id}-analysis-{YYYYMMDD}.json` |
 
 **Archiving:** When a new version of an export is produced on the same day (v2, v3), prior versions are retained (auto-versioned). When a new day's export supersedes a prior day's, the prior day's file is moved to `data/exports/archive/`.
 
-### 3.2 `data/imports/WA/Patches/`
+### 3.2 `Sessions/Patches/`
 
 All patch files received from Claude AI. Two categories:
 
@@ -230,7 +230,7 @@ All patch files received from Claude AI. Two categories:
 
 Applied patches and executed directives are moved to `archive/patches/` by the applicator or Claude Code.
 
-### 3.3 `data/imports/WA/Session_B_Analysis/`
+### 3.3 `Sessions/Session_B/09_Analysis_output_logs/`
 
 Claude AI session outputs from Session B analytical work.
 
@@ -243,7 +243,7 @@ Claude AI session outputs from Session B analytical work.
 
 **Not here:** Session C notes (→ `Session_C_Words/`), dimension review files (→ `Session_B_Dimension_Review/`).
 
-### 3.4 `data/imports/WA/Session_B_Verse_Context/`
+### 3.4 `Sessions/Session_B/02_Verse_Context_logs/`
 
 Claude AI session outputs from Verse Context classification work.
 
@@ -256,7 +256,7 @@ Claude AI session outputs from Verse Context classification work.
 
 **Not here:** Dimension review files (→ `Session_B_Dimension_Review/`).
 
-### 3.5 `data/imports/WA/Session_B_Dimension_Review/`
+### 3.5 `Sessions/Session_B/05_Dimension_Review_logs/`
 
 Claude AI session outputs from Dimension Review work.
 
@@ -266,7 +266,7 @@ Claude AI session outputs from Dimension Review work.
 | Session logs | `wa-dim-{cluster}-session-log-v{n}-{YYYYMMDD}.md` |
 | Registry-specific patches | `wa-dim-{cluster}-reg{NNN}-patch-v{n}-{YYYYMMDD}.json` |
 
-### 3.6 `data/imports/WA/Session_C_Words/`
+### 3.6 `Sessions/Session_C/Session_C_Words/`
 
 Claude AI Session C word study outputs.
 
@@ -281,7 +281,7 @@ Claude AI Session C word study outputs.
 
 Governing instruction documents. Only the **current version** lives here. Superseded versions go to the `archive/` subfolder within Session_B.
 
-### 3.8 `data/discovery/`
+### 3.8 `research/discovery/`
 
 STEP API discovery output. Paired JSON + markdown files per word. No archiving needed — these are source data.
 
@@ -302,9 +302,9 @@ All analysis outputs, reports, and investigation artefacts produced by Claude Co
 
 | Subfolder | What goes here | Naming pattern |
 |-----------|---------------|----------------|
-| `outputs/reports/programme/` | Programme status reports, periodic reviews, registry overviews, word registry exports | `wa-programme-status-report-{YYYYMMDD}.md`, `wa-programme-registry-overview-{YYYYMMDD}.json`, `word_registry.json` |
-| `outputs/reports/words/` | Per-word reports — Verse Context reports, engine run reports, word extracts | `vc-report-{NNN}-{word}-{YYYYMMDD}.docx`, `{word}_{reg}_report_{YYYYMMDD}.md` |
-| `outputs/investigations/` | Ad-hoc data investigations, CSV dumps, dedup plans, instruction gap analyses, assessments | `{topic}-{YYYYMMDD}.{ext}` |
+| `Workflow/Programme/Program_reports/` | Programme status reports, periodic reviews, registry overviews, word registry exports | `wa-programme-status-report-{YYYYMMDD}.md`, `wa-programme-registry-overview-{YYYYMMDD}.json`, `word_registry.json` |
+| `Sessions/Session_B/09_Analysis_output_logs/words/` | Per-word reports — Verse Context reports, engine run reports, word extracts | `vc-report-{NNN}-{word}-{YYYYMMDD}.docx`, `{word}_{reg}_report_{YYYYMMDD}.md` |
+| `research/investigations/` | Ad-hoc data investigations, CSV dumps, dedup plans, instruction gap analyses, assessments | `{topic}-{YYYYMMDD}.{ext}` |
 | `outputs/docx/` | Word documents for external consumption | `{WORD}-full-extract-{YYYYMMDD}.docx` |
 | `outputs/pdf/` | Final publishable products | |
 | `outputs/archive/` | Superseded outputs (audit diffs, old reports) | Moved here when superseded |
@@ -427,7 +427,7 @@ Documents that are outdated but contain valuable content are archived, not delet
 
 ## 6. File Manifest
 
-The project maintains a machine-readable file manifest at `data/file_manifest.json`. This indexes every non-code file in the project (including archived files) with structured metadata.
+The project maintains a machine-readable file manifest at `database/file_manifest.json`. This indexes every non-code file in the project (including archived files) with structured metadata.
 
 ### 6.1 Purpose
 

@@ -36,7 +36,7 @@ from scripts.readiness_sweep_pilot import (
     phase_rh_prose,
 )
 
-DB = "data/bible_research.db"
+DB = "database/bible_research.db"
 DATE_STR = datetime.now(timezone.utc).strftime("%Y%m%d")
 OUT_MD = Path(f"outputs/reports/wa-global-readinesssweep-programme-scan-{DATE_STR}.md")
 OUT_JSON = Path(f"outputs/reports/wa-global-readinesssweep-programme-scan-raw-{DATE_STR}.json")

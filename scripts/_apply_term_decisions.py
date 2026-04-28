@@ -35,8 +35,8 @@ The generated JSON is structured for direct consumption by the audit-mode
 decision engine.
 
 Usage:
-  python scripts/_apply_term_decisions.py --input data/discovery/soul_term_map_20260323.json
-  python scripts/_apply_term_decisions.py --input data/discovery/soul_term_map_20260323.json --ceiling 1000
+  python scripts/_apply_term_decisions.py --input research/discovery/soul_term_map_20260323.json
+  python scripts/_apply_term_decisions.py --input research/discovery/soul_term_map_20260323.json --ceiling 1000
 """
 
 import argparse

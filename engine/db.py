@@ -8,10 +8,12 @@ Wraps analytics/db_client.py and adds engine-specific queries.
 import os
 import sys
 
-# Allow importing from analytics/ at project root.
 _ROOT = os.path.join(os.path.dirname(__file__), "..")
-if _ROOT not in sys.path:
-    sys.path.insert(0, _ROOT)
+# analytics/ lives under scripts/ since the 2026-04-27 folder restructure.
+# Add scripts/ to sys.path so `from analytics.* import ...` keeps working.
+_SCRIPTS = os.path.join(_ROOT, "scripts")
+if _SCRIPTS not in sys.path:
+    sys.path.insert(0, _SCRIPTS)
 
 from analytics.db_client import get_connection as _base_get_connection  # noqa: E402
 

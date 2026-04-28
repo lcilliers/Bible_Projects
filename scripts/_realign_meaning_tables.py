@@ -51,7 +51,7 @@ sys.path.insert(0, ROOT)
 
 from engine.meaning_parser import run_parser  # noqa: E402
 
-DB = os.path.join(ROOT, "data", "bible_research.db")
+DB = os.path.join(ROOT, "database", "bible_research.db")
 
 
 # ─────────────────────────────────────────────────────────────────────────────

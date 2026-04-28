@@ -21,7 +21,7 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB = "data/bible_research.db"
+DB = "database/bible_research.db"
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 

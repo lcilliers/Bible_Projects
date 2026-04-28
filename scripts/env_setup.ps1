@@ -86,7 +86,7 @@ STEP_REQUEST_TIMEOUT=10
 
 # ── SQLite Database ──────────────────────────────────────────────────────────
 # Path to the SQLite database file (relative to project root)
-DB_PATH=data/bible_research.db
+DB_PATH=database/bible_research.db
 "@ | Set-Content $envFile
     Write-Host ".env template created. Edit it to add your credentials." -ForegroundColor Yellow
 } else {

@@ -31,10 +31,22 @@ data/*.sqlite3
 data/*.bak
 data/*.bak_*
 
-# ── Live database (analytics folder) ──────────
+# ── Live database (post-2026-04-27 restructure) ──
+# DB now lives in database/; file_manifest.json is small and stays tracked.
+database/*.db
+database/*.sqlite
+database/*.sqlite3
+database/*.bak
+database/*.bak_*
+
+# ── Legacy paths (kept for safety) ────────────
 analytics/*.db
 analytics/*.sqlite
 analytics/*.sqlite3
+scripts/analytics/*.db
+scripts/analytics/*.sqlite
+scripts/analytics/*.sqlite3
+scripts/database/
 
 # ── Backups folder ────────────────────────────
 backups/

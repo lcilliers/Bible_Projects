@@ -9,8 +9,8 @@ Replaces the three-script pipeline (_discover_word_terms.py,
 _apply_term_decisions.py, _extract_word_terms.py) in a single pass.
 
 Produces:
-  data/discovery/{word}_step_data_{YYYYMMDD}.json   — full term + verse data
-  data/discovery/{word}_step_data_{YYYYMMDD}.md     — summary table
+  research/discovery/{word}_step_data_{YYYYMMDD}.json   — full term + verse data
+  research/discovery/{word}_step_data_{YYYYMMDD}.md     — summary table
 
 Usage:
   python scripts/word_study_extract.py --word soul
@@ -673,7 +673,7 @@ def main() -> None:
 
     today       = date.today().strftime("%Y%m%d")
     registry_no = _lookup_registry_id(word)
-    output_dir  = os.path.join(_ROOT, "data", "discovery")
+    output_dir  = os.path.join(_ROOT, "research", "discovery")
     stem        = f"{registry_no}_{word}_step_data_{today}"
     json_path   = os.path.join(output_dir, f"{stem}.json")
     md_path     = os.path.join(output_dir, f"{stem}.md")

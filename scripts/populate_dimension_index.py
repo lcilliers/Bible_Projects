@@ -19,7 +19,7 @@ import os
 import re
 from datetime import date
 
-DB_PATH = os.path.join('data', 'bible_research.db')
+DB_PATH = os.path.join('database', 'bible_research.db')
 
 # Confirmed dimension vocabulary — v1.6 (WA-DimensionReview-Instruction-v1.6-2026-04-08)
 # 11 dimensions. Keyword classifier produces starting hypotheses using these labels.

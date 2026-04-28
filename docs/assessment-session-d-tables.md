@@ -103,7 +103,7 @@ All four tables are empty. This is expected — Session D has not started.
 |-------|--------|--------|
 | SD_POINTER flags | 229 flags across 60 source registries pointing to 70 targets | Primary input — the structural bridge from Session B |
 | Session B completed registries | 5 at Analysis Complete (compassion, forgiveness, grace, love, mercy) | Word studies available as complete extracts |
-| Session D pointers export files | 7 files in data/exports/session_d/ | Pre-assembled pointer data for Claude AI consumption |
+| Session D pointers export files | 7 files in Sessions/Session_D/session_d/ | Pre-assembled pointer data for Claude AI consumption |
 | Correlation data | wa-correlations-2026-04-09.json (852 KB) | Programme-wide inter-word correlation signals |
 | SD pointer audit | wa-sd-pointer-audit-c17-2026-04-12.json (124 KB) | Cluster C17 pointer quality assessment |
 | Session D Orientation | v3.0 (346 lines, active governing document) | Process instruction ready |

@@ -8,7 +8,7 @@ Rules (per researcher instruction):
 """
 import sqlite3
 
-DB = "../data/bible_research.db"
+DB = "../database/bible_research.db"
 conn = sqlite3.connect(DB)
 conn.row_factory = sqlite3.Row
 conn.execute("PRAGMA foreign_keys = ON")

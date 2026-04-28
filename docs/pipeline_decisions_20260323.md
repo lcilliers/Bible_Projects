@@ -83,7 +83,7 @@ Internally this script runs six phases in sequence:
 2. **DECIDE**: Apply filters. G3/G4/G5 → excluded. G1/G2/G2-MTI/G2r → include.
    Build the decisions data structure (replaces what `_apply_term_decisions.py` produced).
 
-3. **WRITE TRIAGE**: Write `{word}_triage_{date}.md` to `data/discovery/`. This is a
+3. **WRITE TRIAGE**: Write `{word}_triage_{date}.md` to `research/discovery/`. This is a
    complete record of every term considered, the group it was assigned to, the action taken,
    and whether any quality flags will be raised. Produced before DB writes so the researcher
    can inspect it even if the subsequent DB write fails.

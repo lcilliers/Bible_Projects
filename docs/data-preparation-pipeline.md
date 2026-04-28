@@ -69,8 +69,8 @@ python scripts/word_study_extract.py --word <word> [--anchors H1234,G5678]
 
 **Output:**
 ```
-data/discovery/{nnn}_{word}_step_data_{YYYYMMDD}.json   (structured data)
-data/discovery/{nnn}_{word}_step_data_{YYYYMMDD}.md     (human-readable summary)
+research/discovery/{nnn}_{word}_step_data_{YYYYMMDD}.json   (structured data)
+research/discovery/{nnn}_{word}_step_data_{YYYYMMDD}.md     (human-readable summary)
 ```
 
 The discovery JSON is the input for Stage 3. No database writes occur at this stage.
@@ -140,7 +140,7 @@ Claude Code queries the database and builds batch JSONs for Claude AI:
 - **Size:** 2,000–2,500 unclassified verses per batch (never splits a term across batches)
 - **Priority:** Unclassified terms first, ordered by `owning_registry_fk` ascending
 - **Batch ID:** Sequential VCB-001, VCB-002, etc.
-- **Output:** `data/exports/verse_context/wa-vcb-{batch_id}-extract-{date}.json`
+- **Output:** `Sessions/Session_B/01_Verse_Context_Process_input/wa-vcb-{batch_id}-extract-{date}.json`
 
 ### 4b. Verse Classification (Claude AI)
 

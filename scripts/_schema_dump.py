@@ -1,5 +1,5 @@
 import sqlite3, sys
-db = sys.argv[1] if len(sys.argv) > 1 else "data/bible_research.db"
+db = sys.argv[1] if len(sys.argv) > 1 else "database/bible_research.db"
 c = sqlite3.connect(db).cursor()
 tables = c.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name").fetchall()
 for (t,) in tables:

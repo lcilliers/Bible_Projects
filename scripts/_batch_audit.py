@@ -9,7 +9,7 @@ import sys
 import subprocess
 import time
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
 

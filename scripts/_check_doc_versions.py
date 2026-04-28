@@ -1,8 +1,9 @@
 """GR-FILE-003 compliance check for instruction documents.
 
 Verifies that every instruction document under
-`data/imports/WA/Workflow/Framework_B/Session_B/` has internal version metadata
-consistent with its filename.
+`Workflow/Instructions/` has internal version metadata
+consistent with its filename. (Pre-2026-04-27 the instructions lived in
+`data/imports/WA/Workflow/Framework_B/Session_B/`.)
 
 Specifically, for each `wa-*.md` file:
   1. Filename matches `wa-{name}-v{major}_{minor}-{YYYYMMDD}.md`.
@@ -33,8 +34,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DOCS_DIR = ROOT / "data" / "imports" / "WA" / "Workflow" / "Framework_B" / "Session_B"
-ARCHIVE_DIR = ROOT / "data" / "imports" / "WA" / "Workflow" / "Framework_B" / "archive"
+# Active instruction docs live in Workflow/Instructions/ since the 2026-04-27 restructure.
+DOCS_DIR = ROOT / "Workflow" / "Instructions"
+ARCHIVE_DIR = ROOT / "Workflow" / "archive"
 
 # Filename pattern: wa-{name}-v{major}_{minor}-{YYYYMMDD}.md
 # {name} can contain hyphens; greedy match up to the version token.
@@ -146,7 +148,7 @@ def detect_inplace_edits() -> list[str]:
     if result.returncode != 0:
         return []
 
-    target_prefix = "data/imports/WA/Workflow/Framework_B/Session_B/wa-"
+    target_prefix = "Workflow/Instructions/wa-"
     flagged: list[str] = []
     for line in result.stdout.splitlines():
         if not line:

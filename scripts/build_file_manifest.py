@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-build_file_manifest.py — Generates data/file_manifest.json
+build_file_manifest.py — Generates database/file_manifest.json
 
 Scans the project tree and produces a machine-readable index of every
 non-code file (imports, exports, patches, directives, reports, logs,
@@ -28,13 +28,13 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-MANIFEST_PATH = PROJECT_ROOT / "data" / "file_manifest.json"
+MANIFEST_PATH = PROJECT_ROOT / "database" / "file_manifest.json"
 
 # Directories to scan (relative to PROJECT_ROOT)
 SCAN_DIRS = [
     "data/imports",
     "data/exports",
-    "data/discovery",
+    "research/discovery",
     "data/schema",
     "archive",
     "outputs",
@@ -157,7 +157,7 @@ def classify_category(rel_path: str) -> str:
         return "import"
     if parts.startswith("data/exports"):
         return "export"
-    if parts.startswith("data/discovery"):
+    if parts.startswith("research/discovery"):
         return "discovery"
     if parts.startswith("data/schema"):
         return "schema"
@@ -173,7 +173,7 @@ def classify_category(rel_path: str) -> str:
         return "directive"
     if parts.startswith("outputs/reports"):
         return "report"
-    if parts.startswith("outputs/investigations"):
+    if parts.startswith("research/investigations"):
         return "investigation"
     if parts.startswith("outputs"):
         return "report"

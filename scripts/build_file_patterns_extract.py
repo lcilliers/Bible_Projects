@@ -8,7 +8,7 @@ Usage:
   python scripts/build_file_patterns_extract.py --scope=per-registry
 
 Default output:
-  data/exports/reference/wa-file-patterns-extract-{YYYYMMDD}.json
+  Workflow/reference/wa-file-patterns-extract-{YYYYMMDD}.json
 """
 from __future__ import annotations
 
@@ -23,8 +23,8 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-DB_PATH = os.path.join("data", "bible_research.db")
-OUT_DIR = os.path.join("data", "exports", "reference")
+DB_PATH = os.path.join("database", "bible_research.db")
+OUT_DIR = os.path.join("Workflow", "reference")
 EXTRACTOR_VERSION = "1.0"
 
 

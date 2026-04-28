@@ -18,7 +18,7 @@ import re
 from collections import defaultdict
 from datetime import date
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 
 
 def derive_root_code(family_terms):

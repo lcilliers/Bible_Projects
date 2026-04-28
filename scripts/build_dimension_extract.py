@@ -8,7 +8,7 @@ Three extract types:
   2. Group verification extract (--group-verify 112-003) — verse text for description correction
   3. Existing pointers extract (--pointers C01) — pre-existing Session B/D pointers
 
-Output: data/exports/dimension_review/
+Output: Sessions/Session_B/04_dimension_review_process input/
 
 Usage:
   python scripts/build_dimension_extract.py --cluster C01
@@ -21,7 +21,7 @@ import os
 import sqlite3
 from datetime import date
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "exports", "dimension_review")
 
 
@@ -574,7 +574,7 @@ def build_handoff_document(conn, cluster: str, today: str,
     """Author the handoff kickoff .md for a DimReview batch.
 
     Filename: wa-dim-{cluster}-handoff-kickoff-v1-{today}.md
-    Target dir: data/imports/WA/Session_B_Dimension_Review/
+    Target dir: Sessions/Session_B/05_Dimension_Review_logs/
     """
     out_dir = os.path.join(
         os.path.dirname(__file__), "..",
@@ -643,7 +643,7 @@ def build_handoff_document(conn, cluster: str, today: str,
 
     # 2. Inputs
     lines.append("## 2. Inputs — extract files\n")
-    lines.append(f"Generated {today} against schema v3.11.0 (post-M31). All land in `data/exports/dimension_review/`.\n")
+    lines.append(f"Generated {today} against schema v3.11.0 (post-M31). All land in `Sessions/Session_B/04_dimension_review_process input/`.\n")
     lines.append("| File | Purpose |")
     lines.append("|---|---|")
     lines.append(f"| `wa-dim-{cluster}-extract-{today}.json` | Cluster extract — primary Phase A/B input |")

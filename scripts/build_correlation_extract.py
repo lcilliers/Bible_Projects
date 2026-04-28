@@ -12,7 +12,7 @@ and clusters that warrant Session D investigation:
   4. Root family connections — words sharing etymological roots
   5. Shared anchor verses — different words both anchoring on the same verse
 
-Output: data/exports/session_d/wa-correlations-{date}.json
+Output: Sessions/Session_D/session_d/wa-correlations-{date}.json
 
 Usage:
   python scripts/build_correlation_extract.py
@@ -26,7 +26,7 @@ import sqlite3
 from collections import defaultdict
 from datetime import date, datetime, timezone
 
-DB_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB_PATH = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 OUT_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "exports", "session_d")
 
 

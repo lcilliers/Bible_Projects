@@ -21,7 +21,7 @@ sys.path.insert(0, r"G:\My Drive\Bible_study_projects")
 from analytics.step_client import StepClient
 from engine.span_filter import apply_span_filter
 
-DB = r"G:\My Drive\Bible_study_projects\data\bible_research.db"
+DB = r"G:\My Drive\Bible_study_projects\database\bible_research.db"
 conn = sqlite3.connect(DB)
 conn.row_factory = sqlite3.Row
 client = StepClient()

@@ -3,7 +3,7 @@
 **Date:** 2026-03-23  
 **Status:** DRAFT — awaiting researcher review  
 **Supersedes:** `audit_word_refactor_review.md` (researcher feedback incorporated)  
-**Input source:** `docs/audit_word_refactor_review.md` (all RESPONSE blocks), `docs/word_study_extract_design.md`, full schema `data/schema/create_tables.sql`
+**Input source:** `docs/audit_word_refactor_review.md` (all RESPONSE blocks), `docs/word_study_extract_design.md`, full schema `Workflow/schema/create_tables.sql`
 
 ---
 
@@ -39,12 +39,12 @@
 The primary data input is the JSON file produced by `scripts/word_study_extract.py`:
 
 ```
-data/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
+research/discovery/{registry_no:03d}_{word}_step_data_{YYYYMMDD}.json
 ```
 
 Examples:
-- `data/discovery/182_soul_step_data_20260323.json`
-- `data/discovery/004_anger_step_data_20260323.json`
+- `research/discovery/182_soul_step_data_20260323.json`
+- `research/discovery/004_anger_step_data_20260323.json`
 
 If multiple files exist for the word (different dates), the audit step will present a selection menu. The researcher chooses which file to audit against.
 
@@ -365,7 +365,7 @@ Print a formatted report showing row counts per table and a summary of key field
 **Purpose:** Locate and load the Step 1 extract file; validate it against the registry entry; open stream checkpoints in the log.
 
 **Procedure:**
-1. Search `data/discovery/` for files matching pattern: `{registry_no:03d}_{word}_step_data_*.json`
+1. Search `research/discovery/` for files matching pattern: `{registry_no:03d}_{word}_step_data_*.json`
    - `registry_no` = `str(registry_id).zfill(3)`
    - `word` = `word_registry.word` (lowercase)
 2. If no file found: STOP → "Step 1 extract file not found. Run `scripts/word_study_extract.py --word {word}` first."
@@ -1146,10 +1146,10 @@ python -m engine.engine --mode=audit_word --registry=182 --dry-run
 python -m engine.engine --mode=audit_word --registry=182 --interactive
 
 # Specify extract file explicitly (bypasses auto-select)
-python -m engine.engine --mode=audit_word --registry=182 --extract-file=data/discovery/182_soul_step_data_20260323.json
+python -m engine.engine --mode=audit_word --registry=182 --extract-file=research/discovery/182_soul_step_data_20260323.json
 ```
 
-**Auto-select behaviour:** When `--extract-file` is not specified, A3 searches `data/discovery/` for all files matching `{registry_no:03d}_{word}_step_data_*.json` and selects the **latest** (lexicographically last date). An older format without registry prefix (`{word}_step_data_*.json`) is also checked as fallback.
+**Auto-select behaviour:** When `--extract-file` is not specified, A3 searches `research/discovery/` for all files matching `{registry_no:03d}_{word}_step_data_*.json` and selects the **latest** (lexicographically last date). An older format without registry prefix (`{word}_step_data_*.json`) is also checked as fallback.
 
 ---
 

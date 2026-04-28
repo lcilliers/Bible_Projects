@@ -89,7 +89,7 @@ def main():
         anchors = w["anchors"]
 
         # Check if discovery JSON already exists
-        discovery_dir = os.path.join(ROOT, "data", "discovery")
+        discovery_dir = os.path.join(ROOT, "research", "discovery")
         prefix = f"{reg_no:03d}_{word.lower().replace(' ', '_')}_step_data_"
         existing = [f for f in os.listdir(discovery_dir) if f.startswith(prefix) and f.endswith(".json")]
         if existing:

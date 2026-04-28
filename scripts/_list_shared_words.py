@@ -2,7 +2,7 @@
 import sqlite3
 import os
 
-DB = os.path.join(os.path.dirname(__file__), "..", "data", "bible_research.db")
+DB = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 conn = sqlite3.connect(DB)
 conn.row_factory = sqlite3.Row
 
