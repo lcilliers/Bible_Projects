@@ -30,7 +30,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 DB_PATH = os.path.join("database", "bible_research.db")
-OUT_DIR = os.path.join("outputs", "reports", "words")
+OUT_DIR = os.path.join("Sessions", "Session_B", "09_Analysis_output_logs", "words")
 
 
 def now_iso() -> str:
@@ -90,7 +90,11 @@ def parse_qa_findings(text: str) -> tuple:
             return f"Section {m.group(1)} — {m.group(2).strip()}"
         return current
 
-    for m in re.finditer(r"\*\*Q&A-(\d+)\s*\|\s*Q(\d+)\*\*(.*?)$", text, re.MULTILINE):
+    # Per analysis-output v1_5 §v2.8: catalogue codes can be QNNN, GAP-N-NNN,
+    # GAP-S{n}-NNN, or compound like "Q034 through Q041 (consolidated)" / "GAP-S3 questions".
+    # Accept any non-asterisk content as the code; downstream resolution will
+    # match against catalogue.question_code where possible (and skip otherwise).
+    for m in re.finditer(r"\*\*Q&A-(\d+)\s*\|\s*([^\*\n]+?)\*\*(.*?)$", text, re.MULTILINE):
         start = m.start()
         # Find next Q&A or H2 boundary
         next_m = re.search(r"\n\*\*Q&A-\d+", text[start + 1:])
@@ -99,15 +103,18 @@ def parse_qa_findings(text: str) -> tuple:
         end = (start + 1 + min(c.start() for c in candidates)) if candidates else len(text)
         block = text[start:end]
         qa_seq = int(m.group(1))
-        q_code = "Q" + m.group(2)
-        marker_suffix = m.group(3).strip()  # text after the '**Q&A-NNN | QNNN**' marker on the same line
+        q_code = m.group(2)  # full catalogue code, no Q-prefix prepending
+        marker_suffix = m.group(3).strip()  # text after the marker on the same line
 
-        # Detect stub markers (e.g. '[view needed for Q035-Q041]')
-        # Stub indicator: no 'Question:' line in the block within ~200 chars of the marker
-        question_present = bool(re.search(r"^Question:\s*", block, re.MULTILINE))
-        if not question_present:
+        # Detect true stub markers (no Question AND no Disposition). Some Q&As
+        # legitimately omit Question text when disposition=NOT APPLICABLE — those
+        # are NOT stubs; they're concise NA entries. Accept both flat "Question:"
+        # and bullet-list "- Question:" forms.
+        question_present = bool(re.search(r"^(?:- )?Question:\s*", block, re.MULTILINE))
+        disposition_present = bool(re.search(r"^(?:- )?Disposition:\s*", block, re.MULTILINE))
+        if not question_present and not disposition_present:
             parser_warnings.append(
-                f"Stub Q&A marker at qa_seq={qa_seq}, q_code={q_code} — no Question field "
+                f"Stub Q&A marker at qa_seq={qa_seq}, q_code={q_code} — no Question and no Disposition "
                 f"(suffix on marker line: {marker_suffix!r}). Skipping."
             )
             continue
@@ -126,8 +133,18 @@ def parse_qa_findings(text: str) -> tuple:
         disposition = _extract_field(block, "Disposition")
         answer = _extract_multiline_field(
             block, "Answer",
-            stop_fields=("Anchor verses", "Finding type", "Stage 2b note", "[QUESTION REVIEW NOTE"),
+            stop_fields=("Anchor verses", "Finding type", "Stage 2b note", "[QUESTION REVIEW NOTE",
+                         "Evidence basis", "- Anchor verses", "- Finding type", "- Stage 2b note",
+                         "- Evidence basis"),
         )
+        # NOT APPLICABLE / NOT ANSWERED Q&As use Rationale: instead of Answer:
+        if not answer:
+            answer = _extract_multiline_field(
+                block, "Rationale",
+                stop_fields=("Anchor verses", "Finding type", "Stage 2b note", "[QUESTION REVIEW NOTE",
+                             "Evidence basis", "- Anchor verses", "- Finding type", "- Stage 2b note",
+                             "- Evidence basis"),
+            )
         anchor_verses = _extract_field(block, "Anchor verses")
         finding_type = _extract_field(block, "Finding type")
         stage_b_note = _extract_field(block, "Stage 2b note")
@@ -149,38 +166,93 @@ def parse_qa_findings(text: str) -> tuple:
 
 
 def _extract_field(block: str, field_name: str) -> str | None:
-    m = re.search(rf"^{re.escape(field_name)}:\s*(.+)$", block, re.MULTILINE)
+    """Extract `{label}: value` — accepts both flat and `- ` bullet-prefixed forms."""
+    m = re.search(rf"^(?:- )?{re.escape(field_name)}:\s*(.+)$", block, re.MULTILINE)
     return m.group(1).strip() if m else None
 
 
 def _extract_multiline_field(block: str, field_name: str, stop_fields: tuple) -> str | None:
-    pat = rf"{re.escape(field_name)}:\s*(.+?)(?=" + "|".join(rf"\n{re.escape(s)}" for s in stop_fields) + ")"
+    # Match optional bullet prefix, then label, then value spanning lines until
+    # a stop field (with or without bullet prefix) is reached.
+    pat = (
+        rf"(?:^- )?{re.escape(field_name)}:\s*(.+?)"
+        + r"(?=" + "|".join(rf"\n(?:- )?{re.escape(s)}" for s in stop_fields) + ")"
+    )
     m = re.search(pat, block, re.DOTALL)
     return m.group(1).strip() if m else None
 
 
 def parse_sd_pointers(text: str) -> list:
-    """Extract from the Complete SD Pointer Register table."""
+    """Extract SD pointers — supports two formats:
+
+    (A) Register table under '## Complete SD Pointer Register':
+        | SP-NNN | target | priority | unit |
+    (B) Flat `**SP-NNN-NNN** — raised in Unit X, date, priority, target` blocks
+        under '## SD Pointer Accumulator' (canonical v1.5 form, §v2.8).
+    """
     sd = []
-    # Find table after '## Complete SD Pointer Register'
+    seen_seqs = set()
+
+    # Format (A): register table
     m = re.search(r"##\s+Complete SD Pointer Register\s*\n", text)
-    if not m:
-        return sd
-    start = m.end()
-    section = text[start:start + 8000]  # bounded
-    # Table rows: | SP-NNN | target | priority | unit |
+    if m:
+        start = m.end()
+        section = text[start:start + 8000]
+        for row_m in re.finditer(
+            r"^\|\s*(SP-\d+)\s*\|\s*(.+?)\s*\|\s*(HIGH|MEDIUM|LOW)\s*\|\s*([^|]+?)\s*\|",
+            section, re.MULTILINE,
+        ):
+            seq = row_m.group(1)
+            if seq in seen_seqs:
+                continue
+            seen_seqs.add(seq)
+            sd.append({
+                "seq": seq,
+                "target": row_m.group(2).strip(),
+                "priority": row_m.group(3).strip(),
+                "unit_raised": row_m.group(4).strip(),
+            })
+
+    # Format (B): flat **SP-NNN-NNN** entries with bullet fields, scanned across
+    # the whole document. Multiple accumulator sections (working / Final) may
+    # exist; we capture every SP-NNN-NNN block regardless. Variants accepted:
+    #   "raised in Unit X" or "raised Unit X" (no "in")
     for row_m in re.finditer(
-        r"^\|\s*(SP-\d+)\s*\|\s*(.+?)\s*\|\s*(HIGH|MEDIUM|LOW)\s*\|\s*([^|]+?)\s*\|",
-        section, re.MULTILINE,
+        r"\*\*SP-(\d{3}-\d{3})\*\*\s+—\s+raised(?:\s+in)?\s+(.+?),\s*(\d{4}-\d{2}-\d{2}),\s*(HIGH|MEDIUM|LOW),\s*([^\n]+?)\n((?:- .+\n)*)",
+        text,
     ):
+        seq = "SP-" + row_m.group(1)
+        if seq in seen_seqs:
+            continue
+        seen_seqs.add(seq)
+        unit = row_m.group(2).strip()
+        date = row_m.group(3)
+        priority = row_m.group(4)
+        session_target = row_m.group(5).strip()
+        body = row_m.group(6)
+
+        def field(label, body=body):
+            r = re.search(rf"^- {re.escape(label)}:\s*(.+)$", body, re.MULTILINE)
+            return r.group(1).strip() if r else None
+
+        target = field("Target") or field("Target registry")
         sd.append({
-            "seq": row_m.group(1),
-            "target": row_m.group(2).strip(),
-            "priority": row_m.group(3).strip(),
-            "unit_raised": row_m.group(4).strip(),
+            "seq": seq,
+            "target": target or session_target,
+            "priority": priority,
+            "unit_raised": unit,
+            "session_target": session_target,
+            "date": date,
+            "detail": {
+                "target": target,
+                "connecting": field("Connecting term") or field("Connecting term/verse")
+                              or field("Connecting verse"),
+                "question": field("Question"),
+                "evidence": field("Evidence basis"),
+            },
         })
-    # Also extract per-pointer detail blocks scattered earlier
-    # Pattern: **SD POINTER raised — SP-NNN:** followed by - lines
+
+    # Per-pointer detail blocks: '**SD POINTER raised — SP-NNN:**'
     detail = {}
     for det_m in re.finditer(
         r"\*\*SD POINTER raised\s+—\s+(SP-\d+):\*\*\s*\n((?:- .+\n)+)",
@@ -198,35 +270,76 @@ def parse_sd_pointers(text: str) -> list:
                 k, v = ln.split(":", 1)
                 fields[k.strip()] = v.strip()
         detail[sp_id] = fields
-    # Merge detail into table rows where available
     for sp in sd:
         if sp["seq"] in detail:
             sp["detail"] = detail[sp["seq"]]
     return sd
 
 
-def parse_observations(text: str) -> list:
-    """Extract from Complete Observations Register table."""
+def parse_observations(text: str, registry_no: int | None = None) -> list:
+    """Extract observations — supports two formats:
+
+    (A) Register table under '## Complete Observations Register':
+        | OBS-NNN | content | unit |
+    (B) Inline `**OBS-{registry:03d}-{seq:03d}:** {content}` markers
+        scattered through reading-unit prose (canonical v1.5, §v2.8).
+
+    `registry_no` is required for Format (B) so the regex can disambiguate
+    R030's OBS markers from any other registry's that might appear.
+    """
     obs = []
+    seen = set()
+
+    # Format (A): register table
     m = re.search(r"##\s+Complete Observations Register\s*\n", text)
-    if not m:
-        return obs
-    start = m.end()
-    # Table rows until next H2
-    next_h2 = re.search(r"\n##\s", text[start:])
-    end = start + (next_h2.start() if next_h2 else len(text) - start)
-    section = text[start:end]
-    for row_m in re.finditer(
-        r"^\|\s*(OBS-\d+)\s*\|\s*(.+?)\s*\|\s*(\S+)\s*\|",
-        section, re.MULTILINE,
-    ):
-        if row_m.group(1) == "OBS":  # skip header
-            continue
-        obs.append({
-            "seq": row_m.group(1),
-            "content": row_m.group(2).strip(),
-            "unit": row_m.group(3).strip(),
-        })
+    if m:
+        start = m.end()
+        next_h2 = re.search(r"\n##\s", text[start:])
+        end = start + (next_h2.start() if next_h2 else len(text) - start)
+        section = text[start:end]
+        for row_m in re.finditer(
+            r"^\|\s*(OBS-\d+)\s*\|\s*(.+?)\s*\|\s*(\S+)\s*\|",
+            section, re.MULTILINE,
+        ):
+            if row_m.group(1) == "OBS":
+                continue
+            seq = row_m.group(1)
+            if seq in seen:
+                continue
+            seen.add(seq)
+            obs.append({
+                "seq": seq,
+                "content": row_m.group(2).strip(),
+                "unit": row_m.group(3).strip(),
+            })
+
+    # Format (B): inline **OBS-{reg:03d}-{seq:03d}:** markers
+    if registry_no is not None:
+        reg_str = f"{registry_no:03d}"
+        pat = re.compile(
+            rf"^\*\*OBS-{reg_str}-(\d+):\*\*\s+(.+?)"
+            rf"(?=\n\*\*OBS-{reg_str}-\d+:|\n###\s|\n##\s|\n\*\*\[|\n\*\*SD POINTER|\n\*\*Set-aside|\Z)",
+            re.MULTILINE | re.DOTALL,
+        )
+        for m_obs in pat.finditer(text):
+            seq = m_obs.group(1)
+            content = m_obs.group(2).strip()
+            # Track unit by walking back to most recent ### UNIT or ### CHAPTER heading
+            unit_m = None
+            for um in re.finditer(r"^###\s+(UNIT \d+|Unit \d+|CHAPTER \d+|Chapter \d+)[^\n]*",
+                                  text[:m_obs.start()], re.MULTILINE):
+                unit_m = um
+            unit = unit_m.group(0).strip() if unit_m else None
+            if seq in seen:
+                continue
+            seen.add(seq)
+            obs.append({
+                "seq": seq,
+                "content": content,
+                "unit": unit,
+            })
+
+    obs.sort(key=lambda o: int(re.sub(r"\D", "", o["seq"])) if re.sub(r"\D", "", o["seq"]) else 0)
     return obs
 
 
@@ -372,21 +485,47 @@ def parse_review_notes(text: str) -> list:
 
 
 def parse_status_update(text: str) -> dict | None:
-    """Extract status update intent from Patch Inventory section."""
-    # Pattern 1: backticked target ("`'Analysis Complete'`")
+    """Extract status update intent from one of three locations:
+
+    (1) `## Session Close` → `session_b_status: 'Analysis Complete'` (canonical v1.5).
+    (2) `### Category F — Registry Status Update` (legacy patch-flow form).
+    (3) Any `session_b_status: 'X'` quoted assignment near the end of the obslog.
+    """
+    statuses = "(Analysis Complete|Pre-Analysis Complete|Verse Context Reset|Session B Complete|Ready for Analysis|In Progress)"
+
+    # Pattern 1: Session Close section (v1.5 canonical)
+    sc = re.search(r"##\s+Session Close\b", text)
+    if sc:
+        section = text[sc.end():sc.end() + 4000]
+        m = re.search(
+            rf"session_b_status\s*:?\s*[`'\"]\s*{statuses}\s*[`'\"]",
+            section,
+        )
+        if m:
+            return {"target_status": m.group(1).strip()}
+
+    # Pattern 2: legacy Category F section
     m = re.search(
-        r"###\s+Category F\s+—\s+Registry Status Update[\s\S]*?session_b_status[^\n]*?[`'\"](Analysis Complete|Pre-Analysis Complete|Verse Context Reset|Session B Complete|Ready for Analysis|In Progress)[`'\"]",
+        rf"###\s+Category F\s+—\s+Registry Status Update[\s\S]*?session_b_status[^\n]*?[`'\"]{statuses}[`'\"]",
         text,
     )
     if m:
         return {"target_status": m.group(1).strip()}
-    # Pattern 2: arrow form within Category F section
     m2 = re.search(
         r"###\s+Category F[\s\S]*?session_b_status\s*→\s*['\"`]?([A-Z][\w\s]+?)['\"`.]",
         text,
     )
     if m2:
         return {"target_status": m2.group(1).strip()}
+
+    # Pattern 3: catch-all — any quoted status assignment
+    m3 = re.search(
+        rf"session_b_status\s*:?\s*[`'\"]\s*{statuses}\s*[`'\"]",
+        text,
+    )
+    if m3:
+        return {"target_status": m3.group(1).strip()}
+
     return None
 
 
@@ -644,7 +783,7 @@ def parse_obslog(obslog_path: str, registry_no: int) -> dict:
 
     qa_findings, qa_warnings = parse_qa_findings(text)
     sd_pointers = parse_sd_pointers(text)
-    observations = parse_observations(text)
+    observations = parse_observations(text, registry_no=registry_no)
     chapters = parse_chapters(text)
     prose_supersedes = parse_prose_supersedes(text)
     gap_ws = parse_gap_and_ws_questions(text)

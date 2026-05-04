@@ -1,0 +1,167 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG060-V1-CANONICAL",
+    "registry_id": 60,
+    "word": "faithfulness",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R060 faithfulness — 7 group dimension assignments + registry stamp + 1 SD pointer. 2 dimension changes from automated labels. Manual application required.",
+    "superseded_patch": "PATCH-20260502-DIMREVIEW-C10-REG060-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-02: 7 dimension labels prefixed with sort order to match wa_vocab_set.DIMENSION_LABEL. Researcher waiver extends to C10 cluster DimReview cycle."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7150
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-001 H5414G natan (covenant land giving) — Moral Character / GOD. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7151
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-002 H5414G natan (giving from compassion) — Relational Disposition / GOD. CHANGED from Volition: divine compassion in giving is relational orientation, not a volitional act."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7152
+      },
+      "set": {
+        "dimension": "03 — Cognition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-003 H5414G natan (giving inner capacities — wisdom, spirit) — Cognition / HUMAN. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7153
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-004 H5414G natan (giving over in judgment) — Moral Character / GOD. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7154
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-005 H5414G natan (human self-giving) — Relational Disposition / HUMAN. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7155
+      },
+      "set": {
+        "dimension": "11 — Divine-Human Correspondence",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-006 H5414G natan (giving glory — ascription of worth) — Divine-Human Correspondence / HUMAN. Automated label confirmed; dominant_subject set. Human gives glory; divine claim to glory is the corresponding pole."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 7156
+      },
+      "set": {
+        "dimension": "08 — Transformation",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "872-007 H5414G natan (ashes to beauty, mourning to gladness) — Transformation / HUMAN. CHANGED from Emotion-Positive: the group names the transformation process, not the resultant emotion."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 60,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-60-SD001",
+        "strongs_reference": "H5414G",
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "R060 faithfulness (natan H5414G) shows that a single property term can serve four distinct inner-being dimensions across its verse corpus — Moral Character (covenant commitment), Relational Disposition (compassion), Transformation (eschatological restoration), and Divine-Human Correspondence (glory-ascription). This illustrates the programmatic principle that property terms carry dimensional breadth. Session D should note this in any discussion of how property terms function across the programme. The natan groups also reveal that divine self-giving and human self-giving are structurally parallel — GOD gives out of covenantal faithfulness/compassion; HUMAN gives in echo of that orientation. A cross-cluster comparison with love (R103) and mercy (R111) would be valuable.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "SD pointer DIM-60-SD001 — property-term dimensional breadth observation for Session D."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 60
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R060 faithfulness DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 9,
+    "dimension_index_updates": 7,
+    "registry_stamps": 1,
+    "research_flag_inserts": 1,
+    "dimension_changes": 2,
+    "vocabulary_conversions": 5
+  }
+}

@@ -1,0 +1,261 @@
+# Chapter 6 — Open Questions
+
+**Registry 064 — Forgiveness** · *Session D Pointer Compendium*
+
+All open SD pointers for this registry, ordered by priority (HIGH first). This chapter is the Session D input from this word.
+
+---
+
+**Total open SD pointers:** 27 (HIGH: 9, MEDIUM: 14, LOW: 4)
+
+
+## HIGH priority (9)
+
+
+### DIM-064-SD002
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+Mat 18:27 — the master forgave the servant's debt 'out of pity' (*splagchnizomai*), a word naming visceral compassion as a body-involving inner state. This is the most direct somatic entry point for the act of forgiving in the NT: the compassion that generates the forgiving act is itself visceral in its origin. The question for Session D: does compassion (registry 023, C17) function as a necessary inner-being precondition of forgiveness, or is it one pathway among several? This connection is confirmed by dimension overlap (4 shared dimensions) and by the direct vocabulary bridge in this verse. Cannot be resolved within registry 064 alone: whether the compassion-forgiveness relationship is constitutive or merely common requires the compassion corpus to be read.
+
+
+### DIM-064-SD003
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: H5545_
+
+*Source:* Session B v4.7
+
+The Levitical forgiveness corpus (group 5379-001) presents forgiveness as covenantally objective: correct ritual execution produces forgiveness without specifying inner-being prerequisites in the worshipper. The NT corpus consistently pairs forgiveness with repentance and faith as inner-being preconditions. These represent two distinct covenantal grammars of receiving forgiveness. Session D question: are these structurally sequential (OT type fulfilled and replaced by NT type) or parallel (different aspects of the same underlying inner-being grammar)? Implicates guilt (073) and repentance (135). Cannot be resolved within registry 064 alone: the grammar-shift question requires comparative reading of the guilt and repentance corpora.
+
+
+### DIM-064-SD004
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: H5545_
+
+*Source:* Session B v4.7
+
+Jer 31:34 is a shared anchor verse with guilt (073), thought/knowledge (160), and love (103). The new covenant promise joins together: direct knowledge of God (cognitive), forgiveness of iniquity (relational), and God's cessation of memory of sin (cognitive-relational). The 'remember no more' clause introduces a cognitive dimension to forgiveness — the removal of the basis for future charges. Session D question: does forgiveness in the new covenant context involve a cognitive component (the removal or transformation of the guilt-state's cognitive content) that connects it to the thought and knowledge registries? Three registries share this anchor; their convergence at this verse may name a structural inner-being cluster within the new covenant promise. Cannot be resolved within registry 064 alone.
+
+
+### DIM-064-SD006
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: H5547_
+
+*Source:* Session B v4.7
+
+Psa 130:4 ('with you there is forgiveness, that you may be feared') establishes reverential fear as a downstream inner state produced by the encounter with divine forgiveness. Luk 7:47 establishes love as a downstream inner state produced by forgiveness received. Two distinct inner-being states are named in the corpus as downstream consequences of forgiveness. Session D question: are these the same inner-being response named differently in different cultural and covenantal contexts, or are they two distinct states that forgiveness produces depending on context or depth? This question also connects to the grace-supplication pattern in registry 068 (DIM-068 established: grace given → supplication produced). The hypothesis: divine gifts operate as inner-being generators producing specific downstream orientations. Session D must examine whether this is a structural pattern. Implicates reverence (138), love (103), grace (068).
+
+
+### DIM-064-SD011
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+Luk 7:47 states an explicit inner-being causal chain: the woman's many sins are forgiven (not because she loved, but because she was forgiven), and therefore she loved much; the one forgiven little loves little. The causal direction is unambiguous: forgiveness received → love produced. This chain implicates guilt (073) as the prior state that forgiveness addresses. The full three-registry sequence: guilt (prior state) → forgiveness received (release of guilt) → love produced (downstream orientation). Session D must determine: (1) Is this three-registry causal chain reproducible across the programme corpus? (2) Is forgiveness a transitional state in the inner-being landscape — one that characteristically transforms the person from one orientation to another — rather than a stable state? This is the highest-priority cross-registry question arising from this registry.
+
+
+### DIM-064-SD014
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: H5545_
+
+*Source:* Session B v4.7
+
+The Levitical corpus (group 5379-001) presents forgiveness as covenantally objective: sacrifice + priestly atonement → 'they shall be forgiven' (passive). The mechanism is outward and ritual; the inner-being prerequisite is not specified. The NT corpus requires repentance and faith. Hebrews (Heb 9:22, Heb 10:18) bridges the two: 'without the shedding of blood there is no forgiveness.' Session D question: does the contrast between OT covenantal-objective forgiveness and NT experiential forgiveness reflect two distinct inner-being grammars of receiving forgiveness, or does one fulfil the other in a way that resolves them into a single structure? Implicates repentance (135), guilt (073), faith (059), and the programme's treatment of covenant structure. Cannot be resolved within registry 064.
+
+
+### DIM-064-SD016
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: H5546_
+
+*Source:* Session B v4.7
+
+Psa 86:5 places forgiveness (*sallāch*) in direct apposition with goodness and *hesed* (steadfast love/mercy) as co-equal divine attributes: 'you, O Lord, are good and forgiving, abounding in steadfast love.' This is the most concentrated single verse in the corpus for the forgiveness-mercy-kindness cluster. Session D question: does the programme's treatment of mercy (111) and kindness (099) situate them in the same divine-attribute cluster as forgiveness, and does their co-location in Psa 86:5 suggest a systematic relationship where forgiveness is the specific relational act that mercy and *hesed* generate? This is a Session D priority for the C17 cluster synthesis. Confirmed by cooccurrence (16), dimension overlap (3), and shared anchor (Lev 4:20).
+
+
+### DIM-064-SD017
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+Eph 1:7 — 'in him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace.' Grace is the upstream disposition from which forgiveness flows: 'according to grace' names grace as the source and standard of the forgiveness act. Session D question: does the grace corpus (registry 068) consistently present grace as the source-disposition from which forgiveness and other specific relational acts flow? If so, do grace and forgiveness occupy structurally different positions in an inner-being hierarchy (grace = dispositional; forgiveness = specific relational act derived from the disposition)? This question is the most direct structural question connecting the two most theologically important registries in C17. Confirmed by dimension overlap (3 shared dimensions).
+
+
+### DIM-064-SD020
+
+_priority: HIGH · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+9 shared verses between forgiveness (064) and faith (059). The NT pattern is consistent: forgiveness is received through faith (Acts 10:43 'everyone who believes receives forgiveness through his name'; Acts 2:38 repent and be baptised for forgiveness; Acts 26:18 forgiveness for those sanctified by faith). Faith appears as the human instrument through which divine forgiveness is accessed. Session D question: is the faith-forgiveness relationship causal (faith creates the inner-being conditions for forgiveness to be received) or sequential (faith is the posture in which forgiveness is recognised and received)? The distinction matters for understanding whether faith is a necessary inner-being precondition or a concomitant state. Implicates repentance (135) as a parallel access-condition. Confirmed by cooccurrence (9 shared verses).
+
+
+## MEDIUM priority (14)
+
+
+### DIM-064-SD001
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+Luk 5:20 (Mar 2:5 parallel) — when Jesus saw the faith of those who brought the paralytic, he pronounced forgiveness. Corporate faith mediates individual forgiveness in this account. The verse raises the question of whether communal intercession has a structural role in the transmission of forgiveness. This connects to the listen/prayer/intercession function represented by registry 213 (listen, C02). Why cannot this be resolved within registry 064 alone: the forgiveness corpus names the mechanism of the paralytic's healing but not the inner-being structure of corporate faith as a forgiveness-channel. That question requires the listen corpus to be read alongside the forgiveness corpus.
+
+
+### DIM-064-SD005
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+Acts 26:18 presents a structured inner-being conversion sequence: 'open their eyes, so that they may turn from darkness to light and from the power of Satan to God, that they may receive forgiveness of sins and a place among those who are sanctified by faith.' The sequence is: spiritual blindness → sight → turning → forgiveness of sins → sanctification. This sequence implicates spiritual blindness (207), calling (019), forgiveness (064), and sanctification. Session D question: is this conversion sequence a reproducible inner-being grammar across the NT corpus, and does forgiveness consistently function as a gateway state (received, then leading to further transformation) rather than a terminal one? Cannot be resolved within registry 064 alone.
+
+
+### DIM-064-SD007
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+The Synoptic forgiveness pronouncements (Luk 5:20-24; Mar 2:5-10; Mat 9:2-6) generate a Christological argument: Jesus claims authority to forgive sins that is challenged as belonging exclusively to God ('who can forgive sins but God alone?' Mar 2:7). Jesus' response is to demonstrate the authority through a healing. The authority to forgive is here presented as equivalent to divine authority. Session D question: does the authority corpus (197, C20) address the relationship between divine authority and the capacity to forgive at scale? Is forgiveness structurally dependent on authority in a way that the C20 analysis should examine? Confirmed by cooccurrence (10 shared verses) and dimension overlap (5). Cannot be resolved within registry 064 alone.
+
+
+### DIM-064-SD008
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+Mat 6:14-15 establishes a reciprocal relational coherence requirement: 'if you forgive others their trespasses, your heavenly Father will also forgive you; but if you do not forgive others their trespasses, neither will your Father forgive your trespasses.' This is not a simple quid pro quo but a structural congruence condition: the person who occupies the position of one who has been forgiven cannot simultaneously occupy the position of one who refuses to forgive. Session D question: is there a programme-wide pattern where a received inner-being gift (grace, forgiveness) is structured so that its retention requires its exercise? Does this relational-congruence logic appear in the grace, mercy, or love corpora? Cannot be resolved within registry 064 alone — requires cross-registry reading.
+
+
+### DIM-064-SD009
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863G_
+
+*Source:* Session B v4.7
+
+Mar 10:29 (anchor for group 5376-001) — Jesus validates the disciples' act of leaving home, family, and lands for the gospel. The deliberate leaving of what is legitimately held, driven by a higher loyalty, is the same act-structure as forgiveness. The verse places this leaving-act within the discipleship response to calling. Session D question: does the calling corpus (019) address the inner-being cost of the leaving-act as a dimension of vocation — the reordering of attachments that calling requires? Does the volitional dimension of forgiveness connect to the volitional dimension of responding to calling through the shared act-structure of releasing what is legitimately held? Cannot be resolved within registry 064 alone.
+
+
+### DIM-064-SD010
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863G_
+
+*Source:* Session B v4.7
+
+Rev 2:4 (anchor for group 5376-002) — 'you have abandoned the love you had at first.' The Ephesian church maintains orthodox practice and doctrinal vigilance while abandoning first love. This pattern names a potential inner-being dissociation: religious conduct continuing while the relational inner disposition (love, forgiveness) atrophies. The same *aphiēmi* that names forgiveness (right release of a claim) names this wrong release (abandonment of love). Session D question: does the programme's treatment of love (103) and fellowship (062) address the inner-being failure mode of religious formalism — where the relational disposition is lost while religious conduct continues? This is the inner-being dynamic underlying the Pharisee-pattern observed in multiple passages.
+
+
+### DIM-064-SD018
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+Mar 3:29 — 'whoever blasphemes against the Holy Spirit never has forgiveness, but is guilty of an eternal sin.' The absolute limit of forgiveness names a state in which the characteristic is permanently inaccessible. Session D question: what is the inner-being grammar of the condition for which forgiveness is permanently unavailable? Is it a volitional state (final and irreversible refusal), a cognitive state (final darkening — spiritual blindness, registry 207), or a spiritual state (complete severance from the Spirit — implicating spiritual deadness, registry 210)? The Mar 3:29 verse is shared with sin (147). The inner-being precondition of the unforgivable sin requires cross-registry reading of sin, blindness, deadness, and rebellion (128) to characterise.
+
+
+### DIM-064-SD019
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+19 shared verses between forgiveness (064) and strength (187) is the second-highest cooccurrence signal in this registry's corpus. The forgiveness passages frequently invoke divine power, exaltation, and authority in the same context as forgiveness: Acts 5:31 ('God exalted him at his right hand as Leader and Savior to give repentance and forgiveness of sins'), Num 14:19 ('according to the greatness of your steadfast love'). Session D question: does the programme's strength/power cluster (C20) address the relationship between divine omnipotence and the capacity to forgive at the scale Scripture describes? Is there an inner-being statement about divine power embedded in the forgiveness corpus that the C20 synthesis should address? Confirmed by 19 shared verses (strongest unexpected cooccurrence signal in this registry).
+
+
+### DIM-064-SD021
+
+_priority: MEDIUM · target session: D · raised: 2026-04-12 · Strong's: G0863G_
+
+*Source:* Session B v4.7
+
+8 shared verses between forgiveness (064) and desire (043). The leave/abandon groups (5376) contain verses about leaving behind earthly attachments for discipleship — an act that implies a reordering of desire. When forgiveness is extended, the offended party must forgo the inner satisfaction of retained grievance — itself a form of desire (the desire for vindication, the desire for the account to be settled). Session D question: does the desire corpus (043) address the inner-being act of relinquishing a desire as a dimension of forgiveness? When forgiveness requires releasing the satisfaction of the retained claim, is there a desire-level reordering taking place that the programme should map? Confirmed by cooccurrence (8 shared verses).
+
+
+### SP-064-001
+
+_priority: MEDIUM · target session: Session D · raised: 2026-04-28T10:32:31Z_
+
+*Source:* Session B Stage 2 (obslog capture pipeline)
+
+R122 (prayer) and/or R130 (reconciliation) — or descriptive target: horizontal-vertical worship ordering (raised in Unit Unit 7 Group 5376-003)
+
+
+### SP-064-T2-002
+
+_priority: MEDIUM · target session: D · raised: 2026-04-30T07:56:13Z_
+
+*Source:* Second-tier catalogue v2 application 2026-04-30
+
+[Catalogue v2 §11 Session-D implication] The constitutional movement sequence (T2.10) — a map for the forgiveness chapter
+
+
+### SP-064-T2-003
+
+_priority: MEDIUM · target session: D · raised: 2026-04-30T07:56:13Z_
+
+*Source:* Second-tier catalogue v2 application 2026-04-30
+
+[Catalogue v2 §11 Session-D implication] The conscience-resolution framing (T3.9) — a new way to describe forgiveness's deepest function
+
+
+### SP-064-T2-004
+
+_priority: MEDIUM · target session: D · raised: 2026-04-30T07:56:13Z_
+
+*Source:* Second-tier catalogue v2 application 2026-04-30
+
+[Catalogue v2 §11 Session-D implication] The grace-mercy-forgiveness dimensional cluster (T6.7) — structural positioning for the C17 synthesis
+
+
+### SP-064-T2-005
+
+_priority: MEDIUM · target session: D · raised: 2026-04-30T07:56:13Z_
+
+*Source:* Second-tier catalogue v2 application 2026-04-30
+
+[Catalogue v2 §11 Session-D implication] The threefold eschatological anticipation (T5.6) — eschatological architecture for the forgiveness chapter
+
+
+## LOW priority (4)
+
+
+### DIM-064-SD012
+
+_priority: LOW · target session: D · raised: 2026-04-12 · Strong's: G0863H_
+
+*Source:* Session B v4.7
+
+Mat 18:35 — 'if you do not forgive your brother from your heart' (*ek tēs kardias*). The heart is named as the required inner locus of genuine forgiveness, distinguishing it from verbal or legal declaration alone. Session D question: does the programme's treatment of heart as an inner-being faculty consistently require heart-level engagement for genuine inner-being acts? Does the forgiveness-from-the-heart qualifier connect structurally to other heart-locus inner-being requirements (love from the heart, obedience from the heart) in a way that Session D should map? Registered as lower priority pending programme-wide heart-faculty analysis.
+
+
+### DIM-064-SD013
+
+_priority: LOW · target session: D · raised: 2026-04-12 · Strong's: G0863I_
+
+*Source:* Session B v4.7
+
+The permitting/welcome sense of *aphiēmi* (group 5378-001) names the inner posture of non-obstruction and openness — letting someone come, granting access, refusing to hinder. This is structurally parallel to the inner posture of forgiveness (releasing a claim, opening the relational space). Session D question: is there a common inner-being disposition underlying both forgiveness and welcome/hospitality — a posture of opening rather than closing — that connects the forgiveness corpus to hospitality or compassion registries? Lower priority pending other more strongly signalled connections.
+
+
+### DIM-064-SD015
+
+_priority: LOW · target session: D · raised: 2026-04-12 · Strong's: H5545_
+
+*Source:* Session B v4.7
+
+The OT intercession corpus (group 5379-002) includes multiple cases of communal forgiveness-seeking: Daniel praying for the nation (Dan 9:19), Moses interceding for Israel (Num 14:19), Amos interceding (Amos 7:2), Solomon's prayer covering multiple scenarios of national sin (1Ki 8). This raises the question of whether forgiveness has a collective inner-being dimension — what does it mean for a community to receive forgiveness, and is the inner-being grammar different from individual forgiveness? Lower priority given limited programme focus on corporate inner-being states.
+
+
+### DIM-064-SD022
+
+_priority: LOW · target session: D · raised: 2026-04-12 · Strong's: G0859_
+
+*Source:* Session B v4.7
+
+6 shared verses between forgiveness (064) and evil (057). Forgiveness is structurally the response to evil done — the two registries are counterparts. Session D question: does the evil corpus (057) address the inner experience of the perpetrator who has committed evil and received forgiveness — specifically, what the inner-being grammar is for the one who has done wrong and has been released? The forgiveness corpus addresses the inner state of the forgiver and the recipient, but the inner-being experience of moving from evildoer to forgiven person has its own grammar. Lower priority given the cooccurrence strength and structural rather than dynamic nature of the connection.

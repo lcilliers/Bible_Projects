@@ -1,0 +1,53 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG139-V1-CANONICAL",
+    "registry_id": 139,
+    "word": "righteousness",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R139 righteousness — 1 group dimension assignment + registry stamp. Manual application required (wa_dimension_index + word_registry).",
+    "superseded_patch": "PATCH-20260502-DIMREVIEW-C10-REG139-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-02: 1 dimension labels prefixed with sort order to match wa_vocab_set.DIMENSION_LABEL. Researcher waiver extends to C10 cluster DimReview cycle."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8182
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1099-001 G1345 dikaiōma — Moral Character / HUMAN. Automated label confirmed; vocabulary converted from legacy format."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 139
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R139 righteousness DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "dimension_index_updates": 1,
+    "registry_stamps": 1,
+    "research_flag_inserts": 0,
+    "dimension_changes": 0,
+    "vocabulary_conversions": 1
+  }
+}

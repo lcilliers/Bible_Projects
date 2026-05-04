@@ -1,0 +1,126 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260501-DIMREVIEW-C17-REG117-V2-CANONICAL",
+    "patch_type": "DIMREVIEW",
+    "cluster": "C17",
+    "registry_no": 117,
+    "registry_word": "peace",
+    "governing_instruction": "wa-dimensionreview-instruction-v3_3-20260418.md",
+    "produced_date": "2026-05-01",
+    "produced_by": "Claude AI — Registry Mode Phase C",
+    "mode": "Registry Mode",
+    "description": "Dimension assignments for 4 new H7965G shalom groups (2508-001/002/003/004, vc_group_id 3581-3584). Created from H7965 shalom reinstatement 2026-05-01. No group description corrections. One SD pointer inserted. Registry stamp included.",
+    "session_b_status": null,
+    "superseded_patch": "PATCH-20260501-DIMREVIEW-C17-REG117-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-01: AI emitted dimension labels in short form (e.g. \"Emotion — Positive\"); canonical DIMENSION_LABEL vocab requires the sort-order prefix (e.g. \"01 — Emotion — Positive\"). Researcher waived strict patch-format rule for this ad-hoc flow. Source patch retained at v1; this v2 is the applied form."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9365
+      },
+      "set": {
+        "dimension": "01 — Emotion — Positive",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the positive inner experiential condition of the whole person — peace, rest, welfare, and wholeness inwardly. The God-oriented soul's condition when shalom is present. Lam 3:17 (soul bereft of peace) confirms the characteristic by showing its absence in the nephesh. Isa 26:3 (perfect peace for the trusting mind) and Psa 4:8 (in peace I will lie down and sleep) are the primary positive expressions. Human is the dominant bearer; God is the source/ground but the condition itself is the human experiential state."
+      },
+      "description": "Dimension assignment for 2508-001: shalom as inner condition — Emotion–Positive, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9366
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Shalom as God's covenantal inner orientation toward his people — expressed as giving (Num 6:26), speaking (Psa 85:8), and eternally confirming (Isa 54:10) peace. God consistently initiates and sustains; the human is the recipient. Withdrawal (Jer 16:5) is the negative expression of the same relational characterisation. Distinct from group 2508-004: this group is about God's covenantal disposition, not about the peace embodied in the messianic person."
+      },
+      "description": "Dimension assignment for 2508-002: shalom as covenantal peace — Relational Disposition, GOD"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9367
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the stable inner orientation of the human person toward peace — as identity (Psa 120:7: I am for peace), character (Mal 2:6: walked in peace and uprightness), and moral imperative (Psa 34:14: seek peace and pursue it). The group includes authentic peace-orientation and its false simulation (prophets crying Peace when there is no peace) — both confirm that shalom-as-orientation is a genuine moral-character quality capable of authentic and counterfeit instantiation. Moral Character preferred over Volition (stable orientation vs. discrete acts) and Relational Disposition (inner quality of person vs. orientation toward a specific other)."
+      },
+      "description": "Dimension assignment for 2508-003: shalom as inner orientation toward peace — Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9368
+      },
+      "set": {
+        "dimension": "11 — Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "NONE",
+        "manual_override": 0,
+        "notes": "Shalom as the peace constitutively identified with and proceeding from the messianic king — who is both divinely appointed (Prince of Peace, Isa 9:6) and humanly embodied (He shall be their peace, Mic 5:5; chastisement purchased through suffering, Isa 53:5). Peace here is not God giving a condition to humans (2508-002) nor the human inner state received (2508-001) — it is the characteristic that is ontologically identified with the person who bridges the divine-human boundary. DHC assigned: the divine and human poles are equally constitutive. Dominant_subject = NONE: the dual nature of the messianic subject cannot be resolved to one pole. Strong SD003 cross-registry connection to R117 Greek groups (Eph 2:14 — he himself is our peace) and R130 (reconciliation, Col 1:20)."
+      },
+      "description": "Dimension assignment for 2508-004: shalom as messianic peace — Divine-Human Correspondence, NONE"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-117-SD003",
+        "registry_id": 117,
+        "flag_code": "SD_POINTER",
+        "description": "Group 2508-004 (H7965G sha.lom — messianic/eschatological peace) establishes that shalom in the Hebrew prophetic corpus is constitutively identified with the person of the messianic king: Prince of Peace (Isa 9:6), He shall be their peace (Mic 5:5), upon him was the chastisement that brought us peace (Isa 53:5). This is the OT ground of the NT claim that Christ IS peace (Eph 2:14, G1515 eirene — R117 group 426-003). Session D must examine whether the he-shall-be-their-peace structure (person = peace) in the Hebrew prophetic corpus is the direct semantic antecedent of he-himself-is-our-peace in the NT — and whether this constitutes a single unified concept across both testaments that R117 shalom and eirene groups together document. Cross-registry targets: NT eirene registries (R117 own Greek groups), R130 reconciliation (Col 1:20), messianic-identity material.",
+        "session_target": "D",
+        "raised_date": "2026-05-01",
+        "governing_instruction": "wa-dimensionreview-instruction-v3_3-20260418.md"
+      },
+      "description": "Insert SD pointer DIM-117-SD003: messianic peace (OT) as antecedent of Christ IS peace (NT)"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 117
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418.md"
+      },
+      "description": "Registry stamp: R117 peace dim_review_status = Complete"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "dimension_index_updates": 4,
+    "session_research_flags_inserts": 1,
+    "word_registry_updates": 1,
+    "group_description_corrections": 0,
+    "session_b_findings_inserts": 0,
+    "cluster_stamp_included": false,
+    "groups_assigned": [
+      "2508-001",
+      "2508-002",
+      "2508-003",
+      "2508-004"
+    ]
+  }
+}

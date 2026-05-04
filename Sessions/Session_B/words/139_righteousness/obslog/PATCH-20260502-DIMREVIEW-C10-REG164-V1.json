@@ -1,0 +1,192 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG164-V1",
+    "registry_id": 164,
+    "word": "truthfulness",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R164 truthfulness — 10 group dimension assignments + registry stamp + 1 SD pointer. 3 UNCLASSIFIED groups assigned; 1 dimension change. Manual application required."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8401 },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-001 G0225 alētheia (sanctification through truth) — Transformation / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8402 },
+      "set": {
+        "dimension": "Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-002 G0225 alētheia (will's orientation toward/against truth) — Volition / HUMAN. Was UNCLASSIFIED — assigned. Obeying vs refusing truth is a volitional inner act."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8403 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-003 G0225 alētheia (integrity, authenticity as inner character) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8404 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-004 G0225 alētheia (Spirit of truth — human capacity/incapacity to receive the Spirit) — Dependence/Creatureliness / HUMAN. Was UNCLASSIFIED. The group names the creature's receptivity to the Spirit's indwelling — constitutive dependence."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8405 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-005 G0225 alētheia (worship in spirit and truth) — Relational Disposition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8406 },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1197-006 G0225 alētheia (knowledge of truth as saving event) — Cognition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8409 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "6587-001 G0228 alēthinos (true heart drawn near to God; genuine orientation) — Relational Disposition / HUMAN. Was UNCLASSIFIED — assigned."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8408 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "6588-001 G0227 alēthēs (truthfulness as inner character quality) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8410 },
+      "set": {
+        "dimension": "Cognition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "6589-001 G0230 alēthōs (truly — qualifier of inner recognition and knowing) — Cognition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8407 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "6590-001 G0226 alētheuō (speaking truth in love toward others) — Relational Disposition / HUMAN. CHANGED from Moral Character: orientation-toward-another is dominant."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 164,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-164-SD002",
+        "strongs_reference": "G0225,G0226,G0227,G0228,G0230",
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "R164 (alētheia family) shows truth operating across five inner-being dimensions: Transformation (sanctification), Volition (will toward/against truth), Moral Character (integrity/authenticity), Dependence/Creatureliness (receptivity to Spirit of truth), Relational Disposition (worship in truth; truthful speech), and Cognition (knowledge of truth as saving event). This breadth is itself a finding: truth in the NT is not a single inner-being category but a force engaging the whole person. Supplementary to pre-existing DIM-164-SD001 (registry label-fit question); this pointer adds the dimension-breadth observation for Session D synthesis.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "SD pointer DIM-164-SD002 — alētheia family engages all five primary inner-being dimensions."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 164 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R164 truthfulness DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 12,
+    "dimension_index_updates": 10,
+    "registry_stamps": 1,
+    "research_flag_inserts": 1,
+    "dimension_changes": 1,
+    "unclassified_assigned": 3,
+    "vocabulary_conversions": 7
+  }
+}

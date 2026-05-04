@@ -1,0 +1,202 @@
+{
+  "meta": {
+    "generated_at": "2026-05-03T15:06:42Z",
+    "model": "claude-sonnet-4-6",
+    "effort": "high",
+    "n_pairs": 6,
+    "n_results": 6,
+    "total_input_tokens": 35460,
+    "total_output_tokens": 16161,
+    "total_cache_read_tokens": 0,
+    "total_cache_create_tokens": 0,
+    "estimated_cost_usd": 0.3488
+  },
+  "results": [
+    {
+      "verse_record_id": 318,
+      "reference": "Exo 34:6",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In this verse חֶסֶד (absolute noun, masculine singular) functions as a named dispositional quality of YHWH's inner being within a formal divine self-proclamation. It appears in the construct phrase וְרַב חֶסֶד (with the adjective רַב in construct state, Aamsc), meaning 'abounding / great in chesed.' Together with the surrounding attributes — compassionate (רַחוּם), gracious (חַנּוּן), slow to anger (אֶרֶךְ אַפַּיִם), and faithful (אֱמֶת) — chesed names a defining character quality of God's inner life: an overflowing, abundant covenant-love or loyal-kindness. The term passes the inner-being filter as a moral and relational disposition attributed to God himself, disclosed through a proclamatory self-revelation rather than through any physical or spatial referent.",
+      "unresolved_pointers": [
+        {
+          "pointer": "chesed_emet_hendiadys",
+          "description": "חֶסֶד and אֱמֶת are conjoined (וֶאֱמֶת) immediately after וְרַב חֶסֶד. Whether this pairing functions as a hendiadys ('abundant in faithful love' as a single quality) or as two syntactically independent attributes cannot be determined from this verse alone; it requires lexical comparison with parallel occurrences of the pair (e.g., Gen 24:27; Ps 85:10; 2 Sam 2:6) and programme-level adjudication of whether אֱמֶת is treated as a modifier of chesed."
+        },
+        {
+          "pointer": "divine_attribute_formula_parallel_occurrences",
+          "description": "This verse is the probable source-text of a repeated divine-attribute formula cited elsewhere in the OT (Num 14:18; Ps 86:15; Ps 103:8; Joel 2:13; Jonah 4:2; Neh 9:17). Whether chesed here carries specifically covenantal-loyalty semantics (as opposed to general benevolence or mercy) cannot be settled from this verse alone; the parallel citations — some of which abbreviate or reorder the formula — are required to determine which semantic component of chesed is foregrounded in each use."
+        },
+        {
+          "pointer": "rab_chesed_construct_semantic_range",
+          "description": "The adjective רַב (H7227A) is in construct state governing חֶסֶד; its owning_registry is null in the spans data. The force of 'abounding in chesed' (magnitude? inexhaustibility? relational abundance?) affects how the inner-being quality is characterised. Whether וְרַב חֶסֶד is a stock formulaic phrase with a fixed semantic profile requires a cross-corpus check on רַב in construct with quality-nouns beyond this verse."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 4857,
+        "output_tokens": 2373,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    },
+    {
+      "verse_record_id": 319,
+      "reference": "Num 14:18",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In Num 14:18, חֶסֶד appears in the construct phrase רַב חֶסֶד ('abounding in chesed'), which characterises YHWH's inner relational disposition: he is not merely kind but overflowing in loyal kindness. The term functions as the named inner-being quality of God — a relational-covenantal disposition — set in explicit parallel with 'slow to anger' (אֶרֶךְ אַפַּיִם) and in structural tension with his justice ('will by no means clear the guilty'). Chesed here is the positive pole of God's inner character: the disposition that orients him toward forgiveness of iniquity and transgression. The noun is masculine singular absolute, standing as the head-term of the construct phrase after the adjective וְרַב (Aamsc, 'great of / abounding in'), making chesed the substance of that abundance.",
+      "unresolved_pointers": [
+        {
+          "pointer": "exod_34_6_7_source_parallel",
+          "description": "Num 14:18 is a near-verbatim citation of Exod 34:6-7 (the divine self-disclosure formula spoken to Moses). Whether Moses's deployment of the formula in this intercession context adds any nuance to chesed — or whether the construct phrase רַב-חֶסֶד carries identical force in both settings — cannot be determined from Num 14:18 alone; requires comparison with Exod 34:6-7 and other formulaic occurrences (e.g. Ps 86:15, Joel 2:13, Jonah 4:2)."
+        },
+        {
+          "pointer": "rav_chesed_construct_scope",
+          "description": "The construct chain רַב-חֶסֶד uses רַב (H7227A, Aamsc construct, 'great of') as a quantifier. Whether רַב here denotes intensity of the quality, frequency of its exercise, or scope across many beneficiaries is a lexical question that requires checking רַב in analogous construct phrases (e.g. רַב-חַיִל, רַב-עַם) and cannot be resolved from this verse alone."
+        },
+        {
+          "pointer": "chesed_forgiveness_causal_relation",
+          "description": "The verse juxtaposes 'abounding in chesed' (attribute) with 'forgiving iniquity and transgression' (act) without an explicit connective marking cause or means. Whether chesed is the inner motive from which the forgiveness-act flows, or merely a co-listed parallel attribute, requires examination of parallel divine-attribute formulas across the OT and cannot be settled from this verse alone."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 5647,
+        "output_tokens": 1916,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    },
+    {
+      "verse_record_id": 3938,
+      "reference": "Neh 9:17",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In Neh 9:17 חֶסֶד appears in the construct phrase וְרַב חֶסֶד ('abounding in steadfast love/kindness'), where H7227A רַב (adjective, masculine singular construct) governs H2617A חֶסֶד (noun, masculine singular absolute). The term functions here as an enumerated inner-character attribute of God: one of five stacked descriptors (forgiveness, graciousness, compassion, patience, chesed) that together define God's inner disposition toward a rebellious Israel. Chesed is not describing a discrete act in this verse but a standing quality — possessed in abundance — that constitutes God's relational orientation toward the people. Its position in the climactic list explains the verse's closing statement ('did not forsake them'): Israel's unfaithfulness is absorbed by the abundance of this divine disposition. The term passes the inner-being filter as a moral-character quality expressing God's enduring relational orientation.",
+      "unresolved_pointers": [
+        {
+          "pointer": "double_chesed_spans_artifact",
+          "description": "The spans data lists H2617A twice — once as וחסד (HC/Ncmsa, with conjunction prefix) and once as חֶסֶד (HNcmsa, no prefix). The standard MT of Neh 9:17 has only one occurrence in וְרַב־חֶסֶד. Whether this duplication is a tagging artefact, a textual variant, or a deliberate split cannot be resolved from the verse alone; requires textual-critical check against MT and manuscript evidence."
+        },
+        {
+          "pointer": "divine_attributes_formula_parallel",
+          "description": "The phrase וְרַב חֶסֶד is part of the divine attributes formula most fully attested in Exod 34:6. Whether chesed in this formulaic quotation carries the same semantic weight and inner-being reference as in Exod 34:6 (and Ps 86:15, Num 14:18, etc.) requires a parallel-passage analysis of the formula's use across the canon; the verse alone cannot settle this."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 7636,
+        "output_tokens": 2946,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    },
+    {
+      "verse_record_id": 728,
+      "reference": "Joe 2:13",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In Joel 2:13, חֶסֶד (H2617A, noun masculine singular absolute) appears in the construct phrase וְרַב חֶסֶד, rendered 'abounding in steadfast love.' It functions as a characterological attribute of God's inner being — one of four dispositional qualities (gracious, merciful, slow to anger, abounding in chesed) that together describe who God is inwardly and constitute the stated ground for the call to return to him. The term names loyal, steadfast love as a deep dispositional quality intrinsic to God's character; the construct with רַב ('great/much') frames chesed not as an occasional act but as an overflowing, defining inner orientation of God toward his people. The verse thus presents chesed as an inner-being characteristic of God that provides motivational warrant for human repentance.",
+      "unresolved_pointers": [
+        {
+          "pointer": "exodus_34_6_parallel_formula",
+          "description": "Joel 2:13 closely adapts the divine-attributes formula from Exod 34:6, where חֶסֶד appears paired with אֱמֶת (emet, 'faithfulness') as a doublet. Joel omits אֱמֶת entirely. Whether chesed in Joel 2:13 absorbs the faithfulness/covenant-loyalty dimension from its Exod 34:6 source, or whether the omission narrows the semantic range toward relational warmth alone, cannot be resolved from Joel 2:13 alone; it requires direct comparison with the Exod 34:6 parallel and analysis of Joel's editorial adaptation."
+        },
+        {
+          "pointer": "chesed_covenantal_vs_relational_register",
+          "description": "The inner-being characteristic named by chesed could be principally (a) covenant loyalty/faithfulness, (b) emotional warmth and relational affection, or (c) an indissoluble blend of both. This semantic register question directly affects how the programme should characterise the inner-being quality at the R103 Love level. The verse itself does not adjudicate between these; it requires programme-level cross-verse lexical analysis of the chesed root family."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 5605,
+        "output_tokens": 3495,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    },
+    {
+      "verse_record_id": 732,
+      "reference": "Jon 4:2",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In Jon 4:2, chesed (חֶסֶד) appears in the construct phrase רַב חֶסֶד (raḇ-ḥeseḏ, 'abounding in steadfast love'), the fourth of five divine character attributes Jonah cites in his prayer-confession. It names God's relational disposition of loyal, steadfast love as an inner-being quality of God — specifically, it is the quality Jonah claims he already *knew* (יָדַעְתִּי, Qal perfect 1cs) before the Nineveh commission, and which drove his prior decision to flee. Chesed here thus functions simultaneously as a predicated divine character attribute (a description of God's inner relational orientation) and as the content of Jonah's prior inner knowledge that constituted his motivation for flight. The term passes the inner-being filter: it names a relational disposition/moral character quality and is embedded in an explicit knowledge-claim that shaped an act of will.",
+      "unresolved_pointers": [
+        {
+          "pointer": "exodus_34_6_parallel_formula",
+          "description": "The five-attribute string in Jon 4:2 (gracious, merciful, slow to anger, abounding in chesed, relenting from disaster) closely parallels the divine self-disclosure in Exod 34:6, but with a notable difference: Exod 34:6 pairs chesed with אֱמֶת (emet, 'faithfulness') as a hendiadys (רַב-חֶסֶד וֶאֱמֶת), whereas Jon 4:2 omits emet. The full semantic scope of chesed in this verse — whether its meaning is narrowed or redirected by standing without its typical partner — cannot be assessed without checking the Exod 34:6 parallel and other uses of the formula (e.g. Joel 2:13, Ps 103:8, Nah 1:3)."
+        },
+        {
+          "pointer": "jonah_irony_vs_genuine_belief",
+          "description": "Jonah cites God's chesed as the *reason* he fled, framing it as something he knew all along. Whether this knowledge-claim reflects a genuine prior relational orientation toward God's chesed or functions ironically and bitterly in context (given his anger in 4:1 and protest in 4:3) affects how the inner-being quality here should be characterised. Resolving this requires the broader Jonah narrative (Jon 1:3, 3:10–4:1, 4:3) and possibly rhetorical analysis of the prayer genre, neither of which the verse alone provides."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 7703,
+        "output_tokens": 2970,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    },
+    {
+      "verse_record_id": 3992,
+      "reference": "Psa 86:15",
+      "strong": "H2617A",
+      "term_summary": {
+        "transliteration": "che.sed",
+        "gloss": "kindness",
+        "language": "Hebrew",
+        "owning_registry": "R103 love"
+      },
+      "meaning": "In Psa 86:15, חֶסֶד (chesed) appears in the construct phrase וְרַב חֶסֶד — 'and abounding in chesed/steadfast love' — where it names one of several character qualities predicated of God. It functions as a divine relational-moral attribute: a quality of God's inner character/disposition described as present in great abundance. The phrase clusters chesed alongside compassion (רַחוּם), grace (חַנּוּן), patience (אֶרֶךְ אַפַּיִם), and faithfulness (אֱמֶת), meaning chesed here names a discrete inner-being characteristic of God — covenantal loyal love as a constitutive disposition of who God is — rather than a single act. The term passes the filter as a spiritual/character quality of the whole person (divine subject).",
+      "unresolved_pointers": [
+        {
+          "pointer": "exod_34_6_formula_parallel",
+          "description": "Psa 86:15 closely echoes the Sinai self-disclosure formula of Exod 34:6 (and its reflexes in Num 14:18; Neh 9:17; Psa 103:8; Joel 2:13; Jon 4:2). Whether chesed in this verse carries specifically covenantal weight (as the Exod 34:6 context implies) or is functioning as a more general benevolence term cannot be resolved from this verse alone; requires checking the formula-tradition parallels."
+        },
+        {
+          "pointer": "rab_chesed_construct_degree_crux",
+          "description": "The span for H7227A (וְרַב) has a null gloss in the data. The construct רַב חֶסֶד can be rendered 'great in chesed,' 'abounding in chesed,' or 'much chesed.' The nuance — whether it quantifies instances of chesed or characterizes the magnitude of the disposition — affects how chesed is being used here; requires a lexical check of רַב in divine-attribute constructs."
+        },
+        {
+          "pointer": "programme_divine_subject_classification",
+          "description": "The programme's inner-being filter is framed around 'a person's invisible life.' This verse attributes chesed to God as subject. Whether the programme treats divine-attribute verses as a distinct category or applies the same inner-being analysis to God requires programme-level guidance that cannot be resolved from the verse itself."
+        }
+      ],
+      "_usage": {
+        "input_tokens": 4012,
+        "output_tokens": 2461,
+        "cache_creation_input_tokens": 0,
+        "cache_read_input_tokens": 0
+      },
+      "_stop_reason": "end_turn"
+    }
+  ]
+}

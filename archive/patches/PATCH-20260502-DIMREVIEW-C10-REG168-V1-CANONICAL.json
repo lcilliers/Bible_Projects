@@ -1,0 +1,325 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG168-V1-CANONICAL",
+    "registry_id": 168,
+    "word": "uprightness",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R168 uprightness — 18 group dimension assignments + registry stamp. 7 dimension changes from automated labels. Manual application required.",
+    "superseded_patch": "PATCH-20260502-DIMREVIEW-C10-REG168-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-02: 18 dimension labels prefixed with sort order to match wa_vocab_set.DIMENSION_LABEL. Researcher waiver extends to C10 cluster DimReview cycle."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8439
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1211-001 H3476 yosher (uprightness of heart tested by God) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8440
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1211-002 H3476 yosher (uprightness as path/way) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8441
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1211-003 H3476 yosher (uprightness expressed in speech) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8449
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1212-001 H4339 meshar (God judges with uprightness — divine standard of right judgment) — Moral Character / GOD."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8450
+      },
+      "set": {
+        "dimension": "01 — Emotion — Positive",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1212-002 H4339 meshar (inmost being exults at rightness — Pro 23:16) — Emotion-Positive / HUMAN. CHANGED from Cognition: exultation of the inmost being is positive emotion, not a cognitive act."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8455
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1214-001 H5229 nekhochah (uprightness resisted/refused) — Moral Character / HUMAN. Negation of the quality; dimension confirmed."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8448
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1215-001 H3483 yesharah (uprightness of heart toward you — directed toward God) — Relational Disposition / HUMAN. CHANGED from Moral Character: relational directedness 'toward God' is the defining characteristic."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8442
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-001 H3477G yashar (did right in the eyes of the Lord — divine moral assessment) — Moral Character / GOD."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8443
+      },
+      "set": {
+        "dimension": "04 — Volition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-002 H3477G yashar (right in his own eyes — self-determination of moral standard) — Volition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8444
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-003 H3477G yashar (the upright / upright in heart) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8445
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-004 H3477G yashar (God and his word described as upright) — Moral Character / GOD. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8446
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-005 H3477G yashar (Job as blameless and upright) — Moral Character / HUMAN. ROOT_INFERRED → CLAUDE_AI."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8447
+      },
+      "set": {
+        "dimension": "08 — Transformation",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1216-006 H3477G yashar (God made man upright — original constitution and its loss) — Transformation / HUMAN. CHANGED from Moral Character: original integrity given then lost is constitutional change, not stable quality."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8454
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1217-001 H5228 nakhoach (honest inner character expressed in speech) — Moral Character / HUMAN. CHANGED from Relational Disposition: honest character quality is dominant, not orientation-toward-another. ROOT_INFERRED → CLAUDE_AI."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8438
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1218-001 G2118 euthutēs (scepter of uprightness — Christ's kingship character) — Moral Character / GOD. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8451
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "7492-001 H5227 nokhach (before the face of the Lord — prayer/lament orientation toward God) — Relational Disposition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8452
+      },
+      "set": {
+        "dimension": "04 — Volition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "7492-002 H5227 nokhach (stumbling block of iniquity before their faces — willful choice of object) — Volition / HUMAN. CHANGED from Relational Disposition: wilful attention to idols is Volition. ROOT_INFERRED → CLAUDE_AI."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8453
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "7492-003 H5227 nokhach (eyes directly forward — focused moral directedness) — Moral Character / HUMAN. CHANGED from Relational Disposition: inner uprightness of direction, not orientation-toward-another. ROOT_INFERRED → CLAUDE_AI."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 168
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R168 uprightness DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 19,
+    "dimension_index_updates": 18,
+    "registry_stamps": 1,
+    "research_flag_inserts": 0,
+    "dimension_changes": 7,
+    "vocabulary_conversions": 11
+  }
+}

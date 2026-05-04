@@ -14,6 +14,30 @@ Lightweight task ledger for the Bible_study_projects repo. Check off items as th
 
 - [ ] _Enrich programme prose with the inputs and outcomes of methodology review sessions_
 - [ ] _Phase_A_Prose: generate phase A prose — instruction filed [Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md](Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md). First application 2026-04-27: R030 contrition (6 prose_section rows captured). Legacy-prose audit pending: 5 registries (035 covetousness, 062 fellowship, 134 renewal, 206 vulnerability, 207 blindness_spiritual) have `.md` files in Sessions/Session_A/Data_Prose/ from 2026-04-20 but DB capture status unverified — see instruction §12._
+
+### Six reset-registries — re-run through v2 pipeline (raised 2026-04-28)
+
+The six registries reset to `session_b_status='Verse Context Reset'` on 2026-04-19 (because the v3 VC contracts invalidated their prior Session B work) need to retrace the full v2 pipeline to reach `Analysis Complete`, like R030 contrition and R067 goodness. Legacy completion artefacts in `Sessions/Session_C/Session C/wa-{NNN}-{word}-complete-2026-04-13*.json` are reference input (the prior analytical work) but not authoritative — re-validation is required.
+
+| Reg | Word | VC | Phase A in DB | Readiness output | Validation | Stage 2 obslog | Verdict |
+|---:|---|---|---|---|---|---|---|
+| 023 | compassion | Complete (legacy) | ☑ 2026-04-28 | ☑ | ☑ | ☐ | **BLOCKED** — C09 fails: 7 groups without dimension assignment (5933-001, 5933-002, 5934-001, 5935-001, 5936-001, +2). Dimension review needed for these groups before Stage 2. |
+| 062 | fellowship | Complete (legacy) | ☑ 2026-04-28 | ☑ | ☑ | ☑ 2026-04-28 | **Analysis Complete** — 5 chapters, 8 SD pointers, 77 chapter citations (FK=null pending observation register), 16 prior findings retained. Obslog had no observation register (134 OBS-062-NNN refs cited inline but not defined as wa_session_b_findings rows) — supersede pass needed to populate the observation lifecycle. Captured artefacts: [obslog](Sessions/Session_B/09_Analysis_output_logs/words/wa-obslog-ro62-fellowship-sb-v1-20260428.md), [manifest](Sessions/Session_B/09_Analysis_output_logs/words/wa-062-fellowship-obslog-parse-manifest-v1-20260428.json). |
+| 064 | forgiveness | Complete (legacy) | ☑ 2026-04-28 | ☑ | ☑ | ☑ 2026-04-28 | **Analysis Complete** — 34 observations (25 resolved_qa, 9 open), 1 new SD pointer SP-064-001, 5 chapters with 109 citations (51 FK-resolved), 168 Q&A catalogue links, 118 entity links. Obslog had complete observation register (34 inline OBS-064-NNN markers) → clean Q&A→observation lifecycle resolution. |
+| 068 | **grace** | **In Progress** (blocker) | ☑ 2026-04-28 | ☑ | ☑ | ☐ | **BLOCKED** — C04 fails: VC must be Complete. VC closure required before Stage 2. (All other gates clean: 12 PASS, 2 WARN.) |
+| 103 | love | Complete (legacy) | ☑ 2026-04-28 | ☑ | ☑ | ☐ | **BLOCKED** — C09 fails: 1 orphan group 2898-001 (H2898 has 0 active verses; documented as data-quality issue in SP-067-012). Either delete-flag the orphan group + term, or assign a dimension to the empty group. |
+| 111 | mercy | Complete (legacy) | ☑ 2026-04-28 | ☑ | ☑ | ☐ | **READY** — 12 PASS, 3 WARN (set-aside ratio anomalies in 6 groups; CLAUDE_AI dim confidence; researcher fields absent) |
+
+**Per-stage notes:**
+
+- **Phase A in DB**: 6 prose_section rows under source_stage='session_a' (codes sa_s1_d1..sa_s1_d6). Generated via `python scripts/generate_session_a_extract.py --registry N --apply` per [wa-sessiona-prose-instruction [current]](Workflow/Instructions/wa-sessiona-prose-instruction-v1_0-20260427.md).
+- **Readiness output**: paired `.md` + `.json` in `Sessions/Session_B/07_Analysis_Readiness_Status/` per [wa-sessionb-analysis-readiness [current]](Workflow/Instructions/wa-sessionb-analysis-readiness-v1_9-20260427.md) §v2.R6.
+- **Validation**: paired `.md` + `.json` validation report per readiness §v2.R8 — must show **READY** verdict before Stage 2.
+- **Stage 2 obslog**: an AI session per word producing a comprehensive obslog `.md` per [wa-sessionb-analysis-output [current]](Workflow/Instructions/wa-sessionb-analysis-output-v1_5-20260428.md) — using §v2.8 markers + §v2.9 chapter citations. Researcher orchestrates; this is the time-expensive stage.
+- **Capture to DB**: CC parses + writes per claudecode `[current]` §v2.CC2/CC3 — should land cleanly given AI follows v1_5 markers.
+- **§K legacy-VC caveat**: applies to all six (VC was performed under pre-v3 contracts; per-term `vc_status='not_done'`). AI must flag any material dependence on legacy classifications via `ANALYSIS_VC_UNVERIFIED_MATERIAL` per the readiness output's §K instruction.
+
+CC-side preconditions (Phase A + readiness + validation) for the 5 with VC=Complete are run-now-able. Grace requires VC closure first (separate VC track).
 - [ ] _Phase_B_Verse_Context: Run through all verse context again — VC-7 pilot done (renewal); VC-8 done (yearning, treachery, jealousy, righteousness — malice carry-over to VC-9); VC-9 done (5 registries, 9 terms); VC-10 done (5 three-term registries, 12 terms); VC-11 done (5 three-term registries, 15 terms incl. 3 partial-completion mti=916/1364/5111); 47 of ~3,891 mti_terms at vc_completed across 16 registries; 169 legacy-Complete registries still pending under v3_9 contracts._
 
 ## Open

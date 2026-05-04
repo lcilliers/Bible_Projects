@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-04-28T04:28:27Z",
+  "generated_at": "2026-04-28T14:29:33Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 1843,
-  "total_active": 447,
-  "total_archived": 1396,
+  "total_files": 1851,
+  "total_active": 449,
+  "total_archived": 1402,
   "files": [
     {
       "path": "Logs/Framework-B-SessionLog-2026-03-07.md",
@@ -18276,6 +18276,21 @@
       "modified": "2026-04-11T17:54:46Z"
     },
     {
+      "path": "archive/patches/wa-023-compassion-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 23,
+      "word": "compassion",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 432497,
+      "modified": "2026-04-28T06:23:11Z"
+    },
+    {
       "path": "archive/patches/wa-030-contrition-sessiona-patch-20260427.json",
       "category": "patch",
       "type": "patch",
@@ -18321,6 +18336,21 @@
       "modified": "2026-04-17T03:23:25Z"
     },
     {
+      "path": "archive/patches/wa-062-fellowship-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 62,
+      "word": "fellowship",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 108328,
+      "modified": "2026-04-28T06:24:04Z"
+    },
+    {
       "path": "archive/patches/wa-064-forgiveness-sessionB-cc-directive-v1-2026-04-12.md",
       "category": "directive",
       "type": "cc-directive",
@@ -18349,6 +18379,21 @@
       "archived": true,
       "size_bytes": 1215,
       "modified": "2026-04-12T17:32:03Z"
+    },
+    {
+      "path": "archive/patches/wa-064-forgiveness-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 64,
+      "word": "forgiveness",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 109393,
+      "modified": "2026-04-28T06:24:06Z"
     },
     {
       "path": "archive/patches/wa-067-goodness-patch-sessionb-findings-v1-20260427.json",
@@ -18426,6 +18471,21 @@
       "modified": "2026-04-10T14:22:18Z"
     },
     {
+      "path": "archive/patches/wa-068-grace-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 68,
+      "word": "grace",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 157802,
+      "modified": "2026-04-28T06:26:01Z"
+    },
+    {
       "path": "archive/patches/wa-096-jealousy-g3863-patch-vcrevise-v1-20260424.json",
       "category": "patch",
       "type": "patch",
@@ -18486,6 +18546,21 @@
       "modified": "2026-04-12T17:11:24Z"
     },
     {
+      "path": "archive/patches/wa-103-love-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 103,
+      "word": "love",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 763467,
+      "modified": "2026-04-28T06:24:31Z"
+    },
+    {
       "path": "archive/patches/wa-108-meditation-patch-sdpointer-v1-20260425.json",
       "category": "patch",
       "type": "patch",
@@ -18544,6 +18619,21 @@
       "archived": true,
       "size_bytes": 5787,
       "modified": "2026-04-11T12:54:22Z"
+    },
+    {
+      "path": "archive/patches/wa-111-mercy-sessiona-patch-20260428.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": 111,
+      "word": "mercy",
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 378855,
+      "modified": "2026-04-28T06:24:42Z"
     },
     {
       "path": "archive/patches/wa-112-mind-patch-20260327-V2.json",
@@ -21724,6 +21814,36 @@
       "archived": false,
       "size_bytes": 1101,
       "modified": "2026-04-28T03:44:42Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-062-fellowship-obslog-parse-manifest-v1-20260428.json",
+      "category": "report",
+      "type": "word-report",
+      "registry": 62,
+      "word": "fellowship",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-28",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 47686,
+      "modified": "2026-04-28T09:21:31Z"
+    },
+    {
+      "path": "outputs/reports/words/wa-062-fellowship-obslog-validation-v1-20260428.md",
+      "category": "report",
+      "type": "word-report",
+      "registry": 62,
+      "word": "fellowship",
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-04-28",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 2014,
+      "modified": "2026-04-28T09:21:31Z"
     },
     {
       "path": "outputs/session-logs/archive/wa-global-databasereview-obslog-v1-20260419.md",

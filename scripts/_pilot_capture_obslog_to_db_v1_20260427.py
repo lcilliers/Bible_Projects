@@ -68,6 +68,8 @@ ANOMALY_TYPES = {
     "FINDING_UNCITED",          # resolved finding not cited in any current chapter
     "CHAPTER_NOT_SUPERSEDED",   # current chapter still pre-revision after lifecycle changes
     "CITATION_GAP",             # >10% citation tokens unresolved per chapter
+    # 2026-04-28: status-advance gate
+    "OBSERVATION_REGISTER_MISSING",  # obslog requested completion status with 0 observations
 }
 
 
@@ -161,6 +163,15 @@ def existing_sd_pointer(conn, registry_id: int, flag_label: str) -> int | None:
 
 
 def write_status_update(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
+    """Advance word_registry.session_b_status if the obslog requested it.
+
+    Hard gate: refuse to advance to 'Analysis Complete' (or 'Session B Complete')
+    when the obslog has no observation register. An obslog with 0 observations
+    cannot have produced a complete Q&A → finding lifecycle, so the status
+    advance would be misleading. The status is held at the prior value and a
+    DATA_ANOMALY_OBSERVATION_REGISTER_MISSING finding is raised for the
+    next session's §N (per analysis-output v1_5 §v2.8 mandatory marker rule).
+    """
     s = manifest.get("status_update")
     if not s or not s.get("target_status"):
         return {"written": 0, "skipped": 0, "errors": [], "note": "no status_update in manifest"}
@@ -170,6 +181,38 @@ def write_status_update(conn, manifest: dict, ctx: dict, dry: bool) -> dict:
     ).fetchone()[0]
     if current == target:
         return {"written": 0, "skipped": 1, "errors": [], "note": f"status already '{target}'"}
+
+    # Hard gate: completion statuses require an observation register
+    completion_statuses = ("Analysis Complete", "Session B Complete")
+    obs_count = len(manifest.get("observations") or [])
+    if target in completion_statuses and obs_count == 0:
+        # Raise an anomaly finding instead of advancing
+        if not dry:
+            seq = conn.execute("""
+                SELECT COUNT(*) FROM wa_session_b_findings
+                 WHERE registry_id = ? AND finding_type LIKE 'DATA_ANOMALY_%'
+            """, (ctx["registry_id"],)).fetchone()[0] + 1
+            finding_id_text = f"ANOMALY-{ctx['registry_no']:03d}-{seq:03d}"
+            desc = (
+                f"Obslog requested status='{target}' but contained no observation register "
+                f"(0 inline OBS-{ctx['registry_no']:03d}-NNN markers; 0 Q&A → finding lifecycle "
+                f"resolution possible). Status held at '{current}'. Per analysis-output v1_5 §v2.8, "
+                f"the obslog must include `**OBS-{{registry:03d}}-{{seq:03d}}:**` markers for each "
+                f"observation. Resolve via supersede obslog adding the observation register."
+            )
+            conn.execute("""
+                INSERT INTO wa_session_b_findings
+                    (finding_id, registry_id, finding_type, finding,
+                     raised_date, status, session_b_instruction)
+                VALUES (?, ?, 'DATA_ANOMALY_OBSERVATION_REGISTER_MISSING', ?, ?, 'open', ?)
+            """, (finding_id_text, ctx["registry_id"], desc, ctx["ts"],
+                  "wa-claudecode-instruction-v4_4"))
+        return {
+            "written": 0, "skipped": 0,
+            "errors": [f"BLOCKED: target='{target}' refused — obslog has no observation register; status held at '{current}'"],
+            "note": f"BLOCKED: status held at '{current}' pending observation-register supersede",
+        }
+
     if not dry:
         conn.execute(
             "UPDATE word_registry SET session_b_status = ? WHERE id = ?",

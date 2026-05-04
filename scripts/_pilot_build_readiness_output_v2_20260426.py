@@ -350,43 +350,66 @@ def get_correlation_signals(conn, registry_id: int, owner_mti_ids: list) -> dict
 
 
 def get_catalogue_questions(conn, registry_no: int) -> dict:
-    """Return generic (Sections 1-5) + any registry-specific catalogue questions.
+    """Return v2 second-tier catalogue (T0-T7) + any registry-specific extensions.
 
-    Per researcher direction (2026-04-26):
-      - Generic = the 147 chapter questions in Sections 1-5 (apply to every word).
-      - Registry-specific = questions where source_registry_no = current registry
-        (these are word-specific Extensions, included only when this is the word
-        being analysed).
-      - Word-specific Extensions for OTHER registries and Evidence-Flag questions
-        are NOT included in the readiness output for this word.
+    Schema (post catalogue v2 migration, 2026-04-30):
+      - 189 v2 prompts: tier IS NOT NULL (T0..T7), grouped by component_code
+        (e.g. T0.1, T1.3) with prompt_seq inside each component.
+      - 159 v1 generic questions retired to status='redundant_v1'.
+      - Registry-specific extensions: source_registry_no = current registry,
+        tier IS NULL, still active (e.g. 'Compassion Extensions' for R023).
+
+    The v2 tier/component grouping IS the Stage 2b structure — Stage 2b works
+    through the catalogue tier-by-tier, component-by-component.
     """
-    generic = conn.execute("""
-        SELECT obs_id, question_code, section, source_word, source_registry_no,
+    tiered = conn.execute("""
+        SELECT obs_id, question_code, section, tier, component_code,
+               component_title, prompt_seq, source_word, source_registry_no,
                question_text, pattern_type, scope, status
           FROM wa_obs_question_catalogue
          WHERE (deleted = 0 OR deleted IS NULL)
-           AND section LIKE 'Section %'
-         ORDER BY section, obs_id
+           AND status = 'active'
+           AND tier IS NOT NULL
+         ORDER BY tier, component_code, prompt_seq, obs_id
     """).fetchall()
-    generic = [dict(r) for r in generic]
-    by_section = defaultdict(list)
-    for r in generic:
-        by_section[r['section'] or '(no section)'].append(r)
-    # Registry-specific: questions whose source_registry_no matches current registry
-    # (word-specific Extensions like 'Compassion Extensions' are sourced from reg 23 etc.)
+    tiered = [dict(r) for r in tiered]
+
+    # Group by tier → component_code → list of prompts
+    by_tier: dict = defaultdict(lambda: defaultdict(list))
+    component_titles: dict = {}
+    for q in tiered:
+        t = q['tier'] or '(no tier)'
+        c = q['component_code'] or '(no component)'
+        by_tier[t][c].append(q)
+        if c not in component_titles and q.get('component_title'):
+            component_titles[c] = q['component_title']
+
+    tier_summary = []
+    for t in sorted(by_tier.keys()):
+        n_components = len(by_tier[t])
+        n_prompts = sum(len(qs) for qs in by_tier[t].values())
+        # Tier label: pull from the first prompt's section field
+        sample = next(iter(by_tier[t].values()))[0]
+        tier_label = sample.get('section') or t
+        tier_summary.append((t, tier_label, n_components, n_prompts))
+
+    # Registry-specific extensions: word-specific catalogue rows for THIS registry,
+    # tier IS NULL (not part of the v2 universal tier set).
     registry_specific = conn.execute("""
         SELECT obs_id, question_code, section, source_word, source_registry_no,
                question_text, pattern_type, scope, status
           FROM wa_obs_question_catalogue
          WHERE (deleted = 0 OR deleted IS NULL)
+           AND status = 'active'
+           AND tier IS NULL
            AND source_registry_no = ?
-           AND section NOT LIKE 'Section %'
          ORDER BY section, obs_id
     """, (registry_no,)).fetchall()
     return {
-        "generic": generic,
-        "generic_by_section": dict(by_section),
-        "generic_section_summary": [(s, len(qs)) for s, qs in by_section.items()],
+        "tiered": tiered,
+        "by_tier": {t: dict(comps) for t, comps in by_tier.items()},
+        "component_titles": component_titles,
+        "tier_summary": tier_summary,
         "registry_specific": [dict(r) for r in registry_specific],
     }
 
@@ -861,70 +884,82 @@ def render_section_k_legacy_vc(owners: list, states: dict) -> list:
 
 
 def render_section_l_catalogue(catalogue: dict, registry_no: int, registry_word: str) -> list:
-    """Stage 2b foundational input — generic catalogue + any registry-specific questions.
+    """Stage 2b foundational input — v2 second-tier catalogue (T0–T7) +
+    any registry-specific extensions still active for this registry.
 
-    Per researcher direction (2026-04-26):
-      - Generic = the 147 chapter questions in Sections 1-5. Apply to every word.
-        Embedded as JSON; the section grouping IS the Stage 2b chapter structure.
-      - Registry-specific = questions sourced from THIS registry (word-specific
-        Extensions). Included only when this registry has any.
-      - Other word-specific Extensions and Evidence-Flag questions are NOT
-        included here.
+    Embeds as JSON grouped tier → component → prompts, matching the v1.8
+    Session B Stage 2 instruction §10 catalogue source-of-truth contract.
     """
     import json
     L = []
-    generic = catalogue['generic']
-    generic_by_section = catalogue['generic_by_section']
-    section_summary = catalogue['generic_section_summary']
+    tiered = catalogue['tiered']
+    by_tier = catalogue['by_tier']
+    component_titles = catalogue['component_titles']
+    tier_summary = catalogue['tier_summary']
     registry_specific = catalogue['registry_specific']
-    L.append("## L. Stage 2b Foundational Input — Observation Question Catalogue")
+    n_components = sum(len(comps) for comps in by_tier.values())
+    L.append("## L. Stage 2b Foundational Input — Second-Tier Catalogue (T0–T7)")
     L.append("")
-    L.append(f"**Generic questions: {len(generic)}** across {len(generic_by_section)} sections. The section grouping IS the Stage 2b chapter structure — Stage 2b works through the catalogue section-by-section, producing answers grouped by section.")
+    L.append(f"**Active prompts: {len(tiered)}** across **{n_components} components** in **{len(by_tier)} tiers (T0–T7)**. Per `wa-sessionb-analysis-output [current]` §10, this is the operative question set for Stage 2b. Tier→component→prompt grouping IS the Stage 2b structure — Stage 2b walks the catalogue tier-by-tier, component-by-component, recording one Q&A entry per prompt.")
     L.append("")
-    L.append("### Section summary (generic)")
+    L.append("### Tier summary")
     L.append("")
-    L.append("| Section | n questions |")
-    L.append("|---|---:|")
-    for s, n in section_summary:
-        L.append(f"| {s} | {n} |")
+    L.append("| Tier | Tier label | n components | n prompts |")
+    L.append("|---|---|---:|---:|")
+    for t, tier_label, nc, np in tier_summary:
+        L.append(f"| `{t}` | {tier_label} | {nc} | {np} |")
     L.append("")
-    L.append("### Generic questions (JSON, grouped by section)")
+    L.append("### Catalogue (JSON, grouped by tier → component → prompts)")
     L.append("")
-    L.append("Format: JSON. Structure: as-is from `wa_obs_question_catalogue`. Apply to every word.")
+    L.append("Format: JSON. Structure: as-is from `wa_obs_question_catalogue` filtered to `tier IS NOT NULL AND status='active'`. Apply to every word — universal across registries.")
     L.append("")
+    tier_label_lookup = {t: tier_label for t, tier_label, _, _ in tier_summary}
     grouped_payload = {
-        "total": len(generic),
-        "section_count": len(generic_by_section),
-        "sections": {
-            s: [
-                {
-                    "obs_id": q['obs_id'],
-                    "question_code": q['question_code'],
-                    "section": q['section'],
-                    "source_word": q['source_word'],
-                    "source_registry_no": q['source_registry_no'],
-                    "question_text": q['question_text'],
-                    "pattern_type": q['pattern_type'],
-                    "scope": q['scope'],
-                    "status": q['status'],
-                }
-                for q in qs
-            ]
-            for s, qs in generic_by_section.items()
-        }
+        "total_prompts": len(tiered),
+        "total_components": n_components,
+        "total_tiers": len(by_tier),
+        "catalogue_version": "v2-2026-04-29",
+        "tiers": {
+            t: {
+                "tier_label": tier_label_lookup.get(t, t),
+                "components": {
+                    c: {
+                        "component_title": component_titles.get(c, ""),
+                        "prompts": [
+                            {
+                                "obs_id": q['obs_id'],
+                                "question_code": q['question_code'],
+                                "tier": q['tier'],
+                                "component_code": q['component_code'],
+                                "component_title": q['component_title'],
+                                "prompt_seq": q['prompt_seq'],
+                                "section": q['section'],
+                                "question_text": q['question_text'],
+                                "pattern_type": q['pattern_type'],
+                                "scope": q['scope'],
+                                "status": q['status'],
+                            }
+                            for q in qs
+                        ],
+                    }
+                    for c, qs in by_tier[t].items()
+                },
+            }
+            for t in sorted(by_tier.keys())
+        },
     }
     L.append("```json")
     L.append(json.dumps(grouped_payload, indent=2, ensure_ascii=False))
     L.append("```")
     L.append("")
-    # Registry-specific
-    L.append(f"### Registry-specific questions for {registry_no:03d} {registry_word}")
+    # Registry-specific extensions
+    L.append(f"### Registry-specific extensions for R{registry_no:03d} {registry_word}")
     L.append("")
     if not registry_specific:
-        L.append(f"_None._ No questions in `wa_obs_question_catalogue` are sourced from registry {registry_no} ({registry_word}).")
+        L.append(f"_None._ No active non-tiered extensions in `wa_obs_question_catalogue` are sourced from registry {registry_no} ({registry_word}).")
         L.append("")
     else:
-        L.append(f"**{len(registry_specific)} question(s)** sourced from this registry's prior work. Include in Stage 2b alongside the generic questions.")
+        L.append(f"**{len(registry_specific)} extension(s)** sourced from this registry's prior work. These are word-specific extensions outside the universal T0–T7 set; consider them in Stage 2b alongside the tiered prompts.")
         L.append("")
         rs_payload = {
             "registry_no": registry_no,
@@ -1084,11 +1119,11 @@ def build(conn, registry_no: int) -> str:
     signals = get_correlation_signals(conn, reg['id'], [t['mti'] for t in owners])
 
     L: list[str] = []
-    L.append(f"# wa-{registry_no:03d}-{reg['word']} — Analysis Readiness Output (v2)")
+    L.append(f"# wa-{registry_no:03d}-{reg['word']} — Analysis Readiness Output (v6)")
     L.append("")
-    L.append(f"_Pilot v2 generation · {ts} · schema {schema}_")
+    L.append(f"_v6 generation · {ts} · schema {schema} · catalogue v2-2026-04-29 (T0–T7)_")
     L.append("")
-    L.append(f"_Strategy: vc-corrective-strategy-v2 §4 · sections aligned with `wa-sessionb-analysis-output-v1_1` reading units 1-9._")
+    L.append(f"_Sections aligned with `wa-sessionb-analysis-output [current]` reading units 1-9 + §10 (second-tier catalogue)._")
     L.append("")
     L.append(f"_Source of truth: live DB at generation time. Regenerate to refresh._")
     L.append("")
@@ -1158,7 +1193,8 @@ def build_json(conn, registry_no: int) -> dict:
             "registry_word": reg['word'],
             "generator": "_pilot_build_readiness_output_v2_20260426.py",
             "strategy": "vc-corrective-strategy-v2-20260426.md",
-            "version": "v5",
+            "version": "v6",
+            "catalogue_version": "v2-2026-04-29",
         },
         "registry": reg,
         "owner_terms": owners,
@@ -1191,7 +1227,7 @@ def main() -> int:
     out_dir = OUT_DIR
     os.makedirs(out_dir, exist_ok=True)
     base = (args.out and os.path.splitext(args.out)[0]) or \
-        f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v5-{today_compact()}"
+        f"wa-{args.registry:03d}-{reg['word']}-readiness-output-v6-{today_compact()}"
 
     if not args.json_only:
         md_text = build(conn, args.registry)

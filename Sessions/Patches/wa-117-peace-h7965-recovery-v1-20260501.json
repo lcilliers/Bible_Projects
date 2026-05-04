@@ -1,0 +1,401 @@
+{
+  "patch_id": "PATCH-20260501-H7965-RECOVERY-V1",
+  "registry_no": 117,
+  "registry_word": "peace",
+  "rationale": "Recover H7965 shalom family for R117 peace. The 2026-03-26 delete sweep removed shalom from active inventory without an exclusion_reason. The R117 description and Phase 1 strongs_list both attest H7965 was originally extracted under R117. STEP extract on 2026-05-01 confirmed the same 209-verse footprint. This patch un-flags the existing data and re-OWNs to R117 to enable Verse Context re-run.",
+  "mode": "LIVE",
+  "before": {
+    "timestamp": "2026-05-01T19:04:03Z",
+    "scope": [
+      {
+        "strongs": "H7965G",
+        "mti_primary": {
+          "id": 2508,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 34,
+          "owning_word": "peace",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 2646,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3425,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 148
+      },
+      {
+        "strongs": "H7965H",
+        "mti_primary": {
+          "id": 406,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 617,
+          "term_owner_type": null,
+          "delete_flagged": 1,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3433,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 1
+      },
+      {
+        "strongs": "H7965I",
+        "mti_primary": {
+          "id": 2509,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 34,
+          "owning_word": "peace: well-being",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 2647,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3427,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 46
+      },
+      {
+        "strongs": "H7965J",
+        "mti_primary": {
+          "id": 2510,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 34,
+          "owning_word": "peace: friendship",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 2648,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3430,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 5
+      },
+      {
+        "strongs": "H7965K",
+        "mti_primary": {
+          "id": 2511,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 34,
+          "owning_word": "peace: greeting",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 2649,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3429,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 8
+      },
+      {
+        "strongs": "H7965L",
+        "mti_primary": {
+          "id": 2512,
+          "status": "delete",
+          "owning_registry": "117",
+          "owning_registry_fk": 34,
+          "owning_word": "peace: completely",
+          "vc_status": "not_done",
+          "last_changed": "2026-03-26T14:46:32Z"
+        },
+        "ti_r117": {
+          "id": 2650,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3434,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 0,
+        "r117_verses_flagged": 1
+      }
+    ],
+    "registry_before": {
+      "no": 117,
+      "word": "peace",
+      "verse_context_status": "Complete",
+      "session_b_status": "Verse Context Reset",
+      "dim_review_status": "Complete"
+    }
+  },
+  "after": {
+    "timestamp": "2026-05-01T19:04:03Z",
+    "scope": [
+      {
+        "strongs": "H7965G",
+        "mti_primary": {
+          "id": 2508,
+          "status": "extracted",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 2646,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3425,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 148,
+        "r117_verses_flagged": 0
+      },
+      {
+        "strongs": "H7965H",
+        "mti_primary": {
+          "id": 406,
+          "status": "extracted_thin",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 617,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3433,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 1,
+        "r117_verses_flagged": 0
+      },
+      {
+        "strongs": "H7965I",
+        "mti_primary": {
+          "id": 2509,
+          "status": "extracted",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace: well-being",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 2647,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3427,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 46,
+        "r117_verses_flagged": 0
+      },
+      {
+        "strongs": "H7965J",
+        "mti_primary": {
+          "id": 2510,
+          "status": "extracted_thin",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace: friendship",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 2648,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3430,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 5,
+        "r117_verses_flagged": 0
+      },
+      {
+        "strongs": "H7965K",
+        "mti_primary": {
+          "id": 2511,
+          "status": "extracted_thin",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace: greeting",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 2649,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3429,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 8,
+        "r117_verses_flagged": 0
+      },
+      {
+        "strongs": "H7965L",
+        "mti_primary": {
+          "id": 2512,
+          "status": "extracted_thin",
+          "owning_registry": "117",
+          "owning_registry_fk": 117,
+          "owning_word": "peace: completely",
+          "vc_status": "not_done",
+          "last_changed": "2026-05-01T19:04:03Z"
+        },
+        "ti_r117": {
+          "id": 2650,
+          "term_owner_type": "OWNER",
+          "delete_flagged": 0,
+          "file_id": 48
+        },
+        "ti_r34": {
+          "id": 3434,
+          "term_owner_type": "XREF",
+          "delete_flagged": 0,
+          "file_id": 80
+        },
+        "r117_verses_active": 1,
+        "r117_verses_flagged": 0
+      }
+    ],
+    "registry_before": {
+      "no": 117,
+      "word": "peace",
+      "verse_context_status": "In Progress",
+      "session_b_status": "Verse Context Reset",
+      "dim_review_status": "Complete"
+    }
+  },
+  "counts": {
+    "mti_reactivated": 6,
+    "ti_promoted_owner": 6,
+    "ti_demoted_xref": 6,
+    "ti_unflagged": 0,
+    "verses_unflagged": 209,
+    "registry_updated": 1
+  },
+  "scope": [
+    {
+      "strongs": "H7965G",
+      "mti_id": 2508,
+      "r117_ti": 2646,
+      "r34_ti": 3425,
+      "verses": 148,
+      "gloss": "peace"
+    },
+    {
+      "strongs": "H7965H",
+      "mti_id": 406,
+      "r117_ti": 617,
+      "r34_ti": 3433,
+      "verses": 1,
+      "gloss": "Peace [God]"
+    },
+    {
+      "strongs": "H7965I",
+      "mti_id": 2509,
+      "r117_ti": 2647,
+      "r34_ti": 3427,
+      "verses": 46,
+      "gloss": "peace: well-being"
+    },
+    {
+      "strongs": "H7965J",
+      "mti_id": 2510,
+      "r117_ti": 2648,
+      "r34_ti": 3430,
+      "verses": 5,
+      "gloss": "peace: friendship"
+    },
+    {
+      "strongs": "H7965K",
+      "mti_id": 2511,
+      "r117_ti": 2649,
+      "r34_ti": 3429,
+      "verses": 8,
+      "gloss": "peace: greeting"
+    },
+    {
+      "strongs": "H7965L",
+      "mti_id": 2512,
+      "r117_ti": 2650,
+      "r34_ti": 3434,
+      "verses": 1,
+      "gloss": "peace: completely"
+    }
+  ]
+}

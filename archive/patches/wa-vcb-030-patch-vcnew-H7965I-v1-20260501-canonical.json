@@ -1,0 +1,841 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260501-VCB030-VCNEW-H7965I-V1",
+    "batch_id": "VCB-030",
+    "terms_covered": [
+      2509
+    ],
+    "input_versions": {
+      "2509": 1
+    },
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "2026-05-01",
+    "produced_by": "wa-versecontext-instruction-v3_10",
+    "session_b_status": null,
+    "description": "Verse context classification — VCB-030, H7965I sha.lom (peace: well-being), mti=2509, R117, 46 verses. FRESH term — shalom reinstated 2026-05-01.",
+    "patch_type": "VCNEW",
+    "normalization_note": "CC-side: patch_type=\"VCNEW\" injected pre-apply (AI omitted)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2509,
+        "group_code": "2509-001",
+        "context_description": "Term names shalom as the comprehensive inner condition of welfare and well-being — the wholeness of the person as divinely given, sustained, or promised",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965I: shalom as inner condition of welfare and well-being"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2509,
+        "group_code": "2509-002",
+        "context_description": "Term names shalom as the falsely promised or self-deceived condition of welfare — the inner state wrongly claimed when judgment or correction is the reality",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965I: shalom as falsely promised welfare"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78291,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 29:6 — set aside: social welfare enquiry formula"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78292,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 37:14 — set aside: welfare check formula"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78293,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:27 — set aside: social welfare enquiry"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78294,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:28 — set aside: report of welfare, external"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78290,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 18:7 — set aside: mutual welfare enquiry formula"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78289,
+        "mti_term_id": 2509,
+        "group_id": "2509-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Blesses himself in his heart saying 'I shall be safe' while walking in stubbornness of heart — sha.lom claimed by the self-deceived heart; the false inner assurance of welfare accompanying covenant violation.",
+        "delete_flagged": 0
+      },
+      "description": "Deu 29:19 — ANCHOR, group 2509-002: self-deceived heart claiming safety"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78309,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 10:21 — set aside: physical safety after battle"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78310,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:15 — set aside: social welfare enquiry"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78272,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 17:18 — set aside: welfare check"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78275,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:7 — set aside: welfare/safety conditional, external outcome"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78273,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:13 — set aside: physical safety"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78274,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:21 — set aside: external physical safety"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78288,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 8:10 — set aside: health inquiry, social/diplomatic"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78282,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 18:28 — set aside: report formula"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78283,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 18:29 — set aside: welfare enquiry"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78284,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 18:32 — set aside: welfare enquiry"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78285,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 19:24 — set aside: physical return safely"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78286,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 19:30 — set aside: physical return"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78287,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 20:9 — set aside: social welfare enquiry"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78277,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Shunammite's concealment is inner-being, but sha.lom itself is the social formula here, not the inner-being carrier.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 4:23 — set aside: social reassurance formula"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78278,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 4:26 — set aside: welfare enquiry cluster"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78279,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:21 — set aside: enquiry formula"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78280,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": "Gehazi's deception is inner-being but sha.lom is the formula, not the carrier of his deceit.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:22 — set aside: sha.lom as formula, deception carried by lie not sha.lom"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78281,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:11 — set aside: enquiry formula"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78271,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ch 18:10 — set aside: parallel to 2Sa 8:10, health enquiry"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78276,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 19:1 — set aside: physical return safely"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78307,
+        "mti_term_id": 2509,
+        "group_id": "2509-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "In prosperity the destroyer will come — sha.lom-prosperity as the illusory condition of the wicked before destruction.",
+        "delete_flagged": 0
+      },
+      "description": "Job 15:21 — related, group 2509-002: illusory prosperity of the wicked"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78308,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Houses safe from fear, no rod of God — the welfare-condition of the wicked observed; inner content: the absence of fear and divine discipline.",
+        "delete_flagged": 0
+      },
+      "description": "Job 21:9 — related, group 2509-001: welfare/safety observed in the wicked"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78311,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Lord delights in the welfare of his servant — God's inner orientation toward his servant's comprehensive welfare; sha.lom as the object of divine delight.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 35:27 — ANCHOR, group 2509-001: Lord delights in welfare of his servant"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78312,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "No health in my bones because of sin — sha.lom-soundness absent as somatic consequence of sin; welfare/wholeness broken by inner disorder.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 38:3 — related, group 2509-001: absence of soundness as consequence of sin"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78313,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "He redeems my soul in safety — sha.lom-safety as the condition of the soul (nephesh) under divine redemption.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 55:18 — related, group 2509-001: soul redeemed in safety"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78314,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Mountains bearing prosperity for the people — eschatological covenant welfare.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 72:3 — related, group 2509-001: eschatological covenant prosperity"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78315,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Psalmist envious of the arrogant when he saw the prosperity of the wicked — inner-being engagement through envy provoked by observing sha.lom-prosperity.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 73:3 — related, group 2509-001: envy provoked by prosperity of the wicked"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78295,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "For my welfare I had great bitterness; in love you delivered my life — sha.lom achieved paradoxically through suffering and divine love.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 38:17 — related, group 2509-001: welfare through suffering and divine love"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78296,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 41:3 — set aside: military passing safely, external"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78297,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "I make well-being and create calamity — God as sovereign creator of sha.lom and its opposite; comprehensive welfare as divine creation.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 45:7 — related, group 2509-001: God as creator of well-being"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78306,
+        "mti_term_id": 2509,
+        "group_id": "2509-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Prophets said 'It shall be well with you' while the sword reached their very life (nephesh) — false promise of welfare reaching the inner person.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 4:10 — related, group 2509-002: false prophecy of welfare reaching the nephesh"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78298,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 12:5 — set aside: safe land = external safety of terrain"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78299,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 15:5 — set aside: welfare enquiry in lament, social formula"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78300,
+        "mti_term_id": 2509,
+        "group_id": "2509-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "It shall be well with you to everyone who stubbornly follows his own heart — false welfare promise to the stubborn-hearted; parallel to Deu 29:19.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 23:17 — related, group 2509-002: false welfare promised to the stubborn-hearted"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78302,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Seek the welfare of the city; in its welfare you will find your welfare — active orientation toward sha.lom; welfare is participatory and shared.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 29:7 — related, group 2509-001: seeking welfare as active orientation"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78301,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Plans for welfare and not for evil, to give you a future and a hope — divine purposive orientation toward the comprehensive welfare of his people.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 29:11 — ANCHOR, group 2509-001: divine plans for welfare, future, and hope"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78303,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "I will reveal to them abundance of prosperity and security — God revealing sha.lom-prosperity.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 33:6 — related, group 2509-001: God revealing abundance of prosperity"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78304,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "All the prosperity I provide for it — God providing sha.lom-prosperity for Jerusalem.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 33:9 — related, group 2509-001: God providing prosperity for Jerusalem"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78305,
+        "mti_term_id": 2509,
+        "group_id": "2509-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "This man is not seeking the welfare of this people, but their harm — inner orientation of seeking sha.lom contrasted with seeking harm.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 38:4 — related, group 2509-001: seeking welfare as inner orientation"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78316,
+        "mti_term_id": 2509,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Zec 8:10 — set aside: external physical safety from foe"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 48,
+    "group_inserts": 2,
+    "group_updates": 0,
+    "verse_context_inserts": 46,
+    "verse_context_updates": 0,
+    "relevant_verses": 19,
+    "set_aside_verses": 27,
+    "anchor_verses": 2,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0
+  }
+}

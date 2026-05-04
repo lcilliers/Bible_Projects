@@ -1,0 +1,2595 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260501-VCB030-VCNEW-H7965G-V1",
+    "batch_id": "VCB-030",
+    "terms_covered": [2508],
+    "input_versions": { "2508": 1 },
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "2026-05-01",
+    "produced_by": "wa-versecontext-instruction-v3_10",
+    "session_b_status": null,
+    "description": "Verse context classification — VCB-030, H7965G sha.lom (peace), mti=2508, R117, 148 verses. FRESH term — shalom reinstated 2026-05-01."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2508,
+        "group_code": "2508-001",
+        "context_description": "Term names shalom as the inner condition of the whole person — peace, welfare, and wholeness experienced inwardly; the opposite of fear, distress, or restlessness; the condition of the God-oriented soul",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965G: shalom as inner condition"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2508,
+        "group_code": "2508-002",
+        "context_description": "Term names shalom as the covenantal peace between God and his people — given by God, grounded in covenant, expressed in blessing, and capable of being withdrawn or eternally confirmed",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965G: shalom as covenantal peace"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2508,
+        "group_code": "2508-003",
+        "context_description": "Term names shalom as the inner orientation of the person toward peace — as character, disposition, and telos; both its authentic pursuit and its false simulation",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965G: shalom as inner orientation toward peace"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2508,
+        "group_code": "2508-004",
+        "context_description": "Term names shalom as the peace that belongs to and proceeds from the messianic king — eschatological, comprehensive, embodied in his person and reign, and purchased through his suffering",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965G: shalom as messianic/eschatological peace"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78177,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 15:15 — set aside (no_inner_being): go to your fathers in peace = dying safely, external welfare"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78178,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:29 — set aside (no_inner_being): sent away in peace = diplomatic farewell formula"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78179,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 26:31 — set aside (no_inner_being): departed in peace = diplomatic departure"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78180,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Jacob's vow — return in peace tied to covenantal commitment ('the Lord shall be my God'). Shalom as the condition of the one under divine protection in covenant.",
+        "delete_flagged": 0
+      },
+      "description": "Gen 28:21 — related, group 2508-002: return in peace as covenantal condition"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78181,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Brothers could not speak peaceably to Joseph — shalom names the relational-inner orientation of peace that hatred makes impossible.",
+        "delete_flagged": 0
+      },
+      "description": "Gen 37:4 — related, group 2508-003: inability to speak shalom = absence of inner peace-orientation"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78182,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 41:16 — set aside (no_inner_being): favorable answer = diplomatic/social use"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78183,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Peace to you, do not be afraid — shalom blessing directly paired with call not to fear; addresses inner condition of the brothers.",
+        "delete_flagged": 0
+      },
+      "description": "Gen 43:23 — related, group 2508-001: peace greeting addressing inner fear"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78184,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Gen 44:17 — set aside (no_inner_being): go up in peace = farewell formula"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78170,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 4:18 — set aside (no_inner_being): go in peace = farewell formula"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78169,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Exo 18:23 — set aside (no_inner_being): people going to their place in peace = external social welfare"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78233,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Covenant blessing — I will give peace in the land, none shall make you afraid. Shalom as God's gift producing freedom from inner fear.",
+        "delete_flagged": 0
+      },
+      "description": "Lev 26:6 — related, group 2508-002: covenantal peace gift"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78240,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Aaronic blessing — the Lord give you peace. Foundational covenant-gift of shalom within the triple divine blessing.",
+        "delete_flagged": 0
+      },
+      "description": "Num 6:26 — ANCHOR, group 2508-002: Aaronic blessing giving peace"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78239,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Covenant of peace given to Phinehas — covenantal relational peace by divine declaration.",
+        "delete_flagged": 0
+      },
+      "description": "Num 25:12 — related, group 2508-002: covenant of peace"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78162,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 2:26 — set aside (no_inner_being): words of peace = diplomatic communication"
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78163,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 20:10 — set aside (no_inner_being): offer terms of peace = military protocol"
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78164,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 20:11 — set aside (no_inner_being): responds peaceably = military/political"
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78165,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Deu 23:6 — set aside (no_inner_being): do not seek their peace = diplomatic prohibition"
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78223,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jos 9:15 — set aside (no_inner_being): political treaty"
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78229,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 4:17 — set aside (no_inner_being): political alliance"
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78230,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Divine word at theophany — Peace be to you. Do not fear. Shalom directly counteracts inner terror in divine encounter.",
+        "delete_flagged": 0
+      },
+      "description": "Judg 6:23 — ANCHOR, group 2508-001: shalom countering inner fear in divine encounter"
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78231,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 8:9 — set aside (no_inner_being): return in peace from battle"
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78224,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 11:13 — set aside (no_inner_being): restore peaceably = political negotiation"
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78225,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 11:31 — set aside (no_inner_being): return in peace from battle"
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78226,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 18:6 — set aside (no_inner_being): go in peace = priestly farewell formula"
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78227,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 19:20 — set aside (no_inner_being): hospitality greeting"
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78228,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Judg 21:13 — set aside (no_inner_being): proclaimed peace = political/military proclamation"
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78135,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Go in peace after prayer — Hannah came in anguish, departs in peace after divine encounter; inner state changed.",
+        "delete_flagged": 0
+      },
+      "description": "1Sa 1:17 — related, group 2508-001: peace following prayer and divine response"
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78141,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 7:14 — set aside (no_inner_being): political peace between nations"
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78136,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 16:4 — set aside (no_inner_being): do you come peaceably = inquiry about intent"
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78137,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 16:5 — set aside (no_inner_being): peaceably = answer about peaceful intent"
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78138,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Go in peace grounded in covenant oath sworn in the Lord's name — shalom of the covenantal friendship.",
+        "delete_flagged": 0
+      },
+      "description": "1Sa 20:42 — related, group 2508-002: peace of covenantal friendship"
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78139,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 25:35 — set aside (no_inner_being): farewell formula"
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78140,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Sa 29:7 — set aside (no_inner_being): go peaceably = military dismissal"
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78158,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 3:21 — set aside (no_inner_being): went in peace = departed safely"
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78159,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 3:22 — set aside (no_inner_being): had gone in peace = departed safely"
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78160,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 3:23 — set aside (no_inner_being): gone in peace = narrative repetition"
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78156,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 15:9 — set aside (no_inner_being): go in peace = dismissal formula"
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78155,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 15:27 — set aside (no_inner_being): go back in peace = military/political instruction"
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78157,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Sa 17:3 — set aside (no_inner_being): all people at peace = political resolution"
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78127,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:5 — set aside (no_inner_being): peace = absence of war (military)"
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78128,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:6 — set aside (no_inner_being): go down to Sheol in peace = peaceful death as external condition"
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78125,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:13 — set aside (no_inner_being): do you come peacefully = political inquiry"
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78126,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Peace from the Lord forevermore for David's house — covenantal peace with divine origin and eternal character.",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 2:33 — related, group 2508-002: covenant peace from the Lord"
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78133,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 4:24 — set aside (no_inner_being): peace on all sides = territorial/political"
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78134,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 5:12 — set aside (no_inner_being): political treaty"
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78129,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 20:18 — set aside (no_inner_being): come out for peace = military terms"
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78130,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 22:17 — set aside (no_inner_being): return home in peace = military dispersal"
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78131,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "1Ki 22:27 — set aside (no_inner_being): come in peace = return from battle safely"
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78132,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Prophetic sign — return in peace would disprove Micaiah's word; shalom as a condition bearing on prophetic truth and divine authority.",
+        "delete_flagged": 0
+      },
+      "description": "1Ki 22:28 — related, group 2508-002: shalom as sign of covenantal/prophetic reality"
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78149,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 5:19 — set aside (no_inner_being): go in peace = religious/social formula"
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78150,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:17 — set aside (no_inner_being): Is it peace? = military inquiry"
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78151,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:18 — set aside (no_inner_being): Is it peace? = military"
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78152,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:19 — set aside (no_inner_being): Is it peace? = military"
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78153,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "What peace can there be while Jezebel's whorings and sorceries continue — peace explicitly conditioned on moral/spiritual fidelity; moral corruption makes peace impossible.",
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:22 — related, group 2508-003: peace impossible without covenant fidelity"
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78154,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 9:31 — set aside (no_inner_being): political challenge"
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78147,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 20:19 — set aside (no_inner_being): peace and security in my days = external/political"
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78148,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ki 22:20 — set aside (no_inner_being): gathered to grave in peace = peaceful death as external condition"
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78123,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Triple shalom pronounced over David grounded in 'your God helps you' — peace of the one under divine help and favour.",
+        "delete_flagged": 0
+      },
+      "description": "1Ch 12:18 — related, group 2508-002: covenant peace grounded in divine help"
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78124,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "God's promise: I will give peace and quiet to Israel in Solomon's days. Shalom + shaqat as divine double gift.",
+        "delete_flagged": 0
+      },
+      "description": "1Ch 22:9 — related, group 2508-002: covenant peace as divine gift"
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78142,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 15:5 — set aside (no_inner_being): no peace to those going out or coming in = external social conditions"
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78143,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 18:16 — set aside (no_inner_being): parallel to 1Ki 22:17"
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78144,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 18:26 — set aside (no_inner_being): return in peace = battle return"
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78145,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Prophetic sign — parallel to 1Ki 22:28. Return in peace as test of prophetic truth.",
+        "delete_flagged": 0
+      },
+      "description": "2Ch 18:27 — related, group 2508-002: shalom as prophetic sign"
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78146,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "2Ch 34:28 — set aside (no_inner_being): gathered to grave in peace = peaceful death"
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78176,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ezr 9:12 — set aside (no_inner_being): seek their peace = diplomatic prohibition"
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78168,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Est 9:30 — set aside (no_inner_being): words of peace and truth = official correspondence formula"
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78167,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Mordecai sought the welfare (shalom) of his people and spoke peace to them — shalom as inner disposition of care expressed in leadership.",
+        "delete_flagged": 0
+      },
+      "description": "Est 10:3 — related, group 2508-003: seeking and speaking shalom as character orientation"
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78222,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Job 5:24 — set aside (no_inner_being): tent at peace = external domestic security"
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78221,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "God makes peace in his high heaven — divine sovereignty expressed as peace-making in the heavenly realm.",
+        "delete_flagged": 0
+      },
+      "description": "Job 25:2 — related, group 2508-002: God as maker of peace in his domain"
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78260,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "In peace I will lie down and sleep — shalom as inner condition of rest and security grounded in trust in God alone.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 4:8 — ANCHOR, group 2508-001: shalom as inner rest and trust"
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78254,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Speak peace with neighbors while evil is in their hearts — shalom as the false relational disposition; heart-evil contrasted with tongue-peace.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 28:3 — related, group 2508-003: false peace orientation (tongue vs heart)"
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78255,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "May the Lord bless his people with peace — divine blessing of shalom.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 29:11 — related, group 2508-002: peace as divine blessing"
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78256,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Seek peace and pursue it — active pursuit of shalom as moral imperative.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 34:14 — related, group 2508-003: active seeking of peace as moral imperative"
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78257,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "They do not speak peace but device deceit against the quiet — shalom as the disposition absent in the wicked.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 35:20 — related, group 2508-003: shalom absent in those who devise evil"
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78258,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The meek shall delight in abundant peace — shalom as the inner condition of flourishing for the meek.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 37:11 — related, group 2508-001: abundant shalom as inner condition of the meek"
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78259,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The man of peace (ish shalom) has a future — shalom as personal character description.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 37:37 — related, group 2508-003: man of peace as character type"
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78261,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 69:22 — set aside (no_inner_being): when they are at peace = condition of safety used as imprecatory image"
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78262,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Peace abound till the moon be no more — eschatological peace abounding in the messianic reign.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 72:7 — related, group 2508-004: eschatological peace"
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78264,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "God will speak peace to his people, to his saints — divine speech of covenantal peace conditioned on not turning back to folly.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 85:8 — ANCHOR, group 2508-002: God speaking peace to his saints"
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78263,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Righteousness and peace kiss each other — cosmic convergence of shalom and righteousness in the eschatological vision.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 85:10 — related, group 2508-004: righteousness and peace converging eschatologically"
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78245,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Great peace have those who love your law; nothing can make them stumble. Shalom as the inner condition of those oriented toward God's word.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 119:165 — ANCHOR, group 2508-001: great peace as inner condition of the law-loving person"
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78246,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Too long among those who hate peace — shalom as an orientation that can be hated.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 120:6 — related, group 2508-003: shalom as orientation that can be hated"
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78247,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "I am for peace (ani shalom) — shalom as personal identity and fundamental disposition; most direct statement of peace as inner orientation.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 120:7 — ANCHOR, group 2508-003: I am for peace = shalom as personal identity"
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78248,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Pray for the peace of Jerusalem — shalom of the covenant city as the object of prayer and inner orientation.",
+        "delete_flagged": 0
+      },
+      "description": "Psa 122:6 — related, group 2508-002: praying for covenant city's shalom"
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78249,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 122:7 — set aside (no_inner_being): peace within walls = external/spatial city blessing"
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78250,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 122:8 — set aside (no_inner_being): peace within you = city blessing formula"
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78251,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 125:5 — set aside (no_inner_being): liturgical conclusion formula"
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78252,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 128:6 — set aside (no_inner_being): liturgical conclusion formula"
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78253,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Psa 147:14 — set aside (no_inner_being): makes peace in your borders = territorial/political"
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78244,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Length of days and peace as fruit of following wisdom — shalom as inner condition produced by wise living.",
+        "delete_flagged": 0
+      },
+      "description": "Pro 3:2 — related, group 2508-001: shalom as fruit of wisdom"
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78243,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "All wisdom's paths are peace — shalom as the characteristic of the way of wisdom.",
+        "delete_flagged": 0
+      },
+      "description": "Pro 3:17 — related, group 2508-001: wisdom's paths are peace"
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78242,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Those who plan peace have joy — shalom planning as heart-disposition producing joy; contrasted with evil in the heart.",
+        "delete_flagged": 0
+      },
+      "description": "Pro 12:20 — related, group 2508-003: planning peace as heart-disposition"
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78166,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Ecc 3:8 — set aside (no_inner_being): a time for peace = temporal condition, absence of war"
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78265,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "One who finds peace in the beloved's eyes — shalom as the inner condition of acceptance and wholeness in relationship.",
+        "delete_flagged": 0
+      },
+      "description": "Song 8:10 — related, group 2508-001: shalom as inner condition of acceptance"
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78206,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Prince of Peace — shalom as the messianic king's title and identity.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 9:6 — ANCHOR, group 2508-004: Prince of Peace = messianic identity"
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78207,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Of the increase of his government and peace there will be no end — endless shalom of the messianic reign.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 9:7 — related, group 2508-004: endless peace of messianic reign"
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78187,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Perfect peace (shalom shalom) for the one whose mind is stayed on God because he trusts — fullest statement of peace as inner condition produced by directed trust.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 26:3 — ANCHOR, group 2508-001: perfect peace for the trusting mind"
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78186,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "You will ordain peace for us — God ordaining shalom as divine gift.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 26:12 — related, group 2508-002: God ordaining peace"
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78188,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Let them make peace with me — relational act of reconciliation/covenant peace with God.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 27:5 — related, group 2508-002: making peace with God"
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78189,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The effect of righteousness will be peace — shalom as fruit of righteous character orientation.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 32:17 — related, group 2508-003: peace as fruit of righteousness"
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78190,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "My people will abide in a peaceful habitation — eschatological condition of God's people at rest.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 32:18 — related, group 2508-004: eschatological peaceful habitation"
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78191,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 33:7 — set aside (no_inner_being): envoys of peace = political diplomats"
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78192,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Isa 39:8 — set aside (no_inner_being): peace and security in my days = external/political"
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78193,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Your peace would have been like a river — abundance of inner shalom as counterfactual fruit of obedience.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 48:18 — related, group 2508-001: abundant peace as fruit of obedience"
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78194,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "There is no peace for the wicked — shalom impossible for those in moral disorder.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 48:22 — related, group 2508-003: no peace for the wicked"
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78195,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Herald bringing good news who publishes peace — shalom as content of the gospel announcement.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 52:7 — related, group 2508-004: herald publishing messianic peace"
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78196,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "Upon him was the chastisement that brought us peace — vicarious purchase of shalom through the Servant's suffering.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 53:5 — ANCHOR, group 2508-004: chastisement purchasing peace"
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78197,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "My covenant of peace shall not be removed — eternal unbreakable covenant of shalom.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:10 — ANCHOR, group 2508-002: eternal covenant of peace"
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78198,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Great shall be the peace of your children — shalom of the covenant community taught by God.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 54:13 — related, group 2508-002: peace of the covenant community"
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78199,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Go out in joy and be led forth in peace — restoration as condition of inner peace.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 55:12 — related, group 2508-004: led forth in eschatological peace"
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78201,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "He enters into peace; those who walk uprightly rest in their beds — shalom as the final inner condition of the righteous.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:2 — related, group 2508-001: shalom as inner rest of the upright at death"
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78200,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Peace, peace, to the far and to the near — God's comprehensive proclamation of covenantal shalom.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:19 — related, group 2508-002: comprehensive covenant peace proclaimed"
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78202,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "No peace for the wicked — parallel to 48:22.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 57:21 — related, group 2508-003: no peace for the wicked"
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78203,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The way of peace they do not know — peace as a way of life unknown to those in moral disorder.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 59:8 — related, group 2508-003: the way of peace unknown to the wicked"
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78204,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "I will make your overseers peace — peace as the governing principle of the restored community.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 60:17 — related, group 2508-004: peace as structural principle of restored community"
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78205,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "I will extend peace like a river — overflowing eschatological peace.",
+        "delete_flagged": 0
+      },
+      "description": "Isa 66:12 — related, group 2508-004: eschatological peace extended like a river"
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78217,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Crying Peace, peace when there is no peace — moral violation of false peace proclamation.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 6:14 — related, group 2508-003: false peace proclamation"
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78218,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Parallel to Jer 6:14 — false peace proclamation.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 8:11 — related, group 2508-003: false peace proclamation"
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78219,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "We looked for peace but no good came — the inner-being longing for shalom unfulfilled.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 8:15 — related, group 2508-001: longing for peace unfulfilled"
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78220,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Speaks peace with mouth but plans ambush in heart — parallel to Psa 28:3, heart contrasted with tongue.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 9:8 — related, group 2508-003: false peace orientation (mouth vs heart)"
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78208,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "No flesh has peace — universal absence of shalom under divine judgment.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 12:12 — related, group 2508-001: universal absence of shalom under judgment"
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78209,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "False prophets promising assured peace — false peace promise.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 14:13 — related, group 2508-003: false assured peace promise"
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78210,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "We looked for peace — parallel to Jer 8:15, longing for shalom.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 14:19 — related, group 2508-001: longing for peace unfulfilled"
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78211,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "I have taken away my peace from this people — withdrawal of divine covenantal peace as judgment.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 16:5 — related, group 2508-002: divine peace withdrawn as judgment"
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78212,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 25:37 — set aside (no_inner_being): peaceful folds = external/spatial"
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78213,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The prophet who prophesies peace — the prophetic test of peace proclamation; truth demonstrated by fulfilment.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 28:9 — related, group 2508-003: prophetic proclamation of peace tested"
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78214,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Cry of panic, terror, and no peace — absence of shalom as inner condition in distress.",
+        "delete_flagged": 0
+      },
+      "description": "Jer 30:5 — related, group 2508-001: absence of shalom amid terror"
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78215,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 34:5 — set aside (no_inner_being): die in peace = peaceful death as external condition"
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78216,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Jer 43:12 — set aside (no_inner_being): go away in peace = military withdrawal safely"
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78232,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "My soul is bereft of peace — most direct statement of shalom as inner-being condition of the soul (nephesh).",
+        "delete_flagged": 0
+      },
+      "description": "Lam 3:17 — ANCHOR, group 2508-001: soul bereft of peace"
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78175,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "When anguish comes they will seek peace but there shall be none — inner-being longing for shalom in distress.",
+        "delete_flagged": 0
+      },
+      "description": "Eze 7:25 — related, group 2508-001: seeking shalom in anguish"
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78171,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Saying Peace when there is no peace — false prophets; moral corruption of the peace proclamation.",
+        "delete_flagged": 0
+      },
+      "description": "Eze 13:10 — related, group 2508-003: false peace proclamation"
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78172,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Saw visions of peace for her when there was no peace — false prophetic visions.",
+        "delete_flagged": 0
+      },
+      "description": "Eze 13:16 — related, group 2508-003: false peace visions"
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78173,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Covenant of peace with my people — God's covenant of peace in the eschatological/new covenant.",
+        "delete_flagged": 0
+      },
+      "description": "Eze 34:25 — related, group 2508-002: eschatological covenant of peace"
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78174,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Everlasting covenant of peace — shalom as the permanent covenant condition.",
+        "delete_flagged": 0
+      },
+      "description": "Eze 37:26 — related, group 2508-002: everlasting covenant of peace"
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78161,
+        "mti_term_id": 2508,
+        "group_id": "2508-001",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Fear not, peace be with you; be strong and of good courage — angelic shalom addressing Daniel's inner terror.",
+        "delete_flagged": 0
+      },
+      "description": "Dan 10:19 — related, group 2508-001: shalom countering inner terror in angelic encounter"
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78241,
+        "mti_term_id": 2508,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "Obd 7 — set aside (no_inner_being): those at peace with you = political alliance partners"
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78236,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Prophets cry Peace for payment — moral corruption of the peace proclamation for gain.",
+        "delete_flagged": 0
+      },
+      "description": "Mic 3:5 — related, group 2508-003: false peace for payment"
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78237,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "He shall be their peace — messianic ruler as shalom personified.",
+        "delete_flagged": 0
+      },
+      "description": "Mic 5:5 — ANCHOR, group 2508-004: he shall be their peace = peace personified"
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78238,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Herald who publishes peace — parallel to Isa 52:7, messianic proclamation.",
+        "delete_flagged": 0
+      },
+      "description": "Nah 1:15 — related, group 2508-004: herald of messianic peace"
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78185,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "In this place I will give peace — God's gift of shalom in the temple, covenantal/eschatological.",
+        "delete_flagged": 0
+      },
+      "description": "Hag 2:9 — related, group 2508-002: divine gift of peace in the temple"
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78266,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Counsel of peace between messianic priest-king — peace characterising messianic governance.",
+        "delete_flagged": 0
+      },
+      "description": "Zec 6:13 — related, group 2508-004: counsel of peace in messianic governance"
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78267,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "There shall be a sowing of peace — peace as the condition of the restored eschatological era.",
+        "delete_flagged": 0
+      },
+      "description": "Zec 8:12 — related, group 2508-004: sowing of eschatological peace"
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78268,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Render judgments that make for peace — peace as the telos of just governance, requiring intentional orientation.",
+        "delete_flagged": 0
+      },
+      "description": "Zec 8:16 — related, group 2508-003: judgments making for peace"
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78269,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Love truth and peace — shalom as the object of love, a disposition of the heart.",
+        "delete_flagged": 0
+      },
+      "description": "Zec 8:19 — related, group 2508-003: love of peace as inner disposition"
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78270,
+        "mti_term_id": 2508,
+        "group_id": "2508-004",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "The messianic king shall speak peace to the nations — universal messianic proclamation.",
+        "delete_flagged": 0
+      },
+      "description": "Zec 9:10 — related, group 2508-004: messianic king speaking peace to nations"
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78234,
+        "mti_term_id": 2508,
+        "group_id": "2508-002",
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 1,
+        "set_aside_reason": null,
+        "notes": "Covenant of life and peace given to Levi — covenantal shalom as God's specific gift in priestly covenant.",
+        "delete_flagged": 0
+      },
+      "description": "Mal 2:5 — related, group 2508-002: covenant of peace given to Levi"
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 78235,
+        "mti_term_id": 2508,
+        "group_id": "2508-003",
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "notes": "He walked with me in peace and uprightness — shalom as the character of Levi's life before God; the peaceful disposition of the faithful priest.",
+        "delete_flagged": 0
+      },
+      "description": "Mal 2:6 — ANCHOR, group 2508-003: walking with God in peace and uprightness"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 156,
+    "group_inserts": 4,
+    "group_updates": 0,
+    "verse_context_inserts": 152,
+    "verse_context_updates": 0,
+    "relevant_verses": 72,
+    "set_aside_verses": 76,
+    "anchor_verses": 11,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0
+  }
+}

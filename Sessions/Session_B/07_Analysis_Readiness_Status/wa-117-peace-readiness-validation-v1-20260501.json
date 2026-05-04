@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "registry_no": 117,
+    "word": "peace",
+    "generated_at": "2026-05-01T20:05:36Z",
+    "schema_expected": "3.17.0",
+    "checks_run": 15
+  },
+  "verdict_summary": {
+    "PASS": 10,
+    "WARN": 4,
+    "FAIL": 1
+  },
+  "overall": "BLOCKED",
+  "checks": [
+    {
+      "id": "C01",
+      "label": "Schema version",
+      "category": "schema",
+      "verdict": "PASS",
+      "detail": "schema_version = 3.17.0"
+    },
+    {
+      "id": "C02",
+      "label": "Engine audit clean",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "last_automation_run = 'AUDITED'"
+    },
+    {
+      "id": "C03",
+      "label": "Phase 1 status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "phase1_status = 'Complete'"
+    },
+    {
+      "id": "C04",
+      "label": "Verse Context status",
+      "category": "registry",
+      "verdict": "FAIL",
+      "detail": "verse_context_status = 'In Progress'; expected 'Complete'"
+    },
+    {
+      "id": "C05",
+      "label": "Dimension Review status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "dim_review_status = 'Complete' (version: wa-dimensionreview-instruction-v3_3-20260418.md)"
+    },
+    {
+      "id": "C06",
+      "label": "Phase A prose captured",
+      "category": "prose",
+      "verdict": "PASS",
+      "detail": "6/6 sa_s1_d* rows present"
+    },
+    {
+      "id": "C07",
+      "label": "Readiness output present",
+      "category": "filesystem",
+      "verdict": "PASS",
+      "detail": "latest .md: wa-117-peace-readiness-output-v8-20260501.md; latest .json: wa-117-peace-readiness-output-v8-20260501.json"
+    },
+    {
+      "id": "C08",
+      "label": "Term inventory health",
+      "category": "terms",
+      "verdict": "PASS",
+      "detail": "49 OWNER terms, all with ≥1 verse"
+    },
+    {
+      "id": "C09",
+      "label": "All groups have dimensions",
+      "category": "dimensions",
+      "verdict": "PASS",
+      "detail": "73/73 groups have dimension assignments"
+    },
+    {
+      "id": "C10",
+      "label": "All groups have anchors",
+      "category": "dimensions",
+      "verdict": "PASS",
+      "detail": "73/73 groups have ≥1 anchor"
+    },
+    {
+      "id": "C11",
+      "label": "Set-aside ratio",
+      "category": "vc",
+      "verdict": "WARN",
+      "detail": "27 group(s) with set-aside > 90%: ['408-001 (13/6 = 217%)', '408-002 (13/9 = 144%)', '408-003 (13/2 = 650%)', '408-004 (13/6 = 217%)', '408-005 (13/4 = 325%)', '408-006 (13/3 = 433%)', '413-002 (1/1 = 100%)', '417-001 (11/6 = 183%)', '417-002 (11/5 = 220%)', '418-001 (18/5 = 360%)', '418-002 (18/4 = 450%)', '418-003 (18/5 = 360%)', '418-004 (18/9 = 200%)', '419-001 (82/4 = 2050%)', '419-002 (82/26 = 315%)', '419-003 (82/10 = 820%)', '419-004 (82/6 = 1367%)', '419-005 (82/9 = 911%)', '419-006 (82/3 = 2733%)', '420-001 (3/3 = 100%)', '2521-001 (13/7 = 186%)', '2585-001 (7/4 = 175%)', '2585-002 (7/7 = 100%)', '2585-003 (7/3 = 233%)', '2586-001 (3/3 = 100%)', '2591-001 (3/3 = 100%)', '2601-001 (8/7 = 114%)']. Possible VC drift; review Stage 2a."
+    },
+    {
+      "id": "C12",
+      "label": "Legacy-VC caveat",
+      "category": "vc",
+      "verdict": "WARN",
+      "detail": "48/49 OWNER terms legacy-VC: ['H7965H', 'H2790B', 'H2814', 'H1293', 'H7600']. Mixed-state."
+    },
+    {
+      "id": "C13",
+      "label": "Dimension confidence",
+      "category": "dimensions",
+      "verdict": "WARN",
+      "detail": "dimension_confidence: CLAUDE_AI: 73. No 'confirmed' assignments — Session B can promote during Stage 2."
+    },
+    {
+      "id": "C14",
+      "label": "No open DATA_ANOMALY_* findings",
+      "category": "findings",
+      "verdict": "PASS",
+      "detail": "no open DATA_ANOMALY_* findings for this registry"
+    },
+    {
+      "id": "C15",
+      "label": "Researcher fields",
+      "category": "registry",
+      "verdict": "WARN",
+      "detail": "inference_note: absent; word_synopsis: absent. Researcher-authored fields are informational; absence is not blocking."
+    }
+  ]
+}

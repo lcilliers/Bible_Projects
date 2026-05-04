@@ -123,6 +123,7 @@ zotero-cache/
 # Claude Code local settings
 .claude/settings.local.json
 .claude/worktrees/
+.claude/*.lock
 
 # ── Large extract artefacts (legacy + post-restructure paths) ─
 outputs/reports/words/love_full_extract.csv

@@ -1,0 +1,322 @@
+# Goodness — Prose (R067)
+
+**Source:** [Workflow/Programme/Corpus_prose/wa-corpus-prose-20260428.md](../../../../Workflow/Programme/Corpus_prose/wa-corpus-prose-20260428.md), section beginning line 714.
+**Status snapshot:** Analysis Complete · Verse Context Complete · Cluster C10 · 5 of 6 prose chapters present (Why-It-Matters not yet authored).
+**Prose word count:** approx 6,400 words.
+
+This file is the goodness section of the corpus prose extracted as a standalone reading copy — no edits, no normalisation. Citations of the form OBS-067-OBS-NNN, SP-067-NNN, GAP-N-NNN and Q-NNN refer to entries in goodness's observation register and SD pointer set; their full text and supporting verses appear in reports 2–5.
+
+---
+
+## 067 — Goodness
+
+**Status:** Analysis Complete  ·  **Verse Context:** Complete
+
+> Goodness is the quality of being genuinely, structurally beneficial — not just pleasing or approved but actually doing good in the deep sense of the word. The Hebrew and Greek vocabulary runs from the aesthetic (pleasant, beautiful) through the moral (righteous, beneficial) to the relational (kind). God is described as good at the very beginning of creation: what he makes is good because it reflects his character. Human goodness is derivative: a participation in and reflection of the goodness that originates in God.
+
+### Chapter 1 — Meaning
+
+_Word Characteristic Summary_
+
+**Registry 067 — Goodness**
+*Word Characteristic Summary*
+
+**Origin and structural disposition**
+
+Goodness originates in God (OBS-067-OBS-001). This is not a theological inference imposed from outside the text — it is the structural claim the verse evidence consistently makes. The registry description states it directly: human goodness is "a participation in and reflection of the goodness that originates in God" (OBS-067-OBS-001). Genesis 1:31, the anchor verse for Group 884-007, establishes goodness as the ontological baseline — the Creator pronounces his work "very good" before any human moral life begins (OBS-067-OBS-036, OBS-067-OBS-013). Goodness in this registry is pre-moral before it is moral: it is first an ontological quality of the Creator and creation, then a relational characteristic of divine-human engagement, then a demand on and possibility for the human person.
+
+The mode of origin is both declaration and derivation. God declares creation good (OBS-067-OBS-036); God reveals to the human person what good is — "He has told you, O man, what is good" (Mic 6:8, OBS-067-OBS-027, OBS-067-OBS-028); God produces goodness in the human person through his Spirit (Gal 5:22, OBS-067-OBS-042). Human goodness is therefore not autonomous virtue but responsive, derivative, and enabled participation (OBS-067-OBS-001, OBS-067-OBS-026).
+
+**Twelve distinct modes of operation**
+
+The verse evidence reveals twelve analytically distinct modes in which goodness operates in the inner being (OBS-067-OBS-022, Q003). These twelve modes are genuinely distinct inner-being phenomena — not merely translational variety (OBS-067-OBS-022). DIM-67-001, the core analytical question for this registry, is resolved: the diversity is real, and the modes engage different inner-being faculties (OBS-067-OBS-023).
+
+(1) Doxological assertion — God's inner character declared good, Group 884-001, Dimension 11 — Divine-Human Correspondence (OBS-067-OBS-016). (2) Human moral character — the inner quality of the good person who walks uprightly and acts honestly, Group 884-002, Dimension 05 — Moral Character. (3) Experiential orientation — nearness to God as the highest inner experiential good; the reorientation of the inner life toward what truly satisfies, Group 884-003, Dimension 05 — Moral Character (provisional; dimension review queried by OBS-067-OBS-030, SP-067-014). (4) Comparative evaluation — goodness as the ranking operator of wisdom's better-than sayings, asserting the greater value of inner qualities over external achievement, Group 884-004, Dimension 03 — Cognition (OBS-067-OBS-012, OBS-067-OBS-031). (5) Covenantal word — God's promise and faithful word as good; his declared intentions toward his people, Group 884-005, Dimension 05 — Moral Character (provisional; dimension review queried by OBS-067-OBS-034, SP-067-016). (6) Moral verdict — the recognition and naming of what is not good; the prophetic and wisdom assessment of conduct contrary to the good God requires, Group 884-006, Dimension 03 — Cognition (OBS-067-OBS-012). (7) Creative pronouncement — the Creator's evaluative declaration of creation as good; the ontological baseline, Group 884-007, Dimension 11 provisional — unique in the registry as a pre-relational divine act (OBS-067-OBS-013, OBS-067-OBS-037, GAP-N-003). (8) Volitional preference — what is good-in-the-eyes-of an actor; what one chooses, yields to, or judges fitting, Group 884-008, Dimension 04 — Volition confirmed (OBS-067-OBS-014, OBS-067-OBS-039). (9) Inner well-being state — the shalom-condition of gladness of heart, being-well, and inward flourishing, Group 884-009, Dimension uncertain — no current label fits cleanly (OBS-067-OBS-015, GAP-N-001, GAP-N-002). (10) Spirit-produced virtue — goodness as an inner-being quality that fills the person and is completed by God, Group 885-001, G0019 agathōsunē, Dimension 04 — Volition (OBS-067-OBS-016). (11) Divine generous goodwill — God's chrēstotēs as his inner disposition of generous goodwill toward humanity, Group 886-001, G5544, Dimension 11 — Divine-Human Correspondence (OBS-067-OBS-017). (12) Spirit-produced kindness — chrēstotēs as the Spirit-enabled relational disposition of the renewed person, Group 886-002, G5544, Dimension 05 — Moral Character (OBS-067-OBS-017).
+
+**The question of unity and plurality**
+
+The twelve modes are held together theologically, not lexically: all twelve express, derive from, or respond to the one goodness that is God's own (OBS-067-OBS-022). The Hebrew tov covers this unified-yet-plural field with a single lexical form (OBS-067-OBS-006); English requires multiple words to render the plurality. The unity is theological; the plurality is phenomenological (OBS-067-OBS-022, OBS-067-OBS-023). DIM-67-001 is resolved in favour of "genuinely distinct inner-being phenomena" (OBS-067-OBS-022).
+
+**Dimension structure across the registry**
+
+The registry spans four confirmed dimensions and carries three groups awaiting dimension review (OBS-067-OBS-002, OBS-067-OBS-011). The registry-level label (Moral/Conscience) is an inadequate summary: the word operates across Divine-Human Correspondence (11), Moral Character (05), Cognition (03), and Volition (04) at minimum (OBS-067-OBS-002). Two dimension review flags are raised: Group 884-003 may belong to Dependence/Creatureliness rather than Moral Character (SP-067-014, OBS-067-OBS-030); Group 884-005's dominant subject is divine faithfulness rather than human moral character, suggesting Dimension 11 may be more accurate (SP-067-016, OBS-067-OBS-034). Group 884-007 may require a sub-category within Dimension 11 for its ontological-creative distinctiveness (GAP-N-003, OBS-067-OBS-037).
+
+**What goodness produces in the inner being**
+
+Encounter with divine goodness produces trust and refuge-taking (Psa 34:8, OBS-067-OBS-025), praise and thanksgiving (the doxological group 884-001), and receptive longing for instruction (Psa 119:68 — "teach me your statutes", OBS-067-OBS-026). The experiential good of nearness produces stable inner orientation and the overflow of testimony (Psa 73:28, OBS-067-OBS-029). Reception of God's good covenantal word produces inner knowing in heart and soul — a settled, verified certainty (Jos 23:14, OBS-067-OBS-033). The Spirit-produced quality of goodness fills the person and enables the community (Rom 15:14 — "full of goodness… able to instruct one another", OBS-067-OBS-042). The recognition of one's own not-goodness produces self-loathing and the first movement toward moral transformation (Eze 36:31, OBS-067-OBS-035).
+
+**Direction of movement**
+
+Goodness follows a consistent directional pattern (Q016): downward from God as origin → inward into the human inner being through encounter, covenantal reception, and Spirit-filling → outward into relational and communal expression (OBS-067-OBS-001, OBS-067-OBS-033, OBS-067-OBS-042). The vertical orientation (walking with God, nearness to God, fear of the Lord) is the precondition for the horizontal expression (justice, kindness, instruction of others) (OBS-067-OBS-027).
+
+**The ground of genuine expression**
+
+Three inner conditions are identified as the ground from which genuine goodness flows (Q014): proximity and orientation toward God (Psa 73:28, OBS-067-OBS-029), the fear of the Lord (Pro 15:16, OBS-067-OBS-031), and the Spirit's filling (Gal 5:22, OBS-067-OBS-042). These converge on a single inner posture (OBS-067-OBS-029). Performed goodness is its counterpart: calling evil good (Mal 2:17), redefining good as material advantage (Jer 44:17), and the etymologically embedded G5542 chrēstologia (smooth talk) as the distortion form of chrēstotēs (OBS-067-OBS-024, OBS-067-OBS-049).
+
+**The structural negative**
+
+Goodness is understood in part through its structural negative (OBS-067-OBS-049, Q021). Group 884-006 (22 verses — not good) and Rom 3:12 ("no one does good, not even one") name the absence of goodness as a real and diagnostically significant condition (OBS-067-OBS-035, OBS-067-OBS-046). The tripartite structure — presence, absence, distortion — is confirmed across the full registry (OBS-067-OBS-049, OBS-067-OBS-024). The distortion pole is etymological rather than textual in the active verse corpus (OBS-067-OBS-049).
+
+**Thin-evidence qualification**
+
+G0019 (agathōsunē, 4 verses) and G5544 (chrēstotēs, 7 verses) are thin-corpus terms (OBS-067-OBS-047). All conclusions derived from these terms are analytically supported but not definitively confirmed — the evidential weight of the registry rests primarily on H2896A (306 verses) (OBS-067-OBS-047, OBS-067-OBS-008).
+
+---
+
+### Chapter 2 — How It Works
+
+_Word Impact Description_
+
+**Registry 067 — Goodness**
+*Word Impact Description*
+
+**The structural opposite**
+
+Three structural opposites emerge from the verse evidence (Q021, OBS-067-OBS-049). The most explicit is the direct linguistic negative — not good — which carries 22 verses in Group 884-006 and names specific conduct, orientations, and deeds as contrary to what God requires (OBS-067-OBS-035). These include rebellion, partiality, violence, and false weights. Behind these specific failures is the deeper structural opposite named in Rom 3:12: having turned aside and become worthless, incapable of doing good (OBS-067-OBS-046, OBS-067-OBS-049). The universal-depravity diagnosis is not merely behavioural but structural — an inner-being condition of directional reversal, emptied character, and absent capacity. The third structural opposite is the distortion form: calling evil good (Mal 2:17) and G5542 chrēstologia (smooth talk — the etymologically embedded distortion of chrēstotēs) (OBS-067-OBS-024, OBS-067-OBS-049).
+
+**The logic of merit**
+
+The verse evidence does not present divine goodness as merit-conditioned (Q022, Q051). Deu 9:6 states this explicitly: "not because of your righteousness, for you are a stubborn people" (OBS-067-OBS-033 context). The doxological corpus presents God's goodness as flowing from his character, not from the recipient's standing. At the human level, Mic 6:8 requires justice and kindness without qualification of the other's deservingness (OBS-067-OBS-027). Pro 22:9 names the person of "bountiful eye" as blessed regardless of the recipient's merit. The logic of merit operates against goodness: where merit-logic governs, goodness becomes transactional rather than characterological.
+
+**Closing orientations**
+
+Three inner-being orientations close off the reception or expression of goodness (Q028, OBS-067-OBS-049). Self-direction: "a rebellious people who walk in a way that is not good, following their own devices" (Isa 65:2) — orientation away from God and toward self-chosen ways (OBS-067-OBS-035 context). Wilful refusal: "we will not walk in it" (Jer 6:16) — the good way offered and the will refuses; not ignorance but resistance. Moral self-justification: Jer 44:17 — the people define idolatrous prosperity as good, redefining the good in terms of material self-advantage (OBS-067-OBS-024). On the divine side, Rom 11:22 names unbelief/departure as closing off the ongoing experience of divine chrēstotēs (OBS-067-OBS-044, OBS-067-OBS-043).
+
+**Modes of inner transformation**
+
+Goodness operates through three distinct modes of inner transformation (Q031). Reorientation: Psa 73:28 shows Asaph's inner life transformed not by changed circumstances but by a shift of orientation — "it is good to be near God" is the transformed position, not the transformed situation (OBS-067-OBS-029). Character transformation: the Spirit fills the person with goodness (Gal 5:22, Rom 15:14) — the inner character itself is changed (OBS-067-OBS-042). Moral awareness transformation: the person who did not see their deeds as not-good comes through remembering, recognising, and loathing to see clearly (Eze 36:31, OBS-067-OBS-035). This third mode is the negative-to-positive arc: moral blindness is the condition, recognition is the turn, loathing is the inner event that marks the boundary (OBS-067-OBS-035).
+
+**The relationship to human effort**
+
+Goodness reconstitutes rather than displaces human effort (Q040). 2Th 1:11 is the defining verse: "may God fulfil every resolve for good and every work of faith by his power" — the human resolve is real, not absorbed or overridden, but completed by God's power (OBS-067-OBS-042 context). Mic 6:8 requires active human doing: justice must be done, kindness must be loved, humility must be walked (OBS-067-OBS-027). The Spirit produces character (Gal 5:22, OBS-067-OBS-042), but Col 3:12 frames the expression as active choice — "put on, therefore." The structure throughout is: divine enabling → genuine human action → divine completion (OBS-067-OBS-039, OBS-067-OBS-014).
+
+**The relationship to weakness and affliction**
+
+Goodness operates specifically in conditions of need and affliction (Q030). Psa 34:8 is composed in a context of distress (OBS-067-OBS-025). Lam 3:25 locates the declaration that "the Lord is good" in conditions of suffering and waiting. The shalom-condition of Group 884-009 names the well-being sought by those in distress (OBS-067-OBS-015). The inner well-being goodness produces is not fragile prosperity — Est 5:9 demonstrates the fragility of well-being not grounded in God (OBS-067-OBS-040) — but a rootedness that withstands disruption.
+
+**The Haman diagnostic**
+
+Est 5:9 functions as a diagnostic for Group 884-009 (OBS-067-OBS-040, OBS-067-OBS-041). Haman's tov-lev (glad of heart) is genuine as inner-being language — the compound explicitly locates the state in the heart. But the verse's narrative places this inner state immediately before its destruction: one sight, one moment, and the gladness is replaced by wrath. The diagnostic: inner well-being not rooted in God is inherently fragile (OBS-067-OBS-040). The shared anchor with Registry 97 (joy, OBS-067-OBS-041) raises the question for Session D of whether the inner well-being of Group 884-009 is analytically the same as joy or a distinct phenomenon (SP-067-017).
+
+**The inner-being condition of non-reception**
+
+The most direct statement is Rom 3:12: "all have turned aside; together they have become worthless; no one does good, not even one" (OBS-067-OBS-046, OBS-067-OBS-049). The inner-being condition of the person without goodness is directional (turned aside), evaluative (become worthless), and volitional (unable to do good). Eze 36:31 describes the condition of those who have not yet received the transforming recognition: walking in evil ways, doing deeds that are not good, morally blind to one's own condition (OBS-067-OBS-035). Jer 6:16 names the condition of deliberate refusal — the good way offered and actively rejected.
+
+---
+
+### Chapter 3 — Verses
+
+_Annotated Verse Evidence_
+
+**Registry 067 — Goodness**
+*Annotated Verse Evidence*
+
+The following anchor verses are the primary analytical text for this registry (OBS-067-OBS-025 through OBS-067-OBS-046). Each anchor is identified with its group, dimension, and the inner-being characteristic it most directly engages.
+
+---
+
+**Psa 34:8** — Group 884-001 (Divine goodness — doxological) · Dimension 11 — Divine-Human Correspondence
+
+*"Oh, taste and see that the Lord is good! Blessed is the man who takes refuge in him."*
+
+The invitation to taste and see is a claim about the epistemology of goodness: divine goodness is knowable through personal encounter, not only propositional assertion (OBS-067-OBS-025). The sensory metaphor (taste) names an inner perception event. The verse's logical structure: encounter divine goodness → trust response → blessedness (OBS-067-OBS-025). This verse is the cross-registry anchor for R49 (discernment — tasting as inner perception, SP-067-007) and R78 (hope — refuge as shelter). The act of tasting divine goodness is simultaneously an act of discernment and the catalyst for trust (OBS-067-OBS-025, Q&A-054).
+
+---
+
+**Psa 119:68** — Group 884-001 (Divine goodness — doxological) · Dimension 11 — Divine-Human Correspondence
+
+*"You are good and do good; teach me your statutes."*
+
+The verse that most explicitly models the being-doing relationship (OBS-067-OBS-026). God's goodness is first ontological (you are good) and then functional (you do good) — the inner character generates the outward action (OBS-067-OBS-026). The human response is a request for instruction — a receptive, learning posture. This verse establishes the programme's reference point for the question of whether goodness is a character quality or an activity: it is both, in that order, with character prior (OBS-067-OBS-026, Q043).
+
+---
+
+**Mic 6:8** — Group 884-002 (Human moral character) · Dimension 05 — Moral Character
+
+*"He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?"*
+
+The definitional anchor for human moral goodness (OBS-067-OBS-027). Three observations govern this verse. First, goodness is defined by tri-fold content: justice (outward conduct in human community), loving kindness (inner dispositional), and humble walking with God (vertical orientation) — co-presented as constitutive, not optional (OBS-067-OBS-027). Second, the frame is revelatory — "He has told you" positions goodness as divinely disclosed, humanly received (OBS-067-OBS-028). Third, the requirement is comprehensive — horizontal and vertical relations both addressed (OBS-067-OBS-027). This verse shares its anchor status with six other registries: compassion (R23), condemnation (R24), humility (R80), kindness (R99), love (R103), will (R173) — the highest-density cross-registry synthesis node in this registry (OBS-067-OBS-021, SP-067-004).
+
+---
+
+**Psa 73:28** — Group 884-003 (Inner experiential good) · Dimension 05 — Moral Character (queried; see SP-067-014)
+
+*"But for me it is good to be near God; I have made the Lord God my refuge, that I may tell of all your works."*
+
+The anchor for the registry's deepest phenomenological register (OBS-067-OBS-029). The inner-being movement: crisis of doubt → interior turn toward God → recognition that nearness is good → refuge-making as active inner act → testimony as forward-oriented expression (OBS-067-OBS-029). The transformation is entirely in orientation, not circumstance. The verse answers the question: what is the experiential good that genuinely satisfies? (OBS-067-OBS-029). The dimension assignment (Moral Character 05) is queried: this anchor engages spiritual orientation and experiential proximity rather than moral character in the primary sense, pointing toward Dependence/Creatureliness (08) or a spiritual orientation sub-category (OBS-067-OBS-030, SP-067-014).
+
+---
+
+**Pro 15:16** — Group 884-004 (Comparative wisdom good) · Dimension 03 — Cognition
+
+*"Better is a little with the fear of the Lord than great treasure and trouble with it."*
+
+The verse establishes the fundamental wisdom ranking: inner orientation (fear of the Lord) is of greater value than material abundance (OBS-067-OBS-031). The comparison is asymmetric — "a little" against "great treasure" — which makes the ranking more striking. The fear of the Lord is the inner-being ground from which all wisdom evaluations proceed (OBS-067-OBS-031, Q071).
+
+---
+
+**Pro 16:32** — Group 884-004 (Comparative wisdom good) · Dimension 03 — Cognition
+
+*"Whoever is slow to anger is better than the mighty, and he who rules his spirit than he who takes a city."*
+
+Two inner characteristics are named and ranked above external achievements: slow to anger (anger restraint) and ruling one's spirit (self-mastery) (OBS-067-OBS-031). The verse is a cross-registry anchor with R4 (anger) and R199 (dominion/self-mastery) — a genuine cross-registry bridge (OBS-067-OBS-032, SP-067-015). The structural normative claim: inner mastery is consistently valued above external power (OBS-067-OBS-031). Tov here functions as a comparative operator, not as naming a characteristic directly (OBS-067-OBS-012).
+
+---
+
+**Jos 23:14** — Group 884-005 (God's good word and promise) · Dimension 05 — Moral Character (queried; see SP-067-016)
+
+*"And now I am about to go the way of all the earth, and you know in your hearts and souls, all of you, that not one word has failed of all the good things that the Lord your God promised concerning you."*
+
+The covenantal anchor (OBS-067-OBS-033). Three analytically significant features: the death-bed context gives the declaration its weight; "in your hearts and souls" explicitly names the inner being as the site of covenantal knowledge (OBS-067-OBS-033); and "not one word has failed" names completeness as the character of God's good word (OBS-067-OBS-033). This verse bridges R67 (goodness) with R183 (heart) and R182 (soul) — explicitly naming these as the sites of covenantal reception (SP-067-009, OBS-067-OBS-033). The dimension assignment (Moral Character 05) is queried: the dominant subject is God's covenantal faithfulness, not human moral character (OBS-067-OBS-034, SP-067-016).
+
+---
+
+**Eze 36:31** — Group 884-006 (Not good — moral verdict) · Dimension 03 — Cognition
+
+*"Then you will remember your evil ways, and your deeds that were not good, and you will loathe yourselves for your iniquities and your abominations."*
+
+The most emotionally charged anchor in the registry (OBS-067-OBS-035). The verse describes an inner-being sequence: remember → recognise deeds as not-good → loathe oneself (OBS-067-OBS-035). The not-good verdict becomes internalised as self-recognition. The moral recognition produces an affective consequence — self-loathing — that is itself an inner-being event (OBS-067-OBS-035). The dimension assignment (Cognition 03) captures the evaluative judgment but does not capture the full affective weight (OBS-067-OBS-035). This verse is a cross-registry anchor with R1 (abomination), connecting not-good recognition with abomination vocabulary (SP-067-006, OBS-067-OBS-035).
+
+---
+
+**Gen 1:31** — Group 884-007 (God's creation pronouncement) · Dimension 11 provisional (queried; see GAP-N-003)
+
+*"And God saw everything that he had made, and behold, it was very good. And there was evening and there was morning, the sixth day."*
+
+The ontological baseline for the entire registry (OBS-067-OBS-036). Before any moral life, before any covenant, before any human inner-being engagement with goodness — the Creator pronounces creation "very good" (tov me'od) (OBS-067-OBS-036). This is the intensive form of tov reserved for the totality of creation — the superlative of goodness belongs to the Creator's pronouncement over all he has made (OBS-067-OBS-036). The group is pre-relational: it precedes any divine-human relationship and has no human correlate (OBS-067-OBS-013, OBS-067-OBS-037). The departure from goodness named in 884-006 (Eze 36:31) is a departure from this creational good (OBS-067-OBS-036). The dimension review should consider whether this group requires a distinct sub-category within Dimension 11 for its ontological-creative distinctiveness (GAP-N-003, OBS-067-OBS-037).
+
+---
+
+**Jer 26:14** — Group 884-008 (Volitional preference idiom) · Dimension 04 — Volition (confirmed; OBS-067-OBS-014, OBS-067-OBS-039)
+
+*"But as for me, behold, I am in your hands. Do with me as seems good and right to you."*
+
+The anchor chosen for the volitional-preference group is its most weighty instance (OBS-067-OBS-038). Jeremiah speaks under threat of death, placing his life in his accusers' hands and yielding the judgment entirely to their will (OBS-067-OBS-038). This situates the good-in-the-eyes-of idiom at its most morally serious: not diplomatic formula but genuine willed self-relinquishment (OBS-067-OBS-038). The group spans 40 verses ranging from diplomatic convention to this ultimate yielding. The volitional engagement is real throughout; its weight varies across the group (OBS-067-OBS-038). Dimension 04 — Volition is confirmed as the correct assignment: the group description explicitly names choosing, preferring, agreeing, and judging fitting (OBS-067-OBS-014, OBS-067-OBS-039).
+
+---
+
+**Est 5:9** — Group 884-009 (Inner well-being state) · Dimension uncertain (GAP-N-001, GAP-N-002)
+
+*"And Haman went out that day joyful and glad of heart. But when Haman saw Mordecai in the king's gate, that he neither rose nor trembled before him, he was filled with wrath against Mordecai."*
+
+The anchor for the inner well-being group is its most diagnostically revealing instance (OBS-067-OBS-040). The compound tov-lev (glad of heart) explicitly locates the inner well-being state in the heart. The verse's narrative places this state immediately before its destruction — one sight replaces gladness with wrath (OBS-067-OBS-040). The diagnostic: inner well-being not rooted in God is inherently fragile (OBS-067-OBS-040). This instance is shared as anchor with R97 (joy, OBS-067-OBS-041, SP-067-017). The dimension for this group is uncertain: neither Moral Character (05), Cognition (03), nor Volition (04) fits cleanly. The dimension review should address whether an Experiential/Affective or Emotion — Positive category applies (GAP-N-001, GAP-N-002, OBS-067-OBS-015).
+
+---
+
+**Gal 5:22** — Groups 885-001 (agathōsunē) and 886-002 (chrēstotēs) · Dimensions 04 — Volition and 05 — Moral Character
+
+*"But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness,"*
+
+The anchor for both Greek OWNER terms simultaneously — the only verse in the registry that anchors two groups (OBS-067-OBS-045). Both G0019 (agathōsunē, 885-001, Dimension 04 — Volition) and G5544 (chrēstotēs, 886-002, Dimension 05 — Moral Character) appear adjacent in the fruit list as distinct items (OBS-067-OBS-045). Their different dimensions confirm the programme's analytical distinction: agathōsunē is goodness as virtue and resolve (volitional — the Spirit-enabled resolve for good); chrēstotēs is kindness as relational disposition and character quality (moral character — expressed toward others) (OBS-067-OBS-045). The co-anchor with five other registries — faith (R59), joy (R97), love (R103), patience (R116), peace (R117) — makes Gal 5:22 the NT's highest-density cross-registry synthesis node in this registry (OBS-067-OBS-021, SP-067-005). The Gal 5:22 lexical gloss for agathōsunē as "generosity" introduces a semantic shade overlapping with R65 (generosity), warranting attention in Session D (OBS-067-OBS-008, SP-067-011).
+
+---
+
+**Rom 11:22** — Group 886-001 (Divine chrēstotēs) · Dimension 11 — Divine-Human Correspondence
+
+*"Note then the kindness and the severity of God: severity toward those who have fallen, but God's kindness to you, provided you continue in his kindness. Otherwise you too will be cut off."*
+
+The anchor for the divine kindness group presents chrēstotēs in its most structurally complex context (OBS-067-OBS-043). The verse names a divine bipolarity: chrēstotēs (kindness, generous goodwill) and apotomia (severity) as the two poles of God's relational disposition (OBS-067-OBS-043). The conditionality — "provided you continue in his kindness" — does not make kindness uncertain in its nature but names a real relational dynamic: the human party can exit the sphere of divine chrēstotēs through unbelief (OBS-067-OBS-043). This raises a fundamental Session D question: are divine inner dispositions unconditional as attributes or relational as dispositions? (OBS-067-OBS-044, SP-067-018). This question exceeds the scope of any single registry's Session B analysis and is formally deferred to Session D (SP-067-018).
+
+---
+
+**Confessional function of the doxological refrain**
+
+The liturgical refrain "Give thanks to the Lord, for he is good; his steadfast love endures forever" (Psa 106:1, 107:1, 118:1, 136:1, Jer 33:11) is not represented by a single anchor verse but as a pattern across Group 884-001 (OBS-067-OBS-025 context). Each repetition is a community-forming confessional act: the assembled people declare the character of God, and in declaring it, orient themselves toward him. The goodness of God as confessional declaration is therefore both a theological claim and a social, formative act (Q079).
+
+---
+
+### Chapter 4 — Language
+
+_Original Language Vocabulary_
+
+**Registry 067 — Goodness**
+*Original Language Vocabulary*
+
+**Term inventory**
+
+Registry 067 holds three OWNER terms: one Hebrew (H2896A tov, 306 verses, nine groups) and two Greek (G0019 agathōsunē, 4 verses, one group; G5544 chrēstotēs, 7 verses, two groups) (Q086). The corpus is dominated by the single Hebrew term, which carries 306 of 317 active classified verses (OBS-067-OBS-006). Nine XREF terms flow to two adjacent registries — R65 (generosity, 6 terms) and R103 (love, 3 terms) — giving a 75% sharing ratio (OBS-067-OBS-004, Q087). This high sharing ratio reflects the programme's decision to distribute the broader goodness vocabulary family across three registries (OBS-067-OBS-007, SP-067-011).
+
+**The Hebrew primary term — H2896A (tov)**
+
+The root TOV is one of the most semantically broad in biblical Hebrew (OBS-067-OBS-006). Its ten sub-senses span: pleasant/agreeable to the senses (1a), pleasant to the higher nature (1b), good/excellent of kind (1c), good/rich/valuable (1d), good/appropriate/becoming (1e), better/comparative (1f), glad/happy/prosperous of sensuous nature (1g), good understanding of intellectual nature (1h), good/kind/benign (1i), good/right ethical (1j) (OBS-067-OBS-006). These ten sub-senses map directly onto the nine verse context groups — the lexical breadth is genuine semantic range, not translational artefact (OBS-067-OBS-006, Q088).
+
+The conceptual origin of tov is phenomenological before it is ethical: the root begins with concrete experienced pleasantness and rises to moral and covenantal categories (OBS-067-OBS-006). Goodness in Hebrew thought is not first an abstract ethical standard — it is first the quality of things that genuinely satisfy and benefit, recognisable in creation (Gen 1:31, OBS-067-OBS-036) and in proximity to God (Psa 73:28, OBS-067-OBS-029).
+
+H2896A carries both divine and human reference with the same lexical form (OBS-067-OBS-016, Q096). "The Lord is good" (884-001) and "a good man" (884-002) use the same word — linguistically embedding the connection between divine goodness and human goodness that the registry description states theologically (OBS-067-OBS-001).
+
+**The Greek OWNER terms — G0019 and G5544**
+
+The registry holds two Greek OWNER terms, which is itself analytically significant (OBS-067-OBS-045). G0019 (agathōsunē — goodness, virtue, beneficence, Dimension 04 — Volition) and G5544 (chrēstotēs — kindness, goodness, gentleness, Dimension 05 — Moral Character for human; Dimension 11 for divine) are related but distinct (OBS-067-OBS-045, OBS-067-OBS-017). They co-appear in Gal 5:22 as adjacent Spirit-fruit assigned different dimensions — the programme's analytical distinction: agathōsunē is goodness as virtue and resolve; chrēstotēs is kindness as relational disposition expressed toward others (OBS-067-OBS-045, Q089).
+
+G0019 (agathōsunē) is almost certainly a NT coinage — not attested in classical Greek literature or the LXX (Q099). The coinage reveals: the NT needed a term for goodness as a named inner-being virtue distinct from the adjective agathos, which applies to virtually anything good. Its entire 4-verse NT corpus (Rom 15:14, Gal 5:22, Eph 5:9, 2Th 1:11) is Pauline and pneumatological — goodness as Spirit-produced virtue filling the person and enabling community (OBS-067-OBS-008, OBS-067-OBS-047).
+
+G5544 (chrēstotēs) spans the widest range in its meaning parse: goodness, kindness, gentleness, beneficence, and goodness/virtue (including the negation in Rom 3:12) (OBS-067-OBS-009). Its related-word family is revealing: G5541 (chrēsteuomai — be kind), G5543 (chrēstos — good/kind), and G5542 (chrēstologia — smooth talk, the etymologically embedded distortion form) (OBS-067-OBS-010, OBS-067-OBS-024). The distortion pole — using kindness-language without kindness-character — is present in the word family even if not attested as a distinct verse-context group (OBS-067-OBS-049).
+
+**The vocabulary architecture — what it reveals**
+
+The verbal-action mode of goodness (G0015 agathopoieō — to do good; G0014 agathoergeō — to do good) is entirely in R65 (generosity) as XREF (OBS-067-OBS-007, Q090). The verbal form of the Hebrew tov (H2895 — be pleasing) is in R103 (love) as XREF (OBS-067-OBS-007). R67 consistently holds the quality/disposition sense; the verbal/active and relational/affective senses belong to adjacent registries (OBS-067-OBS-007, SP-067-011). The programme's structural decision to distribute the TOV/AGATH root family across three registries is visible in the XREF architecture — this is a programme boundary decision whose adequacy Session D should test (OBS-067-OBS-004, SP-067-011).
+
+The person-type terms illuminate the structural opposition: G5358 (filagathos — lover of good) and G0865 (afilagathos — hating good) are both in the XREF inventory (OBS-067-OBS-004, Q092, Q093). The vocabulary has coined dedicated person-type terms for the consistent expression of goodness and its structural opposite.
+
+The intensive form tov me'od (very good — Gen 1:31) is reserved for the totality of creation (OBS-067-OBS-036, Q117). The superlative of goodness belongs to the Creator's pronouncement — it does not appear in Spirit-fruit or human character contexts.
+
+**The Hebrew-Greek development**
+
+The movement from H2896A's ten-sub-sense breadth to the more specialised NT terms represents development, not narrowing (Q099). The OT's single adjectival form carries the full weight of aesthetic, moral, comparative, covenantal, evaluative, volitional, and experiential registers (OBS-067-OBS-006). The NT's abstract nouns (agathōsunē, chrēstotēs) concentrate specific aspects and name them as distinct Spirit-produced qualities (OBS-067-OBS-008, OBS-067-OBS-009). The development is pneumatological precision: goodness in its fullest expression named as a Spirit-enabled quality (OBS-067-OBS-008).
+
+LXX cross-testament continuity is partially addressed: G5544 was used in the LXX to render a Hebrew moral-quality term, confirmed by Rom 3:12 as a quotation from Ps 14:3 LXX (OBS-067-OBS-009, Q097). LSJ data is absent for both Greek OWNER terms — a data gap that limits fuller cross-testament analysis (OBS-067-OBS-047).
+
+**Thin-evidence qualification**
+
+G0019 and G5544 are thin-corpus terms (OBS-067-OBS-047). All conclusions derived from these terms are analytically supported but not definitively confirmed — the evidential weight of the registry rests primarily on H2896A (306 verses) (OBS-067-OBS-047). This qualification applies to all claims in this chapter that draw on the Greek OWNER terms.
+
+---
+
+### Chapter 5 — Interrelationships
+
+_Connections and Research Pointers_
+
+**Registry 067 — Goodness**
+*Connections and Research Pointers*
+
+**The primary co-occurrence connection — R103 Love**
+
+The strongest co-occurrence connection for Registry 067 is R103 (love) at 23 shared verses — the highest count in the co-occurrence table (OBS-067-OBS-018, OBS-067-OBS-019, Q122). The connection is confirmed at root level: H2895 (tov verbal — be pleasing) and H2898 (tuv — goodness nominal) are both owned by R103 as XREF terms, sharing the TOV root family with H2896A (OBS-067-OBS-007, Q125). Mic 6:8 holds love and goodness together definitionally — "to love kindness" is one of three constitutive expressions of what is good (OBS-067-OBS-027, Q123). The simultaneity of love and goodness in Mic 6:8 implies that at the deepest level of the good person's character, love and goodness are not separable activities but aspects of a unified inner disposition (Q123, OBS-067-OBS-027).
+
+**The tri-registry structural position — R65, R67, R103**
+
+Registry 067 sits at the centre of a tri-registry structure around the TOV and AGATH root families (OBS-067-OBS-007, OBS-067-OBS-004, SP-067-011). R65 (generosity) holds the active-doing dimension (G0015 agathopoieō, G0018 agathos — 6 XREF terms); R103 (love) holds the relational-affective dimension (H2895, H2898, G5358 — 3 XREF terms); R67 holds the quality/disposition dimension (H2896A, G0019, G5544 — 3 OWNER terms) (OBS-067-OBS-007, Q113). The tri-registry distribution reflects genuine semantic distinctions — inner quality vs active doing vs relational pleasantness — but the Hebrew often spans all three within a single verse (OBS-067-OBS-007, SP-067-011). Session D should test whether the boundaries hold under the full verse evidence (SP-067-011, OBS-067-OBS-004).
+
+The agathos (G0018, 90 OWNER verses in R65) vs agathōsunē (G0019, 4 OWNER verses in R67) verse-count differential is stark (OBS-067-OBS-004). Session D should examine whether the R65 agathos corpus includes verses engaging goodness as inner disposition (R67 territory) (SP-067-011).
+
+**The two highest-density cross-registry nodes**
+
+Mic 6:8 co-anchors with six registries: compassion (R23), condemnation (R24), humility (R80), kindness (R99), love (R103), and will (R173) (OBS-067-OBS-021, Q138). Session D should examine whether these six co-anchoring registries constitute a unified moral posture — justice, loving kindness, and humble walk as co-constitutive expressions of what is good — or whether they are better understood as distinct characteristics that happen to co-appear at this verse (SP-067-004, OBS-067-OBS-021).
+
+Gal 5:22 co-anchors with five registries: faith (R59), joy (R97), love (R103), patience (R116), and peace (R117), and anchors both OWNER Greek terms simultaneously (OBS-067-OBS-021, OBS-067-OBS-045, Q128). Session D should examine whether the Gal 5:22 Spirit-fruit cluster constitutes a programme-defined synthesis unit — nine inner-being qualities co-produced by the Spirit as facets of a unified character (SP-067-005, OBS-067-OBS-021).
+
+**Confirmed structural relationships in single verses**
+
+Three anchor verses make explicit structural relationships between goodness and adjacent characteristics (Q127). Psa 34:8: encounter with divine goodness → trust/refuge; structural relationship named: tasting divine goodness produces the inner act of trust (OBS-067-OBS-025, SP-067-007). Rom 2:4: "God's kindness is meant to lead you to repentance"; structural relationship named: divine chrēstotēs is the mechanism that produces repentance (OBS-067-OBS-043). Pro 16:32: inner self-mastery is superior to external power; structural relationship named at the highest-density wisdom comparative in the registry (OBS-067-OBS-031, OBS-067-OBS-032, SP-067-015).
+
+**The goodness-abomination connection — Eze 36:31**
+
+The shared anchor with R1 (abomination) at Eze 36:31 names an analytically important connection (OBS-067-OBS-035, SP-067-006). The verse places recognition of deeds as not-good alongside self-loathing for iniquities and abominations. The connection: the moral verdict on not-good conduct engages the same inner-being territory as abomination vocabulary (OBS-067-OBS-035, SP-067-006). Session D should examine whether the not-good and abomination registers share an inner-being mechanism — specifically whether Eze 36:31 → self-loathing → repentance constitutes a structural sequence connecting R67, R1, and repentance vocabulary (SP-067-006, OBS-067-OBS-044, SP-067-018).
+
+**The authority co-occurrence — R197**
+
+R197 (authority) ranks third in co-occurrence at 17 shared verses — above joy, soul, and wisdom (OBS-067-OBS-019, OBS-067-OBS-020). The likely driver is Group 884-008 (volitional-preference idiom, 40 verses): the "do what seems good to you" formula is densely represented in royal and political narrative contexts (OBS-067-OBS-020, SP-067-013, SP-067-003). Session D should confirm whether this co-occurrence is formulaic rather than conceptual before treating R67-R197 as a substantive inner-being connection (SP-067-013, OBS-067-OBS-020).
+
+**The goodness-will relationship**
+
+Group 884-008 (40 verses, volitional preference idiom) and the R173 (will) shared anchor at Mic 6:8 together establish that goodness does not displace or bypass the human will — it reconstitutes it (OBS-067-OBS-014, OBS-067-OBS-039, Q130). 2Th 1:11 is definitive: "may God fulfil every resolve for good" — the human resolve is real; the divine completion is also real (OBS-067-OBS-039). The largest group in the registry (884-008, 40 verses) is specifically about volitional engagement — confirming that goodness and will are not opposed but are structurally intertwined (OBS-067-OBS-014, OBS-067-OBS-039).
+
+**H2898 (tuv) — data quality flag**
+
+H2898 (tuv — goodness, nominal) is listed as XREF in R67 with R103 as OWNER but has 0 active classified verses in R103 (OBS-067-OBS-005, SP-067-012). Session D should verify H2898's status before using it as a cross-registry connection (SP-067-012, OBS-067-OBS-005).
+
+**Research pointers — complete register for Session D**
+
+All SD pointers from both prior and current sessions (SP-067-001 through SP-067-018) are recorded here as the chapter 5 SD pointer compendium. See §N Resolution sections and the SD Pointer register in this obslog for full descriptions. High-priority pointers: SP-067-001 (tri-registry boundary, R65), SP-067-004 (Mic 6:8 synthesis node), SP-067-005 (Gal 5:22 Spirit-fruit cluster), SP-067-006 (Eze 36:31 goodness-abomination bridge), SP-067-011 (agathos/agathōsunē boundary), SP-067-014 (884-003 dimension review), SP-067-016 (884-005 dimension review).
+
+---

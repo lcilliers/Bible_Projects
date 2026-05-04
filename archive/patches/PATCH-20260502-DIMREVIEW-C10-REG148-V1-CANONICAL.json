@@ -1,0 +1,69 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG148-V1-CANONICAL",
+    "registry_id": 148,
+    "word": "sincerity",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R148 sincerity — 2 group dimension assignments + registry stamp. Manual application required.",
+    "superseded_patch": "PATCH-20260502-DIMREVIEW-C10-REG148-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-02: 2 dimension labels prefixed with sort order to match wa_vocab_set.DIMENSION_LABEL. Researcher waiver extends to C10 cluster DimReview cycle."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8262
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "1126-001 G1505 eilikrineia — Moral Character / HUMAN. Automated label confirmed; vocabulary converted."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 8263
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "6231-001 G1506 eilikrinēs — Moral Character / HUMAN. Automated label confirmed; vocabulary converted."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 148
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R148 sincerity DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "dimension_index_updates": 2,
+    "registry_stamps": 1,
+    "research_flag_inserts": 0,
+    "dimension_changes": 0,
+    "vocabulary_conversions": 2
+  }
+}

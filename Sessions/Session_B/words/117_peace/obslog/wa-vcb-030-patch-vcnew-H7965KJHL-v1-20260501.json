@@ -1,0 +1,130 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260501-VCB030-VCNEW-H7965KJHL-V1",
+    "batch_id": "VCB-030",
+    "terms_covered": [2511, 2510, 406, 2512],
+    "input_versions": { "2511": 1, "2510": 1, "406": 1, "2512": 1 },
+    "governing_instruction": "wa-versecontext-instruction-v3_10-20260425.md",
+    "produced_date": "2026-05-01",
+    "produced_by": "wa-versecontext-instruction-v3_10",
+    "session_b_status": null,
+    "description": "VCB-030: H7965K (mti=2511, 8v), H7965J (mti=2510, 5v), H7965H (mti=406, 1v), H7965L (mti=2512, 1v). All FRESH. H7965L all-verses-fail (adverbial use, no inner-being). Shalom reinstated 2026-05-01."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2511,
+        "group_code": "2511-001",
+        "context_description": "Term names shalom as the substantive peace-blessing invoked in greeting — the comprehensive peace of the whole person called upon as the content of the greeting act",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965K: shalom as substantive peace-blessing in greeting"
+    },
+    { "op_id": "OP-002", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78322, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "1Sa 10:4 — set aside: social greeting act" },
+    { "op_id": "OP-003", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78323, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "1Sa 17:22 — set aside: social greeting act" },
+    { "op_id": "OP-004", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78324, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "1Sa 25:5 — set aside: diplomatic greeting instruction" },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78325, "mti_term_id": 2511, "group_id": "2511-001", "is_anchor": 1, "is_relevant": 1, "is_related": 0, "set_aside_reason": null, "notes": "Peace be to you, and peace be to your house, and peace be to all that you have — the triple sha.lom blessing as greeting content; sha.lom is the substantive blessing invoked, not merely a social formula.", "delete_flagged": 0 },
+      "description": "1Sa 25:6 — ANCHOR, group 2511-001: triple sha.lom blessing as greeting content"
+    },
+    { "op_id": "OP-006", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78326, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "1Sa 30:21 — set aside: social greeting act" },
+    { "op_id": "OP-007", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78328, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "2Sa 11:7 — set aside: welfare enquiry, external" },
+    { "op_id": "OP-008", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78327, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "2Ki 10:13 — set aside: social visit" },
+    { "op_id": "OP-009", "operation": "insert", "table": "verse_context", "record": { "verse_record_id": 78329, "mti_term_id": 2511, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": null, "delete_flagged": 0 }, "description": "Est 2:11 — set aside: welfare enquiry" },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 2510,
+        "group_code": "2510-001",
+        "context_description": "Term names shalom as the inner relational bond of close friendship — the bond of trust, loyalty, and mutual allegiance whose violation by the sha.lom-friend constitutes the deepest relational betrayal",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965J: shalom as inner bond of close friendship"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78317, "mti_term_id": 2510, "group_id": "2510-001", "is_anchor": 1, "is_relevant": 1, "is_related": 0, "set_aside_reason": null, "notes": "If you have come to me in friendship (sha.lom) to help me, my heart will be joined to you — sha.lom as inner relational loyalty directly connected to heart-union.", "delete_flagged": 0 },
+      "description": "1Ch 12:17 — ANCHOR, group 2510-001: sha.lom friendship connected to heart-union"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78320, "mti_term_id": 2510, "group_id": "2510-001", "is_anchor": 0, "is_relevant": 1, "is_related": 1, "set_aside_reason": null, "notes": "My close friend (ish sha.lom) in whom I trusted — sha.lom names the bond of friendship whose betrayal is devastating.", "delete_flagged": 0 },
+      "description": "Psa 41:9 — related, group 2510-001: man of sha.lom who betrays"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78321, "mti_term_id": 2510, "group_id": "2510-001", "is_anchor": 0, "is_relevant": 1, "is_related": 1, "set_aside_reason": null, "notes": "Stretched out his hand against his friends (sha.lom); he violated his covenant — sha.lom friendship violated alongside covenant.", "delete_flagged": 0 },
+      "description": "Psa 55:20 — related, group 2510-001: sha.lom friends; covenant violation"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78318, "mti_term_id": 2510, "group_id": "2510-001", "is_anchor": 0, "is_relevant": 1, "is_related": 1, "set_aside_reason": null, "notes": "All my close friends (anshei sha.lom), watching for my fall — men of sha.lom who are secretly hostile.", "delete_flagged": 0 },
+      "description": "Jer 20:10 — related, group 2510-001: men of sha.lom secretly hostile"
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78319, "mti_term_id": 2510, "group_id": "2510-001", "is_anchor": 0, "is_relevant": 1, "is_related": 1, "set_aside_reason": null, "notes": "Your trusted friends (anshei sha.lom) have deceived you — men of sha.lom who deceive.", "delete_flagged": 0 },
+      "description": "Jer 38:22 — related, group 2510-001: men of sha.lom who deceive"
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context_group",
+      "record": {
+        "mti_term_id": 406,
+        "group_code": "406-001",
+        "context_description": "Term names shalom as the divine identity commemorated in the altar name YHWH-Shalom — God identified as peace in the altar built after the peace-theophany, sealing the inner peace given in divine encounter",
+        "notes": null,
+        "delete_flagged": 0
+      },
+      "description": "New group for H7965H: shalom as divine identity in YHWH-Shalom altar name"
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 55836, "mti_term_id": 406, "group_id": "406-001", "is_anchor": 1, "is_relevant": 1, "is_related": 0, "set_aside_reason": null, "notes": "Gideon built an altar and called it YHWH-Shalom (The Lord Is Peace) following the theophany of Judg 6:23. The divine name commemorates God as the source and substance of peace sealed in the altar after the inner-peace encounter (Peace be to you. Do not fear).", "delete_flagged": 0 },
+      "description": "Judg 6:24 — ANCHOR, group 406-001: YHWH-Shalom altar name — God identified as peace"
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": { "verse_record_id": 78330, "mti_term_id": 2512, "group_id": null, "is_anchor": 0, "is_relevant": 0, "is_related": 0, "set_aside_reason": "no_inner_being", "notes": "Sha.lom used adverbially meaning 'completely/wholly' applied to the external event of exile. Adverbial intensifier; inner-being content of exile carried by other terms, not by sha.lom in this adverbial role.", "delete_flagged": 0 },
+      "description": "Jer 13:19 — set aside: sha.lom as adverb 'wholly', external event, no inner-being"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 18,
+    "group_inserts": 3,
+    "group_updates": 0,
+    "verse_context_inserts": 15,
+    "verse_context_updates": 0,
+    "relevant_verses": 7,
+    "set_aside_verses": 8,
+    "anchor_verses": 3,
+    "dual_context_verses": 0,
+    "revisions_to_prior": 0,
+    "all_verses_fail_terms": ["H7965L (mti=2512) — 1 verse, sha.lom adverbial, no inner-being. R4 not applicable."]
+  }
+}

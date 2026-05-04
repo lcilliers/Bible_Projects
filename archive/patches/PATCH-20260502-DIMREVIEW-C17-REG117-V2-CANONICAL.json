@@ -1,0 +1,128 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C17-REG117-V2-CANONICAL",
+    "patch_type": "DIMREVIEW",
+    "cluster": "C17",
+    "registry_no": 117,
+    "registry_word": "peace",
+    "governing_instruction": "wa-dimensionreview-instruction-v3_3-20260418.md",
+    "produced_date": "2026-05-02",
+    "produced_by": "Claude AI — Registry Mode Phase C (second pass)",
+    "mode": "Registry Mode",
+    "description": "Dimension assignments for 5 new shalom subform groups: 2509-001/002 (H7965I well-being), 2511-001 (H7965K greeting), 2510-001 (H7965J friendship), 406-001 (H7965H Peace [God]). Registry stamp included.",
+    "session_b_status": null,
+    "superseded_patch": "PATCH-20260502-DIMREVIEW-C17-REG117-V1",
+    "normalization_note": "CC-side label normalisation 2026-05-02: canonical DIMENSION_LABEL prefix + spacing applied (\"Vitality/Existence\" -> \"07 — Vitality / Existence\", etc.). Researcher waiver extends to this second-pass H7965 DimReview cycle. Source patch retained at v1; this v2 is the applied form."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9369
+      },
+      "set": {
+        "dimension": "07 — Vitality / Existence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the comprehensive condition of welfare and wholeness of the whole person — health, safety, soul-safety, and prosperity as divinely given or sustained. Psa 38:3 (no health in bones because of sin) locates welfare-absence in the body caused by inner disorder; Psa 55:18 (soul redeemed in safety) locates the welfare-condition in the soul; Jer 29:11 (plans for welfare and hope) names divine purposing for comprehensive flourishing. Vitality/Existence preferred over Emotion-Positive (scope is broader than felt-state) and Relational Disposition/GOD (the condition belongs to the human person even when divinely given). Dominant subject HUMAN: the welfare condition is borne by the human even where God is its creator and sustainer."
+      },
+      "description": "2509-001: shalom as inner condition of welfare — Vitality/Existence, HUMAN"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9370
+      },
+      "set": {
+        "dimension": "05 — Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the falsely claimed welfare arising from stubbornness of heart — the morally-generated false inner assurance of safety. Deu 29:19 (blesses himself in his heart, walking in stubbornness) is the defining anchor: the self-deception is seated in the heart and produced by the moral disposition of stubborn covenant-unfaithfulness. Jer 23:17 confirms the pattern (false welfare promised to those who follow their own stubborn hearts). Moral Character (05) preferred: the false sha.lom is the expression of a stable inner quality of moral nature (stubbornness/unfaithfulness) rather than primarily an emotion (02) or cognitive error (03). Dominant subject HUMAN throughout."
+      },
+      "description": "2509-002: shalom as falsely promised welfare — Moral Character, HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9371
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the substantive blessing-content invoked in greeting — the inner orientation of goodwill toward another expressed as the peace-blessing (1Sa 25:6: Peace be to you, and peace be to your house, and peace be to all that you have). The greeting-blessing is fundamentally a relational act of goodwill; the sha.lom invoked is the expression of the greeter's orientation toward the recipient's comprehensive welfare. Relational Disposition (06) preferred over Emotion-Positive (which would name the condition wished for rather than the act of orientation). Single-verse evidence: VERSE_EVIDENCE_MINIMAL noted; call is unambiguous. Dominant subject HUMAN."
+      },
+      "description": "2511-001: shalom as peace-blessing in greeting — Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9372
+      },
+      "set": {
+        "dimension": "06 — Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Shalom as the inner relational bond of close friendship — the orientation of trust, loyalty, and allegiance toward a specific other person. 1Ch 12:17 (my heart will be joined to you if you come in sha.lom) directly ties sha.lom-friendship to heart-union: the sha.lom is the inner orientation whose seat is the heart. The betrayal pattern across the corpus (Psa 41:9, 55:20, Jer 20:10, 38:22) confirms that the sha.lom-bond was a real inner orientation — its violation wounds precisely because it was genuine. Relational Disposition (06): the inner orientation of loyalty toward another, stronger than Moral Character (05) here because the primary characteristic is the relational bond (directed toward another) rather than a stable quality of moral nature considered in itself. Dominant subject HUMAN: human-to-human friendship bond throughout."
+      },
+      "description": "2510-001: shalom as inner bond of friendship — Relational Disposition, HUMAN"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": {
+        "id": 9373
+      },
+      "set": {
+        "dimension": "11 — Divine-Human Correspondence",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Shalom as divine identity commemorated in the altar name YHWH-Shalom (Judg 6:24) — God named as peace itself in the human act of altar-building following the peace-theophany (Judg 6:23: Peace be to you. Do not fear). The characteristic operates at the divine-human boundary: God discloses peace (divine pole), Gideon receives it and names God as its substance (human pole). DHC (11) assigned: this parallels the structure of 2508-004 (Mic 5:5 — He shall be their peace, DHC, NONE) but here the divine pole dominates — the content named is God's identity as peace, the naming act is human but secondary. Dominant subject GOD: YHWH-Shalom names God's identity; the human act (Gideon builds and names) is the vehicle, not the subject. Analytical note: the 'X IS peace' structure appears at three points in Scripture — YHWH (Judg 6:24, this group), the Messiah (Mic 5:5, group 2508-004), and Christ (Eph 2:14, R117 Greek group 426-003) — forming the structural spine of the peace registry. Subsumed in DIM-117-SD003."
+      },
+      "description": "406-001: shalom as divine identity YHWH-Shalom — Divine-Human Correspondence, GOD"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "word_registry",
+      "match": {
+        "no": 117
+      },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418.md"
+      },
+      "description": "Registry stamp: R117 peace dim_review_status = Complete (second pass — all 78 groups at CLAUDE_AI)"
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "dimension_index_updates": 5,
+    "word_registry_updates": 1,
+    "group_description_corrections": 0,
+    "session_b_findings_inserts": 0,
+    "session_d_pointers_inserts": 0,
+    "cluster_stamp_included": false,
+    "groups_assigned": [
+      "2509-001",
+      "2509-002",
+      "2511-001",
+      "2510-001",
+      "406-001"
+    ]
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "meta": {
+    "directive_id": "DIR-20260502-001",
+    "produced_date": "2026-05-02",
+    "produced_at": "2026-05-02T07:55:06Z",
+    "produced_by": "Claude Code (scripts/_tmp_build_righteousness_audit_v1_20260502.py)",
+    "db_changes": "none",
+    "target_strongs": [
+      "H6662",
+      "H6663",
+      "H6664",
+      "H6665",
+      "H6666",
+      "G1342",
+      "G1343",
+      "G1344",
+      "G1345",
+      "G1346",
+      "G1347",
+      "G1348",
+      "G1349"
+    ]
+  },
+  "completion_confirmation": {
+    "queries_executed": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ],
+    "row_counts": {
+      "Q1_term_inventory": 12,
+      "Q2_registry_summary": 3,
+      "Q3_verse_footprint": 12,
+      "Q4_xref_appearances_terms": 12,
+      "Q4_xref_appearances_total_xrefs": 18
+    },
+    "absent_target_strongs_in_Q1": [
+      "H6665"
+    ],
+    "registries_outside_C10": [
+      98
+    ],
+    "schema_adaptations": [
+      "Strongs lookup expanded to match sub-letter variants (H6662G/H/I etc.) via GLOB pattern, since STEP records sub-senses with letter suffixes; the directive target list uses bare canonical forms.",
+      "XREF mechanism described in q_4 result schema_note: there is no dedicated xref join table; XREF associations live in wa_term_inventory.term_owner_type='XREF' joined via file_id -> wa_file_index -> word_registry."
+    ]
+  },
+  "query_1_term_inventory": [
+    {
+      "mti_term_id": 3246,
+      "strongs_number": "H6662",
+      "transliteration": "tsad.diq",
+      "gloss": "righteous",
+      "language": "Hebrew",
+      "status": "extracted",
+      "owning_registry_no": 77,
+      "owning_registry_word": "honesty",
+      "cluster_assignment": "C10",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": null
+    },
+    {
+      "mti_term_id": 947,
+      "strongs_number": "H6663",
+      "transliteration": "tsa.deq",
+      "gloss": "to justify",
+      "language": "Hebrew",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 942,
+      "strongs_number": "H6664G",
+      "transliteration": "tse.deq",
+      "gloss": "righteousness",
+      "language": "Hebrew",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 911,
+      "strongs_number": "H6666",
+      "transliteration": "tse.da.qah",
+      "gloss": "righteousness",
+      "language": "Hebrew",
+      "status": "extracted",
+      "owning_registry_no": 77,
+      "owning_registry_word": "honesty",
+      "cluster_assignment": "C10",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": null
+    },
+    {
+      "mti_term_id": 3193,
+      "strongs_number": "G1342",
+      "transliteration": "dikaios",
+      "gloss": "just",
+      "language": "Greek",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 950,
+      "strongs_number": "G1343",
+      "transliteration": "dikaiosunē",
+      "gloss": "righteousness",
+      "language": "Greek",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 3194,
+      "strongs_number": "G1344",
+      "transliteration": "dikaioō",
+      "gloss": "to justify",
+      "language": "Greek",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 1099,
+      "strongs_number": "G1345",
+      "transliteration": "dikaiōma",
+      "gloss": "righteous act",
+      "language": "Greek",
+      "status": "extracted",
+      "owning_registry_no": 139,
+      "owning_registry_word": "righteousness",
+      "cluster_assignment": "C10",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": null
+    },
+    {
+      "mti_term_id": 3199,
+      "strongs_number": "G1346",
+      "transliteration": "dikaiōs",
+      "gloss": "rightly",
+      "language": "Greek",
+      "status": "extracted_thin",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 3203,
+      "strongs_number": "G1347",
+      "transliteration": "dikaiōsis",
+      "gloss": "justification",
+      "language": "Greek",
+      "status": "extracted_thin",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 3204,
+      "strongs_number": "G1348",
+      "transliteration": "dikastēs",
+      "gloss": "magistrate",
+      "language": "Greek",
+      "status": "extracted_thin",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    },
+    {
+      "mti_term_id": 949,
+      "strongs_number": "G1349",
+      "transliteration": "dikē",
+      "gloss": "condemnation",
+      "language": "Greek",
+      "status": "extracted",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete"
+    }
+  ],
+  "query_1_absent_target_strongs": [
+    {
+      "strongs_number": "H6665",
+      "transliteration": "tsidqah",
+      "gloss": "righteousness (Aramaic)",
+      "note": "No active mti_terms row found (extracted/extracted_thin). Term is absent from the programme."
+    }
+  ],
+  "query_2_registry_summary": [
+    {
+      "registry_no": 77,
+      "registry_word": "honesty",
+      "cluster_assignment": "C10",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": null,
+      "owned_term_count": 2,
+      "owned_strongs": [
+        "H6662",
+        "H6666"
+      ]
+    },
+    {
+      "registry_no": 98,
+      "registry_word": "justice",
+      "cluster_assignment": "C13",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": "Complete",
+      "owned_term_count": 9,
+      "owned_strongs": [
+        "H6663",
+        "H6664G",
+        "G1342",
+        "G1343",
+        "G1344",
+        "G1346",
+        "G1347",
+        "G1348",
+        "G1349"
+      ]
+    },
+    {
+      "registry_no": 139,
+      "registry_word": "righteousness",
+      "cluster_assignment": "C10",
+      "session_b_status": "Verse Context Reset",
+      "verse_context_status": "Complete",
+      "dim_review_status": null,
+      "owned_term_count": 1,
+      "owned_strongs": [
+        "G1345"
+      ]
+    }
+  ],
+  "query_3_verse_footprint": [
+    {
+      "strongs_number": "H6662",
+      "transliteration": "tsad.diq",
+      "owning_registry_no": 77,
+      "owning_registry_word": "honesty",
+      "verse_context_group_count": 3,
+      "wa_dimension_index_count": 3,
+      "total_verse_count": 174,
+      "dominant_subject_null_count": 3
+    },
+    {
+      "strongs_number": "H6663",
+      "transliteration": "tsa.deq",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 2,
+      "wa_dimension_index_count": 2,
+      "total_verse_count": 40,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "H6664G",
+      "transliteration": "tse.deq",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 4,
+      "wa_dimension_index_count": 4,
+      "total_verse_count": 105,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "H6666",
+      "transliteration": "tse.da.qah",
+      "owning_registry_no": 77,
+      "owning_registry_word": "honesty",
+      "verse_context_group_count": 3,
+      "wa_dimension_index_count": 3,
+      "total_verse_count": 148,
+      "dominant_subject_null_count": 3
+    },
+    {
+      "strongs_number": "G1342",
+      "transliteration": "dikaios",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 2,
+      "wa_dimension_index_count": 2,
+      "total_verse_count": 74,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1343",
+      "transliteration": "dikaiosunē",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 3,
+      "wa_dimension_index_count": 3,
+      "total_verse_count": 74,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1344",
+      "transliteration": "dikaioō",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 36,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1345",
+      "transliteration": "dikaiōma",
+      "owning_registry_no": 139,
+      "owning_registry_word": "righteousness",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 10,
+      "dominant_subject_null_count": 1
+    },
+    {
+      "strongs_number": "G1346",
+      "transliteration": "dikaiōs",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 5,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1347",
+      "transliteration": "dikaiōsis",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 2,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1348",
+      "transliteration": "dikastēs",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 2,
+      "dominant_subject_null_count": 0
+    },
+    {
+      "strongs_number": "G1349",
+      "transliteration": "dikē",
+      "owning_registry_no": 98,
+      "owning_registry_word": "justice",
+      "verse_context_group_count": 1,
+      "wa_dimension_index_count": 1,
+      "total_verse_count": 3,
+      "dominant_subject_null_count": 0
+    }
+  ],
+  "query_4_xref_appearances": {
+    "schema_note": "XREF mechanism: wa_term_inventory has one row per (term, file_id) occurrence. term_owner_type='OWNER' identifies the canonical home (file_id is on the owner registry's STEP extract file); term_owner_type='XREF' rows mark the term as in-scope for another registry's verse-context analysis without ownership. The XREF registry is derived via wa_file_index.word_registry_fk on the file the XREF row sits under.",
+    "by_term": [
+      {
+        "strongs_number": "H6662",
+        "transliteration": "tsad.diq",
+        "owning_registry_no": 77,
+        "owning_registry_word": "honesty",
+        "xrefs": [
+          {
+            "xref_registry_no": 98,
+            "xref_registry_word": "justice",
+            "xref_cluster": "C13"
+          },
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "H6663",
+        "transliteration": "tsa.deq",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 77,
+            "xref_registry_word": "honesty",
+            "xref_cluster": "C10"
+          },
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "H6664G",
+        "transliteration": "tse.deq",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 77,
+            "xref_registry_word": "honesty",
+            "xref_cluster": "C10"
+          },
+          {
+            "xref_registry_no": 117,
+            "xref_registry_word": "peace",
+            "xref_cluster": "C17"
+          },
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "H6666",
+        "transliteration": "tse.da.qah",
+        "owning_registry_no": 77,
+        "owning_registry_word": "honesty",
+        "xrefs": [
+          {
+            "xref_registry_no": 98,
+            "xref_registry_word": "justice",
+            "xref_cluster": "C13"
+          },
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1342",
+        "transliteration": "dikaios",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1343",
+        "transliteration": "dikaiosunē",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1344",
+        "transliteration": "dikaioō",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1345",
+        "transliteration": "dikaiōma",
+        "owning_registry_no": 139,
+        "owning_registry_word": "righteousness",
+        "xrefs": [
+          {
+            "xref_registry_no": 98,
+            "xref_registry_word": "justice",
+            "xref_cluster": "C13"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1346",
+        "transliteration": "dikaiōs",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1347",
+        "transliteration": "dikaiōsis",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1348",
+        "transliteration": "dikastēs",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      },
+      {
+        "strongs_number": "G1349",
+        "transliteration": "dikē",
+        "owning_registry_no": 98,
+        "owning_registry_word": "justice",
+        "xrefs": [
+          {
+            "xref_registry_no": 24,
+            "xref_registry_word": "condemnation",
+            "xref_cluster": "C13"
+          },
+          {
+            "xref_registry_no": 139,
+            "xref_registry_word": "righteousness",
+            "xref_cluster": "C10"
+          }
+        ]
+      }
+    ]
+  }
+}

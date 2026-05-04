@@ -1,8 +1,8 @@
 # Word Analysis Corpus — Programme Reading
 
-_Generated 2026-04-28T04:28:10Z_
+_Generated 2026-04-28T10:33:12Z_
 
-_2 word(s) included._
+_4 word(s) included._
 
 ---
 
@@ -235,6 +235,477 @@ The word "broken" is applied in English to at least three distinct Hebrew roots 
 - `Inferential — no correlation signal confirmed. See SP8 for Session D investigation.`
 
 Per integrity rules SB-7 and SB-8: All confirmed connections above are supported by at least one correlation signal (co-occurrence or shared anchor). No confirmed connection is stated without signal support. No strong correlation signal has been omitted — the 6 registries with ≥3 shared verses or shared anchors are all addressed above.
+
+---
+
+---
+
+## 062 — Fellowship
+
+**Status:** Analysis Complete  ·  **Dimension review:** Complete  ·  **Verse Context:** Complete
+
+> Fellowship is the experience of genuine shared life with others — not just being in the same place but actually participating together in something real. The Greek koinōnia carries the sense of having in common, sharing in, participating in. It is used of the fellowship of the Spirit, the fellowship of suffering, the fellowship of the Lord's Supper. Biblical fellowship is always anchored in something shared at a deeper level than preference or proximity: a shared life in God, a shared story, a shared hope.
+
+### Chapter 1 — Meaning
+
+**registry_id:** 62
+**author:** claude_ai
+**source_file:** wa-obslog-ro62-fellowship-sb-v1-20260428.md
+
+Fellowship in Scripture spans two distinct language families that converge on the same underlying reality of shared participation. The Hebrew vocabulary comes from the chavar root — a large family of terms whose primary sense is joining, binding together, or being united with something or someone. The Greek vocabulary comes from the koinōn root, where the primary sense is holding in common, participating in something shared. These two families carry no etymological connection, but their semantic ranges overlap precisely at the point of inner-being significance: both name the act and state of sharing-in, of genuine participation rather than mere adjacency. (OBS-062-005, OBS-062-017, Q&A-026)
+
+**Hebrew: the chavar family.** The root verb H2266 (cha.var — to unite, join, bind together) is the core of the Hebrew vocabulary and carries unusual semantic breadth. Its stem variants span Qal (to unite; also to tie magic charms), Piel (to unite with, ally), Pual (to be allied, be joined), Hiphil (to join words together), and Hithpael (to join oneself to, make alliance). This stem diversity signals that the chavar root captures joining from every grammatical angle: passive being-joined, active joining-of-another, and reflexive self-joining-to. The same root produces noun derivatives spanning wound and bruise (H2250), company and association (H2267, H2274), companion (H2270), consort and wife (H2278), spell and charmer (H2267's occult sense), and the structural joining terms describing the tabernacle's construction (seam, clamp, junction — H4225, H4226, H2279). The range from wound to companionship to occult binding to architectural seam is not random polysemy — it reflects the single underlying logic of being-joined-to, expressed across the full range of human and material experience. (OBS-062-007, OBS-062-008, OBS-062-019, Q&A-026)
+
+**Greek: the koinōn family.** G2842 (koinōnia) is defined as "the close association between persons, emphasising what is common between them; by extension: participation, sharing, contribution, gift." The name comes directly from koinos (common, shared) — koinōnia is literally the-common-ness, the-state-of-having-in-common. G2844 (koinōnos — participant, partner) names the person who is in koinōnia: one who joins in with another in some enterprise or activity. Related words extend the range: koinōneō (to participate, G2841), koinōnikos (generous, G2843), sunkoinōnos (co-sharer, G4791). The koinōn root consistently points to what is held in common as the basis of the relationship: the common thing defines the fellowship. (OBS-062-017, OBS-062-018, Q&A-026)
+
+**Semantic range.** The fellowship vocabulary spans: the most basic existential participation (being-among-the-living, Ecc 9:4), through voluntary relational companionship (the friend who lifts, Ecc 4:10; the companion-of-God-fearers, Psa 119:63), through covenantal intimacy (the wife as companion, Mal 2:14), through moral complicity (Mat 23:30 — having taken part in shedding blood), through transformative suffering (Isa 53:5 — wounds that heal; Pro 20:30 — wounds that cleanse), to the ontological extreme of participating in the divine nature itself (2Pe 1:4). The same root vocabulary covers the full spectrum from minimal to maximal participation. (OBS-062-019, Q&A-010)
+
+**Sense structure: unified by a single logic.** Despite this breadth, the sense structure of fellowship is unified by the principle that the character of fellowship is determined by its object. To fellowship is to participate in what the fellowship object is. This principle is explicit in 2Pe 1:4 (participating in the divine nature), confirmed in the H2270 companionship data (companionship with God-fearers forms righteous character; companionship with thieves forms corrupt character — Psa 119:63, Isa 1:23), and operative in the negative (joining to idols produces spiritual bondage, Hos 4:17). The sense structure is formally unified: one logic, unlimited in its object-range. (Q&A-004, OBS-062-019)
+
+**Structural negatives and absence forms.** The negative forms of fellowship are: faithlessness (Mal 2:14), structural incompatibility (2Cor 6:14), distorted fellowship directed toward false objects (Hos 4:17), and isolation (Ecc 4:10). These engage the same inner-being faculty as positive fellowship — the capacity for relational alignment and participation — but direct it wrongly or describe its deprivation. (Q&A-005)
+
+**Note on LSJ.** Both Greek terms lack parsed LSJ data. The classical Greek register of koinōnia is not accessible from this session's data. Meaning work proceeds from Mounce definitions and verse evidence. (OBS-062-017)
+
+---
+
+### Chapter 2 — How It Works
+
+**registry_id:** 62
+**author:** claude_ai
+**source_file:** wa-obslog-ro62-fellowship-sb-v1-20260428.md
+
+**The governing mechanism.** Fellowship operates by a single inner logic: the person participates in what the fellowship object is, and through that participation, is formed into conformity with it. This is the repeating pattern across every mode of fellowship's operation in this registry. The contrast between Psa 119:63 (God-fearer companionship → righteous character) and Isa 1:23 (thief companionship → corrupt character), alongside 2Pe 1:4 (divine nature participation → sharing in what God is) and Hos 4:17 (idol-joining → spiritual bondage), all demonstrate the same mechanism operating across radically different objects. (Q&A-004, OBS-062-019, OBS-062-048, OBS-062-049, OBS-062-058, OBS-062-042)
+
+**Disposition and act.** Fellowship combines a dispositional and an active dimension. It is dispositional in that the Psalmist declares himself companion of all who fear God (Psa 119:63) — a stable inner orientation that persists. It is active in that Paul pursues the fellowship of Christ's sufferings as a life-goal (Phili 3:10). Over time, volitional fellowship creates inner character that becomes constitutive of the person — Jer 13:23 makes explicit what habitual alignment produces: a moral character as fixed as leopard spots, immune to self-reversal. (Q&A-016, OBS-062-048, OBS-062-055, OBS-062-052)
+
+**What produces and triggers fellowship.** Two primary sources produce fellowship: divine initiative and human volitional alignment. God initiates the highest fellowship through promise (2Pe 1:4) and through active joining (Eze 37:19 — "I will join with it the stick of Judah"). Human volitional alignment produces horizontal fellowship through the choice of companions (Psa 119:63) and the pursuit of participation (Phili 3:10). Existential fellowship — being among the living (Ecc 9:4) — is given with existence itself. (Q&A-008, OBS-062-037, OBS-062-051)
+
+**What fellowship produces.** Divine fellowship produces: capacity for divine nature participation (2Pe 1:4), hope grounded in communal existence (Ecc 9:4), enabling capacity to lift the fallen (Ecc 4:10), sharing in suffering and comfort (Phili 3:10, 2Cor 1:7). False or wicked fellowship produces: moral corruption conforming to the fellowship object (Isa 1:23, Job 34:8), spiritual bondage beyond recovery (Hos 4:17), moral culpability through complicity (Mat 23:30). Transformative wounding produces: inner moral cleansing (Pro 20:30) and healing (Isa 53:5). (Q&A-011, OBS-062-037, OBS-062-039, OBS-062-040, OBS-062-058)
+
+**The volitional dimension.** Fellowship is substantially volitional in the human direction. The Hithpael stem of H2266 ("to join oneself to, make alliance") explicitly names the reflexive volitional act of self-joining. The Psalmist chooses companions (Psa 119:63); Paul pursues fellowship with Christ's sufferings actively. However, the consequences of volitional fellowship are not always reversible: Ephraim, having joined to idols, is beyond divine appeal — "leave him alone" (Hos 4:17). Habitual fellowship-alignment creates, over time, an inner moral character that becomes constitutive and resistant to self-reversal. (Q&A-009, OBS-062-042, OBS-062-052)
+
+**The divine-human axis.** God's involvement in fellowship operates on multiple registers. As initiating source: God grants promises enabling divine nature participation (2Pe 1:4) and actively joins divided communities (Eze 37:19). As the object of fellowship: the Father and Son are the ultimate fellowship objects for whom horizontal fellowship among believers exists (1Jo 1:3). As witness: God observes and holds accountable those who violate covenantal fellowship bonds (Mal 2:14). As the one who withdraws: when joining to idols is complete, God leaves the person in their chosen fellowship (Hos 4:17). God initiates, enables, witnesses, and responds — but does not compel. (Q&A-006, Q&A-013, OBS-062-037, OBS-062-051)
+
+**The two-level structure.** 1Jo 1:3 establishes the structural statement: horizontal fellowship among believers is grounded in and participates in vertical fellowship with the Father and Son. The proclamation creates horizontal fellowship; that horizontal fellowship is itself a participation in the divine fellowship. Horizontal fellowship is not an independent reality — it derives from and participates in the vertical. This observation directly addresses DIM-62-SD001's Session D question. (OBS-062-056)
+
+**The corporate dimension.** Fellowship operates distinctively at the corporate level. 1Jo 1:3 shows that horizontal fellowship is a shared participation in the divine fellowship — not the sum of individual vertical fellowships. Eze 37:19 shows divine restoration as the joining of two divided national communities into one. Ecc 4:10 shows the fellowship of two persons as a structural support system: having a companion is the condition of survival in crisis. The corporate dimension is constitutive, not additive: fellowship creates a new unity from previously distinct persons. (OBS-062-056, OBS-062-051, OBS-062-050)
+
+**What closes fellowship off.** Fellowship is foreclosed by complete inner commitment to an incompatible object (Hos 4:17) and by structural moral incompatibility (2Cor 6:14). Moral failure per se and weakness do not foreclose fellowship — the data shows fellowship operating precisely through weakness (suffering, falling, wounding). What closes fellowship is the inner orientation toward something structurally incompatible with the fellowship sought. (Q&A-035, OBS-062-042, OBS-062-057)
+
+**Sequences of operation.** Three traceable sequences: (1) divine promises → escape from corruption → participation in divine nature (2Pe 1:4); (2) knowing Christ → sharing sufferings → conformity to death → resurrection fellowship (Phili 3:10); (3) apostolic witness → proclamation → horizontal fellowship → vertical fellowship (1Jo 1:3). Fellowship is the state achieved through a sequence, not the starting point. It deepens through stages. (Q&A-022, OBS-062-037)
+
+---
+
+### Chapter 3 — Verses
+
+**registry_id:** 62
+**author:** claude_ai
+**source_file:** wa-obslog-ro62-fellowship-sb-v1-20260428.md
+
+### H2250 — wound / bruise
+
+**Group 7568-001 — disciplinary wound as instrument of inner moral purification**
+
+**Pro 20:30** — *"Blows that wound cleanse away evil; strokes make clean the innermost parts."*
+
+The disciplinary blow (chavar root — H2250) is the instrument of moral renovation. The blow reaches "the innermost parts" — physical penetration of the wound corresponds to moral penetration of inner cleansing. Evil (ra' — inner moral state) is cleansed by the external stroke. The mechanism is outside-in: the surface wound indexes and effects a deeper moral renovation. (OBS-062-039)
+
+**Group 7568-002 — redemptive wound producing inner healing and restoration**
+
+**Isa 53:5** — *"But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."*
+
+The servant's wounds (chavarburotav) become the instrument of others' healing, not the servant's own. The causal chain is substitutionary: his wounds, our healing; his chastisement, our peace. The inner-moral states (transgression, iniquity) are the cause of the wounding; the wounds produce the reverse of what caused them. Fellowship vocabulary (wound) describes the deepest possible vicarious participation — one person bearing the physical-moral consequences of another's inner state. (OBS-062-040, OBS-062-041)
+
+---
+
+### H2266 — to unite / join
+
+**Group 7565-001 — idolatrous or wrongful relational alliance**
+
+**Hos 4:17** — *"Ephraim is joined to idols; leave him alone."*
+
+The passive form: Ephraim has arrived at a state of being-joined. The fellowship with idols is so complete it produces divine withdrawal — not punishment but departure. "Leave him alone" indicates the joining has become constitutive of Ephraim's inner being: the false fellowship object has become so thoroughly the person's inner orientation that further divine engagement is withheld. (OBS-062-042)
+
+**Group 7565-002 — occult charming as forbidden inner-spiritual practice**
+
+**Psa 58:5** — *"so that it does not hear the voice of charmers or of the cunning enchanter."*
+
+The occult-charming sense of chavar (H2266 Qal 1a2 — to tie magic charms). The enchanter attempts to bind through occult joining. The verse images a context where the binding fails — the cobra does not respond. The inner-being of the charmer is one of presumptuous reliance on occult binding-power. (OBS-062-043)
+
+**Group 7565-003 — joining words as inner rhetorical expression**
+
+**Job 16:4** — *"I also could speak as you do, if you were in my place; I could join words together against you and shake my head at you."*
+
+The Hiphil sense of chavar (to pile up / join words). Job describes a rhetorical capacity he withholds — he could deploy adversarial word-joining but chooses restraint. The inner act of self-restraint in not deploying fellowship vocabulary against the comforters is the inner-being content: fellowship-vocabulary as capacity held in reserve through relational compassion. (OBS-062-044)
+
+**Group 7565-004 — being joined with all the living as ground of hope**
+
+**Ecc 9:4** — *"But he who is joined with all the living has hope, for a living dog is better than a dead lion."*
+
+Being-among-the-living (the most minimal form of fellowship) is named as the ground of hope. Existential participation in the community of the living produces the inner-being state of hope. Absence of this fellowship (death) forecloses hope even for the noblest being. (OBS-062-045)
+
+---
+
+### H2267 — spell / association
+
+**Group 7569-001 — occult charming as forbidden inner-spiritual practice**
+
+**Psa 58:5** — *(same verse — shared anchor with H2266 group 7565-002)*
+
+Both H2266 (verb) and H2267 (noun) anchor here — the enchanting vocabulary spans verb and noun without distinction of inner-being content. The shared anchor confirms the unified inner-being content of the enchantment vocabulary. (OBS-062-046)
+
+**Group 7569-002 — reliance on occult power as spiritual misdirection**
+
+**Isa 47:9** — *"These two things shall come to you in a moment, in one day; the loss of children and widowhood shall come upon you in full measure, in spite of your many sorceries and the great power of your enchantments."*
+
+Babylon trusted in enchantments (chavar-root: magical binding) as an alternative protection source. The judgement comes "in spite of" the enchantments — false fellowship cannot protect genuine fellowship relationships (family, spouse). The losses are relational: "loss of children and widowhood." False fellowship cannot preserve genuine fellowship. (OBS-062-047)
+
+---
+
+### H2270 — companion
+
+**Group 7566-001 — companionship as chosen moral and spiritual alignment**
+
+**Psa 119:63** — *"I am a companion of all who fear you, of those who keep your precepts."*
+
+The Psalmist's fellowship is constituted by shared devotional identity — not proximity or preference but shared fear of God and obedience. The declaration is an inner-identity claim: my companions are those who share my inner orientation toward God. Companionship follows from inner alignment. (OBS-062-048)
+
+**Group 7566-002 — companionship as moral alignment with wickedness**
+
+**Isa 1:23** — *"Your princes are rebels and companions of thieves. Everyone loves a bribe and runs after gifts. They do not bring justice to the fatherless, and the widow's cause does not come to them."*
+
+The same fellowship-formation mechanism in the wicked direction: companions of thieves love bribes — the companionship produces the moral character and its consequences. Mirroring Psa 119:63: God-fearer fellowship forms righteous character; thief-fellowship forms corrupt character. (OBS-062-049)
+
+**Group 7566-003 — companionship as mutual relational support**
+
+**Ecc 4:10** — *"For if they fall, one will lift up his fellow. But woe to him who is alone when he falls and has not another to lift him up!"*
+
+The functional test of fellowship: the companion is defined by what he does when the other falls. Having a companion enables restoration; absence of a companion means isolation in crisis. The inner-being of the isolated person — "woe to him who is alone" — is the negative image of fellowship-enabled restoration. (OBS-062-050)
+
+**Group 7566-004 — divinely-willed communal restoration as inner-being oneness**
+
+**Eze 37:19** — *"Thus says the Lord God: Behold, I am about to take the stick of Joseph (that is in the hand of Ephraim) and the tribes of Israel associated with him. And I will join with it the stick of Judah, and make them one stick, that they may be one in my hand."*
+
+God as the active agent of fellowship-joining. The divided communities become one through divine action — "I will join" uses the chavar verb with God as subject. The joining produces a new inner-corporate reality: "one in my hand." The physical image of two sticks becoming one images the inner-communal transformation of division into unity. Being-held-in-the-divine-hand is an inner-being expression of security and belonging. (OBS-062-051)
+
+---
+
+### H2272 — spot
+
+**Group 7573-001 — indelibly formed inner moral character depicted as fixed marking**
+
+**Jer 13:23** — *"Can the Ethiopian change his skin or the leopard his spots? Then also you can do good who are accustomed to do evil."*
+
+The chavarburah (spots/stripes — H2272) functions as analogy for moral character's fixedness. Physical markings that cannot be changed by the creature image inner moral character that cannot be self-reversed by the habituated person. Fellowship vocabulary in its most extended derivational sense becomes the image of moral formation's permanence: habitual fellowship with patterns of evil creates inner marks as indelible as animal markings. (OBS-062-052)
+
+---
+
+### H2274 — company
+
+**Group 7574-001 — keeping company with evildoers as moral alignment**
+
+**Job 34:8** — *"who travels in company with evildoers and walks with wicked men?"*
+
+Elihu's accusation (false in context but analytically significant) uses company (cheverah — H2274) to name moral identification through association. To travel in company with evildoers is to be morally identified with them. Fellowship vocabulary is forensic here: it identifies the inner person by naming the companions they travel with. (OBS-062-053)
+
+---
+
+### H2278 — consort
+
+**Group 7576-001 — covenantal companionship as relational bond that faithlessness violates**
+
+**Mal 2:14** — *"But you say, 'Why does he not?' Because the Lord was witness between you and the wife of your youth, to whom you have been faithless, though she is your companion and your wife by covenant."*
+
+The chaveret (H2278 — consort/companion) names the wife in the most relational terms. Faithlessness violates both covenant (legal bond) and companionship (inner-relational bond). God is witness to the violation. The verse holds covenant and companionship as two aspects of the same bond: covenant names the legal form; companionship names the inner participatory reality. (OBS-062-054)
+
+---
+
+### G2842 — koinōnia / participation
+
+**Group 873-001 — Vertical fellowship with God**
+
+**Phili 3:10** — *"that I may know him and the power of his resurrection, and may share his sufferings, becoming like him in his death,"*
+
+The fellowship of Christ's sufferings (koinōnian pathēmatōn) is Paul's life-goal. The sequence: knowing Christ → sharing sufferings → conformity to death. Fellowship is the mechanism of inner-person transformation through suffering-participation. To share Christ's sufferings is to enter progressive conformity to his death, which is the path toward resurrection fellowship. (OBS-062-055)
+
+**1Jo 1:3** — *"that which we have seen and heard we proclaim also to you, so that you too may have fellowship with us; and indeed our fellowship is with the Father and with his Son Jesus Christ."*
+
+The structural statement of fellowship's two-level architecture: horizontal fellowship among believers is grounded in and participates in vertical fellowship with the Father and Son. The proclamation creates horizontal fellowship; that horizontal fellowship is itself a participation in the divine fellowship. The purpose of apostolic proclamation is fellowship-creation — not knowledge-transmission but participation-invitation. (OBS-062-056)
+
+**Group 873-002 — Horizontal fellowship among believers**
+
+**2Cor 6:14** — *"Do not be unequally yoked with unbelievers. For what partnership has righteousness with lawlessness? Or what fellowship has light with darkness?"*
+
+The incompatibility statement: fellowship cannot exist across structural inner-being incompatibility. Righteousness and lawlessness cannot produce genuine koinōnia — the inner orientations are structurally antithetical. The verse establishes the boundary-condition of fellowship: what is held in common must be genuinely held in common; incompatible inner orientations cannot produce the common-ness that koinōnia requires. (OBS-062-057)
+
+---
+
+### G2844 — koinōnos / participant
+
+**Group 5367-001 — Inner-spiritual participation as sharer in divine nature**
+
+**2Pe 1:4** — *"by which he has granted to us his precious and very great promises, so that through them you may become partakers of the divine nature, having escaped from the corruption that is in the world because of sinful desire."*
+
+The ontological maximum of fellowship: partakers (koinōnoi) of the divine nature. The path: divine promises → escape from corruption driven by sinful desire → participation in divine nature. The inner-being movement is from corruption-state through transformation to participation in what God is. Fellowship here is not with God across a relational distance but in God's nature — sharing in what God is by becoming participant in it. (OBS-062-058)
+
+**Group 5367-002 — Moral alignment through participation**
+
+**Mat 23:30** — *"saying, 'If we had lived in the days of our fathers, we would not have taken part with them in shedding the blood of the prophets.'"*
+
+The claim of non-complicity uses fellowship vocabulary: "have taken part with" (ekoinōnēsamen). Moral participation in evil is named as fellowship. The irony: those who deny participation are convicted of it by their current rejection of Christ. The verse establishes that koinōnia is the vocabulary of moral co-responsibility — to participate in an act is to be in fellowship with it morally. (OBS-062-059)
+
+---
+
+### Chapter 4 — Language
+
+**registry_id:** 62
+**author:** claude_ai
+**source_file:** wa-obslog-ro62-fellowship-sb-v1-20260428.md
+
+**The compression of "fellowship."** The English word "fellowship" functions in contemporary usage primarily as a warm relational term — shared social life, community gathering. Scripture's fellowship vocabulary spans radically different inner-being registers that this single English word cannot distinguish: the modest commercial partnership of Luk 5:10 (fishing partners), the existential fellowship of being-among-the-living (Ecc 9:4), the wounding-fellowship of Pro 20:30 and Isa 53:5, and the ontological participation in divine nature of 2Pe 1:4. None of these connections are visible to English readers who encounter only "fellowship." (Q&A-044, OBS-062-026)
+
+**The invisible root meaning of koinōnia.** The Greek koinōnia is literally "the-common-ness" — it comes from koinos (common, shared). Fellowship (koinōnia) in its Greek form always raises the question: what is held in common? The common thing defines the fellowship. For divine nature participation (2Pe 1:4), what is held in common is the divine nature itself. For fellowship of suffering (Phili 3:10), it is the suffering and comfort of Christ. For covenantal companionship (Mal 2:14), it is the covenant bond. For moral complicity (Mat 23:30), it is the moral act. English "fellowship" obscures this analytical precision entirely. (Q&A-044, OBS-062-017)
+
+**The wound as fellowship vocabulary.** English readers do not recognise "wound" or "bruise" as fellowship vocabulary. The Hebrew chavar root family spans both companionship (H2270 — companion) and wound (H2250 — bruise, stripe) — both derived from the same root logic of joining. A wound joins the force of the blow to the body; the mark it leaves is a joining that persists. Pro 20:30 and Isa 53:5 use wound vocabulary in full inner-being registers that have nothing to do with social fellowship — but that are lexically grounded in the same root. This connection is entirely inaccessible to English readers. (Q&A-044, OBS-062-006)
+
+**The stem diversity of H2266 and what it carries.** The chavar verb has five distinct grammatical stems, each carrying a different inner-being emphasis. The Hithpael ("join oneself to, make alliance") is the most inner-being significant: it names the reflexive volitional act of self-joining — the person joins themselves to the object of fellowship. This stem is critical for understanding the volitional dimension of fellowship. The Pual passive ("be allied, be joined") describes the completed state of having been joined — important for Hos 4:17 ("Ephraim is joined" — passive, describing a fixed condition). English translations do not distinguish these stems. (Q&A-045, OBS-062-007)
+
+**The LSJ gap.** Both Greek terms lack parsed LSJ data in this registry. The classical Greek register of koinōnia — which was a term for civic and philosophical community, business partnership, and shared life in the polis — is not accessible from this session's data. This is noted as an ongoing data gap: the classical background of koinōnia, which would illuminate how the NT writers used a familiar Hellenistic term in new theological contexts, cannot be drawn upon here. (OBS-062-017)
+
+**"Partner" and "partaker" flattening.** English translations of G2844 often use "partner" (Phile 17, Phili 1:5, Luk 5:10, 2Cor 8:23) or "partaker" (2Pe 1:4, 1Pe 5:1). "Partner" carries primarily commercial or ministerial connotation in contemporary English; "partaker" is archaic. Neither carries the weight of the Greek: one who shares-in, one who participates-in, one who holds-in-common-with. The inner-being significance of G2844 — that the koinōnos genuinely shares in the reality of what is fellowship-with — is attenuated by these English choices. (Q&A-044, OBS-062-018)
+
+---
+
+### Chapter 5 — Interrelationships
+
+**registry_id:** 62
+**author:** claude_ai
+**source_file:** wa-obslog-ro62-fellowship-sb-v1-20260428.md
+
+**Confirmed connections** (supported by correlation signals):
+
+**R43 Desire — 6 shared verses (strongest co-occurrence signal).**
+Connection type: verse co-occurrence (6 shared verses). The 6-verse overlap between fellowship and desire is the strongest cross-registry signal and points toward desire as the inner motivating state shaping fellowship direction. The relational alignments that fellowship describes — toward God (Psa 119:63), toward wickedness (Isa 1:23), toward idols (Hos 4:17) — each presuppose an inner desire-orientation directing the fellowship. The correlation signal is confirmed but the precise nature of the desire-fellowship relationship requires Session D investigation. (OBS-062-028, SP-062-001)
+
+**R167 Unity — 3 shared verses.**
+Connection type: verse co-occurrence. Unity (oneness) as outcome of fellowship (shared participation). The chavar root's joining-into-one (Eze 37:19 — "make them one stick") provides the Hebrew lexical ground for this connection. Fellowship produces unity as its corporate expression. (OBS-062-029)
+
+**R184 Spirit — 3 shared verses.**
+Connection type: verse co-occurrence. The fellowship of the Spirit (2Cor 13:14 — "the fellowship of the Holy Spirit be with you all") is the most distinctively NT formulation of koinōnia. The Spirit mediates the fellowship between believers and the divine. (OBS-062-030)
+
+**R192 Comfort — 3 shared verses.**
+Connection type: verse co-occurrence. 2Cor 1:7 establishes the structural connection: "as you share in our sufferings, you will also share in our comfort." Shared suffering → shared comfort is a fellowship mechanism — the participatory vocabulary links suffering and comfort as two aspects of the same shared participation. (OBS-062-031)
+
+**R30 Contrition and R151 Sorrow — shared anchor at Isa 53:5.**
+Connection type: shared anchor. The wounding vocabulary of H2250 (chavarburotav — his wounds) in Isa 53:5 anchors simultaneously in fellowship (Transformation group), contrition (R30), and sorrow (R151). The three-way anchoring at a single verse is analytically significant: fellowship, contrition, and sorrow are held in the same textual moment. The servant's wounds are the vehicle through which all three inner-being realities are expressed. (OBS-062-032, SP-062-002, SP-062-004)
+
+**R180 Yielding — shared anchor at 2Pe 1:4.**
+Connection type: shared anchor. 2Pe 1:4 is anchored in both fellowship (5367-001 — divine nature participation) and yielding (R180). The verse's "escape from the corruption that is in the world because of sinful desire" points toward an inner-being act of yielding as the prerequisite for divine nature participation — the escape from sinful desire may be what yielding names as an active inner disposition. (OBS-062-033, SP-062-008)
+
+**R209 Likeness and R210 Deadness — shared anchor at Phili 3:10.**
+Connection type: shared anchor. Phili 3:10's "becoming like him in his death" links fellowship (873-001 — sharing Christ's sufferings), likeness/conformity (R209), and deadness/mortification (R210). The suffering-conformity-death trajectory of koinōnia connects these three registries at a single verse. (OBS-062-033)
+
+**Inferential connections** (analytically plausible but not confirmed by correlation signal):
+
+**R34 Covenant.**
+Connection type: shared anchor at Mal 2:14 (single verse — insufficient for co-occurrence threshold; shared anchor confirmed). Mal 2:14 holds covenant (berith) and companionship (chaveret — fellowship vocabulary) in explicit relation: the wife is "your companion and your wife by covenant." The verse suggests that covenant and fellowship name two dimensions of the same bond — covenant as legal form, fellowship as inner participatory reality. DIM-62-SD001 proposed this structural relationship explicitly.
+`Inferential — shared anchor only. Confirmation would require: co-occurrence signal showing fellowship and covenant vocabulary co-occurring at three or more verses.` (SP-062-007, OBS-062-054)
+
+**R150 Sorcery.**
+Connection type: shared anchor at Isa 47:9. The enchantment vocabulary of H2267 (spell/charmer) anchors in both fellowship (occult charming group) and sorcery (R150). The dark-alliance valence of the chavar root — joining to magical power — is the semantic connection.
+`Inferential — shared anchor only. Confirmation would require: co-occurrence signal at three or more verses or dedicated semantic comparative analysis.` (OBS-062-035, SP-062-003)
+
+---
+
+---
+
+## 064 — Forgiveness
+
+**Status:** Analysis Complete  ·  **Dimension review:** Complete  ·  **Verse Context:** Complete
+
+> Forgiveness is the release of a legitimate claim against someone who has wronged you — the decision not to hold the debt against them, to cancel the account of injury. The Hebrew and Greek vocabulary covers sending away, releasing, covering over. Forgiveness in Scripture is consistently modelled on what God does: he forgives by genuinely releasing the debt, not by pretending the wrong did not happen. Human forgiveness is called for as a response to having been forgiven, and its absence poisons the inner life of the one who withholds it.
+
+### Chapter 1 — Meaning
+
+The forgiveness vocabulary in Scripture is built on two distinct root families that together cover the full semantic range of the act. The Hebrew salach root (H5545 — *sā·laḥ*, verb; H5546 — *sal·lāḥ*, adjective; H5547 — *sə·lî·ḥāh*, noun) comprises three grammatical forms naming the act of forgiving, the character of being forgiving, and forgiveness as an abstract quality respectively. This Hebrew root occupies a restricted lexical space: it is used exclusively of God in the Old Testament — no human subject ever forgives with the salach root (OBS-064-003). This is not a theological inference but a lexical datum. When human forgiveness appears in the Hebrew text, it draws on other vocabulary (nasa — to lift/carry; kaphar — to cover). The salach root belongs uniquely to the divine (Q&A-004, Q&A-086).
+
+The Greek vocabulary introduces a different structure. The root is *aphiēmi* (G0863), a compound of *apo* (away from) and *hiēmi* (to send, let go). The physical image in the root is the releasing of a hold — something previously grasped is sent away (Q&A-086). This verb operates across a wide semantic range: releasing a debt-claim, releasing attachment to family or possessions, releasing a barrier to permit access. The programme registers these under three sub-entries (G0863G — to release: leave; G0863H — to release: forgive; G0863I — to release: permit). The abstract noun *afesis* (G0859) names the resulting state — the condition of having been released, most frequently in the NT phrase "forgiveness of sins" (*aphesis hamartiōn*) (OBS-064-005, Q&A-086).
+
+What the English word "forgive" conceals is that the Hebrew and Greek vocabularies operate differently at the level of semantic restriction. Hebrew sa.lach is exclusively a divine act; Greek aphiēmi is used for both God's act of forgiving and the commanded human act of forgiving (Mat 18:35, Luk 17:3-4). The New Testament's use of the same verb for both divine and human forgiveness is not lexical looseness — it is a structural claim: human forgiveness is an act structurally shaped by divine forgiveness (OBS-064-006, Q&A-004).
+
+The semantic range covered by the registry is broader than "forgiveness" in the modern English sense. It includes: the act of releasing a guilt-debt (H5545, G0863H, G0859); the dispositional readiness to forgive as a character attribute (H5546); forgiveness as an abstract quality possessed by God (H5547); the act of releasing attachments for a higher loyalty (G0863G); and the act of granting or withholding access (G0863I). The unifying inner logic across all these senses is the releasing of a hold — whether the thing held is a debt-claim, a relational attachment, or a permission-barrier (Q&A-035).
+
+The three Hebrew grammatical forms deserve notice. The verb sa.lach describes the act. The adjective sal.lach — appearing only once in the OT (Psa 86:5) — names the dispositional character: "you, O Lord, are good and forgiving, abounding in steadfast love to all who call upon you." This adjective places forgiveness-readiness as a co-equal attribute alongside goodness and steadfast love (OBS-064-019, Q&A-012). The noun se.li.chah (Psa 130:4; Dan 9:9; Neh 9:17) names forgiveness as a divine possession — "with you there is forgiveness" — an abstract quality that resides with God (OBS-064-020). Together these three forms name the same reality from three angles: what God does (act), what kind of being God is (disposition), and what God has (possession).
+
+Cross-testament development: the LXX applied the Greek aphiēmi/afesis family to render OT forgiveness vocabulary, and the NT continues this rendering — but extends the same vocabulary to commanded human practice. This is the lexical bridge that makes the NT command to forgive (using aphiēmi) intelligible within the OT framework. The NT uses a linguistically unified vocabulary for divine and human forgiveness where the OT used distinct vocabularies — not to collapse the difference between divine and human forgiveness, but to name human forgiveness as structurally shaped by the divine (OBS-064-006, Q&A-088).
+
+
+---
+
+### Chapter 2 — How It Works
+
+Forgiveness operates through four distinct modes in the corpus, each with its own inner-being grammar (Q&A-017).
+
+The first mode is covenantal-objective. The Old Testament cultic corpus (H5545, group 5379-001) presents forgiveness as the guaranteed outcome of correct ritual procedure: sacrifice offered, atonement made, forgiveness declared — "and they shall be forgiven" (Lev 4:20). The inner-being state of the worshipper is not named as a prerequisite. The mechanism is external; the outcome is forensic; the worshipper receives the declared status through participation in the prescribed ritual. What this reveals: forgiveness is an act with structural prerequisites, and when those prerequisites are met, it is not withheld (OBS-064-014, Q&A-005).
+
+The second mode is divine relational-personal. The New Testament forgiveness pronouncements name forgiveness as a personal declaratory act: "your sins are forgiven you" (Luk 7:47-48). Here inner-being access-postures appear — faith (Act 10:43), repentance (Act 2:38), confession (1Jo 1:9). These are not merit-conditions but access-postures: they name the inner orientation through which forgiveness is received, not the basis on which it is earned. The basis remains God's character and the atoning blood of Christ (Eph 1:7) (OBS-064-022, Q&A-006, Q&A-028).
+
+The third mode is human horizontal. Commanded human forgiveness (G0863H group 5377-002; Mat 18:35; Luk 17:3-4) is the release of an inner claim against an offender, required "from your heart." The heart-locus requirement distinguishes the inner-being act — heart-level release of the claim — from its outer form of verbal declaration. Forgiveness is commanded and can be willed, but its genuineness requires the deeper inner-being engagement. Verbal forgiveness without heart-level release is insufficient in God's assessment (OBS-064-031, Q&A-060).
+
+The fourth mode is intercessory. Group 5379-002 covers seeking forgiveness on behalf of others — Daniel's prayer (Dan 9:19), Moses' intercession (Num 14:19). The intercessory mode requires the posture of dependence: the intercessor appeals not to the community's merit but to God's own character and covenant. "For your own sake, O my God" — the appeal is to what God is, not to what the community deserves (OBS-064-016, Q&A-017).
+
+These four modes are layered, not independent. The intercessory mode assumes the covenantal-objective; the horizontal human mode assumes the relational-personal received. Mat 18:35 implies that genuine human forgiveness is grounded in recognising the magnitude of what one has received from God (Q&A-017).
+
+What forgiveness produces in the inner being: two downstream inner states are directly named. Love (agapē): Luk 7:47 establishes a quantity-proportional causal chain — forgiveness received generates love-orientation in direct proportion to the forgiveness received: "she loved much because she was forgiven much; he who is forgiven little loves little" (OBS-064-029, Q&A-010, Q&A-018). Reverential fear: Psa 130:4 establishes that encountering divine forgiveness-as-quality produces awe rather than presumption — "there is forgiveness with you, that you may be feared" (OBS-064-020, Q&A-004). The two downstream states arise in different contexts: love from having personally received forgiveness; reverential fear from encountering the existence of forgiveness as a divine quality (OBS-064-021).
+
+Beyond these named states, forgiveness enables a series of further inner acts: direct knowledge of God (Jer 31:34 — forgiveness removes the barrier to knowing God directly), right worship (Mat 5:24 — reconciliation/forgiveness enables the offering to be made), and the capacity to extend forgiveness to others (Mat 18:35 structural logic) (OBS-064-017, OBS-064-028, Q&A-009, Q&A-025).
+
+The vertical-horizontal interdependence is among the most structurally developed features of this registry. God's forgiveness is both the model and the enabling condition for human forgiveness. The one who genuinely receives divine forgiveness is being formed into one who can extend human forgiveness; the one who refuses to extend forgiveness calls into question whether the divine forgiveness was genuinely received at the heart level. This is not merely an ethical requirement but a relational ontology — the forgiven-unforgiver is a self-contradictory inner-being position with structural consequences (Mat 18:35; Mat 6:14-15) (OBS-064-032, Q&A-003).
+
+Forgiveness is not a terminal inner-being state. The verse evidence consistently positions it as transitional: it removes a prior condition (guilt, broken standing) and generates further inner states (love, reverence, knowledge, capacity to worship). Jer 31:34 adds permanent structural character — "I will remember their sin no more" — producing both a stable relational condition and a generative basis from which further inner states arise (OBS-064-017, Q&A-014).
+
+The inner-being cost of forgiveness for the giver: a legitimate claim is cancelled, meaning the offended party absorbs the cost of the wrong rather than extracting payment. The divine cost is most explicit: Christ's blood as the mechanism (Eph 1:7; Heb 9:22) names suffering on the Forgiver's side. In the human horizontal mode, Mat 18:27 presents visceral compassion (*splagchnizomai*) as the felt inner precondition of the act — the body's gut-response as the origin-point of the forgiving decision (OBS-064-022, Q&A-049).
+
+
+---
+
+### Chapter 3 — Verses
+
+_Verse Evidence_
+
+All 14 anchor verses read in Unit 7. Presented group by group.
+
+**H5545 — Group 5379-001 — anchor: Lev 4:20**
+"Thus shall he do with the bull... and the priest shall make atonement for them, and they shall be forgiven."
+The formulaic atonement structure. The Niphal passive ("they shall be forgiven") positions the worshipper as receiver. No inner-being prerequisite named. Forgiveness is a declared status-change, not an inner event of the worshipper — the atonement produces it externally. This covenantal-objective mode is structurally prior to all inner-being analysis of forgiveness: the act can precede named inner engagement. (OBS-064-014, Q&A-067)
+
+Supporting verses: Lev 5:18 — unintentional sin receives the same formulaic forgiveness, establishing that atonement covers the full range of culpable wrongdoing. Num 15:25-26 — corporate forgiveness declared as outcome of community participation in the ritual. The scope: individual and community, intentional and unintentional.
+
+**H5545 — Group 5379-002 — anchor: Dan 9:19**
+"O Lord, hear; O Lord, forgive. O Lord, pay attention and act. Delay not, for your own sake, O my God, because your city and your people are called by your name."
+Three urgent imperatives. The grounds of the plea: God's own name and the people's identity as his — not the community's merit. This models the inner posture of intercession: urgency without merit-claim, grounded entirely in God's character. The appeal "for your own sake" is the deepest inner grammar of the intercessory plea: God's own glory and covenant consistency are the grounds. (OBS-064-015, OBS-064-016, Q&A-068)
+
+Supporting verses: Num 14:19 — Moses grounds the plea in the greatness of God's steadfast love and the precedent of prior forgiveness. Psa 25:11 — acknowledgment of great guilt combined with appeal to God's name. The pattern: guilt named honestly, appeal made on the basis of God's character rather than the petitioner's condition.
+
+**H5545 — Group 5379-003 — anchor: Jer 31:34**
+"I will forgive their iniquity, and I will remember their sin no more."
+The most theologically concentrated verse. Three new-covenant elements joined: direct universal knowledge of God (no longer mediated), forgiveness of iniquity, and cognitive cessation — "remember no more." The "remember no more" clause names a juridical-cognitive act: God's commitment to cease treating the sin as the basis of the relationship. Forgiveness here is not periodic renewal but permanent new-covenant condition. Three registries share this anchor (guilt, love, thought/knowledge) — their convergence at this verse identifies a structural inner-being cluster within the new covenant promise. (OBS-064-017, OBS-064-018, Q&A-058, Q&A-069)
+
+Supporting verses: 2Ch 7:14 — "if my people... humble themselves, and pray and seek my face and turn from their wicked ways, then I will hear from heaven and will forgive their sin." Inner-being prerequisites named in this verse: humility, prayer, seeking God, turning. Psa 103:3 — "who forgives all your iniquity, who heals all your diseases." The forgiveness-healing pairing in praise — inner-being restoration placed first, bodily restoration following.
+
+**H5546 — Group 5380-001 — anchor: Psa 86:5**
+"For you, O Lord, are good and forgiving, abounding in steadfast love to all who call upon you."
+The only OT occurrence of the adjectival sal.lach. Three divine attributes in apposition: good, forgiving, abounding in hesed. The adjective names the dispositional readiness — what God is — not merely what God does. The universal access condition: "all who call upon you." God's forgiveness-readiness is not selective by person but is bounded by calling. The triad places forgiveness-disposition co-equal with goodness and steadfast love as essential divine character. (OBS-064-019, Q&A-070)
+
+**H5547 — Group 880-001 — anchor: Psa 130:4**
+"But with you there is forgiveness, that you may be feared."
+The counterintuitive verse: divine forgiveness produces reverential fear, not presumption. The noun se.li.chah names forgiveness as a divine possession — it resides with God. The Psalm's movement (De Profundis): from the depths of guilt-experience → recognition that forgiveness belongs to God → reverence → hope. The inner-being trajectory shows that genuine encounter with the availability of divine forgiveness does not embolden the sinner but moves them to awe. The fear named is reverential fear — the response to standing before One whose capacity to pardon is absolute. (OBS-064-020, OBS-064-021, Q&A-071)
+
+Supporting verses: Dan 9:9 — "to the Lord our God belong mercy and forgiveness, for we have rebelled against him." The asymmetry named explicitly: the community's record is rebellion; God's possession is forgiveness and mercy. The prayer rests on this asymmetry. Neh 9:17 — forgiveness-readiness placed within the full cluster of divine relational character attributes.
+
+**G0859 — Group 879-001 — anchor: Eph 1:7**
+"In him we have redemption through his blood, the forgiveness of our trespasses, according to the riches of his grace."
+The theological architecture: grace (upstream source-disposition) → blood (atoning mechanism) → redemption + forgiveness (paired outcomes). "According to the riches of his grace" governs both the act and its sufficiency — grace determines the standard. Redemption (release from bondage) and forgiveness (release from guilt) named as twin aspects of the same event. Together they describe comprehensive liberation: from bondage-condition and from guilt-standing. (OBS-064-022, OBS-064-023, Q&A-061)
+
+Supporting verses: Act 2:38 — "repent and be baptized... for the forgiveness of your sins, and you will receive the gift of the Holy Spirit." Forgiveness and Spirit-gift presented together; the received state opens immediately into further transformation. Act 26:18 — the conversion sequence: forgiveness as mid-sequence state (after turning, before sanctification) confirming its transitional rather than terminal character. (Q&A-083)
+
+**G0859 — Group 879-002 — anchor: Mar 3:29**
+"Whoever blasphemes against the Holy Spirit never has forgiveness, but is guilty of an eternal sin."
+The outer structural limit. "Never has forgiveness" is categorical and permanent. "Guilty of an eternal sin" — ongoing, unresolvable guilt as the permanent condition. The verse defines forgiveness's absolute limit by naming the one condition in which it is permanently inaccessible. The structural contrast: the normal human condition — even in guilt — is an open state (forgiveness remains possible); blasphemy against the Spirit closes that state permanently. The nature of the inner-being condition that produces this closure is a Session D question (DIM-064-SD018). (OBS-064-024, OBS-064-025, Q&A-073)
+
+Supporting verses: Heb 9:22 — "without the shedding of blood there is no forgiveness of sins." The necessary-condition statement: blood as the required mechanism, bridging OT and NT. Heb 10:18 — where forgiveness is secured through Christ's sacrifice, the sacrificial system has served its purpose; the OT cultic mode is declared complete.
+
+**G0863G — Group 5376-001 — anchor: Mar 10:29**
+"There is no one who has left house or brothers or sisters or mother or father or children or lands, for my sake and for the gospel."
+The discipleship-leaving vocabulary. The same aphiēmi that releases a debt-claim releases family and property. The inner-being act: priority-reordering — releasing what is legitimately held when a higher claim asserts itself. The volitional character is explicit: leaving is a choice, motivated by the call. (OBS-064-026, Q&A-074)
+
+**G0863G — Group 5376-002 — anchor: Rev 2:4**
+"You have abandoned the love you had at first."
+The wrong release. Aphiēmi applied to love names wrongful abandonment — releasing what should be held. The Ephesian church maintains orthodox practice while abandoning the inner-being disposition of love. This names a failure mode: the act-structure of releasing can produce wrong results when the object released is a relational bond rather than a debt-claim. The inverse of forgiveness: forgiveness is the right release of a claim; this is the wrong release of a bond. (OBS-064-027, Q&A-075)
+
+**G0863G — Group 5376-003 — anchor: Mat 5:24**
+"Leave your gift there before the altar and go. First be reconciled to your brother, and then come and offer your gift."
+The inner-being ordering principle: horizontal relationship has structural priority over vertical religious act when the horizontal relationship is broken. The leaving-act (aphiēmi — leave your gift) is commanded to enable reconciliation. Forgiveness/reconciliation is prerequisite for right worship — not because God values human reconciliation more than worship, but because unreconciled horizontal relationships are incompatible with the inner posture of vertical worship. New SD pointer raised: SP-064-001. (OBS-064-028, Q&A-076, SP-064-001)
+
+**G0863H — Group 5377-001 — anchor: Luk 7:47**
+"Her sins, which are many, are forgiven — for she loved much. But he who is forgiven little, loves little."
+The highest inner-being density verse in the registry. The causal chain explicitly stated: forgiveness received → love produced, in quantity-proportional relationship. The woman's somatic acts (weeping, anointing) are the bodily evidence of her inner transformation — the body as the surface on which the inner state becomes visible. The causal direction is unambiguous: not she loved therefore she was forgiven, but she was forgiven therefore she loved. Love is the evidence of prior forgiveness, not its cause. (OBS-064-029, OBS-064-030, Q&A-059, Q&A-077)
+
+**G0863H — Group 5377-002 — anchor: Mat 18:35**
+"So also my heavenly Father will do to every one of you, if you do not forgive your brother from your heart."
+The heart-locus requirement. Heart-level release distinguishes genuine forgiveness from verbal declaration. The parable establishes the structural incoherence of the forgiven-unforgiver position: occupying the position of one who has received enormous forgiveness while refusing to extend it is internally contradictory, with structural consequences. The forgiveness revoked in the parable is not punishment imposed from outside but the consequence of the structural position the servant has chosen. (OBS-064-031, OBS-064-032, Q&A-060, Q&A-078)
+
+**G0863I — Group 5378-001 — anchor: Mar 10:14**
+"Let the children come to me; do not hinder them, for to such belongs the kingdom of God."
+The permit-meaning as inner posture: non-obstruction, welcome, receptivity. Jesus' indignation at the disciples' hindering names the kingdom-values posture that welcome represents. Permitting access is a relational orientation, not merely a practical decision. (OBS-064-033, Q&A-079)
+
+**G0863I — Group 5378-002 — anchor: Mat 23:13**
+"You shut the kingdom of heaven in people's faces. For you neither enter yourselves nor allow those who would enter to go in."
+The obstruction failure. Not-permitting (negative aphiēmi) as the moral character failure of the Pharisees — religious authority used to close rather than open. The inverse of the kingdom-welcome posture commanded in Mar 10:14. Both verses use aphiēmi in the permit-meaning; together they define the moral character spectrum from open welcome to closed obstruction. (OBS-064-034, Q&A-080)
+
+
+---
+
+### Chapter 4 — Language
+
+The English word "forgive" carries its meaning quietly — it does not announce what it is covering or how much it is concealing. Several translational losses are significant for understanding what Scripture actually says (Q&A-090).
+
+**The divine-exclusivity loss.** Hebrew sa.lach is exclusively a divine subject verb. English "forgive" is used freely for both God and humans, making the OT lexical restriction invisible. The Christological weight of Mar 2:7 — "who can forgive sins but God alone?" — is only fully felt when the reader knows that the OT salach root was exclusively divine. Jesus' claim to forgive sins is not simply remarkable; within the OT lexical framework it is a claim to operate in a category that belongs to God alone (OBS-064-003, Q&A-090).
+
+**The shared-root loss.** English readers encounter three distinct vocabulary fields in the NT: "forgive" (Luk 7:47), "leave" (Mar 10:29), "permit" (Mar 10:14). In the Greek these are all *aphiēmi* — the same root, the same act-structure of releasing a hold. The discipleship-leaving vocabulary (G0863G) and the forgiveness vocabulary (G0863H) share the same root because they share the same inner logic: releasing what is legitimately held when a higher claim asserts itself (OBS-064-004, OBS-064-026, Q&A-035). English translation severs this connection entirely. The reader who encounters "leave your nets" and "forgive your brother from your heart" does not see that both commands engage the same releasing-act.
+
+**The act-vs-state loss.** Greek distinguishes the verb afiēmi (the act of releasing) from the noun afesis (the state of having been released). English compresses both into "forgive/forgiveness." Theologically this matters: afesis names what the person now is (released from the claim), not merely what was done to them. The NT phrase "forgiveness of sins" names a condition received, not just a transaction completed (OBS-064-005, Q&A-090).
+
+**The dispositional form.** Hebrew sal.lach (Psa 86:5) names forgiveness as a character attribute — God is forgiving, not merely God forgives. The adjectival form appears only once in the OT, placed in apposition with "good" and "abounding in steadfast love." English can distinguish "forgiving" (adjective) from "forgives" (verb), but the weight of a unique adjectival form in a tightly constructed praise-statement requires knowing the lexical scarcity to register its significance (OBS-064-019, Q&A-012).
+
+**The "remember no more" construction.** Jer 31:34 — "I will remember their sin no more" — uses a Hebrew formulation denoting cessation of a cognitive act. This is not forgetfulness (God does not lose knowledge) but the covenantal commitment to cease treating the sin as the basis of the relationship — a juridical cessation of the remembering-act. English "no more" captures something of this, but the construction may read as a cognitive impossibility rather than a volitional covenantal commitment. Forgiveness in this register changes the cognitive landscape of the relationship: the debt is not merely cancelled but rendered permanently non-chargeable (OBS-064-017, Q&A-090).
+
+**The heart requirement.** Mat 18:35 — "from your heart" (*ek tēs kardias*). The Greek *kardia* (and its Hebrew background *lēb*) names the centre of the whole inner person — cognitive, volitional, affective. English "heart" has been emotionalised by cultural usage; the biblical *kardia* is more comprehensive and more central. "From your heart" means from the centre of the inner being, not merely from the level of feeling. This distinction matters for understanding what genuine forgiveness requires (OBS-064-031, Q&A-022).
+
+**Somatic language.** The forgiveness vocabulary itself carries no direct somatic terms — no organ named as the physical seat of the act. The somatic dimension appears in three locations: the mechanism (Christ's blood — Eph 1:7, Heb 9:22; the physical body as the site of the atoning act); the precondition (visceral compassion — *splagchnizomai* — Mat 18:27; the gut-response as the felt origin of the forgiving decision); and the downstream expression (the woman of Luk 7:47 weeping and anointing — the body as the surface on which inner transformation becomes visible). Forgiveness works through and upon the whole body without being seated in any particular organ (OBS-064-030, OBS-064-022, Q&A-054, Q&A-022).
+
+
+---
+
+### Chapter 5 — Interrelationships
+
+### Confirmed Connections
+
+**Guilt (073) — 51 shared verses — HIGH signal**
+The primary structural counterpart. Guilt names the inner-being condition (accumulated moral debt, the claim registered against the person) that forgiveness directly addresses. The two registries together describe the complete cycle of the forgiveness transaction: guilt as the prior state, forgiveness as the act of cancellation, released-from-guilt as the resulting state. Jer 31:34 is a shared anchor: "I will forgive their iniquity, and I will remember their sin no more" — forgiveness and the removal of the guilt-state named together. The connection type is structural-definitional: these two registries are counterparts by the nature of what they name. Session D must examine whether they constitute a single inner-being cluster requiring joint analysis (OBS-064-011, OBS-064-018, Q&A-101).
+
+**Mercy/hesed (111) — 15 shared verses; shared anchor Lev 4:20 — MEDIUM-HIGH signal**
+Mercy as the dispositional ground from which forgiveness flows. Psa 86:5 places sal.lach (forgiving) in direct apposition with *hesed* (steadfast love/mercy) as co-equal divine character attributes. Lev 4:20 is shared with mercy at the cultic atonement level — mercy is operative in the forgiveness-through-atonement structure. The connection type: shared divine attribute cluster; mercy as the relational disposition, forgiveness as the specific relational act that mercy generates (OBS-064-019, Q&A-100; DIM-064-SD016).
+
+**Repentance (135) — 12 shared verses — MEDIUM signal**
+Repentance as the human access-posture for NT forgiveness. Mar 1:4, Luk 24:47, Act 2:38, Act 5:31 — the NT consistently pairs the two. Repentance and forgiveness are structurally sequential: the inner turn (repentance) precedes or accompanies the received state (forgiveness). The connection type: sequential access-posture to received state. Whether the relationship is causal or concomitant is a Session D question (DIM-064-SD003) (Q&A-105).
+
+**Faith (059) — 9 shared verses — MEDIUM signal**
+Faith as the NT instrument of access. Act 10:43: "everyone who believes in him receives forgiveness." The connection type: access-instrument to received state, parallel to repentance-forgiveness. Whether faith is necessary inner-being precondition or concomitant posture is a Session D question (DIM-064-SD020) (Q&A-106).
+
+**Love (103) — 8 shared verses; shared anchor Jer 31:34 — MEDIUM signal**
+Love as the primary named downstream state of received forgiveness. Luk 7:47: the causal chain stated explicitly and quantity-proportionally. Jer 31:34 shared anchor connects forgiveness and love within the new covenant promise. The connection type: causal-generative; forgiveness operates as an inner-being generator of love-orientation (OBS-064-029, Q&A-018, Q&A-100; DIM-064-SD011).
+
+**Authority (197) — 9 shared verses — MEDIUM signal**
+Authority as the structural framework of divine forgiveness. Mar 2:7 — "who can forgive sins but God alone?" places forgiveness within the authority-claim. The Synoptic forgiveness pronouncements are simultaneously forgiveness-acts and authority-demonstrations. The connection type: forgiveness as the expression and evidence of divine authority (Q&A-103; DIM-064-SD007).
+
+**Reconciliation (130) — shared anchor Mat 5:24**
+Mat 5:24 commands leaving an offering to be reconciled before returning to offer it. The shared anchor confirms the structural link: forgiveness enables the relational restoration that reconciliation names. The connection type: forgiveness as the inner-being act that opens the space for reconciliation (OBS-064-028, SP-064-001, Q&A-100).
+
+**Grace (068) — confirmed by verse evidence Eph 1:7 and dimension overlap**
+Eph 1:7: "according to the riches of his grace" — grace is the upstream source-disposition from which forgiveness flows. The connection type: grace as dispositional source, forgiveness as specific relational act derived from the disposition. Session D must examine whether grace consistently occupies the upstream position relative to forgiveness and other specific relational acts (OBS-064-022, Q&A-100; DIM-064-SD017).
+
+### Inferential Connections
+
+**Compassion (023) — 4 shared verses**
+Mat 18:27: the master forgave "out of pity" (*splagchnizomai* — visceral compassion). Compassion appears as a felt inner precondition of the specific forgiving act in the parable. Whether compassion is a necessary structural precondition of forgiveness or one pathway among several cannot be determined within this registry alone. *Inferential — 4 shared verses confirm co-occurrence. Confirmation would require the compassion corpus to show whether splagchnizomai is systematically named as a precondition of forgiving acts* (DIM-064-SD002).
+
+**Sin (147) — 5 shared verses; shared anchor Mar 3:29**
+Sin and forgiveness are terminologically inseparable in the NT phrase "forgiveness of sins." The sin registry addresses the condition that forgiveness releases. Mar 3:29 (shared anchor with sin) names the unforgivable sin as the permanent exception. The relationship is structural and definitional. *The co-occurrence confirms intersection; the structural relationship is inferential pending the sin corpus being read alongside this one.*
+
+**Desire (043) — 6 shared verses**
+The G0863G discipleship-leaving groups share verses with desire where earthly attachments are released for kingdom-loyalty. DIM-064-SD021 asks whether releasing desire (for vindication, for the satisfaction of a retained grievance) is a dimension of the forgiveness-act. *Inferential — the co-occurrence likely reflects the discipleship-leaving vocabulary. Confirmation would require the desire corpus to address desire-release as a component of forgiving* (DIM-064-SD021).
+
 
 ---
 
