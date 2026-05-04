@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-05-04T06:35:12Z",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_terms": 50,
+  "dim": 384,
+  "max_verses_per_term": 30,
+  "seed": 20260504,
+  "doc_fields": [
+    "reference",
+    "target_word",
+    "verse_context_group.context_description (if classified)",
+    "verse_text (fallback)"
+  ],
+  "normalize": true,
+  "source_db": "database\\bible_research.db"
+}

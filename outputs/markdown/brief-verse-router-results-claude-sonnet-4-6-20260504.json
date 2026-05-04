@@ -1,0 +1,1783 @@
+{
+  "meta": {
+    "generated_at": "2026-05-04T05:06:42Z",
+    "model": "claude-sonnet-4-6",
+    "effort": "medium",
+    "input_file": "outputs/markdown/unclassified-verse-sample-50-verses-20260504.json",
+    "n_verses": 50,
+    "n_decisions": 63,
+    "n_summary": 18,
+    "n_set_aside": 45,
+    "n_error": 0,
+    "tokens": {
+      "input": 106051,
+      "output": 6018,
+      "cache_read": 0,
+      "estimated_cost_usd": 0.4084
+    }
+  },
+  "by_verse": [
+    {
+      "reference": "Jer 23:10",
+      "decisions": [
+        {
+          "verse_record_id": 2897,
+          "mti_term_id": 71,
+          "strong": "H0056",
+          "summary": "The land mourns as a consequence of the curse brought on by widespread adultery and evil conduct.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": "Mourning here is attributed to the land, reflecting communal grief over moral failure."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2306,
+        "output_tokens": 91,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 10:33",
+      "decisions": [
+        {
+          "verse_record_id": 16328,
+          "mti_term_id": 765,
+          "strong": "H1285",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The ark of the covenant here is a physical/ceremonial object leading Israel; no inner-being content engaged."
+        },
+        {
+          "verse_record_id": 79893,
+          "mti_term_id": 2585,
+          "strong": "H4496H",
+          "summary": "The Lord goes before Israel to find them a resting place, indicating provision of peace and settledness for his people.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2336,
+        "output_tokens": 153,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Job 7:10",
+      "decisions": [
+        {
+          "verse_record_id": 219030,
+          "mti_term_id": 6989,
+          "strong": "H4725",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "'place' here refers to a physical/spatial location, not an inner-being characteristic"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1689,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jer 51:51",
+      "decisions": [
+        {
+          "verse_record_id": 6429,
+          "mti_term_id": 313,
+          "strong": "H0954",
+          "summary": "The people are overcome with shame and dishonor because foreigners have desecrated the Lord's sanctuary.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2090,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Heb 1:7",
+      "decisions": [
+        {
+          "verse_record_id": 9958,
+          "mti_term_id": 614,
+          "strong": "G4151H",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Here pneuma means winds/natural forces; angels are described as winds, not referencing inner life."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2289,
+        "output_tokens": 80,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Judg 2:23",
+      "decisions": [
+        {
+          "verse_record_id": 56338,
+          "mti_term_id": 419,
+          "strong": "H5117",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The verb here means 'left/allowed to remain' — a divine action of restraint, not an inner-life window."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1949,
+        "output_tokens": 85,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 30:14",
+      "decisions": [
+        {
+          "verse_record_id": 55874,
+          "mti_term_id": 408,
+          "strong": "H2790B",
+          "summary": "A husband's deliberate silence day after day constitutes chosen acquiescence, ratifying his wife's vows through his inaction.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": "Silence here is a willed relational choice with binding moral consequence, not merely absence of speech."
+        },
+        {
+          "verse_record_id": 45395,
+          "mti_term_id": 1203,
+          "strong": "H8085G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Hearing marks the legal moment triggering the husband's obligation; it functions as a procedural trigger, not an inner-life window."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2024,
+        "output_tokens": 714,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Gen 11:32",
+      "decisions": [
+        {
+          "verse_record_id": 55552,
+          "mti_term_id": 1379,
+          "strong": "H4191",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Records Terah's physical death at 205 years in Haran; no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1773,
+        "output_tokens": 82,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 23:2",
+      "decisions": [
+        {
+          "verse_record_id": 47467,
+          "mti_term_id": 1228,
+          "strong": "H6213A",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Balak simply did what Balaam instructed — external compliance, no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1868,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Psa 37:36",
+      "decisions": [
+        {
+          "verse_record_id": 192466,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "summary": "The psalmist sought the wicked man but could not find him, showing the futility of seeking those who perish.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 1614,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Exo 39:20",
+      "decisions": [
+        {
+          "verse_record_id": 176167,
+          "mti_term_id": 5734,
+          "strong": "H5980",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "'Close/beside' here describes physical positioning of rings on the ephod, not inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2247,
+        "output_tokens": 79,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Gen 9:11",
+      "decisions": [
+        {
+          "verse_record_id": 10279,
+          "mti_term_id": 618,
+          "strong": "H1320",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "'All flesh' here refers to living creatures/humans as physical beings destroyed by flood, not an inner-life quality."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2237,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Lev 13:47",
+      "decisions": [
+        {
+          "verse_record_id": 187923,
+          "mti_term_id": 6080,
+          "strong": "H6593",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Flax/linen is a material fabric; no inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1868,
+        "output_tokens": 74,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jer 9:10",
+      "decisions": [
+        {
+          "verse_record_id": 48221,
+          "mti_term_id": 1235,
+          "strong": "H1980G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Refers to no one passing through the desolated land — external movement/geography"
+        },
+        {
+          "verse_record_id": 169932,
+          "mti_term_id": 5571,
+          "strong": "H5074",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Birds and beasts physically fled the devastated land — no inner-life content"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2169,
+        "output_tokens": 277,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Judg 8:17",
+      "decisions": [
+        {
+          "verse_record_id": 216108,
+          "mti_term_id": 6900,
+          "strong": "H4026M",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Tower refers to a physical structure being demolished, no inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1676,
+        "output_tokens": 73,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Mat 13:54",
+      "decisions": [
+        {
+          "verse_record_id": 60635,
+          "mti_term_id": 684,
+          "strong": "G1411",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The crowd asks about the source of Jesus's mighty works; dunamis here refers to miraculous deeds, not inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2643,
+        "output_tokens": 87,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Luk 12:45",
+      "decisions": [
+        {
+          "verse_record_id": 144032,
+          "mti_term_id": 4804,
+          "strong": "G1401",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The servant's role is social/relational context; the inner-being content belongs to the heart term, not the slave designation itself."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2842,
+        "output_tokens": 87,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jos 16:9",
+      "decisions": [
+        {
+          "verse_record_id": 90990,
+          "mti_term_id": 3095,
+          "strong": "H5159",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Inheritance here refers to tribal land allocation, not an inner-life concept."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1860,
+        "output_tokens": 75,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jer 29:13",
+      "decisions": [
+        {
+          "verse_record_id": 37556,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "summary": "Wholehearted seeking of God leads to finding him — the inner orientation determines whether one truly encounters God.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 1654,
+        "output_tokens": 78,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "1Sa 13:22",
+      "decisions": [
+        {
+          "verse_record_id": 83644,
+          "mti_term_id": 2816,
+          "strong": "H3027G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Hand here refers to physical possession of weapons, not inner-being content."
+        },
+        {
+          "verse_record_id": 192339,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Finding refers to physical availability of weapons on the day of battle, not inner seeking."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2447,
+        "output_tokens": 141,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Judg 8:18",
+      "decisions": [
+        {
+          "verse_record_id": 33657,
+          "mti_term_id": 1041,
+          "strong": "H0259",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "'One' here is numerical, describing each man's appearance, not inner life."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2256,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Exo 17:7",
+      "decisions": [
+        {
+          "verse_record_id": 218893,
+          "mti_term_id": 6989,
+          "strong": "H4725",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "The place name is geographical, not inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2374,
+        "output_tokens": 69,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Act 10:11",
+      "decisions": [
+        {
+          "verse_record_id": 83322,
+          "mti_term_id": 1328,
+          "strong": "G0746",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "ἀρχαῖς here means 'corners' (physical extremities of the sheet), not authority or inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2189,
+        "output_tokens": 88,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Psa 106:44",
+      "decisions": [
+        {
+          "verse_record_id": 572,
+          "mti_term_id": 209,
+          "strong": "H6862B",
+          "summary": "God responded with compassion when he saw the people's distress, moved by their suffering.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 1584,
+        "output_tokens": 73,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Hos 5:13",
+      "decisions": [
+        {
+          "verse_record_id": 51621,
+          "mti_term_id": 1308,
+          "strong": "H3201",
+          "summary": "Assyria is powerless to cure Israel's spiritual and national sickness, exposing misplaced trust.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        },
+        {
+          "verse_record_id": 157603,
+          "mti_term_id": 5177,
+          "strong": "H3377",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Refers to a royal title or proper name ('great king'); no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2766,
+        "output_tokens": 148,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Psa 47:3",
+      "decisions": [
+        {
+          "verse_record_id": 195373,
+          "mti_term_id": 6253,
+          "strong": "H7272",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "'feet' here is physical/military metaphor for dominion, no inner-being content"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1758,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Act 26:3",
+      "decisions": [
+        {
+          "verse_record_id": 185926,
+          "mti_term_id": 2336,
+          "strong": "G1189",
+          "summary": "Paul earnestly pleads with Agrippa to listen to him patiently, expressing a heartfelt personal request.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2151,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "1Sa 22:9",
+      "decisions": [
+        {
+          "verse_record_id": 215574,
+          "mti_term_id": 6895,
+          "strong": "H5324",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Describes Doeg's physical position standing among Saul's servants; no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2343,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Exo 14:4",
+      "decisions": [
+        {
+          "verse_record_id": 220513,
+          "mti_term_id": 7029,
+          "strong": "H2428A",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "'Soldiers/host' here refers to Pharaoh's military forces — external, not inner life."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2287,
+        "output_tokens": 83,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "1Ch 26:8",
+      "decisions": [
+        {
+          "verse_record_id": 220576,
+          "mti_term_id": 7030,
+          "strong": "H2428G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Describes physical/military capability for gatekeeping service, not inner character."
+        },
+        {
+          "verse_record_id": 217783,
+          "mti_term_id": 6965,
+          "strong": "H3581B",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Refers to physical capacity/qualification for service duties, not inner-life content."
+        },
+        {
+          "verse_record_id": 210404,
+          "mti_term_id": 6722,
+          "strong": "H5656G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Service here refers to temple gatekeeping duties, an external religious function without inner-life window."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2391,
+        "output_tokens": 217,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "1Sa 19:3",
+      "decisions": [
+        {
+          "verse_record_id": 150811,
+          "mti_term_id": 2820,
+          "strong": "H3027K",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "'beside' (lit. 'to the hand of') indicates physical proximity/location, not inner-being content"
+        }
+      ],
+      "usage": {
+        "input_tokens": 2289,
+        "output_tokens": 82,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Mar 1:29",
+      "decisions": [
+        {
+          "verse_record_id": 221202,
+          "mti_term_id": 7054,
+          "strong": "G3614G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "oikia here refers to a physical house/location, no inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2149,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Gen 32:8",
+      "decisions": [
+        {
+          "verse_record_id": 33571,
+          "mti_term_id": 1041,
+          "strong": "H0259",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "'One' refers to one of the two camps — purely logistical/external context."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2206,
+        "output_tokens": 78,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Song 1:13",
+      "decisions": [
+        {
+          "verse_record_id": 138239,
+          "mti_term_id": 4624,
+          "strong": "H6872A",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Used here as a physical metaphor (sachet/bundle of myrrh); no inner-being content carried by this term in context."
+        },
+        {
+          "verse_record_id": 138249,
+          "mti_term_id": 4626,
+          "strong": "H6872B",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "unclear",
+          "note": "H6872B (pebble) does not appear in the verse spans; likely a misassignment requiring deeper review."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1748,
+        "output_tokens": 630,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Mar 15:24",
+      "decisions": [
+        {
+          "verse_record_id": 160656,
+          "mti_term_id": 5275,
+          "strong": "G1266",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Division of garments is a physical/external act, no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2067,
+        "output_tokens": 76,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Joh 11:5",
+      "decisions": [
+        {
+          "verse_record_id": 67775,
+          "mti_term_id": 1609,
+          "strong": "G0079",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "'Sister' here is a relational/family identifier, not an inner-being term in this context."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1942,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Psa 69:24",
+      "decisions": [
+        {
+          "verse_record_id": 57519,
+          "mti_term_id": 140,
+          "strong": "H2740",
+          "summary": "God's burning anger is called upon to overtake the enemies of the psalmist.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 1577,
+        "output_tokens": 72,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "1Sa 28:17",
+      "decisions": [
+        {
+          "verse_record_id": 150680,
+          "mti_term_id": 2818,
+          "strong": "H3027I",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "'by me' (lit. by my hand) here means through Samuel as instrument/agent — no inner-being content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2091,
+        "output_tokens": 84,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Job 40:14",
+      "decisions": [
+        {
+          "verse_record_id": 33266,
+          "mti_term_id": 1029,
+          "strong": "H3034",
+          "summary": "God says he would acknowledge/praise Job only if Job's own hand could save him — a conditional, ironic acknowledgment highlighting human inability.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 1620,
+        "output_tokens": 84,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Ecc 12:12",
+      "decisions": [
+        {
+          "verse_record_id": 10445,
+          "mti_term_id": 618,
+          "strong": "H1320",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "'Flesh' here refers to bodily weariness from excessive study, not an inner-life window."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1972,
+        "output_tokens": 79,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "2Ch 23:21",
+      "decisions": [
+        {
+          "verse_record_id": 56188,
+          "mti_term_id": 418,
+          "strong": "H8252",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The city being quiet refers to civil/political calm after Athaliah's death, not an inner state."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1810,
+        "output_tokens": 81,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Judg 20:12",
+      "decisions": [
+        {
+          "verse_record_id": 156532,
+          "mti_term_id": 237,
+          "strong": "H7451I",
+          "summary": "Israel confronts Benjamin about the evil (moral wrongdoing) committed among them, implying moral accountability.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2053,
+        "output_tokens": 77,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Neh 12:46",
+      "decisions": [
+        {
+          "verse_record_id": 33274,
+          "mti_term_id": 1029,
+          "strong": "H3034",
+          "summary": "Thanksgiving to God was an established part of Israel's worship, originating in the days of David and Asaph.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        },
+        {
+          "verse_record_id": 33249,
+          "mti_term_id": 1027,
+          "strong": "H8416",
+          "summary": "Praise to God was formally organized in Israel's worship tradition since the time of David and Asaph.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2033,
+        "output_tokens": 151,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jer 11:12",
+      "decisions": [
+        {
+          "verse_record_id": 48188,
+          "mti_term_id": 1235,
+          "strong": "H1980G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Describes physical movement of people going to cry to idols, no inner-life window."
+        },
+        {
+          "verse_record_id": 679,
+          "mti_term_id": 236,
+          "strong": "H7451C",
+          "summary": "In their time of trouble and distress, the idols they worshipped cannot save them.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2434,
+        "output_tokens": 147,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 2:4",
+      "decisions": [
+        {
+          "verse_record_id": 85976,
+          "mti_term_id": 2883,
+          "strong": "H6485A",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Census listing of troop numbers; purely administrative count, no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 1642,
+        "output_tokens": 78,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Exo 3:5",
+      "decisions": [
+        {
+          "verse_record_id": 168663,
+          "mti_term_id": 904,
+          "strong": "H6944G",
+          "summary": "The ground where Moses stands is holy, requiring reverent posture before God's presence.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        },
+        {
+          "verse_record_id": 195224,
+          "mti_term_id": 6253,
+          "strong": "H7272",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Feet here are a physical body part; removing sandals is an external ritual act."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2357,
+        "output_tokens": 140,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Exo 17:6",
+      "decisions": [
+        {
+          "verse_record_id": 158117,
+          "mti_term_id": 5212,
+          "strong": "H6697H",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "physical_only",
+          "note": "Rock is a literal physical object from which water flows; no inner-being content in this verse."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2436,
+        "output_tokens": 78,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 13:32",
+      "decisions": [
+        {
+          "verse_record_id": 48773,
+          "mti_term_id": 1238,
+          "strong": "H3427",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Refers to physical inhabitants dwelling in the land, no inner-life content."
+        },
+        {
+          "verse_record_id": 22726,
+          "mti_term_id": 858,
+          "strong": "H7200G",
+          "summary": "The spies report what they personally witnessed — the fearsome people they saw in the land.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2964,
+        "output_tokens": 141,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Est 8:15",
+      "decisions": [
+        {
+          "verse_record_id": 11162,
+          "mti_term_id": 621,
+          "strong": "H3318G",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Physical departure from the king's presence; no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2296,
+        "output_tokens": 73,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Deu 3:14",
+      "decisions": [
+        {
+          "verse_record_id": 198272,
+          "mti_term_id": 118,
+          "strong": "H2256M",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "חֶבֶל here means 'region/territory' (Argob), not pain or sorrow"
+        },
+        {
+          "verse_record_id": 54811,
+          "mti_term_id": 1366,
+          "strong": "H8034",
+          "summary": "Jair named conquered villages after himself, asserting personal identity and legacy through naming.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2685,
+        "output_tokens": 147,
+        "cache_read_input_tokens": 0
+      }
+    }
+  ],
+  "flat_decisions": [
+    {
+      "reference": "Jer 23:10",
+      "verse_record_id": 2897,
+      "mti_term_id": 71,
+      "strong": "H0056",
+      "summary": "The land mourns as a consequence of the curse brought on by widespread adultery and evil conduct.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": "Mourning here is attributed to the land, reflecting communal grief over moral failure.",
+      "decision": "summary"
+    },
+    {
+      "reference": "Num 10:33",
+      "verse_record_id": 16328,
+      "mti_term_id": 765,
+      "strong": "H1285",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The ark of the covenant here is a physical/ceremonial object leading Israel; no inner-being content engaged.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 10:33",
+      "verse_record_id": 79893,
+      "mti_term_id": 2585,
+      "strong": "H4496H",
+      "summary": "The Lord goes before Israel to find them a resting place, indicating provision of peace and settledness for his people.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Job 7:10",
+      "verse_record_id": 219030,
+      "mti_term_id": 6989,
+      "strong": "H4725",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "'place' here refers to a physical/spatial location, not an inner-being characteristic",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 51:51",
+      "verse_record_id": 6429,
+      "mti_term_id": 313,
+      "strong": "H0954",
+      "summary": "The people are overcome with shame and dishonor because foreigners have desecrated the Lord's sanctuary.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Heb 1:7",
+      "verse_record_id": 9958,
+      "mti_term_id": 614,
+      "strong": "G4151H",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Here pneuma means winds/natural forces; angels are described as winds, not referencing inner life.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Judg 2:23",
+      "verse_record_id": 56338,
+      "mti_term_id": 419,
+      "strong": "H5117",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The verb here means 'left/allowed to remain' — a divine action of restraint, not an inner-life window.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 30:14",
+      "verse_record_id": 55874,
+      "mti_term_id": 408,
+      "strong": "H2790B",
+      "summary": "A husband's deliberate silence day after day constitutes chosen acquiescence, ratifying his wife's vows through his inaction.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": "Silence here is a willed relational choice with binding moral consequence, not merely absence of speech.",
+      "decision": "summary"
+    },
+    {
+      "reference": "Num 30:14",
+      "verse_record_id": 45395,
+      "mti_term_id": 1203,
+      "strong": "H8085G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Hearing marks the legal moment triggering the husband's obligation; it functions as a procedural trigger, not an inner-life window.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Gen 11:32",
+      "verse_record_id": 55552,
+      "mti_term_id": 1379,
+      "strong": "H4191",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Records Terah's physical death at 205 years in Haran; no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 23:2",
+      "verse_record_id": 47467,
+      "mti_term_id": 1228,
+      "strong": "H6213A",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Balak simply did what Balaam instructed — external compliance, no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Psa 37:36",
+      "verse_record_id": 192466,
+      "mti_term_id": 1101,
+      "strong": "H4672",
+      "summary": "The psalmist sought the wicked man but could not find him, showing the futility of seeking those who perish.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Exo 39:20",
+      "verse_record_id": 176167,
+      "mti_term_id": 5734,
+      "strong": "H5980",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "'Close/beside' here describes physical positioning of rings on the ephod, not inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Gen 9:11",
+      "verse_record_id": 10279,
+      "mti_term_id": 618,
+      "strong": "H1320",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "'All flesh' here refers to living creatures/humans as physical beings destroyed by flood, not an inner-life quality.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Lev 13:47",
+      "verse_record_id": 187923,
+      "mti_term_id": 6080,
+      "strong": "H6593",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Flax/linen is a material fabric; no inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 9:10",
+      "verse_record_id": 48221,
+      "mti_term_id": 1235,
+      "strong": "H1980G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Refers to no one passing through the desolated land — external movement/geography",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 9:10",
+      "verse_record_id": 169932,
+      "mti_term_id": 5571,
+      "strong": "H5074",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Birds and beasts physically fled the devastated land — no inner-life content",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Judg 8:17",
+      "verse_record_id": 216108,
+      "mti_term_id": 6900,
+      "strong": "H4026M",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Tower refers to a physical structure being demolished, no inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Mat 13:54",
+      "verse_record_id": 60635,
+      "mti_term_id": 684,
+      "strong": "G1411",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The crowd asks about the source of Jesus's mighty works; dunamis here refers to miraculous deeds, not inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Luk 12:45",
+      "verse_record_id": 144032,
+      "mti_term_id": 4804,
+      "strong": "G1401",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The servant's role is social/relational context; the inner-being content belongs to the heart term, not the slave designation itself.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jos 16:9",
+      "verse_record_id": 90990,
+      "mti_term_id": 3095,
+      "strong": "H5159",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Inheritance here refers to tribal land allocation, not an inner-life concept.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 29:13",
+      "verse_record_id": 37556,
+      "mti_term_id": 1101,
+      "strong": "H4672",
+      "summary": "Wholehearted seeking of God leads to finding him — the inner orientation determines whether one truly encounters God.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "1Sa 13:22",
+      "verse_record_id": 83644,
+      "mti_term_id": 2816,
+      "strong": "H3027G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Hand here refers to physical possession of weapons, not inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "1Sa 13:22",
+      "verse_record_id": 192339,
+      "mti_term_id": 1101,
+      "strong": "H4672",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Finding refers to physical availability of weapons on the day of battle, not inner seeking.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Judg 8:18",
+      "verse_record_id": 33657,
+      "mti_term_id": 1041,
+      "strong": "H0259",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "'One' here is numerical, describing each man's appearance, not inner life.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Exo 17:7",
+      "verse_record_id": 218893,
+      "mti_term_id": 6989,
+      "strong": "H4725",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "The place name is geographical, not inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Act 10:11",
+      "verse_record_id": 83322,
+      "mti_term_id": 1328,
+      "strong": "G0746",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "ἀρχαῖς here means 'corners' (physical extremities of the sheet), not authority or inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Psa 106:44",
+      "verse_record_id": 572,
+      "mti_term_id": 209,
+      "strong": "H6862B",
+      "summary": "God responded with compassion when he saw the people's distress, moved by their suffering.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Hos 5:13",
+      "verse_record_id": 51621,
+      "mti_term_id": 1308,
+      "strong": "H3201",
+      "summary": "Assyria is powerless to cure Israel's spiritual and national sickness, exposing misplaced trust.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Hos 5:13",
+      "verse_record_id": 157603,
+      "mti_term_id": 5177,
+      "strong": "H3377",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Refers to a royal title or proper name ('great king'); no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Psa 47:3",
+      "verse_record_id": 195373,
+      "mti_term_id": 6253,
+      "strong": "H7272",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "'feet' here is physical/military metaphor for dominion, no inner-being content",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Act 26:3",
+      "verse_record_id": 185926,
+      "mti_term_id": 2336,
+      "strong": "G1189",
+      "summary": "Paul earnestly pleads with Agrippa to listen to him patiently, expressing a heartfelt personal request.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "1Sa 22:9",
+      "verse_record_id": 215574,
+      "mti_term_id": 6895,
+      "strong": "H5324",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Describes Doeg's physical position standing among Saul's servants; no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Exo 14:4",
+      "verse_record_id": 220513,
+      "mti_term_id": 7029,
+      "strong": "H2428A",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "'Soldiers/host' here refers to Pharaoh's military forces — external, not inner life.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "1Ch 26:8",
+      "verse_record_id": 220576,
+      "mti_term_id": 7030,
+      "strong": "H2428G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Describes physical/military capability for gatekeeping service, not inner character.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "1Ch 26:8",
+      "verse_record_id": 217783,
+      "mti_term_id": 6965,
+      "strong": "H3581B",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Refers to physical capacity/qualification for service duties, not inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "1Ch 26:8",
+      "verse_record_id": 210404,
+      "mti_term_id": 6722,
+      "strong": "H5656G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Service here refers to temple gatekeeping duties, an external religious function without inner-life window.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "1Sa 19:3",
+      "verse_record_id": 150811,
+      "mti_term_id": 2820,
+      "strong": "H3027K",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "'beside' (lit. 'to the hand of') indicates physical proximity/location, not inner-being content",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Mar 1:29",
+      "verse_record_id": 221202,
+      "mti_term_id": 7054,
+      "strong": "G3614G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "oikia here refers to a physical house/location, no inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Gen 32:8",
+      "verse_record_id": 33571,
+      "mti_term_id": 1041,
+      "strong": "H0259",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "'One' refers to one of the two camps — purely logistical/external context.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Song 1:13",
+      "verse_record_id": 138239,
+      "mti_term_id": 4624,
+      "strong": "H6872A",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Used here as a physical metaphor (sachet/bundle of myrrh); no inner-being content carried by this term in context.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Song 1:13",
+      "verse_record_id": 138249,
+      "mti_term_id": 4626,
+      "strong": "H6872B",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "unclear",
+      "note": "H6872B (pebble) does not appear in the verse spans; likely a misassignment requiring deeper review.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Mar 15:24",
+      "verse_record_id": 160656,
+      "mti_term_id": 5275,
+      "strong": "G1266",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Division of garments is a physical/external act, no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Joh 11:5",
+      "verse_record_id": 67775,
+      "mti_term_id": 1609,
+      "strong": "G0079",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "'Sister' here is a relational/family identifier, not an inner-being term in this context.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Psa 69:24",
+      "verse_record_id": 57519,
+      "mti_term_id": 140,
+      "strong": "H2740",
+      "summary": "God's burning anger is called upon to overtake the enemies of the psalmist.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "1Sa 28:17",
+      "verse_record_id": 150680,
+      "mti_term_id": 2818,
+      "strong": "H3027I",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "'by me' (lit. by my hand) here means through Samuel as instrument/agent — no inner-being content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Job 40:14",
+      "verse_record_id": 33266,
+      "mti_term_id": 1029,
+      "strong": "H3034",
+      "summary": "God says he would acknowledge/praise Job only if Job's own hand could save him — a conditional, ironic acknowledgment highlighting human inability.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Ecc 12:12",
+      "verse_record_id": 10445,
+      "mti_term_id": 618,
+      "strong": "H1320",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "'Flesh' here refers to bodily weariness from excessive study, not an inner-life window.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "2Ch 23:21",
+      "verse_record_id": 56188,
+      "mti_term_id": 418,
+      "strong": "H8252",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The city being quiet refers to civil/political calm after Athaliah's death, not an inner state.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Judg 20:12",
+      "verse_record_id": 156532,
+      "mti_term_id": 237,
+      "strong": "H7451I",
+      "summary": "Israel confronts Benjamin about the evil (moral wrongdoing) committed among them, implying moral accountability.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Neh 12:46",
+      "verse_record_id": 33274,
+      "mti_term_id": 1029,
+      "strong": "H3034",
+      "summary": "Thanksgiving to God was an established part of Israel's worship, originating in the days of David and Asaph.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Neh 12:46",
+      "verse_record_id": 33249,
+      "mti_term_id": 1027,
+      "strong": "H8416",
+      "summary": "Praise to God was formally organized in Israel's worship tradition since the time of David and Asaph.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Jer 11:12",
+      "verse_record_id": 48188,
+      "mti_term_id": 1235,
+      "strong": "H1980G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Describes physical movement of people going to cry to idols, no inner-life window.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 11:12",
+      "verse_record_id": 679,
+      "mti_term_id": 236,
+      "strong": "H7451C",
+      "summary": "In their time of trouble and distress, the idols they worshipped cannot save them.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Num 2:4",
+      "verse_record_id": 85976,
+      "mti_term_id": 2883,
+      "strong": "H6485A",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Census listing of troop numbers; purely administrative count, no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Exo 3:5",
+      "verse_record_id": 168663,
+      "mti_term_id": 904,
+      "strong": "H6944G",
+      "summary": "The ground where Moses stands is holy, requiring reverent posture before God's presence.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Exo 3:5",
+      "verse_record_id": 195224,
+      "mti_term_id": 6253,
+      "strong": "H7272",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Feet here are a physical body part; removing sandals is an external ritual act.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Exo 17:6",
+      "verse_record_id": 158117,
+      "mti_term_id": 5212,
+      "strong": "H6697H",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "Rock is a literal physical object from which water flows; no inner-being content in this verse.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 13:32",
+      "verse_record_id": 48773,
+      "mti_term_id": 1238,
+      "strong": "H3427",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Refers to physical inhabitants dwelling in the land, no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 13:32",
+      "verse_record_id": 22726,
+      "mti_term_id": 858,
+      "strong": "H7200G",
+      "summary": "The spies report what they personally witnessed — the fearsome people they saw in the land.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Est 8:15",
+      "verse_record_id": 11162,
+      "mti_term_id": 621,
+      "strong": "H3318G",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Physical departure from the king's presence; no inner-life content.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Deu 3:14",
+      "verse_record_id": 198272,
+      "mti_term_id": 118,
+      "strong": "H2256M",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "חֶבֶל here means 'region/territory' (Argob), not pain or sorrow",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Deu 3:14",
+      "verse_record_id": 54811,
+      "mti_term_id": 1366,
+      "strong": "H8034",
+      "summary": "Jair named conquered villages after himself, asserting personal identity and legacy through naming.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    }
+  ]
+}

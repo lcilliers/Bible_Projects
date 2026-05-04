@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "generated_at": "2026-05-04T04:17:00Z",
+    "model": "claude-sonnet-4-6",
+    "effort": "medium",
+    "input_file": "outputs/markdown/unclassified-sample-100-pairs-20260504.json",
+    "n_pairs": 5,
+    "n_summary": 3,
+    "n_set_aside": 2,
+    "n_error": 0,
+    "tokens": {
+      "input": 9041,
+      "output": 259,
+      "cache_read": 0,
+      "estimated_cost_usd": 0.031
+    }
+  },
+  "results": [
+    {
+      "verse_record_id": 289,
+      "mti_term_id": 19,
+      "reference": "Jam 3:16",
+      "strong": "G2052",
+      "decision": "summary",
+      "summary": "Selfish ambition (eritheia) produces disorder and every vile practice wherever it exists.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "usage": {
+        "input_tokens": 1536,
+        "output_tokens": 46,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "verse_record_id": 14081,
+      "mti_term_id": 716,
+      "reference": "Jer 4:20",
+      "strong": "H7667",
+      "decision": "set_aside",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "H7667 here describes physical/military destruction cascading across the land — no inner-life window in this verse.",
+      "usage": {
+        "input_tokens": 1676,
+        "output_tokens": 56,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "verse_record_id": 141268,
+      "mti_term_id": 4739,
+      "reference": "Lev 13:10",
+      "strong": "H4241",
+      "decision": "set_aside",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "physical_only",
+      "note": "mich.yah here refers to raw/live flesh in a skin swelling — a medical/physical diagnostic term, no inner-being content",
+      "usage": {
+        "input_tokens": 1753,
+        "output_tokens": 59,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "verse_record_id": 162737,
+      "mti_term_id": 5367,
+      "reference": "2Cor 8:23",
+      "strong": "G2844",
+      "decision": "summary",
+      "summary": "Titus is described as Paul's partner — sharing a bond of mutual commitment in ministry work toward the Corinthians.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "usage": {
+        "input_tokens": 1844,
+        "output_tokens": 52,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "verse_record_id": 93411,
+      "mti_term_id": 940,
+      "reference": "Deu 12:1",
+      "strong": "H4941G",
+      "decision": "summary",
+      "summary": "Israel is called to carefully observe God's justice-ordinances throughout their life in the promised land.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "usage": {
+        "input_tokens": 2232,
+        "output_tokens": 46,
+        "cache_read_input_tokens": 0
+      }
+    }
+  ]
+}

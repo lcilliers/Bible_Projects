@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-05-04T06:34:49Z",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_terms": 50,
+  "dim": 384,
+  "doc_fields": [
+    "transliteration",
+    "gloss",
+    "step_search_gloss",
+    "short_def_mounce",
+    "senses",
+    "root_family",
+    "meaning",
+    "language"
+  ],
+  "normalize": true,
+  "source_db": "database\\bible_research.db"
+}

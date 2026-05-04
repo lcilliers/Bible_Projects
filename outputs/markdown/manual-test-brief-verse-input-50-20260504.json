@@ -1,0 +1,6325 @@
+{
+  "meta": {
+    "n_verses": 50,
+    "n_terms_to_classify": 63,
+    "note": "Slim per-verse input matching exactly what the API caller serialises per call.",
+    "source_file": "unclassified-verse-sample-50-verses-20260504.json"
+  },
+  "verses": [
+    {
+      "reference": "Jer 23:10",
+      "verse_text": "Jer 23:10 For the land is full of adulterers ; because of the curse the land mourns , and the pastures of the wilderness are dried up . Their course is evil , and their might is not right .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3588A",
+          "original": "כִּי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H5003",
+          "original": "מְנָֽאֲפִים",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4390",
+          "original": "מָלְאָה",
+          "pos": "verb",
+          "gloss": "to fill",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H6440I",
+          "original": "מִפְּנֵי",
+          "pos": "noun",
+          "gloss": "face: because",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "H0423",
+          "original": "אָלָה",
+          "pos": "noun",
+          "gloss": "oath",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H0056",
+          "original": "אָבְלָה",
+          "pos": "verb",
+          "gloss": "to mourn",
+          "registry": "R071 grief"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3001",
+          "original": "יָבְשׁוּ",
+          "pos": "verb",
+          "gloss": "to wither",
+          "registry": "R146 shame"
+        },
+        {
+          "strong": "H4999",
+          "original": "נְאוֹת",
+          "pos": "noun",
+          "gloss": "habitation",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H4057B",
+          "original": "מִדְבָּר",
+          "pos": "noun",
+          "gloss": "wilderness",
+          "registry": "R043 desire"
+        },
+        {
+          "strong": "H1961",
+          "original": "וַתְּהִי",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H4794",
+          "original": "מְרֽוּצָתָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7451H",
+          "original": "רָעָה",
+          "pos": "adjective",
+          "gloss": "bad: evil",
+          "registry": "R005 anguish"
+        },
+        {
+          "strong": "H1369",
+          "original": "וּגְבוּרָתָם",
+          "pos": "noun",
+          "gloss": "might",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H3808",
+          "original": "לֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3651A",
+          "original": "כֵֽן",
+          "pos": "adjective",
+          "gloss": "right",
+          "registry": "R121 praise"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 2897,
+          "mti_term_id": 71,
+          "strong": "H0056",
+          "owning_registry": "R071 grief",
+          "transliteration": "a.val",
+          "gloss": "to mourn",
+          "language": "Hebrew",
+          "step_search_gloss": "to mourn",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Num 10:33",
+      "verse_text": "Num 10:33 So they set out from the mount of the Lord three days ’ journey . And the ark of the covenant of the Lord went before them three days ’ journey , to seek out a resting place for them.",
+      "all_spans_in_verse": [
+        {
+          "strong": "H5265",
+          "original": "וַיִּסְעוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2022G",
+          "original": "מֵהַר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H1870L",
+          "original": "דֶּרֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7969",
+          "original": "שְׁלֹשֶׁת",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3117G",
+          "original": "יָמִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0727",
+          "original": "וַאֲרוֹן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1285",
+          "original": "בְּרִית",
+          "pos": "noun",
+          "gloss": "covenant",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H5265",
+          "original": "נֹסֵעַ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6440G",
+          "original": "לִפְנֵיהֶם",
+          "pos": "noun",
+          "gloss": "face: before",
+          "registry": "R112 mind"
+        },
+        {
+          "strong": "H1870L",
+          "original": "דֶּרֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7969",
+          "original": "שְׁלֹשֶׁת",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3117G",
+          "original": "יָמִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8446",
+          "original": "לָתוּר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000l",
+          "original": "לָהֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4496H",
+          "original": "מְנוּחָֽה",
+          "pos": "noun",
+          "gloss": "resting",
+          "registry": "R117 peace"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 16328,
+          "mti_term_id": 765,
+          "strong": "H1285",
+          "owning_registry": "R034 covenant",
+          "transliteration": "be.rit",
+          "gloss": "covenant",
+          "language": "Hebrew",
+          "step_search_gloss": "covenant",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 79893,
+          "mti_term_id": 2585,
+          "strong": "H4496H",
+          "owning_registry": "R117 peace",
+          "transliteration": "me.nu.chah",
+          "gloss": "resting",
+          "language": "Hebrew",
+          "step_search_gloss": "resting",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Job 7:10",
+      "verse_text": "Job 7:10 he returns no more to his house , nor does his place know him anymore .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3808",
+          "original": "לֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H7725G",
+          "original": "יָשׁוּב",
+          "pos": "verb",
+          "gloss": "to return: return",
+          "registry": "R135 repentance"
+        },
+        {
+          "strong": "H5750",
+          "original": "עוֹד",
+          "pos": "adverb",
+          "gloss": "still",
+          "registry": "R111 mercy"
+        },
+        {
+          "strong": "H1004B",
+          "original": "לְבֵיתוֹ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H5234A",
+          "original": "יַכִּירֶנּוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5750",
+          "original": "עוֹד",
+          "pos": "adverb",
+          "gloss": "still",
+          "registry": "R111 mercy"
+        },
+        {
+          "strong": "H4725",
+          "original": "מְקֹמֽוֹ",
+          "pos": "noun",
+          "gloss": "place",
+          "registry": "R187 strength"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 219030,
+          "mti_term_id": 6989,
+          "strong": "H4725",
+          "owning_registry": "R187 strength",
+          "transliteration": "ma.qom",
+          "gloss": "place",
+          "language": "Hebrew",
+          "step_search_gloss": "place",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Jer 51:51",
+      "verse_text": "Jer 51:51 ‘We are put to shame , for we have heard reproach ; dishonor has covered our face , for foreigners have come into the holy places of the Lord’s house .’",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0954",
+          "original": "בֹּשְׁנוּ",
+          "pos": "verb",
+          "gloss": "be ashamed",
+          "registry": "R146 shame"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H8085G",
+          "original": "שָׁמַעְנוּ",
+          "pos": "verb",
+          "gloss": "to hear: hear",
+          "registry": "R166 understanding"
+        },
+        {
+          "strong": "H2781",
+          "original": "חֶרְפָּה",
+          "pos": "noun",
+          "gloss": "reproach",
+          "registry": "R146 shame"
+        },
+        {
+          "strong": "H3680",
+          "original": "כִּסְּתָה",
+          "pos": "verb",
+          "gloss": "to cover",
+          "registry": "R090 innocence"
+        },
+        {
+          "strong": "H3639",
+          "original": "כְלִמָּה",
+          "pos": "noun",
+          "gloss": "shame",
+          "registry": "R146 shame"
+        },
+        {
+          "strong": "H6440H",
+          "original": "פָּנֵינוּ",
+          "pos": "noun",
+          "gloss": "face",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H0935G",
+          "original": "בָּאוּ",
+          "pos": "verb",
+          "gloss": "to come [in]: come",
+          "registry": "R198 might"
+        },
+        {
+          "strong": "H2114A",
+          "original": "זָרִים",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַֽל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H4720",
+          "original": "מִקְדְּשֵׁי",
+          "pos": "noun",
+          "gloss": "sanctuary",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H1004Q",
+          "original": "בֵּית",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָֽה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 6429,
+          "mti_term_id": 313,
+          "strong": "H0954",
+          "owning_registry": "R146 shame",
+          "transliteration": "bosh",
+          "gloss": "be ashamed",
+          "language": "Hebrew",
+          "step_search_gloss": "be ashamed",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Heb 1:7",
+      "verse_text": "Heb 1:7 Of the angels he says , “He makes his angels winds , and his ministers a flame of fire .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G4314",
+          "original": "πρὸς",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3303",
+          "original": "μὲν",
+          "pos": "conjunction",
+          "gloss": "on the other hand",
+          "registry": "R147 sin"
+        },
+        {
+          "strong": "G3588",
+          "original": "τοὺς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0032G",
+          "original": "ἀγγέλους",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3004G",
+          "original": "λέγει·",
+          "pos": "verb",
+          "gloss": "to say: says",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "G3588",
+          "original": "Ὁ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G4160G",
+          "original": "ποιῶν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τοὺς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0032G",
+          "original": "ἀγγέλους",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτοῦ",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G4151H",
+          "original": "πνεύματα,",
+          "pos": "noun",
+          "gloss": "spirit/breath: spirit",
+          "registry": "R184 spirit"
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3588",
+          "original": "τοὺς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3011",
+          "original": "λειτουργοὺς",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτοῦ",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G4442",
+          "original": "πυρὸς",
+          "pos": "noun",
+          "gloss": "fire",
+          "registry": "R056 envy"
+        },
+        {
+          "strong": "G5395",
+          "original": "φλόγα·",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 9958,
+          "mti_term_id": 614,
+          "strong": "G4151H",
+          "owning_registry": "R184 spirit",
+          "transliteration": "pneuma",
+          "gloss": "spirit/breath: spirit",
+          "language": "Greek",
+          "step_search_gloss": "spirit/breath: breath",
+          "short_def_mounce": ": breath/wind<br>wind, breath, things which are commonly perceived as having no material substance; by extension: spirit, heart, mind, the immaterial part of the inner person that can respond to God; spirit being: (evil) spirit, ghost, God the Holy Spirit",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Judg 2:23",
+      "verse_text": "Judg 2:23 So the Lord left those nations , not driving them out quickly , and he did not give them into the hand of Joshua .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3240",
+          "original": "וַיַּנַּח",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1471A",
+          "original": "הַגּוֹיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0428",
+          "original": "הָאֵלֶּה",
+          "pos": "pronoun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1115",
+          "original": "לְבִלְתִּי",
+          "pos": "conjunction",
+          "gloss": "lest",
+          "registry": "R162 transgression"
+        },
+        {
+          "strong": "H3423H",
+          "original": "הוֹרִישָׁם",
+          "pos": "verb",
+          "gloss": "to possess: take",
+          "registry": "R043 desire"
+        },
+        {
+          "strong": "H4118B",
+          "original": "מַהֵר",
+          "pos": "verb",
+          "gloss": "quickly",
+          "registry": "R061 fear"
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H5414G",
+          "original": "נְתָנָם",
+          "pos": "verb",
+          "gloss": "to give: give",
+          "registry": "R060 faithfulness"
+        },
+        {
+          "strong": "H3027H",
+          "original": "בְּיַד",
+          "pos": "noun",
+          "gloss": "hand: power",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H3091G",
+          "original": "יְהוֹשֻֽׁעַ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 56338,
+          "mti_term_id": 419,
+          "strong": "H5117",
+          "owning_registry": "R117 peace",
+          "transliteration": "nu.ach",
+          "gloss": "to rest",
+          "language": "Hebrew",
+          "step_search_gloss": "to rest",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Num 30:14",
+      "verse_text": "Num 30:14 But if her husband says nothing to her from day to day , then he establishes all her vows or all her pledges that are upon her. He has established them, because he said nothing to her on the day that he heard of them.",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5088",
+          "original": "נֵדֶר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3605",
+          "original": "וְכָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H7621",
+          "original": "שְׁבֻעַת",
+          "pos": "noun",
+          "gloss": "oath",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "H0632",
+          "original": "אִסָּר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6031B",
+          "original": "לְעַנֹּת",
+          "pos": "verb",
+          "gloss": "to afflict",
+          "registry": "R066 gentleness"
+        },
+        {
+          "strong": "H5315I",
+          "original": "נָפֶשׁ",
+          "pos": "noun",
+          "gloss": "soul: myself",
+          "registry": "R182 Soul"
+        },
+        {
+          "strong": "H0376H",
+          "original": "אִישָׁהּ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6965I",
+          "original": "יְקִימֶנּוּ",
+          "pos": "verb",
+          "gloss": "to arise: establish",
+          "registry": "R033 courage"
+        },
+        {
+          "strong": "H0376H",
+          "original": "וְאִישָׁהּ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6565A",
+          "original": "יְפֵרֶֽנּוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 55874,
+          "mti_term_id": 408,
+          "strong": "H2790B",
+          "owning_registry": "R117 peace",
+          "transliteration": "cha.resh",
+          "gloss": "be quiet",
+          "language": "Hebrew",
+          "step_search_gloss": "be quiet",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 45395,
+          "mti_term_id": 1203,
+          "strong": "H8085G",
+          "owning_registry": "R166 understanding",
+          "transliteration": "sha.ma",
+          "gloss": "to hear: hear",
+          "language": "Hebrew",
+          "step_search_gloss": "to hear: hear",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Gen 11:32",
+      "verse_text": "Gen 11:32 The days of Terah were 205 years , and Terah died in Haran .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H1961",
+          "original": "וַיִּהְיוּ",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H3117G",
+          "original": "יְמֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8646G",
+          "original": "תֶרַח",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2568",
+          "original": "חָמֵשׁ",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8141",
+          "original": "שָׁנִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3967",
+          "original": "וּמָאתַיִם",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8141",
+          "original": "שָׁנָה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4191",
+          "original": "וַיָּמָת",
+          "pos": "verb",
+          "gloss": "to die",
+          "registry": "R210 deadness"
+        },
+        {
+          "strong": "H8646G",
+          "original": "תֶּרַח",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2771A",
+          "original": "בְּחָרָֽן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 55552,
+          "mti_term_id": 1379,
+          "strong": "H4191",
+          "owning_registry": "R210 deadness",
+          "transliteration": "mut",
+          "gloss": "to die",
+          "language": "Hebrew",
+          "step_search_gloss": "to die",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Num 23:2",
+      "verse_text": "Num 23:2 Balak did as Balaam had said . And Balak and Balaam offered on each altar a bull and a ram .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6213A",
+          "original": "וַיַּעַשׂ",
+          "pos": "verb",
+          "gloss": "to make: do",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H1111",
+          "original": "בָּלָק",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "כַּאֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1696G",
+          "original": "דִּבֶּר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1109A",
+          "original": "בִּלְעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5927I",
+          "original": "וַיַּעַל",
+          "pos": "verb",
+          "gloss": "to ascend: offer up",
+          "registry": "R052 division"
+        },
+        {
+          "strong": "H1111",
+          "original": "בָּלָק",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1109A",
+          "original": "וּבִלְעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6499",
+          "original": "פָּר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0352A",
+          "original": "וָאַיִל",
+          "pos": "noun",
+          "gloss": "ram",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H4196",
+          "original": "בַּמִּזְבֵּֽחַ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 47467,
+          "mti_term_id": 1228,
+          "strong": "H6213A",
+          "owning_registry": "R173 will",
+          "transliteration": "a.sah",
+          "gloss": "to make: do",
+          "language": "Hebrew",
+          "step_search_gloss": "to make: do",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Psa 37:36",
+      "verse_text": "Psa 37:36 But he passed away, and behold , he was no more ; though I sought him, he could not be found .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H5674A",
+          "original": "וַיַּֽעֲבֹר",
+          "pos": "verb",
+          "gloss": "to pass",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "H2009",
+          "original": "וְהִנֵּה",
+          "pos": "particle",
+          "gloss": "behold",
+          "registry": "R090 innocence"
+        },
+        {
+          "strong": "H0369",
+          "original": "אֵינֶנּוּ",
+          "pos": "particle",
+          "gloss": "nothing",
+          "registry": "R142 self-control"
+        },
+        {
+          "strong": "H1245",
+          "original": "וָֽאֲבַקְשֵׁהוּ",
+          "pos": "verb",
+          "gloss": "to seek",
+          "registry": "R043 desire"
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H4672",
+          "original": "נִמְצָֽא",
+          "pos": "verb",
+          "gloss": "to find",
+          "registry": "R140 seeking"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 192466,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "owning_registry": "R140 seeking",
+          "transliteration": "ma.tsa",
+          "gloss": "to find",
+          "language": "Hebrew",
+          "step_search_gloss": "to find",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Exo 39:20",
+      "verse_text": "Exo 39:20 And they made two rings of gold , and attached them in front to the lower part of the two shoulder pieces of the ephod , at its seam above the skillfully woven band of the ephod .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6213H",
+          "original": "וַֽיַּעֲשׂוּ",
+          "pos": "verb",
+          "gloss": "to make",
+          "registry": "R098 justice"
+        },
+        {
+          "strong": "H8147",
+          "original": "שְׁתֵּי",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2885",
+          "original": "טַבְּעֹת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2091",
+          "original": "זָהָב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5414H",
+          "original": "וַֽיִּתְּנֻם",
+          "pos": "verb",
+          "gloss": "to give: put",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H8147",
+          "original": "שְׁתֵּי",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3802",
+          "original": "כִתְפֹת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0646",
+          "original": "הָאֵפֹד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4295",
+          "original": "מִלְמַטָּה",
+          "pos": "adverb",
+          "gloss": "beneath",
+          "registry": "R098 justice"
+        },
+        {
+          "strong": "H4136",
+          "original": "מִמּוּל",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6440G",
+          "original": "פָּנָיו",
+          "pos": "noun",
+          "gloss": "face: before",
+          "registry": "R112 mind"
+        },
+        {
+          "strong": "H5980",
+          "original": "לְעֻמַּת",
+          "pos": "noun",
+          "gloss": "close",
+          "registry": "R099 kindness"
+        },
+        {
+          "strong": "H4225",
+          "original": "מֶחְבַּרְתּוֹ",
+          "pos": "noun",
+          "gloss": "joining",
+          "registry": "R062 fellowship"
+        },
+        {
+          "strong": "H4605",
+          "original": "מִמַּעַל",
+          "pos": "adverb",
+          "gloss": "above",
+          "registry": "R052 division"
+        },
+        {
+          "strong": "H2805",
+          "original": "לְחֵשֶׁב",
+          "pos": "noun",
+          "gloss": "artwork",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "H0646",
+          "original": "הָאֵפֹֽד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 176167,
+          "mti_term_id": 5734,
+          "strong": "H5980",
+          "owning_registry": "R099 kindness",
+          "transliteration": "um.mah",
+          "gloss": "close",
+          "language": "Hebrew",
+          "step_search_gloss": "close",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Gen 9:11",
+      "verse_text": "Gen 9:11 I establish my covenant with you, that never again shall all flesh be cut off by the waters of the flood , and never again shall there be a flood to destroy the earth .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6965I",
+          "original": "וַהֲקִמֹתִי",
+          "pos": "verb",
+          "gloss": "to arise: establish",
+          "registry": "R033 courage"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1285",
+          "original": "בְּרִיתִי",
+          "pos": "noun",
+          "gloss": "covenant",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H0854",
+          "original": "אִתְּכֶם",
+          "pos": "preposition",
+          "gloss": "with",
+          "registry": "R023 compassion"
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹֽא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3772I",
+          "original": "יִכָּרֵת",
+          "pos": "verb",
+          "gloss": "to cut: eliminate",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H1320",
+          "original": "בָּשָׂר",
+          "pos": "noun",
+          "gloss": "flesh",
+          "registry": "R185 flesh"
+        },
+        {
+          "strong": "H5750",
+          "original": "עוֹד",
+          "pos": "adverb",
+          "gloss": "still",
+          "registry": "R111 mercy"
+        },
+        {
+          "strong": "H4325G",
+          "original": "מִמֵּי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3999",
+          "original": "הַמַּבּוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹֽא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H1961",
+          "original": "יִהְיֶה",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H5750",
+          "original": "עוֹד",
+          "pos": "adverb",
+          "gloss": "still",
+          "registry": "R111 mercy"
+        },
+        {
+          "strong": "H3999",
+          "original": "מַבּוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7843",
+          "original": "לְשַׁחֵת",
+          "pos": "verb",
+          "gloss": "to ruin",
+          "registry": "R031 corruption"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָֽרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 10279,
+          "mti_term_id": 618,
+          "strong": "H1320",
+          "owning_registry": "R185 flesh",
+          "transliteration": "ba.sar",
+          "gloss": "flesh",
+          "language": "Hebrew",
+          "step_search_gloss": "flesh",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Lev 13:47",
+      "verse_text": "Lev 13:47 “When there is a case of leprous disease in a garment , whether a woolen or a linen garment ,",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0899B",
+          "original": "וְהַבֶּגֶד",
+          "pos": "noun",
+          "gloss": "garment",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H1961",
+          "original": "יִהְיֶה",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "000b",
+          "original": "בוֹ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5061",
+          "original": "נֶגַע",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6883",
+          "original": "צָרָעַת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0899B",
+          "original": "בְּבֶגֶד",
+          "pos": "noun",
+          "gloss": "garment",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "H6785",
+          "original": "צֶמֶר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0176A",
+          "original": "אוֹ",
+          "pos": "conjunction",
+          "gloss": "or",
+          "registry": "R175 wonder"
+        },
+        {
+          "strong": "H0899B",
+          "original": "בְּבֶגֶד",
+          "pos": "noun",
+          "gloss": "garment",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "H6593",
+          "original": "פִּשְׁתִּֽים",
+          "pos": "noun",
+          "gloss": "flax",
+          "registry": "R128 rebellion"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 187923,
+          "mti_term_id": 6080,
+          "strong": "H6593",
+          "owning_registry": "R128 rebellion",
+          "transliteration": "pe.shet",
+          "gloss": "flax",
+          "language": "Hebrew",
+          "step_search_gloss": "flax",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Jer 9:10",
+      "verse_text": "Jer 9:10 “I will take up weeping and wailing for the mountains , and a lamentation for the pastures of the wilderness , because they are laid waste so that no one passes through , and the lowing of cattle is not heard ; both the birds of the air and the beasts have fled and are gone .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H5414Q",
+          "original": "וְנָתַתִּי",
+          "pos": "verb",
+          "gloss": "to give: if only!",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H3389",
+          "original": "יְרוּשָׁלִַם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1530G",
+          "original": "לְגַלִּים",
+          "pos": "noun",
+          "gloss": "heap",
+          "registry": "R083 idolatry"
+        },
+        {
+          "strong": "H4583",
+          "original": "מְעוֹן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8577A",
+          "original": "תַּנִּים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "וְאֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H5892B",
+          "original": "עָרֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3063G",
+          "original": "יְהוּדָה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5414Q",
+          "original": "אֶתֵּן",
+          "pos": "verb",
+          "gloss": "to give: if only!",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H8077A",
+          "original": "שְׁמָמָה",
+          "pos": "noun",
+          "gloss": "devastation",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H1097",
+          "original": "מִבְּלִי",
+          "pos": "noun",
+          "gloss": "without",
+          "registry": "R162 transgression"
+        },
+        {
+          "strong": "H3427",
+          "original": "יוֹשֵֽׁב",
+          "pos": "verb",
+          "gloss": "to dwell",
+          "registry": "R173 will"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 48221,
+          "mti_term_id": 1235,
+          "strong": "H1980G",
+          "owning_registry": "R173 will",
+          "transliteration": "ha.lakh",
+          "gloss": "to go: went",
+          "language": "Hebrew",
+          "step_search_gloss": "to go: went",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 169932,
+          "mti_term_id": 5571,
+          "strong": "H5074",
+          "owning_registry": "R086 impurity",
+          "transliteration": "na.dad",
+          "gloss": "to wander",
+          "language": "Hebrew",
+          "step_search_gloss": "to wander",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Judg 8:17",
+      "verse_text": "Judg 8:17 And he broke down the tower of Penuel and killed the men of the city .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0853",
+          "original": "וְאֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H4026M",
+          "original": "מִגְדַּל",
+          "pos": "noun",
+          "gloss": "tower",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H6439G",
+          "original": "פְּנוּאֵל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5422",
+          "original": "נָתָץ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2026",
+          "original": "וַֽיַּהֲרֹג",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0376G",
+          "original": "אַנְשֵׁי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5892B",
+          "original": "הָעִֽיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 216108,
+          "mti_term_id": 6900,
+          "strong": "H4026M",
+          "owning_registry": "R187 strength",
+          "transliteration": "mig.dal",
+          "gloss": "tower",
+          "language": "Hebrew",
+          "step_search_gloss": "tower",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Mat 13:54",
+      "verse_text": "Mat 13:54 and coming to his hometown he taught them in their synagogue , so that they were astonished , and said , “ Where did this man get this wisdom and these mighty works ?",
+      "all_spans_in_verse": [
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2064",
+          "original": "ἐλθὼν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1519",
+          "original": "εἰς",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τὴν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3968",
+          "original": "πατρίδα",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτοῦ",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G1321",
+          "original": "ἐδίδασκεν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1438",
+          "original": "αὐτοὺς",
+          "pos": "pronoun-personal",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1722",
+          "original": "ἐν",
+          "pos": "preposition",
+          "gloss": "in/on/among",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "G3588",
+          "original": "τῇ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G4864",
+          "original": "συναγωγῇ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτῶν,",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G5620",
+          "original": "ὥστε",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1605",
+          "original": "ἐκπλήσσεσθαι",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1438",
+          "original": "αὐτοὺς",
+          "pos": "pronoun-personal",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3004G",
+          "original": "λέγειν·",
+          "pos": "verb",
+          "gloss": "to say: says",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "G4159",
+          "original": "Πόθεν",
+          "pos": "adverb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3778",
+          "original": "τούτῳ",
+          "pos": "unknown:D",
+          "gloss": "this/these",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G3588",
+          "original": "ἡ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G4678",
+          "original": "σοφία",
+          "pos": "noun",
+          "gloss": "wisdom",
+          "registry": "R174 wisdom"
+        },
+        {
+          "strong": "G3778",
+          "original": "αὕτη",
+          "pos": "unknown:D",
+          "gloss": "this/these",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3588",
+          "original": "αἱ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1411",
+          "original": "δυνάμεις;",
+          "pos": "noun",
+          "gloss": "power",
+          "registry": "R187 strength"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 60635,
+          "mti_term_id": 684,
+          "strong": "G1411",
+          "owning_registry": "R187 strength",
+          "transliteration": "dunamis",
+          "gloss": "power",
+          "language": "Greek",
+          "step_search_gloss": "power",
+          "short_def_mounce": "power, ability; miracle; ruler, an extended meaning of a person or supernatural being who has administrative power",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Luk 12:45",
+      "verse_text": "Luk 12:45 But if that servant says to himself , ‘ My master is delayed in coming ,’ and begins to beat the male and female servants , and to eat and drink and get drunk ,",
+      "all_spans_in_verse": [
+        {
+          "strong": "G1437",
+          "original": "ἐὰν",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1161",
+          "original": "δὲ",
+          "pos": "conjunction",
+          "gloss": "then",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "G3004G",
+          "original": "εἴπῃ",
+          "pos": "verb",
+          "gloss": "to say: says",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "G3588",
+          "original": "ὁ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1401",
+          "original": "δοῦλος",
+          "pos": "noun",
+          "gloss": "slave",
+          "registry": "R017 bondage"
+        },
+        {
+          "strong": "G1565",
+          "original": "ἐκεῖνος",
+          "pos": "unknown:D",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1722",
+          "original": "ἐν",
+          "pos": "preposition",
+          "gloss": "in/on/among",
+          "registry": "R059 faith"
+        },
+        {
+          "strong": "G3588",
+          "original": "τῇ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2588",
+          "original": "καρδίᾳ",
+          "pos": "noun",
+          "gloss": "heart",
+          "registry": "R183 heart"
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτοῦ·",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G5549",
+          "original": "Χρονίζει",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "ὁ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2962H",
+          "original": "κύριός",
+          "pos": "noun",
+          "gloss": "lord: master",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "G1473",
+          "original": "μου",
+          "pos": "pronoun-personal",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2064",
+          "original": "ἔρχεσθαι,",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G0757",
+          "original": "ἄρξηται",
+          "pos": "verb",
+          "gloss": "be first",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "G5180",
+          "original": "τύπτειν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τοὺς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3816",
+          "original": "παῖδας",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3588",
+          "original": "τὰς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3814",
+          "original": "παιδίσκας,",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2068",
+          "original": "ἐσθίειν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5037",
+          "original": "τε",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G4095",
+          "original": "πίνειν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3182",
+          "original": "μεθύσκεσθαι,",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 144032,
+          "mti_term_id": 4804,
+          "strong": "G1401",
+          "owning_registry": "R017 bondage",
+          "transliteration": "doulos",
+          "gloss": "slave",
+          "language": "Greek",
+          "step_search_gloss": "slave",
+          "short_def_mounce": "- a slave (literal or figurative, involuntary or voluntary; frequently, therefore in a qualified sense of subjection or subserviency)",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Jos 16:9",
+      "verse_text": "Jos 16:9 together with the towns that were set apart for the people of Ephraim within the inheritance of the Manassites , all those towns with their villages .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H5892B",
+          "original": "וְהֶעָרִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3995",
+          "original": "הַמִּבְדָּלוֹת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121G",
+          "original": "לִבְנֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0669G",
+          "original": "אֶפְרַיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8432",
+          "original": "בְּתוֹךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5159",
+          "original": "נַחֲלַת",
+          "pos": "noun",
+          "gloss": "inheritance",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H1121G",
+          "original": "בְּנֵֽי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4519G",
+          "original": "מְנַשֶּׁה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3605",
+          "original": "כָּֽל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5892B",
+          "original": "הֶעָרִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2691B",
+          "original": "וְחַצְרֵיהֶֽן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 90990,
+          "mti_term_id": 3095,
+          "strong": "H5159",
+          "owning_registry": "R173 will",
+          "transliteration": "na.cha.lah",
+          "gloss": "inheritance",
+          "language": "Hebrew",
+          "step_search_gloss": "inheritance",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Jer 29:13",
+      "verse_text": "Jer 29:13 You will seek me and find me, when you seek me with all your heart .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H1245",
+          "original": "וּבִקַּשְׁתֶּם",
+          "pos": "verb",
+          "gloss": "to seek",
+          "registry": "R043 desire"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֹתִי",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H4672",
+          "original": "וּמְצָאתֶם",
+          "pos": "verb",
+          "gloss": "to find",
+          "registry": "R140 seeking"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H1875",
+          "original": "תִדְרְשֻׁנִי",
+          "pos": "verb",
+          "gloss": "to seek",
+          "registry": "R140 seeking"
+        },
+        {
+          "strong": "H3605",
+          "original": "בְּכָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H3824",
+          "original": "לְבַבְכֶֽם",
+          "pos": "noun",
+          "gloss": "heart",
+          "registry": "R183 heart"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 37556,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "owning_registry": "R140 seeking",
+          "transliteration": "ma.tsa",
+          "gloss": "to find",
+          "language": "Hebrew",
+          "step_search_gloss": "to find",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "1Sa 13:22",
+      "verse_text": "1Sa 13:22 So on the day of the battle there was neither sword nor spear found in the hand of any of the people with Saul and Jonathan , but Saul and Jonathan his son had them .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H1961",
+          "original": "וְהָיָה",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H3117G",
+          "original": "בְּיוֹם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4421",
+          "original": "מִלְחֶמֶת",
+          "pos": "noun",
+          "gloss": "battle",
+          "registry": "R185 flesh"
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H4672",
+          "original": "נִמְצָא",
+          "pos": "verb",
+          "gloss": "to find",
+          "registry": "R140 seeking"
+        },
+        {
+          "strong": "H2719",
+          "original": "חֶרֶב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2595",
+          "original": "וַחֲנִית",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3027G",
+          "original": "בְּיַד",
+          "pos": "noun",
+          "gloss": "hand",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5971A",
+          "original": "הָעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0854",
+          "original": "אֶת",
+          "pos": "preposition",
+          "gloss": "with",
+          "registry": "R023 compassion"
+        },
+        {
+          "strong": "H7586G",
+          "original": "שָׁאוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0854",
+          "original": "וְאֶת",
+          "pos": "preposition",
+          "gloss": "with",
+          "registry": "R023 compassion"
+        },
+        {
+          "strong": "H3129N",
+          "original": "יוֹנָתָן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4672",
+          "original": "וַתִּמָּצֵא",
+          "pos": "verb",
+          "gloss": "to find",
+          "registry": "R140 seeking"
+        },
+        {
+          "strong": "H7586G",
+          "original": "לְשָׁאוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3129N",
+          "original": "וּלְיוֹנָתָן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121A",
+          "original": "בְּנֽוֹ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 83644,
+          "mti_term_id": 2816,
+          "strong": "H3027G",
+          "owning_registry": "R197 authority",
+          "transliteration": "yad",
+          "gloss": "hand",
+          "language": "Hebrew",
+          "step_search_gloss": "hand",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 192339,
+          "mti_term_id": 1101,
+          "strong": "H4672",
+          "owning_registry": "R140 seeking",
+          "transliteration": "ma.tsa",
+          "gloss": "to find",
+          "language": "Hebrew",
+          "step_search_gloss": "to find",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Judg 8:18",
+      "verse_text": "Judg 8:18 Then he said to Zebah and Zalmunna , “ Where are the men whom you killed at Tabor ?” They answered , “As you are , so were they. Every one of them resembled the son of a king .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0559",
+          "original": "וַיֹּאמֶר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H2078",
+          "original": "זֶבַח",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0413",
+          "original": "וְאֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H6759",
+          "original": "צַלְמֻנָּע",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0375",
+          "original": "אֵיפֹה",
+          "pos": "particle",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0376G",
+          "original": "הָאֲנָשִׁים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H2026",
+          "original": "הֲרַגְתֶּם",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8396G",
+          "original": "בְּתָבוֹר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0559",
+          "original": "וַֽיֹּאמרוּ",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H3644G",
+          "original": "כָּמוֹךָ",
+          "pos": "preposition",
+          "gloss": "like",
+          "registry": "R172 wickedness"
+        },
+        {
+          "strong": "H3644G",
+          "original": "כְמוֹהֶם",
+          "pos": "preposition",
+          "gloss": "like",
+          "registry": "R172 wickedness"
+        },
+        {
+          "strong": "H0259",
+          "original": "אֶחָד",
+          "pos": "adjective",
+          "gloss": "one",
+          "registry": "R121 praise"
+        },
+        {
+          "strong": "H8389",
+          "original": "כְּתֹאַר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121A",
+          "original": "בְּנֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4428G",
+          "original": "הַמֶּֽלֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 33657,
+          "mti_term_id": 1041,
+          "strong": "H0259",
+          "owning_registry": "R121 praise",
+          "transliteration": "e.chad",
+          "gloss": "one",
+          "language": "Hebrew",
+          "step_search_gloss": "one",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Exo 17:7",
+      "verse_text": "Exo 17:7 And he called the name of the place Massah and Meribah , because of the quarreling of the people of Israel , and because they tested the Lord by saying , “ Is the Lord among us or not ?”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H7121H",
+          "original": "וַיִּקְרָא",
+          "pos": "verb",
+          "gloss": "to call: call by",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "H8034",
+          "original": "שֵׁם",
+          "pos": "noun",
+          "gloss": "name",
+          "registry": "R204 name"
+        },
+        {
+          "strong": "H4725",
+          "original": "הַמָּקוֹם",
+          "pos": "noun",
+          "gloss": "place",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H4532",
+          "original": "מַסָּה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4809G",
+          "original": "וּמְרִיבָה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H7379",
+          "original": "רִיב",
+          "pos": "noun",
+          "gloss": "strife",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H1121G",
+          "original": "בְּנֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3478",
+          "original": "יִשְׂרָאֵל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5921A",
+          "original": "וְעַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H5254G",
+          "original": "נַסֹּתָם",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H0559",
+          "original": "לֵאמֹר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H3426",
+          "original": "הֲיֵשׁ",
+          "pos": "particle",
+          "gloss": "there",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H7130G",
+          "original": "בְּקִרְבֵּנוּ",
+          "pos": "noun",
+          "gloss": "entrails: among",
+          "registry": "R112 mind"
+        },
+        {
+          "strong": "H0518A",
+          "original": "אִם",
+          "pos": "conjunction",
+          "gloss": "if",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H0369",
+          "original": "אָֽיִן",
+          "pos": "particle",
+          "gloss": "nothing",
+          "registry": "R142 self-control"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 218893,
+          "mti_term_id": 6989,
+          "strong": "H4725",
+          "owning_registry": "R187 strength",
+          "transliteration": "ma.qom",
+          "gloss": "place",
+          "language": "Hebrew",
+          "step_search_gloss": "place",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Act 10:11",
+      "verse_text": "Act 10:11 and saw the heavens opened and something like a great sheet descending , being let down by its four corners upon the earth .",
+      "all_spans_in_verse": [
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2334",
+          "original": "θεωρεῖ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τὸν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3772",
+          "original": "οὐρανὸν",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0455",
+          "original": "ἀνεῳγμένον",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2597",
+          "original": "καταβαῖνον",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G4632",
+          "original": "σκεῦός",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5100",
+          "original": "τι",
+          "pos": "unknown:X",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5613",
+          "original": "ὡς",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3607",
+          "original": "ὀθόνην",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3173",
+          "original": "μεγάλην",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5064",
+          "original": "τέσσαρσιν",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0746",
+          "original": "ἀρχαῖς",
+          "pos": "noun",
+          "gloss": "beginning",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "G2524",
+          "original": "καθιέμενον",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1909",
+          "original": "ἐπὶ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τῆς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1093G",
+          "original": "γῆς,",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 83322,
+          "mti_term_id": 1328,
+          "strong": "G0746",
+          "owning_registry": "R197 authority",
+          "transliteration": "archē",
+          "gloss": "beginning",
+          "language": "Greek",
+          "step_search_gloss": "beginning",
+          "short_def_mounce": "beginning, origin, first; ruler, power, authority; position of authority, domain",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Psa 106:44",
+      "verse_text": "Psa 106:44 Nevertheless, he looked upon their distress , when he heard their cry .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H7200G",
+          "original": "וַיַּרְא",
+          "pos": "verb",
+          "gloss": "to see: see",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H6862B",
+          "original": "בַּצַּר",
+          "pos": "adjective",
+          "gloss": "distress",
+          "registry": "R005 anguish"
+        },
+        {
+          "strong": "000l",
+          "original": "לָהֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8085G",
+          "original": "בְּשָׁמְעוֹ",
+          "pos": "verb",
+          "gloss": "to hear: hear",
+          "registry": "R166 understanding"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H7440",
+          "original": "רִנָּתָֽם",
+          "pos": "noun",
+          "gloss": "cry",
+          "registry": "R097 joy"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 572,
+          "mti_term_id": 209,
+          "strong": "H6862B",
+          "owning_registry": "R005 anguish",
+          "transliteration": "tsar",
+          "gloss": "distress",
+          "language": "Hebrew",
+          "step_search_gloss": "distress",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Hos 5:13",
+      "verse_text": "Hos 5:13 When Ephraim saw his sickness , and Judah his wound , then Ephraim went to Assyria , and sent to the great king . But he is not able to cure you or heal your wound .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H7200G",
+          "original": "וַיַּרְא",
+          "pos": "verb",
+          "gloss": "to see: see",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H0669G",
+          "original": "אֶפְרַיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H2483",
+          "original": "חָלְיוֹ",
+          "pos": "noun",
+          "gloss": "sickness",
+          "registry": "R071 grief"
+        },
+        {
+          "strong": "H3063G",
+          "original": "וִֽיהוּדָה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H4205",
+          "original": "מְזֹרוֹ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3212",
+          "original": "וַיֵּלֶךְ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0669G",
+          "original": "אֶפְרַיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H0804G",
+          "original": "אַשּׁוּר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7971G",
+          "original": "וַיִּשְׁלַח",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H4428G",
+          "original": "מֶלֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3377",
+          "original": "יָרֵב",
+          "pos": "noun",
+          "gloss": "`great`",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H1931",
+          "original": "וְהוּא",
+          "pos": "pronoun",
+          "gloss": "he/she/it",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H3808",
+          "original": "לֹא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3201",
+          "original": "יוּכַל",
+          "pos": "verb",
+          "gloss": "be able",
+          "registry": "R196 power"
+        },
+        {
+          "strong": "H7495",
+          "original": "לִרְפֹּא",
+          "pos": "verb",
+          "gloss": "to heal",
+          "registry": "R184 spirit"
+        },
+        {
+          "strong": "000l",
+          "original": "לָכֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3808",
+          "original": "וְלֹֽא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H1455",
+          "original": "יִגְהֶה",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4480A",
+          "original": "מִכֶּם",
+          "pos": "preposition",
+          "gloss": "from",
+          "registry": "R089 iniquity"
+        },
+        {
+          "strong": "H4205",
+          "original": "מָזֽוֹר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 51621,
+          "mti_term_id": 1308,
+          "strong": "H3201",
+          "owning_registry": "R196 power",
+          "transliteration": "ya.khol",
+          "gloss": "be able",
+          "language": "Hebrew",
+          "step_search_gloss": "be able",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 157603,
+          "mti_term_id": 5180,
+          "strong": "H3377",
+          "owning_registry": "R051 distress",
+          "transliteration": "ya.rev",
+          "gloss": "`great`",
+          "language": "Hebrew",
+          "step_search_gloss": "`great`",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Psa 47:3",
+      "verse_text": "Psa 47:3 He subdued peoples under us, and nations under our feet .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H5945B",
+          "original": "עֶלְיוֹן",
+          "pos": "adjective",
+          "gloss": "Most High [God]",
+          "registry": "R052 division"
+        },
+        {
+          "strong": "H3372H",
+          "original": "נוֹרָא",
+          "pos": "verb",
+          "gloss": "to fear: revere",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H4428G",
+          "original": "מֶלֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1419A",
+          "original": "גָּדוֹל",
+          "pos": "adjective",
+          "gloss": "great: large",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָֽרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 195373,
+          "mti_term_id": 6253,
+          "strong": "H7272",
+          "owning_registry": "R149 slander",
+          "transliteration": "re.gel",
+          "gloss": "foot",
+          "language": "Hebrew",
+          "step_search_gloss": "foot",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Act 26:3",
+      "verse_text": "Act 26:3 especially because you are familiar with all the customs and controversies of the Jews . Therefore I beg you to listen to me patiently .",
+      "all_spans_in_verse": [
+        {
+          "strong": "G3122",
+          "original": "μάλιστα",
+          "pos": "adverb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1109",
+          "original": "γνώστην",
+          "pos": "noun",
+          "gloss": "expert in",
+          "registry": "R026 conscience"
+        },
+        {
+          "strong": "G1510",
+          "original": "ὄντα",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "G4771",
+          "original": "σε",
+          "pos": "pronoun-personal",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3956",
+          "original": "πάντων",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τῶν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2596",
+          "original": "κατὰ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2453",
+          "original": "Ἰουδαίους",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1485",
+          "original": "ἐθῶν",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5037",
+          "original": "τε",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2213",
+          "original": "ζητημάτων·",
+          "pos": "noun",
+          "gloss": "a question/dispute",
+          "registry": "R043 desire"
+        },
+        {
+          "strong": "G1352",
+          "original": "διὸ",
+          "pos": "conjunction",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1189",
+          "original": "δέομαι",
+          "pos": "verb",
+          "gloss": "to pray",
+          "registry": "R122 prayer"
+        },
+        {
+          "strong": "G3116",
+          "original": "μακροθύμως",
+          "pos": "adverb",
+          "gloss": "patiently",
+          "registry": "R115 passion"
+        },
+        {
+          "strong": "G0191",
+          "original": "ἀκοῦσαί",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1473",
+          "original": "μου.",
+          "pos": "pronoun-personal",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 185926,
+          "mti_term_id": 2336,
+          "strong": "G1189",
+          "owning_registry": "R122 prayer",
+          "transliteration": "deomai",
+          "gloss": "to pray",
+          "language": "Greek",
+          "step_search_gloss": "to pray",
+          "short_def_mounce": "to pray; ask, beg, plead",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "1Sa 22:9",
+      "verse_text": "1Sa 22:9 Then answered Doeg the Edomite , who stood by the servants of Saul , “I saw the son of Jesse coming to Nob , to Ahimelech the son of Ahitub ,",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6030B",
+          "original": "וַיַּעַן",
+          "pos": "verb",
+          "gloss": "to answer",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "H1673",
+          "original": "דֹּאֵג",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0130",
+          "original": "הָאֲדֹמִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1931",
+          "original": "וְהוּא",
+          "pos": "pronoun",
+          "gloss": "he/she/it",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5324",
+          "original": "נִצָּב",
+          "pos": "verb",
+          "gloss": "to stand",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H5650",
+          "original": "עַבְדֵֽי",
+          "pos": "noun",
+          "gloss": "servant/slave",
+          "registry": "R176 worship"
+        },
+        {
+          "strong": "H7586G",
+          "original": "שָׁאוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0559",
+          "original": "וַיֹּאמַר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H7200G",
+          "original": "רָאִיתִי",
+          "pos": "verb",
+          "gloss": "to see: see",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1121A",
+          "original": "בֶּן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3448",
+          "original": "יִשַׁי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0935G",
+          "original": "בָּא",
+          "pos": "verb",
+          "gloss": "to come [in]: come",
+          "registry": "R198 might"
+        },
+        {
+          "strong": "H5011",
+          "original": "נֹבֶה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H0288G",
+          "original": "אֲחִימֶלֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121A",
+          "original": "בֶּן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0285G",
+          "original": "אֲחִטֽוּב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 215574,
+          "mti_term_id": 6895,
+          "strong": "H5324",
+          "owning_registry": "R187 strength",
+          "transliteration": "na.tsav",
+          "gloss": "to stand",
+          "language": "Hebrew",
+          "step_search_gloss": "to stand",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Exo 14:4",
+      "verse_text": "Exo 14:4 And I will harden Pharaoh’s heart , and he will pursue them, and I will get glory over Pharaoh and all his host , and the Egyptians shall know that I am the Lord .” And they did so .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H2388G",
+          "original": "וְחִזַּקְתִּי",
+          "pos": "verb",
+          "gloss": "to strengthen: strengthen",
+          "registry": "R033 courage"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H3820A",
+          "original": "לֵב",
+          "pos": "noun",
+          "gloss": "heart",
+          "registry": "R183 heart"
+        },
+        {
+          "strong": "H6547J",
+          "original": "פַּרְעֹה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7291",
+          "original": "וְרָדַף",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0310A",
+          "original": "אַחֲרֵיהֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3513G",
+          "original": "וְאִכָּבְדָה",
+          "pos": "verb",
+          "gloss": "to honor: honour",
+          "registry": "R015 boastfulness"
+        },
+        {
+          "strong": "H6547J",
+          "original": "בְּפַרְעֹה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3605",
+          "original": "וּבְכָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H2428A",
+          "original": "חֵילוֹ",
+          "pos": "noun",
+          "gloss": "strength: soldiers",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H3045",
+          "original": "וְיָדְעוּ",
+          "pos": "verb",
+          "gloss": "to know",
+          "registry": "R100 knowledge"
+        },
+        {
+          "strong": "H4713",
+          "original": "מִצְרַיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H0589",
+          "original": "אֲנִי",
+          "pos": "pronoun",
+          "gloss": "I",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H6213A",
+          "original": "וַיַּֽעֲשׂוּ",
+          "pos": "verb",
+          "gloss": "to make: do",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3651C",
+          "original": "כֵֽן",
+          "pos": "adverb",
+          "gloss": "so",
+          "registry": "R004 anger"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 220513,
+          "mti_term_id": 7029,
+          "strong": "H2428A",
+          "owning_registry": "R187 strength",
+          "transliteration": "cha.yil",
+          "gloss": "strength: soldiers",
+          "language": "Hebrew",
+          "step_search_gloss": "strength: soldiers",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "1Ch 26:8",
+      "verse_text": "1Ch 26:8 All these were of the sons of Obed-edom with their sons and brothers , able men qualified for the service ; sixty-two of Obed-edom .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H0428",
+          "original": "אֵלֶּה",
+          "pos": "pronoun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121A",
+          "original": "מִבְּנֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5654",
+          "original": "עֹבֵד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5654",
+          "original": "אֱדֹם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1992",
+          "original": "הֵמָּה",
+          "pos": "pronoun",
+          "gloss": "they [masc.]",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H1121A",
+          "original": "וּבְנֵיהֶם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0251H",
+          "original": "וַאֲחֵיהֶם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0376G",
+          "original": "אִֽישׁ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2428G",
+          "original": "חַיִל",
+          "pos": "noun",
+          "gloss": "strength",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H3581B",
+          "original": "בַּכֹּחַ",
+          "pos": "noun",
+          "gloss": "strength",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H5656G",
+          "original": "לַעֲבֹדָה",
+          "pos": "noun",
+          "gloss": "service",
+          "registry": "R176 worship"
+        },
+        {
+          "strong": "H8346",
+          "original": "שִׁשִּׁים",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8147",
+          "original": "וּשְׁנַיִם",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5654",
+          "original": "לְעֹבֵד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5654",
+          "original": "אֱדֹֽם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 220576,
+          "mti_term_id": 7030,
+          "strong": "H2428G",
+          "owning_registry": "R187 strength",
+          "transliteration": "cha.yil",
+          "gloss": "strength",
+          "language": "Hebrew",
+          "step_search_gloss": "strength",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 217783,
+          "mti_term_id": 6965,
+          "strong": "H3581B",
+          "owning_registry": "R187 strength",
+          "transliteration": "ko.ach",
+          "gloss": "strength",
+          "language": "Hebrew",
+          "step_search_gloss": "strength",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 210404,
+          "mti_term_id": 6722,
+          "strong": "H5656G",
+          "owning_registry": "R176 worship",
+          "transliteration": "a.vo.dah",
+          "gloss": "service",
+          "language": "Hebrew",
+          "step_search_gloss": "service",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "1Sa 19:3",
+      "verse_text": "1Sa 19:3 And I will go out and stand beside my father in the field where you are , and I will speak to my father about you. And if I learn anything I will tell you .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0589",
+          "original": "וַאֲנִי",
+          "pos": "pronoun",
+          "gloss": "I",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3318G",
+          "original": "אֵצֵא",
+          "pos": "verb",
+          "gloss": "to come out: come",
+          "registry": "R185 flesh"
+        },
+        {
+          "strong": "H5975G",
+          "original": "וְעָמַדְתִּי",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3027K",
+          "original": "לְיַד",
+          "pos": "noun",
+          "gloss": "hand: to",
+          "registry": "R033 courage"
+        },
+        {
+          "strong": "H0001G",
+          "original": "אָבִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7704G",
+          "original": "בַּשָּׂדֶה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0859A",
+          "original": "אַתָּה",
+          "pos": "pronoun",
+          "gloss": "you [m.s.]",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H8033G",
+          "original": "שָׁם",
+          "pos": "adverb",
+          "gloss": "there",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H0589",
+          "original": "וַאֲנִי",
+          "pos": "pronoun",
+          "gloss": "I",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H1696G",
+          "original": "אֲדַבֵּר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000b",
+          "original": "בְּךָ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H0001G",
+          "original": "אָבִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7200H",
+          "original": "וְרָאִיתִי",
+          "pos": "verb",
+          "gloss": "to see: examine",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H4100",
+          "original": "מָה",
+          "pos": "particle",
+          "gloss": "what?",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H5046",
+          "original": "וְהִגַּדְתִּי",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000l",
+          "original": "לָֽךְ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 150811,
+          "mti_term_id": 2820,
+          "strong": "H3027K",
+          "owning_registry": "R033 courage",
+          "transliteration": "yad",
+          "gloss": "hand: to",
+          "language": "Hebrew",
+          "step_search_gloss": "hand: to",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Mar 1:29",
+      "verse_text": "Mar 1:29 And immediately he left the synagogue and entered the house of Simon and Andrew , with James and John .",
+      "all_spans_in_verse": [
+        {
+          "strong": "G2532",
+          "original": "Καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2112",
+          "original": "εὐθὺς",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1537",
+          "original": "ἐκ",
+          "pos": "preposition",
+          "gloss": "out from",
+          "registry": "R140 seeking"
+        },
+        {
+          "strong": "G3588",
+          "original": "τῆς",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G4864",
+          "original": "συναγωγῆς",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1831",
+          "original": "ἐξελθόντες",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2064",
+          "original": "ἦλθον ⸃",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1519",
+          "original": "εἰς",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τὴν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3614G",
+          "original": "οἰκίαν",
+          "pos": "noun",
+          "gloss": "home",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "G4613O",
+          "original": "Σίμωνος",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G0406",
+          "original": "Ἀνδρέου",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3326",
+          "original": "μετὰ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2385G",
+          "original": "Ἰακώβου",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G2491H",
+          "original": "Ἰωάννου.",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 221202,
+          "mti_term_id": 7054,
+          "strong": "G3614G",
+          "owning_registry": "R187 strength",
+          "transliteration": "oikia",
+          "gloss": "home",
+          "language": "Greek",
+          "step_search_gloss": "home",
+          "short_def_mounce": ": home/temple/building<br>house, home; family",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Gen 32:8",
+      "verse_text": "Gen 32:8 thinking , “ If Esau comes to the one camp and attacks it, then the camp that is left will escape .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3372G",
+          "original": "וַיִּירָא",
+          "pos": "verb",
+          "gloss": "to fear: revere",
+          "registry": "R061 fear"
+        },
+        {
+          "strong": "H3290",
+          "original": "יַעֲקֹב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3966",
+          "original": "מְאֹד",
+          "pos": "adverb",
+          "gloss": "much",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H3334",
+          "original": "וַיֵּצֶר",
+          "pos": "verb",
+          "gloss": "be distressed",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "000l",
+          "original": "לוֹ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2673",
+          "original": "וַיַּחַץ",
+          "pos": "verb",
+          "gloss": "to divide",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H5971A",
+          "original": "הָעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0854",
+          "original": "אִתּוֹ",
+          "pos": "preposition",
+          "gloss": "with",
+          "registry": "R023 compassion"
+        },
+        {
+          "strong": "H0853",
+          "original": "וְאֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H6629G",
+          "original": "הַצֹּאן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "וְאֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1241",
+          "original": "הַבָּקָר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1581",
+          "original": "וְהַגְּמַלִּים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8147",
+          "original": "לִשְׁנֵי",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4264",
+          "original": "מַחֲנֽוֹת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 33571,
+          "mti_term_id": 1041,
+          "strong": "H0259",
+          "owning_registry": "R121 praise",
+          "transliteration": "e.chad",
+          "gloss": "one",
+          "language": "Hebrew",
+          "step_search_gloss": "one",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Song 1:13",
+      "verse_text": "Song 1:13 My beloved is to me a sachet of myrrh that lies between my breasts .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6872A",
+          "original": "צְרוֹר",
+          "pos": "noun",
+          "gloss": "bundle",
+          "registry": "R005 anguish"
+        },
+        {
+          "strong": "H4753",
+          "original": "הַמֹּר",
+          "pos": "noun",
+          "gloss": "myrrh",
+          "registry": "R005 anguish"
+        },
+        {
+          "strong": "H1730G",
+          "original": "דּוֹדִי",
+          "pos": "noun",
+          "gloss": "beloved",
+          "registry": "R103 love"
+        },
+        {
+          "strong": "000l",
+          "original": "לִי",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0996G",
+          "original": "בֵּין",
+          "pos": "preposition",
+          "gloss": "between",
+          "registry": "R049 discernment"
+        },
+        {
+          "strong": "H7699A",
+          "original": "שָׁדַי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3885A",
+          "original": "יָלִֽין",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 138239,
+          "mti_term_id": 4624,
+          "strong": "H6872A",
+          "owning_registry": "R005 anguish",
+          "transliteration": "tse.ror",
+          "gloss": "bundle",
+          "language": "Hebrew",
+          "step_search_gloss": "bundle",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 138249,
+          "mti_term_id": 4626,
+          "strong": "H6872B",
+          "owning_registry": "R005 anguish",
+          "transliteration": "tse.ror",
+          "gloss": "pebble",
+          "language": "Hebrew",
+          "step_search_gloss": "pebble",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Mar 15:24",
+      "verse_text": "Mar 15:24 And they crucified him and divided his garments among them, casting lots for them , to decide what each should take .",
+      "all_spans_in_verse": [
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G4717",
+          "original": "σταυροῦσιν",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτὸν",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ ⸃",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G1266",
+          "original": "διαμερίζονται",
+          "pos": "verb",
+          "gloss": "to divide",
+          "registry": "R052 division"
+        },
+        {
+          "strong": "G3588",
+          "original": "τὰ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2440",
+          "original": "ἱμάτια",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτοῦ,",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G0906G",
+          "original": "βάλλοντες",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2819",
+          "original": "κλῆρον",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G1909",
+          "original": "ἐπ᾽",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτὰ",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G5101",
+          "original": "τίς",
+          "pos": "unknown:I",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G5101",
+          "original": "τί",
+          "pos": "unknown:I",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0142",
+          "original": "ἄρῃ.",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 160656,
+          "mti_term_id": 5275,
+          "strong": "G1266",
+          "owning_registry": "R052 division",
+          "transliteration": "diamerizō",
+          "gloss": "to divide",
+          "language": "Greek",
+          "step_search_gloss": "to divide",
+          "short_def_mounce": "to divide, distribute",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Joh 11:5",
+      "verse_text": "Joh 11:5 Now Jesus loved Martha and her sister and Lazarus .",
+      "all_spans_in_verse": [
+        {
+          "strong": "G0025",
+          "original": "ἠγάπα",
+          "pos": "verb",
+          "gloss": "to love",
+          "registry": "R103 love"
+        },
+        {
+          "strong": "G1161",
+          "original": "δὲ",
+          "pos": "conjunction",
+          "gloss": "then",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "G3588",
+          "original": "ὁ",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2424G",
+          "original": "Ἰησοῦς",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3588",
+          "original": "τὴν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G3136",
+          "original": "Μάρθαν",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3588",
+          "original": "τὴν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G0079",
+          "original": "ἀδελφὴν",
+          "pos": "noun",
+          "gloss": "sister",
+          "registry": "R103 love"
+        },
+        {
+          "strong": "G0846",
+          "original": "αὐτῆς",
+          "pos": "pronoun-personal",
+          "gloss": "it/s/he",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "G2532",
+          "original": "καὶ",
+          "pos": "conjunction",
+          "gloss": "and",
+          "registry": "R040 deceit"
+        },
+        {
+          "strong": "G3588",
+          "original": "τὸν",
+          "pos": "article",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "G2976H",
+          "original": "Λάζαρον.",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 67775,
+          "mti_term_id": 1609,
+          "strong": "G0079",
+          "owning_registry": "R103 love",
+          "transliteration": "adelfē",
+          "gloss": "sister",
+          "language": "Greek",
+          "step_search_gloss": "sister",
+          "short_def_mounce": "sister, fellow countrywoman; by extension a female believer, a sister in the family of faith",
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Psa 69:24",
+      "verse_text": "Psa 69:24 Pour out your indignation upon them , and let your burning anger overtake them .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H2821",
+          "original": "תֶּחְשַׁכְנָה",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5869A",
+          "original": "עֵינֵיהֶם",
+          "pos": "noun",
+          "gloss": "eye",
+          "registry": "R089 iniquity"
+        },
+        {
+          "strong": "H7200G",
+          "original": "מֵרְאוֹת",
+          "pos": "verb",
+          "gloss": "to see: see",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H4975",
+          "original": "וּמָתְנֵיהֶם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8548",
+          "original": "תָּמִיד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4571",
+          "original": "הַמְעַֽד",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 57519,
+          "mti_term_id": 140,
+          "strong": "H2740",
+          "owning_registry": "R004 anger",
+          "transliteration": "cha.ron",
+          "gloss": "burning anger",
+          "language": "Hebrew",
+          "step_search_gloss": "burning anger",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "1Sa 28:17",
+      "verse_text": "1Sa 28:17 The Lord has done to you as he spoke by me , for the Lord has torn the kingdom out of your hand and given it to your neighbor , David .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6213A",
+          "original": "וַיַּעַשׂ",
+          "pos": "verb",
+          "gloss": "to make: do",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "000l",
+          "original": "לוֹ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "כַּאֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1696G",
+          "original": "דִּבֶּר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3027I",
+          "original": "בְּיָדִי",
+          "pos": "noun",
+          "gloss": "hand: themselves",
+          "registry": "R033 courage"
+        },
+        {
+          "strong": "H7167",
+          "original": "וַיִּקְרַע",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3068G",
+          "original": "יְהוָה",
+          "pos": "noun",
+          "gloss": "YHWH/Yahweh",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H4467",
+          "original": "הַמַּמְלָכָה",
+          "pos": "noun",
+          "gloss": "kingdom",
+          "registry": "R196 power"
+        },
+        {
+          "strong": "H3027G",
+          "original": "מִיָּדֶךָ",
+          "pos": "noun",
+          "gloss": "hand",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H5414G",
+          "original": "וַֽיִּתְּנָהּ",
+          "pos": "verb",
+          "gloss": "to give: give",
+          "registry": "R060 faithfulness"
+        },
+        {
+          "strong": "H7453",
+          "original": "לְרֵעֲךָ",
+          "pos": "noun",
+          "gloss": "neighbor",
+          "registry": "R103 love"
+        },
+        {
+          "strong": "H1732",
+          "original": "לְדָוִֽד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 150680,
+          "mti_term_id": 2818,
+          "strong": "H3027I",
+          "owning_registry": "R033 courage",
+          "transliteration": "yad",
+          "gloss": "hand: themselves",
+          "language": "Hebrew",
+          "step_search_gloss": "hand: themselves",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Job 40:14",
+      "verse_text": "Job 40:14 Then will I also acknowledge to you that your own right hand can save you.",
+      "all_spans_in_verse": [
+        {
+          "strong": "H1571",
+          "original": "וְגַם",
+          "pos": "particle",
+          "gloss": "also",
+          "registry": "R167 unity"
+        },
+        {
+          "strong": "H0589",
+          "original": "אֲנִי",
+          "pos": "pronoun",
+          "gloss": "I",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3034",
+          "original": "אוֹדֶךָּ",
+          "pos": "verb",
+          "gloss": "to give thanks",
+          "registry": "R121 praise"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H3467",
+          "original": "תוֹשִׁעַ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000l",
+          "original": "לְךָ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3225G",
+          "original": "יְמִינֶֽךָ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 33266,
+          "mti_term_id": 1029,
+          "strong": "H3034",
+          "owning_registry": "R121 praise",
+          "transliteration": "ya.dah",
+          "gloss": "to give thanks",
+          "language": "Hebrew",
+          "step_search_gloss": "to give thanks",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Ecc 12:12",
+      "verse_text": "Ecc 12:12 My son , beware of anything beyond these. Of making many books there is no end , and much study is a weariness of the flesh .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3148",
+          "original": "וְיֹתֵר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1992",
+          "original": "מֵהֵמָּה",
+          "pos": "pronoun",
+          "gloss": "they [masc.]",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H1121A",
+          "original": "בְּנִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2094B",
+          "original": "הִזָּהֵר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6213H",
+          "original": "עֲשׂוֹת",
+          "pos": "verb",
+          "gloss": "to make",
+          "registry": "R098 justice"
+        },
+        {
+          "strong": "H5612H",
+          "original": "סְפָרִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7235A",
+          "original": "הַרְבֵּה",
+          "pos": "verb",
+          "gloss": "to multiply",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H0369",
+          "original": "אֵין",
+          "pos": "particle",
+          "gloss": "nothing",
+          "registry": "R142 self-control"
+        },
+        {
+          "strong": "H7093",
+          "original": "קֵץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3854",
+          "original": "וְלַהַג",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7235A",
+          "original": "הַרְבֵּה",
+          "pos": "verb",
+          "gloss": "to multiply",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H3024",
+          "original": "יְגִעַת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1320",
+          "original": "בָּשָֽׂר",
+          "pos": "noun",
+          "gloss": "flesh",
+          "registry": "R185 flesh"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 10445,
+          "mti_term_id": 618,
+          "strong": "H1320",
+          "owning_registry": "R185 flesh",
+          "transliteration": "ba.sar",
+          "gloss": "flesh",
+          "language": "Hebrew",
+          "step_search_gloss": "flesh",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "2Ch 23:21",
+      "verse_text": "2Ch 23:21 So all the people of the land rejoiced , and the city was quiet after Athaliah had been put to death with the sword .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H8055",
+          "original": "וַיִּשְׂמְחוּ",
+          "pos": "verb",
+          "gloss": "to rejoice",
+          "registry": "R097 joy"
+        },
+        {
+          "strong": "H3605",
+          "original": "כָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5971A",
+          "original": "עַם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5892B",
+          "original": "וְהָעִיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8252",
+          "original": "שָׁקָטָה",
+          "pos": "verb",
+          "gloss": "to quiet",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H0853",
+          "original": "וְאֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H6271G",
+          "original": "עֲתַלְיָהוּ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4191",
+          "original": "הֵמִיתוּ",
+          "pos": "verb",
+          "gloss": "to die",
+          "registry": "R210 deadness"
+        },
+        {
+          "strong": "H2719",
+          "original": "בֶחָֽרֶב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 56188,
+          "mti_term_id": 418,
+          "strong": "H8252",
+          "owning_registry": "R117 peace",
+          "transliteration": "sha.qat",
+          "gloss": "to quiet",
+          "language": "Hebrew",
+          "step_search_gloss": "to quiet",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Judg 20:12",
+      "verse_text": "Judg 20:12 And the tribes of Israel sent men through all the tribe of Benjamin , saying , “ What evil is this that has taken place among you ?",
+      "all_spans_in_verse": [
+        {
+          "strong": "H7971G",
+          "original": "וַֽיִּשְׁלְחוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7626H",
+          "original": "שִׁבְטֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3478",
+          "original": "יִשְׂרָאֵל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0376G",
+          "original": "אֲנָשִׁים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3605",
+          "original": "בְּכָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H7626H",
+          "original": "שִׁבְטֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1144G",
+          "original": "בִנְיָמִן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0559",
+          "original": "לֵאמֹר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H4100",
+          "original": "מָה",
+          "pos": "particle",
+          "gloss": "what?",
+          "registry": "R042 delight"
+        },
+        {
+          "strong": "H7451I",
+          "original": "הָרָעָה",
+          "pos": "noun",
+          "gloss": "distress: evil",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H2063",
+          "original": "הַזֹּאת",
+          "pos": "pronoun",
+          "gloss": "this",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1961",
+          "original": "נִהְיְתָה",
+          "pos": "verb",
+          "gloss": "to be",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "000b",
+          "original": "בָּכֶֽם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 156532,
+          "mti_term_id": 237,
+          "strong": "H7451I",
+          "owning_registry": "R051 distress",
+          "transliteration": "ra.ah",
+          "gloss": "distress: evil",
+          "language": "Hebrew",
+          "step_search_gloss": "distress: evil",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Neh 12:46",
+      "verse_text": "Neh 12:46 For long ago in the days of David and Asaph there were directors of the singers , and there were songs of praise and thanksgiving to God .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3588A",
+          "original": "כִּֽי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H3117G",
+          "original": "בִימֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1732",
+          "original": "דָוִיד",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0623H",
+          "original": "וְאָסָף",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6924H",
+          "original": "מִקֶּדֶם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7218H",
+          "original": "ראש",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7218H",
+          "original": "רָאשֵׁי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7891",
+          "original": "הַמְשֹׁרְרִים",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7892A",
+          "original": "וְשִׁיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8416",
+          "original": "תְּהִלָּה",
+          "pos": "noun",
+          "gloss": "praise",
+          "registry": "R121 praise"
+        },
+        {
+          "strong": "H3034",
+          "original": "וְהֹדוֹת",
+          "pos": "verb",
+          "gloss": "to give thanks",
+          "registry": "R121 praise"
+        },
+        {
+          "strong": "H0430G",
+          "original": "לֵֽאלֹהִֽים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 33274,
+          "mti_term_id": 1029,
+          "strong": "H3034",
+          "owning_registry": "R121 praise",
+          "transliteration": "ya.dah",
+          "gloss": "to give thanks",
+          "language": "Hebrew",
+          "step_search_gloss": "to give thanks",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 33249,
+          "mti_term_id": 1027,
+          "strong": "H8416",
+          "owning_registry": "R121 praise",
+          "transliteration": "te.hil.lah",
+          "gloss": "praise",
+          "language": "Hebrew",
+          "step_search_gloss": "praise",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Jer 11:12",
+      "verse_text": "Jer 11:12 Then the cities of Judah and the inhabitants of Jerusalem will go and cry to the gods to whom they make offerings , but they cannot save them in the time of their trouble .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H1980G",
+          "original": "וְהָֽלְכוּ",
+          "pos": "verb",
+          "gloss": "to go: went",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H5892B",
+          "original": "עָרֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3063G",
+          "original": "יְהוּדָה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3427",
+          "original": "וְיֹשְׁבֵי",
+          "pos": "verb",
+          "gloss": "to dwell",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3389",
+          "original": "יְרוּשָׁלִַם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2199",
+          "original": "וְזָֽעֲקוּ",
+          "pos": "verb",
+          "gloss": "to cry out",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H0430J",
+          "original": "הָאֱלֹהִים",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1992",
+          "original": "הֵם",
+          "pos": "pronoun",
+          "gloss": "they [masc.]",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H6999H",
+          "original": "מְקַטְּרִים",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000l",
+          "original": "לָהֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3467",
+          "original": "וְהוֹשֵׁעַ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3808",
+          "original": "לֹֽא",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R044 despair"
+        },
+        {
+          "strong": "H3467",
+          "original": "יוֹשִׁיעוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "000l",
+          "original": "לָהֶם",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6256",
+          "original": "בְּעֵת",
+          "pos": "noun",
+          "gloss": "time",
+          "registry": "R126 purpose"
+        },
+        {
+          "strong": "H7451C",
+          "original": "רָעָתָֽם",
+          "pos": "noun",
+          "gloss": "distress: harm",
+          "registry": "R005 anguish"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 48188,
+          "mti_term_id": 1235,
+          "strong": "H1980G",
+          "owning_registry": "R173 will",
+          "transliteration": "ha.lakh",
+          "gloss": "to go: went",
+          "language": "Hebrew",
+          "step_search_gloss": "to go: went",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 679,
+          "mti_term_id": 236,
+          "strong": "H7451C",
+          "owning_registry": "R005 anguish",
+          "transliteration": "ra.ah",
+          "gloss": "distress: harm",
+          "language": "Hebrew",
+          "step_search_gloss": "distress: harm",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Num 2:4",
+      "verse_text": "Num 2:4 his company as listed being 74,600 .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H6635A",
+          "original": "וּצְבָאוֹ",
+          "pos": "noun",
+          "gloss": "army",
+          "registry": "R117 peace"
+        },
+        {
+          "strong": "H6485A",
+          "original": "וּפְקֻדֵיהֶם",
+          "pos": "verb",
+          "gloss": "to reckon: list",
+          "registry": "R197 authority"
+        },
+        {
+          "strong": "H0702",
+          "original": "אַרְבָּעָה",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7657",
+          "original": "וְשִׁבְעִים",
+          "pos": "adjective",
+          "gloss": "seventy",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H0505G",
+          "original": "אֶלֶף",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8337",
+          "original": "וְשֵׁשׁ",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3967",
+          "original": "מֵאֽוֹת",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 85976,
+          "mti_term_id": 2883,
+          "strong": "H6485A",
+          "owning_registry": "R197 authority",
+          "transliteration": "pa.qad",
+          "gloss": "to reckon: list",
+          "language": "Hebrew",
+          "step_search_gloss": "to reckon: list",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Exo 3:5",
+      "verse_text": "Exo 3:5 Then he said , “Do not come near ; take your sandals off your feet , for the place on which you are standing is holy ground .”",
+      "all_spans_in_verse": [
+        {
+          "strong": "H0559",
+          "original": "וַיֹּאמֶר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H0408",
+          "original": "אַל",
+          "pos": "particle",
+          "gloss": "not",
+          "registry": "R147 sin"
+        },
+        {
+          "strong": "H7126G",
+          "original": "תִּקְרַב",
+          "pos": "verb",
+          "gloss": "to present: come",
+          "registry": "R183 heart"
+        },
+        {
+          "strong": "H1988",
+          "original": "הֲלֹם",
+          "pos": "adverb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5394",
+          "original": "שַׁל",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5275",
+          "original": "נְעָלֶיךָ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5921A",
+          "original": "מֵעַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H7272",
+          "original": "רַגְלֶיךָ",
+          "pos": "noun",
+          "gloss": "foot",
+          "registry": "R149 slander"
+        },
+        {
+          "strong": "H3588A",
+          "original": "כִּי",
+          "pos": "conjunction",
+          "gloss": "for",
+          "registry": "R028 consecration"
+        },
+        {
+          "strong": "H4725",
+          "original": "הַמָּקוֹם",
+          "pos": "noun",
+          "gloss": "place",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0859A",
+          "original": "אַתָּה",
+          "pos": "pronoun",
+          "gloss": "you [m.s.]",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H5975G",
+          "original": "עוֹמֵד",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5921A",
+          "original": "עָלָיו",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H0127G",
+          "original": "אַדְמַת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6944G",
+          "original": "קֹדֶשׁ",
+          "pos": "noun",
+          "gloss": "holiness",
+          "registry": "R076 holiness"
+        },
+        {
+          "strong": "H1931",
+          "original": "הֽוּא",
+          "pos": "pronoun",
+          "gloss": "he/she/it",
+          "registry": "R057 evil"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 168663,
+          "mti_term_id": 904,
+          "strong": "H6944G",
+          "owning_registry": "R076 holiness",
+          "transliteration": "qo.desh",
+          "gloss": "holiness",
+          "language": "Hebrew",
+          "step_search_gloss": "holiness",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 195224,
+          "mti_term_id": 6253,
+          "strong": "H7272",
+          "owning_registry": "R149 slander",
+          "transliteration": "re.gel",
+          "gloss": "foot",
+          "language": "Hebrew",
+          "step_search_gloss": "foot",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Exo 17:6",
+      "verse_text": "Exo 17:6 Behold , I will stand before you there on the rock at Horeb , and you shall strike the rock , and water shall come out of it, and the people will drink .” And Moses did so , in the sight of the elders of Israel .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H2005",
+          "original": "הִנְנִי",
+          "pos": "particle",
+          "gloss": "look!",
+          "registry": "R090 innocence"
+        },
+        {
+          "strong": "H5975G",
+          "original": "עֹמֵד",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6440G",
+          "original": "לְפָנֶיךָ",
+          "pos": "noun",
+          "gloss": "face: before",
+          "registry": "R112 mind"
+        },
+        {
+          "strong": "H8033G",
+          "original": "שָּׁם",
+          "pos": "adverb",
+          "gloss": "there",
+          "registry": "R034 covenant"
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַֽל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H6697H",
+          "original": "הַצּוּר",
+          "pos": "noun",
+          "gloss": "rock",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H2722",
+          "original": "בְּחֹרֵב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5221",
+          "original": "וְהִכִּיתָ",
+          "pos": "verb",
+          "gloss": "to smite",
+          "registry": "R030 contrition"
+        },
+        {
+          "strong": "H6697H",
+          "original": "בַצּוּר",
+          "pos": "noun",
+          "gloss": "rock",
+          "registry": "R051 distress"
+        },
+        {
+          "strong": "H3318G",
+          "original": "וְיָצְאוּ",
+          "pos": "verb",
+          "gloss": "to come out: come",
+          "registry": "R185 flesh"
+        },
+        {
+          "strong": "H4480A",
+          "original": "מִמֶּנּוּ",
+          "pos": "preposition",
+          "gloss": "from",
+          "registry": "R089 iniquity"
+        },
+        {
+          "strong": "H4325G",
+          "original": "מַיִם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8354",
+          "original": "וְשָׁתָה",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5971A",
+          "original": "הָעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6213A",
+          "original": "וַיַּעַשׂ",
+          "pos": "verb",
+          "gloss": "to make: do",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3651C",
+          "original": "כֵּן",
+          "pos": "particle",
+          "gloss": "so",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "H4872",
+          "original": "מֹשֶׁה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5869H",
+          "original": "לְעֵינֵי",
+          "pos": "noun",
+          "gloss": "eye: seeing",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H2205G",
+          "original": "זִקְנֵי",
+          "pos": "adjective",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3478",
+          "original": "יִשְׂרָאֵֽל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 158117,
+          "mti_term_id": 5212,
+          "strong": "H6697H",
+          "owning_registry": "R051 distress",
+          "transliteration": "tsur",
+          "gloss": "rock",
+          "language": "Hebrew",
+          "step_search_gloss": "rock",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Num 13:32",
+      "verse_text": "Num 13:32 So they brought to the people of Israel a bad report of the land that they had spied out , saying , “The land , through which we have gone to spy it out , is a land that devours its inhabitants , and all the people that we saw in it are of great height .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H3318H",
+          "original": "וַיּוֹצִיאוּ",
+          "pos": "verb",
+          "gloss": "to come out: send",
+          "registry": "R156 surrender"
+        },
+        {
+          "strong": "H1681",
+          "original": "דִּבַּת",
+          "pos": "noun",
+          "gloss": "slander",
+          "registry": "R149 slander"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H8446",
+          "original": "תָּרוּ",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֹתָהּ",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0413",
+          "original": "אֶל",
+          "pos": "preposition",
+          "gloss": "to[wards]",
+          "registry": "R013 bitterness"
+        },
+        {
+          "strong": "H1121G",
+          "original": "בְּנֵי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3478",
+          "original": "יִשְׂרָאֵל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0559",
+          "original": "לֵאמֹר",
+          "pos": "verb",
+          "gloss": "to say",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H0776G",
+          "original": "הָאָרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H5674A",
+          "original": "עָבַרְנוּ",
+          "pos": "verb",
+          "gloss": "to pass",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "000b",
+          "original": "בָהּ",
+          "pos": "preposition",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8446",
+          "original": "לָתוּר",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֹתָהּ",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H0776G",
+          "original": "אֶרֶץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0398",
+          "original": "אֹכֶלֶת",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3427",
+          "original": "יוֹשְׁבֶיהָ",
+          "pos": "verb",
+          "gloss": "to dwell",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H1931",
+          "original": "הִוא",
+          "pos": "pronoun",
+          "gloss": "he/she/it",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H3605",
+          "original": "וְכָל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H5971A",
+          "original": "הָעָם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0834A",
+          "original": "אֲשֶׁר",
+          "pos": "particle",
+          "gloss": "which",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H7200G",
+          "original": "רָאִינוּ",
+          "pos": "verb",
+          "gloss": "to see: see",
+          "registry": "R058 experience"
+        },
+        {
+          "strong": "H8432",
+          "original": "בְתוֹכָהּ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0376G",
+          "original": "אַנְשֵׁי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4060A",
+          "original": "מִדּֽוֹת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 48773,
+          "mti_term_id": 1238,
+          "strong": "H3427",
+          "owning_registry": "R173 will",
+          "transliteration": "ya.shav",
+          "gloss": "to dwell",
+          "language": "Hebrew",
+          "step_search_gloss": "to dwell",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 22726,
+          "mti_term_id": 858,
+          "strong": "H7200G",
+          "owning_registry": "R058 experience",
+          "transliteration": "ra.ah",
+          "gloss": "to see: see",
+          "language": "Hebrew",
+          "step_search_gloss": "to see: see",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Est 8:15",
+      "verse_text": "Est 8:15 Then Mordecai went out from the presence of the king in royal robes of blue and white , with a great golden crown and a robe of fine linen and purple , and the city of Susa shouted and rejoiced .",
+      "all_spans_in_verse": [
+        {
+          "strong": "H4782H",
+          "original": "וּמָרְדֳּכַי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3318G",
+          "original": "יָצָא",
+          "pos": "verb",
+          "gloss": "to come out: come",
+          "registry": "R185 flesh"
+        },
+        {
+          "strong": "H6440H",
+          "original": "מִלִּפְנֵי",
+          "pos": "noun",
+          "gloss": "face",
+          "registry": "R004 anger"
+        },
+        {
+          "strong": "H4428G",
+          "original": "הַמֶּלֶךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3830",
+          "original": "בִּלְבוּשׁ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4438",
+          "original": "מַלְכוּת",
+          "pos": "noun",
+          "gloss": "royalty",
+          "registry": "R160 thought"
+        },
+        {
+          "strong": "H8504",
+          "original": "תְּכֵלֶת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2353",
+          "original": "וָחוּר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5850",
+          "original": "וַעֲטֶרֶת",
+          "pos": "noun",
+          "gloss": "crown",
+          "registry": "R023 compassion"
+        },
+        {
+          "strong": "H2091",
+          "original": "זָהָב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1419A",
+          "original": "גְּדוֹלָה",
+          "pos": "adjective",
+          "gloss": "great: large",
+          "registry": "R187 strength"
+        },
+        {
+          "strong": "H8509",
+          "original": "וְתַכְרִיךְ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0948",
+          "original": "בּוּץ",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0713",
+          "original": "וְאַרְגָּמָן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5892B",
+          "original": "וְהָעִיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7800",
+          "original": "שׁוּשָׁן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H6670A",
+          "original": "צָהֲלָה",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H8055",
+          "original": "וְשָׂמֵֽחָה",
+          "pos": "verb",
+          "gloss": "to rejoice",
+          "registry": "R097 joy"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 11162,
+          "mti_term_id": 621,
+          "strong": "H3318G",
+          "owning_registry": "R185 flesh",
+          "transliteration": "ya.tsa",
+          "gloss": "to come out: come",
+          "language": "Hebrew",
+          "step_search_gloss": "to come out: come",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    },
+    {
+      "reference": "Deu 3:14",
+      "verse_text": "Deu 3:14 Jair the Manassite took all the region of Argob , that is, Bashan , as far as the border of the Geshurites and the Maacathites , and called the villages after his own name , Havvoth-jair , as it is to this day .)",
+      "all_spans_in_verse": [
+        {
+          "strong": "H2971G",
+          "original": "יָאִיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1121G",
+          "original": "בֶּן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4519G",
+          "original": "מְנַשֶּׁה",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H3947G",
+          "original": "לָקַח",
+          "pos": "verb",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H3605",
+          "original": "כָּל",
+          "pos": "noun",
+          "gloss": "all",
+          "registry": "R057 evil"
+        },
+        {
+          "strong": "H2256M",
+          "original": "חֶבֶל",
+          "pos": "noun",
+          "gloss": "pain",
+          "registry": "R151 sorrow"
+        },
+        {
+          "strong": "H0709G",
+          "original": "אַרְגֹּב",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5704",
+          "original": "עַד",
+          "pos": "preposition",
+          "gloss": "till",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H1366G",
+          "original": "גְּבוּל",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H1651",
+          "original": "הַגְּשׁוּרִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H4602",
+          "original": "וְהַמַּֽעֲכָתִי",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H7121H",
+          "original": "וַיִּקְרָא",
+          "pos": "verb",
+          "gloss": "to call: call by",
+          "registry": "R019 calling"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֹתָם",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H5921A",
+          "original": "עַל",
+          "pos": "preposition",
+          "gloss": "upon",
+          "registry": "R032 counsel"
+        },
+        {
+          "strong": "H8034",
+          "original": "שְׁמוֹ",
+          "pos": "noun",
+          "gloss": "name",
+          "registry": "R204 name"
+        },
+        {
+          "strong": "H0853",
+          "original": "אֶת",
+          "pos": "particle",
+          "gloss": "[Obj.]",
+          "registry": "R011 awe"
+        },
+        {
+          "strong": "H1316",
+          "original": "הַבָּשָׁן",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2334",
+          "original": "חַוֺּת",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2334",
+          "original": "יָאִיר",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H5704",
+          "original": "עַד",
+          "pos": "preposition",
+          "gloss": "till",
+          "registry": "R173 will"
+        },
+        {
+          "strong": "H3117L",
+          "original": "הַיּוֹם",
+          "pos": "noun",
+          "gloss": null,
+          "registry": null
+        },
+        {
+          "strong": "H2088",
+          "original": "הַזֶּֽה",
+          "pos": "pronoun",
+          "gloss": "this",
+          "registry": "R099 kindness"
+        }
+      ],
+      "terms_to_classify": [
+        {
+          "verse_record_id": 198272,
+          "mti_term_id": 118,
+          "strong": "H2256M",
+          "owning_registry": "R151 sorrow",
+          "transliteration": "che.vel",
+          "gloss": "pain",
+          "language": "Hebrew",
+          "step_search_gloss": "cord",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        },
+        {
+          "verse_record_id": 54811,
+          "mti_term_id": 1366,
+          "strong": "H8034",
+          "owning_registry": "R204 name",
+          "transliteration": "shem",
+          "gloss": "name",
+          "language": "Hebrew",
+          "step_search_gloss": "name",
+          "short_def_mounce": null,
+          "meaning_excerpt": ""
+        }
+      ]
+    }
+  ]
+}

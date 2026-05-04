@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-05-04T06:59:12Z",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_terms": 2557,
+  "components": {
+    "root": {
+      "dim": 873,
+      "weight": 0.35,
+      "n_distinct_codes": 873
+    },
+    "gloss": {
+      "dim": 384,
+      "weight": 0.35
+    },
+    "meaning": {
+      "dim": 384,
+      "weight": 0.3
+    }
+  },
+  "final_dim": 1641,
+  "mounce_handling": "tracked separately as bridge map; not in primary vector",
+  "source_db": "database\\bible_research.db"
+}

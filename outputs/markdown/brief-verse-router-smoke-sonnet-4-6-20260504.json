@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "generated_at": "2026-05-04T05:03:27Z",
+    "model": "claude-sonnet-4-6",
+    "effort": "medium",
+    "input_file": "outputs/markdown/unclassified-verse-sample-50-verses-20260504.json",
+    "n_verses": 5,
+    "n_decisions": 6,
+    "n_summary": 3,
+    "n_set_aside": 3,
+    "n_error": 0,
+    "tokens": {
+      "input": 10710,
+      "output": 481,
+      "cache_read": 0,
+      "estimated_cost_usd": 0.0393
+    }
+  },
+  "by_verse": [
+    {
+      "reference": "Jer 23:10",
+      "decisions": [
+        {
+          "verse_record_id": 2897,
+          "mti_term_id": 71,
+          "strong": "H0056",
+          "summary": "The land mourns as a consequence of the curse brought by widespread adultery and evil conduct.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": "Mourning here is attributed to the land, a personification reflecting communal grief over sin."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2306,
+        "output_tokens": 92,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Num 10:33",
+      "decisions": [
+        {
+          "verse_record_id": 16328,
+          "mti_term_id": 765,
+          "strong": "H1285",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "The ark of the covenant here is a physical/ritual object leading Israel; no inner-life content engaged."
+        },
+        {
+          "verse_record_id": 79893,
+          "mti_term_id": 2585,
+          "strong": "H4496H",
+          "summary": "The ark goes ahead of Israel to find them a resting place, portraying rest as a divine gift sought on their behalf.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2336,
+        "output_tokens": 154,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Job 7:10",
+      "decisions": [
+        {
+          "verse_record_id": 219030,
+          "mti_term_id": 6989,
+          "strong": "H4725",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "spatial_only",
+          "note": "'place' here is a physical/spatial location, not an inner-being term"
+        }
+      ],
+      "usage": {
+        "input_tokens": 1689,
+        "output_tokens": 74,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Jer 51:51",
+      "decisions": [
+        {
+          "verse_record_id": 6429,
+          "mti_term_id": 313,
+          "strong": "H0954",
+          "summary": "The people are put to shame because foreigners have desecrated the Lord's house, causing deep communal disgrace.",
+          "set_aside": false,
+          "set_aside_reason": null,
+          "note": null
+        }
+      ],
+      "usage": {
+        "input_tokens": 2090,
+        "output_tokens": 79,
+        "cache_read_input_tokens": 0
+      }
+    },
+    {
+      "reference": "Heb 1:7",
+      "decisions": [
+        {
+          "verse_record_id": 9958,
+          "mti_term_id": 614,
+          "strong": "G4151H",
+          "summary": null,
+          "set_aside": true,
+          "set_aside_reason": "no_inner_being",
+          "note": "Here pneuma refers to winds/wind as physical forces; angels made into winds, no inner-life content."
+        }
+      ],
+      "usage": {
+        "input_tokens": 2289,
+        "output_tokens": 82,
+        "cache_read_input_tokens": 0
+      }
+    }
+  ],
+  "flat_decisions": [
+    {
+      "reference": "Jer 23:10",
+      "verse_record_id": 2897,
+      "mti_term_id": 71,
+      "strong": "H0056",
+      "summary": "The land mourns as a consequence of the curse brought by widespread adultery and evil conduct.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": "Mourning here is attributed to the land, a personification reflecting communal grief over sin.",
+      "decision": "summary"
+    },
+    {
+      "reference": "Num 10:33",
+      "verse_record_id": 16328,
+      "mti_term_id": 765,
+      "strong": "H1285",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "The ark of the covenant here is a physical/ritual object leading Israel; no inner-life content engaged.",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Num 10:33",
+      "verse_record_id": 79893,
+      "mti_term_id": 2585,
+      "strong": "H4496H",
+      "summary": "The ark goes ahead of Israel to find them a resting place, portraying rest as a divine gift sought on their behalf.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Job 7:10",
+      "verse_record_id": 219030,
+      "mti_term_id": 6989,
+      "strong": "H4725",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "spatial_only",
+      "note": "'place' here is a physical/spatial location, not an inner-being term",
+      "decision": "set_aside"
+    },
+    {
+      "reference": "Jer 51:51",
+      "verse_record_id": 6429,
+      "mti_term_id": 313,
+      "strong": "H0954",
+      "summary": "The people are put to shame because foreigners have desecrated the Lord's house, causing deep communal disgrace.",
+      "set_aside": false,
+      "set_aside_reason": null,
+      "note": null,
+      "decision": "summary"
+    },
+    {
+      "reference": "Heb 1:7",
+      "verse_record_id": 9958,
+      "mti_term_id": 614,
+      "strong": "G4151H",
+      "summary": null,
+      "set_aside": true,
+      "set_aside_reason": "no_inner_being",
+      "note": "Here pneuma refers to winds/wind as physical forces; angels made into winds, no inner-life content.",
+      "decision": "set_aside"
+    }
+  ]
+}
