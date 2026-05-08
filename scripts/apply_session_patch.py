@@ -2050,6 +2050,11 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
         print(f"  [BACKUP] {os.path.basename(backup_dest)}")
         # Trim retained backups so this directory doesn't grow unbounded.
         try:
+            # Add project root to sys.path so 'engine' resolves regardless
+            # of where this script is invoked from.
+            _proj_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+            if _proj_root not in sys.path:
+                sys.path.insert(0, _proj_root)
             from engine.backup import prune_backups
             pruned = prune_backups()
             n_pruned = sum(pruned.values())
