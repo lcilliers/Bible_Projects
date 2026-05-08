@@ -2048,6 +2048,16 @@ def apply_patch(patch_path: str, dry_run: bool = False) -> dict:
                          f"bible_research_backup_{_now()[:19].replace('-','').replace(':','').replace('T','_')}_{patch_id}.db"),
         )
         print(f"  [BACKUP] {os.path.basename(backup_dest)}")
+        # Trim retained backups so this directory doesn't grow unbounded.
+        try:
+            from engine.backup import prune_backups
+            pruned = prune_backups()
+            n_pruned = sum(pruned.values())
+            if n_pruned:
+                print(f"  [BACKUP] retention pruned {n_pruned} older backups "
+                      f"({pruned})")
+        except Exception as prune_exc:
+            print(f"  [WARN] Backup pruning failed (non-fatal): {prune_exc}")
     except Exception as exc:
         print(f"  [WARN] Pre-patch backup failed: {exc}")
 

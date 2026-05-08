@@ -50,7 +50,7 @@ def pre_run_backup(run_id: str) -> Path:
         shutil.copy2(src, dest)
     except Exception as exc:
         raise RuntimeError(f"Pre-run backup failed: {exc}") from exc
-    _prune_pre_run_backups()
+    prune_backups()
     return dest
 
 
@@ -90,29 +90,57 @@ def integrity_check(db_path: Path | None = None) -> bool:
         conn.close()
 
 
-def _prune_pre_run_backups() -> None:
+def prune_backups() -> dict[str, int]:
     """Keep only the N most recent backups per category; delete the rest.
 
-    Categories pruned independently:
-      - pre-run:  bible_research_backup_*.db
-      - post-run: bible_research_*_post.db
-      - manual/checkpoint: bible_research_manual_*.db, bible_research_checkpoint_*.db
+    Categories pruned independently (each retains BACKUP_RETENTION newest):
+      - pre-run engine backups:        bible_research_backup_<ts>_<label>.db
+      - post-run engine backups:       bible_research_<ts>_<label>_post.db
+      - manual/checkpoint backups:     bible_research_(manual|checkpoint)_*.db
+      - timestamped pre-action backups: bible_research_<ts>_pre_<label>.db
+      - dated ad-hoc pre-action:       bible_research_pre_<label>_<date>.db
+                                       (excludes pre-migration which is permanent)
+      - smoke-test artefacts:          _smoke_*.db (kept while present, never pruned
+                                       — they're tiny and named explicitly for tests)
 
-    Pre-migration backups are never pruned (permanent).
+    Pre-migration backups (bible_research_pre_migration_*.db) are never pruned.
+
+    Returns a per-category dict of {pattern_label: deleted_count}.
     """
-    categories = [
-        re.compile(r"bible_research_backup_\d{8}_\d{6}_.*\.db$"),
-        re.compile(r"bible_research_\d{8}_\d{6}_.*_post\.db$"),
-        re.compile(r"bible_research_(manual|checkpoint)_.*\.db$"),
+    categories: list[tuple[str, re.Pattern[str]]] = [
+        ("pre_run",
+         re.compile(r"^bible_research_backup_\d{8}_\d{6}_.*\.db$")),
+        ("post_run",
+         re.compile(r"^bible_research_\d{8}_\d{6}_.*_post\.db$")),
+        ("manual_checkpoint",
+         re.compile(r"^bible_research_(manual|checkpoint)_.*\.db$")),
+        # NEW: timestamp-prefix pre-action (e.g. _apply_* scripts)
+        ("pre_action_ts",
+         re.compile(r"^bible_research_\d{8}_\d{6}_pre_.*\.db$")),
+        # NEW: dated ad-hoc pre-action (excludes pre_migration_)
+        ("pre_action_dated",
+         re.compile(r"^bible_research_pre_(?!migration_).*\.db$")),
     ]
-    for pattern in categories:
+    deleted: dict[str, int] = {}
+    if not _BACKUPS_DIR.exists():
+        return deleted
+    all_files = [p for p in _BACKUPS_DIR.iterdir() if p.is_file()]
+    for label, pattern in categories:
         backups = sorted(
-            [p for p in _BACKUPS_DIR.iterdir() if pattern.match(p.name)],
+            [p for p in all_files if pattern.match(p.name)],
             key=lambda p: p.stat().st_mtime,
             reverse=True,
         )
+        n = 0
         for old in backups[BACKUP_RETENTION:]:
             try:
                 old.unlink()
+                n += 1
             except Exception:
                 pass
+        deleted[label] = n
+    return deleted
+
+
+# Backwards-compatibility alias for prior callers.
+_prune_pre_run_backups = prune_backups
