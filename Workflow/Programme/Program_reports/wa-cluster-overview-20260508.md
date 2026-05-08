@@ -1,6 +1,6 @@
 # Cluster Overview — programme-wide snapshot
 
-_Generated: 2026-05-08 10:59 UTC_  
+_Generated: 2026-05-08 13:53 UTC_  
 _Source: `database/bible_research.db`_
 
 ## Status roll-up
@@ -23,7 +23,7 @@ _Source: `database/bible_research.db`_
 
 | | Code | Description | Status | Terms (OT+NT) | Sub-grps | Verses | Anchors | Findings (s/f/g/syn) | Updated |
 |---|---|---|---|---:|---:|---:|---:|---|---|
-| · | **FLAG** | Flagged for Review | Not started | 121 (93+28) | 0 | 1990 | 266 | — | 2026-05-05 |
+| · | **FLAG** | Flagged for Review | Not started | 126 (93+33) | 0 | 2007 | 273 | — | 2026-05-05 |
 | · | **M01** | Fear, Dread and Terror | Not started | 94 (72+22) | 0 | 982 | 179 | — | 2026-05-05 |
 | · | **M02** | Anger, Wrath and Indignation | Not started | 46 (31+15) | 0 | 349 | 77 | — | 2026-05-05 |
 | · | **M03** | Grief, Sorrow and Mourning | Not started | 86 (56+30) | 0 | 596 | 127 | — | 2026-05-05 |
@@ -38,7 +38,7 @@ _Source: `database/bible_research.db`_
 | · | **M12** | Purity, Holiness and Consecration | Not started | 46 (24+22) | 0 | 454 | 78 | — | 2026-05-05 |
 | · | **M13** | Truth, Faithfulness and Integrity | Not started | 26 (16+10) | 0 | 592 | 62 | — | 2026-05-05 |
 | · | **M14** | Deceit, Hypocrisy and Falsehood | Not started | 42 (23+19) | 0 | 372 | 64 | — | 2026-05-05 |
-| ▶ | **M15** | Wisdom, Understanding and Knowledge | Analysis - In Progress | 90 (43+47) | 0 | 1428 | 195 | — | 2026-05-08 |
+| ▶ | **M15** | Wisdom, Understanding and Knowledge | Analysis - In Progress | 85 (43+42) | 8 | 1411 | 188 | — | 2026-05-08 |
 | · | **M16** | Folly, Madness and Foolishness | Not started | 29 (19+10) | 0 | 159 | 39 | — | 2026-05-05 |
 | · | **M17** | Counsel, Planning and Purpose | Not started | 17 (9+8) | 0 | 256 | 39 | — | 2026-05-05 |
 | · | **M18** | Hope, Expectation and Waiting | Not started | 26 (13+13) | 0 | 244 | 44 | — | 2026-05-05 |
