@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "WA-M05-VCREVISE-UTREVIEW-BORDERLINE-20260507",
+    "patch_type": "VCREVISE",
+    "cluster_code": "M05",
+    "description": "Follow-up to wa-cluster-M05-patch-vcrevise-utreview-v1-20260507.json. Resolves the one borderline verse held from the main UT review patch. Neh 13:14 / H2617A che.sed (vrID=3940, mti=536) confirmed relevant by researcher decision 2026-05-07. Rationale: the covenantal loyalty appeal activates the inner-disposition register of che.sed — Nehemiah presenting his faithfulness toward God's house as grounds for divine remembrance.",
+    "companion_document": "Sessions/Session_Clusters/M05/WA-M05-UT-verse-review-v1-20260507.md (P2-003)",
+    "obslog_reference": "wa-obslog-M05-love-compassion-kindness-v1-20260507 Phase 2 — borderline resolution",
+    "terms_covered": [536],
+    "input_versions": {
+      "536": "wa-cluster-M05-comprehensive-v3-20260507"
+    },
+    "created": "2026-05-07",
+    "researcher_decision": "CONFIRMED RELEVANT — Leroux, 2026-05-07"
+  },
+  "operations": [
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 3940, "mti_term_id": 536},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-003 | Neh 13:14 | H2617A che.sed — covenantal loyalty appeal; inner disposition of che.sed-faithfulness toward God's house operative. Researcher confirmed CR 2026-05-07."
+    }
+  ],
+  "_validation": {
+    "expected_cr_rows": 1,
+    "expected_total_operations": 1,
+    "completion_confirmation": "SELECT is_relevant, set_aside_reason FROM verse_context WHERE verse_record_id=3940 AND mti_term_id=536 — expected: is_relevant=1, set_aside_reason=NULL."
+  }
+}

@@ -1,0 +1,2079 @@
+{
+  "meta": {
+    "generated": "2026-05-07T05:49:05Z",
+    "version": "v3",
+    "source": "database/bible_research.db",
+    "total_clusters": 47,
+    "total_terms_with_cluster": 2364
+  },
+  "clusters": [
+    {
+      "cluster_code": "M01",
+      "description": "Fear, Dread and Terror",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 94,
+      "n_hebrew": 72,
+      "n_greek": 22,
+      "n_fully_covered": 69,
+      "n_zero_verses": 0,
+      "n_with_pending": 25,
+      "active_verses": 1105,
+      "covered_verses": 976,
+      "untouched_verses": 129,
+      "coverage_pct": 88.3,
+      "top_terms": [
+        {
+          "strong": "H3372G",
+          "gloss": "to fear: revere",
+          "active": 194
+        },
+        {
+          "strong": "H3372H",
+          "gloss": "to fear: revere",
+          "active": 107
+        },
+        {
+          "strong": "G5399",
+          "gloss": "to fear",
+          "active": 83
+        },
+        {
+          "strong": "H3373",
+          "gloss": "afraid",
+          "active": 64
+        },
+        {
+          "strong": "H6343",
+          "gloss": "dread",
+          "active": 48
+        }
+      ]
+    },
+    {
+      "cluster_code": "M02",
+      "description": "Anger, Wrath and Indignation",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 46,
+      "n_hebrew": 31,
+      "n_greek": 15,
+      "n_fully_covered": 26,
+      "n_zero_verses": 0,
+      "n_with_pending": 20,
+      "active_verses": 721,
+      "covered_verses": 351,
+      "untouched_verses": 370,
+      "coverage_pct": 48.7,
+      "top_terms": [
+        {
+          "strong": "H2534",
+          "gloss": "rage",
+          "active": 115
+        },
+        {
+          "strong": "H2734",
+          "gloss": "to be incensed",
+          "active": 88
+        },
+        {
+          "strong": "H7379",
+          "gloss": "strife",
+          "active": 60
+        },
+        {
+          "strong": "H3707",
+          "gloss": "to provoke",
+          "active": 52
+        },
+        {
+          "strong": "H7068",
+          "gloss": "jealousy",
+          "active": 41
+        }
+      ]
+    },
+    {
+      "cluster_code": "M03",
+      "description": "Grief, Sorrow and Mourning",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 86,
+      "n_hebrew": 56,
+      "n_greek": 30,
+      "n_fully_covered": 54,
+      "n_zero_verses": 1,
+      "n_with_pending": 31,
+      "active_verses": 1069,
+      "covered_verses": 588,
+      "untouched_verses": 481,
+      "coverage_pct": 55.0,
+      "top_terms": [
+        {
+          "strong": "H7451C",
+          "gloss": "distress: harm",
+          "active": 151
+        },
+        {
+          "strong": "H7451I",
+          "gloss": "distress: evil",
+          "active": 137
+        },
+        {
+          "strong": "H1058",
+          "gloss": "to weep",
+          "active": 100
+        },
+        {
+          "strong": "H6869B",
+          "gloss": "distress",
+          "active": 69
+        },
+        {
+          "strong": "H5999",
+          "gloss": "trouble",
+          "active": 54
+        }
+      ]
+    },
+    {
+      "cluster_code": "M04",
+      "description": "Joy, Gladness and Delight",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 61,
+      "n_hebrew": 40,
+      "n_greek": 21,
+      "n_fully_covered": 45,
+      "n_zero_verses": 0,
+      "n_with_pending": 16,
+      "active_verses": 1275,
+      "covered_verses": 1210,
+      "untouched_verses": 65,
+      "coverage_pct": 94.9,
+      "top_terms": [
+        {
+          "strong": "H2896A",
+          "gloss": "pleasant",
+          "active": 306
+        },
+        {
+          "strong": "H8055",
+          "gloss": "to rejoice",
+          "active": 147
+        },
+        {
+          "strong": "H8057",
+          "gloss": "joy",
+          "active": 89
+        },
+        {
+          "strong": "H2654A",
+          "gloss": "to delight in",
+          "active": 69
+        },
+        {
+          "strong": "H6381",
+          "gloss": "to wonder",
+          "active": 69
+        }
+      ]
+    },
+    {
+      "cluster_code": "M05",
+      "description": "Love, Compassion and Kindness",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 87,
+      "n_hebrew": 26,
+      "n_greek": 61,
+      "n_fully_covered": 73,
+      "n_zero_verses": 1,
+      "n_with_pending": 13,
+      "active_verses": 1326,
+      "covered_verses": 1283,
+      "untouched_verses": 43,
+      "coverage_pct": 96.8,
+      "top_terms": [
+        {
+          "strong": "H2617A",
+          "gloss": "kindness",
+          "active": 169
+        },
+        {
+          "strong": "G0025",
+          "gloss": "to love",
+          "active": 107
+        },
+        {
+          "strong": "G3870",
+          "gloss": "to plead/comfort",
+          "active": 105
+        },
+        {
+          "strong": "G0018",
+          "gloss": "good",
+          "active": 90
+        },
+        {
+          "strong": "G1577",
+          "gloss": "assembly",
+          "active": 85
+        }
+      ]
+    },
+    {
+      "cluster_code": "M06",
+      "description": "Hate, Contempt and Hostility",
+      "bucket": "NAMED",
+      "status": "Analysis Completed",
+      "version": "v6",
+      "n_terms": 34,
+      "n_hebrew": 30,
+      "n_greek": 4,
+      "n_fully_covered": 33,
+      "n_zero_verses": 0,
+      "n_with_pending": 1,
+      "active_verses": 437,
+      "covered_verses": 435,
+      "untouched_verses": 0,
+      "coverage_pct": 99.5,
+      "top_terms": [
+        {
+          "strong": "H8130",
+          "gloss": "to hate",
+          "active": 139
+        },
+        {
+          "strong": "H2781",
+          "gloss": "reproach",
+          "active": 72
+        },
+        {
+          "strong": "H2778A",
+          "gloss": "to taunt",
+          "active": 38
+        },
+        {
+          "strong": "H5006",
+          "gloss": "to spurn",
+          "active": 24
+        },
+        {
+          "strong": "H8581",
+          "gloss": "to abhor",
+          "active": 20
+        }
+      ]
+    },
+    {
+      "cluster_code": "M07",
+      "description": "Shame, Disgrace and Humiliation",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 36,
+      "n_hebrew": 19,
+      "n_greek": 17,
+      "n_fully_covered": 30,
+      "n_zero_verses": 0,
+      "n_with_pending": 6,
+      "active_verses": 547,
+      "covered_verses": 435,
+      "untouched_verses": 112,
+      "coverage_pct": 79.5,
+      "top_terms": [
+        {
+          "strong": "H2617B",
+          "gloss": "shame",
+          "active": 169
+        },
+        {
+          "strong": "H0954",
+          "gloss": "be ashamed",
+          "active": 113
+        },
+        {
+          "strong": "H3637",
+          "gloss": "be humiliated",
+          "active": 38
+        },
+        {
+          "strong": "H8213",
+          "gloss": "to abase",
+          "active": 29
+        },
+        {
+          "strong": "H1322",
+          "gloss": "shame",
+          "active": 29
+        }
+      ]
+    },
+    {
+      "cluster_code": "M08",
+      "description": "Pride, Arrogance and Boasting",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 47,
+      "n_hebrew": 28,
+      "n_greek": 19,
+      "n_fully_covered": 33,
+      "n_zero_verses": 0,
+      "n_with_pending": 14,
+      "active_verses": 653,
+      "covered_verses": 429,
+      "untouched_verses": 224,
+      "coverage_pct": 65.7,
+      "top_terms": [
+        {
+          "strong": "H7311A",
+          "gloss": "to exalt",
+          "active": 184
+        },
+        {
+          "strong": "G0757",
+          "gloss": "be first",
+          "active": 63
+        },
+        {
+          "strong": "H4791",
+          "gloss": "height",
+          "active": 52
+        },
+        {
+          "strong": "H1347",
+          "gloss": "pride",
+          "active": 45
+        },
+        {
+          "strong": "H6967",
+          "gloss": "height",
+          "active": 43
+        }
+      ]
+    },
+    {
+      "cluster_code": "M09",
+      "description": "Humility, Meekness and Submission",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 17,
+      "n_hebrew": 6,
+      "n_greek": 11,
+      "n_fully_covered": 13,
+      "n_zero_verses": 2,
+      "n_with_pending": 2,
+      "active_verses": 110,
+      "covered_verses": 92,
+      "untouched_verses": 18,
+      "coverage_pct": 83.6,
+      "top_terms": [
+        {
+          "strong": "H3665",
+          "gloss": "be humble",
+          "active": 32
+        },
+        {
+          "strong": "G1299",
+          "gloss": "to direct",
+          "active": 16
+        },
+        {
+          "strong": "G5218",
+          "gloss": "obedience",
+          "active": 14
+        },
+        {
+          "strong": "G5013",
+          "gloss": "to humble",
+          "active": 11
+        },
+        {
+          "strong": "G5011",
+          "gloss": "lowly",
+          "active": 8
+        }
+      ]
+    },
+    {
+      "cluster_code": "M10",
+      "description": "Guilt, Sin and Transgression",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 87,
+      "n_hebrew": 54,
+      "n_greek": 33,
+      "n_fully_covered": 64,
+      "n_zero_verses": 0,
+      "n_with_pending": 23,
+      "active_verses": 2290,
+      "covered_verses": 2055,
+      "untouched_verses": 235,
+      "coverage_pct": 89.7,
+      "top_terms": [
+        {
+          "strong": "H2398",
+          "gloss": "to sin",
+          "active": 213
+        },
+        {
+          "strong": "H7563",
+          "gloss": "wicked",
+          "active": 180
+        },
+        {
+          "strong": "H5771G",
+          "gloss": "iniquity: crime",
+          "active": 162
+        },
+        {
+          "strong": "H2403B",
+          "gloss": "sin",
+          "active": 160
+        },
+        {
+          "strong": "H2930A",
+          "gloss": "to defile",
+          "active": 128
+        }
+      ]
+    },
+    {
+      "cluster_code": "M11",
+      "description": "Repentance, Forgiveness and Restoration",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 14,
+      "n_hebrew": 7,
+      "n_greek": 7,
+      "n_fully_covered": 8,
+      "n_zero_verses": 1,
+      "n_with_pending": 5,
+      "active_verses": 338,
+      "covered_verses": 284,
+      "untouched_verses": 54,
+      "coverage_pct": 84.0,
+      "top_terms": [
+        {
+          "strong": "H3722A",
+          "gloss": "to atone",
+          "active": 93
+        },
+        {
+          "strong": "G0863G",
+          "gloss": "to release: leave",
+          "active": 66
+        },
+        {
+          "strong": "H5545",
+          "gloss": "to forgive",
+          "active": 45
+        },
+        {
+          "strong": "G0863H",
+          "gloss": "to release: forgive",
+          "active": 37
+        },
+        {
+          "strong": "H5162H",
+          "gloss": "to be sorry: relent",
+          "active": 34
+        }
+      ]
+    },
+    {
+      "cluster_code": "M12",
+      "description": "Purity, Holiness and Consecration",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 46,
+      "n_hebrew": 24,
+      "n_greek": 22,
+      "n_fully_covered": 31,
+      "n_zero_verses": 0,
+      "n_with_pending": 15,
+      "active_verses": 713,
+      "covered_verses": 616,
+      "untouched_verses": 97,
+      "coverage_pct": 86.4,
+      "top_terms": [
+        {
+          "strong": "H6942G",
+          "gloss": "to consecrate: consecate",
+          "active": 113
+        },
+        {
+          "strong": "H2889",
+          "gloss": "pure",
+          "active": 87
+        },
+        {
+          "strong": "H2891",
+          "gloss": "be pure",
+          "active": 79
+        },
+        {
+          "strong": "H8549G",
+          "gloss": "unblemished",
+          "active": 51
+        },
+        {
+          "strong": "H5355A",
+          "gloss": "innocent",
+          "active": 40
+        }
+      ]
+    },
+    {
+      "cluster_code": "M13",
+      "description": "Truth, Faithfulness and Integrity",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 26,
+      "n_hebrew": 16,
+      "n_greek": 10,
+      "n_fully_covered": 12,
+      "n_zero_verses": 1,
+      "n_with_pending": 13,
+      "active_verses": 698,
+      "covered_verses": 590,
+      "untouched_verses": 108,
+      "coverage_pct": 84.5,
+      "top_terms": [
+        {
+          "strong": "H3477G",
+          "gloss": "upright:right",
+          "active": 113
+        },
+        {
+          "strong": "H0539",
+          "gloss": "be faithful",
+          "active": 100
+        },
+        {
+          "strong": "G0225",
+          "gloss": "truth",
+          "active": 90
+        },
+        {
+          "strong": "H0571G",
+          "gloss": "truth: faithful",
+          "active": 66
+        },
+        {
+          "strong": "G4103",
+          "gloss": "faithful",
+          "active": 62
+        }
+      ]
+    },
+    {
+      "cluster_code": "M14",
+      "description": "Deceit, Hypocrisy and Falsehood",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 42,
+      "n_hebrew": 23,
+      "n_greek": 19,
+      "n_fully_covered": 36,
+      "n_zero_verses": 0,
+      "n_with_pending": 6,
+      "active_verses": 393,
+      "covered_verses": 367,
+      "untouched_verses": 26,
+      "coverage_pct": 93.4,
+      "top_terms": [
+        {
+          "strong": "H8267",
+          "gloss": "deception",
+          "active": 109
+        },
+        {
+          "strong": "H4284",
+          "gloss": "plot",
+          "active": 52
+        },
+        {
+          "strong": "H4820",
+          "gloss": "deceit",
+          "active": 38
+        },
+        {
+          "strong": "H5956",
+          "gloss": "to conceal",
+          "active": 27
+        },
+        {
+          "strong": "H2790A",
+          "gloss": "to plow/plot",
+          "active": 22
+        }
+      ]
+    },
+    {
+      "cluster_code": "M15",
+      "description": "Wisdom, Understanding and Knowledge",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 87,
+      "n_hebrew": 42,
+      "n_greek": 45,
+      "n_fully_covered": 69,
+      "n_zero_verses": 0,
+      "n_with_pending": 18,
+      "active_verses": 1717,
+      "covered_verses": 1404,
+      "untouched_verses": 313,
+      "coverage_pct": 81.8,
+      "top_terms": [
+        {
+          "strong": "H3045",
+          "gloss": "to know",
+          "active": 421
+        },
+        {
+          "strong": "H0995",
+          "gloss": "to understand",
+          "active": 162
+        },
+        {
+          "strong": "H2450",
+          "gloss": "wise",
+          "active": 127
+        },
+        {
+          "strong": "H1847",
+          "gloss": "knowledge",
+          "active": 89
+        },
+        {
+          "strong": "H3289",
+          "gloss": "to advise",
+          "active": 73
+        }
+      ]
+    },
+    {
+      "cluster_code": "M16",
+      "description": "Folly, Madness and Foolishness",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 29,
+      "n_hebrew": 19,
+      "n_greek": 10,
+      "n_fully_covered": 29,
+      "n_zero_verses": 0,
+      "n_with_pending": 0,
+      "active_verses": 160,
+      "covered_verses": 160,
+      "untouched_verses": 0,
+      "coverage_pct": 100.0,
+      "top_terms": [
+        {
+          "strong": "H0191",
+          "gloss": "fool[ish]",
+          "active": 26
+        },
+        {
+          "strong": "H0200",
+          "gloss": "folly",
+          "active": 24
+        },
+        {
+          "strong": "H5039",
+          "gloss": "folly",
+          "active": 13
+        },
+        {
+          "strong": "G3474",
+          "gloss": "foolish",
+          "active": 12
+        },
+        {
+          "strong": "G0878",
+          "gloss": "foolish",
+          "active": 10
+        }
+      ]
+    },
+    {
+      "cluster_code": "M17",
+      "description": "Counsel, Planning and Purpose",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 17,
+      "n_hebrew": 9,
+      "n_greek": 8,
+      "n_fully_covered": 11,
+      "n_zero_verses": 0,
+      "n_with_pending": 6,
+      "active_verses": 280,
+      "covered_verses": 252,
+      "untouched_verses": 28,
+      "coverage_pct": 90.0,
+      "top_terms": [
+        {
+          "strong": "H6098",
+          "gloss": "counsel",
+          "active": 85
+        },
+        {
+          "strong": "G0746",
+          "gloss": "beginning",
+          "active": 55
+        },
+        {
+          "strong": "H6960A",
+          "gloss": "to await",
+          "active": 42
+        },
+        {
+          "strong": "H5475",
+          "gloss": "counsel",
+          "active": 21
+        },
+        {
+          "strong": "G1012",
+          "gloss": "plan",
+          "active": 12
+        }
+      ]
+    },
+    {
+      "cluster_code": "M18",
+      "description": "Hope, Expectation and Waiting",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 26,
+      "n_hebrew": 13,
+      "n_greek": 13,
+      "n_fully_covered": 21,
+      "n_zero_verses": 0,
+      "n_with_pending": 5,
+      "active_verses": 249,
+      "covered_verses": 240,
+      "untouched_verses": 9,
+      "coverage_pct": 96.4,
+      "top_terms": [
+        {
+          "strong": "G1680",
+          "gloss": "hope",
+          "active": 48
+        },
+        {
+          "strong": "H8615B",
+          "gloss": "hope",
+          "active": 31
+        },
+        {
+          "strong": "G1679",
+          "gloss": "to hope/expect",
+          "active": 31
+        },
+        {
+          "strong": "H3176H",
+          "gloss": "to wait: hope",
+          "active": 26
+        },
+        {
+          "strong": "G1937",
+          "gloss": "to long for",
+          "active": 16
+        }
+      ]
+    },
+    {
+      "cluster_code": "M19",
+      "description": "Trust, Confidence and Security",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 32,
+      "n_hebrew": 18,
+      "n_greek": 14,
+      "n_fully_covered": 23,
+      "n_zero_verses": 0,
+      "n_with_pending": 9,
+      "active_verses": 376,
+      "covered_verses": 338,
+      "untouched_verses": 38,
+      "coverage_pct": 89.9,
+      "top_terms": [
+        {
+          "strong": "H0982",
+          "gloss": "to trust",
+          "active": 117
+        },
+        {
+          "strong": "H0983",
+          "gloss": "security",
+          "active": 41
+        },
+        {
+          "strong": "H2620",
+          "gloss": "to seek refuge",
+          "active": 36
+        },
+        {
+          "strong": "H4581",
+          "gloss": "security",
+          "active": 35
+        },
+        {
+          "strong": "H4268",
+          "gloss": "refuge",
+          "active": 20
+        }
+      ]
+    },
+    {
+      "cluster_code": "M20",
+      "description": "Doubt, Despair and Anxiety",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 14,
+      "n_hebrew": 5,
+      "n_greek": 9,
+      "n_fully_covered": 13,
+      "n_zero_verses": 0,
+      "n_with_pending": 1,
+      "active_verses": 83,
+      "covered_verses": 70,
+      "untouched_verses": 13,
+      "coverage_pct": 84.3,
+      "top_terms": [
+        {
+          "strong": "H5074",
+          "gloss": "to wander",
+          "active": 26
+        },
+        {
+          "strong": "G3309",
+          "gloss": "to worry",
+          "active": 17
+        },
+        {
+          "strong": "H1672",
+          "gloss": "be anxious",
+          "active": 7
+        },
+        {
+          "strong": "G3308",
+          "gloss": "concern",
+          "active": 6
+        },
+        {
+          "strong": "H2976",
+          "gloss": "to despair",
+          "active": 6
+        }
+      ]
+    },
+    {
+      "cluster_code": "M21",
+      "description": "Prayer, Worship and Devotion",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 32,
+      "n_hebrew": 8,
+      "n_greek": 24,
+      "n_fully_covered": 22,
+      "n_zero_verses": 3,
+      "n_with_pending": 7,
+      "active_verses": 540,
+      "covered_verses": 503,
+      "untouched_verses": 37,
+      "coverage_pct": 93.1,
+      "top_terms": [
+        {
+          "strong": "H7592",
+          "gloss": "to ask",
+          "active": 136
+        },
+        {
+          "strong": "G4336",
+          "gloss": "to pray",
+          "active": 81
+        },
+        {
+          "strong": "G2065",
+          "gloss": "to ask",
+          "active": 58
+        },
+        {
+          "strong": "G2168",
+          "gloss": "to thank",
+          "active": 38
+        },
+        {
+          "strong": "G4335",
+          "gloss": "prayer",
+          "active": 36
+        }
+      ]
+    },
+    {
+      "cluster_code": "M22",
+      "description": "Praise, Thanksgiving and Glory",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 43,
+      "n_hebrew": 26,
+      "n_greek": 17,
+      "n_fully_covered": 24,
+      "n_zero_verses": 0,
+      "n_with_pending": 19,
+      "active_verses": 1437,
+      "covered_verses": 895,
+      "untouched_verses": 542,
+      "coverage_pct": 62.3,
+      "top_terms": [
+        {
+          "strong": "H6944G",
+          "gloss": "holiness",
+          "active": 286
+        },
+        {
+          "strong": "H3519",
+          "gloss": "glory",
+          "active": 189
+        },
+        {
+          "strong": "G0040G",
+          "gloss": "holy",
+          "active": 120
+        },
+        {
+          "strong": "H3034",
+          "gloss": "to give thanks",
+          "active": 106
+        },
+        {
+          "strong": "H6918G",
+          "gloss": "holy",
+          "active": 99
+        }
+      ]
+    },
+    {
+      "cluster_code": "M23",
+      "description": "Strength, Power and Dominion",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 105,
+      "n_hebrew": 64,
+      "n_greek": 41,
+      "n_fully_covered": 47,
+      "n_zero_verses": 0,
+      "n_with_pending": 58,
+      "active_verses": 1790,
+      "covered_verses": 1243,
+      "untouched_verses": 547,
+      "coverage_pct": 69.4,
+      "top_terms": [
+        {
+          "strong": "H2388G",
+          "gloss": "to strengthen: strengthen",
+          "active": 163
+        },
+        {
+          "strong": "H3581B",
+          "gloss": "strength",
+          "active": 120
+        },
+        {
+          "strong": "G1411",
+          "gloss": "power",
+          "active": 107
+        },
+        {
+          "strong": "G1849",
+          "gloss": "authority",
+          "active": 93
+        },
+        {
+          "strong": "H5797",
+          "gloss": "strength",
+          "active": 91
+        }
+      ]
+    },
+    {
+      "cluster_code": "M24",
+      "description": "Weakness, Vulnerability and Suffering",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 67,
+      "n_hebrew": 41,
+      "n_greek": 26,
+      "n_fully_covered": 33,
+      "n_zero_verses": 5,
+      "n_with_pending": 29,
+      "active_verses": 669,
+      "covered_verses": 508,
+      "untouched_verses": 161,
+      "coverage_pct": 75.9,
+      "top_terms": [
+        {
+          "strong": "H6031B",
+          "gloss": "to afflict",
+          "active": 76
+        },
+        {
+          "strong": "G5185",
+          "gloss": "blind",
+          "active": 46
+        },
+        {
+          "strong": "H7503",
+          "gloss": "to slacken",
+          "active": 45
+        },
+        {
+          "strong": "H7667",
+          "gloss": "breaking",
+          "active": 42
+        },
+        {
+          "strong": "H6040",
+          "gloss": "affliction",
+          "active": 36
+        }
+      ]
+    },
+    {
+      "cluster_code": "M25",
+      "description": "Life, Vitality and Existence",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 14,
+      "n_hebrew": 12,
+      "n_greek": 2,
+      "n_fully_covered": 10,
+      "n_zero_verses": 0,
+      "n_with_pending": 4,
+      "active_verses": 981,
+      "covered_verses": 918,
+      "untouched_verses": 63,
+      "coverage_pct": 93.6,
+      "top_terms": [
+        {
+          "strong": "H2421",
+          "gloss": "to live",
+          "active": 248
+        },
+        {
+          "strong": "H2416A",
+          "gloss": "alive",
+          "active": 207
+        },
+        {
+          "strong": "H2416B",
+          "gloss": "kinsfolk",
+          "active": 207
+        },
+        {
+          "strong": "G4151G",
+          "gloss": "spirit/breath: breath",
+          "active": 120
+        },
+        {
+          "strong": "H2416C",
+          "gloss": "living thing",
+          "active": 98
+        }
+      ]
+    },
+    {
+      "cluster_code": "M26",
+      "description": "Righteousness and Justice",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 36,
+      "n_hebrew": 14,
+      "n_greek": 22,
+      "n_fully_covered": 24,
+      "n_zero_verses": 0,
+      "n_with_pending": 12,
+      "active_verses": 951,
+      "covered_verses": 846,
+      "untouched_verses": 105,
+      "coverage_pct": 89.0,
+      "top_terms": [
+        {
+          "strong": "H6662",
+          "gloss": "righteous",
+          "active": 184
+        },
+        {
+          "strong": "H6666",
+          "gloss": "righteousness",
+          "active": 148
+        },
+        {
+          "strong": "H6664G",
+          "gloss": "righteousness",
+          "active": 110
+        },
+        {
+          "strong": "G1343",
+          "gloss": "righteousness",
+          "active": 74
+        },
+        {
+          "strong": "G1342",
+          "gloss": "just",
+          "active": 74
+        }
+      ]
+    },
+    {
+      "cluster_code": "M27",
+      "description": "Evil, Wickedness and Abomination",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 17,
+      "n_hebrew": 10,
+      "n_greek": 7,
+      "n_fully_covered": 9,
+      "n_zero_verses": 0,
+      "n_with_pending": 8,
+      "active_verses": 419,
+      "covered_verses": 255,
+      "untouched_verses": 164,
+      "coverage_pct": 60.9,
+      "top_terms": [
+        {
+          "strong": "H7843",
+          "gloss": "to ruin",
+          "active": 135
+        },
+        {
+          "strong": "H7489A",
+          "gloss": "be evil",
+          "active": 94
+        },
+        {
+          "strong": "H7451A",
+          "gloss": "bad: harmful",
+          "active": 64
+        },
+        {
+          "strong": "H8074G",
+          "gloss": "be desolate: destroyed",
+          "active": 29
+        },
+        {
+          "strong": "H8077A",
+          "gloss": "devastation",
+          "active": 23
+        }
+      ]
+    },
+    {
+      "cluster_code": "M28",
+      "description": "Envy, Greed and Lust",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 37,
+      "n_hebrew": 20,
+      "n_greek": 17,
+      "n_fully_covered": 31,
+      "n_zero_verses": 0,
+      "n_with_pending": 6,
+      "active_verses": 559,
+      "covered_verses": 359,
+      "untouched_verses": 200,
+      "coverage_pct": 64.2,
+      "top_terms": [
+        {
+          "strong": "H0176B",
+          "gloss": "desire",
+          "active": 175
+        },
+        {
+          "strong": "H2181",
+          "gloss": "to fornicate",
+          "active": 83
+        },
+        {
+          "strong": "G1939",
+          "gloss": "desire",
+          "active": 37
+        },
+        {
+          "strong": "H0183",
+          "gloss": "to desire",
+          "active": 26
+        },
+        {
+          "strong": "H2530B",
+          "gloss": "desirable thing",
+          "active": 20
+        }
+      ]
+    },
+    {
+      "cluster_code": "M29",
+      "description": "Desire, Longing and Will",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 11,
+      "n_hebrew": 7,
+      "n_greek": 4,
+      "n_fully_covered": 10,
+      "n_zero_verses": 0,
+      "n_with_pending": 1,
+      "active_verses": 295,
+      "covered_verses": 294,
+      "untouched_verses": 1,
+      "coverage_pct": 99.7,
+      "top_terms": [
+        {
+          "strong": "G2309",
+          "gloss": "to will/desire",
+          "active": 120
+        },
+        {
+          "strong": "G2307",
+          "gloss": "will/desire",
+          "active": 58
+        },
+        {
+          "strong": "H7522",
+          "gloss": "acceptance",
+          "active": 56
+        },
+        {
+          "strong": "H2974",
+          "gloss": "be willing",
+          "active": 19
+        },
+        {
+          "strong": "H5068",
+          "gloss": "be willing",
+          "active": 15
+        }
+      ]
+    },
+    {
+      "cluster_code": "M30",
+      "description": "Obedience and Disobedience",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 29,
+      "n_hebrew": 16,
+      "n_greek": 13,
+      "n_fully_covered": 20,
+      "n_zero_verses": 0,
+      "n_with_pending": 9,
+      "active_verses": 888,
+      "covered_verses": 640,
+      "untouched_verses": 248,
+      "coverage_pct": 72.1,
+      "top_terms": [
+        {
+          "strong": "H8104G",
+          "gloss": "to keep: obey",
+          "active": 195
+        },
+        {
+          "strong": "H8104H",
+          "gloss": "to keep: guard",
+          "active": 151
+        },
+        {
+          "strong": "H5493G",
+          "gloss": "to turn aside: remove",
+          "active": 139
+        },
+        {
+          "strong": "H5493I",
+          "gloss": "to turn aside: turn aside",
+          "active": 81
+        },
+        {
+          "strong": "H8104J",
+          "gloss": "to keep: careful",
+          "active": 75
+        }
+      ]
+    },
+    {
+      "cluster_code": "M31",
+      "description": "Faith, Belief and Unbelief",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 13,
+      "n_hebrew": 0,
+      "n_greek": 13,
+      "n_fully_covered": 11,
+      "n_zero_verses": 0,
+      "n_with_pending": 2,
+      "active_verses": 320,
+      "covered_verses": 311,
+      "untouched_verses": 9,
+      "coverage_pct": 97.2,
+      "top_terms": [
+        {
+          "strong": "G4100",
+          "gloss": "to trust (in)",
+          "active": 120
+        },
+        {
+          "strong": "G4102G",
+          "gloss": "faith",
+          "active": 97
+        },
+        {
+          "strong": "G1832",
+          "gloss": "be permitted",
+          "active": 29
+        },
+        {
+          "strong": "G0571",
+          "gloss": "unbelieving",
+          "active": 21
+        },
+        {
+          "strong": "G2821",
+          "gloss": "calling",
+          "active": 11
+        }
+      ]
+    },
+    {
+      "cluster_code": "M32",
+      "description": "Conscience and Self-Awareness",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 6,
+      "n_hebrew": 1,
+      "n_greek": 5,
+      "n_fully_covered": 6,
+      "n_zero_verses": 0,
+      "n_with_pending": 0,
+      "active_verses": 17,
+      "covered_verses": 17,
+      "untouched_verses": 0,
+      "coverage_pct": 100.0,
+      "top_terms": [
+        {
+          "strong": "H7896K",
+          "gloss": "to set: consider",
+          "active": 7
+        },
+        {
+          "strong": "G4894",
+          "gloss": "be aware",
+          "active": 3
+        },
+        {
+          "strong": "G1760",
+          "gloss": "to reflect on",
+          "active": 3
+        },
+        {
+          "strong": "G2589",
+          "gloss": "heart-knower",
+          "active": 2
+        },
+        {
+          "strong": "G6083",
+          "gloss": "be conscious of",
+          "active": 1
+        }
+      ]
+    },
+    {
+      "cluster_code": "M33",
+      "description": "Peace, Rest and Quietness",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 42,
+      "n_hebrew": 25,
+      "n_greek": 17,
+      "n_fully_covered": 35,
+      "n_zero_verses": 0,
+      "n_with_pending": 7,
+      "active_verses": 668,
+      "covered_verses": 541,
+      "untouched_verses": 127,
+      "coverage_pct": 81.0,
+      "top_terms": [
+        {
+          "strong": "H7965G",
+          "gloss": "peace",
+          "active": 148
+        },
+        {
+          "strong": "H5117",
+          "gloss": "to rest",
+          "active": 140
+        },
+        {
+          "strong": "G1515",
+          "gloss": "peace",
+          "active": 84
+        },
+        {
+          "strong": "H7965I",
+          "gloss": "peace: well-being",
+          "active": 46
+        },
+        {
+          "strong": "H2790B",
+          "gloss": "be quiet",
+          "active": 43
+        }
+      ]
+    },
+    {
+      "cluster_code": "M34",
+      "description": "Perseverance, Endurance and Steadfastness",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 22,
+      "n_hebrew": 7,
+      "n_greek": 15,
+      "n_fully_covered": 15,
+      "n_zero_verses": 0,
+      "n_with_pending": 7,
+      "active_verses": 220,
+      "covered_verses": 169,
+      "untouched_verses": 51,
+      "coverage_pct": 76.8,
+      "top_terms": [
+        {
+          "strong": "H5331",
+          "gloss": "perpetuity",
+          "active": 42
+        },
+        {
+          "strong": "G5281",
+          "gloss": "perseverance",
+          "active": 31
+        },
+        {
+          "strong": "G3954",
+          "gloss": "boldness",
+          "active": 31
+        },
+        {
+          "strong": "H5081H",
+          "gloss": "noble",
+          "active": 21
+        },
+        {
+          "strong": "G5278",
+          "gloss": "to remain/endure",
+          "active": 16
+        }
+      ]
+    },
+    {
+      "cluster_code": "M35",
+      "description": "Testing, Temptation and Trial",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 24,
+      "n_hebrew": 0,
+      "n_greek": 24,
+      "n_fully_covered": 17,
+      "n_zero_verses": 1,
+      "n_with_pending": 6,
+      "active_verses": 189,
+      "covered_verses": 162,
+      "untouched_verses": 27,
+      "coverage_pct": 85.7,
+      "top_terms": [
+        {
+          "strong": "G3982",
+          "gloss": "to persuade",
+          "active": 52
+        },
+        {
+          "strong": "G1381",
+          "gloss": "to test",
+          "active": 21
+        },
+        {
+          "strong": "G3985H",
+          "gloss": "to test/tempt: test",
+          "active": 19
+        },
+        {
+          "strong": "G3985G",
+          "gloss": "to test/tempt: tempt",
+          "active": 12
+        },
+        {
+          "strong": "G3986H",
+          "gloss": "temptation/testing: testing",
+          "active": 11
+        }
+      ]
+    },
+    {
+      "cluster_code": "M36",
+      "description": "Service, Slavery and Labour",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 18,
+      "n_hebrew": 10,
+      "n_greek": 8,
+      "n_fully_covered": 7,
+      "n_zero_verses": 0,
+      "n_with_pending": 11,
+      "active_verses": 570,
+      "covered_verses": 309,
+      "untouched_verses": 261,
+      "coverage_pct": 54.2,
+      "top_terms": [
+        {
+          "strong": "H5647H",
+          "gloss": "to serve: minister",
+          "active": 142
+        },
+        {
+          "strong": "G1401",
+          "gloss": "slave",
+          "active": 106
+        },
+        {
+          "strong": "H5647G",
+          "gloss": "to serve",
+          "active": 88
+        },
+        {
+          "strong": "H5656H",
+          "gloss": "service: ministry",
+          "active": 73
+        },
+        {
+          "strong": "H5647I",
+          "gloss": "to serve: labour",
+          "active": 30
+        }
+      ]
+    },
+    {
+      "cluster_code": "M37",
+      "description": "Calling, Election and Vocation",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 20,
+      "n_hebrew": 8,
+      "n_greek": 12,
+      "n_fully_covered": 16,
+      "n_zero_verses": 0,
+      "n_with_pending": 4,
+      "active_verses": 1093,
+      "covered_verses": 1049,
+      "untouched_verses": 44,
+      "coverage_pct": 96.0,
+      "top_terms": [
+        {
+          "strong": "H7121G",
+          "gloss": "to call: call to",
+          "active": 286
+        },
+        {
+          "strong": "H7121H",
+          "gloss": "to call: call by",
+          "active": 194
+        },
+        {
+          "strong": "H0977",
+          "gloss": "to choose",
+          "active": 159
+        },
+        {
+          "strong": "G2564G",
+          "gloss": "to call: call",
+          "active": 110
+        },
+        {
+          "strong": "H7121I",
+          "gloss": "to call: call out",
+          "active": 102
+        }
+      ]
+    },
+    {
+      "cluster_code": "M38",
+      "description": "Salvation, Redemption and Deliverance",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 13,
+      "n_hebrew": 3,
+      "n_greek": 10,
+      "n_fully_covered": 8,
+      "n_zero_verses": 0,
+      "n_with_pending": 5,
+      "active_verses": 355,
+      "covered_verses": 319,
+      "untouched_verses": 36,
+      "coverage_pct": 89.9,
+      "top_terms": [
+        {
+          "strong": "G4982",
+          "gloss": "to save",
+          "active": 99
+        },
+        {
+          "strong": "H3722B",
+          "gloss": "to cover",
+          "active": 93
+        },
+        {
+          "strong": "H6299",
+          "gloss": "to ransom",
+          "active": 48
+        },
+        {
+          "strong": "G4991",
+          "gloss": "salvation",
+          "active": 43
+        },
+        {
+          "strong": "G4990",
+          "gloss": "savior",
+          "active": 24
+        }
+      ]
+    },
+    {
+      "cluster_code": "M39",
+      "description": "Blessing, Favour and Grace",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 16,
+      "n_hebrew": 10,
+      "n_greek": 6,
+      "n_fully_covered": 8,
+      "n_zero_verses": 0,
+      "n_with_pending": 8,
+      "active_verses": 740,
+      "covered_verses": 688,
+      "untouched_verses": 52,
+      "coverage_pct": 93.0,
+      "top_terms": [
+        {
+          "strong": "H1288",
+          "gloss": "to bless",
+          "active": 249
+        },
+        {
+          "strong": "H3190",
+          "gloss": "be good",
+          "active": 110
+        },
+        {
+          "strong": "G5485",
+          "gloss": "grace",
+          "active": 88
+        },
+        {
+          "strong": "H2603A",
+          "gloss": "be gracious",
+          "active": 72
+        },
+        {
+          "strong": "H2580",
+          "gloss": "favor",
+          "active": 67
+        }
+      ]
+    },
+    {
+      "cluster_code": "M41",
+      "description": "Remembrance and Memory",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 33,
+      "n_hebrew": 20,
+      "n_greek": 13,
+      "n_fully_covered": 9,
+      "n_zero_verses": 16,
+      "n_with_pending": 8,
+      "active_verses": 971,
+      "covered_verses": 822,
+      "untouched_verses": 149,
+      "coverage_pct": 84.7,
+      "top_terms": [
+        {
+          "strong": "H8085G",
+          "gloss": "to hear: hear",
+          "active": 228
+        },
+        {
+          "strong": "H2142",
+          "gloss": "to remember",
+          "active": 215
+        },
+        {
+          "strong": "H1245",
+          "gloss": "to seek",
+          "active": 207
+        },
+        {
+          "strong": "H1875",
+          "gloss": "to seek",
+          "active": 152
+        },
+        {
+          "strong": "G2212",
+          "gloss": "to seek",
+          "active": 83
+        }
+      ]
+    },
+    {
+      "cluster_code": "M42",
+      "description": "Speech, Voice and Cry",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 34,
+      "n_hebrew": 27,
+      "n_greek": 7,
+      "n_fully_covered": 18,
+      "n_zero_verses": 2,
+      "n_with_pending": 14,
+      "active_verses": 527,
+      "covered_verses": 415,
+      "untouched_verses": 112,
+      "coverage_pct": 78.7,
+      "top_terms": [
+        {
+          "strong": "H5012",
+          "gloss": "to prophesy",
+          "active": 95
+        },
+        {
+          "strong": "H2199",
+          "gloss": "to cry out",
+          "active": 73
+        },
+        {
+          "strong": "H7442B",
+          "gloss": "to sing",
+          "active": 51
+        },
+        {
+          "strong": "H2167",
+          "gloss": "to sing",
+          "active": 41
+        },
+        {
+          "strong": "G5455",
+          "gloss": "to call",
+          "active": 38
+        }
+      ]
+    },
+    {
+      "cluster_code": "M43",
+      "description": "Prophecy and Revelation",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 13,
+      "n_hebrew": 5,
+      "n_greek": 8,
+      "n_fully_covered": 8,
+      "n_zero_verses": 0,
+      "n_with_pending": 5,
+      "active_verses": 144,
+      "covered_verses": 89,
+      "untouched_verses": 55,
+      "coverage_pct": 61.8,
+      "top_terms": [
+        {
+          "strong": "H0226G",
+          "gloss": "sign: miraculous",
+          "active": 47
+        },
+        {
+          "strong": "G4152",
+          "gloss": "spiritual",
+          "active": 21
+        },
+        {
+          "strong": "G1504",
+          "gloss": "image",
+          "active": 20
+        },
+        {
+          "strong": "G4394",
+          "gloss": "prophecy",
+          "active": 19
+        },
+        {
+          "strong": "H6754",
+          "gloss": "image",
+          "active": 15
+        }
+      ]
+    },
+    {
+      "cluster_code": "M44",
+      "description": "Relational Disposition",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 17,
+      "n_hebrew": 9,
+      "n_greek": 8,
+      "n_fully_covered": 11,
+      "n_zero_verses": 1,
+      "n_with_pending": 5,
+      "active_verses": 642,
+      "covered_verses": 444,
+      "untouched_verses": 198,
+      "coverage_pct": 69.2,
+      "top_terms": [
+        {
+          "strong": "H0341",
+          "gloss": "enemy",
+          "active": 244
+        },
+        {
+          "strong": "H2416D",
+          "gloss": "community",
+          "active": 207
+        },
+        {
+          "strong": "H6862C",
+          "gloss": "enemy",
+          "active": 66
+        },
+        {
+          "strong": "H7378",
+          "gloss": "to contend",
+          "active": 59
+        },
+        {
+          "strong": "G0079",
+          "gloss": "sister",
+          "active": 25
+        }
+      ]
+    },
+    {
+      "cluster_code": "M45",
+      "description": "Transformation and Renewal",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 14,
+      "n_hebrew": 3,
+      "n_greek": 11,
+      "n_fully_covered": 13,
+      "n_zero_verses": 1,
+      "n_with_pending": 0,
+      "active_verses": 176,
+      "covered_verses": 176,
+      "untouched_verses": 0,
+      "coverage_pct": 100.0,
+      "top_terms": [
+        {
+          "strong": "H7725O",
+          "gloss": "to return: repent",
+          "active": 77
+        },
+        {
+          "strong": "G3340",
+          "gloss": "to repent",
+          "active": 32
+        },
+        {
+          "strong": "G3341",
+          "gloss": "repentance",
+          "active": 22
+        },
+        {
+          "strong": "G2537",
+          "gloss": "new",
+          "active": 16
+        },
+        {
+          "strong": "H2487",
+          "gloss": "change",
+          "active": 11
+        }
+      ]
+    },
+    {
+      "cluster_code": "M46",
+      "description": "Abundance, Prosperity and Wealth",
+      "bucket": "NAMED",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 12,
+      "n_hebrew": 10,
+      "n_greek": 2,
+      "n_fully_covered": 5,
+      "n_zero_verses": 0,
+      "n_with_pending": 7,
+      "active_verses": 129,
+      "covered_verses": 83,
+      "untouched_verses": 46,
+      "coverage_pct": 64.3,
+      "top_terms": [
+        {
+          "strong": "H7230",
+          "gloss": "abundance",
+          "active": 41
+        },
+        {
+          "strong": "H1952",
+          "gloss": "substance",
+          "active": 26
+        },
+        {
+          "strong": "H1433",
+          "gloss": "greatness",
+          "active": 13
+        },
+        {
+          "strong": "H1878",
+          "gloss": "to prosper",
+          "active": 11
+        },
+        {
+          "strong": "H1420",
+          "gloss": "greatness",
+          "active": 11
+        }
+      ]
+    },
+    {
+      "cluster_code": "FLAG",
+      "description": "Flagged for Review",
+      "bucket": "REVIEW",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 121,
+      "n_hebrew": 93,
+      "n_greek": 28,
+      "n_fully_covered": 44,
+      "n_zero_verses": 3,
+      "n_with_pending": 74,
+      "active_verses": 3788,
+      "covered_verses": 2120,
+      "untouched_verses": 1668,
+      "coverage_pct": 56.0,
+      "top_terms": [
+        {
+          "strong": "H8034",
+          "gloss": "name",
+          "active": 364
+        },
+        {
+          "strong": "H1285",
+          "gloss": "covenant",
+          "active": 236
+        },
+        {
+          "strong": "H4941G",
+          "gloss": "justice: judgement",
+          "active": 208
+        },
+        {
+          "strong": "H7311B",
+          "gloss": "be rotten",
+          "active": 184
+        },
+        {
+          "strong": "H8199",
+          "gloss": "to judge",
+          "active": 182
+        }
+      ]
+    },
+    {
+      "cluster_code": "T2",
+      "description": "T2 - Supplementary",
+      "bucket": "SUPPLEMENTARY",
+      "status": "Not started",
+      "version": "v6",
+      "n_terms": 627,
+      "n_hebrew": 478,
+      "n_greek": 149,
+      "n_fully_covered": 238,
+      "n_zero_verses": 21,
+      "n_with_pending": 368,
+      "active_verses": 18949,
+      "covered_verses": 8323,
+      "untouched_verses": 10626,
+      "coverage_pct": 43.9,
+      "top_terms": [
+        {
+          "strong": "H5971L",
+          "gloss": "people: creatures",
+          "active": 430
+        },
+        {
+          "strong": "H1571",
+          "gloss": "also",
+          "active": 404
+        },
+        {
+          "strong": "H0589",
+          "gloss": "I",
+          "active": 376
+        },
+        {
+          "strong": "H3027G",
+          "gloss": "hand",
+          "active": 375
+        },
+        {
+          "strong": "H0859E",
+          "gloss": "you [f.p.]",
+          "active": 359
+        }
+      ]
+    }
+  ]
+}

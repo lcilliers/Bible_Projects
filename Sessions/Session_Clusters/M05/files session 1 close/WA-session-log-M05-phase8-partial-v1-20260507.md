@@ -1,0 +1,147 @@
+# WA-session-log-M05-phase8-partial-v1-20260507
+
+> Framework B Soul Word Analysis Programme — Session Log
+> Session: M05 Phase 8 (partial) — Sub-groups A, B, C catalogue pass
+> Date: 20260507
+> Prefix: WA
+> Previous session reference: wa-cluster-M05-comprehensive-v9-20260507.md (input)
+> Obslog: wa-obslog-M05-love-compassion-kindness-v1-20260507
+
+---
+
+## Session summary
+
+This session covered Phase 5 through Phase 8 (partial) for cluster M05 — Love, Compassion and Kindness. The session began from the compacted transcript state (Phases 1–7 previously completed in prior sessions up to Phase 8 M05-A findings). The main analytical work this session was the Phase 8 catalogue pass for sub-groups M05-A, M05-B, and M05-C.
+
+---
+
+## Work completed
+
+### Phase 5 — Sub-group summaries
+**Output:** WA-M05-subgroup-summaries-v1-20260507.md
+Seven 250-word summaries, one per sub-group. Produced as required preceding document before Phase 6.
+
+### Phase 6 — Group-verse mapping
+**Outputs:** WA-M05-A-group-verse-mapping-v1-20260507.md · WA-M05-B-group-verse-mapping-v1-20260507.md · WA-M05-C-through-G-group-verse-mapping-v1-20260507.md
+
+Key decisions:
+- Group 1583 (H2617A che.sed, 115 verses) split → 1583-a (divine chesed as eternal attribute) / 1583-b (divine chesed enacted in acts)
+- Group 629 (H2550 cha.mal) split → 629-a (positive human compassion) / 629-b (disobedient compassion)
+- Group 604 (G3870 parakaleō) split → 604-a (pastoral/apostolic appeal) / 604-b (social requests)
+- 22 P-verses assigned in M05-A; 1 P-verse in M05-B; 1 P-verse in M05-C; 9 P-verses in M05-G
+- New group created for G0463 anochē (mti=7502) — no verse rows present; anchor deferred
+
+### Phase 7 — Directives DIR-004 through DIR-011
+**Outputs:** wa-cluster-M05-dir-004-A-mapping-v1-20260507.md · wa-cluster-M05-dir-005-to-010-mapping-v1-20260507.md · wa-cluster-M05-dir-011-followup-v1-20260507.md
+
+CC application results:
+- 99/101 anchors set; 32 P-verses assigned; 2/3 splits applied (629 ✓, 604 ✓, 1583 HALTED)
+- DIR-011 resolved all four outstanding items: Group 1542 anchor (Rom 5:8), Group 1271 anchor (Psa 18:35), Group 3602 anochē (anchor deferred — 0 verse rows), Group 1583 per-verse routing (all 115 verses routed: 59→1583-a, 56→1583-b)
+- Residual verses resolved: 5 Group 629 → 629-b; 1Cor 4:13 → 604-a
+- v9 report loaded confirming: G=1208 (91.2%), P=2 (both BOUNDARY), SA=8, NR=107
+
+### Phase 8 — Catalogue pass (189 prompts × sub-groups)
+
+#### M05-A — Love (497 verses, 37 groups)
+**Output:** WA-M05-A-findings-v1-20260507.md (906 lines)
+
+Key findings:
+- Love is God's constitutive attribute (Lam 3:22); typological direction confirmed (divine→human)
+- Complex 37-group structure; heart = primary constitutional site (Mat 22:37); structural opposite = hatred (Pro 10:12) and disordered-directedness (Joh 3:19)
+- Love engages all faculties; most centrally: volition (commanded), relational capacity, moral evaluation (love = evaluative standard, Rom 13:10)
+- God-to-human interface most evidenced; love transforms agency (2Cor 5:14)
+- Eschatologically permanent (1Cor 13:8); deposits trustworthy character; Spirit-communication primary mechanism
+- Chesed/faithfulness dominant co-occurrence; love architecturally highest (1Cor 13:13)
+- Primary lexical finding: love is constitutively directional (defined by its object)
+- G-codes raised: T6.4.3, T6.6.3, T6.7.3
+
+#### M05-B — Compassion (184 verses, 18 groups)
+**Output:** WA-M05-B-findings-v1-20260507.md (889 lines)
+
+Key findings:
+- Constitutively somatic-affective (bowel/womb vocabulary) — most bodily of all M05 characteristics
+- Inner movement (not static disposition): encounter → visceral stirring → action, without deliberative gap
+- Judicial-withholding register (Groups 338, 630, 3599) major structural finding: compassion can be appropriately suppressed; disobedient compassion is morally culpable (1Sa 15:9 — loss of kingdom)
+- Lam 4:10 most diagnostic image-condition verse: compassionate women committing atrocity under catastrophe
+- Directional asymmetry: human never shows compassion toward God; flows from greater to lesser
+- Chesed/ra.chum pairing (Exo 34:6) most consistent co-occurrence; Col 3:12 most multi-cluster verse
+- G-codes: T6.4.3, T6.6.3, T6.7.3
+
+#### M05-C — Mercy (60 verses, 9 groups)
+**Output:** WA-M05-C-findings-v1-20260507.md (831 lines)
+
+Key findings:
+- Entirely Greek vocabulary (no Hebrew terms) — structurally significant
+- Primary dimension: relational-judicial (vs M05-B's affective-somatic, M05-A's relational-moral)
+- Mercy-economy structure: received → owed → shown/withheld → consequence (Mat 18:33 pattern)
+- Directional asymmetry confirmed: human never mercy-giver toward God
+- Luk 1:78 splanchna eleous deepest constitutional proximity with M05-B (inward-parts register)
+- Eph 2:4 most significant cross-sub-group verse: grounds mercy in love (M05-A) as motivation
+- Sovereignty of mercy (Group 1628 — Rom 9:15-16): cannot be coerced or generated by human merit
+- Eschatological mercy (Jude 21, 2Ti 1:18): mercy awaited at last day
+- New finding: mercy's scope includes cognitive-spiritual states (Jude 22 — mercy toward doubters)
+- G-codes: T6.6.3, T6.7.3
+
+---
+
+## Researcher decisions made this session
+
+**RD-T713-001:** T7.1.3 (LXX translation equivalents and root architecture queries) parked programme-wide. No T7.1.3 G-codes to be raised in subsequent passes. Recorded in obslog and applied immediately from M05-C onwards.
+
+---
+
+## Cross-sub-group synthesis findings (A–C)
+
+1. Love (M05-A) is the prior constitutive orientation; compassion (M05-B) is its activation under suffering; mercy (M05-C) is its form when guilt stands before authority. These are structurally sequential, not merely adjacent.
+2. The bowel/womb constitutional vocabulary is M05-B's distinctive contribution — absent in M05-A, diminished in M05-C.
+3. Eph 2:4 anchors both M05-A (love as motivation) and M05-C (mercy as expression) — the cluster's primary integration verse for love-to-mercy relationship.
+4. Exo 34:6 anchors M05-A (chesed) and M05-B (ra.chum) simultaneously — the divine self-disclosure formula is the cluster's primary integration node for love-to-compassion relationship.
+5. Col 3:12 anchors M05-B, M05-C, M05-D, M05-E simultaneously — most multi-cluster verse in M05 encountered so far.
+
+---
+
+## Handoff state for next session
+
+**Immediate next action:** M05-D catalogue pass (Kindness and Goodness, 126 verses, 16 groups)
+
+**Remaining Phase 8 sub-groups:**
+- M05-D — Kindness and Goodness (126v, 16 groups)
+- M05-E — Gentleness (30v, 9 groups)
+- M05-F — Comfort and Encouragement (206v, 11 groups)
+- M05-G — Fellowship and Participation (40v, 8 groups)
+- M05-BOUNDARY — structural characterisation only
+
+**Active report for next session:** wa-cluster-M05-comprehensive-v9-20260507.md
+
+**Standing instruction:** RD-T713-001 applies — no T7.1.3 G-codes.
+
+**Outstanding CC work:**
+- anochē (mti=7502) STEP extraction needed before Group 3602 anchor can be set
+- Pre-existing anchor=2 cases (groups 1549, 1551, 1566, 1583, 1591, 3218): cleanup directive deferred
+
+**G-codes for CC (accumulated, not yet actioned):**
+- T6.4.3: cross-registry chesed distribution count (raised in M05-A)
+- T6.6.3: anchor verse cross-registry overlap counts (raised in M05-A, B, C)
+- T6.7.3: dimensional overlap counts (raised in M05-A, B, C)
+
+---
+
+## Output files produced this session
+
+| File | Type | Status |
+|---|---|---|
+| WA-M05-subgroup-summaries-v1-20260507.md | Phase 5 summaries | ✓ outputs |
+| WA-M05-A-group-verse-mapping-v1-20260507.md | Phase 6 mapping | ✓ outputs |
+| WA-M05-B-group-verse-mapping-v1-20260507.md | Phase 6 mapping | ✓ outputs |
+| WA-M05-C-through-G-group-verse-mapping-v1-20260507.md | Phase 6 mapping | ✓ outputs |
+| wa-cluster-M05-dir-004-A-mapping-v1-20260507.md | Phase 7 directive | ✓ outputs |
+| wa-cluster-M05-dir-005-to-010-mapping-v1-20260507.md | Phase 7 directives | ✓ outputs |
+| wa-cluster-M05-dir-011-followup-v1-20260507.md | Phase 7 follow-up | ✓ outputs |
+| WA-M05-A-findings-v1-20260507.md | Phase 8 findings | ✓ outputs |
+| WA-M05-B-findings-v1-20260507.md | Phase 8 findings | ✓ outputs |
+| WA-M05-C-findings-v1-20260507.md | Phase 8 findings | ✓ outputs |
+| wa-obslog-M05-love-compassion-kindness-v1-20260507.md | Obslog | ✓ outputs |
+
+---
+
+*WA-session-log-M05-phase8-partial-v1-20260507 | Session close 20260507*

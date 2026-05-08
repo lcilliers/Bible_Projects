@@ -1,0 +1,150 @@
+
+============================================================
+  Q1 — Schema confirmation
+============================================================
+  cluster_finding table exists: True
+  catalogue_version='v2-2026-04-29' rows: 189 (expected 189)
+
+============================================================
+  Q2 — Row counts by finding_status (M05)
+============================================================
+  finding_status            n
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -
+  cluster_synthesis           67
+  finding                   1411
+  gap                          3
+  silent                      36
+  TOTAL                     1517
+
+============================================================
+  Q3 — Per sub-group row counts (M05)
+============================================================
+  subgroup        label                                   n
+  ------------------------------------------------------------
+  M05-A          Love                                       189
+  M05-B          Compassion                                 189
+  M05-BOUNDARY   Boundary                                     5
+  M05-C          Mercy                                      189
+  M05-D          Kindness and Goodness                      189
+  M05-E          Gentleness                                 189
+  M05-F          Comfort and Encouragement                  189
+  M05-G          Fellowship and Participation               189
+  CLUSTER-LEVEL  (cluster_subgroup_id IS NULL)              189
+
+============================================================
+  Q4 — Gap-status rows (M05)
+============================================================
+  Gap rows total: 3
+
+  cf.id= 2997  q=T6.4.3    scope=CLUSTER
+    excerpt: T6.4.3 — cross-registry chesed distribution count (first raised M05-A; reconfirmed through all sub-groups). G-code recorded from outstanding-actions list in WA-M05-consolidated-findings-v1-20260507-pa
+
+  cf.id= 3005  q=T6.6.3    scope=CLUSTER
+    excerpt: Cross-registry anchor verse overlap counts required from CC. Raised in M05-A and reconfirmed through M05-G.
+
+  cf.id= 3008  q=T6.7.3    scope=CLUSTER
+    excerpt: Dimensional overlap counts required from CC.
+
+
+============================================================
+  Q5 — 3-row representative sample
+============================================================
+  Rows returned: 9
+
+  q=T0.1.1  sg=M05-A  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part1.md
+    excerpt: God's constitutive being is love — the divine self-disclosure formula at Exo 34:6 (Group 1583-a/b) names chesed as his defining inner attribute; 1Jo 4:8 establishes that God is love ontologically. Love is not one attribute among many but the characterisation of what God is. The specific love-forms (
+
+  q=T0.1.1  sg=M05-D  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part1.md
+    excerpt: "No one is good except God alone" (Mar 10:18 — Group 1096) — goodness is God's exclusive constitutive attribute from which all creaturely goodness is derivative. God's kindness is purposive and active: "God's kindness is meant to lead you to repentance" (Rom 2:4 — Group 1111). The character revealed
+
+  q=T0.1.1  sg=M05-G  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part1.md
+    excerpt: The "fellowship of the Holy Spirit" (2Cor 13:14 — Group 1055) names koinōnia as a quality of the divine inner life. God is "faithful, by whom you were called into the fellowship of his Son" (1Cor 1:9 — Group 1055). He initiates katallagē — "God, who through Christ reconciled us to himself" (2Cor 5:1
+
+  q=T2.1.1  sg=M05-A  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part2.md
+    excerpt: Partial — the Spirit is the source of love's indwelling (Rom 5:5 — Group 1542: "God's love poured into our hearts through the Holy Spirit"), making the Spirit the producer and channel of love. Explicit spirit-level location of the love characteristic itself is not directly evidenced; the Spirit is i
+
+  q=T2.1.1  sg=M05-D  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part2.md
+    excerpt: Partial — Spirit-production of kindness (Gal 5:22 — Group 1112) implies spirit-level origination without naming the spirit as the constitutional location of the characteristic itself.
+
+  q=T2.1.1  sg=M05-G  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part2.md
+    excerpt: Yes — explicitly. "Fellowship of the Holy Spirit" (2Cor 13:14 — Group 1055); "any participation in the Spirit" (Phili 2:1 — Group 1055); Spirit-prayer in the building-up context (Jude 20 — Group 2849). M05-G has the clearest spirit-level location in the cluster.
+
+  q=T5.1.1  sg=M05-A  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part4.md
+    excerpt: Yes — love is transformative: "the love of Christ controls us" (2Cor 5:14 — Group 1542) — the inner experience of Christ's love restructures the person's motivating centre. Spirit-infused love (Rom 5:5 — Group 1542) is an inner transformation that did not exist before.
+
+  q=T5.1.1  sg=M05-D  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part4.md
+    excerpt: Yes — God's kindness leads to repentance (Rom 2:4 — Group 1111) — a directional inner transformation. The good work begun in the person will be brought to completion (Phili 1:6 — Group 1098).
+
+  q=T5.1.1  sg=M05-G  status=finding
+    source: WA-M05-consolidated-findings-v1-20260507-part4.md
+    excerpt: Yes — transformation toward the divine nature: 2Pe 1:4 (Group 1057): "become partakers of the divine nature, having escaped from the corruption." The katallagē transformation (2Cor 5:17 — Group 2069 context): "if anyone is in Christ, he is a new creation."
+
+
+============================================================
+  Q6 — wa_session_b_findings count (M05 registries)
+============================================================
+  Session B findings linked to any M05-owning registry: 1482
+  (Pre-directive count not snapshotted; we did not write to wa_session_b_findings in this directive.)
+
+============================================================
+  Q7 — VCREVISE patch result (Amo 5:21 + 2Pe 1:3)
+============================================================
+  vr=192566 mti=6209 (Amo 5:21): is_rel=1 grp=2148 sar=None
+  vr=215044 mti=6845 (2Pe 1:3): is_rel=1 grp=2597 sar=None
+
+============================================================
+  Q8 — G-code T6.4.3: cross-registry chesed (H2617A) distribution
+============================================================
+  Rows: 1
+  registry=103 (love): vc_rows=243
+
+============================================================
+  Q8 — G-code T6.6.3: M05 anchor-verse cross-cluster overlap
+============================================================
+  M05 anchor verses appearing in other clusters/terms: 0
+
+============================================================
+  Q8 — G-code T6.7.3: prompts with both subgroup + synthesis
+============================================================
+  Prompts with both: 33
+  T0.1.1   total=  8 synthesis=1 subgroup=7
+  T0.2.1   total=  8 synthesis=1 subgroup=7
+  T0.2.3   total=  8 synthesis=1 subgroup=7
+  T1.5.2   total=  8 synthesis=1 subgroup=7
+  T1.5.3   total=  3 synthesis=1 subgroup=2
+  T1.8.1   total=  8 synthesis=1 subgroup=7
+  T2.1.1   total=  6 synthesis=1 subgroup=5
+  T2.1.3   total=  2 synthesis=1 subgroup=1
+  T2.10.2  total=  8 synthesis=1 subgroup=7
+  T2.3.2   total=  5 synthesis=1 subgroup=4
+  T2.4.2   total=  4 synthesis=1 subgroup=3
+  T2.9.1   total=  8 synthesis=1 subgroup=7
+  T2.9.3   total=  2 synthesis=1 subgroup=1
+  T3.10.1  total=  8 synthesis=1 subgroup=7
+  T3.3.1   total=  3 synthesis=1 subgroup=2
+  T3.9.1   total=  6 synthesis=1 subgroup=5
+  T4.1.1   total=  8 synthesis=1 subgroup=7
+  T4.2.2   total=  3 synthesis=1 subgroup=2
+  T4.6.1   total=  8 synthesis=1 subgroup=7
+  T5.1.2   total=  8 synthesis=1 subgroup=7
+  T5.2.1   total=  8 synthesis=1 subgroup=7
+  T5.3.1   total=  8 synthesis=1 subgroup=7
+  T5.4.1   total=  8 synthesis=1 subgroup=7
+  T6.1.1   total=  8 synthesis=1 subgroup=7
+  T6.2.1   total=  5 synthesis=1 subgroup=4
+  T6.3.1   total=  8 synthesis=1 subgroup=7
+  T6.4.1   total=  8 synthesis=1 subgroup=7
+  T6.5.1   total=  8 synthesis=1 subgroup=7
+  T7.1.5   total=  8 synthesis=1 subgroup=7
+  T7.1.6   total=  8 synthesis=1 subgroup=7
+  T7.1.7   total=  8 synthesis=1 subgroup=7
+  T7.1.9   total=  6 synthesis=1 subgroup=5
+  T7.3.1   total=  8 synthesis=1 subgroup=7

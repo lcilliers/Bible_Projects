@@ -1,0 +1,94 @@
+Verification run: 2026-05-06T14:42:56Z
+DB: database\bible_research.db
+
+======================================================================
+§1. Anchor verse claims
+======================================================================
+Group code     Term   Anchor ref   Status     Notes
+550-001        H8130  Lev 19:17    OK_ANCHOR  is_anchor=1 set
+550-002        H8130  Exo 1:10     OK_ANCHOR  is_anchor=1 set
+550-NEW-01     H8130  Deu 22:13    OK_ANCHOR  is_anchor=1 set
+550-NEW-02     H8130  Pro 8:13     OK_ANCHOR  is_anchor=1 set
+550-NEW-03     H8130  Psa 11:5     OK_ANCHOR  is_anchor=1 set
+550-NEW-04     H8130  Exo 20:5     OK_ANCHOR  is_anchor=1 set
+1663-001       H8131  Dan 4:19     OK_ANCHOR  is_anchor=1 set
+902-001        H8135  Pro 10:12    OK_ANCHOR  is_anchor=1 set
+902-002        H8135  Deu 1:27     OK_ANCHOR  is_anchor=1 set
+902-003        H8135  Ecc 9:6      OK_ANCHOR  is_anchor=1 set
+903-001        H4895  Hos 9:7      OK_ANCHOR  is_anchor=1 set
+5518-001       H7852  Gen 27:41    OK_ANCHOR  is_anchor=1 set
+172-001        H5006  Num 14:11    OK_ANCHOR  is_anchor=1 set
+1280-001       H0959  Isa 53:3     OK_ANCHOR  is_anchor=1 set
+252-001        H8581  Psa 119:163  OK_ANCHOR  is_anchor=1 set
+1283-001       H1860  Dan 12:2     OK_ANCHOR  is_anchor=1 set
+1775-002       H6184  Psa 54:3     NO_VC      no verse_context row in this group
+322-001        H2781  Psa 69:20    OK_ANCHOR  is_anchor=1 set
+337-001        G0476  1Pe 5:8      NO_VC      no verse_context row in this group
+
+======================================================================
+§2. NT verse citations
+======================================================================
+Term   NT ref       Status       Notes
+G0948  Rev 21:8     OK           vr_id=208
+G0948  Rom 2:22     OK           vr_id=207
+G0476  1Pe 5:8      OK           vr_id=93929
+G0476  Mat 5:25     OK           vr_id=93932
+G0476  Luk 12:58    OK           vr_id=93930
+G0476  Luk 18:3     OK           vr_id=93931
+G0865  2Ti 3:3      OK           vr_id=164228
+G5195  1Th 2:2      OK           vr_id=6723
+
+======================================================================
+§3. Group code references
+======================================================================
+Group code     Term   Status         Notes
+550-001        H8130  OK             id=1601 verses=88 anchors=1
+550-002        H8130  OK             id=3590 verses=4 anchors=1
+550-NEW-01     H8130  OK             id=3593 verses=9 anchors=1
+550-NEW-02     H8130  OK             id=3594 verses=21 anchors=1
+550-NEW-03     H8130  OK             id=3595 verses=19 anchors=1
+550-NEW-04     H8130  OK             id=3596 verses=14 anchors=1
+1663-001       H8131  OK             id=1602 verses=1 anchors=1
+1663-NEW-04    H8131  OK             id=3597 verses=1 anchors=0
+902-001        H8135  OK             id=1201 verses=5 anchors=1
+902-002        H8135  OK             id=1202 verses=2 anchors=1
+902-003        H8135  OK             id=1203 verses=2 anchors=1
+903-001        H4895  OK             id=1199 verses=2 anchors=1
+5518-001       H7852  OK             id=1200 verses=6 anchors=1
+172-001        H5006  OK             id=91 verses=19 anchors=1
+172-002        H5006  OK             id=92 verses=4 anchors=1
+172-003        H5006  OK             id=93 verses=2 anchors=1
+1567-001       H5007B OK             id=153 verses=3 anchors=1
+316-001        H0937  OK             id=2021 verses=11 anchors=1
+1280-001       H0959  OK             id=3045 verses=13 anchors=2
+1281-001       H0963  OK             id=3046 verses=1 anchors=1
+1277-001       H7590  OK             id=3054 verses=3 anchors=1
+14-001         G0948  OK             id=6 verses=1 anchors=1
+14-002         G0948  OK             id=7 verses=1 anchors=1
+247-001        H8263  OK             id=127 verses=2 anchors=1
+247-002        H8263  OK             id=3591 verses=2 anchors=0
+248-001        H8374  OK             id=128 verses=1 anchors=1
+252-001        H8581  OK             id=136 verses=5 anchors=1
+252-002        H8581  OK             id=137 verses=4 anchors=1
+252-003        H8581  OK             id=138 verses=9 anchors=1
+1283-001       H1860  OK             id=3047 verses=2 anchors=2
+1775-001       H6184  OK             id=829 verses=7 anchors=1
+1775-002       H6184  OK             id=830 verses=13 anchors=1
+6966-001       H0394  OK             id=2907 verses=8 anchors=2
+6967-001       H0393  OK             id=2906 verses=2 anchors=2
+6968-001       H0395  OK             id=2908 verses=1 anchors=1
+1568-001       H5007A OK             id=154 verses=2 anchors=1
+1664-001       H8146  OK             id=1204 verses=1 anchors=1
+337-001        G5195  OK             id=2034 verses=5 anchors=1
+322-001        H2781  OK             id=2158 verses=27 anchors=2
+322-002        H2781  OK             id=2159 verses=45 anchors=2
+317-001        H8103  OK             id=2164 verses=1 anchors=1
+
+======================================================================
+SUMMARY
+======================================================================
+! 3 flag(s) for investigation:
+
+  - ANCHOR — Psa 54:3 has no verse_context row for group 1775-002 (id=830)
+  - ANCHOR — group 337-001 has mti_term_id=337, findings imply 3200 (G0476)
+  - ANCHOR — 1Pe 5:8 has no verse_context row for group 337-001 (id=2034)
