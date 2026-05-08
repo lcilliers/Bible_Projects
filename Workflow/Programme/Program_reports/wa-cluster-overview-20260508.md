@@ -1,6 +1,6 @@
 # Cluster Overview — programme-wide snapshot
 
-_Generated: 2026-05-08 09:46 UTC_  
+_Generated: 2026-05-08 10:59 UTC_  
 _Source: `database/bible_research.db`_
 
 ## Status roll-up
@@ -8,7 +8,8 @@ _Source: `database/bible_research.db`_
 | Status | Count |
 |---|---:|
 | ✓ Analysis Completed | 2 |
-| · Not started | 44 |
+| ▶ Analysis - In Progress | 1 |
+| · Not started | 43 |
 | **Total clusters** | **46** |
 
 ## Programme totals
@@ -37,7 +38,7 @@ _Source: `database/bible_research.db`_
 | · | **M12** | Purity, Holiness and Consecration | Not started | 46 (24+22) | 0 | 454 | 78 | — | 2026-05-05 |
 | · | **M13** | Truth, Faithfulness and Integrity | Not started | 26 (16+10) | 0 | 592 | 62 | — | 2026-05-05 |
 | · | **M14** | Deceit, Hypocrisy and Falsehood | Not started | 42 (23+19) | 0 | 372 | 64 | — | 2026-05-05 |
-| · | **M15** | Wisdom, Understanding and Knowledge | Not started | 90 (43+47) | 0 | 1428 | 195 | — | 2026-05-05 |
+| ▶ | **M15** | Wisdom, Understanding and Knowledge | Analysis - In Progress | 90 (43+47) | 0 | 1428 | 195 | — | 2026-05-08 |
 | · | **M16** | Folly, Madness and Foolishness | Not started | 29 (19+10) | 0 | 159 | 39 | — | 2026-05-05 |
 | · | **M17** | Counsel, Planning and Purpose | Not started | 17 (9+8) | 0 | 256 | 39 | — | 2026-05-05 |
 | · | **M18** | Hope, Expectation and Waiting | Not started | 26 (13+13) | 0 | 244 | 44 | — | 2026-05-05 |
