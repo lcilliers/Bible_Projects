@@ -2653,3 +2653,177 @@ Source files (Parts 1–4): confirmed present in outputs directory
 
 **Phase 9 COMPLETE.** Directive delivered. Awaiting CC application and confirmation before Phase 10.
 
+
+---
+
+### RESEARCHER MESSAGE — Phase 10 review instruction
+
+**Verbatim:** "the directive was processed. please review and evaluate the result. It seems very odd. It seems that the cluster itself has not produce a coherent result. Either the evidence (verses) are inconclusive, and therefore the assumption that it contains characteristics are fundamentally wrong, or something seriously went wrong with the analysis"
+
+**Action:** Read the comprehensive v4 report in full. Review what the directive produced. Evaluate whether the cluster result is coherent. Diagnose the source of the apparent incoherence before any response.
+
+
+---
+
+### PHASE 10 — Opening observation and diagnostic
+
+**Date:** 2026-05-08
+**Trigger:** Researcher observation that the cluster result appears incoherent.
+**Input:** wa-cluster-M32-comprehensive-v4-20260508.md
+
+**Diagnostic findings from reading v4:**
+
+1. The v4 report shows zero cluster_finding rows. The findings-record directive (DIR-20260508-004) appears to have been processed but has produced no visible findings in the DB output. This is either a load failure or the comprehensive report was generated before the directive was applied.
+
+2. However: the directive was described as "processed" by the researcher. The v4 report shows `cluster.version=v6` and `last_updated=2026-05-08T03:20:43Z` — but contains no §3.N section for cluster_finding rows. The report format may not include cluster_finding rows by default, OR the finding rows were written to the DB but are not surfaced in the comprehensive report template.
+
+3. The researcher's core concern — that the cluster result is incoherent — must be evaluated against the actual verse evidence, NOT the DB loading result. The DB loading question and the analytical coherence question are separate.
+
+**Core diagnostic question:** Is the cluster analytically incoherent, or does it appear incoherent for a different reason?
+
+**Observations from the verse evidence (directly from §2 in v4):**
+
+M32-A (Conscience): 4 verses
+- Act 5:2: suneidō = "with his wife's knowledge" — the Greek word for conscience is used as shared-knowledge/complicity, not as a self-reflective moral assessment. The word primarily means "to know together with."
+- Act 12:12: suneidō = "when he realized this" — simple situational awareness, no moral content whatsoever.
+- Act 14:6: suneidō = "they learned of it" — again, pure cognitive awareness of an external fact.
+- 1Cor 4:4: sunoida = "I am not aware of anything against myself" — this is the only verse in M32-A with genuine moral self-assessment content.
+
+**Observation:** Three of the four M32-A verses are cognitive-awareness uses of suneidō, not conscience uses. Only 1Cor 4:4 carries conscience in the technical sense. The cluster has been built on terms whose primary semantic range in these extracted verses is not "conscience" but rather "to know / become aware / realise."
+
+M32-B (Self-Awareness / Inner Attention): 7 verses of shit
+- These are sound — the term consistently names the act of setting inner attention, across positive (3578-A) and negative (3578-B) modes.
+
+**BOUNDARY:**
+- enthumeomai: from R085 imagination — not conscience, not self-awareness. 3 verses.
+- kardiognōstēs: divine attribute (heart-knower). Correctly identified as BOUNDARY.
+- autokatakritos: 1 verse, hapax legomenon in NT. BOUNDARY is correct but 1 verse.
+
+**Root diagnostic:**
+
+The cluster has two different problems:
+
+PROBLEM 1 — Term selection problem for M32-A: suneidō (G4894) in these specific extracted verses is primarily a cognitive-awareness word ("realised," "learned"), not a conscience word. The conscience sense of suneidō is attested in the broader NT but is NOT the dominant sense in the three Act verses extracted for this term. The conscience term that properly names the characteristic is suneidēsis (G4893) — the noun — which is NOT in this cluster. What is in this cluster are the verbal forms in their lesser-attested conscience sense plus their dominant general-awareness sense.
+
+PROBLEM 2 — Small and heterogeneous verse base: 17 verses total. Of those: 6 are BOUNDARY (not the characteristic), 4 are M32-A of which only 1 (1Cor 4:4) carries genuine conscience content. This means the entire conscience sub-group rests on one verse in substance.
+
+**Conclusion of diagnostic:**
+
+The researcher's instinct is correct. The cluster is analytically thin in M32-A because:
+(a) The primary conscience vocabulary (suneidēsis G4893) is not in this cluster — it sits in R026/R112 registries
+(b) The verbal forms that are in this cluster (suneidō/sunoida) appear primarily in general-awareness uses in the extracted verses
+(c) The analysis built an elaborate structure on a one-verse evidential base for conscience proper
+
+M32-B (shit) is analytically sound — 7 verses with a real characteristic demonstrated.
+
+The cluster is not fundamentally wrongly conceived — conscience and self-awareness ARE inner-being characteristics. But the evidence base assembled for M32-A is too thin and too mixed to sustain the analytical conclusions drawn.
+
+**This requires researcher decision before any further action.** Options to surface.
+
+
+---
+
+### RESEARCHER MESSAGE — Cluster consolidation instruction
+
+**Verbatim:** "what this means, is that analysis demonstrated that the terms in assigned in this cluster should be consolidated with another cluster. can you evaluate the clusters and advise where cluster m32 should be consolidated into."
+
+**Action:** Evaluate all cluster descriptions against M32's terms and their actual verse evidence. Identify the best consolidation target. Do not guess — ground every recommendation in what the terms actually evidence in their extracted verses.
+
+
+### Phase 10 — Consolidation target evaluation
+
+**Method:** Match each M32 term's actual verse evidence against candidate cluster descriptions. No speculation — only what the verses demonstrate.
+
+**M32 terms mapped to their actual verse function:**
+
+| Term | Actual verse function | Source registries |
+|---|---|---|
+| G4894 suneidō | Cognitive awareness / knowing / realising | R026 conscience |
+| G6083 sunoida | Moral self-assessment (1 verse, 1Cor 4:4) | R026 conscience |
+| H7896K shit | Deliberate inner attention / taking to heart / considering | R112 mind |
+| G1760 enthumeomai | Inner reflection / pondering | R085 imagination |
+| G2589 kardiognōstēs | Divine heart-knowledge (BOUNDARY) | R183 heart |
+| G0843 autokatakritos | Self-condemnation (BOUNDARY, 1 verse) | R024 condemnation |
+
+**Candidate clusters evaluated:**
+
+M15 — Wisdom, Understanding and Knowledge: 87 terms, 1717 verses
+- This is the largest and most obvious candidate for the cognitive-awareness terms. suneidō in its "realised/learned" sense (Act 12:12, 14:6) is straightforwardly a knowing/awareness term. shit (inner attending) produces knowledge and instruction (Pro 24:32). enthumeomai (inner reflection) is cognitive. The kardiognōstēs divine knowing also has a natural home here.
+- CONCERN: M15 is Wisdom/Understanding/Knowledge — these are typically epistemic virtues and products. The M32 terms are mostly about the *act* of inner attending and self-knowing rather than wisdom as a quality or product. The fit is partial.
+
+M17 — Counsel, Planning and Purpose: 17 terms, 280 verses
+- e.tsah (counsel) appears as a co-span with shit in Psa 13:2 ("take counsel in my soul"). The inner-attending acts in shit (Jer 31:21, Pro 24:32) have a deliberative, purposive quality. enthumeomai covers considered inner deliberation.
+- CONCERN: M17 is about counsel, planning, and purpose — the products and acts of deliberate planning. The M32 terms are more about the *attentive* and *self-aware* dimension of inner life than about planning or purposive deliberation specifically.
+
+M26 — Righteousness and Justice: 36 terms, 951 verses
+- autokatakritos (self-condemned) has a natural link to justice/condemnation language. sunoida in 1Cor 4:4 operates in an explicitly judicial frame (acquittal, judgment). 
+- CONCERN: This is the weakest fit for the majority of terms. Only autokatakritos and 1Cor 4:4 carry justice/judgment content. The other five terms do not.
+
+M41 — Remembrance and Memory: 33 terms, 971 verses
+- Jer 31:21 (shit directing attention to one's own past) is the closest M32 verse to memory — "consider the highway, the road by which you went." The attending faculty explicitly activates memory here. R112 finding 112-F001 also notes the link between attentiveness and memory ("vigilant attentiveness is the means by which memory is maintained; forgetting is the product of failed attentiveness").
+- CONCERN: M32's terms are about the act of attending, not memory itself. The overlap is at the boundary but not the centre of what the terms do.
+
+M15 (Wisdom, Understanding and Knowledge) — BEST GENERAL FIT for the cognitive terms (suneidō general awareness, enthumeomai, shit in knowledge-production mode).
+
+BUT: the single strongest finding from this cluster — 1Cor 4:4 (moral self-assessment under divine judgment) — does not fit M15 naturally.
+
+**The harder question: is there a cluster for moral self-assessment specifically?**
+
+Looking at the cluster descriptions:
+- M10 (Guilt, Sin and Transgression) — autokatakritos and 1Cor 4:4 have some resonance here, but these terms are not about guilt or sin as characteristics — they are about inner knowing of one's moral state.
+- M26 (Righteousness and Justice) — 1Cor 4:4's judicial frame fits better here than M10; autokatakritos clearly belongs in this orbit.
+- M13 (Truth, Faithfulness and Integrity) — the conscience function (knowing one's own moral standing truthfully) has some affinity with integrity and self-truth.
+
+**Conclusion of evaluation — to surface to researcher.**
+
+
+---
+
+### RESEARCHER MESSAGE — Split and redistribute instruction
+
+**Verbatim:** "the objective of clustering is to home terms related a characteristic, and associated characteristics to allow for the terms to be evaluated together. if M32 is a conglomarate of terms that belong to different characteristics in several other clusters then the terms in M32 must be split to move the the appropriate clusters."
+
+**Action:** Work through each M32 term individually. Determine the correct destination cluster for each based on its verse evidence. Produce a complete split-and-redistribute recommendation before any directive is written. All reasoning grounded in verse evidence only.
+
+
+---
+
+### RESEARCHER MESSAGE — Preservation option selected
+
+**Verbatim:** "option b"
+
+**Action:** Produce dissolution directive for M32. Terms split: G4894 suneidō, H7896K shit, G1760 enthumeomai → M15. G6083 sunoida, G2589 kardiognōstēs, G0843 autokatakritos → M26. M32 cluster_finding rows retained in DB, flagged as legacy/superseded. M32 cluster status set to dissolved/retired. Directive to follow.
+
+
+### Phase 10 — Dissolution directive preparation
+
+**Directive type:** Cluster dissolution + term reassignment (cross-cluster scope)
+**Pattern:** §11.6 Worked pattern C (cluster reassignment) — extended for full dissolution
+**Filename pattern:** §2.2 global pattern (cross-cluster work per §11.7)
+**Directive ID:** DIR-20260508-005
+
+**Term split confirmed:**
+- G4894 suneidō (mti=454) → M15
+- H7896K shit (mti=3578) → M15
+- G1760 enthumeomai (mti=3392) → M15
+- G6083 sunoida (mti=2739) → M26
+- G2589 kardiognōstēs (mti=599) → M26
+- G0843 autokatakritos (mti=4848) → M26
+
+**Preservation decision:** M32 cluster_finding rows retained, flagged as legacy/superseded (Option B per researcher)
+**M32 cluster:** status to be updated to indicate dissolution — CC to confirm available status value
+
+**Note on filename:** This is cross-cluster scope (touches M32, M15, M26) — uses global pattern per §11.7.
+
+
+### Phase 10 — Dissolution directive produced
+
+**Directive:** wa-global-M32-dir-dissolution-v1-20260508.md
+**Directive ID:** DIR-20260508-005
+**Pattern:** §11.6 cluster reassignment + §2.2 global filename (cross-cluster scope)
+**Operations:** 6 term reassignments, M32 sub-group rows flagged, M32 cluster_finding rows preserved/flagged, M32 cluster status set to Dissolved
+**M15 receives:** G4894 suneidō (mti=454), H7896K shit (mti=3578), G1760 enthumeomai (mti=3392)
+**M26 receives:** G6083 sunoida (mti=2739), G2589 kardiognōstēs (mti=599), G0843 autokatakritos (mti=4848)
+**Preservation:** All M32 cluster_finding rows retained as legacy reference (researcher Option B)
+**Awaiting:** CC application and completion confirmation before session log is produced
+
