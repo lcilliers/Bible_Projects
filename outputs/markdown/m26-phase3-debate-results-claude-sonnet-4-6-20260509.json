@@ -1,0 +1,279 @@
+{
+  "meta": {
+    "generated_at": "2026-05-09T03:46:47Z",
+    "model": "claude-sonnet-4-6",
+    "effort": "medium",
+    "n_terms": 39,
+    "tokens": {
+      "input": 3,
+      "output": 13733,
+      "cache_read": 2191,
+      "estimated_cost_usd": 0.206
+    }
+  },
+  "result": {
+    "cluster_overview": "M26 spans a dense semantic field of righteousness, justice, and their legal-judicial counterparts across both Testaments. The Hebrew tsedaqah/tsedeq family and the Greek dik- word family form two interlocking centres: the first emphasising covenant-relational moral standing, the second emphasising legally grounded rightness and its judicial execution. The cluster divides into at least six distinguishable inner-being phenomena — a state of righteous character, a disposition of moral uprightness, an act of justification/vindication, retributive avenging justice, condemnatory judicial sentence, and an evaluative reckoning faculty — plus two structural opposite terms that define the cluster's boundary from within.",
+    "onion_observation": "The border between M26-A (core righteousness as state) and M26-B (uprightness as straightness) is the cluster's most porous seam, since tsedaqah and yosher can both describe the same person's moral character; similarly, M26-C (justification) and M26-E (condemnation) morph into one another because both are verdicts issuing from the same judicial faculty, differing only in direction.",
+    "subgroups": [
+      {
+        "code": "M26-A",
+        "label": "Core Righteousness: State of Being Right",
+        "characteristic_definition": "Located in the character and covenantal standing of the person (or in God's own nature); engages the moral-judicial faculty by which conformity to a standard is recognised and expressed; produces a recognised status before God and in community conduct; structurally opposed by wickedness (rasha) and injustice (aval, M26-G); directed both from God toward the person (imputed/bestowed righteousness) and from the person outward toward God and neighbour (lived righteousness).",
+        "rationale": "These terms form the definitional core of the cluster, each naming the state or quality of 'being right' in a covenantal-moral sense rather than a procedure or act. The Hebrew tsedaqah/tsedeq/tsaddiq group and the Greek dikaios/dikaiosunē group converge on the same concept across testaments; endikos is placed here because its LSJ meaning 'according to right, just, legitimate' and Mounce's 'just, deserved' function as qualifying descriptors of the righteous standard rather than an independent action.",
+        "terms": [
+          {
+            "strong": "G1342",
+            "transliteration": "dikaios",
+            "rationale": "Mounce defines this as 'right, righteous, upright; in the NT referring to God's proper standards expressed in the covenants; a person in accord with God's standards' — the central adjectival form of righteous character."
+          },
+          {
+            "strong": "G1343",
+            "transliteration": "dikaiosunē",
+            "rationale": "Mounce defines this as 'righteousness, what is right, the act of doing what is in agreement with God's standards, the state of being in proper relationship with God' — the dominant abstract noun of the cluster."
+          },
+          {
+            "strong": "H6662",
+            "transliteration": "tsad.diq",
+            "rationale": "Gloss 'righteous' with 206 occurrences — the primary Hebrew adjective denoting a person whose character and conduct conform to covenant standards, the direct counterpart to dikaios."
+          },
+          {
+            "strong": "H6664G",
+            "transliteration": "tse.deq",
+            "rationale": "Gloss 'righteousness' — the primary Hebrew noun for the righteous standard or quality in both ethical and legal usage, occurring 117 times."
+          },
+          {
+            "strong": "H6664H",
+            "transliteration": "tse.deq",
+            "rationale": "Step search gloss 'Righteousness [God]' — the same root applied distinctively to divine righteousness, signalling the theological height of the concept."
+          },
+          {
+            "strong": "H6666",
+            "transliteration": "tse.da.qah",
+            "rationale": "Gloss 'righteousness' at 165 occurrences — the dominant Hebrew covenant-relational form, often carrying ethical-communal texture alongside the legal-standard sense of tsedeq."
+          }
+        ]
+      },
+      {
+        "code": "M26-B",
+        "label": "Moral Uprightness: Inner Disposition of Straightness",
+        "characteristic_definition": "Located in the will and conduct of the person; engages the moral-volitional faculty through the governing metaphor of straightness versus crookedness; produces directness, equity, and reliability in action and relationship; structurally opposed by perverseness and crooked dealing; directed from the person outward in social and relational conduct rather than primarily from God, distinguishing it from the covenantal emphasis of M26-A.",
+        "rationale": "The Hebrew yosher/meshar/nekhokhah group all share the root idea of being straight or level — moral rectitude conceived geometrically — and Greek euthutēs (Mounce: 'a figurative extension of a straight object') is its explicit NT equivalent. This sub-group is distinguishable from M26-A because the emphasis falls on directness and reliability of inner disposition rather than on covenant status or forensic standing.",
+        "terms": [
+          {
+            "strong": "H3476",
+            "transliteration": "yo.sher",
+            "rationale": "Gloss 'uprightness' — the Hebrew noun built on the root yāshar ('to be straight'), naming moral rectitude as a personal inner disposition."
+          },
+          {
+            "strong": "H3483",
+            "transliteration": "ye.sha.rah",
+            "rationale": "Gloss 'uprightness' — a variant form of the same root, reinforcing the straightness concept with a single occurrence that anchors a distinct lexical form."
+          },
+          {
+            "strong": "H4339",
+            "transliteration": "me.shar",
+            "rationale": "Gloss 'uprightness' — a noun in the same straightness/equity field, used in contexts of equitable/level dealing in 19 occurrences."
+          },
+          {
+            "strong": "H5229",
+            "transliteration": "ne.kho.chah",
+            "rationale": "Gloss 'upright' — the Hebrew adjective for that which is straight or directly in front, used in moral contexts to describe direct, non-devious conduct."
+          },
+          {
+            "strong": "G2118",
+            "transliteration": "euthutēs",
+            "rationale": "Mounce defines this as 'righteousness, uprightness, a figurative extension of a straight (not crooked) object' — the Greek lexical bridge connecting the Hebrew uprightness vocabulary to NT usage."
+          }
+        ]
+      },
+      {
+        "code": "M26-C",
+        "label": "Justification: Declaring or Making Righteous",
+        "characteristic_definition": "Located in the judicial act directed at a person's standing before God or a human court; engages the declarative-judicial faculty; produces a change in moral-legal status from condemned to vindicated or righteous; structurally opposed by condemnation (M26-E); directed from the judging party (usually God) toward the judged person, making this distinct from M26-A which names the state rather than the act of conferring it.",
+        "rationale": "These four terms all name the judicial act of declaring or effecting righteous standing: the verbal root (dikaioō, tsadeq), the resultant process (dikaiōsis), and the concrete requirement or righteous act that grounds the verdict (dikaiōma). Together they form the procedural dimension of righteousness — what happens when a verdict of 'righteous' is pronounced.",
+        "terms": [
+          {
+            "strong": "G1344",
+            "transliteration": "dikaioō",
+            "rationale": "Mounce defines this as 'to justify, vindicate, declare righteous, to put someone in a proper relationship with another, implying a proper legal or moral relationship' — the central verbal act of justification."
+          },
+          {
+            "strong": "G1347",
+            "transliteration": "dikaiōsis",
+            "rationale": "Mounce 'justification' — the NT noun for the process and state resulting from God's declarative act of pronouncing someone righteous."
+          },
+          {
+            "strong": "G1345",
+            "transliteration": "dikaiōma",
+            "rationale": "Mounce 'regulation, requirement, commandment; righteous act of righteousness' — the concrete expression of a righteous requirement or act that either grounds or constitutes the verdict."
+          },
+          {
+            "strong": "H6663",
+            "transliteration": "tsa.deq",
+            "rationale": "Gloss 'to justify' — the Hebrew verbal root (Qal/Hiphil) for declaring or being righteous, the OT semantic anchor of NT dikaioō."
+          }
+        ]
+      },
+      {
+        "code": "M26-D",
+        "label": "Avenging Justice: Retribution for Wrongdoing",
+        "characteristic_definition": "Located in the will and zeal of the avenger (divine or commissioned human agent); engages the retributive-judicial faculty in response to perceived injustice or wrong done; produces punishment, requital, or restoration of the violated right; structurally opposed by impunity and the toleration of wrong; directed from the avenger toward the wrongdoer, distinguishing it from M26-C (directed toward the innocent/accused) and M26-E (a verdict rather than an enacted response).",
+        "rationale": "The ekdik- word group (ekdikeō, ekdikēsis, ekdikos) and antapodidōmi share the semantic core of paying back and taking up a cause against wrongdoing; dikaiokrisia (Mounce: 'righteous judgment justice') names the quality of righteous judgment as it is enacted retributively, fitting the sub-group's emphasis on justice carried out rather than status declared.",
+        "terms": [
+          {
+            "strong": "G1556",
+            "transliteration": "ekdikeō",
+            "rationale": "Mounce 'to avenge, take revenge; to grant justice, get justice' — the verbal act of executing retributive justice on behalf of the wronged."
+          },
+          {
+            "strong": "G1557",
+            "transliteration": "ekdikēsis",
+            "rationale": "Mounce 'justice; vengeance; punishment' — the noun naming the exercise of avenging/retributive justice as both divine and human action."
+          },
+          {
+            "strong": "G1558",
+            "transliteration": "ekdikos",
+            "rationale": "Mounce 'punishing, avenging' — the adjectival/substantival form designating the agent or quality of avenging justice."
+          },
+          {
+            "strong": "G0467",
+            "transliteration": "antapodidōmi",
+            "rationale": "Mounce 'to repay, return' — the act of giving back in equal measure that underlies retributive justice as a principle of equivalence."
+          },
+          {
+            "strong": "G1341",
+            "transliteration": "dikaiokrisia",
+            "rationale": "Mounce 'righteous judgment justice' — a compound (dikaios + krisis) naming the righteous quality of executed judgment, most naturally at home in the retributive sub-group."
+          }
+        ]
+      },
+      {
+        "code": "M26-E",
+        "label": "Condemnation: Judicial Sentence Against",
+        "characteristic_definition": "Located in the judicial pronouncement (divine or human) directed against a person found guilty; engages the judicial-evaluative faculty in its negative verdict; produces a declared state of guilt, penalty, or sentence; structurally opposed by justification (M26-C); directed from the judge toward the defendant — and reflexively inward in the case of self-condemnation (autokatakritos), which reveals the inner-being dimension of the group.",
+        "rationale": "The kata-krin- group (katakrinō, katadikazō, katakrisis) plus dikē ('condemnation' in NT usage) all name the act or state of a negative judicial verdict; autokatakritos is particularly significant for inner-being analysis because it shows the condemnatory faculty turned reflexively on the self.",
+        "terms": [
+          {
+            "strong": "G2632",
+            "transliteration": "katakrinō",
+            "rationale": "Mounce 'to condemn' — the judicial act of passing a condemning sentence, the verbal opposite of dikaioō."
+          },
+          {
+            "strong": "G2613",
+            "transliteration": "katadikazō",
+            "rationale": "Mounce 'to condemn' — a parallel judicial verb for pronouncing sentence against, reinforcing the condemnation sub-group's verbal core."
+          },
+          {
+            "strong": "G2633",
+            "transliteration": "katakrisis",
+            "rationale": "Mounce 'condemnation' — the noun for the act or result of condemnation, corresponding to dikaiōsis in M26-C."
+          },
+          {
+            "strong": "G0843",
+            "transliteration": "autokatakritos",
+            "rationale": "Mounce 'self-condemned' — the reflexive compound that locates condemnatory judgment within the person's own inner being, the most inner-being-significant term in the sub-group."
+          },
+          {
+            "strong": "G1349",
+            "transliteration": "dikē",
+            "rationale": "Mounce 'condemnation' — the root Greek term for judicial penalty/condemnation that anchors the entire dik- word family in the concept of legal process and its negative outcome."
+          }
+        ]
+      },
+      {
+        "code": "M26-F",
+        "label": "Moral Reckoning: Evaluative Faculty of Worth",
+        "characteristic_definition": "Located in the cognitive-judicial faculty of the mind; engages the evaluative-reckoning capacity that assigns worth, credits righteousness, or determines accountability; produces a credited status or recognised liability; structurally opposed by partial, arbitrary, or prejudiced assessment (adiakritos names the absence of that opposite); directed from the evaluating subject (God, self, or judge) toward the person or act being assessed.",
+        "rationale": "These terms share an evaluative or accounting logic: logizomai (credit/count), axioō (deem worthy), arakh (to value/assess), hupodikos (standing under accountability), and adiakritos (free from the prejudice that distorts such assessment). Together they describe the inner faculty of moral accounting that underlies both justification and condemnation.",
+        "terms": [
+          {
+            "strong": "G3049",
+            "transliteration": "logizomai",
+            "rationale": "Mounce 'to credit, count, reckon; regard, think, consider' — the cognitive act of counting or crediting righteousness or guilt, central to Pauline justification logic."
+          },
+          {
+            "strong": "G0515",
+            "transliteration": "axioō",
+            "rationale": "Mounce 'to consider worthy, consider wise or fitting' — the evaluative act of assigning dignity or desert, the positive pole of moral assessment."
+          },
+          {
+            "strong": "H6186B",
+            "transliteration": "a.rakh",
+            "rationale": "Gloss 'to value' — the Hebrew evaluative act of assigning worth or setting in order for comparison, the OT counterpart to the Greek reckoning vocabulary."
+          },
+          {
+            "strong": "G5267",
+            "transliteration": "hupodikos",
+            "rationale": "Mounce 'accountable, answerable' — the state of standing under reckoning/liability, the inner posture of one subject to assessment; the result of the evaluative process rather than the process itself."
+          },
+          {
+            "strong": "G0087",
+            "transliteration": "adiakritos",
+            "rationale": "Mounce 'impartial, free from prejudice' — names the quality of the evaluative faculty when it is freed from distorting partiality, the prerequisite for righteous moral reckoning."
+          }
+        ]
+      },
+      {
+        "code": "M26-G",
+        "label": "Structural Opposites: Wickedness and Injustice",
+        "characteristic_definition": "Located in the character and will of the person; engages the moral-volitional faculty in the direction of perversity and covenant violation; produces conduct and inner status directly opposed to tsedaqah and dikaiosunē; these terms define the cluster's inner boundary by naming what righteousness is not; directed from the person away from the divine standard, making them the polar opposite of M26-A in causal direction.",
+        "rationale": "Both terms are the acknowledged structural opposites of core righteousness vocabulary in the Hebrew OT: rasha is the opposite of tsaddiq (righteous person), and aval names the act of perverting justice — the opposite of tsedaqah-based conduct. Their presence in M26 anchors the T1 requirement that the structural opposite appear in the cluster.",
+        "terms": [
+          {
+            "strong": "H5765",
+            "transliteration": "a.val",
+            "rationale": "Gloss 'to act unjustly' — the verbal opposite of tsedaqah-based justice, naming the inner volition that produces perversion of right."
+          },
+          {
+            "strong": "H7561",
+            "transliteration": "ra.sha",
+            "rationale": "Gloss 'be wicked' — the stative verb/adjective opposite of tsaddiq, naming the inner state and character of the wicked person in contrast to the righteous."
+          }
+        ]
+      }
+    ],
+    "boundary": {
+      "rationale": "These terms support the cluster's judicial and evaluative activity without themselves constituting inner-being characteristics: aitia and aitios are procedural/role designations (charge, causer/culpable party), kardiognōstēs is a divine capacity that enables just judgment rather than a person's inner state, endikos qualifies outcomes as legally deserved rather than naming a character trait, and shephot/shephat designate the institutional act or office of judging.",
+      "terms": [
+        {
+          "strong": "G0156",
+          "transliteration": "aitia",
+          "rationale": "Mounce '(legal) charge; reason, cause' — a procedural legal term for the accusation brought in judicial process, naming the ground of a charge rather than an inner disposition."
+        },
+        {
+          "strong": "G0159",
+          "transliteration": "aitios",
+          "rationale": "Mounce 'causer-' — a functional role designation for the one who is culpable/responsible, a legal-status label rather than an inner moral characteristic."
+        },
+        {
+          "strong": "G2589",
+          "transliteration": "kardiognōstēs",
+          "rationale": "Mounce 'heart-knower of the heart' — a divine attribute (God's penetrating knowledge of hearts) that functions as the prerequisite capacity for just judgment, not an inner-being characteristic of the human person."
+        },
+        {
+          "strong": "G1738",
+          "transliteration": "endikos",
+          "rationale": "Mounce 'just, deserved' — primarily qualifies legal outcomes or sentences as in accordance with right rather than naming an inner moral state or disposition in the person."
+        },
+        {
+          "strong": "H8196",
+          "transliteration": "she.phot",
+          "rationale": "Gloss 'judgment' — refers to judicial decisions/acts as an institutional function (2 occurrences) rather than an inner quality of righteousness or justice felt by the person."
+        },
+        {
+          "strong": "H8200",
+          "transliteration": "she.phat",
+          "rationale": "Gloss 'to judge' — the verbal act of the judicial office in a single occurrence; a functional description of judicial activity rather than an inner-being characteristic."
+        }
+      ]
+    },
+    "flagged": [
+      {
+        "strong": "G6083",
+        "transliteration": "sunoida",
+        "issue": "Mounce defines this as 'to be conscious of, know' — in its inner-being dimension this is self-awareness or conscience-awareness of one's own moral state, which overlaps significantly with conscience-cluster vocabulary and is not clearly grounded in the righteousness/justice characteristic by gloss alone; its assignment to M26 rather than a conscience or self-knowledge cluster is uncertain from the gloss.",
+        "proposed_action": "researcher_review"
+      }
+    ]
+  }
+}
