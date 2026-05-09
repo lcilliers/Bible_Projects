@@ -54,7 +54,7 @@ DIRECTIVES = [
     ("D", "wa-cluster-M15-dir-006-D-mapping-v1-20260509.md",
      "WA-M15-D-group-verse-mapping-v1-20260508.md"),
     ("E", "wa-cluster-M15-dir-007-E-mapping-v1-20260509.md",
-     "WA-M15-E-group-verse-mapping-v1-20260508.md"),
+     "WA-M15-E-group-verse-mapping-v2-20260509.md"),
     ("F", "wa-cluster-M15-dir-008-F-mapping-v1-20260509.md",
      "WA-M15-F-group-verse-mapping-v1-20260508.md"),
     ("G", "wa-cluster-M15-dir-009-G-mapping-v1-20260509.md",
@@ -66,7 +66,7 @@ DIRECTIVES = [
 
 GROUP_HEADING_RE = re.compile(
     r"^##\s+Group\s+([A-G]-\d+)"
-    r"(?:\s*\(\s*(?:existing\s+code\s+)?(\d+)[^)]*\))?"
+    r"(?:\s*\([^)]*?(\d+)[^)]*\))?"
     r"\s+[—-]\s+(.+?)\s*$"
 )
 STATUS_RE = re.compile(r"^\*\*Status:\*\*\s*(.+?)\s*$")
@@ -424,10 +424,16 @@ def apply_plan(conn, plan: dict, dry_run: bool = False) -> dict:
         "groups_inserted": 0,
         "groups_updated": 0,
         "vc_updated": 0,
+        "vc_inserted_dual": 0,
         "anchors_set": 0,
         "anchors_cleared": 0,
         "skipped_missing_vc": 0,
     }
+
+    # Track (vr_id, mti_term_id) pairs we've UPDATEd so far in this apply.
+    # Subsequent occurrences of the same pair across different groups are
+    # dual assignments and become INSERTs (creating a second vc row).
+    touched: set[tuple[int, int]] = set()
 
     cur = conn.cursor()
     ts = now_iso()
@@ -502,31 +508,89 @@ def apply_plan(conn, plan: dict, dry_run: bool = False) -> dict:
                     f"Group {action['code']} category={cat} unsupported"
                 )
 
-            # For each verse: UPDATE verse_context
+            # For each verse, decide UPDATE vs INSERT based on:
+            #  - whether the row already sits at the target group_id (skip)
+            #  - whether this (vr,mti) has already been touched (dual → INSERT)
+            #  - otherwise UPDATE the existing vc row to point at new group
             anchor_set_for_group = False
+            target_gid = action["resolved_group_id"]
             for v in action["verses"]:
-                # Match by (verse_record_id, mti_term_id) — need mti_id
-                # from current vc row
-                vc = cur.execute(
-                    "SELECT id, mti_term_id FROM verse_context "
-                    " WHERE verse_record_id=? "
-                    "   AND COALESCE(delete_flagged,0)=0",
-                    (v["vr_id"],),
-                ).fetchone()
-                if not vc:
+                # Resolve mti via Strong's (some verses have multiple
+                # mti_term_ids; the mapping doc specifies which Strong's).
+                strong = v.get("strong")
+                if strong:
+                    rows = list(cur.execute(
+                        "SELECT vc.id, vc.mti_term_id, vc.group_id "
+                        "  FROM verse_context vc "
+                        "  JOIN mti_terms mt ON mt.id=vc.mti_term_id "
+                        " WHERE vc.verse_record_id=? "
+                        "   AND mt.strongs_number=? "
+                        "   AND COALESCE(vc.delete_flagged,0)=0 "
+                        " ORDER BY vc.id",
+                        (v["vr_id"], strong),
+                    ))
+                else:
+                    rows = list(cur.execute(
+                        "SELECT id, mti_term_id, group_id FROM verse_context "
+                        " WHERE verse_record_id=? "
+                        "   AND COALESCE(delete_flagged,0)=0 ORDER BY id",
+                        (v["vr_id"],),
+                    ))
+                if not rows:
                     counts["skipped_missing_vc"] += 1
                     continue
-                rc = cur.execute(
-                    "UPDATE verse_context "
-                    "   SET group_id=?, "
-                    "       analysis_note=COALESCE(NULLIF(?, ''), analysis_note), "
-                    "       is_anchor=? "
-                    " WHERE id=?",
-                    (action["resolved_group_id"], v["analysis_note"],
-                     1 if v["is_anchor"] else 0, vc["id"]),
-                ).rowcount
-                if rc:
+
+                # Pick the first row's mti for the touched-key
+                mti = rows[0]["mti_term_id"]
+                key = (v["vr_id"], mti)
+
+                # Check if any existing row is already at target_gid
+                row_at_target = next(
+                    (r for r in rows if r["group_id"] == target_gid), None
+                )
+
+                if row_at_target is not None:
+                    # Already at correct group — just refresh note + anchor
+                    cur.execute(
+                        "UPDATE verse_context "
+                        "   SET analysis_note=COALESCE(NULLIF(?, ''), analysis_note), "
+                        "       is_anchor=? "
+                        " WHERE id=?",
+                        (v["analysis_note"],
+                         1 if v["is_anchor"] else 0,
+                         row_at_target["id"]),
+                    )
                     counts["vc_updated"] += 1
+                    touched.add(key)
+                elif key in touched:
+                    # Earlier action moved this row; this is a dual
+                    # assignment — INSERT a second vc row at target_gid
+                    cur.execute(
+                        "INSERT INTO verse_context "
+                        "  (verse_record_id, mti_term_id, group_id, "
+                        "   is_anchor, is_relevant, is_related, "
+                        "   analysis_note, delete_flagged) "
+                        "VALUES (?, ?, ?, ?, 1, 0, ?, 0)",
+                        (v["vr_id"], mti, target_gid,
+                         1 if v["is_anchor"] else 0,
+                         v["analysis_note"] or None),
+                    )
+                    counts["vc_inserted_dual"] += 1
+                else:
+                    # First touch of this (vr, mti) — UPDATE the existing
+                    # row to point at the new group_id.
+                    rc = cur.execute(
+                        "UPDATE verse_context "
+                        "   SET group_id=?, "
+                        "       analysis_note=COALESCE(NULLIF(?, ''), analysis_note), "
+                        "       is_anchor=? "
+                        " WHERE id=?",
+                        (target_gid, v["analysis_note"],
+                         1 if v["is_anchor"] else 0, rows[0]["id"]),
+                    ).rowcount
+                    if rc:
+                        counts["vc_updated"] += 1
+                    touched.add(key)
                 if v["is_anchor"]:
                     counts["anchors_set"] += 1
                     anchor_set_for_group = True
