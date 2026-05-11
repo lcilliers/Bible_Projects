@@ -175,10 +175,13 @@ def main() -> int:
     print(f"Cluster {args.m_cluster}: {cluster['description']}")
 
     # --- 2. Term metadata for cluster members
+    # Post-M46: mti_terms.cluster_subgroup_id is gone — sub-group mapping
+    # now lives in mti_term_subgroup (m:n). A term may belong to multiple
+    # sub-groups (DEC-1..DEC-3 of m39-subgroup-multi-term-design-v1).
     term_rows = conn.execute("""
         SELECT mt.id AS mti_id, mt.strongs_number, mt.gloss,
                mt.transliteration, mt.language, mt.status AS mti_status,
-               mt.owning_registry_fk, mt.cluster_subgroup_id,
+               mt.owning_registry_fk,
                mt.md_version, mt.vc_status,
                wr.no AS reg_no, wr.word AS reg_word,
                wr.cluster_assignment AS legacy_c_cluster,
@@ -194,15 +197,12 @@ def main() -> int:
     """, (args.m_cluster,)).fetchall()
     by_strong = {}
     mti_ids_per_strong = defaultdict(set)
-    mti_to_subgroup_id = {}
     for r in term_rows:
         s = r["strongs_number"]
         if s not in by_strong:
             by_strong[s] = dict(r)
         if r["mti_id"]:
             mti_ids_per_strong[s].add(r["mti_id"])
-            if r["cluster_subgroup_id"]:
-                mti_to_subgroup_id[r["mti_id"]] = r["cluster_subgroup_id"]
     strongs_list = list(by_strong.keys())
     all_mti_ids = set()
     for ids in mti_ids_per_strong.values():
@@ -217,13 +217,33 @@ def main() -> int:
          ORDER BY sort_order, subgroup_code
     """, (args.m_cluster,)).fetchall()]
     sg_by_id = {sg["id"]: sg for sg in subgroups}
-    # Map each Strong's to a subgroup id (fall back to None for unassigned).
-    strong_to_sg_id = {}
+
+    # mti_term_subgroup: term -> list of sub-group ids (m:n)
+    mti_to_subgroup_ids: dict[int, list[int]] = defaultdict(list)
+    if all_mti_ids:
+        ph_mts = ",".join("?" * len(all_mti_ids))
+        for r in conn.execute(f"""
+            SELECT mts.mti_term_id, mts.cluster_subgroup_id
+              FROM mti_term_subgroup mts
+              JOIN cluster_subgroup cs
+                ON cs.id = mts.cluster_subgroup_id
+             WHERE mts.mti_term_id IN ({ph_mts})
+               AND COALESCE(mts.delete_flagged,0) = 0
+               AND COALESCE(cs.delete_flagged,0) = 0
+        """, list(all_mti_ids)):
+            mti_to_subgroup_ids[r["mti_term_id"]].append(
+                r["cluster_subgroup_id"]
+            )
+
+    # Strong's -> list of sub-group ids (union across mti_ids of that strong)
+    strong_to_sg_ids: dict[str, list[int]] = defaultdict(list)
     for s in strongs_list:
+        seen = set()
         for mid in mti_ids_per_strong[s]:
-            if mid in mti_to_subgroup_id:
-                strong_to_sg_id[s] = mti_to_subgroup_id[mid]
-                break
+            for sg_id in mti_to_subgroup_ids.get(mid, []):
+                if sg_id not in seen:
+                    seen.add(sg_id)
+                    strong_to_sg_ids[s].append(sg_id)
     print(f"  sub-groups: {len(subgroups)}")
 
     # --- 3. Verses per term: wa_verse_records + verse_context
@@ -275,10 +295,15 @@ def main() -> int:
             })
 
     # verse_context per (mti_term_id, verse_record_id)
+    # Post-M46 a single (mti_term_id, verse_record_id) pair can have N rows
+    # differing in cluster_subgroup_id (DEC-3 'both' verses route to multiple
+    # sub-groups). All rows are collected here; the §2 verse rendering uses
+    # cluster_subgroup_id to drive sub-group bucketing.
     vc_by_pair = defaultdict(list)
     if all_mti_ids:
         for r in conn.execute(f"""
             SELECT vc.verse_record_id, vc.mti_term_id, vc.group_id,
+                   vc.cluster_subgroup_id,
                    vc.is_anchor, vc.is_relevant, vc.is_related,
                    vc.set_aside_reason, vc.notes, vc.delete_flagged
               FROM verse_context vc
@@ -289,18 +314,29 @@ def main() -> int:
             )
 
     # --- 4. Group context (verse_context_group)
+    # Post-M47: vcg.mti_term_id is gone — vcg ↔ term is m:n via vcg_term.
+    # A vcg can therefore appear under multiple terms in the per-term §3
+    # view (each occurrence is the same vcg_id with the same description).
     print("Loading verse_context_group entries...", flush=True)
     groups_by_mti = defaultdict(list)
+    vcg_by_id: dict[int, dict] = {}
     if all_mti_ids:
         for r in conn.execute(f"""
-            SELECT vcg.id AS group_id, vcg.mti_term_id, vcg.group_code,
-                   vcg.context_description, vcg.notes
+            SELECT vcg.id AS group_id, vt.mti_term_id,
+                   vcg.group_code, vcg.context_description, vcg.notes
               FROM verse_context_group vcg
+              JOIN vcg_term vt ON vt.vcg_id = vcg.id
              WHERE COALESCE(vcg.delete_flagged,0) = 0
-               AND vcg.mti_term_id IN ({ph})
+               AND COALESCE(vt.delete_flagged,0) = 0
+               AND vt.mti_term_id IN ({ph})
              ORDER BY vcg.group_code
         """, list(all_mti_ids)).fetchall():
-            groups_by_mti[r["mti_term_id"]].append(dict(r))
+            row = dict(r)
+            groups_by_mti[r["mti_term_id"]].append(row)
+            # Note: vcg_by_id may receive the same vcg_id multiple times
+            # (once per term it spans). The dict store is idempotent —
+            # the meta is identical across rows for the same vcg_id.
+            vcg_by_id[row["group_id"]] = row
 
     # --- 5. Findings + pointers
     print("Loading findings + SD pointers...", flush=True)
@@ -444,10 +480,254 @@ def main() -> int:
              ORDER BY ps.registry_id, ps.section_type_id
         """, list(m_registries)).fetchall()]
 
+    # --- 7b. Connectivity health checks
+    # The connectivity chain runs:
+    #   wa_verse_records ← verse_context (group_id, cluster_subgroup_id)
+    #   verse_context.group_id → verse_context_group (per-term meaning groups)
+    #   verse_context.cluster_subgroup_id → cluster_subgroup
+    #   mti_terms ↔ cluster_subgroup via mti_term_subgroup (m:n)
+    # Anything that breaks this chain is invisible to the analyst unless
+    # the report surfaces it. The health block below counts each break
+    # and lists the offending rows when small.
+    print("Computing connectivity health...", flush=True)
+    health: dict[str, list] = {}
+
+    # H1: active vc rows in this cluster with cluster_subgroup_id NULL
+    health["H1_unrouted_vc"] = [
+        dict(r) for r in conn.execute("""
+            SELECT vc.id AS vc_id, vc.verse_record_id, vc.mti_term_id,
+                   vr.reference, mt.strongs_number
+              FROM verse_context vc
+              JOIN mti_terms mt ON mt.id=vc.mti_term_id
+              JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+             WHERE mt.cluster_code=?
+               AND vc.cluster_subgroup_id IS NULL
+               AND COALESCE(vc.delete_flagged,0)=0
+             ORDER BY mt.strongs_number, vr.reference
+        """, (args.m_cluster,))
+    ]
+
+    # H2: active vc rows with is_relevant=1 but no group_id (relevant
+    # but not yet placed in a meaning group)
+    health["H2_relevant_no_group"] = [
+        dict(r) for r in conn.execute("""
+            SELECT vc.id AS vc_id, vc.verse_record_id, vc.mti_term_id,
+                   vr.reference, mt.strongs_number
+              FROM verse_context vc
+              JOIN mti_terms mt ON mt.id=vc.mti_term_id
+              JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+             WHERE mt.cluster_code=?
+               AND vc.is_relevant=1
+               AND vc.group_id IS NULL
+               AND COALESCE(vc.delete_flagged,0)=0
+               AND (vc.set_aside_reason IS NULL OR vc.set_aside_reason='')
+             ORDER BY mt.strongs_number, vr.reference
+        """, (args.m_cluster,))
+    ]
+
+    # H3: vc.mti_term_id is not in the vcg's term set (post-M47 m:n).
+    # Was: cross-term contamination based on the old 1:1 vcg.mti_term_id.
+    # Now: contamination = no active vcg_term row links the vc's term
+    # to its vcg. The 79 known instances post-M47 are vc rows pointing
+    # at soft-deleted vcgs (pre-existing data quality issue).
+    health["H3_vcg_term_mismatch"] = [
+        dict(r) for r in conn.execute("""
+            SELECT vc.id AS vc_id, vc.verse_record_id, vc.mti_term_id,
+                   vc.group_id,
+                   vr.reference, mt.strongs_number AS vc_strong,
+                   vcg.group_code,
+                   COALESCE(vcg.delete_flagged,0) AS vcg_deleted
+              FROM verse_context vc
+              JOIN verse_context_group vcg ON vcg.id=vc.group_id
+              JOIN mti_terms mt ON mt.id=vc.mti_term_id
+              JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+             WHERE mt.cluster_code=?
+               AND COALESCE(vc.delete_flagged,0)=0
+               AND NOT EXISTS (
+                   SELECT 1 FROM vcg_term vt
+                    WHERE vt.vcg_id = vc.group_id
+                      AND vt.mti_term_id = vc.mti_term_id
+                      AND COALESCE(vt.delete_flagged,0)=0
+               )
+             ORDER BY mt.strongs_number, vr.reference
+        """, (args.m_cluster,))
+    ]
+
+    # H4: vc has cluster_subgroup_id set, but the term has no
+    # mti_term_subgroup mapping to that sub-group — orphaned routing
+    health["H4_subgroup_route_orphan"] = [
+        dict(r) for r in conn.execute("""
+            SELECT vc.id AS vc_id, vc.verse_record_id, vc.mti_term_id,
+                   vc.cluster_subgroup_id, vr.reference,
+                   mt.strongs_number, cs.subgroup_code
+              FROM verse_context vc
+              JOIN mti_terms mt ON mt.id=vc.mti_term_id
+              JOIN cluster_subgroup cs ON cs.id=vc.cluster_subgroup_id
+              JOIN wa_verse_records vr ON vr.id=vc.verse_record_id
+             WHERE mt.cluster_code=?
+               AND vc.cluster_subgroup_id IS NOT NULL
+               AND COALESCE(vc.delete_flagged,0)=0
+               AND NOT EXISTS (
+                   SELECT 1 FROM mti_term_subgroup mts
+                    WHERE mts.mti_term_id = vc.mti_term_id
+                      AND mts.cluster_subgroup_id = vc.cluster_subgroup_id
+                      AND COALESCE(mts.delete_flagged,0)=0
+               )
+             ORDER BY mt.strongs_number, vr.reference
+        """, (args.m_cluster,))
+    ]
+
+    # H5: vcg rows with no active vc references (orphan meaning group).
+    # Post-M47: vcg ↔ term is m:n; a vcg is "in this cluster" if any of
+    # its terms belongs to the cluster. A multi-term vcg is reported once
+    # with a comma-joined Strong's list.
+    health["H5_orphan_vcg"] = [
+        dict(r) for r in conn.execute("""
+            SELECT vcg.id AS group_id, vcg.group_code,
+                   vcg.context_description,
+                   GROUP_CONCAT(DISTINCT mt.strongs_number) AS strongs_number
+              FROM verse_context_group vcg
+              JOIN vcg_term vt ON vt.vcg_id=vcg.id
+              JOIN mti_terms mt ON mt.id=vt.mti_term_id
+             WHERE mt.cluster_code=?
+               AND COALESCE(vcg.delete_flagged,0)=0
+               AND COALESCE(vt.delete_flagged,0)=0
+               AND NOT EXISTS (
+                   SELECT 1 FROM verse_context vc
+                    WHERE vc.group_id=vcg.id
+                      AND COALESCE(vc.delete_flagged,0)=0
+               )
+             GROUP BY vcg.id
+             ORDER BY vcg.group_code
+        """, (args.m_cluster,))
+    ]
+
+    # H6: terms in cluster with no mti_term_subgroup mapping
+    health["H6_unassigned_terms"] = [
+        dict(r) for r in conn.execute("""
+            SELECT mt.id AS mti_id, mt.strongs_number, mt.transliteration,
+                   mt.gloss
+              FROM mti_terms mt
+             WHERE mt.cluster_code=?
+               AND COALESCE(mt.delete_flagged,0)=0
+               AND NOT EXISTS (
+                   SELECT 1 FROM mti_term_subgroup mts
+                    WHERE mts.mti_term_id = mt.id
+                      AND COALESCE(mts.delete_flagged,0)=0
+               )
+             ORDER BY mt.strongs_number
+        """, (args.m_cluster,))
+    ]
+
+    # H7: terms with mti_term_subgroup mapping but no verse_context_group
+    # rows at all (term placed in a sub-group but never had its verses
+    # contextually grouped). Post-M47 vcg ↔ term is via vcg_term.
+    health["H7_terms_without_vcg"] = [
+        dict(r) for r in conn.execute("""
+            SELECT mt.id AS mti_id, mt.strongs_number, mt.transliteration,
+                   mt.gloss
+              FROM mti_terms mt
+              JOIN mti_term_subgroup mts ON mts.mti_term_id=mt.id
+             WHERE mt.cluster_code=?
+               AND COALESCE(mt.delete_flagged,0)=0
+               AND COALESCE(mts.delete_flagged,0)=0
+               AND NOT EXISTS (
+                   SELECT 1 FROM vcg_term vt
+                     JOIN verse_context_group vcg ON vcg.id=vt.vcg_id
+                    WHERE vt.mti_term_id = mt.id
+                      AND COALESCE(vt.delete_flagged,0)=0
+                      AND COALESCE(vcg.delete_flagged,0)=0
+               )
+             GROUP BY mt.id
+             ORDER BY mt.strongs_number
+        """, (args.m_cluster,))
+    ]
+
+    # H8: vcgs whose active verses span multiple sub-groups. The analytical
+    # principle is one-vcg-per-sub-group (a meaning belongs in one sub-group
+    # context). Multi-sub-group spread arises when per-verse classification
+    # (e.g. the M26 subject classifier) routes verses of the same vcg to
+    # different sub-groups. Each split vcg is a candidate for: (a) promoting
+    # minority BOUNDARY verses to the dominant sub-group, (b) reassigning
+    # minority verses to a different vcg in their actual sub-group, or
+    # (c) splitting the meaning into multiple vcgs.
+    h8_rows = list(conn.execute("""
+        SELECT vcg.id AS vcg_id, vcg.group_code,
+               GROUP_CONCAT(DISTINCT mt.strongs_number) AS strongs_number,
+               cs.subgroup_code, COUNT(DISTINCT vc.id) AS n_verses
+          FROM verse_context_group vcg
+          JOIN vcg_term vt ON vt.vcg_id=vcg.id
+          JOIN mti_terms mt ON mt.id=vt.mti_term_id
+          JOIN verse_context vc ON vc.group_id=vcg.id
+          JOIN cluster_subgroup cs ON cs.id=vc.cluster_subgroup_id
+         WHERE mt.cluster_code=?
+           AND COALESCE(vcg.delete_flagged,0)=0
+           AND COALESCE(vt.delete_flagged,0)=0
+           AND COALESCE(vc.delete_flagged,0)=0
+         GROUP BY vcg.id, cs.subgroup_code
+    """, (args.m_cluster,)))
+    h8_by_vcg: dict = defaultdict(dict)
+    h8_meta: dict = {}
+    for r in h8_rows:
+        h8_by_vcg[r["vcg_id"]][r["subgroup_code"]] = r["n_verses"]
+        h8_meta[r["vcg_id"]] = (r["group_code"], r["strongs_number"])
+    health["H8_vcg_spans_subgroups"] = []
+    for vcg_id, dist in h8_by_vcg.items():
+        if len(dist) <= 1:
+            continue
+        code, strong = h8_meta[vcg_id]
+        total = sum(dist.values())
+        dom_sg, dom_n = max(dist.items(), key=lambda kv: kv[1])
+        minority_sgs = ", ".join(
+            f"{sg}={n}" for sg, n in sorted(dist.items())
+            if sg != dom_sg
+        )
+        health["H8_vcg_spans_subgroups"].append({
+            "group_code": code,
+            "strongs_number": strong,
+            "n_subgroups": len(dist),
+            "n_verses": total,
+            "dom_sg": dom_sg,
+            "dom_n": dom_n,
+            "minority_n": total - dom_n,
+            "minority_sgs": minority_sgs,
+        })
+    health["H8_vcg_spans_subgroups"].sort(
+        key=lambda r: (-r["n_subgroups"], -r["n_verses"])
+    )
+
+    # Pre-compute per-sub-group vcg rollup for §2.N summary blocks.
+    # sg_id -> { vcg_id -> verse_count }. Drives the "verse-context groups
+    # in this sub-group" summary at the top of each §2.N section.
+    sg_vcg_summary: dict[int, dict[int, int]] = defaultdict(
+        lambda: defaultdict(int)
+    )
+    for r in conn.execute("""
+        SELECT vc.cluster_subgroup_id, vc.group_id
+          FROM verse_context vc
+          JOIN mti_terms mt ON mt.id=vc.mti_term_id
+         WHERE mt.cluster_code=?
+           AND vc.cluster_subgroup_id IS NOT NULL
+           AND vc.group_id IS NOT NULL
+           AND COALESCE(vc.delete_flagged,0)=0
+    """, (args.m_cluster,)):
+        sg_vcg_summary[r["cluster_subgroup_id"]][r["group_id"]] += 1
+
     # --- 8. Build output Markdown
     print("Writing output...", flush=True)
-    L = []
+    L: list[str] = []
     def add(s=""): L.append(s)
+
+    # Heading tracker for the table of contents. Each emitted section
+    # heading registers its (level, display_title, anchor_id) here, and
+    # gets a paired `<a id="..."></a>` HTML anchor inserted just before
+    # so cross-references work in any markdown renderer.
+    toc_entries: list[tuple[int, str, str]] = []
+
+    def add_section(level: int, title: str, anchor_id: str) -> None:
+        toc_entries.append((level, title, anchor_id))
+        add(f'<a id="{anchor_id}"></a>')
+        add(f"{'#' * level} {title}")
 
     add(f"# {args.m_cluster} {cluster['description']} — "
         "comprehensive term + verse exposure")
@@ -467,9 +747,12 @@ def main() -> int:
     add()
     add("---")
     add()
+    # Reserved insertion point for the table of contents — populated
+    # after the body is built so we know all the headings.
+    toc_insert_idx = len(L)
 
     # § Cluster summary
-    add("## §1. Cluster summary")
+    add_section(2, "§1. Cluster summary", "s1")
     add()
     n_h = sum(1 for s in strongs_list if by_strong[s]["language"] == "Hebrew")
     n_g = sum(1 for s in strongs_list if by_strong[s]["language"] == "Greek")
@@ -613,19 +896,25 @@ def main() -> int:
         )
     add()
     # Sub-group breakdown
+    # Post-M46 a term can be in multiple sub-groups; the count below
+    # therefore sums distinct (term, sub-group) pairings, not distinct terms.
+    # "terms assigned" is the count of distinct Strong's that have ≥1
+    # sub-group mapping.
     if subgroups:
         sg_term_count = defaultdict(int)
         for s in strongs_list:
-            sg_id = strong_to_sg_id.get(s)
-            if sg_id:
+            for sg_id in strong_to_sg_ids.get(s, []):
                 sg_term_count[sg_id] += 1
-        unassigned = sum(
-            1 for s in strongs_list if s not in strong_to_sg_id
-        )
+        n_assigned = sum(1 for s in strongs_list
+                         if strong_to_sg_ids.get(s))
+        unassigned = sum(1 for s in strongs_list
+                         if not strong_to_sg_ids.get(s))
         add(f"8. Sub-group breakdown ({len(subgroups)} sub-groups, "
-            f"{sum(sg_term_count.values())} terms assigned"
+            f"{n_assigned} terms assigned"
             + (f", {unassigned} unassigned" if unassigned else "")
-            + "):")
+            + "; counts below are distinct term-in-sub-group pairs and "
+            + "may sum higher than `terms assigned` when terms span "
+            + "multiple sub-groups):")
         add()
         add("| Sub-group | Label | Terms | Description |")
         add("|---|---|---:|---|")
@@ -639,19 +928,151 @@ def main() -> int:
         if unassigned:
             add(
                 f"| _(unassigned)_ | — | {unassigned} | "
-                f"Terms in this cluster with no `cluster_subgroup_id` set |"
+                f"Terms in this cluster with no `mti_term_subgroup` row |"
             )
         add()
 
+    # ----- §1.9 Connectivity health -------------------------------------
+    # Surfaces breaks in the chain
+    #   verse → verse_context → verse_context_group / cluster_subgroup
+    #   ↔ mti_term_subgroup → cluster_subgroup
+    # Each check has an Hn code so it can be referenced in the body.
+    add("9. Connectivity health "
+        "(broken or missing links along verse → vc → vcg / sub-group → term):")
+    add()
+    health_rows = [
+        ("H1", "Active vc rows in cluster with `cluster_subgroup_id` NULL "
+               "— verse not routed to any sub-group",
+         len(health["H1_unrouted_vc"])),
+        ("H2", "Active vc rows with `is_relevant=1` but `group_id` NULL "
+               "— relevant verse not yet in a meaning group",
+         len(health["H2_relevant_no_group"])),
+        ("H3", "vc.mti_term_id is not in its vcg's term set "
+               "(`vcg_term`) — cross-term contamination, or vc points "
+               "at a soft-deleted vcg",
+         len(health["H3_vcg_term_mismatch"])),
+        ("H4", "vc.cluster_subgroup_id set but the term has no "
+               "`mti_term_subgroup` link to that sub-group "
+               "— orphaned verse routing",
+         len(health["H4_subgroup_route_orphan"])),
+        ("H5", "Active `verse_context_group` rows with no active vc "
+               "references — orphan meaning group",
+         len(health["H5_orphan_vcg"])),
+        ("H6", "Cluster terms with no `mti_term_subgroup` mapping "
+               "— term placed in cluster but unassigned to any sub-group",
+         len(health["H6_unassigned_terms"])),
+        ("H7", "Cluster terms with sub-group mapping but zero "
+               "`verse_context_group` rows — sub-group placed but verses "
+               "never contextually grouped",
+         len(health["H7_terms_without_vcg"])),
+        ("H8", "vcgs whose active verses span multiple sub-groups — "
+               "the same meaning is routed to different sub-groups; "
+               "candidates for promotion, reassignment, or split",
+         len(health["H8_vcg_spans_subgroups"])),
+    ]
+    add("| Code | Check | Count |")
+    add("|---|---|---:|")
+    for code, desc, n in health_rows:
+        marker = " ⚠" if n else ""
+        add(f"| `{code}`{marker} | {desc} | {n} |")
+    add()
+    # Detail tables (only emit when non-zero, capped at 50 rows)
+    HEALTH_DETAIL_CAP = 50
+
+    def emit_health_table(code, headers, rows, cell_fns):
+        if not rows:
+            return
+        add(f"_`{code}` detail (showing {min(len(rows), HEALTH_DETAIL_CAP)} of "
+            f"{len(rows)}):_")
+        add()
+        add("| " + " | ".join(headers) + " |")
+        add("|" + "|".join(["---"] * len(headers)) + "|")
+        for r in rows[:HEALTH_DETAIL_CAP]:
+            add("| " + " | ".join(fn(r) for fn in cell_fns) + " |")
+        add()
+
+    emit_health_table(
+        "H1",
+        ["vc_id", "Reference", "Strong's", "mti_id"],
+        health["H1_unrouted_vc"],
+        [lambda r: str(r["vc_id"]), lambda r: sanitise(r["reference"]),
+         lambda r: r["strongs_number"], lambda r: str(r["mti_term_id"])],
+    )
+    emit_health_table(
+        "H2",
+        ["vc_id", "Reference", "Strong's", "mti_id"],
+        health["H2_relevant_no_group"],
+        [lambda r: str(r["vc_id"]), lambda r: sanitise(r["reference"]),
+         lambda r: r["strongs_number"], lambda r: str(r["mti_term_id"])],
+    )
+    emit_health_table(
+        "H3",
+        ["vc_id", "Reference", "vc Strong's", "vcg code", "vcg deleted?"],
+        health["H3_vcg_term_mismatch"],
+        [lambda r: str(r["vc_id"]), lambda r: sanitise(r["reference"]),
+         lambda r: r["vc_strong"], lambda r: r["group_code"] or "",
+         lambda r: "yes" if r["vcg_deleted"] else "no"],
+    )
+    emit_health_table(
+        "H4",
+        ["vc_id", "Reference", "Strong's", "Sub-group"],
+        health["H4_subgroup_route_orphan"],
+        [lambda r: str(r["vc_id"]), lambda r: sanitise(r["reference"]),
+         lambda r: r["strongs_number"], lambda r: r["subgroup_code"] or ""],
+    )
+    emit_health_table(
+        "H5",
+        ["group_id", "Code", "Strong's", "Description"],
+        health["H5_orphan_vcg"],
+        [lambda r: str(r["group_id"]), lambda r: r["group_code"] or "",
+         lambda r: r["strongs_number"],
+         lambda r: sanitise((r["context_description"] or "")[:120])],
+    )
+    emit_health_table(
+        "H6",
+        ["mti_id", "Strong's", "Translit", "Gloss"],
+        health["H6_unassigned_terms"],
+        [lambda r: str(r["mti_id"]), lambda r: r["strongs_number"],
+         lambda r: r["transliteration"] or "",
+         lambda r: r["gloss"] or ""],
+    )
+    emit_health_table(
+        "H7",
+        ["mti_id", "Strong's", "Translit", "Gloss"],
+        health["H7_terms_without_vcg"],
+        [lambda r: str(r["mti_id"]), lambda r: r["strongs_number"],
+         lambda r: r["transliteration"] or "",
+         lambda r: r["gloss"] or ""],
+    )
+    emit_health_table(
+        "H8",
+        ["vcg", "Term", "Verses", "Sub-groups", "Dominant",
+         "Dom n", "Minority n", "Minority breakdown"],
+        health["H8_vcg_spans_subgroups"],
+        [lambda r: f"`{r['group_code']}`",
+         lambda r: r["strongs_number"],
+         lambda r: str(r["n_verses"]),
+         lambda r: str(r["n_subgroups"]),
+         lambda r: r["dom_sg"],
+         lambda r: str(r["dom_n"]),
+         lambda r: str(r["minority_n"]),
+         lambda r: r["minority_sgs"]],
+    )
+
     # ----- helper: status precedence over verse_context records ----------
     def vc_status(vc_recs):
-        """Return (status_code, group_id_str, set_aside_reason)."""
+        """Return (status_code, group_code_str, set_aside_reason).
+        Post-2026-05-10: returns the vcg.group_code (e.g. '911-001'),
+        not the bare integer id, so the verse table cross-references the
+        per-sub-group vcg summary at the top of each §2.N section."""
         for r in vc_recs:
             if r.get("delete_flagged"):
                 continue
             if (r.get("group_id") and r.get("group_id") > 0
                     and r.get("is_relevant") == 1):
-                return ("G", str(r["group_id"]), "")
+                vcg = vcg_by_id.get(r["group_id"])
+                code = (vcg and vcg.get("group_code")) or str(r["group_id"])
+                return ("G", code, "")
         for r in vc_recs:
             if r.get("delete_flagged"):
                 continue
@@ -691,7 +1112,7 @@ def main() -> int:
         return "; ".join(items)
 
     # ----- §2. Verses by sub-group ---------------------------------------
-    add("## §2. Verses by sub-group")
+    add_section(2, "§2. Verses by sub-group", "s2")
     add()
     add("All verses for cluster terms, grouped by the analytical sub-group "
         "the term belongs to. Within each sub-group the rows are sorted "
@@ -712,18 +1133,41 @@ def main() -> int:
         "pair is the natural key for any `verse_context` operation.")
     add()
 
-    # Bucket verse rows by subgroup id, with a sentinel 0 = unassigned.
+    # Bucket verse rows by subgroup id, with a sentinel 0 = unrouted.
+    # Post-M46 the verse-level routing lives on verse_context.cluster_subgroup_id,
+    # not on the term. A single wa_verse_records row (per mti_term_id) is
+    # rendered under EACH sub-group its vc rows route to (so a 'both'-DEC-3
+    # verse appears in M26-A1 and M26-A2). Verses with no active vc row, or
+    # with vc.cluster_subgroup_id NULL, fall to bucket 0 (unrouted).
     sg_verse_rows = defaultdict(list)
     for s in strongs_list:
-        sg_id = strong_to_sg_id.get(s) or 0
         meta = by_strong[s]
         for mid in mti_ids_per_strong[s]:
             for v in verses_by_mti.get(mid, []):
-                sg_verse_rows[sg_id].append({
-                    "strong": s,
-                    "translit": meta.get("transliteration") or "",
-                    "v": v,
-                })
+                vc_recs = vc_by_pair.get((mid, v["vr_id"]), [])
+                # Distinct sub-group ids referenced by ACTIVE vc rows for
+                # this (mti_term_id, vr_id). De-dupe here so a single verse
+                # doesn't appear twice under the same sub-group when there
+                # are multiple vc rows in the same bucket.
+                sg_ids_for_v = []
+                seen_sg = set()
+                for vc in vc_recs:
+                    if vc.get("delete_flagged"):
+                        continue
+                    sg_id = vc.get("cluster_subgroup_id")
+                    if sg_id is None:
+                        continue
+                    if sg_id not in seen_sg:
+                        seen_sg.add(sg_id)
+                        sg_ids_for_v.append(sg_id)
+                if not sg_ids_for_v:
+                    sg_ids_for_v = [0]
+                for sg_id in sg_ids_for_v:
+                    sg_verse_rows[sg_id].append({
+                        "strong": s,
+                        "translit": meta.get("transliteration") or "",
+                        "v": v,
+                    })
 
     # De-dupe per (subgroup, term, location) so a term that appears
     # multiple times in the same verse only shows once in the row stream.
@@ -747,26 +1191,67 @@ def main() -> int:
     for sg in subgroups:
         sg_index += 1
         rows = sg_verse_rows.get(sg["id"], [])
-        # Term list for this sub-group
+        # Term list for this sub-group (terms whose mti_term_subgroup
+        # mapping includes this sub-group). A term spanning multiple
+        # sub-groups is listed under each.
         sg_terms = [
             (s, by_strong[s].get("transliteration") or "")
             for s in strongs_list
-            if strong_to_sg_id.get(s) == sg["id"]
+            if sg["id"] in strong_to_sg_ids.get(s, [])
         ]
-        add(f"### §2.{sg_index} `{sanitise(sg['subgroup_code'])}` — "
-            f"{sanitise(sg['label'])}")
+        add_section(
+            3,
+            f"§2.{sg_index} `{sanitise(sg['subgroup_code'])}` — "
+            f"{sanitise(sg['label'])}",
+            f"s2-{sg_index}",
+        )
         add()
         add(f"_{sanitise(sg['core_description'])}_")
         add()
         add(f"1. Terms in sub-group ({len(sg_terms)}): "
             + ", ".join(f"{s} {t}".strip() for s, t in sg_terms))
-        add(f"2. Verse rows ({len(rows)}, deduped by term × location):")
+        # Verse-context groups in this sub-group: every distinct vcg whose
+        # active verses route here. Lets the analyst see the meaning fabric
+        # of the sub-group at a glance — this is the data that flows into
+        # findings.
+        vcg_counts_for_sg = sg_vcg_summary.get(sg["id"], {})
+        if vcg_counts_for_sg:
+            add(f"2. Verse-context groups in this sub-group "
+                f"({len(vcg_counts_for_sg)}):")
+            add()
+            add("| Group code | Term | Description | Verses (here) |")
+            add("|---|---|---|---:|")
+            for vcg_id, n_v in sorted(
+                vcg_counts_for_sg.items(),
+                key=lambda kv: -kv[1],
+            ):
+                vcg = vcg_by_id.get(vcg_id)
+                if not vcg:
+                    add(f"| _(missing vcg id {vcg_id})_ | — | — | {n_v} |")
+                    continue
+                term_strong = mti_to_strong.get(vcg["mti_term_id"], "?")
+                term_translit = (
+                    by_strong.get(term_strong, {}).get("transliteration")
+                    or ""
+                )
+                term_label = f"{term_strong} *{term_translit}*".strip()
+                desc = vcg.get("context_description") or ""
+                add(
+                    f"| `{vcg.get('group_code') or '?'}` | "
+                    f"{sanitise(term_label)} | "
+                    f"{sanitise(desc)} | {n_v} |"
+                )
+            add()
+            add(f"3. Verse rows ({len(rows)}, deduped by term × location):")
+        else:
+            add(f"2. Verse-context groups in this sub-group: (none)")
+            add(f"3. Verse rows ({len(rows)}, deduped by term × location):")
         add()
         if not rows:
             add("(no verses)")
             add()
             continue
-        add("| vr_id | mti_id | Reference | Term | Status | Group | "
+        add("| vr_id | mti_id | Reference | Term | Status | Group code | "
             "Set-aside reason | Spans in verse | Verse text |")
         add("|---:|---:|---|---|---|---|---|---|---|")
         for row in rows:
@@ -787,17 +1272,23 @@ def main() -> int:
             )
         add()
 
-    # Unassigned rows
+    # Unrouted rows: vc rows with cluster_subgroup_id NULL (and any
+    # verses for terms with no mti_term_subgroup mapping at all).
     if sg_verse_rows.get(0):
         sg_index += 1
         rows = sg_verse_rows[0]
         unassigned_terms = [
             (s, by_strong[s].get("transliteration") or "")
-            for s in strongs_list if s not in strong_to_sg_id
+            for s in strongs_list if not strong_to_sg_ids.get(s)
         ]
-        add(f"### §2.{sg_index} _(unassigned)_")
+        add_section(
+            3,
+            f"§2.{sg_index} _(unrouted / unassigned)_",
+            f"s2-{sg_index}",
+        )
         add()
-        add("_Terms in this cluster with no `cluster_subgroup_id` set._")
+        add("_Verses whose `verse_context.cluster_subgroup_id` is NULL, "
+            "or whose term has no `mti_term_subgroup` mapping._")
         add()
         add(f"1. Terms ({len(unassigned_terms)}): "
             + ", ".join(f"{s} {t}".strip() for s, t in unassigned_terms))
@@ -825,7 +1316,7 @@ def main() -> int:
         add()
 
     # § Per-term sections
-    add("## §3. Per-term comprehensive detail")
+    add_section(2, "§3. Per-term comprehensive detail", "s3")
     add()
     add("Each term gets numbered sections: identity • meaning • "
         "anchor-verse linkages • groups • findings • pointers • auxiliary "
@@ -845,7 +1336,12 @@ def main() -> int:
         m = by_strong[s]
         add("---")
         add()
-        add(f"### {s} {m['transliteration'] or ''} — {m['gloss'] or ''}")
+        add_section(
+            3,
+            f"{s} {m['transliteration'] or ''} — {m['gloss'] or ''} "
+            f"(`mti_id={m.get('mti_id')}`)",
+            f"t-{s}",
+        )
         add()
 
         # Identity (numbered)
@@ -853,11 +1349,15 @@ def main() -> int:
         add()
         reg = (f"R{m['reg_no']:03d} {m['reg_word']}"
                if m.get("reg_no") else "—")
-        sg_id = strong_to_sg_id.get(s)
-        sg = sg_by_id.get(sg_id) if sg_id else None
-        sg_label = (
-            f"`{sg['subgroup_code']}` ({sg['label']})" if sg else "—"
-        )
+        sg_ids = strong_to_sg_ids.get(s, [])
+        sg_label_parts = []
+        for sg_id in sg_ids:
+            sg = sg_by_id.get(sg_id)
+            if sg:
+                sg_label_parts.append(
+                    f"`{sg['subgroup_code']}` ({sg['label']})"
+                )
+        sg_label = " · ".join(sg_label_parts) or "—"
         add(f"1. Strong's: `{s}` · Lang: "
             f"{m['language'] or '?'} · "
             f"Owner: {m.get('term_owner_type') or '—'}")
@@ -1059,7 +1559,11 @@ def main() -> int:
     # § Appendix
     add("---")
     add()
-    add("## §4. Appendix — items linked at registry or collection level")
+    add_section(
+        2,
+        "§4. Appendix — items linked at registry or collection level",
+        "s4",
+    )
     add()
 
     # 3.1
@@ -1079,8 +1583,12 @@ def main() -> int:
             continue
         seen_f.add(f["id"])
         reg_only_uniq.append(f)
-    add(f"### §4.1 Findings from contributor registries with no "
-        f"term-level link ({len(reg_only_uniq)})")
+    add_section(
+        3,
+        f"§4.1 Findings from contributor registries with no "
+        f"term-level link ({len(reg_only_uniq)})",
+        "s4-1",
+    )
     add()
     if not reg_only_uniq:
         add("(none)")
@@ -1126,8 +1634,12 @@ def main() -> int:
             continue
         seen_p.add(p["id"])
         reg_only_p_uniq.append(p)
-    add(f"### §4.2 SD pointers from contributor registries with no "
-        f"term-level link ({len(reg_only_p_uniq)})")
+    add_section(
+        3,
+        f"§4.2 SD pointers from contributor registries with no "
+        f"term-level link ({len(reg_only_p_uniq)})",
+        "s4-2",
+    )
     add()
     if not reg_only_p_uniq:
         add("(none)")
@@ -1145,8 +1657,12 @@ def main() -> int:
         add()
 
     # 3.3
-    add(f"### §4.3 Prose sections from contributor registries "
-        f"({len(prose_sections)})")
+    add_section(
+        3,
+        f"§4.3 Prose sections from contributor registries "
+        f"({len(prose_sections)})",
+        "s4-3",
+    )
     add()
     if not prose_sections:
         add("(none)")
@@ -1182,37 +1698,48 @@ def main() -> int:
     for mid in all_mti_ids:
         for g in groups_by_mti[mid]:
             cluster_groups.add(g["group_id"])
-    add(f"### §4.4 Cluster-internal verse_context_group rows "
-        f"({len(cluster_groups)})")
+    add_section(
+        3,
+        f"§4.4 Cluster-internal verse_context_group rows "
+        f"({len(cluster_groups)})",
+        "s4-4",
+    )
     add()
     if not cluster_groups:
         add("(none)")
         add()
     else:
-        add("Deduplicated list of all `verse_context_group` rows whose "
-            "`mti_term_id` belongs to this cluster.")
+        add("Deduplicated list of all `verse_context_group` rows that "
+            "appear in this cluster (post-M47: a vcg may be linked to "
+            "multiple terms via `vcg_term`; the Strong's column is a "
+            "comma-joined list of all linked terms).")
         add()
         ph_g = ",".join("?" * len(cluster_groups))
         all_groups = conn.execute(f"""
-            SELECT id, mti_term_id, group_code, context_description, notes
-              FROM verse_context_group
-             WHERE id IN ({ph_g})
-             ORDER BY group_code
+            SELECT vcg.id, vcg.group_code, vcg.context_description,
+                   vcg.notes,
+                   GROUP_CONCAT(DISTINCT mt.strongs_number) AS strongs_list
+              FROM verse_context_group vcg
+              LEFT JOIN vcg_term vt ON vt.vcg_id=vcg.id
+                AND COALESCE(vt.delete_flagged,0)=0
+              LEFT JOIN mti_terms mt ON mt.id=vt.mti_term_id
+             WHERE vcg.id IN ({ph_g})
+             GROUP BY vcg.id
+             ORDER BY vcg.group_code
         """, list(cluster_groups)).fetchall()
-        add("| Group ID | Code | mti_term_id | Strong's | Description | Notes |")
-        add("|---|---|---|---|---|---|")
+        add("| Group ID | Code | Strong's (linked terms) | Description | Notes |")
+        add("|---|---|---|---|---|")
         for g in all_groups:
-            sn = mti_to_strong.get(g["mti_term_id"], "?")
             add(
                 f"| {g['id']} | {sanitise(g['group_code'])} | "
-                f"{g['mti_term_id']} | {sn} | "
+                f"{sanitise(g['strongs_list'] or '—')} | "
                 f"{sanitise(g['context_description'])} | "
                 f"{sanitise(g['notes'])} |"
             )
         add()
 
     # 3.5
-    add("### §4.5 Cross-cluster orphan findings/pointers")
+    add_section(3, "§4.5 Cross-cluster orphan findings/pointers", "s4-5")
     add()
     add("Findings + SD pointers that mention M-cluster vocabulary but "
         "originate from registries that do NOT contribute terms to this "
@@ -1220,6 +1747,16 @@ def main() -> int:
         f"[wa-cluster-{args.m_cluster.lower()}-finding-orphans-v1-…]"
         "(../../../outputs/markdown/) for the full scan.")
     add()
+
+    # ----- Build and splice the table of contents into the reserved slot
+    toc_lines: list[str] = ['<a id="toc"></a>', "## Table of contents", ""]
+    for level, title, anchor in toc_entries:
+        indent = "  " * (level - 2) if level > 2 else ""
+        toc_lines.append(f"{indent}- [{title}](#{anchor})")
+    toc_lines.append("")
+    toc_lines.append("---")
+    toc_lines.append("")
+    L[toc_insert_idx:toc_insert_idx] = toc_lines
 
     conn.close()
 

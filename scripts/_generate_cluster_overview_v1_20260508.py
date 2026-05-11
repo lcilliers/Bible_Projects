@@ -72,14 +72,15 @@ def main():
     verse_counts = {}
     anchor_counts = {}
     for r in cur.execute(
+        # Post-M47: vcg ↔ term is m:n. Use vc.mti_term_id directly to
+        # determine the cluster (vc has its own mti_term_id, not derived
+        # from the vcg).
         "SELECT mt.cluster_code, "
         "       COUNT(DISTINCT vc.id) AS n_vc, "
         "       SUM(CASE WHEN vc.is_anchor=1 THEN 1 ELSE 0 END) AS n_anchor "
         "  FROM verse_context vc "
-        "  JOIN verse_context_group vcg ON vcg.id=vc.group_id "
-        "  JOIN mti_terms mt ON mt.id=vcg.mti_term_id "
+        "  JOIN mti_terms mt ON mt.id=vc.mti_term_id "
         " WHERE COALESCE(vc.delete_flagged,0)=0 "
-        "   AND COALESCE(vcg.delete_flagged,0)=0 "
         "   AND COALESCE(mt.delete_flagged,0)=0 "
         "   AND mt.cluster_code IS NOT NULL "
         " GROUP BY mt.cluster_code"

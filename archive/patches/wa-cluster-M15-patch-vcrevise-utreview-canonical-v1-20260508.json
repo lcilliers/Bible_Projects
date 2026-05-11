@@ -1,0 +1,5267 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260508-M15-VCREVISE-UTREVIEW-CANONICAL-V1",
+    "produced_date": "20260508",
+    "produced_by": "wa-sessionb-cluster-instruction-v1_1-20260507.md",
+    "patch_type": "VCREVISE",
+    "session_b_status": null,
+    "description": "M15 Phase 2 UT verse review. All 313 UT verses individually read and classified. Set-asides: sexual uses of ya.da, financial calculation uses of cha.shav, physical tasting ta.am, non-musing si.ach, musical hig.ga.von, social-recognition agnoeō/ya.da, communicative-only logos. Confirmed: all remaining UT verses. Borderlines resolved by researcher decision 2026-05-08.",
+    "terms_covered": [
+      242,
+      519,
+      528,
+      532,
+      749,
+      955,
+      958,
+      963,
+      973,
+      1171,
+      1838,
+      3280,
+      3335,
+      4458,
+      5099,
+      5278,
+      5883,
+      6668
+    ],
+    "input_versions": {
+      "963": 1,
+      "955": 1,
+      "3335": 1,
+      "519": 1,
+      "4458": 1,
+      "5099": 1,
+      "6668": 1,
+      "749": 1,
+      "1838": 1,
+      "5278": 1,
+      "528": 1,
+      "973": 1,
+      "242": 1,
+      "1171": 1,
+      "532": 1,
+      "3280": 1,
+      "5883": 1,
+      "958": 1
+    },
+    "governing_instruction": "wa-sessionb-cluster-instruction-v1_1-20260507.md",
+    "companion_document": "WA-M15-UT-verse-review-v1-20260508.md",
+    "supersedes": "PATCH-20260508-M15-VCREVISE-UTREVIEW-V1 (format errors: operation='upsert' not supported by applicator; field 'context_description' not on verse_context table — moved to 'analysis_note'; terms_covered list out of sync with operations)",
+    "correction_note": "Canonical-format rewrite. 323 insert ops (UT cases) + 3 update ops (existing rows). context_description -> analysis_note. terms_covered + input_versions recomputed from actual operations. R4 integrity: 2 provisional anchor(s) set on terms with no pre-existing anchor (6668, 5278); Phase 6 mapping revisits these. Verified against DB as of generation time.",
+    "operations_count": 326
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29563,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual union — Adam knew Eve his wife",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29564,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual union — Cain knew his wife",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29565,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual union — Adam knew his wife again",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29537,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual euphemism — that we may know them",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29538,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — daughters who have not known any man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29535,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual context — did not know when she lay down",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29536,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual context — did not know when she lay down",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29544,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity — a maiden whom no man had known",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29558,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual context — did not know she was his daughter-in-law",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29559,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual euphemism — he did not know her again",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29767,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — every woman who has known man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29768,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — who have not known man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29769,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — women who had not known man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29718,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — she had never known a man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29728,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual euphemism — that we may know him",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29729,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual assault context — they knew her and abused her",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29732,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual — every woman that has lain with a male",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29733,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Virginity/sexual — who had not known a man",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178198,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Sexual/marital — Elkanah knew Hannah his wife",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29549,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Simple social recognition — Do you know Laban? Researcher decision 2026-05-08",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130854,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial counting — your contribution shall be counted",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130855,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial counting — the rest shall be counted",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 3335,
+        "verse_record_id": 130857
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial calculation — let him calculate the years"
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130847,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial calculation — He shall calculate with his buyer",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130848,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial calculation — he shall calculate",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130849,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial calculation — the priest shall calculate the price",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130850,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial calculation — the priest shall calculate the amount",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130866,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial accounting — no accounting from the men",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130868,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Financial accounting — no accounting shall be asked",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 155365,
+        "mti_term_id": 5099,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Physical tasting under oath — none had tasted food",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 155366,
+        "mti_term_id": 5099,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Physical tasting — I tasted a little honey. Researcher decision 2026-05-08",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 155367,
+        "mti_term_id": 5099,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Physical tasting — I tasted a little honey with the tip of the staff",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 157984,
+        "mti_term_id": 242,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Narrating/telling not inner musing — Tell of it you who ride on donkeys. Researcher decision 2026-05-08",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 157983,
+        "mti_term_id": 242,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Term-span of the — no inner musing characteristic present",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 181465,
+        "mti_term_id": 5883,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Musical melody/tone — to the melody of the lyre; not inner meditation",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82260,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Personal recognition/acquaintance — unknown in person to the churches. Researcher decision 2026-05-08",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42637,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Legal account-giving — each will give an account of himself",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42641,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "External communication — to bring Gentiles to obedience by word and deed",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42576,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "External declared promise — word of God has not failed",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42577,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Stated promise — this is what the promise said",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42575,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Legal decree — the Lord will carry out his sentence",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42602,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Legal/judicial — that you may be justified in your words",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42544,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Spoken discourse — not with lofty speech or wisdom",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42546,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Speech/message — not in plausible words of wisdom",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42687,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Talk/speech — kingdom does not consist in talk",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42715,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Spoken utterance — if with your tongue you utter speech",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42723,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Divine word received — was it from you that the word of God came",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42725,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Preached word — hold fast to the word I preached",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42728,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Prophetic quotation — the saying that is written",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42549,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Spoken commitment — our word to you has not been Yes and No",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42553,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Proclaimed word — peddlers of God's word",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42555,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "External message — message of reconciliation",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42556,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Mode of communication — by truthful speech",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42557,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Communicative capacity — in speech in knowledge",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42558,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Oratorical speech — his speech of no account",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42559,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Written communication — what we say by letter",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42562,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Rhetorical skill — unskilled in speaking",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42560,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "External divine message — to make the word of God fully known",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42563,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "External message — God may open a door for the word",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42564,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Speech mode — let your speech always be gracious",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42570,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Teaching/content received — share all good things with one who teaches",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42565,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Proclaimed gospel message — when you heard the word of truth",
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1171,
+        "verse_record_id": 42567
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Spoken words — deceive you with empty words"
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "mti_term_id": 1171,
+        "verse_record_id": 42568
+      },
+      "set": {
+        "is_relevant": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "Speech gift — words may be given to me"
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29580,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29581,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29540,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29541,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29545,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29546,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29553,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29554,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29556,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29555,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29557,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29561,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29562,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29567,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29568,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29570,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29571,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29572,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29574,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29573,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29575,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29576,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29578,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178296,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178299,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178297,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7325,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7326,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7327,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7328,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7329,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7330,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7331,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7332,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7333,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130845,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29754,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29755,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29762,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29764,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 15199,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178219,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178220,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178240,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7336,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178252,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178258,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178230,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178231,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178232,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178233,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178234,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178235,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178236,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178246,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178248,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178314,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178315,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178327,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29734,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29735,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29738,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29719,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29722,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29724,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29726,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29731,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178361,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178365,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178366,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178362,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178363,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178364,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178367,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178209,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178211,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178213,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178214,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178199,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178203,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178202,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178205,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7339,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 148516,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7343,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178141,
+        "mti_term_id": 955,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130830,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 130831,
+        "mti_term_id": 3335,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7346,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7347,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7348,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7349,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7350,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 148525,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 148526,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29747,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29748,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29749,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29746,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178289,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178290,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178291,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178292,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178295,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178293,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 15194,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7353,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29717,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29671,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29672,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29677,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29676,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29686,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29689,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29694,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 6943,
+        "mti_term_id": 519,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29698,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29701,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29707,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29708,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29709,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29705,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29706,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 157995,
+        "mti_term_id": 242,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178187,
+        "mti_term_id": 955,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178360,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178331,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 148527,
+        "mti_term_id": 749,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178333,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178336,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 6964,
+        "mti_term_id": 519,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178337,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178340,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-198",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178343,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-199",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178344,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-200",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178345,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-201",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178352,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-202",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178353,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-203",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178267,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-204",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178275,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-205",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178276,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-206",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178273,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-207",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178274,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-208",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178284,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-209",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178286,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-210",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178263,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-211",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178265,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-212",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29642,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-213",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29656,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-214",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29601,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-215",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29603,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-216",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29604,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-217",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29612,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-218",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29613,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-219",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7436,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-220",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29617,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-221",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29618,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-222",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29619,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-223",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29621,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-224",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29633,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-225",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29637,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-226",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29648,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-227",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7442,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-228",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7445,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-229",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 6975,
+        "mti_term_id": 519,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-230",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7449,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-231",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7450,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-232",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208271,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-233",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208272,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-234",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208273,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-235",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208274,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-236",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208275,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-237",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208276,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-238",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208277,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-239",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208278,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-240",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208280,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-241",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208279,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-242",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208282,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-243",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208283,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-244",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208281,
+        "mti_term_id": 6668,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-245",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29592,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-246",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178218,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-247",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208270,
+        "mti_term_id": 528,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-248",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178309,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-249",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29744,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-250",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178373,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-251",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178372,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-252",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178376,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-253",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 178369,
+        "mti_term_id": 958,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-254",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7458,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-255",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208346,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-256",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7459,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-257",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208347,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-258",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7461,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-259",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82263,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-260",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7462,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-261",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7464,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-262",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82262,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-263",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208345,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-264",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7465,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-265",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7466,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-266",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 160664,
+        "mti_term_id": 5278,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-267",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7467,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-268",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7469,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-269",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7471,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-270",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 54444,
+        "mti_term_id": 973,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-271",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82264,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-272",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42574,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-273",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 137855,
+        "mti_term_id": 3280,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-274",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82268,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-275",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82269,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-276",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82266,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-277",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42572,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-278",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42573,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-279",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208351,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-280",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42537,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-281",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29786,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-282",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42535,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-283",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7473,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-284",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7474,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-285",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7475,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-286",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7476,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-287",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7477,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-288",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208335,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-289",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7480,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-290",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7481,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-291",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7482,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-292",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7485,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-293",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208338,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-294",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7486,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-295",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208341,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-296",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42548,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-297",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82249,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-298",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82250,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-299",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42538,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-300",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42541,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-301",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29790,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-302",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29791,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-303",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42540,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-304",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82251,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-305",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42542,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-306",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42543,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-307",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29793,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-308",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82254,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-309",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7488,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-310",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82256,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-311",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42550,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-312",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42551,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-313",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 42552,
+        "mti_term_id": 1171,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-314",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29825,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-315",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7489,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-316",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 29821,
+        "mti_term_id": 963,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-317",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7495,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-318",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7497,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-319",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82252,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-320",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 82261,
+        "mti_term_id": 1838,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-321",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7499,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-322",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 208344,
+        "mti_term_id": 4458,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-323",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7500,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-324",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7503,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-325",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7505,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    },
+    {
+      "op_id": "OP-326",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 7506,
+        "mti_term_id": 532,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "delete_flagged": 0
+      }
+    }
+  ]
+}

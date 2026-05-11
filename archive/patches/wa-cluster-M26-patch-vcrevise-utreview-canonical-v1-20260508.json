@@ -1,0 +1,1834 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260508-M26-VCREVISE-UTREVIEW-CANONICAL-V1",
+    "patch_type": "VCREVISE",
+    "produced_date": "20260508",
+    "produced_by": "_apply_m26_phase2_ut_review_v1_20260508.py (Claude API)",
+    "description": "M26 Phase 2 UT verse review — automated via Claude API. 105 operations: relevant + set-aside decisions. Borderlines and errors not included. R4 provisional anchors set on 1 term(s) with no pre-existing anchor.",
+    "session_b_status": null,
+    "terms_covered": [
+      4,
+      5,
+      438,
+      942,
+      1211,
+      1212,
+      1225,
+      3246,
+      3252,
+      3410,
+      4846,
+      6753
+    ],
+    "input_versions": {
+      "4": 1,
+      "5": 1,
+      "438": 1,
+      "942": 1,
+      "1211": 1,
+      "1212": 1,
+      "1225": 1,
+      "3246": 1,
+      "3252": 1,
+      "3410": 1,
+      "4846": 1,
+      "6753": 1
+    },
+    "operations_count": 105,
+    "governing_instruction": "wa-sessionb-cluster-instruction-v1_1-20260507.md §5",
+    "companion_document": "WA-M26-UT-verse-review-v1-20260508.md",
+    "r4_provisional_anchors": [
+      {
+        "mti_term_id": 438,
+        "verse_record_id": 57129
+      }
+    ]
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212041,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to troops equipped/arrayed for battle, an external military arrangement with no inner-being righteousness content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 12:33 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0002",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212042,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "term used for military readiness/equipment, not an inner-being characteristic of righteousness or justice",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 12:35 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0003",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212043,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes troops arranged/ready for battle, not any inner-being valuation or moral quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 12:36 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0004",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212044,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/expert' here describes military skill and physical capability, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 12:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0005",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212045,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes military arraying/positioning of troops, not an inner-being quality of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 19:10 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0006",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212046,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes military deployment/arraying troops against an enemy, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 19:11 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0007",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212047,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'to set in array/draw up forces' in a military sense — external battlefield action, not an inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 19:17 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0008",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212048,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term appears in a military context describing battle formation, with no inner-being characteristic engaged.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ch 19:9 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0009",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101924,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'regard/consider' in the sense of how others should view apostles in their role, not engaging any inner-being righteousness or moral quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Cor 4:1 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0010",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212049,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'to arrange/put in order' referring to physical wood on an altar, not a moral or inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Ki 18:33 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0011",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101925,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term is used to express a personal opinion about Silvanus's character ('as I regard him'), not an inner-being righteousness/justice characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Pe 5:12 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0012",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 207313,
+        "mti_term_id": 1225,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The verse describes Saul's military campaigns against external enemies; no inner-being wickedness or righteousness is in view.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Sa 14:47 | H7561 ra.sha | set_aside"
+    },
+    {
+      "op_id": "OP-0013",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212050,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes drawing up in battle formation, an external military action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Sa 17:2 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0014",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212051,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes armies drawing up for battle, an external military action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Sa 17:21 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0015",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212052,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to drawing up/arranging for battle, an external military action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Sa 17:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0016",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212053,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes drawing up battle lines, an external military action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 1Sa 4:2 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0017",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169333,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The Lord is declared righteous as an inner characteristic affirmed by humbled leaders acknowledging His moral nature.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Ch 12:6 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0018",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212054,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means to draw up/arrange a battle formation, an external military action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Ch 13:3 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0019",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212055,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to drawing up battle lines, a purely military/external action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Ch 14:10 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0020",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101926,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'consider/understand' in a cognitive sense about Paul's consistency, not an inner-being righteousness/justice characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Cor 10:11 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0021",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101928,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'remind himself' in the sense of personal reckoning about affiliation, not engaging a righteousness/justice inner characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Cor 10:7 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0022",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145632,
+        "mti_term_id": 4846,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God condemned Sodom and Gomorrah, establishing condemnation as a judicial inner-being standing for the ungodly.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Pe 2:6 | G2632 katakrinō | relevant"
+    },
+    {
+      "op_id": "OP-0023",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212056,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes military arrangement of troops, not an inner-being quality or moral assessment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Sa 10:10 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0024",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212057,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes military arraying/positioning of troops, an external tactical action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Sa 10:17 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0025",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212058,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes troops drawing up in battle array — a military/external action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Sa 10:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0026",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212059,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes military arrangement/deployment, not an inner-being quality of valuing or assessment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | 2Sa 10:9 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0027",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3127,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means simply 'reason for coming' — a neutral inquiry with no inner-being or judicial content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 10:21 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0028",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101934,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'counted as nothing' referring to the temple's reputation/status — an external civic/religious concern, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 19:27 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0029",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3142,
+        "mti_term_id": 5,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term names an external cause or justification for a civic disturbance, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 19:40 | G0159 aitios | set_aside"
+    },
+    {
+      "op_id": "OP-0030",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3129,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to a legal/investigative charge sought through flogging — an external judicial procedure with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 22:24 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0031",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3130,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term names a legal charge in an external judicial/procedural context, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 23:28 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0032",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3131,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term names a legal charge brought in external legal proceedings, not an inner-being state or quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 25:18 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0033",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3132,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to formal legal charges in a prisoner transfer — an external procedural matter with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 25:27 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0034",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3133,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term names a legal charge in an external judicial examination, not an inner-being quality or state.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Act 28:18 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0035",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 45953,
+        "mti_term_id": 1212,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term appears as 'agreement' in a diplomatic alliance context, naming an external political arrangement rather than an inner-being quality of uprightness.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Dan 11:6 | H4339 me.shar | set_aside"
+    },
+    {
+      "op_id": "OP-0036",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169340,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is declared inwardly righteous in all his works, contrasted with Israel's disobedience.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Dan 9:14 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0037",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 95976,
+        "mti_term_id": 942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term describes accurate/fair weights and measures as an external commercial standard, not an inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Deu 25:15 | H6664G tse.deq | set_aside"
+    },
+    {
+      "op_id": "OP-0038",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169343,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is declared 'just and upright' as inner character — righteousness and uprightness are intrinsic divine qualities.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Deu 32:4 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0039",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212061,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to tending/arranging lamps in the tabernacle — a physical, ritual action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Exo 27:21 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0040",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212062,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'arrange/set in order' referring to bread placement — a physical/ritual action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Exo 40:23 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0041",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212063,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'arrange/set up' referring to physical objects (table, lampstand), with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Exo 40:4 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0042",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 146256,
+        "mti_term_id": 3252,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to an executed judgment (punishment) carried out externally against a person, not an inner-being quality or state.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Eze 23:10 | H8196 she.phot | set_aside"
+    },
+    {
+      "op_id": "OP-0043",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212064,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/place' here refers to physically placing incense and oil on a table, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Eze 23:41 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0044",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 95982,
+        "mti_term_id": 942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term describes just/accurate physical measuring instruments, not an inner-being characteristic of righteousness.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Eze 45:10 | H6664G tse.deq | set_aside"
+    },
+    {
+      "op_id": "OP-0045",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212065,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes armies joining battle (military arrangement), not an inner-being quality or moral assessment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Gen 14:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0046",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212066,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "the term here means 'laid in order' (arranged the wood), a physical action with no inner-being content",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Gen 22:9 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0047",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212067,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The verse describes external military/feast preparations with no inner-being righteousness or justice content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Isa 21:5 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0048",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212068,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes a burning place being prepared/made ready — an external physical arrangement, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Isa 30:33 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0049",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212069,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'compare/liken' in the sense of placing side by side for comparison, with no inner-being righteousness or justice content in view.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Isa 40:18 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0050",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212070,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/set in order' here refers to arranging or presenting arguments/declarations before God, not an inner-being quality of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Isa 44:7 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0051",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212071,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value' here refers to the external ritual act of setting a table/filling cups for a deity, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Isa 65:11 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0052",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 57129,
+        "mti_term_id": 438,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is named 'The Lord is our righteousness,' attributing righteousness as an intrinsic inner quality of God.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 23:6 | H6664H tse.deq | relevant"
+    },
+    {
+      "op_id": "OP-0053",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 57130,
+        "mti_term_id": 438,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God's righteousness is named as an inner divine quality constituting Jerusalem's identity and security.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 33:16 | H6664H tse.deq | relevant"
+    },
+    {
+      "op_id": "OP-0054",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212072,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'advance/arrange for battle,' describing external military preparation with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 46:3 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0055",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212073,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'set in array' (military formation), describing external battle positioning against Babylon, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 50:14 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0056",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212074,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'arrayed' refers to military formation/battle arrangement, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 50:42 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0057",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212075,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes a skilled warrior who does not return empty-handed — a military/external action, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 50:9 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0058",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212076,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'set in array' describes military formation/external battle arrangement, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jer 6:23 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0059",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212081,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here concerns directing/arranging words in argument, not an inner-being quality of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Job 32:14 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0060",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 45950,
+        "mti_term_id": 1211,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "An angelic mediator declares to a person what is upright/right for them, conveying uprightness as a moral standard communicated to the inner being.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Job 33:23 | H3476 yo.sher | relevant"
+    },
+    {
+      "op_id": "OP-0061",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212083,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/avail' here concerns whether a cry for help will be effective against distress, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Job 36:19 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0062",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212084,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'draw up our case' refers to an external legal/rhetorical act of arranging argument, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Job 37:19 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0063",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212086,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes an army drawn up for battle — an external military arrangement, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Joe 2:5 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0064",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212087,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'laid in order' referring to physical arrangement of flax stalks on a roof, not an inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Jos 2:6 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0065",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212088,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "the term refers to drawing up a battle line — an external military action with no inner-being content",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Judg 20:20 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0066",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212089,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes forming/arranging a battle line — a military/external action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Judg 20:22 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0067",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212090,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes arranging troops in battle formation, a purely military/external action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Judg 20:30 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0068",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212091,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes troops arranging themselves in battle formation — an external military action, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Judg 20:33 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0069",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 28346,
+        "mti_term_id": 942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term describes externally accurate measuring instruments (balances, weights, ephah, hin), not an inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 19:36 | H6664G tse.deq | set_aside"
+    },
+    {
+      "op_id": "OP-0070",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212092,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to physically arranging sacrificial pieces on an altar fire, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 1:12 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0071",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212093,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'arrange' (wood on fire), a purely physical liturgical action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 1:7 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0072",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212094,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to physically arranging sacrificial pieces on an altar fire, not an inner-being quality or moral assessment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 1:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0073",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212095,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to Aaron arranging/tending lamps in the tabernacle — a priestly ritual action, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 24:3 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0074",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212096,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'to arrange' lamps on a lampstand — a physical, ritual action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 24:4 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0075",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212097,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'arrange' here refers to a ritual physical action of setting out bread, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 24:8 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0076",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212098,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to arranging the burnt offering on the altar — a physical ritual action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Lev 6:12 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0077",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101939,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to being numbered/counted among transgressors as an external classification, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Luk 22:37 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0078",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145639,
+        "mti_term_id": 4846,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "the condemnation here is a judicial/legal verdict pronounced externally against Jesus, not an inner-being characteristic or state",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mar 10:33 | G2632 katakrinō | set_aside"
+    },
+    {
+      "op_id": "OP-0079",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145640,
+        "mti_term_id": 4846,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The council collectively condemned Jesus as deserving death, expressing an inner judgment of condemnation.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mar 14:64 | G2632 katakrinō | relevant"
+    },
+    {
+      "op_id": "OP-0080",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3122,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to the written legal charge on the inscription, an external judicial/civic act with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mar 15:26 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0081",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3120,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'case' here refers to the circumstances/situation of a man with his wife, not an inner-being quality of righteousness or judgment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mat 19:10 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0082",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3119,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "'cause' here refers to an external legal/social ground for divorce, not an inner-being characteristic or condition",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mat 19:3 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0083",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145644,
+        "mti_term_id": 4846,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term refers to an external judicial act — the chief priests and scribes pronouncing a death sentence — not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mat 20:18 | G2632 katakrinō | set_aside"
+    },
+    {
+      "op_id": "OP-0084",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 145645,
+        "mti_term_id": 4846,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "Judas recognises Jesus has been condemned, prompting inner moral remorse and a change of mind.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mat 27:3 | G2632 katakrinō | relevant"
+    },
+    {
+      "op_id": "OP-0085",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3121,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term names the written legal charge posted on the cross, an external juridical/civic label, not an inner-being condition.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Mat 27:37 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0086",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169400,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is declared righteous as an inner-being characteristic contrasted with human wickedness.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Neh 9:33 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0087",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212099,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to arranging/setting altars for ritual sacrifice — an external cultic action, not an inner-being quality or moral assessment.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Num 23:4 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0088",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 232247,
+        "mti_term_id": 1211,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term underlies what one 'should give,' describing an external standard of proper conduct or due amount rather than an inner-being quality of uprightness held within the person.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Pro 11:24 | H3476 yo.sher | set_aside"
+    },
+    {
+      "op_id": "OP-0089",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 232390,
+        "mti_term_id": 1212,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes wine going down smoothly, a physical sensation with no inner-being or moral uprightness content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Pro 23:31 | H4339 me.shar | set_aside"
+    },
+    {
+      "op_id": "OP-0090",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212100,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here refers to setting/arranging a table, a physical domestic action with no inner-being content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Pro 9:2 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0091",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169469,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is declared righteous as an inner characteristic alongside graciousness and mercy.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 116:5 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0092",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169472,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is declared righteous as an inner-being characteristic, paired with the righteousness of His rules.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 119:137 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0093",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169474,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The Lord is described as righteous, presenting righteousness as a divine inner-being characteristic motivating just action.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 129:4 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0094",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212101,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/prepare' here refers to an external act of preparation (a lamp for the anointed), not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 132:17 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0095",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169479,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The Lord is declared righteous in all his ways, naming righteousness as an inner characteristic of God.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 145:17 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0096",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 96018,
+        "mti_term_id": 942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The psalmist proclaims righteousness/deliverance openly in the congregation, expressing an inner conviction to declare it.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 40:9 | H6664G tse.deq | relevant"
+    },
+    {
+      "op_id": "OP-0097",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 96019,
+        "mti_term_id": 942,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "Righteousness is named as an inner quality or cause for which the king rides out victoriously.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 45:4 | H6664G tse.deq | relevant"
+    },
+    {
+      "op_id": "OP-0098",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212105,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value/lay the charge' functions here as an external judicial act of laying charges before someone, not an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 50:21 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0099",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 212106,
+        "mti_term_id": 6753,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term 'to value' here relates to setting/spreading a table, a physical/external action with no inner-being righteousness or justice content.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 78:19 | H6186B a.rakh | set_aside"
+    },
+    {
+      "op_id": "OP-0100",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169504,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "God is described as a righteous judge, naming righteousness as an inner characteristic of His judicial nature.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Psa 7:11 | H6662 tsad.diq | relevant"
+    },
+    {
+      "op_id": "OP-0101",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101958,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here means 'regarded as' in the sense of being treated/classified as slaughter-sheep — an external social/violent condition, not an inner-being quality.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Rom 8:36 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0102",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 101959,
+        "mti_term_id": 3410,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "'counted as offspring' is a declarative/accounting reckoning of lineage status, not an inner-being characteristic of righteousness or justice.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Rom 9:8 | G3049 logizomai | set_aside"
+    },
+    {
+      "op_id": "OP-0103",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 232400,
+        "mti_term_id": 1212,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The term here describes wine flowing smoothly, a physical/sensory quality, not an inner-being moral characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Song 7:9 | H4339 me.shar | set_aside"
+    },
+    {
+      "op_id": "OP-0104",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 3137,
+        "mti_term_id": 4,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "no_inner_being",
+        "analysis_note": "The verse concerns rebuking for soundness in faith; the term 'cause/charge' does not appear in the verse text in a way that engages an inner-being characteristic.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Tit 1:13 | G0156 aitia | set_aside"
+    },
+    {
+      "op_id": "OP-0105",
+      "operation": "insert",
+      "table": "verse_context",
+      "record": {
+        "verse_record_id": 169513,
+        "mti_term_id": 3246,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "set_aside_reason": null,
+        "analysis_note": "The Lord dwelling within is characterised as righteous, an inner quality contrasted with the unjust who knows no shame.",
+        "delete_flagged": 0
+      },
+      "description": "Phase2 | Zep 3:5 | H6662 tsad.diq | relevant"
+    }
+  ]
+}

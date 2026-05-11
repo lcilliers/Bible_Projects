@@ -101,22 +101,37 @@ def main() -> int:
 
     # ---- mti_terms in cluster (active OWNER + XREF distinction not relevant
     # here; we just need term identity per mti_id)
+    # Post-M46: term-to-sub-group is m:n via mti_term_subgroup; a term may
+    # appear under multiple sub-groups.
     term_meta = {}
     sg_to_mti_ids = defaultdict(list)
-    mti_to_sg_id = {}
+    mti_to_sg_ids: dict[int, list[int]] = defaultdict(list)
     for r in conn.execute("""
         SELECT mt.id AS mti_id, mt.strongs_number, mt.gloss,
-               mt.transliteration, mt.cluster_subgroup_id
+               mt.transliteration
           FROM mti_terms mt
          WHERE mt.cluster_code=? AND COALESCE(mt.delete_flagged,0)=0
     """, (args.m_cluster,)).fetchall():
         term_meta[r["mti_id"]] = dict(r)
-        if r["cluster_subgroup_id"]:
-            sg_to_mti_ids[r["cluster_subgroup_id"]].append(r["mti_id"])
-            mti_to_sg_id[r["mti_id"]] = r["cluster_subgroup_id"]
+    if term_meta:
+        ph_t = ",".join("?" * len(term_meta))
+        for r in conn.execute(f"""
+            SELECT mts.mti_term_id, mts.cluster_subgroup_id
+              FROM mti_term_subgroup mts
+              JOIN cluster_subgroup cs
+                ON cs.id = mts.cluster_subgroup_id
+             WHERE mts.mti_term_id IN ({ph_t})
+               AND COALESCE(mts.delete_flagged,0)=0
+               AND COALESCE(cs.delete_flagged,0)=0
+        """, list(term_meta.keys())):
+            sg_to_mti_ids[r["cluster_subgroup_id"]].append(r["mti_term_id"])
+            mti_to_sg_ids[r["mti_term_id"]].append(r["cluster_subgroup_id"])
     print(f"  terms: {len(term_meta)}")
 
     # ---- verse_context_group rows for each sub-group's terms
+    # Post-M47: vcg ↔ term is m:n via vcg_term. A vcg can appear under
+    # multiple terms (e.g. a "Proverbs outcomes" meaning shared by H6662
+    # + H6666); each linked term gets its own row in this output.
     sg_to_groups = defaultdict(list)
     group_meta = {}
     for sg_id, mti_ids in sg_to_mti_ids.items():
@@ -124,11 +139,13 @@ def main() -> int:
             continue
         ph = ",".join("?" * len(mti_ids))
         for r in conn.execute(f"""
-            SELECT vcg.id, vcg.mti_term_id, vcg.group_code,
+            SELECT vcg.id, vt.mti_term_id, vcg.group_code,
                    vcg.context_description, vcg.notes
               FROM verse_context_group vcg
-             WHERE vcg.mti_term_id IN ({ph})
+              JOIN vcg_term vt ON vt.vcg_id=vcg.id
+             WHERE vt.mti_term_id IN ({ph})
                AND COALESCE(vcg.delete_flagged,0)=0
+               AND COALESCE(vt.delete_flagged,0)=0
              ORDER BY vcg.id
         """, mti_ids):
             row = dict(r)
@@ -498,9 +515,15 @@ def main() -> int:
         "Strong's number.")
     add()
     # Group terms by sub-group (then unassigned)
+    # Post-M46: a term in N sub-groups appears under each.
     terms_by_sg = defaultdict(list)
     for mid, m in term_meta.items():
-        terms_by_sg[m.get("cluster_subgroup_id")].append(m)
+        sg_ids = mti_to_sg_ids.get(mid, [])
+        if not sg_ids:
+            terms_by_sg[None].append(m)
+        else:
+            for sg_id in sg_ids:
+                terms_by_sg[sg_id].append(m)
 
     sg_order = [sg["id"] for sg in subgroups] + [None]
     sg_idx = 0
@@ -510,7 +533,7 @@ def main() -> int:
             continue
         sg_idx += 1
         if sg_id is None:
-            label = "Unassigned (no cluster_subgroup_id)"
+            label = "Unassigned (no mti_term_subgroup row)"
             sg_code = "—"
         else:
             sg = sg_by_id[sg_id]
@@ -565,10 +588,11 @@ def main() -> int:
         add("---")
         add()
 
-    # If there are mti_ids in the cluster with no cluster_subgroup_id,
+    # If there are mti_ids in the cluster with no mti_term_subgroup row,
     # show their unconnected verses in an "Unassigned" tail section.
     unassigned_mti = [
-        mid for mid, m in term_meta.items() if not m["cluster_subgroup_id"]
+        mid for mid, m in term_meta.items()
+        if not mti_to_sg_ids.get(mid)
     ]
     if unassigned_mti:
         add(f"## §4. Terms in cluster without a sub-group "

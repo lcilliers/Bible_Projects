@@ -20,7 +20,13 @@ Shared constants for the Session A v9 Automation Engine.
 # cleanup; resolves coverage false-positives and VCNEW insert collisions).
 # Bumped 2026-04-27 for M40-M43 (DB-capture architecture: verse_context.analysis_note,
 # wa_prose_section_citations, wa_obs_question_catalogue.review_note, finding_id NULL).
-EXPECTED_SCHEMA_VERSION = "3.17.0"
+# Bumped 2026-05-06 for M44-M45 (cluster_subgroup table + cluster_finding table).
+# Bumped 2026-05-10 for M46 (term-to-sub-group m:n: new mti_term_subgroup join table,
+# verse_context.cluster_subgroup_id added, mti_terms.cluster_subgroup_id dropped per
+# DEC-1 of m39-subgroup-multi-term-design-v1).
+# Bumped 2026-05-10 for M47 (vcg-to-term m:n: new vcg_term join table; drop
+# verse_context_group.mti_term_id; absorbs 21 pre-existing cross-term placements).
+EXPECTED_SCHEMA_VERSION = "3.21.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"

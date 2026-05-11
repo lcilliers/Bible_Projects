@@ -78,25 +78,32 @@ def load_subgroups(conn, code):
 
 
 def load_terms(conn, code):
+    """Post-M46: a term in N sub-groups produces N rows here (one per
+    sub-group it appears in). Callers that need a single answer per term
+    should de-dupe on (mti_id, subgroup_code) or treat the per-sub-group
+    duplication as expected."""
     return list(conn.execute(
         """
         SELECT mt.id AS mti_id, mt.strongs_number, mt.transliteration,
-               mt.gloss, mt.language, mt.cluster_subgroup_id,
+               mt.gloss, mt.language,
+               mts.cluster_subgroup_id,
                mt.anchor_note, mt.md_version,
                cs.subgroup_code, cs.label AS sg_label,
                ti.short_def_mounce, ti.lsj_entry, ti.meaning,
                ti.parsed_meaning_id, ti.occurrence_count,
                ti.occurrence_count_qualifier, ti.testament
           FROM mti_terms mt
-          LEFT JOIN cluster_subgroup cs ON cs.id=mt.cluster_subgroup_id
+          JOIN mti_term_subgroup mts ON mts.mti_term_id=mt.id
+          JOIN cluster_subgroup cs   ON cs.id=mts.cluster_subgroup_id
           LEFT JOIN wa_term_inventory ti
                  ON ti.strongs_number=mt.strongs_number
                 AND COALESCE(ti.delete_flagged,0)=0
                 AND COALESCE(ti.term_owner_type,'OWNER')='OWNER'
          WHERE mt.cluster_code=?
            AND COALESCE(mt.delete_flagged,0)=0
+           AND COALESCE(mts.delete_flagged,0)=0
            AND COALESCE(cs.delete_flagged,0)=0
-         ORDER BY mt.cluster_subgroup_id, mt.language, mt.strongs_number
+         ORDER BY cs.sort_order, mt.language, mt.strongs_number
         """, (code,)
     ))
 
@@ -144,6 +151,10 @@ def load_findings(conn, code):
 
 
 def load_anchors(conn, code):
+    """Post-M46: anchors are bucketed by vc.cluster_subgroup_id (the
+    verse-level routing field), not by the term's sub-group. A 'both'-DEC-3
+    anchor verse with two vc rows (M26-A1 + M26-A2) produces two rows here,
+    one under each sub-group."""
     return list(conn.execute(
         """
         SELECT vc.id AS vc_id, vc.verse_record_id, vc.group_id,
@@ -157,17 +168,18 @@ def load_anchors(conn, code):
                cs.subgroup_code, cs.label AS sg_label
           FROM verse_context vc
           JOIN verse_context_group vcg ON vcg.id=vc.group_id
-          JOIN mti_terms mt           ON mt.id=vcg.mti_term_id
+          JOIN mti_terms mt           ON mt.id=vc.mti_term_id
           JOIN wa_verse_records vr    ON vr.id=vc.verse_record_id
           JOIN books b                ON b.id=vr.book_id
-          LEFT JOIN cluster_subgroup cs ON cs.id=mt.cluster_subgroup_id
+          LEFT JOIN cluster_subgroup cs ON cs.id=vc.cluster_subgroup_id
          WHERE mt.cluster_code=?
            AND vc.is_anchor=1
            AND COALESCE(vc.delete_flagged,0)=0
            AND COALESCE(vcg.delete_flagged,0)=0
            AND COALESCE(mt.delete_flagged,0)=0
            AND COALESCE(cs.delete_flagged,0)=0
-         ORDER BY cs.subgroup_code, mt.strongs_number, vcg.group_code
+         ORDER BY cs.sort_order, cs.subgroup_code,
+                  mt.strongs_number, vcg.group_code
         """, (code,)
     ))
 
