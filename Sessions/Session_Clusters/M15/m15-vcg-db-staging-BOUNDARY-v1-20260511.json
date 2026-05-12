@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "BOUNDARY",
+    "source_input": "wa-m15-boundary-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T18:31:23Z",
+    "purpose": "DB-load staging for M15-BOUNDARY VCG cleanup.",
+    "needs_subgroup_creation": false,
+    "subgroup_to_create": null,
+    "totals": {
+      "vcgs_to_create": 1,
+      "verses_to_assign_to_vcgs": 1,
+      "verses_to_set_aside": 5,
+      "sum_check": 6
+    },
+    "anchor_status": "1/1 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-BOUNDARY-VCG01",
+      "label": "Boundary — reasoned disputation as inner-faculty engagement",
+      "context_description": "Jude 9: Michael contending with the devil in disputation about the body of Moses. The dialegō here is the form taken by contested engagement between spiritual beings — reasoned disputation as the mode of serious inner-faculty engagement even in angelic conflict. P-status: borderline.",
+      "cluster_subgroup_code": "BOUNDARY",
+      "mti_term_ids": [
+        1080
+      ],
+      "verse_count": 1,
+      "verses": [
+        {
+          "vr_id": 36282,
+          "reference": "Jude 9",
+          "strongs": "G1256",
+          "mti_term_id": 1080,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 36282,
+        "reference": "Jude 9",
+        "strongs": "G1256",
+        "translit": "dialegō",
+        "anchor_rationale": "Michael does not presume to pronounce judgment but engages in reasoned disputation (dialegō) — the form of serious inner-faculty engagement. Boundary case: the subject is angelic, and the phenomenon is at the edge of M15's scope."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Legal determination (diaginōskō, Acts); extended talking causing Eutychus to fall asleep (dialegō, borderline); name translation (methermēneuō); arbitrator role declined by Jesus (meristēs).",
+    "verse_count": 5,
+    "verses": [
+      {
+        "vr_id": 82324,
+        "reference": "Act 23:15",
+        "strongs": "G1231",
+        "mti_term_id": 1846,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 82325,
+        "reference": "Act 24:22",
+        "strongs": "G1231",
+        "mti_term_id": 1846,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 187436,
+        "reference": "Act 20:9",
+        "strongs": "G1256",
+        "mti_term_id": 1080,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 54444,
+        "reference": "Act 13:8",
+        "strongs": "G3177",
+        "mti_term_id": 973,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 160664,
+        "reference": "Luk 12:14",
+        "strongs": "G3312",
+        "mti_term_id": 5278,
+        "assignment_note": null
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}
