@@ -6,58 +6,36 @@
 
 ## What This Session Is
 
-Session C produces a single publication document for each word — a complete, reader-facing description of the word as a characteristic of the human inner life. It is written in plain, accessible language for an intelligent non-specialist reader. It draws directly from the word's data export (the complete JSON produced by Session A) and from the verse annotation and language annotation contributions provided by Session B.
+Session C produces a single publication document for each completed, reader-facing description of the cluster as a collection of characteristics of the human inner life. It is written in plain, accessible language for an intelligent non-specialist reader. It draws directly from the cluster's data export provided by Session B including analytic findings, verse annotations and language annotation contributions.
 
-Session C is the primary articulation layer of the programme. It does not summarise the technical analysis — it articulates what the word means, how it works, and where it connects, using the biblical evidence as its foundation. Session B subsequently deepens and corrects it. Session D findings will further inform it as cross-word patterns are established.
+Session C is the primary articulation layer of the programme. It does not summarise the technical analysis — it articulates what the cluster and the different sub groups in the cluster means, how it works, and where it connects, using the biblical evidence as its foundation.
 
-The document produced by Session C is a living document. It is updated to its annotated final form when Session B's verse and language annotations are incorporated. It is updated again when Session D establishes cross-word connections.
+The document produced by Session C is a living document reflecting the status of cluster data export at a particular point in time.
 
 ---
 
-## Pipeline Position
+## Cluster data
 
-```
-Session A  →  data extraction (complete JSON)
-Session C  →  primary word articulation (this session) — one document
-Session B  →  analytical audit — verse annotations and language annotations 
-               fed back into this document; database updated
-Session D  →  cross-word synthesis — findings fed back into this document; 
-               synergy publication layer produced separately
-```
+
+To be inserted by CC
+
 
 ---
 
 ## What to Attach
 
-**Session C v1 (initial document):**
-- This instruction file
-- The complete word data export from Session A: `wa-[nnn]-[word]-complete-[date].json`
-
-**Session C v2 (Session B update — Stage 3 of Session B):**
-- This instruction file
-- The Session B v3 clean extract: `wa-[nnn]-[word]-complete-[date]-r3.json`
-- The Session B observations log (highest-versioned file)
-- The Session B analytical brief
-- The existing word study: `wa-[nnn]-[word]-word-study-v1-[date].md`
-
-**Session C v3 (Session D update):**
-- This instruction file
-- The Session D findings document for this word
-- The existing word study: `wa-[nnn]-[word]-word-study-v2-[date].md`
-
-Do not attach sub-process documents or extract files beyond what the current version requires.
+CC to insert the name of the Cluster document
 
 ---
 
 ## Output File
 
-One Markdown file per word per version:
+One Markdown file per Cluster per version:
 
 | Version | Filename pattern | Example |
 |---|---|---|
-| v1 — initial | `wa-[nnn]-[word]-word-study-v1-[date].md` | `wa-068-grace-word-study-v1-2026-04-09.md` |
-| v2 — Session B update | `wa-[nnn]-[word]-word-study-v2-[date].md` | `wa-068-grace-word-study-v2-2026-04-10.md` |
-| v3 — Session D update | `wa-[nnn]-[word]-word-study-v3-[date].md` | `wa-068-grace-word-study-v3-[date].md` |
+| v1 — initial | `wa-[nnn]-Cluster-[shortname]-study-v1-[date].md` | `wa-M05-cluster-love-study-v1-2026-04-09.md` |
+
 
 All filenames lowercase. The previous version is retained on disk — do not overwrite.
 
@@ -65,9 +43,9 @@ All filenames lowercase. The previous version is retained on disk — do not ove
 
 ---
 
-## Reading the JSON Before Writing
+## Reading the Cluster Beport Before Writing
 
-Session C reads the JSON in two passes. Do not collapse these into a single read — the two-pass structure keeps memory focused and prevents loading detail that is not yet needed.
+Session C reads the data in multiple passes. Do not collapse these into a single read — the multi-pass structure keeps memory focused and prevents loading detail that is not yet needed.
 
 ---
 

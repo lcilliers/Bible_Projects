@@ -4,7 +4,7 @@ Extract the 189 tiered observation prompts (T0..T7) from
 `wa_obs_question_catalogue` into a markdown file.
 
 Output:
-  Workflow/Catalogue/wa-obs-catalogue-tiered-v{N}-{YYYYMMDD}.md
+  Workflow/Tiers/wa-obs-catalogue-tiered-v{N}-{YYYYMMDD}.md
 
 Structure: tier → component → numbered questions (prompt_seq).
 Read-only: never modifies the database.
@@ -20,7 +20,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 
 DB_PATH = os.path.join("database", "bible_research.db")
-OUT_DIR = os.path.join("Workflow", "Catalogue")
+OUT_DIR = os.path.join("Workflow", "Tiers")
 
 
 def now_iso() -> str:

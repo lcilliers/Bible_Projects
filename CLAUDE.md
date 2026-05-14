@@ -203,7 +203,8 @@ Documents in `Workflow/Instructions/`. **All operational cross-references use th
 | wa-registry-management-guide | Both | Registry structure, OWNER/XREF, dual status, clusters, pools (§7a) |
 | wa-sessionb-analysis-readiness | Both | Session B Stage 1: data audit + remediation. Hard gates: VC/DimReview/B-target |
 | wa-sessionb-analysis-output | Both | Session B Stage 2: 2a analysis · 2b Q&A + Type b patch · 2c analytic word output |
-| wa-sessionc-instruction | Claude AI | Session C: reader-facing word study (6 chapters, 3 lifecycle versions) |
+| wa-sessionc-instruction | Claude AI | *(superseded by cluster model — see wa-sessionc-cluster-overview)* Per-word Session C, retired 2026-05-12 |
+| wa-sessionc-cluster-overview | Both | Session C cluster publication: end-to-end process, shared style, 7 chapter instructions, appendices instruction, assembler. Entry point for cluster publication |
 | wa-sessiond-orientation | Both | Session D: pointer clustering, question formulation, evidence retrieval, analysis |
 | wa-dimensionreview-instruction | Both | Dimension review (Phase A/B/C) |
 | wa-versecontext-instruction | Both | Verse Context: batch construction, classification, validation, status advancement |

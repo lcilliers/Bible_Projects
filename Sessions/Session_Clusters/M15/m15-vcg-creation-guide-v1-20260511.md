@@ -1,3 +1,4 @@
+
 # Verse Context Group (VCG) creation — coherent guide
 
 **Compiled:** 2026-05-11

@@ -9,7 +9,7 @@ Programme-wide cluster overview report. One row per cluster, summarising:
   - cluster_finding count by status (synthesis / finding / silent / gap)
   - last_updated_date
 
-Output: Workflow/Programme/Program_reports/wa-cluster-overview-{date}.md
+Output: Workflow/Clusters/wa-cluster-overview-{date}.md
 """
 from __future__ import annotations
 
@@ -20,7 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 DB_PATH = os.path.join("database", "bible_research.db")
-OUT_DIR = os.path.join("Workflow", "Programme", "Program_reports")
+OUT_DIR = os.path.join("Workflow", "Clusters")
 
 
 def now_compact():
@@ -45,8 +45,8 @@ def main():
     cur = conn.cursor()
 
     clusters = list(cur.execute(
-        "SELECT cluster_code, description, gloss, status, bucket, version, "
-        "       last_updated_date "
+        "SELECT cluster_code, short_name, description, gloss, status, bucket, "
+        "       version, last_updated_date "
         "  FROM cluster ORDER BY cluster_code"
     ))
 
@@ -144,10 +144,10 @@ def main():
     lines.append("## Per-cluster detail")
     lines.append("")
     lines.append(
-        "| | Code | Description | Status | Terms (OT+NT) | Sub-grps | Verses | Anchors | Findings (s/f/g/syn) | Updated |"
+        "| | Code | Short | Description | Status | Terms (OT+NT) | Sub-grps | Verses | Anchors | Findings (s/f/g/syn) | Updated |"
     )
     lines.append(
-        "|---|---|---|---|---:|---:|---:|---:|---|---|"
+        "|---|---|---|---|---|---:|---:|---:|---:|---|---|"
     )
     for c in clusters:
         code = c["cluster_code"]
@@ -173,6 +173,7 @@ def main():
         lines.append(
             f"| {status_marker(c['status'])} "
             f"| **{code}** "
+            f"| {c['short_name'] or ''} "
             f"| {c['description'] or ''} "
             f"| {c['status']} "
             f"| {terms_str} "
@@ -183,6 +184,32 @@ def main():
             f"| {updated} |"
         )
     lines.append("")
+
+    # Per-cluster gloss listing (full term-gloss text for each cluster)
+    lines.append("## Cluster glosses (full term-gloss lists)")
+    lines.append("")
+    lines.append(
+        "The full `cluster.gloss` field for each cluster — the complete list of "
+        "primary terms (with parenthetical transliterations) covered by the cluster. "
+        "Intended as parseable input for downstream processes."
+    )
+    lines.append("")
+    for c in clusters:
+        code = c["cluster_code"]
+        short = c["short_name"] or ""
+        desc = c["description"] or ""
+        gloss = (c["gloss"] or "").strip()
+        header_tail = f" — {desc}" if desc else ""
+        header_short = f" ({short})" if short else ""
+        lines.append(f"### {code}{header_tail}{header_short}")
+        lines.append("")
+        if gloss:
+            lines.append(gloss)
+        else:
+            lines.append("_(no gloss recorded)_")
+        lines.append("")
+        lines.append("---")
+        lines.append("")
 
     # Footer key
     lines.append("## Notation")

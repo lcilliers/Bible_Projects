@@ -1,4 +1,5 @@
-"""_generate_cluster_comprehensive_v1_20260505.py — read-only.
+"""_generate_cluster_comprehensive_v1_20260505.py — read-only with one
+exception: the **session-open status transition** (see end of this docstring).
 
 Comprehensive M-cluster extract — exposes every database fact connected to
 each term in the cluster, plus registry-level / cross-cluster items that are
@@ -34,6 +35,17 @@ Registry / cluster-level (not yet linked to a specific term):
 
 Usage:
   python scripts/_generate_cluster_comprehensive_v1_20260505.py --m-cluster M06
+
+Session-open status transition (the documented exception to read-only):
+  When the report is generated for a cluster currently at
+  cluster.status='Not started', the script transitions the status to
+  'Data - In Progress' as part of the same invocation. A row-level JSON
+  backup is taken before the UPDATE. The transition is logged to stdout and
+  reflected in cluster.last_updated_date. This replaces the dir-001 status-
+  init directive (formerly required at session open per
+  wa-sessionb-cluster-instruction §4.1 v1_4); the transition is now inline
+  with first-data preparation rather than a separate ceremony. Idempotent:
+  if status is anything other than 'Not started', no write occurs.
 """
 from __future__ import annotations
 
@@ -173,6 +185,41 @@ def main() -> int:
         print(f"ERROR: cluster {args.m_cluster} not found.")
         return 1
     print(f"Cluster {args.m_cluster}: {cluster['description']}")
+
+    # --- 1b. Session-open status transition (documented exception to
+    # read-only; see module docstring). If status == 'Not started', flip to
+    # 'Data - In Progress' as part of first-data preparation. Idempotent:
+    # any other status is a noop.
+    if cluster["status"] == "Not started":
+        now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        backup_dir = os.path.join("backups", "row_backups")
+        os.makedirs(backup_dir, exist_ok=True)
+        backup_path = os.path.join(
+            backup_dir,
+            f"cluster_{args.m_cluster}_pre_status_init_"
+            f"{datetime.now().strftime('%Y%m%dT%H%M%S')}.json",
+        )
+        with open(backup_path, "w", encoding="utf-8") as fbk:
+            json.dump(
+                {
+                    "trigger": "_generate_cluster_comprehensive_v1 session-open transition",
+                    "timestamp": now_utc,
+                    "row": dict(cluster),
+                },
+                fbk, indent=2, ensure_ascii=False,
+            )
+        conn.execute(
+            "UPDATE cluster SET status = ?, last_updated_date = ? "
+            "WHERE cluster_code = ? AND status = ?",
+            ("Data - In Progress", now_utc, args.m_cluster, "Not started"),
+        )
+        conn.commit()
+        print(
+            f"  status: 'Not started' → 'Data - In Progress'  "
+            f"(backup: {backup_path})"
+        )
+    else:
+        print(f"  status: {cluster['status']!r}  (no transition)")
 
     # --- 2. Term metadata for cluster members
     # Post-M46: mti_terms.cluster_subgroup_id is gone — sub-group mapping
