@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-05-14T02:56:10Z",
+  "generated_at": "2026-05-15T04:05:14Z",
   "generator": "scripts/build_file_manifest.py",
-  "total_files": 2117,
-  "total_active": 538,
-  "total_archived": 1579,
+  "total_files": 2125,
+  "total_active": 543,
+  "total_archived": 1582,
   "files": [
     {
       "path": "Logs/FrameworkB-SessionLog-20260325.docx",
@@ -21486,6 +21486,51 @@
       "modified": "2026-05-08T16:29:55Z"
     },
     {
+      "path": "archive/patches/wa-cluster-M39-patch-vcnew-utreview-v1-20260514.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 19393,
+      "modified": "2026-05-14T03:57:25Z"
+    },
+    {
+      "path": "archive/patches/wa-cluster-M46-patch-vcnew-utreview-api-v1-20260514.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 70788,
+      "modified": "2026-05-14T14:44:05Z"
+    },
+    {
+      "path": "archive/patches/wa-cluster-M46-patch-vcnew-utreview-v1-20260514.json",
+      "category": "patch",
+      "type": "patch",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".json",
+      "archived": true,
+      "size_bytes": 18169,
+      "modified": "2026-05-14T09:10:10Z"
+    },
+    {
       "path": "archive/patches/wa-clusters-20260327.json",
       "category": "patch",
       "type": "patch",
@@ -24846,6 +24891,21 @@
       "modified": "2026-05-07T19:00:41Z"
     },
     {
+      "path": "outputs/markdown/cluster-instruction-streamlining-audit-v1-20260514.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 5576,
+      "modified": "2026-05-14T03:30:08Z"
+    },
+    {
       "path": "outputs/markdown/empty-registry-inspection-20260503.md",
       "category": "report",
       "type": "report",
@@ -24981,6 +25041,21 @@
       "modified": "2026-05-09T10:36:05Z"
     },
     {
+      "path": "outputs/markdown/m39-boundary-exit-investigation-v1-20260514.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 9505,
+      "modified": "2026-05-14T06:26:27Z"
+    },
+    {
       "path": "outputs/markdown/m39-subgroup-multi-term-design-v1-20260510.md",
       "category": "report",
       "type": "report",
@@ -24994,6 +25069,21 @@
       "archived": false,
       "size_bytes": 10848,
       "modified": "2026-05-10T05:42:04Z"
+    },
+    {
+      "path": "outputs/markdown/m46-session-a-extraction-brief-v1-20260514.md",
+      "category": "report",
+      "type": "report",
+      "registry": null,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": "1",
+      "date": "2026-05-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 4601,
+      "modified": "2026-05-14T13:54:02Z"
     },
     {
       "path": "outputs/markdown/manual-test-brief-briefing-20260504.md",
@@ -31729,6 +31819,36 @@
       "archived": false,
       "size_bytes": 9103,
       "modified": "2026-04-11T17:07:53Z"
+    },
+    {
+      "path": "research/discovery/215_wealth_step_data_20260514.json",
+      "category": "discovery",
+      "type": "discovery-json",
+      "registry": 215,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-05-14",
+      "ext": ".json",
+      "archived": false,
+      "size_bytes": 337493,
+      "modified": "2026-05-14T14:23:28Z"
+    },
+    {
+      "path": "research/discovery/215_wealth_step_data_20260514.md",
+      "category": "discovery",
+      "type": "discovery-summary",
+      "registry": 215,
+      "word": null,
+      "cluster": null,
+      "batch": null,
+      "version": null,
+      "date": "2026-05-14",
+      "ext": ".md",
+      "archived": false,
+      "size_bytes": 1609,
+      "modified": "2026-05-14T14:23:28Z"
     },
     {
       "path": "research/discovery/love_step_data_20260323.json",
