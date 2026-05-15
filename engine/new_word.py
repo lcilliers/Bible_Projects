@@ -432,8 +432,8 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                             transliteration, step_search_gloss, word_analysis_gloss,
                             occurrence_count, meaning, meaning_numbered,
                             lsj_entry, short_def_mounce, testament,
-                            causative_form_present, status_note)
-                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, ?)""",
+                            causative_form_present)
+                       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?)""",
                     (
                         ti_id, file_id, lang,
                         resolved, resolved,
@@ -446,7 +446,6 @@ def run_new_word(conn, registry_id: int, strongs_list: list[str],
                         vocab.get("lsj_entry") or None,
                         vocab.get("short_def_mounce") or None,
                         1 if vocab.get("causative_form_present") else 0,
-                        "; ".join(errors[-3:]) if errors else None,
                     ),
                 )
                 term_inv_ids[strongs] = ti_id

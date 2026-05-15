@@ -715,8 +715,8 @@ def run_bulk_gap_fill(conn,
                                     transliteration, step_search_gloss, word_analysis_gloss,
                                     occurrence_count, meaning, meaning_numbered,
                                     lsj_entry, short_def_mounce, testament,
-                                    causative_form_present, status_note)
-                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?, NULL)""",
+                                    causative_form_present)
+                               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, ?)""",
                             (
                                 ti_id, file_id, lang,
                                 resolved, resolved,

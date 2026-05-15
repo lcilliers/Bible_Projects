@@ -64,6 +64,14 @@ import sqlite3
 import sys
 from datetime import datetime, timezone
 
+# Force stdout/stderr to UTF-8 so Unicode characters in patch content
+# (em-dashes, arrows, Greek letters, etc.) don't crash print on Windows cp1252.
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.stderr.reconfigure(encoding="utf-8")
+except Exception:
+    pass
+
 DB_PATH      = os.path.join(os.path.dirname(__file__), "..", "database", "bible_research.db")
 ARCHIVE_DIR  = os.path.join(os.path.dirname(__file__), "..", "archive", "patches")
 

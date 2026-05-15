@@ -1,0 +1,335 @@
+{
+  "_meta": {
+    "document": "WA-M46-cc-instructions-v1-20260514",
+    "cluster": "M46",
+    "date": "2026-05-14",
+    "session_ref": "wa-obslog-M46-abundance-v1-20260514",
+    "source_assessments": [
+      "WA-M46-term-reallocation-v1-20260514",
+      "WA-M46-reconstitution-assessment-v1-20260514",
+      "WA-M46-impact-assessment-v1-20260514"
+    ],
+    "decisions_authorised": "D1 through D7 (D7A variant), all confirmed by researcher 2026-05-14",
+    "total_action_groups": 5,
+    "prerequisite": "All actions in groups 1-4 require regeneration of M46 comprehensive report after completion. Action group 5 (Session A extraction) is a separate programme-level pipeline task.",
+    "execution_order": "Groups must be executed in order 1 \u2192 2 \u2192 3 \u2192 4. Group 5 is independent and can be queued separately.",
+    "dry_run_required": true
+  },
+  "action_group_1": {
+    "title": "T2 \u2192 M46: Move 8 terms from T2 Supplementary to M46",
+    "rationale": "D2 confirmed. These terms carry wealth/richness/abundance vocabulary that belongs in the reconstituted M46 domain cluster. They are currently in T2 as supporting terms without characteristic assignment.",
+    "impact_on_T2": "8 terms removed from T2. T2 gloss field updated to remove these entries.",
+    "impact_on_M46": "8 terms added to M46. M46 term count increases from 5 to 13.",
+    "cc_operations": [
+      {
+        "op": "TERM_REBIND",
+        "strong": "H8082",
+        "translit": "sha.men",
+        "gloss": "rich",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "SHA.MAN root adjective: fat, rich, fertile. Neh 9:25 co-occurs with a.dan and sha.man. Key wealth-domain adjective."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "H8080",
+        "translit": "sha.man",
+        "gloss": "to grow fat",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "SHA.MAN root verb: to become fat/rich. Deu 32:15 Jeshurun grew fat and kicked \u2014 prototypical prosperity \u2192 apostasy sequence. Neh 9:25."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "H4924",
+        "translit": "mish.man",
+        "gloss": "fatness",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "SHA.MAN root abstract noun: fatness, rich things. Isa 17:4; Dan 11:24; Gen 27:28,39. Names material richness as a condition."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "G842",
+        "translit": "autark\u0113s",
+        "gloss": "self-sufficient",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "Greek adjective: self-sufficient, content. Phil 4:11 root form. The inner posture of sufficiency regardless of material circumstance. Pairs with autarkeia (G841, shared from M15)."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "H5727",
+        "translit": "a.dan",
+        "gloss": "to luxuriate",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "EDEN root verb: to live in luxury, take delight in abundance. Neh 9:25 \u2014 ate, were filled, grew fat, and delighted (a.dan) in God's goodness. Inner engagement with material abundance."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "H7961",
+        "translit": "shal.a.nan",
+        "gloss": "at ease",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "SHA.A.NAN root: at ease, complacent, careless \u2014 specifically the complacency of the materially secure. Isa 32:9,11; Amos 6:1 ('woe to those who are at ease in Zion'); Jer 49:31; Zec 1:15. VERIFY: CC to confirm Strong's H7961 matches T2 mti record with translit shal.a.nan before executing."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "H2630",
+        "translit": "cha.san",
+        "gloss": "to hoard",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "CHOSEN root verb: to store up, hoard, lay in store. Same root family as H2633 cho.sen (wealth, already in M46). Isa 23:18; Pro 2:7. Names the inner act of accumulation and hoarding."
+      },
+      {
+        "op": "TERM_REBIND",
+        "strong": "G3045",
+        "translit": "liparos",
+        "gloss": "rich",
+        "from_cluster": "T2",
+        "to_cluster": "M46",
+        "note": "Greek adjective: oily, rich, luxurious. Rev 18:14 only \u2014 the luxurious goods of Babylon lost in judgment. NT wealth-domain vocabulary. Low occurrence but thematically central to M46's apocalyptic register."
+      }
+    ]
+  },
+  "action_group_2": {
+    "title": "M46 \u2192 M22: Move H3520B ke.vud.dah (mti_id=1870)",
+    "rationale": "D6 confirmed. ke.vud.dah is extracted_thin (1 occurrence, 2 verses), origin registry R015 boastfulness (C09), and its KAVED root (glory/honour/weight) belongs in M22 Praise/Thanksgiving/Glory rather than M46 Abundance.",
+    "impact_on_M46": "1 term removed (ke.vud.dah). M46 term count: 13 \u2192 12. VCG 3422 (1870-001) migrates to M22.",
+    "impact_on_M22": "1 term added (ke.vud.dah, mti_id=1870). 1 VCG added (3422, 1870-001). 2 verses added (Eze 23:41 vc_id=143931, Psa 45:13 vc_id=143932). M22 status unchanged (Not started \u2014 safe to add terms).",
+    "cc_operations": [
+      {
+        "op": "TERM_REBIND",
+        "strong": "H3520B",
+        "translit": "ke.vud.dah",
+        "mti_id": 1870,
+        "gloss": "riches",
+        "from_cluster": "M46",
+        "to_cluster": "M22",
+        "note": "KAVED root (ka.vod, glory/honour/weight family). Material richness or splendour as the setting in which inner spiritual orientation is enacted. 2 verses: Eze 23:41 (stately couch \u2014 idolatrous context), Psa 45:13 (glorious princess \u2014 royal splendour). Extracted_thin; origin R015 boastfulness (C09)."
+      },
+      {
+        "op": "VCG_MIGRATE",
+        "vcg_id": 3422,
+        "vcg_code": "1870-001",
+        "vcg_description": "Term names material richness or splendour as the setting in which inner spiritual orientation \u2014 faithfulness or its corruption toward God \u2014 is enacted or exposed",
+        "from_cluster": "M46",
+        "to_cluster": "M22",
+        "verses_in_group": [
+          {
+            "vc_id": 143931,
+            "reference": "Eze 23:41",
+            "vr_id": 143931
+          },
+          {
+            "vc_id": 143932,
+            "reference": "Psa 45:13",
+            "vr_id": 143932
+          }
+        ]
+      }
+    ]
+  },
+  "action_group_3": {
+    "title": "M46 internal: Move H1878 da.shen group 111-002 to M39 (D7A)",
+    "rationale": "D7A confirmed. Group 111-002 (VCG id=51) carries anointing vocabulary (Psa 23:5) belonging to the M39 Blessing/Favour/Grace register. Moving 1 VCG and 1 verse to M39. H1878 da.shen itself stays in M46 (group 111-001 retained). M39 impact: +1 VCG, +1 verse. No M39 findings disrupted.",
+    "impact_on_M46": "VCG 51 (111-002) migrates out. H1878 da.shen retains group 111-001 in M46. 1 verse (Psa 23:5) removed from M46 verse pool.",
+    "impact_on_M39": "1 VCG added (111-002). 1 verse added (Psa 23:5). No existing findings disrupted. M39 Analysis Completed status: add addendum note only.",
+    "cc_operations": [
+      {
+        "op": "VCG_MIGRATE",
+        "vcg_id": 51,
+        "vcg_code": "111-002",
+        "vcg_description": "Term names the anointing that signals divine presence and favour \u2014 the saturation of the head with oil as the emblem of divine blessing upon the inner person",
+        "from_cluster": "M46",
+        "to_cluster": "M39",
+        "term_stays_in": "M46",
+        "note": "H1878 da.shen (mti_id=111) remains in M46 as the owner term. Only this VCG and its one verse migrate. The term is split across M46 (111-001, prosperity) and M39 (111-002, anointing) \u2014 this is a legitimate cross-cluster VCG split.",
+        "verses_in_group": [
+          {
+            "vc_id": 58191,
+            "reference": "Psa 23:5",
+            "vr_id": 58191,
+            "verse_text": "You prepare a table before me in the presence of my enemies; you anoint my head with oil; my cup overflows."
+          }
+        ]
+      }
+    ]
+  },
+  "action_group_4": {
+    "title": "autarkeia (G841) shared term: Add M46 verse_context rows (D3)",
+    "rationale": "D3 confirmed. autarkeia (G841) stays in M15 Wisdom (Analysis Completed \u2014 no M15 records modified). Two specific verses whose inner-being content sits in the wealth domain are additionally registered in M46 via new verse_context rows. This implements the shared-term mechanism: the same term appears in two clusters for different verse-level reasons.",
+    "impact_on_M15": "Zero \u2014 no M15 records modified.",
+    "impact_on_M46": "2 new verse_context rows added for autarkeia (G841) pointing to M46. Term appears in both M15 and M46.",
+    "cc_operations": [
+      {
+        "op": "VCNEW_SHARED",
+        "strong": "G841",
+        "translit": "autarkeia",
+        "gloss": "self-sufficiency",
+        "primary_cluster": "M15",
+        "shared_cluster": "M46",
+        "note": "DO NOT modify any M15 record. Add new verse_context rows for M46 only. CC to resolve mti_id for G841 from mti_terms table before executing.",
+        "verses_to_add_in_M46": [
+          {
+            "reference": "1 Tim 6:6",
+            "is_relevant": 1,
+            "is_anchor": 0,
+            "group_id": null,
+            "rationale": "Godliness with contentment (autarkeia) is great gain \u2014 the wealth-domain framing ('great gain') places this verse in M46; autarkeia names the inner posture of sufficiency that constitutes true wealth. Distinct from M15 dimension (wisdom/virtue)."
+          },
+          {
+            "reference": "2 Cor 9:8",
+            "is_relevant": 1,
+            "is_anchor": 0,
+            "group_id": null,
+            "rationale": "Having all sufficiency (autarkeia) in all things so that you may abound in every good work \u2014 material sufficiency enabling generosity; the inner-being response to material provision. Distinct from M15 dimension (wisdom/sufficiency as virtue)."
+          }
+        ]
+      }
+    ]
+  },
+  "action_group_5": {
+    "title": "Session A extraction brief: 8 new terms for M46 (D5)",
+    "rationale": "D5 confirmed. These terms were not excluded intentionally from the programme \u2014 they were simply not identified as relevant until now. They represent the primary NT and OT vocabulary for the state of being rich/poor and the condition of wealth, which is the core domain of the reconstituted M46. Session A extraction pipeline required before these terms can be placed in M46.",
+    "pipeline": "Session A extraction (STEP Bible) \u2192 mti_terms registration \u2192 verse extraction \u2192 M46 assignment",
+    "priority_tier_1": {
+      "note": "HIGH priority \u2014 core vocabulary of the M46 wealth domain. Substantial occurrence counts. Theologically central.",
+      "terms": [
+        {
+          "strong": "G4145",
+          "translit": "plousios",
+          "gloss": "rich",
+          "language": "Greek",
+          "occurrences_approx": 28,
+          "key_verses": [
+            "Rev 3:17",
+            "Luke 12:16",
+            "Luke 18:23",
+            "Jas 2:6",
+            "1 Tim 6:17",
+            "2 Cor 8:9"
+          ],
+          "inner_being_significance": "Names the state of being materially wealthy. Rev 3:17 Laodicean church ('I am rich') is a primary inner-being distortion case \u2014 self-assessed richness masking spiritual poverty. The rich young ruler (Luke 18:23) is a portrait of wealth as inner-being obstacle."
+        },
+        {
+          "strong": "G4149",
+          "translit": "ploutos",
+          "gloss": "wealth, riches",
+          "language": "Greek",
+          "occurrences_approx": 22,
+          "key_verses": [
+            "Rom 11:33",
+            "Eph 1:18",
+            "Eph 3:8",
+            "Col 1:27",
+            "Rev 5:12",
+            "Jas 5:2"
+          ],
+          "inner_being_significance": "Names material and spiritual wealth as a quality. Notably used of divine riches (Rom 11:33 'riches of his wisdom and knowledge') \u2014 the term operates across material and spiritual registers. Jas 5:2 'your riches have rotted' \u2014 wealth as morally corruptible possession."
+        },
+        {
+          "strong": "G4147",
+          "translit": "plout\u0113\u014d",
+          "gloss": "to be rich, to become rich",
+          "language": "Greek",
+          "occurrences_approx": 12,
+          "key_verses": [
+            "Luke 12:21",
+            "1 Tim 6:9",
+            "1 Tim 6:18",
+            "Rev 3:17",
+            "Rev 18:3"
+          ],
+          "inner_being_significance": "Luke 12:21 'not rich toward God' \u2014 the contrast between material wealth-accumulation and inner-being richness toward God. 1 Tim 6:9 'those who desire to be rich fall into temptation' \u2014 the desire to become rich as inner-being peril."
+        },
+        {
+          "strong": "G4148",
+          "translit": "ploutiz\u014d",
+          "gloss": "to make rich, to enrich",
+          "language": "Greek",
+          "occurrences_approx": 3,
+          "key_verses": [
+            "2 Cor 6:10",
+            "2 Cor 8:9",
+            "1 Cor 1:5"
+          ],
+          "inner_being_significance": "2 Cor 8:9 'he became poor so that you by his poverty might become rich' \u2014 the Christological wealth transfer; the richest inner-being statement about poverty and wealth in the NT. 2 Cor 6:10 'as poor yet making many rich' \u2014 the paradox of apostolic poverty producing inner wealth."
+        },
+        {
+          "strong": "G4434",
+          "translit": "pt\u014dchos",
+          "gloss": "poor, destitute",
+          "language": "Greek",
+          "occurrences_approx": 34,
+          "key_verses": [
+            "Matt 5:3",
+            "Luke 4:18",
+            "Jas 2:2-6",
+            "2 Cor 8:9",
+            "Gal 4:9"
+          ],
+          "inner_being_significance": "The counterpart to plousios \u2014 the rich/poor contrast pair. Matt 5:3 'poor in spirit' extends pt\u014dchos into the inner-being register explicitly. Luke 4:18 'good news to the poor' \u2014 the poor as the primary recipients of the gospel. Jas 2:2-6 \u2014 the moral distortion of treating the poor with contempt. Essential to M46 as the domain of wealth also defines the domain of poverty."
+        }
+      ]
+    },
+    "priority_tier_2": {
+      "note": "MEDIUM priority \u2014 OT core vocabulary. High co-occurrence with existing M46 terms.",
+      "terms": [
+        {
+          "strong": "H6239",
+          "translit": "o.sher",
+          "gloss": "riches, wealth",
+          "language": "Hebrew",
+          "occurrences_approx": 37,
+          "key_verses": [
+            "Pro 3:16",
+            "Pro 8:18",
+            "Pro 11:28",
+            "Pro 13:8",
+            "Pro 22:4",
+            "Ecc 4:8",
+            "Ecc 5:13-14"
+          ],
+          "inner_being_significance": "Pro 8:18 already in M46 hon group \u2014 'riches and honor are with me, enduring wealth (o.sher) and righteousness' \u2014 o.sher co-occurs directly with hon in Wisdom's speech. High cross-term co-occurrence with existing M46 terms. The primary OT noun for the state of material wealth."
+        },
+        {
+          "strong": "H6223",
+          "translit": "a.shir",
+          "gloss": "rich person",
+          "language": "Hebrew",
+          "occurrences_approx": 23,
+          "key_verses": [
+            "Pro 10:15",
+            "Pro 14:20",
+            "Pro 18:11",
+            "Pro 22:2",
+            "Pro 28:6",
+            "Ecc 5:12"
+          ],
+          "inner_being_significance": "The rich person as a social and moral category in Proverbs and Ecclesiastes. Pro 10:15 already in M46 hon group \u2014 'a rich man's wealth is his strong city'; a.shir co-occurs with hon in that verse. Names the person defined by wealth and the inner-being dynamics that follow."
+        },
+        {
+          "strong": "H6238",
+          "translit": "a.shar",
+          "gloss": "to become rich",
+          "language": "Hebrew",
+          "occurrences_approx": 17,
+          "key_verses": [
+            "Pro 10:4",
+            "Pro 13:7",
+            "Pro 21:17",
+            "Pro 23:4",
+            "Pro 28:20",
+            "Hos 12:8"
+          ],
+          "inner_being_significance": "The verb of becoming rich. Hos 12:8 'Ephraim has said, Ah, but I am rich, I have found wealth for myself' \u2014 the inner self-declaration of wealth as spiritual delusion. Pro 23:4 'do not toil to acquire wealth; be discerning enough to desist' \u2014 the wisdom-shaped restraint on the drive to become rich."
+        }
+      ]
+    },
+    "extraction_note": "CC to initiate Session A pipeline for all 8 terms. After extraction and verse registration, all terms are assigned to M46 as primary cluster. The extraction gap is NOT a programme error \u2014 these terms were simply not yet assessed. Standard Session A workflow applies."
+  }
+}

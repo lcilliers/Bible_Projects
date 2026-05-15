@@ -1,0 +1,2562 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_name": "wa-cluster-M46-patch-vcnew-utreview-api-v1-20260514",
+    "cluster": "M46",
+    "session_ref": "M46 Phase 2 UT review via Claude API",
+    "date": "20260514",
+    "terms_covered": [
+      4702,
+      7577,
+      7578,
+      7579,
+      7580,
+      7581,
+      7582,
+      7583,
+      7010,
+      4696,
+      7584,
+      7585,
+      7586,
+      413,
+      4697,
+      4695
+    ],
+    "input_versions": {
+      "4702": 1,
+      "7577": 1,
+      "7578": 1,
+      "7579": 1,
+      "7580": 1,
+      "7581": 1,
+      "7582": 1,
+      "7583": 1,
+      "7010": 2,
+      "4696": 1,
+      "7584": 1,
+      "7585": 1,
+      "7586": 1,
+      "413": 1,
+      "4697": 1,
+      "4695": 1
+    },
+    "operation_count": 188,
+    "source": "Claude API classification"
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139398,
+        "mti_term_id": 4702,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237872,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237873,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237874,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Narrative identification of a person as wealthy with no inner-being engagement — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237870,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237869,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237859,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237860,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social-category reference to wealthy neighbors in a hospitality instruction with no inner-being wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237861,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237862,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237863,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237864,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237865,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237866,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237868,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237852,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237853,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use of 'rich' describing divine mercy as an attribute — no material wealth or inner human orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237851,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237854,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237855,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237856,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237857,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237858,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237876,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237877,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237878,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social-status catalogue listing the rich alongside kings and generals with no inner-being wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237875,
+        "mti_term_id": 7577,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social-category pairing of rich/poor in a mark-of-the-beast list with no inner-being wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237881,
+        "mti_term_id": 7578,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Adverbial intensifier for spiritual indwelling of Christ's word — no material wealth or inner-being wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237879,
+        "mti_term_id": 7578,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237882,
+        "mti_term_id": 7578,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Adverbial modifier for Spirit's outpouring in regeneration context — no wealth/poverty inner-being orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237880,
+        "mti_term_id": 7578,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Adverbial modifier for eschatological kingdom entry — spiritual/eschatological context with no material wealth or inner-being wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237887,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237888,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237894,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237883,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237886,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237885,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237884,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237892,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237893,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237891,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Commercial enrichment through trade with Babylon — literal economic narrative with no inner orientation or constitutional engagement — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237889,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Commercial traders lamenting economic loss — literal material narrative with no inner orientation, trust, or constitutional wealth posture — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237890,
+        "mti_term_id": 7579,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Maritime merchants lamenting commercial loss from Babylon's fall — purely economic-narrative context with no inner orientation or constitutional wealth posture — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237895,
+        "mti_term_id": 7580,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical enrichment in spiritual gifts (speech, knowledge) — no inner orientation toward material wealth or poverty — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237896,
+        "mti_term_id": 7580,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237897,
+        "mti_term_id": 7580,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237911,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237910,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237909,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237917,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use describing God's divine attributes (kindness, forbearance), not material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237918,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use describing the abundance of God's glory — no material wealth or inner posture toward wealth in view — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237915,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for spiritual/salvific blessing to the Gentiles — no material wealth or inner posture toward it in view — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237916,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Doxological metaphor for the depth of God's wisdom and knowledge — no material wealth or inner posture toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237899,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237903,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the abundance of divine grace in redemption — no material wealth or inner posture toward wealth in view — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237902,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the eschatological inheritance God gives to saints — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237904,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the immeasurable abundance of divine grace toward believers — no material wealth or inner posture in view — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237906,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the inexhaustible spiritual content of Christ proclaimed in the gospel — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237905,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the abundance of God's glory as divine resource for strengthening — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237912,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the abundance of God's glory as the measure of divine provision — no inner posture toward material wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237900,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the glorious content of the gospel mystery — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237901,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use for the fullness of spiritual understanding and assurance — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237898,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237907,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237908,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237914,
+        "mti_term_id": 7581,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Doxological ascription of divine attributes to the Lamb in heavenly worship — no material wealth or inner posture toward it — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237919,
+        "mti_term_id": 7582,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237950,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237946,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237947,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237949,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Incidental mention of the poor as recipients of alms in a narrative dispute — no inner-being engagement with wealth/poverty orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237948,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Pragmatic observation about the poor's ongoing presence used to justify an action — no inner-being content regarding wealth or poverty orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237941,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237942,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237943,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237944,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Incidental mention of the poor as alms recipients in a narrative dispute — no inner-being orientation toward wealth or poverty developed — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237945,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Pragmatic situational comment about the poor's ongoing presence — no inner-being content regarding wealth or poverty orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237938,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237939,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237940,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237931,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237932,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237933,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237934,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237935,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237936,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237937,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237927,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Passing mention of the poor as alms recipients in a narrative dispute — no inner-being content regarding wealth or poverty orientation developed — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237928,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237929,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Pragmatic situational comment about the poor's ongoing presence — no inner-being orientation toward wealth or poverty developed — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237930,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Incidental narrative surmise about almsgiving instruction — no inner-being content regarding wealth or poverty orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237953,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Reports a practical collection for the poor as an ecclesial action — no inner-being engagement with wealth or poverty orientation developed — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237920,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237921,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Reports a practical agreement to remember the poor as an ecclesial commitment — no inner-being content regarding wealth or poverty orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237922,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Metaphorical use of ptōchos to describe weak spiritual principles — no engagement with material wealth/poverty or inner orientation toward possessions — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237923,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237924,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237925,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237926,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237952,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237951,
+        "mti_term_id": 7583,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Demographic catalogue of social groups marked by the beast — rich/poor used as social categories with no inner-being content regarding wealth orientation — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219943,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Legal restitution context — material goods as penalty payment, no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139383,
+        "mti_term_id": 4696,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Physical descriptor of strongest warriors in a judgment narrative — no inner orientation toward wealth or abundance — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139381,
+        "mti_term_id": 4696,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Physical descriptor of warriors in a military-judgment context — no inner orientation toward wealth or material abundance — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139382,
+        "mti_term_id": 4696,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Bodily fatness metaphor for national glory declining — physical/national imagery with no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139380,
+        "mti_term_id": 4696,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Geographic descriptor of fertile/wealthy provinces in a military conquest narrative — no inner orientation toward wealth or prosperity — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237960,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Legal/cultic regulation on equal offering amounts — no inner orientation toward wealth or poverty — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237976,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social/narrative reference to wealth status as marriage criterion — no inner posture toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237956,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237963,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237974,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social/political tribute context — wealthy people as gift-bringers to royalty, no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237965,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237966,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237967,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237968,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237970,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237971,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237969,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237973,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237972,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237959,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237958,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Social/political inversion commentary — rich seated low as social disorder — no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237957,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Practical social warning about cursing the powerful — wealth as social power category only, no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237961,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Prophetic burial narrative — 'rich man' as social identifier for grave location, no inner orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237962,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237964,
+        "mti_term_id": 7584,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237981,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237978,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237977,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Royal reward promise in military narrative context — no inner orientation toward wealth or poverty engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237984,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237991,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237992,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Agricultural/earth fertility context — enrichment of the land by rain and river, not inner-being orientation toward material wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237986,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237985,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237987,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237988,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237989,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237990,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237983,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237980,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Commercial trade and geopolitical enrichment narrative — descriptive of economic transactions between nations, no inner-being orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237979,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Apocalyptic political prophecy describing comparative national wealth and military power — no inner-being orientation toward wealth — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237982,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237993,
+        "mti_term_id": 7585,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238015,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Narrative dispute over transferred material property — no inner orientation toward wealth or poverty — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-145",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237999,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Material reward promised for military deed — literal-external narrative with no inner-being engagement — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-146",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237997,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-147",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237998,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-148",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237996,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Historical comparative statement of material wealth — no inner-being orientation or engagement — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-149",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237994,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-150",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 237995,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Biographical summary listing material blessings at death — no inner-being posture or orientation engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-151",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238000,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-152",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238001,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-153",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238005,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Historical comparative statement of material wealth — no inner-being orientation or engagement — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-154",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238002,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "External narrative report of material prosperity as political outcome — no inner orientation or trust engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-155",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238003,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Background narrative statement of material wealth prior to political event — no inner-being orientation engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-156",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238004,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Historical inventory of accumulated material wealth — no inner-being posture or orientation engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-157",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238014,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-158",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238028,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-159",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238029,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-160",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238027,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-161",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238024,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-162",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238026,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-163",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238018,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-164",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238019,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-165",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238020,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-166",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238021,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-167",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238022,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-168",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238023,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-169",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238025,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-170",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238007,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-171",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238008,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-172",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238009,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-173",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238010,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-174",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238011,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-175",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238012,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "General wisdom observation that riches do not accrue to the intelligent by merit — no inner orientation, trust, or disposition toward wealth engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-176",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238017,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-177",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238016,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-178",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 238006,
+        "mti_term_id": 7586,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Historical-prophetic narrative of a king's political-military power from wealth — no inner orientation, trust, or disposition toward riches engaged — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-179",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 56061,
+        "mti_term_id": 413,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Describes the city of Jerusalem as an undisturbed habitation — civic/physical security with no inner orientation toward wealth, poverty, or material abundance — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-180",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139386,
+        "mti_term_id": 4697,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-181",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139373,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Physical food richness in tribal blessing oracle — no inner orientation toward wealth or poverty. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-182",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139379,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Land fertility assessment in military reconnaissance context — no inner orientation toward wealth. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-183",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139376,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Physical description of soldiers as strong/robust — no wealth or inner-being register. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-184",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139370,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Fertile pasture land description in settlement narrative — no inner orientation toward wealth. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-185",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139375,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Agricultural abundance in restoration oracle — physical produce description, no inner orientation toward wealth. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-186",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139371,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Rich pasture in pastoral/shepherd allegory — figurative but no inner-being wealth orientation engaged. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-187",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139372,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "Fat/strong sheep in flock allegory denoting oppressive class — allegorical use without inner wealth-orientation content. — outside M46 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-188",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139374,
+        "mti_term_id": 4695,
+        "group_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    }
+  ]
+}
