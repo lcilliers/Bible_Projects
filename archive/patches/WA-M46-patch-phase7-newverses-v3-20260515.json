@@ -1,0 +1,70 @@
+{
+  "_patch_meta": {
+    "patch_id": "WA-M46-patch-phase7-newverses-v3-20260515",
+    "patch_type": "VCNEW",
+    "cluster_code": "M46",
+    "source_report": "wa-cluster-M46-comprehensive-v12-20260515",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v1_13-20260514.md",
+    "companion_to": "WA-M46-patch-phase7-routing-v2-20260515",
+    "date": "2026-05-15T04:51:38Z",
+    "description": "VCNEW inserts for 2 sha.men adj verses not previously in verse_context. Companion to WA-M46-patch-phase7-routing-v2-20260515 (VCREVISE).",
+    "terms_covered": [
+      4695
+    ],
+    "input_versions": {
+      "4695": 2
+    },
+    "op_count": 2,
+    "ai_input_intent_summary": {
+      "from_patch": "WA-M46-patch-phase7-routing-v1-20260515",
+      "ops_split_out": [
+        {
+          "ref": "Neh 9:25",
+          "vr_id": 139377
+        },
+        {
+          "ref": "Neh 9:35",
+          "vr_id": 139378
+        }
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139377,
+        "mti_term_id": 4695,
+        "group_id": 3723,
+        "cluster_subgroup_id": 45,
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_reference": "Neh 9:25",
+      "_routing_basis": "Rich land → ate → fat → delighted then turned — sha.men adj names the ambient condition before apostasy"
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 139378,
+        "mti_term_id": 4695,
+        "group_id": 3723,
+        "cluster_subgroup_id": 45,
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_reference": "Neh 9:35",
+      "_routing_basis": "Rich land God gave — context of disobedience; sha.men names the provision within which faithfulness was owed"
+    }
+  ]
+}

@@ -1,0 +1,2029 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCVERSE+VCREVISE",
+    "patch_id": "WA-M46-patch-phase67-routing-v1-20260514",
+    "cluster_code": "M46",
+    "session_ref": "wa-M46-phase3-obslog-v1-20260514",
+    "source_report": "wa-cluster-M46-comprehensive-v10-20260514",
+    "instruction_version": "wa-sessionb-cluster-instruction-v1_12-20260514",
+    "date": "2026-05-14",
+    "description": "Phase 6 anchor selection + Phase 7 verse routing. Routes all P-status and G-status verses to M46-A, M46-B, or M46-C. Sets is_anchor=1 for 4 anchor verses (2 per A and B, 1 for C primary + 1 secondary). G-status verses use VCREVISE to add cluster_subgroup_id without disturbing existing group_id. P-status and UT verses use VCVERSE to route to sub-group.",
+    "anchors": {
+      "M46-A": [
+        "Rev 3:17 (plousios, vc_id=64282)",
+        "Isa 6:10 (sha.men verb, vc_id=139385)"
+      ],
+      "M46-B": [
+        "Pro 13:4 (da.shen, vc_id=1135)",
+        "Pro 15:6 (cho.sen, vc_id=12790)"
+      ],
+      "M46-C": [
+        "2Cor 8:9 (pt\u014dcheu\u014d, vc_id=237919)",
+        "Phil 4:11 (autark\u0113s, vc_id=148148)"
+      ]
+    },
+    "op_count": 197,
+    "terms_covered": [
+      7577,
+      7579,
+      7580,
+      413,
+      7582,
+      7581,
+      7584,
+      7585,
+      7586,
+      4898,
+      7583,
+      681,
+      7109,
+      4695,
+      4696,
+      4697,
+      4702,
+      7010,
+      111,
+      1142,
+      3836
+    ],
+    "notes": [
+      "G3045 liparos (mti_id=4702) has no sub-group assignment in DB (H6 warning). Add mti_term_subgroup row: M46-A.",
+      "sha.a.nan 413-002 verses need separate identification from \u00a73 detail \u2014 routed to M46-C; CC to verify which vc_ids carry group_id=1862.",
+      "9 UT borderline verses (from Phase 2) remain unrouted pending researcher decision \u2014 not included in this patch.",
+      "Several duplicate vc_ids may exist where both the 'old' vc_id and a 'new' vc_id reference the same verse/term \u2014 CC to deduplicate before applying.",
+      "Pro 6:31 hon was revised to SA in Phase 2; Pro 19:14 hon vc_id=219934 is P \u2014 included in routing."
+    ]
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "VCVERSE",
+      "vr_id": 139398,
+      "mti_id": 4702,
+      "reference": "Rev 18:14",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "liparos names luxurious goods for which the soul (psuch\u0113) longed; material richness as the object of corrupted inner desire in Babylon's judgment context."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "VCVERSE",
+      "vr_id": 40846,
+      "mti_id": 1142,
+      "reference": "Job 11:2",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov names the multitude of words \u2014 verbal excess as inner-being phenomenon; the talkative person whose words demand moral assessment."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "VCVERSE",
+      "vr_id": 40831,
+      "mti_id": 1142,
+      "reference": "Hos 9:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov names the greatness/magnitude of iniquity and hatred \u2014 the weight of inner moral distortion that occasions divine punishment."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "VCVERSE",
+      "vr_id": 1132,
+      "mti_id": 111,
+      "reference": "Deu 31:20",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (grown fat) names the condition of material satiation that produces inner turning from God \u2014 the prosperity-to-apostasy sequence."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "VCVERSE",
+      "vr_id": 64214,
+      "mti_id": 111,
+      "reference": "Pro 15:30",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (refreshes) names the inner-physical renewal produced by good news \u2014 the ordered reception of abundance (good news) refreshing the deep frame of the person."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "VCVERSE",
+      "vr_id": 238028,
+      "mti_id": 7586,
+      "reference": "Psa 49:6",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'those who trust in their wealth and boast of the abundance of their riches' \u2014 riches as object of misplaced trust and boasting."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "VCVERSE",
+      "vr_id": 238029,
+      "mti_id": 7586,
+      "reference": "Psa 52:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: the man 'trusted in the abundance of his riches and sought refuge in his own destruction' \u2014 riches replacing God as refuge."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "VCVERSE",
+      "vr_id": 238018,
+      "mti_id": 7586,
+      "reference": "Pro 11:16",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: violent men get riches \u2014 the moral character (violence) that produces wealth; wealth revealing the inner person."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "VCVERSE",
+      "vr_id": 238019,
+      "mti_id": 7586,
+      "reference": "Pro 11:28",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'whoever trusts in his riches will fall' \u2014 riches as the object of misplaced trust producing the fall."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "VCVERSE",
+      "vr_id": 238024,
+      "mti_id": 7586,
+      "reference": "Pro 3:16",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: wisdom's left hand holds riches and honor \u2014 wealth as the gift of Wisdom; wealth ordered through character."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "VCVERSE",
+      "vr_id": 238026,
+      "mti_id": 7586,
+      "reference": "Pro 8:18",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'riches and honor are with me, enduring wealth and righteousness' \u2014 Wisdom claiming riches and righteousness as unified; ordered wealth through Wisdom."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "VCVERSE",
+      "vr_id": 238027,
+      "mti_id": 7586,
+      "reference": "Psa 112:3",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'wealth and riches are in his house, and his righteousness endures forever' \u2014 the righteous person's wealth paired with enduring righteousness."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "VCVERSE",
+      "vr_id": 237997,
+      "mti_id": 7586,
+      "reference": "1Ki 3:11",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: Solomon chose not to ask for riches \u2014 the king who subordinated wealth to wisdom; wealth as the test of inner priority."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "VCVERSE",
+      "vr_id": 237998,
+      "mti_id": 7586,
+      "reference": "1Ki 3:13",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: God gives riches as gift to one who chose wisdom \u2014 ordered wealth as divine gift following right inner priority."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "VCVERSE",
+      "vr_id": 238000,
+      "mti_id": 7586,
+      "reference": "2Ch 1:11",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: Solomon's heart did not ask for possessions or wealth but for wisdom \u2014 the inner priority that reveals character."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "VCVERSE",
+      "vr_id": 238001,
+      "mti_id": 7586,
+      "reference": "2Ch 1:12",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: riches given as gift after wisdom was chosen \u2014 wealth as divine gift following right inner orientation."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "VCVERSE",
+      "vr_id": 237994,
+      "mti_id": 7586,
+      "reference": "1Ch 29:12",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'both riches and honor come from you, and you rule over all' \u2014 riches as divine gift acknowledging God's sovereignty over material provision."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "VCVERSE",
+      "vr_id": 238020,
+      "mti_id": 7586,
+      "reference": "Pro 13:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'another pretends to be poor, yet has great wealth' \u2014 the concealment of wealth as deceptive inner posture; wealth and self-presentation."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "VCVERSE",
+      "vr_id": 238021,
+      "mti_id": 7586,
+      "reference": "Pro 13:8",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: a man's riches may ransom his life \u2014 wealth as moral-relational resource with life-determining weight."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "VCVERSE",
+      "vr_id": 238022,
+      "mti_id": 7586,
+      "reference": "Pro 22:1",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'a good name is to be chosen rather than great riches' \u2014 wisdom placing inner character (name) above material wealth."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "VCVERSE",
+      "vr_id": 238023,
+      "mti_id": 7586,
+      "reference": "Pro 22:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'the reward of humility and fear of the Lord is riches and honor and life' \u2014 the inner disposition (humility, fear) producing ordered wealth."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "VCVERSE",
+      "vr_id": 238025,
+      "mti_id": 7586,
+      "reference": "Pro 8:18",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher (second instance): enduring wealth with righteousness as Wisdom's gift."
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "VCVERSE",
+      "vr_id": 238006,
+      "mti_id": 7586,
+      "reference": "Ecc 4:8",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'there is no end to all his toil, and his eyes are never satisfied with riches' \u2014 the insatiable labor for riches; constitutionally unsatisfied inner person."
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "VCVERSE",
+      "vr_id": 238007,
+      "mti_id": 7586,
+      "reference": "Ecc 5:12",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'the abundance of the rich will not let him sleep' \u2014 wealth disturbing the inner rest; the restlessness of abundance."
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "VCVERSE",
+      "vr_id": 238008,
+      "mti_id": 7586,
+      "reference": "Ecc 5:13",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: riches 'kept by their owner to his hurt' \u2014 hoarded wealth becoming its owner's damage."
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "VCVERSE",
+      "vr_id": 238009,
+      "mti_id": 7586,
+      "reference": "Ecc 5:14",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'those riches were lost in a bad venture' \u2014 the precariousness of material wealth and the grief of loss."
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "VCVERSE",
+      "vr_id": 238010,
+      "mti_id": 7586,
+      "reference": "Ecc 5:19",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: 'everyone also to whom God has given wealth and possessions and power to enjoy them... this is the gift of God' \u2014 wealth as divinely given gift when received with the capacity to enjoy it."
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "VCVERSE",
+      "vr_id": 238011,
+      "mti_id": 7586,
+      "reference": "Ecc 6:2",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: God gives wealth but not the power to enjoy it \u2014 a stranger enjoys it; the alienation between having wealth and being able to enjoy it."
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "VCVERSE",
+      "vr_id": 238012,
+      "mti_id": 7586,
+      "reference": "Est 5:11",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "o.sher: Haman's self-display of riches, sons, and honor before his friends \u2014 wealth as the ground of pride and self-glorification."
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "VCVERSE",
+      "vr_id": 64259,
+      "mti_id": 7577,
+      "reference": "Mat 19:23",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'with difficulty will a rich person enter the kingdom' \u2014 wealth as the obstacle to kingdom entry; the spiritual weight of material richness."
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "VCVERSE",
+      "vr_id": 64260,
+      "mti_id": 7577,
+      "reference": "Mat 19:24",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: camel through eye of needle \u2014 graphic statement of the kingdom-blocking character of wealth."
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "VCVERSE",
+      "vr_id": 64262,
+      "mti_id": 7577,
+      "reference": "Mar 10:25",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: same camel-needle saying \u2014 wealth as kingdom obstacle."
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "VCVERSE",
+      "vr_id": 64263,
+      "mti_id": 7577,
+      "reference": "Luk 6:24",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'woe to you who are rich, for you have received your consolation' \u2014 wealth as eschatological consolation that exhausts itself in this age."
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "VCVERSE",
+      "vr_id": 64264,
+      "mti_id": 7577,
+      "reference": "Luk 12:16",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "plousios: the rich man whose land produced plentifully \u2014 parable opening establishing the moral context."
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "VCVERSE",
+      "vr_id": 64266,
+      "mti_id": 7577,
+      "reference": "Luk 16:1",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "plousios: rich man with a dishonest manager \u2014 moral category context."
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "VCVERSE",
+      "vr_id": 64267,
+      "mti_id": 7577,
+      "reference": "Luk 16:19",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: the rich man feasting sumptuously, ignoring Lazarus \u2014 wealth producing moral blindness to the suffering neighbor."
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "VCVERSE",
+      "vr_id": 64268,
+      "mti_id": 7577,
+      "reference": "Luk 16:21",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: Lazarus desired to be fed from rich man's table \u2014 the indifference of wealth to the poor at the gate."
+    },
+    {
+      "op_id": "OP-038",
+      "operation": "VCVERSE",
+      "vr_id": 64269,
+      "mti_id": 7577,
+      "reference": "Luk 16:22",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: the rich man died \u2014 the eschatological reversal of material wealth."
+    },
+    {
+      "op_id": "OP-039",
+      "operation": "VCVERSE",
+      "vr_id": 64270,
+      "mti_id": 7577,
+      "reference": "Luk 18:23",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'he became very sad, for he was extremely rich' \u2014 wealth producing grief when confronted with kingdom demands."
+    },
+    {
+      "op_id": "OP-040",
+      "operation": "VCVERSE",
+      "vr_id": 64271,
+      "mti_id": 7577,
+      "reference": "Luk 18:25",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: camel-needle \u2014 wealth as kingdom obstacle."
+    },
+    {
+      "op_id": "OP-041",
+      "operation": "VCVERSE",
+      "vr_id": 64272,
+      "mti_id": 7577,
+      "reference": "Luk 21:1",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "plousios: the rich putting gifts in the treasury \u2014 the giving practice of the wealthy as moral observation (context for the widow's greater gift)."
+    },
+    {
+      "op_id": "OP-042",
+      "operation": "VCVERSE",
+      "vr_id": 64275,
+      "mti_id": 7577,
+      "reference": "1Ti 6:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'charge them not to be haughty, nor to set their hopes on the uncertainty of riches' \u2014 the twin distortions of wealth: haughtiness and misplaced hope."
+    },
+    {
+      "op_id": "OP-043",
+      "operation": "VCVERSE",
+      "vr_id": 64276,
+      "mti_id": 7577,
+      "reference": "Jam 1:10",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'the rich in his humiliation' \u2014 the rich person's glory fades like grass; wealth as that which passes away."
+    },
+    {
+      "op_id": "OP-044",
+      "operation": "VCVERSE",
+      "vr_id": 64277,
+      "mti_id": 7577,
+      "reference": "Jam 1:11",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'the rich man fade away in the midst of his pursuits' \u2014 the transience of wealth and the rich person absorbed in its pursuit."
+    },
+    {
+      "op_id": "OP-045",
+      "operation": "VCVERSE",
+      "vr_id": 64278,
+      "mti_id": 7577,
+      "reference": "Jam 2:5",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "plousios: God chose the poor to be 'rich in faith' \u2014 poverty of material condition paired with richness of faith; kingdom inversion of wealth categories."
+    },
+    {
+      "op_id": "OP-046",
+      "operation": "VCVERSE",
+      "vr_id": 64279,
+      "mti_id": 7577,
+      "reference": "Jam 2:6",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'are not the rich the ones who oppress you and drag you into court?' \u2014 wealth as the basis of oppressive power over the poor."
+    },
+    {
+      "op_id": "OP-047",
+      "operation": "VCVERSE",
+      "vr_id": 64280,
+      "mti_id": 7577,
+      "reference": "Jam 5:1",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'come now, you rich, weep and howl for the miseries coming upon you' \u2014 prophetic-eschatological judgment on wealth accumulated through injustice."
+    },
+    {
+      "op_id": "OP-048",
+      "operation": "VCVERSE",
+      "vr_id": 64281,
+      "mti_id": 7577,
+      "reference": "Rev 2:9",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "plousios: Smyrna \u2014 'I know your poverty, but you are rich' \u2014 divine reversal: material poverty concealing actual inner richness before God."
+    },
+    {
+      "op_id": "OP-049",
+      "operation": "VCVERSE",
+      "vr_id": 64282,
+      "mti_id": 7577,
+      "reference": "Rev 3:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 1,
+      "rationale": "ANCHOR M46-A. plousios: 'I am rich, I have prospered, I need nothing' \u2014 the self-declaration of wealth as the definitive inner-being distortion; false self-assessment concealing actual wretchedness. The cluster's most precise statement."
+    },
+    {
+      "op_id": "OP-050",
+      "operation": "VCVERSE",
+      "vr_id": 64283,
+      "mti_id": 7577,
+      "reference": "Rev 6:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: the rich among those hiding from the wrath of the Lamb \u2014 wealth providing no refuge in the day of judgment."
+    },
+    {
+      "op_id": "OP-051",
+      "operation": "VCVERSE",
+      "vr_id": 64273,
+      "mti_id": 7577,
+      "reference": "2Cor 8:9",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'though he was rich, yet for your sake he became poor' \u2014 Christ's pre-incarnate wealth voluntarily surrendered; the Christological paradigm."
+    },
+    {
+      "op_id": "OP-052",
+      "operation": "VCVERSE",
+      "vr_id": 64274,
+      "mti_id": 7577,
+      "reference": "Eph 2:4",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "plousios: 'God being rich in mercy' \u2014 wealth vocabulary applied to the divine attribute of mercy; God's mercy is inexhaustible/abundant."
+    },
+    {
+      "op_id": "OP-053",
+      "operation": "VCVERSE",
+      "vr_id": 64284,
+      "mti_id": 7577,
+      "reference": "Rev 13:16",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "plousios: rich and poor alike marked by the beast \u2014 wealth providing no exemption from the mark; material status irrelevant before eschatological allegiance demands."
+    },
+    {
+      "op_id": "OP-054",
+      "operation": "VCVERSE",
+      "vr_id": 64289,
+      "mti_id": 7579,
+      "reference": "Luk 1:53",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'the rich he has sent away empty' \u2014 the Magnificat's reversal of the materially rich; wealth as the condition that leaves one empty before God."
+    },
+    {
+      "op_id": "OP-055",
+      "operation": "VCVERSE",
+      "vr_id": 64290,
+      "mti_id": 7579,
+      "reference": "Luk 12:21",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'lays up treasure for himself and is not rich toward God' \u2014 the self-directed form of being rich vs being rich toward God; wealth-orientation as inner decision."
+    },
+    {
+      "op_id": "OP-056",
+      "operation": "VCVERSE",
+      "vr_id": 64291,
+      "mti_id": 7579,
+      "reference": "Rom 10:12",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'bestowing his riches on all who call on him' \u2014 God's generosity toward all who call; wealth vocabulary for divine inexhaustible provision."
+    },
+    {
+      "op_id": "OP-057",
+      "operation": "VCVERSE",
+      "vr_id": 64292,
+      "mti_id": 7579,
+      "reference": "1Cor 4:8",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'already you have become rich! without us you have become kings!' \u2014 ironic address to Corinthians' self-satisfied spiritual wealth; false self-assessment of inner richness."
+    },
+    {
+      "op_id": "OP-058",
+      "operation": "VCVERSE",
+      "vr_id": 64293,
+      "mti_id": 7579,
+      "reference": "2Cor 8:9",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'so that you by his poverty might become rich' \u2014 the Christological wealth-exchange; poverty as the means of others' enrichment."
+    },
+    {
+      "op_id": "OP-059",
+      "operation": "VCVERSE",
+      "vr_id": 64294,
+      "mti_id": 7579,
+      "reference": "1Ti 6:9",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'those who desire to be rich fall into temptation and a snare' \u2014 the inner desire to become rich as the source of ruin."
+    },
+    {
+      "op_id": "OP-060",
+      "operation": "VCVERSE",
+      "vr_id": 64295,
+      "mti_id": 7579,
+      "reference": "1Ti 6:18",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'rich in good works' \u2014 wealth vocabulary applied to generous works; being rich toward others as the ordered form of wealth."
+    },
+    {
+      "op_id": "OP-061",
+      "operation": "VCVERSE",
+      "vr_id": 64296,
+      "mti_id": 7579,
+      "reference": "Rev 3:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'I have prospered' \u2014 the self-declaration of prospering as false inner assessment (same verse as anchor A1)."
+    },
+    {
+      "op_id": "OP-062",
+      "operation": "VCVERSE",
+      "vr_id": 64297,
+      "mti_id": 7579,
+      "reference": "Rev 3:18",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'buy from me gold refined by fire, so that you may be rich' \u2014 the divine counsel to seek true wealth through testing; the ordered alternative to false self-assessed wealth."
+    },
+    {
+      "op_id": "OP-063",
+      "operation": "VCVERSE",
+      "vr_id": 64298,
+      "mti_id": 7579,
+      "reference": "Rev 18:3",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: merchants 'have grown rich from the power of her luxurious living' \u2014 Babylon's wealth-generating corruption; wealth from exploitative luxury."
+    },
+    {
+      "op_id": "OP-064",
+      "operation": "VCVERSE",
+      "vr_id": 64299,
+      "mti_id": 7579,
+      "reference": "Rev 18:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: merchants who 'gained wealth from her' standing far off at her judgment \u2014 wealth from Babylon weeping at its loss."
+    },
+    {
+      "op_id": "OP-065",
+      "operation": "VCVERSE",
+      "vr_id": 64300,
+      "mti_id": 7579,
+      "reference": "Rev 18:19",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploute\u014d: 'all who had ships at sea grew rich by her wealth' \u2014 Babylon's wealth enriching through commercial exploitation; lament at its loss."
+    },
+    {
+      "op_id": "OP-066",
+      "operation": "VCVERSE",
+      "vr_id": 64304,
+      "mti_id": 7581,
+      "reference": "Mat 13:22",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'deceitfulness of riches choke the word' \u2014 riches as a choking force; the deceptive quality of wealth that prevents fruitfulness."
+    },
+    {
+      "op_id": "OP-067",
+      "operation": "VCVERSE",
+      "vr_id": 64305,
+      "mti_id": 7581,
+      "reference": "Mar 4:19",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'cares of the world and deceitfulness of riches choke the word' \u2014 same pattern; riches choking inner responsiveness."
+    },
+    {
+      "op_id": "OP-068",
+      "operation": "VCVERSE",
+      "vr_id": 64306,
+      "mti_id": 7581,
+      "reference": "Luk 8:14",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'choked by cares and riches and pleasures of life' \u2014 riches as one of three choking forces preventing fruit."
+    },
+    {
+      "op_id": "OP-069",
+      "operation": "VCVERSE",
+      "vr_id": 64311,
+      "mti_id": 7581,
+      "reference": "2Cor 8:2",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'extreme poverty overflowed in a wealth of generosity' \u2014 poverty producing generosity; material poverty generating relational/moral wealth."
+    },
+    {
+      "op_id": "OP-070",
+      "operation": "VCVERSE",
+      "vr_id": 64320,
+      "mti_id": 7581,
+      "reference": "1Ti 6:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'nor to set their hopes on the uncertainty of riches' \u2014 riches as uncertain hope-object vs God as reliable provider."
+    },
+    {
+      "op_id": "OP-071",
+      "operation": "VCVERSE",
+      "vr_id": 64321,
+      "mti_id": 7581,
+      "reference": "Heb 11:26",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: Moses 'considered the reproach of Christ greater wealth than the treasures of Egypt' \u2014 eschatological revaluation placing reproach above material treasure; the ordered inner assessment."
+    },
+    {
+      "op_id": "OP-072",
+      "operation": "VCVERSE",
+      "vr_id": 64322,
+      "mti_id": 7581,
+      "reference": "Jam 5:2",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "ploutos: 'your riches have rotted' \u2014 the decay of accumulated wealth as judgment on unjust hoarding."
+    },
+    {
+      "op_id": "OP-073",
+      "operation": "VCVERSE",
+      "vr_id": 64302,
+      "mti_id": 7580,
+      "reference": "2Cor 6:10",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploutiz\u014d: 'as poor, yet making many rich' \u2014 the apostolic paradox of material poverty generating spiritual-relational enrichment in others; Christological pattern in ministry."
+    },
+    {
+      "op_id": "OP-074",
+      "operation": "VCVERSE",
+      "vr_id": 64303,
+      "mti_id": 7580,
+      "reference": "2Cor 9:11",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "ploutiz\u014d: 'enriched in every way to be generous in every way' \u2014 enrichment received for the purpose of generosity; wealth as through-put for others' benefit."
+    },
+    {
+      "op_id": "OP-075",
+      "operation": "VCVERSE",
+      "vr_id": 237919,
+      "mti_id": 7582,
+      "reference": "2Cor 8:9",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 1,
+      "rationale": "ANCHOR M46-C. pt\u014dcheu\u014d: 'though he was rich, yet for your sake he became poor, so that you by his poverty might become rich' \u2014 the Christological wealth-exchange; voluntary impoverishment as the paradigm of the ordered response to the wealth domain."
+    },
+    {
+      "op_id": "OP-076",
+      "operation": "VCVERSE",
+      "vr_id": 237950,
+      "mti_id": 7583,
+      "reference": "Mat 5:3",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'poor in spirit, for theirs is the kingdom of heaven' \u2014 poverty of spirit as the inner posture of dependence and humility before God; material poverty vocabulary transferred to name inner disposition."
+    },
+    {
+      "op_id": "OP-077",
+      "operation": "VCVERSE",
+      "vr_id": 237946,
+      "mti_id": 7583,
+      "reference": "Mat 11:5",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'the poor have good news preached to them' \u2014 the poor as the primary recipients of the gospel; poverty as the condition of openness to divine gift."
+    },
+    {
+      "op_id": "OP-078",
+      "operation": "VCVERSE",
+      "vr_id": 237947,
+      "mti_id": 7583,
+      "reference": "Mat 19:21",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'sell what you possess and give to the poor' \u2014 the command to voluntary impoverishment for others' benefit as the path to perfection."
+    },
+    {
+      "op_id": "OP-079",
+      "operation": "VCVERSE",
+      "vr_id": 237939,
+      "mti_id": 7583,
+      "reference": "Luk 6:20",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'blessed are you who are poor, for yours is the kingdom of God' \u2014 material poverty as eschatological blessing; the poor as heirs of the kingdom."
+    },
+    {
+      "op_id": "OP-080",
+      "operation": "VCVERSE",
+      "vr_id": 237940,
+      "mti_id": 7583,
+      "reference": "Luk 7:22",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'the poor have good news preached to them' \u2014 messianic proclamation to the poor as sign of the kingdom's arrival."
+    },
+    {
+      "op_id": "OP-081",
+      "operation": "VCVERSE",
+      "vr_id": 237938,
+      "mti_id": 7583,
+      "reference": "Luk 4:18",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'anointed me to proclaim good news to the poor' \u2014 Jesus's inaugural programmatic declaration; the poor as the primary address of the messianic mission."
+    },
+    {
+      "op_id": "OP-082",
+      "operation": "VCVERSE",
+      "vr_id": 237931,
+      "mti_id": 7583,
+      "reference": "Luk 14:13",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'invite the poor, the crippled, the lame, the blind' \u2014 the commanded reorientation of hospitality from the wealthy to the poor."
+    },
+    {
+      "op_id": "OP-083",
+      "operation": "VCVERSE",
+      "vr_id": 237932,
+      "mti_id": 7583,
+      "reference": "Luk 14:21",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'bring in the poor and crippled' \u2014 the commanded inclusion of the poor in the banquet as kingdom pattern."
+    },
+    {
+      "op_id": "OP-084",
+      "operation": "VCVERSE",
+      "vr_id": 237935,
+      "mti_id": 7583,
+      "reference": "Luk 18:22",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'distribute to the poor, and you will have treasure in heaven' \u2014 voluntary impoverishment for the poor producing eschatological wealth."
+    },
+    {
+      "op_id": "OP-085",
+      "operation": "VCVERSE",
+      "vr_id": 237936,
+      "mti_id": 7583,
+      "reference": "Luk 19:8",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: Zacchaeus giving half to the poor as restitution \u2014 the ordered reorientation of wealth toward the poor as sign of inner transformation."
+    },
+    {
+      "op_id": "OP-086",
+      "operation": "VCVERSE",
+      "vr_id": 237937,
+      "mti_id": 7583,
+      "reference": "Luk 21:3",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'this poor widow has put in more than all' \u2014 the greater generosity of the poor; poverty enabling genuine giving."
+    },
+    {
+      "op_id": "OP-087",
+      "operation": "VCVERSE",
+      "vr_id": 237942,
+      "mti_id": 7583,
+      "reference": "Mar 12:42",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: poor widow putting in two copper coins \u2014 the generosity of material poverty."
+    },
+    {
+      "op_id": "OP-088",
+      "operation": "VCVERSE",
+      "vr_id": 237943,
+      "mti_id": 7583,
+      "reference": "Mar 12:43",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'this poor widow has put in more than all' \u2014 the widow's gift declared greater; poverty enabling full giving."
+    },
+    {
+      "op_id": "OP-089",
+      "operation": "VCVERSE",
+      "vr_id": 237941,
+      "mti_id": 7583,
+      "reference": "Mar 10:21",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'sell all that you have and give to the poor' \u2014 the command to voluntary impoverishment for the sake of the poor and kingdom."
+    },
+    {
+      "op_id": "OP-090",
+      "operation": "VCVERSE",
+      "vr_id": 237920,
+      "mti_id": 7583,
+      "reference": "2Cor 6:10",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'as poor, yet making many rich' \u2014 the apostolic poverty that enriches others; material poverty as the ground of spiritual-relational generosity."
+    },
+    {
+      "op_id": "OP-091",
+      "operation": "VCVERSE",
+      "vr_id": 237923,
+      "mti_id": 7583,
+      "reference": "Jam 2:2",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: the poor man in shabby clothes entering the assembly \u2014 the assembly's treatment of the poor as moral test."
+    },
+    {
+      "op_id": "OP-092",
+      "operation": "VCVERSE",
+      "vr_id": 237924,
+      "mti_id": 7583,
+      "reference": "Jam 2:3",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'say to the poor man, stand over there' \u2014 wealth-based preferential treatment as moral failure."
+    },
+    {
+      "op_id": "OP-093",
+      "operation": "VCVERSE",
+      "vr_id": 237925,
+      "mti_id": 7583,
+      "reference": "Jam 2:5",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'God chose those who are poor... to be rich in faith' \u2014 the poor chosen for kingdom richness; divine inversion of wealth categories."
+    },
+    {
+      "op_id": "OP-094",
+      "operation": "VCVERSE",
+      "vr_id": 237926,
+      "mti_id": 7583,
+      "reference": "Jam 2:6",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'the rich oppress you and drag you into court' \u2014 the structural violence of wealth against the poor."
+    },
+    {
+      "op_id": "OP-095",
+      "operation": "VCVERSE",
+      "vr_id": 237928,
+      "mti_id": 7583,
+      "reference": "Joh 12:6",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: Judas cared nothing for the poor but used the poor as pretext for theft \u2014 false concern for the poor masking inner greed."
+    },
+    {
+      "op_id": "OP-096",
+      "operation": "VCVERSE",
+      "vr_id": 237934,
+      "mti_id": 7583,
+      "reference": "Luk 16:22",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'the poor man died and was carried by the angels to Abraham's side' \u2014 the eschatological reversal; the poor man's destination contrasting with the rich man's."
+    },
+    {
+      "op_id": "OP-097",
+      "operation": "VCVERSE",
+      "vr_id": 237952,
+      "mti_id": 7583,
+      "reference": "Rev 3:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "pt\u014dchos: 'you are... poor' \u2014 the Laodicean church's actual poverty despite self-assessed wealth."
+    },
+    {
+      "op_id": "OP-098",
+      "operation": "VCVERSE",
+      "vr_id": 237956,
+      "mti_id": 7584,
+      "reference": "2Sa 12:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: the rich man unwilling to take from his own flock \u2014 wealth and unwillingness to give; the moral character revealed by how the rich treat what they have."
+    },
+    {
+      "op_id": "OP-099",
+      "operation": "VCVERSE",
+      "vr_id": 237963,
+      "mti_id": 7584,
+      "reference": "Job 27:19",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'he goes to bed rich, but will do so no more; he opens his eyes and his wealth is gone' \u2014 the sudden loss of the wicked rich man's wealth."
+    },
+    {
+      "op_id": "OP-100",
+      "operation": "VCVERSE",
+      "vr_id": 237964,
+      "mti_id": 7584,
+      "reference": "Mic 6:12",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'your rich men are full of violence' \u2014 wealth directly connected to inner violence and moral corruption."
+    },
+    {
+      "op_id": "OP-101",
+      "operation": "VCVERSE",
+      "vr_id": 237965,
+      "mti_id": 7584,
+      "reference": "Pro 10:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'a rich man's wealth is his strong city' \u2014 wealth as the rich person's perceived security and stronghold; misplaced trust."
+    },
+    {
+      "op_id": "OP-102",
+      "operation": "VCVERSE",
+      "vr_id": 237966,
+      "mti_id": 7584,
+      "reference": "Pro 14:20",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the rich has many friends' \u2014 the relational distortion wealth creates; false friendship attached to wealth."
+    },
+    {
+      "op_id": "OP-103",
+      "operation": "VCVERSE",
+      "vr_id": 237967,
+      "mti_id": 7584,
+      "reference": "Pro 18:11",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'a rich man's wealth is his strong city, and like a high wall in his imagination' \u2014 wealth as imagined fortress; the illusion of security."
+    },
+    {
+      "op_id": "OP-104",
+      "operation": "VCVERSE",
+      "vr_id": 237968,
+      "mti_id": 7584,
+      "reference": "Pro 18:23",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the rich answers roughly' \u2014 wealth producing harsh, dismissive inner orientation toward others."
+    },
+    {
+      "op_id": "OP-105",
+      "operation": "VCVERSE",
+      "vr_id": 237969,
+      "mti_id": 7584,
+      "reference": "Pro 22:2",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the rich and the poor meet together; the Lord is the maker of them both' \u2014 shared creatureliness before God; wealth does not create a different moral category before the Creator."
+    },
+    {
+      "op_id": "OP-106",
+      "operation": "VCVERSE",
+      "vr_id": 237970,
+      "mti_id": 7584,
+      "reference": "Pro 22:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the rich rules over the poor, and the borrower is the slave of the lender' \u2014 wealth as structural power producing relational domination."
+    },
+    {
+      "op_id": "OP-107",
+      "operation": "VCVERSE",
+      "vr_id": 237971,
+      "mti_id": 7584,
+      "reference": "Pro 28:6",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'better is a poor man who walks in his integrity than a rich man who is crooked in his ways' \u2014 integrity as superior to wealth; character the true measure."
+    },
+    {
+      "op_id": "OP-108",
+      "operation": "VCVERSE",
+      "vr_id": 237972,
+      "mti_id": 7584,
+      "reference": "Pro 28:11",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'a rich man is wise in his own eyes, but a poor man who has understanding will find him out' \u2014 wealth producing false self-assessed wisdom."
+    },
+    {
+      "op_id": "OP-109",
+      "operation": "VCVERSE",
+      "vr_id": 237973,
+      "mti_id": 7584,
+      "reference": "Ecc 5:12",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the abundance of the rich will not let him sleep' \u2014 wealth producing inner restlessness; the cost of abundance in sleep and peace."
+    },
+    {
+      "op_id": "OP-110",
+      "operation": "VCVERSE",
+      "vr_id": 237974,
+      "mti_id": 7584,
+      "reference": "Ecc 10:6",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shir: 'the rich sit in a low place' \u2014 social inversion as wisdom observation about wealth and honor."
+    },
+    {
+      "op_id": "OP-111",
+      "operation": "VCVERSE",
+      "vr_id": 237981,
+      "mti_id": 7585,
+      "reference": "Gen 14:23",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: Abram refusing to take anything lest the king say 'I made Abram rich' \u2014 the deliberate refusal of wealth to preserve integrity; not-enriching oneself through alliance."
+    },
+    {
+      "op_id": "OP-112",
+      "operation": "VCVERSE",
+      "vr_id": 237978,
+      "mti_id": 7585,
+      "reference": "1Sa 2:7",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'the Lord makes poor and makes rich; he brings low and he exalts' \u2014 divine sovereignty over material condition; wealth and poverty as instruments of God's governance."
+    },
+    {
+      "op_id": "OP-113",
+      "operation": "VCVERSE",
+      "vr_id": 237984,
+      "mti_id": 7585,
+      "reference": "Job 15:29",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'he will not be rich, and his wealth will not endure' \u2014 the wicked man's wealth failing; the futility of unjust accumulation."
+    },
+    {
+      "op_id": "OP-114",
+      "operation": "VCVERSE",
+      "vr_id": 237985,
+      "mti_id": 7585,
+      "reference": "Pro 10:22",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'the blessing of the Lord makes rich, and he adds no sorrow with it' \u2014 divine blessing as the proper source of wealth; wealth from blessing carries no sorrow unlike wealth from toil."
+    },
+    {
+      "op_id": "OP-115",
+      "operation": "VCVERSE",
+      "vr_id": 237986,
+      "mti_id": 7585,
+      "reference": "Pro 10:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'the hand of the diligent makes rich' \u2014 diligence as the inner character that produces wealth; character determining material outcome."
+    },
+    {
+      "op_id": "OP-116",
+      "operation": "VCVERSE",
+      "vr_id": 237987,
+      "mti_id": 7585,
+      "reference": "Pro 13:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'one pretends to be rich, yet has nothing' \u2014 false self-presentation of wealth; deception in the wealth domain."
+    },
+    {
+      "op_id": "OP-117",
+      "operation": "VCVERSE",
+      "vr_id": 237988,
+      "mti_id": 7585,
+      "reference": "Pro 21:17",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'whoever loves pleasure will be a poor man; he who loves wine and oil will not be rich' \u2014 the inner orientation toward pleasure as the path to poverty; love of luxury as the path away from wealth."
+    },
+    {
+      "op_id": "OP-118",
+      "operation": "VCVERSE",
+      "vr_id": 237989,
+      "mti_id": 7585,
+      "reference": "Pro 23:4",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'do not toil to acquire wealth; be discerning enough to desist' \u2014 the wisdom-shaped restraint on the wealth-seeking drive; discernment as the inner discipline that stops the acquisition momentum."
+    },
+    {
+      "op_id": "OP-119",
+      "operation": "VCVERSE",
+      "vr_id": 237990,
+      "mti_id": 7585,
+      "reference": "Pro 28:20",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'whoever hastens to be rich will not go unpunished' \u2014 the inner drive toward quick wealth as moral failure producing punishment."
+    },
+    {
+      "op_id": "OP-120",
+      "operation": "VCVERSE",
+      "vr_id": 237991,
+      "mti_id": 7585,
+      "reference": "Psa 49:16",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'be not afraid when a man becomes rich' \u2014 the instruction not to fear the prosperity of the wicked; wealth not the true measure of standing before God."
+    },
+    {
+      "op_id": "OP-121",
+      "operation": "VCVERSE",
+      "vr_id": 237992,
+      "mti_id": 7585,
+      "reference": "Hos 12:8",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'I am rich; I have found wealth for myself' \u2014 Ephraim's self-declaration of wealth as false moral vindication; becoming rich as the basis of self-assessed righteousness."
+    },
+    {
+      "op_id": "OP-122",
+      "operation": "VCVERSE",
+      "vr_id": 237993,
+      "mti_id": 7585,
+      "reference": "Zec 11:5",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "a.shar: 'blessed be the Lord, I have become rich' \u2014 corrupt shepherds self-congratulating on their enrichment while exploiting the flock; wealth as the marker of successful exploitation."
+    },
+    {
+      "op_id": "OP-123",
+      "operation": "VCVERSE",
+      "vr_id": 219947,
+      "mti_id": 7010,
+      "reference": "Psa 44:12",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'sold your people for a trifle' \u2014 hon as the measure of worth; being sold for no-worth names the depth of covenantal abandonment."
+    },
+    {
+      "op_id": "OP-124",
+      "operation": "VCVERSE",
+      "vr_id": 219927,
+      "mti_id": 7010,
+      "reference": "Pro 1:13",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: the wicked enticing 'we shall find all precious goods' \u2014 hon as the object of sinful inner desire; material goods as the goal of violence."
+    },
+    {
+      "op_id": "OP-125",
+      "operation": "VCVERSE",
+      "vr_id": 219944,
+      "mti_id": 7010,
+      "reference": "Pro 8:18",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'enduring wealth and righteousness' \u2014 hon as wisdom's gift alongside righteousness; ordered wealth through Wisdom."
+    },
+    {
+      "op_id": "OP-126",
+      "operation": "VCVERSE",
+      "vr_id": 219928,
+      "mti_id": 7010,
+      "reference": "Pro 10:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'a rich man's wealth is his strong city' \u2014 wealth as perceived psychological fortress; misplaced security."
+    },
+    {
+      "op_id": "OP-127",
+      "operation": "VCVERSE",
+      "vr_id": 219930,
+      "mti_id": 7010,
+      "reference": "Pro 12:27",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'the diligent man will get precious wealth' \u2014 hon as fruit of diligence; character producing wealth."
+    },
+    {
+      "op_id": "OP-128",
+      "operation": "VCVERSE",
+      "vr_id": 219932,
+      "mti_id": 7010,
+      "reference": "Pro 13:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'one pretends to be rich, yet has nothing' \u2014 deceptive self-presentation regarding wealth."
+    },
+    {
+      "op_id": "OP-129",
+      "operation": "VCVERSE",
+      "vr_id": 219931,
+      "mti_id": 7010,
+      "reference": "Pro 13:11",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'wealth gained hastily will dwindle; whoever gathers little by little will increase' \u2014 character orientation (patience vs haste) determining wealth's sustainability."
+    },
+    {
+      "op_id": "OP-130",
+      "operation": "VCVERSE",
+      "vr_id": 219935,
+      "mti_id": 7010,
+      "reference": "Pro 19:4",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'wealth brings many new friends, but a poor man is deserted' \u2014 wealth distorting authentic relationship; false friendship attached to material status."
+    },
+    {
+      "op_id": "OP-131",
+      "operation": "VCVERSE",
+      "vr_id": 219934,
+      "mti_id": 7010,
+      "reference": "Pro 19:14",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'house and wealth are inherited from fathers, but a prudent wife is from the Lord' \u2014 inherited material wealth contrasted with divine gift of wisdom."
+    },
+    {
+      "op_id": "OP-132",
+      "operation": "VCVERSE",
+      "vr_id": 219936,
+      "mti_id": 7010,
+      "reference": "Pro 24:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'by knowledge the rooms are filled with precious riches' \u2014 inner knowledge as the source that fills with material abundance."
+    },
+    {
+      "op_id": "OP-133",
+      "operation": "VCVERSE",
+      "vr_id": 219938,
+      "mti_id": 7010,
+      "reference": "Pro 28:8",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'multiplies wealth by interest and profit gathers it for him who is generous to the poor' \u2014 unjust accumulation providentially redirected; moral corruption of unjust gain."
+    },
+    {
+      "op_id": "OP-134",
+      "operation": "VCVERSE",
+      "vr_id": 219941,
+      "mti_id": 7010,
+      "reference": "Pro 30:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "hon: 'four never say Enough' \u2014 constitutional insatiability; the inner person who cannot be satisfied."
+    },
+    {
+      "op_id": "OP-135",
+      "operation": "VCVERSE",
+      "vr_id": 139374,
+      "mti_id": 4695,
+      "reference": "Hab 1:16",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men: 'by them he lives in luxury, and his food is rich' \u2014 Babylon's military success producing luxury and rich food; material richness from conquest as inner condition of the conqueror."
+    },
+    {
+      "op_id": "OP-136",
+      "operation": "VCVERSE",
+      "vr_id": 139375,
+      "mti_id": 4695,
+      "reference": "Isa 30:23",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "sha.men: 'bread, the produce of the ground, which will be rich and plenteous' \u2014 eschatological divine provision producing rich bread; ordered abundance as divine gift."
+    },
+    {
+      "op_id": "OP-137",
+      "operation": "VCVERSE",
+      "vr_id": 139377,
+      "mti_id": 4695,
+      "reference": "Neh 9:25",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men: 'a rich land' \u2014 abundance of the land given to Israel which then ate, grew fat, and turned from God; the context for the prosperity-apostasy sequence."
+    },
+    {
+      "op_id": "OP-138",
+      "operation": "VCVERSE",
+      "vr_id": 139378,
+      "mti_id": 4695,
+      "reference": "Neh 9:35",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men: 'the large and rich land that you set before them, they did not serve you' \u2014 the rich land as the context of Israel's covenantal failure; abundance producing disobedience."
+    },
+    {
+      "op_id": "OP-139",
+      "operation": "VCVERSE",
+      "vr_id": 139381,
+      "mti_id": 4696,
+      "reference": "Isa 10:16",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "mish.man: 'wasting sickness among his stout warriors' \u2014 the fat/robust warriors of Assyria struck with wasting; human prosperity/robustness under divine judgment."
+    },
+    {
+      "op_id": "OP-140",
+      "operation": "VCVERSE",
+      "vr_id": 139382,
+      "mti_id": 4696,
+      "reference": "Isa 17:4",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "mish.man: 'the fat of his flesh will grow lean' \u2014 Jacob's material prosperity/fatness stripped in judgment; the reduction of material abundance as divine action."
+    },
+    {
+      "op_id": "OP-141",
+      "operation": "VCVERSE",
+      "vr_id": 139386,
+      "mti_id": 4697,
+      "reference": "Jer 5:28",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men: 'they have grown fat and sleek; they know no bounds in deeds of evil' \u2014 fatness producing moral insensibility and abandonment of justice."
+    },
+    {
+      "op_id": "OP-142",
+      "operation": "VCVERSE",
+      "vr_id": 64213,
+      "mti_id": 111,
+      "reference": "Deu 31:20",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "da.shen: 'grown fat, they will turn to other gods and despise me' \u2014 material prosperity producing inner turning from God; the prosperity-apostasy pattern."
+    },
+    {
+      "op_id": "OP-143",
+      "operation": "VCVERSE",
+      "vr_id": 139385,
+      "mti_id": 4697,
+      "reference": "Isa 6:10",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 1,
+      "rationale": "ANCHOR M46-A. sha.men: 'make the heart of this people dull' \u2014 God causing the heart to grow fat and lose perception; the judicial making-fat of the heart as the paradigm of distortion."
+    },
+    {
+      "op_id": "OP-144",
+      "operation": "VCVERSE",
+      "vr_id": 1135,
+      "mti_id": 111,
+      "reference": "Pro 13:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 1,
+      "rationale": "ANCHOR M46-B. da.shen: 'the soul of the diligent is richly supplied' \u2014 inner richness (ne.phesh + da.shen) as the fruit of character; the defining statement that the wealth domain touches the soul."
+    },
+    {
+      "op_id": "OP-145",
+      "operation": "VCVERSE",
+      "vr_id": 12790,
+      "mti_id": 681,
+      "reference": "Pro 15:6",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "cho.sen: 'in the house of the righteous there is much treasure, but trouble befalls the income of the wicked' \u2014 cho.sen as the wealth of the righteous; character determining the quality of wealth."
+    },
+    {
+      "op_id": "OP-146",
+      "operation": "VCVERSE",
+      "vr_id": 148148,
+      "mti_id": 4898,
+      "reference": "Phil 4:11",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 1,
+      "rationale": "ANCHOR M46-C. autark\u0113s: 'I have learned, in whatever situation I am, to be content' \u2014 contentment as a learned inner disposition; the paradigmatic statement of the ordered response."
+    },
+    {
+      "op_id": "OP-147",
+      "operation": "VCVERSE",
+      "vr_id": 56057,
+      "mti_id": 413,
+      "reference": "Amo 6:1",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.a.nan (413-001): 'woe to those who are at ease in Zion' \u2014 complacent ease produced by material security as vice."
+    },
+    {
+      "op_id": "OP-148",
+      "operation": "VCVERSE",
+      "vr_id": 56065,
+      "mti_id": 413,
+      "reference": "Zec 1:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.a.nan (413-001): 'exceedingly angry with the nations that are at ease' \u2014 divine anger at the complacent ease of the nations."
+    },
+    {
+      "op_id": "OP-149",
+      "operation": "VCVERSE",
+      "vr_id": 56063,
+      "mti_id": 413,
+      "reference": "Job 12:5",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.a.nan (413-001): 'in the thought of one who is at ease there is contempt for misfortune' \u2014 at-ease person's contempt for the suffering of others."
+    },
+    {
+      "op_id": "OP-150",
+      "operation": "VCVERSE",
+      "vr_id": 56064,
+      "mti_id": 413,
+      "reference": "Psa 123:4",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.a.nan (413-001): 'the scorn of those who are at ease, of the contempt of the proud' \u2014 complacent ease producing contempt toward the oppressed."
+    },
+    {
+      "op_id": "OP-151",
+      "operation": "VCVERSE",
+      "vr_id": 56062,
+      "mti_id": 413,
+      "reference": "2Ki 19:28",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.a.nan (413-001): 'your complacency has come into my ears' \u2014 Assyria's complacent ease as the inner ground of arrogance against God."
+    },
+    {
+      "op_id": "OP-152",
+      "operation": "VCVERSE",
+      "vr_id": 117400,
+      "mti_id": 3836,
+      "reference": "Neh 9:25",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "a.dan (3836-001): 'delighted themselves in your great goodness' \u2014 inner joy in God's abundant provision; delight in divine abundance as the ordered response."
+    },
+    {
+      "op_id": "OP-153",
+      "operation": "VCVERSE",
+      "vr_id": 53162,
+      "mti_id": 7109,
+      "reference": "Isa 23:18",
+      "set_cluster_subgroup": "M46-C",
+      "set_is_anchor": 0,
+      "rationale": "cha.san (7109-001, negated): 'will not be stored or hoarded' \u2014 the eschatological reversal of hoarding; wealth released for the Lord's people."
+    },
+    {
+      "op_id": "OP-154",
+      "operation": "VCREVISE",
+      "vr_id": 40832,
+      "mti_id": 1142,
+      "reference": "Isa 1:11",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-155",
+      "operation": "VCREVISE",
+      "vr_id": 40834,
+      "mti_id": 1142,
+      "reference": "Isa 37:24",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-156",
+      "operation": "VCREVISE",
+      "vr_id": 40835,
+      "mti_id": 1142,
+      "reference": "Isa 40:26",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-157",
+      "operation": "VCREVISE",
+      "vr_id": 40838,
+      "mti_id": 1142,
+      "reference": "Isa 47:9",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-158",
+      "operation": "VCREVISE",
+      "vr_id": 40836,
+      "mti_id": 1142,
+      "reference": "Isa 47:12",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-159",
+      "operation": "VCREVISE",
+      "vr_id": 40837,
+      "mti_id": 1142,
+      "reference": "Isa 47:13",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-160",
+      "operation": "VCREVISE",
+      "vr_id": 40839,
+      "mti_id": 1142,
+      "reference": "Isa 57:10",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-161",
+      "operation": "VCREVISE",
+      "vr_id": 40840,
+      "mti_id": 1142,
+      "reference": "Isa 63:1",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-162",
+      "operation": "VCREVISE",
+      "vr_id": 40841,
+      "mti_id": 1142,
+      "reference": "Isa 63:7",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-163",
+      "operation": "VCREVISE",
+      "vr_id": 40843,
+      "mti_id": 1142,
+      "reference": "Jer 13:22",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-164",
+      "operation": "VCREVISE",
+      "vr_id": 40844,
+      "mti_id": 1142,
+      "reference": "Jer 30:14",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-165",
+      "operation": "VCREVISE",
+      "vr_id": 40845,
+      "mti_id": 1142,
+      "reference": "Jer 30:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-166",
+      "operation": "VCREVISE",
+      "vr_id": 40856,
+      "mti_id": 1142,
+      "reference": "Lam 1:3",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-167",
+      "operation": "VCREVISE",
+      "vr_id": 40857,
+      "mti_id": 1142,
+      "reference": "Lam 1:5",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-168",
+      "operation": "VCREVISE",
+      "vr_id": 40858,
+      "mti_id": 1142,
+      "reference": "Lam 3:32",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-169",
+      "operation": "VCREVISE",
+      "vr_id": 40862,
+      "mti_id": 1142,
+      "reference": "Neh 13:22",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-170",
+      "operation": "VCREVISE",
+      "vr_id": 40863,
+      "mti_id": 1142,
+      "reference": "Neh 9:25",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-171",
+      "operation": "VCREVISE",
+      "vr_id": 38117,
+      "mti_id": 1142,
+      "reference": "Hos 10:1",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-172",
+      "operation": "VCREVISE",
+      "vr_id": 40828,
+      "mti_id": 1142,
+      "reference": "Hos 10:1",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-173",
+      "operation": "VCREVISE",
+      "vr_id": 40829,
+      "mti_id": 1142,
+      "reference": "Hos 10:13",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-174",
+      "operation": "VCREVISE",
+      "vr_id": 40861,
+      "mti_id": 1142,
+      "reference": "Nah 3:4",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-175",
+      "operation": "VCREVISE",
+      "vr_id": 40853,
+      "mti_id": 1142,
+      "reference": "Job 4:14",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-176",
+      "operation": "VCREVISE",
+      "vr_id": 40847,
+      "mti_id": 1142,
+      "reference": "Job 23:6",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-177",
+      "operation": "VCREVISE",
+      "vr_id": 40850,
+      "mti_id": 1142,
+      "reference": "Job 33:19",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-178",
+      "operation": "VCREVISE",
+      "vr_id": 40851,
+      "mti_id": 1142,
+      "reference": "Job 35:9",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-179",
+      "operation": "VCREVISE",
+      "vr_id": 40852,
+      "mti_id": 1142,
+      "reference": "Job 37:23",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "rov (1142-001): magnitude of inner-moral realities (iniquity, steadfast love, pride) \u2014 routes to M46-A as the sub-group where abundance applied to the weight of inner-moral distortion or divine-human correspondence is operative."
+    },
+    {
+      "op_id": "OP-180",
+      "operation": "VCREVISE",
+      "vr_id": 1134,
+      "mti_id": 111,
+      "reference": "Pro 11:25",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (111-001): inner refreshment/enrichment of satisfied soul from generosity and trust \u2014 routes to M46-B (character producing wealth/inner richness)."
+    },
+    {
+      "op_id": "OP-181",
+      "operation": "VCREVISE",
+      "vr_id": 1137,
+      "mti_id": 111,
+      "reference": "Pro 28:25",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (111-001): inner refreshment/enrichment of satisfied soul from generosity and trust \u2014 routes to M46-B (character producing wealth/inner richness)."
+    },
+    {
+      "op_id": "OP-182",
+      "operation": "VCREVISE",
+      "vr_id": 533,
+      "mti_id": 111,
+      "reference": "Pro 11:25",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (111-001): inner refreshment/enrichment of satisfied soul from generosity and trust \u2014 routes to M46-B (character producing wealth/inner richness)."
+    },
+    {
+      "op_id": "OP-183",
+      "operation": "VCREVISE",
+      "vr_id": 534,
+      "mti_id": 111,
+      "reference": "Pro 28:25",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "da.shen (111-001): inner refreshment/enrichment of satisfied soul from generosity and trust \u2014 routes to M46-B (character producing wealth/inner richness)."
+    },
+    {
+      "op_id": "OP-184",
+      "operation": "VCREVISE",
+      "vr_id": 12790,
+      "mti_id": 681,
+      "reference": "Pro 15:6",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "cho.sen (681-001): wealth as moral category \u2014 character determining whether wealth is blessing or snare. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-185",
+      "operation": "VCREVISE",
+      "vr_id": 12791,
+      "mti_id": 681,
+      "reference": "Pro 27:24",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "cho.sen (681-001): wealth as moral category \u2014 character determining whether wealth is blessing or snare. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-186",
+      "operation": "VCREVISE",
+      "vr_id": 12792,
+      "mti_id": 681,
+      "reference": "Isa 33:6",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "cho.sen (681-001): wealth as moral category \u2014 character determining whether wealth is blessing or snare. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-187",
+      "operation": "VCREVISE",
+      "vr_id": 12794,
+      "mti_id": 681,
+      "reference": "Eze 22:25",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "cho.sen (681-001): wealth as moral category \u2014 character determining whether wealth is blessing or snare. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-188",
+      "operation": "VCREVISE",
+      "vr_id": 219945,
+      "mti_id": 7010,
+      "reference": "Psa 112:3",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-189",
+      "operation": "VCREVISE",
+      "vr_id": 219946,
+      "mti_id": 7010,
+      "reference": "Psa 119:14",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-190",
+      "operation": "VCREVISE",
+      "vr_id": 219940,
+      "mti_id": 7010,
+      "reference": "Pro 3:9",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-191",
+      "operation": "VCREVISE",
+      "vr_id": 219929,
+      "mti_id": 7010,
+      "reference": "Pro 11:4",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-192",
+      "operation": "VCREVISE",
+      "vr_id": 219933,
+      "mti_id": 7010,
+      "reference": "Pro 18:11",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-193",
+      "operation": "VCREVISE",
+      "vr_id": 219937,
+      "mti_id": 7010,
+      "reference": "Pro 28:22",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-194",
+      "operation": "VCREVISE",
+      "vr_id": 219939,
+      "mti_id": 7010,
+      "reference": "Pro 29:3",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-195",
+      "operation": "VCREVISE",
+      "vr_id": 219948,
+      "mti_id": 7010,
+      "reference": "Song 8:7",
+      "set_cluster_subgroup": "M46-B",
+      "set_is_anchor": 0,
+      "rationale": "hon (7010-001): wealth in relation to inner-being orientation and moral condition. Routes to M46-B."
+    },
+    {
+      "op_id": "OP-196",
+      "operation": "VCREVISE",
+      "vr_id": 139384,
+      "mti_id": 4697,
+      "reference": "Deu 32:15",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men verb (4697-002): spiritual fatness of prosperity turning heart from God \u2014 Deu 32:15 (Jeshurun grew fat and kicked) and Neh 9:25 (ate, grew fat, delighted but then turned). Routes to M46-A."
+    },
+    {
+      "op_id": "OP-197",
+      "operation": "VCREVISE",
+      "vr_id": 139387,
+      "mti_id": 4697,
+      "reference": "Neh 9:25",
+      "set_cluster_subgroup": "M46-A",
+      "set_is_anchor": 0,
+      "rationale": "sha.men verb (4697-002): spiritual fatness of prosperity turning heart from God \u2014 Deu 32:15 (Jeshurun grew fat and kicked) and Neh 9:25 (ate, grew fat, delighted but then turned). Routes to M46-A."
+    }
+  ]
+}

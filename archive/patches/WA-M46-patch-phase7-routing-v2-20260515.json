@@ -1,0 +1,3652 @@
+{
+  "_patch_meta": {
+    "patch_id": "WA-M46-patch-phase7-routing-v2-20260515",
+    "patch_type": "VCREVISE",
+    "cluster_code": "M46",
+    "source_report": "wa-cluster-M46-comprehensive-v12-20260515",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v1_13-20260514.md",
+    "supersedes": "WA-M46-patch-phase7-routing-v1-20260515",
+    "date": "2026-05-15T04:58:53Z",
+    "description": "Phase 7 verse routing for M46. CC-aligned from AI v1 patch (WA-M46-patch-phase7-routing-v1-20260515.json). Eight technical defects in v1 were corrected without disturbing the reading-grounded routing decisions. See outputs/markdown/m46-phase7-patch-alignment-v1-20260515.md and Sessions/Session_Clusters/M46/WA-M46-cc-response-to-phase7-patch-v1-20260515.md for the full audit trail.",
+    "terms_covered": [
+      111,
+      413,
+      681,
+      1142,
+      3836,
+      4695,
+      4696,
+      4697,
+      4702,
+      4898,
+      7010,
+      7109,
+      7577,
+      7578,
+      7579,
+      7580,
+      7581,
+      7582,
+      7583,
+      7584,
+      7585,
+      7586
+    ],
+    "input_versions": {
+      "111": 2,
+      "413": 2,
+      "681": 2,
+      "1142": 2,
+      "3836": 1,
+      "4695": 3,
+      "4696": 2,
+      "4697": 2,
+      "4702": 2,
+      "4898": 1,
+      "7010": 3,
+      "7109": 1,
+      "7577": 2,
+      "7578": 2,
+      "7579": 2,
+      "7580": 2,
+      "7581": 2,
+      "7582": 2,
+      "7583": 2,
+      "7584": 2,
+      "7585": 2,
+      "7586": 2
+    },
+    "op_count": 208,
+    "cc_alignment_notes": {
+      "anchor_strategy": "Existing anchors preserved except where AI explicitly designated 7 new anchor ops (per AI's _patch_meta.description: 'Anchors set where designated'). set_is_anchor field omitted from non-anchor ops.",
+      "vr_id_corrections": "57 ops had vr_id corrected via (reference, mti_term_id) lookup. Original AI patch used verse_context.id values where verse_record_id was expected.",
+      "h7600_additions": "4 H7600 sha.a.nan verses added per AI's instruction in v1 notes (CC to identify 413-002 verses) and pattern extrapolation: Isa 32:9, Isa 32:11, Isa 37:29 -> M46-A gid=1861; Isa 32:18 -> M46-D gid=1862.",
+      "orphan_inserts_split": "2 truly-orphan ops (Neh 9:25, Neh 9:35 for sha.men adj mti=4695) split into companion VCNEW patch WA-M46-patch-phase7-newverses-v3-20260515.json.",
+      "subgroup_code_resolution": "AI's 'M46-A'..'M46-D' translated to integer cluster_subgroup_id: 45/46/47/48.",
+      "liparos_term_move": "Term G3045 liparos moved from M46-A to M46-B via mti_term_subgroup UPDATE before patch apply (separate inline operation, not part of this patch). Required because AI's reading routes Rev 18:14 to M46-B.",
+      "anchor_preservation_for_isa_32_18": "Isa 32:18 H7600 retained is_anchor=1 (existing) — patch op does not modify is_anchor.",
+      "hon_retargeting_applied": "4 hon (H1952 mti=7010) ops retarget Psa 112:3 / Psa 119:14 / Pro 11:4 / Pro 28:22 from group_id=2933 to specific content-aligned VCGs (3711/3716/3717/2957). AI's generic 'preserve existing group_id' note overridden by reading-grounded explicit ops."
+    },
+    "ai_input_intent_summary": {
+      "patch_type": "VCREVISE",
+      "patch_id": "WA-M46-patch-phase7-routing-v1-20260515",
+      "cluster_code": "M46",
+      "session_ref": "wa-M46-verse-readings-v1-20260514",
+      "source_report": "wa-cluster-M46-comprehensive-v12-20260515",
+      "instruction_version": "wa-sessionb-cluster-instruction-v1_12-20260514",
+      "date": "2026-05-15",
+      "description": "Phase 7 verse routing — derived from reading every verse in wa-M46-verse-readings-v1-20260514.md. Every routing decision is grounded in the recorded reading of that specific verse. Sets cluster_subgroup_id and group_id for all relevant (G and P status) verses. Anchors set where designated.",
+      "op_count": 204,
+      "subgroup_distribution": {
+        "M46-A": 78,
+        "M46-B": 50,
+        "M46-C": 34,
+        "M46-D": 42
+      },
+      "anchors": [
+        "Pro 13:4",
+        "Isa 6:10",
+        "Rev 3:17",
+        "2Cor 8:9",
+        "Psa 52:7",
+        "Isa 33:6",
+        "Phil 4:11"
+      ],
+      "notes": [
+        "VCREVISE applies to all rows regardless of current status. CC: if a row already has a group_id, preserve it and only update cluster_subgroup_id where missing. If group_id is NULL, set both.",
+        "Some verses appear twice with different mti_ids (same verse, different cluster terms). Each (vr_id, mti_id) pair is a distinct verse_context row and is routed independently.",
+        "sha.a.nan 413-002 verses (divine secure quietness → M46-D, group_id=1862): CC to identify these from the sha.a.nan per-term section and route them to M46-D + VCG 1862.",
+        "liparos (G3045, vr_id=64258, Rev 18:14): routed to M46-B + VCG 3709 (ploutos choking/deceiving force). Basis: soul longed for luxurious goods — insatiability face.",
+        "9 UT borderline verses remain unrouted — pending researcher decision. Not included in this patch.",
+        "Pro 15:30 (da.shen) routed to M46-D VCG 3708 (ptōchos-003 giving/release/enrichment) — basis: good news enriches bones; received blessing rather than character-produced wealth. This is correct per the reading.",
+        "Pro 3:9 (hon — honor Lord with wealth) routed to M46-D VCG 3715 (plousiōs divine provision) — the act of directing wealth toward God; M46-D ordering face.",
+        "1Ti 6:17 has three terms (plousios, plousiōs, ploutos) each with their own vc row — routed individually: plousios→M46-A (haughtiness/misplaced hope), plousiōs→M46-D (divine provision), ploutos→M46-A (uncertain riches as disqualified hope)."
+      ]
+    }
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 1134,
+        "mti_term_id": 111,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 50,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 11:25",
+      "_routing_basis": "Bringing blessing enriches — generosity produces enrichment; character→wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 1135,
+        "mti_term_id": 111,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 50,
+        "cluster_subgroup_id": 47,
+        "is_anchor": 1
+      },
+      "_reference": "Pro 13:4",
+      "_routing_basis": "ANCHOR M46-C. Soul of diligent richly supplied — ne.phesh + da.shen; character produces soul-richness",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 1137,
+        "mti_term_id": 111,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 50,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 28:25",
+      "_routing_basis": "Trust in the Lord produces enrichment vs. greed producing strife — character→wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 1136,
+        "mti_term_id": 111,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Pro 15:30",
+      "_routing_basis": "Good news refreshes the bones — received blessing as inner-physical renewal; D not C because it names received gift not character-produced",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 1132,
+        "mti_term_id": 111,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 204,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Deu 31:20",
+      "_routing_basis": "Grown fat → turned to other gods — prosperity-apostasy mechanism; same VCG as sha.men verb",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40831,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hos 9:7",
+      "_routing_basis": "Great iniquity and great hatred — magnitude of inner moral failure",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40832,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 1:11",
+      "_routing_basis": "Multitude of sacrifices — abundance of ritual without inner reality",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40834,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 37:24",
+      "_routing_basis": "My many chariots — military abundance as ground of arrogance",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40835,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 40:26",
+      "_routing_basis": "Greatness of God's might — magnitude setting context for human dependence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40838,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 47:9",
+      "_routing_basis": "Many sorceries — abundance of false spiritual practice",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40836,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 47:12",
+      "_routing_basis": "Many sorceries — rov as the quantity trusted in that cannot save",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40837,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 47:13",
+      "_routing_basis": "Many counsels — abundance of human strategising replacing divine direction",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40839,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 57:10",
+      "_routing_basis": "Length of the way — accumulated distance of spiritual wandering",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40840,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 63:1",
+      "_routing_basis": "Greatness of God's strength — magnitude of divine salvific action",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40841,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 63:7",
+      "_routing_basis": "Abundance of his steadfast love — magnitude of divine faithfulness as anchor for human inner person",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40843,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jer 13:22",
+      "_routing_basis": "Greatness of your iniquity — magnitude of moral failure as cause of suffering",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40844,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jer 30:14",
+      "_routing_basis": "Guilt is great — weight of guilt as ground of judgment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40845,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jer 30:15",
+      "_routing_basis": "Guilt is great — same pattern as Jer 30:14",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40856,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Lam 1:3",
+      "_routing_basis": "Hard servitude — magnitude of imposed suffering crushing inner condition",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40857,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Lam 1:5",
+      "_routing_basis": "Multitude of transgressions — accumulated covenant violations as ground of judgment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40858,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Lam 3:32",
+      "_routing_basis": "Abundance of steadfast love — rov of divine faithfulness greater than rov of transgression",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40862,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Neh 9:25",
+      "_routing_basis": "Great goodness — rov of God's goodness as the abundance before apostasy",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40863,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Neh 13:22",
+      "_routing_basis": "Greatness of your steadfast love — personal petition grounded in rov of divine faithfulness",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40828,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hos 10:1",
+      "_routing_basis": "More fruit increased more altars — rov naming proportional unfaithfulness with prosperity",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40828,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hos 10:1",
+      "_routing_basis": "Hos 10:1 second rov instance — same verse",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40829,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hos 10:13",
+      "_routing_basis": "Multitude of your warriors — military abundance as object of displaced trust",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40861,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Nah 3:4",
+      "_routing_basis": "Countless whorings — magnitude of spiritual prostitution as ground of judgment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40853,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 4:14",
+      "_routing_basis": "Made all my bones shake — totality of inner-physical terror response",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40847,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 23:6",
+      "_routing_basis": "Greatness of his power — magnitude of divine power that does not crush the petitioner",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40850,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 33:19",
+      "_routing_basis": "Continual strife in bones — rov of sustained inner-physical suffering",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40851,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 35:9",
+      "_routing_basis": "Multitude of oppressions — rov of external suffering producing inner cry",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40852,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 37:23",
+      "_routing_basis": "Abundant righteousness — magnitude of divine righteousness as ground of just governance",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 40846,
+        "mti_term_id": 1142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 11:2",
+      "_routing_basis": "Multitude of words — verbal abundance as substitute for moral justification; rov names the abundance-as-problem",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56057,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Amo 6:1",
+      "_routing_basis": "Woe to those at ease in Zion — complacent ease produced by material-political security",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56065,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Zec 1:15",
+      "_routing_basis": "Nations at ease — divine anger at self-generated complacency",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56063,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 12:5",
+      "_routing_basis": "Contempt for misfortune from the at-ease person",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56064,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Psa 123:4",
+      "_routing_basis": "Scorn of those at ease — sha.a.nan producing contempt toward the oppressed",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56062,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "2Ki 19:28",
+      "_routing_basis": "Complacency has come into my ears — Assyria's inner ground of arrogance against God",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139374,
+        "mti_term_id": 4695,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3723,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hab 1:16",
+      "_routing_basis": "Lives in luxury, food is rich — self-attributed military success producing inner idolatry of own power",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139377,
+        "mti_term_id": 4695,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3723,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Neh 9:25",
+      "_routing_basis": "Rich land → ate → fat → delighted then turned — sha.men adj names the ambient condition before apostasy",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139378,
+        "mti_term_id": 4695,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3723,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Neh 9:35",
+      "_routing_basis": "Rich land God gave — context of disobedience; sha.men names the provision within which faithfulness was owed",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139375,
+        "mti_term_id": 4695,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Isa 30:23",
+      "_routing_basis": "Rich and plenteous bread — eschatological divine provision; restoration context → M46-C ordered face",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139385,
+        "mti_term_id": 4697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 203,
+        "cluster_subgroup_id": 45,
+        "is_anchor": 1
+      },
+      "_reference": "Isa 6:10",
+      "_routing_basis": "ANCHOR M46-A. Make heart fat/dull — judicial hardening; fat heart = closed heart",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139384,
+        "mti_term_id": 4697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 204,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Deu 32:15",
+      "_routing_basis": "Jeshurun grew fat and kicked — prototypical prosperity-apostasy sequence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139386,
+        "mti_term_id": 4697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 204,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jer 5:28",
+      "_routing_basis": "Grown fat and sleek → no bounds in evil, no justice for fatherless — fatness producing moral insensibility",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139387,
+        "mti_term_id": 4697,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 204,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Neh 9:25",
+      "_routing_basis": "Became fat (sha.men verb) → delighted then turned — sha.men verb in prosperity-apostasy sequence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139381,
+        "mti_term_id": 4696,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3724,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 10:16",
+      "_routing_basis": "Stout warriors struck with wasting — human robustness/fatness as what judgment reduces",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139382,
+        "mti_term_id": 4696,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3724,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 17:4",
+      "_routing_basis": "Fat flesh of Jacob growing lean — material prosperity stripped by judgment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237872,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Mat 19:23",
+      "_routing_basis": "With difficulty will a rich person enter the kingdom — wealth as inner obstacle",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237873,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Mat 19:24",
+      "_routing_basis": "Camel through eye of needle — the inner obstacle of wealth to kingdom entry",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237869,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 6:24",
+      "_routing_basis": "Woe to you who are rich — consolation fully received in this age; inner satisfaction exhausted here",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237862,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:19",
+      "_routing_basis": "Rich man feasting daily — daily self-indulgence while Lazarus lies at gate; hardness",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237863,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:21",
+      "_routing_basis": "Lazarus desired scraps from rich man's table — indifference scale; hardness toward neighbor",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237864,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:22",
+      "_routing_basis": "Rich man died — eschatological reversal of the hardness pattern",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237865,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 18:23",
+      "_routing_basis": "Became very sad for he was extremely rich — wealth producing grief when kingdom demands; inner obstacle",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237866,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 18:25",
+      "_routing_basis": "Camel-needle — kingdom obstacle; same pattern as Mat 19:24",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237868,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 21:1",
+      "_routing_basis": "Rich putting gifts in treasury — giving from surplus; moral observation in context of widow's greater gift",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237852,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3705,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 8:9",
+      "_routing_basis": "Though he was rich yet became poor — Christological reversal; M46-D",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-059",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237851,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "1Ti 6:17",
+      "_routing_basis": "Charge rich not to be haughty nor set hopes on uncertain riches — twin distortions: pride and misplaced hope",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-060",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237854,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jam 1:10",
+      "_routing_basis": "Rich in his humiliation — transience of wealth; fading like grass",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-061",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237855,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Jam 1:11",
+      "_routing_basis": "Rich man fades in midst of his pursuits — absorbed in accumulation while fading",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-062",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237856,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3705,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Jam 2:5",
+      "_routing_basis": "God chose poor to be rich in faith — kingdom reversal; material poor/rich in faith",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-063",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237857,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:6",
+      "_routing_basis": "Rich oppress and drag into court — wealth enabling structural domination",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-064",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237858,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 5:1",
+      "_routing_basis": "Weep and howl for miseries coming — prophetic judgment on unjust accumulated wealth",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-065",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237876,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3705,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Rev 2:9",
+      "_routing_basis": "You are poor but you are rich — Smyrna: materially poor, genuinely rich before God",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-066",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237877,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45,
+        "is_anchor": 1
+      },
+      "_reference": "Rev 3:17",
+      "_routing_basis": "ANCHOR M46-A. I am rich I need nothing — the definitive inner-closure self-assessment",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-067",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237878,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 6:15",
+      "_routing_basis": "Rich hiding from wrath — wealth provides no exemption",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-068",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237861,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:1",
+      "_routing_basis": "Rich man with dishonest manager — moral category context; wealthy as structural role",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-069",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237859,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 12:16",
+      "_routing_basis": "Rich man whose land produced plentifully — parable opening showing inner deliberation of self-directed accumulation",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-070",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237870,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Mar 10:25",
+      "_routing_basis": "Camel-needle — same kingdom-obstacle pattern; Mark's version",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-071",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237875,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 13:16",
+      "_routing_basis": "Rich among those marked — wealth provides no exemption from allegiance demand",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-072",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237879,
+        "mti_term_id": 7578,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3715,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "1Ti 6:17",
+      "_routing_basis": "God who richly provides — plousiōs names the abundant quality of divine provision as ground of ordered inner life",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-073",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237887,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 1:53",
+      "_routing_basis": "Rich sent away empty — Magnificat: being-rich produces emptiness from God",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-074",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237888,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Luk 12:21",
+      "_routing_basis": "Not rich toward God — self-directed accumulation; inner-closure orientation",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-075",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237886,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3712,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 8:9",
+      "_routing_basis": "You might become rich through his poverty — Christological enrichment; toward-God form",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-076",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237883,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "1Cor 4:8",
+      "_routing_basis": "Already rich — ironic premature self-assessed spiritual prosperity; inner-closure self-assessment",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-077",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237885,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "1Ti 6:9",
+      "_routing_basis": "Those who desire to be rich fall — the inner desire to become rich as the primary inner problem",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-078",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237884,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3712,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "1Ti 6:18",
+      "_routing_basis": "Rich in good works — plouteō directed toward others; M46-D form",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-079",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237892,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 3:17",
+      "_routing_basis": "I have prospered — self-declared prosperity as inner-closure; same verse as plousios anchor",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-080",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237893,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3712,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Rev 3:18",
+      "_routing_basis": "Buy gold from me to be rich — divine counsel to seek true plouteō through refining",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-081",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237891,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 18:3",
+      "_routing_basis": "Merchants grew rich from Babylon's luxurious living — wealth from exploitation; inner-closure",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-082",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237889,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 18:15",
+      "_routing_basis": "Who gained wealth from her — mourning of those whose plouteō was Babylon-dependent",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-083",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237890,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 18:19",
+      "_routing_basis": "Grew rich by her wealth — lament at loss of Babylon-sourced wealth",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-084",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237894,
+        "mti_term_id": 7579,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3712,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Rom 10:12",
+      "_routing_basis": "Bestowing riches on all who call — divine plouteō toward those who call; M46-D",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-085",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237896,
+        "mti_term_id": 7580,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3713,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 6:10",
+      "_routing_basis": "As poor yet making many rich — apostolic poverty producing others' enrichment; through-put pattern",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-086",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237897,
+        "mti_term_id": 7580,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3713,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 9:11",
+      "_routing_basis": "Enriched to be generous — received enrichment instrumental for others' benefit",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-087",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237911,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3709,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Mat 13:22",
+      "_routing_basis": "Deceitfulness of riches chokes the word — riches as choking inner force; apatē",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-088",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237910,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3709,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Mar 4:19",
+      "_routing_basis": "Deceitfulness of riches chokes — same pattern as Mat 13:22",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-089",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237909,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3709,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 8:14",
+      "_routing_basis": "Choked by riches and pleasures — riches as one of three choking forces",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-090",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237899,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3710,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 8:2",
+      "_routing_basis": "Wealth of generosity from poverty and joy — ploutos revalued; generosity exceeds material riches",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-091",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237898,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "1Ti 6:17",
+      "_routing_basis": "Uncertain riches as hope-object — ploutos as the thing whose uncertainty disqualifies it as inner anchor (routes to plousios VCG — shared verse)",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-092",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237907,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3710,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Heb 11:26",
+      "_routing_basis": "Reproach of Christ counted greater wealth than Egypt's treasure — ploutos revalued by forward-looking inner vision",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-093",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237908,
+        "mti_term_id": 7581,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3709,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 5:2",
+      "_routing_basis": "Riches have rotted — decay of unjustly accumulated wealth; insatiability/deceitfulness face",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-094",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237919,
+        "mti_term_id": 7582,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3714,
+        "cluster_subgroup_id": 48,
+        "is_anchor": 1
+      },
+      "_reference": "2Cor 8:9",
+      "_routing_basis": "ANCHOR M46-D primary. He became poor so you might become rich — Christological paradigm of voluntary impoverishment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-095",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237950,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 5:3",
+      "_routing_basis": "Poor in spirit — poverty as inner posture of dependence and openness before God",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-096",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237946,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 11:5",
+      "_routing_basis": "Poor have good news preached — poor as primary recipients of gospel",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-097",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237947,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 19:21",
+      "_routing_basis": "Sell and give to the poor — act of release producing kingdom treasure",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-098",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237933,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:20",
+      "_routing_basis": "Poor man Lazarus at gate — the poor as the moral test; rich man's indifference",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-099",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237934,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 16:22",
+      "_routing_basis": "Poor man carried by angels — eschatological reversal; poverty as kingdom ground",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-100",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237935,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 18:22",
+      "_routing_basis": "Distribute to the poor — act of release; kingdom treasure in exchange",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-101",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237864,
+        "mti_term_id": 7577,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3704,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Luk 16:22",
+      "_routing_basis": "Rich man died and was buried — eschatological reversal, hardness face (plousios in same verse)",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-102",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237936,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 19:8",
+      "_routing_basis": "Zacchaeus gives half to poor — spontaneous release as inner-being response to encounter",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-103",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237937,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 21:3",
+      "_routing_basis": "Poor widow gave more than all — giving from poverty; total release",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-104",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237938,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 4:18",
+      "_routing_basis": "Anointed to proclaim good news to the poor — primary messianic address to the poor",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-105",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237939,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 6:20",
+      "_routing_basis": "Blessed are you who are poor — material poverty as eschatological blessing",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-106",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237940,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 7:22",
+      "_routing_basis": "Poor have good news preached — messianic sign; same pattern as Mat 11:5",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-107",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237941,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mar 10:21",
+      "_routing_basis": "Sell all give to poor — command of release; kingdom treasure",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-108",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237942,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mar 12:42",
+      "_routing_basis": "Poor widow put in two copper coins — giving from poverty",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-109",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237943,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mar 12:43",
+      "_routing_basis": "Poor widow gave more than all — Jesus's evaluation of total giving",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-110",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237946,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 11:5",
+      "_routing_basis": "Duplicate check — Mat 11:5 ptōchos",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-111",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237947,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3708,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 19:21",
+      "_routing_basis": "Duplicate check — Mat 19:21 ptōchos",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-112",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237931,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 14:13",
+      "_routing_basis": "Invite poor to feast — reorientation of hospitality; kingdom pattern",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-113",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237932,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Luk 14:21",
+      "_routing_basis": "Bring in the poor — kingdom feast filled with those world excludes",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-114",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237920,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3713,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 6:10",
+      "_routing_basis": "As poor yet making many rich — ptōchos instance in same verse as ploutizō; routes to ploutizō VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-115",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237920,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3713,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "2Cor 6:10",
+      "_routing_basis": "2Cor 6:10 ptōchos vc_id duplicate check",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-116",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237923,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:2",
+      "_routing_basis": "Poor man in shabby clothing — assembly's treatment as moral test",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-117",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237924,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:3",
+      "_routing_basis": "Tell poor man to stand — differential treatment revealing inner partiality",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-118",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237923,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:2",
+      "_routing_basis": "Jam 2:2 second vc_id",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-119",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237924,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:3",
+      "_routing_basis": "Jam 2:3 second vc_id",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-120",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237925,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Jam 2:5",
+      "_routing_basis": "God chose poor to be rich in faith — divine election of the materially poor",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-121",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237926,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:6",
+      "_routing_basis": "Rich oppress — ptōchos as the one the rich exploit; poor as moral mirror",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-122",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237925,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Jam 2:5",
+      "_routing_basis": "Jam 2:5 second vc_id",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-123",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237926,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Jam 2:6",
+      "_routing_basis": "Jam 2:6 second vc_id",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-124",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237928,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Joh 12:6",
+      "_routing_basis": "Judas false concern for poor — invoking poor as concealment of greed; poor as moral test",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-125",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237928,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3707,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Joh 12:6",
+      "_routing_basis": "Joh 12:6 second vc_id",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-126",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237950,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3706,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Mat 5:3",
+      "_routing_basis": "Mat 5:3 ptōchos second vc_id",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-127",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237952,
+        "mti_term_id": 7583,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Rev 3:17",
+      "_routing_basis": "Rev 3:17 ptōchos — 'you are poor' (Laodicea's actual inner poverty); routes to plousios M46-A VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-128",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238028,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Psa 49:6",
+      "_routing_basis": "Trust in wealth and boast of riches — o.sher as object of misplaced trust and boasting",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-129",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238029,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46,
+        "is_anchor": 1
+      },
+      "_reference": "Psa 52:7",
+      "_routing_basis": "ANCHOR M46-B. Trusted in riches not God — substitution of material wealth for divine refuge",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-130",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238024,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 3:16",
+      "_routing_basis": "Wisdom's left hand holds riches — o.sher as Wisdom's gift; ordered wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-131",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238026,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 8:18",
+      "_routing_basis": "Riches and honor with me, enduring wealth and righteousness — Wisdom's o.sher paired with righteousness",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-132",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238018,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 11:16",
+      "_routing_basis": "Violent men get riches — character (violence) producing wealth; moral character face → a.shir-01 VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-133",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238019,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 11:28",
+      "_routing_basis": "Trusts in riches will fall — o.sher as misplaced trust producing falling",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-134",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238020,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 13:7",
+      "_routing_basis": "One pretends to be rich yet has nothing — false self-presentation of wealth; inner-closure face",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-135",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238021,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 13:8",
+      "_routing_basis": "Riches may ransom life — wealth creating vulnerability; o.sher as the thing that exposes the person",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-136",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238022,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 22:1",
+      "_routing_basis": "Good name over great riches — wisdom placing character above o.sher",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-137",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238023,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 22:4",
+      "_routing_basis": "Reward of humility and fear is riches — o.sher as fruit of inner dispositions",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-138",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238025,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 8:18",
+      "_routing_basis": "Pro 8:18 second o.sher vc_id — same verse",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-139",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238027,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Psa 112:3",
+      "_routing_basis": "Wealth and riches in his house, righteousness endures — o.sher and righteousness together in righteous person's house",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-140",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237994,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "1Ch 29:12",
+      "_routing_basis": "Both riches and honor come from you — divine sovereignty over o.sher",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-141",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237997,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "1Ki 3:11",
+      "_routing_basis": "Did not ask for riches — Solomon's heart not seeking o.sher; right inner priority",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-142",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237998,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "1Ki 3:13",
+      "_routing_basis": "Riches given as unasked gift — o.sher following right inner priority",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-143",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238000,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "2Ch 1:11",
+      "_routing_basis": "Heart did not ask for wealth — same pattern as 1Ki 3:11",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-144",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238001,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "2Ch 1:12",
+      "_routing_basis": "Riches given after wisdom chosen — o.sher as consequence of right inner order",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-145",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238006,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 4:8",
+      "_routing_basis": "Eyes never satisfied with riches — o.sher as object of insatiable inner desire",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-146",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238007,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 5:12",
+      "_routing_basis": "Abundance of rich not let him sleep — same verse has hon; routes to hon VCG for this o.sher instance",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-147",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238008,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 5:13",
+      "_routing_basis": "Riches kept to owner's hurt — hoarded o.sher harming its keeper",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-148",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238009,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 5:14",
+      "_routing_basis": "Riches lost in bad venture — grief of losing hoarded wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-149",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238010,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Ecc 5:19",
+      "_routing_basis": "God gives wealth with power to enjoy — o.sher as divine gift with inner capacity to receive it",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-150",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238011,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 6:2",
+      "_routing_basis": "Wealth present but power to enjoy absent — o.sher without inner capacity; insatiability/alienation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-151",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 238012,
+        "mti_term_id": 7586,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Est 5:11",
+      "_routing_basis": "Haman recounts splendour of riches — o.sher as ground of pride and self-display",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-152",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237956,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "2Sa 12:4",
+      "_routing_basis": "Rich man unwilling to give from own flock — failure of pity (cha.mal); hardness",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-153",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237963,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3703,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 27:19",
+      "_routing_basis": "Goes to bed rich, wakes with wealth gone — transience; routes to plousios M46-A VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-154",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237965,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 10:15",
+      "_routing_basis": "Rich man's wealth his strong city — imagined stronghold; hon co-occurs, routes to hon VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-155",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237966,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 14:20",
+      "_routing_basis": "Rich has many friends — conditional relationships produced by wealth; hardness context",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-156",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237967,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 18:11",
+      "_routing_basis": "Wealth strong city, high wall in imagination — imagined stronghold; hon co-occurs → hon VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-157",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237968,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 18:23",
+      "_routing_basis": "Rich answers roughly — hardness of inner posture toward petitioners",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-158",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237969,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3719,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 22:2",
+      "_routing_basis": "Rich and poor before God who made both — shared creatureliness; wisdom's examination",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-159",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237970,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 22:7",
+      "_routing_basis": "Rich rules over poor — structural domination enabled by wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-160",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237971,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3719,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 28:6",
+      "_routing_basis": "Better poor with integrity than rich and crooked — integrity above wealth; wisdom's evaluation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-161",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237972,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 28:11",
+      "_routing_basis": "Rich wise in own eyes — wealth producing false self-assessed wisdom; hardness of self-perception",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-162",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237973,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Ecc 5:12",
+      "_routing_basis": "Abundance of rich not let him sleep — inner restlessness of the a.shir",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-163",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237974,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3719,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Ecc 10:6",
+      "_routing_basis": "Rich sit in low place — social inversion; wisdom's observation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-164",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237964,
+        "mti_term_id": 7584,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3718,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Mic 6:12",
+      "_routing_basis": "Rich men full of violence — wealth with inner moral violence and deception",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-165",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237981,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3722,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Gen 14:23",
+      "_routing_basis": "Abram refuses enrichment — deliberate not-being-enriched to preserve testimony of God-dependence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-166",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237978,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "1Sa 2:7",
+      "_routing_basis": "Lord makes poor and makes rich — divine sovereignty over enrichment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-167",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237984,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Job 15:29",
+      "_routing_basis": "Wicked will not be rich — inner moral condition (wickedness) blocking enrichment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-168",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237985,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 10:22",
+      "_routing_basis": "Lord's blessing makes rich, adds no sorrow — enrichment from divine blessing vs self-generated toil",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-169",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237986,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 10:4",
+      "_routing_basis": "Diligent hand makes rich — character (diligence) producing enrichment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-170",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237987,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 13:7",
+      "_routing_basis": "Pretends to be rich yet has nothing — false self-presentation of wealth; self-deception face",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-171",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237988,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 21:17",
+      "_routing_basis": "Loves pleasure will not be rich — inner orientation toward pleasure as path away from enrichment",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-172",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237989,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3722,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Pro 23:4",
+      "_routing_basis": "Do not toil to acquire wealth, desist — wisdom counselling restraint of wealth-seeking drive",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-173",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237990,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 28:20",
+      "_routing_basis": "Hastens to be rich not go unpunished — urgency in wealth-pursuit as inner failure",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-174",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237991,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Psa 49:16",
+      "_routing_basis": "Be not afraid when man becomes rich — instruction against inner fear/envy at another's prosperity",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-175",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237992,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Hos 12:8",
+      "_routing_basis": "I am rich I have found wealth — Ephraim's self-declaration as false moral vindication",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-176",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 237993,
+        "mti_term_id": 7585,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3720,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Zec 11:5",
+      "_routing_basis": "Blessed be the Lord I have become rich — corrupt shepherds' self-congratulation through exploitation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-177",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219945,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2957,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Psa 112:3",
+      "_routing_basis": "Wealth and riches in house of righteous — character producing wealth with enduring righteousness; M46-C",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-178",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219946,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Psa 119:14",
+      "_routing_basis": "Delight in testimonies as in all riches — hon as the measure of highest value; testimonies equal to riches",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-179",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219940,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3715,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Pro 3:9",
+      "_routing_basis": "Honor Lord with your wealth — hon directed toward God; M46-D ordering (using plousiōs VCG — divine provision)",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-180",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219929,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3716,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 11:4",
+      "_routing_basis": "Riches do not profit in day of wrath — hon as the thing that fails when it matters most",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-181",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219933,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 18:11",
+      "_routing_basis": "Rich man's wealth strong city in imagination — hon = imagined stronghold; primary M46-B VCG",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-182",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219937,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3711,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Pro 28:22",
+      "_routing_basis": "Stingy hastens after wealth — hon as the thing urgently pursued; inner-closure drive",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-183",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219939,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 29:3",
+      "_routing_basis": "Companion of prostitutes squanders hon — disordered inner desire consuming wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-184",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219948,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Song 8:7",
+      "_routing_basis": "Cannot purchase love with hon — hon and love incommensurable; wealth's limit in deepest inner-being domain",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-185",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219947,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2213,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Psa 44:12",
+      "_routing_basis": "Sold for a trifle — hon naming zero-worth; covenantal shame",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-186",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219927,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 1:13",
+      "_routing_basis": "We shall find all precious goods — hon as object of sinful inner desire driving violence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-187",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219944,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 8:18",
+      "_routing_basis": "Enduring wealth with righteousness — Wisdom's hon paired with righteousness",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-188",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219928,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 10:15",
+      "_routing_basis": "Rich man's wealth strong city — hon as imagined psychological stronghold",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-189",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219930,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 12:27",
+      "_routing_basis": "Diligent gets precious wealth — hon as fruit of character",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-190",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219932,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 13:7",
+      "_routing_basis": "Pretends to be rich yet has nothing — concealment of hon; inner deception",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-191",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219931,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 13:11",
+      "_routing_basis": "Wealth gained hastily dwindles; gathered little by little increases — patience vs haste; character→hon",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-192",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219935,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 19:4",
+      "_routing_basis": "Wealth brings many friends; poor deserted — hon distorting authentic relationship",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-193",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219934,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3717,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 19:14",
+      "_routing_basis": "House and wealth inherited; prudent wife from Lord — material inheritance vs divine gift",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-194",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219936,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3721,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 24:4",
+      "_routing_basis": "By knowledge rooms filled with precious riches — inner knowledge producing material hon",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-195",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219938,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 28:8",
+      "_routing_basis": "Multiplies by interest gathered for generous — unjust accumulation redirected by providence",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-196",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 219941,
+        "mti_term_id": 7010,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2933,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Pro 30:15",
+      "_routing_basis": "Never says enough — constitutional insatiability; hon = the thing that is never enough",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-197",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 12790,
+        "mti_term_id": 681,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2957,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 15:6",
+      "_routing_basis": "Righteous has treasure; wicked income brings trouble — character determines quality of wealth",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-198",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 12791,
+        "mti_term_id": 681,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2957,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Pro 27:24",
+      "_routing_basis": "Riches do not last forever — cho.sen as transient; character-wealth observation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-199",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 12792,
+        "mti_term_id": 681,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2957,
+        "cluster_subgroup_id": 47,
+        "is_anchor": 1
+      },
+      "_reference": "Isa 33:6",
+      "_routing_basis": "ANCHOR M46-C secondary. Fear of Lord is Zion's treasure — cho.sen applied to inner realities of salvation",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-200",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 12794,
+        "mti_term_id": 681,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2957,
+        "cluster_subgroup_id": 47
+      },
+      "_reference": "Eze 22:25",
+      "_routing_basis": "Prophets took treasure through violence — cho.sen seized by corrupt inner character",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-201",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 148148,
+        "mti_term_id": 4898,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 385,
+        "cluster_subgroup_id": 48,
+        "is_anchor": 1
+      },
+      "_reference": "Phil 4:11",
+      "_routing_basis": "ANCHOR M46-D secondary. I have learned to be content — contentment as achieved inner disposition",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-202",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 221686,
+        "mti_term_id": 7109,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 2956,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Isa 23:18",
+      "_routing_basis": "Not stored or hoarded — cha.san negated; eschatological release of wealth toward God's people",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-203",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 117400,
+        "mti_term_id": 3836,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 552,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Neh 9:25",
+      "_routing_basis": "Delighted in God's goodness — ordered inner delight in divine provision",
+      "_vr_status": "exact"
+    },
+    {
+      "op_id": "OP-204",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 139398,
+        "mti_term_id": 4702,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 3709,
+        "cluster_subgroup_id": 46
+      },
+      "_reference": "Rev 18:14",
+      "_routing_basis": "Soul longed for rich delicacies of Babylon — liparos names luxury goods as object of the soul's longing; M46-B insatiability/deceitfulness face",
+      "_vr_status": "recovered"
+    },
+    {
+      "op_id": "OP-205",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56060,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 32:9",
+      "_routing_basis": "Complacent ease of Jerusalem's women — same 413-001 register as Amo 6:1 / Zec 1:15 already in patch; CC extrapolation from AI's pattern.",
+      "_vr_status": "added_by_cc"
+    },
+    {
+      "op_id": "OP-206",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56058,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 32:11",
+      "_routing_basis": "Same pericope as Isa 32:9 — complacent ease warning. CC extrapolation.",
+      "_vr_status": "added_by_cc"
+    },
+    {
+      "op_id": "OP-207",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56059,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1862,
+        "cluster_subgroup_id": 48
+      },
+      "_reference": "Isa 32:18",
+      "_routing_basis": "Per AI's note: 413-002 'divine secure quietness' face routes to M46-D + VCG 1862. Existing is_anchor=1 preserved.",
+      "_vr_status": "added_by_cc"
+    },
+    {
+      "op_id": "OP-208",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "verse_record_id": 56062,
+        "mti_term_id": 413,
+        "delete_flagged": 0
+      },
+      "set": {
+        "group_id": 1861,
+        "cluster_subgroup_id": 45
+      },
+      "_reference": "Isa 37:29",
+      "_routing_basis": "Sennacherib's complacent boasting — 413-001 register. CC extrapolation.",
+      "_vr_status": "added_by_cc"
+    }
+  ]
+}

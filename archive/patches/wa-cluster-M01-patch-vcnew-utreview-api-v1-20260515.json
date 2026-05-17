@@ -1,0 +1,2205 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M01-patch-vcnew-utreview-api-v1-20260515",
+    "cluster_code": "M01",
+    "session_ref": "M01 Phase 2 UT review via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v1_13-20260514",
+    "date": "20260515",
+    "terms_covered": [
+      21,
+      284,
+      92,
+      1734,
+      1162,
+      1157,
+      305,
+      309,
+      1552,
+      703,
+      298,
+      269,
+      272,
+      156,
+      1152,
+      1776,
+      4814,
+      1777,
+      829,
+      1719,
+      1554,
+      1793,
+      1161,
+      1744,
+      289
+    ],
+    "input_versions": {
+      "21": 1,
+      "284": 1,
+      "92": 1,
+      "1734": 1,
+      "1162": 1,
+      "1157": 1,
+      "305": 1,
+      "309": 1,
+      "1552": 1,
+      "703": 1,
+      "298": 1,
+      "269": 1,
+      "272": 1,
+      "156": 1,
+      "1152": 1,
+      "1776": 1,
+      "4814": 1,
+      "1777": 1,
+      "829": 1,
+      "1719": 1,
+      "1554": 1,
+      "1793": 1,
+      "1161": 1,
+      "1744": 1,
+      "289": 1
+    },
+    "op_count": 128,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "cc_provisional_anchor_promotions": {
+      "rule": "wa-sessionb-cluster-instruction-v1_13 §5.1.1",
+      "fixed_op_indices_0based": [
+        32,
+        74
+      ],
+      "fixed_count": 2
+    }
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 818,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 819,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 822,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 825,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 827,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 829,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 831,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 832,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 834,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 835,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57969,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57972,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57975,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57976,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 836,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 844,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 846,
+        "mti_term_id": 21,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2319,
+        "mti_term_id": 284,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60750,
+        "mti_term_id": 284,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "e.mah used here as a noun meaning 'idols/dread-images' (objects of false worship), not inner human fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157753,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning to hurry/rush out in a physical expulsion narrative, not inner fear or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157754,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157755,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning to hurry/hasten in response to divine command for military urgency, not inner terror or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157761,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning to act quickly in providing provisions, a logistical sense with no inner fear or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157762,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning to hurry/hasten in a physical errand context, with no inner fear or dismay content — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157763,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning hurried physical dispatch of couriers, conveying urgency of movement rather than inner fear or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157776,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ba.hal meaning to acquire hastily in a wisdom-saying about wealth, with no inner fear or dismay content — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157786,
+        "mti_term_id": 92,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65941,
+        "mti_term_id": 1734,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "za.chal used in its sense of 'to crawl/creep' (referring to dust-crawling creatures), not 'to fear' — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42469,
+        "mti_term_id": 1162,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Za.a.vah used as 'a horror' meaning an object of revulsion to other nations, not inner fear experienced by a person — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42470,
+        "mti_term_id": 1162,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Za.a.vah used as an object of horror/disgrace among nations, a social-shame formula, not inner terror experienced by the subject — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42471,
+        "mti_term_id": 1162,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Za.a.vah as covenant-curse formula denoting object of revulsion to surrounding nations, not inner-being fear or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42472,
+        "mti_term_id": 1162,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Za.a.vah as formulaic covenant-curse object of revulsion before other kingdoms, not an inner-being experience of terror or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 41881,
+        "mti_term_id": 1157,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_provisional_anchor": "Set by CC per v1_13 §5.1.1 (term has no existing anchor; first relevant op marked is_anchor=1)"
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61544,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.rad meaning to scare away animals from corpses, not human inner trembling or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2601,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2607,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61542,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.rad used in the sense of 'taking trouble/showing care' (concern), not inner trembling or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61549,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.rad meaning to frighten away animals (flocks), not human inner trembling or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61551,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.rad meaning to scare away scavenging animals from corpses, not human inner trembling or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61554,
+        "mti_term_id": 305,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.rad meaning to disturb/frighten animals (lions), not human inner trembling or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2637,
+        "mti_term_id": 309,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.ra.dah used in the sense of solicitous care or effort on someone's behalf, not inner trembling or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65113,
+        "mti_term_id": 1552,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cho.ri meaning intensity/heat of divine anger in a rhetorical inquiry, not a person's inner fear or dread response — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65115,
+        "mti_term_id": 1552,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13699,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13679,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat meaning national/political dissolution of a people — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13680,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat meaning military defeat and destruction of nations, not inner fear or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13681,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat meaning physical breaking of an oppressor's yoke and rod — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13677,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat applied to divine righteousness never failing/wavering, not to human inner fear or dismay — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13684,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat describing parched/cracked ground due to drought, a physical natural phenomenon — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13689,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat meaning physical destruction of a fortress in military conquest — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13694,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13695,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "cha.tat meaning physical breaking of bows as weapons — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 13671,
+        "mti_term_id": 703,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60961,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60933,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ya.re used as an attributive adjective describing the wilderness as dread-inspiring terrain, not naming a human inner fear-response — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60935,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60947,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60949,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ya.re used attributively to characterise the wilderness as dread-inducing terrain, not naming a human inner experience of fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60925,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60979,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ya.re used attributively to describe a land as fearsome terrain in an oracle, not naming a human inner-being fear experience — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61014,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 61028,
+        "mti_term_id": 298,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60729,
+        "mti_term_id": 269,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "yir.ah meaning practical avoidance of physical hazard (briers and thorns), not inner fear or reverential awe — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60726,
+        "mti_term_id": 269,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "yir.ah used adjectivally to describe the visual quality of wheel rims, not an inner fear or reverential awe experience — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60727,
+        "mti_term_id": 269,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60721,
+        "mti_term_id": 272,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.gu.rah used as 'granary/barn' (storage place for seed), not as fear or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 487,
+        "mti_term_id": 156,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "mu.tsaq meaning physical constriction of water (frozen fast), not inner anguish or constraint of a person — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201914,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning physical ruins/destruction of fortifications, not inner terror or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201907,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning consequential ruin/destruction from foolish speech, not inner terror or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201908,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning socioeconomic ruin/destruction, not inner terror or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201909,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning destruction/doom as retributive outcome for evildoers, not inner terror or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201910,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning ruin as consequence of reckless speech, not inner terror or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 201911,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "me.chit.tah meaning political/social ruin of a prince without people, not inner terror or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 41314,
+        "mti_term_id": 1152,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160839,
+        "mti_term_id": 1776,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 1,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      },
+      "_provisional_anchor": "Set by CC per v1_13 §5.1.1 (term has no existing anchor; first relevant op marked is_anchor=1)"
+    },
+    {
+      "op_id": "OP-076",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 144330,
+        "mti_term_id": 4814,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "mish.bar meaning literal ocean waves as a metaphor for God's power, not human inner fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 160840,
+        "mti_term_id": 1777,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "a.ruts used as a noun meaning 'terrible/dreadful ravines' (physical terrain), not inner dread or fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 19888,
+        "mti_term_id": 829,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 137751,
+        "mti_term_id": 1719,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "pa.lats meaning physical trembling of earth's pillars as a cosmic event, not human inner shuddering or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65140,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning to quarrel or be agitated with each other in a social context, not inner fear or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65138,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65137,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65129,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning literal earthquake/seismic quaking of the earth, a physical cosmic event rather than inner human fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65130,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65135,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65134,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning cosmic/physical trembling of heavenly foundations during theophany, not human inner fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65131,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning raging arrogance/fury directed outward against God, not inner fear or trembling — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65132,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning raging aggression/fury against God, not inner fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65128,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65157,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning physical trembling of the earth's pillars under divine power, a cosmic event not inner human fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65156,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning to provoke/challenge God in an outward relational sense, not inner fear or trembling — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65163,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning cosmic/physical trembling of mountain foundations in theophany, not human inner-being fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65166,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning physical trembling of the earth in a storm theophany, not inner human fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65161,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning outward raging/angry agitation of a fool in argument, not inner fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65162,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning figurative earth-trembling as social/cosmic disruption metaphor, not inner human fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65152,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning physical quaking of mountains as cosmic sign of divine wrath, not inner human fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65143,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning cosmic trembling of heavens at divine wrath, a physical-eschatological event not inner human fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65145,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65144,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65146,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning divine shaking/destabilizing of kingdoms as external political-cosmic action, not inner human fear — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65147,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning God being roused/stirred to action, not inner human fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65150,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning raging arrogance/fury directed against God, not inner fear or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65151,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning outward raging aggression against God, not inner fear or trembling — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65153,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65155,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65158,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65159,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning physical cosmic quaking of earth and heavens, not inner human fear or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65136,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.gaz meaning physical trembling/quaking of the land as cosmic judgment sign, not inner human fear or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65160,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65142,
+        "mti_term_id": 1554,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 66493,
+        "mti_term_id": 1793,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ra.ad meaning physical earth-trembling at divine presence, a cosmic natural event rather than human inner terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42162,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning physical desolation of uninhabited houses, not inner horror or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42160,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning physical land-desolation as divine judgment outcome, not inner horror or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42161,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning physical ruin left in a city, not inner dread or horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42163,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning land rendered physically desolate by invaders, not inner horror or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42167,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning physical land-waste caused by an invading destroyer, not inner horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42164,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning territorial ruin and waste under judgment, not inner fear or horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42165,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah in a judicial devastation formula denoting civic-territorial ruin, not inner dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42166,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning land laid waste by the sword, not inner horror or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42168,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning land desolated and cursed as judicial outcome, not inner horror or dread — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42169,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning a city rendered physically desolate and uninhabited, not inner horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42170,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning cities made uninhabited and desolate, not inner dread or horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42171,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning land made desolate by invasion, not inner horror or terror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42172,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning physical land-desolation as divine judicial purpose, not inner horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42159,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning national desolation as punishment outcome, not inner fear or horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 42173,
+        "mti_term_id": 1161,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sham.mah meaning civic desolation and scorn as judicial consequence, not inner dread or horror — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 66053,
+        "mti_term_id": 1744,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "sa.ar used as a command to the heavens (cosmic personification), not describing human inner shuddering or fear-response — outside M01 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 60755,
+        "mti_term_id": 289,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ta.mah applied to cosmic pillars of heaven as a mythological-physical description, not human inner astonishment — outside M01 inner-being scope."
+      }
+    }
+  ]
+}

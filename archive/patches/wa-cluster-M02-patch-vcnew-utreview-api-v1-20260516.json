@@ -1,0 +1,6033 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "wa-cluster-M02-patch-vcnew-utreview-api-v1-20260516",
+    "cluster_code": "M02",
+    "session_ref": "M02 Phase 1 UT review via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_2-20260516",
+    "date": "20260516",
+    "terms_covered": [
+      19,
+      37,
+      1405,
+      3043,
+      114,
+      115,
+      254,
+      255,
+      136,
+      139,
+      140,
+      149,
+      151,
+      166,
+      177,
+      205,
+      344,
+      222,
+      223,
+      234
+    ],
+    "input_versions": {
+      "19": 1,
+      "37": 1,
+      "1405": 1,
+      "3043": 1,
+      "114": 1,
+      "115": 1,
+      "254": 1,
+      "255": 1,
+      "136": 1,
+      "139": 1,
+      "140": 1,
+      "149": 1,
+      "151": 1,
+      "166": 1,
+      "177": 1,
+      "205": 1,
+      "344": 1,
+      "222": 1,
+      "223": 1,
+      "234": 1
+    },
+    "op_count": 370,
+    "source": "Claude API classification (Sonnet 4.6)",
+    "provisional_anchor_promotions": [],
+    "provisional_anchor_count": 0
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 289,
+        "mti_term_id": 19,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 404,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57872,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57871,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 407,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57880,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57881,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57882,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57883,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 408,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57878,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57879,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57866,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57867,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57865,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57861,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57862,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57863,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57864,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57868,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57869,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 411,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 413,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57877,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57873,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57874,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57875,
+        "mti_term_id": 37,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63448,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63447,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63442,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63444,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63443,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63449,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63451,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 63452,
+        "mti_term_id": 1405,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 186024,
+        "mti_term_id": 3043,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "zid used as 'to cook/boil' physically (cooking stew), not as anger or insolent pride — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167,
+        "mti_term_id": 114,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 168,
+        "mti_term_id": 114,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 175,
+        "mti_term_id": 114,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Za.am used as 'accursed/abominable' qualifying a dishonest measure — adjectival sense of being under curse, not an inner-being experience of indignation — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57733,
+        "mti_term_id": 115,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57737,
+        "mti_term_id": 115,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 7513,
+        "mti_term_id": 254,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 7518,
+        "mti_term_id": 255,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "za.aph used of the sea's physical turbulence/storming, not human or divine inner-being anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 340,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57463,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57467,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57392,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57388,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57389,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57390,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "che.mah used as literal 'venom' of crawling beasts, a physical sense with no inner-being anger content — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57391,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "che.mah used as literal 'venom' of serpents in a wine metaphor, physical sense with no anger content — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57387,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-053",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 341,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-054",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57385,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-055",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57386,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-056",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57380,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-057",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57381,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-058",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57382,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-059",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57383,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-060",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57384,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-061",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57393,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-062",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 343,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-063",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57394,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-064",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57396,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-065",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57395,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-066",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57460,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-067",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57457,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-068",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57458,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-069",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57459,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-070",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57477,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-071",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57479,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "che.mah used as literal 'venom' of a serpent in a simile about the wicked, physical poison sense rather than inner anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-072",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57480,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-073",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57482,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-074",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57483,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-075",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57484,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-076",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57485,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-077",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57486,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-078",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57487,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-079",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57475,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-080",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57476,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "che.mah used as literal 'venom' of asps in a metaphor for deadly speech, physical poison sense not inner-being anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-081",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 344,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-082",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57469,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-083",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57470,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-084",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57472,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-085",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57474,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-086",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57429,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-087",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57430,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-088",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57431,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-089",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57432,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-090",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57433,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-091",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57434,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-092",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57435,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-093",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57436,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-094",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57437,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-095",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57438,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-096",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57439,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-097",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57440,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-098",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57454,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-099",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57455,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-100",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57456,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-101",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57441,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-102",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57442,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-103",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57444,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-104",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57443,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-105",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57445,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-106",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57446,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-107",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57447,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-108",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57448,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-109",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57449,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-110",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57450,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-111",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57451,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-112",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57452,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-113",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57453,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-114",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57461,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-115",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57462,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-116",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57420,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-117",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57422,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-118",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57425,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-119",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57426,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-120",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57398,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-121",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57399,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-122",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57400,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-123",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57401,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-124",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57402,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-125",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57403,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-126",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57404,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-127",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57405,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-128",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57406,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-129",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57408,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-130",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57409,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-131",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57411,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-132",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57413,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-133",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57414,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-134",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57415,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-135",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57416,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-136",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57417,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-137",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57419,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-138",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57428,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "che.mah used as physical heat of wine causing illness, not inner-being anger or fury — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-139",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57464,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-140",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57465,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-141",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57466,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-142",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57427,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-143",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57488,
+        "mti_term_id": 136,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-144",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57554,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-145",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57555,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-146",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57556,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-147",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57557,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-148",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57559,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-149",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57560,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-150",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57561,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-151",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57562,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-152",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57553,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-153",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57548,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-154",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57550,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-155",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57551,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-156",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57552,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-157",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57587,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-158",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57589,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-159",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57590,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-160",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57592,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-161",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57594,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-162",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57546,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-163",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57547,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-164",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57543,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-165",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57544,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-166",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57545,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-167",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57573,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-168",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57577,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-169",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57578,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-170",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57579,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-171",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57580,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-172",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57581,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-173",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57575,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-174",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57576,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-175",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57526,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-176",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57527,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-177",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57530,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-178",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57529,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-179",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57540,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-180",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57542,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-181",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57535,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-182",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57536,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-183",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57537,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-184",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57538,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-185",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57539,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-186",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57534,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-187",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57524,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-188",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57525,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-189",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57531,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-190",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57532,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-191",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57582,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "The term in context refers to building/repairing activity (cha.rah likely a scribal variant or different root), not to anger or inner-being kindling — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-192",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 364,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-193",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57583,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-194",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57584,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-195",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57568,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-196",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57569,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-197",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57570,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-198",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57571,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-199",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57572,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-200",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57599,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-201",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57597,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-202",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57598,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-203",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57596,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-204",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57603,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-205",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57567,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-206",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57565,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-207",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57566,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-208",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57564,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-209",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57563,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-210",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57604,
+        "mti_term_id": 139,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-211",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 310,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-212",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57494,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-213",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57498,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-214",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57515,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-215",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57509,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-216",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57518,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "Term used for literal physical burning of thorns in a speed simile, not divine or human anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-217",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57519,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-218",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57521,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-219",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57522,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-220",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57499,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-221",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57506,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-222",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57502,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-223",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57503,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-224",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57504,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-225",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57505,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-226",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57508,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-227",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57496,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-228",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57497,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-229",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 313,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-230",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57510,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-231",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57514,
+        "mti_term_id": 140,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-232",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 365,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-233",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57772,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-234",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57769,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-235",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57770,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-236",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57771,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-237",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57791,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-238",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 366,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-239",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57752,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-240",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57753,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-241",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57756,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-242",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57763,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-243",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57766,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-244",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57758,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-245",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57759,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-246",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57760,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-247",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57761,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-248",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57792,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-249",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57793,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-250",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 367,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-251",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57794,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-252",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 368,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-253",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57779,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-254",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57781,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-255",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57782,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-256",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57783,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-257",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57784,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-258",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57785,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-259",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57786,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-260",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57787,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-261",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57777,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-262",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57774,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-263",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57775,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-264",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57776,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ka.as used in the sense of grieving/troubling the hearts of nations with news of destruction, not provoking anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-265",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57778,
+        "mti_term_id": 149,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-266",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 373,
+        "mti_term_id": 151,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-267",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2910,
+        "mti_term_id": 166,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-268",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2912,
+        "mti_term_id": 166,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-269",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 2918,
+        "mti_term_id": 166,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "ma.rar used in a purely sensory/physical sense describing bitter taste of strong drink, not provocation or inner-being anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-270",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 385,
+        "mti_term_id": 177,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "na.phal ('to fall') is not the word bearing anger meaning here; the verse's anger sense derives from a different Hebrew root — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-271",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158055,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'bind/wrap' physically (money), not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-272",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158056,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-273",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158057,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-274",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158042,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-275",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158052,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-276",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158053,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-277",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158039,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'lay siege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-278",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158040,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-279",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158041,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege/close in on' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-280",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158049,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'tie up/bind' physically (bags of silver), not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-281",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158050,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-282",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158051,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-283",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158044,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'bag/bind up' physically (money), not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-284",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158045,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-285",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158046,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-286",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158047,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-287",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158048,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-288",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158038,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-289",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158060,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'lay siege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-290",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158061,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military siege context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-291",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158062,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-292",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158063,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-293",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158064,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-294",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158065,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-295",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158066,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-296",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158058,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege/siege' in prophetic-military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-297",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158059,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'bind/wrap' physically (hair in robe), not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-298",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 158054,
+        "mti_term_id": 205,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "tsur used as 'besiege' in military context, not 'provoke' — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-299",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1955,
+        "mti_term_id": 344,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-300",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1956,
+        "mti_term_id": 344,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-301",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1957,
+        "mti_term_id": 344,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-302",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1987,
+        "mti_term_id": 344,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-303",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57663,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-304",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 301,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-305",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 302,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-306",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 304,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-307",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 305,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-308",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 306,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-309",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57657,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-310",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57658,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-311",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57655,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-312",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57656,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-313",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57672,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-314",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57652,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-315",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57654,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-316",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57653,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-317",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57660,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-318",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57661,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-319",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57674,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-320",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57659,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-321",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57670,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-322",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57664,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-323",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57665,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-324",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57666,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-325",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57667,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-326",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57669,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-327",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57671,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-328",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57673,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-329",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 307,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-330",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57675,
+        "mti_term_id": 222,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-331",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 376,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-332",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 377,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-333",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57695,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-334",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57684,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-335",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57694,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-336",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57693,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-337",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57683,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-338",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57676,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-339",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57678,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-340",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57677,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-341",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57679,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-342",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57680,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-343",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57681,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-344",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57682,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-345",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57696,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-346",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57685,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-347",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57687,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-348",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57688,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-349",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57689,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-350",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57690,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-351",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57691,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-352",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57692,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-353",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 380,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-354",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57697,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-355",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 57698,
+        "mti_term_id": 223,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-356",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157498,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'lawsuit/legal case' in judicial procedural context, not inner-being strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-357",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157499,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'lawsuit/legal case' in judicial procedural context, not inner-being strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-358",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157500,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'lawsuit/legal case' in judicial procedural context, not inner-being strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-359",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157493,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal case/matter for adjudication,' not inner-being strife or anger-driven contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-360",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157494,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal dispute/case before judges,' not inner-being anger-driven strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-361",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157495,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal dispute' settled by priests in judicial procedure, not inner-being contention or anger — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-362",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157496,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal dispute/case' in court setting, not inner-being anger-driven strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-363",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157520,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-364",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157489,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal case/dispute for royal adjudication,' not inner-being anger-driven contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-365",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157490,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal dispute/case' in judicial context, not inner-being anger-driven strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-366",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157488,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'disputed cases' in judicial/administrative context, not inner-being anger-driven strife or contention — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-367",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157487,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal case/matter' in judicial-administrative context, not inner-being anger-driven strife — outside M02 inner-being scope."
+      }
+    },
+    {
+      "op_id": "OP-368",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157525,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-369",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157530,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0
+      }
+    },
+    {
+      "op_id": "OP-370",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 157501,
+        "mti_term_id": 234,
+        "group_id": null,
+        "cluster_subgroup_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "delete_flagged": 0,
+        "vertical_pass_flag": 0,
+        "set_aside_reason": "riv used as 'legal dispute' in priestly judicial context, not inner-being anger-driven strife or contention — outside M02 inner-being scope."
+      }
+    }
+  ]
+}

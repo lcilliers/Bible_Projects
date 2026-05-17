@@ -1,0 +1,374 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCG_RETAIN_REVISE + VCG_CREATE",
+    "patch_id": "WA-M46-patch-vcg-from-reading-v1-20260514",
+    "cluster_code": "M46",
+    "session_ref": "wa-M46-verse-readings-v1-20260514",
+    "date": "2026-05-14",
+    "description": "VCG descriptions derived from reading every relevant verse. Existing VCGs retained with revised descriptions where the reading refined understanding. New VCGs created for all terms that had no group. All descriptions are grounded in specific verses named in the text.",
+    "retain_revise_count": 12,
+    "create_count": 22,
+    "total_vcgs": 34,
+    "subgroup_distribution": {
+      "M46-A": 9,
+      "M46-B": 6,
+      "M46-C": 5,
+      "M46-D": 13,
+      "M39-A": 1
+    }
+  },
+  "vcg_operations": [
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 203,
+      "vcg_code": "4697-001",
+      "mti_id": 4697,
+      "strong": "H8080",
+      "translit": "sha.men (verb)",
+      "subgroup": "M46-A",
+      "description": "Term names the making-fat of the inner heart as the mechanism of divine judgment \u2014 God causing the heart to grow thick and unresponsive so that the person can no longer see, hear, or understand, and therefore cannot turn and be healed. The same vocabulary that describes material prosperity (fatness) is applied here to the inner organ of perception: the fat heart is the closed heart. Anchor: Isa 6:10.",
+      "note": "Retain. Description refined from reading."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 204,
+      "vcg_code": "4697-002",
+      "mti_id": 4697,
+      "strong": "H8080",
+      "translit": "sha.men (verb)",
+      "subgroup": "M46-A",
+      "description": "Term names the spiritual fatness that material prosperity produces \u2014 the person who has grown fat through abundance forsakes the God who made them and scoffs at the Rock of their salvation. The sequence is evidenced in Deu 32:15, Neh 9:25, and Jer 5:28: material provision received \u2192 satiation \u2192 fat \u2192 turned from God / unbounded in wickedness / justice abandoned. Growing fat is the inner condition that removes the constraint on sin and the orientation toward God. Anchor: Deu 32:15.",
+      "note": "Retain. Description refined from reading."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 1861,
+      "vcg_code": "413-001",
+      "mti_id": 413,
+      "strong": "H7600",
+      "translit": "sha.a.nan",
+      "subgroup": "M46-A",
+      "description": "Term names the inner condition of complacent ease that wealth and security produce \u2014 the settled, untroubled self-assurance of those whose material and social position has made them feel unthreatened. This ease is not the shalom of God's gift but a self-generated security that produces contempt for those in misfortune, blindness to coming judgment, and arrogance toward God. In Job 12:5 it produces contempt; in Amos 6:1 it receives a prophetic woe; in 2Ki 19:28 it is the inner ground of Assyrian rage against God. Anchor: Amo 6:1.",
+      "note": "Retain. Description refined from reading."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 1862,
+      "vcg_code": "413-002",
+      "mti_id": 413,
+      "strong": "H7600",
+      "translit": "sha.a.nan",
+      "subgroup": "M46-D",
+      "description": "Term names the divinely-given condition of secure quietness \u2014 the ease of God's people living in genuine peace and safety as the fruit of shalom, in contrast to the self-generated complacency of 413-001. The same inner phenomenology (settled, untroubled, at ease) has an entirely different ground: when God gives it, it is the condition of the redeemed community at rest. Anchor: Isa 32:18.",
+      "note": "Retain; reroute from M46-C to M46-D."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 385,
+      "vcg_code": "4898-001",
+      "mti_id": 4898,
+      "strong": "G0842",
+      "translit": "autark\u0113s",
+      "subgroup": "M46-D",
+      "description": "Term names contentment as a learned inner disposition \u2014 the acquired capacity of the inner person to remain settled and sufficient regardless of external material circumstance. Paul has learned this through living in both abundance and scarcity; it is not a natural state but an achieved one. The person who is autark\u0113s is no longer governed by the wealth domain in either direction \u2014 neither destroyed by poverty nor corrupted by abundance. This is the capstone inner-being state of M46-D: the inner life that has been formed beyond material circumstance. Anchor: Phil 4:11.",
+      "note": "Retain."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 2957,
+      "vcg_code": "681-001",
+      "mti_id": 681,
+      "strong": "H2633",
+      "translit": "cho.sen",
+      "subgroup": "M46-C",
+      "description": "Term names wealth and treasure as the moral category in which inner character is revealed \u2014 in the house of the righteous there is much treasure; trouble befalls the income of the wicked. The character of the person shapes the moral quality of what they hold. Cho.sen also names the true treasure: the fear of the Lord is Zion's cho.sen \u2014 the inner realities of salvation, wisdom, and knowledge are the real wealth, which material cho.sen only shadows. Wealth obtained through violence (Eze 22:25) and wealth that does not last (Pro 27:24) complete the picture. Anchor: Isa 33:6.",
+      "note": "Retain. Description refined."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 2933,
+      "vcg_code": "7010-001",
+      "mti_id": 7010,
+      "strong": "H1952",
+      "translit": "hon",
+      "subgroup": "M46-B",
+      "description": "Term names material wealth in its relation to the inner life of the person who holds it \u2014 its capacity to function as an imagined stronghold (Pro 18:11 \u2014 high wall in his imagination), to distort relationship (Pro 19:4 \u2014 wealth brings many friends; poor man deserted), to produce insatiability (Pro 30:15 \u2014 never says enough), and to reveal the inner person's character in how it is gained and used. Hon in its wisdom-ordered forms (Pro 3:9 \u2014 honoring God with wealth; Pro 8:18 \u2014 enduring wealth with righteousness; Song 8:7 \u2014 cannot purchase love) routes to M46-C. This VCG holds the verses where hon names wealth as the inner-being pressure point. Anchor: Pro 18:11 (imagined stronghold); Pro 30:15 (insatiability).",
+      "note": "Retain, revised description. Primary sub-group moved from old framing to M46-B."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 2956,
+      "vcg_code": "7109-001",
+      "mti_id": 7109,
+      "strong": "H2630",
+      "translit": "cha.san",
+      "subgroup": "M46-D",
+      "description": "Term (in negation) names the inner disposition of not-hoarding \u2014 the eschatological ordering in which material wealth is released for others rather than retained for the self. Isa 23:18: Tyre's merchandise will not be stored or hoarded but will supply those who dwell before the Lord. The negated form names the disordered instinct (hoarding) by pointing to its reversal; the positive content is the ordered act of releasing wealth toward God's people. Anchor: Isa 23:18.",
+      "note": "Retain. Sub-group: M46-D."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 552,
+      "vcg_code": "3836-001",
+      "mti_id": 3836,
+      "strong": "H5727",
+      "translit": "a.dan",
+      "subgroup": "M46-D",
+      "description": "Term names the inner act of luxuriating in or delighting in received abundance \u2014 specifically delighting in God's goodness as the source. Neh 9:25: they ate, were filled, became fat, and delighted (a.dan) in your great goodness. This is the ordered face of abundance received with joy and conscious orientation toward the Giver. The same verse that documents the prosperity-apostasy pattern shows a.dan as the inner act that preceded the turning \u2014 delight in goodness, if not tethered to the Giver, becomes the ground of forgetting. In its ordered form a.dan names the legitimate inner enjoyment of divine provision. Anchor: Neh 9:25.",
+      "note": "Retain. Sub-group: M46-D."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 2213,
+      "vcg_code": "1142-001",
+      "mti_id": 1142,
+      "strong": "H7230",
+      "translit": "rov",
+      "subgroup": "M46-A",
+      "description": "Term names abundance or greatness as a scalar applied to inner-moral realities \u2014 the weight or magnitude of iniquity (Jer 13:22; 30:14-15; Lam 1:5), the abundance of steadfast love that answers it (Lam 3:32; Isa 63:7; Neh 13:22), the greatness of spiritual failure (Hos 9:7), and the magnitude of false spiritual resources that cannot save (Isa 47:9-13). Rov does not name wealth in itself but names the weight of what accumulates in the inner-moral domain \u2014 and how the magnitude of divine faithfulness exceeds the magnitude of human failure. Anchor: Isa 63:7 (abundance of his steadfast love); Hos 9:7 (great iniquity and great hatred).",
+      "note": "Retain. Description revised to reflect verse reading."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 50,
+      "vcg_code": "111-001",
+      "mti_id": 111,
+      "strong": "H1878",
+      "translit": "da.shen",
+      "subgroup": "M46-C",
+      "description": "Term names the inner enrichment or richly-supplied condition of the soul that flows from right inner character \u2014 the soul of the diligent is richly supplied (Pro 13:4; ne.phesh + da.shen is the only instance in the cluster where prosperity vocabulary is applied directly to the ne.phesh); whoever brings blessing will be enriched (Pro 11:25); the one who trusts in the Lord will be enriched (Pro 28:25). Good news refreshes the bones (Pro 15:30 \u2014 da.shen applied to inner-physical renewal through received blessing). Character (diligence, generosity, trust) is the inner condition that produces material and inner enrichment as its fruit. Anchor: Pro 13:4.",
+      "note": "Retain. Deu 31:20 routes to M46-A separately (da.shen as fat \u2192 apostasy). Pro 15:30 routes to M46-D (received good news as inner enrichment)."
+    },
+    {
+      "action": "RETAIN_REVISE",
+      "vcg_id": 51,
+      "vcg_code": "111-002",
+      "mti_id": 111,
+      "strong": "H1878",
+      "translit": "da.shen",
+      "subgroup": "M39-A",
+      "description": "Anointing face \u2014 routed to M39-A. Not M46 material. Retained in DB as cross-cluster route.",
+      "note": "Retain at M39-A. No change."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7577-001",
+      "mti_id": 7577,
+      "strong": "G4145",
+      "translit": "plousios",
+      "subgroup": "M46-A",
+      "description": "Term names the inner-closure condition of the self-assessed wealthy person \u2014 the one who says 'I am rich, I need nothing' and thereby closes themselves to receiving from God. Wealth has become both the self-assessment and the perceived need-eliminator. The Laodicean church (Rev 3:17) is the paradigm: materially self-sufficient, spiritually blind and wretched without knowing it. Luk 6:24 names the same pattern from another angle: the rich have received their consolation \u2014 their inner satisfaction is fully met in this age, leaving nothing for the age to come. Mat 19:23-24 names the inner obstacle wealth creates for kingdom entry. Anchor: Rev 3:17.",
+      "note": "New VCG. Primary M46-A inner-closure face of plousios."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7577-002",
+      "mti_id": 7577,
+      "strong": "G4145",
+      "translit": "plousios",
+      "subgroup": "M46-B",
+      "description": "Term names the wealthy person whose abundance has produced hardness toward others \u2014 the rich man who feasts daily while Lazarus desires scraps at his gate (Luk 16:19-21); the rich who oppress and drag the poor into court (Jam 2:6); the rich who weep and howl at the judgment of their unjustly accumulated wealth (Jam 5:1); the assembly that honors the wealthy and dishonors the poor (Jam 2:2-3). The inner capacity for pity and genuine relationship has been overridden by the social power differential wealth creates. Anchor: Luk 16:19.",
+      "note": "New VCG. M46-B hardness face of plousios."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7577-003",
+      "mti_id": 7577,
+      "strong": "G4145",
+      "translit": "plousios",
+      "subgroup": "M46-D",
+      "description": "Term names wealth in its Christological inversion and eschatological revaluation \u2014 he who was rich became poor for our sake (2Cor 8:9); the materially poor Smyrna church is rich before God (Rev 2:9); God himself is rich in mercy (Eph 2:4); the poor who are rich in faith are the ones God has chosen (Jam 2:5). The plousios vocabulary is here deployed in its reversed form: the true wealth is not material, and the materially poor may be the genuinely rich. Anchor: Rev 2:9.",
+      "note": "New VCG. M46-D kingdom-reversal face of plousios."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7583-001",
+      "mti_id": 7583,
+      "strong": "G4434",
+      "translit": "pt\u014dchos",
+      "subgroup": "M46-D",
+      "description": "Term names poverty as the inner posture of dependence and openness before God \u2014 the condition in which the person has nothing to offer and is therefore constitutively receptive to divine gift. The poor in spirit (Mat 5:3) are not people lacking in spirit but those who know they have no inner resource to bring; the kingdom belongs to them. The materially poor are the primary recipients of the gospel (Luk 4:18; 4:20) and the heirs of the kingdom (Luk 6:20; Jam 2:5). God has specifically chosen the pt\u014dchos of this world to be rich in faith. Material poverty may be the condition that most naturally removes the inner buffer of self-sufficiency and creates openness. Anchor: Mat 5:3.",
+      "note": "New VCG. Primary M46-D poverty-as-kingdom-ground face."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7583-002",
+      "mti_id": 7583,
+      "strong": "G4434",
+      "translit": "pt\u014dchos",
+      "subgroup": "M46-B",
+      "description": "Term names the poor person as the moral test of the wealthy person's inner condition \u2014 the assembly that pays attention to the rich visitor and tells the poor man to stand reveals what is in the heart (Jam 2:2-3); the community that dishonors the poor while honoring the rich has made a moral judgment about persons based on material condition; the false concern of Judas for the poor (Joh 12:6) reveals that invoking the poor can itself be an inner act of concealment. How a person treats the pt\u014dchos is the index of their inner moral condition. Anchor: Jam 2:2-3.",
+      "note": "New VCG. M46-B \u2014 poor as the mirror of the wealthy person's inner condition."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7583-003",
+      "mti_id": 7583,
+      "strong": "G4434",
+      "translit": "pt\u014dchos",
+      "subgroup": "M46-D",
+      "description": "Term names voluntary giving from poverty and the command to give to the poor as acts that produce genuine enrichment and kingdom treasure. The widow who gave all her living gave more than all the wealthy (Luk 21:3; Mar 12:43) \u2014 her gift was total and was evaluated by Jesus as greater. The commands to give to the poor (Luk 18:22; Mat 19:21) are the specific acts of release by which kingdom treasure is obtained. Zacchaeus giving half to the poor is the spontaneous inner-being response to encounter with Jesus (Luk 19:8). The giving to the poor is both the external act and the inner act of relinquishing the attachment that wealth creates. Anchor: Luk 21:3.",
+      "note": "New VCG. M46-D \u2014 giving to the poor as act of release producing kingdom treasure."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7581-001",
+      "mti_id": 7581,
+      "strong": "G4149",
+      "translit": "ploutos",
+      "subgroup": "M46-B",
+      "description": "Term names material riches as the choking and deceiving inner force \u2014 the deceitfulness (apat\u0113) of riches competes with the word of God for the inner person's receptivity and produces fruitlessness (Mat 13:22; Mar 4:19; Luk 8:14); riches that have been unjustly accumulated rot and are moth-eaten (Jam 5:2); the person who has riches set their hope on something inherently uncertain (1Ti 6:17). The word apat\u0113 names the mechanism: riches present themselves as satisfying and securing but they are deceptive \u2014 they do not deliver what they promise, they choke rather than nourish, they decay rather than endure. Anchor: Mat 13:22.",
+      "note": "New VCG. M46-B insatiability/deceitfulness face."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7581-002",
+      "mti_id": 7581,
+      "strong": "G4149",
+      "translit": "ploutos",
+      "subgroup": "M46-D",
+      "description": "Term names riches in their revaluation by a higher inner-being calculus \u2014 the wealth of generosity that flows from poverty and overflowing joy (2Cor 8:2); the reproach of Christ counted as greater wealth than the treasures of Egypt because Moses was looking to the reward (Heb 11:26). In both cases the person's inner vision \u2014 what they are looking toward, what they count as truly valuable \u2014 has reordered the wealth calculus. The ploutos of genuine generosity exceeds material ploutos; the ploutos of Christ's reproach exceeds the treasures of Egypt. Anchor: Heb 11:26.",
+      "note": "New VCG. M46-D revaluation face."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7579-001",
+      "mti_id": 7579,
+      "strong": "G4147",
+      "translit": "ploute\u014d",
+      "subgroup": "M46-A",
+      "description": "Term names the self-directed drive to become rich as the inner-being condition that produces closure and ruin \u2014 those who desire to be rich fall into temptation, snare, and many harmful desires that plunge them into destruction (1Ti 6:9); the Corinthians' premature self-assessment of inner richness and kingly status (1Cor 4:8 \u2014 ironic); the Laodicean church's claimed prosperity as the ground of inner self-sufficiency (Rev 3:17); merchants who grew rich through Babylon's exploitation and mourn its loss (Rev 18:3; 15; 19). The self-directed orientation toward becoming rich is identified as the inner problem before any wealth exists (1Ti 6:9 \u2014 desire to be rich). Anchor: 1Ti 6:9.",
+      "note": "New VCG. M46-A self-directed ploute\u014d face."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7579-002",
+      "mti_id": 7579,
+      "strong": "G4147",
+      "translit": "ploute\u014d",
+      "subgroup": "M46-D",
+      "description": "Term names becoming rich in its directed-toward-God and toward-others form \u2014 not laying up treasure for oneself but being rich toward God (Luk 12:21); being rich in good works and generous (1Ti 6:18); enriched through Christ's poverty so that others might become rich (2Cor 8:9); God bestowing his riches on all who call on him (Rom 10:12); the counsel to buy from Christ gold refined by fire to be truly rich (Rev 3:18). The same verb that names the self-directed wealth-orientation (7579-001) here names the ordered orientation: toward God, toward others, through encounter with Christ. Anchor: Luk 12:21 (rich toward God).",
+      "note": "New VCG. M46-D toward-God face of ploute\u014d."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7580-001",
+      "mti_id": 7580,
+      "strong": "G4148",
+      "translit": "ploutiz\u014d",
+      "subgroup": "M46-D",
+      "description": "Term names the enrichment of others as the inner-being goal and outcome of apostolic poverty \u2014 as poor yet making many rich (2Cor 6:10); enriched in every way to be generous in every way (2Cor 9:11). The through-put pattern: material poverty is the condition from which relational and spiritual enrichment of others flows. The person who is enriched (ploutiz\u014d) by God is enriched not as the terminal destination but as the instrument of further generosity. Anchor: 2Cor 6:10.",
+      "note": "New VCG. M46-D."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7582-001",
+      "mti_id": 7582,
+      "strong": "G4433",
+      "translit": "pt\u014dcheu\u014d",
+      "subgroup": "M46-D",
+      "description": "Term names the voluntary poverty of Christ as the paradigmatic act of the wealth domain's inversion \u2014 though he was rich he became poor, so that through his poverty we might become rich (2Cor 8:9). This is the foundational Christological statement of M46-D: divine wealth voluntarily surrendered; voluntary impoverishment as the means of others' enrichment; the through-put of self-impoverishment for others' benefit. Every act of voluntary release in M46 participates in or reflects this movement. Anchor: 2Cor 8:9.",
+      "note": "New VCG. M46-D. Sole verse \u2014 sole VCG."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7578-001",
+      "mti_id": 7578,
+      "strong": "G4146",
+      "translit": "plousi\u014ds",
+      "subgroup": "M46-D",
+      "description": "Term names the abundance of divine provision \u2014 God who richly provides all things for enjoyment (1Ti 6:17). The adverb plousi\u014ds applied to God's giving names the quality of divine generosity: it is not minimal or grudging but rich and abundant. This is the proper ground of the ordered inner life \u2014 not riches themselves but the God who gives richly. The person who anchors hope in God rather than in uncertain riches finds that the alternative ground is itself characterized by plousi\u014ds generosity. Anchor: 1Ti 6:17.",
+      "note": "New VCG. M46-D. One relevant verse."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7586-001",
+      "mti_id": 7586,
+      "strong": "H6239",
+      "translit": "o.sher",
+      "subgroup": "M46-B",
+      "description": "Term names material riches as the object of misplaced trust and the condition of insatiability \u2014 those who trust in their wealth and boast of the abundance of their riches (Psa 49:6); the man who trusted in the abundance of his riches rather than making God his refuge (Psa 52:7); whoever trusts in riches will fall (Pro 11:28); the eyes never satisfied with riches (Ecc 4:8); wealth present but the power to enjoy it absent (Ecc 6:2); riches kept to the owner's hurt and then lost (Ecc 5:13-14); Haman recounting the splendour of his riches to his household (Est 5:11). Material wealth presented as the inner security foundation and found to be unreliable, insatiable, and ultimately alienating. Anchor: Psa 52:7.",
+      "note": "New VCG. M46-B."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7586-002",
+      "mti_id": 7586,
+      "strong": "H6239",
+      "translit": "o.sher",
+      "subgroup": "M46-C",
+      "description": "Term names material riches as the gift and fruit of the ordered inner life \u2014 Wisdom carries riches in her left hand alongside long life in her right (Pro 3:16); riches and honor are with Wisdom, enduring wealth and righteousness (Pro 8:18); the reward of humility and fear of the Lord is riches and honor and life (Pro 22:4); wealth and riches are in the house of the righteous, paired with enduring righteousness (Psa 112:3). Solomon chose wisdom rather than riches and received riches as the unasked-for consequence (1Ki 3:11-13; 2Ch 1:11-12). Both riches and honor come from God who governs all (1Ch 29:12). Anchor: Pro 8:18.",
+      "note": "New VCG. M46-C."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7584-001",
+      "mti_id": 7584,
+      "strong": "H6223",
+      "translit": "a.shir",
+      "subgroup": "M46-B",
+      "description": "Term names the inner condition of the wealthy person whose material abundance has produced specific distortions \u2014 wise in their own eyes (Pro 28:11); unable to sleep from the restlessness of abundance (Ecc 5:12); answering roughly those who petition (Pro 18:23); exercising structural dominion over the poor (Pro 22:7); full of violence (Mic 6:12); unwilling to give from their own abundance, taking instead from the poor (2Sa 12:4); ignoring the suffering neighbor while feasting daily (Luk 16:19-21); going to bed rich and waking to find wealth gone (Job 27:19). Wealth produces a specific inner posture toward others and toward the person's own condition. Anchor: Pro 28:11.",
+      "note": "New VCG. M46-B."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7584-002",
+      "mti_id": 7584,
+      "strong": "H6223",
+      "translit": "a.shir",
+      "subgroup": "M46-C",
+      "description": "Term names the rich person in the wisdom tradition's moral examination \u2014 the rich and poor stand equally before God who made them both (Pro 22:2); better is the poor person who walks in integrity than the rich person who is crooked in their ways (Pro 28:6); the rich man unwilling to give from his own flock reveals a specific inner moral failure (2Sa 12:4 \u2014 moral lesson context). The wisdom tradition consistently evaluates the a.shir not by their material condition but by their inner character \u2014 and regularly finds that integrity in poverty exceeds wealth in crookedness. Anchor: Pro 22:2.",
+      "note": "New VCG. M46-C."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7585-001",
+      "mti_id": 7585,
+      "strong": "H6238",
+      "translit": "a.shar",
+      "subgroup": "M46-A",
+      "description": "Term names the inner drive to become rich as the source of moral failure and self-deception \u2014 Ephraim declares 'I am rich; I have found wealth for myself; they cannot find iniquity in me' (Hos 12:8): the self-declaration of wealth as the ground of self-assessed innocence; corrupt shepherds thank God for their enrichment while exploiting the flock (Zec 11:5); hastening to be rich brings punishment (Pro 28:20); the wicked will not become rich (Job 15:29). The inner motivation to accumulate \u2014 when it is self-directed and operates through exploitation or self-deception \u2014 produces the inner-closure pattern of M46-A. Anchor: Hos 12:8.",
+      "note": "New VCG. M46-A."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7585-002",
+      "mti_id": 7585,
+      "strong": "H6238",
+      "translit": "a.shar",
+      "subgroup": "M46-C",
+      "description": "Term names enrichment as the fruit of diligence and divine blessing \u2014 the hand of the diligent makes rich (Pro 10:4); the blessing of the Lord makes rich, and he adds no sorrow with it (Pro 10:22); the Lord makes poor and makes rich, brings low and exalts (1Sa 2:7). Inner character (diligence) produces material enrichment; divine blessing produces material enrichment without the hidden cost that self-generated accumulation carries. The same verb names enrichment as earned through character and as given through divine sovereignty. Anchor: Pro 10:22.",
+      "note": "New VCG. M46-C."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "7585-003",
+      "mti_id": 7585,
+      "strong": "H6238",
+      "translit": "a.shar",
+      "subgroup": "M46-D",
+      "description": "Term names the deliberate refusal of enrichment as an act of inner integrity and wisdom \u2014 Abram refuses to take a thread or sandal strap from the king of Sodom lest the king claim to have made him rich (Gen 14:23): the inner act of not-being-enriched to preserve the testimony of dependence on God alone; wisdom counsels do not toil to acquire wealth, be discerning enough to desist (Pro 23:4). The inner discipline of restraining the wealth-seeking drive is itself an inner-being act of ordering the inner life beyond material circumstance. Anchor: Gen 14:23.",
+      "note": "New VCG. M46-D."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "4695-001",
+      "mti_id": 4695,
+      "strong": "H8082",
+      "translit": "sha.men (adj)",
+      "subgroup": "M46-A",
+      "description": "Term names material richness as the ambient condition within which the inner person's orientation toward God is tested and typically found wanting \u2014 the rich land God gave Israel became the context in which they ate, grew fat, and turned from him (Neh 9:25; 9:35); the rich food and luxury of the Chaldean conqueror is the fruit of self-attributed military success that produces a worship of one's own means (Hab 1:16). Eschatological rich bread (Isa 30:23) stands as the divinely-given form of sha.men provision in which the ordered inner response is gratitude. Anchor: Neh 9:35.",
+      "note": "New VCG. M46-A (with Isa 30:23 routing to M46-C)."
+    },
+    {
+      "action": "CREATE",
+      "vcg_code": "4696-001",
+      "mti_id": 4696,
+      "strong": "H4924B",
+      "translit": "mish.man",
+      "subgroup": "M46-A",
+      "description": "Term names the material fatness and robustness of accumulated human power as the condition that divine judgment reduces \u2014 the stout warriors of Assyria struck with wasting sickness by the Lord of hosts (Isa 10:16); the fat flesh of Jacob's former glory growing lean in judgment (Isa 17:4). The mish.man condition \u2014 the thick, robust, well-provisioned state \u2014 is here specifically what is stripped away. Material prosperity and physical abundance are the outer markers of the condition that divine judgment addresses at its root. Anchor: Isa 10:16.",
+      "note": "New VCG. M46-A."
+    }
+  ]
+}

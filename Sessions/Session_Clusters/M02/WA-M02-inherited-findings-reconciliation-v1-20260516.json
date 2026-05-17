@@ -1,0 +1,908 @@
+{
+  "cluster_code": "M02",
+  "generated_at": "2026-05-16T00:00:00Z",
+  "governing_instruction": "wa-sessionb-cluster-instruction-v2_2-20260516 §13",
+  "total_rows": 88,
+  "dispositions_summary": {
+    "ROUTE-TO-CLUSTER": 50,
+    "CARRY-TO-SESSION-D": 36,
+    "FOLD-INTO-PROMPT": 2,
+    "RESOLVED-BY-CATALOGUE": 0,
+    "NEW-CLUSTER-FINDING": 0,
+    "SUPERSEDED": 0,
+    "RESEARCHER-DECISION": 0
+  },
+  "reconciliations": [
+
+    {
+      "source": "wa_session_b_findings",
+      "id": 74,
+      "finding_id": "DIM-56-001",
+      "registry_no": 56,
+      "registry_word": "envy",
+      "disposition": "FOLD-INTO-PROMPT",
+      "target": "T0.3.2 [E-VCG-01/02/03/04] — M02-E jealousy corpus",
+      "rationale": "DIM-56-001 articulates the tripartite structure of jealousy/zeal vocabulary matching M02-E's four-VCG structure. Fold note: the jealousy vocabulary shows a single inner mechanism — passionate exclusive attachment — whose moral valence is determined entirely by object and direction. M02-E-VCG-03 (sanctified) and M02-E-VCG-04 (destructive) are the poles."
+    },
+
+    {
+      "source": "wa_session_b_findings",
+      "id": 142,
+      "finding_id": "DIM-103-001",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future M-cluster) — love full spectrum architecture",
+      "rationale": "Love's inner-being architecture (God-to-human, human-to-God, mutual, disordered love). No M02 anger content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 171,
+      "finding_id": "DIM-103-002",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — divine inner-being vocabulary attribution",
+      "rationale": "Question of whether love vocabulary attributes inner-being states to God (ye.di.dut nap.shi). Love-cluster T4/T0 content. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1385,
+      "finding_id": "SYN-INTRA-103-001",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1 Definition",
+      "rationale": "Love's T1 synthesis: definition as structured family, tripartite structure, vocabulary arc. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1386,
+      "finding_id": "SYN-INTRA-103-002",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2 Constitutional Location",
+      "rationale": "Love's constitutional architecture across all five levels. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1387,
+      "finding_id": "SYN-INTRA-103-003",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T3 Inner Faculties",
+      "rationale": "Love's engagement of all eleven inner faculties. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1388,
+      "finding_id": "SYN-INTRA-103-004",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T4 Relational Interfaces",
+      "rationale": "Love's three-axis relational architecture. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1389,
+      "finding_id": "SYN-INTRA-103-005",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T5 Formation",
+      "rationale": "Love's formation process and eschatological trajectory. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1390,
+      "finding_id": "SYN-INTRA-103-006",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T6 Structural Relationships",
+      "rationale": "Love's structural position as central sequential node. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1391,
+      "finding_id": "SYN-INTRA-103-007",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T7 Evidential Foundation",
+      "rationale": "Love's evidential foundation: vocabulary structure, primary anchor. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1392,
+      "finding_id": "SYN-INTER-103-001",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT2 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1393,
+      "finding_id": "SYN-INTER-103-002",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT3 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1394,
+      "finding_id": "SYN-INTER-103-003",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT4 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1395,
+      "finding_id": "SYN-INTER-103-004",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT5 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1396,
+      "finding_id": "SYN-INTER-103-005",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT6 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1397,
+      "finding_id": "SYN-INTER-103-006",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T1xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1398,
+      "finding_id": "SYN-INTER-103-007",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2xT3 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1399,
+      "finding_id": "SYN-INTER-103-008",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2xT4 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1400,
+      "finding_id": "SYN-INTER-103-009",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2xT5 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1401,
+      "finding_id": "SYN-INTER-103-010",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2xT6 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1402,
+      "finding_id": "SYN-INTER-103-011",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T2xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1403,
+      "finding_id": "SYN-INTER-103-012",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T3xT4 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1404,
+      "finding_id": "SYN-INTER-103-013",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T3xT5 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1405,
+      "finding_id": "SYN-INTER-103-014",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T3xT6 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1406,
+      "finding_id": "SYN-INTER-103-015",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T3xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1407,
+      "finding_id": "SYN-INTER-103-016",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T4xT5 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1408,
+      "finding_id": "SYN-INTER-103-017",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T4xT6 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1409,
+      "finding_id": "SYN-INTER-103-018",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T4xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1410,
+      "finding_id": "SYN-INTER-103-019",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T5xT6 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1411,
+      "finding_id": "SYN-INTER-103-020",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T5xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 1412,
+      "finding_id": "SYN-INTER-103-021",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — T6xT7 inter-tier",
+      "rationale": "No M02 content."
+    },
+
+    {
+      "source": "wa_session_b_findings",
+      "id": 32,
+      "finding_id": "DIM-128-001",
+      "registry_no": 128,
+      "registry_word": "rebellion",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Rebellion cluster (future) — sur orphaned verse data repair",
+      "rationale": "Data repair matter for rebellion registry. Deu 4:9; 7:4; 2Ki 3:3; Num 16:26 are apostasy-not-anger content. No M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 88,
+      "finding_id": "DIM-128-002",
+      "registry_no": 128,
+      "registry_word": "rebellion",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Rebellion cluster (future) + Repentance cluster M11 — T6 bilateral (turning as directional inner-being mechanism)",
+      "rationale": "Turning (sur) as shared mechanism for rebellion and repentance. Bilateral T6 content for rebellion and repentance clusters. Not M02 content."
+    },
+    {
+      "source": "wa_session_b_findings",
+      "id": 91,
+      "finding_id": "DIM-128-003",
+      "registry_no": 128,
+      "registry_word": "rebellion",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Rebellion cluster (future) — sur orphaned verse data repair (continuation)",
+      "rationale": "Continuation of DIM-128-001. Data repair for rebellion registry. No M02 content."
+    },
+
+    {
+      "source": "wa_session_b_findings",
+      "id": 75,
+      "finding_id": "DIM-178-001",
+      "registry_no": 178,
+      "registry_word": "wrath",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Wrath cluster (future) or Trust/Security cluster — cho.mah (wall) XREF groups",
+      "rationale": "cho.mah wall-groups in R178 wrath carry security/vulnerability/self-possession patterns orthogonal to anger. Not M02 anger-characteristic content."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 677,
+      "finding_id": "M01-BOUNDARY-H6426",
+      "registry_no": 1,
+      "registry_word": "abomination",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "M01 Fear — Phase 12 BOUNDARY closure",
+      "rationale": "BOUNDARY_DECISION_PENDING for H6426 pa.lats from M01 closure. Route to M01 Phase 12. Not M02 content."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 178,
+      "finding_id": "DIM-3-SD001",
+      "registry_no": 3,
+      "registry_word": "ambition",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — philos-family cluster taxonomy (≥3 registries: R3 ambition, R103 love, R56 envy, hospitality vocabulary)",
+      "rationale": "Cross-cluster taxonomic question exceeding ≥3 registries. Not resolvable within M02's Phase 9."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 670,
+      "finding_id": "M01-BOUNDARY-G0085",
+      "registry_no": 51,
+      "registry_word": "distress",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "M01 Fear — Phase 12 BOUNDARY closure",
+      "rationale": "BOUNDARY_DECISION_PENDING for G0085 ademoneo from M01 closure. Route to M01 Phase 12."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 673,
+      "finding_id": "M01-BOUNDARY-H3735",
+      "registry_no": 51,
+      "registry_word": "distress",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "M01 Fear — Phase 12 BOUNDARY closure",
+      "rationale": "BOUNDARY_DECISION_PENDING for H3735 ke.ra from M01 closure. Route to M01 Phase 12."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 675,
+      "finding_id": "M01-BOUNDARY-H6125",
+      "registry_no": 51,
+      "registry_word": "distress",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "M01 Fear — Phase 12 BOUNDARY closure",
+      "rationale": "BOUNDARY_DECISION_PENDING for H6125 a.qah from M01 closure. Route to M01 Phase 12."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 34,
+      "finding_id": "PH2-056-001",
+      "registry_no": 56,
+      "registry_word": "envy",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Envy cluster (future M28) — G3788 ophthalmos data coverage",
+      "rationale": "Data coverage/quality flag for envy registry's own Phase 2. Not M02 content."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 35,
+      "finding_id": "PH2-056-002",
+      "registry_no": 56,
+      "registry_word": "envy",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Envy cluster (future M28) — G6041 zeleuō data gap",
+      "rationale": "Data gap for envy registry. Not M02 content."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 7,
+      "finding_id": "PH2-103-001",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) + Desire cluster — a.hev XREF review",
+      "rationale": "XREF data coverage issue for love cluster. No M02 content."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 8,
+      "finding_id": "PH2-103-002",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — rachamim corpus cleaning",
+      "rationale": "Data quality issue for love registry. No M02 content."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 9,
+      "finding_id": "PH2-103-003",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 1Jo 4:18: perfect love casting out fear (love R103 × fear M01)",
+      "rationale": "Bilateral love-fear cross-registry structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 10,
+      "finding_id": "PH2-103-004",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 1Jo 4:8/16: God is love — programme-wide theological summit",
+      "rationale": "Programme-wide claim governing all divine inner-being attributions across ≥3 clusters. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 11,
+      "finding_id": "PH2-103-005",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — agapaō coverage gap",
+      "rationale": "Coverage gap for love registry. No M02 content."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 12,
+      "finding_id": "PH2-103-006",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — Song 8:6 theological depth study",
+      "rationale": "Song theological study for love cluster T7. Note: Song 8:6 qin.ah already treated as M02-E-VCG-04 anchor; Song's broader theology belongs to love cluster."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 164,
+      "finding_id": "DIM-103-SD001",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — somatic dimension programme-wide vocabulary question (≥3 registries)",
+      "rationale": "Programme-level vocabulary revision question spanning ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 165,
+      "finding_id": "DIM-103-SD002",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — C17 synthesis: God's inner being (≥5 clusters: love, compassion, mercy, grace, peace + M02 wrath)",
+      "rationale": "Programme-wide synthesis of divine inner being across ≥5 clusters. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 242,
+      "finding_id": "DIM-103-SD000",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — dod/beloved structural homology across divine and human love",
+      "rationale": "Programme-level claim about unity of love vocabulary across divine and human registers. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 289,
+      "finding_id": "DIM-103-SD003",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Mat 5:44 enemy-love (love R103 × seeking R140 × will R173 × prayer R212 — ≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 290,
+      "finding_id": "DIM-103-SD004",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Joh 12:25 love/hate of self (≥4 registries)",
+      "rationale": "Cross-registry ≥4 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 291,
+      "finding_id": "DIM-103-SD005",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 2Ti 3:4 philotheos/philēdonos (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 292,
+      "finding_id": "DIM-103-SD006",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Mic 6:8 chesed/justice/humility triad (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 293,
+      "finding_id": "DIM-103-SD007",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — racham root hierarchy: love > compassion > mercy (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 294,
+      "finding_id": "DIM-103-SD008",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Eccl 9:6 love/hatred/envy triadic taxonomy (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 295,
+      "finding_id": "DIM-103-SD009",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — tuv root love/goodness bridge (≥2 registries, programme-level structural claim)",
+      "rationale": "Cross-registry structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 296,
+      "finding_id": "DIM-103-SD010",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Jer 12:7 divine love + divine grief (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 297,
+      "finding_id": "DIM-103-SD011",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Mat 3:17 Father-Son love archetype (≥4 registries)",
+      "rationale": "Cross-registry ≥4 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 298,
+      "finding_id": "DIM-103-SD012",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Zep 3:17 love producing rest (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 299,
+      "finding_id": "DIM-103-SD013",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Mat 5:44 enemy-love integration (≥3 registries, overlaps SD003)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 300,
+      "finding_id": "DIM-103-SD014",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 1Cor 13 love/patience/pride (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 301,
+      "finding_id": "DIM-103-SD015",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Gal 5:22 love as source of Spirit-fruits (≥9 registries)",
+      "rationale": "Cross-registry ≥9 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 302,
+      "finding_id": "DIM-103-SD016",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Mat 3:17 Trinity nexus (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 303,
+      "finding_id": "DIM-103-SD017",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 2Sa 1:26 grief as love's evidence under loss (≥2 registries, programme-level structural)",
+      "rationale": "Programme-level structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 304,
+      "finding_id": "DIM-103-SD018",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Jer 31:34 new covenant integration (≥5 registries)",
+      "rationale": "Cross-registry ≥5 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 305,
+      "finding_id": "DIM-103-SD019",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Exo 34:6 five-attribute divine formula (≥5 registries, programme-wide)",
+      "rationale": "Programme-wide repeated formula spanning ≥5 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 306,
+      "finding_id": "DIM-103-SD020",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Luk 7:47 forgiveness → love (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 307,
+      "finding_id": "DIM-103-SD021",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Joh 15:15 love and knowledge (≥4 registries)",
+      "rationale": "Cross-registry ≥4 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 308,
+      "finding_id": "DIM-103-SD022",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 1Th 5:8 faith-love-hope armour triad (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 309,
+      "finding_id": "DIM-103-SD023",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Act 20:37 farewell love/grief (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 310,
+      "finding_id": "DIM-103-SD024",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Gen 29:31 divine love compensating human hatred (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 311,
+      "finding_id": "DIM-103-SD025",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "ROUTE-TO-CLUSTER",
+      "target": "Love cluster (future) — rachamim contamination verse list (data quality)",
+      "rationale": "Data quality issue for love registry. The somatic boundary question carries to Session D but the primary disposition is data cleaning for love cluster."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 312,
+      "finding_id": "DIM-103-SD026",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — love and power structural connection (≥4 C20 registries)",
+      "rationale": "Cross-registry ≥4 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 313,
+      "finding_id": "DIM-103-SD027",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — surrender making love possible (≥2 registries, programme-level structural)",
+      "rationale": "Programme-level structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 314,
+      "finding_id": "DIM-103-SD028",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — self-love programme taxonomy (programme-level)",
+      "rationale": "Programme-level self-love taxonomy question. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 617,
+      "finding_id": "SP-103-029",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — 1Jo 4:18 perfect love casting out fear (formalises PH2-103-003)",
+      "rationale": "Love × fear bilateral + programme-level structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 618,
+      "finding_id": "SP-103-030",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Luk 15:20 compassion as love's activation mode (love R103 × compassion R23)",
+      "rationale": "Love × compassion bilateral structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 619,
+      "finding_id": "SP-103-031",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Song 5:6 soul vitality and love (love R103 × soul R182)",
+      "rationale": "Love × soul constitutional claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 620,
+      "finding_id": "SP-103-032",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Eze 16:8 love prior to covenant (love R103 × covenant R34)",
+      "rationale": "Love × covenant causal claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 621,
+      "finding_id": "SP-103-033",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Jer 12:7 divine grief as love's expression (love R103 × grief R71 × soul R182 — ≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 622,
+      "finding_id": "SP-103-034",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "FOLD-INTO-PROMPT",
+      "target": "T6.6.2 [E-VCG-04] — shared anchor Song 8:6 and M02-E treatment of qin.ah",
+      "rationale": "Fold note: Song 8:6 (qin.ah / M02-E-VCG-04 anchor) establishes the jealousy-love connection at the lexical level — the same root spanning human jealousy's fiercer-than-death intensity and divine jealousy. The 'flame of Yah' theological question carries to Session D; the qin.ah-love intersection is already within M02-E Phase 9."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 623,
+      "finding_id": "SP-103-035",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — divine inner-being vocabulary (me'eka / nephesh-of-God attribution, ≥3 registries)",
+      "rationale": "Programme-wide theological question spanning ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 624,
+      "finding_id": "SP-103-036",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — love → surrender → giving of soul (≥3 registries)",
+      "rationale": "Cross-registry ≥3 registries. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 625,
+      "finding_id": "SP-103-037",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — Rom 5:5 Spirit as structural mediator of divine love (programme-wide, ≥3 registries)",
+      "rationale": "Programme-wide structural claim. CARRY-TO-SESSION-D."
+    },
+    {
+      "source": "wa_session_research_flags",
+      "id": 626,
+      "finding_id": "SP-103-038",
+      "registry_no": 103,
+      "registry_word": "love",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — self-love taxonomy (overlaps DIM-103-SD028)",
+      "rationale": "Programme-level self-love taxonomy. CARRY-TO-SESSION-D."
+    },
+
+    {
+      "source": "wa_session_research_flags",
+      "id": 167,
+      "finding_id": "DIM-152-SD001",
+      "registry_no": 152,
+      "registry_word": "strife",
+      "disposition": "CARRY-TO-SESSION-D",
+      "target": "Session D — magnitude vocabulary (rov/rabah) in divine-human correspondence mode (programme-wide, ≥3 registries)",
+      "rationale": "Programme-level lexical pattern question observed in strife registry, spanning ≥3 registries. CARRY-TO-SESSION-D."
+    }
+
+  ]
+}

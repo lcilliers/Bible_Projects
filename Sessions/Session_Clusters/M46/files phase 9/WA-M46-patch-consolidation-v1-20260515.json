@@ -1,0 +1,507 @@
+{
+  "_patch_meta": {
+    "patch_id": "WA-M46-patch-consolidation-v1-20260515",
+    "cluster_code": "M46",
+    "session_ref": "wa-M46-verse-readings-v1-20260514",
+    "source_report": "wa-cluster-M46-comprehensive-v13-20260515",
+    "instruction_version": "wa-sessionb-cluster-instruction-v1_13",
+    "date": "2026-05-15",
+    "description": "Consolidation patch addressing three structural issues (H3/H4/H7) from v13 and completing analytical routing of 7 P-status verses and 4 confirmed UT verses. Built from grounded verse readings.",
+    "sections": {
+      "A_h3_vcg_term_additions": "18 VCG_ADD_TERM operations \u2014 adds secondary terms to VCG term sets to resolve cross-term H3 violations",
+      "B_h4_secondary_subgroup_links": "20 MTI_SUBGROUP_ADD operations \u2014 adds secondary mti_term_subgroup rows for terms with multi-subgroup verse pools",
+      "C_h7_liparos_vcg": "1 VCG_CREATE operation \u2014 creates liparos-001 (Rev 18:14, M46-B) to resolve H7 for G3045",
+      "D_vcnew_ut_verses": "4 VCNEW operations \u2014 creates verse_context rows for 4 confirmed UT verses",
+      "E_vcrevise_p_verses": "13 VCREVISE operations \u2014 routes 7 P-status verses (with duplicate vc_ids)"
+    },
+    "execution_order": "Apply A \u2192 B \u2192 C \u2192 D \u2192 E in order. C (liparos VCG creation) must precede any reference to the new liparos VCG id.",
+    "dry_run_required": true,
+    "notes": [
+      "Section A adds terms to VCG term sets. This is a vcg_term table operation, not a verse_context operation.",
+      "Section B adds mti_term_subgroup rows. Each row is (mti_term_id, subgroup_id) pair \u2014 use existing pattern from primary assignments.",
+      "Section C creates new VCG 4702-001 for liparos. After creation, re-route Rev 18:14 (vc_id=64258) from group_id=3709 to the new liparos VCG id, and remove the liparos entry from VCG 7581-001 term set (reverse the H3 fix for liparos if it was applied).",
+      "Sections D and E resolve the remaining 7 P-status and 4 UT verses. Some vr_ids appear as both old and new vc_id pairs (duplicates from the extraction) \u2014 CC to apply once and note duplicates.",
+      "3 UT verses remain unidentified (vr_ids unknown). These will surface in v14 if they exist. CC to flag if found during execution.",
+      "After applying, regenerate v14 report to confirm H3=0, H4=0, H7=0, H2=0, P=0, UT=3 (remaining unidentified)."
+    ]
+  },
+  "section_A_h3_vcg_term_additions": [
+    {
+      "vcg_id": 204,
+      "vcg_code": "4697-002",
+      "add_mti_id": 111,
+      "add_translit": "da.shen",
+      "basis": "Deu 31:20 da.shen (grown fat) routes to 4697-002 because it evidences same prosperity-apostasy pattern. da.shen must be in VCG term set to resolve H3."
+    },
+    {
+      "vcg_id": 3708,
+      "vcg_code": "7583-003",
+      "add_mti_id": 111,
+      "add_translit": "da.shen",
+      "basis": "Pro 15:30 da.shen (good news refreshes bones) routed to 7583-003 as received blessing enriching inner person. da.shen must be in VCG term set."
+    },
+    {
+      "vcg_id": 3716,
+      "vcg_code": "7586-001",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Pro 11:4 hon (riches do not profit in day of wrath) routed to 7586-001 as misplaced trust/failure. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 3721,
+      "vcg_code": "7585-002",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Pro 12:27, 13:11, 24:4 hon verses routed to 7585-002 (character\u2192wealth). hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 3717,
+      "vcg_code": "7586-002",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Pro 19:14, Pro 8:18, Psa 119:14 hon verses routed to 7586-002. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 3711,
+      "vcg_code": "7579-001",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Pro 28:22 hon (stingy hastens after wealth) routed to 7579-001. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 3715,
+      "vcg_code": "7578-001",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Pro 3:9 hon (honour Lord with wealth) routed to 7578-001. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 2957,
+      "vcg_code": "681-001",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Psa 112:3 hon (wealth and riches in righteous person's house) routed to 681-001. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 2213,
+      "vcg_code": "1142-001",
+      "add_mti_id": 7010,
+      "add_translit": "hon",
+      "basis": "Psa 44:12 hon (sold for a trifle) routed to 1142-001. hon must be in VCG term set."
+    },
+    {
+      "vcg_id": 3718,
+      "vcg_code": "7584-001",
+      "add_mti_id": 7586,
+      "add_translit": "o.sher",
+      "basis": "Pro 11:16 o.sher (violent men get riches) routed to 7584-001. o.sher must be in VCG term set."
+    },
+    {
+      "vcg_id": 2933,
+      "vcg_code": "7010-001",
+      "add_mti_id": 7586,
+      "add_translit": "o.sher",
+      "basis": "Ecc 4:8, 5:12 o.sher verses routed to 7010-001. o.sher must be in VCG term set."
+    },
+    {
+      "vcg_id": 3703,
+      "vcg_code": "7577-001",
+      "add_mti_id": 7586,
+      "add_translit": "o.sher",
+      "basis": "Pro 13:7 and Pro 13:8 o.sher verses routed to 7577-001. o.sher must be in VCG term set."
+    },
+    {
+      "vcg_id": 3703,
+      "vcg_code": "7577-001",
+      "add_mti_id": 7584,
+      "add_translit": "a.shir",
+      "basis": "Job 27:19 a.shir (goes to bed rich) routed to 7577-001. a.shir must be in VCG term set."
+    },
+    {
+      "vcg_id": 3703,
+      "vcg_code": "7577-001",
+      "add_mti_id": 7581,
+      "add_translit": "ploutos",
+      "basis": "1Ti 6:17 ploutos (uncertain riches) routed to 7577-001. ploutos must be in VCG term set."
+    },
+    {
+      "vcg_id": 3703,
+      "vcg_code": "7577-001",
+      "add_mti_id": 7583,
+      "add_translit": "pt\u014dchos",
+      "basis": "Rev 3:17 pt\u014dchos (you are poor) routed to 7577-001 as the actual poverty of the self-assessed-rich. pt\u014dchos must be in VCG term set."
+    },
+    {
+      "vcg_id": 3713,
+      "vcg_code": "7580-001",
+      "add_mti_id": 7583,
+      "add_translit": "pt\u014dchos",
+      "basis": "2Cor 6:10 pt\u014dchos (as poor yet making many rich) routed to 7580-001. pt\u014dchos must be in VCG term set."
+    },
+    {
+      "vcg_id": 3709,
+      "vcg_code": "7581-001",
+      "add_mti_id": 4702,
+      "add_translit": "liparos",
+      "basis": "Rev 18:14 liparos (soul longed for delicacies) routed to 7581-001 as insatiability face. liparos must be in VCG term set."
+    },
+    {
+      "vcg_id": 2933,
+      "vcg_code": "7010-001",
+      "add_mti_id": 7584,
+      "add_translit": "a.shir",
+      "basis": "Pro 10:15, Pro 18:11 a.shir verses routed to 7010-001 (imagined stronghold). a.shir must be in VCG term set."
+    }
+  ],
+  "section_B_h4_secondary_subgroup_links": [
+    {
+      "mti_id": 7577,
+      "translit": "plousios",
+      "add_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "basis": "plousios has verses routed to M46-B (hardness face: Luk 16:19-21, Jam 2:6, Jam 5:1, Luk 16:1, Luk 16:22, Luk 21:1, Jam 2:6)"
+    },
+    {
+      "mti_id": 7577,
+      "translit": "plousios",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "plousios has verses routed to M46-D (reversal face: 2Cor 8:9, Jam 2:5, Rev 2:9)"
+    },
+    {
+      "mti_id": 7579,
+      "translit": "ploute\u014d",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "ploute\u014d has verses in M46-D (toward-God face: 2Cor 8:9, 1Ti 6:18, Rev 3:18, Rom 10:12)"
+    },
+    {
+      "mti_id": 7581,
+      "translit": "ploutos",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "ploutos has verses in M46-D (revaluation face: 2Cor 8:2, Heb 11:26)"
+    },
+    {
+      "mti_id": 7581,
+      "translit": "ploutos",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "ploutos has 1Ti 6:17 verse in M46-A (uncertain riches as disqualified hope-object)"
+    },
+    {
+      "mti_id": 7583,
+      "translit": "pt\u014dchos",
+      "add_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "basis": "pt\u014dchos has verses in M46-B (poor as moral test of wealthy: Jam 2:2-3, Jam 2:6, Joh 12:6, Luk 16:20)"
+    },
+    {
+      "mti_id": 7583,
+      "translit": "pt\u014dchos",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "pt\u014dchos has Rev 3:17 verse in M46-A (actual poverty of the self-assessed-rich Laodicea)"
+    },
+    {
+      "mti_id": 7010,
+      "translit": "hon",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "hon has verses in M46-A (Pro 11:4, Pro 28:22, Psa 44:12, Pro 1:13, Pro 10:15, Pro 13:7)"
+    },
+    {
+      "mti_id": 7010,
+      "translit": "hon",
+      "add_subgroup": "M46-C",
+      "subgroup_id": 47,
+      "basis": "hon has verses in M46-C (Pro 8:18, Psa 112:3, Psa 119:14, Pro 12:27, Pro 13:11, Pro 19:14, Pro 24:4, Pro 28:8)"
+    },
+    {
+      "mti_id": 7010,
+      "translit": "hon",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "hon has verse in M46-D (Pro 3:9 \u2014 honour Lord with wealth)"
+    },
+    {
+      "mti_id": 7586,
+      "translit": "o.sher",
+      "add_subgroup": "M46-C",
+      "subgroup_id": 47,
+      "basis": "o.sher has verses in M46-C (wisdom-gift face: Pro 3:16, 8:18, 22:4, Psa 112:3, 1Ki 3:11-13, 2Ch 1:11-12, 1Ch 29:12, Ecc 5:19)"
+    },
+    {
+      "mti_id": 7586,
+      "translit": "o.sher",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "o.sher has verse in M46-A (Pro 13:7 \u2014 pretends to be rich; false self-presentation)"
+    },
+    {
+      "mti_id": 7584,
+      "translit": "a.shir",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "a.shir has verses in M46-A (Job 27:19 \u2014 goes to bed rich; Psa 49:2 \u2014 UT/new)"
+    },
+    {
+      "mti_id": 7584,
+      "translit": "a.shir",
+      "add_subgroup": "M46-C",
+      "subgroup_id": 47,
+      "basis": "a.shir has verses in M46-C (wisdom-examination face: Pro 22:2, Pro 28:6, Ecc 10:6)"
+    },
+    {
+      "mti_id": 7585,
+      "translit": "a.shar",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "a.shar has verses in M46-A (moral failure face: Job 15:29, Pro 13:7, Pro 21:17, Pro 28:20, Psa 49:16, Hos 12:8, Zec 11:5, Jer 5:27)"
+    },
+    {
+      "mti_id": 7585,
+      "translit": "a.shar",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "a.shar has verses in M46-D (refusal face: Gen 14:23, Pro 23:4)"
+    },
+    {
+      "mti_id": 111,
+      "translit": "da.shen",
+      "add_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "basis": "da.shen has Deu 31:20 verse in M46-A (grown fat \u2192 apostasy)"
+    },
+    {
+      "mti_id": 111,
+      "translit": "da.shen",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "da.shen has Pro 15:30 verse in M46-D (good news refreshes bones \u2014 received blessing)"
+    },
+    {
+      "mti_id": 413,
+      "translit": "sha.a.nan",
+      "add_subgroup": "M46-D",
+      "subgroup_id": 48,
+      "basis": "sha.a.nan has 413-002 verses in M46-D (divine secure quietness: Isa 32:18)"
+    },
+    {
+      "mti_id": 4695,
+      "translit": "sha.men adj",
+      "add_subgroup": "M46-C",
+      "subgroup_id": 47,
+      "basis": "sha.men adj has Isa 30:23 verse in M46-C (eschatological divine provision as rich bread)"
+    }
+  ],
+  "section_C_h7_liparos_vcg": {
+    "op": "VCG_CREATE",
+    "vcg_code": "4702-001",
+    "mti_id": 4702,
+    "strong": "G3045",
+    "translit": "liparos",
+    "subgroup": "M46-B",
+    "subgroup_id": 46,
+    "description": "Term names the luxurious goods of Babylon as the object of the soul's longing \u2014 'your soul longed for all your delicacies (liparos) and your splendors, lost to you never to be found again' (Rev 18:14). The soul (psuch\u0113) oriented toward material luxury names the insatiability and deceitfulness face of the wealth domain: the inner person whose desire was attached to the richness of Babylon mourns its loss. Single-verse term; anchor set for R4 compliance.",
+    "anchor_vr_id": 64258,
+    "anchor_reference": "Rev 18:14",
+    "is_anchor": 1,
+    "note": "After creating this VCG, remove liparos from VCG 7581-001 term set if the H3 fix added it there. Rev 18:14 should be re-routed from group_id=3709 to group_id=(new liparos VCG id)."
+  },
+  "section_D_vcnew_ut_verses": [
+    {
+      "op": "VCNEW",
+      "vr_id": 237954,
+      "mti_id": 7584,
+      "reference": "2Sa 12:1",
+      "is_relevant": 1,
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "The rich man of Nathan's parable introduced \u2014 a.shir names the character whose inner moral failure (failure of pity toward poor man) is the subject of the parable. Parable opening establishing the a.shir as moral category. M46-B + 7584-001."
+    },
+    {
+      "op": "VCNEW",
+      "vr_id": 237955,
+      "mti_id": 7584,
+      "reference": "2Sa 12:2",
+      "is_relevant": 1,
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Rich man had very many flocks and herds \u2014 the abundance of the a.shir that makes his subsequent failure of pity inexcusable. Abundance coexisting with hardness is the M46-B pattern. M46-B + 7584-001."
+    },
+    {
+      "op": "VCNEW",
+      "vr_id": 237975,
+      "mti_id": 7584,
+      "reference": "Psa 49:2",
+      "is_relevant": 1,
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Both low and high, rich (a.shir) and poor together addressed in wisdom Psalm whose subject is the inner danger of trusting in wealth (Psa 49:6-12). a.shir is the audience of a teaching that directly challenges the inner orientation of the wealthy. M46-B + 7584-001."
+    },
+    {
+      "op": "VCNEW",
+      "vr_id": 238013,
+      "mti_id": 7586,
+      "reference": "Est 1:4",
+      "is_relevant": 1,
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "King Ahasuerus showing the riches (o.sher) of his royal glory for 180 days \u2014 public display of material wealth as self-glorification and status-claim. The o.sher-as-self-display pattern; same register as Haman in Est 5:11. M46-B + 7586-001."
+    }
+  ],
+  "section_E_vcrevise_p_verses": [
+    {
+      "op": "VCREVISE",
+      "vr_id": 237983,
+      "mti_id": 7585,
+      "reference": "Jer 5:27",
+      "cluster_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "group_id": 3720,
+      "is_anchor": 0,
+      "basis": "Houses full of deceit, therefore became great and rich \u2014 a.shar through moral corruption (deceit); the inner orientation of deceit producing enrichment. M46-A + 7585-001 (drive to become rich as moral failure)."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 237962,
+      "mti_id": 7584,
+      "reference": "Jer 9:23",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Let not the rich man (a.shir) boast in his riches \u2014 boasting in wealth as the specific inner temptation of the a.shir; self-glorification through material status. M46-B + 7584-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 238017,
+      "mti_id": 7586,
+      "reference": "Jer 9:23",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Let not the rich man boast in his riches (o.sher) \u2014 o.sher as the object of prohibited boasting; same inner act as Psa 49:6 already in 7586-001. M46-B + 7586-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 238016,
+      "mti_id": 7586,
+      "reference": "Jer 17:11",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Riches (o.sher) got not by justice will leave in mid-life; ends as a fool \u2014 unjustly accumulated o.sher that proves transient and self-destructive. M46-B + 7586-001 (o.sher as insatiable/unreliable/alienating)."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 238014,
+      "mti_id": 7586,
+      "reference": "Est 5:11",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Haman recounted the splendour of his riches (o.sher) \u2014 inner act of recounting o.sher as self-glorification and status reinforcement. M46-B + 7586-001 (already in VCG description)."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64399,
+      "mti_id": 7585,
+      "reference": "Hos 12:8",
+      "cluster_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "group_id": 3720,
+      "is_anchor": 0,
+      "basis": "I am rich (a.shar) I found wealth, they cannot find iniquity in me \u2014 self-declared wealth as false moral vindication; self-deception through material prosperity. M46-A + 7585-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64396,
+      "mti_id": 7585,
+      "reference": "Jer 5:27",
+      "cluster_subgroup": "M46-A",
+      "subgroup_id": 45,
+      "group_id": 3720,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Jer 5:27 a.shar \u2014 same routing as vr_id=237983. M46-A + 7585-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 237959,
+      "mti_id": 7584,
+      "reference": "Ecc 5:12",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Full stomach of the rich will not let him sleep \u2014 inner-physical restlessness produced by abundance; the a.shir who cannot rest. M46-B + 7584-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64378,
+      "mti_id": 7584,
+      "reference": "Ecc 5:12",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Ecc 5:12 a.shir \u2014 same routing. M46-B + 7584-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64382,
+      "mti_id": 7584,
+      "reference": "Jer 9:23",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3718,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Jer 9:23 a.shir \u2014 same routing. M46-B + 7584-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64414,
+      "mti_id": 7586,
+      "reference": "Est 5:11",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Est 5:11 o.sher \u2014 same routing. M46-B + 7586-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64433,
+      "mti_id": 7586,
+      "reference": "Jer 9:23",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Jer 9:23 o.sher \u2014 same routing. M46-B + 7586-001."
+    },
+    {
+      "op": "VCREVISE",
+      "vr_id": 64434,
+      "mti_id": 7586,
+      "reference": "Jer 17:11",
+      "cluster_subgroup": "M46-B",
+      "subgroup_id": 46,
+      "group_id": 3716,
+      "is_anchor": 0,
+      "basis": "Second vc_id for Jer 17:11 o.sher \u2014 same routing. M46-B + 7586-001."
+    }
+  ]
+}

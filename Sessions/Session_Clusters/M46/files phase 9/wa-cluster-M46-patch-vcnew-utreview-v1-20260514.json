@@ -1,0 +1,644 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "patch_id": "WA-M46-patch-vcnew-utreview-v1-20260514",
+    "cluster_code": "M46",
+    "session_ref": "wa-obslog-M46-abundance-v1-20260514",
+    "source_report": "wa-cluster-M46-comprehensive-v1-20260514",
+    "instruction_version": "wa-sessionb-cluster-instruction-v1_12-20260514",
+    "date": "2026-05-14",
+    "terms_covered": [
+      7010,
+      681,
+      111,
+      1142,
+      6903,
+      2879
+    ],
+    "input_versions": {
+      "7010": 1,
+      "681": 1,
+      "111": 1,
+      "1142": 1,
+      "6903": 1,
+      "2879": 1
+    },
+    "op_count": 45,
+    "relevant_count": 19,
+    "set_aside_count": 26,
+    "notes": "Phase 2 UT verse review. 5 OQ items resolved by researcher before patch authoring. All 46 UT verses classified. Lev 25:37 mar.bit (vr_id=85846) excluded \u2014 already G-status in DB per \u00a72 of comprehensive report."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40831,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40846,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1132,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1136,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 216160,
+        "mti_term_id": 6903,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 216162,
+        "mti_term_id": 6903,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219947,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219927,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219940,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219944,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219928,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219930,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219932,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219931,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219935,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219934,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219936,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219938,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219941,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40823,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = numerical multitude of offspring in divine promise. Sheer quantity; no inner-being state named or engaged by the term."
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40824,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = material plenty as blessing content. Quantity of provision; no inner state of the person engaged by this term."
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40825,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = adverbial quantifier of material increase (increased abundantly). Rate of material growth; no inner-being engagement by this term."
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40826,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = numerical multitude of offspring in covenant promise. Sheer quantity; no inner state named by this term."
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40827,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = numerical multitude in blessing wish for descendants. Quantity of persons; no inner-being phenomenon."
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1130,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "da.shen rendered as de.shen (ashes of altar, noun). Physical ritual residue; the term here names the physical ash of offerings, not an inner-being characteristic."
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40859,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = quantity of years as legal-commercial price multiplier. Legal quantifier; no inner state engaged by this term."
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1131,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "da.shen rendered as de.shen (ashes of altar, same as Exo 27:3). Physical altar ash; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40854,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = numerical quantity of enemy forces (like locusts in number). Comparative size only; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40855,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = numerical quantity of enemy forces (locusts in abundance). Sheer quantity of personnel; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40848,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = adverbial quantifier (plentifully declared sound knowledge). Quantifier for speech; no inner state engaged by the term."
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40849,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = many (years), temporal quantifier. Time quantity; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1133,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "da.shen = God's favorable regard/acceptance of the sacrifice. The term names divine reception of the offering; inner-being content of hope for acceptance belongs to the prayer act and other elements, not to da.shen as the primary term here."
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219942,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "hon = enough applied to physical phenomena (barren womb, land, fire). The insatiability is attributed to natural phenomena rather than the inner person directly; inner-being register is not the primary face of the term in this verse."
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1138,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "da.shen = the divine sword gorged with fat (blood of sacrificial animals in judgment). No human inner-being characteristic engaged by the term."
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 1139,
+        "mti_term_id": 111,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "da.shen = land gorged with blood and fat in divine judgment. Physical land; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40842,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = abundance of milk (material food provision). Quantity of food; no inner-being engagement by this term."
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40833,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = many days (temporal quantifier before punishment). Time quantity; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40830,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = ten thousands (quantity of laws written). Quantitative amplifier for divine instruction; inner-being content of estrangement is carried by other terms in the verse, not by rov."
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 40860,
+        "mti_term_id": 1142,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "rov = multitude/hosts of slain. Quantity of corpses in battle description; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12793,
+        "mti_term_id": 681,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "cho.sen = wealth of the city as object of divine judgment and enemy plunder. Material wealth being transferred; no inner-being state named or engaged by the term in this verse."
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219923,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "hon = commercial material wealth of Tyre. Commercial exchange context; no inner-being characteristic engaged by the term."
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219924,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "hon = commercial wealth of Tyre (Damascus trade). Same pattern as Eze 27:12; commercial material wealth only."
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219925,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "hon = riches sinking with Tyre. Material commercial goods lost in catastrophe; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 219926,
+        "mti_term_id": 7010,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "hon = abundant commercial wealth enriching kings. Commercial material wealth; no inner-being content."
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 85857,
+        "mti_term_id": 2879,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "mar.veh = abundance of prey/spoil divided in eschatological reversal. The term names quantity of spoil to be distributed; inner-being content of divine restoration is carried by the larger context, not by mar.veh as primary term."
+      }
+    }
+  ]
+}

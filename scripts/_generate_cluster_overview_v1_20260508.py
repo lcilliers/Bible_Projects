@@ -30,7 +30,9 @@ def now_compact():
 def status_marker(status):
     return {
         "Analysis Completed": "✓",
+        "Analysis Completed (Terms Added)": "✓+",
         "Analysis - In Progress": "▶",
+        "Data - In Progress": "◐",
         "Not started": "·",
     }.get(status, "?")
 
