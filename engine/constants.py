@@ -26,7 +26,12 @@ Shared constants for the Session A v9 Automation Engine.
 # DEC-1 of m39-subgroup-multi-term-design-v1).
 # Bumped 2026-05-10 for M47 (vcg-to-term m:n: new vcg_term join table; drop
 # verse_context_group.mti_term_id; absorbs 21 pre-existing cross-term placements).
-EXPECTED_SCHEMA_VERSION = "3.21.0"
+# Bumped 2026-05-16 for M48 (cluster_finding.vcg_scope column + UNIQUE constraint
+# extension for VCG-level Phase 9 scope markers per v2_2 §14).
+# Bumped 2026-05-18 for M49 (characteristic + characteristic_subgroup +
+# cluster_observation tables; supports many-sub-groups-per-characteristic and
+# observation-carry-forward across phases per researcher direction 2026-05-18).
+EXPECTED_SCHEMA_VERSION = "3.23.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
