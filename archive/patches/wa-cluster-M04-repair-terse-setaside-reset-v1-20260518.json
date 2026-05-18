@@ -1,0 +1,1375 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260518-M04-REPAIR-TERSE-SETASIDE-RESET-V1",
+    "registry_id": null,
+    "produced_date": "20260518",
+    "produced_by": "scripts/_build_m04_terse_setaside_reset_patch_20260518.py",
+    "patch_type": "REPAIR",
+    "cluster_code": "M04",
+    "session_b_status": null,
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_5-20260518 §17.5 (audit-fix) + §18.2 RESCUE pattern; §1.1 scope",
+    "description": "Reset 75 terse set-asides (all H2896A tov, reasons 'physical_only' or 'no_inner_being') so they re-enter the pipeline at Pass A for fresh per-verse reading. Researcher direction 2026-05-18: verses were bulk-processed under bias; require individual reading under v2_5 §1.1 full inner-being scope. After this patch + Pass A run, each verse will have a fresh authored meaning. Researcher then dispositions each (PROMOTE-TO-SUBGROUP / CONFIRM-SET-ASIDE-with-§4.5.1-reason / HOLD)."
+  },
+  "_patch_summary": {
+    "total_operations": 75,
+    "vr_restore_count": 0,
+    "vc_reset_count": 75,
+    "by_original_reason": {
+      "physical_only": 59,
+      "no_inner_being": 16
+    },
+    "produced_at_utc": "2026-05-18T08:33:26Z"
+  },
+  "operations": [
+    {
+      "op_id": "OP-00001",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63127
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63127 Gen 15:15 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63133
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63133 Gen 24:50 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63134
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63134 Gen 25:8 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63139
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63139 Gen 31:24 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63140
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63140 Gen 31:29 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63150
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63150 Lev 27:10 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00007",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63151
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63151 Lev 27:12 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63152
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63152 Lev 27:14 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63153
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63153 Lev 27:33 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63154
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63154 Num 13:19 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00011",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63175
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63175 Judg 8:32 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00012",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63198
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63198 1Sa 25:8 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00013",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63226
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63226 Est 7:9 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63229
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63229 Est 8:17 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00015",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63231
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63231 Est 9:19 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00016",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63232
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='no_inner_being' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63232 Est 9:22 H2896A tov (was is_relevant=0 with terse reason 'no_inner_being'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00017",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63124
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63124 Gen 2:9 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00018",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63125
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63125 Gen 2:12 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00019",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63126
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63126 Gen 6:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00020",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63129
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63129 Gen 18:7 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00021",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63132
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63132 Gen 24:16 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00022",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63135
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63135 Gen 26:7 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00023",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63136
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63136 Gen 27:9 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00024",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63138
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63138 Gen 30:20 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00025",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63142
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63142 Gen 41:5 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00026",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63143
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63143 Gen 41:22 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00027",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63144
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63144 Gen 41:24 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00028",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63145
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63145 Gen 41:26 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00029",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63146
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63146 Gen 41:35 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00030",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63147
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63147 Gen 49:15 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00031",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63148
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63148 Exo 2:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00032",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63149
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63149 Exo 3:8 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00033",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63155
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63155 Num 14:7 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00034",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63158
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63158 Deu 1:25 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00035",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63159
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63159 Deu 1:35 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00036",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63160
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63160 Deu 3:25 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00037",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63161
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63161 Deu 4:21 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00038",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63162
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63162 Deu 4:22 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00039",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63163
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63163 Deu 6:10 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00040",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63164
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63164 Deu 8:7 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00041",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63165
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63165 Deu 8:12 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00042",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63166
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63166 Deu 11:17 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00043",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63169
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63169 Deu 28:12 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00044",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63171
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63171 Jos 7:21 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00045",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63173
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63173 Jos 23:13 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00046",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63177
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63177 Judg 9:11 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00047",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63179
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63179 Judg 15:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00048",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63180
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63180 Judg 18:9 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00049",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63187
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63187 1Sa 8:14 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00050",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63188
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63188 1Sa 8:16 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00051",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63189
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63189 1Sa 9:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00052",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63194
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63194 1Sa 16:12 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00053",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63201
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63201 2Sa 11:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00054",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63210
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63210 Ezr 8:27 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00055",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63214
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63214 Est 1:11 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00056",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63216
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63216 Est 2:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00057",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63217
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63217 Est 2:3 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00058",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63218
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63218 Est 2:7 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00059",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63219
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63219 Est 2:9 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00060",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63234
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63234 Pro 24:13 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00061",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63237
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63237 Isa 5:9 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00062",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63238
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63238 Isa 39:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00063",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63240
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63240 Jer 6:20 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00064",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63241
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63241 Jer 24:2 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00065",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63242
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63242 Jer 24:3 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00066",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63243
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63243 Jer 24:5 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00067",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63247
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63247 Lam 4:1 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00068",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63248
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63248 Eze 17:8 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00069",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63249
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63249 Eze 24:4 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00070",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63250
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63250 Eze 31:16 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00071",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63251
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63251 Eze 34:14 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00072",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63252
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63252 Dan 1:15 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00073",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63253
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63253 Hos 4:13 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00074",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63254
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63254 Joe 3:5 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    },
+    {
+      "op_id": "OP-00075",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63256
+      },
+      "set": {
+        "is_relevant": 1,
+        "is_anchor": 0,
+        "set_aside_reason": null,
+        "analysis_note": null,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "notes": "[audit-fix v2_5 RESCUE-reset 2026-05-18] Original set_aside_reason='physical_only' was terse and possibly bulk-processed under bias. Reset for fresh individual Pass A reading under v2_5 §1.1 scope. Disposition (PROMOTE / SET-ASIDE-with-proper-reason / HOLD) to be decided per-verse after Pass A meaning is authored."
+      },
+      "description": "Reset vc=63256 Nah 3:4 H2896A tov (was is_relevant=0 with terse reason 'physical_only'); now is_relevant=1 + analysis_note NULL for Pass A pickup"
+    }
+  ]
+}

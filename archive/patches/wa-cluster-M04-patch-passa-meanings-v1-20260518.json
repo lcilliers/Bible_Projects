@@ -1,0 +1,1102 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M04-patch-passa-meanings-v1-20260518",
+    "cluster_code": "M04",
+    "session_ref": "M04 Phase 2 Pass A meaning record via Claude API",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_0-20260515",
+    "date": "20260518",
+    "terms_covered": [
+      356,
+      549,
+      884
+    ],
+    "input_versions": {
+      "884": 4,
+      "549": 3,
+      "356": 2
+    },
+    "op_count": 77,
+    "source": "Claude API meaning record (Sonnet 4.6); 77 verses across 3 terms"
+  },
+  "operations": [
+    {
+      "op_id": "OP-0001",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63124,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The quality of being pleasant here is an aesthetic and sensory one — trees are pleasing to the eye, stirring a perceptual delight in the beholder through their visible beauty."
+      },
+      "_reference": "Gen 2:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0002",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63125,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Pleasantness here is a quality of material excellence perceived in gold, bdellium, and onyx — desirable resources whose worth registers as something finely appealing."
+      },
+      "_reference": "Gen 2:12",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0003",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63126,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The daughters of man are seen as attractive — their visual appeal stirs desire in the sons of God, prompting deliberate choice and action toward them."
+      },
+      "_reference": "Gen 6:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0004",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63127,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "A 'good old age' frames the end of life as a satisfying, full, and peaceful experience — the pleasantness is the inner sense of completeness and peace at death's approach."
+      },
+      "_reference": "Gen 15:15",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0005",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63129,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The calf is described as tender and good — the pleasantness is a quality of physical excellence that makes it fitting and desirable for hospitality and feasting."
+      },
+      "_reference": "Gen 18:7",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0006",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63132,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Rebekah's attractiveness is a perceived visual quality — her appearance makes a favorable impression, which is the outer form through which pleasantness is registered here."
+      },
+      "_reference": "Gen 24:16",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0007",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63133,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Here 'good' is paired with 'bad' as the full range of human speech or interference — the verse does not evidence inner delight but rather the absence of any evaluative response permitted to Laban and Bethuel."
+      },
+      "_reference": "Gen 24:50",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0008",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63134,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Abraham's 'good old age' conveys a life brought to satisfying fullness — the pleasantness is the inner sense of completion and contentment that attends a well-lived life at its close."
+      },
+      "_reference": "Gen 25:8",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0009",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63135,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Rebekah's attractive appearance is the quality that generates fear in Isaac — her pleasantness to the sight is powerful enough to threaten his life, showing how deeply it registers in others' perception and desire."
+      },
+      "_reference": "Gen 26:7",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0010",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63136,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The goats are 'good' in the sense of being fine, choice animals — pleasantness here is a quality of material excellence that makes them suitable for producing delicious food."
+      },
+      "_reference": "Gen 27:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0011",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63138,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Leah experiences a 'good endowment' from God in having borne six sons — the pleasantness is her inner sense of being favored and honored, expected to produce relational warmth from her husband."
+      },
+      "_reference": "Gen 30:20",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0012",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63139,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God warns Laban not to speak anything to Jacob, 'good or bad' — the verse does not evidence inner delight; 'good' here covers the full spectrum of speech, and inner-being content is absent."
+      },
+      "_reference": "Gen 31:24",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0013",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63140,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "As in the prior warning, 'good or bad' spans all possible speech directed at Jacob — the verse does not evidence inner joy or delight; it uses 'good' as one pole of a merism for total restraint."
+      },
+      "_reference": "Gen 31:29",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0014",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63142,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The seven ears of grain are described as plump and good — pleasantness here is a quality of agricultural abundance and excellence perceived in the dream, signaling prosperous years ahead."
+      },
+      "_reference": "Gen 41:5",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0015",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63143,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The seven ears are 'full and good' in the dream — pleasantness is again a quality of visible abundance, pointing inwardly to the anticipation of plenty that such a vision would stir."
+      },
+      "_reference": "Gen 41:22",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0016",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63144,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The seven good ears consumed by thin ones picture the loss of abundance — the pleasantness of the good ears serves as the foil for the coming destruction, making the contrast felt."
+      },
+      "_reference": "Gen 41:24",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0017",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63145,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The seven good cows and seven good ears both represent seven years of plenty — pleasantness here is the quality of fruitful abundance that the future holds, as perceived in the dream's imagery."
+      },
+      "_reference": "Gen 41:26",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0018",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63146,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The 'good years' are years of agricultural abundance — pleasantness here is the quality of generous provision that must be gathered and stored, a time whose enjoyment depends on wise stewardship."
+      },
+      "_reference": "Gen 41:35",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0019",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63147,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Issachar sees the resting place as good and the land as pleasant — his perception of these favorable conditions moves his will to accept servitude, showing how pleasantness shapes inner judgment and decision."
+      },
+      "_reference": "Gen 49:15",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0020",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63148,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The mother sees that her newborn son is fine — her perception of the child's pleasing quality moves her to risk hiding him, showing how the sense of goodness and delight in what is seen drives protective action."
+      },
+      "_reference": "Exo 2:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0021",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63149,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The promised land is described as good and broad — its pleasantness is an objective quality of abundance and desirability that motivates God's saving intervention and stirs hope in the people."
+      },
+      "_reference": "Exo 3:8",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0022",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63150,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "In ritual substitution law, 'good for bad' describes the quality differential of animals — the verse uses pleasantness as a standard of quality assessment rather than evidencing inner delight."
+      },
+      "_reference": "Lev 27:10",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0023",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63151,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The priest evaluates an animal as either good or bad for vow purposes — pleasantness here is a quality judgment used in sacred valuation, not an inner emotional state."
+      },
+      "_reference": "Lev 27:12",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0024",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63152,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The priest values a dedicated house as good or bad — pleasantness functions as a standard of quality in priestly assessment, with no inner-being emotional content evidenced in this verse."
+      },
+      "_reference": "Lev 27:14",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0025",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63153,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The law forbids distinguishing between good and bad animals in tithing — pleasantness here is a quality distinction that is deliberately suspended, with no inner delight content in view."
+      },
+      "_reference": "Lev 27:33",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0026",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63154,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The spies are sent to assess whether the land is good or bad — pleasantness here is a quality of the land to be perceived and reported, informing the people's sense of what awaits them."
+      },
+      "_reference": "Num 13:19",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0027",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63155,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Caleb and Joshua declare the land exceedingly good — their inner conviction that the land is desirable and excellent is expressed with enthusiastic confidence meant to move the congregation's will."
+      },
+      "_reference": "Num 14:7",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0028",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63158,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The scouts return fruit and report the land is good — the pleasantness is a quality they perceived that was meant to fill the people with confidence and eager desire for the gift."
+      },
+      "_reference": "Deu 1:25",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0029",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63159,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The good land is withheld from the rebellious generation — pleasantness here is the desirable quality of the promised inheritance whose loss constitutes judgment, contrasting against the inner state of rebellion."
+      },
+      "_reference": "Deu 1:35",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0030",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63160,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Moses pleads to see the good land — his longing reveals that the land's pleasantness has become an object of deep personal desire in his inner being, and its sight is a hoped-for delight."
+      },
+      "_reference": "Deu 3:25",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0031",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63161,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Moses is barred from entering the good land because of Israel's sin — the land's pleasantness is the inheritance he is denied, making its goodness the measure of what divine anger costs him personally."
+      },
+      "_reference": "Deu 4:21",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0032",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63162,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Moses contrasts his dying in this land with Israel going over to possess the good land — the pleasantness of that land is the gift Israel will enjoy while Moses is excluded, sharpening the pathos of his situation."
+      },
+      "_reference": "Deu 4:22",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0033",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63163,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God brings Israel into the land with great and good cities — the pleasantness is an experienced quality of ready-made abundance that Israel will inhabit as unearned gift, meant to evoke gratitude."
+      },
+      "_reference": "Deu 6:10",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0034",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63164,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God is bringing Israel into a good land rich with water — the pleasantness is the land's abundant, life-sustaining quality, meant to stir grateful recognition of divine generosity."
+      },
+      "_reference": "Deu 8:7",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0035",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63165,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Building good houses is listed among the blessings that may breed forgetfulness of God — the pleasantness of fine dwellings is a comfort that can quietly displace the inner orientation toward gratitude."
+      },
+      "_reference": "Deu 8:12",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0036",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63166,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Perishing from the good land is the consequence of turning away from God — the land's pleasantness is the precious possession at stake, its loss serving as the severest warning against disobedience."
+      },
+      "_reference": "Deu 11:17",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0037",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63169,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The Lord opens his good treasury to give rain — the pleasantness of God's heavenly storehouse is the quality of generous, life-giving provision that flows from obedience, meant to produce grateful flourishing."
+      },
+      "_reference": "Deu 28:12",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0038",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63171,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Achan sees a beautiful cloak and covets it — the object's visual pleasantness acted on his inner perception, arousing desire that overrode conscience and led to theft."
+      },
+      "_reference": "Jos 7:21",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0039",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63173,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Perishing from the good ground is the threatened consequence of unfaithfulness — the land's pleasantness is what makes expulsion from it so grievous, functioning as a motivator for covenant loyalty."
+      },
+      "_reference": "Jos 23:13",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0040",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63175,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Gideon dies in a good old age — the pleasantness is a life brought to satisfying fullness, marking his death as a fitting and honorable close to a long and significant life."
+      },
+      "_reference": "Judg 8:32",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0041",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63177,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The fig tree prizes its sweetness and good fruit over ruling the trees — the pleasantness of its fruit is its valued identity, and attachment to that good quality drives its inner refusal of power."
+      },
+      "_reference": "Judg 9:11",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0042",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63179,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The younger sister is said to be more beautiful than her sibling — the verse presents pleasantness as a comparative quality of appearance used to justify a relational substitution."
+      },
+      "_reference": "Judg 15:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0043",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63180,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The scouts declare the land very good, urging immediate action — their inner perception of the land's desirability generates urgency and will to possess it without delay."
+      },
+      "_reference": "Judg 18:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0044",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63187,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The king will take the best fields and vineyards — pleasantness here is the quality of prime, most desirable land that royal power will seize, turning a blessing into an instrument of oppression."
+      },
+      "_reference": "1Sa 8:14",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0045",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63188,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The king will take the best young men — their quality of excellence and desirability makes them targets of royal conscription, and pleasantness here describes human worth seized by force."
+      },
+      "_reference": "1Sa 8:16",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0046",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63189,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Saul is a handsome young man, the most impressive in appearance among all Israel — his pleasantness to the eye is a striking outward quality that sets him apart and makes him seem fit for leadership."
+      },
+      "_reference": "1Sa 9:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0047",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63194,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "David has beautiful eyes and a handsome appearance — his pleasing outward quality accompanies God's choice of him, though the verse implicitly contrasts outer pleasantness with the inner heart God truly sees."
+      },
+      "_reference": "1Sa 16:12",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0048",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63198,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "David's servants appeal to a feast day — the pleasantness here is the quality of a good day that makes generosity fitting and the inner mood of celebration a ground for the request."
+      },
+      "_reference": "1Sa 25:8",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0049",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63201,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "David sees Bathsheba bathing and she is very beautiful — her visual pleasantness acts on his perception and stirs desire, setting in motion a chain of inner impulses that lead to moral failure."
+      },
+      "_reference": "2Sa 11:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0050",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 28385,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "David is called the sweet psalmist of Israel — his pleasantness is a quality of his inner spirit expressed through song, a God-given gift of lyrical beauty that delighted and edified the nation."
+      },
+      "_reference": "2Sa 23:1",
+      "_strongs": "H5273A"
+    },
+    {
+      "op_id": "OP-0051",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 23418,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Joy is the collective inner state of the returned exiles as they celebrate the temple dedication — a communal, outwardly expressed gladness rooted in the restoration of worship."
+      },
+      "_reference": "Ezr 6:16",
+      "_strongs": "H2304"
+    },
+    {
+      "op_id": "OP-0052",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63210,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term here describes the quality of bronze vessels valued as precious as gold; it conveys material excellence rather than an inner-being state in this verse."
+      },
+      "_reference": "Ezr 8:27",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0053",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63214,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes Vashti's physical loveliness — her pleasant appearance — which the king wanted displayed before the princes; the delight is aesthetic and external, not an inner state."
+      },
+      "_reference": "Est 1:11",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0054",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63216,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes young women who are physically beautiful and pleasing; the pleasantness sought is outward attractiveness for the king's selection, not an inner-being quality."
+      },
+      "_reference": "Est 2:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0055",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63217,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term again points to outward physical beauty — young women gathered for their pleasant appearance; the inner-being dimension is not directly in view in this administrative context."
+      },
+      "_reference": "Est 2:3",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0056",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63218,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Esther's pleasant appearance — beautiful figure and lovely to look at — is the focus; the term describes her external attractiveness rather than any inner emotional state."
+      },
+      "_reference": "Est 2:7",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0057",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63219,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Esther pleased Hegai and won his favor; the pleasantness here bridges outward appeal and the favorable inner response it produced in the one who perceived her."
+      },
+      "_reference": "Est 2:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0058",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63226,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term here modifies Mordecai's word as one that 'saved the king' — describing his deed as good/beneficial; the pleasantness is moral-relational rather than an inner emotional state."
+      },
+      "_reference": "Est 7:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0059",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63229,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes the holiday as a 'good' day — framing the Jews' gladness and feasting as a positively valued occasion; the inner experience of delight is expressed through communal celebration."
+      },
+      "_reference": "Est 8:17",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0060",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63231,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The rural Jews observe the fourteenth of Adar as a good/holiday day of gladness and feasting; the pleasant quality of the day is linked to communal joy and gift-giving rather than private inner experience."
+      },
+      "_reference": "Est 9:19",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0061",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63232,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sorrow is structurally contrasted with gladness and mourning with a holiday; the term marks a reversal of inner state — from grief to joy — memorialized in communal feasting and generosity."
+      },
+      "_reference": "Est 9:22",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0062",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63234,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Honey is called good and sweet to the taste — the term here describes sensory pleasantness as a positive, enjoyable quality, grounding delight in physical experience."
+      },
+      "_reference": "Pro 24:13",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0063",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63237,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes large, beautiful houses soon to be desolate; the pleasantness is aesthetic and material, and its coming ruin underscores the fragility of human delight in fine possessions."
+      },
+      "_reference": "Isa 5:9",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0064",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63238,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The precious oil is described as 'good/pleasant'; the term here marks valuable, desirable material wealth that Hezekiah proudly displayed, with no direct inner-being content in this verse."
+      },
+      "_reference": "Isa 39:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0065",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63240,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Sweet cane from a distant land is described as pleasant, yet God declares the sacrifices not pleasing to him; the term highlights the contrast between outward pleasantness and genuine inner-directed acceptability before God."
+      },
+      "_reference": "Jer 6:20",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0066",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63241,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The term describes the very good figs — their quality is excellent; this is a physical, evaluative use without direct inner-being content, setting up the theological comparison that follows."
+      },
+      "_reference": "Jer 24:2",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0067",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63242,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God directs Jeremiah's perception to distinguish the good figs from the bad; the term evaluates quality as a vehicle for conveying divine discernment — no direct inner-being emotional content."
+      },
+      "_reference": "Jer 24:3",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0068",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63243,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God regards the exiles from Judah as 'good' like the good figs — the term expresses divine favorable disposition toward them, reflecting God's inner attitude of acceptance and intended blessing."
+      },
+      "_reference": "Jer 24:5",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0069",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63247,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Pure gold, once precious and good, has grown dim and changed; the term's past quality of the gold underscores what has been lost, evoking lamentation over the destruction of what was once pleasing and valued."
+      },
+      "_reference": "Lam 4:1",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0070",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63248,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The vine was planted on good soil — favorable and productive ground; the term describes environmental quality rather than inner-being content in this allegorical verse."
+      },
+      "_reference": "Eze 17:8",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0071",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63249,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The good pieces of meat — thigh and shoulder — are the choice portions placed in the pot; the term signals desirable quality in a culinary metaphor, with no direct inner-being content."
+      },
+      "_reference": "Eze 24:4",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0072",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63250,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The best and choicest trees of Lebanon are described with this term; it conveys the superlative quality of what was once glorious, now cast down — the term underscores loss of excellent status rather than an inner state."
+      },
+      "_reference": "Eze 31:16",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0073",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63251,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God promises to feed his flock with good pasture — abundant, nourishing, and restful grazing land; the term describes the quality of divine provision that produces rest and satisfaction in those cared for."
+      },
+      "_reference": "Eze 34:14",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0074",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63252,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The young men who refused the king's food were better in appearance — the term describes their improved physical condition; the pleasantness here is visible, bodily flourishing rather than an inner emotional state."
+      },
+      "_reference": "Dan 1:15",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0075",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63253,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "The shade of the trees is described as pleasant/good, providing sensory comfort that draws people to sacrifice there; the appeal is outward and physical, indirectly enabling idolatrous behavior rather than reflecting an inner joyful state."
+      },
+      "_reference": "Hos 4:13",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0076",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63254,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "God's rich/precious treasures have been plundered into pagan temples; the term marks the high value of what was taken, not an inner emotional state, though the implied inner response is grief at the desecration."
+      },
+      "_reference": "Joe 3:5",
+      "_strongs": "H2896A"
+    },
+    {
+      "op_id": "OP-0077",
+      "table": "verse_context",
+      "operation": "update",
+      "match": {
+        "id": 63256,
+        "delete_flagged": 0
+      },
+      "set": {
+        "analysis_note": "Nineveh is personified as a graceful prostitute with deadly charms; the term describes an outwardly attractive pleasantness that is seductive and destructive, with the inner reality being betrayal rather than genuine delight."
+      },
+      "_reference": "Nah 3:4",
+      "_strongs": "H2896A"
+    }
+  ]
+}
