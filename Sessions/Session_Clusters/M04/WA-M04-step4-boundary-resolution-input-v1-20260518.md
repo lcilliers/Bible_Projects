@@ -1,8 +1,24 @@
-# M04 Step 4 — Phase 8.5 BOUNDARY resolution input for AI
+# M04 Step 4 — Phase 8.5 BOUNDARY resolution input for AI (structural data)
 
 **Date:** 2026-05-18
 **Governing instruction:** wa-sessionb-cluster-instruction-v2_5-20260518 §11A (Phase 8.5) + §18.2 verse-level dispositions
 **Task:** propose a per-verse disposition (SET-ASIDE / ROUTE-TO-CLUSTER / PROMOTE-TO-SUBGROUP) for every BOUNDARY verse listed below.
+
+---
+
+## Required inputs (read brief first; this is the structural data)
+
+This document is the **structural data** for the M04 Step 4 task. It is read **in conjunction with the brief**:
+
+| # | Document | Purpose |
+|---|---|---|
+| 1 | **Brief (read first)** — `Sessions/Session_Clusters/M04/WA-M04-step4-boundary-resolution-brief-v1-20260518.md` | Primary instructions: context, pre-decisions, disposition vocabulary, §4.5.1 forbidden grounds, output format, suggested batching |
+| 2 | **This document** — `Sessions/Session_Clusters/M04/WA-M04-step4-boundary-resolution-input-v1-20260518.md` | Per-verse data: 257 BOUNDARY verses with text + Pass A meaning + co-occurrence list; M04 sub-group catalogue; programme cluster catalogue |
+| 3 | **Governing instruction** — `Workflow/Instructions/wa-sessionb-cluster-instruction-v2_5-20260518.md` — read §1.1, §2.8, §4.5.1, §8.4.1, §11A, §18.2 | Scope rules, disposition vocabulary, forbidden grounds |
+| 4 | **Global rules** — `wa-global-general-rules` [current] | Programme-wide discipline |
+| 5 | **Background** — `Sessions/Session_Clusters/M04/WA-M04-boundary-content-analysis-v1-20260517.md` | Register-family analysis of the original 322 BOUNDARY corpus (informational) |
+
+If you have not yet read the brief, **stop and read it first.** It contains context and pre-decisions that govern the dispositions in this document.
 
 ---
 
