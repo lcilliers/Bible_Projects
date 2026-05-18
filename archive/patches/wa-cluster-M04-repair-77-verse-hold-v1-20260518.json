@@ -1,0 +1,1329 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260518-M04-REPAIR-77-VERSE-HOLD-V1",
+    "registry_id": null,
+    "produced_date": "20260518",
+    "produced_by": "scripts/_build_m04_77_verse_hold_patch_20260518.py",
+    "patch_type": "REPAIR",
+    "cluster_code": "M04",
+    "session_b_status": null,
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_5-20260518 §17.5 (audit-fix; cluster.status unchanged)",
+    "description": "HOLD the 77 verses (75 tov reset + 2 restored-vr orphans) at researcher direction 2026-05-18: Pass A meanings preserved in analysis_note; verses returned to set-aside state with HOLD-PENDING-DEEPER-ANALYSIS reason. Findable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'. Next: M04 retrofit Step 3 (create 6 new sub-groups + assign 69 register-family BOUNDARY verses) proceeds."
+  },
+  "_patch_summary": {
+    "total_operations": 77,
+    "produced_at_utc": "2026-05-18T08:55:46Z",
+    "hold_reason_marker": "HOLD-PENDING-DEEPER-ANALYSIS"
+  },
+  "operations": [
+    {
+      "op_id": "OP-00001",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23418
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2304 ched.vah Ezr 6:16 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Ezr 6:16 H2304 ched.vah (vc=23418)"
+    },
+    {
+      "op_id": "OP-00002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63124
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 2:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 2:9 H2896A tov (vc=63124)"
+    },
+    {
+      "op_id": "OP-00003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63125
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 2:12 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 2:12 H2896A tov (vc=63125)"
+    },
+    {
+      "op_id": "OP-00004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63126
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 6:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 6:2 H2896A tov (vc=63126)"
+    },
+    {
+      "op_id": "OP-00005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63127
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 15:15 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 15:15 H2896A tov (vc=63127)"
+    },
+    {
+      "op_id": "OP-00006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63129
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 18:7 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 18:7 H2896A tov (vc=63129)"
+    },
+    {
+      "op_id": "OP-00007",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63132
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 24:16 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 24:16 H2896A tov (vc=63132)"
+    },
+    {
+      "op_id": "OP-00008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63133
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 24:50 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 24:50 H2896A tov (vc=63133)"
+    },
+    {
+      "op_id": "OP-00009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63134
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 25:8 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 25:8 H2896A tov (vc=63134)"
+    },
+    {
+      "op_id": "OP-00010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63135
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 26:7 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 26:7 H2896A tov (vc=63135)"
+    },
+    {
+      "op_id": "OP-00011",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63136
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 27:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 27:9 H2896A tov (vc=63136)"
+    },
+    {
+      "op_id": "OP-00012",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63138
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 30:20 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 30:20 H2896A tov (vc=63138)"
+    },
+    {
+      "op_id": "OP-00013",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63139
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 31:24 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 31:24 H2896A tov (vc=63139)"
+    },
+    {
+      "op_id": "OP-00014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63140
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 31:29 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 31:29 H2896A tov (vc=63140)"
+    },
+    {
+      "op_id": "OP-00015",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63142
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 41:5 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 41:5 H2896A tov (vc=63142)"
+    },
+    {
+      "op_id": "OP-00016",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63143
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 41:22 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 41:22 H2896A tov (vc=63143)"
+    },
+    {
+      "op_id": "OP-00017",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63144
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 41:24 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 41:24 H2896A tov (vc=63144)"
+    },
+    {
+      "op_id": "OP-00018",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63145
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 41:26 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 41:26 H2896A tov (vc=63145)"
+    },
+    {
+      "op_id": "OP-00019",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63146
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 41:35 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 41:35 H2896A tov (vc=63146)"
+    },
+    {
+      "op_id": "OP-00020",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63147
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Gen 49:15 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Gen 49:15 H2896A tov (vc=63147)"
+    },
+    {
+      "op_id": "OP-00021",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63148
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Exo 2:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Exo 2:2 H2896A tov (vc=63148)"
+    },
+    {
+      "op_id": "OP-00022",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63149
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Exo 3:8 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Exo 3:8 H2896A tov (vc=63149)"
+    },
+    {
+      "op_id": "OP-00023",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63150
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Lev 27:10 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Lev 27:10 H2896A tov (vc=63150)"
+    },
+    {
+      "op_id": "OP-00024",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63151
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Lev 27:12 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Lev 27:12 H2896A tov (vc=63151)"
+    },
+    {
+      "op_id": "OP-00025",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63152
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Lev 27:14 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Lev 27:14 H2896A tov (vc=63152)"
+    },
+    {
+      "op_id": "OP-00026",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63153
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Lev 27:33 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Lev 27:33 H2896A tov (vc=63153)"
+    },
+    {
+      "op_id": "OP-00027",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63154
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Num 13:19 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Num 13:19 H2896A tov (vc=63154)"
+    },
+    {
+      "op_id": "OP-00028",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63155
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Num 14:7 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Num 14:7 H2896A tov (vc=63155)"
+    },
+    {
+      "op_id": "OP-00029",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63158
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 1:25 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 1:25 H2896A tov (vc=63158)"
+    },
+    {
+      "op_id": "OP-00030",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63159
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 1:35 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 1:35 H2896A tov (vc=63159)"
+    },
+    {
+      "op_id": "OP-00031",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63160
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 3:25 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 3:25 H2896A tov (vc=63160)"
+    },
+    {
+      "op_id": "OP-00032",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63161
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 4:21 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 4:21 H2896A tov (vc=63161)"
+    },
+    {
+      "op_id": "OP-00033",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63162
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 4:22 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 4:22 H2896A tov (vc=63162)"
+    },
+    {
+      "op_id": "OP-00034",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63163
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 6:10 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 6:10 H2896A tov (vc=63163)"
+    },
+    {
+      "op_id": "OP-00035",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63164
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 8:7 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 8:7 H2896A tov (vc=63164)"
+    },
+    {
+      "op_id": "OP-00036",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63165
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 8:12 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 8:12 H2896A tov (vc=63165)"
+    },
+    {
+      "op_id": "OP-00037",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63166
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 11:17 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 11:17 H2896A tov (vc=63166)"
+    },
+    {
+      "op_id": "OP-00038",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63169
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Deu 28:12 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Deu 28:12 H2896A tov (vc=63169)"
+    },
+    {
+      "op_id": "OP-00039",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63171
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jos 7:21 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jos 7:21 H2896A tov (vc=63171)"
+    },
+    {
+      "op_id": "OP-00040",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63173
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jos 23:13 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jos 23:13 H2896A tov (vc=63173)"
+    },
+    {
+      "op_id": "OP-00041",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63175
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Judg 8:32 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Judg 8:32 H2896A tov (vc=63175)"
+    },
+    {
+      "op_id": "OP-00042",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63177
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Judg 9:11 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Judg 9:11 H2896A tov (vc=63177)"
+    },
+    {
+      "op_id": "OP-00043",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63179
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Judg 15:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Judg 15:2 H2896A tov (vc=63179)"
+    },
+    {
+      "op_id": "OP-00044",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63180
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Judg 18:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Judg 18:9 H2896A tov (vc=63180)"
+    },
+    {
+      "op_id": "OP-00045",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63187
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 1Sa 8:14 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 1Sa 8:14 H2896A tov (vc=63187)"
+    },
+    {
+      "op_id": "OP-00046",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63188
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 1Sa 8:16 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 1Sa 8:16 H2896A tov (vc=63188)"
+    },
+    {
+      "op_id": "OP-00047",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63189
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 1Sa 9:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 1Sa 9:2 H2896A tov (vc=63189)"
+    },
+    {
+      "op_id": "OP-00048",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63194
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 1Sa 16:12 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 1Sa 16:12 H2896A tov (vc=63194)"
+    },
+    {
+      "op_id": "OP-00049",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63198
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 1Sa 25:8 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 1Sa 25:8 H2896A tov (vc=63198)"
+    },
+    {
+      "op_id": "OP-00050",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63201
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov 2Sa 11:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 2Sa 11:2 H2896A tov (vc=63201)"
+    },
+    {
+      "op_id": "OP-00051",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63210
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Ezr 8:27 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Ezr 8:27 H2896A tov (vc=63210)"
+    },
+    {
+      "op_id": "OP-00052",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63214
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 1:11 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 1:11 H2896A tov (vc=63214)"
+    },
+    {
+      "op_id": "OP-00053",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63216
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 2:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 2:2 H2896A tov (vc=63216)"
+    },
+    {
+      "op_id": "OP-00054",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63217
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 2:3 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 2:3 H2896A tov (vc=63217)"
+    },
+    {
+      "op_id": "OP-00055",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63218
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 2:7 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 2:7 H2896A tov (vc=63218)"
+    },
+    {
+      "op_id": "OP-00056",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63219
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 2:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 2:9 H2896A tov (vc=63219)"
+    },
+    {
+      "op_id": "OP-00057",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63226
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 7:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 7:9 H2896A tov (vc=63226)"
+    },
+    {
+      "op_id": "OP-00058",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63229
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 8:17 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 8:17 H2896A tov (vc=63229)"
+    },
+    {
+      "op_id": "OP-00059",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63231
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 9:19 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 9:19 H2896A tov (vc=63231)"
+    },
+    {
+      "op_id": "OP-00060",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63232
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Est 9:22 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Est 9:22 H2896A tov (vc=63232)"
+    },
+    {
+      "op_id": "OP-00061",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63234
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Pro 24:13 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Pro 24:13 H2896A tov (vc=63234)"
+    },
+    {
+      "op_id": "OP-00062",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63237
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Isa 5:9 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Isa 5:9 H2896A tov (vc=63237)"
+    },
+    {
+      "op_id": "OP-00063",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63238
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Isa 39:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Isa 39:2 H2896A tov (vc=63238)"
+    },
+    {
+      "op_id": "OP-00064",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63240
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jer 6:20 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jer 6:20 H2896A tov (vc=63240)"
+    },
+    {
+      "op_id": "OP-00065",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63241
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jer 24:2 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jer 24:2 H2896A tov (vc=63241)"
+    },
+    {
+      "op_id": "OP-00066",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63242
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jer 24:3 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jer 24:3 H2896A tov (vc=63242)"
+    },
+    {
+      "op_id": "OP-00067",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63243
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Jer 24:5 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Jer 24:5 H2896A tov (vc=63243)"
+    },
+    {
+      "op_id": "OP-00068",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63247
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Lam 4:1 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Lam 4:1 H2896A tov (vc=63247)"
+    },
+    {
+      "op_id": "OP-00069",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63248
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Eze 17:8 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Eze 17:8 H2896A tov (vc=63248)"
+    },
+    {
+      "op_id": "OP-00070",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63249
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Eze 24:4 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Eze 24:4 H2896A tov (vc=63249)"
+    },
+    {
+      "op_id": "OP-00071",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63250
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Eze 31:16 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Eze 31:16 H2896A tov (vc=63250)"
+    },
+    {
+      "op_id": "OP-00072",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63251
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Eze 34:14 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Eze 34:14 H2896A tov (vc=63251)"
+    },
+    {
+      "op_id": "OP-00073",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63252
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Dan 1:15 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Dan 1:15 H2896A tov (vc=63252)"
+    },
+    {
+      "op_id": "OP-00074",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63253
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Hos 4:13 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Hos 4:13 H2896A tov (vc=63253)"
+    },
+    {
+      "op_id": "OP-00075",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63254
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Joe 3:5 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Joe 3:5 H2896A tov (vc=63254)"
+    },
+    {
+      "op_id": "OP-00076",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 63256
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H2896A tov Nah 3:4 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD Nah 3:4 H2896A tov (vc=63256)"
+    },
+    {
+      "op_id": "OP-00077",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 28385
+      },
+      "set": {
+        "is_relevant": 0,
+        "is_anchor": 0,
+        "cluster_subgroup_id": null,
+        "group_id": null,
+        "set_aside_reason": "HOLD-PENDING-DEEPER-ANALYSIS (2026-05-18): Pass A meaning authored 2026-05-18 under v2_5 §1.1 scope; researcher disposition deferred per v2_5 §17.5 audit-fix. Verse demonstrates inner-being potential but requires deeper analysis (researcher: 'there is still something hidden in the understanding of these verses, but it is beyond me at the moment'). Pass A meaning preserved in analysis_note. To be revisited in a future research pass; queryable by set_aside_reason LIKE 'HOLD-PENDING-DEEPER-ANALYSIS%'.",
+        "notes": "[audit-fix v2_5 HOLD 2026-05-18] H5273A na.im 2Sa 23:1 — Pass A re-authored 2026-05-18; researcher deferred disposition. Original state: terse set-aside (physical_only/no_inner_being) suspected bulk-processing bias. Fresh Pass A meaning is in analysis_note for future review."
+      },
+      "description": "HOLD 2Sa 23:1 H5273A na.im (vc=28385)"
+    }
+  ]
+}
