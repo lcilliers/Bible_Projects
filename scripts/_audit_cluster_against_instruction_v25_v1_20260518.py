@@ -113,6 +113,151 @@ VOLUME_THRESHOLDS = {
     "STATUS_SUFFIX_BLOCKING": 1,  # status flag = blocking by definition
 }
 
+# Corpus-fraction thresholds for determining bounded vs systemic scope of a
+# corrective action. If affected entities exceed CORPUS_FRACTION_SYSTEMIC of
+# the relevant denominator, the action is flagged as systemic (cluster-wide).
+CORPUS_FRACTION_SYSTEMIC = 0.50  # >50% = systemic
+
+# -----------------------------------------------------------------------------
+# Canonical corrective-action cascade
+# -----------------------------------------------------------------------------
+# Any verse-level structural change in a cluster cascades through up to 5
+# steps. Each error type enters the cascade at a specific step. Items that
+# start at later steps skip earlier ones.
+
+CANONICAL_CASCADE = [
+    {"step": 1, "phase": "Phase 2", "label": "Pass A meaning — author verse_context.analysis_note"},
+    {"step": 2, "phase": "Phase 5/6", "label": "Sub-group review — fit existing sub-group OR propose new"},
+    {"step": 3, "phase": "Phase 7", "label": "VCG review — fit existing VCG in target sub-group OR create new (with anchor)"},
+    {"step": 4, "phase": "Phase 9/11", "label": "Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one"},
+    {"step": 5, "phase": "Session C", "label": "Publication review — re-publish any chapter whose cited findings substantively changed"},
+]
+
+# Map each error type to its cascade entry point and metadata. Used by
+# compute_corrective_actions() to produce the per-error action plan.
+#
+# Fields:
+#   label          — human-readable error type
+#   entry_step     — step in CANONICAL_CASCADE where corrective work begins (0 = informational, no DB action)
+#   skip_to_final  — True if cascade may short-circuit (e.g. verse confirmed as legitimate set-aside)
+#   default_scope  — bounded | bounded-systemic | systemic
+#   action_pattern — short description of the corrective action template
+#   notes          — discipline reminders
+ERROR_TYPE_CASCADES = {
+    "missing_pass_a_meaning": {
+        "label": "Verse missing Pass A meaning",
+        "entry_step": 1,
+        "skip_to_final": True,
+        "default_scope": "bounded",
+        "action_pattern": "Run Phase 2 Pass A on the affected vc_ids → cascade through 2/3/4/5 as needed",
+        "notes": "Cascade may short-circuit at step 1 if the verse turns out to be a legitimate set-aside (no inner-being state). Otherwise full cascade applies.",
+    },
+    "missing_subgroup": {
+        "label": "Verse missing sub-group assignment (cluster_subgroup_id IS NULL)",
+        "entry_step": 2,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Review analysis_note vs existing sub-groups; assign to fit OR propose new sub-group; cascade through 3/4/5",
+        "notes": "Pass A meaning already exists. Sub-group decision drives Phase 7 + Phase 9/11 follow-on.",
+    },
+    "missing_vcg": {
+        "label": "Verse missing VCG assignment (group_id IS NULL)",
+        "entry_step": 3,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Review meaning + sub-group placement vs existing VCGs; assign or create new VCG (with anchor)",
+        "notes": "Sub-group placement already exists. VCG-level analysis only.",
+    },
+    "missing_anchor": {
+        "label": "Term lacks active anchor (R4 violation)",
+        "entry_step": 3,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Designate one relevant verse of the term as is_anchor=1",
+        "notes": "Surgical — no cascade beyond Phase 7 anchor flag.",
+    },
+    "ut_verse": {
+        "label": "UT verse — no verse_context row exists for the (verse_record_id, mti_term_id) pair",
+        "entry_step": 1,
+        "skip_to_final": True,
+        "default_scope": "bounded",
+        "action_pattern": "Run Phase 1 classification (relevant / set_aside / borderline); if relevant, Phase 2 + cascade",
+        "notes": "Phase 1 classifier per §4.2 with v2_5 in-scope examples.",
+    },
+    "forbidden_setaside": {
+        "label": "set_aside_reason matches §4.5.1 forbidden grounds",
+        "entry_step": 1,
+        "skip_to_final": True,
+        "default_scope": "bounded",
+        "action_pattern": "RESCUE candidate review — re-classify each as relevant under v2_5 §1.1 scope; if rescued, run Pass A + cascade. If confirmed set-aside, rewrite reason with §4.5.1-valid ground.",
+        "notes": "Strong RESCUE candidates — the original reason is bias-flagged.",
+    },
+    "terse_setaside": {
+        "label": "Terse set_aside_reason lacks specific evidence ground (e.g. 'physical_only')",
+        "entry_step": 1,
+        "skip_to_final": True,
+        "default_scope": "bounded",
+        "action_pattern": "Researcher reviews each: confirm with proper §4.5.1 evidence-based reason (no cascade) OR RESCUE → relevant + cascade",
+        "notes": "Terse values may be legitimate but lack the verse-specific rationale §4.5.1 requires.",
+    },
+    "boundary_parking": {
+        "label": "STAYS-verdict term with verses parked in {code}-BOUNDARY (§8.4.1)",
+        "entry_step": 2,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "PROMOTE-TO-SUBGROUP per §18.2 — move verse to fitting substantive sub-group; cascade through 3/4/5",
+        "notes": "Existing sub-group structure can absorb these (term already has substantive sub-group home).",
+    },
+    "register_family": {
+        "label": "Register-family cohort in BOUNDARY needing substantive sub-group (§1.1, §8.4.1)",
+        "entry_step": 2,
+        "skip_to_final": False,
+        "default_scope": "bounded-systemic",
+        "action_pattern": "Group affected verses by register family → design new sub-group(s) per §8.4 → PROMOTE the cohort → Phase 7 VCG design for new sub-group → Phase 9 findings for new sub-group → Session C publication review",
+        "notes": "Multi-phase cascade per cohort. Existing M{NN}-A through M{NN}-J sub-groups remain untouched; this adds new sub-groups for the missing register families.",
+    },
+    "boundary_pending": {
+        "label": "BOUNDARY_DECISION_PENDING flag — needs §11A disposition",
+        "entry_step": 2,
+        "skip_to_final": True,
+        "default_scope": "bounded",
+        "action_pattern": "Phase 8.5 §11A disposition: SET-ASIDE, ROUTE-TO-CLUSTER, or PROMOTE-TO-SUBGROUP per verse; cascade per disposition",
+        "notes": "Each verse gets one of three dispositions; cascade depth depends on outcome.",
+    },
+    "placeholder_finding": {
+        "label": "Placeholder cluster_finding row ('[Sub-group not separately addressed]')",
+        "entry_step": 4,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Either: revise finding_text with substantive evidence (read sub-group verses, author) OR change finding_status to 'silent' with explicit silence rationale",
+        "notes": "No verse impact. Phase 9 micro-pass on the affected finding rows only.",
+    },
+    "ungrounded_finding": {
+        "label": "cluster_finding row with no verse / VCG / anchor reference in finding_text",
+        "entry_step": 4,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Read finding's source verses, add explicit verse references to finding_text. If genuinely a cluster-synthesis without specific verses, add sub-group references at minimum.",
+        "notes": "Phase 9 §15.2 check 1 compliance. No verse impact.",
+    },
+    "completeness_gap": {
+        "label": "Catalogue prompt × scope cell missing cluster_finding row (§15.2 check 2)",
+        "entry_step": 4,
+        "skip_to_final": False,
+        "default_scope": "bounded",
+        "action_pattern": "Phase 9 micro-pass: author E (with verse evidence) / S (silent with rationale) / G (gap) for each missing cell; INSERT cluster_finding row",
+        "notes": "Phase 9 cell-by-cell completion. Researcher may opt to filter to v2_5 T0–T7 prompts if catalogue includes legacy codes.",
+    },
+    "status_suffix": {
+        "label": "cluster.status carries post-closure suffix (e.g. 'Terms Added')",
+        "entry_step": 0,
+        "skip_to_final": True,
+        "default_scope": "informational",
+        "action_pattern": "Umbrella signal — the underlying PIPELINE-INCOMPLETE items are the real corrective actions. Once they resolve, clear the suffix via a closure-re-attestation directive.",
+        "notes": "Not a separate corrective action; resolves automatically when pipeline-completeness gaps close.",
+    },
+}
+
 # Status-string patterns indicating known post-closure state that requires audit.
 # These are researcher conventions appended to `cluster.status` after closure
 # (e.g. "Analysis Completed (Terms Added)" or "(Verses Added)") to signal that
@@ -700,6 +845,248 @@ def check_register_families_in_boundary(conn, code):
 
 
 # -----------------------------------------------------------------------------
+# Corrective-actions plan
+# -----------------------------------------------------------------------------
+
+
+def _estimate_work(count):
+    """Qualitative work estimate by item count."""
+    if count == 0:
+        return "none"
+    if count <= 10:
+        return "small"
+    if count <= 100:
+        return "medium"
+    if count <= 500:
+        return "large"
+    return "very large"
+
+
+def _map_finding_to_error_types(finding):
+    """Map a check finding to error_type keys for corrective-action grouping.
+
+    Returns a list of (error_type, items_or_count) tuples.
+    """
+    code = finding["code"]
+    items = finding.get("items", []) or []
+
+    if code == "AUDIT-V25-STATUS-SUFFIX":
+        return [("status_suffix", items)]
+    if code == "AUDIT-V25-PIPELINE-INCOMPLETE":
+        # Bucket items by category
+        by_cat = defaultdict(list)
+        for it in finding.get("items", []):
+            by_cat[it["category"]].append(it)
+        # Categories already align with error_type keys
+        out = []
+        for cat in ("ut_verse", "missing_pass_a_meaning", "missing_subgroup", "missing_vcg", "missing_anchor"):
+            if cat in by_cat:
+                out.append((cat, by_cat[cat]))
+        # Use full totals from by_category where items list was truncated
+        by_cat_total = finding.get("by_category", {})
+        if by_cat_total and finding.get("items_total", 0) > len(finding.get("items", [])):
+            # The items list was capped; rebuild from totals
+            out = []
+            for cat in ("ut_verse", "missing_pass_a_meaning", "missing_subgroup", "missing_vcg", "missing_anchor"):
+                if by_cat_total.get(cat, 0) > 0:
+                    out.append((cat, by_cat.get(cat, [])))  # sample list (possibly truncated)
+        return out
+    if code == "AUDIT-V25-BOUNDARY-PENDING":
+        return [("boundary_pending", items)]
+    if code == "AUDIT-V25-FORBIDDEN-SETASIDE":
+        return [("forbidden_setaside", items)]
+    if code == "AUDIT-V25-TERSE-SETASIDE":
+        return [("terse_setaside", items)]
+    if code == "AUDIT-V25-BOUNDARY-PARKING":
+        return [("boundary_parking", items)]
+    if code == "AUDIT-V25-EVIDENCE-GROUNDING":
+        # Heuristic: if text head matches placeholder pattern, mark placeholder; else ungrounded
+        placeholder, ungrounded = [], []
+        for it in items:
+            head = (it.get("text_head") or "").lower()
+            if "not separately addressed" in head or "see cluster-level finding" in head:
+                placeholder.append(it)
+            else:
+                ungrounded.append(it)
+        # The items list was capped at 30; need to scale by full count
+        out = []
+        total = finding.get("items_total", 0)
+        if total > len(items):
+            # Can't split totals reliably; report under ungrounded with note
+            ungrounded_count = total
+            out = [("ungrounded_finding", items)]  # samples; total recorded separately
+        else:
+            if placeholder:
+                out.append(("placeholder_finding", placeholder))
+            if ungrounded:
+                out.append(("ungrounded_finding", ungrounded))
+        return out
+    if code == "AUDIT-V25-COMPLETENESS":
+        return [("completeness_gap", items)]
+    if code == "AUDIT-V25-REGISTER-FAMILIES":
+        # Items here is a list of {family, count, samples}
+        # Aggregate into one register_family action
+        return [("register_family", items)]
+    return []
+
+
+def compute_corrective_actions(findings, cluster_meta, conn, code):
+    """Produce a corrective-action plan: per error type, the cascade entry
+    point, affected count, sample entities, scope, and estimated work.
+    """
+    # Aggregate count per error type. We use the finding's reported "count"
+    # not the items list length (items list may be truncated for the report).
+    aggregated = defaultdict(lambda: {"count": 0, "samples": [], "extra": {}})
+
+    for f in findings:
+        if f["count"] == 0:
+            continue
+        mappings = _map_finding_to_error_types(f)
+        if f["code"] == "AUDIT-V25-PIPELINE-INCOMPLETE":
+            # Use by_category for the actual counts
+            by_cat = f.get("by_category", {})
+            for etype, sample_items in mappings:
+                aggregated[etype]["count"] += by_cat.get(etype, 0)
+                aggregated[etype]["samples"].extend(sample_items[:10])
+        elif f["code"] == "AUDIT-V25-EVIDENCE-GROUNDING":
+            # Split placeholder vs ungrounded
+            items = f.get("items", [])
+            total = f.get("items_total", 0)
+            placeholder_in_samples = sum(1 for it in items if "not separately addressed" in (it.get("text_head") or "").lower())
+            ungrounded_in_samples = len(items) - placeholder_in_samples
+            if placeholder_in_samples + ungrounded_in_samples > 0:
+                ratio_placeholder = placeholder_in_samples / max(1, placeholder_in_samples + ungrounded_in_samples)
+                est_placeholder = int(round(total * ratio_placeholder))
+                est_ungrounded = total - est_placeholder
+            else:
+                est_placeholder = 0
+                est_ungrounded = total
+            if est_placeholder > 0:
+                aggregated["placeholder_finding"]["count"] = est_placeholder
+                aggregated["placeholder_finding"]["samples"].extend(
+                    [it for it in items if "not separately addressed" in (it.get("text_head") or "").lower()][:10]
+                )
+                aggregated["placeholder_finding"]["extra"] = {"estimation_note": f"Estimated split from sample of {len(items)} (placeholder ratio {ratio_placeholder:.0%})"}
+            if est_ungrounded > 0:
+                aggregated["ungrounded_finding"]["count"] = est_ungrounded
+                aggregated["ungrounded_finding"]["samples"].extend(
+                    [it for it in items if "not separately addressed" not in (it.get("text_head") or "").lower()][:10]
+                )
+        elif f["code"] == "AUDIT-V25-REGISTER-FAMILIES":
+            aggregated["register_family"]["count"] = f["count"]
+            # Items is a list of family records
+            aggregated["register_family"]["samples"] = f.get("items", [])[:20]
+        else:
+            for etype, sample_items in mappings:
+                aggregated[etype]["count"] += f["count"]
+                aggregated[etype]["samples"].extend(sample_items[:10] if isinstance(sample_items, list) else [])
+
+    # Compute corpus denominators for scope determination
+    corpus = {
+        "relevant_vc_total": conn.execute(
+            "SELECT COUNT(*) FROM verse_context vc JOIN mti_terms mt ON mt.id=vc.mti_term_id "
+            "WHERE mt.cluster_code=? AND vc.is_relevant=1 AND COALESCE(vc.delete_flagged,0)=0",
+            (code,),
+        ).fetchone()[0],
+        "term_count": conn.execute(
+            "SELECT COUNT(*) FROM mti_terms WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0",
+            (code,),
+        ).fetchone()[0],
+        "setaside_total": conn.execute(
+            "SELECT COUNT(*) FROM verse_context vc JOIN mti_terms mt ON mt.id=vc.mti_term_id "
+            "WHERE mt.cluster_code=? AND vc.is_relevant=0 AND COALESCE(vc.delete_flagged,0)=0",
+            (code,),
+        ).fetchone()[0],
+        "cluster_finding_total": conn.execute(
+            "SELECT COUNT(*) FROM cluster_finding WHERE cluster_code=? AND COALESCE(delete_flagged,0)=0",
+            (code,),
+        ).fetchone()[0],
+    }
+
+    actions = []
+    for etype, data in aggregated.items():
+        if etype not in ERROR_TYPE_CASCADES:
+            continue
+        meta = ERROR_TYPE_CASCADES[etype]
+        count = data["count"]
+        # Determine scope: if count >= CORPUS_FRACTION_SYSTEMIC of relevant
+        # denominator, mark as systemic; else default per meta.
+        scope = meta["default_scope"]
+        ratio = None
+        denominator_label = None
+        if etype in ("missing_pass_a_meaning", "missing_subgroup", "missing_vcg", "ut_verse", "missing_anchor", "boundary_parking", "register_family", "boundary_pending"):
+            denom = corpus["relevant_vc_total"] or 1
+            denominator_label = "relevant verses"
+            ratio = count / denom
+        elif etype in ("forbidden_setaside", "terse_setaside"):
+            denom = corpus["setaside_total"] or 1
+            denominator_label = "set-aside verses"
+            ratio = count / denom
+        elif etype in ("placeholder_finding", "ungrounded_finding"):
+            denom = corpus["cluster_finding_total"] or 1
+            denominator_label = "cluster_finding rows"
+            ratio = count / denom
+        elif etype == "completeness_gap":
+            denominator_label = "expected cells"
+            # Already known from check
+            ratio = None
+        # Systemic upgrade rule
+        if ratio is not None and ratio >= CORPUS_FRACTION_SYSTEMIC:
+            scope = "systemic"
+        actions.append({
+            "error_type": etype,
+            "label": meta["label"],
+            "entry_step": meta["entry_step"],
+            "skip_to_final": meta["skip_to_final"],
+            "action_pattern": meta["action_pattern"],
+            "notes": meta["notes"],
+            "count": count,
+            "scope": scope,
+            "ratio": ratio,
+            "denominator_label": denominator_label,
+            "estimated_work": _estimate_work(count),
+            "samples": data["samples"][:8],
+            "extra": data.get("extra", {}),
+        })
+
+    # Sort by entry_step (earliest cascade entry first), then by count desc
+    actions.sort(key=lambda a: (a["entry_step"], -a["count"]))
+
+    # Compute overall verdict from the action set
+    if not actions:
+        verdict_label = "COMPLIANT"
+        verdict_recommendation = "No corrective actions needed. Cluster is aligned with v2_5."
+    elif any(a["scope"] == "systemic" for a in actions):
+        # At least one action is systemic — recommends phase-restart for that
+        # scope but still bounded for others
+        verdict_label = "SYSTEMIC"
+        systemic_actions = [a for a in actions if a["scope"] == "systemic"]
+        verdict_recommendation = (
+            f"{len(systemic_actions)} systemic action(s) affect >{int(CORPUS_FRACTION_SYSTEMIC*100)}% of cluster scope. "
+            "Bounded fixes are insufficient; consider phase-restart on the affected scope. Other actions are bounded surgical."
+        )
+    elif any(a["scope"] == "bounded-systemic" for a in actions):
+        verdict_label = "BOUNDED-SYSTEMIC"
+        verdict_recommendation = (
+            "All actions are bounded but at least one requires new structural elements (sub-groups, VCGs). "
+            "Existing cluster structure remains intact. Cluster status does not change."
+        )
+    else:
+        verdict_label = "BOUNDED-FIXES"
+        verdict_recommendation = (
+            "All actions are bounded surgical fixes. Existing cluster structure remains intact. "
+            "Cluster status does not change (§17.5)."
+        )
+
+    return {
+        "label": verdict_label,
+        "recommendation": verdict_recommendation,
+        "actions": actions,
+        "corpus": corpus,
+    }
+
+
+# -----------------------------------------------------------------------------
 # Verdict computation
 # -----------------------------------------------------------------------------
 
@@ -769,7 +1156,7 @@ def compute_verdict(findings):
 # -----------------------------------------------------------------------------
 
 
-def write_report(code, findings, verdict, cluster_meta):
+def write_report(code, findings, verdict, cluster_meta, plan=None):
     """Write the audit compliance report as markdown."""
     out_dir = Path(f"Sessions/Session_Clusters/{code}")
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -787,8 +1174,96 @@ def write_report(code, findings, verdict, cluster_meta):
     lines.append("---")
     lines.append("")
 
-    # §1 — Verdict
-    lines.append("## §1 — Verdict")
+    # §1 — Corrective-actions plan (new structure)
+    if plan is not None:
+        lines.append("## §1 — Corrective-actions plan")
+        lines.append("")
+        lines.append(f"**Plan verdict:** `{plan['label']}`")
+        lines.append("")
+        lines.append(plan["recommendation"])
+        lines.append("")
+        lines.append("**Cluster corpus reference (denominators for scope):**")
+        c = plan["corpus"]
+        lines.append(f"- relevant verse_context rows: {c['relevant_vc_total']}")
+        lines.append(f"- term count: {c['term_count']}")
+        lines.append(f"- set-aside vc rows: {c['setaside_total']}")
+        lines.append(f"- existing cluster_finding rows: {c['cluster_finding_total']}")
+        lines.append("")
+
+        if plan["actions"]:
+            lines.append("### Canonical cascade")
+            lines.append("")
+            for step in CANONICAL_CASCADE:
+                lines.append(f"{step['step']}. **{step['phase']}** — {step['label']}")
+            lines.append("")
+            lines.append("### Actions (sorted by cascade entry step)")
+            lines.append("")
+            lines.append("| # | Error type | Entry step | Count | Scope | Work | % of denominator |")
+            lines.append("|---|---|---:|---:|---|---|---|")
+            for idx, a in enumerate(plan["actions"], 1):
+                pct = f"{a['ratio']*100:.0f}% of {a['denominator_label']}" if a["ratio"] is not None else "—"
+                lines.append(f"| {idx} | `{a['error_type']}` | {a['entry_step']} | {a['count']} | {a['scope']} | {a['estimated_work']} | {pct} |")
+            lines.append("")
+
+            lines.append("### Per-action detail")
+            lines.append("")
+            for idx, a in enumerate(plan["actions"], 1):
+                lines.append(f"#### Action {idx} — `{a['error_type']}` ({a['count']} items, {a['scope']})")
+                lines.append("")
+                lines.append(f"**Cascade entry:** step {a['entry_step']}")
+                if a["entry_step"] > 0:
+                    entry_step = next((s for s in CANONICAL_CASCADE if s["step"] == a["entry_step"]), None)
+                    if entry_step:
+                        lines.append(f"  ({entry_step['phase']} — {entry_step['label']})")
+                lines.append("")
+                lines.append(f"**Action pattern:** {a['action_pattern']}")
+                lines.append("")
+                lines.append(f"**Cascade steps that may apply:**")
+                if a["entry_step"] == 0:
+                    lines.append("  - (informational only; no cascade)")
+                else:
+                    for step in CANONICAL_CASCADE:
+                        if step["step"] >= a["entry_step"]:
+                            applies = "applies"
+                            if step["step"] > a["entry_step"] and a["skip_to_final"]:
+                                applies = "may apply (cascade may short-circuit)"
+                            lines.append(f"  - Step {step['step']} ({step['phase']}): {step['label']} — {applies}")
+                lines.append("")
+                lines.append(f"**Notes:** {a['notes']}")
+                lines.append("")
+                if a.get("extra", {}).get("estimation_note"):
+                    lines.append(f"_{a['extra']['estimation_note']}_")
+                    lines.append("")
+                if a["samples"]:
+                    lines.append("**Sample affected entities:**")
+                    for s in a["samples"][:8]:
+                        if isinstance(s, dict):
+                            if "family" in s:
+                                # Register-family sample
+                                lines.append(f"- {s['family']}: {s['count']} verses")
+                            elif "reference" in s and "strongs" in s:
+                                lines.append(f"- {s.get('strongs','')} {s.get('transliteration','') or s.get('translit','')} {s.get('reference') or ''} (vc={s.get('vc_id','')})")
+                            elif "question_code" in s:
+                                lines.append(f"- {s['question_code']} × {s.get('subgroup','')}")
+                            elif "registry" in s:
+                                lines.append(f"- registry={s.get('registry')} strongs={s.get('strongs')}")
+                            elif "reason" in s:
+                                lines.append(f"- reason={s.get('reason','')!r}")
+                            elif "suffix" in s:
+                                lines.append(f"- suffix={s['suffix']}")
+                            else:
+                                lines.append(f"- {s}")
+                    lines.append("")
+                lines.append("---")
+                lines.append("")
+        else:
+            lines.append("No corrective actions to plan. Cluster is fully aligned with v2_5.")
+            lines.append("")
+            lines.append("---")
+            lines.append("")
+
+    # §2 — Legacy verdict (kept for backward continuity)
+    lines.append("## §2 — Legacy verdict (phase-restart framing)")
     lines.append("")
     lines.append(f"**Level:** `{verdict['level']}`")
     lines.append("")
@@ -810,8 +1285,8 @@ def write_report(code, findings, verdict, cluster_meta):
     lines.append("---")
     lines.append("")
 
-    # §2 — Summary table
-    lines.append("## §2 — Summary by check")
+    # §3 — Summary table
+    lines.append("## §3 — Summary by check")
     lines.append("")
     lines.append("| Check code | Count | Threshold | Severity | Section |")
     lines.append("|---|---:|---:|---|---|")
@@ -822,8 +1297,8 @@ def write_report(code, findings, verdict, cluster_meta):
     lines.append("---")
     lines.append("")
 
-    # §3 — Per-check detail
-    lines.append("## §3 — Per-check detail")
+    # §4 — Per-check detail
+    lines.append("## §4 — Per-check detail")
     lines.append("")
     for f in findings:
         lines.append(f"### {f['code']} — {f['title']}")
@@ -918,8 +1393,8 @@ def write_report(code, findings, verdict, cluster_meta):
         lines.append("---")
         lines.append("")
 
-    # §4 — Researcher next steps
-    lines.append("## §4 — Researcher next steps")
+    # §5 — Researcher next steps
+    lines.append("## §5 — Researcher next steps")
     lines.append("")
     if verdict["level"] == "COMPLIANT":
         lines.append("No action required.")
@@ -978,13 +1453,18 @@ def main():
     findings.append(check_register_families_in_boundary(conn, code))
 
     verdict = compute_verdict(findings)
-    out_path = write_report(code, findings, verdict, cluster_meta)
+    plan = compute_corrective_actions(findings, cluster_meta, conn, code)
+    out_path = write_report(code, findings, verdict, cluster_meta, plan=plan)
 
     print(f"\nAudit complete. Report: {out_path}")
-    print(f"Verdict: {verdict['level']}")
+    print(f"Corrective-actions plan: {plan['label']}")
+    print(f"Number of actions: {len(plan['actions'])}")
+    for a in plan["actions"]:
+        ratio_str = f", {a['ratio']*100:.0f}%" if a["ratio"] is not None else ""
+        print(f"  - {a['error_type']}: {a['count']} items, entry step {a['entry_step']}, scope={a['scope']} ({a['estimated_work']}{ratio_str})")
+    print(f"\nLegacy phase-restart verdict (informational): {verdict['level']}")
     if verdict["restart_from"]:
-        print(f"Recommended restart-from: Phase {verdict['restart_from']}")
-    print(f"Recommendation: {verdict['recommendation']}")
+        print(f"  restart-from: Phase {verdict['restart_from']}")
 
     conn.close()
 

@@ -1,6 +1,6 @@
 # M02 audit against wa-sessionb-cluster-instruction-v2_5-20260518
 
-**Date:** 2026-05-18 06:18
+**Date:** 2026-05-18 06:45
 **Script:** `scripts/_audit_cluster_against_instruction_v25_v1_20260518.py`
 **Instruction version checked against:** v2_5
 **Cluster status at audit time:** 'Analysis Completed (Terms Added)'
@@ -8,7 +8,195 @@
 
 ---
 
-## §1 — Verdict
+## §1 — Corrective-actions plan
+
+**Plan verdict:** `BOUNDED-SYSTEMIC`
+
+All actions are bounded but at least one requires new structural elements (sub-groups, VCGs). Existing cluster structure remains intact. Cluster status does not change.
+
+**Cluster corpus reference (denominators for scope):**
+- relevant verse_context rows: 645
+- term count: 44
+- set-aside vc rows: 54
+- existing cluster_finding rows: 389
+
+### Canonical cascade
+
+1. **Phase 2** — Pass A meaning — author verse_context.analysis_note
+2. **Phase 5/6** — Sub-group review — fit existing sub-group OR propose new
+3. **Phase 7** — VCG review — fit existing VCG in target sub-group OR create new (with anchor)
+4. **Phase 9/11** — Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one
+5. **Session C** — Publication review — re-publish any chapter whose cited findings substantively changed
+
+### Actions (sorted by cascade entry step)
+
+| # | Error type | Entry step | Count | Scope | Work | % of denominator |
+|---|---|---:|---:|---|---|---|
+| 1 | `status_suffix` | 0 | 1 | informational | small | — |
+| 2 | `terse_setaside` | 1 | 2 | bounded | small | 4% of set-aside verses |
+| 3 | `missing_subgroup` | 2 | 4 | bounded | small | 1% of relevant verses |
+| 4 | `boundary_pending` | 2 | 4 | bounded | small | 1% of relevant verses |
+| 5 | `register_family` | 2 | 4 | bounded-systemic | small | 1% of relevant verses |
+| 6 | `completeness_gap` | 4 | 1582 | bounded | very large | — |
+| 7 | `ungrounded_finding` | 4 | 42 | bounded | medium | 11% of cluster_finding rows |
+
+### Per-action detail
+
+#### Action 1 — `status_suffix` (1 items, informational)
+
+**Cascade entry:** step 0
+
+**Action pattern:** Umbrella signal — the underlying PIPELINE-INCOMPLETE items are the real corrective actions. Once they resolve, clear the suffix via a closure-re-attestation directive.
+
+**Cascade steps that may apply:**
+  - (informational only; no cascade)
+
+**Notes:** Not a separate corrective action; resolves automatically when pipeline-completeness gaps close.
+
+**Sample affected entities:**
+- suffix=post-closure terms added
+
+---
+
+#### Action 2 — `terse_setaside` (2 items, bounded)
+
+**Cascade entry:** step 1
+  (Phase 2 — Pass A meaning — author verse_context.analysis_note)
+
+**Action pattern:** Researcher reviews each: confirm with proper §4.5.1 evidence-based reason (no cascade) OR RESCUE → relevant + cascade
+
+**Cascade steps that may apply:**
+  - Step 1 (Phase 2): Pass A meaning — author verse_context.analysis_note — applies
+  - Step 2 (Phase 5/6): Sub-group review — fit existing sub-group OR propose new — may apply (cascade may short-circuit)
+  - Step 3 (Phase 7): VCG review — fit existing VCG in target sub-group OR create new (with anchor) — may apply (cascade may short-circuit)
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — may apply (cascade may short-circuit)
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — may apply (cascade may short-circuit)
+
+**Notes:** Terse values may be legitimate but lack the verse-specific rationale §4.5.1 requires.
+
+**Sample affected entities:**
+- reason='physical_only'
+
+---
+
+#### Action 3 — `missing_subgroup` (4 items, bounded)
+
+**Cascade entry:** step 2
+  (Phase 5/6 — Sub-group review — fit existing sub-group OR propose new)
+
+**Action pattern:** Review analysis_note vs existing sub-groups; assign to fit OR propose new sub-group; cascade through 3/4/5
+
+**Cascade steps that may apply:**
+  - Step 2 (Phase 5/6): Sub-group review — fit existing sub-group OR propose new — applies
+  - Step 3 (Phase 7): VCG review — fit existing VCG in target sub-group OR create new (with anchor) — applies
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — applies
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — applies
+
+**Notes:** Pass A meaning already exists. Sub-group decision drives Phase 7 + Phase 9/11 follow-on.
+
+**Sample affected entities:**
+- G4088 pikria Eph 4:31 (vc=4648)
+- G4088 pikria Act 8:23 (vc=4649)
+- G4088 pikria Rom 3:14 (vc=4650)
+- G4088 pikria Heb 12:15 (vc=4651)
+
+---
+
+#### Action 4 — `boundary_pending` (4 items, bounded)
+
+**Cascade entry:** step 2
+  (Phase 5/6 — Sub-group review — fit existing sub-group OR propose new)
+
+**Action pattern:** Phase 8.5 §11A disposition: SET-ASIDE, ROUTE-TO-CLUSTER, or PROMOTE-TO-SUBGROUP per verse; cascade per disposition
+
+**Cascade steps that may apply:**
+  - Step 2 (Phase 5/6): Sub-group review — fit existing sub-group OR propose new — applies
+  - Step 3 (Phase 7): VCG review — fit existing VCG in target sub-group OR create new (with anchor) — may apply (cascade may short-circuit)
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — may apply (cascade may short-circuit)
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — may apply (cascade may short-circuit)
+
+**Notes:** Each verse gets one of three dispositions; cascade depth depends on outcome.
+
+**Sample affected entities:**
+- registry=rebellion strongs=G0485
+- registry=ambition strongs=G2042
+- registry=envy strongs=G2200
+- registry=anger strongs=H3708B
+
+---
+
+#### Action 5 — `register_family` (4 items, bounded-systemic)
+
+**Cascade entry:** step 2
+  (Phase 5/6 — Sub-group review — fit existing sub-group OR propose new)
+
+**Action pattern:** Group affected verses by register family → design new sub-group(s) per §8.4 → PROMOTE the cohort → Phase 7 VCG design for new sub-group → Phase 9 findings for new sub-group → Session C publication review
+
+**Cascade steps that may apply:**
+  - Step 2 (Phase 5/6): Sub-group review — fit existing sub-group OR propose new — applies
+  - Step 3 (Phase 7): VCG review — fit existing VCG in target sub-group OR create new (with anchor) — applies
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — applies
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — applies
+
+**Notes:** Multi-phase cascade per cohort. Existing M{NN}-A through M{NN}-J sub-groups remain untouched; this adds new sub-groups for the missing register families.
+
+**Sample affected entities:**
+- horizontal_relational: 2 verses
+- material_sensory: 2 verses
+
+---
+
+#### Action 6 — `completeness_gap` (1582 items, bounded)
+
+**Cascade entry:** step 4
+  (Phase 9/11 — Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one)
+
+**Action pattern:** Phase 9 micro-pass: author E (with verse evidence) / S (silent with rationale) / G (gap) for each missing cell; INSERT cluster_finding row
+
+**Cascade steps that may apply:**
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — applies
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — applies
+
+**Notes:** Phase 9 cell-by-cell completion. Researcher may opt to filter to v2_5 T0–T7 prompts if catalogue includes legacy codes.
+
+**Sample affected entities:**
+- C-001 × M02-A
+- C-001 × M02-B
+- C-001 × M02-C
+- C-001 × M02-D
+- C-001 × M02-E
+- C-001 × M02-F
+- C-001 × M02-BOUNDARY
+- C-001 × CLUSTER
+
+---
+
+#### Action 7 — `ungrounded_finding` (42 items, bounded)
+
+**Cascade entry:** step 4
+  (Phase 9/11 — Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one)
+
+**Action pattern:** Read finding's source verses, add explicit verse references to finding_text. If genuinely a cluster-synthesis without specific verses, add sub-group references at minimum.
+
+**Cascade steps that may apply:**
+  - Step 4 (Phase 9/11): Findings review — does the verse confirm / extend / contradict an existing finding, or open a new one — applies
+  - Step 5 (Session C): Publication review — re-publish any chapter whose cited findings substantively changed — applies
+
+**Notes:** Phase 9 §15.2 check 1 compliance. No verse impact.
+
+**Sample affected entities:**
+- T0.1.1 × None
+- T0.1.2 × None
+- T0.2.1 × M02-C
+- T0.2.1 × None
+- T0.2.2 × None
+- T0.3.1 × None
+- T0.3.3 × M02-C
+- T0.3.3 × None
+
+---
+
+## §2 — Legacy verdict (phase-restart framing)
 
 **Level:** `MIXED`
 
@@ -21,7 +209,7 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 
 ---
 
-## §2 — Summary by check
+## §3 — Summary by check
 
 | Check code | Count | Threshold | Severity | Section |
 |---|---:|---:|---|---|
@@ -37,7 +225,7 @@ Per v2_5 §17.3.2, the cluster.status transition for this restart is:
 
 ---
 
-## §3 — Per-check detail
+## §4 — Per-check detail
 
 ### AUDIT-V25-STATUS-SUFFIX — cluster.status carries a post-closure suffix indicating un-processed additions
 
@@ -261,7 +449,7 @@ BOUNDARY verses scanned: 82
 
 ---
 
-## §4 — Researcher next steps
+## §5 — Researcher next steps
 
 1. Review the blocking findings above and confirm or override the recommended phase restart (Phase 1).
 2. If accepting the restart, CC will build a phase-restart directive per §17.3.2: backup affected rows + status transition + roll-back ops.
