@@ -31,7 +31,11 @@ Shared constants for the Session A v9 Automation Engine.
 # Bumped 2026-05-18 for M49 (characteristic + characteristic_subgroup +
 # cluster_observation tables; supports many-sub-groups-per-characteristic and
 # observation-carry-forward across phases per researcher direction 2026-05-18).
-EXPECTED_SCHEMA_VERSION = "3.23.0"
+# Bumped 2026-05-18 for M50 (cluster_finding.characteristic_id column + extended
+# UNIQUE; Phase 9 findings authored at characteristic scope, not sub-group, per
+# researcher direction 2026-05-18 — "sub groups is purely a capacity organiser,
+# the evaluating unit is the characteristic").
+EXPECTED_SCHEMA_VERSION = "3.24.0"
 
 # Sentinel written to word_registry.last_automation_run on successful audit completion.
 AUDITED_SENTINEL = "AUDITED"
