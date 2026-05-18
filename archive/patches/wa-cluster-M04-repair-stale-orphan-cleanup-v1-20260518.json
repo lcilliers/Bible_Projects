@@ -1,0 +1,216 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260518-M04-REPAIR-STALE-ORPHAN-CLEANUP-V1",
+    "registry_id": null,
+    "produced_date": "20260518",
+    "produced_by": "scripts/_build_m04_stale_orphan_cleanup_patch_20260518.py",
+    "patch_type": "REPAIR",
+    "cluster_code": "M04",
+    "session_b_status": null,
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_5-20260518 §17.5 (audit-fix; cluster.status unchanged)",
+    "description": "Audit-fix per v2_5 audit dated 2026-05-18 — M04 had 15 stale orphan verse_context rows pointing to soft-deleted wa_verse_records. Each orphan has a live sibling vc covering the same (Bible reference, term) pair, fully processed (Pass A + sub-group + VCG). Soft-delete the 15 orphans to clean up the duplicate noise. 4 additional orphans (Dan 1:10, Ezr 6:16, 2Sa 23:1, Psa 81:2) require special-case dispositions and are handled by a separate patch — not included here."
+  },
+  "_patch_summary": {
+    "total_operations": 15,
+    "stale_orphan_count": 15,
+    "special_cases_excluded": 4,
+    "produced_at_utc": "2026-05-18T07:39:46Z"
+  },
+  "operations": [
+    {
+      "op_id": "OP-00001",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23325
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12223 delete_flagged=1; live sibling vc=23326 covers Php 1:4 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23325 Php 1:4 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12223 deleted; live sibling vc=23326)"
+    },
+    {
+      "op_id": "OP-00002",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23251
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12306 delete_flagged=1; live sibling vc=23252 covers Php 1:18 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23251 Php 1:18 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12306 deleted; live sibling vc=23252)"
+    },
+    {
+      "op_id": "OP-00003",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23327
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12224 delete_flagged=1; live sibling vc=23328 covers Php 1:25 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23327 Php 1:25 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12224 deleted; live sibling vc=23328)"
+    },
+    {
+      "op_id": "OP-00004",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23329
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12225 delete_flagged=1; live sibling vc=23330 covers Php 2:2 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23329 Php 2:2 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12225 deleted; live sibling vc=23330)"
+    },
+    {
+      "op_id": "OP-00005",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23212
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12330 delete_flagged=1; live sibling vc=23213 covers Php 2:17 G4796. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23212 Php 2:17 G4796 sunchairo (was is_relevant=1 in M04-D / M04-D-VCG-01; vr=12330 deleted; live sibling vc=23213)"
+    },
+    {
+      "op_id": "OP-00006",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23253
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12307 delete_flagged=1; live sibling vc=23254 covers Php 2:17 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23253 Php 2:17 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12307 deleted; live sibling vc=23254)"
+    },
+    {
+      "op_id": "OP-00007",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23214
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12331 delete_flagged=1; live sibling vc=23215 covers Php 2:18 G4796. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23214 Php 2:18 G4796 sunchairo (was is_relevant=1 in M04-D / M04-D-VCG-01; vr=12331 deleted; live sibling vc=23215)"
+    },
+    {
+      "op_id": "OP-00008",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23255
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12308 delete_flagged=1; live sibling vc=23256 covers Php 2:18 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23255 Php 2:18 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12308 deleted; live sibling vc=23256)"
+    },
+    {
+      "op_id": "OP-00009",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23257
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12309 delete_flagged=1; live sibling vc=23258 covers Php 2:28 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23257 Php 2:28 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12309 deleted; live sibling vc=23258)"
+    },
+    {
+      "op_id": "OP-00010",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23331
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12226 delete_flagged=1; live sibling vc=23332 covers Php 2:29 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23331 Php 2:29 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12226 deleted; live sibling vc=23332)"
+    },
+    {
+      "op_id": "OP-00011",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23259
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12310 delete_flagged=1; live sibling vc=23260 covers Php 3:1 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23259 Php 3:1 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12310 deleted; live sibling vc=23260)"
+    },
+    {
+      "op_id": "OP-00012",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23333
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12227 delete_flagged=1; live sibling vc=23334 covers Php 4:1 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23333 Php 4:1 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12227 deleted; live sibling vc=23334)"
+    },
+    {
+      "op_id": "OP-00013",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23216
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12311 delete_flagged=1; live sibling vc=23262 covers Php 4:4 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23216 Php 4:4 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12311 deleted; live sibling vc=23262)"
+    },
+    {
+      "op_id": "OP-00014",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23261
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12312 delete_flagged=1; live sibling vc=23263 covers Php 4:10 G5463. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23261 Php 4:10 G5463 chairo (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12312 deleted; live sibling vc=23263)"
+    },
+    {
+      "op_id": "OP-00015",
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "id": 23351
+      },
+      "set": {
+        "delete_flagged": 1,
+        "notes": "audit-fix v2_5 stale orphan cleanup (20260518): vr=12242 delete_flagged=1; live sibling vc=23350 covers 1Jn 1:4 G5479. Soft-deleted per researcher approval 2026-05-18 — orphan has no analytical content (analysis_note NULL)."
+      },
+      "description": "M04 stale orphan: vc=23351 1Jn 1:4 G5479 chara (was is_relevant=1 in M04-C / M04-C-VCG-03; vr=12242 deleted; live sibling vc=23350)"
+    }
+  ]
+}
